@@ -1,0 +1,2422 @@
+{
+  "program": {
+    "fileInfos": {
+      "../bin/node/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "70ae6416528e68c2ee7b62892200d2ca631759943d4429f8b779b947ff1e124d",
+        "signature": "70ae6416528e68c2ee7b62892200d2ca631759943d4429f8b779b947ff1e124d",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "dc47c4fa66b9b9890cf076304de2a9c5201e94b740cffdf09f87296d877d71f6",
+        "signature": "dc47c4fa66b9b9890cf076304de2a9c5201e94b740cffdf09f87296d877d71f6",
+        "affectsGlobalScope": false
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "7a387c58583dfca701b6c85e0adaf43fb17d590fb16d5b2dc0a2fbd89f35c467",
+        "signature": "7a387c58583dfca701b6c85e0adaf43fb17d590fb16d5b2dc0a2fbd89f35c467",
+        "affectsGlobalScope": false
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "8a12173c586e95f4433e0c6dc446bc88346be73ffe9ca6eec7aa63c8f3dca7f9",
+        "signature": "8a12173c586e95f4433e0c6dc446bc88346be73ffe9ca6eec7aa63c8f3dca7f9",
+        "affectsGlobalScope": false
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2018.d.ts": {
+        "version": "5f4e733ced4e129482ae2186aae29fde948ab7182844c3a5a51dd346182c7b06",
+        "signature": "5f4e733ced4e129482ae2186aae29fde948ab7182844c3a5a51dd346182c7b06",
+        "affectsGlobalScope": false
+      },
+      "../bin/node/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "9affb0a2ddc57df5b8174c0af96c288d697a262e5bc9ca1f544c999dc64a91e6",
+        "signature": "9affb0a2ddc57df5b8174c0af96c288d697a262e5bc9ca1f544c999dc64a91e6",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "63e0cc12d0f77394094bd19e84464f9840af0071e5b9358ced30511efef1d8d2",
+        "signature": "63e0cc12d0f77394094bd19e84464f9840af0071e5b9358ced30511efef1d8d2",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "43fb1d932e4966a39a41b464a12a81899d9ae5f2c829063f5571b6b87e6d2f9c",
+        "signature": "43fb1d932e4966a39a41b464a12a81899d9ae5f2c829063f5571b6b87e6d2f9c",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "signature": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "42f5e41e5893da663dbf0394268f54f1da4b43dc0ddd2ea4bf471fe5361d6faf",
+        "signature": "42f5e41e5893da663dbf0394268f54f1da4b43dc0ddd2ea4bf471fe5361d6faf",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "0b7a905675e6cb4211c128f0a3aa47d414b275180a299a9aad5d3ec298abbfc4",
+        "signature": "0b7a905675e6cb4211c128f0a3aa47d414b275180a299a9aad5d3ec298abbfc4",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "dfff68b3c34338f6b307a25d4566de15eed7973b0dc5d69f9fde2bcac1c25315",
+        "signature": "dfff68b3c34338f6b307a25d4566de15eed7973b0dc5d69f9fde2bcac1c25315",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "cb609802a8698aa28b9c56331d4b53f590ca3c1c3a255350304ae3d06017779d",
+        "signature": "cb609802a8698aa28b9c56331d4b53f590ca3c1c3a255350304ae3d06017779d",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "signature": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "4670208dd7da9d6c774ab1b75c1527a810388c7989c4905de6aaea8561cb9dce",
+        "signature": "4670208dd7da9d6c774ab1b75c1527a810388c7989c4905de6aaea8561cb9dce",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "signature": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "signature": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "d0db416bccdb33975548baf09a42ee8c47eace1aac7907351a000f1e568e7232",
+        "signature": "d0db416bccdb33975548baf09a42ee8c47eace1aac7907351a000f1e568e7232",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "signature": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "signature": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "signature": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": {
+        "version": "0eb85d6c590b0d577919a79e0084fa1744c1beba6fd0d4e951432fa1ede5510a",
+        "signature": "0eb85d6c590b0d577919a79e0084fa1744c1beba6fd0d4e951432fa1ede5510a",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": {
+        "version": "a40c4d82bf13fcded295ac29f354eb7d40249613c15e07b53f2fc75e45e16359",
+        "signature": "a40c4d82bf13fcded295ac29f354eb7d40249613c15e07b53f2fc75e45e16359",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2018.intl.d.ts": {
+        "version": "df9c8a72ca8b0ed62f5470b41208a0587f0f73f0a7db28e5a1272cf92537518e",
+        "signature": "df9c8a72ca8b0ed62f5470b41208a0587f0f73f0a7db28e5a1272cf92537518e",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2018.promise.d.ts": {
+        "version": "bb2d3fb05a1d2ffbca947cc7cbc95d23e1d053d6595391bd325deb265a18d36c",
+        "signature": "bb2d3fb05a1d2ffbca947cc7cbc95d23e1d053d6595391bd325deb265a18d36c",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2018.regexp.d.ts": {
+        "version": "c80df75850fea5caa2afe43b9949338ce4e2de086f91713e9af1a06f973872b8",
+        "signature": "c80df75850fea5caa2afe43b9949338ce4e2de086f91713e9af1a06f973872b8",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.es2020.bigint.d.ts": {
+        "version": "4f435f794b7853c55e2ae7cff6206025802aa79232d2867544178f2ca8ff5eaa",
+        "signature": "4f435f794b7853c55e2ae7cff6206025802aa79232d2867544178f2ca8ff5eaa",
+        "affectsGlobalScope": true
+      },
+      "../bin/node/node_modules/typescript/lib/lib.esnext.intl.d.ts": {
+        "version": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
+        "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/tslib/tslib.d.ts": {
+        "version": "61649aa5553c5eb196c297184d861a2428210a175f2763f4e2ef0bac3169c220",
+        "signature": "61649aa5553c5eb196c297184d861a2428210a175f2763f4e2ef0bac3169c220",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/upath/upath.d.ts": {
+        "version": "40391fabf54c15c70c44c538a98ca9fe751a06adae84adc9a9c2da765452a538",
+        "signature": "40391fabf54c15c70c44c538a98ca9fe751a06adae84adc9a9c2da765452a538",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/libs/src/compiler/config.ts": {
+        "version": "854906254edceb9564d2d3538b717841c82a03a61a52e6c1724abf6407b7873f",
+        "signature": "be63a769c2afd5a5963ee9d42195d67cd95bef597527fa6abaf5d41a5b45e0d3",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/terser/node_modules/source-map/source-map.d.ts": {
+        "version": "2887592574fcdfd087647c539dcb0fbe5af2521270dad4a37f9d17c16190d579",
+        "signature": "2887592574fcdfd087647c539dcb0fbe5af2521270dad4a37f9d17c16190d579",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/terser/tools/terser.d.ts": {
+        "version": "bb0eaa8ca1893891c335326c7171956de7eb626c0d9c8e5ee4dd8f7f6a30ab9f",
+        "signature": "bb0eaa8ca1893891c335326c7171956de7eb626c0d9c8e5ee4dd8f7f6a30ab9f",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/slash/index.d.ts": {
+        "version": "5b71418af9a4923df0089934452cbae57643dfc4e480552be8b49192616181f3",
+        "signature": "5b71418af9a4923df0089934452cbae57643dfc4e480552be8b49192616181f3",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/tdictionary.ts": {
+        "version": "510eafe5c9cff7ff07e49677ae8ec33ca8592a6d526f951777a96b59b87d481e",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts": {
+        "version": "505ae6dc9b1dcb017ee4bbef6a8a833f5f936c0e18e869de5c8f1c0f777e758f",
+        "signature": "505ae6dc9b1dcb017ee4bbef6a8a833f5f936c0e18e869de5c8f1c0f777e758f",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/stringarrayencoding.ts": {
+        "version": "8013e1843f8644841d9ad74efa72f445c9f15fb399062334e7184b2ee5877535",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tstringarrayencoding.ts": {
+        "version": "2c233798d9e5385b5f3c73ea027144c1afaf878fe48497acfa7c96e0d8688097",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/generators/identifier-names-generators/identifiernamesgenerator.ts": {
+        "version": "0b47f70d0b8ada3c3874d355c8cad2a5534778e6d766ed877adfb18767813e24",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/obfuscationtarget.ts": {
+        "version": "1efacf502334e4cdb33b9b0e72b2acdab24bfb06b9638648e60f459dba777af3",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/source-map/sourcemapmode.ts": {
+        "version": "b1aae05b006ca81f3391224fb7fcfeed4d578768b95330c8245135ed762025a2",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/options/ioptions.ts": {
+        "version": "d7f15d2a3a4f4d66e9c3747d9852d2dfcbeb4f7ce03c11e46d8e0ed4c5b8321f",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tinputoptions.ts": {
+        "version": "57bcff7ec3e79f8fad6404971791b411ea5b39665524310dda344348a72b9348",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/iinitializable.ts": {
+        "version": "9cd4305d6a9745a373abdc4c63a9aa91fdba7aeaa8103e91f672da53b201d899",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/source-code/iobfuscatedcode.ts": {
+        "version": "70337ac02a6941e3db367343726cd038e0d23c48a8196b1a6e65b7914a636d6b",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/tobfuscationresultsobject.ts": {
+        "version": "92b1319fabc07e1b333c518d21c7e8ba237ce7bbe5a82b9de68e94b9ff0c8150",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/javascript-obfuscator/index.d.ts": {
+        "version": "32062a6764b29656c764d0a63d469e4246d7bc2b5b4e1320c43fcbf321bad104",
+        "signature": "32062a6764b29656c764d0a63d469e4246d7bc2b5b4e1320c43fcbf321bad104",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/fancy-log/index.d.ts": {
+        "version": "f806d1521c691dcfa81a3597853eae9cac46c6fe8e75f1b87fe4e47f239e5e07",
+        "signature": "f806d1521c691dcfa81a3597853eae9cac46c6fe8e75f1b87fe4e47f239e5e07",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/chalk/index.d.ts": {
+        "version": "0d14fa22c41fdc7277e6f71473b20ebc07f40f00e38875142335d5b63cdfc9d2",
+        "signature": "0d14fa22c41fdc7277e6f71473b20ebc07f40f00e38875142335d5b63cdfc9d2",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/libs/src/compiler/log.ts": {
+        "version": "6e1f3637a9dfc5795b5bf056a87479fa232ad2e2a679d3af2aace0e7b2508cd8",
+        "signature": "1320cbaccd784a7e7cdece67734e87cc31da75064ae5ae16593f5c915900dc01",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/uglifycss/index.d.ts": {
+        "version": "48bd9cc97e25e31db6cf37ab5c03ec6b5ae36e0c64531d6463b275cd4a775a87",
+        "signature": "48bd9cc97e25e31db6cf37ab5c03ec6b5ae36e0c64531d6463b275cd4a775a87",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/globals.d.ts": {
+        "version": "2dd7dbacbd70cc156185235140b7b6682c002c1ea678dd87d7a20589d4555fc0",
+        "signature": "2dd7dbacbd70cc156185235140b7b6682c002c1ea678dd87d7a20589d4555fc0",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/node/async_hooks.d.ts": {
+        "version": "4ed9f71ddbb5753771ee391f64297078a88f7dfd1480646dcf08c31395778682",
+        "signature": "4ed9f71ddbb5753771ee391f64297078a88f7dfd1480646dcf08c31395778682",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/buffer.d.ts": {
+        "version": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
+        "signature": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/child_process.d.ts": {
+        "version": "465150173a56b943b2f6d8918e35c89d8386ffd37aa466e486ca54db54d6cee7",
+        "signature": "465150173a56b943b2f6d8918e35c89d8386ffd37aa466e486ca54db54d6cee7",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/cluster.d.ts": {
+        "version": "123ec69e4b3a686eb49afd94ebe3292a5c84a867ecbcb6bb84bdd720a12af803",
+        "signature": "123ec69e4b3a686eb49afd94ebe3292a5c84a867ecbcb6bb84bdd720a12af803",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/console.d.ts": {
+        "version": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "signature": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/constants.d.ts": {
+        "version": "90c85ddbb8de82cd19198bda062065fc51b7407c0f206f2e399e65a52e979720",
+        "signature": "90c85ddbb8de82cd19198bda062065fc51b7407c0f206f2e399e65a52e979720",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/crypto.d.ts": {
+        "version": "d4dd0b19ee0338dd4f1603eacb41859b9d5371bfef2b2849cb870d6fd6602bcb",
+        "signature": "d4dd0b19ee0338dd4f1603eacb41859b9d5371bfef2b2849cb870d6fd6602bcb",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/dgram.d.ts": {
+        "version": "7ecfe97b43aa6c8b8f90caa599d5648bb559962e74e6f038f73a77320569dd78",
+        "signature": "7ecfe97b43aa6c8b8f90caa599d5648bb559962e74e6f038f73a77320569dd78",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/dns.d.ts": {
+        "version": "aad3237c3f99480041cad7ca04d64307c98933996f822342b7c0ee4a78553346",
+        "signature": "aad3237c3f99480041cad7ca04d64307c98933996f822342b7c0ee4a78553346",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/domain.d.ts": {
+        "version": "4d4c83f77ac21a72252785baa5328a5612b0b6598d512f68b8cb14f7966d059e",
+        "signature": "4d4c83f77ac21a72252785baa5328a5612b0b6598d512f68b8cb14f7966d059e",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/events.d.ts": {
+        "version": "eaa8136bb11fbea5bdaf29e06aa45a1969ddd39fbfb5fe58a01f00d7f1562cd9",
+        "signature": "eaa8136bb11fbea5bdaf29e06aa45a1969ddd39fbfb5fe58a01f00d7f1562cd9",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/fs.d.ts": {
+        "version": "e253cd3c7d10c4f600308d0528dd371d7e4165d8295b37a1f38d0ef6c0dfaf60",
+        "signature": "e253cd3c7d10c4f600308d0528dd371d7e4165d8295b37a1f38d0ef6c0dfaf60",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/fs/promises.d.ts": {
+        "version": "fb28748ff8d015f52e99daee4f454e57cec1a22141f1257c317f3630a15edeb7",
+        "signature": "fb28748ff8d015f52e99daee4f454e57cec1a22141f1257c317f3630a15edeb7",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/http.d.ts": {
+        "version": "9440dcf960685f7ec10856891a6cebb52a5ae8cef6a2e85daf9476dafd346cbe",
+        "signature": "9440dcf960685f7ec10856891a6cebb52a5ae8cef6a2e85daf9476dafd346cbe",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/http2.d.ts": {
+        "version": "5d9394b829cfd504b2fe17287aaad8ce1dcfb2a2183c962a90a85b96da2c1c90",
+        "signature": "5d9394b829cfd504b2fe17287aaad8ce1dcfb2a2183c962a90a85b96da2c1c90",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/https.d.ts": {
+        "version": "c969bf4c7cdfe4d5dd28aa09432f99d09ad1d8d8b839959646579521d0467d1a",
+        "signature": "c969bf4c7cdfe4d5dd28aa09432f99d09ad1d8d8b839959646579521d0467d1a",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/inspector.d.ts": {
+        "version": "6c3857edaeeaaf43812f527830ebeece9266b6e8eb5271ab6d2f0008306c9947",
+        "signature": "6c3857edaeeaaf43812f527830ebeece9266b6e8eb5271ab6d2f0008306c9947",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/module.d.ts": {
+        "version": "bc6a77e750f4d34584e46b1405b771fb69a224197dd6bafe5b0392a29a70b665",
+        "signature": "bc6a77e750f4d34584e46b1405b771fb69a224197dd6bafe5b0392a29a70b665",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/net.d.ts": {
+        "version": "46cac76114704902baa535b30fb66a26aeaf9430f3b3ab44746e329f12e85498",
+        "signature": "46cac76114704902baa535b30fb66a26aeaf9430f3b3ab44746e329f12e85498",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/os.d.ts": {
+        "version": "ed4ae81196cccc10f297d228bca8d02e31058e6d723a3c5bc4be5fb3c61c6a34",
+        "signature": "ed4ae81196cccc10f297d228bca8d02e31058e6d723a3c5bc4be5fb3c61c6a34",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/path.d.ts": {
+        "version": "84044697c8b3e08ef24e4b32cfe6440143d07e469a5e34bda0635276d32d9f35",
+        "signature": "84044697c8b3e08ef24e4b32cfe6440143d07e469a5e34bda0635276d32d9f35",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/perf_hooks.d.ts": {
+        "version": "0b6098fedb648cab8091cca2b022a5c729b6ef18da923852033f495907cb1a45",
+        "signature": "0b6098fedb648cab8091cca2b022a5c729b6ef18da923852033f495907cb1a45",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/process.d.ts": {
+        "version": "0e0d58f5e90c0a270dac052b9c5ad8ccdfc8271118c2105b361063218d528d6e",
+        "signature": "0e0d58f5e90c0a270dac052b9c5ad8ccdfc8271118c2105b361063218d528d6e",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/node/punycode.d.ts": {
+        "version": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1",
+        "signature": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/querystring.d.ts": {
+        "version": "9f633ecf3e065ff82c19eccab35c8aa1d6d5d1a49af282dc29ef5a64cca34164",
+        "signature": "9f633ecf3e065ff82c19eccab35c8aa1d6d5d1a49af282dc29ef5a64cca34164",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/readline.d.ts": {
+        "version": "6b2bb67b0942bcfce93e1d6fad5f70afd54940a2b13df7f311201fba54b2cbe9",
+        "signature": "6b2bb67b0942bcfce93e1d6fad5f70afd54940a2b13df7f311201fba54b2cbe9",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/repl.d.ts": {
+        "version": "dd3706b25d06fe23c73d16079e8c66ac775831ef419da00716bf2aee530a04a4",
+        "signature": "dd3706b25d06fe23c73d16079e8c66ac775831ef419da00716bf2aee530a04a4",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/stream.d.ts": {
+        "version": "406a63c7e94107394341e97dbdc3312a1ecea75571d067a69eaa213786d9f154",
+        "signature": "406a63c7e94107394341e97dbdc3312a1ecea75571d067a69eaa213786d9f154",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/string_decoder.d.ts": {
+        "version": "d67e08745494b000da9410c1ae2fdc9965fc6d593fe0f381a47491f75417d457",
+        "signature": "d67e08745494b000da9410c1ae2fdc9965fc6d593fe0f381a47491f75417d457",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/timers.d.ts": {
+        "version": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "signature": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/tls.d.ts": {
+        "version": "424bc64b2794d9280c1e1f4a3518ba9d285385a16d84753a6427bb469e582eca",
+        "signature": "424bc64b2794d9280c1e1f4a3518ba9d285385a16d84753a6427bb469e582eca",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/trace_events.d.ts": {
+        "version": "a77fdb357c78b70142b2fdbbfb72958d69e8f765fd2a3c69946c1018e89d4638",
+        "signature": "a77fdb357c78b70142b2fdbbfb72958d69e8f765fd2a3c69946c1018e89d4638",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/tty.d.ts": {
+        "version": "3c2ac350c3baa61fd2b1925844109e098f4376d0768a4643abc82754fd752748",
+        "signature": "3c2ac350c3baa61fd2b1925844109e098f4376d0768a4643abc82754fd752748",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/url.d.ts": {
+        "version": "826d48e49c905cedb906cbde6ccaf758827ff5867d4daa006b5a79e0fb489357",
+        "signature": "826d48e49c905cedb906cbde6ccaf758827ff5867d4daa006b5a79e0fb489357",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/util.d.ts": {
+        "version": "baa711b17f67390c60eac3c70a1391b23a8e3833cb723b2d7336d4817a22455c",
+        "signature": "baa711b17f67390c60eac3c70a1391b23a8e3833cb723b2d7336d4817a22455c",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/v8.d.ts": {
+        "version": "289be113bad7ee27ee7fa5b1e373c964c9789a5e9ed7db5ddcb631371120b953",
+        "signature": "289be113bad7ee27ee7fa5b1e373c964c9789a5e9ed7db5ddcb631371120b953",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/vm.d.ts": {
+        "version": "e4abb8eaa8a7d78236be0f8342404aab076668d20590209e32fdeb924588531e",
+        "signature": "e4abb8eaa8a7d78236be0f8342404aab076668d20590209e32fdeb924588531e",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/worker_threads.d.ts": {
+        "version": "086bfc0710b044ce1586108ee56c6e1c0d9ca2d325c153bb026cbc850169f593",
+        "signature": "086bfc0710b044ce1586108ee56c6e1c0d9ca2d325c153bb026cbc850169f593",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/zlib.d.ts": {
+        "version": "f409183966a1dd93d3a9cd1d54fbeb85c73101e87cd5b19467c5e37b252f3fd8",
+        "signature": "f409183966a1dd93d3a9cd1d54fbeb85c73101e87cd5b19467c5e37b252f3fd8",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/base.d.ts": {
+        "version": "b46af749e3574b83bccc0ec829322b15e834ae90b45760eebc75a189c28c0868",
+        "signature": "b46af749e3574b83bccc0ec829322b15e834ae90b45760eebc75a189c28c0868",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts": {
+        "version": "12b2608d6074167c331c9c3c6994a57819f6ff934c7fd4527e23aabf56d4c8d1",
+        "signature": "12b2608d6074167c331c9c3c6994a57819f6ff934c7fd4527e23aabf56d4c8d1",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts": {
+        "version": "ffc1cd688606ad1ddb59a40e8f3defbde907af2a3402d1d9ddf69accb2903f07",
+        "signature": "ffc1cd688606ad1ddb59a40e8f3defbde907af2a3402d1d9ddf69accb2903f07",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.2/globals.d.ts": {
+        "version": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1",
+        "signature": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.2/base.d.ts": {
+        "version": "4cef33b2997388559c39b2f98c37e8319ad61e30a1f0edc55c53913f2250bade",
+        "signature": "4cef33b2997388559c39b2f98c37e8319ad61e30a1f0edc55c53913f2250bade",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.5/globals.global.d.ts": {
+        "version": "2708349d5a11a5c2e5f3a0765259ebe7ee00cdcc8161cb9990cb4910328442a1",
+        "signature": "2708349d5a11a5c2e5f3a0765259ebe7ee00cdcc8161cb9990cb4910328442a1",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.5/wasi.d.ts": {
+        "version": "0b3fef11ea6208c4cb3715c9aa108766ce98fc726bfba68cc23b25ce944ce9c0",
+        "signature": "0b3fef11ea6208c4cb3715c9aa108766ce98fc726bfba68cc23b25ce944ce9c0",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.5/base.d.ts": {
+        "version": "255dbc5a5acef2b83b47145042aa0127ebf7fe24cd5ce6afaaaf5c8fc2c5eb96",
+        "signature": "255dbc5a5acef2b83b47145042aa0127ebf7fe24cd5ce6afaaaf5c8fc2c5eb96",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.7/assert.d.ts": {
+        "version": "a8b842671d535d14f533fd8dbfacebceacf5195069d720425d572d5cc5ab3dc4",
+        "signature": "a8b842671d535d14f533fd8dbfacebceacf5195069d720425d572d5cc5ab3dc4",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.7/base.d.ts": {
+        "version": "9779312cffccce68e3ffbaa3a876381dc54a8240d9bdaa448f7eba222ec19392",
+        "signature": "9779312cffccce68e3ffbaa3a876381dc54a8240d9bdaa448f7eba222ec19392",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts": {
+        "version": "d522314e80ed71b57e3c2939d3c9594eaae63a4adf028559e6574f6b270b0fee",
+        "signature": "d522314e80ed71b57e3c2939d3c9594eaae63a4adf028559e6574f6b270b0fee",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/sass/index.d.ts": {
+        "version": "b1071c8eeb8da55bfac2666551ac923320b0c8a76a292ff55de0190ea59e691c",
+        "signature": "b1071c8eeb8da55bfac2666551ac923320b0c8a76a292ff55de0190ea59e691c",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/libs/src/compiler/core.ts": {
+        "version": "a6b3ceb513922f7dc405051726423956ee68ef2f6f1e708643ff5018d23af2b8",
+        "signature": "90fbb4fcbf67870e5d466e7d44421058a680bfe219a581d13e9a0b981ee2c24e",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/mysql/index.d.ts": {
+        "version": "9a89969be020f6e14763e39be6cb86038a4769ba2fc1fa0647030519a184a036",
+        "signature": "9a89969be020f6e14763e39be6cb86038a4769ba2fc1fa0647030519a184a036",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/libs/src/compiler/index.ts": {
+        "version": "fdcc605742c9070ab4545368cbb3ade585501d7bc37ea9cd79aabf4ab1a1607d",
+        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/libs/src/compiler/sass.ts": {
+        "version": "247d710a23a94f193c2aadbfc132d5e65b86486ce925883a95c90cf124f9df84",
+        "signature": "fbfda394b3bddffc43d5648a250342b699a0e08cd9a7d5445be8129c7d4d9f58",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/color-name/index.d.ts": {
+        "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
+        "signature": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/jquery/jquerystatic.d.ts": {
+        "version": "2a19c7dd007f71b9db87dba915e20d894dbdac8aa8fab5d1c3083a61f2316a5c",
+        "signature": "2a19c7dd007f71b9db87dba915e20d894dbdac8aa8fab5d1c3083a61f2316a5c",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/jquery/jquery.d.ts": {
+        "version": "3ea0e1446b84ad60e76c41d5ab06d923b929043f885e28321520ed18aa70cddb",
+        "signature": "3ea0e1446b84ad60e76c41d5ab06d923b929043f885e28321520ed18aa70cddb",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/jquery/misc.d.ts": {
+        "version": "b3907b2c4c8ccd6100c20a4691a9509df2867e5346154358eab40f8e037271bc",
+        "signature": "b3907b2c4c8ccd6100c20a4691a9509df2867e5346154358eab40f8e037271bc",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/jquery/legacy.d.ts": {
+        "version": "8c4a3355af2c490a8af67c4ec304e970424a15ef648a3c3fbb3ee6634461e2cc",
+        "signature": "8c4a3355af2c490a8af67c4ec304e970424a15ef648a3c3fbb3ee6634461e2cc",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/sizzle/index.d.ts": {
+        "version": "7ddac8a4ba398441cfd6d8a69380401378f122ee8cc2d848e6e32f4db2b6c876",
+        "signature": "7ddac8a4ba398441cfd6d8a69380401378f122ee8cc2d848e6e32f4db2b6c876",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/jquery/index.d.ts": {
+        "version": "2f7f24e566d3029aa802876b4452ae7d8a4ae21a44cefe4767c3986e06b69fc4",
+        "signature": "2f7f24e566d3029aa802876b4452ae7d8a4ae21a44cefe4767c3986e06b69fc4",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/datatables.net/index.d.ts": {
+        "version": "310c4f4f0ea7174f45ff9451409dd6dbb7ffad13a368c8480ad79190c26038d7",
+        "signature": "310c4f4f0ea7174f45ff9451409dd6dbb7ffad13a368c8480ad79190c26038d7",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/minimatch/index.d.ts": {
+        "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
+        "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
+        "affectsGlobalScope": false
+      },
+      "./php-yt-api/node_modules/@types/toastr/index.d.ts": {
+        "version": "4f1b913e255fde2374f516e153ba6acaf933769f9486c7301a66d624393edfd5",
+        "signature": "4f1b913e255fde2374f516e153ba6acaf933769f9486c7301a66d624393edfd5",
+        "affectsGlobalScope": true
+      },
+      "./php-yt-api/node_modules/@types/validator/index.d.ts": {
+        "version": "3ff2dd07f8aa032e6eb7ffacd8f4e1f0b8dac4ba02c1f6ea1413187aef947ec9",
+        "signature": "3ff2dd07f8aa032e6eb7ffacd8f4e1f0b8dac4ba02c1f6ea1413187aef947ec9",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/har-format/index.d.ts": {
+        "version": "3e3144d1b1eab267eab7041cfae2d258636944e96d8a0567f44b574b252ab1f1",
+        "signature": "3e3144d1b1eab267eab7041cfae2d258636944e96d8a0567f44b574b252ab1f1",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/chrome/har-format/index.d.ts": {
+        "version": "be7abf1df570aea13a80f9e26c48e4ec51ee5b5c807326fc730eadba8a118905",
+        "signature": "be7abf1df570aea13a80f9e26c48e4ec51ee5b5c807326fc730eadba8a118905",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/@types/filewriter/index.d.ts": {
+        "version": "d9932f317f16ea21c183b67b73a72f17883c52933980292e7ebba2215495bb5c",
+        "signature": "d9932f317f16ea21c183b67b73a72f17883c52933980292e7ebba2215495bb5c",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/@types/filesystem/index.d.ts": {
+        "version": "40dcb6f3611671f2b9567edf67f9e5c52315663d60cdf0778baefb6007350ea3",
+        "signature": "40dcb6f3611671f2b9567edf67f9e5c52315663d60cdf0778baefb6007350ea3",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/@types/chrome/index.d.ts": {
+        "version": "8d06ab674d5bb4049ce8570a8fb76a764a1db75771a69311b38c502598841c0b",
+        "signature": "8d06ab674d5bb4049ce8570a8fb76a764a1db75771a69311b38c502598841c0b",
+        "affectsGlobalScope": true
+      }
+    },
+    "options": {
+      "module": 1,
+      "target": 1,
+      "experimentalDecorators": true,
+      "declaration": true,
+      "composite": true,
+      "emitDecoratorMetadata": true,
+      "inlineSourceMap": true,
+      "allowUnreachableCode": false,
+      "noImplicitReturns": false,
+      "noImplicitAny": false,
+      "skipDefaultLibCheck": true,
+      "skipLibCheck": true,
+      "lib": [
+        "lib.dom.d.ts",
+        "lib.es2015.d.ts",
+        "lib.es2016.d.ts"
+      ],
+      "rootDir": "./php-yt-api/libs/src/compiler",
+      "outDir": "./php-yt-api/libs/compiler",
+      "noLib": false,
+      "esModuleInterop": true,
+      "importHelpers": true,
+      "project": "./php-yt-api/tsconfig.compiler.json",
+      "watch": true,
+      "configFilePath": "./php-yt-api/tsconfig.compiler.json"
+    },
+    "referencedMap": {
+      "../bin/node/node_modules/typescript/lib/lib.dom.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2020.bigint.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es5.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/chrome/har-format/index.d.ts": [
+        "./node_modules/@types/har-format/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/chrome/index.d.ts": [
+        "./node_modules/@types/chrome/har-format/index.d.ts",
+        "./node_modules/@types/filesystem/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/filesystem/index.d.ts": [
+        "./node_modules/@types/filewriter/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/filewriter/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/har-format/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/config.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/path.d.ts",
+        "./php-yt-api/node_modules/@types/node/process.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/upath/upath.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/core.ts": [
+        "./php-yt-api/libs/src/compiler/config.ts",
+        "./php-yt-api/libs/src/compiler/log.ts",
+        "./php-yt-api/node_modules/@types/node/child_process.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/path.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/sass/index.d.ts",
+        "./php-yt-api/node_modules/@types/uglifycss/index.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/index.d.ts",
+        "./php-yt-api/node_modules/slash/index.d.ts",
+        "./php-yt-api/node_modules/terser/tools/terser.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/index.ts": [
+        "./php-yt-api/libs/src/compiler/config.ts",
+        "./php-yt-api/libs/src/compiler/log.ts",
+        "./php-yt-api/node_modules/@types/mysql/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/log.ts": [
+        "./php-yt-api/node_modules/@types/fancy-log/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/chalk/index.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/sass.ts": [
+        "./php-yt-api/libs/src/compiler/core.ts",
+        "./php-yt-api/libs/src/compiler/log.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/sass/index.d.ts"
+      ],
+      "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/color-name/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/datatables.net/index.d.ts": [
+        "./php-yt-api/node_modules/@types/jquery/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/fancy-log/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/index.d.ts": [
+        "./php-yt-api/node_modules/@types/jquery/jquery.d.ts",
+        "./php-yt-api/node_modules/@types/jquery/jquerystatic.d.ts",
+        "./php-yt-api/node_modules/@types/jquery/legacy.d.ts",
+        "./php-yt-api/node_modules/@types/jquery/misc.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/sizzle/index.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/jquery.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/jquerystatic.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/legacy.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/misc.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/minimatch/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/mysql/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/async_hooks.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/async_hooks.d.ts",
+        "./php-yt-api/node_modules/@types/node/buffer.d.ts",
+        "./php-yt-api/node_modules/@types/node/child_process.d.ts",
+        "./php-yt-api/node_modules/@types/node/cluster.d.ts",
+        "./php-yt-api/node_modules/@types/node/console.d.ts",
+        "./php-yt-api/node_modules/@types/node/constants.d.ts",
+        "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+        "./php-yt-api/node_modules/@types/node/dgram.d.ts",
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/domain.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs/promises.d.ts",
+        "./php-yt-api/node_modules/@types/node/globals.d.ts",
+        "./php-yt-api/node_modules/@types/node/http.d.ts",
+        "./php-yt-api/node_modules/@types/node/http2.d.ts",
+        "./php-yt-api/node_modules/@types/node/https.d.ts",
+        "./php-yt-api/node_modules/@types/node/inspector.d.ts",
+        "./php-yt-api/node_modules/@types/node/module.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/os.d.ts",
+        "./php-yt-api/node_modules/@types/node/path.d.ts",
+        "./php-yt-api/node_modules/@types/node/perf_hooks.d.ts",
+        "./php-yt-api/node_modules/@types/node/process.d.ts",
+        "./php-yt-api/node_modules/@types/node/punycode.d.ts",
+        "./php-yt-api/node_modules/@types/node/querystring.d.ts",
+        "./php-yt-api/node_modules/@types/node/readline.d.ts",
+        "./php-yt-api/node_modules/@types/node/repl.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/string_decoder.d.ts",
+        "./php-yt-api/node_modules/@types/node/timers.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/trace_events.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/tty.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/v8.d.ts",
+        "./php-yt-api/node_modules/@types/node/vm.d.ts",
+        "./php-yt-api/node_modules/@types/node/worker_threads.d.ts",
+        "./php-yt-api/node_modules/@types/node/zlib.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/buffer.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/child_process.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/cluster.d.ts": [
+        "./php-yt-api/node_modules/@types/node/child_process.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/console.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/constants.d.ts": [
+        "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/os.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/crypto.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/dgram.d.ts": [
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/dns.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/domain.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/events.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/fs.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs/promises.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/fs/promises.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/globals.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/http.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/http2.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/http.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/https.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/http.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/inspector.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/module.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/net.d.ts": [
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/os.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/path.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/perf_hooks.d.ts": [
+        "./php-yt-api/node_modules/@types/node/async_hooks.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/process.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/tty.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/punycode.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/querystring.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/readline.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/repl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/readline.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/vm.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/stream.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/string_decoder.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/timers.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/tls.d.ts": [
+        "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/trace_events.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/globals.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/globals.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/globals.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.5/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.5/globals.global.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.5/wasi.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.5/globals.global.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.5/wasi.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.7/assert.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.7/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.5/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/assert.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/tty.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/url.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/querystring.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/util.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/v8.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/vm.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/worker_threads.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/vm.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/zlib.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/sass/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/sizzle/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/toastr/index.d.ts": [
+        "./php-yt-api/node_modules/@types/jquery/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/uglifycss/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/validator/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/chalk/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/source-code/iobfuscatedcode.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tinputoptions.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/types/tobfuscationresultsobject.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/generators/identifier-names-generators/identifiernamesgenerator.ts": [
+        "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/obfuscationtarget.ts": [
+        "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/source-map/sourcemapmode.ts": [
+        "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/stringarrayencoding.ts": [
+        "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/iinitializable.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/options/ioptions.ts": [
+        "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/enums/generators/identifier-names-generators/identifiernamesgenerator.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/enums/obfuscationtarget.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/enums/source-map/sourcemapmode.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tstringarrayencoding.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/source-code/iobfuscatedcode.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/iinitializable.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tinputoptions.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/options/ioptions.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/types/tdictionary.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tstringarrayencoding.ts": [
+        "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/enums/stringarrayencoding.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/tdictionary.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/tobfuscationresultsobject.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/source-code/iobfuscatedcode.ts"
+      ],
+      "./php-yt-api/node_modules/slash/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/terser/node_modules/source-map/source-map.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/terser/tools/terser.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/terser/node_modules/source-map/source-map.d.ts"
+      ],
+      "./php-yt-api/node_modules/tslib/tslib.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/upath/upath.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../bin/node/node_modules/typescript/lib/lib.dom.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es2020.bigint.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.es5.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "../bin/node/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/chrome/har-format/index.d.ts": [
+        "./node_modules/@types/har-format/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/chrome/index.d.ts": [
+        "./node_modules/@types/chrome/har-format/index.d.ts",
+        "./node_modules/@types/filesystem/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/filesystem/index.d.ts": [
+        "./node_modules/@types/filewriter/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/filewriter/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/har-format/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/core.ts": [
+        "./php-yt-api/libs/src/compiler/log.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/log.ts": [
+        "./php-yt-api/node_modules/chalk/index.d.ts"
+      ],
+      "./php-yt-api/libs/src/compiler/sass.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts"
+      ],
+      "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/color-name/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/datatables.net/index.d.ts": [
+        "./php-yt-api/node_modules/@types/jquery/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/fancy-log/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/index.d.ts": [
+        "./php-yt-api/node_modules/@types/jquery/jquery.d.ts",
+        "./php-yt-api/node_modules/@types/jquery/jquerystatic.d.ts",
+        "./php-yt-api/node_modules/@types/jquery/legacy.d.ts",
+        "./php-yt-api/node_modules/@types/jquery/misc.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/sizzle/index.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/jquery.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/jquerystatic.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/legacy.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/jquery/misc.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/minimatch/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/mysql/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/async_hooks.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/async_hooks.d.ts",
+        "./php-yt-api/node_modules/@types/node/buffer.d.ts",
+        "./php-yt-api/node_modules/@types/node/child_process.d.ts",
+        "./php-yt-api/node_modules/@types/node/cluster.d.ts",
+        "./php-yt-api/node_modules/@types/node/console.d.ts",
+        "./php-yt-api/node_modules/@types/node/constants.d.ts",
+        "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+        "./php-yt-api/node_modules/@types/node/dgram.d.ts",
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/domain.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs/promises.d.ts",
+        "./php-yt-api/node_modules/@types/node/globals.d.ts",
+        "./php-yt-api/node_modules/@types/node/http.d.ts",
+        "./php-yt-api/node_modules/@types/node/http2.d.ts",
+        "./php-yt-api/node_modules/@types/node/https.d.ts",
+        "./php-yt-api/node_modules/@types/node/inspector.d.ts",
+        "./php-yt-api/node_modules/@types/node/module.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/os.d.ts",
+        "./php-yt-api/node_modules/@types/node/path.d.ts",
+        "./php-yt-api/node_modules/@types/node/perf_hooks.d.ts",
+        "./php-yt-api/node_modules/@types/node/process.d.ts",
+        "./php-yt-api/node_modules/@types/node/punycode.d.ts",
+        "./php-yt-api/node_modules/@types/node/querystring.d.ts",
+        "./php-yt-api/node_modules/@types/node/readline.d.ts",
+        "./php-yt-api/node_modules/@types/node/repl.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/string_decoder.d.ts",
+        "./php-yt-api/node_modules/@types/node/timers.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/trace_events.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/tty.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/v8.d.ts",
+        "./php-yt-api/node_modules/@types/node/vm.d.ts",
+        "./php-yt-api/node_modules/@types/node/worker_threads.d.ts",
+        "./php-yt-api/node_modules/@types/node/zlib.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/buffer.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/child_process.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/cluster.d.ts": [
+        "./php-yt-api/node_modules/@types/node/child_process.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/console.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/constants.d.ts": [
+        "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/os.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/crypto.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/dgram.d.ts": [
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/dns.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/domain.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/events.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/fs.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs/promises.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/fs/promises.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/globals.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/http.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/http2.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/http.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/https.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/http.d.ts",
+        "./php-yt-api/node_modules/@types/node/tls.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/inspector.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/module.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/net.d.ts": [
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/os.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/path.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/perf_hooks.d.ts": [
+        "./php-yt-api/node_modules/@types/node/async_hooks.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/process.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/tty.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/punycode.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/querystring.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/readline.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/repl.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/readline.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/vm.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/stream.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/string_decoder.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/timers.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/tls.d.ts": [
+        "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+        "./php-yt-api/node_modules/@types/node/dns.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/trace_events.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/globals.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/globals.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/globals.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.5/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.5/globals.global.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.5/wasi.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.5/globals.global.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.5/wasi.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.7/assert.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.7/base.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.5/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/assert.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/base.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/tty.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/net.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/url.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/querystring.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/util.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/v8.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/vm.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/worker_threads.d.ts": [
+        "./php-yt-api/node_modules/@types/node/events.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/url.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/vm.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/node/zlib.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/stream.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/sass/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/sizzle/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/toastr/index.d.ts": [
+        "./php-yt-api/node_modules/@types/jquery/index.d.ts",
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/uglifycss/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/@types/validator/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/chalk/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/javascript-obfuscator/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/source-code/iobfuscatedcode.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tinputoptions.ts",
+        "./php-yt-api/node_modules/javascript-obfuscator/src/types/tobfuscationresultsobject.ts"
+      ],
+      "./php-yt-api/node_modules/slash/index.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/terser/node_modules/source-map/source-map.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/terser/tools/terser.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts",
+        "./php-yt-api/node_modules/terser/node_modules/source-map/source-map.d.ts"
+      ],
+      "./php-yt-api/node_modules/tslib/tslib.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ],
+      "./php-yt-api/node_modules/upath/upath.d.ts": [
+        "./php-yt-api/node_modules/@types/node/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+        "./php-yt-api/node_modules/@types/node/util.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "../bin/node/node_modules/typescript/lib/lib.dom.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2016.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2017.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2018.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es2020.bigint.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.es5.d.ts",
+      "../bin/node/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "./node_modules/@types/chrome/har-format/index.d.ts",
+      "./node_modules/@types/chrome/index.d.ts",
+      "./node_modules/@types/filesystem/index.d.ts",
+      "./node_modules/@types/filewriter/index.d.ts",
+      "./node_modules/@types/har-format/index.d.ts",
+      "./php-yt-api/libs/src/compiler/config.ts",
+      "./php-yt-api/node_modules/@gradecam/tsenum/dist/index.d.ts",
+      "./php-yt-api/node_modules/@types/color-name/index.d.ts",
+      "./php-yt-api/node_modules/@types/datatables.net/index.d.ts",
+      "./php-yt-api/node_modules/@types/fancy-log/index.d.ts",
+      "./php-yt-api/node_modules/@types/jquery/index.d.ts",
+      "./php-yt-api/node_modules/@types/jquery/jquery.d.ts",
+      "./php-yt-api/node_modules/@types/jquery/jquerystatic.d.ts",
+      "./php-yt-api/node_modules/@types/jquery/legacy.d.ts",
+      "./php-yt-api/node_modules/@types/jquery/misc.d.ts",
+      "./php-yt-api/node_modules/@types/minimatch/index.d.ts",
+      "./php-yt-api/node_modules/@types/mysql/index.d.ts",
+      "./php-yt-api/node_modules/@types/node/async_hooks.d.ts",
+      "./php-yt-api/node_modules/@types/node/base.d.ts",
+      "./php-yt-api/node_modules/@types/node/buffer.d.ts",
+      "./php-yt-api/node_modules/@types/node/child_process.d.ts",
+      "./php-yt-api/node_modules/@types/node/cluster.d.ts",
+      "./php-yt-api/node_modules/@types/node/console.d.ts",
+      "./php-yt-api/node_modules/@types/node/constants.d.ts",
+      "./php-yt-api/node_modules/@types/node/crypto.d.ts",
+      "./php-yt-api/node_modules/@types/node/dgram.d.ts",
+      "./php-yt-api/node_modules/@types/node/dns.d.ts",
+      "./php-yt-api/node_modules/@types/node/domain.d.ts",
+      "./php-yt-api/node_modules/@types/node/events.d.ts",
+      "./php-yt-api/node_modules/@types/node/fs.d.ts",
+      "./php-yt-api/node_modules/@types/node/fs/promises.d.ts",
+      "./php-yt-api/node_modules/@types/node/globals.d.ts",
+      "./php-yt-api/node_modules/@types/node/http.d.ts",
+      "./php-yt-api/node_modules/@types/node/http2.d.ts",
+      "./php-yt-api/node_modules/@types/node/https.d.ts",
+      "./php-yt-api/node_modules/@types/node/inspector.d.ts",
+      "./php-yt-api/node_modules/@types/node/module.d.ts",
+      "./php-yt-api/node_modules/@types/node/net.d.ts",
+      "./php-yt-api/node_modules/@types/node/os.d.ts",
+      "./php-yt-api/node_modules/@types/node/path.d.ts",
+      "./php-yt-api/node_modules/@types/node/perf_hooks.d.ts",
+      "./php-yt-api/node_modules/@types/node/process.d.ts",
+      "./php-yt-api/node_modules/@types/node/punycode.d.ts",
+      "./php-yt-api/node_modules/@types/node/querystring.d.ts",
+      "./php-yt-api/node_modules/@types/node/readline.d.ts",
+      "./php-yt-api/node_modules/@types/node/repl.d.ts",
+      "./php-yt-api/node_modules/@types/node/stream.d.ts",
+      "./php-yt-api/node_modules/@types/node/string_decoder.d.ts",
+      "./php-yt-api/node_modules/@types/node/timers.d.ts",
+      "./php-yt-api/node_modules/@types/node/tls.d.ts",
+      "./php-yt-api/node_modules/@types/node/trace_events.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.2/base.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.2/fs.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.2/globals.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.2/util.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.5/base.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.5/globals.global.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.5/wasi.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.7/assert.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.7/base.d.ts",
+      "./php-yt-api/node_modules/@types/node/ts3.7/index.d.ts",
+      "./php-yt-api/node_modules/@types/node/tty.d.ts",
+      "./php-yt-api/node_modules/@types/node/url.d.ts",
+      "./php-yt-api/node_modules/@types/node/util.d.ts",
+      "./php-yt-api/node_modules/@types/node/v8.d.ts",
+      "./php-yt-api/node_modules/@types/node/vm.d.ts",
+      "./php-yt-api/node_modules/@types/node/worker_threads.d.ts",
+      "./php-yt-api/node_modules/@types/node/zlib.d.ts",
+      "./php-yt-api/node_modules/@types/sass/index.d.ts",
+      "./php-yt-api/node_modules/@types/sizzle/index.d.ts",
+      "./php-yt-api/node_modules/@types/toastr/index.d.ts",
+      "./php-yt-api/node_modules/@types/uglifycss/index.d.ts",
+      "./php-yt-api/node_modules/@types/validator/index.d.ts",
+      "./php-yt-api/node_modules/chalk/index.d.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/index.d.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/generators/identifier-names-generators/identifiernamesgenerator.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/obfuscationtarget.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/source-map/sourcemapmode.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/enums/stringarrayencoding.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/iinitializable.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/options/ioptions.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/interfaces/source-code/iobfuscatedcode.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tinputoptions.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/options/tstringarrayencoding.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/tdictionary.ts",
+      "./php-yt-api/node_modules/javascript-obfuscator/src/types/tobfuscationresultsobject.ts",
+      "./php-yt-api/node_modules/slash/index.d.ts",
+      "./php-yt-api/node_modules/terser/node_modules/source-map/source-map.d.ts",
+      "./php-yt-api/node_modules/terser/tools/terser.d.ts",
+      "./php-yt-api/node_modules/tslib/tslib.d.ts",
+      "./php-yt-api/node_modules/upath/upath.d.ts"
+    ]
+  },
+  "version": "3.9.5"
+}

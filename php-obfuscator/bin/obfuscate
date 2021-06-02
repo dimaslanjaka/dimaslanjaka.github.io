@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+// Either local or composer installed autoload file
+$own = __DIR__ . '/../vendor/autoload.php';
+$installed = __DIR__ . '/../../../autoload.php';
+
+if (file_exists($own)) {
+    include $own;
+} elseif (file_exists($installed)) {
+    include $installed;
+} else {
+    throw new RuntimeException('Dependencies/Composer not installed');
+}
+
+ini_set('xdebug.max_nesting_level', 2000);
+
+$app = new Symfony\Component\Console\Application;
+
+$app->add(new Naneau\Obfuscator\Console\Command\ObfuscateCommand);
+$app->run();

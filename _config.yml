@@ -168,3 +168,17 @@ browsersync:
   ghostMode:
     scroll: true
   instanceName: "uniqueString"
+
+# Article schema
+# https://developers.google.com/structured-data/rich-snippets/articles#article_markup_properties
+schema:
+  image:
+    url: /img/android-chrome-144x144.png
+    height: 144
+    width: 144 # <= 696
+  publisher:
+    name: Dimas Lanjaka
+    logo:
+      url: /img/android-chrome-144x144.png
+      width: 144 # <= 600
+      height: 144 # >= 60

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
-    "clean": "hexo clean",
+    "clean": "hexo clean && echo git.webmanajemen.com > docs/CNAME",
     "deploy": "hexo deploy",
     "server": "hexo server",
     "server:clean": "npm run clean && npm run server",

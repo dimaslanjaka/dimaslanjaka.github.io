@@ -7,9 +7,13 @@
     {% endblock %}
 
     {% include './_partial/common/head.swig' %}
-    
+
     {% block pageCss %}
     {% endblock %}
+
+    {% if is_post() %}
+    {% block jsonld %}{% endblock %}
+    {% endif %}
 </head>
 <body ontouchstart>
     {% block loader %}

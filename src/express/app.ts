@@ -4,13 +4,13 @@ import path from "path";
 import serveIndex from "serve-index";
 import serveStatic from "serve-static";
 import { default as translateRouter } from "./routes/translate";
-import ngrok from "./ngrok";
+import ngrok from "../ngrok";
 import session from "express-session";
 import methodOverride from "method-override";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import Storage from "./js/Storage";
-const expressLayouts = require("./express/express-layouts");
+import Storage from "../js/Storage";
+import expressLayouts from "./express-layouts";
 const storage = new Storage();
 
 let port = 3000;

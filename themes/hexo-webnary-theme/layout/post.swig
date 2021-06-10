@@ -31,11 +31,12 @@
                 }
             },
             "datePublished": "{{ page.date.toDate().toISOString() }}",
-            "dateModified": "{{ page.updated.toDate().toISOString() }}",
-            "description": "{{ page.excerpt }}",
-            "articleBody": "{{ page.more }}"
+            "dateModified": "{{ page.updated.toDate().toISOString() }}"
         }
     </script>
+    <!--
+            "description": "{{ get_text_html(page.excerpt)|page.title }}",
+            "articleBody": "{{ get_text_html(page.more) }}"-->
 {% endblock %}
 
 {% block pageCss %}

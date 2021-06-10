@@ -7,7 +7,7 @@
             "@type": "BlogPosting",
             "mainEntityOfPage":{
                 "@type":"WebPage",
-                "@id":"{{ config.url }}"
+                "@id":"{{ config.url }}{{ url_for(page.path) }}"
             },
             "headline": "{{ page.title }}",
             "image": {

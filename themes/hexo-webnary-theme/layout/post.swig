@@ -25,7 +25,7 @@
                 "name": "{{ theme.schema.publisher.name }}",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "{{ theme.schema.publisher.logo.url }}",
+                    "url": "{{ config.logo }}",
                     "width": {{ theme.schema.publisher.logo.width }},
                     "height": {{ theme.schema.publisher.logo.height }}
                 }

@@ -31,7 +31,9 @@
                 }
             },
             "datePublished": "{{ page.date.toDate().toISOString() }}",
-            "dateModified": "{{ page.updated.toDate().toISOString() }}"
+            "dateModified": "{{ page.updated.toDate().toISOString() }}",
+            "description": "{{ page.excerpt }}",
+            "articleBody": "{{ page.more }}"
         }
     </script>
 {% endblock %}

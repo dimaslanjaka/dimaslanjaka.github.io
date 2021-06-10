@@ -12,7 +12,7 @@
             "headline": "{{ page.title }}",
             "image": {
                 "@type": "ImageObject",
-                "url": "{{ theme.schema.image.url }}",
+                "url": "{{ page.cover|default(get_setting('default_cover')) }}",
                 "width": {{ theme.schema.image.width }},
                 "height": {{ theme.schema.image.height }}
             },

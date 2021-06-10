@@ -23,7 +23,7 @@
                     {% endif %}
                 </ul>
             </div>
-            
+
             <div class="mark__block">
                 <i class="mark__icon iconfont icon-time"></i>
                 <ul class="mark__list clearfix">
@@ -60,7 +60,7 @@
         <div class="post-announce">
             {{ __('copyright_statement.one') }}
             <a href="{{ page.editor.link }}">{{ page.editor.name }}</a> {{ __('copyright_statement.two') }}：{{ page.editor.name }}（<a href="{{ page.editor.link }}">{{ page.editor.link }}</a>）
-        </div> 
+        </div>
         {% else %}
         <div class="post-announce">
             {{ __('copyright_statement.three') }}

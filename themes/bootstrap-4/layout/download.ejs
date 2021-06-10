@@ -1,0 +1,38 @@
+<div class="card bg-light mb-3 download-card">
+    <div class="card-header"><h2>Download file</h2></div>
+    <div class="card-body">
+        <h3 class="card-title">File: <code><%= page.filename %></h3></code>
+        <p class="card-text">
+            <table class="table">
+                <tbody>
+                    <% if (page.filetype) { %>
+                        <tr>
+                            <th scope="row">Filetype</th>
+                            <td><%= page.filetype %></td>
+                        </tr>
+                    <% } %>
+                    <% if (page.summary) { %>
+                        <tr>
+                            <th scope="row">Summary:</th>
+                            <td><%= page.summary %></td>
+                        </tr>
+                    <% } %>
+                    <% if (page.moreinfolink) { %>
+                        <tr>
+                            <th scope="row">More info:</th>
+                            <td><a href="<%= page.moreinfolink %>"><%= page.moreinfolink %></a></td>
+                        </tr>
+                    <% } %>
+                    <% if (page.downloadlink) { %>
+                        <th scope="row">Download link: </th>
+                        <td><a href="<%= page.downloadlink %>"><%= page.downloadlink %></a></td>
+                    <% } %>
+                </tbody>
+            </table>
+        </p>
+        <%- page.content %>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-success" href="<%= page.downloadlink %>">Download</a>
+    </div>
+</div>

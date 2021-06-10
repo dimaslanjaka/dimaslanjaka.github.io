@@ -1,0 +1,15 @@
+<h1>Archives</h1>
+
+<ul>
+    <% page.posts.each(function(post) { %>
+        <li>
+            <a class="archive--post-link" href="<%- url_for(post.path) %>"> <%= post.title %> </a>
+            <span class="archive--post-date"><%= date(post.date, config.date_format) %></span>
+            <span class="archive--post-excerpt">
+                <% if(post.excerpt) { %>
+                    <p><%- post.excerpt %></p>
+                <% } %>
+            </span>
+        </li>
+    <% }) %>
+</ul>

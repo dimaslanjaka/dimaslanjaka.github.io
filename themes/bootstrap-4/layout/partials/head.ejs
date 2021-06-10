@@ -1,0 +1,12 @@
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="<%= theme.theme_color %>" />
+	<meta name="author" content="<%= config.author %>" />
+	<%- favicon_tag(theme.favicon_path) %>
+	<title><%= config.title %></title>
+	<%- css("css/styles.css") %>
+	<link rel="stylesheet" href="<%= theme.bs_theme?theme.bs_theme:"/css/libs/bootstrap-4.3.1.min.css" %>" />
+	<link rel="stylesheet" href="<%= theme.hljs_theme?theme.hljs_theme:"https://highlightjs.org/static/demo/styles/base16/monokai.css" %>" />
+	<%- partial("partials/google_analytics.ejs") %>
+</head>

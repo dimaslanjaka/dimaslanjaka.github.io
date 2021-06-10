@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%= title %></title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="themes/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="themes/dist/css/mdb-pro.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        header {
+            min-height: 3.5em;
+        }
+        @media (max-width: 450px) {
+            html,
+            body {
+                height: 700px;
+            }
+        }
+        @media (min-width: 451px) and (max-width: 740px) {
+            html,
+            body {
+                height: 500px;
+            }
+        }
+        @media (min-width: 800px) and (max-width: 850px) {
+            html,
+            body {
+                height: 550px;
+            }
+        }
+    </style>
+    <% if (typeof style != 'undefined') {%>
+    <%- style %>
+    <% } %>
+</head>
+
+<body>
+
+<!-- Navigation & Intro -->
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold title" href="../home/main.html">Brand</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="list-unstyled navbar-nav mr-auto">
+                    <li class="nav-item dropdown ml-4 mb-0">
+                        <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"> Homepage </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../home/home-parallax.html">Home Parallax</a>
+                            <a class="dropdown-item" href="../home/home-slider.html">Home Slider</a>
+                            <a class="dropdown-item" href="../home/home-video-background.html">Home Video Background</a>
+                            <a class="dropdown-item" href="../home/home-gradient.html">Home Gradient</a>
+                            <a class="dropdown-item" href="../home/home-gradient-animation.html">Home Gradient Animation</a>
+                            <a class="dropdown-item" href="../home/home-video.html">Home Video</a>
+                            <a class="dropdown-item" href="../home/home-onepage.html">One Page Layout</a>
+                            <a class="dropdown-item" href="../home/coming-soon.html">Coming Soon</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ml-4">
+                        <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink12" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Features </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../features/features.html">Features</a>
+                            <a class="dropdown-item" href="../features/feature-detail.html">Feature Detail</a>
+                            <a class="dropdown-item" href="../features/services.html">Services</a>
+                            <a class="dropdown-item" href="../features/typography.html">Typography</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link title" href="../pricing/pricing.html" data-offset="90">Pricing</a>
+                    </li>
+                    <li class="nav-item dropdown ml-4">
+                        <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Pages </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../pages/about.html">About us</a>
+                            <a class="dropdown-item" href="../pages/testimonials.html">Testimonials</a>
+                            <a class="dropdown-item" href="../pages/contact.html">Contact</a>
+                            <a class="dropdown-item" href="../pages/register.html">Register</a>
+                            <a class="dropdown-item" href="../pages/login.html">Login</a>
+                            <a class="dropdown-item" href="../pages/gallery.html">Gallery</a>
+                            <a class="dropdown-item" href="../pages/faq.html">FAQ</a>
+                            <a class="dropdown-item" href="../pages/404.html">Error 404</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ml-4">
+                        <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink3" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Blog </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../blog/blog-standard.html">Blog Standard</a>
+                            <a class="dropdown-item" href="../blog/blog-3columns.html">Blog 3 Columns</a>
+                            <a class="dropdown-item" href="../blog/blog-post.html">Blog Post</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Social Icon  -->
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="fab fa-facebook-f title"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="fab fa-twitter title"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="fab fa-instagram title"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="btn pink-gradient btn-rounded btn-sm font-weight-bold" href="#download" data-offset="90">Free
+                            trial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <% if (typeof header != 'undefined') { %>
+        <%- header %>
+    <% } %>
+</header>
+<!-- Navigation & Intro -->
+
+<!-- Main content -->
+<main>
+    <% if (typeof body != 'undefined') { %>
+        <%- body %>
+    <% } %>
+</main>
+<!-- Main content -->
+
+<!-- Footer -->
+<footer class="page-footer text-center text-md-left unique-color-dark pt-0 mt-0">
+    <% if (typeof footer != 'undefined') { footer } %>
+</footer>
+<!-- Footer -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="themes/dist/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="themes/dist/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="themes/dist/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="themes/dist/js/mdb.js"></script>
+<% if (typeof script != 'undefined') {script} %>
+</body>
+
+</html>

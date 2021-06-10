@@ -1,0 +1,43 @@
+# bootstrap-theme
+# https://github.com/bendotbike/bootstrap-hexo-theme
+
+# Bootstrap theme (leave blank for default)
+# Use a link to a (preferably minified) bootstrap-theme.css. I recommend looking @ https://bootswatch.com
+bs_theme:
+
+# Highlight js theme
+hljs_theme:
+
+# Color for <meta> theme-color
+theme_color:
+
+# Path to favicon. /source/ is considered the root folder
+favicon_path:
+
+# Navbar links. Formatting ex:
+# Blog: /blog
+navbar_links:
+  Home: /
+
+# Footer links
+footer_links:
+  Github: https://github.com/dimaslanjaka
+
+comments :
+  enable: true
+  type: utteranc
+  disqus:
+    shortname: dimaslanjaka
+    identifier:
+  utteranc :
+    repo :
+    theme :
+# comments_enable: true
+# comments_repo:
+# comments_theme:
+
+# Google Analytics
+google_analytics_tracking_id:
+
+# Google Custom Search
+google_custom_search_url:

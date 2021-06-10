@@ -1,0 +1,11 @@
+<% if (page.categories && page.categories.length) { %>
+    <p id="post--categories">
+        <span class="badge badge-secondary">Categories: </span>
+        <%- list_categories(page.categories, {
+            show_count: false,
+            class: "page-category",
+            style: "none",
+            seperator: ","
+        }) %>
+    </p>
+<% } %>

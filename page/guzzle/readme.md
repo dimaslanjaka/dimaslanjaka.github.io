@@ -1,4 +1,0 @@
-## Installation
-```sh
-composer install
-```

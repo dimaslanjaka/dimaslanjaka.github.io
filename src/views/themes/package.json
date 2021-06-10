@@ -1,0 +1,60 @@
+{
+  "name": "mdbootstrap-pro",
+  "version": "4.11.0",
+  "main": "dist/js/mdb.js",
+  "scripts": {
+    "js-lint": "eslint js/src/*.js",
+    "scss-lint": "stylelint --config .stylelintrc.json --syntax scss \"**/scss/**/*.scss\"",
+    "js-compile-plugins": "babel js/src/ --out-dir js/dist/",
+    "css-compile": "gulp css-compile",
+    "css-minify": "gulp css-minify",
+    "js-build": "gulp js-build",
+    "js-minify": "gulp js-minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.mdbootstrap.com/mdb/jquery/jq-gulp.git"
+  },
+  "author": "MDBootstrap",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-block-scoped-functions": "^7.2.0",
+    "@babel/plugin-transform-block-scoping": "^7.4.4",
+    "@babel/plugin-transform-classes": "^7.4.4",
+    "@babel/plugin-transform-shorthand-properties": "^7.2.0",
+    "@babel/plugin-transform-template-literals": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-transform-es2015-constants": "^6.1.4",
+    "browser-sync": "^2.26.7",
+    "core-js": "^3.1.4",
+    "eslint": "^5.16.0",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.1",
+    "gulp-clean-css": "4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "6.2.0",
+    "gulp-minify": "3.1.0",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-zip": "^5.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.0",
+    "stylelint-scss": "^3.8.0"
+  },
+  "dependencies": {},
+  "description": "",
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  }
+}

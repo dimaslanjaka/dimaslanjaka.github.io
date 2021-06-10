@@ -1,0 +1,81 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 70px; /* for footer */
+}
+
+#page-content {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.4;
+}
+
+/* Line numbers for code snippets */
+.gutter pre {
+    padding-right: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+/* word wrap code snippets - highlight.js wraps every code block in a "highlight" class */
+.highlight {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* The big jumbotron on top of each blog post */
+#post-top {
+    padding: 15px;
+}
+
+.page-info-badge {
+    margin-right: 10px;
+}
+
+#show-post-info-btn {
+    margin-left: 10px;
+}
+
+/* For download pages */
+#download-jumbotron {
+    padding: 20px;
+}
+
+/*
+ Archive
+ More compressed than index.ejs
+ */
+.archive--post-link {
+
+}
+
+.post-comments {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+/* Footer */
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+}
+
+/* Styling google custom search (https://www.cambiaresearch.com/articles/84/how-to-integrate-a-google-custom-search-popup-in-a-bootstrap-navbar) */
+.reset-box-sizing, .reset-box-sizing *, .reset-box-sizing *:before, .reset-box-sizing *:after,  .gsc-inline-block {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button {
+    box-sizing: content-box;
+    line-height: normal;
+}

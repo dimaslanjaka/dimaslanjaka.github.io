@@ -1,0 +1,13 @@
+<%
+/**
+ * @type {typeof import("../../../node_modules/hexo/lib/hexo/default_config.js")} page
+ */
+let page = page;
+%>
+<div class="jumbotron">
+    <h1><%- page.projectname %></h1>
+    <% if (page.subtitle) { %><h4 class="text-muted"><%- page.subtitle %></h4><% } %>
+    <% if (page.sourceurl) { %><h4><a href="<%- page.sourceurl %>">Source</a></h4><% } %>
+    <% if (page.downloadurl) { %><h4><a href="<%- page.downloadurl %>">Download</a></h4><% } %>
+</div>
+<%- page.content %>

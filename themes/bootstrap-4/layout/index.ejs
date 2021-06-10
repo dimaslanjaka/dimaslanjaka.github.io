@@ -1,0 +1,23 @@
+<p><%= config.description %></p>
+<p>
+    <h2>Posts</h2>
+    <ul>
+        <% page.posts.each(function(post) { %>
+            <li>
+                <h3>
+                    <a href="<%- url_for(post.path) %>">
+                        <%= post.title %>
+                    </a>
+                </h3>
+                <div class="post-date">
+                    <%= date(post.date, config.date_format) %>
+                </div>
+                <% if(post.excerpt) { %>
+                    <p>
+                        <%- post.excerpt %>
+                    </p>
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>
+</p>

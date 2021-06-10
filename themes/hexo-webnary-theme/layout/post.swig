@@ -13,21 +13,21 @@
             "image": {
                 "@type": "ImageObject",
                 "url": "{{ page.cover|default(get_setting('default_cover')) }}",
-                "width": {{ theme.schema.image.width }},
-                "height": {{ theme.schema.image.height }}
+                "width": {{ config.schema.image.width|"140" }},
+                "height": {{ config.schema.image.height|"140" }}
             },
             "author": {
                 "@type": "Person",
-                "name": "{{ config.author.name }}"
+                "name": "{{ config.author.name|"Admin" }}"
             },
             "publisher": {
                 "@type": "Organization",
-                "name": "{{ theme.schema.publisher.name }}",
+                "name": "{{ config.schema.publisher.name|"WMI" }}",
                 "logo": {
                     "@type": "ImageObject",
                     "url": "{{ config.logo }}",
-                    "width": {{ theme.schema.publisher.logo.width }},
-                    "height": {{ theme.schema.publisher.logo.height }}
+                    "width": {{ config.schema.publisher.logo.width|"700" }},
+                    "height": {{ config.schema.publisher.logo.height|"628" }}
                 }
             },
             "datePublished": "{{ page.date.toDate().toISOString() }}",

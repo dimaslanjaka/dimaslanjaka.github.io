@@ -18,7 +18,7 @@
             },
             "author": {
                 "@type": "Person",
-                "name": "{{ config.author }}"
+                "name": "{{ config.author.name }}"
             },
             "publisher": {
                 "@type": "Organization",

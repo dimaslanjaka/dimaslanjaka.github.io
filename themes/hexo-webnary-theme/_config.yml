@@ -30,7 +30,7 @@ math:
     cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
     # Bootcss, works great in China, but not so well in other region
     #cdn: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
-  
+
 # Sass
 node_sass:
   outputStyle: nested
@@ -40,9 +40,9 @@ node_sass:
 # Autoprefixer
 autoprefixer:
   exclude:
-    - '*.min.css'
+    - "*.min.css"
   browsers:
-    - 'last 2 versions'
+    - "last 2 versions"
 
 # Lunr
 lunr:
@@ -61,14 +61,14 @@ hfc_html:
 
 hfc_css:
   enable: true
-  exclude: 
-    - '*.min.css'
+  exclude:
+    - "*.min.css"
 
 hfc_js:
   enable: true
   mangle: true
-  exclude: 
-    - '*.min.js'
+  exclude:
+    - "*.min.js"
 
 hfc_img:
   enable: true
@@ -92,3 +92,17 @@ hfc_favicons:
     opengraph: false
     windows: true
     yandex: false
+
+# Article schema
+# https://developers.google.com/structured-data/rich-snippets/articles#article_markup_properties
+schema:
+  image:
+    url: img/android-chrome-144x144.png
+    height: 144
+    width: 144 # <= 696
+  publisher:
+    name: Dimas Lanjaka
+    logo:
+      url: img/android-chrome-144x144.png
+      width: 144 # <= 600
+      height: 144 # >= 60

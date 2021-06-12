@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Prepare transformation">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/ts_node.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/ts_node.xml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix package-lock.json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/2020/6/10/update-genshin-impact-1.6.0-1.6.1.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/2020/6/7/update-genshin-impact-1.5.1-1.6.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +89,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="article:dev" type="js.build_tools.gulp" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.ts</gulpfile>
+      <tasks>
+        <task>article:dev</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="agc:nodemon" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -128,6 +131,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gulp.js.article:dev" />
       <item itemvalue="Node.js.ts-node" />
       <item itemvalue="npm.agc:nodemon" />
       <item itemvalue="npm.server" />
@@ -136,6 +140,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.agc:nodemon" />
+        <item itemvalue="Gulp.js.article:dev" />
         <item itemvalue="npm.dev:express" />
         <item itemvalue="npm.server" />
       </list>
@@ -159,7 +164,8 @@
       <workItem from="1623487172421" duration="363000" />
       <workItem from="1623487845252" duration="8754000" />
       <workItem from="1623524258196" duration="166000" />
-      <workItem from="1623527510394" duration="2393000" />
+      <workItem from="1623527510394" duration="3808000" />
+      <workItem from="1623536338886" duration="3367000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -322,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623494175865</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix package-lock.json">
+      <created>1623531409383</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1623531409383</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +367,8 @@
     <MESSAGE value="Update dependencies" />
     <MESSAGE value="Fix" />
     <MESSAGE value="Prepare transformation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepare transformation" />
+    <MESSAGE value="Fix package-lock.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix package-lock.json" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

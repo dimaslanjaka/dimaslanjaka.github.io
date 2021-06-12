@@ -4,6 +4,7 @@ import * as gulp from "gulp";
 import * as path from "path";
 import transformPosts, { transformPostBody } from "./src/markdown/transformPosts";
 import * as fs from "fs";
+
 const prodPostDir = path.join(__dirname, "source/_posts");
 const devPostDir = path.join(__dirname, "build/_posts");
 
@@ -12,7 +13,8 @@ function emptyDir(directory) {
     if (err) throw err;
 
     for (const file of files) {
-      fs.unlink(path.join(directory, file), (err) => {
+      let filex = path.join(directory, file);
+      fs.unlink(filex, (err) => {
         if (err) throw err;
       });
     }
@@ -20,15 +22,15 @@ function emptyDir(directory) {
 }
 
 gulp.task("article:dev", function (done) {
-  emptyDir(prodPostDir);
+  emptyDir(devPostDir);
   transformPostBody("build/_posts");
   done();
 });
 
 gulp.task("article:dist", function (done) {
-  emptyDir(devPostDir);
+  emptyDir(prodPostDir);
   transformPosts("source/_posts");
   done();
 });
 
-gulp.task("default", gulp.series("webserver-browser-sync"));
+gulp.task("default", gulp.series("article:dev", "article:dist"));

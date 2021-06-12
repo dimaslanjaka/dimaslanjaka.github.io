@@ -3,23 +3,29 @@
   "ignore": [
     ".git",
     "node_modules/**/node_modules",
-    "build/storage"
+    "build/storage",
+    "src/express/views/themes/fontawesome",
+    "src/express/views/themes/scss",
+    "src/express/views/themes/js",
+    "src/express/views/themes/img"
   ],
   "verbose": true,
   "execMap": {
-    "js": "node --harmony"
+    "js": "node --harmony",
+    "ts": "ts-node"
   },
   "events": {
-    "start": "ts-node ./src/express/app.ts",
     "restart": "kill-port --port 3001,3000",
     "crash": "kill-port --port 3001,3000"
   },
   "delay": 1500,
   "watch": [
-    "src/**"
+    "src/**",
+    "src/express/app.ts"
   ],
   "env": {
     "NODE_ENV": "development"
   },
   "ext": "js,json,ts,ejs,html,md"
 }
+

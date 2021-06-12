@@ -3,7 +3,9 @@ title: Update Genshin Impact 1.6.1 Manual
 
 subtitle: "Update Genshin Impact 1.6.0 - 1.6.1 Manual"
 
-date: 2020-6-10
+date: 2021-6-10
+
+lang: en
 
 type: post
 

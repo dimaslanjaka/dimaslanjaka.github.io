@@ -1,0 +1,25 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "build/storage"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+    "start": "ts-node ./src/express/app.ts",
+    "restart": "kill-port --port 3001,3000",
+    "crash": "kill-port --port 3001,3000"
+  },
+  "delay": 1500,
+  "watch": [
+    "src/**"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,ts,ejs,html,md"
+}

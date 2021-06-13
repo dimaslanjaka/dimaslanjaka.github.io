@@ -21,6 +21,13 @@ module.exports = {
     /*'prettier'*/
   ],
   rules: {
+    "prefer-const": [
+      "warn",
+      {
+        destructuring: "any",
+        ignoreReadBeforeAssign: false,
+      },
+    ],
     "require-jsdoc": 0,
     "prefer-rest-params": "off",
     "no-const-assign": 1,

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix package-lock.json">
+      <change afterPath="$PROJECT_DIR$/nodemon-electron.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/spawner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/spawner.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/electron/menu.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/translator/index.ts" root0="SKIP_INSPECTION" />
   </component>
@@ -52,7 +59,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/express-cors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/electron/Brauser" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -67,19 +74,20 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\source\_posts" />
       <recent name="D:\Repositories\gh-pages\src\express" />
       <recent name="D:\Repositories\gh-pages\src-post" />
       <recent name="D:\Repositories\gh-pages\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\src\electron\boilerplate" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Update" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Location" />
       <recent name="D:\Repositories\gh-pages\src\express" />
       <recent name="D:\Repositories\gh-pages\src\node" />
-      <recent name="D:\Repositories\gh-pages\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.agc:nodemon">
+  <component name="RunManager" selected="npm.dev:express">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -100,11 +108,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="agc:nodemon" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="agc:nodemon" />
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev:electron" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev:electron" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -120,29 +138,19 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="server" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Gulp.js.article:dev" />
       <item itemvalue="Node.js.ts-node" />
-      <item itemvalue="npm.agc:nodemon" />
-      <item itemvalue="npm.server" />
       <item itemvalue="npm.dev:express" />
+      <item itemvalue="npm.dev:electron" />
+      <item itemvalue="npm.dev" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.agc:nodemon" />
-        <item itemvalue="Gulp.js.article:dev" />
         <item itemvalue="npm.dev:express" />
-        <item itemvalue="npm.server" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.dev:electron" />
+        <item itemvalue="Gulp.js.article:dev" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +173,8 @@
       <workItem from="1623487845252" duration="8754000" />
       <workItem from="1623524258196" duration="166000" />
       <workItem from="1623527510394" duration="3808000" />
-      <workItem from="1623536338886" duration="3367000" />
+      <workItem from="1623536338886" duration="10423000" />
+      <workItem from="1623551651900" duration="11862000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -335,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623531409383</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fix package-lock.json">
+      <created>1623539846220</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1623539846220</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,28 +4,26 @@
     ".git",
     "node_modules/**/node_modules",
     "build/storage",
+    "src/electron",
     "src/express/views/themes/fontawesome",
     "src/express/views/themes/scss",
     "src/express/views/themes/js",
     "src/express/views/themes/img"
   ],
-  "verbose": true,
+  "verbose": false,
   "execMap": {
     "js": "node --harmony",
     "ts": "ts-node"
   },
+  "exec": "ts-node src/express/app.ts",
   "events": {
     "restart": "kill-port --port 3001,3000",
     "crash": "kill-port --port 3001,3000"
   },
   "delay": 1500,
-  "watch": [
-    "src/**",
-    "src/express/app.ts"
-  ],
+  "watch": ["src/**"],
   "env": {
     "NODE_ENV": "development"
   },
   "ext": "js,json,ts,ejs,html,md"
 }
-

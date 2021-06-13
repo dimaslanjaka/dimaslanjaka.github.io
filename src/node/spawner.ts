@@ -1,4 +1,7 @@
+// noinspection DuplicatedCode
+
 import { ChildProcess, ChildProcessWithoutNullStreams, spawn, SpawnOptions } from "child_process";
+import process from "process";
 
 class spawner {
   static children: ChildProcessWithoutNullStreams[] = [];
@@ -7,43 +10,47 @@ class spawner {
   /**
    * Spawn Commands
    * @param command node
-   * @param options ['index.js']
-   * @param detached spawn stdio detach
+   * @param args ['index.js']
    * @param callback callback for children process
    */
   // eslint-disable-next-line no-unused-vars
-  static spawn(command: string, options?: string[], detached?: boolean | null, callback?: (path: ChildProcess) => any) {
-    const stdioOpt: SpawnOptions = { stdio: "pipe", detached: typeof detached == "boolean" ? detached : false };
-    const child = spawn(command, options, stdioOpt);
+  static spawn(command: string, args?: string[], callback?: (path: ChildProcess) => any) {
+    const defaultOption: SpawnOptions = { stdio: "pipe", detached: false };
+    if (["npm", "ts-node", "tsc", "npx", "hexo"].includes(command)) {
+      command = /^win/.test(process.platform) ? `${command}.cmd` : command;
+    }
+    const child = spawn(command, args, defaultOption);
     child.unref();
 
-    if (typeof detached == "boolean" && detached) {
-      child.stdout.setEncoding("utf8");
-      child.stdout.on("data", function (data) {
-        console.log("stdout:" + data);
-      });
-      child.stderr.setEncoding("utf8");
-      child.stderr.on("data", function (data) {
-        console.log("stderr:" + data);
-      });
-      child.stdin.on("data", function (data) {
-        console.log("stdin:" + data);
-      });
-    } else {
-      child.stderr.setEncoding("utf8");
-      child.stderr.on("data", function (data) {
-        console.log("stderr:" + data);
-      });
-    }
+    child.stdout.setEncoding("utf8");
+    child.stdout.on("data", function (data) {
+      process.stdout.write(data);
+    });
+    child.stderr.setEncoding("utf8");
+    child.stderr.on("data", function (data) {
+      process.stdout.write(data);
+    });
+    child.stdin.on("data", function (data) {
+      process.stdout.write(data);
+    });
 
     if (typeof callback == "function") {
       callback(child);
     }
     spawner.children.push(child);
+    console.log(`Child Process ${spawner.children.length}`);
 
     if (!this.onExit) {
       this.onExit = true;
-      process.on("exit", this.children_kill);
+      console.log("registering children killer");
+      process.on("exit", function () {
+        console.log("Finished", new Date().getTime());
+        spawner.children_kill();
+      });
+      process.on("uncaughtException", spawner.children_kill);
+      process.on("SIGINT", spawner.children_kill);
+      process.on("SIGTERM", spawner.children_kill);
+      process.on("SIGKILL", spawner.children_kill);
     }
 
     return child;
@@ -52,13 +59,15 @@ class spawner {
   /**
    * Kill all ChildProcessWithoutNullStreams[]
    */
-  private static children_kill() {
+  static children_kill() {
     console.log("killing", spawner.children.length, spawner.children.length > 1 ? "child processes" : "child process");
-    spawner.children.forEach(function (child: ChildProcessWithoutNullStreams) {
-      //process.kill(child.pid, "SIGINT");
+
+    for (let i = 0; i < spawner.children.length; i++) {
+      let child = spawner.children[i];
       child.kill();
       console.log(`Child ${child.pid} killed ${child.killed}`);
-    });
+      delete spawner.children[i];
+    }
   }
 }
 

@@ -3,11 +3,11 @@
 vendor
 node_modules
 shoot/
-node_modules
 package-lock.json
 php-yt-api.*
 php-yt-api*
-exclude
+exclude/
+exclude/**/*
 v2
 /instagram
 /BOT
@@ -15,3 +15,4 @@ v2
 /drone
 tsconfig.compiler.*
 *.rar
+.vuepress/.temp

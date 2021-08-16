@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/src-posts/Genshin%20Impact/Artifact/Archaic%20Petra.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/src-posts/Genshin%20Impact/Character/Klee.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/src-posts/Genshin%20Impact/Domain/Cecilia%20Garden.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Quiz The Legend Of Neverland</title>
-    <url>/src-posts/The%20Legend%20Of%20Neverland/Quiz.html</url>
-    <content><![CDATA[<div class="container">
+    <url>/The%20Legend%20Of%20Neverland/Quiz.html</url>
+    <content><![CDATA[<style>
+[id*="questions-filter"] li:not([data-id]) {
+  display: none;
+}
+
+[id*="questions"] li {
+  display: block;
+  text-transform: lowercase;
+}
+
+[id*="questions"] li:first-letter {
+  text-transform: uppercase;
+}
+</style>
+
+<div class="container">
   <label for="search-questions"></label>
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control">
 </div>
 
 <ul id="questions">
+  <li>the photocopier will produce carbon dioxide while photocopying (X)</li>
   <li>Monet is an impressionist painter (O)</li>
   <li>In walking races beyond 20km, there is a food supply station every 3km (X)</li>
   <li>The country that held the most Olympic Summer Games is USA (X)</li>
@@ -196,7 +197,7 @@ function jQueryMethod() {
   </entry>
   <entry>
     <title>Cooking Recipes</title>
-    <url>/src-posts/The%20Legend%20Of%20Neverland/Recipes.html</url>
+    <url>/The%20Legend%20Of%20Neverland/Recipes.html</url>
     <content><![CDATA[<p><a href="https://im.ge/i/603TF"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.im.ge/2021/08/15/603TF.png" alt="603TF.png" title="" ></img></a></p>
 ]]></content>
       <categories>
@@ -210,7 +211,7 @@ function jQueryMethod() {
   </entry>
   <entry>
     <title>Starconch Location</title>
-    <url>/src-posts/Genshin%20Impact/Location/Starconch.html</url>
+    <url>/Genshin%20Impact/Location/Starconch.html</url>
     <content><![CDATA[<p>Starconch merupakan salah satu bahan atau material yang bisa kalian dapatkan di game Genshin Impact. Pada awalnya saat kita menemukan Starconch ini pasti kita kebingungan, karena sama sekali belum diperlukan untuk Ascension karakter manapun dan bahkan tidak dipakai untuk menu masakan. Namun semenjak ada update 1.1 dari Genshin Impact pada 11 November 2020, maka kita dapat mengakses karakter Childe melalui Wishing, dan kita membutuhkan Staconch untuk ascension yang berguna untuk menaikkan level Childe.</p>
 <!--suppress HtmlUnknownTarget -->
 <div class="text-center">
@@ -242,7 +243,7 @@ function jQueryMethod() {
   </entry>
   <entry>
     <title>Update Genshin Impact 1.6.0 Manual</title>
-    <url>/src-posts/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html</url>
+    <url>/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html</url>
     <content><![CDATA[<p>Update genshin impact <code>1.6.1</code> manual via download manager (IDM).</p>
 <span id="more"></span>
 
@@ -326,7 +327,7 @@ function jQueryMethod() {
   </entry>
   <entry>
     <title>Update Genshin Impact 1.6.1 Manual</title>
-    <url>/src-posts/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html</url>
+    <url>/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html</url>
     <content><![CDATA[<p>Update genshin impact <code>1.6.1</code> manual via download manager (IDM).</p>
 <span id="more"></span>
 

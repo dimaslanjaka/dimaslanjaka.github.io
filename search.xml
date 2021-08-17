@@ -3,28 +3,8 @@
   <entry>
     <title>Test</title>
     <url>/Test/Inline%20Image.html</url>
-    <content><![CDATA[<style>
-.container-box {
-  /*border: 3px solid blue;
-  padding: 20px 40px 40px;*/
-  /*max-width: 640px;*/
-}
-.container-box-image {
-  display: inline-block;
-  vertical-align: top;
-  width: 46%;
-  margin: 20px 30px 0 0;
-}
-.container-box-text {
-  display: inline-block;
-  width: 46%;
-}
-@media (max-width: 620px) {
-  .container-box-text {
-    width: 100%;
-  }
-}
-</style>
+    <content><![CDATA[<!--suppress HtmlUnknownTarget -->
+<link rel="stylesheet" href="/scss/inline-image.css" media="all" />
 
 <div class="container-box">
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428" alt="x" title="" ></img>

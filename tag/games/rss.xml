@@ -30,6 +30,23 @@
 [id*=&#34;questions&#34;] li:first-letter {
   text-transform: uppercase;
 }
+
+input[type=&#34;text&#34;] {
+  width: 90%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+input[type=&#34;text&#34;]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
 &lt;/style&gt;
 
 &lt;div class=&#34;container&#34;&gt;

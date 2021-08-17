@@ -24,7 +24,7 @@
 
 [id*=&#34;questions&#34;] li {
   display: block;
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
 }
 
 [id*=&#34;questions&#34;] li:first-letter {
@@ -33,8 +33,8 @@
 &lt;/style&gt;
 
 &lt;div class=&#34;container&#34;&gt;
-  &lt;label for=&#34;search-questions&#34;&gt;&lt;/label&gt;
-  &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34;&gt;
+  &lt;label for=&#34;search-questions&#34;&gt;Filter&lt;/label&gt;
+  &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34; placeholder=&#34;search from here&#34;&gt;
 &lt;/div&gt;
 
 &lt;ul id=&#34;questions&#34;&gt;

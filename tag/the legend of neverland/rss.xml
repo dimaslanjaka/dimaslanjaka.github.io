@@ -17,7 +17,7 @@
             <category>the legend of neverland</category>
             <category>games</category>
             <pubDate>Mon, 16 Aug 2021 17:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;Kagmaw-Grassland-F3&#34;&gt;&lt;a href=&#34;#Kagmaw-Grassland-F3&#34; class=&#34;headerlink&#34; title=&#34;Kagmaw Grassland F3&#34;&gt;&lt;/a&gt;Kagmaw Grassland F3&lt;/h2&gt;&lt;p&gt;&lt;img on=&#34;tap:lightbox1&#34; role=&#34;button&#34; tabindex=&#34;0&#34; layout=&#34;responsive&#34; width=&#34;&#34; height=&#34;&#34; src=&#34;/Expel%20Quest%20Exp%20Char/Kagmaw%20Grassland%20F3.png&#34; alt=&#34;&#34; title=&#34;&#34; &gt;&lt;/img&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;Kagmaw-Grassland-F3&#34;&gt;&lt;a title=&#34;Kagmaw Grassland F3&#34; class=&#34;headerlink&#34; href=&#34;#Kagmaw-Grassland-F3&#34;&gt;&lt;/a&gt;Kagmaw Grassland F3&lt;/h2&gt;&lt;p&gt;&lt;img on=&#34;tap:lightbox1&#34; role=&#34;button&#34; tabindex=&#34;0&#34; layout=&#34;responsive&#34; width=&#34;&#34; height=&#34;&#34; src=&#34;Expel%20Quest%20Exp%20Char/Kagmaw%20Grassland%20F3.png&#34; alt=&#34;&#34; title=&#34;&#34; &gt;&lt;/img&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -27,41 +27,9 @@
             <category>the legend of neverland</category>
             <category>games</category>
             <pubDate>Sun, 15 Aug 2021 17:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;style&gt;
-[id*=&#34;questions-filter&#34;] li:not([data-id]) {
-  display: none;
-}
-
-[id*=&#34;questions&#34;] li {
-  display: block;
-  /*text-transform: lowercase;*/
-}
-
-[id*=&#34;questions&#34;] li:first-letter {
-  text-transform: uppercase;
-}
-
-input[type=&#34;text&#34;] {
-  width: 90%;
-  border: 2px solid #aaa;
-  border-radius: 4px;
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-  display: inline-block;
-}
-
-input[type=&#34;text&#34;]:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
-}
-&lt;/style&gt;
-
-&lt;div class=&#34;container&#34;&gt;
+            <description><![CDATA[ &lt;div class=&#34;container&#34;&gt;
   &lt;label for=&#34;search-questions&#34;&gt;Filter&lt;/label&gt;
-  &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34; placeholder=&#34;search from here&#34;&gt;
+  &lt;input placeholder=&#34;search from here&#34; class=&#34;form-control&#34; id=&#34;search-questions&#34; type=&#34;text&#34; autocomplete=&#34;chrome-off&#34;&gt;
 &lt;/div&gt;
 
 &lt;ul id=&#34;questions&#34;&gt;
@@ -169,67 +137,7 @@ input[type=&#34;text&#34;]:focus {
   If you know of other questions and answers that are not on the list, please comment below.
 &lt;/blockquote&gt;
 
-&lt;script&gt;
-loadJScript(
-  &#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&#34;,
-  jQueryMethod
-);
 
-//this function will work cross-browser for loading scripts asynchronously
-function loadJScript(src, callback) {
-  var s, r, t;
-  r = false;
-  s = document.createElement(&#34;script&#34;);
-  s.type = &#34;text/javascript&#34;;
-  s.src = src;
-  s.onload = s.onreadystatechange = function () {
-    //console.log( this.readyState ); //uncomment this line to see which ready states are called.
-    if (!r &amp;&amp; (!this.readyState || this.readyState == &#34;complete&#34;)) {
-      r = true;
-      callback();
-    }
-  };
-  t = document.getElementsByTagName(&#34;script&#34;)[0];
-  t.parentNode.insertBefore(s, t);
-}
-
-function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, &#34;\\$&amp;&#34;); // $&amp; means the whole matched string
-}
-
-function jQueryMethod() {
-  // ul questions
-  const questions = document.getElementById(&#34;questions&#34;);
-  const inputSearch = document.getElementById(&#34;search-questions&#34;);
-
-  jQuery(&#34;#search-questions&#34;).keyup(function () {
-    var filter = jQuery(this).val();
-    let listQuiz = jQuery(&#34;ul[id*=&#39;questions&#39;] li&#34;);
-    listQuiz.each(function (index) {
-      const searchWild =
-        jQuery(this)
-          .text()
-          .search(new RegExp(escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
-      const searchFirst =
-        jQuery(this)
-          .text()
-          .search(new RegExp(&#34;^&#34; + escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
-      if (searchFirst) {
-        jQuery(this).hide();
-      } else {
-        jQuery(this).show();
-        // move to first position
-        jQuery(this).prependTo(jQuery(&#34;ul[id*=&#39;questions&#39;]&#34;));
-      }
-      if (searchWild) {
-        jQuery(this).hide();
-      } else {
-        jQuery(this).show();
-      }
-    });
-  });
-}
-&lt;/script&gt;
  ]]></description>
         </item>
         <item>

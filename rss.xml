@@ -7,23 +7,44 @@
         <language>en</language>
         <pubDate>Mon, 16 Aug 2021 17:00:00 +0000</pubDate>
         <lastBuildDate>Mon, 16 Aug 2021 17:00:00 +0000</lastBuildDate>
-        <category>Expel Incident</category>
+        <category>Test</category>
         <category>Quiz</category>
         <category>Event</category>
         <category>Life Skill</category>
         <category>Games</category>
         <category>Genshin Impact</category>
+        <category>Expel Incident</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/Test/Inline%20Image.html</guid>
             <title>Test</title>
             <link>https://git.webmanajemen.com/Test/Inline%20Image.html</link>
-            <category>Expel Incident</category>
+            <category>Test</category>
             <pubDate>Mon, 16 Aug 2021 17:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;!--suppress HtmlUnknownTarget --&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;scss/inline-image.css&#34; media=&#34;all&#34; /&gt;
+            <description><![CDATA[ &lt;style&gt;
+.container-box {
+  /*border: 3px solid blue;
+  padding: 20px 40px 40px;*/
+  /*max-width: 640px;*/
+}
+.container-box-image {
+  display: inline-block;
+  vertical-align: top;
+  width: 46%;
+  margin: 20px 30px 0 0;
+}
+.container-box-text {
+  display: inline-block;
+  width: 46%;
+}
+@media (max-width: 620px) {
+  .container-box-text {
+    width: 100%;
+  }
+}
+&lt;/style&gt;
 
 &lt;div class=&#34;container-box&#34;&gt;
-  &lt;img on=&#34;tap:lightbox1&#34; role=&#34;button&#34; tabindex=&#34;0&#34; layout=&#34;responsive&#34; width=&#34;&#34; height=&#34;&#34; src=&#34;https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428&#34; alt=&#34;&#34; title=&#34;&#34; &gt;&lt;/img&gt;
+  &lt;img on=&#34;tap:lightbox1&#34; role=&#34;button&#34; tabindex=&#34;0&#34; layout=&#34;responsive&#34; width=&#34;&#34; height=&#34;&#34; src=&#34;https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428&#34; alt=&#34;x&#34; title=&#34;&#34; &gt;&lt;/img&gt;
   &lt;div class=&#34;container-box-text&#34;&gt;
     &lt;h2&gt;Why Do Cats Like Boxes?&lt;/h2&gt;
     &lt;p&gt;&#34;Cats like boxes because they are cryptic animals; they like to hide,&#34; Stephen Zawistowski, science adviser for the American Society for the Prevention of Cruelty to Animals, told Business Insider. &#34;And a box gives them a place of safety and security.&#34;&lt;/p&gt;

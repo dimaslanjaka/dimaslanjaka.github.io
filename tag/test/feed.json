@@ -9,7 +9,7 @@
             "url": "https://git.webmanajemen.com/Test/Helper.html",
             "title": "Test",
             "date_published": "2021-08-16T17:00:00.000Z",
-            "content_html": "<p>&lt;%- gravatar(‘<a href=\"mailto:&#x61;&#x40;&#x61;&#98;&#99;&#x2e;&#x63;&#111;&#109;\">&#x61;&#x40;&#x61;&#98;&#99;&#x2e;&#x63;&#111;&#109;</a>‘ {s: 40, d: ‘<a href=\"https://via.placeholder.com/150&#39;}\">https://via.placeholder.com/150&#39;}</a>) %&gt;</p>\n",
+            "content_html": "<!--\n<%- gravatar('a@abc.com' {s: 40, d: 'https://via.placeholder.com/150'}) %>\n\n<%- list_from_file(\"src-posts/The Legend Of Neverland/Quiz/quiz.txt\") %>\n-->\n\n<!-- readfile Helper/readfile.md -->\n",
             "tags": [
                 "Test"
             ]

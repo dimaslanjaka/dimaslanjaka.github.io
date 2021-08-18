@@ -20,7 +20,13 @@
             <link>https://git.webmanajemen.com/Test/Helper.html</link>
             <category>Test</category>
             <pubDate>Mon, 16 Aug 2021 17:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;p&gt;&amp;lt;%- gravatar(‘&lt;a href=&#34;mailto:&amp;#x61;&amp;#x40;&amp;#x61;&amp;#98;&amp;#99;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&#34;&gt;&amp;#x61;&amp;#x40;&amp;#x61;&amp;#98;&amp;#99;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;‘ {s: 40, d: ‘&lt;a href=&#34;https://via.placeholder.com/150&amp;#39;}&#34;&gt;https://via.placeholder.com/150&amp;#39;}&lt;/a&gt;) %&amp;gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;!--
+&lt;%- gravatar(&#39;a@abc.com&#39; {s: 40, d: &#39;https://via.placeholder.com/150&#39;}) %&gt;
+
+&lt;%- list_from_file(&#34;src-posts/The Legend Of Neverland/Quiz/quiz.txt&#34;) %&gt;
+--&gt;
+
+&lt;!-- readfile Helper/readfile.md --&gt;
  ]]></description>
         </item>
         <item>

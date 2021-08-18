@@ -3,7 +3,13 @@
   <entry>
     <title>Test</title>
     <url>/Test/Helper.html</url>
-    <content><![CDATA[<p>&lt;%- gravatar(‘<a href="mailto:&#x61;&#x40;&#x61;&#98;&#99;&#x2e;&#x63;&#111;&#109;">&#x61;&#x40;&#x61;&#98;&#99;&#x2e;&#x63;&#111;&#109;</a>‘ {s: 40, d: ‘<a href="https://via.placeholder.com/150&#39;}">https://via.placeholder.com/150&#39;}</a>) %&gt;</p>
+    <content><![CDATA[<!--
+<%- gravatar('a@abc.com' {s: 40, d: 'https://via.placeholder.com/150'}) %>
+
+<%- list_from_file("src-posts/The Legend Of Neverland/Quiz/quiz.txt") %>
+-->
+
+<!-- readfile Helper/readfile.md -->
 ]]></content>
       <categories>
         <category>Test</category>

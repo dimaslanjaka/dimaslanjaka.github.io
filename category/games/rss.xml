@@ -191,6 +191,7 @@ function jQueryMethod() {
         document.getElementById(&#34;questions&#34;).appendChild(li);
       });
     }
+    processLi();
   });
 }
 &lt;/script&gt;

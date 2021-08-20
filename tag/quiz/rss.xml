@@ -65,15 +65,25 @@ input[type=&#34;text&#34;]:focus {
 }
 &lt;/style&gt;
 
-&lt;div class=&#34;container&#34;&gt;
-  &lt;label for=&#34;search-questions&#34;&gt;Filter&lt;/label&gt;
-  &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34; placeholder=&#34;search from here&#34;&gt;
-&lt;/div&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css&#34; /&gt;
 
-&lt;tr&gt;&lt;td&gt;Last updated&lt;/td&gt;&lt;td&gt;2021-08-20 15:57:28&lt;/td&gt;&lt;/tr&gt;
+&lt;div id=&#34;bootstrap-wrapper&#34;&gt;
+  &lt;div class=&#34;container&#34;&gt;
+    &lt;label for=&#34;search-questions&#34;&gt;Filter&lt;/label&gt;
+    &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34; placeholder=&#34;search from here&#34;&gt;
+    &lt;small id=&#34;passwordHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Last updated&lt;/td&gt;
+        &lt;td&gt;
+          2021-08-20 16:10:22
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/small&gt;
 
-&lt;ul id=&#34;questions&#34;&gt;
-  The eight wonder of the world is Terra Cotta Warriors (O)
+  &lt;/div&gt;
+
+  &lt;ul id=&#34;questions&#34;&gt;
+    The eight wonder of the world is Terra Cotta Warriors (O)
 The earth day is on the Apr. 22nd of each year (O)
 The earth Day every year falls on 20-Dec (X)
 The sea with the most islands in the world is Sea Of Marmara (X)
@@ -225,18 +235,14 @@ Alligator’s tear is to disguise yourself (X)
 Cuttlefish and octopus are both crawl animals (X)
 Seattle is one of main financial centers in the world (X)
 
-&lt;/ul&gt;
+  &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  If you know of other questions and answers that are not on the list, please comment below.
-&lt;/blockquote&gt;
+  &lt;blockquote&gt;
+    If you know of other questions and answers that are not on the list, please comment below.
+  &lt;/blockquote&gt;
+&lt;/div&gt;
 
 &lt;script&gt;
-loadJScript(
-  &#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&#34;,
-  jQueryMethod
-);
-
 //this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
@@ -315,6 +321,11 @@ function jQueryMethod() {
     processLi();
   });
 }
+
+loadJScript(
+  &#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&#34;,
+  jQueryMethod
+);
 &lt;/script&gt;
  ]]></description>
         </item>

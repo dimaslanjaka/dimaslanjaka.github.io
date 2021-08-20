@@ -107,6 +107,8 @@ input[type=&#34;text&#34;]:focus {
   &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34; placeholder=&#34;search from here&#34;&gt;
 &lt;/div&gt;
 
+&lt;tr&gt;&lt;td&gt;Last updated&lt;/td&gt;&lt;td&gt;&lt;!-- now() --&gt;&lt;/td&gt;&lt;/tr&gt;
+
 &lt;ul id=&#34;questions&#34;&gt;
   The eight wonder of the world is Terra Cotta Warriors (O)
 The earth day is on the Apr. 22nd of each year (O)
@@ -210,6 +212,7 @@ Lodine deficiency in children and adolescents can lead to General Weakness (X)
 The first shot that symbols the freedom of the United States of America started on Washington (X)
 Aurora is the special scenery you can see in High Latitude (O)
 The greatest branch of Yellow River is River Fen (X)
+Frostbite causes injury of the skin&#39;s (Arrestor/Arrector) (X)
 The so-called theory of “Invisible Hand” in the field of economics was originally presented by Marx (X)
 The main reason that boosts Singapore’s economic development is Rich Labor resource (X)
 The main reason that boost Singapore’s economic development is Good Natural Condition (X)
@@ -367,13 +370,8 @@ function jQueryMethod() {
             <link>https://git.webmanajemen.com/Test/Helper.html</link>
             <category>Test</category>
             <pubDate>Fri, 16 Jul 2021 17:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;!--
-&lt;%- gravatar(&#39;a@abc.com&#39; {s: 40, d: &#39;https://via.placeholder.com/150&#39;}) %&gt;
+            <description><![CDATA[ &lt;!-- include /source/_posts/Tes/Test/Helper/readFile.md --&gt;
 
-&lt;%- list_from_file(&#34;src-posts/The Legend Of Neverland/Quiz/quiz.txt&#34;) %&gt;
---&gt;
-
-&lt;!-- readfile source/_posts/Tes/Test/Helper/readfile.md --&gt;
  ]]></description>
         </item>
         <item>

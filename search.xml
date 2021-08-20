@@ -3,13 +3,8 @@
   <entry>
     <title>Test Helper</title>
     <url>/Test/Helper.html</url>
-    <content><![CDATA[<!--
-<%- gravatar('a@abc.com' {s: 40, d: 'https://via.placeholder.com/150'}) %>
+    <content><![CDATA[<!-- include /source/_posts/Tes/Test/Helper/readFile.md -->
 
-<%- list_from_file("src-posts/The Legend Of Neverland/Quiz/quiz.txt") %>
--->
-
-<!-- readfile source/_posts/Tes/Test/Helper/readfile.md -->
 ]]></content>
       <categories>
         <category>Test</category>
@@ -107,6 +102,8 @@ input[type="text"]:focus {
   <label for="search-questions">Filter</label>
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
 </div>
+
+<tr><td>Last updated</td><td><!-- now() --></td></tr>
 
 <ul id="questions">
   The eight wonder of the world is Terra Cotta Warriors (O)
@@ -211,6 +208,7 @@ Lodine deficiency in children and adolescents can lead to General Weakness (X)
 The first shot that symbols the freedom of the United States of America started on Washington (X)
 Aurora is the special scenery you can see in High Latitude (O)
 The greatest branch of Yellow River is River Fen (X)
+Frostbite causes injury of the skin's (Arrestor/Arrector) (X)
 The so-called theory of “Invisible Hand” in the field of economics was originally presented by Marx (X)
 The main reason that boosts Singapore’s economic development is Rich Labor resource (X)
 The main reason that boost Singapore’s economic development is Good Natural Condition (X)

@@ -312,6 +312,9 @@ function jQueryMethod() {
     });
   };
 
+  // clean orphan text
+  $(&#34;#questions&#34;).text(&#39;&#39;);
+  // remove existing li&#39;s
   $(&#34;#questions li&#34;).remove();
 
   $.get(quizUrl).then(function (data) {

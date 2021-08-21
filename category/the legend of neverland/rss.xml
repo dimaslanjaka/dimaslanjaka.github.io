@@ -108,8 +108,15 @@ input[type=&#34;text&#34;]:focus {
   &lt;div class=&#34;container&#34;&gt;
     &lt;label for=&#34;search-questions&#34; class=&#34;sr-only&#34;&gt;Filter&lt;/label&gt;
     &lt;input autocomplete=&#34;chrome-off&#34; type=&#34;text&#34; id=&#34;search-questions&#34; class=&#34;form-control&#34; placeholder=&#34;search from here&#34;&gt;
+    &lt;div class=&#34;mt-1 mb-1&#34;&gt;
+      &lt;div class=&#34;form-check form-check-inline&#34;&gt;
+        &lt;input class=&#34;form-check-input&#34; type=&#34;checkbox&#34; id=&#34;O_only&#34; value=&#34;option1&#34;&gt;
+        &lt;label class=&#34;form-check-label&#34; for=&#34;O_only&#34;&gt;Only Show (O)&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
-      Last updated 2021-08-21 01:46:55
+      Last updated
+      2021-08-21 12:25:10
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -291,8 +298,7 @@ Food coloring usually included in jellies (O)
   &lt;/blockquote&gt;
 &lt;/div&gt;
 
-&lt;script&gt;
-//this function will work cross-browser for loading scripts asynchronously
+&lt;script&gt;//this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
@@ -311,7 +317,7 @@ function loadJScript(src, callback) {
 }
 
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, &#34;\\$&amp;&#34;); // $&amp; means the whole matched string
+  return string.replace(/[.*+?^${}()|[\]\\]/g, &#34;\\&lt;!-- script /source/assets/js/quiz.js --&gt;&#34;); // &lt;!-- script /source/assets/js/quiz.js --&gt; means the whole matched string
 }
 
 const quizUrl =
@@ -319,62 +325,97 @@ const quizUrl =
 let quizSrc = [];
 
 function jQueryMethod() {
-  const processLi = function () {
-    // ul questions
-    const questions = document.getElementById(&#34;questions&#34;);
-    const inputSearch = document.getElementById(&#34;search-questions&#34;);
+  // ul questions
+  const questions = document.getElementById(&#34;questions&#34;);
+  const inputSearch = document.getElementById(&#34;search-questions&#34;);
+  const O_only = document.getElementById(&#34;O_only&#34;);
 
-    jQuery(&#34;#search-questions&#34;).keyup(function () {
-      var filter = jQuery(this).val();
-      let listQuiz = jQuery(&#34;ul[id*=&#39;questions&#39;] li&#34;);
-      listQuiz.each(function (index) {
-        const searchWild =
-          jQuery(this)
-            .text()
-            .search(new RegExp(escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
-        const searchFirst =
-          jQuery(this)
-            .text()
-            .search(new RegExp(&#34;^&#34; + escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
-        if (searchFirst) {
-          jQuery(this).hide();
-        } else {
-          jQuery(this).show();
-          // move to first position
-          jQuery(this).prependTo(jQuery(&#34;ul[id*=&#39;questions&#39;]&#34;));
-        }
-        if (searchWild) {
-          jQuery(this).hide();
-        } else {
-          jQuery(this).show();
-        }
-      });
+  // searcher
+  const searchLi = function (filter) {
+    let listQuiz = jQuery(&#34;ul[id*=&#39;questions&#39;] li&#34;);
+    listQuiz.each(function (index) {
+      const searchWild =
+        jQuery(this)
+          .text()
+          .search(new RegExp(escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
+      const searchFirst =
+        jQuery(this)
+          .text()
+          .search(new RegExp(&#34;^&#34; + escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
+      if (searchFirst) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+        // move to first position
+        jQuery(this).prependTo(jQuery(&#34;ul[id*=&#39;questions&#39;]&#34;));
+      }
+      if (searchWild) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+      }
     });
   };
 
-  // clean orphan text
-  $(&#34;#questions&#34;).text(&#39;&#39;);
-  // remove existing li&#39;s
-  $(&#34;#questions li&#34;).remove();
+  const processLi = function () {
+    jQuery(&#34;#search-questions&#34;).keyup(function () {
+      searchLi(jQuery(this).val());
+    });
+  };
 
+  // transform array to li
+  const transformArray2Li = function () {
+    // clean orphan text
+    $(&#34;#questions&#34;).text(&#34;&#34;);
+    // remove existing li&#39;s
+    $(&#34;#questions li&#34;).remove();
+
+    for (let i = 0; i &lt; quizSrc.length; i++) {
+      let str = quizSrc[i];
+      let isTrue = /\(O\)$/i;
+      const li = document.createElement(&#34;li&#34;);
+      li.innerHTML = str;
+      if (isTrue.test(str)) {
+        li.setAttribute(&#34;class&#34;, &#34;isTrue&#34;);
+      } else {
+        li.setAttribute(&#34;class&#34;, &#34;isFalse&#34;);
+      }
+      document.getElementById(&#34;questions&#34;).appendChild(li);
+    }
+  };
+
+  // get from source url
   $.get(quizUrl).then(function (data) {
     if (data) {
+      // split newLine from retrieved text into array
       const split = data.split(&#34;\n&#34;);
+      // merge
       quizSrc = quizSrc.concat(split);
+      // trim
       quizSrc.map(function (str) {
-        const li = document.createElement(&#34;li&#34;);
-        li.innerHTML = str;
-        document.getElementById(&#34;questions&#34;).appendChild(li);
+        return str.trim();
       });
+      // transform
+      transformArray2Li();
     }
     processLi();
   });
+
+  $(&#34;#O_only&#34;).on(&#34;change&#34;, function (e) {
+    e.preventDefault();
+    if (this.checked) {
+      $(&#34;.isFalse&#34;).remove();
+    } else {
+      transformArray2Li();
+    }
+
+    if (inputSearch &amp;&amp; inputSearch.value &amp;&amp; inputSearch.value.trim().length &gt; 0) {
+      searchLi(inputSearch.value);
+    }
+  });
 }
 
-loadJScript(
-  &#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&#34;,
-  jQueryMethod
-);
+loadJScript(&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&#34;, jQueryMethod);
 &lt;/script&gt;
  ]]></description>
         </item>

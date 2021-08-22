@@ -56,6 +56,10 @@ input[type=&#34;text&#34;]:focus {
   font-size: 10px;
   margin: 0;
 }
+
+#incoming-terms ul {
+  list-style-type: none;
+}
 &lt;/style&gt;
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css&#34; /&gt;
@@ -72,7 +76,7 @@ input[type=&#34;text&#34;]:focus {
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      8/22/2021, 9:46:02 PM
+      8/22/2021, 9:53:01 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -321,12 +325,24 @@ Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly 
 &lt;/div&gt;
 
 &lt;script&gt;console.clear();
+function rangeAlphabetic(start, stop) {
+  var result = [];
+  for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx &lt;= end; ++idx) {
+    result.push(String.fromCharCode(idx));
+  }
+  return result;
+}
+
+let aZ = rangeAlphabetic(&#34;a&#34;, &#34;z&#34;)
+  .concat(rangeAlphabetic(&#34;A&#34;, &#34;Z&#34;))
+  .filter(function (el) {
+    return el != null;
+  }); // a-zA-Z array
 
 // automated test
 setTimeout(function () {
   let inputSearch = document.getElementById(&#34;search-questions&#34;);
-  let randx = [&#34;i&#34;, &#34;a&#34;, &#34;p&#34;, &#34;j&#34;];
-  var keyword = randx[Math.floor(Math.random() * randx.length)];
+  var keyword = aZ[Math.floor(Math.random() * aZ.length)];
   inputSearch.value = keyword;
   inputSearch.dispatchEvent(new Event(&#34;keyup&#34;));
 }, 3000);

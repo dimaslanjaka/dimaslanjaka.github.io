@@ -455,6 +455,10 @@ input[type="text"]:focus {
   font-size: 10px;
   margin: 0;
 }
+
+#incoming-terms ul {
+  list-style-type: none;
+}
 </style>
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
@@ -471,7 +475,7 @@ input[type="text"]:focus {
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      8/22/2021, 9:46:02 PM
+      8/22/2021, 9:53:01 PM
     </small>
 
   </div>
@@ -720,12 +724,24 @@ Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly 
 </div>
 
 <script>console.clear();
+function rangeAlphabetic(start, stop) {
+  var result = [];
+  for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
+    result.push(String.fromCharCode(idx));
+  }
+  return result;
+}
+
+let aZ = rangeAlphabetic("a", "z")
+  .concat(rangeAlphabetic("A", "Z"))
+  .filter(function (el) {
+    return el != null;
+  }); // a-zA-Z array
 
 // automated test
 setTimeout(function () {
   let inputSearch = document.getElementById("search-questions");
-  let randx = ["i", "a", "p", "j"];
-  var keyword = randx[Math.floor(Math.random() * randx.length)];
+  var keyword = aZ[Math.floor(Math.random() * aZ.length)];
   inputSearch.value = keyword;
   inputSearch.dispatchEvent(new Event("keyup"));
 }, 3000);

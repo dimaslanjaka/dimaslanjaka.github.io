@@ -51,6 +51,11 @@ input[type=&#34;text&#34;]:focus {
   border-color: dodgerBlue;
   box-shadow: 0 0 8px 0 dodgerBlue;
 }
+
+#incoming-terms * {
+  font-size: 10px;
+  margin: 0;
+}
 &lt;/style&gt;
 
 &lt;link rel=&#34;stylesheet&#34; href=&#34;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css&#34; /&gt;
@@ -67,7 +72,7 @@ input[type=&#34;text&#34;]:focus {
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      8/22/2021, 9:24:47 PM
+      8/22/2021, 9:42:38 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -298,9 +303,21 @@ Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly 
 
   &lt;blockquote class=&#34;mt-2&#34;&gt;
     Join discord https://tiny.one/INDO1945.&lt;br /&gt;
-    This article shortcut url https://bit.ly/TLONQUIZ&lt;br/&gt;
-    Add new quiz https://bit.ly/TLONQUIZADD
+    This article shortcut url https://bit.ly/TLONQUIZ&lt;br /&gt;
+    Add new quiz https://bit.ly/TLONQUIZADD&lt;br /&gt;
+    Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo&lt;br /&gt;
+    This article https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html
   &lt;/blockquote&gt;
+
+  &lt;div id=&#34;incoming-terms&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;quiz the legend of neverland&lt;/li&gt;
+      &lt;li&gt;jawaban quiz the legend of neverland&lt;/li&gt;
+      &lt;li&gt;quiz grid the legend of neverland&lt;/li&gt;
+      &lt;li&gt;quiz clue the legend of neverland&lt;/li&gt;
+      &lt;li&gt;quiz the legend of neverland updated&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;script&gt;console.clear();
@@ -433,15 +450,19 @@ function jQueryMethod() {
         // split newLine from retrieved text into array
         let split = data.split(&#34;\n&#34;);
         // trim
-        quizSrc.map(function (str) {
+        quizSrc = quizSrc.map(function (str) {
           return str.trim();
         });
         // merge and remove duplicates
-        quizSrc = uniqArr(quizSrc.concat(split));
-        // trim
-        quizSrc.map(function (str) {
-          return str.trim();
-        });
+        quizSrc = uniqArr(
+          // merge
+          quizSrc
+            .concat(split)
+            // trim
+            .map(function (str) {
+              return str.trim();
+            })
+        );
         // transform
         transformArray2Li();
       }

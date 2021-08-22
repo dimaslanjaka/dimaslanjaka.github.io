@@ -466,7 +466,7 @@ input[type="text"]:focus {
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      8/22/2021, 4:47:31 PM
+      8/22/2021, 8:27:21 PM
     </small>
 
   </div>
@@ -666,12 +666,52 @@ Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly 
 
   </ul>
 
+  <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz">
+    <input type="hidden" name="add" value="add">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="newQ">Add new question</label>
+        <textarea type="text" id="newQ" placeholder="add new question" name="q" class="form-control"></textarea>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-2">
+          Answer of new question (pick one)
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" name="a" name="q" class="custom-control-input" value="O">
+          <label class="custom-control-label" for="customRadioInline1">(O)</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" name="a" class="custom-control-input" value="X">
+          <label class="custom-control-label" for="customRadioInline2">(X)</label>
+        </div>
+
+<pre><code>    &lt;div class=&quot;mt-2&quot;&gt;&lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-block btn-sm&quot;&gt;Send&lt;/button&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </form>
+
   <blockquote>
-    If you know of other questions and answers that are not on the list, please comment below or join https://tiny.one/INDO1945.<br/> Share: Quiz event Answers https://bit.ly/TLONQUIZ to contribute by commenting to this article
+    Join discord https://tiny.one/INDO1945.<br />
+    This article shortcut url https://bit.ly/TLONQUIZ
   </blockquote>
 </div>
 
-<script>//this function will work cross-browser for loading scripts asynchronously
+<script>console.clear();
+
+// automated test
+setTimeout(function () {
+  let inputSearch = document.getElementById("search-questions");
+  const randx = ["i", "a", "p", "j"];
+  var keyword = randx[Math.floor(Math.random() * randx.length)];
+  inputSearch.value = keyword;
+  inputSearch.dispatchEvent(new Event("keyup"));
+}, 1500);
+
+/*** MAIN SCRIPT START ***/
+
+//this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
@@ -689,12 +729,21 @@ function loadJScript(src, callback) {
   t.parentNode.insertBefore(s, t);
 }
 
+function uniqArr(a) {
+  var seen = {};
+  return a.filter(function (item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
+}
+
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, "\\<!-- script /source/assets/js/quiz.js -->"); // <!-- script /source/assets/js/quiz.js --> means the whole matched string
 }
 
-const quizUrl =
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt";
+const quizUrls = [
+  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt",
+  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt",
+];
 let quizSrc = [];
 
 function jQueryMethod() {
@@ -757,23 +806,31 @@ function jQueryMethod() {
     }
   };
 
-  // get from source url
-  $.get(quizUrl).then(function (data) {
-    if (data) {
-      // split newLine from retrieved text into array
-      const split = data.split("\n");
-      // merge
-      quizSrc = quizSrc.concat(split);
-      // trim
-      quizSrc.map(function (str) {
-        return str.trim();
-      });
-      // transform
-      transformArray2Li();
-    }
-    processLi();
+  // get new question sources
+  quizUrls.forEach(function (quizUrl) {
+    console.log(quizUrl);
+    $.get(quizUrl).then(function (data) {
+      if (data) {
+        // split newLine from retrieved text into array
+        const split = data.split("\n");
+        // trim
+        quizSrc.map(function (str) {
+          return str.trim();
+        });
+        // merge and remove duplicates
+        quizSrc = uniqArr(quizSrc.concat(split));
+        // trim
+        quizSrc.map(function (str) {
+          return str.trim();
+        });
+        // transform
+        transformArray2Li();
+      }
+      processLi();
+    });
   });
 
+  // filter only (O)
   $("#O_only").on("change", function (e) {
     e.preventDefault();
     if (this.checked) {
@@ -786,6 +843,23 @@ function jQueryMethod() {
       searchLi(inputSearch.value);
     }
   });
+
+  // form add quiz
+  /*
+  $("form#addQuiz").on("submit", function (e) {
+    e.preventDefault();
+    let t = $(this);
+    $.ajax({
+      url: t.attr("action"),
+      type: "post",
+      //dataType: "json",
+      data: t.serialize(),
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  });
+  */
 }
 
 loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", jQueryMethod);

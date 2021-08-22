@@ -172,7 +172,7 @@
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      8/22/2021, 10:07:54 PM
+      8/22/2021, 10:12:14 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -456,7 +456,15 @@ input[type=&#34;text&#34;]:focus {
   font-size: 10px;
   margin: 0;
 }
-
+#incoming-terms li:after {
+  content: &#34; | &#34;;
+}
+#incoming-terms li:last-child:after {
+  content: &#34;&#34;;
+}
+#incoming-terms li {
+  display: inline;
+}
 #incoming-terms ul {
   list-style-type: none;
 }

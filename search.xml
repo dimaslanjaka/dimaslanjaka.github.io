@@ -420,48 +420,7 @@
   <entry>
     <title>Quiz The Legend Of Neverland</title>
     <url>/The%20Legend%20Of%20Neverland/Quiz.html</url>
-    <content><![CDATA[<style>
-[id*="questions-filter"] li:not([data-id]) {
-  display: none;
-}
-
-[id*="questions"] li {
-  display: block;
-  /*text-transform: lowercase;*/
-}
-
-[id*="questions"] li:first-letter {
-  text-transform: uppercase;
-}
-
-input[type="text"] {
-  width: 90%;
-  border: 2px solid #aaa;
-  border-radius: 4px;
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-  display: inline-block;
-}
-
-input[type="text"]:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
-}
-
-#incoming-terms * {
-  font-size: 10px;
-  margin: 0;
-}
-
-#incoming-terms ul {
-  list-style-type: none;
-}
-</style>
-
-<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
+    <content><![CDATA[<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
 
 <div id="bootstrap-wrapper">
   <div class="mb-2">
@@ -475,7 +434,7 @@ input[type="text"]:focus {
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      8/22/2021, 9:53:01 PM
+      8/22/2021, 10:04:04 PM
     </small>
 
   </div>
@@ -723,6 +682,45 @@ Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly 
   </div>
 </div>
 
+<style>[id*="questions-filter"] li:not([data-id]) {
+  display: none;
+}
+
+[id*="questions"] li {
+  display: block;
+  /*text-transform: lowercase;*/
+}
+
+[id*="questions"] li:first-letter {
+  text-transform: uppercase;
+}
+
+input[type="text"] {
+  width: 90%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+#incoming-terms * {
+  font-size: 10px;
+  margin: 0;
+}
+
+#incoming-terms ul {
+  list-style-type: none;
+}
+</style>
 <script>console.clear();
 function rangeAlphabetic(start, stop) {
   var result = [];

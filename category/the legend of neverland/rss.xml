@@ -117,7 +117,7 @@ input[type=&#34;text&#34;]:focus {
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      8/22/2021, 9:20:09 PM
+      8/22/2021, 9:23:17 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -366,7 +366,11 @@ setTimeout(function () {
 
 /*** MAIN SCRIPT START ***/
 
-//this function will work cross-browser for loading scripts asynchronously
+/**
+ * this function will work cross-browser for loading scripts asynchronously
+ * @param {string} src
+ * @param {function} callback
+ */
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
@@ -384,6 +388,11 @@ function loadJScript(src, callback) {
   t.parentNode.insertBefore(s, t);
 }
 
+/**
+ * Unique Array
+ * @param {Array} a
+ * @returns
+ */
 function uniqArr(a) {
   var seen = {};
   return a.filter(function (item) {
@@ -391,6 +400,11 @@ function uniqArr(a) {
   });
 }
 
+/**
+ * Escape regexp
+ * @param {string} string
+ * @returns
+ */
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, &#34;\\&lt;!-- script /source/assets/js/quiz.js --&gt;&#34;); // &lt;!-- script /source/assets/js/quiz.js --&gt; means the whole matched string
 }
@@ -463,7 +477,7 @@ function jQueryMethod() {
 
   // get new question sources
   quizUrls.forEach(function (quizUrl) {
-    console.log(quizUrl);
+    //console.log(quizUrl);
     $.get(quizUrl).then(function (data) {
       if (data) {
         // split newLine from retrieved text into array

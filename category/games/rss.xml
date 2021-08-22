@@ -204,7 +204,7 @@ input[type=&#34;text&#34;]:focus {
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      8/22/2021, 9:17:17 PM
+      8/22/2021, 9:20:09 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -445,11 +445,11 @@ Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly 
 // automated test
 setTimeout(function () {
   let inputSearch = document.getElementById(&#34;search-questions&#34;);
-  const randx = [&#34;i&#34;, &#34;a&#34;, &#34;p&#34;, &#34;j&#34;];
+  let randx = [&#34;i&#34;, &#34;a&#34;, &#34;p&#34;, &#34;j&#34;];
   var keyword = randx[Math.floor(Math.random() * randx.length)];
   inputSearch.value = keyword;
   inputSearch.dispatchEvent(new Event(&#34;keyup&#34;));
-}, 1500);
+}, 3000);
 
 /*** MAIN SCRIPT START ***/
 
@@ -482,7 +482,7 @@ function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, &#34;\\&lt;!-- script /source/assets/js/quiz.js --&gt;&#34;); // &lt;!-- script /source/assets/js/quiz.js --&gt; means the whole matched string
 }
 
-const quizUrls = [
+let quizUrls = [
   &#34;https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt&#34;,
   &#34;https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt&#34;,
 ];
@@ -490,19 +490,19 @@ let quizSrc = [];
 
 function jQueryMethod() {
   // ul questions
-  const questions = document.getElementById(&#34;questions&#34;);
-  const inputSearch = document.getElementById(&#34;search-questions&#34;);
-  const O_only = document.getElementById(&#34;O_only&#34;);
+  let questions = document.getElementById(&#34;questions&#34;);
+  let inputSearch = document.getElementById(&#34;search-questions&#34;);
+  let O_only = document.getElementById(&#34;O_only&#34;);
 
   // searcher
-  const searchLi = function (filter) {
+  let searchLi = function (filter) {
     let listQuiz = jQuery(&#34;ul[id*=&#39;questions&#39;] li&#34;);
     listQuiz.each(function (index) {
-      const searchWild =
+      let searchWild =
         jQuery(this)
           .text()
           .search(new RegExp(escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
-      const searchFirst =
+      let searchFirst =
         jQuery(this)
           .text()
           .search(new RegExp(&#34;^&#34; + escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
@@ -521,14 +521,14 @@ function jQueryMethod() {
     });
   };
 
-  const processLi = function () {
+  let processLi = function () {
     jQuery(&#34;#search-questions&#34;).keyup(function () {
       searchLi(jQuery(this).val());
     });
   };
 
   // transform array to li
-  const transformArray2Li = function () {
+  let transformArray2Li = function () {
     // clean orphan text
     $(&#34;#questions&#34;).text(&#34;&#34;);
     // remove existing li&#39;s
@@ -537,7 +537,7 @@ function jQueryMethod() {
     for (let i = 0; i &lt; quizSrc.length; i++) {
       let str = quizSrc[i];
       let isTrue = /\(O\)$/i;
-      const li = document.createElement(&#34;li&#34;);
+      let li = document.createElement(&#34;li&#34;);
       li.innerHTML = str;
       if (isTrue.test(str)) {
         li.setAttribute(&#34;class&#34;, &#34;isTrue&#34;);
@@ -554,7 +554,7 @@ function jQueryMethod() {
     $.get(quizUrl).then(function (data) {
       if (data) {
         // split newLine from retrieved text into array
-        const split = data.split(&#34;\n&#34;);
+        let split = data.split(&#34;\n&#34;);
         // trim
         quizSrc.map(function (str) {
           return str.trim();

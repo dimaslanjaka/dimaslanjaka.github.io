@@ -1,1 +1,27 @@
-{"name":"dimas/nodejs","type":"project","license":"MIT","authors":[{"name":"Dimas Lanjaka","email":"dimaslanjaka@gmail.com"}],"require":{},"autoload":{"files":["CrossPlatformCiphers/PHP_CIPHER/index.php","src/cors.php"]},"config":{"preferred-install":"dist"},"repositories":{"packagist":{"type":"composer","url":"https://packagist.org"}}}
+{
+  "name": "dimas/nodejs",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dimas Lanjaka",
+      "email": "dimaslanjaka@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "files": [
+      "CrossPlatformCiphers/PHP_CIPHER/index.php",
+      "src/cors.php"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.org"
+    }
+  }
+}

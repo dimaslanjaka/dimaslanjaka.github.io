@@ -1,1 +1,1 @@
-console.clear();let table=document.getElementsByTagName("table");for(i=0;i<table.length;i++)calculatetr(table[i]);function calculatetr(table){let identifier="table.hasAttribute("id")?table.id:"-";console.log(`Start" calculating table ${identifier}`);let tr="table.getElementsByTagName("tr");if(tr.length">0)for(i=0;i</table.length;i++)calculatetr(table[i]);function>
+function CalculateTR(table){let identifier=table.hasAttribute("id")?table.id:"-";console.log(`Start Calculating Table ${identifier}`);let tr=table.getElementsByTagName("tr");if(tr.length>0)for(i=0;i

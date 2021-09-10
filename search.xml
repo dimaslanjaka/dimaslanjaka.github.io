@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test Include</title>
-    <url>/Test/Include.html</url>
-    <content><![CDATA[<p>first line<br>2nd line<br>3rd line</p>
+    <title>Test Helper</title>
+    <url>/Test/Helper.html</url>
+    <content><![CDATA[<!-- include /source/_posts/Tes/Test/Helper/readFile.md -->
+
 ]]></content>
       <categories>
         <category>Test</category>
@@ -13,10 +14,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Test Helper</title>
-    <url>/Test/Helper.html</url>
-    <content><![CDATA[<!-- include /source/_posts/Tes/Test/Helper/readFile.md -->
-
+    <title>Test Include</title>
+    <url>/Test/Include.html</url>
+    <content><![CDATA[<p>first line<br>2nd line<br>3rd line</p>
 ]]></content>
       <categories>
         <category>Test</category>
@@ -201,6 +201,7 @@
 <ul>
 <li><a href="#ingredients-water-essence-prices">Ingredients Water Essence Prices</a></li>
 <li><a href="#char-buff-dish">Char Buff Dish</a></li>
+<li><a href="#flower-fairy-upgrade-dish">Flower Fairy Upgrade Dish</a></li>
 </ul>
 <!-- tocstop -->
 
@@ -399,15 +400,75 @@
 <td align="left">Resistance +1000</td>
 </tr>
 </tbody></table>
-<p>| Flower Fairy Upgrade Dish | Ingredients | HeroEXP |</p>
-<p>1 Boiled Corn Com 1 Salt 1 ro EX</p>
-<p>2 Roasted Potato Potato 3 salt 3 ro</p>
-<p>3 Gruel Barley 2 Wheat 3 Water 2 0<br>4 Com Porridge Com 3 Milk 4 Water 3 0 EXP +31<br>5 Vegetable Soup Milk 2 Clery 2 Carrot 2 0</p>
-<p>[ Onion Soup Black Pepper 2 Onion 3 | FreshCheese = 2 ro EXP</p>
-<p>Strawberry Milk Milk 3 Strawberry 2 Sugar 2 e (P +600</p>
-<p>8 Chocolate Milk Milk 2 Chocolate 3 Sugar 2</p>
-<p>9 Fried Shrimp Egg 3 Wheat 3 Shrimp 4</p>
-<p>10 Fried Rice with Shrimp Rice 4 Egg 4 Shrimp 4 { 0<br>“ Chicken Soup Noodle Wheat 4 | ChickenWing = 5 Salt 4 { 0<br>12 Ham Sandwich Wheat 3 Cheese 4 Meat 3 0</p>
+<h2><span id="flower-fairy-upgrade-dish">Flower Fairy Upgrade Dish</span><a href="#flower-fairy-upgrade-dish" class="header-anchor">#</a></h2><table>
+<thead>
+<tr>
+<th align="left">Food Name</th>
+<th align="center">Ingredients</th>
+<th align="left">Fairy EXP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Boiled Corn</td>
+<td align="center">Corn 1 Salt 1 Water 1</td>
+<td align="left">+100</td>
+</tr>
+<tr>
+<td align="left">Roasted Potato</td>
+<td align="center">Potato 3 salt 3</td>
+<td align="left">+150</td>
+</tr>
+<tr>
+<td align="left">Gruel Barley</td>
+<td align="center">Barley 2 Wheat 3 Water 2</td>
+<td align="left">+230</td>
+</tr>
+<tr>
+<td align="left">Corn Porridge</td>
+<td align="center">Corn 3 Milk 4 Water 3</td>
+<td align="left">+310</td>
+</tr>
+<tr>
+<td align="left">Vegetable Soup</td>
+<td align="center">Milk 2 Clery 2 Carrot 2</td>
+<td align="left">+400</td>
+</tr>
+<tr>
+<td align="left">Onion Soup</td>
+<td align="center">Black Pepper 2 Onion 3 Fresh Cheese 2</td>
+<td align="left">+480</td>
+</tr>
+<tr>
+<td align="left">Strawberry Milk</td>
+<td align="center">Milk 3 Strawberry 2 Sugar 2</td>
+<td align="left">+600</td>
+</tr>
+<tr>
+<td align="left">Chocolate Milk</td>
+<td align="center">Milk 2 Chocolate 3 Sugar 2</td>
+<td align="left">+850</td>
+</tr>
+<tr>
+<td align="left">Fried Shrimp</td>
+<td align="center">Egg 3 Wheat 3 Shrimp 4</td>
+<td align="left">+1150</td>
+</tr>
+<tr>
+<td align="left">Fried Rice with Shrimp</td>
+<td align="center">Rice 4 Egg 4 Shrimp 4</td>
+<td align="left">+1450</td>
+</tr>
+<tr>
+<td align="left">Chicken Soup Noodle</td>
+<td align="center">Wheat 4 Chicken Wing 5 Salt 4</td>
+<td align="left">+1800</td>
+</tr>
+<tr>
+<td align="left">Ham Sandwich</td>
+<td align="center">Wheat 3 Cheese 4 Meat 3</td>
+<td align="left">+2200</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -999,7 +1060,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      9/10/2021, 5:14:07 PM
+      9/10/2021, 5:19:48 PM
     </small>
 
   </div>

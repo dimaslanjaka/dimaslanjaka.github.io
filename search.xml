@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test Helper</title>
-    <url>/Test/Helper.html</url>
-    <content><![CDATA[<!-- include /source/_posts/Tes/Test/Helper/readFile.md -->
-
+    <title>Test Include</title>
+    <url>/Test/Include.html</url>
+    <content><![CDATA[<p>first line<br>2nd line<br>3rd line</p>
 ]]></content>
       <categories>
         <category>Test</category>
@@ -14,9 +13,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Test Include</title>
-    <url>/Test/Include.html</url>
-    <content><![CDATA[<p>first line<br>2nd line<br>3rd line</p>
+    <title>Test Helper</title>
+    <url>/Test/Helper.html</url>
+    <content><![CDATA[<!-- include /source/_posts/Tes/Test/Helper/readFile.md -->
+
 ]]></content>
       <categories>
         <category>Test</category>
@@ -199,7 +199,7 @@
 <!-- toc -->
 
 <ul>
-<li><a href="#ingredients-prices">Ingredients Prices</a></li>
+<li><a href="#ingredients-water-essence-prices">Ingredients Water Essence Prices</a></li>
 <li><a href="#char-buff-dish">Char Buff Dish</a></li>
 </ul>
 <!-- tocstop -->
@@ -208,15 +208,15 @@
   
 <!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
 <p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png" alt="Recipes" title="" ></img></p>
-<h2><span id="ingredients-prices">Ingredients Prices</span><a href="#ingredients-prices" class="header-anchor">#</a></h2><table>
+<h2><span id="ingredients-water-essence-prices">Ingredients Water Essence Prices</span><a href="#ingredients-water-essence-prices" class="header-anchor">#</a></h2><table>
 <thead>
 <tr>
 <th align="left">ingredients</th>
-<th align="center">Water Essence Price</th>
+<th align="center">Price</th>
 <th align="left">ingredients</th>
-<th align="center">Water Essence Price</th>
+<th align="center">Price</th>
 <th align="left">ingredients</th>
-<th align="center">Water Essence Price</th>
+<th align="center">Price</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -321,7 +321,7 @@
 <tr>
 <td align="left">Barley Tea</td>
 <td align="center">Barley 3 Salt 3 Water 3</td>
-<td align="left">Crush/Roll +300</td>
+<td align="left">Crush +300</td>
 </tr>
 <tr>
 <td align="left">Corn Flake</td>
@@ -336,7 +336,7 @@
 <tr>
 <td align="left">Popcorn</td>
 <td align="center">Corn 6 Milk 6 Butter 6</td>
-<td align="left">Pierce/Penet +300</td>
+<td align="left">Pierce +300</td>
 </tr>
 <tr>
 <td align="left">Mixed Fried Rice</td>
@@ -361,42 +361,42 @@
 <tr>
 <td align="left">Tomato Macaroni</td>
 <td align="center">Wheat 4 Onion 4 Tomato 4</td>
-<td align="left"></td>
+<td align="left">Resistance +600</td>
 </tr>
 <tr>
 <td align="left">Chocolate Cream Cake</td>
 <td align="center">Wheat 6 Egg 6 Chocolate 6</td>
-<td align="left"></td>
+<td align="left">Protect +600</td>
 </tr>
 <tr>
 <td align="left">Steamed Dumplings</td>
 <td align="center">Wheat 4 Meat 4 Salt 4</td>
-<td align="left"></td>
+<td align="left">Pierce +600</td>
 </tr>
 <tr>
 <td align="left">Steamed Pork Ribs with Potatoes</td>
 <td align="center">Potato 5 Meat 5 Salt 5</td>
-<td align="left"></td>
+<td align="left">Attack +300</td>
 </tr>
 <tr>
 <td align="left">Fried Pork Chop</td>
 <td align="center">Egg 5 Wheat 5 Meat 5</td>
-<td align="left"></td>
+<td align="left">Crit +1000</td>
 </tr>
 <tr>
 <td align="left">Matcha Chicken Wing</td>
 <td align="center">Chicken Wing 2 Thyme 2 Salt 2</td>
-<td align="left"></td>
+<td align="left">Block +1000</td>
 </tr>
 <tr>
 <td align="left">Stewed Chicken with Wine</td>
 <td align="center">Chicken Wing 2 Thyme 2 Red Wine 2</td>
-<td align="left"></td>
+<td align="left">Crush +1000</td>
 </tr>
 <tr>
 <td align="left">T-Bone Steak</td>
 <td align="center">Meat Chunk 3 Thyme 3 salt 3</td>
-<td align="left"></td>
+<td align="left">Resistance +1000</td>
 </tr>
 </tbody></table>
 <p>| Flower Fairy Upgrade Dish | Ingredients | HeroEXP |</p>
@@ -999,7 +999,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      9/10/2021, 5:10:29 PM
+      9/10/2021, 5:14:07 PM
     </small>
 
   </div>

@@ -40,7 +40,7 @@
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/10/2021, 5:25:37 PM
+      9/10/2021, 9:03:16 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -415,34 +415,6 @@ calcium is a intelligent element (O)
     Add new quiz https://bit.ly/TLONQUIZADD&lt;br&gt;
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   &lt;/blockquote&gt;
-
-  &lt;div id=&#34;incoming-terms&#34; itemscope itemtype=&#34;https://schema.org/ItemList&#34;&gt;
-    &lt;h2 itemprop=&#34;name&#34;&gt;&lt;span id=&#34;quiz-the-legend-of-neverland&#34;&gt;Quiz the legend of neverland&lt;/span&gt;&lt;a href=&#34;#quiz-the-legend-of-neverland&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;br&gt;
-    &lt;link itemprop=&#34;itemListOrder&#34; href=&#34;https://schema.org/ItemListOrderDescending&#34;&gt;
-    &lt;ul&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;quiz the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;jawaban quiz the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;quiz grid the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;quiz clue the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;quiz the legend of neverland updated&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;kuis the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;jawaban kuis the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;scenic quiz the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;scenic quiz event the legend of neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;quiz tlon&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;tlon quiz&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;scenic quiz&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;scenic quiz tlon&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;tlon scenic quiz&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;The Legend of Neverland Scenic Quiz&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;Legend of Neverland Scenic Quiz Archives&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;Scenic Quiz Event Answers - The Legend of Neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;[The Legend of Neverland] Scenic Quiz Event&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;Questions and Answers for Legend of Neverland&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;The Legend of Neverland Guide and Tips for new players&lt;/li&gt;
-      &lt;li itemprop=&#34;itemListElement&#34;&gt;The Legend of Neverland: Guide and Tips for quiz event&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;style&gt;[id*=&#34;questions-filter&#34;] li:not([data-id]) {
@@ -473,23 +445,6 @@ input[type=&#34;text&#34;] {
 input[type=&#34;text&#34;]:focus {
   border-color: dodgerBlue;
   box-shadow: 0 0 8px 0 dodgerBlue;
-}
-
-#incoming-terms * {
-  font-size: 10px;
-  margin: 0;
-}
-#incoming-terms li:after {
-  content: &#34; | &#34;;
-}
-#incoming-terms li:last-child:after {
-  content: &#34;&#34;;
-}
-#incoming-terms li {
-  display: inline;
-}
-#incoming-terms ul {
-  list-style-type: none;
 }
 &lt;/style&gt;
 &lt;script&gt;console.clear();

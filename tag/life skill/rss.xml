@@ -397,6 +397,7 @@ for (i = 0; i &lt; table.length; i++) {
  * @param {HTMLTableElement} table
  */
 function CalculateTR(table) {
+  console.log(`Start Calculating Table ${table.id}`);
   let tr = table.getElementsByTagName(&#34;tr&#34;);
   if (tr.length &gt; 0)
     for (i = 0; i &lt; tr.length; i++) {
@@ -404,7 +405,8 @@ function CalculateTR(table) {
         str;
       if (typeof td[3] != &#34;undefined&#34;) {
         str = td[3].innerText;
-        if (str.includes(&#34;+&#34;)) {
+        if (/[+\(\)]/gm.test(str)) {
+          console.log(str);
           str = str.trim().replaceAll(/x/gs, &#34;*&#34;);
           td[3].innerText = eval(str);
           console.log(str);

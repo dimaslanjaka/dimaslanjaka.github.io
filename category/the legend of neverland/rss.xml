@@ -328,7 +328,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/10/2021, 9:08:59 PM
+      9/10/2021, 10:13:38 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -1247,7 +1247,9 @@ loadJScript(&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.
 &lt;td&gt;(300x3)+(2000x4)+(2000x3)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-  &lt;script&gt;let table = document.getElementsByTagName(&#34;table&#34;);
+  &lt;script&gt;console.clear();
+
+let table = document.getElementsByTagName(&#34;table&#34;);
 for (i = 0; i &lt; table.length; i++) {
   CalculateTR(table[i]);
 }
@@ -1267,6 +1269,7 @@ function CalculateTR(table) {
         if (str.includes(&#34;+&#34;)) {
           str = str.trim().replaceAll(/x/gs, &#34;*&#34;);
           td[3].innerText = eval(str);
+          console.log(str);
         }
       }
     }

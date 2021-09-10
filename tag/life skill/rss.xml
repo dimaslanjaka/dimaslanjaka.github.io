@@ -385,7 +385,9 @@
 &lt;td&gt;(300x3)+(2000x4)+(2000x3)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-  &lt;script&gt;let table = document.getElementsByTagName(&#34;table&#34;);
+  &lt;script&gt;console.clear();
+
+let table = document.getElementsByTagName(&#34;table&#34;);
 for (i = 0; i &lt; table.length; i++) {
   CalculateTR(table[i]);
 }
@@ -405,6 +407,7 @@ function CalculateTR(table) {
         if (str.includes(&#34;+&#34;)) {
           str = str.trim().replaceAll(/x/gs, &#34;*&#34;);
           td[3].innerText = eval(str);
+          console.log(str);
         }
       }
     }

@@ -502,7 +502,9 @@
 <td>(300x3)+(2000x4)+(2000x3)</td>
 </tr>
 </tbody></table>
-  <script>let table = document.getElementsByTagName("table");
+  <script>console.clear();
+
+let table = document.getElementsByTagName("table");
 for (i = 0; i < table.length; i++) {
   CalculateTR(table[i]);
 }
@@ -522,6 +524,7 @@ function CalculateTR(table) {
         if (str.includes("+")) {
           str = str.trim().replaceAll(/x/gs, "*");
           td[3].innerText = eval(str);
+          console.log(str);
         }
       }
     }
@@ -1118,7 +1121,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      9/10/2021, 9:08:59 PM
+      9/10/2021, 10:13:38 PM
     </small>
 
   </div>
@@ -1861,7 +1864,7 @@ loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
   <entry>
     <title></title>
     <url>/assets/js/recipes.js</url>
-    <content><![CDATA[let table=document.getElementsByTagName("table");for(i=0;i<table.length;i++)calculatetr(table[i]);function calculatetr(table){let tr="table.getElementsByTagName("tr");if(tr.length">0)for(i=0;i</table.length;i++)calculatetr(table[i]);function>]]></content>
+    <content><![CDATA[console.clear();let table=document.getElementsByTagName("table");for(i=0;i<table.length;i++)calculatetr(table[i]);function calculatetr(table){let tr="table.getElementsByTagName("tr");if(tr.length">0)for(i=0;i</table.length;i++)calculatetr(table[i]);function>]]></content>
   </entry>
   <entry>
     <title></title>

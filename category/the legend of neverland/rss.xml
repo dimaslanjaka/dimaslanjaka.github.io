@@ -328,7 +328,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/11/2021, 4:46:09 AM
+      9/11/2021, 5:53:27 AM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -1253,7 +1253,7 @@ loadJScript(&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.
     &lt;/tbody&gt;
 &lt;/table&gt;
 
-  &lt;script&gt;console.clear();
+&lt;script&gt;console.clear();
 
 CalculateTR(document.getElementById(&#34;char-dish&#34;));
 CalculateTR(document.getElementById(&#34;fairy-dish&#34;));
@@ -1282,6 +1282,44 @@ function CalculateTR(table) {
       }
     }
 }
+&lt;/script&gt;
+
+&lt;div style=&#34;margin:10px&#34;&gt;
+  &lt;b&gt;Calculate x100 foods&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Boiled Corn x100 total price &lt;b i=&#34;bcprice&#34;&gt;-&lt;/b&gt; total exp &lt;b i=&#34;bcexp&#34;&gt;-&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;Ham x100 total price &lt;b i=&#34;hamprice&#34;&gt;-&lt;/b&gt; total exp &lt;b i=&#34;hamexp&#34;&gt;-&lt;/b&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;em&gt;if the total price of ham is calculated into boiled corn food&lt;/em&gt; &lt;b i=&#34;hamprice&#34;&gt;&lt;/b&gt; &amp;divide; &lt;b i=&#34;bcprice&#34;&gt;&lt;/b&gt; &amp;#61; &lt;b i=&#34;ham-bc&#34;&gt;&lt;/b&gt; &amp;times &lt;b i=&#34;bcexp&#34;&gt;-&lt;/b&gt; (x100 Boiled Corn) &amp;#61; &lt;b i=&#34;bctotal&#34;&gt;&lt;/b&gt; total exp
+&lt;/div&gt;
+
+&lt;script&gt;
+  console.clear();
+  /* Ham */
+  writeTo(&#34;[i=&#39;hamprice&#39;]&#34;, 14900 * 100, &#34;brown&#34;);
+  writeTo(&#34;[i=&#39;hamexp&#39;]&#34;, 2200 * 100, &#34;brown&#34;);
+  /* Boiled Corn */
+  writeTo(&#34;[i=&#39;bcprice&#39;]&#34;, 350 * 100, &#34;yellow&#34;);
+  writeTo(&#34;[i=&#39;bcexp&#39;]&#34;, 100 * 100, &#34;yellow&#34;);
+  writeTo(&#34;[i=&#39;ham-bc&#39;]&#34;, (14900 * 100) / (350 * 100), &#34;blue&#34;, function(total) {
+    return total.toFixed(2);
+  });
+  writeTo(&#39;[i=&#34;bctotal&#34;]&#39;, ((14900 * 100) / (350 * 100)) * (100 * 100));
+
+  function writeTo(priceid, totalprice, color, callback) {
+    if (typeof callback == &#34;function&#34;) {
+      totalprice = callback(totalprice);
+    } else if (typeof color == &#34;function&#34;) {
+      totalprice = color(totalprice);
+    }
+    if (!color || typeof color == &#34;function&#34;) color = &#34;red&#34;;
+    let x = document.querySelectorAll(priceid);
+    for (i = 0; i &lt; x.length; i++) {
+      x[i].style.backgroundColor = color;
+      if (color != &#34;yellow&#34;) x[i].style.color = &#34;white&#34;;
+      x[i].innerHTML = totalprice.toLocaleString(&#34;en-US&#34;);
+    }
+  }
 &lt;/script&gt;
  ]]></description>
         </item>

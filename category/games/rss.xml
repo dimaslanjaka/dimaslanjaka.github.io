@@ -526,7 +526,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/14/2021, 4:41:11 PM
+      9/14/2021, 5:59:39 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -1145,6 +1145,7 @@ loadJScript(&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.
 &lt;li&gt;&lt;a href=&#34;#ingredients-water-essence-prices&#34;&gt;Ingredients Water Essence Prices&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#char-buff-dish&#34;&gt;Char Buff Dish&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#flower-fairy-upgrade-dish&#34;&gt;Flower Fairy Upgrade Dish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#compare-100x-boiled-corns&#34;&gt;Compare 100x boiled corns&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- tocstop --&gt;
 
@@ -1451,7 +1452,16 @@ loadJScript(&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.
     &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;script&gt;console.clear();
+&lt;h2&gt;&lt;span id=&#34;compare-100x-boiled-corns&#34;&gt;Compare 100x boiled corns&lt;/span&gt;&lt;a href=&#34;#compare-100x-boiled-corns&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&lt;div style=&#34;margin:10px&#34;&gt;
+  &lt;b&gt;Calculate x100 foods&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Boiled Corn x100 total price &lt;b i=&#34;bcprice&#34;&gt;-&lt;/b&gt; total exp &lt;b i=&#34;bcexp&#34;&gt;-&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;Ham x100 total price &lt;b i=&#34;hamprice&#34;&gt;-&lt;/b&gt; total exp &lt;b i=&#34;hamexp&#34;&gt;-&lt;/b&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;em&gt;if the total price of ham is calculated into boiled corn food&lt;/em&gt; &lt;b i=&#34;hamprice&#34;&gt;&lt;/b&gt; &amp;divide; &lt;b i=&#34;bcprice&#34;&gt;&lt;/b&gt; &amp;#61; &lt;b i=&#34;ham-bc&#34;&gt;&lt;/b&gt; &amp;times &lt;b i=&#34;bcexp&#34;&gt;-&lt;/b&gt; (x100 Boiled Corn) &amp;#61; &lt;b i=&#34;bctotal&#34;&gt;&lt;/b&gt; total exp
+&lt;/div&gt;
+
+  &lt;script&gt;console.clear();
 
 CalculateTR(document.getElementById(&#34;char-dish&#34;));
 CalculateTR(document.getElementById(&#34;fairy-dish&#34;));
@@ -1480,20 +1490,9 @@ function CalculateTR(table) {
       }
     }
 }
-&lt;/script&gt;
 
-&lt;div style=&#34;margin:10px&#34;&gt;
-  &lt;b&gt;Calculate x100 foods&lt;/b&gt;
-  &lt;ul&gt;
-    &lt;li&gt;Boiled Corn x100 total price &lt;b i=&#34;bcprice&#34;&gt;-&lt;/b&gt; total exp &lt;b i=&#34;bcexp&#34;&gt;-&lt;/b&gt;&lt;/li&gt;
-    &lt;li&gt;Ham x100 total price &lt;b i=&#34;hamprice&#34;&gt;-&lt;/b&gt; total exp &lt;b i=&#34;hamexp&#34;&gt;-&lt;/b&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;em&gt;if the total price of ham is calculated into boiled corn food&lt;/em&gt; &lt;b i=&#34;hamprice&#34;&gt;&lt;/b&gt; &amp;divide; &lt;b i=&#34;bcprice&#34;&gt;&lt;/b&gt; &amp;#61; &lt;b i=&#34;ham-bc&#34;&gt;&lt;/b&gt; &amp;times &lt;b i=&#34;bcexp&#34;&gt;-&lt;/b&gt; (x100 Boiled Corn) &amp;#61; &lt;b i=&#34;bctotal&#34;&gt;&lt;/b&gt; total exp
-&lt;/div&gt;
-
-&lt;script&gt;
-  console.clear();
-  /* Ham */
+// Compare 100x boiled corns 
+/* Ham */
   writeTo(&#34;[i=&#39;hamprice&#39;]&#34;, 14900 * 100, &#34;brown&#34;);
   writeTo(&#34;[i=&#39;hamexp&#39;]&#34;, 2200 * 100, &#34;brown&#34;);
   /* Boiled Corn */
@@ -1502,7 +1501,9 @@ function CalculateTR(table) {
   writeTo(&#34;[i=&#39;ham-bc&#39;]&#34;, (14900 * 100) / (350 * 100), &#34;blue&#34;, function(total) {
     return total.toFixed(2);
   });
-  writeTo(&#39;[i=&#34;bctotal&#34;]&#39;, ((14900 * 100) / (350 * 100)) * (100 * 100));
+  writeTo(&#39;[i=&#34;bctotal&#34;]&#39;, ((14900 * 100) / (350 * 100)) * (100 * 100), function(total) {
+    return total.toFixed(0);
+  });
 
   function writeTo(priceid, totalprice, color, callback) {
     if (typeof callback == &#34;function&#34;) {

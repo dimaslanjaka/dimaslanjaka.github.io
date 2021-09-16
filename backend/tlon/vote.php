@@ -85,12 +85,13 @@ function getIpAddress()
     <div class="row">
       <div class="col-md-12">
         <div class="jumbotron m-5">
-          <div class="text-center mb-2">
+          <div class="text-center">Vote closed</div>
+          <div class="text-center mb-2 d-none">
             please vote for the guild name for INDO1945 which is good for all players in s48 <br>
             User Hash: <?= md5(getIpAddress()) ?> <br>
             Choose One Below.
           </div>
-          <form action="?vote" method="post">
+          <form action="?vote" method="post" class="d-none">
             <input type="hidden" name="vote" value="i">
 
             <div class="row">
@@ -107,7 +108,7 @@ function getIpAddress()
 
               <div class="col-md-8">
                 <div>
-                  <button type="submit" class="btn-warning btn btn-block">Submit Vote</button>
+                  <button type="submit" class="btn-warning btn btn-block" disabled>Submit Vote</button>
                 </div>
               </div>
             </div>

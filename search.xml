@@ -98,6 +98,22 @@
     <url>/The%20Legend%20Of%20Neverland/Fishing.html</url>
     <content><![CDATA[<p>Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the <code>cooking shop</code>. You can see the recipe at <a href="/The%20Legend%20Of%20Neverland/Recipes.html">Cooking Recipes</a>.<br>You can cook buffs for your character or make dishes to increase the level of <code>Fairies</code> you have.<br>This time you can auto-fish using <code>bluestacks</code> and <code>macros</code>.</p>
 <p>  <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png" alt="Fishing the legend of neverland" title="" ></img></p>
+<h2 id="Calculating-the-fishing-actions"><a href="#Calculating-the-fishing-actions" class="headerlink" title="Calculating the fishing actions"></a>Calculating the fishing actions</h2><ul>
+  <li><span>1 bottle = 300 staminas</span> &divide; 5/action &rarr; <span>
+      <script>
+        document.write(300 / 5);
+      </script> actions
+    </span>.</li>
+  <li><span>1 fishing = &plusmn;7-8 secs (we take 7 secs)</span></li>
+  <li><span>7 x 60 actions &erarr; <script>
+        document.write(7 * 60)
+      </script> seconds &divide; 60 secs (1 min)</span> = <span>
+      <script>
+        document.write(420 / 60)
+      </script> minutes
+    </span> <span>to finish 1 stamina bottle</span></li>
+</ul>
+  
 <h2 id="Auto-fishing-script"><a href="#Auto-fishing-script" class="headerlink" title="Auto fishing script"></a>Auto fishing script</h2><p>  <a href="/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20&%20Stamina.json">Download Macros Auto Fishing</a></p>
 ]]></content>
       <categories>
@@ -1219,7 +1235,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      9/19/2021, 1:56:52 AM
+      9/19/2021, 2:10:05 AM
     </small>
 
   </div>

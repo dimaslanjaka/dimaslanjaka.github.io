@@ -26,6 +26,22 @@
             <pubDate>Sat, 18 Sep 2021 17:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the &lt;code&gt;cooking shop&lt;/code&gt;. You can see the recipe at &lt;a href=&#34;/The%20Legend%20Of%20Neverland/Recipes.html&#34;&gt;Cooking Recipes&lt;/a&gt;.&lt;br&gt;You can cook buffs for your character or make dishes to increase the level of &lt;code&gt;Fairies&lt;/code&gt; you have.&lt;br&gt;This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;code&gt;macros&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;  &lt;img on=&#34;tap:lightbox1&#34; role=&#34;button&#34; tabindex=&#34;0&#34; layout=&#34;responsive&#34; width=&#34;&#34; height=&#34;&#34; src=&#34;https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png&#34; alt=&#34;Fishing the legend of neverland&#34; title=&#34;&#34; &gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Calculating-the-fishing-actions&#34;&gt;&lt;a href=&#34;#Calculating-the-fishing-actions&#34; class=&#34;headerlink&#34; title=&#34;Calculating the fishing actions&#34;&gt;&lt;/a&gt;Calculating the fishing actions&lt;/h2&gt;&lt;ul&gt;
+  &lt;li&gt;&lt;span&gt;1 bottle = 300 staminas&lt;/span&gt; &amp;divide; 5/action &amp;rarr; &lt;span&gt;
+      &lt;script&gt;
+        document.write(300 / 5);
+      &lt;/script&gt; actions
+    &lt;/span&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;1 fishing = &amp;plusmn;7-8 secs (we take 7 secs)&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;7 x 60 actions &amp;erarr; &lt;script&gt;
+        document.write(7 * 60)
+      &lt;/script&gt; seconds &amp;divide; 60 secs (1 min)&lt;/span&gt; = &lt;span&gt;
+      &lt;script&gt;
+        document.write(420 / 60)
+      &lt;/script&gt; minutes
+    &lt;/span&gt; &lt;span&gt;to finish 1 stamina bottle&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+  
 &lt;h2 id=&#34;Auto-fishing-script&#34;&gt;&lt;a href=&#34;#Auto-fishing-script&#34; class=&#34;headerlink&#34; title=&#34;Auto fishing script&#34;&gt;&lt;/a&gt;Auto fishing script&lt;/h2&gt;&lt;p&gt;  &lt;a href=&#34;/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20&amp;%20Stamina.json&#34;&gt;Download Macros Auto Fishing&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -358,7 +374,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/19/2021, 1:56:52 AM
+      9/19/2021, 2:10:05 AM
     &lt;/small&gt;
 
   &lt;/div&gt;

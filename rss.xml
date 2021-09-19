@@ -573,7 +573,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/19/2021, 8:22:34 AM
+      9/19/2021, 4:56:01 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -981,27 +981,30 @@ input[type=&#34;text&#34;]:focus {
 }
 &lt;/style&gt;
 &lt;script&gt;console.clear();
-function rangeAlphabetic(start, stop) {
-  var result = [];
-  for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx &lt;= end; ++idx) {
-    result.push(String.fromCharCode(idx));
+
+if (location.host == &#34;cdpn.io&#34;) {
+  function rangeAlphabetic(start, stop) {
+    var result = [];
+    for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx &lt;= end; ++idx) {
+      result.push(String.fromCharCode(idx));
+    }
+    return result;
   }
-  return result;
+
+  let aZ = rangeAlphabetic(&#34;a&#34;, &#34;z&#34;)
+    .concat(rangeAlphabetic(&#34;A&#34;, &#34;Z&#34;))
+    .filter(function (el) {
+      return el != null;
+    }); // a-zA-Z array
+
+  // automated test
+  setTimeout(function () {
+    let inputSearch = document.getElementById(&#34;search-questions&#34;);
+    var keyword = aZ[Math.floor(Math.random() * aZ.length)];
+    inputSearch.value = keyword;
+    inputSearch.dispatchEvent(new Event(&#34;keyup&#34;));
+  }, 3000);
 }
-
-let aZ = rangeAlphabetic(&#34;a&#34;, &#34;z&#34;)
-  .concat(rangeAlphabetic(&#34;A&#34;, &#34;Z&#34;))
-  .filter(function (el) {
-    return el != null;
-  }); // a-zA-Z array
-
-// automated test
-setTimeout(function () {
-  let inputSearch = document.getElementById(&#34;search-questions&#34;);
-  var keyword = aZ[Math.floor(Math.random() * aZ.length)];
-  inputSearch.value = keyword;
-  inputSearch.dispatchEvent(new Event(&#34;keyup&#34;));
-}, 3000);
 
 /*** MAIN SCRIPT START ***/
 
@@ -1064,10 +1067,6 @@ function jQueryMethod() {
   let searchLi = function (filter) {
     let listQuiz = jQuery(&#34;ul[id*=&#39;questions&#39;] li&#34;);
     listQuiz.each(function (index) {
-      let searchWild =
-        jQuery(this)
-          .text()
-          .search(new RegExp(escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
       let searchFirst =
         jQuery(this)
           .text()
@@ -1079,6 +1078,11 @@ function jQueryMethod() {
         // move to first position
         jQuery(this).prependTo(jQuery(&#34;ul[id*=&#39;questions&#39;]&#34;));
       }
+
+      let searchWild =
+        jQuery(this)
+          .text()
+          .search(new RegExp(escapeRegExp(filter), &#34;gmi&#34;)) &lt; 0;
       if (searchWild) {
         jQuery(this).hide();
       } else {
@@ -1114,8 +1118,10 @@ function jQueryMethod() {
     }
   };
 
-  // get new question sources
+  // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
+    let url_parse = new URL(quizUrl);
+
     //console.log(quizUrl);
     $.get(quizUrl).then(function (data) {
       if (data) {
@@ -1175,6 +1181,29 @@ function jQueryMethod() {
 }
 
 loadJScript(&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&#34;, jQueryMethod);
+
+/**
+ * How URL native work {@link https://dmitripavlutin.com/parse-url-javascript/}
+ * @see {@link https://stackoverflow.com/questions/8486099/how-do-i-parse-a-url-query-parameters-in-javascript}
+ * @param {string} url
+ * @returns
+ */
+function parse_query_url(url) {
+  if (!url) throw &#34;Please provide url&#34;;
+  var query = url.substr(1); // skip first ?
+  var result = {};
+  query.split(&#34;&amp;&#34;).forEach(function (part) {
+    var item = part.split(&#34;=&#34;);
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+
+function parse_url(url) {
+  let parse = new URL(url);
+  parse.search = parse_query_url(parse.search);
+  return parse;
+}
 &lt;/script&gt;
  ]]></description>
         </item>

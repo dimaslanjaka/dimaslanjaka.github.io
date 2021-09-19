@@ -37,7 +37,7 @@
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      9/19/2021, 6:06:01 PM
+      9/19/2021, 8:07:05 PM
     &lt;/small&gt;
 
   &lt;/div&gt;
@@ -585,7 +585,7 @@ function jQueryMethod() {
   // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
     let url_parse = new URL(quizUrl);
-    url_parse.search = &#34;?date=&#34; + new Date();
+    url_parse.search = &#34;?uid=#uniqid()&#34;;
     //console.log(url_parse.toString());
 
     //console.log(quizUrl);

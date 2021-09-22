@@ -1,10 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>What is RegExp</title>
+    <url>/RegExp/RegExp.html</url>
+    <content><![CDATA[<!--https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285-->
+<h2 id="what-is-regular-expression"><a class="markdownIt-Anchor" href="#what-is-regular-expression"></a> What Is Regular Expression ?</h2>
+<p>Regular Expression (RegExp) a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text. <a href="https://en.wikipedia.org/wiki/Regular_expression">Read More</a></p>
+<h2 id="what-can-a-regular-expression-be-used-for"><a class="markdownIt-Anchor" href="#what-can-a-regular-expression-be-used-for"></a> What can a regular expression be used for ?</h2>
+<p>A regular expression can be a single character, or a more complicated pattern. Regular expressions can be used to perform all types of text search and text replace operations. /w3schools/i is a regular expression.</p>
+<h2 id="which-is-the-best-example-of-a-regex"><a class="markdownIt-Anchor" href="#which-is-the-best-example-of-a-regex"></a> Which is the best example of a regex ?</h2>
+<ul>
+<li>
+<p><strong>Anchors — ^ and $</strong></p>
+<table>
+<thead>
+<tr>
+<th>RegExp</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>^</b>Hello</td>
+<td>matches any string that <em>starts with <strong>Hello</strong></em> -&gt;  <a href="https://regex101.com/r/cO8lqs/2">Try it!</a></td>
+</tr>
+<tr>
+<td>world<b>$</b></td>
+<td>matches a string that <em>ends with <strong>world</strong></em></td>
+</tr>
+<tr>
+<td><b>^</b>Hello world<b>$</b></td>
+<td><em>exact string match</em> (starts and ends with <strong>Hello world</strong>)</td>
+</tr>
+<tr>
+<td>Hello</td>
+<td><em>matches any string</em> that has the text <strong>Hello</strong> in it</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Quantifiers — * + ? and {}</strong></p>
+<table>
+<thead>
+<tr>
+<th>RegExp</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abc*</td>
+<td>matches a string that has ab followed by zero or more c -&gt;  <a href="https://regex101.com/r/cO8lqs/1">Try it!</a></td>
+</tr>
+<tr>
+<td>abc+</td>
+<td>matches a string that has ab followed by one or more</td>
+</tr>
+<tr>
+<td>abc<b>?</b></td>
+<td>matches a string that has ab followed by zero or one</td>
+</tr>
+<tr>
+<td>abc<b>{2}</b></td>
+<td>matches a string that has ab followed by 2</td>
+</tr>
+<tr>
+<td>abc<b>{2,}</b></td>
+<td>matches a string that has ab followed by 2 or more</td>
+</tr>
+<tr>
+<td>abc<b>{2,5}</b></td>
+<td>matches a string that has ab followed by 2 up to 5</td>
+</tr>
+<tr>
+<td>ca<b>(bc)*</b></td>
+<td>matches a string that has a followed by zero or more copies of the sequence</td>
+</tr>
+<tr>
+<td>bca<b>(bc){2,5}</b></td>
+<td>matches a string that has a followed by 2 up to 5 copies of the sequence bc</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>OR operator — | or []</strong></p>
+<table>
+<thead>
+<tr>
+<th>RegExp</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a(b|c)</td>
+<td>matches a string that has <strong><em>a</em> followed by <em>b</em> or <em>c</em></strong> (and captures <strong><em>b</em> or <em>c</em></strong>) -&gt; <a href="https://regex101.com/r/cO8lqs/3">Try it!</a></td>
+</tr>
+<tr>
+<td>a[bc]</td>
+<td>same as previous, <strong>but without capturing <em>b</em> or <em>c</em></strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Character classes — \d \w \s and .</strong></p>
+<table>
+<thead>
+<tr>
+<th>RegExp</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Regular Expression</category>
+      </categories>
+      <tags>
+        <tag>RegExp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Badword</title>
+    <url>/RegExp/badword.html</url>
+    <content><![CDATA[<!--toc-->
+<h2 id="main-expression"><a class="markdownIt-Anchor" href="#main-expression"></a> Main Expression</h2>
+<figure class="highlight plaintext"><figcaption><span>&#123;#regexp-main&#125;</span></figcaption><table><tr><td class="code"><pre><span class="line">^((?!badword).)*$</span><br></pre></td></tr></table></figure>
+<!-- script /RegExp/RegExp/badwords.js -->]]></content>
+      <categories>
+        <category>Regular Expression</category>
+      </categories>
+      <tags>
+        <tag>RegExp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test Helper</title>
     <url>/Test/Helper.html</url>
     <content><![CDATA[<!-- include /source/_posts/Tes/Test/Helper/readFile.md -->
-
 ]]></content>
       <categories>
         <category>Test</category>
@@ -16,7 +155,9 @@
   <entry>
     <title>Test Include</title>
     <url>/Test/Include.html</url>
-    <content><![CDATA[<p>first line<br>2nd line<br>3rd line</p>
+    <content><![CDATA[<p>first line<br />
+2nd line<br />
+3rd line</p>
 ]]></content>
       <categories>
         <category>Test</category>
@@ -30,7 +171,6 @@
     <url>/Test/Inline%20Image.html</url>
     <content><![CDATA[<!--suppress HtmlUnknownTarget -->
 <link rel="stylesheet" href="/scss/inline-image.css" media="all" />
-
 <div class="container-box">
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428" alt="x" title="" ></img>
   <div class="container-box-text">
@@ -50,18 +190,22 @@
   <entry>
     <title>Bluestacks Game Control The Legend Of Neverland</title>
     <url>/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html</url>
-    <content><![CDATA[<h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><ul>
+    <content><![CDATA[<h3 id="requirements"><a class="markdownIt-Anchor" href="#requirements"></a> Requirements</h3>
+<ul>
 <li>Bluestacks (4 or 5 supported) ( <a href="https://www.bluestacks.com/bluestacks-5.html">Download Bluestacks</a> )</li>
 </ul>
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
-<li>Switch Fairies<ul>
+<h3 id="features"><a class="markdownIt-Anchor" href="#features"></a> Features</h3>
+<ul>
+<li>Switch Fairies
+<ul>
 <li>Team 1 (CTRL+Z)</li>
 <li>Team 2 (CTRL+X)</li>
 <li>Team 3 (CTRL+C)</li>
 <li>Team 4 (CTRL+V)</li>
 </ul>
 </li>
-<li>Switch Jobs/Classes<ul>
+<li>Switch Jobs/Classes
+<ul>
 <li>Job 1 (CTRL+A)</li>
 <li>Job 2 (CTRL+S)</li>
 <li>Job 3 (CTRL+D)</li>
@@ -72,12 +216,13 @@
 <li>2 Skill Fairies (E &amp; Q)</li>
 <li>And More</li>
 </ul>
-<h5 id="Switch-Fairies-Ability-Preview"><a href="#Switch-Fairies-Ability-Preview" class="headerlink" title="Switch Fairies Ability Preview"></a>Switch Fairies Ability Preview</h5><div class="video-container"><iframe src="https://www.youtube.com/embed/9ZEqUD5piB4" frameborder="0" loading="lazy" allowfullscreen></iframe></div> 
+<h5 id="switch-fairies-ability-preview"><a class="markdownIt-Anchor" href="#switch-fairies-ability-preview"></a> Switch Fairies Ability Preview</h5>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/9ZEqUD5piB4" frameborder="0" loading="lazy" allowfullscreen></iframe></div> 
 <hr/>
 <center><b><a href="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg">Download Game Control</a></b></center>
 <hr/>
-
-<h5 id="How-to-download"><a href="#How-to-download" class="headerlink" title="How to download"></a>How to download</h5><div style="clear:both;"></div>
+<h5 id="how-to-download"><a class="markdownIt-Anchor" href="#how-to-download"></a> How to download</h5>
+<div style="clear:both;"></div>
 <div>
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="300px" height="250px" src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" alt="Save Link As" title="" ></img>
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="300px" height="250px" src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" alt="Save Link As" title="" ></img>
@@ -96,9 +241,12 @@
   <entry>
     <title>Auto Fishing</title>
     <url>/The%20Legend%20Of%20Neverland/Fishing.html</url>
-    <content><![CDATA[<p>Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the <code>cooking shop</code>. You can see the recipe at <a href="/The%20Legend%20Of%20Neverland/Recipes.html">Cooking Recipes</a>.<br>You can cook buffs for your character or make dishes to increase the level of <code>Fairies</code> you have.<br>This time you can auto-fish using <code>bluestacks</code> and <code>macros</code>.</p>
-<p>  <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png" alt="Fishing the legend of neverland" title="" ></img></p>
-<h2 id="Calculating-the-fishing-actions"><a href="#Calculating-the-fishing-actions" class="headerlink" title="Calculating the fishing actions"></a>Calculating the fishing actions</h2><ul>
+    <content><![CDATA[<p>Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the <code>cooking shop</code>. You can see the recipe at <a href="/The%20Legend%20Of%20Neverland/Recipes.html">Cooking Recipes</a>.<br />
+You can cook buffs for your character or make dishes to increase the level of <code>Fairies</code> you have.<br />
+This time you can auto-fish using <code>bluestacks</code> and <code>macros</code>.</p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png" alt="Fishing the legend of neverland" title="" ></img></p>
+<h2 id="calculating-the-fishing-actions"><a class="markdownIt-Anchor" href="#calculating-the-fishing-actions"></a> Calculating the fishing actions</h2>
+<ul>
   <li><span>1 bottle = 300 staminas</span> &divide; 5/action &rarr; <span>
       <script>
         document.write(300 / 5);
@@ -113,14 +261,19 @@
       </script> minutes
     </span> <span>to finish 1 stamina bottle</span></li>
 </ul>
-  
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><ul>
-<li>First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot<br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png" alt="image" title="" ></img></li>
-<li>set <code>repeat actions</code> with the total stamina bottle you have, or my recommendation is to subtract a little from the total stamina bottle you have. for example you have 55 bottles, set just 50 repeat actions, this to prevent other items to be used unexpectedly/unintentionally.<br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png" alt="Setup total stamina bottles as repeat action" title="" ></img></li>
+<h2 id="configuration"><a class="markdownIt-Anchor" href="#configuration"></a> Configuration</h2>
+<ul>
+<li>First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot<br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png" alt="image" title="" ></img></li>
+<li>set <code>repeat actions</code> with the total stamina bottle you have, or my recommendation is to subtract a little from the total stamina bottle you have. for example you have 55 bottles, set just 50 repeat actions, this to prevent other items to be used unexpectedly/unintentionally.<br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png" alt="Setup total stamina bottles as repeat action" title="" ></img></li>
 </ul>
-<h2 id="How-to-download-script"><a href="#How-to-download-script" class="headerlink" title="How to download script"></a>How to download script</h2><p>  <a href="/The%20Legend%20Of%20Neverland/Macros.html">Read Here</a></p>
-<h2 id="Auto-fishing-script"><a href="#Auto-fishing-script" class="headerlink" title="Auto fishing script"></a>Auto fishing script</h2><p>  <a href="/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20&%20Stamina.json">Download Macros Auto Fishing</a></p>
-<h2 id="How-to-import-script"><a href="#How-to-import-script" class="headerlink" title="How to import script ?"></a>How to import script ?</h2><p>  <a href="/The%20Legend%20Of%20Neverland/Macros.html">Read Here</a></p>
+<h2 id="how-to-download-script"><a class="markdownIt-Anchor" href="#how-to-download-script"></a> How to download script</h2>
+<p><a href="/The%20Legend%20Of%20Neverland/Macros.html">Read Here</a></p>
+<h2 id="auto-fishing-script"><a class="markdownIt-Anchor" href="#auto-fishing-script"></a> Auto fishing script</h2>
+<p><a href="/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json">Download Macros Auto Fishing</a></p>
+<h2 id="how-to-import-script"><a class="markdownIt-Anchor" href="#how-to-import-script"></a> How to import script ?</h2>
+<p><a href="/The%20Legend%20Of%20Neverland/Macros.html">Read Here</a></p>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -137,35 +290,34 @@
     <url>/The%20Legend%20Of%20Neverland/Macros.html</url>
     <content><![CDATA[<p>Indeed, in case you’re on BlueStacks construct 4.130 or higher, you’ll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs/monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.</p>
   <div class="toc">
-
 <!-- toc -->
-
 <ul>
-<li><a href="#features">Features</a><ul>
+<li><a href="#features">Features</a>
+<ul>
 <li><a href="#how-to-download-the-macros">How to download the macros</a></li>
 <li><a href="#how-to-import-the-macros-script-into-bluestacks">How to import the macros script into bluestacks</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
-
 </div>
-  
-<h4><span id="introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more">Introduction: Macros barely used for Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.</span><a href="#introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more" class="header-anchor">#</a></h4><p>Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. <a href="https://www.bluestacks.com/features/macros.html">Read more</a></p>
-<h1><span id="features">Features</span><a href="#features" class="header-anchor">#</a></h1><ul>
+<h4><span id="introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more"> Introduction: Macros barely used for Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.</span><a href="#introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more" class="header-anchor">#</a></h4>
+<p>Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. <a href="https://www.bluestacks.com/features/macros.html">Read more</a></p>
+<h1><span id="features"> Features</span><a href="#features" class="header-anchor">#</a></h1>
+<ul>
 <li>Collect materials</li>
 <li>Mining: for upgrading gears and weapons</li>
 <li>Inscription: for upgrading skills and talents</li>
 <li>Insect: for produce crystal</li>
 <li>Auto fishing: <a href="/The%20Legend%20Of%20Neverland/Fishing.html">Click Here To Read And Download The Script</a></li>
 </ul>
-<h3><span id="how-to-download-the-macros">How to download the macros</span><a href="#how-to-download-the-macros" class="header-anchor">#</a></h3><div style="clear:both;"></div>
+<h3><span id="how-to-download-the-macros"> How to download the macros</span><a href="#how-to-download-the-macros" class="header-anchor">#</a></h3>
+<div style="clear:both;"></div>
 <div style="width: 100%;">
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="50%" height="auto" src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" alt="Save Link As" title="" ></img>
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="50%" height="auto" src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" alt="Save With Filename" title="" ></img>
 </div>
 <div style="clear:both;"></div>
-
 <table class="table table-responsive">
   <tr>
     <td rowspan="2">Auto Farming Materials</td>
@@ -187,11 +339,15 @@
     <td><a href="Macros/auto%20target.json">Download</a></td>
   </tr>
 </table>
-
-<h3><span id="how-to-import-the-macros-script-into-bluestacks">How to import the macros script into bluestacks</span><a href="#how-to-import-the-macros-script-into-bluestacks" class="header-anchor">#</a></h3><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939380-d9fbf1d7-2cb1-469a-a29b-cf3f1c33084f.png" alt="Click Macros On Bluestacks" title="" ></img><br><em>Click Macros On Bluestacks</em></p>
-<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939401-b1a36399-2d91-46bd-82f9-78cb8e65c985.png" alt="Click Import" title="" ></img><br><em>Click Import</em></p>
-<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939413-53a2940a-d018-4b04-963c-9968abd6304c.png" alt="Select JSON macros script" title="" ></img><br><em>Select JSON macros script then import</em></p>
-<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939502-c9bb6e0c-284b-47a9-84b5-8863af2266f5.png" alt="image" title="" ></img><br><em>Import successful</em></p>
+<h3><span id="how-to-import-the-macros-script-into-bluestacks"> How to import the macros script into bluestacks</span><a href="#how-to-import-the-macros-script-into-bluestacks" class="header-anchor">#</a></h3>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939380-d9fbf1d7-2cb1-469a-a29b-cf3f1c33084f.png" alt="Click Macros On Bluestacks" title="" ></img><br>
+<em>Click Macros On Bluestacks</em></p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939401-b1a36399-2d91-46bd-82f9-78cb8e65c985.png" alt="Click Import" title="" ></img><br>
+<em>Click Import</em></p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939413-53a2940a-d018-4b04-963c-9968abd6304c.png" alt="Select JSON macros script" title="" ></img><br>
+<em>Select JSON macros script then import</em></p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132939502-c9bb6e0c-284b-47a9-84b5-8863af2266f5.png" alt="image" title="" ></img><br>
+<em>Import successful</em></p>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -206,7 +362,8 @@
   <entry>
     <title>Midi</title>
     <url>/The%20Legend%20Of%20Neverland/Midi.html</url>
-    <content><![CDATA[<h3 id="NPC’s-favorite-musical-instrument"><a href="#NPC’s-favorite-musical-instrument" class="headerlink" title="NPC’s favorite musical instrument"></a>NPC’s favorite musical instrument</h3><blockquote>
+    <content><![CDATA[<h3 id="npcs-favorite-musical-instrument"><a class="markdownIt-Anchor" href="#npcs-favorite-musical-instrument"></a> NPC’s favorite musical instrument</h3>
+<blockquote>
 <p>Did you know that playing music with certain instruments to the npc who gave you the quest “Music Performance Request” will give you better rewards, such as ff seeds, cabala, etc.</p>
 </blockquote>
 <table>
@@ -217,7 +374,8 @@
 <th>musical instrument</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Colin</td>
 <td>Sophila</td>
 <td>Flute</td>
@@ -242,20 +400,18 @@
 <td>Sophila</td>
 <td>Guitar</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="List-Best-Midi-Hold-tap-Right-click-to-copy"><a href="#List-Best-Midi-Hold-tap-Right-click-to-copy" class="headerlink" title="List Best Midi (Hold tap/Right click to copy)"></a>List Best Midi (Hold tap/Right click to copy)</h3><table>
+</tbody>
+</table>
+<h3 id="list-best-midi-hold-tapright-click-to-copy"><a class="markdownIt-Anchor" href="#list-best-midi-hold-tapright-click-to-copy"></a> List Best Midi (Hold tap/Right click to copy)</h3>
+<table>
 <thead>
 <tr>
 <th>Title</th>
 <th>Link</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Deep purple - soldier of fortune</td>
 <td><a href="https://bitmidi.com/uploads/38563.mid">https://bitmidi.com/uploads/38563.mid</a></td>
 </tr>
@@ -291,8 +447,10 @@
 <td>Hatsune Miku</td>
 <td><a href="https://bitmidi.com/uploads/55292.mid">https://bitmidi.com/uploads/55292.mid</a></td>
 </tr>
-</tbody></table>
-<h3 id="Available-Midi-Sites"><a href="#Available-Midi-Sites" class="headerlink" title="Available Midi Sites"></a>Available Midi Sites</h3><ul>
+</tbody>
+</table>
+<h3 id="available-midi-sites"><a class="markdownIt-Anchor" href="#available-midi-sites"></a> Available Midi Sites</h3>
+<ul>
 <li><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi">https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi</a></li>
 <li><a href="https://www.mfiles.co.uk/midi-files.htm">https://www.mfiles.co.uk/midi-files.htm</a></li>
 <li><a href="https://midisfree.com/">https://midisfree.com/</a></li>
@@ -303,8 +461,8 @@
 <li><a href="https://sheet.host/">https://sheet.host/</a></li>
 <li><a href="http://www.hamienet.com/">http://www.hamienet.com/</a></li>
 </ul>
-<h3 id="How-to-create-music-song-mp3-to-midi"><a href="#How-to-create-music-song-mp3-to-midi" class="headerlink" title="How to create music/song mp3 to midi"></a>How to create music/song mp3 to midi</h3><div class="video-container"><iframe src="https://www.youtube.com/embed/tik3ZFwFsJA" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-
+<h3 id="how-to-create-musicsong-mp3-to-midi"><a class="markdownIt-Anchor" href="#how-to-create-musicsong-mp3-to-midi"></a> How to create music/song mp3 to midi</h3>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/tik3ZFwFsJA" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/kIXXv8oUqOc" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 ]]></content>
       <categories>
@@ -319,9 +477,7 @@
     <title>Cooking Recipes</title>
     <url>/The%20Legend%20Of%20Neverland/Recipes.html</url>
     <content><![CDATA[<div class="toc">
-
 <!-- toc -->
-
 <ul>
 <li><a href="#ingredients-water-essence-prices">Ingredients Water Essence Prices</a></li>
 <li><a href="#char-buff-dish">Char Buff Dish</a></li>
@@ -329,308 +485,310 @@
 <li><a href="#compare-100x-boiled-corns">Compare 100x boiled corns</a></li>
 </ul>
 <!-- tocstop -->
-
 </div>
-
-<h2><span id="ingredients-water-essence-prices">Ingredients Water Essence Prices</span><a href="#ingredients-water-essence-prices" class="header-anchor">#</a></h2><table>
+<h2><span id="ingredients-water-essence-prices"> Ingredients Water Essence Prices</span><a href="#ingredients-water-essence-prices" class="header-anchor">#</a></h2>
+<table>
 <thead>
 <tr>
-<th align="left">ingredients</th>
-<th align="center">Price</th>
-<th align="left">ingredients</th>
-<th align="center">Price</th>
-<th align="left">ingredients</th>
-<th align="center">Price</th>
+<th style="text-align:left">ingredients</th>
+<th style="text-align:center">Price</th>
+<th style="text-align:left">ingredients</th>
+<th style="text-align:center">Price</th>
+<th style="text-align:left">ingredients</th>
+<th style="text-align:center">Price</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">Eeg</td>
-<td align="center">50</td>
-<td align="left">Fresh Cheese</td>
-<td align="center">500</td>
-<td align="left">Barley</td>
-<td align="center">150</td>
+<tbody>
+<tr>
+<td style="text-align:left">Eeg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:left">Fresh Cheese</td>
+<td style="text-align:center">500</td>
+<td style="text-align:left">Barley</td>
+<td style="text-align:center">150</td>
 </tr>
 <tr>
-<td align="left">Meat Chunk</td>
-<td align="center">2000</td>
-<td align="left">Carrot</td>
-<td align="center">500</td>
-<td align="left">Mushroom</td>
-<td align="center">150</td>
+<td style="text-align:left">Meat Chunk</td>
+<td style="text-align:center">2000</td>
+<td style="text-align:left">Carrot</td>
+<td style="text-align:center">500</td>
+<td style="text-align:left">Mushroom</td>
+<td style="text-align:center">150</td>
 </tr>
 <tr>
-<td align="left">Cheese</td>
-<td align="center">2000</td>
-<td align="left">Onion</td>
-<td align="center">500</td>
-<td align="left">Corn</td>
-<td align="center">50</td>
+<td style="text-align:left">Cheese</td>
+<td style="text-align:center">2000</td>
+<td style="text-align:left">Onion</td>
+<td style="text-align:center">500</td>
+<td style="text-align:left">Corn</td>
+<td style="text-align:center">50</td>
 </tr>
 <tr>
-<td align="left">Chicken Wing</td>
-<td align="center">2000</td>
-<td align="left">Celery</td>
-<td align="center">500</td>
-<td align="left">Potato</td>
-<td align="center">50</td>
+<td style="text-align:left">Chicken Wing</td>
+<td style="text-align:center">2000</td>
+<td style="text-align:left">Celery</td>
+<td style="text-align:center">500</td>
+<td style="text-align:left">Potato</td>
+<td style="text-align:center">50</td>
 </tr>
 <tr>
-<td align="left">Meat</td>
-<td align="center">1500</td>
-<td align="left">Butter</td>
-<td align="center">300</td>
-<td align="left">Thyme</td>
-<td align="center">2000</td>
+<td style="text-align:left">Meat</td>
+<td style="text-align:center">1500</td>
+<td style="text-align:left">Butter</td>
+<td style="text-align:center">300</td>
+<td style="text-align:left">Thyme</td>
+<td style="text-align:center">2000</td>
 </tr>
 <tr>
-<td align="left">Shrimp</td>
-<td align="center">1500</td>
-<td align="left">Black Pepper</td>
-<td align="center">300</td>
-<td align="left">Red Wine</td>
-<td align="center">2000</td>
+<td style="text-align:left">Shrimp</td>
+<td style="text-align:center">1500</td>
+<td style="text-align:left">Black Pepper</td>
+<td style="text-align:center">300</td>
+<td style="text-align:left">Red Wine</td>
+<td style="text-align:center">2000</td>
 </tr>
 <tr>
-<td align="left">Tomato</td>
-<td align="center">750</td>
-<td align="left">Milk</td>
-<td align="center">300</td>
-<td align="left">Chocolate Material</td>
-<td align="center">950</td>
+<td style="text-align:left">Tomato</td>
+<td style="text-align:center">750</td>
+<td style="text-align:left">Milk</td>
+<td style="text-align:center">300</td>
+<td style="text-align:left">Chocolate Material</td>
+<td style="text-align:center">950</td>
 </tr>
 <tr>
-<td align="left">Bacon</td>
-<td align="center">750</td>
-<td align="left">Wheat</td>
-<td align="center">300</td>
-<td align="left">Strawberry</td>
-<td align="center">750</td>
+<td style="text-align:left">Bacon</td>
+<td style="text-align:center">750</td>
+<td style="text-align:left">Wheat</td>
+<td style="text-align:center">300</td>
+<td style="text-align:left">Strawberry</td>
+<td style="text-align:center">750</td>
 </tr>
 <tr>
-<td align="left">Sugar</td>
-<td align="center">750</td>
-<td align="left">Water</td>
-<td align="center">150</td>
-<td align="left"></td>
-<td align="center"></td>
+<td style="text-align:left">Sugar</td>
+<td style="text-align:center">750</td>
+<td style="text-align:left">Water</td>
+<td style="text-align:center">150</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="left">Rice</td>
-<td align="center">700</td>
-<td align="left">Salt</td>
-<td align="center">150</td>
-<td align="left"></td>
-<td align="center"></td>
+<td style="text-align:left">Rice</td>
+<td style="text-align:center">700</td>
+<td style="text-align:left">Salt</td>
+<td style="text-align:center">150</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
 </tr>
-</tbody></table>
-<h2><span id="char-buff-dish">Char Buff Dish</span><a href="#char-buff-dish" class="header-anchor">#</a></h2><table id="char-dish">
-    <thead>
-        <tr>
-            <th style="text-align:left">Food Name</th>
-            <th style="text-align:left">Ingredients</th>
-            <th style="text-align:left">Buff</th>
-            <th style="text-align:center">Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align:left">Fried Egg</td>
-            <td style="text-align:left">Egg 1 Salt 1</td>
-            <td style="text-align:left">Crit +300</td>
-            <td style="text-align:center">50+150</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Baked Mushroom</td>
-            <td style="text-align:left">Mushroom 2 Salt 2 Water 2</td>
-            <td style="text-align:left">Block +300</td>
-            <td style="text-align:center">(150x2)+(150x2)+(150x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Barley Tea</td>
-            <td style="text-align:left">Barley 3 Salt 3 Water 3</td>
-            <td style="text-align:left">Crush +300</td>
-            <td style="text-align:center">(150x3)+(150x3)+(150x3)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Corn Flake</td>
-            <td style="text-align:left">Corn 4 Milk 4 Salt 4</td>
-            <td style="text-align:left">Resistance +300</td>
-            <td style="text-align:center">(50x4)+(300x4)+(150x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Mushroom Stew</td>
-            <td style="text-align:left">Mushroom 4 Milk 4 Black Pepper 4</td>
-            <td style="text-align:left">Protect +300</td>
-            <td style="text-align:center">(150x4)+(300x4)+(300x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Popcorn</td>
-            <td style="text-align:left">Corn 6 Milk 6 Butter 6</td>
-            <td style="text-align:left">Pierce +300</td>
-            <td style="text-align:center">(50x6)+(300x6)+(300x6)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Mixed Fried Rice</td>
-            <td style="text-align:left">Egg 5 Potato 5 Rice 5</td>
-            <td style="text-align:left">Attack +150</td>
-            <td style="text-align:center">(50x5)+(50x5)+(700x5)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Fried Rice with Mushroom</td>
-            <td style="text-align:left">Mushroom 4 Carrot 4 Rice 4</td>
-            <td style="text-align:left">crit +600</td>
-            <td style="text-align:center">(150x4)+(500x4)+(700x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Fried Onion Rings</td>
-            <td style="text-align:left">Wheat 5 Onion 5 Salt 5</td>
-            <td style="text-align:left">Block +600</td>
-            <td style="text-align:center">(300x5)+(500x5)+(150x5)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Fried Food Platter</td>
-            <td style="text-align:left">Celery 3 Carrot 3 Bacon 3</td>
-            <td style="text-align:left">crush +600</td>
-            <td style="text-align:center">(500x3)+(500x3)+(750x3)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Tomato Macaroni</td>
-            <td style="text-align:left">Wheat 4 Onion 4 Tomato 4</td>
-            <td style="text-align:left">Resistance +600</td>
-            <td style="text-align:center">(300x4)+(500x4)+(750x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Chocolate Cream Cake</td>
-            <td style="text-align:left">Wheat 6 Egg 6 Chocolate 6</td>
-            <td style="text-align:left">Protect +600</td>
-            <td style="text-align:center">(300x6)+(50x6)+(950x6)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Steamed Dumplings</td>
-            <td style="text-align:left">Wheat 4 Meat 4 Salt 4</td>
-            <td style="text-align:left">Pierce +600</td>
-            <td style="text-align:center">(300x4)+(2000x4)+(150x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Steamed Pork Ribs with Potatoes</td>
-            <td style="text-align:left">Potato 5 Meat 5 Salt 5</td>
-            <td style="text-align:left">Attack +300</td>
-            <td style="text-align:center">(50x5)+(2000x5)+(150x5)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Fried Pork Chop</td>
-            <td style="text-align:left">Egg 5 Wheat 5 Meat 5</td>
-            <td style="text-align:left">Crit +1000</td>
-            <td style="text-align:center">(50x5)+(300x5)+(2000x5)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Matcha Chicken Wing</td>
-            <td style="text-align:left">Chicken Wing 2 Thyme 2 Salt 2</td>
-            <td style="text-align:left">Block +1000</td>
-            <td style="text-align:center">(2000x2)+(2000x2)+(150x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Stewed Chicken with Wine</td>
-            <td style="text-align:left">Chicken Wing 2 Thyme 2 Red Wine 2</td>
-            <td style="text-align:left">Crush +1000</td>
-            <td style="text-align:center">(2000x2)+(2000x2)+(2000x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">T-Bone Steak</td>
-            <td style="text-align:left">Meat Chunk 3 Thyme 3 salt 3</td>
-            <td style="text-align:left">Resistance +1000</td>
-            <td style="text-align:center">(2000x3)+(2000x3)+(150x3)</td>
-        </tr>
-    </tbody>
+</tbody>
 </table>
-
-<h2><span id="flower-fairy-upgrade-dish">Flower Fairy Upgrade Dish</span><a href="#flower-fairy-upgrade-dish" class="header-anchor">#</a></h2><table id="fairy-dish">
-    <thead>
-        <tr>
-            <th style="text-align:left">Food Name</th>
-            <th style="text-align:center">Ingredients</th>
-            <th style="text-align:left">Fairy EXP</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align:left">Boiled Corn</td>
-            <td style="text-align:center">Corn 1 Salt 1 Water 1</td>
-            <td style="text-align:left">+100</td>
-            <td>50+150+150</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Roasted Potato</td>
-            <td style="text-align:center">Potato 3 salt 3</td>
-            <td style="text-align:left">+150</td>
-            <td>(50x3)+(150x3)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Gruel Barley</td>
-            <td style="text-align:center">Barley 2 Wheat 3 Water 2</td>
-            <td style="text-align:left">+230</td>
-            <td>(150x2)+(300x3)+(150x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Corn Porridge</td>
-            <td style="text-align:center">Corn 3 Milk 4 Water 3</td>
-            <td style="text-align:left">+310</td>
-            <td>(50x3)+(300x4)+(150x3)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Vegetable Soup</td>
-            <td style="text-align:center">Milk 2 Celery 2 Carrot 2</td>
-            <td style="text-align:left">+400</td>
-            <td>(300x2)+(500x2)+(500x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Onion Soup</td>
-            <td style="text-align:center">Black Pepper 2 Onion 3 Fresh Cheese 2</td>
-            <td style="text-align:left">+480</td>
-            <td>(300x2)+(500x3)+(500x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Strawberry Milk</td>
-            <td style="text-align:center">Milk 3 Strawberry 2 Sugar 2</td>
-            <td style="text-align:left">+600</td>
-            <td>(300x3)+(750x2)+(750x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Chocolate Milk</td>
-            <td style="text-align:center">Milk 2 Chocolate 3 Sugar 2</td>
-            <td style="text-align:left">+850</td>
-            <td>(300x2)+(950x3)+(750x2)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Fried Shrimp</td>
-            <td style="text-align:center">Egg 3 Wheat 3 Shrimp 4</td>
-            <td style="text-align:left">+1150</td>
-            <td>(50x3)+(300x3)+(1500x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Fried Rice with Shrimp</td>
-            <td style="text-align:center">Rice 4 Egg 4 Shrimp 4</td>
-            <td style="text-align:left">+1450</td>
-            <td>(700x4)+(50x4)+(1500x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Chicken Soup Noodle</td>
-            <td style="text-align:center">Wheat 4 Chicken Wing 5 Salt 4</td>
-            <td style="text-align:left">+1800</td>
-            <td>(300x4)+(2000x5)+(150x4)</td>
-        </tr>
-        <tr>
-            <td style="text-align:left">Ham Sandwich</td>
-            <td style="text-align:center">Wheat 3 Cheese 4 Meat 3</td>
-            <td style="text-align:left">+2200</td>
-            <td>(300x3)+(2000x4)+(2000x3)</td>
-        </tr>
-    </tbody>
+<h2><span id="char-buff-dish"> Char Buff Dish</span><a href="#char-buff-dish" class="header-anchor">#</a></h2>
+<table id="char-dish">
+	<thead>
+		<tr>
+			<th style="text-align:left">Food Name</th>
+			<th style="text-align:left">Ingredients</th>
+			<th style="text-align:left">Buff</th>
+			<th style="text-align:center">Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align:left">Fried Egg</td>
+			<td style="text-align:left">Egg 1 Salt 1</td>
+			<td style="text-align:left">Crit +300</td>
+			<td style="text-align:center">50+150</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Baked Mushroom</td>
+			<td style="text-align:left">Mushroom 2 Salt 2 Water 2</td>
+			<td style="text-align:left">Block +300</td>
+			<td style="text-align:center">(150x2)+(150x2)+(150x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Barley Tea</td>
+			<td style="text-align:left">Barley 3 Salt 3 Water 3</td>
+			<td style="text-align:left">Crush +300</td>
+			<td style="text-align:center">(150x3)+(150x3)+(150x3)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Corn Flake</td>
+			<td style="text-align:left">Corn 4 Milk 4 Salt 4</td>
+			<td style="text-align:left">Resistance +300</td>
+			<td style="text-align:center">(50x4)+(300x4)+(150x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Mushroom Stew</td>
+			<td style="text-align:left">Mushroom 4 Milk 4 Black Pepper 4</td>
+			<td style="text-align:left">Protect +300</td>
+			<td style="text-align:center">(150x4)+(300x4)+(300x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Popcorn</td>
+			<td style="text-align:left">Corn 6 Milk 6 Butter 6</td>
+			<td style="text-align:left">Pierce +300</td>
+			<td style="text-align:center">(50x6)+(300x6)+(300x6)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Mixed Fried Rice</td>
+			<td style="text-align:left">Egg 5 Potato 5 Rice 5</td>
+			<td style="text-align:left">Attack +150</td>
+			<td style="text-align:center">(50x5)+(50x5)+(700x5)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Fried Rice with Mushroom</td>
+			<td style="text-align:left">Mushroom 4 Carrot 4 Rice 4</td>
+			<td style="text-align:left">crit +600</td>
+			<td style="text-align:center">(150x4)+(500x4)+(700x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Fried Onion Rings</td>
+			<td style="text-align:left">Wheat 5 Onion 5 Salt 5</td>
+			<td style="text-align:left">Block +600</td>
+			<td style="text-align:center">(300x5)+(500x5)+(150x5)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Fried Food Platter</td>
+			<td style="text-align:left">Celery 3 Carrot 3 Bacon 3</td>
+			<td style="text-align:left">crush +600</td>
+			<td style="text-align:center">(500x3)+(500x3)+(750x3)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Tomato Macaroni</td>
+			<td style="text-align:left">Wheat 4 Onion 4 Tomato 4</td>
+			<td style="text-align:left">Resistance +600</td>
+			<td style="text-align:center">(300x4)+(500x4)+(750x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Chocolate Cream Cake</td>
+			<td style="text-align:left">Wheat 6 Egg 6 Chocolate 6</td>
+			<td style="text-align:left">Protect +600</td>
+			<td style="text-align:center">(300x6)+(50x6)+(950x6)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Steamed Dumplings</td>
+			<td style="text-align:left">Wheat 4 Meat 4 Salt 4</td>
+			<td style="text-align:left">Pierce +600</td>
+			<td style="text-align:center">(300x4)+(2000x4)+(150x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Steamed Pork Ribs with Potatoes</td>
+			<td style="text-align:left">Potato 5 Meat 5 Salt 5</td>
+			<td style="text-align:left">Attack +300</td>
+			<td style="text-align:center">(50x5)+(2000x5)+(150x5)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Fried Pork Chop</td>
+			<td style="text-align:left">Egg 5 Wheat 5 Meat 5</td>
+			<td style="text-align:left">Crit +1000</td>
+			<td style="text-align:center">(50x5)+(300x5)+(2000x5)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Matcha Chicken Wing</td>
+			<td style="text-align:left">Chicken Wing 2 Thyme 2 Salt 2</td>
+			<td style="text-align:left">Block +1000</td>
+			<td style="text-align:center">(2000x2)+(2000x2)+(150x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Stewed Chicken with Wine</td>
+			<td style="text-align:left">Chicken Wing 2 Thyme 2 Red Wine 2</td>
+			<td style="text-align:left">Crush +1000</td>
+			<td style="text-align:center">(2000x2)+(2000x2)+(2000x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">T-Bone Steak</td>
+			<td style="text-align:left">Meat Chunk 3 Thyme 3 salt 3</td>
+			<td style="text-align:left">Resistance +1000</td>
+			<td style="text-align:center">(2000x3)+(2000x3)+(150x3)</td>
+		</tr>
+	</tbody>
 </table>
-
-<h2><span id="compare-100x-boiled-corns">Compare 100x boiled corns</span><a href="#compare-100x-boiled-corns" class="header-anchor">#</a></h2><div style="margin:10px">
+<h2><span id="flower-fairy-upgrade-dish"> Flower Fairy Upgrade Dish</span><a href="#flower-fairy-upgrade-dish" class="header-anchor">#</a></h2>
+<table id="fairy-dish">
+	<thead>
+		<tr>
+			<th style="text-align:left">Food Name</th>
+			<th style="text-align:center">Ingredients</th>
+			<th style="text-align:left">Fairy EXP</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align:left">Boiled Corn</td>
+			<td style="text-align:center">Corn 1 Salt 1 Water 1</td>
+			<td style="text-align:left">+100</td>
+			<td>50+150+150</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Roasted Potato</td>
+			<td style="text-align:center">Potato 3 salt 3</td>
+			<td style="text-align:left">+150</td>
+			<td>(50x3)+(150x3)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Gruel Barley</td>
+			<td style="text-align:center">Barley 2 Wheat 3 Water 2</td>
+			<td style="text-align:left">+230</td>
+			<td>(150x2)+(300x3)+(150x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Corn Porridge</td>
+			<td style="text-align:center">Corn 3 Milk 4 Water 3</td>
+			<td style="text-align:left">+310</td>
+			<td>(50x3)+(300x4)+(150x3)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Vegetable Soup</td>
+			<td style="text-align:center">Milk 2 Celery 2 Carrot 2</td>
+			<td style="text-align:left">+400</td>
+			<td>(300x2)+(500x2)+(500x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Onion Soup</td>
+			<td style="text-align:center">Black Pepper 2 Onion 3 Fresh Cheese 2</td>
+			<td style="text-align:left">+480</td>
+			<td>(300x2)+(500x3)+(500x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Strawberry Milk</td>
+			<td style="text-align:center">Milk 3 Strawberry 2 Sugar 2</td>
+			<td style="text-align:left">+600</td>
+			<td>(300x3)+(750x2)+(750x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Chocolate Milk</td>
+			<td style="text-align:center">Milk 2 Chocolate 3 Sugar 2</td>
+			<td style="text-align:left">+850</td>
+			<td>(300x2)+(950x3)+(750x2)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Fried Shrimp</td>
+			<td style="text-align:center">Egg 3 Wheat 3 Shrimp 4</td>
+			<td style="text-align:left">+1150</td>
+			<td>(50x3)+(300x3)+(1500x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Fried Rice with Shrimp</td>
+			<td style="text-align:center">Rice 4 Egg 4 Shrimp 4</td>
+			<td style="text-align:left">+1450</td>
+			<td>(700x4)+(50x4)+(1500x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Chicken Soup Noodle</td>
+			<td style="text-align:center">Wheat 4 Chicken Wing 5 Salt 4</td>
+			<td style="text-align:left">+1800</td>
+			<td>(300x4)+(2000x5)+(150x4)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Ham Sandwich</td>
+			<td style="text-align:center">Wheat 3 Cheese 4 Meat 3</td>
+			<td style="text-align:left">+2200</td>
+			<td>(300x3)+(2000x4)+(2000x3)</td>
+		</tr>
+	</tbody>
+</table>
+<h2><span id="compare-100x-boiled-corns"> Compare 100x boiled corns</span><a href="#compare-100x-boiled-corns" class="header-anchor">#</a></h2>
+<div style="margin:10px">
   <b>Calculate x100 foods</b>
   <ul>
     <li>Boiled Corn x100 total price <b i="bcprice">-</b> total exp <b i="bcexp">-</b></li>
@@ -638,9 +796,7 @@
   </ul>
   <em>if the total price of ham is calculated into boiled corn food</em> <b i="hamprice"></b> &divide; <b i="bcprice"></b> &#61; <b i="ham-bc"></b> &times <b i="bcexp">-</b> (x100 Boiled Corn) &#61; <b i="bctotal"></b> total exp
 </div>
-
 <!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
-
 <p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png" alt="Recipes" title="" ></img></p>
   <script>console.clear();
 
@@ -713,7 +869,9 @@ function CalculateTR(table) {
   <entry>
     <title>Trial Of Time</title>
     <url>/The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html</url>
-    <content><![CDATA[<h1 id="Trial-of-time-gate-locations"><a href="#Trial-of-time-gate-locations" class="headerlink" title="Trial of time gate locations"></a>Trial of time gate locations</h1><h2 id="Fog-Swamp-F2"><a href="#Fog-Swamp-F2" class="headerlink" title="Fog Swamp F2"></a>Fog Swamp F2</h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png" alt="Fog Swamp F2" title="" ></img></p>
+    <content><![CDATA[<h1 id="trial-of-time-gate-locations"><a class="markdownIt-Anchor" href="#trial-of-time-gate-locations"></a> Trial of time gate locations</h1>
+<h2 id="fog-swamp-f2"><a class="markdownIt-Anchor" href="#fog-swamp-f2"></a> Fog Swamp F2</h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png" alt="Fog Swamp F2" title="" ></img></p>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -734,16 +892,15 @@ function CalculateTR(table) {
   <figcaption>Material untuk Ascension Childe</figcaption>
 </figure>
 </div>
-
-<h2 id="Lokasi-Starconch"><a href="#Lokasi-Starconch" class="headerlink" title="Lokasi Starconch"></a>Lokasi Starconch</h2><figure>
+<h2 id="lokasi-starconch"><a class="markdownIt-Anchor" href="#lokasi-starconch"></a> Lokasi Starconch</h2>
+<figure>
   <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://gamefever.co.id/wp-content/uploads/2020/11/Genshin-Impact-Starconch-location-1024x753.jpg" alt="Map Starconch" title="" ></img>
   <figcaption>Lokasi keseluruhan Starconch di sepanjang pantai Liyue</figcaption>
 </figure>
-
 <p>Starconch dapat ditemukan di pantai yang ada di wilayah Liyue. Namun item ini dapat dengan mudah ditemukan pada dua lokasi. Pertama adalah <code>Yaoguang Shoal</code>. Starconch sangat melimpah di area pantai paling selatan ini. Lokasi kedua, kalian bisa kunjungi <code>Hutan Batu Guyun</code>, di selatan Yaoguang Shoal.</p>
 <p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://gamefever.co.id/wp-content/uploads/2020/11/GFID_GenshinImpactStarconch-1-1024x576.jpg" alt="Starconch Example" title="" ></img></p>
 <p>Saat berburu <code>Starconch</code>, perhatikan <code>kerang berwarna biru muda</code>. Kalian juga bisa menggunakan fitur <code>Elemental Sight</code> untuk membantu menemukan <code>Starconch</code> yang lebih menonjol di atas pasir. Untuk menaikan keseluruhan level karakter <code>Childe</code> (level 90), diperkirakan membutuhkan total <code>168 Starconch</code>. Sayangnya sampai sekarang belum ada informasi dimana kita bisa membeli Starconch, hanya dapat kita farm / panen.</p>
-<hr>
+<hr />
 <p>Itulah lokasi <code>Starconch</code> yang bisa kalian gunakan untuk memperkuat karakter Childe di Genshin Impact. Nantikan tips dan guide Genshin Impact lainnya. Sampai jumpa.</p>
 ]]></content>
       <categories>
@@ -760,75 +917,90 @@ function CalculateTR(table) {
     <url>/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html</url>
     <content><![CDATA[<p>Update genshin impact <code>1.6.1</code> manual via download manager (IDM).</p>
 <span id="more"></span>
-
-<h2 id="Patch-1-5-1-1-6-0"><a href="#Patch-1-5-1-1-6-0" class="headerlink" title="Patch 1.5.1 - 1.6.0"></a>Patch 1.5.1 - 1.6.0</h2><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.1_1.6.0_diff_LvqpG1Srcm72t6YF.zip">en-us_1.5.1_1.6.0_diff_LvqpG1Srcm72t6YF.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.1_1.6.0_diff_jVasZSurGCqb1PYx.zip">game_1.5.1_1.6.0_diff_jVasZSurGCqb1PYx.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.1_1.6.0_diff_mdLSj8pM1ANnHZTB.zip">ja-jp_1.5.1_1.6.0_diff_mdLSj8pM1ANnHZTB.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.1_1.6.0_diff_HJxsoPmCvqB2liEA.zip">ko-kr_1.5.1_1.6.0_diff_HJxsoPmCvqB2liEA.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.1_1.6.0_diff_jXGDLg1FMVdYZrRQ.zip">zh-cn_1.5.1_1.6.0_diff_jXGDLg1FMVdYZrRQ.zip</a></li>
+<h2 id="patch-151-160"><a class="markdownIt-Anchor" href="#patch-151-160"></a> Patch 1.5.1 - 1.6.0</h2>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.1_1.6.0_diff_LvqpG1Srcm72t6YF.zip">en-us_1.5.1_1.6.0_diff_LvqpG1Srcm72t6YF.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.1_1.6.0_diff_jVasZSurGCqb1PYx.zip">game_1.5.1_1.6.0_diff_jVasZSurGCqb1PYx.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.1_1.6.0_diff_mdLSj8pM1ANnHZTB.zip">ja-jp_1.5.1_1.6.0_diff_mdLSj8pM1ANnHZTB.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.1_1.6.0_diff_HJxsoPmCvqB2liEA.zip">ko-kr_1.5.1_1.6.0_diff_HJxsoPmCvqB2liEA.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.1_1.6.0_diff_jXGDLg1FMVdYZrRQ.zip">zh-cn_1.5.1_1.6.0_diff_jXGDLg1FMVdYZrRQ.zip</a></li>
 </ul>
-<h2 id="How-to-update"><a href="#How-to-update" class="headerlink" title="How to update"></a>How to update</h2><ul>
-<li>  Download Update Version Or Full Game Version</li>
-<li>  Copy all to your Genshin Impact\Genshin Impact Game\ folder</li>
+<h2 id="how-to-update"><a class="markdownIt-Anchor" href="#how-to-update"></a> How to update</h2>
+<ul>
+<li>Download Update Version Or Full Game Version</li>
+<li>Copy all to your Genshin Impact\Genshin Impact Game\ folder</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.. Preview Example::</span><br><span class="line">.</span><br><span class="line">|-- C:</span><br><span class="line">    |-- Program Files</span><br><span class="line">        |-- Genshin Impact</span><br><span class="line">            |-- Genshin Impact Game</span><br><span class="line">                |-- game_..._diff_H8LGSgKU.zip</span><br><span class="line">                |-- ja-jp_..._diff_hfBOW6ym.zip</span><br><span class="line">                |-- ko-kr_..._diff_NcX8UP1L.zip</span><br><span class="line">                |-- en-us_..._diff_KdXT5Pi0.zip</span><br><span class="line">                `-- zh-cn_..._diff_hvg2F3QM.zip</span><br></pre></td></tr></table></figure>
-
-<h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
-<h2 id="Full-Game"><a href="#Full-Game" class="headerlink" title="Full Game"></a>Full Game</h2><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20201111_8e266b33e565ddf8/GenshinImpact_1.1.0.zip">GenshinImpact_1.1.0.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210317_67c8f1002bb26672/GenshinImpact_1.4.0.zip">GenshinImpact_1.4.0.zip</a></li>
-<li><h2 id="1-5-1"><a href="#1-5-1" class="headerlink" title="1.5.1"></a>1.5.1</h2></li>
-<li><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/GenshinImpact_1.5.1.zip">GenshinImpact_1.5.1.zip</a></li>
+<h2 id="screenshot"><a class="markdownIt-Anchor" href="#screenshot"></a> Screenshot</h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
+<h2 id="full-game"><a class="markdownIt-Anchor" href="#full-game"></a> Full Game</h2>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20201111_8e266b33e565ddf8/GenshinImpact_1.1.0.zip">GenshinImpact_1.1.0.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210317_67c8f1002bb26672/GenshinImpact_1.4.0.zip">GenshinImpact_1.4.0.zip</a></li>
+<li>
+<h2 id="151"><a class="markdownIt-Anchor" href="#151"></a> 1.5.1</h2>
+</li>
+<li>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/GenshinImpact_1.5.1.zip">GenshinImpact_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_English(US)_1.5.1.zip">Audio_English(US)_1.5.1.zip</a></li>
+<li>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_English(US)_1.5.1.zip">Audio_English(US)_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Korean_1.5.1.zip">Audio_Korean_1.5.1.zip</a></li>
+<li>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Korean_1.5.1.zip">Audio_Korean_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Japanese_1.5.1.zip">Audio_Japanese_1.5.1.zip</a></li>
+<li>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Japanese_1.5.1.zip">Audio_Japanese_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Chinese_1.5.1.zip">Audio_Chinese_1.5.1.zip</a></li>
+<li>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Chinese_1.5.1.zip">Audio_Chinese_1.5.1.zip</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="Another-Components"><a href="#Another-Components" class="headerlink" title="Another Components"></a>Another Components</h2><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/plugins/DXSETUP.zip">DXSETUP.zip</a></li>
+<h2 id="another-components"><a class="markdownIt-Anchor" href="#another-components"></a> Another Components</h2>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/plugins/DXSETUP.zip">DXSETUP.zip</a></li>
 </ul>
-<h1 id="Old-Version"><a href="#Old-Version" class="headerlink" title="Old Version"></a>Old Version</h1><h2 id="Chinesse-Version"><a href="#Chinesse-Version" class="headerlink" title="Chinesse Version"></a>Chinesse Version</h2><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/YuanShen_1.2.0.zip">YuanShen_1.2.0.zip</a></li>
+<h1 id="old-version"><a class="markdownIt-Anchor" href="#old-version"></a> Old Version</h1>
+<h2 id="chinesse-version"><a class="markdownIt-Anchor" href="#chinesse-version"></a> Chinesse Version</h2>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/YuanShen_1.2.0.zip">YuanShen_1.2.0.zip</a></li>
 </ul>
-<h2 id="Patch-v-1-5-0-v-1-5-1"><a href="#Patch-v-1-5-0-v-1-5-1" class="headerlink" title="Patch v.1.5.0 - v.1.5.1"></a>Patch v.1.5.0 - v.1.5.1</h2><ul>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip">en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.0_1.5.1_diff_MF8HJNzT.zip">game_1.5.0_1.5.1_diff_MF8HJNzT.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip">ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip">ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip</a></li>
-<li>  <a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip">zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip</a></li>
+<h2 id="patch-v150-v151"><a class="markdownIt-Anchor" href="#patch-v150-v151"></a> Patch v.1.5.0 - v.1.5.1</h2>
+<ul>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip">en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.0_1.5.1_diff_MF8HJNzT.zip">game_1.5.0_1.5.1_diff_MF8HJNzT.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip">ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip">ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip</a></li>
+<li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip">zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip</a></li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Title</th>
-<th align="center">URL</th>
+<th style="text-align:center">URL</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Blogger</td>
-<td align="center"><a href="https://webmanajemen.com/">webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://webmanajemen.com">webmanajemen.com</a></td>
 </tr>
 <tr>
 <td>Git Page</td>
-<td align="center"><a href="https://git.webmanajemen.com/">git.webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://git.webmanajemen.com">git.webmanajemen.com</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -844,53 +1016,66 @@ function CalculateTR(table) {
     <url>/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html</url>
     <content><![CDATA[<p>Update genshin impact <code>1.6.1</code> manual via download manager (IDM).</p>
 <span id="more"></span>
-
-<h2 id="Patch-1-6-0-1-6-1"><a href="#Patch-1-6-0-1-6-1" class="headerlink" title="Patch 1.6.0 - 1.6.1"></a>Patch 1.6.0 - 1.6.1</h2><ul>
+<h2 id="patch-160-161"><a class="markdownIt-Anchor" href="#patch-160-161"></a> Patch 1.6.0 - 1.6.1</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip">en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip">game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip">ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip">ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip">zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip</a></li>
 </ul>
-<h2 id="How-to-update"><a href="#How-to-update" class="headerlink" title="How to update"></a>How to update</h2><ul>
+<h2 id="how-to-update"><a class="markdownIt-Anchor" href="#how-to-update"></a> How to update</h2>
+<ul>
 <li>Download Update Version Or Full Game Version</li>
 <li>Copy all to your Genshin Impact\Genshin Impact Game\ folder</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.. Preview Example::</span><br><span class="line">.</span><br><span class="line">|-- C:</span><br><span class="line">    |-- Program Files</span><br><span class="line">        |-- Genshin Impact</span><br><span class="line">            |-- Genshin Impact Game</span><br><span class="line">                |-- game_..._diff_H8LGSgKU.zip</span><br><span class="line">                |-- ja-jp_..._diff_hfBOW6ym.zip</span><br><span class="line">                |-- ko-kr_..._diff_NcX8UP1L.zip</span><br><span class="line">                |-- en-us_..._diff_KdXT5Pi0.zip</span><br><span class="line">                `-- zh-cn_..._diff_hvg2F3QM.zip</span><br></pre></td></tr></table></figure>
-
-<h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
-<h2 id="Full-Game"><a href="#Full-Game" class="headerlink" title="Full Game"></a>Full Game</h2><ul>
+<h2 id="screenshot"><a class="markdownIt-Anchor" href="#screenshot"></a> Screenshot</h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
+<h2 id="full-game"><a class="markdownIt-Anchor" href="#full-game"></a> Full Game</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20201111_8e266b33e565ddf8/GenshinImpact_1.1.0.zip">GenshinImpact_1.1.0.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210317_67c8f1002bb26672/GenshinImpact_1.4.0.zip">GenshinImpact_1.4.0.zip</a></li>
-<li><h2 id="1-5-1"><a href="#1-5-1" class="headerlink" title="1.5.1"></a>1.5.1</h2></li>
-<li><ul>
+<li>
+<h2 id="151"><a class="markdownIt-Anchor" href="#151"></a> 1.5.1</h2>
+</li>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/GenshinImpact_1.5.1.zip">GenshinImpact_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_English(US)_1.5.1.zip">Audio_English(US)_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Korean_1.5.1.zip">Audio_Korean_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Japanese_1.5.1.zip">Audio_Japanese_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Chinese_1.5.1.zip">Audio_Chinese_1.5.1.zip</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="Another-Components"><a href="#Another-Components" class="headerlink" title="Another Components"></a>Another Components</h2><ul>
+<h2 id="another-components"><a class="markdownIt-Anchor" href="#another-components"></a> Another Components</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/plugins/DXSETUP.zip">DXSETUP.zip</a></li>
 </ul>
-<h1 id="Old-Version"><a href="#Old-Version" class="headerlink" title="Old Version"></a>Old Version</h1><h2 id="Chinesse-Version"><a href="#Chinesse-Version" class="headerlink" title="Chinesse Version"></a>Chinesse Version</h2><ul>
+<h1 id="old-version"><a class="markdownIt-Anchor" href="#old-version"></a> Old Version</h1>
+<h2 id="chinesse-version"><a class="markdownIt-Anchor" href="#chinesse-version"></a> Chinesse Version</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/YuanShen_1.2.0.zip">YuanShen_1.2.0.zip</a></li>
 </ul>
-<h2 id="Patch-v-1-5-0-v-1-5-1"><a href="#Patch-v-1-5-0-v-1-5-1" class="headerlink" title="Patch v.1.5.0 - v.1.5.1"></a>Patch v.1.5.0 - v.1.5.1</h2><ul>
+<h2 id="patch-v150-v151"><a class="markdownIt-Anchor" href="#patch-v150-v151"></a> Patch v.1.5.0 - v.1.5.1</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip">en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.0_1.5.1_diff_MF8HJNzT.zip">game_1.5.0_1.5.1_diff_MF8HJNzT.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip">ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip</a></li>
@@ -901,18 +1086,20 @@ function CalculateTR(table) {
 <thead>
 <tr>
 <th>Title</th>
-<th align="center">URL</th>
+<th style="text-align:center">URL</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Blogger</td>
-<td align="center"><a href="https://webmanajemen.com/">webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://webmanajemen.com">webmanajemen.com</a></td>
 </tr>
 <tr>
 <td>Git Page</td>
-<td align="center"><a href="https://git.webmanajemen.com/">git.webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://git.webmanajemen.com">git.webmanajemen.com</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -928,60 +1115,74 @@ function CalculateTR(table) {
     <url>/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html</url>
     <content><![CDATA[<p>Update genshin impact <code>2.0.0</code> manual via download manager (IDM).</p>
 <span id="more"></span>
-
-<h2 id="Patch-1-6-1-2-0-0"><a href="#Patch-1-6-1-2-0-0" class="headerlink" title="Patch 1.6.1 - 2.0.0"></a>Patch 1.6.1 - 2.0.0</h2><ul>
+<h2 id="patch-161-200"><a class="markdownIt-Anchor" href="#patch-161-200"></a> Patch 1.6.1 - 2.0.0</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip">en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip">game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip">ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip">ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip">zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip</a></li>
 </ul>
-<h2 id="Patch-1-6-0-1-6-1"><a href="#Patch-1-6-0-1-6-1" class="headerlink" title="Patch 1.6.0 - 1.6.1"></a>Patch 1.6.0 - 1.6.1</h2><ul>
+<h2 id="patch-160-161"><a class="markdownIt-Anchor" href="#patch-160-161"></a> Patch 1.6.0 - 1.6.1</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip">en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip">game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip">ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip">ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip">zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip</a></li>
 </ul>
-<h2 id="How-to-update"><a href="#How-to-update" class="headerlink" title="How to update"></a>How to update</h2><ul>
+<h2 id="how-to-update"><a class="markdownIt-Anchor" href="#how-to-update"></a> How to update</h2>
+<ul>
 <li>Download Update Version Or Full Game Version</li>
 <li>Copy all to your Genshin Impact\Genshin Impact Game\ folder</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.. Preview Example::</span><br><span class="line">.</span><br><span class="line">|-- C:</span><br><span class="line">    |-- Program Files</span><br><span class="line">        |-- Genshin Impact</span><br><span class="line">            |-- Genshin Impact Game</span><br><span class="line">                |-- game_..._diff_H8LGSgKU.zip</span><br><span class="line">                |-- ja-jp_..._diff_hfBOW6ym.zip</span><br><span class="line">                |-- ko-kr_..._diff_NcX8UP1L.zip</span><br><span class="line">                |-- en-us_..._diff_KdXT5Pi0.zip</span><br><span class="line">                `-- zh-cn_..._diff_hvg2F3QM.zip</span><br></pre></td></tr></table></figure>
-
-<h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
-<h2 id="Full-Game"><a href="#Full-Game" class="headerlink" title="Full Game"></a>Full Game</h2><ul>
+<h2 id="screenshot"><a class="markdownIt-Anchor" href="#screenshot"></a> Screenshot</h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
+<h2 id="full-game"><a class="markdownIt-Anchor" href="#full-game"></a> Full Game</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20201111_8e266b33e565ddf8/GenshinImpact_1.1.0.zip">GenshinImpact_1.1.0.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210317_67c8f1002bb26672/GenshinImpact_1.4.0.zip">GenshinImpact_1.4.0.zip</a></li>
-<li><h2 id="1-5-1"><a href="#1-5-1" class="headerlink" title="1.5.1"></a>1.5.1</h2></li>
-<li><ul>
+<li>
+<h2 id="151"><a class="markdownIt-Anchor" href="#151"></a> 1.5.1</h2>
+</li>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/GenshinImpact_1.5.1.zip">GenshinImpact_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_English(US)_1.5.1.zip">Audio_English(US)_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Korean_1.5.1.zip">Audio_Korean_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Japanese_1.5.1.zip">Audio_Japanese_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Chinese_1.5.1.zip">Audio_Chinese_1.5.1.zip</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="Another-Components"><a href="#Another-Components" class="headerlink" title="Another Components"></a>Another Components</h2><ul>
+<h2 id="another-components"><a class="markdownIt-Anchor" href="#another-components"></a> Another Components</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/plugins/DXSETUP.zip">DXSETUP.zip</a></li>
 </ul>
-<h1 id="Old-Version"><a href="#Old-Version" class="headerlink" title="Old Version"></a>Old Version</h1><h2 id="Chinesse-Version"><a href="#Chinesse-Version" class="headerlink" title="Chinesse Version"></a>Chinesse Version</h2><ul>
+<h1 id="old-version"><a class="markdownIt-Anchor" href="#old-version"></a> Old Version</h1>
+<h2 id="chinesse-version"><a class="markdownIt-Anchor" href="#chinesse-version"></a> Chinesse Version</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/YuanShen_1.2.0.zip">YuanShen_1.2.0.zip</a></li>
 </ul>
-<h2 id="Patch-v-1-5-0-v-1-5-1"><a href="#Patch-v-1-5-0-v-1-5-1" class="headerlink" title="Patch v.1.5.0 - v.1.5.1"></a>Patch v.1.5.0 - v.1.5.1</h2><ul>
+<h2 id="patch-v150-v151"><a class="markdownIt-Anchor" href="#patch-v150-v151"></a> Patch v.1.5.0 - v.1.5.1</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip">en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.0_1.5.1_diff_MF8HJNzT.zip">game_1.5.0_1.5.1_diff_MF8HJNzT.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip">ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip</a></li>
@@ -992,18 +1193,20 @@ function CalculateTR(table) {
 <thead>
 <tr>
 <th>Title</th>
-<th align="center">URL</th>
+<th style="text-align:center">URL</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Blogger</td>
-<td align="center"><a href="https://webmanajemen.com/">webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://webmanajemen.com">webmanajemen.com</a></td>
 </tr>
 <tr>
 <td>Git Page</td>
-<td align="center"><a href="https://git.webmanajemen.com/">git.webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://git.webmanajemen.com">git.webmanajemen.com</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -1019,65 +1222,80 @@ function CalculateTR(table) {
     <url>/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html</url>
     <content><![CDATA[<p>Update genshin impact <code>2.1.0</code> manual via download manager (IDM).</p>
 <span id="more"></span>
-
-<h2 id="Patch-2-0-0-2-1-0"><a href="#Patch-2-0-0-2-1-0" class="headerlink" title="Patch 2.0.0 - 2.1.0"></a>Patch 2.0.0 - 2.1.0</h2><ul>
+<h2 id="patch-200-210"><a class="markdownIt-Anchor" href="#patch-200-210"></a> Patch 2.0.0 - 2.1.0</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip">en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip">game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip">ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip</a></li>
 </ul>
-<h2 id="Patch-1-6-1-2-0-0"><a href="#Patch-1-6-1-2-0-0" class="headerlink" title="Patch 1.6.1 - 2.0.0"></a>Patch 1.6.1 - 2.0.0</h2><ul>
+<h2 id="patch-161-200"><a class="markdownIt-Anchor" href="#patch-161-200"></a> Patch 1.6.1 - 2.0.0</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip">en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip">game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip">ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip">ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip">zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip</a></li>
 </ul>
-<h2 id="Patch-1-6-0-1-6-1"><a href="#Patch-1-6-0-1-6-1" class="headerlink" title="Patch 1.6.0 - 1.6.1"></a>Patch 1.6.0 - 1.6.1</h2><ul>
+<h2 id="patch-160-161"><a class="markdownIt-Anchor" href="#patch-160-161"></a> Patch 1.6.0 - 1.6.1</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip">en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip">game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip">ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip">ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip">zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip</a></li>
 </ul>
-<h2 id="How-to-update"><a href="#How-to-update" class="headerlink" title="How to update"></a>How to update</h2><ul>
+<h2 id="how-to-update"><a class="markdownIt-Anchor" href="#how-to-update"></a> How to update</h2>
+<ul>
 <li>Download Update Version Or Full Game Version</li>
 <li>Copy all to your Genshin Impact\Genshin Impact Game\ folder</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.. Preview Example::</span><br><span class="line">.</span><br><span class="line">|-- C:</span><br><span class="line">    |-- Program Files</span><br><span class="line">        |-- Genshin Impact</span><br><span class="line">            |-- Genshin Impact Game</span><br><span class="line">                |-- game_..._diff_H8LGSgKU.zip</span><br><span class="line">                |-- ja-jp_..._diff_hfBOW6ym.zip</span><br><span class="line">                |-- ko-kr_..._diff_NcX8UP1L.zip</span><br><span class="line">                |-- en-us_..._diff_KdXT5Pi0.zip</span><br><span class="line">                `-- zh-cn_..._diff_hvg2F3QM.zip</span><br></pre></td></tr></table></figure>
-
-<h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
-<h2 id="Full-Game"><a href="#Full-Game" class="headerlink" title="Full Game"></a>Full Game</h2><ul>
+<h2 id="screenshot"><a class="markdownIt-Anchor" href="#screenshot"></a> Screenshot</h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://i.imgur.com/zHDw2i0.png" alt="preview" title="" ></img></p>
+<h2 id="full-game"><a class="markdownIt-Anchor" href="#full-game"></a> Full Game</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20201111_8e266b33e565ddf8/GenshinImpact_1.1.0.zip">GenshinImpact_1.1.0.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210317_67c8f1002bb26672/GenshinImpact_1.4.0.zip">GenshinImpact_1.4.0.zip</a></li>
-<li><h2 id="1-5-1"><a href="#1-5-1" class="headerlink" title="1.5.1"></a>1.5.1</h2></li>
-<li><ul>
+<li>
+<h2 id="151"><a class="markdownIt-Anchor" href="#151"></a> 1.5.1</h2>
+</li>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/GenshinImpact_1.5.1.zip">GenshinImpact_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_English(US)_1.5.1.zip">Audio_English(US)_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Korean_1.5.1.zip">Audio_Korean_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Japanese_1.5.1.zip">Audio_Japanese_1.5.1.zip</a></li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Chinese_1.5.1.zip">Audio_Chinese_1.5.1.zip</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="Another-Components"><a href="#Another-Components" class="headerlink" title="Another Components"></a>Another Components</h2><ul>
+<h2 id="another-components"><a class="markdownIt-Anchor" href="#another-components"></a> Another Components</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/plugins/DXSETUP.zip">DXSETUP.zip</a></li>
 </ul>
-<h1 id="Old-Version"><a href="#Old-Version" class="headerlink" title="Old Version"></a>Old Version</h1><h2 id="Chinesse-Version"><a href="#Chinesse-Version" class="headerlink" title="Chinesse Version"></a>Chinesse Version</h2><ul>
+<h1 id="old-version"><a class="markdownIt-Anchor" href="#old-version"></a> Old Version</h1>
+<h2 id="chinesse-version"><a class="markdownIt-Anchor" href="#chinesse-version"></a> Chinesse Version</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/YuanShen_1.2.0.zip">YuanShen_1.2.0.zip</a></li>
 </ul>
-<h2 id="Patch-v-1-5-0-v-1-5-1"><a href="#Patch-v-1-5-0-v-1-5-1" class="headerlink" title="Patch v.1.5.0 - v.1.5.1"></a>Patch v.1.5.0 - v.1.5.1</h2><ul>
+<h2 id="patch-v150-v151"><a class="markdownIt-Anchor" href="#patch-v150-v151"></a> Patch v.1.5.0 - v.1.5.1</h2>
+<ul>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip">en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.0_1.5.1_diff_MF8HJNzT.zip">game_1.5.0_1.5.1_diff_MF8HJNzT.zip</a></li>
 <li><a href="https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip">ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip</a></li>
@@ -1088,18 +1306,20 @@ function CalculateTR(table) {
 <thead>
 <tr>
 <th>Title</th>
-<th align="center">URL</th>
+<th style="text-align:center">URL</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Blogger</td>
-<td align="center"><a href="https://webmanajemen.com/">webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://webmanajemen.com">webmanajemen.com</a></td>
 </tr>
 <tr>
 <td>Git Page</td>
-<td align="center"><a href="https://git.webmanajemen.com/">git.webmanajemen.com</a></td>
+<td style="text-align:center"><a href="https://git.webmanajemen.com">git.webmanajemen.com</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>Games</category>
@@ -1113,21 +1333,33 @@ function CalculateTR(table) {
   <entry>
     <title>Colorful Auspicious Nimbus Cloud</title>
     <url>/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html</url>
-    <content><![CDATA[<h2 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h2><ul>
-<li>Blueprint (To buy this blueprint, you have to go to an NPC named the <code>Wonder Creator</code> in <code>Sophila</code>.)<br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png" alt="" title="" ></img></li>
+    <content><![CDATA[<h2 id="requirement"><a class="markdownIt-Anchor" href="#requirement"></a> Requirement</h2>
+<ul>
+<li>Blueprint (To buy this blueprint, you have to go to an NPC named the <code>Wonder Creator</code> in <code>Sophila</code>.)<br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png" alt="" title="" ></img></li>
 </ul>
-<h3 id="Colorful-Auspicious-Nimbus-Cloud-Material-Chest-Locations"><a href="#Colorful-Auspicious-Nimbus-Cloud-Material-Chest-Locations" class="headerlink" title="Colorful Auspicious Nimbus Cloud Material Chest Locations"></a>Colorful Auspicious Nimbus Cloud Material Chest Locations</h3><ul>
+<h3 id="colorful-auspicious-nimbus-cloud-material-chest-locations"><a class="markdownIt-Anchor" href="#colorful-auspicious-nimbus-cloud-material-chest-locations"></a> Colorful Auspicious Nimbus Cloud Material Chest Locations</h3>
+<ul>
 <li>Magic Wool chest location</li>
 </ul>
-<p>Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you’ll found the chest<br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr1-map.png" alt="" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png" alt="" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr1-teleporter.png" alt="" title="" ></img></p>
+<p>Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you’ll found the chest<br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr1-map.png" alt="" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png" alt="" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr1-teleporter.png" alt="" title="" ></img></p>
 <ul>
 <li>Miraculous Dye chest location</li>
 </ul>
-<p><em>Twilight Rainforest F2. Behind map teleporter</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr2-map.png" alt="map" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr2-overview.png" alt="overview" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr2-detail.png" alt="detail" title="" ></img></p>
+<p><em>Twilight Rainforest F2. Behind map teleporter</em><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr2-map.png" alt="map" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr2-overview.png" alt="overview" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr2-detail.png" alt="detail" title="" ></img></p>
 <ul>
 <li>Weightless Dust chest location</li>
 </ul>
-<p><em>Twilight Rainforest F3. Behind bush and tree</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr3-map.png" alt="map" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr3-overview.png" alt="overview" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr3-detail.png" alt="detail" title="" ></img></p>
+<p><em>Twilight Rainforest F3. Behind bush and tree</em><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr3-map.png" alt="map" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr3-overview.png" alt="overview" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Colorful%20Auspicious%20Nimbus%20Cloud/tr3-detail.png" alt="detail" title="" ></img></p>
 <p><em>Colorful Auspicious Nimbus Cloud Video Tutorial</em></p>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/hVhzL_q1IOs" frameborder="0" loading="lazy" allowfullscreen></iframe></div>]]></content>
       <categories>
@@ -1141,24 +1373,33 @@ function CalculateTR(table) {
   <entry>
     <title>Winged Hairband</title>
     <url>/The%20Legend%20Of%20Neverland/Chest/Winged%20Hairband.html</url>
-    <content><![CDATA[<h2 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h2><ul>
-<li><p>Blueprint (Buy to Npc in Sophila)<br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/blueprint.webp" alt="Blueprint" title="" ></img></p>
+    <content><![CDATA[<h2 id="requirement"><a class="markdownIt-Anchor" href="#requirement"></a> Requirement</h2>
+<ul>
+<li>
+<p>Blueprint (Buy to Npc in Sophila)<br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/blueprint.webp" alt="Blueprint" title="" ></img></p>
 </li>
-<li><p>Feather Decoration Chest Location</p>
+<li>
+<p>Feather Decoration Chest Location</p>
 <p>Goto <code>Fog Swamp F1</code></p>
-<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs1-map.webp" alt="Feather Decoration Chest Location" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png" alt="Feather Decoration Chest Detail Location" title="" ></img></p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs1-map.webp" alt="Feather Decoration Chest Location" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png" alt="Feather Decoration Chest Detail Location" title="" ></img></p>
 </li>
-<li><p>Mysterious Yarn Chest Location</p>
+<li>
+<p>Mysterious Yarn Chest Location</p>
 <p>Goto <code>Fog Swamp F2</code>, near house of NPC named Robin.</p>
-<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs2-map.webp" alt="Mysterious Yarn Chest Location" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png" alt="Mysterious Yarn Chest Detail Location" title="" ></img></p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs2-map.webp" alt="Mysterious Yarn Chest Location" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png" alt="Mysterious Yarn Chest Detail Location" title="" ></img></p>
 </li>
-<li><p>Vitalization Dust Chest Location</p>
+<li>
+<p>Vitalization Dust Chest Location</p>
 <p>Goto <code>Fog Swamp F3</code>, large purple and dark green trees, with early trees appearing bright blue and forming a circle.</p>
-<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs3-map.webp" alt="Vitalization Dust Location" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs3-detail.png" alt="Vitalization Dust Chest Detail Location" title="" ></img></p>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs3-map.webp" alt="Vitalization Dust Location" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Winged%20Hairband/fs3-detail.png" alt="Vitalization Dust Chest Detail Location" title="" ></img></p>
 </li>
 </ul>
-<h2 id="Video-tutorial"><a href="#Video-tutorial" class="headerlink" title="Video tutorial"></a>Video tutorial</h2><div class="video-container"><iframe src="https://www.youtube.com/embed/psOnlBSRBjA" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-
+<h2 id="video-tutorial"><a class="markdownIt-Anchor" href="#video-tutorial"></a> Video tutorial</h2>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/psOnlBSRBjA" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/yRbP_fSP3xY" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 ]]></content>
       <categories>
@@ -1173,24 +1414,22 @@ function CalculateTR(table) {
     <title>Highest Fairies Exp And Crystals Expel Incident</title>
     <url>/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html</url>
     <content><![CDATA[<div class="toc">
-
 <!-- toc -->
-
 <ul>
 <li><a href="#gaya-snow-mountain-2f">Gaya Snow Mountain 2F</a></li>
 <li><a href="#gaya-snow-mountain-3f">Gaya Snow Mountain 3F</a></li>
 <li><a href="#skala-desert-3f">Skala Desert 3F</a></li>
 </ul>
 <!-- tocstop -->
-
 </div>
-
 <h2><span id="expel-incident-the-legend-of-neverland">Expel Incident The Legend Of NeverLand</span><a href="#expel-incident-the-legend-of-neverland" class="header-anchor">#</a></h2>
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most FAIRY EXP AND CRYSTALS.
-
-<h2><span id="gaya-snow-mountain-2f">Gaya Snow Mountain 2F</span><a href="#gaya-snow-mountain-2f" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png" alt="" title="" ></img></p>
-<h2><span id="gaya-snow-mountain-3f">Gaya Snow Mountain 3F</span><a href="#gaya-snow-mountain-3f" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png" alt="" title="" ></img></p>
-<h2><span id="skala-desert-3f">Skala Desert 3F</span><a href="#skala-desert-3f" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Crystals%20Fairy%20Exp/Skala%20Desert%203F.png" alt="" title="" ></img></p>
+<h2><span id="gaya-snow-mountain-2f"> Gaya Snow Mountain 2F</span><a href="#gaya-snow-mountain-2f" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png" alt="" title="" ></img></p>
+<h2><span id="gaya-snow-mountain-3f"> Gaya Snow Mountain 3F</span><a href="#gaya-snow-mountain-3f" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png" alt="" title="" ></img></p>
+<h2><span id="skala-desert-3f"> Skala Desert 3F</span><a href="#skala-desert-3f" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Crystals%20Fairy%20Exp/Skala%20Desert%203F.png" alt="" title="" ></img></p>
 <style>em::before{content:"Gate Name : ";}</style>
 ]]></content>
       <categories>
@@ -1205,9 +1444,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     <title>Highest Exp Character Expel Incident</title>
     <url>/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html</url>
     <content><![CDATA[<div class="toc">
-
 <!-- toc -->
-
 <ul>
 <li><a href="#kagmaw-grassland-f3">Kagmaw Grassland F3</a></li>
 <li><a href="#kagmaw-grassland-f1">Kagmaw Grassland F1</a></li>
@@ -1224,25 +1461,56 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 <li><a href="#morcuri-mines-f2">Morcuri Mines F2</a></li>
 </ul>
 <!-- tocstop -->
-
 </div>
-  
 <h2><span id="expel-incident-the-legend-of-neverland">Expel Incident The Legend Of NeverLand</span><a href="#expel-incident-the-legend-of-neverland" class="header-anchor">#</a></h2>
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most CHARACTER EXP.
-
-<h2><span id="kagmaw-grassland-f3">Kagmaw Grassland F3</span><a href="#kagmaw-grassland-f3" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Kagmaw%20Grassland%20F3.png" alt="Running Wolf Pack" title="" ></img><br><em>Running Wolf Pack</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png" alt="Black Wolf King" title="" ></img><br><em>Black Wolf King</em></p>
-<h2><span id="kagmaw-grassland-f1">Kagmaw Grassland F1</span><a href="#kagmaw-grassland-f1" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png" alt="Silk And Satin" title="" ></img><br><em>Silk And Satin</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Kagmaw%20Grassland%20F1%202.png" alt="Rolling Rock" title="" ></img><br><em>Rolling Rock</em></p>
-<h2><span id="skala-desert-f1">Skala Desert F1</span><a href="#skala-desert-f1" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Skala%20Desert%20F1.png" alt="Raiders of the lost arks" title="" ></img><br><em>Raiders of the lost arks</em></p>
-<h2><span id="skala-desert-f3">Skala Desert F3</span><a href="#skala-desert-f3" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://drive.google.com/uc?export=view&id=1P3LF3l1ViyaXKAZ2-EDQkKctNU63IBR0" alt="" title="" ></img><br><em>Cherish Food</em></p>
-<h2><span id="oak-town">Oak Town</span><a href="#oak-town" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Oak%20Town%202.png" alt="" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Oak%20Town.png" alt="" title="" ></img></p>
-<h2><span id="twilight-rainforest-f1">Twilight Rainforest F1</span><a href="#twilight-rainforest-f1" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Twilight%20Rainforest%201F.png" alt="" title="" ></img><br>  <em>Rampant Insect</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Twilight%20Rainforest%20F1.png" alt="" title="" ></img></p>
-<h2><span id="twilight-rainforest-f3">Twilight Rainforest F3</span><a href="#twilight-rainforest-f3" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132796579-01ac578a-c4d9-4c3f-8497-216e238ef8c3.png" alt="Lemuridae Chief" title="" ></img><br><em>Lemuridae Chief</em></p>
-<h2><span id="gaia-snow-mountain-f1">Gaia Snow Mountain F1</span><a href="#gaia-snow-mountain-f1" class="header-anchor">#</a></h2><p>  <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133004330-3b54aef9-6bcf-4e9d-9dd6-da6b5672afb2.png" alt="Winter Fashion" title="" ></img><br>  <em>Winter Fashion</em></p>
-<h2><span id="gaia-snow-mountain-f2">Gaia Snow Mountain F2</span><a href="#gaia-snow-mountain-f2" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Gaia%20Snow%20Mountain%20F2.png" alt="" title="" ></img></p>
-<h2><span id="gaia-snow-mountain-f3">Gaia Snow Mountain F3</span><a href="#gaia-snow-mountain-f3" class="header-anchor">#</a></h2><p>  <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133228994-3f8d9ba4-b09a-46ee-b46d-5f680f728331.png" alt="Sparkling" title="" ></img><br>  <em>Sparkling</em></p>
-<h2><span id="fog-swamp-f1">Fog Swamp F1</span><a href="#fog-swamp-f1" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F1.png" alt="Hurry-Curry" title="" ></img><br><em>Hurry-Curry</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F1%202.png" alt="Poacher Doomsday" title="" ></img><br><em>Poacher Doomsday</em></p>
-<h2><span id="fog-swamp-f3">Fog Swamp F3</span><a href="#fog-swamp-f3" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F3.png" alt="Liar Raid" title="" ></img><br>  <em>Liar Raid</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F3%202.png" alt="Murloc Sushi" title="" ></img><br><em>Murloc Sushi</em></p>
-<h2><span id="morcuri-mines-f2">Morcuri Mines F2</span><a href="#morcuri-mines-f2" class="header-anchor">#</a></h2><p>  <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133885294-5c64c56c-bb09-414f-a479-b300b0c7cb88.png" alt="Mechanic" title="" ></img><br>  <em>Mechanic</em></p>
+<h2><span id="kagmaw-grassland-f3"> Kagmaw Grassland F3</span><a href="#kagmaw-grassland-f3" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Kagmaw%20Grassland%20F3.png" alt="Running Wolf Pack" title="" ></img><br>
+<em>Running Wolf Pack</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png" alt="Black Wolf King" title="" ></img><br>
+<em>Black Wolf King</em></p>
+<h2><span id="kagmaw-grassland-f1"> Kagmaw Grassland F1</span><a href="#kagmaw-grassland-f1" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png" alt="Silk And Satin" title="" ></img><br>
+<em>Silk And Satin</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Kagmaw%20Grassland%20F1%202.png" alt="Rolling Rock" title="" ></img><br>
+<em>Rolling Rock</em></p>
+<h2><span id="skala-desert-f1"> Skala Desert F1</span><a href="#skala-desert-f1" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Skala%20Desert%20F1.png" alt="Raiders of the lost arks" title="" ></img><br>
+<em>Raiders of the lost arks</em></p>
+<h2><span id="skala-desert-f3"> Skala Desert F3</span><a href="#skala-desert-f3" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://drive.google.com/uc?export=view&amp;id=1P3LF3l1ViyaXKAZ2-EDQkKctNU63IBR0" alt="" title="" ></img><br>
+<em>Cherish Food</em></p>
+<h2><span id="oak-town"> Oak Town</span><a href="#oak-town" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Oak%20Town%202.png" alt="" title="" ></img><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Oak%20Town.png" alt="" title="" ></img></p>
+<h2><span id="twilight-rainforest-f1"> Twilight Rainforest F1</span><a href="#twilight-rainforest-f1" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Twilight%20Rainforest%201F.png" alt="" title="" ></img><br>
+<em>Rampant Insect</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Exp%20Char/Twilight%20Rainforest%20F1.png" alt="" title="" ></img></p>
+<h2><span id="twilight-rainforest-f3"> Twilight Rainforest F3</span><a href="#twilight-rainforest-f3" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132796579-01ac578a-c4d9-4c3f-8497-216e238ef8c3.png" alt="Lemuridae Chief" title="" ></img><br>
+<em>Lemuridae Chief</em></p>
+<h2><span id="gaia-snow-mountain-f1"> Gaia Snow Mountain F1</span><a href="#gaia-snow-mountain-f1" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133004330-3b54aef9-6bcf-4e9d-9dd6-da6b5672afb2.png" alt="Winter Fashion" title="" ></img><br>
+<em>Winter Fashion</em></p>
+<h2><span id="gaia-snow-mountain-f2"> Gaia Snow Mountain F2</span><a href="#gaia-snow-mountain-f2" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Gaia%20Snow%20Mountain%20F2.png" alt="" title="" ></img></p>
+<h2><span id="gaia-snow-mountain-f3"> Gaia Snow Mountain F3</span><a href="#gaia-snow-mountain-f3" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133228994-3f8d9ba4-b09a-46ee-b46d-5f680f728331.png" alt="Sparkling" title="" ></img><br>
+<em>Sparkling</em></p>
+<h2><span id="fog-swamp-f1"> Fog Swamp F1</span><a href="#fog-swamp-f1" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F1.png" alt="Hurry-Curry" title="" ></img><br>
+<em>Hurry-Curry</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F1%202.png" alt="Poacher Doomsday" title="" ></img><br>
+<em>Poacher Doomsday</em></p>
+<h2><span id="fog-swamp-f3"> Fog Swamp F3</span><a href="#fog-swamp-f3" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F3.png" alt="Liar Raid" title="" ></img><br>
+<em>Liar Raid</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Exp%20Char/Fog%20Swamp%20F3%202.png" alt="Murloc Sushi" title="" ></img><br>
+<em>Murloc Sushi</em></p>
+<h2><span id="morcuri-mines-f2"> Morcuri Mines F2</span><a href="#morcuri-mines-f2" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/133885294-5c64c56c-bb09-414f-a479-b300b0c7cb88.png" alt="Mechanic" title="" ></img><br>
+<em>Mechanic</em></p>
 <style>em::before{content: "Gate Name : ";}</style>
 ]]></content>
       <categories>
@@ -1257,9 +1525,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     <title>Standard Rewards Expel Incident</title>
     <url>/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html</url>
     <content><![CDATA[<div class="toc">
-
 <!-- toc -->
-
 <ul>
 <li><a href="#sophila">Sophila</a></li>
 <li><a href="#kagmaw-grassland-f1">Kagmaw Grassland F1</a></li>
@@ -1268,18 +1534,28 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 <li><a href="#skala-desert-f3">Skala Desert F3</a></li>
 </ul>
 <!-- tocstop -->
-
 </div>
-
 <h2><span id="expel-incident-the-legend-of-neverland">Expel Incident The Legend Of NeverLand</span><a href="#expel-incident-the-legend-of-neverland" class="header-anchor">#</a></h2>
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the STANDARD REWARDS.
-
-
-<h2><span id="sophila">Sophila</span><a href="#sophila" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Standard%20Rewards/Sophilia.png" alt="" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131433396-702bbcc8-1c0b-43d8-a688-caff61d8d8b2.png" alt="Work Together" title="" ></img><br><em>Work Together</em></p>
-<h2><span id="kagmaw-grassland-f1">Kagmaw Grassland F1</span><a href="#kagmaw-grassland-f1" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131432947-509bdb14-e643-4859-965f-b634ea8f8805.png" alt="Monkey Tricks" title="" ></img><br><em>Monkey Tricks</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131443088-50778773-7e35-4474-bbc9-14d75b3943d0.png" alt="Grassland Busy Man" title="" ></img><br><em>Grassland Busy Man</em><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132125883-1c0ca56c-f32e-4b86-b0d3-d56876384cde.png" alt="Lawless" title="" ></img><br><em>Lawless</em></p>
-<h2><span id="twilight-rainforest-f2">Twilight Rainforest F2</span><a href="#twilight-rainforest-f2" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Standard%20Rewards/Twilight%20Rainforest%20F2.png" alt="" title="" ></img><br><em>Rat Crisis</em></p>
-<h2><span id="skala-desert-f2">Skala Desert F2</span><a href="#skala-desert-f2" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Standard%20Rewards/Skala%20Desert%20F2.png" alt="" title="" ></img></p>
-<h2><span id="skala-desert-f3">Skala Desert F3</span><a href="#skala-desert-f3" class="header-anchor">#</a></h2><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131433100-70aa2477-fc05-4e1d-be15-b63ac72b8841.png" alt="Flaming Heart" title="" ></img><br><em>Flaming Heart</em></p>
+<h2><span id="sophila"> Sophila</span><a href="#sophila" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Standard%20Rewards/Sophilia.png" alt="" title="" ></img><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131433396-702bbcc8-1c0b-43d8-a688-caff61d8d8b2.png" alt="Work Together" title="" ></img><br>
+<em>Work Together</em></p>
+<h2><span id="kagmaw-grassland-f1"> Kagmaw Grassland F1</span><a href="#kagmaw-grassland-f1" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131432947-509bdb14-e643-4859-965f-b634ea8f8805.png" alt="Monkey Tricks" title="" ></img><br>
+<em>Monkey Tricks</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131443088-50778773-7e35-4474-bbc9-14d75b3943d0.png" alt="Grassland Busy Man" title="" ></img><br>
+<em>Grassland Busy Man</em><br>
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/132125883-1c0ca56c-f32e-4b86-b0d3-d56876384cde.png" alt="Lawless" title="" ></img><br>
+<em>Lawless</em></p>
+<h2><span id="twilight-rainforest-f2"> Twilight Rainforest F2</span><a href="#twilight-rainforest-f2" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="./Standard%20Rewards/Twilight%20Rainforest%20F2.png" alt="" title="" ></img><br>
+<em>Rat Crisis</em></p>
+<h2><span id="skala-desert-f2"> Skala Desert F2</span><a href="#skala-desert-f2" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="Standard%20Rewards/Skala%20Desert%20F2.png" alt="" title="" ></img></p>
+<h2><span id="skala-desert-f3"> Skala Desert F3</span><a href="#skala-desert-f3" class="header-anchor">#</a></h2>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/131433100-70aa2477-fc05-4e1d-be15-b63ac72b8841.png" alt="Flaming Heart" title="" ></img><br>
+<em>Flaming Heart</em></p>
 <style>em::before{content:"Gate Name : ";}</style>
 ]]></content>
       <categories>
@@ -1294,7 +1570,6 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     <title>Quiz</title>
     <url>/The%20Legend%20Of%20Neverland/Quiz.html</url>
     <content><![CDATA[<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
-
 <div id="bootstrap-wrapper">
   <div class="mb-2">
     <label for="search-questions" class="sr-only">Filter</label>
@@ -1307,11 +1582,9 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      9/21/2021, 9:56:47 PM
+      9/22/2021, 8:07:41 PM
     </small>
-
   </div>
-
   <ul id="questions">
     "Cité de la musique" is located in France (X)
 "volga river tracker" once shocked the world because of its beauty, the painter is llya repin (O)
@@ -1647,9 +1920,7 @@ calcium is a intelligent element (O)
 “Cité de la Musique” is in Austria (O)
 “Law” first appear in Slavery Society (O)
 “WHO” stands for World Health Organization (O)
-
   </ul>
-
   <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mt-4 mb-4 text-center">
     <input type="hidden" name="add" value="add">
     <div class="row">
@@ -1675,20 +1946,17 @@ calcium is a intelligent element (O)
       </div>
     </div>
   </form>
-
   <blockquote class="mt-2">
     <span style="display: none;">Join discord https://tiny.one/INDO1945.</span>
     This article shortcut url https://bit.ly/TLONQUIZ<br />
     Add new quiz https://bit.ly/TLONQUIZADD<br />
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   </blockquote>
-  
   <div>
     <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png" alt="preview" title="" ></img>
     <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png" alt="Winner - MilimNava_s48" title="" ></img>
   </div>
 </div>
-
 <style>[id*="questions-filter"] li:not([data-id]) {
   display: none;
 }
@@ -1963,31 +2231,54 @@ function parse_url(url) {
   <entry>
     <title>About</title>
     <url>/about/index.html</url>
-    <content><![CDATA[<h1 id="About-this-Site"><a href="#About-this-Site" class="headerlink" title="About this Site"></a>About this Site</h1><p><a href="http://forthebadge.com/"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/built-with-love.svg" alt="forthebadge" title="" ></img></a><br><a href="https://forthebadge.com/"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/built-by-developers.svg" alt="forthebadge" title="" ></img></a><br><a href="https://forthebadge.com/"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="forthebadge" title="" ></img></a><br><a href="https://forthebadge.com/"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/validated-html5.svg" alt="forthebadge" title="" ></img></a><br><a href="https://forthebadge.com/"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/uses-git.svg" alt="forthebadge" title="" ></img></a><br><a href="https://forthebadge.com/"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/compatibility-pc-load-letter.svg" alt="forthebadge" title="" ></img></a></p>
-<p>This is Website is made by <strong>Delta Force Techs</strong> team of <strong>Delta Force Community</strong> as a Online Library Projects named <strong>“Web-Nary”</strong>.<br>Here, we post Free Ebooks of Different types of Books for People of all <em>Ages</em> and <em>Type</em> for them to gain Knowledge.<br>If you also want to contribute to the <strong>“Web-Nary”</strong> Project, contact us at <a href="mailto:library@dfcommunity.win">library@dfcommunity.win</a></p>
-<h1 id="Frameworks-used"><a href="#Frameworks-used" class="headerlink" title="Frameworks used :-"></a>Frameworks used :-</h1><!--suppress HtmlDeprecatedAttribute -->
+    <content><![CDATA[<h1 id="about-this-site"><a class="markdownIt-Anchor" href="#about-this-site"></a> About this Site</h1>
+<p><a href="http://forthebadge.com"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/built-with-love.svg" alt="forthebadge" title="" ></img></a><br />
+<a href="https://forthebadge.com"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/built-by-developers.svg" alt="forthebadge" title="" ></img></a><br />
+<a href="https://forthebadge.com"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="forthebadge" title="" ></img></a><br />
+<a href="https://forthebadge.com"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/validated-html5.svg" alt="forthebadge" title="" ></img></a><br />
+<a href="https://forthebadge.com"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/uses-git.svg" alt="forthebadge" title="" ></img></a><br />
+<a href="https://forthebadge.com"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://forthebadge.com/images/badges/compatibility-pc-load-letter.svg" alt="forthebadge" title="" ></img></a></p>
+<p>This is Website is made by <strong>Delta Force Techs</strong> team of <strong>Delta Force Community</strong> as a Online Library Projects named <strong>“Web-Nary”</strong>.<br />
+Here, we post Free Ebooks of Different types of Books for People of all <em>Ages</em> and <em>Type</em> for them to gain Knowledge.<br />
+If you also want to contribute to the <strong>“Web-Nary”</strong> Project, contact us at <a href="mailto:library@dfcommunity.win">library@dfcommunity.win</a></p>
+<h1 id="frameworks-used-"><a class="markdownIt-Anchor" href="#frameworks-used-"></a> Frameworks used :-</h1>
+<!--suppress HtmlDeprecatedAttribute -->
 <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="100" height="100" src="https://raw.githubusercontent.com/hexojs/logo/master/hexo-logo-avatar.png" alt="Hexo logo" title="" ></img>
-
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
-<p>A fast, simple &amp; powerful blog framework, powered by <a href="https://nodejs.org/">Node.js</a>.</p>
+<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
+<blockquote>
+<p>A fast, simple &amp; powerful blog framework, powered by <a href="https://nodejs.org">Node.js</a>.</p>
 </blockquote>
-<p><a href="https://hexo.io/">Website</a> | <a href="https://hexo.io/docs">Documentation</a></p>
-<h1 id="Hosting-Platform"><a href="#Hosting-Platform" class="headerlink" title="Hosting Platform"></a>Hosting Platform</h1><h2 id="Netliy"><a href="#Netliy" class="headerlink" title="Netliy"></a>Netliy</h2><blockquote>
+<p><a href="https://hexo.io">Website</a> | <a href="https://hexo.io/docs">Documentation</a></p>
+<h1 id="hosting-platform"><a class="markdownIt-Anchor" href="#hosting-platform"></a> Hosting Platform</h1>
+<h2 id="netliy"><a class="markdownIt-Anchor" href="#netliy"></a> Netliy</h2>
+<blockquote>
 <p>Both the EBook Download Server and The Complete Website is Hosted at Netlify because of their Global CDN Networks and Website Loading Speed</p>
 </blockquote>
 <img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="netlify" title="" ></img>
-
-<h2 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h2><p>Creating a quality Website takes a lot of time. Unlike others website,<br>Web-Nary is completely independently funded. We fight for our users. This does mean<br>however that we also have to spend time working contracts to pay the bills.<br>This is where you can help: by chipping in you can ensure more time is spent<br>improving Web-Nary rather than dealing with distractions.</p>
+<h2 id="support"><a class="markdownIt-Anchor" href="#support"></a> Support</h2>
+<p>Creating a quality Website takes a lot of time. Unlike others website,<br />
+Web-Nary is completely independently funded. We fight for our users. This does mean<br />
+however that we also have to spend time working contracts to pay the bills.<br />
+This is where you can help: by chipping in you can ensure more time is spent<br />
+improving Web-Nary rather than dealing with distractions.</p>
 <p>To Support Us :-</p>
 <ul>
-<li>You can Contribute<br>OR</li>
+<li>You can Contribute<br />
+OR</li>
 <li>You can donate us in our PayPal</li>
 </ul>
-<h1 id="Website-Administrators"><a href="#Website-Administrators" class="headerlink" title="Website Administrators"></a>Website Administrators</h1><p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/67438566" alt="" title="" ></img><br>Delta Force Community</a></p>
-<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/41448696" alt="" title="" ></img><br>Delta Force Techs</a></p>
-<h2 id="Website-Contributors"><a href="#Website-Contributors" class="headerlink" title="Website Contributors"></a>Website Contributors</h2><p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/41448663" alt="" title="" ></img><br>Bravo 68 Web</a></p>
-<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars2.githubusercontent.com/u/53594347" alt="" title="" ></img><br>Kali DF Dev</a></p>
-<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/59129302" alt="" title="" ></img><br>Awesome Exp</a>#</p>
+<h1 id="website-administrators"><a class="markdownIt-Anchor" href="#website-administrators"></a> Website Administrators</h1>
+<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/67438566" alt="" title="" ></img><br />
+Delta Force Community</a></p>
+<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/41448696" alt="" title="" ></img><br />
+Delta Force Techs</a></p>
+<h2 id="website-contributors"><a class="markdownIt-Anchor" href="#website-contributors"></a> Website Contributors</h2>
+<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/41448663" alt="" title="" ></img><br />
+Bravo 68 Web</a></p>
+<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars2.githubusercontent.com/u/53594347" alt="" title="" ></img><br />
+Kali DF Dev</a></p>
+<p><a  href="https://bravo68web.dfcommunity.win"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://avatars1.githubusercontent.com/u/59129302" alt="" title="" ></img><br />
+Awesome Exp</a>#</p>
 ]]></content>
   </entry>
   <entry>
@@ -2014,7 +2305,9 @@ function parse_url(url) {
   <entry>
     <title>Examples</title>
     <url>/guide/Examples.html</url>
-    <content><![CDATA[<h1 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h1><h2 id="PDF-Embed"><a href="#PDF-Embed" class="headerlink" title="PDF Embed"></a>PDF Embed</h2>
+    <content><![CDATA[<h1 id="examples"><a class="markdownIt-Anchor" href="#examples"></a> Examples</h1>
+<h2 id="pdf-embed"><a class="markdownIt-Anchor" href="#pdf-embed"></a> PDF Embed</h2>
+
 
 	<div class="row">
 		<iframe src="https://drive.google.com/file/d/0B6qSwdwPxPRdTEliX0dhQ2JfUEU/preview" style="width:100%; height:550px"></iframe>
@@ -2022,8 +2315,8 @@ function parse_url(url) {
 
 
 
-
-<h2 id="Git-Hub-Cards"><a href="#Git-Hub-Cards" class="headerlink" title="Git-Hub Cards"></a>Git-Hub Cards</h2><div style="text-align: center">
+<h2 id="git-hub-cards"><a class="markdownIt-Anchor" href="#git-hub-cards"></a> Git-Hub Cards</h2>
+<div style="text-align: center">
   <div class="github-card"
     data-user="bravo68web"
     data-repo=""
@@ -2037,16 +2330,16 @@ function parse_url(url) {
 </div>
 <script src="/github-card-lib/githubcard.js"></script>
 
-
-<h3 id="And-Much-more"><a href="#And-Much-more" class="headerlink" title="And Much more"></a>And Much more</h3><p><strong>See Documentation</strong></p>
+<h3 id="and-much-more"><a class="markdownIt-Anchor" href="#and-much-more"></a> And Much more</h3>
+<p><strong>See Documentation</strong></p>
 ]]></content>
   </entry>
   <entry>
     <title>Hello World Summary</title>
     <url>/guide/hello-world-summary.html</url>
-    <content><![CDATA[<p>This is hello world with summary.<br>This is text summary.</p>
+    <content><![CDATA[<p>This is hello world with summary.<br />
+This is text summary.</p>
 <span id="more"></span>
-
 <p>This is text after summary</p>
 ]]></content>
   </entry>
@@ -2054,17 +2347,18 @@ function parse_url(url) {
     <title>Hello World</title>
     <url>/guide/hello-world.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
@@ -2076,9 +2370,18 @@ function parse_url(url) {
   <entry>
     <title></title>
     <url>/assets/Midi/readme.html</url>
-    <content><![CDATA[<h3 id="Short-url-services"><a href="#Short-url-services" class="headerlink" title="Short url services"></a>Short url services</h3><p>to avoid typing long url, better you short them to easily typed using <a href="http://bitly.com/">bit.ly</a>.<br>another list midi <a href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html">https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html</a></p>
-<h3 id="How-to-copy-url"><a href="#How-to-copy-url" class="headerlink" title="How to copy url"></a>How to copy url</h3><h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/130082790-7798e493-a9b3-426c-8532-7b8468033d45.png" alt="image" title="" ></img><br><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/130567162-ea777985-2600-4a85-b0c8-b44000822316.png" alt="image" title="" ></img></p>
-<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p>current folder path:<br><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/">https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/</a><br>example direct download/streaming <code>7 Orange</code>:<br><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7%20orange.mid">https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7%20orange.mid</a>  </p>
+    <content><![CDATA[<h3 id="short-url-services"><a class="markdownIt-Anchor" href="#short-url-services"></a> Short url services</h3>
+<p>to avoid typing long url, better you short them to easily typed using <a href="http://bitly.com">bit.ly</a>.<br />
+another list midi <a href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html">https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html</a></p>
+<h3 id="how-to-copy-url"><a class="markdownIt-Anchor" href="#how-to-copy-url"></a> How to copy url</h3>
+<h1 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h1>
+<p><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/130082790-7798e493-a9b3-426c-8532-7b8468033d45.png" alt="image" title="" ></img><br />
+<img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="" height="" src="https://user-images.githubusercontent.com/12471057/130567162-ea777985-2600-4a85-b0c8-b44000822316.png" alt="image" title="" ></img></p>
+<h1 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2</h1>
+<p>current folder path:<br />
+<a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/">https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/</a><br />
+example direct download/streaming <code>7 Orange</code>:<br />
+<a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7%20orange.mid">https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7 orange.mid</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -2089,12 +2392,12 @@ function parse_url(url) {
   <entry>
     <title></title>
     <url>/assets/js/quiz.js</url>
-    <content><![CDATA[if(console.clear(),"cdpn.io"==location.host){function rangeAlphabetic(e,t){for(var n=[],r=e.charCodeAt(0),i=t.charCodeAt(0);r<=i;++r)n.push(String.fromCharCode(r));return n}let e=rangeAlphabetic("a","z").concat(rangeAlphabetic("A","Z")).filter((function(e){return null!=e}));setTimeout((function(){let t=document.getElementById("search-questions");var n=e[Math.floor(Math.random()*e.length)];t.value=n,t.dispatchEvent(new Event("keyup"))}),3e3)}function loadJScript(e,t){var n,r,i;r=!1,(n=document.createElement("script")).type="text/javascript",n.src=e,n.onload=n.onreadystatechange=function(){r||this.readyState&&"complete"!=this.readyState||(r=!0,t())},(i=document.getElementsByTagName("script")[0]).parentNode.insertBefore(n,i)}function uniqArr(e){var t={};return e.filter((function(e){return!t.hasOwnProperty(e)&&(t[e]=!0)}))}function escapeRegExp(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}let quizUrls=["https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt","https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt"],quizSrc=[];function jQueryMethod(){document.getElementById("questions");let e=document.getElementById("search-questions"),t=(document.getElementById("O_only"),function(e){jQuery("ul[id*='questions'] li").each((function(t){jQuery(this).text().search(new RegExp("^"+escapeRegExp(e),"gmi"))<0?jQuery(this).hide():(jQuery(this).show(),jQuery(this).prependTo(jQuery("ul[id*='questions']"))),jQuery(this).text().search(new RegExp(escapeRegExp(e),"gmi"))<0?jQuery(this).hide():jQuery(this).show()}))}),n=function(){$("#questions").text(""),$("#questions li").remove();for(let e=0;e<quizSrc.length;e++){let t=quizSrc[e],n=/\(O\)$/i,r=document.createElement("li");r.innerHTML=t,n.test(t)?r.setAttribute("class","isTrue"):r.setAttribute("class","isFalse"),document.getElementById("questions").appendChild(r)}};quizUrls.forEach((function(e){let r=new URL(e);r.search="?uid=#uniqid()",$.get(r.toString()).then((function(e){if(e){let t=e.split("\n");quizSrc=uniqArr((quizSrc=quizSrc.map((function(e){return e.trim()}))).concat(t).map((function(e){return e.trim()}))),n()}jQuery("#search-questions").keyup((function(){t(jQuery(this).val())}))}))})),$("#O_only").on("change",(function(r){r.preventDefault(),this.checked?$(".isFalse").remove():n(),e&&e.value&&e.value.trim().length>0&&t(e.value)}))}function parse_query_url(e){if(!e)throw"Please provide url";var t={};return e.substr(1).split("&").forEach((function(e){var n=e.split("=");t[n[0]]=decodeURIComponent(n[1])})),t}function parse_url(e){let t=new URL(e);return t.search=parse_query_url(t.search),t}loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",jQueryMethod);]]></content>
+    <content><![CDATA[if(console.clear(),"cdpn.io"==location.host){function rangeAlphabetic(e,t){for(var n=[],r=e.charCodeAt(0),i=t.charCodeAt(0);r<=i;++r)n.push(String.fromCharCode(r));return n}let e=rangeAlphabetic("a","z").concat(rangeAlphabetic("A","Z")).filter(function(e){return null!=e});setTimeout(function(){let t=document.getElementById("search-questions");var n=e[Math.floor(Math.random()*e.length)];t.value=n,t.dispatchEvent(new Event("keyup"))},3e3)}function loadJScript(e,t){var n,r,i;r=!1,(n=document.createElement("script")).type="text/javascript",n.src=e,n.onload=n.onreadystatechange=function(){r||this.readyState&&"complete"!=this.readyState||(r=!0,t())},(i=document.getElementsByTagName("script")[0]).parentNode.insertBefore(n,i)}function uniqArr(e){var t={};return e.filter(function(e){return!t.hasOwnProperty(e)&&(t[e]=!0)})}function escapeRegExp(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}let quizUrls=["https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt","https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt"],quizSrc=[];function jQueryMethod(){document.getElementById("questions");let e=document.getElementById("search-questions"),t=(document.getElementById("O_only"),function(e){jQuery("ul[id*='questions'] li").each(function(t){jQuery(this).text().search(new RegExp("^"+escapeRegExp(e),"gmi"))<0?jQuery(this).hide():(jQuery(this).show(),jQuery(this).prependTo(jQuery("ul[id*='questions']"))),jQuery(this).text().search(new RegExp(escapeRegExp(e),"gmi"))<0?jQuery(this).hide():jQuery(this).show()})}),n=function(){$("#questions").text(""),$("#questions li").remove();for(let e=0;e<quizSrc.length;e++){let t=quizSrc[e],n=/\(O\)$/i,r=document.createElement("li");r.innerHTML=t,n.test(t)?r.setAttribute("class","isTrue"):r.setAttribute("class","isFalse"),document.getElementById("questions").appendChild(r)}};quizUrls.forEach(function(e){let r=new URL(e);r.search="?uid=#uniqid()",$.get(r.toString()).then(function(e){if(e){let t=e.split("\n");quizSrc=uniqArr((quizSrc=quizSrc.map(function(e){return e.trim()})).concat(t).map(function(e){return e.trim()})),n()}jQuery("#search-questions").keyup(function(){t(jQuery(this).val())})})}),$("#O_only").on("change",function(r){r.preventDefault(),this.checked?$(".isFalse").remove():n(),e&&e.value&&e.value.trim().length>0&&t(e.value)})}function parse_query_url(e){if(!e)throw"Please provide url";var t={};return e.substr(1).split("&").forEach(function(e){var n=e.split("=");t[n[0]]=decodeURIComponent(n[1])}),t}function parse_url(e){let t=new URL(e);return t.search=parse_query_url(t.search),t}loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",jQueryMethod);]]></content>
   </entry>
   <entry>
     <title></title>
     <url>/assets/js/recipes.js</url>
-    <content><![CDATA[function CalculateTR(table){let identifier=table.hasAttribute("id")?table.id:"-";console.log(`Start Calculating Table ${identifier}`);let tr=table.getElementsByTagName("tr");if(tr.length>0)for(i=0;i<tr.length;i++){let td=tr[i].getElementsByTagName("td"),str,thirdTD=void 0!==td[3];thirdTD&&(str=td[3].innerText,console.log(str),/[+\(\)]/gm.test(str)&&(str=str.trim().replaceAll(/x/gm,"*"),td[3].innerText=eval(str)))}}function writeTo(e,t,l,r){"function"==typeof r?t=r(t):"function"==typeof l&&(t=l(t)),l&&"function"!=typeof l||(l="red");let o=document.querySelectorAll(e);for(i=0;i<o.length;i++)o[i].style.backgroundColor=l,"yellow"!=l&&(o[i].style.color="white"),o[i].innerHTML=t.toLocaleString("en-US")}console.clear(),CalculateTR(document.getElementById("char-dish")),CalculateTR(document.getElementById("fairy-dish")),writeTo("[i='hamprice']",149e4,"brown"),writeTo("[i='hamexp']",22e4,"brown"),writeTo("[i='bcprice']",35e3,"yellow"),writeTo("[i='bcexp']",1e4,"yellow"),writeTo("[i='ham-bc']",149e4/35e3,"blue",(function(e){return e.toFixed(2)})),writeTo('[i="bctotal"]',425714.2857142857,(function(e){return e.toFixed(0)}));]]></content>
+    <content><![CDATA[function CalculateTR(table){let identifier=table.hasAttribute("id")?table.id:"-";console.log(`Start Calculating Table ${identifier}`);let tr=table.getElementsByTagName("tr");if(tr.length>0)for(i=0;i<tr.length;i++){let td=tr[i].getElementsByTagName("td"),str,thirdTD=void 0!==td[3];thirdTD&&(str=td[3].innerText,console.log(str),/[+\(\)]/gm.test(str)&&(str=str.trim().replaceAll(/x/gm,"*"),td[3].innerText=eval(str)))}}function writeTo(e,t,l,r){"function"==typeof r?t=r(t):"function"==typeof l&&(t=l(t)),l&&"function"!=typeof l||(l="red");let o=document.querySelectorAll(e);for(i=0;i<o.length;i++)o[i].style.backgroundColor=l,"yellow"!=l&&(o[i].style.color="white"),o[i].innerHTML=t.toLocaleString("en-US")}console.clear(),CalculateTR(document.getElementById("char-dish")),CalculateTR(document.getElementById("fairy-dish")),writeTo("[i='hamprice']",149e4,"brown"),writeTo("[i='hamexp']",22e4,"brown"),writeTo("[i='bcprice']",35e3,"yellow"),writeTo("[i='bcexp']",1e4,"yellow"),writeTo("[i='ham-bc']",149e4/35e3,"blue",function(e){return e.toFixed(2)}),writeTo('[i="bctotal"]',425714.2857142857,function(e){return e.toFixed(0)});]]></content>
   </entry>
   <entry>
     <title></title>

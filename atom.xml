@@ -6,7 +6,7 @@
   <link href="https://git.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://git.webmanajemen.com/"/>
-  <updated>2021-10-07T18:19:15.751Z</updated>
+  <updated>2021-10-31T02:56:19.701Z</updated>
   <id>https://git.webmanajemen.com/</id>
   
   <author>
@@ -21,17 +21,125 @@
     <link href="https://git.webmanajemen.com/RegExp/RegExp.html"/>
     <id>https://git.webmanajemen.com/RegExp/RegExp.html</id>
     <published>2021-09-21T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.701Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;!--https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285--&gt;
-&lt;h2 id=&quot;what-is-regular-expression&quot;&gt;&lt;a</summary>
-        
-      
+&lt;h2 id=&quot;what-is-regular-expression&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#what-is-regular-expression&quot;&gt;&lt;/a&gt; What Is Regular Expression ?&lt;/h2&gt;
+&lt;p&gt;Regular Expression (RegExp) a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text. &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_expression&quot;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;what-can-a-regular-expression-be-used-for&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#what-can-a-regular-expression-be-used-for&quot;&gt;&lt;/a&gt; What can a regular expression be used for ?&lt;/h2&gt;
+&lt;p&gt;A regular expression can be a single character, or a more complicated pattern. Regular expressions can be used to perform all types of text search and text replace operations. /w3schools/i is a regular expression.&lt;/p&gt;
+&lt;h2 id=&quot;which-is-the-best-example-of-a-regex&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#which-is-the-best-example-of-a-regex&quot;&gt;&lt;/a&gt; Which is the best example of a regex ?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Anchors — ^ and $&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;RegExp&lt;/th&gt;
+&lt;th&gt;Explanations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;^&lt;/b&gt;Hello&lt;/td&gt;
+&lt;td&gt;matches any string that &lt;em&gt;starts with &lt;strong&gt;Hello&lt;/strong&gt;&lt;/em&gt; -&amp;gt;  &lt;a href=&quot;https://regex101.com/r/cO8lqs/2&quot;&gt;Try it!&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;world&lt;b&gt;$&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that &lt;em&gt;ends with &lt;strong&gt;world&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;^&lt;/b&gt;Hello world&lt;b&gt;$&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;exact string match&lt;/em&gt; (starts and ends with &lt;strong&gt;Hello world&lt;/strong&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hello&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;matches any string&lt;/em&gt; that has the text &lt;strong&gt;Hello&lt;/strong&gt; in it&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Quantifiers — * + ? and {}&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;RegExp&lt;/th&gt;
+&lt;th&gt;Explanations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;abc*&lt;/td&gt;
+&lt;td&gt;matches a string that has ab followed by zero or more c -&amp;gt;  &lt;a href=&quot;https://regex101.com/r/cO8lqs/1&quot;&gt;Try it!&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abc+&lt;/td&gt;
+&lt;td&gt;matches a string that has ab followed by one or more&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abc&lt;b&gt;?&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that has ab followed by zero or one&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abc&lt;b&gt;{2}&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that has ab followed by 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abc&lt;b&gt;{2,}&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that has ab followed by 2 or more&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abc&lt;b&gt;{2,5}&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that has ab followed by 2 up to 5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ca&lt;b&gt;(bc)*&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that has a followed by zero or more copies of the sequence&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bca&lt;b&gt;(bc){2,5}&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;matches a string that has a followed by 2 up to 5 copies of the sequence bc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;OR operator — | or []&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;RegExp&lt;/th&gt;
+&lt;th&gt;Explanations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;a(b|c)&lt;/td&gt;
+&lt;td&gt;matches a string that has &lt;strong&gt;&lt;em&gt;a&lt;/em&gt; followed by &lt;em&gt;b&lt;/em&gt; or &lt;em&gt;c&lt;/em&gt;&lt;/strong&gt; (and captures &lt;strong&gt;&lt;em&gt;b&lt;/em&gt; or &lt;em&gt;c&lt;/em&gt;&lt;/strong&gt;) -&amp;gt; &lt;a href=&quot;https://regex101.com/r/cO8lqs/3&quot;&gt;Try it!&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;a[bc]&lt;/td&gt;
+&lt;td&gt;same as previous, &lt;strong&gt;but without capturing &lt;em&gt;b&lt;/em&gt; or &lt;em&gt;c&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Character classes — \d \w \s and .&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;RegExp&lt;/th&gt;
+&lt;th&gt;Explanations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
     
     
     
@@ -47,18 +155,15 @@
     <link href="https://git.webmanajemen.com/RegExp/badword.html"/>
     <id>https://git.webmanajemen.com/RegExp/badword.html</id>
     <published>2021-09-21T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.701Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;!--toc--&gt;
 &lt;h2 id=&quot;main-expression&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#main-expression&quot;&gt;&lt;/a&gt; Main Expression&lt;/h2&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;figcaption&gt;&lt;span&gt;&amp;#123;#regexp-main&amp;#125;&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;^((?!badword).)*$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;try-it&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#try-it&quot;&gt;&lt;/a&gt; Try It&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.regextester.com/15&quot;&gt;Click Here&lt;/a&gt;&lt;/p&gt;
+&lt;!-- script /RegExp/RegExp/badwords.js --&gt;</summary>
     
     
     
@@ -74,16 +179,40 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Fishing.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Fishing.html</id>
     <published>2021-09-18T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.557Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences</summary>
-        
-      
+    <summary type="html">&lt;p&gt;Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the &lt;code&gt;cooking shop&lt;/code&gt;. You can see the recipe at &lt;a href=&quot;/The%20Legend%20Of%20Neverland/Recipes.html&quot;&gt;Cooking Recipes&lt;/a&gt;.&lt;br&gt;
+You can cook buffs for your character or make dishes to increase the level of &lt;code&gt;Fairies&lt;/code&gt; you have.&lt;br&gt;
+This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;code&gt;macros&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png&quot; alt=&quot;Fishing the legend of neverland&quot; title&gt;&lt;/p&gt;
+&lt;h2 id=&quot;calculating-the-fishing-actions&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#calculating-the-fishing-actions&quot;&gt;&lt;/a&gt; Calculating the fishing actions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span&gt;1 bottle = 300 staminas&lt;/span&gt; &amp;divide; 5/action &amp;rarr; &lt;span&gt;
+      &lt;script&gt;
+        document.write(300 / 5);
+      &lt;/script&gt; actions
+    &lt;/span&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;1 fishing = &amp;plusmn;7-8 secs (we take 7 secs)&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span&gt;7 x 60 actions &amp;erarr; &lt;script&gt;
+        document.write(7 * 60)
+      &lt;/script&gt; seconds &amp;divide; 60 secs (1 min)&lt;/span&gt; = &lt;span&gt;
+      &lt;script&gt;
+        document.write(420 / 60)
+      &lt;/script&gt; minutes
+    &lt;/span&gt; &lt;span&gt;to finish 1 stamina bottle&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;configuration&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#configuration&quot;&gt;&lt;/a&gt; Configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png&quot; alt=&quot;image&quot; title&gt;&lt;/li&gt;
+&lt;li&gt;set &lt;code&gt;repeat actions&lt;/code&gt; with the total stamina bottle you have, or my recommendation is to subtract a little from the total stamina bottle you have. for example you have 55 bottles, set just 50 repeat actions, this to prevent other items to be used unexpectedly/unintentionally.&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png&quot; alt=&quot;Setup total stamina bottles as repeat action&quot; title&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;how-to-download-script&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-download-script&quot;&gt;&lt;/a&gt; How to download script&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/The%20Legend%20Of%20Neverland/Macros.html&quot;&gt;Read Here&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;auto-fishing-script&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#auto-fishing-script&quot;&gt;&lt;/a&gt; Auto fishing script&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json&quot;&gt;Download Macros Auto Fishing&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -105,18 +234,41 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html</id>
     <published>2021-09-06T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.697Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h3 id=&quot;requirements&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#requirements&quot;&gt;&lt;/a&gt; Requirements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Bluestacks (4 or 5 supported) ( &lt;a</summary>
-        
-      
+&lt;li&gt;Bluestacks (4 or 5 supported) ( &lt;a href=&quot;https://www.bluestacks.com/bluestacks-5.html&quot;&gt;Download Bluestacks&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;features&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#features&quot;&gt;&lt;/a&gt; Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Switch Fairies
+&lt;ul&gt;
+&lt;li&gt;Team 1 (CTRL+Z)&lt;/li&gt;
+&lt;li&gt;Team 2 (CTRL+X)&lt;/li&gt;
+&lt;li&gt;Team 3 (CTRL+C)&lt;/li&gt;
+&lt;li&gt;Team 4 (CTRL+V)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Switch Jobs/Classes
+&lt;ul&gt;
+&lt;li&gt;Job 1 (CTRL+A)&lt;/li&gt;
+&lt;li&gt;Job 2 (CTRL+S)&lt;/li&gt;
+&lt;li&gt;Job 3 (CTRL+D)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Zoom in (-) - Zoom out (+)&lt;/li&gt;
+&lt;li&gt;Rotate Camera Using D-PAD Arrows&lt;/li&gt;
+&lt;li&gt;2 Skill Fairies (E &amp;amp; Q)&lt;/li&gt;
+&lt;li&gt;And More&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;switch-fairies-ability-preview&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#switch-fairies-ability-preview&quot;&gt;&lt;/a&gt; Switch Fairies Ability Preview&lt;/h5&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/9ZEqUD5piB4&quot; frameborder=&quot;0&quot; loading=&quot;lazy&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt; 
+&lt;hr&gt;
+&lt;center&gt;&lt;b&gt;&lt;a href=&quot;https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg&quot;&gt;Download Game Control&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;
+&lt;hr&gt;
+&lt;h5 id=&quot;how-to-download&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-download&quot;&gt;&lt;/a&gt; How to download&lt;/h5&gt;</summary>
     
     
     
@@ -136,16 +288,39 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros.html</id>
     <published>2021-09-06T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.549Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Indeed, in case you’re on BlueStacks construct 4.130 or higher, you’ll approach the Macros, a component that permits you to record</summary>
-        
-      
+    <summary type="html">&lt;p&gt;Indeed, in case you’re on BlueStacks construct 4.130 or higher, you’ll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs/monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.&lt;/p&gt;
+  &lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#features&quot;&gt;Features&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#how-to-download-the-macros&quot;&gt;How to download the macros&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#how-to-import-the-macros-script-into-bluestacks&quot;&gt;How to import the macros script into bluestacks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;span id=&quot;introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more&quot;&gt; Introduction: Macros barely used for Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.&lt;/span&gt;&lt;a href=&quot;#introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. &lt;a href=&quot;https://www.bluestacks.com/features/macros.html&quot;&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;span id=&quot;features&quot;&gt; Features&lt;/span&gt;&lt;a href=&quot;#features&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Collect materials&lt;/li&gt;
+&lt;li&gt;Mining: for upgrading gears and weapons&lt;/li&gt;
+&lt;li&gt;Inscription: for upgrading skills and talents&lt;/li&gt;
+&lt;li&gt;Insect: for produce crystal&lt;/li&gt;
+&lt;li&gt;Auto fishing: &lt;a href=&quot;/The%20Legend%20Of%20Neverland/Fishing.html&quot;&gt;Click Here To Read And Download The Script&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;span id=&quot;how-to-download-the-macros&quot;&gt; How to download the macros&lt;/span&gt;&lt;a href=&quot;#how-to-download-the-macros&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;width: 100%;&quot;&gt;
+  &lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width=&quot;50%&quot; height=&quot;auto&quot; src=&quot;https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png&quot; alt=&quot;Save Link As&quot; title&gt;
+  &lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width=&quot;50%&quot; height=&quot;auto&quot; src=&quot;https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png&quot; alt=&quot;Save With Filename&quot; title&gt;
+&lt;/div&gt;
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</summary>
     
     
     
@@ -167,10 +342,10 @@
     <link href="https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html"/>
     <id>https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html</id>
     <published>2021-09-03T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.767Z</updated>
+    <updated>2021-10-31T02:56:19.705Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Update genshin impact &lt;code&gt;2.1.0&lt;/code&gt; manual via download manager (IDM).&lt;/p&gt;</summary>
+    <summary type="html">Update genshin impact 2.1.0 manual via download manager (IDM).</summary>
     
     
     
@@ -190,19 +365,38 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Winged%20Hairband.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Winged%20Hairband.html</id>
     <published>2021-08-30T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.767Z</updated>
+    <updated>2021-10-31T02:56:19.633Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;requirement&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#requirement&quot;&gt;&lt;/a&gt; Requirement&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Blueprint (Buy to Npc in</summary>
-        
-      
+&lt;p&gt;Blueprint (Buy to Npc in Sophila)&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Winged%20Hairband/blueprint.webp&quot; alt=&quot;Blueprint&quot; title&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Feather Decoration Chest Location&lt;/p&gt;
+&lt;p&gt;Goto &lt;code&gt;Fog Swamp F1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Winged%20Hairband/fs1-map.webp&quot; alt=&quot;Feather Decoration Chest Location&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png&quot; alt=&quot;Feather Decoration Chest Detail Location&quot; title&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mysterious Yarn Chest Location&lt;/p&gt;
+&lt;p&gt;Goto &lt;code&gt;Fog Swamp F2&lt;/code&gt;, near house of NPC named Robin.&lt;/p&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Winged%20Hairband/fs2-map.webp&quot; alt=&quot;Mysterious Yarn Chest Location&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png&quot; alt=&quot;Mysterious Yarn Chest Detail Location&quot; title&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vitalization Dust Chest Location&lt;/p&gt;
+&lt;p&gt;Goto &lt;code&gt;Fog Swamp F3&lt;/code&gt;, large purple and dark green trees, with early trees appearing bright blue and forming a circle.&lt;/p&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Winged%20Hairband/fs3-map.webp&quot; alt=&quot;Vitalization Dust Location&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Winged%20Hairband/fs3-detail.png&quot; alt=&quot;Vitalization Dust Chest Detail Location&quot; title&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;video-tutorial&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#video-tutorial&quot;&gt;&lt;/a&gt; Video tutorial&lt;/h2&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/psOnlBSRBjA&quot; frameborder=&quot;0&quot; loading=&quot;lazy&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/yRbP_fSP3xY&quot; frameborder=&quot;0&quot; loading=&quot;lazy&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+</summary>
     
     
     
@@ -220,16 +414,111 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html</id>
     <published>2021-08-20T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.545Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;npcs-favorite-musical-instrument&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#npcs-favorite-musical-instrument&quot;&gt;&lt;/a&gt; NPC’s favorite musical</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;npcs-favorite-musical-instrument&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#npcs-favorite-musical-instrument&quot;&gt;&lt;/a&gt; NPC’s favorite musical instrument&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Did you know that playing music with certain instruments to the npc who gave you the quest “Music Performance Request” will give you better rewards, such as ff seeds, cabala, etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NPC Name&lt;/th&gt;
+&lt;th&gt;NPC Location&lt;/th&gt;
+&lt;th&gt;musical instrument&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Colin&lt;/td&gt;
+&lt;td&gt;Sophila&lt;/td&gt;
+&lt;td&gt;Flute&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maggie&lt;/td&gt;
+&lt;td&gt;Oak Town&lt;/td&gt;
+&lt;td&gt;Piano&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Guard&lt;/td&gt;
+&lt;td&gt;Sophila&lt;/td&gt;
+&lt;td&gt;Drum&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Anna&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Violin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Freya&lt;/td&gt;
+&lt;td&gt;Sophila&lt;/td&gt;
+&lt;td&gt;Guitar&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;list-best-midi-hold-tapright-click-to-copy&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#list-best-midi-hold-tapright-click-to-copy&quot;&gt;&lt;/a&gt; List Best Midi (Hold tap/Right click to copy)&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Title&lt;/th&gt;
+&lt;th&gt;Link&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Deep purple - soldier of fortune&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/38563.mid&quot;&gt;https://bitmidi.com/uploads/38563.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Deep purple - soldier of fortune [2]&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/38560.mid&quot;&gt;https://bitmidi.com/uploads/38560.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Only The Lonely&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/112561.mid&quot;&gt;https://bitmidi.com/uploads/112561.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Final Fantasy VII (Battle Theme)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/46430.mid&quot;&gt;https://bitmidi.com/uploads/46430.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Queen - Bohemian Rhapsody&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/87216.mid&quot;&gt;https://bitmidi.com/uploads/87216.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Janis Joplin - Me and Bobby McGee&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/62322.mid&quot;&gt;https://bitmidi.com/uploads/62322.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Clout - Save me&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/24659.mid&quot;&gt;https://bitmidi.com/uploads/24659.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TokiMeki&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/24659.mid&quot;&gt;https://bitmidi.com/uploads/24659.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hatsune Miku&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://bitmidi.com/uploads/55292.mid&quot;&gt;https://bitmidi.com/uploads/55292.mid&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;available-midi-sites&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#available-midi-sites&quot;&gt;&lt;/a&gt; Available Midi Sites&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi&quot;&gt;https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mfiles.co.uk/midi-files.htm&quot;&gt;https://www.mfiles.co.uk/midi-files.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://midisfree.com/&quot;&gt;https://midisfree.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.midiworld.com/&quot;&gt;https://www.midiworld.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.midishrine.com/&quot;&gt;http://www.midishrine.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://midistock.ru/&quot;&gt;https://midistock.ru/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://freemidi.org/topmidi&quot;&gt;https://freemidi.org/topmidi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sheet.host/&quot;&gt;https://sheet.host/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.hamienet.com/&quot;&gt;http://www.hamienet.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;how-to-create-musicsong-mp3-to-midi&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-create-musicsong-mp3-to-midi&quot;&gt;&lt;/a&gt; How to create music/song mp3 to midi&lt;/h3&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/tik3ZFwFsJA&quot; frameborder=&quot;0&quot; loading=&quot;lazy&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/kIXXv8oUqOc&quot; frameborder=&quot;0&quot; loading=&quot;lazy&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;</summary>
     
     
     
@@ -247,18 +536,37 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html</id>
     <published>2021-08-20T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.767Z</updated>
+    <updated>2021-10-31T02:56:19.637Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;requirement&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#requirement&quot;&gt;&lt;/a&gt; Requirement&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Blueprint (To buy this blueprint, you</summary>
-        
-      
+&lt;li&gt;Blueprint (To buy this blueprint, you have to go to an NPC named the &lt;code&gt;Wonder Creator&lt;/code&gt; in &lt;code&gt;Sophila&lt;/code&gt;.)&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png&quot; alt title&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;colorful-auspicious-nimbus-cloud-material-chest-locations&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#colorful-auspicious-nimbus-cloud-material-chest-locations&quot;&gt;&lt;/a&gt; Colorful Auspicious Nimbus Cloud Material Chest Locations&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Magic Wool chest location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you’ll found the chest&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr1-map.png&quot; alt title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png&quot; alt title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr1-teleporter.png&quot; alt title&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Miraculous Dye chest location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Twilight Rainforest F2. Behind map teleporter&lt;/em&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr2-map.png&quot; alt=&quot;map&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr2-overview.png&quot; alt=&quot;overview&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr2-detail.png&quot; alt=&quot;detail&quot; title&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Weightless Dust chest location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Twilight Rainforest F3. Behind bush and tree&lt;/em&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr3-map.png&quot; alt=&quot;map&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr3-overview.png&quot; alt=&quot;overview&quot; title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Colorful%20Auspicious%20Nimbus%20Cloud/tr3-detail.png&quot; alt=&quot;detail&quot; title&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Colorful Auspicious Nimbus Cloud Video Tutorial&lt;/em&gt;&lt;/p&gt;</summary>
     
     
     
@@ -276,20 +584,31 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html</id>
     <published>2021-08-16T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.767Z</updated>
+    <updated>2021-10-31T02:56:19.597Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;div class=&quot;toc&quot;&gt;
 &lt;!-- toc --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#gaya-snow-mountain-f2&quot;&gt;Gaya Snow Mountain F2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
+&lt;li&gt;&lt;a href=&quot;#gaya-snow-mountain-f3&quot;&gt;Gaya Snow Mountain F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#skala-desert-f2&quot;&gt;Skala Desert F2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#skala-desert-f3&quot;&gt;Skala Desert F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#maple-grove-f1&quot;&gt;Maple Grove F1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;span id=&quot;expel-incident-the-legend-of-neverland&quot;&gt;Expel Incident The Legend Of NeverLand&lt;/span&gt;&lt;a href=&quot;#expel-incident-the-legend-of-neverland&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most FAIRY EXP AND CRYSTALS.
+&lt;h2&gt;&lt;span id=&quot;gaya-snow-mountain-f2&quot;&gt; Gaya Snow Mountain F2&lt;/span&gt;&lt;a href=&quot;#gaya-snow-mountain-f2&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png&quot; alt title&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;gaya-snow-mountain-f3&quot;&gt; Gaya Snow Mountain F3&lt;/span&gt;&lt;a href=&quot;#gaya-snow-mountain-f3&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png&quot; alt title&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;skala-desert-f2&quot;&gt; Skala Desert F2&lt;/span&gt;&lt;a href=&quot;#skala-desert-f2&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/136436283-942699d6-be8d-4b55-9ebc-6641ca9884ac.png&quot; alt=&quot;Scorpion&#39;s Revenge&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Scorpion’s Revenge - Kill toxic desert scorpions&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;skala-desert-f3&quot;&gt; Skala Desert F3&lt;/span&gt;&lt;a href=&quot;#skala-desert-f3&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Crystals%20Fairy%20Exp/Skala%20Desert%203F.png&quot; alt title&gt;&lt;/p&gt;</summary>
     
     
     
@@ -307,20 +626,48 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html</id>
     <published>2021-08-16T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.771Z</updated>
+    <updated>2021-10-31T02:56:19.565Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;div class=&quot;toc&quot;&gt;
 &lt;!-- toc --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#kagmaw-grassland-f3&quot;&gt;Kagmaw Grassland F3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
+&lt;li&gt;&lt;a href=&quot;#kagmaw-grassland-f1&quot;&gt;Kagmaw Grassland F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#skala-desert-f1&quot;&gt;Skala Desert F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#skala-desert-f3&quot;&gt;Skala Desert F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#oak-town&quot;&gt;Oak Town&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#twilight-rainforest-f1&quot;&gt;Twilight Rainforest F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#twilight-rainforest-f3&quot;&gt;Twilight Rainforest F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#gaia-snow-mountain-f1&quot;&gt;Gaia Snow Mountain F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#gaia-snow-mountain-f2&quot;&gt;Gaia Snow Mountain F2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#gaia-snow-mountain-f3&quot;&gt;Gaia Snow Mountain F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#fog-swamp-f1&quot;&gt;Fog Swamp F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#fog-swamp-f3&quot;&gt;Fog Swamp F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#maple-grove-f3&quot;&gt;Maple Grove F3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#morcuri-mines-f1&quot;&gt;Morcuri Mines F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#morcuri-mines-f2&quot;&gt;Morcuri Mines F2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;span id=&quot;expel-incident-the-legend-of-neverland&quot;&gt;Expel Incident The Legend Of NeverLand&lt;/span&gt;&lt;a href=&quot;#expel-incident-the-legend-of-neverland&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most CHARACTER EXP.
+&lt;h2&gt;&lt;span id=&quot;kagmaw-grassland-f3&quot;&gt; Kagmaw Grassland F3&lt;/span&gt;&lt;a href=&quot;#kagmaw-grassland-f3&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Exp%20Char/Kagmaw%20Grassland%20F3.png&quot; alt=&quot;Running Wolf Pack&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Running Wolf Pack&lt;/em&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png&quot; alt=&quot;Black Wolf King&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Black Wolf King&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;kagmaw-grassland-f1&quot;&gt; Kagmaw Grassland F1&lt;/span&gt;&lt;a href=&quot;#kagmaw-grassland-f1&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png&quot; alt=&quot;Silk And Satin&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Silk And Satin&lt;/em&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Exp%20Char/Kagmaw%20Grassland%20F1%202.png&quot; alt=&quot;Rolling Rock&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Rolling Rock&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;skala-desert-f1&quot;&gt; Skala Desert F1&lt;/span&gt;&lt;a href=&quot;#skala-desert-f1&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Exp%20Char/Skala%20Desert%20F1.png&quot; alt=&quot;Raiders of the lost arks&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Raiders of the lost arks&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;skala-desert-f3&quot;&gt; Skala Desert F3&lt;/span&gt;&lt;a href=&quot;#skala-desert-f3&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1P3LF3l1ViyaXKAZ2-EDQkKctNU63IBR0&quot; alt=&quot;Cherish Food&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Cherish Food&lt;/em&gt;&lt;/p&gt;</summary>
     
     
     
@@ -338,20 +685,40 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html</id>
     <published>2021-08-16T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.771Z</updated>
+    <updated>2021-10-31T02:56:19.561Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;div class=&quot;toc&quot;&gt;
 &lt;!-- toc --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#sophila&quot;&gt;Sophila&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#kagmaw-grassland-f1&quot;&gt;Kagmaw Grassland</summary>
-        
-      
+&lt;li&gt;&lt;a href=&quot;#kagmaw-grassland-f1&quot;&gt;Kagmaw Grassland F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#twilight-rainforest-f2&quot;&gt;Twilight Rainforest F2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#fog-swamp-f1&quot;&gt;Fog Swamp F1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#skala-desert-f2&quot;&gt;Skala Desert F2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#skala-desert-f3&quot;&gt;Skala Desert F3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;span id=&quot;expel-incident-the-legend-of-neverland&quot;&gt;Expel Incident The Legend Of NeverLand&lt;/span&gt;&lt;a href=&quot;#expel-incident-the-legend-of-neverland&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the STANDARD REWARDS.
+&lt;h2&gt;&lt;span id=&quot;sophila&quot;&gt; Sophila&lt;/span&gt;&lt;a href=&quot;#sophila&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;Standard%20Rewards/Sophilia.png&quot; alt title&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/131433396-702bbcc8-1c0b-43d8-a688-caff61d8d8b2.png&quot; alt=&quot;Work Together&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Work Together&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;kagmaw-grassland-f1&quot;&gt; Kagmaw Grassland F1&lt;/span&gt;&lt;a href=&quot;#kagmaw-grassland-f1&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/131432947-509bdb14-e643-4859-965f-b634ea8f8805.png&quot; alt=&quot;Monkey Tricks&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Monkey Tricks&lt;/em&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/131443088-50778773-7e35-4474-bbc9-14d75b3943d0.png&quot; alt=&quot;Grassland Busy Man&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Grassland Busy Man&lt;/em&gt;&lt;br&gt;
+&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/132125883-1c0ca56c-f32e-4b86-b0d3-d56876384cde.png&quot; alt=&quot;Lawless&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Lawless&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;twilight-rainforest-f2&quot;&gt; Twilight Rainforest F2&lt;/span&gt;&lt;a href=&quot;#twilight-rainforest-f2&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Standard%20Rewards/Twilight%20Rainforest%20F2.png&quot; alt title&gt;&lt;br&gt;
+&lt;em&gt;Rat Crisis&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;fog-swamp-f1&quot;&gt; Fog Swamp F1&lt;/span&gt;&lt;a href=&quot;#fog-swamp-f1&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/136440610-bf123bea-e18a-4ff8-9de6-b735d2ddb3bf.png&quot; alt=&quot;Gory Plague&quot; title&gt;&lt;br&gt;
+&lt;em&gt;Gory Plague - Expel Vampiric Bats&lt;/em&gt;&lt;/p&gt;</summary>
     
     
     
@@ -369,10 +736,10 @@
     <link href="https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html"/>
     <id>https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html</id>
     <published>2021-08-15T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.767Z</updated>
+    <updated>2021-10-31T02:56:19.705Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Update genshin impact &lt;code&gt;2.0.0&lt;/code&gt; manual via download manager (IDM).&lt;/p&gt;</summary>
+    <summary type="html">Update genshin impact 2.0.0 manual via download manager (IDM).</summary>
     
     
     
@@ -392,17 +759,654 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html</id>
     <published>2021-08-15T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:19.503Z</updated>
+    <updated>2021-10-31T02:56:23.761Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css&quot; /&gt;
-&lt;div</summary>
-        
-      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css&quot;&gt;
+&lt;div id=&quot;bootstrap-wrapper&quot;&gt;
+  &lt;div class=&quot;mb-2&quot;&gt;
+    &lt;label for=&quot;search-questions&quot; class=&quot;sr-only&quot;&gt;Filter&lt;/label&gt;
+    &lt;input autocomplete=&quot;chrome-off&quot; type=&quot;text&quot; id=&quot;search-questions&quot; class=&quot;form-control&quot; placeholder=&quot;search from here&quot;&gt;
+    &lt;div class=&quot;mt-1 mb-1&quot;&gt;
+      &lt;div class=&quot;form-check form-check-inline&quot;&gt;
+        &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;O_only&quot; value=&quot;option1&quot;&gt;
+        &lt;label class=&quot;form-check-label&quot; for=&quot;O_only&quot;&gt;Only Show (O)&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;small id=&quot;search-questionsHelpBlock&quot; class=&quot;form-text text-muted&quot;&gt;
+      Last updated
+      10/31/2021, 9:56:23 AM
+    &lt;/small&gt;
+  &lt;/div&gt;
+  &lt;ul id=&quot;questions&quot;&gt;
+    &quot;Cité de la musique&quot; is located in France (X)
+&quot;volga river tracker&quot; once shocked the world because of its beauty, the painter is llya repin (O)
+(Oliver Twist / The Old Curiosity Shop / Bleak House / Little Dorrit / Great Expectations) is masterwork of dickens (O)
+1 kwh of electricity powers a 50 watt bulb light for 20 hours (O)
+8 categories of orchestral music on the music box point to 8 types of music (X)
+80% food storage capacity in the refrigerator, can&#39;t be too energy efficient (O)
+A Song to Remember reflects the life of the Polish musician Bach (X)
+A copier will produce ozone during the copy process (O)
+A fine book, printed with golden words which are Copper Zinc alloy (O)
+A fine book, printed with golden words which are Copper-Manganese Alloy (X)
+A flower with a shorter flowering phase than epiphyllum cactus is dandelion (X)
+A full marathon has the length of around 40 km (O)
+A round in Professional Boxing is 1 minute (X)
+A round in professional boxing is 3 minutes (O)
+A song to remember reflects the life of the Polish musician Frédéric Chopin (O)
+A standard football, its perimeter is around 50-60cm (O)
+AS in Macro economics refers to Aggregate Supply (Total Supply) (O)
+AS in the macro economics refers to total supply (O)
+According to customs, wearing ring in the middle finger indicates that you are in love, in the pinky means you’re single (O)
+Acid Rain is a global environment problem (O)
+Acid rain, Ozone hole, Global warming is a global environmental problem (O)
+Adding nickel plus zinc, copper, platinum, or manganese to gold produces white gold (O)
+Afghan Hound is also known as Afghan Hound, Kabul Hound (O)
+Alligator Tears is to clean the eyes, wash the salt in their eyes (O)
+Alligators shed tears to secrete toxin (X)
+Alligator’s tear is to disguise itself (X)
+Alligator’s tear is to disguise yourself (X)
+America’s Opportunity found potential traces of life on Mars based on Temperature suitable for living (O)
+Among &quot;World’s Top 3 Tenors&quot;, Domingo is Spaniard (O)
+Among the &quot;World’s Top 3 Tenors&quot;, Pavarotti is Spanish (X)
+Among the “World’s Top 3 Tenors” Jose Carreras, Placido Domingo is Spaniard (O)
+Apples contain a memory strengthening microelement called Calcium (X)
+Apples contain a memory strengthening microelement which is Zinc (O)
+Apples contain a memory strengthening microelement which is lodine/Iodine (X)
+Aurora is the special scenery/location you can see in High Latitude (O)
+Ballet is introduced from France (O)
+Ballet is introduced from Germany (X)
+Barbie Three Sisters consists of The Chubby available in 1964, Stacy presented in 1992, Little Kailyn appeared in 1995 (O)
+Basalt is polyporous magmatite (O)
+Bok Choy is originally from China (O)
+Bok Choy, Cabbage originates from China (O)
+Bones can balance when you are doing sports (X)
+Bones can lever when you are doing sports (O)
+Boule de Suif is the masterwork of American writer, Mark Twain (X)
+By mixing gold and copper according to a specific proportion, gold can change into Red gold (O)
+Cabbage is originally from China (O)
+Calcium is also called the Intelligent Element (O)
+Camel has 3 stomach (O)
+Cathaya enjoys the title of &quot;Panda Of Plants&quot; (O)
+Cathaya enjoys the title “Panda of Plants” (O)
+Cats are protected well in Ancient Egypt (O)
+Chehkov is the only writer from Russia who has reached the peak of the world of literature (O)
+Chilblains/Frostbite is caused by exposed to cold, the injury of skin’s Capillary (O)
+China is the first to form the strategic and tactical missile forces in Asia (O)
+China’s offshore continental shelf is one of main oil production zones in the world (O)
+Claude Monet/Manet is an (impressionist painter / artist of impressionism) (O)
+Compared to incandescent light bulbs, energy saving bulb can save up to 75%, 70-80% electricity (O)
+Currently the mathematician who made the most progress in Goldbach is John Von Neuman (X)
+Currently the mathematician who made the most progress in Goldbach is Prague/Praha (X)
+Cuttlefish and octopus are both Rheid animals (O)
+Cuttlefish and octopus are both crawl animals (X)
+David Copperfield, The Tale of Two Cities, Great Expectations is the masterwork of Dickens (O)
+Death, Birth rate is one of the decesive/decisive factors for population reproduction (O)
+Earth day is on the April 22nd of each year (O)
+Eating too much popcorn produced by a popcorn machine may lead to Lead poison (O)
+Einstein is Jewish (O)
+Engels said someone is &quot;The last bard in Medieval Age&quot;, that person was Boccaccio (X)
+Engels said someone is “The last bard in Medieval Age”, that person was Dante (O)
+Euros came into circulation in July. 1st (O)
+Exposure to X ray causes Aplastic Anemia (O)
+Features of the temperate desert environment include great temperature difference between day and night, Low annual precipitation, Long roots and small leaves (O)
+Features of the temperate desert environment include the plant has long leaves and small roots (X)
+Folic acid is one of the nutrition contained in vegetables (O)
+Food coloring usually included in jellies (O)
+Frostbite causes injury of the skin&#39;s (Arrestor/Arrector) (X)
+God of Love is Hera (X)
+Goddess of rock is work by Leonardo da vinci (O)
+Gold accessories use K to describe their gold content. 18K gold accessories contain 75% gold (O)
+Golgi’s Autobiographical trilogy is &quot;My Childhood&quot; (O)
+Graf was the only tennis player who won 2 championships of Grand Slam (X)
+Graf was the only tennis player who won 3 championships of Grand Slam (X)
+Graf was the only tennis player who won 4 championships of Grand Slam (O)
+Granite is a coarse-grained (phaneritic) intrusive igneous rock composed mostly of quartz, alkali feldspar, and plagioclase (O)
+Granite is a polyporous magmatite (X)
+Grassland can Absorbs carbon dioxide and produces oxygen in environment protection (O)
+If someone is suffering from malnutrition and edema, he should drink more soybean milk (O)
+If the human body becomes dehydrated/life-threatening 20% it will endanger life 20% (O)
+If the human body losses 20% water, it will be dehydrated/life-threatening (O)
+If the human body losses 10% water, it will be dehydrated/life-threatening (X)
+If the human body losses 15% water, it will be dehydrated/life-threatening (X)
+In 1974, Napoleon was held as a prisoner by the Thermidorians for 14  days (O)
+In 3500 BC, slavery states appeared in Ancient India (X)
+In 3500BC, Slavery appeared in Ancient Egypt, Ancient Babylon (O)
+In Camera 135, 135 refers to film number (O)
+In Homer’s Epic, the Trojan War lasted for 10 years (O)
+In Japanese anime, the race with the least population is Orc (O)
+In camera 135, &quot;135&quot; is refer to film number (O)
+In order to maximize its effect, windbreak shall be formed with 5 to 10 rows of trees (X)
+In order to maximize its effect, windbreak shall be formed with more than 10 rows of trees (O)
+In stock exchange, Closing price is the most basic data to analyze the stock market (O)
+In the Stock Exchange, Closing Price is the most basic data to analyse the stock market (O)
+In the novel “Red and Black” by French Writer Stendhal, Red refers to the General’s Uniform color, Black refers to the Bishop’s color (O)
+In the summer season the humming cicada sound comes from female (X)
+In the summer season, the humming sound of cicada is from male (O)
+In walking races beyond 20km, there is a food supply station every 3km (X)
+In walking races beyond 20km, there is a food supply station every 5 km (O)
+In “Tom &amp; Jerry”, the leader of the “Three Alley Cats” is Butch (O)
+International marine speed is indicated using &quot;Section&quot;, 1 &quot;Section&quot; is 3112 KM/hour (X)
+Internet came to China in the year of 1994 (O)
+Iodine deficiency in children and adolescents will lead to Compromised growth and intelligence (O)
+Japan is the first country to form the strategic and tactical missile forces in asia (X)
+Jelly often contains artificial coloring, food flavoring, sweeteners, sour agents (O)
+Just like Statue of Liberty, another well-known nickname of the USA is Old Sam (X)
+Just like Statue of Liberty, another well-known nickname of the USA is Uncle Sam (O)
+Kiwi is a kind of berries (O)
+Law first appeared in Feudalism society (X)
+Lenin called someone “A mirror of Russian Revolution”, it is Sholokhov (X)
+Lenin called someone “A mirror of Russian Revolution”, it is Tolstoy (O)
+Lodine/Iodine deficiency in children and adolescents can lead to General Weakness (X)
+Low carbohydrate diet can help reduce diabete (O)
+Low salt diet can help prevent hypertension (O)
+Low-salt diet may help to prevent Hypertension (O)
+Main resources used by humans include: Mineral Resources (O)
+Main resources used by humans include: Solar Resources (O)
+Main resources used by humans include: Space Resources, Mineral Resources, Solar Resources (O)
+Mathematician who has made the greatest progress on Goldbach Conjecture is Jingrun Chen (O)
+Maupassant is the only writer from Russia who has reached the peak of the world of literature (X)
+Mazurka originated from (the plains of Mazovia around Warsaw / Poland / the Mazurs of east-central Poland) (O)
+Mazurka originated from Austria (X)
+Mazurka originated from Finland (X)
+Mazurka originated from Poland (O)
+Member countries of the International Red Cross are from Switzerland (O)
+Mexico is located in North America (O)
+Mexico is located in South America (X)
+Mona Lisa, The Last Supper, Vitruvian Man, Goddess of Rocks is a work by Leonardo da Vinci (O)
+Most African Countries determine their borders by Longitude or latitude and other natural landscapes (O)
+Most of the architecture in the Eastern Roman Empire is renaissance architecture (X)
+Most of the architectures in the eastern roman empire are Byzantine architectures (O)
+NBA now has 30 football teams in total (O)
+Natural growth rate, Birth rate, Death rate is one of the decisive factors for population reproduction (O)
+New York, London, Singapore, Hong Kong, Shanghai, Tokyo is one of the main financial centers in the world (O)
+Newton is Jewish (X)
+Nile, Amu and Indus rivers are all an exorheic river (X)
+Nile, Amu and Indus rivers are all important sources of irrigation water in the coast area (O)
+Nile, Amu and indus rivers are all both of them are important sources of irrigation water in coast area (O)
+Noise pollution is a global environmental problem (X)
+Noise pollution refers to noise over 80 decibels (O)
+Noise pollution refers to noise over 90 decibels (X)
+On the centennial birthday of the International Olympic Committee (IOC) in 1984, Athens was nominated as the capital of the IOC (X)
+On the centennial birthday of the International Olympic Committee (IOC) in 1984, Lausanne was nominated as the capital of IOC (O)
+One round in professional boxing is 3 minutes (O)
+One tubular sunflower can yield One sunflower seed (O)
+One tubular sunflower can yield approximately hundreds and thousands of sunflower seeds (X)
+Onix, Primeape is an original Pokemon (Shown in the first Season) (O)
+People wearing Black clothes are easier to get bitten by mosquitos (O)
+Philippines is in Asia (O)
+Play station 4 Pro is product of Microsoft (X)
+Poker cards are based on ancient calendars. The Joker refers to Queen. (X)
+Potato is a stem of the plant (O)
+Red is the vegetable with the least nutritional ingredients (X)
+Saves power if the food volume in the fridge is 80% of the total capacity (O)
+Saxophone is also called French Horn (X)
+Scorpion is the invertebrate with the slowest metabolism in the world (O)
+Sea with highest salinity in the world is Red Sea (O)
+Sea with lowest salinity in the world is Baltic Sea (O)
+Sea with the most islands in the world is The Aegean Sea (O)
+Seattle is one of main financial centers in the world (X)
+Snail is the invertebrate with the slowest metabolism in the world (X)
+South Korea is the first to form the strategic and tactical missile forces in Asia (X)
+Suez Canal belongs to Egypt (O)
+Sugar Substitute, Acidulant, etc is usually included in jellies (O)
+Sugar, acid substitutes, food coloring, flavoring essence is usually included in jellies (O)
+Symphony no. 9 was conducted by Beethoven (O)
+The Adventures of Tom Sawyer, The adventure of Huckleberry Finn is the masterwork of American writer Mark Twain (O)
+The Afghan Hound is a dog from Afghanistan (O)
+The Afghan Hound is also called Afghan Hound (O)
+The Afghan Hound is also called Bracco Italiano (X)
+The Afghan Hound is also called Vizsla (X)
+The Area 11 from ACG culture stands for Japan (O)
+The Caste system in Ancient India has divisions into 4 classes (O)
+The Chinese Folk song applied in Turandot is Jasmine (O)
+The Chinese folk song applied in turnandot is butterfly lovers (X)
+The Earliest record of Halley’s Comet was left by the Chinese (O)
+The North Star (Polaris) belongs to Dipper (O)
+The North Star (Polaris) often used to for directions belongs to the category of Ursa Minor (O)
+The Olympic Games held in Beijing in 2008 was the 29th Olympic (O)
+The Olympic Games held in Beijing in 2008 was the 30th Olympic (X)
+The Persian Gulf Coast is one of the most important oil-producing areas in the world (O)
+The Suez Canal belongs to Panama (X)
+The Symphony No. 9 was composed by Ludwig van Beethoven (X)
+The Symphony No. 9 was composed by Mozart (X)
+The Ugly Duckling is one of the works of Andersen’s fairy tales (O)
+The adventures of Tom Sawyer is the masterwork of the American writer Mark Twain (O)
+The adventures of tom sawyer is representative of the work of renowned US writer Mark Twain (O)
+The battle in the first World War that used poison gas for the first time is Battle of Verdun (O)
+The best way to put out the fire of alcohol lamp is put out with water (X)
+The best way to put out the fire of alcohol lamp is to use the lamp cap (O)
+The biggest stone Buddha Statue in the word is in Pingshan/Nepal (O)
+The biggest stone Buddha statue in the world is in Henan (X)
+The biggest stone Buddha statue in the world is in Pingshan (X)
+The birthday of Ye Xiu, the protagonist of “Glory”, is May 29th (O)
+The bust way to put out the fire of alcohol lamp is put out with water (X)
+The caste system in Ancient India has divisions into 4 classes (O)
+The cat os protected wll in Ancient Egypt (O)
+The cat os protected wll in Ancient Rome (X)
+The classes of a weight lifting match are based on the age of the athletes (X)
+The classes of weight lifting match are based on the weights of the athletes (O)
+The copier will produce Carbon Dioxide during the copy process (X)
+The copier will produce Ozone while copy process (O)
+The country that borders China to the east is Japan (X)
+The country that borders China to the east is North Korea (O)
+The country that borders China to the east is South Korea (X)
+The country that held the most Olympic Summer Games is Greece (X)
+The country that held the most Olympic Summer Games is UK (X)
+The country that held the most Olympic summer is The United States/USA (O)
+The country that is borders China to the east is North Korea (O)
+The country that is connected to the east of China is Russia (X)
+The domain suffix .uk refers to the United Kingdom (O)
+The earliest record of Halley&#39;s Comet was left by Chinese (O)
+The earliest records of Halley&#39;s Comet were left by the Americans (X)
+The earth Day every year falls on 20-Dec (X)
+The earth day is on the Apr. 22nd of each year (O)
+The effect barrier tree wants to achieve the best effect, it must be formed from the top 10 trees (O)
+The eight notes in music boxes are Eight Instruments (O)
+The eight wonder of the world is Terra Cotta Warriors (O)
+The eighth wonder of the world is Eiffel Tower (X)
+The eighth wonder of the world is Terra Cotta Warriors (O)
+The euro came into existence on 1 Dec (X)
+The euro came into existence on 1 January 1999 (O)
+The first Mahjong Museum in the world is located in China (X)
+The first Mahjong Museum in the world is located in Japan (O)
+The first colorful newspaper appeared in USA (O)
+The first nation in Europe where the printing machine was used is Germany, Icelanders (O)
+The first nation in Europe where the printing machine was used is Icelanders (O)
+The first nation in Europe where the printing machine was used is Irish (X)
+The first newspaper in colors appeared in (an English newspaper / London) (O)
+The first newspaper in colors appeared in UK (X)
+The first shot that symbols the freedom of the United States of America fired on Chicago (X)
+The first shot that symbols the freedom of the United States of America started on Washington (X)
+The first shot that symbols the freedom of the united States of America started on Massachusetts, Lexington (O)
+The first use of Poison gas Bombs is used in the battle of Verdun, Lexington (O)
+The flower that grows shorter than coriander (with a shorter flowering phase than the epiphyllum)is Wheat flower (O)
+The four most important inventions of the 20th century are Airplane? (O)
+The four most important inventions of the 20th century are Computer, Semiconductor, Atomic Energy (nuclear power), Laser (O)
+The four most important inventions of the 20th century are Nuclear Power? (O)
+The four most important inventions of the 20th century are Personal Computer? (O)
+The four most important inventions of the 20th century are semiconductors? (O)
+The full name of Washington, the capital of the USA is Washington District of Columbia (O)
+The full name of Washington, the capital of the USA is Washington District of Truman (X)
+The general international naval speed uses knot as unit. One knot is 1.852km/h (O)
+The general international naval speed uses “knot” as unit, one knot stands for 1.852 km/h (O)
+The general international naval speed uses “knot” as unit, one knot stands for 2.152 km/h (X)
+The general international naval speed uses “knot” as unit, one knot stands for 3.112 km/h (X)
+The god of love and beauty in Roman mythologies is Venus (O)
+The great branch of Yellow River is Wei River (O)
+The greatest branch of Yellow River is River Fen (X)
+The largest body of water on land is Glacier Water (O)
+The largest body of water on land is Glacier water (O)
+The largest stone building in the world is the Colosseum Ancient Rome (X)
+The largest stone building in the world is the Washington Monument (O)
+The largest stone construction in the world is The Great Wall of China (O)
+The largest stone construction in the world is the Great Wall Of China (O)
+The length of the entire marathon is 40km (O)
+The longest film series according to the Guinness book of world records is &quot;the 85 hour The Cure for Insomnia (USA 1987)&quot; series (O)
+The longest film series according to the Guinness book of world records is Star Trek series (X)
+The longest film series according to the Guinness book of world records is Star Wars series (X)
+The longest organ in gastrointestinal tract is small intestine (O)
+The longest organ in the gastrointestinal tract of human body is Small Intestine (O)
+The longest plan journey in the world is Arctic Tern (O)
+The longest plane journey in the world is Andes Vulture (X)
+The longest plane journey in the world is Artic Tern (X)
+The longest series movie in Guinness World Records is Wong Fei Hong Series (O)
+The main reason that boost Singapore’s economic development is Good Natural Condition (X)
+The main reason that boosts Singapore’s economic development is Rich Labor resource (X)
+The main reason that boosts singapore’s economic development is Superior geographical location (O)
+The main source boosting Singapore’s economic development is Superior geographical location (O)
+The most commonly produced and widely used battery in the world is Zinc-carbon battery (O)
+The most important IT center in the world, the Silicon Valley is located in California of USA (O)
+The north star that often used to for directions belongs to the category of Ursa Minor (O)
+The number of “World player Soccer” Pele shirt is no 23 (X)
+The number on the jersey of the “the greatest” Pele is No. 10 (O)
+The peninsula with most oil is Arabian Peninsula (O)
+The peninsula with most oil is Asia Minor Peninsula (X)
+The photocopier/copier will produce carbon dioxide while photocopying (X)
+The poker cards are made based on ancient calendar. The Joker refers to Sun/Moon, Day/Night (O)
+The ring put on middle finger, means being in love (O)
+The ring should be put on/wearing it on pinky finger/style for Currently single (O)
+The scientist called “The father of Physics” is Newton (X)
+The scientist known as “The father of Physics” in the west is Archimedes (O)
+The sea with the highest salinity in the world is Baltic Sea (X)
+The sea with the lowest salinity in the world is Baltic Sea (O)
+The sea with the most islands in the world is Aegean Sea (O)
+The sea with the most islands in the world is Sea Of Marmara (X)
+The size of the regular go chessboard used in competitions is 19×19 (O)
+The smallest sea in the world is Sea Of Marmara (O)
+The so-called &quot;Last Bard of Middle Ages&quot; by apgus is Beaucachu (X)
+The so-called theory of “Invisible Hand” in the field of economics was originally presented by Adam Smith (O)
+The so-called theory of “Invisible Hand” in the field of economics was originally presented by Marx (X)
+The terminal station in Europe of Eurasian Continental bridge is in Rotterdam (O)
+The turning point of WWII is the Battle of Stalingrad (O)
+The turning point of World War II was the opening of the second battlefield in Europe (X)
+The type of Redwood that is Mahogany will sink underwater (O)
+The world’s largest and most widely used battery is Zinc-manganese battery (O)
+The world’s oldest diamonds is Keunor (O)
+The “Black” in the novel “Red and Black” written by the French novelist Stendhal refers to the evil side (X)
+The “Five Hardwares” in life stands for Gold, Silver, Tin (O)
+The “Red” in the novel “Red and Black” written by the French novelist Stendhal refers to the color of the revolutionary flag (X)
+There are 31 days in August because of Roman Emperor Augustus (O)
+Tokyo is one of main financial centers in the world (O)
+Ugly Duckling, Emperor’s New Dress, Little Match Girl, Little Mermaid is one of the works of Andersen’s Fairy Tales (O)
+Uneven Bar is not included in the Men&#39;s Gymnastics Project (O)
+Vitamin A, Vitamin B is one of the nutrition contained in vegetables (O)
+WNBA is WNBA/Women’s National Basketball Association (O)
+WNBA means WNBA (O)
+Waldhorn is also called the French Horn (O)
+Wearing black clothes is easier for mosquitoes to bite / Wearing black clothes are easier to get bitten by mosquitoes (O)
+Wei Zhuang, East Emperor Tai Yi is the character of the legend of Qin series (O)
+When a person is drinking water while doing a handstand, water will be the same as drinking while standing (O)
+When cooking poached eggs in a microwave oven, use a toothpick to puncture the egg whites and egg yolks mainly for Faster to cook (X)
+When cooking poached eggs in a microwave oven, use a toothpick to puncture the egg whites and egg yolks mainly for Prevention of Burst (O)
+When person is drinking water while doing handstand, it&#39;s same effect just like talking while drinking and sleep (O)
+When using a microwave to steam eggs, you have to pierce the egg whites with a toothpick, the use of egg yolks is anti-explosion (O)
+While cooking, adding salt to *before taking the dish out* can reduce the loss of iodine (O)
+White is the vegetable with the least nutritional ingredients (O)
+Wind, solar, water, nuclear power is low carbon energy resource (O)
+XBOX ONE is a Microsoft Product (O)
+calcium is a intelligent element (O)
+“Barge Haulers on the Volga” has once shocked the world of arts, the creator of this painting is Repin (O)
+“Christmas in August” is called the Korean version of Love Letter with its tragic story and great acting (O)
+“Cité de la Musique” is in Austria (O)
+“Law” first appear in Slavery Society (O)
+“WHO” stands for World Health Organization (O)
+  &lt;/ul&gt;
+  &lt;form action=&quot;https://backend.webmanajemen.com/tlon/quiz.php&quot; method=&quot;post&quot; id=&quot;addQuiz&quot; target=&quot;_blank&quot; name=&quot;form_add_quiz&quot; class=&quot;mt-4 mb-4 text-center&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;add&quot; value=&quot;add&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-6&quot;&gt;
+        &lt;label for=&quot;newQ&quot;&gt;Add new question&lt;/label&gt;
+        &lt;textarea type=&quot;text&quot; id=&quot;newQ&quot; placeholder=&quot;add new question&quot; name=&quot;q&quot; class=&quot;form-control&quot;&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;div class=&quot;mb-2&quot;&gt;
+          Answer of new question (pick one)
+        &lt;/div&gt;
+        &lt;div class=&quot;custom-control custom-radio custom-control-inline&quot;&gt;
+          &lt;input type=&quot;radio&quot; id=&quot;customRadioInline1&quot; name=&quot;a&quot; class=&quot;custom-control-input&quot; value=&quot;O&quot;&gt;
+          &lt;label class=&quot;custom-control-label&quot; for=&quot;customRadioInline1&quot;&gt;(O)&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;custom-control custom-radio custom-control-inline&quot;&gt;
+          &lt;input type=&quot;radio&quot; id=&quot;customRadioInline2&quot; name=&quot;a&quot; class=&quot;custom-control-input&quot; value=&quot;X&quot;&gt;
+          &lt;label class=&quot;custom-control-label&quot; for=&quot;customRadioInline2&quot;&gt;(X)&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;submitter&quot; class=&quot;mt-2&quot;&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-block btn-sm&quot;&gt;Send&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;blockquote class=&quot;mt-2&quot;&gt;
+    &lt;span style=&quot;display: none;&quot;&gt;Join discord https://tiny.one/INDO1945.&lt;/span&gt;
+    This article shortcut url https://bit.ly/TLONQUIZ&lt;br&gt;
+    Add new quiz https://bit.ly/TLONQUIZADD&lt;br&gt;
+    Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
+  &lt;/blockquote&gt;
+  &lt;div&gt;
+    &lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png&quot; alt=&quot;preview&quot; title&gt;
+    &lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png&quot; alt=&quot;Winner - MilimNava_s48&quot; title&gt;
+    &lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/135248607-de662c5f-6b58-4156-9e54-6f43f7fe7850.png&quot; alt=&quot;Winner 29/9/2021 Nanao_s48&quot; title&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;[id*=&quot;questions-filter&quot;] li:not([data-id]) {
+  display: none;
+}
+
+[id*=&quot;questions&quot;] li {
+  display: block;
+  /*text-transform: lowercase;*/
+}
+
+[id*=&quot;questions&quot;] li:first-letter {
+  text-transform: uppercase;
+}
+
+input[type=&quot;text&quot;] {
+  width: 90%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+input[type=&quot;text&quot;]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+&lt;/style&gt;
+&lt;script&gt;console.clear();
+
+if (location.host == &quot;cdpn.io&quot;) {
+  function rangeAlphabetic(start, stop) {
+    var result = [];
+    for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx &lt;= end; ++idx) {
+      result.push(String.fromCharCode(idx));
+    }
+    return result;
+  }
+
+  let aZ = rangeAlphabetic(&quot;a&quot;, &quot;z&quot;)
+    .concat(rangeAlphabetic(&quot;A&quot;, &quot;Z&quot;))
+    .filter(function (el) {
+      return el != null;
+    }); // a-zA-Z array
+
+  // automated test
+  setTimeout(function () {
+    let inputSearch = document.getElementById(&quot;search-questions&quot;);
+    var keyword = aZ[Math.floor(Math.random() * aZ.length)];
+    inputSearch.value = keyword;
+    inputSearch.dispatchEvent(new Event(&quot;keyup&quot;));
+  }, 3000);
+}
+
+/*** MAIN SCRIPT START ***/
+
+/**
+ * this function will work cross-browser for loading scripts asynchronously
+ * @param {string} src
+ * @param {function} callback
+ */
+function loadJScript(src, callback) {
+  var s, r, t;
+  r = false;
+  s = document.createElement(&quot;script&quot;);
+  s.type = &quot;text/javascript&quot;;
+  s.src = src;
+  s.onload = s.onreadystatechange = function () {
+    //console.log( this.readyState ); //uncomment this line to see which ready states are called.
+    if (!r &amp;&amp; (!this.readyState || this.readyState == &quot;complete&quot;)) {
+      r = true;
+      callback();
+    }
+  };
+  t = document.getElementsByTagName(&quot;script&quot;)[0];
+  t.parentNode.insertBefore(s, t);
+}
+
+/**
+ * Unique Array
+ * @param {Array} a
+ * @returns
+ */
+function uniqArr(a) {
+  var seen = {};
+  return a.filter(function (item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
+}
+
+/**
+ * Escape regexp
+ * @param {string} string
+ * @returns
+ */
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, &quot;\\&lt;!-- script /source/assets/js/quiz.js --&gt;&quot;); // &lt;!-- script /source/assets/js/quiz.js --&gt; means the whole matched string
+}
+
+let quizUrls = [
+  &quot;https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt&quot;,
+  &quot;https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt&quot;,
+];
+let quizSrc = [];
+
+function jQueryMethod() {
+  // ul questions
+  let questions = document.getElementById(&quot;questions&quot;);
+  let inputSearch = document.getElementById(&quot;search-questions&quot;);
+  let O_only = document.getElementById(&quot;O_only&quot;);
+
+  // searcher
+  let searchLi = function (filter) {
+    let listQuiz = jQuery(&quot;ul[id*=&#39;questions&#39;] li&quot;);
+    listQuiz.each(function (index) {
+      let searchFirst =
+        jQuery(this)
+          .text()
+          .search(new RegExp(&quot;^&quot; + escapeRegExp(filter), &quot;gmi&quot;)) &lt; 0;
+      if (searchFirst) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+        // move to first position
+        jQuery(this).prependTo(jQuery(&quot;ul[id*=&#39;questions&#39;]&quot;));
+      }
+
+      let searchWild =
+        jQuery(this)
+          .text()
+          .search(new RegExp(escapeRegExp(filter), &quot;gmi&quot;)) &lt; 0;
+      if (searchWild) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+      }
+    });
+  };
+
+  let processLi = function () {
+    jQuery(&quot;#search-questions&quot;).keyup(function () {
+      searchLi(jQuery(this).val());
+    });
+  };
+
+  // transform array to li
+  let transformArray2Li = function () {
+    // clean orphan text
+    $(&quot;#questions&quot;).text(&quot;&quot;);
+    // remove existing li&#39;s
+    $(&quot;#questions li&quot;).remove();
+
+    for (let i = 0; i &lt; quizSrc.length; i++) {
+      let str = quizSrc[i];
+      let isTrue = /\(O\)$/i;
+      let li = document.createElement(&quot;li&quot;);
+      li.innerHTML = str;
+      if (isTrue.test(str)) {
+        li.setAttribute(&quot;class&quot;, &quot;isTrue&quot;);
+      } else {
+        li.setAttribute(&quot;class&quot;, &quot;isFalse&quot;);
+      }
+      document.getElementById(&quot;questions&quot;).appendChild(li);
+    }
+  };
+
+  // step 1: get new question sources
+  quizUrls.forEach(function (quizUrl) {
+    let url_parse = new URL(quizUrl);
+    url_parse.search = &quot;?uid=#uniqid()&quot;;
+    //console.log(url_parse.toString());
+
+    //console.log(quizUrl);
+    $.get(url_parse.toString()).then(function (data) {
+      if (data) {
+        // split newLine from retrieved text into array
+        let split = data.split(&quot;\n&quot;);
+        // trim
+        quizSrc = quizSrc.map(function (str) {
+          return str.trim();
+        });
+        // merge and remove duplicates
+        quizSrc = uniqArr(
+          // merge
+          quizSrc
+            .concat(split)
+            // trim
+            .map(function (str) {
+              return str.trim();
+            })
+        );
+        // transform
+        transformArray2Li();
+      }
+      processLi();
+    });
+  });
+
+  // filter only (O)
+  $(&quot;#O_only&quot;).on(&quot;change&quot;, function (e) {
+    e.preventDefault();
+    if (this.checked) {
+      $(&quot;.isFalse&quot;).remove();
+    } else {
+      transformArray2Li();
+    }
+
+    if (inputSearch &amp;&amp; inputSearch.value &amp;&amp; inputSearch.value.trim().length &gt; 0) {
+      searchLi(inputSearch.value);
+    }
+  });
+
+  // form add quiz
+  /*
+  $(&quot;form#addQuiz&quot;).on(&quot;submit&quot;, function (e) {
+    e.preventDefault();
+    let t = $(this);
+    $.ajax({
+      url: t.attr(&quot;action&quot;),
+      type: &quot;post&quot;,
+      //dataType: &quot;json&quot;,
+      data: t.serialize(),
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  });
+  */
+}
+
+loadJScript(&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;, jQueryMethod);
+
+/**
+ * How URL native work {@link https://dmitripavlutin.com/parse-url-javascript/}
+ * @see {@link https://stackoverflow.com/questions/8486099/how-do-i-parse-a-url-query-parameters-in-javascript}
+ * @param {string} url
+ * @returns
+ */
+function parse_query_url(url) {
+  if (!url) throw &quot;Please provide url&quot;;
+  var query = url.substr(1); // skip first ?
+  var result = {};
+  query.split(&quot;&amp;&quot;).forEach(function (part) {
+    var item = part.split(&quot;=&quot;);
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+
+function parse_url(url) {
+  let parse = new URL(url);
+  parse.search = parse_query_url(parse.search);
+  return parse;
+}
+&lt;/script&gt;
+</summary>
     
     
     
@@ -420,20 +1424,331 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Recipes.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Recipes.html</id>
     <published>2021-08-14T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:19.503Z</updated>
+    <updated>2021-10-31T02:56:23.761Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;div class=&quot;toc&quot;&gt;
 &lt;!-- toc --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#ingredients-water-essence-prices&quot;&gt;Ingredients Water Essence Prices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
+&lt;li&gt;&lt;a href=&quot;#char-buff-dish&quot;&gt;Char Buff Dish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#flower-fairy-upgrade-dish&quot;&gt;Flower Fairy Upgrade Dish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#compare-100x-boiled-corns&quot;&gt;Compare 100x boiled corns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;span id=&quot;ingredients-water-essence-prices&quot;&gt; Ingredients Water Essence Prices&lt;/span&gt;&lt;a href=&quot;#ingredients-water-essence-prices&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;ingredients&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Price&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;ingredients&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Price&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;ingredients&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Eeg&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;50&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Fresh Cheese&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;500&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Barley&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;150&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Meat Chunk&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2000&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Carrot&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;500&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Mushroom&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;150&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Cheese&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2000&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Onion&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;500&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Corn&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Chicken Wing&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2000&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Celery&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;500&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Potato&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Meat&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1500&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Butter&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Thyme&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Shrimp&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1500&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Black Pepper&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Red Wine&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Tomato&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;750&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Milk&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Chocolate Material&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;950&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bacon&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;750&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Wheat&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Strawberry&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;750&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Sugar&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;750&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Water&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;150&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Rice&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;700&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Salt&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;150&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;span id=&quot;char-buff-dish&quot;&gt; Char Buff Dish&lt;/span&gt;&lt;a href=&quot;#char-buff-dish&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;table id=&quot;char-dish&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th style=&quot;text-align:left&quot;&gt;Food Name&lt;/th&gt;
+			&lt;th style=&quot;text-align:left&quot;&gt;Ingredients&lt;/th&gt;
+			&lt;th style=&quot;text-align:left&quot;&gt;Buff&lt;/th&gt;
+			&lt;th style=&quot;text-align:center&quot;&gt;Price&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Egg&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Egg 1 Salt 1&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Crit +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;50+150&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Baked Mushroom&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Mushroom 2 Salt 2 Water 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Block +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(150x2)+(150x2)+(150x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Barley Tea&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Barley 3 Salt 3 Water 3&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Crush +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(150x3)+(150x3)+(150x3)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Corn Flake&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Corn 4 Milk 4 Salt 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Resistance +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(50x4)+(300x4)+(150x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Mushroom Stew&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Mushroom 4 Milk 4 Black Pepper 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Protect +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(150x4)+(300x4)+(300x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Popcorn&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Corn 6 Milk 6 Butter 6&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Pierce +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(50x6)+(300x6)+(300x6)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Mixed Fried Rice&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Egg 5 Potato 5 Rice 5&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Attack +150&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(50x5)+(50x5)+(700x5)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Rice with Mushroom&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Mushroom 4 Carrot 4 Rice 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;crit +600&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(150x4)+(500x4)+(700x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Onion Rings&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Wheat 5 Onion 5 Salt 5&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Block +600&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(300x5)+(500x5)+(150x5)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Food Platter&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Celery 3 Carrot 3 Bacon 3&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;crush +600&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(500x3)+(500x3)+(750x3)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Tomato Macaroni&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Wheat 4 Onion 4 Tomato 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Resistance +600&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(300x4)+(500x4)+(750x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Chocolate Cream Cake&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Wheat 6 Egg 6 Chocolate 6&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Protect +600&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(300x6)+(50x6)+(950x6)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Steamed Dumplings&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Wheat 4 Meat 4 Salt 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Pierce +600&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(300x4)+(2000x4)+(150x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Steamed Pork Ribs with Potatoes&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Potato 5 Meat 5 Salt 5&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Attack +300&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(50x5)+(2000x5)+(150x5)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Pork Chop&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Egg 5 Wheat 5 Meat 5&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Crit +1000&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(50x5)+(300x5)+(2000x5)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Matcha Chicken Wing&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Chicken Wing 2 Thyme 2 Salt 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Block +1000&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(2000x2)+(2000x2)+(150x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Stewed Chicken with Wine&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Chicken Wing 2 Thyme 2 Red Wine 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Crush +1000&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(2000x2)+(2000x2)+(2000x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;T-Bone Steak&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Meat Chunk 3 Thyme 3 salt 3&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Resistance +1000&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;(2000x3)+(2000x3)+(150x3)&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;span id=&quot;flower-fairy-upgrade-dish&quot;&gt; Flower Fairy Upgrade Dish&lt;/span&gt;&lt;a href=&quot;#flower-fairy-upgrade-dish&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;table id=&quot;fairy-dish&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th style=&quot;text-align:left&quot;&gt;Food Name&lt;/th&gt;
+			&lt;th style=&quot;text-align:center&quot;&gt;Ingredients&lt;/th&gt;
+			&lt;th style=&quot;text-align:left&quot;&gt;Fairy EXP&lt;/th&gt;
+			&lt;th&gt;Price&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Boiled Corn&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Corn 1 Salt 1 Water 1&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+100&lt;/td&gt;
+			&lt;td&gt;50+150+150&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Roasted Potato&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Potato 3 salt 3&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+150&lt;/td&gt;
+			&lt;td&gt;(50x3)+(150x3)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Gruel Barley&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Barley 2 Wheat 3 Water 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+230&lt;/td&gt;
+			&lt;td&gt;(150x2)+(300x3)+(150x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Corn Porridge&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Corn 3 Milk 4 Water 3&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+310&lt;/td&gt;
+			&lt;td&gt;(50x3)+(300x4)+(150x3)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Vegetable Soup&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Milk 2 Celery 2 Carrot 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+400&lt;/td&gt;
+			&lt;td&gt;(300x2)+(500x2)+(500x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Onion Soup&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Black Pepper 2 Onion 3 Fresh Cheese 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+480&lt;/td&gt;
+			&lt;td&gt;(300x2)+(500x3)+(500x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Strawberry Milk&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Milk 3 Strawberry 2 Sugar 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+600&lt;/td&gt;
+			&lt;td&gt;(300x3)+(750x2)+(750x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Chocolate Milk&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Milk 2 Chocolate 3 Sugar 2&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+850&lt;/td&gt;
+			&lt;td&gt;(300x2)+(950x3)+(750x2)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Shrimp&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Egg 3 Wheat 3 Shrimp 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+1150&lt;/td&gt;
+			&lt;td&gt;(50x3)+(300x3)+(1500x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Fried Rice with Shrimp&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Rice 4 Egg 4 Shrimp 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+1450&lt;/td&gt;
+			&lt;td&gt;(700x4)+(50x4)+(1500x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Chicken Soup Noodle&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Wheat 4 Chicken Wing 5 Salt 4&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+1800&lt;/td&gt;
+			&lt;td&gt;(300x4)+(2000x5)+(150x4)&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;Ham Sandwich&lt;/td&gt;
+			&lt;td style=&quot;text-align:center&quot;&gt;Wheat 3 Cheese 4 Meat 3&lt;/td&gt;
+			&lt;td style=&quot;text-align:left&quot;&gt;+2200&lt;/td&gt;
+			&lt;td&gt;(300x3)+(2000x4)+(2000x3)&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;span id=&quot;compare-100x-boiled-corns&quot;&gt; Compare 100x boiled corns&lt;/span&gt;&lt;a href=&quot;#compare-100x-boiled-corns&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div style=&quot;margin:10px&quot;&gt;
+  &lt;b&gt;Calculate x100 foods&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Boiled Corn x100 total price &lt;b i=&quot;bcprice&quot;&gt;-&lt;/b&gt; total exp &lt;b i=&quot;bcexp&quot;&gt;-&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;Ham x100 total price &lt;b i=&quot;hamprice&quot;&gt;-&lt;/b&gt; total exp &lt;b i=&quot;hamexp&quot;&gt;-&lt;/b&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;em&gt;if the total price of ham is calculated into boiled corn food&lt;/em&gt; &lt;b i=&quot;hamprice&quot;&gt;&lt;/b&gt; &amp;divide; &lt;b i=&quot;bcprice&quot;&gt;&lt;/b&gt; &amp;#61; &lt;b i=&quot;ham-bc&quot;&gt;&lt;/b&gt; &amp;times &lt;b i=&quot;bcexp&quot;&gt;-&lt;/b&gt; (x100 Boiled Corn) &amp;#61; &lt;b i=&quot;bctotal&quot;&gt;&lt;/b&gt; total exp
+&lt;/div&gt;
+&lt;!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) --&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png&quot; alt=&quot;Recipes&quot; title&gt;&lt;/p&gt;</summary>
     
     
     
@@ -451,16 +1766,13 @@
     <link href="https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html"/>
     <id>https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html</id>
     <published>2021-08-14T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.537Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;trial-of-time-gate-locations&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#trial-of-time-gate-locations&quot;&gt;&lt;/a&gt; Trial of time gate</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;trial-of-time-gate-locations&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#trial-of-time-gate-locations&quot;&gt;&lt;/a&gt; Trial of time gate locations&lt;/h1&gt;
+&lt;h2 id=&quot;fog-swamp-f2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#fog-swamp-f2&quot;&gt;&lt;/a&gt; Fog Swamp F2&lt;/h2&gt;
+&lt;p&gt;&lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png&quot; alt=&quot;Fog Swamp F2&quot; title&gt;&lt;/p&gt;
+</summary>
     
     
     
@@ -478,16 +1790,11 @@
     <link href="https://git.webmanajemen.com/Test/Helper.html"/>
     <id>https://git.webmanajemen.com/Test/Helper.html</id>
     <published>2021-07-16T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.701Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;!-- include /source/_posts/Tes/Test/Helper/readFile.md</summary>
-        
-      
+    <summary type="html">&lt;!-- include /source/_posts/Tes/Test/Helper/readFile.md --&gt;
+</summary>
     
     
     
@@ -503,18 +1810,13 @@
     <link href="https://git.webmanajemen.com/Test/Include.html"/>
     <id>https://git.webmanajemen.com/Test/Include.html</id>
     <published>2021-07-16T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:16.743Z</updated>
+    <updated>2021-10-31T02:56:20.521Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;first line&lt;br /&gt;
-2nd line&lt;br /&gt;
-3rd</summary>
-        
-      
+    <summary type="html">&lt;p&gt;first line&lt;br&gt;
+2nd line&lt;br&gt;
+3rd line&lt;/p&gt;
+</summary>
     
     
     
@@ -530,19 +1832,20 @@
     <link href="https://git.webmanajemen.com/Test/Inline%20Image.html"/>
     <id>https://git.webmanajemen.com/Test/Inline%20Image.html</id>
     <published>2021-07-16T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.751Z</updated>
+    <updated>2021-10-31T02:56:19.697Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;!--suppress HtmlUnknownTarget --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;/scss/inline-image.css&quot; media=&quot;all&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/scss/inline-image.css&quot; media=&quot;all&quot;&gt;
 &lt;div class=&quot;container-box&quot;&gt;
-  &lt;img</summary>
-        
-      
+  &lt;img on=&quot;tap:lightbox1&quot; role=&quot;button&quot; tabindex=&quot;0&quot; layout=&quot;responsive&quot; width height src=&quot;https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428&quot; alt=&quot;x&quot; title&gt;
+  &lt;div class=&quot;container-box-text&quot;&gt;
+    &lt;h2&gt;Why Do Cats Like Boxes?&lt;/h2&gt;
+    &lt;p&gt;&quot;Cats like boxes because they are cryptic animals; they like to hide,&quot; Stephen Zawistowski, science adviser for the American Society for the Prevention of Cruelty to Animals, told Business Insider. &quot;And a box gives them a place of safety and security.&quot;&lt;/p&gt;
+    &lt;p&gt;While inside a box, cats feel that they cannot be snuck up on from behind or the side — anything that wants to approach them must come directly into their field of vision. In effect, such hiding spaces allow them to watch the world around them without being seen.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</summary>
     
     
     
@@ -558,10 +1861,10 @@
     <link href="https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html"/>
     <id>https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html</id>
     <published>2021-06-09T17:00:00.000Z</published>
-    <updated>2021-10-07T18:19:15.767Z</updated>
+    <updated>2021-10-31T02:56:19.705Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Update genshin impact &lt;code&gt;1.6.1&lt;/code&gt; manual via download manager (IDM).&lt;/p&gt;</summary>
+    <summary type="html">Update genshin impact 1.6.1 manual via download manager (IDM).</summary>
     
     
     

@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-19T14:30:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.949Z",
+            "dateModified": "2021-11-02T21:09:20.803Z",
             "description": "      Tutorial mengatasi windows 10 tanpa kehilangan data (settings, aplikasi, file) GPT MBR both supported             Permasalahan / Kendala :            Windows 10 tidak bisa booting setelah install dual boot dengan windows versi lama (vista, xp, 7, 8)      bootrec /fixboot : access denied      bcdedit rebuildbcd the requested system device cannot be found      windows 10 wont start code 0xc00000e      windows installation but drive letter is changed after update windows 10 or older windows              Requirements :                  Free Disk Min 100GB (untuk jaga-jaga bila ada file dump di windows sebelumnya yang belum terinstall)      Bootable Windows 10 (usb/dvd)      Internet (untuk update feature, dll *optional)              Tata cara:                  Matikan PC/Laptop, lalu masuk ke BIOS      Cari boot settings, disable secure boot, enable legacy boot      Set USB/Removable Disk atau DVD/CD urutan paling atas pada boot list (pastikan setting USB boot enabled jika memakai Bootable USB namun jika tidak ada settingan USB Boot, abaikan saja).             Pada tampilan install windows, anda pilih Repair This Computer -> advanced options -> command shell (CMD)                                lalu masukkan perintah berikut :        diskpartlis vol        Disini kita akan melihat disk volume berapa yang paling besar FREE UP space nya, misal `N`        sel vol n        Memilih volume N        shrink desire=100000        Shrink/membagi partisi 100000 MB (100 GB)        list vol        Melihat daftar volume, cari volume baru berukuran 100 GB yang belum terASSIGN ke Driver Letter (C, D, E, etc), Misal ada pada Volume 8        sel vol 8assign letter=U        Memilih volume 8 dan memberikannya letter U, dimana U tidak sedang dipakai oleh volume disk lainReboot komputer, tanpa mencabut USB/DVD bootableLalu pada tampilan, Instalasi windows klik INSTALL, nanti disuruh memilih di install pada driver tertentu, nah pilihlah DISK U:\ yang tadi sudah di setAuto restart pertama, anda harus mencabut USB/DVD anda agar windows langsung masuk ke tahap instalasi lanjutan. Jika tidak dicabut, maka anda akan dibawa ke repair setup yang tadi lagi.Tunggu Hingga selesai secara sempurna.Jika nanti disuruh memilih OS (jangan memilih OS lama anda dulu, agar semua requirement System terpenuhi dahulu dengan windows update)            ---Lanjut Cara Menghapus Dual boot Windows 10---      ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

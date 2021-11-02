@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-08-06T08:46:00.002Z",
-            "dateModified": "2021-11-02T20:32:49.081Z",
+            "dateModified": "2021-11-02T21:09:20.963Z",
             "description": "Definisi dan PenggunaanAtribut defer adalah atribut boolean.Saat ini, ia menentukan bahwa skrip dijalankan saat halaman selesai diurai.Catatan: Atribut defer hanya untuk skrip eksternal (seharusnya hanya digunakan jika atribut src ada).Catatan: Ada beberapa cara skrip eksternal dapat dijalankan: Jika async hadir: Script dijalankan secara asynchronous dengan sisa halaman (script akan dieksekusi saat halaman melanjutkan penguraian)  Jika async tidak hadir dan menunda hadir: Script dijalankan saat halaman selesai diurai  Jika tidak ada async atau defer yang ada: Script diambil dan dijalankan segera, sebelum browser melanjutkan penguraian halaman Nah berikut kode untuk defer loading multiple css :",
             "articleBody": "<script type=\"text/javascript\">var loadCSSFiles = function() { var links = [\"//example.com/css/custom.css\", \"//fonts.googleapis.com/css?family=PT+Sans\", \"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\"], headElement = document.getElementsByTagName(\"head\")[0], linkElement, i; for (i = 0; i < links.length; i++) { linkElement = document.createElement(\"link\"); linkElement.rel = \"stylesheet\"; linkElement.href = links[i]; headElement.appendChild(linkElement); }};var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;if (raf) { raf(loadCSSFiles);} else { window.addEventListener(\"load\", loadCSSFiles);}</script>Taruh kode diatas di antara <head>DISINI<meta name="generator" content="Hexo 5.4.0"></head> atau diatas  tag."
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

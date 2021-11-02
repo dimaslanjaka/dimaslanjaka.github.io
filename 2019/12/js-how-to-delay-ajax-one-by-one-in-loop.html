@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-12-29T12:26:00.001Z",
-            "dateModified": "2021-11-02T20:32:48.889Z",
+            "dateModified": "2021-11-02T21:09:20.719Z",
             "description": "Bahasa indonesia: Bagaimana eksekusi ajax satu per satu di Loop<div id=“demo”></div><script>/ * Define global variable * @var {int} indexLoop global loop indexer * @var {int} lastLoop global last iteration for global loop indexer from loop initializer * @var {array} queueLoop global array to be processed from ajax * @var {array} arrayLoop define array to be proccesed */var indexLoop = 0,  lastLoop = 0,  queueLoop = [],  arrayLoop = [‘apple’, ‘melon’, ‘watermelon’, ‘grapes’];for (var i = 0; i < arrayLoop.length; i++) {  queueLoop.push(arrayLoop[i]);  if (i == arrayLoop.length - 1) {    lastLoop = i + 1;    ajaxLoop(function () {      var b = document.createElement(‘b’);      b.innerHTML = ‘Processing all item ’ + indexLoop + ’ of ’ + lastLoop + ’ succedeed<br/>’;      document.getElementById(‘demo’).appendChild(b);    });  }}/ * Initialize global ajaxLoop function * @param {function} lastFunction function to be executed on last iteration /function ajaxLoop(lastFunction) {  if (indexLoop < lastLoop) {    $.ajax({      url: ‘https://reqres.in/api/users?page=’ + (indexLoop + 1),      beforeSend: function () {        var b = document.createElement(‘b’);        b.innerHTML = ‘Processing item ’ + indexLoop + ’ of ’ + lastLoop + ‘<br/>’;        document.getElementById(‘demo’).appendChild(b);      },      success: function (response) {        var b = document.createElement(‘b’);        b.innerHTML = ‘Processed item success ’ + this.url.split(’=’)[1] + ’ of ’ + lastLoop + ‘<br/>’;        document.getElementById(‘demo’).appendChild(b);      },      error: function () {        var b = document.createElement(‘b’);        b.innerHTML = ‘Processed item error ’ + this.url.split(’=’)[1] + ’ of ’ + lastLoop + ‘<br/>’;        document.getElementById(‘demo’).appendChild(b);      },      complete: function () {        var b = document.createElement(‘b’);        b.innerHTML = ‘Processed item complete ’ + this.url.split(’=’)[1] + ’ of ’ + lastLoop + ‘<br/>’;        document.getElementById(‘demo’).appendChild(b);      }    });    indexLoop++;    ajaxLoop();    if (indexLoop == queueLoop.length) {      if (typeof lastFunction == ‘function’) {        lastFunction();        /* reseting global indexer */        indexLoop = 0;      }    }  }}</script>preview     
 ",
             "articleBody": undefined
@@ -532,7 +532,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

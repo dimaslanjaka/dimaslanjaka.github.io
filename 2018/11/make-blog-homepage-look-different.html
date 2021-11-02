@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-11-23T14:39:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.989Z",
+            "dateModified": "2021-11-02T21:09:20.851Z",
             "description": "Sometimes we as the blog owner was bored to see the look of the blog, one of them post view on the homepage. Well, we can get rid of this boredom by modifying the post appearance on the homepage to be different. We can freely modify the post homepage display is different, eg combine the grid and list view, or we modify the first post view is different from other posts. This trick I have applied to some Company template. If you would like to try it, please follow the way below.",
             "articleBody": " Please find the code below <b:includable id=‘main’ var=‘top’>Scroll down a bit, then please delete the following code: <b:if cond=‘data:post.isDateStart’> <b:if cond=‘data:post.isFirstPost == &quot;false&quot;’> &lt;/div&gt;&lt;/div&gt; </b:if> </b:if> <b:if cond=‘data:post.isDateStart’> &lt;div class=&quot;date-outer&quot;&gt; </b:if> <b:if cond=‘data:post.isDateStart’> &lt;div class=&quot;date-posts&quot;&gt; </b:if>Then scroll again down, and then delete the following code: <b:if cond=‘data:numPosts != 0’> &lt;/div&gt;&lt;/div&gt; </b:if> Well now we just make a style to set the post view by using .post-outer:nth-child() If we want to change the look of the first post, then all the styles associated with the first post use .post-outer:nth-child(1) as below for example: .post-outer:nth-child(1) .post { … … } .post-outer:nth-child(1) .post h2 { … … } .post-outer:nth-child(1) .post-body { … … } Etc. Then if you want to change the appearance of other posts also then add a style like this, eg for the second post, third, and fourth (in order to have the same look). .post-outer:nth-child(2) .post, .post-outer:nth-child(3) .post, .post-outer:nth-child(4) .post { … … } .post-outer:nth-child(2) .post h2, .post-outer:nth-child(3) .post h2, .post-outer:nth-child(4) .post h2 { … … } .post-outer:nth-child(2) .post-body, .post-outer:nth-child(3) .post-body, .post-outer:nth-child(4) .post-body { … … } Etc. And for other posts, create a style as usual, as follows .post { … … } .post h2 { … … } .post-body { … … } How easy is not it? Good luck… "
         }
@@ -531,7 +531,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

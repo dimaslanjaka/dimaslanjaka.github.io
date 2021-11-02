@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-09-13T00:55:00.000Z",
-            "dateModified": "2021-11-02T20:32:49.069Z",
+            "dateModified": "2021-11-02T21:09:20.943Z",
             "description": "In the previous article I once shared a tutorial on Installing Sticky Functions  On Blogger Widgets, this time I will share a tutorial with the same function that is to make a particular widget sticky or float following the page when scrolled down and up. This tutorial is an improvement as well as answering your comment from the previous tutorial which when the page is scrolled down sticky widget will pass the Footer Wrapper and it will be a bit annoying because it blocks the widgets that are installed in the Footer area.I will share this code more suitable to be installed on all content in Sidebar or can also be installed on one particular widget. For buddy who want to try it, please follow tutorial How to Make Sticky Widget in Sidebar Blog.How to Create a Sticky Widget in Blog Sidebar1. Login to Blogger --> Go to Template editor --> Put below script before </body> tag<script type=‘text/javascript’>//<![CDATA[(function() {<br>  if ((’#sticky-sidebar’).length) { // Change “#sticky-sidebar” with spesific ID or Change to Your ID Widgets    var el = $(’#sticky-sidebar’);    var stickyTop = $(’#sticky-sidebar’).offset().top;    var stickyHeight = $(’#sticky-sidebar’).height();    $(window).scroll(function() {      var limit = $(’#footer-wrapper’).offset().top - stickyHeight - 20; // Distance stops at “#footer-wrapper”      var windowTop = $(window).scrollTop();      if (stickyTop < windowTop) {        el.css({          position: ‘fixed’,          top: 20 // Distance of margin from top        });      } else {        el.css(‘position’, ‘static’);      }      if (limit < windowTop) {        var diff = limit - windowTop;        el.css({          top: diff        });      }    });  }});//]]></script>Notice the code marked, replace the code with the ID to be made sticky according to the template usedNOTE: #sticky-sidebar: ID of the content or widget to be made sticky#footer-wrapper: Specify the ID to limit the sticky functionNext add the width to the content or widget that is made sticky with CSS. Suppose here I give 300px for sticky width, for example:",
             "articleBody": "#sticky-sidebar{width:100%;max-width:300px}Or:#ID_WIDGET{width:100%;max-width:300px}Determine the width according to the width of the sidebar of the template you use and also do not forget to replace the width on a particular query media, for example@media only screen and (max-width:768px){#sticky-sidebar{width:100%;max-width:100%}}DEMO "
         }
@@ -531,7 +531,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

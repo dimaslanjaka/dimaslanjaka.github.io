@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-06-25T12:24:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.957Z",
+            "dateModified": "2021-11-02T21:09:20.811Z",
             "description": "How to automatically create folder if not exists on spesific PATHBagaimana cara membuat folder secara rekursif bila tidak ada pada spesifik PATH<?php//define document root first define document root dahuludefine('APP', $_SERVER['DOCUMENT_ROOT'], true);// [func] path extraction and creationfunction _folder_($d){    $d = str_replace(APP, '', rtrim($d, '/'));    $explode = explode('/', rtrim($d,'/'));    $explode = array_filter($explode);    $ready = (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? '' : '/');    foreach ($explode as $x) {      $ready = rtrim($ready,'/');      $ready .= '/'.$x;      $status = file_exists(APP.$ready);      if ($status === false){        mdir(APP.$ready);      }    }    return $d;}// [func] create folder permission 777function mdir($x){  $oldmask = umask(0);  mkdir($x, 0777);  umask($oldmask);}//Usage Penggunaan$folder_target = ?>       ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

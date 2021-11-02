@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-11-03T06:16:00.001Z",
-            "dateModified": "2021-11-02T20:32:48.989Z",
+            "dateModified": "2021-11-02T21:09:20.851Z",
             "description": "   Download Scriptauto reaction facebook       Step by Step Install BOT reaction for cPanel   Download Scriptnya. simpan dengan nama bot.php   Kalau sudah, Save File Bot nya lalu Upload ke Hosting kalian masing-masing..    Sekarang waktunya Setting Cronjob buat File Bot kalian, agar bisa berjalan dalam waktu yg udah ditentukan :) Untuk settingannya kalian bisa lihat seperti gambar dibawah ini :                  nb. Untuk Waktu Eksekusi, itu terserah sesuai kalian masing2.. :)      Kalo udah mantep settingannya, Klik Add New Cron Job. dan Lihatlah Akun facebook agan bakal ngelike status temen secara otomatis sesuai waktu yang sudah ditentukan tadi.      Atau bila kalian bingung dengan tutorial pemasangan cronjob diatas. anda bisa menggunakan alternatif Di Pencarian ini atau Cara Membuat Cron Job Menggunakan webcron.org       Cara Install Bot Auto Reaction Facebook Lewat Termux            Download Scriptnya. simpan dengan nama bot.php         Taruh file bot.php ke /sdcard    Edit bot.php. masukkan user dan password facebooknya    Lalu masuk ke termux. dan ketik kode dibawah ini         cd $HOME   apt update && apt upgrade   apt install vim php -y   export VISUAL=vim   export EDITOR=vim   echo '#!/bin/sh' > autoloader   echo "cd /sdcard" >> autoloader   echo "php -f bot.php" >> autoloader   chmod 777 autoloader   cat autoloader   user=$(whoami)   echo "*/1 * * * * sh $HOME/autoloader" > cron   crontab -c $user cron   crontab -r   crontab cron   clear && crontab -l && cat autoloader   crond stop && crond start      Hasilnya akan keluar di /sdcard/results.html. seperti dibawah ini.                How to Set cronjob on termux.How to Set cronjob from cron-job.org.",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

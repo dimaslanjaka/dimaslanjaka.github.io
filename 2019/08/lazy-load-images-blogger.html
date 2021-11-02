@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-31T10:05:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.945Z",
+            "dateModified": "2021-11-02T21:09:20.795Z",
             "description": "    Lazy load images bloggerlazy loading blogger berguna untuk : Mempercepat laman webMeningkatkan rating pagespeedHTML (Usage)<img alt='' data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg=='/>src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==' : source gambar dengan resolusi paling rendahdata-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' : source gambar asliJS (taruh diatas </body>)<script>//<![CDATA[const config = {  rootMargin: '0px 0px 50px 0px',  threshold: 0};const imgs = document.querySelectorAll('[data-src]');if (typeof intersectionObserver != 'undefined') {  // register the config object with an instance  // of intersectionObserver  let observer = new intersectionObserver(function (entries, self) {    // iterate over each entry    entries.forEach(entry => {      // process just the images that are intersecting.      // isIntersecting is a property exposed by the interface      if (entry.isIntersecting) {        // custom function that copies the path to the img        // from data-src to src        preloadImage(entry.target);        // the image is now in place, stop watching        self.unobserve(entry.target);      }    });  }, config);    imgs.forEach(img => {    observer.observe(img);  });} else {  imgs.forEach(img => {    preloadImage(img)  });}function preloadImage(e) {  var a = e.getAttribute('src'), b = e.getAttribute('data-src');  if (b.trim() != ''){    e.src = b.trim();  }}]]></script>FULL DEMO  See the Pen   Pure javascript lazy load images by dimas lanjaka (@dimaslanjaka)   on CodePen.",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

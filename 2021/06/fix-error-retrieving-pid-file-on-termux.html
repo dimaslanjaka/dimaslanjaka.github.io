@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2021-06-03T11:00:00.002Z",
-            "dateModified": "2021-11-02T20:32:48.833Z",
+            "dateModified": "2021-11-02T21:09:20.675Z",
             "description": "	Solution to "error retrieving pid file" - Termux and apache      Apache errors overview:           (20014) Internal error (specific information not available):      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid      AH00059: Remove it before continuing if it is corrupted.        This mistake seems while summoning apachectl either with start or with stop and here and there happens when running on Previous Install XAMPP apache on android termux.     Solution          Stop apache first         apachectl stop                    Change dir:         cd /data/data/com.termux/files/usr/var/run/apache2            Then delete the httpd.pid file:       rm httpd.pid            Or using this script:                   #          # This script is part of the video,          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and          # it's intended to be used on Termux Android 32 bits in order to fix the issue,          # https://github.com/termux/termux-packages/issues/1727          # Before executing this script you must install termux-chroot see de video,          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk          #          #!/usr/bin/env bash          aps=$(pidof httpd)          pidf=/var/run/apache2/httpd.pid          [[ -f $pidf ]] && rm -f $pidf          [[ "$aps" != "" ]] && kill -9 $aps                           Github issues:           https://github.com/termux/termux-packages/issues/1727      https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid               ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

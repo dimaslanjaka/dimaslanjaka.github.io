@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-08-07T05:11:00.000Z",
-            "dateModified": "2021-11-02T20:32:49.077Z",
+            "dateModified": "2021-11-02T21:09:20.959Z",
             "description": "Waktu buka halaman adalah salah satu hal penting bagi pengunjung Anda, dan sama pentingnya bagi mesin telusur. Saat menyertakan beberapa file JavaScript dan CSS , browser harus menunggu sampai semua file tersebut telah diunduh untuk merender halaman.Bergantung pada kecepatan koneksi, diperlukan beberapa detik untuk memuat semua sumber dan pengunjung harus menganggur sampai saat itu.Teknik yang kita bahas di sini akan memungkinkan browser untuk menampilkan halaman HTML awalnya tanpa gaya apapun, sehingga pengunjung setidaknya bisa mulai membaca isinya. Begitu halaman di-load, style sheet akan dimuat dan diterapkan tanpa memblokir thread utama. Ini mirip dengan  menunda pemuatan tombol media sosial  .Anda mungkin berpikir mengapa seseorang harus mengekspos tampilan halaman yang jelek tanpa memuat gaya! Itu benar, meski itu akan membuat kesan buruk. Jadi, pendekatan terbaik bisa termasuk kode CSS kritis yang diperlukan untuk memberi gaya pada konten paruh atas di halaman HTML itu sendiri (di bawah bagian kepala halaman web), dan memuat file non-kritis atau besar dengan menggunakan metode di bawah ini.",
             "articleBody": "Taruh kode kode (pilih salah satu) diatas </body> tagAsync CSS LoadingKami dapat menggunakan fungsi JavaScript sederhana untuk menyelesaikan tujuan kami.Berikut adalah contoh untuk memuat satu lembar gaya setelah halaman dimuat.<script>//define function to load cssvar loadCss = function(){ var cssLink = document.createElement('link'); cssLink.rel = 'stylesheet'; cssLink.href = 'myawesomestyle.css'; var head = document.getElementsByTagName('head')[0]; head.parentNode.insertBefore(cssLink, head);}; //call function on window loadwindow.addEventListener('load', loadCss);</script> Memuat Beberapa StylesheetsUntuk memudahkan, kita akan parameterize fungsi loadCss untuk menerima pathfile. Dan kemudian, kita akan menentukan fungsi induk kita yang akanmemanggil fungsi di atas secara berulang untuk setiap file tunggal.<script>var loadMultipleCss = function(){ //load local stylesheet loadCss('myawesomestyle.css'); //load Bootstrap from CDN loadCss('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'); //load Bootstrap theme from CDN loadCss('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css');} var loadCss = function(cssPath){ var cssLink = document.createElement('link'); cssLink.rel = 'stylesheet'; cssLink.href = cssPath; var head = document.getElementsByTagName('head')[0]; head.parentNode.insertBefore(cssLink, head);}; //call function on window loadwindow.addEventListener('load', loadMultipleCss);</script>Sebelum dan sesudah menerapkan tweak ini, bandingkan skor kecepatan halaman Anda. Jika Anda menghadapi masalah dalam menerapkan ini, lakukan posting di komentar. Saya akan mencoba membalas"
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

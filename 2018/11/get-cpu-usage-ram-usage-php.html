@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-11-05T13:08:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.993Z",
+            "dateModified": "2021-11-02T21:09:20.855Z",
             "description": "    if you mean how much ram/cpu php is using then you can do the following     using plain php without using any package: this returns the ram usage: function get_server_memory_usage(){$free = shell_exec('free');$free = (string)trim($free);$free_arr = explode("\n", $free);$mem = explode(" ", $free_arr[1]);$mem = array_filter($mem);$mem = array_merge($mem);$memory_usage = $mem[2]/$mem[1]*100;return $memory_usage;}    cpu usage: function get_server_cpu_usage(){$load = sys_getloadavg();return $load[0];}Native Conditions:$load = sys_getloadavg();$limit =15; //percent cpuif ($load[0] >= $limit) {  die("Oops Server Busy, this message was automate from Dimas Lanjaka For telling users, there too many processed.");}",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

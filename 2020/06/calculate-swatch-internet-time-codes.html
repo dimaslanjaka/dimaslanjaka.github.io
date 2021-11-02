@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2020-06-05T11:11:00.002Z",
-            "dateModified": "2021-11-02T20:32:48.861Z",
+            "dateModified": "2021-11-02T21:09:20.699Z",
             "description": "PHP12 bytes:<?php echo date('B'); ?>48 bytes:<?php echo sprintf("%03d",((time()+3600)%86400)/86.4|0); ?>  C, 56 bytes  main(){printf("%03d",(int)((time(0)+3600)%86400/86.4));}  Explanation:%03d - tells printf to zero-pad up to 3 digits.time(NULL)+3600 - gets amount of seconds (UTC) elapsed since epoch and adds an hour to it (UTC+1).%86400 - divides epoch by the amount of seconds in a 24hr day and gets the remainder (representing seconds elapsed, so far, "today")./86.4 - divide remaining seconds by 86.4 to get the ".beat" count since midnight (UTC+1).Compile (MSVC):C:> cl swatch.cCompile (GCC):$ gcc swatch.cJava 143 bytesimport java.time.*;interface A {  static void main(String[] a) {    System.out.format("%03.0f", LocalTime.now(ZoneId.of("UT+1")).toSecondOfDay() / 86.4);  }}  Javascript      d=new Date();t=;console.log(Math.floor((360*d.getHours()+60*d.getMinutes()+d.getSeconds())/86.4));  ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

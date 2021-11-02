@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-04-25T07:29:00.001Z",
-            "dateModified": "2021-11-02T20:32:49.117Z",
+            "dateModified": "2021-11-02T21:09:21.023Z",
             "description": "Teknik Defer loading multiple external javascript untuk mengurangi loading website secara dramatis.Nah kali ini saya akan share bagaimana cara mengurangi loading website meskipun mempunyai banyak eksternal javascript.Langkah:1. Backup dulu template anda bila memakai CMS Blogger, Yang lainnya backup file asli yang akan di terapkan teknik defer ini.2. Cut semua eksternal javascript (kecuali pemanggil jquery misal: https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js bila theme atau template anda menggunakan framework yang menggantungkan jquery, misal blogger template EVO MAGZ buatan Mas Sugeng.). Lalu paste di notepad. Lalu buat kode berikut ini :",
             "articleBody": "<script type=\"text/javascript\">function downloadJSAtOnload() { (function(scripts) { var i = 0, l = scripts.length; for (; i<l; ++i ){ var element = document.createElement(\"script\"); element.src = scripts[i]; document.body.appendChild(element); } })(['http://yourjavascript.com/16724112645/root93.js','https://source.l3n4r0x.cf/js/highlight/highlight.pack.js']);}if (window.addEventListener) window.addEventListener(\"load\", downloadJSAtOnload, false);else if (window.attachEvent) window.attachEvent(\"onload\", downloadJSAtOnload);else window.onload = downloadJSAtOnload;</script> Deskripsi:Ubah URL eksternal javascript dengan URL eksternal yang kalian punya. Untuk menambah source eksternalnya hanya dikasih koma (,) dan tanda petik (') untuk meload beberapa eksternal javascript/js file (tidak ada batasan).Kemudian taruh script diatas yang sudah kalian edit di atas .Fungsi script diatas adalah mengeksekusi javascript pada saat web telah di load 100%.NOTE: Namun kode diatas tidak bisa untuk meload jquery framework dari ajax.googleapis.com bila theme atau template anda menggunakan framework atau desain yang sangat memerlukan jquery disaat perenderan website. Bisa-bisa nanti malah theme atau template anda tidak sempurna dengan kata lain rusak dibeberapa bagian yang membutuhkan jquery di saat perenderan awal website.Nah selesai.Apakah artikel ini membantu anda ??.. Jangan lupa share yah..."
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

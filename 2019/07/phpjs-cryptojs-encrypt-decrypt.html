@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-21T10:16:00.001Z",
-            "dateModified": "2021-11-02T20:32:48.949Z",
+            "dateModified": "2021-11-02T21:09:20.799Z",
             "description": "           CryptoJS encrypt decrypt support PHP 5, PHP 7.x.                   See the Pen             PHP CryptoJS Encrypt Decrypt by dimas lanjaka (@dimaslanjaka)           on CodePen.                        Code PHP and details variable  [JS]      /**    * @package https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js    */   var salt = 'salt'; //salt   var iv = '1111111111111111'; //pass salt minimum length 12 chars   var iterations = '999'; //iterations   /**    * Get key    * @param string passphrase    * @param string salt    */   function getKey(passphrase, salt) {     var key = CryptoJS.PBKDF2(passphrase, salt, {       hasher: CryptoJS.algo.SHA256,       keySize: 64 / 8,       iterations: iterations     });     return key;   }   /**    * Encrypt function    * @param string passphrase    * @param string plainText    */   function userJSEncrypt(passphrase, plainText) {     var key = getKey(passphrase, salt);     var encrypted = CryptoJS.AES.encrypt(plainText, key, {       iv: CryptoJS.enc.Utf8.parse(iv)     });     return encrypted.ciphertext.toString(CryptoJS.enc.Base64);   }   /**    * Decrypt function    * @param string passphrase    * @param string encryptedText    */   function userJSDecrypt(passphrase, encryptedText) {     var key = getKey(passphrase, salt);     var decrypted = CryptoJS.AES.decrypt(encryptedText, key, {       iv: CryptoJS.enc.Utf8.parse(iv)     });     return decrypted.toString(CryptoJS.enc.Utf8);   }  [PHP 5.6++]  <?phpconst SALT = 'salt'; //saltconst IV = '1111111111111111'; //pass salt minimum length 12 chars or it'll be show warning messagesconst ITERATIONS = 999; //iterationsfunction userPHPEncrypt($passphrase, $plainText){  $key = \hash_pbkdf2("sha256", $passphrase, SALT, ITERATIONS, 64);  $encryptedData = \openssl_encrypt($plainText, 'AES-256-CBC', \hex2bin($key), OPENSSL_RAW_DATA, IV);  return \base64_encode($encryptedData);}function userPHPDecrypt($passphrase, $encryptedTextBase64){  $encryptedText = \base64_decode($encryptedTextBase64);  $key = \hash_pbkdf2("sha256", $passphrase, SALT, ITERATIONS, 64);  $decryptedText = \openssl_decrypt($encryptedText, 'AES-256-CBC', \hex2bin($key), OPENSSL_RAW_DATA, IV);  return $decryptedText;}       Fix Problems    How to fix openssl_encrypt() and       openssl_decrypt() errors  ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

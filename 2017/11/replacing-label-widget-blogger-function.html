@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-11-13T08:28:00.000Z",
-            "dateModified": "2021-11-02T20:32:49.033Z",
+            "dateModified": "2021-11-02T21:09:20.903Z",
             "description": "     I will provide another option of the label widget that can be made dropdown, it looks exactly the same as the dropdown in the archive widget.The purpose of changing the look of this label widget is to save space on the blog page if in my blog there are many labels that make the blog look narrow because it is not just a label widget that is on the blog.In addition your blog will look more tidy and professional.For those who want to mecobanya, please follow the following tutorial:Replacing the Label Widget Function to Be Dropdown1. Go to Blogger> Template> Then find this code<ul>  <b:loop values='data:labels' var='label'>    <li>      <b:if cond='data:blog.url == data:label.url'>        <data:label.name/>        <b:else/>        <a expr:href='data:label.url' rel="noopener external nofollow noreferrer">          <data:label.name/>        </a>      </b:if>      (<data:label.count/>)    </li>  </b:loop></ul>Replace all the code above with this code",
             "articleBody": "<div class=\"dropmedown\"><select class=\"dropdown-select\" onchange='location=this.options[this.selectedIndex].value;'> <option> Search Category </option> <b:loop values='data:labels' var='label'> <option expr:value='data:label.url'> <data:label.name/> ( <data:label.count/>) </option> </b:loop> </select> </div> <b:loop values='data:labels' var='label'> <option expr:value='data:label.url'> <data:label.name/> (<data:label.count/>) </option> </b:loop></select></div>Ex Original HTML:<br>NOTE: Replace any posts marked with your posts.2. Next, add the code below before ]]> </ b: skin> or </ style>/* Dropdown Label */.dropmedown select{outline:none;cursor:pointer}.dropmedown{display:inline-block;position:relative;overflow:hidden;width:100%;background:#fff;border:1px solid transparent;border-radius:3px;height:36px;line-height:36px;color:#444}.dropmedown:before,.dropmedown:after{content:'';position:absolute;z-index:2;top:13px;right:12px;width:0;height:0;line-height:36px;border:4px dashed;border-color:#888 transparent;pointer-events:none}.dropmedown:before{border-bottom-style:solid;border-top:none}.dropmedown:after{margin-top:8px;border-top-style:solid;border-bottom:none}.dropdown-select{position:relative;width:100%;margin:0;padding:6px 8px 6px 10px;height:36px;line-height:18px;font-size:12px;color:#62717a;text-shadow:0 1px #fff;background:#f2f2f2;background:rgba(0,0,0,0)!important;border:0;border-radius:0;-webkit-appearance:none}.dropdown-select>option{margin:3px;padding:6px 8px;text-shadow:none;background:#f8f8f8;outline:none;border:0;border-radius:3px;cursor:pointer}Original CSS:<br>3. Save the template and see the results.<br>Want To Edit From My friend Pen?Here it: Codepen.ioDo you think this article help you ?, please share this :)"
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

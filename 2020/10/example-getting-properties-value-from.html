@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2020-10-23T19:19:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.857Z",
+            "dateModified": "2021-11-02T21:09:20.695Z",
             "description": "pluginManagement {    resolutionStrategy {        eachPlugin {            // Work around https://github.com/gradle/gradle/issues/1697.            if (requested.version == null) {                def pluginName = requested.id.name.split('-').collect { it.capitalize() }.join().uncapitalize()                def versionPropertyName = (requested.id.id == 'org.jetbrains.kotlin.jvm') ?                        "kotlinPluginVersion" : "${pluginName}PluginVersion"                logger.info("Checking for plugin version property '$versionPropertyName'.")                if (gradle.rootProject.hasProperty(versionPropertyName)) {                    def version = gradle.rootProject.properties[versionPropertyName]                    logger.info("Setting '${requested.id.id}' plugin version to $version.")                    useVersion version                } else {                    logger.warn("No version specified for plugin '${requested.id.id}' and property " +                            "'$versionPropertyName' does not exist.")                }            }        }    }}",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

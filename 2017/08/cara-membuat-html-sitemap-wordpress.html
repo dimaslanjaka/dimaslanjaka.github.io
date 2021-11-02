@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-08-05T04:02:00.000Z",
-            "dateModified": "2021-11-02T20:32:49.081Z",
+            "dateModified": "2021-11-02T21:09:20.963Z",
             "description": "Menjadi pengguna WordPress bertahun-tahun saya telah menemukan tidak banyak yang bisa salah dengan CMS open source tapi bila Anda memiliki terlalu banyak plug-in, akan sulit untuk memperbaruinya. Bila memungkinkan, saya selalu mencoba membangun situs yang tidak akan bergantung pada mereka alasan utama untuk ini.Keamanan yang lebih baik sebagai plug-in adalah sumber utama hacks websiteTidak ada jaminan plug-in akan dipertahankan atau diperbarui saat versi baru WordPress keluarMereka menyumbat adminMereka tidak selalu bekerja persis seperti yang Anda inginkanBerikut adalah sedikit kode yang saya gunakan untuk membuat Peta Situs HTML biasa. Anda bahkan bisa memodifikasinya untuk menghasilkan sitemap XML juga dengan sedikit kerja.Yang harus Anda lakukan adalah menyalin kode berikut ke file functions.php dan akan menambahkan kode singkat HTML Sitemap ke situs Anda. Hanya menempatkan [ htmlSitemap ] pada halaman yang Anda inginkan untuk muncul./****Taruh kode dibawah ini di dalam file functions.php theme anda.***/    function get_html_sitemap( $atts ){            $return = '';            $args = array('public'=>1); // If you would like to ignore some post types just add them to the array below            $ignoreposttypes = array('attachment');            $post_types = get_post_types( $args, 'objects' );             foreach ( $post_types as $post_type ) {                if( !in_array($post_type->name,$ignoreposttypes)){                    $return .= '<h2>' . $post_type->labels->name.'</h2>';                    $args = array(                        'posts_per_page'   => -1,                        'post_type'        => $post_type->name,                        'post_status'      => 'publish'                    );                    $posts_array = get_posts( $args );                     $return .=  '<ul>';                    foreach($posts_array as $pst){                        $return .=  '<li><a href="'.get_permalink($pst->ID).'">'.$pst->post_title.'</a></li>';                    }                    $return .=  '</ul>';                }            }        return $return;    }    add_shortcode( 'htmlSitemap', 'get_html_sitemap' );Cara penggunaan:Cukup buat 1 halaman baru (pages) tambahkan shortcode [htmlSitemap] di mode HTML Editor nya.",
             "articleBody": "Selesai. Semoga bermanfaat."
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

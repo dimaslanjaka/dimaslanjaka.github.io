@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-02-09T16:57:00.000Z",
-            "dateModified": "2021-11-02T20:32:49.025Z",
+            "dateModified": "2021-11-02T21:09:20.895Z",
             "description": "Someone talk to stack overflow like this :     I am trying to rotate random CSS sheets via JS - I have the following     script but when I am using it - it doesnt seem to work ? function getRand(){    return Math.round(Math.random()(css.length-1));}var css = new Array(’<link rel=“stylesheet” type=“text/css” href=“css/1.css”>’,’<link rel=“stylesheet” type=“text/css” href=“css/2.css”>’,’<link rel=“stylesheet” type=“text/css” href=“css/3.css”>’,’<link rel=“stylesheet” type=“text/css” href=“css/4.css”>’);rand = getRand();document.write(css[rand]);    Appreciate any help? The best answer is : Try to create the link element programmatically and appending it to the headfunction applyRandCSS(){  var css = [“css/1.css”, “css/2.css”, “css/3.css”, “css/4.css”];  var randomFile = css[Math.round(Math.random()(css.length-1))];  var ss = document.createElement(“link”);  ss.type = “text/css”;  ss.rel = “stylesheet”;  ss.href = randomFile;  document.getElementsByTagName(“head”)[0].appendChild(ss);}Source : https://stackoverflow.com/questions/1244877/random-css-via-js
 ",
             "articleBody": undefined
@@ -532,7 +532,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

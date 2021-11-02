@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-12T11:38:00.001Z",
-            "dateModified": "2021-11-02T20:32:48.949Z",
+            "dateModified": "2021-11-02T21:09:20.803Z",
             "description": "Cara membuat websocket dengan Javascript (JS) dan PHPUpdate: Simple WebsocketRequirements: PHP 5.6+ (minimum) Websocket merupakan standard baru untuk berkomunikasi, dan cocok untuk aplikasi chat, live server, live listener. Hampir sama dengan AJAX namun perbedaannya ada pada kecepatan dan CPU usage pada device client maupun server. Intinya lebih ringan lah.Websocket ini dapat menerima request apapun dan mendistribusikannya secara instant dari perubahan data sebelumnya. Berikut Cara membuat websocket tanpa NODEJS menggunakan Pure Javascript dan PHP:websocket.js/** websocket steam */var socket;socket_start(); //start websocketfunction socket_start() {  if (!socket) { //if socket is null    console.log('WebSocket Started'); //start server    socket = socket_server();  }  try {    socket.onopen = function (msg) {      //console.log('socket initialized');    };    socket.onmessage = function (msg) {      var data = JSON.parse(msg.data);      //PARSING RESPONSE DATA    };    socket.onclose = function (msg) {      console.log({ closed: socket });    };  }  catch (ex) {    console.log(ex);  }}function socket_server() {  console.log('Socket Initialized');  // Set YOUR PHP FILE URL  var host = '/websocket/server.php';   if (!!window.EventSource) {    var socket = new EventSource(host);  } else {    var socket = new WebSocket(host);  }  return socket;}function socket_stop() {  if (socket != null) {    console.log("WebSocket Stopped");    socket.close();    socket = null;  }}function socket_check(){  return socket;}Usage:Checking socket: befungsi untuk mengecek apakah socket sudah berjalan atau tidak.if (!socket_check()){  /* Socket tidak berjalan */}--- OR ---if (socket_check() === null){  /* Socket tidak berjalan */}--- OR ---if (socket_check()){  /* Socket berjalan */}Parsing response datasocket.onmessage = function (msg) { //function socket_start()   var data = JSON.parse(msg.data);   //PARSING RESPONSE DATA DISINI};server.php<?phpheader('X-Robots-Tag: noindex, nofollow', true);header('Content-Type: text/event-stream');header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');header('Cache-Control: post-check=0, pre-check=0', false);header('Cache-Control: no-cache');function SEND($id, $msg){  echo "id: $id" . PHP_EOL;  $data = trim(json_encode([ //encoding JSON untuk data yang panjang    'array_key' => 'array_value',  ]));  echo "data: $data" . PHP_EOL;  echo PHP_EOL;  ob_flush();  flush();}$serverTime = time();SEND($serverTime, 'server time: ' . date('h:i:s', time()));exit;Update: Simple Websocket Incoming terms:javascriptphpwebsocketweb socketsimple websocketwebsocket simplewebsocket javascript php",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

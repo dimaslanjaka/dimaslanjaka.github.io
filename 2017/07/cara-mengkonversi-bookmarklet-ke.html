@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-07-12T17:34:00.000Z",
-            "dateModified": "2021-11-02T20:32:49.085Z",
+            "dateModified": "2021-11-02T21:09:20.975Z",
             "description": "Bookmarklets, atau kemampuan untuk mengeksekusi kode JavaScript Anda sendiri pada halaman manapun, memungkinkan Anda menyesuaikan pengalaman penjelajahan Anda dengan berbagai cara. Beberapa waktu yang lalu saya menulis beberapa kode JS yang akan menghapus semua konten dari halaman manapun dan hanya menampilkan gambar dengan fungsi zoom on click. Ini bekerja dengan baik sebagai bookmarklet tapi saya ingin melihat betapa mudahnya mengemasnya ke Ekstensi Chrome.Saya melakukan ini untuk bersenang-senang tapi ada beberapa alasan kuat seperti akses ke sumber daya lintas domain, akses ke permintaan jaringan, dan kemampuan untuk berbagi dengan orang lain melalui Toko Chrome.Berikut adalah beberapa langkah sederhana yang menunjukkan cara mengubah kode JavaScript menjadi Ekstensi ChromePersyaratannya sederhana: tekan ikon ekstensi yang mengeksekusi kode JS pada halaman. Jadi, saya memerlukan sebuah ikon, file JavaScript dengan kode, dan file manifest yang menentukan cara mengeksekusi file JS tersebut saat ekstensi diklik dan izin apa untuk memberikannya. Karena saya hanya mengubah halaman web di tab yang aktif, saya hanya memerlukan izin "activeTab". Saya melakukan tindakan browser dan mengeksekusi file JS sebagai latar belakang. Inilah manifestonya.Manifest.jsonKarena ekstensi didefinisikan sebagai tindakan browser, file JS saya perlu membungkus kode dengan benar di sekitar acara itu. Jadi, kami memberi tahu Chrome untuk menambahkan pendengar untuk acara klik ( chrome.browserAction.onClicked.addListener) dan saat itu terjadi, kami meminta Chrome untuk menjalankan beberapa kode JavaScript di tab ( chrome.tabs.executeScript ). Berikut adalah file JS lengkap:Background.jsDan inilah ekstensi pada GitHub yang dapat Anda unduh dan tambahkan sendiri dengan membuka ekstensi Chrome (chrome: // extensions /), mengaktifkan mode pengembang, dan memilih folder yang diunduh dengan tombol "load unpacked extension".OnlyImages Ekstensi ChromeLuar:EkstensiMengembangkan Ekstensi Google ChromeAplikasi Chrome di GitHubProyek boilerplate untuk ekstensi Chrome DevTools",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

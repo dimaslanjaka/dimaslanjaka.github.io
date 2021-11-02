@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-15T13:03:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.953Z",
+            "dateModified": "2021-11-02T21:09:20.803Z",
             "description": "Extract video id from youtube URL with javascript function function youtube_parser(url){    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;    var match = url.match(regExp);    if (match&&match[7].length==11) { return match[7]}    var regExp2 = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;  var match2 = url.match(regExp2);  if (match2 && match2[2].length == 11) {    return match2[2];  }    var regex = /(?:[?&]v=|\/embed\/|\/1\/|\/v\/|https?:\/\/(?:www\.)?youtu\.be\/)([^&\n?#]+)/gm;  let m = regex.exec(url);  if (m[1].length){    return m[1];  }    return url+' --failed--';}console.clear()var n = [  'http://www.youtube.com/watch?v=0zMd3nApSvMg&feature=feedrec_grec_index',   'http://www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/QdK8U-VIH_o',   'http://www.youtube.com/v/0zM3nApSvMg?fs=1&amp;hl=en_US&amp;rel=0',  'http://www.youtube.com/watch?v=0zMg3nApSvMg#t=0m10s',  'http://www.youtube.com/embed/0zM3nApdSvMg?rel=0',  'http://www.youtube.com/watch?v=0zM3nAxpSvMg',  'http://youtu.be/0zM3nApgSvMg'];  n.forEach(function(i){  document.write(youtube_parser(i)+'<br>')}); demo  See the Pen   Youtube URL Parser by dimas lanjaka (@dimaslanjaka)   on CodePen.",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

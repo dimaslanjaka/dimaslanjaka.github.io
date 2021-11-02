@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+        <title>Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10 - WMI Gitlab</title>
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Dimas Lanjaka">
+<meta name="designer" content="minfive">
+<meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks">
+<meta name="description" content="Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian belakang router yang ISP Anda berikan Jika demikian, mungkin">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="all">
+
+<link rel="canonical" href="https://git.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html">
+
+<link rel="icon" type="image/png" href="/assets/img/hexo-logo-avatar-transparent-background.png" sizes="32x32">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://git.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html">
+<meta property="og:title" content="Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10 | WMI Gitlab">
+<meta property="og:description" content="Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian belakang router yang ISP Anda berikan Jika demikian, mungkin">
+<meta property="og:image" content="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Prefetch -->
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//static.codepen.io">
+<link rel="dns-prefetch" href="//res.cloudinary.com">
+<link rel="dns-prefetch" href="//ad.doubleclick.com">
+<link rel="dns-prefetch" href="//s3.buysellads.com">
+<link rel="dns-prefetch" href="//srv.buysellads.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+<link rel="dns-prefetch" href="//adservice.google.com">
+<link rel="dns-prefetch" href="//www.googletagservices.com">
+<link rel="dns-prefetch" href="//git.webmanajemen.com">
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="/scss/base/index.css">
+
+
+<!-- RSS -->
+<link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
+
+<!-- 统计 -->
+<!-- Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+
+
+<!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
+
+
+
+    
+    
+<link rel="stylesheet" href="/scss/views/page/post.css">
+
+
+
+    
+    
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage":{
+                "@type":"WebPage",
+                "@id":"https://git.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html"
+            },
+            "headline": "Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10",
+            "image": {
+                "@type": "ImageObject",
+                "url": "http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png",
+                "width": 144,
+                "height": 144
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Dimas Lanjaka"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dimas Lanjaka",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "/assets/img/PicsArt_09-09-12.12.25.jpg",
+                    "width": 1944,
+                    "height": 2592
+                }
+            },
+            "datePublished": "2017-07-10T02:26:00.001Z",
+            "dateModified": "2021-11-02T20:32:49.085Z",
+            "description": "Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian belakang router yang ISP Anda berikan? Jika demikian, mungkin beberapa kombinasi huruf, angka, dan simbol yang sangat lama yang tidak dapat Anda ingat.Kebanyakan orang mencoba menulis kata sandi di suatu tempat atau hanya mengecek router setiap kali mereka harus memberikannya kepada orang lain. Untungnya, jika Anda sudah memiliki komputer yang terhubung ke jaringan WiFi Anda, Anda dapat dengan mudah melihat kata sandi di sana.Saya sudah pernah menulis tentang cara melihat kata sandi WiFi di Mac dan di artikel ini, saya akan membicarakan hal yang sama di Windows.Perhatikan bahwa prosedurnya sama untuk Windows 7, 8 atau 10.Lihat Password WiFi di WindowsUntuk melihat kata sandi WiFi pada mesin Windows Anda, Anda harus memastikan Anda sudah terhubung ke jaringan WiFi atau sebelumnya telah terhubung ke jaringan WiFi.Jika demikian, maka silakan klik kanan pada ikon WiFi di system tray dan pilih Open Network and Sharing Center .Sekarang pergi ke depan dan klik Change Adapter Settings di sebelah kiri. Juga, pastikan untuk membaca posting saya sebelumnya jika Anda ingin mempelajari lebih lanjut tentang Network and Sharing Center .Temukan ikon untuk Wi-Fi , klik kanan padanya dan pilih Status .",
+            "articleBody": "Ini akan memunculkan dialog Status WiFi dimana Anda dapat melihat beberapa informasi dasar tentang koneksi jaringan nirkabel Anda.Klik pada tombol Wireless Properties dan kemudian klik tab Security .Di sini Anda akan melihat kolom teks yang disebut Kunci keamanan jaringan . Silakan periksa kotak Show characters dan sekarang Anda dapat melihat kata sandi keamanan WiFi.Perhatikan bahwa ini hanya kata sandi WiFi dari jaringan WiFi yang saat ini terhubung. Bagaimana jika Anda ingin melihat kata sandi WiFi untuk jaringan WiFi yang sebelumnya terhubung dengan komputer Anda?Untungnya, itu cukup mudah juga di Windows 7. Pada Windows 8 dan 10, Anda harus menggunakan command prompt, yang cukup menyebalkan. Bagaimanapun, di Windows 7, buka Network and Sharing Center dan kemudian klik Manage Wireless Networks .Anda sekarang akan melihat daftar bagus semua jaringan nirkabel yang pernah terhubung dengan komputer. Cukup klik dua kali pada yang Anda minati.Kemudian klik saja pada tab Security dan centang kotak Show characters lagi untuk melihat kata sandinya.Pada Windows 8 dan 10, Anda harus membuka command prompt dengan membuka Start dan mengetik CMD . Saat command prompt terbuka, ketik perintah berikut: netsh wlan show profilesAnda akan menemukan semua profil nirkabel yang tercantum dalam Profil Pengguna . Nama jaringan WiFi ada di sebelah kanan. Dalam kasus saya, saya hanya memiliki satu jaringan WiFi yang terdaftar. Sekarang untuk melihat kata sandi untuk profil, ketik perintah berikut: netsh wlan show profile name=profilename key=clearSilakan ganti nama profil dengan nama sebenarnya dari jaringan WiFi yang terdaftar dari komando sebelumnya. Dalam kasus saya, jaringan WiFi bernama VFTJM. Anda tidak perlu menggunakan tanda kutip di manapun dalam perintah.Saat Anda menjalankan perintah kedua, Anda akan mendapatkan banyak keluaran, namun Anda hanya tertarik untuk menemukan baris yang dimulai dengan Key Content . Ke kanan akan menjadi password WiFi. Saya tidak yakin mengapa Microsoft menghapus kemudahan melihat semua jaringan WiFi yang sebelumnya terhubung di Windows 8 dan 10, tapi untungnya masih ada cara untuk mendapatkan semua informasi tersebut. Jika Anda memiliki pertanyaan, jangan ragu untuk berkomentar.Nikmati!"
+        }
+    </script>
+
+    
+
+    
+    <script data-ad-client="ca-pub-1165447249910969" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body ontouchstart>
+    
+        
+    
+
+    
+
+    <div id="page" class="page js-hidden">
+        
+    <!-- Small Header -->
+<header class="page__small-header page__header--small">
+    <nav class="page__navbar">
+        <div class="page__container navbar-container">
+            <a class="page__logo" href="/" title="Website Management Indonesia" alt="Website Management Indonesia">
+                <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="Website Management Indonesia">
+            </a>
+
+        <!--<nav class="page__nav">
+                <ul class="nav__list clearfix">
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/" alt="Home" title="Home">Home</a>
+                        </li>
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/archives" alt="Archive" title="Archive">Archive</a>
+                        </li>
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/contact" alt="Menu.contact" title="Menu.contact">Menu.contact</a>
+                        </li>
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/about" alt="About" title="About">About</a>
+                        </li>
+                    
+                    <li class="nav__item">
+                        <a href="" alt="About" title="About">About</a>
+                    </li>
+                </ul>
+            </nav>     --> 
+
+            <nav class="page__nav">
+                <ul class="nav__list clearfix">
+                    <li class="nav__item">
+                        <a href="/" alt="Home" title="Home">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/archives" alt="Archives" title="Archives">Archives</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/contact" alt="Contact" title="Contact">Contact</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/about" alt="About" title="About">About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="page__menu-btn" type="button">
+                <i class="iconfont icon-menu"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+        
+    <main class="page__container page__main">
+    <div class="page__content">
+        <article class="page__post">
+    <div class="post__cover">
+        <img src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png" alt="Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10">
+    </div>
+
+    <header class="post__info">
+        <h1 class="post__title">Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10</h1>
+
+        <div class="post__mark">
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-write"></i>
+                <ul class="mark__list clearfix">
+                    
+                        <li class="mark__item">
+                            <a target="_blank" href="https://www.blogger.com/profile/18262459107951035499" rel="noopener external nofollow noreferrer">Unknown</a>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-time"></i>
+                <ul class="mark__list clearfix">
+                    <li class="mark__item"><span>2017-07-10</span></li>
+                </ul>
+            </div>
+
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-tab"></i>
+                <ul class="mark__list clearfix">
+                    
+                </ul>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <div class="post__content">
+        <div id="div_dd0b_0"><span class="notranslate" id="span_dd0b_0">Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian belakang router yang ISP Anda berikan?</span>&nbsp;<span class="notranslate" id="span_dd0b_1">Jika demikian, mungkin beberapa kombinasi huruf, angka, dan simbol yang sangat lama yang tidak dapat Anda ingat.</span></div><div id="div_dd0b_1"><span class="notranslate" id="span_dd0b_2">Kebanyakan orang mencoba menulis kata sandi di suatu tempat atau hanya mengecek router setiap kali mereka harus memberikannya kepada orang lain.</span>&nbsp;<span class="notranslate" id="span_dd0b_3">Untungnya, jika Anda sudah memiliki komputer yang terhubung ke jaringan WiFi Anda, Anda dapat dengan mudah melihat kata sandi di sana.</span></div><div id="div_dd0b_2"><span class="notranslate" id="span_dd0b_4">Saya sudah pernah menulis tentang&nbsp;<a href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.online-tech-tips.com/mac-os-x/view-saved-wi-fi-wpa-wep-passwords-os-x/&amp;usg=ALkJrhiD9NjaXgjPKV9yHAUJJVOBMNYyGA" rel="noopener external nofollow noreferrer" id="a_dd0b_0" target="_blank">cara melihat kata sandi WiFi di Mac</a>&nbsp;dan di artikel ini, saya akan membicarakan hal yang sama di Windows.</span><span class="notranslate" id="span_dd0b_5">Perhatikan bahwa prosedurnya sama untuk Windows 7, 8 atau 10.</span></div><h2 id="h2_dd0b_0"><span class="notranslate" id="span_dd0b_6">Lihat Password WiFi di Windows</span></h2><div id="div_dd0b_3"><span class="notranslate" id="span_dd0b_7">Untuk melihat kata sandi WiFi pada mesin Windows Anda, Anda harus memastikan Anda sudah terhubung ke jaringan WiFi atau sebelumnya telah terhubung ke jaringan WiFi.</span><span class="notranslate" id="span_dd0b_8">Jika demikian, maka silakan klik kanan pada ikon WiFi di system tray dan pilih&nbsp;<span id="span_dd0b_9">Open Network and Sharing Center</span>&nbsp;.</span></div><div id="div_dd0b_4"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png" rel="noopener external nofollow noreferrer" id="a_dd0b_1"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="357" height="131" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png" alt="Buka jaringan sharing center" title></a></div><div id="div_dd0b_5"><span class="notranslate" id="span_dd0b_10">Sekarang pergi ke depan dan klik&nbsp;<span id="span_dd0b_11">Change Adapter Settings</span>&nbsp;di sebelah kiri.</span>&nbsp;<span class="notranslate" id="span_dd0b_12">Juga, pastikan untuk membaca posting saya sebelumnya jika Anda ingin&nbsp;<a href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.online-tech-tips.com/windows-7/network-and-sharing-center-overview/&amp;usg=ALkJrhgos9X5uEWgp3gi7srnN1nXExnqug" rel="noopener external nofollow noreferrer" id="a_dd0b_2" target="_blank">mempelajari lebih lanjut tentang Network and Sharing Center</a>&nbsp;.</span></div><div id="div_dd0b_6"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/change-adapter-settings.png" rel="noopener external nofollow noreferrer" id="a_dd0b_3"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="439" height="206" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/change-adapter-settings.png" alt="Ganti pengaturan adaptor" title></a></div><div id="div_dd0b_7"><span class="notranslate" id="span_dd0b_13">Temukan ikon untuk&nbsp;<span id="span_dd0b_14">Wi-Fi</span>&nbsp;, klik kanan padanya dan pilih&nbsp;<span id="span_dd0b_15">Status</span>&nbsp;.</span></div><div id="div_dd0b_8"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/wifi-status.png" rel="noopener external nofollow noreferrer" id="a_dd0b_4"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="371" height="196" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/wifi-status.png" alt="Status wifi" title></a></div><div id="div_dd0b_9"><span class="notranslate" id="span_dd0b_16">Ini akan memunculkan dialog&nbsp;<span id="span_dd0b_17">Status WiFi di</span>mana Anda dapat melihat beberapa informasi dasar tentang koneksi jaringan nirkabel Anda.</span></div><div id="div_dd0b_10"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/wireless-properties.png" rel="noopener external nofollow noreferrer" id="a_dd0b_5"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="359" height="407" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/wireless-properties.png" alt="Sifat nirkabel" title></a></div><div id="div_dd0b_11"><span class="notranslate" id="span_dd0b_18">Klik pada tombol&nbsp;<span id="span_dd0b_19">Wireless Properties</span>&nbsp;dan kemudian klik tab&nbsp;<span id="span_dd0b_20">Security</span>&nbsp;.</span></div><div id="div_dd0b_12"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/network-security-key.png" rel="noopener external nofollow noreferrer" id="a_dd0b_6"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="371" height="220" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/network-security-key.png" alt="Kunci keamanan jaringan" title></a></div><div id="div_dd0b_13"><span class="notranslate" id="span_dd0b_21">Di sini Anda akan melihat kolom teks yang disebut&nbsp;<span id="span_dd0b_22">Kunci keamanan jaringan</span>&nbsp;.</span>&nbsp;<span class="notranslate" id="span_dd0b_23">Silakan periksa kotak&nbsp;<span id="span_dd0b_24">Show characters</span>&nbsp;dan sekarang Anda dapat melihat kata sandi keamanan WiFi.</span><span class="notranslate" id="span_dd0b_25">Perhatikan bahwa ini hanya kata sandi WiFi dari jaringan WiFi yang saat ini terhubung.</span>&nbsp;<span class="notranslate" id="span_dd0b_26">Bagaimana jika Anda ingin melihat kata sandi WiFi untuk jaringan WiFi yang sebelumnya terhubung dengan komputer Anda?</span></div><div id="div_dd0b_14"><span class="notranslate" id="span_dd0b_27">Untungnya, itu cukup mudah juga di Windows 7. Pada Windows 8 dan 10, Anda harus menggunakan command prompt, yang cukup menyebalkan.</span>&nbsp;<span class="notranslate" id="span_dd0b_28">Bagaimanapun, di Windows 7, buka Network and Sharing Center dan kemudian klik&nbsp;<span id="span_dd0b_29">Manage Wireless Networks</span>&nbsp;.</span></div><div id="div_dd0b_15"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/manage-wireless-networks.png" rel="noopener external nofollow noreferrer" id="a_dd0b_7"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="509" height="201" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/manage-wireless-networks.png" alt="Mengelola jaringan nirkabel" title></a></div><div id="div_dd0b_16"><span class="notranslate" id="span_dd0b_30">Anda sekarang akan melihat daftar bagus semua jaringan nirkabel yang pernah terhubung dengan komputer.</span>&nbsp;<span class="notranslate" id="span_dd0b_31">Cukup klik dua kali pada yang Anda minati.</span></div><div id="div_dd0b_17"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/list-of-wireless-networks.png" rel="noopener external nofollow noreferrer" id="a_dd0b_8"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="518" height="336" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/list-of-wireless-networks.png" alt="Daftar jaringan nirkabel" title></a></div><div id="div_dd0b_18"><span class="notranslate" id="span_dd0b_32">Kemudian klik saja pada tab&nbsp;<span id="span_dd0b_33">Security</span>&nbsp;dan centang kotak&nbsp;<span id="span_dd0b_34">Show characters</span>&nbsp;lagi untuk melihat kata sandinya.</span></div><div id="div_dd0b_19"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/windows-7-wifi-key.png" rel="noopener external nofollow noreferrer" id="a_dd0b_9"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="385" height="222" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/windows-7-wifi-key.png" alt="Windows 7 kunci wifi" title></a></div><div id="div_dd0b_20"><span class="notranslate" id="span_dd0b_35">Pada Windows 8 dan 10, Anda harus membuka command prompt dengan membuka Start dan mengetik&nbsp;<span id="span_dd0b_36">CMD</span>&nbsp;.</span>&nbsp;<span class="notranslate" id="span_dd0b_37">Saat command prompt terbuka, ketik perintah berikut:</span></div><pre id="pre_dd0b_0"><span class="notranslate" id="span_dd0b_38"> </span>netsh wlan show profiles</pre><div id="div_dd0b_21"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/wlan-netsh.png" rel="noopener external nofollow noreferrer" id="a_dd0b_10"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="504" height="283" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/wlan-netsh.png" alt="Wlan netsh" title></a></div><div id="div_dd0b_22"><span class="notranslate" id="span_dd0b_39">Anda akan menemukan semua profil nirkabel yang tercantum dalam&nbsp;<span id="span_dd0b_40">Profil Pengguna</span>&nbsp;.</span>&nbsp;<span class="notranslate" id="span_dd0b_41">Nama jaringan WiFi ada di sebelah kanan.</span>&nbsp;<span class="notranslate" id="span_dd0b_42">Dalam kasus saya, saya hanya memiliki satu jaringan WiFi yang terdaftar.</span>&nbsp;<span class="notranslate" id="span_dd0b_43">Sekarang untuk melihat kata sandi untuk profil, ketik perintah berikut:</span></div><pre id="pre_dd0b_1"><span class="notranslate" id="span_dd0b_44"> </span>netsh wlan show profile name=profilename key=clear</pre><div id="div_dd0b_23"><span class="notranslate" id="span_dd0b_45">Silakan ganti nama&nbsp;<span id="span_dd0b_46">profil</span>&nbsp;dengan nama sebenarnya dari jaringan WiFi yang terdaftar dari komando sebelumnya.</span>&nbsp;<span class="notranslate" id="span_dd0b_47">Dalam kasus saya, jaringan WiFi bernama VFTJM.</span>&nbsp;<span class="notranslate" id="span_dd0b_48">Anda tidak perlu menggunakan tanda kutip di manapun dalam perintah.</span></div><div id="div_dd0b_24"><a target="_blank" href="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/profile-key.png" rel="noopener external nofollow noreferrer" id="a_dd0b_11"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="594" height="489" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/profile-key.png" alt="Kunci profil" title></a></div><div id="div_dd0b_25"><span class="notranslate" id="span_dd0b_49">Saat Anda menjalankan perintah kedua, Anda akan mendapatkan banyak keluaran, namun Anda hanya tertarik untuk menemukan baris yang dimulai dengan&nbsp;<span id="span_dd0b_50">Key Content</span>&nbsp;.</span>&nbsp;<span class="notranslate" id="span_dd0b_51">Ke kanan akan menjadi password WiFi.</span>&nbsp;<span class="notranslate" id="span_dd0b_52">Saya tidak yakin mengapa Microsoft menghapus kemudahan melihat semua jaringan WiFi yang sebelumnya terhubung di Windows 8 dan 10, tapi untungnya masih ada cara untuk mendapatkan semua informasi tersebut.</span>&nbsp;<span class="notranslate" id="span_dd0b_53">Jika Anda memiliki pertanyaan, jangan ragu untuk berkomentar.</span><span class="notranslate" id="span_dd0b_54">Nikmati!</span></div>
+
+        
+
+        
+        <div class="post-announce">
+            Thank you for reading, this article belongs to
+            <a href="https://git.webmanajemen.com">Website Management Indonesia</a>
+            copyright, if reproduced, please indicate the source：Website Management Indonesia（<a href="https://git.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html">https://git.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html</a>）
+        </div>
+        
+
+        
+        <div id="ads-bottom" class="text-center">
+            <style>
+            .adsense_responsive_1 { width: 320px; height: 100px; }
+            @media(min-width: 500px) { .adsense_responsive_1 { width: 468px; height: 60px; } }
+            @media(min-width: 800px) { .adsense_responsive_1 { width: 728px; height: 90px; } }
+            </style>
+            <!-- adsense single banner auto square 6376402862 -->
+            <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script-->
+            <ins class="adsbygoogle adsense_responsive_1" style="display:inline-block" data-full-width-responsive="true" data-ad-client="ca-pub-1165447249910969" data-ad-slot="6376402862"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        
+
+        <!-- https://github.com/sergeyzwezdin/hexo-related-posts -->
+        
+
+        <div class="post__prevs">
+            <div class="post__prev">
+                
+                <a href="/2017/07/ringo-step-shotter-tutorial-cp-wp.html" title="Ringo Step Shotter Tutorial (CP WP)" rel="next"><i class="iconfont icon-prev"></i>Ringo Step Shotter Tutorial (CP WP)</a>
+                
+            </div>
+            <div class="post__prev post__prev--right">
+                
+                <a href="/2017/07/proxy-gambar-dengan-google-app-scripts.html" title="Proxy Gambar dengan Google App Scripts" rel="prev">Proxy Gambar dengan Google App Scripts<i class="iconfont icon-next"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        
+        
+            <div id="disqus_thread"></div>
+        
+    </div>
+
+    <aside class="page__sidebar">
+    <!-- 
+        <div class="sidebar__img">
+            <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="Website Management Indonesia" title="Website Management Indonesia">
+        </div>
+     -->
+
+    <form id="page-search-from" class="page__search-from" action="/search/">
+        <label class="search-form__item">
+            <input class="input" type="text" name="search" placeholder="Search...">
+            <i class="iconfont icon-search"></i>
+        </label>
+    </form>
+
+    
+        <div class="sidebar__block">
+            <h3 class="block__title">Introduction</h3>
+            <p class="block__text">External source WMI Github Laboratory</p>
+        </div>
+    
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Categories</h3>
+        <ul class="block-list"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/">Wordpress</a><span class="block-list-count">35</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/">SEO</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/Blogging/Social-Media/">Social Media</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/PHP/">PHP</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/">JS</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/">Blogger</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/HTML/">HTML</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/Blogging/">Blogging</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/">HTML</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/">CSS</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/">JS</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/">Blogger</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/">HTML</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/Blogging/">Blogging</a><span class="block-list-count">4</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/AMP/">AMP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/AMP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/">Windows</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/VainGlory/">VainGlory</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/">Tools</a><span class="block-list-count">26</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/">Software</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Android/">Android</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/">Social Media</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/">Script</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/PHP/">PHP</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/">Software</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/Android/">Android</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/">JS</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/CodeIgniter/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Android/">Android</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">4</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">46</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Test/">Test</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/TS/">TS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/TS/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/TS/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Software/">Software</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/">Movies</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/Musics/">Musics</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/Musics/Android/">Android</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Android/">Android</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/">Social Media</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Facebook/">Facebook</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Android/">Android</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/">Share</a><span class="block-list-count">15</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/">Blogger</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/">Script</a><span class="block-list-count">14</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/PHP/">PHP</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/">JS</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Gradle/">Gradle</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Gradle/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/">SEO</a><span class="block-list-count">30</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/">Share</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/">Blogger</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/Blogging/">Blogging</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/">Blogging</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/">Blogger</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/HTML/">HTML</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Proxy/">Proxy</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/">Popular</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Software/">Software</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Software/Android/">Android</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/">Github</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/">PHP</a><span class="block-list-count">20</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Android/">Android</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Musics/">Musics</a><span class="block-list-count">127</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Movies/">Movies</a><span class="block-list-count">47</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Miscellaneous/">Miscellaneous</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/Social-Media/">Social Media</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Linux-Unix/">Linux/Unix</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Kotlin/">Kotlin</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Java/">Java</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/">Gradle</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/Kotlin/">Kotlin</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/Kotlin/Android/">Android</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/">JS</a><span class="block-list-count">46</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Windows/">Windows</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">5</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Social-Media/">Social Media</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Social-Media/Facebook/">Facebook</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/">Share</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/SEO/">SEO</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/SEO/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/">HTML</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/">Blogger</a><span class="block-list-count">12</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/Blogging/">Blogging</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/">Hosting</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Wordpress/">Wordpress</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Script/">Script</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Script/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/">HTML</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Blogging/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/AMP/">AMP</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Github/">Github</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Github/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/">Genshin Impact</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Games/">Games</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Games/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">5</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/">Games</a><span class="block-list-count">65</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="block-list-count">12</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="block-list-count">5</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/">Durango</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/Android/">Android</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Android/">Android</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Fonts/">Fonts</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Fonts/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Facebook/">Facebook</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Durango/">Durango</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/">CSS</a><span class="block-list-count">65</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Script/">Script</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/">JS</a><span class="block-list-count">23</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/HTML/">HTML</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/Blogger/">Blogger</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/Blogger/HTML/">HTML</a><span class="block-list-count">7</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/">HTML</a><span class="block-list-count">19</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/">Blogger</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/">HTML</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/AMP/">AMP</a><span class="block-list-count">3</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/">Blogging</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/Social-Media/">Social Media</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/">Blogger</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/">HTML</a><span class="block-list-count">10</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/AMP/">AMP</a><span class="block-list-count">5</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Android/">Android</a><span class="block-list-count">24</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">13</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/">Adsense</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/">Wordpress</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/PHP/">PHP</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/AMP/">AMP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/AMP/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/">Tools</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Share/">Share</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/">SEO</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/">CSS</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">2</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Blogger/HTML/">HTML</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul>
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Latest Post</h3>
+        
+        <ul class="block-list latest-post-list">
+            
+                    <li class="latest-post-item">
+                        <a href="/RegExp/RegExp.html" title="What is RegExp">
+                            <div class="item__cover">
+                                <img src="https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg" alt="What is RegExp">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">What is RegExp</h3>
+                                <span class="item__text">2021-09-22</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/RegExp/badword.html" title="Badword">
+                            <div class="item__cover">
+                                <img src="/RegExp/RegExp/badwords.png" alt="Badword">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">Badword</h3>
+                                <span class="item__text">2021-09-22</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/The%20Legend%20Of%20Neverland/Fishing.html" title="Auto Fishing">
+                            <div class="item__cover">
+                                <img src="/The Legend Of Neverland/Fishing/Studio_Project.jpeg" alt="Auto Fishing">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">Auto Fishing</h3>
+                                <span class="item__text">2021-09-19</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html" title="Bluestacks Game Control The Legend Of Neverland">
+                            <div class="item__cover">
+                                <img src="https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png" alt="Bluestacks Game Control The Legend Of Neverland">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">Bluestacks Game Control The Legend Of Neverland</h3>
+                                <span class="item__text">2021-09-07</span>
+                            </div>
+                        </a>
+                    </li>
+                
+        </ul>
+    
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Tags</h3>
+        
+        <ul class="block-list tag-list clearfix">
+            
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Auto-Click/">Auto Click</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Chest-Location/">Chest Location</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Event/">Event</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Game-Control/">Game Control</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Games/">Games</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Genshin-Impact/">Genshin Impact</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Life-Skill/">Life Skill</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Macros/">Macros</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Quest/">Quest</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/RegExp/">RegExp</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Test/">Test</a>
+                    </li>
+                
+        </ul>
+    
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">ads</h3>
+        <style>
+        .adsense_responsive_sidebar { height: 100px; padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
+        @media(min-width: 500px) { .adsense_responsive_sidebar { height: 250px; } }
+        @media(min-width: 800px) { .adsense_responsive_sidebar { height: 600px; width: 160px } }
+        </style>
+        <!-- adsense single banner auto square 6376402862 -->
+        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script-->
+        <ins class="adsbygoogle adsense_responsive_sidebar" style="display:inline-block" data-full-width-responsive="true" data-ad-client="ca-pub-1165447249910969" data-ad-slot="3325057139"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- <div class="sidebar__block">
+        <h3 class="block__title">Friend Links</h3>
+        <ul class="block-list">
+            
+        </ul>
+    </div> -->
+</aside>
+
+</main>
+
+
+        
+            <!-- Footer -->
+<footer class="page__footer">
+    <section class="footer__top">
+        <div class="page__container footer__container">
+            
+            <div class="footer-top__item footer-top__item--2">
+                <h3 class="item__title">About</h3>
+                <div class="item__content">
+                    <p class="item__text">WMI</p>
+                    <ul class="footer__contact-info">
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-address"></i>
+                            <span>Surabaya, Indonesia</span>
+                        </li>
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-email2"></i>
+                            <span>dimaslanjaka@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            
+                <div class="footer-top__item footer__image">
+                    <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="logo" title="Website Management Indonesia">
+                </div>
+            
+            
+            
+            
+        </div>
+    </section>
+    <section class="footer__bottom">
+        <div class="page__container footer__container">
+            <p class="footer__copyright">©
+                <a href="https://github.com/DFCommunity/hexo-webnary-theme" rel="noopener external nofollow noreferrer" target="_blank">Web-Nary</a> 2020 powered by
+                <a href="http://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>, Made with ❤️ by 
+                <a href="https://github.com/BRAVO68WEB" rel="noopener external nofollow noreferrer" target="_blank">Bravo 68 Web</a>.
+            </p>
+            <ul class="footer__social-network clearfix">
+                
+                
+                    <li class="social-network__item">
+                        <a href="https://github.com/dimaslanjaka" rel="noopener external nofollow noreferrer" target="_blank" title="github">
+                            <i class="iconfont icon-github"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="dimaslanjaka@gmail.com" target="_blank" title="email">
+                            <i class="iconfont icon-email"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                            <i class="iconfont icon-twitter"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="https://facebook.com/dimaslanjaka1" rel="noopener external nofollow noreferrer" target="_blank" title="facebook">
+                            <i class="iconfont icon-facebook"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </section>
+</footer>
+        
+
+        
+            <!-- Back to top Buttom -->
+<div id="back-top" class="back-top back-top--hidden js-hidden">
+    <i class="iconfont icon-top"></i>
+</div>
+        
+    </div>
+
+    <!-- build:js /js/common.js -->
+        <script type="text/javascript" src="js/common/utils.js"></script>
+        <script type="text/javascript" src="js/common/pack.js"></script>
+        <script type="text/javascript" src="js/common/animation.js"></script>
+        <script type="text/javascript" src="js/layout/loading.js"></script>
+        <script type="text/javascript" src="js/layout/header.js"></script>
+        <script type="text/javascript" src="js/layout/back-top.js"></script>
+        <script type="text/javascript" src="js/layout/post.js"></script>
+    <!-- endbuild -->
+
+    
+    
+<script src="/js/page/post.js"></script>
+
+
+
+    
+    
+
+<!--{ if page.comments && config.disqus_shortname }-->
+
+    <script id="dsq-count-scr">
+        var disqus_config = function () {
+            this.page.url = 'https://git.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html';
+            this.page.identifier = '/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html';
+            this.page.title = 'Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10';
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://dimaslanjaka.disqus.com/embed.js';
+        s.async = true;
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" href="https://disqus.com/?ref_noscript" rel="noopener external nofollow noreferrer">comments powered by Disqus.</a></noscript>
+
+
+    <!-- 不蒜子统计 -->
+
+<!--script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script-->
+<script async src="//cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js"></script>
+
+
+
+     
+
+
+
+
+
+
+
+
+
+    
+    <!-- force https -->
+    <script type="text/javascript" src="/js/https.js"></script>
+    
+
+    
+    <link rel="stylesheet" href="/js/adblock.css" media="all">
+    <script type="text/javascript" src="/js/adblock.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+        <title>How to Modify Blogger Share Button Tweak Valid HTML5 CSS3 - WMI Gitlab</title>
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Dimas Lanjaka">
+<meta name="designer" content="minfive">
+<meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks">
+<meta name="description" content="Actually Blogger has been updating its share button quite a bit by adding Pinterest button.But just now I am thinking of making it valid">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="all">
+
+<link rel="canonical" href="https://git.webmanajemen.com/2017/08/how-to-modify-blogger-share-button.html">
+
+<link rel="icon" type="image/png" href="/assets/img/hexo-logo-avatar-transparent-background.png" sizes="32x32">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://git.webmanajemen.com/2017/08/how-to-modify-blogger-share-button.html">
+<meta property="og:title" content="How to Modify Blogger Share Button Tweak Valid HTML5 CSS3 | WMI Gitlab">
+<meta property="og:description" content="Actually Blogger has been updating its share button quite a bit by adding Pinterest button.But just now I am thinking of making it valid">
+<meta property="og:image" content="https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Prefetch -->
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//static.codepen.io">
+<link rel="dns-prefetch" href="//res.cloudinary.com">
+<link rel="dns-prefetch" href="//ad.doubleclick.com">
+<link rel="dns-prefetch" href="//s3.buysellads.com">
+<link rel="dns-prefetch" href="//srv.buysellads.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+<link rel="dns-prefetch" href="//adservice.google.com">
+<link rel="dns-prefetch" href="//www.googletagservices.com">
+<link rel="dns-prefetch" href="//git.webmanajemen.com">
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="/scss/base/index.css">
+
+
+<!-- RSS -->
+<link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
+
+<!-- 统计 -->
+<!-- Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+
+
+<!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
+
+
+
+    
+    
+<link rel="stylesheet" href="/scss/views/page/post.css">
+
+
+
+    
+    
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage":{
+                "@type":"WebPage",
+                "@id":"https://git.webmanajemen.com/2017/08/how-to-modify-blogger-share-button.html"
+            },
+            "headline": "How to Modify Blogger Share Button Tweak Valid HTML5 CSS3",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png",
+                "width": 144,
+                "height": 144
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Dimas Lanjaka"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dimas Lanjaka",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "/assets/img/PicsArt_09-09-12.12.25.jpg",
+                    "width": 1944,
+                    "height": 2592
+                }
+            },
+            "datePublished": "2017-08-22T19:55:00.000Z",
+            "dateModified": "2021-11-02T20:32:49.077Z",
+            "description": "Actually Blogger has been updating its share button quite a bit by adding Pinterest button. But just now I am thinking of making it valid HTML5 and CSS3. At some time ago I have made a post about Blogger share button but still without the Pinterest button because at that blogger has not updated its share button so that it appears only 4 buttons added by G + key.Well this time there is a different from the previous post. Besides now there is Pinterest button, I also will bring up the Orkut button. In the previous post I also can not display the default button Blogger share button on the template using CSS Reset Blogger Tweak . But at that time I outsourced it by making its own sharenya button to be displayed in a template that already uses a trick to hide CSS Reset Blogger.Well this time I use a different way to make Blogger share button is valid HTML5 and CSS3 and can be used in the default template Blogger, custom templates, and templates that use the trick of hiding CSS Reset Blogger. But there is little difference in the template that uses the trick to hide CSS Reset Blogger, to display this share button should be added CSS code share button it.Well we start with using Blogger's default template and custom templates that have not used the trick of hiding CSS Reset Blogger.For Blogger default template please find the code below, for custom template usually no already exist so please save wherever you want under post.",
+            "articleBody": "<!-- share buttons --> <div class='post-share-buttons goog-inline-block'> <b:if cond='data:post.sharePostUrl'> <b:include data='post' name='shareButtons'/> </b:if> </div> Then please replace with the code below<div class='post-share-buttons goog-inline-block'> <a class='goog-inline-block share-button sb-email' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=email&quot;' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=blog&quot;' onclick='window.open(this.href, \"_blank\", \"height=270,width=475\"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=twitter&quot;' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=facebook&quot;' onclick='window.open(this.href, \"_blank\", \"height=430,width=640\"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a> <a class='goog-inline-block share-button sb-orkut' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=orkut&quot;' target='_blank' title='Share to Orkut' style='margin-left:-4px'><span class='share-button-link-text'>Share to Orkut</span></a> <a class='goog-inline-block share-button sb-pinterest' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=pinterest&quot;' target='_blank' title='Share to Pinterest' style='margin-left:-4px'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block dummy-container'><div class='g-plusone' data-size='medium'></div></div> </div> DEMOAnd for templates that already use the trick to hide CSS Reset Blogger please use the HTML code below.<div class='post-share-buttons goog-inline-block'> <a class='goog-inline-block share-button sb-email' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=email&quot;' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=blog&quot;' onclick='window.open(this.href, \"_blank\", \"height=270,width=475\"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=twitter&quot;' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=facebook&quot;' onclick='window.open(this.href, \"_blank\", \"height=430,width=640\"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a> <a class='goog-inline-block share-button sb-orkut' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=orkut&quot;' target='_blank' title='Share to Orkut'><span class='share-button-link-text'>Share to Orkut</span></a> <a class='goog-inline-block share-button sb-pinterest' expr:href='&quot;http://www.blogger.com/share-post.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot;+ data:post.id + &quot;&amp;amp;target=pinterest&quot;' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block dummy-container'><div class='g-plusone' data-size='medium'></div></div> </div> Then add the CSS code below and save it under </ style> code.post-share-buttons{display:inline-block;margin-top:.5em;vertical-align:middle} .share-button{width:20px;height:20px;background:url(http://3.bp.blogspot.com/-derfRu8CYnw/UzKL_T532DI/AAAAAAAAbiQ/3Hs9hjRW_yQ/s1600/share_buttons_20_3.png) no-repeat left !important;overflow:hidden;margin-left:-1px;position:relative} .dummy-container{vertical-align:top;padding-left:.3em} a:hover.share-button{text-decoration:none;z-index:1} .share-button-link-text{display:block;text-indent:-9999px} .sb-email{background-position:0 0 !important} a:hover.sb-email{background-position:0 -20px !important} a:active.sb-email{background-position:0 -40px !important} .sb-blog{background-position:-20px 0 !important} a:hover.sb-blog{background-position:-20px -20px !important} a:active.sb-blog{background-position:-20px -40px !important} .sb-twitter{background-position:-40px 0 !important} a:hover.sb-twitter{background-position:-40px -20px !important} a:active.sb-twitter{background-position:-40px -40px !important}.sb-facebook{background-position:-60px 0 !important}a:hover.sb-facebook{background-position:-60px -20px !important} a:active.sb-facebook{background-position:-60px -40px !important} .sb-buzz{display:none !important} .sb-orkut{background-position:-80px 0 !important;margin-left:-5px} a:hover.sb-orkut{background-position:-80px -20px !important} a:active.sb-orkut{background-position:-80px -40px !important} .sb-pinterest{background-position:-100px 0 !important;margin-left:-5px} a:hover.sb-pinterest{background-position:-100px -20px !important} a:active.sb-pinterest{background-position:-100px -40px !important} .goog-inline-block{position:relative;display:inline-block} For HTML5 and CSS3 validation please test the demo page at the link belowDEMODo not worry, Blogger share button is using css sprite for its image so not too burdensome loading blog."
+        }
+    </script>
+
+    
+
+    
+    <script data-ad-client="ca-pub-1165447249910969" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body ontouchstart>
+    
+        
+    
+
+    
+
+    <div id="page" class="page js-hidden">
+        
+    <!-- Small Header -->
+<header class="page__small-header page__header--small">
+    <nav class="page__navbar">
+        <div class="page__container navbar-container">
+            <a class="page__logo" href="/" title="Website Management Indonesia" alt="Website Management Indonesia">
+                <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="Website Management Indonesia">
+            </a>
+
+        <!--<nav class="page__nav">
+                <ul class="nav__list clearfix">
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/" alt="Home" title="Home">Home</a>
+                        </li>
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/archives" alt="Archive" title="Archive">Archive</a>
+                        </li>
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/contact" alt="Menu.contact" title="Menu.contact">Menu.contact</a>
+                        </li>
+                    
+                            Was
+                        <li class="nav__item">
+                            <a href="/about" alt="About" title="About">About</a>
+                        </li>
+                    
+                    <li class="nav__item">
+                        <a href="" alt="About" title="About">About</a>
+                    </li>
+                </ul>
+            </nav>     --> 
+
+            <nav class="page__nav">
+                <ul class="nav__list clearfix">
+                    <li class="nav__item">
+                        <a href="/" alt="Home" title="Home">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/archives" alt="Archives" title="Archives">Archives</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/contact" alt="Contact" title="Contact">Contact</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/about" alt="About" title="About">About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="page__menu-btn" type="button">
+                <i class="iconfont icon-menu"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+        
+    <main class="page__container page__main">
+    <div class="page__content">
+        <article class="page__post">
+    <div class="post__cover">
+        <img src="https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png" alt="How to Modify Blogger Share Button Tweak Valid HTML5 CSS3">
+    </div>
+
+    <header class="post__info">
+        <h1 class="post__title">How to Modify Blogger Share Button Tweak Valid HTML5 CSS3</h1>
+
+        <div class="post__mark">
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-write"></i>
+                <ul class="mark__list clearfix">
+                    
+                        <li class="mark__item">
+                            <a target="_blank" href="https://www.blogger.com/profile/00073980860956332189" rel="noopener external nofollow noreferrer">Unknown</a>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-time"></i>
+                <ul class="mark__list clearfix">
+                    <li class="mark__item"><span>2017-08-23</span></li>
+                </ul>
+            </div>
+
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-tab"></i>
+                <ul class="mark__list clearfix">
+                    
+                </ul>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <div class="post__content">
+        <div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Actually Blogger has been updating its share button quite a bit by adding Pinterest button.</span>&nbsp;<span class="notranslate">But just now I am thinking of making it valid HTML5 and CSS3.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="http://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png" rel="noopener external nofollow noreferrer" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="400" height="240" src="https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png" alt title></a></div><span style="font-size: 18px; line-height: 28.7999992370605px;"><br></span> <span style="font-size: 18px; line-height: 28.7999992370605px;">At some time ago I have made a post about Blogger share button but still without the Pinterest button because at that blogger has not updated its share button so that it appears only 4 buttons added by G + key.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Well this time there is a different from the previous post.</span>&nbsp;<span class="notranslate">Besides now there is Pinterest button, I also will bring up the Orkut button.</span>&nbsp;<span class="notranslate">In the previous post I also can not display the default button Blogger share button on the template using&nbsp;<a href="http://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=id&amp;sp=nmt4&amp;tl=en&amp;u=http://www.kompiajaib.com/2013/04/trik-menyembunyikan-css-reset-stylesheet-blogger.html&amp;usg=ALkJrhjEZhSaJBJt2xvpyFTya3dY_0to0A" rel="noopener external nofollow noreferrer" style="-webkit-transition: all 0.4s ease-in-out; color: #e8554e; text-decoration: none; transition: all 0.4s ease-in-out;" target="_blank" title="CSS Reset Blogger Tweak">CSS Reset Blogger Tweak</a>&nbsp;.</span>&nbsp;<span class="notranslate">But at that time I outsourced it by making its own sharenya button to be displayed in a template that already uses a trick to hide CSS Reset Blogger.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Well this time I use a different way to make Blogger share button is valid HTML5 and CSS3 and can be used in the default template Blogger, custom templates, and templates that use the trick of hiding CSS Reset Blogger.</span>&nbsp;<span class="notranslate">But there is little difference in the template that uses the trick to hide CSS Reset Blogger, to display this share button should be added CSS code share button it.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Well we start with using Blogger's default template and custom templates that have not used the trick of hiding CSS Reset Blogger.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">For Blogger default template please find the code below, for custom template usually no already exist so please save wherever you want under post.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code class="language-markup" style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;!-- share buttons --&gt;&nbsp;<br>&lt;div class='post-share-buttons goog-inline-block'&gt;&nbsp;<br>&lt;b:if cond='data:post.sharePostUrl'&gt;&nbsp;<br>&lt;b:include data='post' name='shareButtons'/&gt;&nbsp;<br>&lt;/b:if&gt;&nbsp;<br>&lt;/div&gt;&nbsp;</code></pre><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Then please replace with the code below</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code class="language-markup" style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;div class='post-share-buttons goog-inline-block'&gt;&nbsp;<br>&lt;a class='goog-inline-block share-button sb-email' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=email&amp;quot;' target='_blank' title='Email This'&gt;&lt;span class='share-button-link-text'&gt;Email This&lt;/span&gt;&lt;/a&gt;&lt;a class='goog-inline-block share-button sb-blog' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=blog&amp;quot;' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'&gt;&lt;span class='share-button-link-text'&gt;BlogThis!&lt;/span&gt;&lt;/a&gt;&lt;a class='goog-inline-block share-button sb-twitter' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=twitter&amp;quot;' target='_blank' title='Share to Twitter'&gt;&lt;span class='share-button-link-text'&gt;Share to Twitter&lt;/span&gt;&lt;/a&gt;&lt;a class='goog-inline-block share-button sb-facebook' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=facebook&amp;quot;' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'&gt;&lt;span class='share-button-link-text'&gt;Share to Facebook&lt;/span&gt;&lt;/a&gt;&nbsp;<br>&lt;a class='goog-inline-block share-button sb-orkut' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=orkut&amp;quot;' target='_blank' title='Share to Orkut' style='margin-left:-4px'&gt;&lt;span class='share-button-link-text'&gt;Share to Orkut&lt;/span&gt;&lt;/a&gt;&nbsp;<br>&lt;a class='goog-inline-block share-button sb-pinterest' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=pinterest&amp;quot;' target='_blank' title='Share to Pinterest' style='margin-left:-4px'&gt;&lt;span class='share-button-link-text'&gt;Share to Pinterest&lt;/span&gt;&lt;/a&gt;&lt;div class='goog-inline-block dummy-container'&gt;&lt;div class='g-plusone' data-size='medium'&gt;&lt;/div&gt;&lt;/div&gt;&nbsp;<br>&lt;/div&gt;&nbsp;</code></pre><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: center;"><span class="notranslate"><span style="background: rgb(204 , 204 , 204); border-radius: 5px; border: 1px solid rgb(187 , 187 , 187); font-family: &quot;helvetica neue&quot; , &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; font-size: large; margin-right: 10px; padding: 3px 8px 2px;"><a href="http://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=id&amp;sp=nmt4&amp;tl=en&amp;u=http://kompicoba.blogspot.com/2014/03/prrrrrrrrrrrreeeeeeeeeeeeeeeeeeettttttt.html&amp;usg=ALkJrhhVq41g-ejK7EY82k6SW6q9tokrSw" rel="noopener external nofollow noreferrer" style="-webkit-transition: all 0.4s ease-in-out; color: #e8554e; text-decoration: none; transition: all 0.4s ease-in-out;" target="_blank" title="Demo">DEMO</a></span></span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">And for templates that already use the trick to hide CSS Reset Blogger please use the HTML code below.</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code class="language-markup" style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;div class='post-share-buttons goog-inline-block'&gt;&nbsp;<br>&lt;a class='goog-inline-block share-button sb-email' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=email&amp;quot;' target='_blank' title='Email This'&gt;&lt;span class='share-button-link-text'&gt;Email This&lt;/span&gt;&lt;/a&gt;&lt;a class='goog-inline-block share-button sb-blog' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=blog&amp;quot;' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'&gt;&lt;span class='share-button-link-text'&gt;BlogThis!&lt;/span&gt;&lt;/a&gt;&lt;a class='goog-inline-block share-button sb-twitter' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=twitter&amp;quot;' target='_blank' title='Share to Twitter'&gt;&lt;span class='share-button-link-text'&gt;Share to Twitter&lt;/span&gt;&lt;/a&gt;&lt;a class='goog-inline-block share-button sb-facebook' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=facebook&amp;quot;' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'&gt;&lt;span class='share-button-link-text'&gt;Share to Facebook&lt;/span&gt;&lt;/a&gt;&nbsp;<br>&lt;a class='goog-inline-block share-button sb-orkut' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=orkut&amp;quot;' target='_blank' title='Share to Orkut'&gt;&lt;span class='share-button-link-text'&gt;Share to Orkut&lt;/span&gt;&lt;/a&gt;&nbsp;<br>&lt;a class='goog-inline-block share-button sb-pinterest' expr:href='&amp;quot;http://www.blogger.com/share-post.g?blogID=&amp;quot; + data:blog.blogId + &amp;quot;&amp;amp;amp;postID=&amp;quot;+ data:post.id + &amp;quot;&amp;amp;amp;target=pinterest&amp;quot;' target='_blank' title='Share to Pinterest'&gt;&lt;span class='share-button-link-text'&gt;Share to Pinterest&lt;/span&gt;&lt;/a&gt;&lt;div class='goog-inline-block dummy-container'&gt;&lt;div class='g-plusone' data-size='medium'&gt;&lt;/div&gt;&lt;/div&gt;&nbsp;<br>&lt;/div&gt;&nbsp;</code></pre><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Then add the CSS code below and save it under&nbsp;&lt;/ style&gt;&nbsp;code</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code class="language-css" style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">.post-share-buttons&#123;display:inline-block;margin-top:.5em;vertical-align:middle&#125;&nbsp;<br>.share-button&#123;width:20px;height:20px;background:url(http://3.bp.blogspot.com/-derfRu8CYnw/UzKL_T532DI/AAAAAAAAbiQ/3Hs9hjRW_yQ/s1600/share_buttons_20_3.png) no-repeat left !important;overflow:hidden;margin-left:-1px;position:relative&#125;&nbsp;<br>.dummy-container&#123;vertical-align:top;padding-left:.3em&#125;&nbsp;<br>a:hover.share-button&#123;text-decoration:none;z-index:1&#125;&nbsp;<br>.share-button-link-text&#123;display:block;text-indent:-9999px&#125;&nbsp;<br>.sb-email&#123;background-position:0 0 !important&#125;&nbsp;<br>a:hover.sb-email&#123;background-position:0 -20px !important&#125;&nbsp;<br>a:active.sb-email&#123;background-position:0 -40px !important&#125;&nbsp;<br>.sb-blog&#123;background-position:-20px 0 !important&#125;&nbsp;<br>a:hover.sb-blog&#123;background-position:-20px -20px !important&#125;&nbsp;<br>a:active.sb-blog&#123;background-position:-20px -40px !important&#125;&nbsp;<br>.sb-twitter&#123;background-position:-40px 0 !important&#125;&nbsp;<br>a:hover.sb-twitter&#123;background-position:-40px -20px !important&#125;&nbsp;<br>a:active.sb-twitter&#123;background-position:-40px -40px !important&#125;.sb-facebook&#123;background-position:-60px 0 !important&#125;a:hover.sb-facebook&#123;background-position:-60px -20px !important&#125;&nbsp;<br>a:active.sb-facebook&#123;background-position:-60px -40px !important&#125;&nbsp;<br>.sb-buzz&#123;display:none !important&#125;&nbsp;<br>.sb-orkut&#123;background-position:-80px 0 !important;margin-left:-5px&#125;&nbsp;<br>a:hover.sb-orkut&#123;background-position:-80px -20px !important&#125;&nbsp;<br>a:active.sb-orkut&#123;background-position:-80px -40px !important&#125;&nbsp;<br>.sb-pinterest&#123;background-position:-100px 0 !important;margin-left:-5px&#125;&nbsp;<br>a:hover.sb-pinterest&#123;background-position:-100px -20px !important&#125;&nbsp;<br>a:active.sb-pinterest&#123;background-position:-100px -40px !important&#125;&nbsp;<br>.goog-inline-block&#123;position:relative;display:inline-block&#125;&nbsp;</code></pre><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">For HTML5 and CSS3 validation please test the demo page at the link below</span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: center;"><span class="notranslate"><span style="background: rgb(204 , 204 , 204); border-radius: 5px; border: 1px solid rgb(187 , 187 , 187); font-family: &quot;helvetica neue&quot; , &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; font-size: large; margin-right: 10px; padding: 3px 8px 2px;"><a href="http://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=id&amp;sp=nmt4&amp;tl=en&amp;u=http://kompipreett.blogspot.com/2014/03/lorem-ipsum-dolor-sit-amet-consectetur.html&amp;usg=ALkJrhhVf1xxbLpmkmvkZ4hf0rp4yyLsUA" rel="noopener external nofollow noreferrer" style="-webkit-transition: all 0.4s ease-in-out; color: #e8554e; text-decoration: none; transition: all 0.4s ease-in-out;" target="_blank">DEMO</a></span></span></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><br></div><div style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: justify;"><span class="notranslate">Do not worry, Blogger share button is using css sprite for its image so not too burdensome loading blog.</span></div>
+
+        
+
+        
+        <div class="post-announce">
+            Thank you for reading, this article belongs to
+            <a href="https://git.webmanajemen.com">Website Management Indonesia</a>
+            copyright, if reproduced, please indicate the source：Website Management Indonesia（<a href="https://git.webmanajemen.com/2017/08/how-to-modify-blogger-share-button.html">https://git.webmanajemen.com/2017/08/how-to-modify-blogger-share-button.html</a>）
+        </div>
+        
+
+        
+        <div id="ads-bottom" class="text-center">
+            <style>
+            .adsense_responsive_1 { width: 320px; height: 100px; }
+            @media(min-width: 500px) { .adsense_responsive_1 { width: 468px; height: 60px; } }
+            @media(min-width: 800px) { .adsense_responsive_1 { width: 728px; height: 90px; } }
+            </style>
+            <!-- adsense single banner auto square 6376402862 -->
+            <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script-->
+            <ins class="adsbygoogle adsense_responsive_1" style="display:inline-block" data-full-width-responsive="true" data-ad-client="ca-pub-1165447249910969" data-ad-slot="6376402862"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        
+
+        <!-- https://github.com/sergeyzwezdin/hexo-related-posts -->
+        
+
+        <div class="post__prevs">
+            <div class="post__prev">
+                
+                <a href="/2017/08/how-to-install-advertising-box-on-blogger.html" title="How to Install Advertising Box on Blogger" rel="next"><i class="iconfont icon-prev"></i>How to Install Advertising Box on Blogger</a>
+                
+            </div>
+            <div class="post__prev post__prev--right">
+                
+                <a href="/2017/08/dapatkah-anda-mendapatkan-persetujuan.html" title="Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?" rel="prev">Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?<i class="iconfont icon-next"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        
+        
+            <div id="disqus_thread"></div>
+        
+    </div>
+
+    <aside class="page__sidebar">
+    <!-- 
+        <div class="sidebar__img">
+            <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="Website Management Indonesia" title="Website Management Indonesia">
+        </div>
+     -->
+
+    <form id="page-search-from" class="page__search-from" action="/search/">
+        <label class="search-form__item">
+            <input class="input" type="text" name="search" placeholder="Search...">
+            <i class="iconfont icon-search"></i>
+        </label>
+    </form>
+
+    
+        <div class="sidebar__block">
+            <h3 class="block__title">Introduction</h3>
+            <p class="block__text">External source WMI Github Laboratory</p>
+        </div>
+    
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Categories</h3>
+        <ul class="block-list"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/">Wordpress</a><span class="block-list-count">35</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/">SEO</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/Blogging/Social-Media/">Social Media</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/PHP/">PHP</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/">JS</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/">Blogger</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/HTML/">HTML</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/Blogging/">Blogging</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/">HTML</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/">CSS</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/">JS</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/">Blogger</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/">HTML</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/Blogging/">Blogging</a><span class="block-list-count">4</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/AMP/">AMP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/AMP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/">Windows</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/VainGlory/">VainGlory</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/">Tools</a><span class="block-list-count">26</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/">Software</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Android/">Android</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/">Social Media</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/">Script</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/PHP/">PHP</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/">Software</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/Android/">Android</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/">JS</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/CodeIgniter/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Android/">Android</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">4</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">46</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Test/">Test</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/TS/">TS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/TS/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/TS/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Software/">Software</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/">Movies</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/Musics/">Musics</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/Musics/Android/">Android</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Android/">Android</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/">Social Media</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Facebook/">Facebook</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Android/">Android</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/">Share</a><span class="block-list-count">15</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/">Blogger</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/">Script</a><span class="block-list-count">14</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/PHP/">PHP</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/">JS</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Gradle/">Gradle</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Gradle/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/">SEO</a><span class="block-list-count">30</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/">Share</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/">Blogger</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/Blogging/">Blogging</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/">Blogging</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/">Blogger</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/HTML/">HTML</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Proxy/">Proxy</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/">Popular</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Software/">Software</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Software/Android/">Android</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/">Github</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/">PHP</a><span class="block-list-count">20</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Android/">Android</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Musics/">Musics</a><span class="block-list-count">127</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Movies/">Movies</a><span class="block-list-count">47</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Miscellaneous/">Miscellaneous</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/Social-Media/">Social Media</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Linux-Unix/">Linux/Unix</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Kotlin/">Kotlin</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Java/">Java</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/">Gradle</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/Kotlin/">Kotlin</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/Kotlin/Android/">Android</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/">JS</a><span class="block-list-count">46</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Windows/">Windows</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">5</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Social-Media/">Social Media</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Social-Media/Facebook/">Facebook</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/">Share</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/SEO/">SEO</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/SEO/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/">HTML</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/">Blogger</a><span class="block-list-count">12</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/Blogging/">Blogging</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/">Hosting</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Wordpress/">Wordpress</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Script/">Script</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Script/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/">HTML</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Blogging/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/AMP/">AMP</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Github/">Github</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Github/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/">Genshin Impact</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Games/">Games</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Games/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">5</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/">Games</a><span class="block-list-count">65</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="block-list-count">12</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="block-list-count">5</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/">Durango</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/Android/">Android</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Android/">Android</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Fonts/">Fonts</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Fonts/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Facebook/">Facebook</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Durango/">Durango</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/">CSS</a><span class="block-list-count">65</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Script/">Script</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/">JS</a><span class="block-list-count">23</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/HTML/">HTML</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/Blogger/">Blogger</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/Blogger/HTML/">HTML</a><span class="block-list-count">7</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/">HTML</a><span class="block-list-count">19</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/">Blogger</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/">HTML</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/AMP/">AMP</a><span class="block-list-count">3</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/">Blogging</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/Social-Media/">Social Media</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/">Blogger</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/">HTML</a><span class="block-list-count">10</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/AMP/">AMP</a><span class="block-list-count">5</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Android/">Android</a><span class="block-list-count">24</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">13</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/">Adsense</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/">Wordpress</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/PHP/">PHP</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/AMP/">AMP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/AMP/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/">Tools</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Share/">Share</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/">SEO</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/">CSS</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">2</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Blogger/HTML/">HTML</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul>
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Latest Post</h3>
+        
+        <ul class="block-list latest-post-list">
+            
+                    <li class="latest-post-item">
+                        <a href="/RegExp/RegExp.html" title="What is RegExp">
+                            <div class="item__cover">
+                                <img src="https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg" alt="What is RegExp">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">What is RegExp</h3>
+                                <span class="item__text">2021-09-22</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/RegExp/badword.html" title="Badword">
+                            <div class="item__cover">
+                                <img src="/RegExp/RegExp/badwords.png" alt="Badword">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">Badword</h3>
+                                <span class="item__text">2021-09-22</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/The%20Legend%20Of%20Neverland/Fishing.html" title="Auto Fishing">
+                            <div class="item__cover">
+                                <img src="/The Legend Of Neverland/Fishing/Studio_Project.jpeg" alt="Auto Fishing">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">Auto Fishing</h3>
+                                <span class="item__text">2021-09-19</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html" title="Bluestacks Game Control The Legend Of Neverland">
+                            <div class="item__cover">
+                                <img src="https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png" alt="Bluestacks Game Control The Legend Of Neverland">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">Bluestacks Game Control The Legend Of Neverland</h3>
+                                <span class="item__text">2021-09-07</span>
+                            </div>
+                        </a>
+                    </li>
+                
+        </ul>
+    
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Tags</h3>
+        
+        <ul class="block-list tag-list clearfix">
+            
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Auto-Click/">Auto Click</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Chest-Location/">Chest Location</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Event/">Event</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Game-Control/">Game Control</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Games/">Games</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Genshin-Impact/">Genshin Impact</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Life-Skill/">Life Skill</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Macros/">Macros</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Quest/">Quest</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/RegExp/">RegExp</a>
+                    </li>
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Test/">Test</a>
+                    </li>
+                
+        </ul>
+    
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">ads</h3>
+        <style>
+        .adsense_responsive_sidebar { height: 100px; padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
+        @media(min-width: 500px) { .adsense_responsive_sidebar { height: 250px; } }
+        @media(min-width: 800px) { .adsense_responsive_sidebar { height: 600px; width: 160px } }
+        </style>
+        <!-- adsense single banner auto square 6376402862 -->
+        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script-->
+        <ins class="adsbygoogle adsense_responsive_sidebar" style="display:inline-block" data-full-width-responsive="true" data-ad-client="ca-pub-1165447249910969" data-ad-slot="3325057139"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- <div class="sidebar__block">
+        <h3 class="block__title">Friend Links</h3>
+        <ul class="block-list">
+            
+        </ul>
+    </div> -->
+</aside>
+
+</main>
+
+
+        
+            <!-- Footer -->
+<footer class="page__footer">
+    <section class="footer__top">
+        <div class="page__container footer__container">
+            
+            <div class="footer-top__item footer-top__item--2">
+                <h3 class="item__title">About</h3>
+                <div class="item__content">
+                    <p class="item__text">WMI</p>
+                    <ul class="footer__contact-info">
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-address"></i>
+                            <span>Surabaya, Indonesia</span>
+                        </li>
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-email2"></i>
+                            <span>dimaslanjaka@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            
+                <div class="footer-top__item footer__image">
+                    <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="logo" title="Website Management Indonesia">
+                </div>
+            
+            
+            
+            
+        </div>
+    </section>
+    <section class="footer__bottom">
+        <div class="page__container footer__container">
+            <p class="footer__copyright">©
+                <a href="https://github.com/DFCommunity/hexo-webnary-theme" rel="noopener external nofollow noreferrer" target="_blank">Web-Nary</a> 2020 powered by
+                <a href="http://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>, Made with ❤️ by 
+                <a href="https://github.com/BRAVO68WEB" rel="noopener external nofollow noreferrer" target="_blank">Bravo 68 Web</a>.
+            </p>
+            <ul class="footer__social-network clearfix">
+                
+                
+                    <li class="social-network__item">
+                        <a href="https://github.com/dimaslanjaka" rel="noopener external nofollow noreferrer" target="_blank" title="github">
+                            <i class="iconfont icon-github"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="dimaslanjaka@gmail.com" target="_blank" title="email">
+                            <i class="iconfont icon-email"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                            <i class="iconfont icon-twitter"></i>
+                        </a>
+                    </li>
+                
+                    <li class="social-network__item">
+                        <a href="https://facebook.com/dimaslanjaka1" rel="noopener external nofollow noreferrer" target="_blank" title="facebook">
+                            <i class="iconfont icon-facebook"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </section>
+</footer>
+        
+
+        
+            <!-- Back to top Buttom -->
+<div id="back-top" class="back-top back-top--hidden js-hidden">
+    <i class="iconfont icon-top"></i>
+</div>
+        
+    </div>
+
+    <!-- build:js /js/common.js -->
+        <script type="text/javascript" src="js/common/utils.js"></script>
+        <script type="text/javascript" src="js/common/pack.js"></script>
+        <script type="text/javascript" src="js/common/animation.js"></script>
+        <script type="text/javascript" src="js/layout/loading.js"></script>
+        <script type="text/javascript" src="js/layout/header.js"></script>
+        <script type="text/javascript" src="js/layout/back-top.js"></script>
+        <script type="text/javascript" src="js/layout/post.js"></script>
+    <!-- endbuild -->
+
+    
+    
+<script src="/js/page/post.js"></script>
+
+
+
+    
+    
+
+<!--{ if page.comments && config.disqus_shortname }-->
+
+    <script id="dsq-count-scr">
+        var disqus_config = function () {
+            this.page.url = 'https://git.webmanajemen.com/2017/08/how-to-modify-blogger-share-button.html';
+            this.page.identifier = '/2017/08/how-to-modify-blogger-share-button.html';
+            this.page.title = 'How to Modify Blogger Share Button Tweak Valid HTML5 CSS3';
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://dimaslanjaka.disqus.com/embed.js';
+        s.async = true;
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" href="https://disqus.com/?ref_noscript" rel="noopener external nofollow noreferrer">comments powered by Disqus.</a></noscript>
+
+
+    <!-- 不蒜子统计 -->
+
+<!--script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script-->
+<script async src="//cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js"></script>
+
+
+
+     
+
+
+
+
+
+
+
+
+
+    
+    <!-- force https -->
+    <script type="text/javascript" src="/js/https.js"></script>
+    
+
+    
+    <link rel="stylesheet" href="/js/adblock.css" media="all">
+    <script type="text/javascript" src="/js/adblock.js"></script>
+    
+</body>
+</html>

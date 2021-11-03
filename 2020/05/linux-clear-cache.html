@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2020-05-29T10:03:00.002Z",
-            "dateModified": "2021-11-02T21:09:20.699Z",
+            "dateModified": "2021-11-02T20:32:48.861Z",
             "description": "#!/bin/bash#clean page cache#sync#echo 1 >/proc/sys/vm/drop_caches#clean dentries and inodes#sync#echo 2 >/proc/sys/vm/drop_caches#clean page cache and dentries inodes, but it is not recommended in production instead use "echo 1"#sync#echo 3 >/proc/sys/vm/drop_caches################### begin refresh script##################syncif [ $(dpkg-query -W -f='${Status}' polipo 2>/dev/null | grep -c "ok installed") -eq 0 ]; then  apt-get install polipo -yfipolipo -xecho 3 >/proc/sys/vm/drop_cachesswapoff -a && swapon -aprintf '\n%s\n\n' 'Ram-cache and Swap Cleared'/opt/lampp/xampp restartfree -hthis script used for better performance your vps (LINUX). fix apache slow responsefix xampp web server slowfix overload ram vpsfix mysqld overheatfix java machine overheat ram",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

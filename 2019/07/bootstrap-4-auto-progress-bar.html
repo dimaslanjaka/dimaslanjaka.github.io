@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-25T09:09:00.001Z",
-            "dateModified": "2021-11-02T21:09:20.807Z",
+            "dateModified": "2021-11-02T20:32:48.957Z",
             "description": "  Press F12 for console debug        requirements:  1. jQuery  2. Bootstrap 4 css  3. https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/f3dfa14a3848a8282eb39b1e2f01e1d6e62d7c44/js/jquery.progressBarTimer.min.js Read How to async defer CSS JS perfectly    attribute info:    countdown = to start countdown    data-callback = function name of callback    data-warning = bar warning style     data-success = bar success style    data-base = bar progress style  HTML code<div data-callback="fn" countdown="5"></div><div data-callback="fi" countdown="10"></div>Javascript codevar elm = $("[countdown]"); function fc() {    console.log("callback Succedeed")}function ctd(elm) { //main function    var tl = 0 < elm.attr("countdown") ? elm.attr("countdown") : 5,        bs = elm.data("base") ? elm.data("base") : "bg-info",        bw = elm.data("warning") ? elm.data("warning") : "bg-danger",        bc = elm.data("success") ? elm.data("success") : "bg-success",        myCountdown = elm.progressBarTimer({            warningThreshold: 5,            timeLimit: tl,            baseStyle: bs,            warningStyle: bw,            completeStyle: bc,            smooth: !0,            striped: !0,            animated: !0,            height: 0,            onFinish: function() {                var callback = elm.data("callback"),                    xn = window[callback];                if ("function" == typeof xn) {                    var x = eval(callback);                    x()                } else console.log(callback + " isn't function ")            },            label: {                show: !0,                type: "percent"            },            autoStart: !0        })}0 < elm.length && elm.each(function(e) { //looping elements with attribute countdown    ctd($(this))}); Live example  See the Pen   Bootstrap 4 progress bar countdown by dimas lanjaka (@dimaslanjaka)   on CodePen.",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

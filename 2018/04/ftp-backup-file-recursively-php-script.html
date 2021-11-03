@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-04-05T09:33:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.887Z",
+            "dateModified": "2021-11-02T20:32:49.017Z",
             "description": "FTP FILE BACKUP RECURSIVELY Auto Zipping All files Inside DirectoryAuto Send Zipped files to FTP at onceAuto Cleaning sent Zipped files on local storage<?phpdefine("user", "username_ftp", true); //Your FTP Usernamedefine("password", "password_ftp", true); //Your FTP Passworddefine("host", "host_ftp", true); //eg: ftp.drivehq.comdefine("port", "21", true); //default ftp port is 21/*** Script_By_Dimas_Lanjaka ***/if (defined("user") && defined("password") && defined("host")){// Get real path for our folder// Get real path fo $rootPath = realpath(__DIR__);//array_map('unlink', glob("$rootPath*.zip"));// Initialize archive object$zip = new ZipArchive();$cdate = str_replace('.', '-', $_SERVER['HTTP_HOST']);$zip->open($cdate . '.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);// Create recursive directory iterator/** @var SplFileInfo[] $files */$files = new RecursiveIteratorIterator(    new RecursiveDirectoryIterator($rootPath),    RecursiveIteratorIterator::LEAVES_ONLY);foreach ($files as $name => $file){    // Skip directories (they would be added automatically)    if (!$file->isDir())    {        // Get real and relative path for current file        $filePath = $file->getRealPath();        $relativePath = substr($filePath, strlen($rootPath) + 1);        // Add current file to archive        $zip->addFile($filePath, $relativePath);    }}// Zip archive will be created only after closing object$zip->close();function sendfile($file){$host = host;$port = port;$timeout = "60";$user = user;$pass = password;$dest_file = $file;$source_file = $file;$ftp = ftp_connect($host,$port,$timeout);ftp_login($ftp,$user,$pass);ftp_pasv($ftp, true);//if (ftp_delete($ftp, $file)) {$ret = ftp_nb_put($ftp, $dest_file, $source_file, FTP_BINARY, FTP_AUTORESUME);//}while (FTP_MOREDATA == $ret)    {        // display progress bar, or someting        $ret = ftp_nb_continue($ftp);    }}function list_zipfiles($mydirectory) {    // directory we want to scan    $dircontents = scandir($mydirectory);    // list the contents    echo '<ul>';    foreach ($dircontents as $file) {        $extension = pathinfo($file, PATHINFO_EXTENSION);        if ($extension == 'zip') {            echo "<center><li>$file Backup Successfully</li></center>";sendfile($file);unlink($file);        }    }    echo '</ul>';}?><!DOCTYPE HTML><html><head><title>Backup File Recursively</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Hexo 5.4.0"></head><body><h6 class="header1">PRODUCTION</h6><hr class="style1"><?phpcall_user_func('list_zipfiles', "./");}?></body></html><?php /*** Mohon Jangan Hapus Credit Copyright | Please Dont Remove Copyright Credits ***/ ?>",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

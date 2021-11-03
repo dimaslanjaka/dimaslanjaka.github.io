@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-04-13T02:29:00.000Z",
-            "dateModified": "2021-11-02T21:09:21.003Z",
+            "dateModified": "2021-11-02T20:32:49.101Z",
             "description": "Menggunakan vanili JavaScript dan CSS, saya akan menunjukkan cara untuk secara vertikal dan horizontal pusat dinamis konten berukuran dalam wadah persegi responsif.Kode Javascriptvar contents = document.querySelectorAll('.content');var parentHeight,  contentHeight,  topPosition;// Set margin functionfunction setMargin(selector) {  contentHeight = selector.clientHeight;  parentHeight = selector.parentNode.clientHeight;  topPosition = (parentHeight - contentHeight) / 2;  selector.style.top = topPosition + 'px';}// On page load, center contentsfor (var i = 0; i < contents.length; i++) {  setMargin(contents[i]);}// On page resize, adjust content centeringwindow.addEventListener('resize', function() {  for (var i = 0; i < contents.length; i++) {    setMargin(contents[i]);  }});Kode SCSSdiv.box {  position: relative;  display: block;  float: left;  width: 50%;  height: 50%;  text-align: center;    &:before {    content: "";    display: block;    padding-top: 100%;  }    .content {    position: absolute;    left: 0;    top: 25%;    width: 100%;    transition: all 1s ease 0s;  }}Kode HTML<div class="box">    <div class="content">content</div></div>Untuk coba-coba anda bisa menggunakan -> Codepen.io Project ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

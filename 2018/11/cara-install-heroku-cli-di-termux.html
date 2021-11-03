@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-11-17T00:08:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.871Z",
+            "dateModified": "2021-11-02T20:32:49.005Z",
             "description": "Heroku adalah platform cloud sebagai layanan (PaaS) yang mendukung beberapa bahasa pemrograman. Heroku, salah satu platform cloud pertama, telah dikembangkan sejak Juni 2007, ketika hanya mendukung bahasa pemrograman Ruby, tetapi sekarang mendukung Java, Node.js, Scala, Clojure, Python, PHP, dan Go. Untuk alasan ini, Heroku dikatakan sebagai platform polyglot karena memungkinkan pengembang membangun, menjalankan, dan menskala aplikasi dengan cara yang sama di semua bahasa. Heroku diakuisisi oleh Salesforce.com pada 2010 sebesar $ 212 juta. Berikut tutorial untuk install Heroku App dan pre-requirements nya:Instalasi PHP di TermuxInstalasi Composer di TermuxInstalasi Node.js di TermuxInstalasi Heroku App CLI di TermuxTahap 1: update & upgrade aptcd $HOMEapt update -yapt upgrade -yTahap 2: install PHP dan Composercd $HOMEapt install php -yphp -r "copy(‘https://getcomposer.org/installer’, ‘composer-setup.php’);"php -r "if (hash_file(‘sha384’, ‘composer-setup.php’) === ‘93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8’) { echo ‘Installer verified’; } else { echo ‘Installer corrupt’; unlink(‘composer-setup.php’); } echo PHP_EOL;"php composer-setup.phpphp -r "unlink(‘composer-setup.php’);"mv composer.phar …/usr/bin/composerTahap 3: Install Node.Jscd $HOMEapt install nodejs -yTahap 4: install Heroku CLI Librarycd $HOMEwget http://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz -O heroku.tar.gzmkdir herokutar -xvzf heroku.tar.gz -C herokucd heroku/heroku*mv * …/cd $HOMEmv heroku /data/data/com.termux/files/usr/lib/herokuln -s /data/data/com.termux/files/usr/lib/heroku/bin/heroku /data/data/com.termux/files/usr/bin/heroku",
             "articleBody": "Tahap Configurasi Heroku CLIAkses Binary File:cd /data/data/com.termux/files/usr/lib/heroku/bin/vim herokuCara Edit:Klik huruf “i” di keyboard (tanpa tanda petik)Ubah kode di line pertama ( #!/usr/bin/env bash ) ke ( #!/data/data/com.termux/files/usr/bin/env bash ), tanpa tanda kurung loh ya… Lalu save: Klik ESC lalu ketik :wq Lalu klik Enter 2xSelesai. Tahap 5: Test Command Lineheroku --version output: heroku-cli/x.xx.xx-xxxxxxx (android-xxxxx) node-vx.xx.xx "
         }
@@ -531,7 +531,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

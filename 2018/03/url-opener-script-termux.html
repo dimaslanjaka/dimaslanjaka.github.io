@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2018-03-25T10:48:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.887Z",
+            "dateModified": "2021-11-02T20:32:49.017Z",
             "description": "URL Opener Script Termux#!/data/data/com.termux/files/usr/bin/zsh## This is a termux-url-opener script to do diffrent tasks on my Android phone #url=$1echo "What should I do with $url ?"echo "y) download youtube video to movies-folder"echo "u) download youtube video and convert it to mp3 (music-folder)"echo "s) download with scdl (soundcloud)"echo “w) wget file to download-folder” echo "x) nothing"read CHOICEcase $CHOICE in    y)        youtube-dl -o /data/data/com.termux/files/home/storage/shared/Movies/%(title)s.%(ext)s $url	;;    u)	echo “Artist”	read artist	echo “Title”	read title	echo “Album”	read album        youtube-dl -o ~/storage/music/music.flv url<br>ffmpeg−i /storage/music/music.flv /storage/music/url <br>	ffmpeg -i ~/storage/music/music.flv ~/storage/music/url<br>ffmpeg−i /storage/music/music.flv /storage/music/artist-$title.mp3         mid3v2 -a $artist -t $title -A album /storage/music/album ~/storage/music/album /storage/music/artist-$title.mp3	rm ~/storage/music/music.flv	;;    s)	scdl -l $url --path ~/storage/music        echo “s need some work”	;;    w)        cd ~/storage/downloads	wget $url	;;    x)        echo “bye”	;; esac
 ",
             "articleBody": undefined
@@ -532,7 +532,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

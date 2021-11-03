@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-08-03T18:05:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.963Z",
+            "dateModified": "2021-11-02T20:32:49.081Z",
             "description": "Terkadang kita perlu mengeksekusi skrip PHP di widget teks namun secara default WordPress tidak hadir dengan fitur ini karena masalah keamanan.Anda bisa menggunakan beberapa plugin seperti PHP Text Widget dan PHP Code widget tapi mengapa ada orang yang menggunakannya saat kita bisa melakukannya dalam sepersekian detik. Anda tahu apa, Butuh waktu jauh lebih sedikit daripada memasang plugin.Edit file functions.php dari tema Anda saat ini dan tambahkan kode berikut di bagian akhir file.//Run php on text widgetfunction php_execute(html){<br>if(strpos(html,"<"."?php")!==false){ ob_start(); eval("?".">".html);<br>html);<br>html);<br>html=ob_get_contents();ob_end_clean();}return $html;}add_filter(‘widget_text’,‘php_execute’,100);Sekarang hapus cache jika Anda menggunakan Plugin Cache seperti cache WPSuper Cache atau W3 Total.Untuk mengecek kerja, Tempel kode PHP berikut di widget teks<? Php echo ‘Halo Dunia !!!’ ?>",
             "articleBody": "Sekarang periksa tempat di mana Anda telah menempatkan widget, Anda harus melihat \" Hello World !!! \"Jika Anda ingin memahami kode itu kemudian kunjungi - Emanuele Feronato - italian geek dan PROgrammer.Via - WPSquare "
         }
@@ -531,7 +531,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

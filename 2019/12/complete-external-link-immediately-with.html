@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-12-17T11:16:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.763Z",
+            "dateModified": "2021-11-02T20:32:48.917Z",
             "description": "  If you add an external link in the template or in the post and use the target="_blank" attribute, then immediately complete the rel="noopener" on the links.   Looks like this is still not much known by bloggers (including me who just found out hehehe ...).   When we link other web pages to our blog page using target="_blank" , the new page process that runs in the browser's new window is the same as our page process.  If the new page is executing heavy JavaScript, then the performance of our blog pages can also be affected.  Oops ... it turned out to be so impactful ...   The target="_blank" attribute on external links is also vulnerable.  The new page has access to the window object through window.opener , and can direct our page to a different URL using window.opener.location = newURL .   For that, please fix the external link that uses target="_blank" on your blog by adding the rel="noopener" like the following example:   <a href="http://www.domainLain.com/" rel="noopener external nofollow noreferrer"  target="_blank" title="Domain Lain">Domain Lain</a>  If combined with rel="nofollow" the writing is as follows:   <a href="http://www.domainLain.com/" rel="noopener external nofollow noreferrer " target="_blank" title="Domain Lain">Domain Lain</a>  May be useful.   ",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

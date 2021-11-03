@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2017-09-11T04:43:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.951Z",
+            "dateModified": "2021-11-02T20:32:49.073Z",
             "description": "Cara mempercepat loading fonts blog (webfonts).Sekian banyak kode yang saya implementasikan namun belum ada yang mempercepat loading font. Nah berikut tutorialnya:Metode 1.Taruh atau ambil fonts (ttf,woff, dan lainnya) di cdn Lalu pasang htaccess berikut:# Apache config<FilesMatch ".(eot|ttf|otf|woff)"> Header set Access-Control-Allow-Origin "*"</FilesMatch># nginx configif ($filename ~* ^.*?\.(eot)|(ttf)|(woff)$){ add_header Access-Control-Allow-Origin *;}",
             "articleBody": "2. Gunakan Non-Blocking CSS Loading<link rel=\"stylesheet\" type=\"text/css\" href=\"fonts.css\" media=\"none\" onload=\"this.media='all';\"><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" media=\"none\" onload=\"this.media='all';\">3. Bedakan fonts model dengan CSSh1 { font-family: Arial, serif; } /* basic system font */ .fontsloaded h1 { font-family: 'MySpecialFont', serif; } /* custom system font */<link href=\"fonts.css\" onload=\"document.body.className+=' fontsloaded';\" rel=\"stylesheet\" type=\"text/css\" >4. Letakkan fonts file di penyimpanan lokal (localstorage)Selesai. Begitulah sedikit pengetahuan saya dalam merender fonts lebih cepat.Namun saya rekomendasikan menggunakan NON BLOCKING RENDER LOADING."
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2019-07-17T11:21:00.005Z",
-            "dateModified": "2021-11-02T21:09:20.803Z",
+            "dateModified": "2021-11-02T20:32:48.953Z",
             "description": "Extract Hostname/Domain from URL (string)function extractHostname(url) {    var hostname;    //find & remove protocol (http, ftp, etc.) and get hostname    if (url.indexOf("//") > -1) {        hostname = url.split('/')[2];    }    else {        hostname = url.split('/')[0];    }    //find & remove port number    hostname = hostname.split(':')[0];    //find & remove "?"    hostname = hostname.split('?')[0];    return hostname;}//test the code Press F12console.log("== Testing extractHostname: ==");console.log(extractHostname("http://www.blog.classroom.me.uk/index.php"));console.log(extractHostname("http://www.youtube.com/watch?v=ClkQA2Lb_iE"));console.log(extractHostname("https://www.youtube.com/watch?v=ClkQA2Lb_iE"));console.log(extractHostname("www.youtube.com/watch?v=ClkQA2Lb_iE"));console.log(extractHostname("ftps://ftp.websitename.com/dir/file.txt"));console.log(extractHostname("websitename.com:1234/dir/file.txt"));console.log(extractHostname("ftps://websitename.com:1234/dir/file.txt"));console.log(extractHostname("example.com?param=value"));console.log(extractHostname("https://facebook.github.io/jest/"));console.log(extractHostname("//youtube.com/watch?v=ClkQA2Lb_iE"));console.log(extractHostname("http://localhost:4200/watch?v=ClkQA2Lb_iE"));",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

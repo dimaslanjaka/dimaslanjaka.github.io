@@ -129,7 +129,7 @@
                 }
             },
             "datePublished": "2020-02-14T08:49:00.000Z",
-            "dateModified": "2021-11-02T21:09:20.703Z",
+            "dateModified": "2021-11-02T20:32:48.873Z",
             "description": "<LinearLayout	android:id="@+id/main_adTopBanner"	android:orientation="vertical" 	android:layout_height="50dp"	android:layout_width="match_parent">        </LinearLayout>@Overrideprotected void onCreate(Bundle savedInstanceState){	super.onCreate(savedInstanceState);	setContentView(R.layout.activity_main);	LoadAds();			    	   }	private AdView AD_TOP_BANNER = null;public void LoadAds(){	// Create the adView.	this.AD_TOP_BANNER = new AdView(this);	this.AD_TOP_BANNER.setAdUnitId("MY_SPECIAL AND_UNIQUE_AD_ID");	// this.AD_TOP_BANNER.setAdSize(AdSize.BANNER);	this.AD_TOP_BANNER.setAdSize(AdSize.SMART_BANNER);	// Lookup your LinearLayout assuming it's been given		LinearLayout layout = (LinearLayout) findViewById(R.id.main_adTopBanner);	// Add the adView to it.	layout.addView(this.AD_TOP_BANNER);	// Initiate a generic request.	AdRequest adRequest = null;	adRequest = new AdRequest.Builder().build();	//FOR TESTING AND LOADING TEST ADS	//adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("AC98C820A50B4AD8A2106EDE96FB87D4").build();		// Load the adView with the ad request.	this.AD_TOP_BANNER.loadAd(adRequest);}",
             "articleBody": undefined
         }
@@ -530,7 +530,7 @@
                     </li>
                 
                     <li class="social-network__item">
-                        <a href="https://twitter.com/" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
+                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
                             <i class="iconfont icon-twitter"></i>
                         </a>
                     </li>

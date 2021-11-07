@@ -5,8 +5,8 @@
         <link>https://git.webmanajemen.com</link>
         <description>External source WMI Github Laboratory</description>
         <language>en</language>
-        <pubDate>Mon, 03 Aug 2020 04:02:00 +0000</pubDate>
-        <lastBuildDate>Mon, 03 Aug 2020 04:02:00 +0000</lastBuildDate>
+        <pubDate>Mon, 03 Aug 2020 11:02:00 +0700</pubDate>
+        <lastBuildDate>Mon, 03 Aug 2020 11:02:00 +0700</lastBuildDate>
         <category>RegExp</category>
         <category>Test</category>
         <category>Game Control</category>
@@ -25,9 +25,9 @@
         <category>HTML</category>
         <category>AMP</category>
         <category>Facebook</category>
-        <category>Social Media</category>
         <category>Android</category>
         <category>Script</category>
+        <category>Social Media</category>
         <category>Tools</category>
         <category>Tips &amp; Tricks</category>
         <category>CodeIgniter</category>
@@ -42,27 +42,27 @@
         <category>Movies</category>
         <category>Musics</category>
         <category>Popular</category>
+        <category>Windows</category>
+        <category>Genshin Impact</category>
+        <category>Gradle</category>
+        <category>Chest Location</category>
+        <category>Quest</category>
         <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
         <category>Java</category>
-        <category>Gradle</category>
         <category>Kotlin</category>
         <category>Github</category>
         <category>TS</category>
-        <category>Windows</category>
-        <category>Genshin Impact</category>
-        <category>Chest Location</category>
-        <category>Quest</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html</guid>
             <title>build.gradle with custom repository</title>
             <link>https://git.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html</link>
             <category>Android</category>
-            <category>Java</category>
             <category>Gradle</category>
+            <category>Java</category>
             <category>Kotlin</category>
-            <pubDate>Mon, 03 Aug 2020 04:02:00 +0000</pubDate>
+            <pubDate>Mon, 03 Aug 2020 11:02:00 +0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Fix missing dependencies from your gradle project (android, maven, etc) with this build.gradle. &lt;br&gt;insert into &lt;kbd&gt;YOUR_PROJECT_GRADLE/build.gradle&lt;/kbd&gt; &lt;pre&gt;// Top-level build file where you can add configuration options common to all sub-projects/modules.&lt;br&gt;&lt;br&gt;buildscript {&lt;br&gt;    repositories {&lt;br&gt;        maven { url “&lt;a href=&#34;https://maven.google.com&#34;&gt;https://maven.google.com&lt;/a&gt;” }&lt;br&gt;        jcenter()&lt;br&gt;        maven { url “&lt;a href=&#34;https://jitpack.io&#34;&gt;https://jitpack.io&lt;/a&gt;” }&lt;br&gt;        maven { url “&lt;a href=&#34;https://dl.bintray.com/android/android-tools&#34;&gt;https://dl.bintray.com/android/android-tools&lt;/a&gt;” }&lt;br&gt;        maven { url “&lt;a href=&#34;https://plugins.gradle.org/m2/&#34;&gt;https://plugins.gradle.org/m2/&lt;/a&gt;” }&lt;br&gt;        maven { url “&lt;a href=&#34;https://maven.fabric.io/public&#34;&gt;https://maven.fabric.io/public&lt;/a&gt;” }&lt;br&gt;        mavenCentral()&lt;br&gt;        mavenLocal()&lt;br&gt;    }&lt;br&gt;    dependencies {&lt;br&gt;        classpath ‘com.android.tools.build:gradle:3.2.1’&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;&lt;br&gt;allprojects {&lt;br&gt;    repositories {&lt;br&gt;        maven { url “&lt;a href=&#34;https://maven.google.com&#34;&gt;https://maven.google.com&lt;/a&gt;” }&lt;br&gt;        jcenter()&lt;br&gt;        maven { url “&lt;a href=&#34;https://jitpack.io&#34;&gt;https://jitpack.io&lt;/a&gt;” }&lt;br&gt;        maven { url “&lt;a href=&#34;https://dl.bintray.com/android/android-tools&#34;&gt;https://dl.bintray.com/android/android-tools&lt;/a&gt;” }&lt;br&gt;        maven { url “&lt;a href=&#34;https://plugins.gradle.org/m2/&#34;&gt;https://plugins.gradle.org/m2/&lt;/a&gt;” }&lt;br&gt;        maven { url “&lt;a href=&#34;https://maven.fabric.io/public&#34;&gt;https://maven.fabric.io/public&lt;/a&gt;” }&lt;br&gt;        mavenCentral()&lt;br&gt;        mavenLocal()&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;&lt;/pre&gt; &lt;h5&gt;Kotlin&lt;/h5&gt;&lt;kbd&gt;YOUR_PROJECT_GRADLE/build.gradle.kts&lt;/kbd&gt;&lt;pre&gt;&lt;br&gt;buildscript {&lt;br&gt;    repositories {&lt;br&gt;        maven (“&lt;a href=&#34;https://maven.google.com&#34;&gt;https://maven.google.com&lt;/a&gt;”)&lt;br&gt;        jcenter()&lt;br&gt;        maven (“&lt;a href=&#34;https://jitpack.io&#34;&gt;https://jitpack.io&lt;/a&gt;”)&lt;br&gt;        maven (“&lt;a href=&#34;https://dl.bintray.com/android/android-tools&#34;&gt;https://dl.bintray.com/android/android-tools&lt;/a&gt;”)&lt;br&gt;        maven (“&lt;a href=&#34;https://plugins.gradle.org/m2/&#34;&gt;https://plugins.gradle.org/m2/&lt;/a&gt;”)&lt;br&gt;        maven (“&lt;a href=&#34;https://maven.fabric.io/public&#34;&gt;https://maven.fabric.io/public&lt;/a&gt;”)&lt;br&gt;        mavenCentral()&lt;br&gt;        mavenLocal()&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;allprojects {&lt;br&gt;    repositories {&lt;br&gt;        maven (“&lt;a href=&#34;https://maven.google.com&#34;&gt;https://maven.google.com&lt;/a&gt;”)&lt;br&gt;        jcenter()&lt;br&gt;        maven (“&lt;a href=&#34;https://jitpack.io&#34;&gt;https://jitpack.io&lt;/a&gt;”)&lt;br&gt;        maven (“&lt;a href=&#34;https://dl.bintray.com/android/android-tools&#34;&gt;https://dl.bintray.com/android/android-tools&lt;/a&gt;”)&lt;br&gt;        maven (“&lt;a href=&#34;https://plugins.gradle.org/m2/&#34;&gt;https://plugins.gradle.org/m2/&lt;/a&gt;”)&lt;br&gt;        maven (“&lt;a href=&#34;https://maven.fabric.io/public&#34;&gt;https://maven.fabric.io/public&lt;/a&gt;”)&lt;br&gt;        mavenCentral()&lt;br&gt;        mavenLocal()&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;&lt;/pre&gt;&lt;/p&gt;
  ]]></description>
         </item>

@@ -1,625 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    
-        <title>Overcoming Browser Caching Leverage for Favicon.ico - WMI Gitlab</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<meta name="author" content="Dimas Lanjaka">
-<meta name="designer" content="minfive">
-<meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks">
-<meta name="description" content="Overcoming Browser Caching Leverage for Favicon.ico  Favicon is the main icon of a website that appears on the left side of the browser">
+  
+  <title>Overcoming Browser Caching Leverage for Favicon.ico | Website Management Indonesia</title>
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="robots" content="all">
-
-<link rel="canonical" href="https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html">
-
-<link rel="icon" type="image/png" href="/assets/img/hexo-logo-avatar-transparent-background.png" sizes="32x32">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Overcoming Browser Caching Leverage for Favicon.ico">
 <meta property="og:url" content="https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html">
-<meta property="og:title" content="Overcoming Browser Caching Leverage for Favicon.ico | WMI Gitlab">
-<meta property="og:description" content="Overcoming Browser Caching Leverage for Favicon.ico  Favicon is the main icon of a website that appears on the left side of the browser">
+<meta property="og:site_name" content="Website Management Indonesia">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg">
+<meta property="og:image" content="https://imgcdn.000webhostapp.com/https/imgcdn.000webhostapp.com/c76671c4067b4ca042a47c629a10c838.jpeg">
+<meta property="article:published_time" content="2019-12-24T10:01:00.000Z">
+<meta property="article:modified_time" content="2021-11-07T13:58:16.592Z">
+<meta property="article:author" content="[object Object]">
+<meta property="article:tag" content="Tips &amp; Tricks">
+<meta property="article:tag" content="Share">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg">
 
+  <meta name="keywords" content=",Tips &amp; Tricks,Share">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
 
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Website Management Indonesia">
+  <meta name="msapplication-starturl" content="https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Website Management Indonesia">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
 
+  
+    <link rel="canonical" href="https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html">
+  
 
+  
+  
 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create','UA-106238155-1','auto');ga('send','pageview');
+</script>
+  
+  
 
+  
+<link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
 
+  
+<link rel="stylesheet" href="/custom.css">
 
-
-
-
-
-
-
-<!-- Prefetch -->
-
-
-
-
-
-
-<link rel="dns-prefetch" href="//secure.gravatar.com">
-<link rel="dns-prefetch" href="//static.codepen.io">
-<link rel="dns-prefetch" href="//res.cloudinary.com">
-<link rel="dns-prefetch" href="//ad.doubleclick.com">
-<link rel="dns-prefetch" href="//s3.buysellads.com">
-<link rel="dns-prefetch" href="//srv.buysellads.com">
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
-<link rel="dns-prefetch" href="//tpc.googlesyndication.com">
-<link rel="dns-prefetch" href="//adservice.google.com">
-<link rel="dns-prefetch" href="//www.googletagservices.com">
-<link rel="dns-prefetch" href="//git.webmanajemen.com">
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="/scss/base/index.css">
-
-
-<!-- RSS -->
-<link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
-
-<!-- 统计 -->
-<!-- Analytics -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-
-
-
-
-<!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
-
-
-
-    
-    
-<link rel="stylesheet" href="/scss/views/page/post.css">
-
-
-
-    
-    
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "BlogPosting",
-            "mainEntityOfPage":{
-                "@type":"WebPage",
-                "@id":"https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html"
-            },
-            "headline": "Overcoming Browser Caching Leverage for Favicon.ico",
-            "image": {
-                "@type": "ImageObject",
-                "url": "https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg",
-                "width": 144,
-                "height": 144
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Dimas Lanjaka"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "Dimas Lanjaka",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "/assets/img/PicsArt_09-09-12.12.25.jpg",
-                    "width": 1944,
-                    "height": 2592
-                }
-            },
-            "datePublished": "2019-12-24T10:01:00.000Z",
-            "dateModified": "2021-11-02T20:32:48.885Z",
-            "description": "  Overcoming Browser Caching Leverage for Favicon.ico - Favicon is the main icon of a website that appears on the left side of the browser tab and is the logo of the web.  A favicon can also be known as a shortcut icon, website icon, URL icon, or bookmark icon.   This favicon generally uses an image with the extension .ico with a fairly small size that is 16x16 pixels.   Even though the size is quite small, the picture is still a picture.  And this is often a problem in the blog loading speed measuring tool that is browser caching leverage from Favicon.ico.   To overcome the problem of Favicon.ico's browser caching leverage, please follow the following tricks. Using Base64  One way to overcome the browser caching leverage of Favicon.ico is to use a favicon with base64, here's how:   Please download a picture of your current blog favicon.  Please right-click on your blog page then select View source page.  Then find the code like this:   <link href='https://www.domainanda.com/favicon.ico' rel='icon' type='image/x-icon'/>   Please click the blue URL, after the favicon image is open, please save the image on the computer.   Next, please use the favicon to base64 conversion tool , upload the favicon image that was saved on the computer then select URI Data - data: content / type; base64 for the Output Format.   After that, go to the HTML edit blog then look for the code as follows:   <link expr:href='data:blog.canonicalHomepageUrl + &quot;favicon.ico&quot;' rel='icon' type='image/x-icon'/>   Then please change to the following:   <link href=' URL BASE64 FROM STEP 2' rel='icon' type='image/x-icon'/>  Please replace the URL BASE64 DARI LANGKAH 2 code URL BASE64 DARI LANGKAH 2 with the base64 URL of the favicon that was converted in step 2.   Now please check your blog with the blog loading speed measuring tool that you normally use.  Has the browser caching notification from Favicon.ico disappeared? Using Staticaly  Base64 usually produces a URL that is long enough for an image, which of course will affect the HTML size of the blog.   If you are not comfortable with a URL that is long enough from base64, you can overcome this browser caching leverage from Favicon.ico in a more simple way, namely by using Staticaly , the way is as follows:   Please enter the HTML blog edit then look for the code as follows:   <link expr:href='data:blog.canonicalHomepageUrl + &quot;favicon.ico&quot;' rel='icon' type='image/x-icon'/>   Then please change to the following:   <link href='https://cdn.statically.io/favicons/ www.yourdomain.com' rel='icon' type='image/x-icon'/>  Please replace the code www.domainanda.com with your blog's domain name, it can also be without www .   Done, pretty simple right?   Now please check your blog with the blog loading speed measuring tool that you normally use.  Has the browser caching notification from Favicon.ico disappeared? UPDATE:  It turns out that there was a mistake for the Staticaly domain above, which caused an error at Lighthouse.  It turns out that now Staticaly uses the statically.io (double L) domain, but we can still use the staticaly.com domain (single L).  I have corrected the above tutorial for using Favicon with Staticaly.   And in addition, we can control the length of cache for Favicon with Staticaly.  By default, Staticaly provides 1 day cache.  But we can provide parameters to increase the cache time by seconds such as the following for 1 year cache (as long as it is not clear cache).   <link href='https://cdn.statically.io/favicons/www.domainanda.com ?cache=31556952' rel='icon' type='image/x-icon'/>  And this post about how to overcome the leverage of browser caching from Favicon is also made with audio visual that you can watch in the following video:   May be useful.   ",
-            "articleBody": undefined
-        }
-    </script>
-
-    
-
-    
-    <script data-ad-client="ca-pub-1165447249910969" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-
-    
 <meta name="generator" content="Hexo 5.4.0"></head>
-<body ontouchstart>
-    
-        
-    
-
-    
-
-    <div id="page" class="page js-hidden">
-        
-    <!-- Small Header -->
-<header class="page__small-header page__header--small">
-    <nav class="page__navbar">
-        <div class="page__container navbar-container">
-            <a class="page__logo" href="/" title="Website Management Indonesia" alt="Website Management Indonesia">
-                <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="Website Management Indonesia">
-            </a>
-
-        <!--<nav class="page__nav">
-                <ul class="nav__list clearfix">
-                    
-                            Was
-                        <li class="nav__item">
-                            <a href="/" alt="Home" title="Home">Home</a>
-                        </li>
-                    
-                            Was
-                        <li class="nav__item">
-                            <a href="/archives" alt="Archive" title="Archive">Archive</a>
-                        </li>
-                    
-                            Was
-                        <li class="nav__item">
-                            <a href="/contact" alt="Menu.contact" title="Menu.contact">Menu.contact</a>
-                        </li>
-                    
-                            Was
-                        <li class="nav__item">
-                            <a href="/about" alt="About" title="About">About</a>
-                        </li>
-                    
-                    <li class="nav__item">
-                        <a href="" alt="About" title="About">About</a>
-                    </li>
-                </ul>
-            </nav>     --> 
-
-            <nav class="page__nav">
-                <ul class="nav__list clearfix">
-                    <li class="nav__item">
-                        <a href="/" alt="Home" title="Home">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="/archives" alt="Archives" title="Archives">Archives</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="/contact" alt="Contact" title="Contact">Contact</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="/about" alt="About" title="About">About</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <button class="page__menu-btn" type="button">
-                <i class="iconfont icon-menu"></i>
-            </button>
-        </div>
-    </nav>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" rel="noopener external nofollow noreferrer" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Website Management Indonesia</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" rel="noopener external nofollow noreferrer" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
 </header>
-
-
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Insert The Keywords"><input type="hidden" name="sitesearch" value="https://git.webmanajemen.com"></form>
+    <div class="search-result"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+    <script>var a = localStorage.getItem("mdui-drawer-close");
+      if (a) {
+        document.getElementById("sidebar").className += " mdui-drawer-close"
+      }
+      ;</script>
+    <div class="mdui-grid-tile">
+        <img src="/images/banner.png" style="height: 160px;">
         
-    <main class="page__container page__main">
-    <div class="page__content">
-        <article class="page__post">
-    <div class="post__cover">
-        <img src="https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg" alt="Overcoming Browser Caching Leverage for Favicon.ico">
-    </div>
-
-    <header class="post__info">
-        <h1 class="post__title">Overcoming Browser Caching Leverage for Favicon.ico</h1>
-
-        <div class="post__mark">
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-write"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a target="_blank" href="https://www.blogger.com/profile/17555754514989936273" rel="noopener external nofollow noreferrer">Dimas Lanjaka Kumala Indra</a>
-                        </li>
-                    
-                </ul>
+        <img src="/images/avatar.png" class="avatar-animation"
+                                      style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+        
+        <div class="mdui-grid-tile-actions">
+            <div class="mdui-grid-tile-text">
+                <div class="mdui-grid-tile-title">Dimas Lanjaka</div>
+                <div class="mdui-grid-tile-subtitle"><i
+                            class="mdui-icon material-icons">art_track</i>WMI Gitlab</div>
             </div>
-
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-time"></i>
-                <ul class="mark__list clearfix">
-                    <li class="mark__item"><span>2019-12-24</span></li>
-                </ul>
-            </div>
-
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-tab"></i>
-                <ul class="mark__list clearfix">
-                    
-                </ul>
-            </div>
-
             
         </div>
-    </header>
+    </div>
 
-    <div class="post__content">
-        <div id="A-G-C" date="09 Dec 2019 17:01:02"><div class="post-body entry-content" id="post-body-5562675611904764504"><br><div class="clear"></div><br><p class="desc-post fontroboto fontweight400 m0 p0"> <span class="notranslate"> Overcoming Browser Caching Leverage for Favicon.ico - Favicon is the main icon of a website that appears on the left side of the browser tab and is the logo of the web.</span> <span class="notranslate"> A favicon can also be known as a shortcut icon, website icon, URL icon, or bookmark icon.</span> </p><noscript><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width="1280" height="720" src="https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg" alt="Mengatasi Leverage Browser Caching Untuk Favicon.ico" title="Overcoming Browser Caching Leverage for Favicon.ico"></noscript><p> <span class="notranslate"> This favicon generally uses an image with the extension .ico with a fairly small size that is 16x16 pixels.</span> </p><p> <span class="notranslate"> Even though the size is quite small, the picture is still a picture.</span> <span class="notranslate"> And this is often a problem in the blog loading speed measuring tool that is browser caching leverage from Favicon.ico.</span> </p><p> <span class="notranslate"> To overcome the problem of Favicon.ico's browser caching leverage, please follow the following tricks.</span> </p><h4>Using Base64</h4><p> <span class="notranslate"> One way to overcome the browser caching leverage of Favicon.ico is to use a favicon with base64, here's how:</span> </p><ol><li> <span class="notranslate"> Please download a picture of your current blog favicon.</span> <span class="notranslate"> Please right-click on your blog page then select View source page.</span> <span class="notranslate"> Then find the code like this:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='https://www.domainanda.com/favicon.ico' rel='icon' type='image/x-icon'/&gt;</code> </pre><br> <span class="notranslate"> Please click the blue URL, after the favicon image is open, please save the image on the computer.</span> </li><li> <span class="notranslate"> Next, please use <a href="https://dimaslanjaka.github.io/page/safelink.html?url=aHR0cHM6Ly9iYXNlNjQuZ3VydS9jb252ZXJ0ZXIvZW5jb2RlL2ltYWdlL2ljbw==" rel="noopener external nofollow noreferrer" target="_blank" title="favicon to base64 conversion tool">the favicon to base64 conversion tool</a> , upload the favicon image that was saved on the computer then select URI Data - data: content / type; base64 for the Output Format.</span> </li><li> <span class="notranslate"> After that, go to the HTML edit blog then look for the code as follows:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link expr:href='data:blog.canonicalHomepageUrl + &amp;quot;favicon.ico&amp;quot;' rel='icon' type='image/x-icon'/&gt;</code> </pre><br> <span class="notranslate"> Then please change to the following:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='</code> <mark>URL BASE64 FROM STEP 2</mark>' rel='icon' type='image/x-icon'/&gt;</pre><br> <span class="notranslate"> Please replace the <code class="notranslate plaintext">URL BASE64 DARI LANGKAH 2</code> code <code class="notranslate plaintext">URL BASE64 DARI LANGKAH 2</code> with the base64 URL of the favicon that was converted in step 2.</span> </li></ol><p> <span class="notranslate"> Now please check your blog with the blog loading speed measuring tool that you normally use.</span> <span class="notranslate"> Has the browser caching notification from Favicon.ico disappeared?</span> </p><h4>Using Staticaly</h4><p> <span class="notranslate"> Base64 usually produces a URL that is long enough for an image, which of course will affect the HTML size of the blog.</span> </p><p> <span class="notranslate"> If you are not comfortable with a URL that is long enough from base64, you can overcome this browser caching leverage from Favicon.ico in a more simple way, namely by using <a href="https://dimaslanjaka.github.io/page/safelink.html?url=aHR0cHM6Ly9zdGF0aWNhbGx5LmlvL2Zhdmljb25z" rel="noopener external nofollow noreferrer" target="_blank" title="Staticaly">Staticaly</a> , the way is as follows:</span> </p><ol><li> <span class="notranslate"> Please enter the HTML blog edit then look for the code as follows:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link expr:href='data:blog.canonicalHomepageUrl + &amp;quot;favicon.ico&amp;quot;' rel='icon' type='image/x-icon'/&gt;</code> </pre></li><li> <span class="notranslate"> Then please change to the following:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='https://cdn.statically.io/favicons/</code> <mark>www.yourdomain.com</mark>' rel='icon' type='image/x-icon'/&gt;</pre><br> <span class="notranslate"> Please replace the code <code class="notranslate plaintext">www.domainanda.com</code> with your blog's domain name, it can also be without <code class="notranslate plaintext">www</code> .</span> </li><li> <span class="notranslate"> Done, pretty simple right?</span> </li></ol><p> <span class="notranslate"> Now please check your blog with the blog loading speed measuring tool that you normally use.</span> <span class="notranslate"> Has the browser caching notification from Favicon.ico disappeared?</span> </p><h4>UPDATE:</h4><p> <span class="notranslate"> It turns out that there was a mistake for the Staticaly domain above, which caused an error at Lighthouse.</span> <span class="notranslate"> It turns out that now Staticaly uses the <code class="notranslate plaintext">statically.io</code> (double L) domain, but we can still use the <code class="notranslate plaintext">staticaly.com</code> domain (single L).</span> <span class="notranslate"> I have corrected the above tutorial for using Favicon with Staticaly.</span> </p><p> <span class="notranslate"> And in addition, we can control the length of cache for Favicon with Staticaly.</span> <span class="notranslate"> By default, Staticaly provides 1 day cache.</span> <span class="notranslate"> But we can provide parameters to increase the cache time by seconds such as the following for 1 year cache (as long as it is not clear cache).</span> </p><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='https://cdn.statically.io/favicons/www.domainanda.com</code> <mark>?cache=31556952</mark>' rel='icon' type='image/x-icon'/&gt;</pre><p> <span class="notranslate"> And this post about how to overcome the leverage of browser caching from Favicon is also made with audio visual that you can watch in the following video:</span> </p><amp-youtube data-videoid="E0Zqo3HpJdU" height="270" layout="responsive" width="480"></amp-youtube><p> <span class="notranslate"> May be useful.</span> </p><div class="clear"></div></div><br><div class="clear"></div><div class="clear"></div><img on="tap:lightbox1" role="button" tabindex="0" layout="responsive" width height src="https://imgcdn.000webhostapp.com/https/imgcdn.000webhostapp.com/c76671c4067b4ca042a47c629a10c838.jpeg" alt="Overcoming Browser Caching Leverage for Favicon.ico" title></div><link href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/AGC/css/responsive.css" rel="noopener external nofollow noreferrer stylesheet"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css"><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script><script src="https://codepen.io/dimaslanjaka/pen/dyPYagy.js"></script><script src="https://codepen.io/dimaslanjaka/pen/aQRrbR.js"></script>  
-
-        
-
-        
-        <div class="post-announce">
-            Thank you for reading, this article belongs to
-            <a href="https://git.webmanajemen.com">Website Management Indonesia</a>
-            copyright, if reproduced, please indicate the source：Website Management Indonesia（<a href="https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html">https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html</a>）
-        </div>
-        
-
-        
-        <div id="ads-bottom" class="text-center">
-            <style>
-            .adsense_responsive_1 { width: 320px; height: 100px; }
-            @media(min-width: 500px) { .adsense_responsive_1 { width: 468px; height: 60px; } }
-            @media(min-width: 800px) { .adsense_responsive_1 { width: 728px; height: 90px; } }
-            </style>
-            <!-- adsense single banner auto square 6376402862 -->
-            <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script-->
-            <ins class="adsbygoogle adsense_responsive_1" style="display:inline-block" data-full-width-responsive="true" data-ad-client="ca-pub-1165447249910969" data-ad-slot="6376402862"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        
-
-        <!-- https://github.com/sergeyzwezdin/hexo-related-posts -->
-        
-
-        <div class="post__prevs">
-            <div class="post__prev">
-                
-                <a href="/2019/12/heres-how-to-stop-unicef-donations.html" title="Here's How to Stop UNICEF Donations Right And Easily" rel="next"><i class="iconfont icon-prev"></i>Here's How to Stop UNICEF Donations Right And Easily</a>
-                
+    <div class="mdui-list" mdui-collapse="{accordion: true}">
+        <a href="/" class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+            <div class="mdui-list-item-content">Home</div>
+        </a>
+        <div class="mdui-collapse-item">
+            <script>var a = localStorage.getItem("mdui-collapse-item-0");
+              if (a) {
+                document.getElementsByClassName("mdui-collapse-item")[0].className += " mdui-collapse-item-open"
+              }
+              ;</script>
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+                <div class="mdui-list-item-content">Archive</div>
+                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
-            <div class="post__prev post__prev--right">
+            <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
                 
-                <a href="/2019/12/membuat-array-javascript-unik.html" title="Membuat array javascript unik" rel="prev">Membuat array javascript unik<i class="iconfont icon-next"></i></a>
+                <a class="mdui-ripple sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2021/07/">July 2021<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="mdui-ripple sidebar_archives-count">9</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">128</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="mdui-ripple sidebar_archives-count">44</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="mdui-ripple sidebar_archives-count">28</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="mdui-ripple sidebar_archives-count">13</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="mdui-ripple sidebar_archives-count">28</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="mdui-ripple sidebar_archives-count">25</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="mdui-ripple sidebar_archives-count">55</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="mdui-ripple sidebar_archives-count">8</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="mdui-ripple sidebar_archives-count">12</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="mdui-ripple sidebar_archives-count">20</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="mdui-ripple sidebar_archives-count">24</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="mdui-ripple sidebar_archives-count">48</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="mdui-ripple sidebar_archives-count">21</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="mdui-ripple sidebar_archives-count">26</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="mdui-ripple sidebar_archives-count">34</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="mdui-ripple sidebar_archives-count">68</span></a>
                 
             </div>
         </div>
-    </div>
-</article>
-
-
-        
-        
-            <div id="disqus_thread"></div>
-        
-    </div>
-
-    <aside class="page__sidebar">
-    <!-- 
-        <div class="sidebar__img">
-            <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="Website Management Indonesia" title="Website Management Indonesia">
+        <div class="mdui-collapse-item">
+            <script>var a = localStorage.getItem("mdui-collapse-item-1");
+              if (a) {
+                document.getElementsByClassName("mdui-collapse-item")[1].className += " mdui-collapse-item-open"
+              }
+              ;</script>
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+                <div class="mdui-list-item-content">Category</div>
+                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                
+                <a class="mdui-ripple sidebar_archives-link" href="/categories/Games/">Games<span class="mdui-ripple sidebar_archives-count">17</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Games/Genshin-Impact/">Genshin Impact<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland<span class="mdui-ripple sidebar_archives-count">12</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Regular-Expression/">Regular Expression<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Test/">Test<span class="mdui-ripple sidebar_archives-count">3</span></a>
+                
+            </div>
         </div>
-     -->
-
-    <form id="page-search-from" class="page__search-from" action="/search/">
-        <label class="search-form__item">
-            <input class="input" type="text" name="search" placeholder="Search...">
-            <i class="iconfont icon-search"></i>
-        </label>
-    </form>
-
-    
-        <div class="sidebar__block">
-            <h3 class="block__title">Introduction</h3>
-            <p class="block__text">External source WMI Github Laboratory</p>
+        <div class="mdui-collapse-item">
+            <script>var a = localStorage.getItem("mdui-collapse-item-2");
+              if (a) {
+                document.getElementsByClassName("mdui-collapse-item")[2].className += " mdui-collapse-item-open"
+              }
+              ;</script>
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+                <div class="mdui-list-item-content">Tag</div>
+                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                
+                <a class="mdui-ripple sidebar_archives-link" href="/tags/AMP/" rel="tag">AMP<span class="mdui-ripple sidebar_archives-count">15</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Adsense/" rel="tag">Adsense<span class="mdui-ripple sidebar_archives-count">31</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Android/" rel="tag">Android<span class="mdui-ripple sidebar_archives-count">92</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Auto-Click/" rel="tag">Auto Click<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Blogger/" rel="tag">Blogger<span class="mdui-ripple sidebar_archives-count">110</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Blogging/" rel="tag">Blogging<span class="mdui-ripple sidebar_archives-count">59</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/CSS/" rel="tag">CSS<span class="mdui-ripple sidebar_archives-count">72</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Chest-Location/" rel="tag">Chest Location<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/CodeIgniter/" rel="tag">CodeIgniter<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Durango/" rel="tag">Durango<span class="mdui-ripple sidebar_archives-count">14</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Event/" rel="tag">Event<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Facebook/" rel="tag">Facebook<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Fonts/" rel="tag">Fonts<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Game-Control/" rel="tag">Game Control<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Games/" rel="tag">Games<span class="mdui-ripple sidebar_archives-count">58</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Genshin-Impact/" rel="tag">Genshin Impact<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Github/" rel="tag">Github<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Gradle/" rel="tag">Gradle<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/HTML/" rel="tag">HTML<span class="mdui-ripple sidebar_archives-count">96</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Hosting/" rel="tag">Hosting<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/JS/" rel="tag">JS<span class="mdui-ripple sidebar_archives-count">89</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Java/" rel="tag">Java<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Kotlin/" rel="tag">Kotlin<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Life-Skill/" rel="tag">Life Skill<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux-Unix/" rel="tag">Linux/Unix<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Macros/" rel="tag">Macros<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Marketing-Strategies/" rel="tag">Marketing Strategies<span class="mdui-ripple sidebar_archives-count">12</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Miscellaneous/" rel="tag">Miscellaneous<span class="mdui-ripple sidebar_archives-count">13</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Movies/" rel="tag">Movies<span class="mdui-ripple sidebar_archives-count">48</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Musics/" rel="tag">Musics<span class="mdui-ripple sidebar_archives-count">128</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/PHP/" rel="tag">PHP<span class="mdui-ripple sidebar_archives-count">50</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Popular/" rel="tag">Popular<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Proxy/" rel="tag">Proxy<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Quest/" rel="tag">Quest<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/RegExp/" rel="tag">RegExp<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/SEO/" rel="tag">SEO<span class="mdui-ripple sidebar_archives-count">39</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Script/" rel="tag">Script<span class="mdui-ripple sidebar_archives-count">20</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Share/" rel="tag">Share<span class="mdui-ripple sidebar_archives-count">22</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Social-Media/" rel="tag">Social Media<span class="mdui-ripple sidebar_archives-count">21</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Software/" rel="tag">Software<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/TS/" rel="tag">TS<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Test/" rel="tag">Test<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Tips-Tricks/" rel="tag">Tips & Tricks<span class="mdui-ripple sidebar_archives-count">182</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Tools/" rel="tag">Tools<span class="mdui-ripple sidebar_archives-count">27</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/VainGlory/" rel="tag">VainGlory<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Windows/" rel="tag">Windows<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Wordpress/" rel="tag">Wordpress<span class="mdui-ripple sidebar_archives-count">40</span></a>
+                
+            </div>
         </div>
-    
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Categories</h3>
-        <ul class="block-list"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/">Wordpress</a><span class="block-list-count">35</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/">SEO</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/HTML/Blogging/Social-Media/">Social Media</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/SEO/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/PHP/">PHP</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/">JS</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/">Blogger</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/HTML/">HTML</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/Blogging/">Blogging</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/JS/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/">HTML</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/HTML/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/">CSS</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/">JS</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/CSS/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/">Blogger</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/">HTML</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/HTML/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/Blogging/">Blogging</a><span class="block-list-count">4</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/AMP/">AMP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Wordpress/Blogger/AMP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/">Windows</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Windows/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/VainGlory/">VainGlory</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/">Tools</a><span class="block-list-count">26</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/">Software</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Software/Android/">Android</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/">Social Media</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/PHP/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Social-Media/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/">Script</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/PHP/">PHP</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/">Software</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Script/JS/Software/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/">PHP</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/Android/">Android</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/">JS</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/JS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/CodeIgniter/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Android/">Android</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tools/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">4</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">46</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Test/">Test</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/TS/">TS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/TS/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/TS/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Software/">Software</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/">Movies</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/Musics/">Musics</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Movies/Musics/Android/">Android</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Android/">Android</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Software/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/">Social Media</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Facebook/">Facebook</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Social-Media/Android/">Android</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/">Share</a><span class="block-list-count">15</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/">Blogger</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Blogging/">Blogging</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Share/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/">Script</a><span class="block-list-count">14</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/Facebook/">Facebook</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Social-Media/PHP/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/PHP/">PHP</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/">JS</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/JS/Blogger/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Gradle/">Gradle</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Gradle/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Script/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/">SEO</a><span class="block-list-count">30</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/">Share</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/">Blogger</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/Blogging/">Blogging</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Share/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/">Blogging</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogging/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/">Blogger</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/HTML/">HTML</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/SEO/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Proxy/">Proxy</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/">Popular</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Software/">Software</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Software/Android/">Android</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/">Android</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Social-Media/PHP/Android/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/">Github</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Github/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Popular/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/">PHP</a><span class="block-list-count">20</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Android/">Android</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/PHP/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Musics/">Musics</a><span class="block-list-count">127</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Movies/">Movies</a><span class="block-list-count">47</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Miscellaneous/">Miscellaneous</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">8</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Marketing-Strategies/Social-Media/">Social Media</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Linux-Unix/">Linux/Unix</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Kotlin/">Kotlin</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Java/">Java</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/">Gradle</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/Kotlin/">Kotlin</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Java/Gradle/Kotlin/Android/">Android</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/">JS</a><span class="block-list-count">46</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Windows/">Windows</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">5</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Social-Media/">Social Media</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Social-Media/Facebook/">Facebook</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/">Share</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/HTML/">HTML</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Share/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/SEO/">SEO</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/SEO/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/PHP/">PHP</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/">HTML</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Marketing-Strategies/">Marketing Strategies</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Marketing-Strategies/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/">Blogger</a><span class="block-list-count">12</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Social-Media/">Social Media</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/Social-Media/">Social Media</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/HTML/Blogging/Social-Media/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/Blogging/">Blogging</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/JS/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/">Hosting</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Wordpress/">Wordpress</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Script/">Script</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/Script/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/">PHP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Hosting/PHP/Tips-Tricks/Linux-Unix/">Linux/Unix</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/">HTML</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Miscellaneous/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/Blogging/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/HTML/AMP/">AMP</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Github/">Github</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Github/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/">Genshin Impact</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Games/">Games</a><span class="block-list-count">5</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Genshin-Impact/Games/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">5</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/">Games</a><span class="block-list-count">65</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="block-list-count">12</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="block-list-count">3</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="block-list-count">5</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/">Durango</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/Android/">Android</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Durango/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">6</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Android/">Android</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Games/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Fonts/">Fonts</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Fonts/Miscellaneous/">Miscellaneous</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Facebook/">Facebook</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Facebook/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Durango/">Durango</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CodeIgniter/">CodeIgniter</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/">CSS</a><span class="block-list-count">65</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Script/">Script</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/">JS</a><span class="block-list-count">23</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/HTML/">HTML</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/Blogger/">Blogger</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/JS/Blogger/HTML/">HTML</a><span class="block-list-count">7</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/">HTML</a><span class="block-list-count">19</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/">Blogger</a><span class="block-list-count">13</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/">HTML</a><span class="block-list-count">9</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/CSS/Blogger/HTML/AMP/">AMP</a><span class="block-list-count">3</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/">Blogging</a><span class="block-list-count">7</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogging/Social-Media/">Social Media</a><span class="block-list-count">2</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/">Blogger</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/">HTML</a><span class="block-list-count">10</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/HTML/AMP/">AMP</a><span class="block-list-count">5</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Blogger/AMP/">AMP</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Android/">Android</a><span class="block-list-count">24</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Android/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">13</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/">Adsense</a><span class="block-list-count">31</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/">Wordpress</a><span class="block-list-count">4</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/PHP/">PHP</a><span class="block-list-count">2</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/Blogger/Blogging/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/AMP/">AMP</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Wordpress/AMP/PHP/">PHP</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/">Tools</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tools/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">3</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Share/">Share</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Share/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/">SEO</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/SEO/Blogger/Blogging/">Blogging</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/">JS</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/Blogger/">Blogger</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/JS/Blogger/Tips-Tricks/">Tips & Tricks</a><span class="block-list-count">1</span></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/">CSS</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/HTML/">HTML</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/CSS/Blogger/HTML/Blogging/">Blogging</a><span class="block-list-count">2</span></li></ul></li></ul></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Blogger/">Blogger</a><span class="block-list-count">3</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/Adsense/Blogger/HTML/">HTML</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul>
+        <a href="/about" class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+            <div class="mdui-list-item-content">About</div>
+        </a>
     </div>
 
-    <div class="sidebar__block">
-        <h3 class="block__title">Latest Post</h3>
+    <div class="mdui-divider"></div>
+
+    <div class="mdui-list" mdui-collapse="{accordion: true}">
         
-        <ul class="block-list latest-post-list">
-            
-                    <li class="latest-post-item">
-                        <a href="/RegExp/RegExp.html" title="What is RegExp">
-                            <div class="item__cover">
-                                <img src="https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg" alt="What is RegExp">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">What is RegExp</h3>
-                                <span class="item__text">2021-09-22</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/RegExp/badword.html" title="Badword">
-                            <div class="item__cover">
-                                <img src="/RegExp/RegExp/badwords.png" alt="Badword">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">Badword</h3>
-                                <span class="item__text">2021-09-22</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/The%20Legend%20Of%20Neverland/Fishing.html" title="Auto Fishing">
-                            <div class="item__cover">
-                                <img src="/The Legend Of Neverland/Fishing/Studio_Project.jpeg" alt="Auto Fishing">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">Auto Fishing</h3>
-                                <span class="item__text">2021-09-19</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html" title="Bluestacks Game Control The Legend Of Neverland">
-                            <div class="item__cover">
-                                <img src="https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png" alt="Bluestacks Game Control The Legend Of Neverland">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">Bluestacks Game Control The Legend Of Neverland</h3>
-                                <span class="item__text">2021-09-07</span>
-                            </div>
-                        </a>
-                    </li>
-                
-        </ul>
-    
-    </div>
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Tags</h3>
+            <a href="/page/about-me"
+               class="mdui-list-item mdui-ripple">About Me</a>
         
-        <ul class="block-list tag-list clearfix">
-            
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Auto-Click/">Auto Click</a>
-                    </li>
+            <a href="/page/bot-detect"
+               class="mdui-list-item mdui-ripple">Bot Detect</a>
+        
+            <a href="/contact"
+               class="mdui-list-item mdui-ripple">Contact</a>
+        
+        <div class="mdui-collapse-item">
+            <script>var a = localStorage.getItem("mdui-collapse-item-3");
+              if (a) {
+                document.getElementsByClassName("mdui-collapse-item")[3].className += " mdui-collapse-item-open"
+              }
+              ;</script>
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-content">Links</div>
+                <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
                 
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Chest-Location/">Chest Location</a>
-                    </li>
                 
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Event/">Event</a>
-                    </li>
+                    <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple"
+                       style="justify-content: center;">No Links</a>
                 
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Game-Control/">Game Control</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Games/">Games</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Genshin-Impact/">Genshin Impact</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Life-Skill/">Life Skill</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Macros/">Macros</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Quest/">Quest</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/RegExp/">RegExp</a>
-                    </li>
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Test/">Test</a>
-                    </li>
-                
-        </ul>
-    
+            </div>
+        </div>
     </div>
-
-    <div class="sidebar__block">
-        <h3 class="block__title">ads</h3>
-        <style>
-        .adsense_responsive_sidebar { height: 100px; padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
-        @media(min-width: 500px) { .adsense_responsive_sidebar { height: 250px; } }
-        @media(min-width: 800px) { .adsense_responsive_sidebar { height: 600px; width: 160px } }
-        </style>
-        <!-- adsense single banner auto square 6376402862 -->
-        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script-->
-        <ins class="adsbygoogle adsense_responsive_sidebar" style="display:inline-block" data-full-width-responsive="true" data-ad-client="ca-pub-1165447249910969" data-ad-slot="3325057139"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- <div class="sidebar__block">
-        <h3 class="block__title">Friend Links</h3>
-        <ul class="block-list">
-            
-        </ul>
-    </div> -->
 </aside>
 
-</main>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+    
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
 
-
-        
-            <!-- Footer -->
-<footer class="page__footer">
-    <section class="footer__top">
-        <div class="page__container footer__container">
-            
-            <div class="footer-top__item footer-top__item--2">
-                <h3 class="item__title">About</h3>
-                <div class="item__content">
-                    <p class="item__text">WMI</p>
-                    <ul class="footer__contact-info">
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-address"></i>
-                            <span>Surabaya, Indonesia</span>
-                        </li>
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-email2"></i>
-                            <span>dimaslanjaka@gmail.com</span>
-                        </li>
-                    </ul>
+    <style>#main article .mdui-card-content .center-block {
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important
+      }</style>
+    <article class="mdui-card mdui-m-b-5">
+        <header class="mdui-card-media">
+            <img src="https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg"
+                 style="max-height: 240px;">
+            <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                    <div class="mdui-card-primary-title">Overcoming Browser Caching Leverage for Favicon.ico</div>
+                    <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-12-24 / <i
+                                class="iconfont">&#xe601;</i> Dimas Lanjaka Kumala Indra
+                        
+                    </div>
                 </div>
             </div>
-
+            <div class="mdui-card-menu">
+                
+                    <button class="mdui-btn mdui-btn-icon mdui-text-color-white"
+                            mdui-menu="{target: '#qrcode', align: 'right'}"><i
+                                class="mdui-icon material-icons">devices</i></button>
+                    <ul class="mdui-menu" id="qrcode">
+                        
+                            <li class="mdui-menu-item"><a
+                                        class="mdui-text-center mdui-ripple">Send to phone</a></li>
+                        
+                        <li class="mdui-menu-item" disabled>
+                            
+                                <img src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html&chld=M|2">
+                            
+                        </li>
+                    </ul>
+                
+                
+                    <button class="mdui-btn mdui-btn-icon mdui-text-color-white"
+                            mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i>
+                    </button>
+                    <ul class="mdui-menu" id="share_menu">
+                        <li class="mdui-menu-item">
+                            <a href="http://service.weibo.com/share/share.php?appkey=&title=Overcoming Browser Caching Leverage for Favicon.ico&url=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html&pic=https://git.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
+                               target="_blank" class="mdui-ripple">Share to Weibo</a>
+                        </li>
+                        <li class="mdui-menu-item">
+                            <a href="https://twitter.com/intent/tweet?text=Overcoming Browser Caching Leverage for Favicon.ico&url=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html&via=[object Object]"
+                               target="_blank" class="mdui-ripple">Share to Twitter</a>
+                        </li>
+                        <li class="mdui-menu-item">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html" target="_blank"
+                               class="mdui-ripple">Share to Facebook</a>
+                        </li>
+                        <li class="mdui-menu-item">
+                            <a href="https://plus.google.com/share?url=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html" target="_blank"
+                               class="mdui-ripple">Share to Google+</a>
+                        </li>
+                        <li class="mdui-menu-item">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html&title=Overcoming Browser Caching Leverage for Favicon.ico"
+                               target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+                        </li>
+                        <li class="mdui-menu-item">
+                            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Overcoming Browser Caching Leverage for Favicon.ico&pics=https://git.webmanajemen.com/images/favicon.png&url=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html"
+                               target="_blank" class="mdui-ripple">Share to QQ</a>
+                        </li>
+                        <li class="mdui-menu-item">
+                            <a href="https://telegram.me/share/url?url=https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html&text=Overcoming Browser Caching Leverage for Favicon.ico"
+                               target="_blank" class="mdui-ripple">Share to Telegram</a>
+                        </li>
+                    </ul>
+                
+            </div>
+        </header>
+        <div class="mdui-card-content mdui-typo">
+            <div id="A-G-C" date="09 Dec 2019 17:01:02"><div class="post-body entry-content" id="post-body-5562675611904764504"><br><div class="clear"></div><br><p class="desc-post fontroboto fontweight400 m0 p0"> <span class="notranslate"> Overcoming Browser Caching Leverage for Favicon.ico - Favicon is the main icon of a website that appears on the left side of the browser tab and is the logo of the web.</span> <span class="notranslate"> A favicon can also be known as a shortcut icon, website icon, URL icon, or bookmark icon.</span> </p><noscript><img alt="Mengatasi Leverage Browser Caching Untuk Favicon.ico" height="720" src="https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg" title="Overcoming Browser Caching Leverage for Favicon.ico" width="1280"></noscript><p> <span class="notranslate"> This favicon generally uses an image with the extension .ico with a fairly small size that is 16x16 pixels.</span> </p><p> <span class="notranslate"> Even though the size is quite small, the picture is still a picture.</span> <span class="notranslate"> And this is often a problem in the blog loading speed measuring tool that is browser caching leverage from Favicon.ico.</span> </p><p> <span class="notranslate"> To overcome the problem of Favicon.ico's browser caching leverage, please follow the following tricks.</span> </p><h4>Using Base64</h4><p> <span class="notranslate"> One way to overcome the browser caching leverage of Favicon.ico is to use a favicon with base64, here's how:</span> </p><ol><li> <span class="notranslate"> Please download a picture of your current blog favicon.</span> <span class="notranslate"> Please right-click on your blog page then select View source page.</span> <span class="notranslate"> Then find the code like this:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='https://www.domainanda.com/favicon.ico' rel='icon' type='image/x-icon'/&gt;</code> </pre><br> <span class="notranslate"> Please click the blue URL, after the favicon image is open, please save the image on the computer.</span> </li><li> <span class="notranslate"> Next, please use <a href="https://dimaslanjaka.github.io/page/safelink.html?url=aHR0cHM6Ly9iYXNlNjQuZ3VydS9jb252ZXJ0ZXIvZW5jb2RlL2ltYWdlL2ljbw==" rel="noopener external nofollow noreferrer" target="_blank" title="favicon to base64 conversion tool">the favicon to base64 conversion tool</a> , upload the favicon image that was saved on the computer then select URI Data - data: content / type; base64 for the Output Format.</span> </li><li> <span class="notranslate"> After that, go to the HTML edit blog then look for the code as follows:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link expr:href='data:blog.canonicalHomepageUrl + &amp;quot;favicon.ico&amp;quot;' rel='icon' type='image/x-icon'/&gt;</code> </pre><br> <span class="notranslate"> Then please change to the following:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='</code> <mark>URL BASE64 FROM STEP 2</mark>' rel='icon' type='image/x-icon'/&gt;</pre><br> <span class="notranslate"> Please replace the <code class="notranslate plaintext">URL BASE64 DARI LANGKAH 2</code> code <code class="notranslate plaintext">URL BASE64 DARI LANGKAH 2</code> with the base64 URL of the favicon that was converted in step 2.</span> </li></ol><p> <span class="notranslate"> Now please check your blog with the blog loading speed measuring tool that you normally use.</span> <span class="notranslate"> Has the browser caching notification from Favicon.ico disappeared?</span> </p><h4>Using Staticaly</h4><p> <span class="notranslate"> Base64 usually produces a URL that is long enough for an image, which of course will affect the HTML size of the blog.</span> </p><p> <span class="notranslate"> If you are not comfortable with a URL that is long enough from base64, you can overcome this browser caching leverage from Favicon.ico in a more simple way, namely by using <a href="https://dimaslanjaka.github.io/page/safelink.html?url=aHR0cHM6Ly9zdGF0aWNhbGx5LmlvL2Zhdmljb25z" rel="noopener external nofollow noreferrer" target="_blank" title="Staticaly">Staticaly</a> , the way is as follows:</span> </p><ol><li> <span class="notranslate"> Please enter the HTML blog edit then look for the code as follows:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link expr:href='data:blog.canonicalHomepageUrl + &amp;quot;favicon.ico&amp;quot;' rel='icon' type='image/x-icon'/&gt;</code> </pre></li><li> <span class="notranslate"> Then please change to the following:</span> <br><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='https://cdn.statically.io/favicons/</code> <mark>www.yourdomain.com</mark>' rel='icon' type='image/x-icon'/&gt;</pre><br> <span class="notranslate"> Please replace the code <code class="notranslate plaintext">www.domainanda.com</code> with your blog's domain name, it can also be without <code class="notranslate plaintext">www</code> .</span> </li><li> <span class="notranslate"> Done, pretty simple right?</span> </li></ol><p> <span class="notranslate"> Now please check your blog with the blog loading speed measuring tool that you normally use.</span> <span class="notranslate"> Has the browser caching notification from Favicon.ico disappeared?</span> </p><h4>UPDATE:</h4><p> <span class="notranslate"> It turns out that there was a mistake for the Staticaly domain above, which caused an error at Lighthouse.</span> <span class="notranslate"> It turns out that now Staticaly uses the <code class="notranslate plaintext">statically.io</code> (double L) domain, but we can still use the <code class="notranslate plaintext">staticaly.com</code> domain (single L).</span> <span class="notranslate"> I have corrected the above tutorial for using Favicon with Staticaly.</span> </p><p> <span class="notranslate"> And in addition, we can control the length of cache for Favicon with Staticaly.</span> <span class="notranslate"> By default, Staticaly provides 1 day cache.</span> <span class="notranslate"> But we can provide parameters to increase the cache time by seconds such as the following for 1 year cache (as long as it is not clear cache).</span> </p><pre class="notranslate html"> <code class="notranslate html"> &lt;link href='https://cdn.statically.io/favicons/www.domainanda.com</code> <mark>?cache=31556952</mark>' rel='icon' type='image/x-icon'/&gt;</pre><p> <span class="notranslate"> And this post about how to overcome the leverage of browser caching from Favicon is also made with audio visual that you can watch in the following video:</span> </p><amp-youtube data-videoid="E0Zqo3HpJdU" height="270" layout="responsive" width="480"></amp-youtube><p> <span class="notranslate"> May be useful.</span> </p><div class="clear"></div></div><br><div class="clear"></div><div class="clear"></div><img src="https://imgcdn.000webhostapp.com/https/imgcdn.000webhostapp.com/c76671c4067b4ca042a47c629a10c838.jpeg" alt="Overcoming Browser Caching Leverage for Favicon.ico"></div><link href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/AGC/css/responsive.css" rel="noopener external nofollow noreferrer stylesheet"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css"><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script><script src="https://codepen.io/dimaslanjaka/pen/dyPYagy.js"></script><script src="https://codepen.io/dimaslanjaka/pen/aQRrbR.js"></script>  
             
-            
-                <div class="footer-top__item footer__image">
-                    <img src="/assets/img/PicsArt_09-09-12.12.25.jpg" alt="logo" title="Website Management Indonesia">
-                </div>
-            
-            
-            
-            
+            <blockquote>
+                
+                <strong>PermaLink: </strong><br><a
+                        href="https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html">https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html</a>
+            </blockquote>
         </div>
-    </section>
-    <section class="footer__bottom">
-        <div class="page__container footer__container">
-            <p class="footer__copyright">©
-                <a href="https://github.com/DFCommunity/hexo-webnary-theme" rel="noopener external nofollow noreferrer" target="_blank">Web-Nary</a> 2020 powered by
-                <a href="http://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>, Made with ❤️ by 
-                <a href="https://github.com/BRAVO68WEB" rel="noopener external nofollow noreferrer" target="_blank">Bravo 68 Web</a>.
-            </p>
-            <ul class="footer__social-network clearfix">
-                
-                
-                    <li class="social-network__item">
-                        <a href="https://github.com/dimaslanjaka" rel="noopener external nofollow noreferrer" target="_blank" title="github">
-                            <i class="iconfont icon-github"></i>
-                        </a>
-                    </li>
-                
-                    <li class="social-network__item">
-                        <a href="dimaslanjaka@gmail.com" target="_blank" title="email">
-                            <i class="iconfont icon-email"></i>
-                        </a>
-                    </li>
-                
-                    <li class="social-network__item">
-                        <a href="/atom.xml" target="_blank" title="rss">
-                            <i class="iconfont icon-rss"></i>
-                        </a>
-                    </li>
-                
-                    <li class="social-network__item">
-                        <a href="https://twitter.com/bravo68web" rel="noopener external nofollow noreferrer" target="_blank" title="twitter">
-                            <i class="iconfont icon-twitter"></i>
-                        </a>
-                    </li>
-                
-                    <li class="social-network__item">
-                        <a href="https://facebook.com/dimaslanjaka1" rel="noopener external nofollow noreferrer" target="_blank" title="facebook">
-                            <i class="iconfont icon-facebook"></i>
-                        </a>
-                    </li>
-                
-                
-            </ul>
-        </div>
-    </section>
-</footer>
+        <footer class="mdui-card-actions">
+            
+            
+                <a class="mdui-ripple article_tags-link" href="/tags/Share/" rel="tag">Share</a><a class="mdui-ripple article_tags-link" href="/tags/Tips-Tricks/" rel="tag">Tips & Tricks</a>
+            
+        </footer>
         
+    </article>
+    
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
+    <script>$("#main article .mdui-card-content img.fancybox").on("click", function (e) {
+        $.fancybox.open({src: $(this).attr("src")});
+      });</script>
+
+
+    <nav id="paginator">
         
-            <!-- Back to top Buttom -->
-<div id="back-top" class="back-top back-top--hidden js-hidden">
-    <i class="iconfont icon-top"></i>
-</div>
+            <a rel="prev" class="extend prev" href="/2019/12/membuat-array-javascript-unik.html">
+                <button aria-label="prev"
+                        class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i
+                            class="mdui-icon material-icons">arrow_back</i></button>
+                <span class="mdui-p-x-3" mdui-tooltip="{content: 'Membuat array javascript unik'}">Prev</span>
+            </a>
         
+        <div class="spacer"></div>
+        
+            <a rel="next" class="extend next" href="/2019/12/heres-how-to-stop-unicef-donations.html">
+                <span class="mdui-p-x-3" mdui-tooltip="{content: 'Here&#39;s How to Stop UNICEF Donations Right And Easily'}">Next</span>
+                <button aria-label="next"
+                        class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i
+                            class="mdui-icon material-icons">arrow_forward</i></button>
+            </a>
+        
+    </nav>
+
+
+    <div id="comment" class="mdui-m-t-5">
+        <div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = 'https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html';
+    this.page.identifier = 'https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html';
+  };
+  (function () {
+    var d = document, s = d.createElement('script');
+    s.src = '//dimaslanjaka.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank"
+                                                  rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
+</noscript>
+
     </div>
 
-    <!-- build:js /js/common.js -->
-        <script type="text/javascript" src="js/common/utils.js"></script>
-        <script type="text/javascript" src="js/common/pack.js"></script>
-        <script type="text/javascript" src="js/common/animation.js"></script>
-        <script type="text/javascript" src="js/layout/loading.js"></script>
-        <script type="text/javascript" src="js/layout/header.js"></script>
-        <script type="text/javascript" src="js/layout/back-top.js"></script>
-        <script type="text/javascript" src="js/layout/post.js"></script>
-    <!-- endbuild -->
-
-    
-    
-<script src="/js/page/post.js"></script>
 
 
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+    <div class="mdui-p-y-0 mdui-text-center">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    <div class="mdui-p-y-1 mdui-text-center">
+        Copyright &copy;
+        2014 -
+        
+        2021 Dimas Lanjaka<br>
+        Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent"
+                      rel="nofollow noopener noreferrer" style="margin-right: 2px">Hexo</a>
+        Website Manajemen Indonesia
+        
+        
+    </div>
+</footer>
 
-    
-    
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  
+<script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
 
-<!--{ if page.comments && config.disqus_shortname }-->
+  
+<script src="/custom.js"></script>
 
-    <script id="dsq-count-scr">
-        var disqus_config = function () {
-            this.page.url = 'https://git.webmanajemen.com/2019/12/overcoming-browser-caching-leverage-for.html';
-            this.page.identifier = '/2019/12/overcoming-browser-caching-leverage-for.html';
-            this.page.title = 'Overcoming Browser Caching Leverage for Favicon.ico';
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://dimaslanjaka.disqus.com/embed.js';
-        s.async = true;
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a target="_blank" href="https://disqus.com/?ref_noscript" rel="noopener external nofollow noreferrer">comments powered by Disqus.</a></noscript>
-
-
-    <!-- 不蒜子统计 -->
-
-<!--script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script-->
-<script async src="//cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js"></script>
-
-
-
-     
-
-
-
-
-
-
-
-
-
-    
-    <!-- force https -->
-    <script type="text/javascript" src="/js/https.js"></script>
-    
-
-    
-    <link rel="stylesheet" href="/js/adblock.css" media="all">
-    <script type="text/javascript" src="/js/adblock.js"></script>
-    
 </body>
 </html>

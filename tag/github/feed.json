@@ -1,0 +1,42 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Website Management Indonesia • All posts by \"github\" tag",
+    "description": "External source WMI Github Laboratory",
+    "home_page_url": "https://git.webmanajemen.com",
+    "items": [
+        {
+            "id": "https://git.webmanajemen.com/2020/10/git-force-redownload-from-remote.html",
+            "url": "https://git.webmanajemen.com/2020/10/git-force-redownload-from-remote.html",
+            "title": "Git force redownload from remote repository",
+            "date_published": "2020-10-26T09:39:00.001Z",
+            "content_html": "<p>Tutorial</p><pre><br>git reset --hard origin/<branch_name><br>git fetch --all<br></branch_name></pre>  <p>Example from master</p><pre><br>git reset --hard origin/master<br>git fetch --all<br></pre>",
+            "tags": [
+                "Github"
+            ]
+        },
+        {
+            "id": "https://git.webmanajemen.com/2020/10/fix-add-file-to-gitignore-not-filtered.html",
+            "url": "https://git.webmanajemen.com/2020/10/fix-add-file-to-gitignore-not-filtered.html",
+            "title": "Fix add file to gitignore not filtered",
+            "date_published": "2020-10-25T09:45:00.005Z",
+            "content_html": "<pre><br>git rm -r --cached .<br>git add .<br>git commit -m 'clear git cache'<br>git push<br></pre>",
+            "tags": [
+                "Tips & Tricks",
+                "Github"
+            ]
+        },
+        {
+            "id": "https://git.webmanajemen.com/2020/10/how-to-make-pull-request-or.html",
+            "url": "https://git.webmanajemen.com/2020/10/how-to-make-pull-request-or.html",
+            "title": "How to make pull request or contribution on github",
+            "date_published": "2020-10-16T23:51:00.004Z",
+            "content_html": "<h2>Contribution Tutorial</h2><ol>  <li>Fork it (git clone https://github.com/name/repo)</li>  <li>Create your feature branch (git checkout -b my-new-feature)</li>  <li>Commit your changes (git commit -am 'Add some feature')</li>  <li>Push to the branch (git push origin my-new-feature)</li>  <li>Create new Pull Request</li></ol>",
+            "tags": [
+                "Social Media",
+                "Tips & Tricks",
+                "Popular",
+                "Github"
+            ]
+        }
+    ]
+}

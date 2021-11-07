@@ -1,0 +1,31 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Website Management Indonesia • All posts by \"windows\" tag",
+    "description": "External source WMI Github Laboratory",
+    "home_page_url": "https://git.webmanajemen.com",
+    "items": [
+        {
+            "id": "https://git.webmanajemen.com/2021/03/nodejs-windows-visual-studio.html",
+            "url": "https://git.webmanajemen.com/2021/03/nodejs-windows-visual-studio.html",
+            "title": "Fix Error NodeJS Windows Visual Studio",
+            "date_published": "2021-03-24T16:04:00.006Z",
+            "content_html": "<ul>    <li>Install <a href=\"https://visualstudio.microsoft.com/downloads/\" rel=\"noopener noreferer nofollow\" target=\"_blank\">Microsoft Visual Studio Code 2019</a></li>  <li>Install Module C++</li>  <img alt=\"Requirement C++ FOr Node JS\" src=\"https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png\" title=\"C++ for nodejs\">  <li>Type below codes to your terminal (administrator)</li>  <pre>\t<br>  npm i -g --production windows-build-tools<br>  npm config set msvs_version 2019 --global<br>  npm config set msbuild_path \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\"<br>  </pre></ul> ",
+            "tags": [
+                "JS",
+                "Windows"
+            ]
+        },
+        {
+            "id": "https://git.webmanajemen.com/2020/12/nodejs-common-fix-command-on-linux-or.html",
+            "url": "https://git.webmanajemen.com/2020/12/nodejs-common-fix-command-on-linux-or.html",
+            "title": "NodeJS Common Fix Command On Linux Or Windows",
+            "date_published": "2020-12-31T01:11:00.003Z",
+            "content_html": "<p></p><h3>Linux</h3> <pre class=\"bash\"><br># add new repository<br>sudo add-apt-repository ppa:deadsnakes/ppa<br>sudo apt-get update -y<br>sudo apt install libgtk-3-0 -y<br>sudo apt install software-properties-common checkinstall -y<br>sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev build-essential libncurses5-dev libgmp-dev libnss3-dev wget -y<br><br># nodejs additional packages<br>npm install --global lerna node-pre-gyp typescript<br><br># python 2.7<br>sudo apt install python-minimal -y<br>sudo apt install python-pip -y<br><br># Install<br>npm --build-from-source install<br><br># Fix Chrome Sandbox<br>sudo chown root:root node_modules/electron/dist/chrome-sandbox<br>sudo chmod 4755 node_modules/electron/dist/chrome-sandbox<br><br># run<br>sudo npm run start<br></pre> <h3>Windows</h3><li>install <a href=\"https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools\" rel=\"noopener noreferer nofollow\">Visual Studio Installer</a></li><pre><br>npm config set msvs_version 2017 --global<br>npm i electron-builder-squirrel-windows electron-builder node-gyp electron electron-rebuild -g<br>node-gyp configure --msvs_version=2017<br>npm install --global --production windows-build-tools<br>npm install<br></pre> <p></p>",
+            "tags": [
+                "Tips & Tricks",
+                "Linux/Unix",
+                "Windows"
+            ]
+        }
+    ]
+}

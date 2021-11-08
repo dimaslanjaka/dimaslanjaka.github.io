@@ -1,2 +1,1 @@
-let regexpMain = document.getElementById("regexp-main");
-console.log(regexpMain);
+let regexpMain=document.getElementById("regexp-main");console.log(regexpMain);

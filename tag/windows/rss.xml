@@ -5,8 +5,8 @@
         <link>https://git.webmanajemen.com</link>
         <description>External source WMI Github Laboratory</description>
         <language>en</language>
-        <pubDate>Wed, 24 Mar 2021 23:04:00 +0700</pubDate>
-        <lastBuildDate>Wed, 24 Mar 2021 23:04:00 +0700</lastBuildDate>
+        <pubDate>Wed, 24 Mar 2021 16:04:00 +0000</pubDate>
+        <lastBuildDate>Wed, 24 Mar 2021 16:04:00 +0000</lastBuildDate>
         <category>RegExp</category>
         <category>Test</category>
         <category>Game Control</category>
@@ -25,9 +25,9 @@
         <category>HTML</category>
         <category>AMP</category>
         <category>Facebook</category>
+        <category>Social Media</category>
         <category>Android</category>
         <category>Script</category>
-        <category>Social Media</category>
         <category>Tools</category>
         <category>Tips &amp; Tricks</category>
         <category>CodeIgniter</category>
@@ -42,25 +42,25 @@
         <category>Movies</category>
         <category>Musics</category>
         <category>Popular</category>
-        <category>Windows</category>
-        <category>Genshin Impact</category>
-        <category>Gradle</category>
-        <category>Chest Location</category>
-        <category>Quest</category>
         <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
         <category>Java</category>
+        <category>Gradle</category>
         <category>Kotlin</category>
         <category>Github</category>
         <category>TS</category>
+        <category>Windows</category>
+        <category>Genshin Impact</category>
+        <category>Chest Location</category>
+        <category>Quest</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/2021/03/nodejs-windows-visual-studio.html</guid>
             <title>Fix Error NodeJS Windows Visual Studio</title>
             <link>https://git.webmanajemen.com/2021/03/nodejs-windows-visual-studio.html</link>
             <category>JS</category>
             <category>Windows</category>
-            <pubDate>Wed, 24 Mar 2021 23:04:00 +0700</pubDate>
+            <pubDate>Wed, 24 Mar 2021 16:04:00 +0000</pubDate>
             <description><![CDATA[ &lt;ul&gt;    &lt;li&gt;Install &lt;a href=&#34;https://visualstudio.microsoft.com/downloads/&#34; rel=&#34;noopener noreferer nofollow&#34; target=&#34;_blank&#34;&gt;Microsoft Visual Studio Code 2019&lt;/a&gt;&lt;/li&gt;  &lt;li&gt;Install Module C++&lt;/li&gt;  &lt;img alt=&#34;Requirement C++ FOr Node JS&#34; src=&#34;https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png&#34; title=&#34;C++ for nodejs&#34;&gt;  &lt;li&gt;Type below codes to your terminal (administrator)&lt;/li&gt;  &lt;pre&gt;	&lt;br&gt;  npm i -g --production windows-build-tools&lt;br&gt;  npm config set msvs_version 2019 --global&lt;br&gt;  npm config set msbuild_path &#34;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe&#34;&lt;br&gt;  &lt;/pre&gt;&lt;/ul&gt;  ]]></description>
         </item>
         <item>
@@ -70,7 +70,7 @@
             <category>Tips &amp; Tricks</category>
             <category>Linux/Unix</category>
             <category>Windows</category>
-            <pubDate>Thu, 31 Dec 2020 08:11:00 +0700</pubDate>
+            <pubDate>Thu, 31 Dec 2020 01:11:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;/p&gt;&lt;h3&gt;Linux&lt;/h3&gt; &lt;pre class=&#34;bash&#34;&gt;&lt;br&gt;# add new repository&lt;br&gt;sudo add-apt-repository ppa:deadsnakes/ppa&lt;br&gt;sudo apt-get update -y&lt;br&gt;sudo apt install libgtk-3-0 -y&lt;br&gt;sudo apt install software-properties-common checkinstall -y&lt;br&gt;sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev build-essential libncurses5-dev libgmp-dev libnss3-dev wget -y&lt;br&gt;&lt;br&gt;# nodejs additional packages&lt;br&gt;npm install --global lerna node-pre-gyp typescript&lt;br&gt;&lt;br&gt;# python 2.7&lt;br&gt;sudo apt install python-minimal -y&lt;br&gt;sudo apt install python-pip -y&lt;br&gt;&lt;br&gt;# Install&lt;br&gt;npm --build-from-source install&lt;br&gt;&lt;br&gt;# Fix Chrome Sandbox&lt;br&gt;sudo chown root:root node_modules/electron/dist/chrome-sandbox&lt;br&gt;sudo chmod 4755 node_modules/electron/dist/chrome-sandbox&lt;br&gt;&lt;br&gt;# run&lt;br&gt;sudo npm run start&lt;br&gt;&lt;/pre&gt; &lt;h3&gt;Windows&lt;/h3&gt;&lt;li&gt;install &lt;a href=&#34;https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;Visual Studio Installer&lt;/a&gt;&lt;/li&gt;&lt;pre&gt;&lt;br&gt;npm config set msvs_version 2017 --global&lt;br&gt;npm i electron-builder-squirrel-windows electron-builder node-gyp electron electron-rebuild -g&lt;br&gt;node-gyp configure --msvs_version=2017&lt;br&gt;npm install --global --production windows-build-tools&lt;br&gt;npm install&lt;br&gt;&lt;/pre&gt; &lt;p&gt;&lt;/p&gt; ]]></description>
         </item>
     </channel>

@@ -20,7 +20,7 @@
 <meta property="og:description" content="Auto ads test   Adsense H1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-30T07:15:01.000Z">
-<meta property="article:modified_time" content="2021-11-09T15:45:50.563Z">
+<meta property="article:modified_time" content="2021-11-09T16:10:14.034Z">
 <meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="adsense">
 <meta property="article:tag" content="test">
@@ -445,8 +445,9 @@
   display: inline-block;
   background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
   color: #303030;
-  min-height: 18px;
-  min-width: 81px;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
 }
 </style><script>/**
  * Browser processor
@@ -605,8 +606,20 @@ if (!isBrowser()) {
     replaceWith,
     insertAfter,
   };
+} else {
+  window.__tcfapi = (command, parameter, callback) => {
+    if (command === "checkConsent") {
+      callback(true);
+    }
+    if (command === "addEventListener") {
+      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
+    }
+  };
+  for (let index = 0; index < adscont.length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
 }
-</script><script>(adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-1165447249910969"
-        });</script></body>
+</script></body>
 </html>

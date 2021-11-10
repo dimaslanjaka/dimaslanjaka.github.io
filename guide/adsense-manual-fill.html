@@ -18,7 +18,7 @@
 <meta property="og:description" content="to target ads to appear to the specified position or element, then you must create an element with the hexo-adsense-fill attribute.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-10T07:15:01.000Z">
-<meta property="article:modified_time" content="2021-11-10T14:00:53.068Z">
+<meta property="article:modified_time" content="2021-11-10T16:33:20.139Z">
 <meta property="article:author" content="Dimas Lanjaka">
 <meta property="article:tag" content="adsense">
 <meta property="article:tag" content="test">
@@ -43,13 +43,7 @@
 
   
   <link rel="canonical" href="https://www.webmanajemen.com/guide/adsense-manual-fill.html" />
-     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create','UA-106238155-1','auto');ga('send','pageview');
-</script>   
+        
 <link rel="stylesheet" href="/css/mdui.css">
 <link rel="stylesheet" href="/css/style.css">
  
@@ -69,8 +63,18 @@
     "*.min.html",
     "exclude/**/*"
   ],
-  "development": false
-}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script>
+  "development": false,
+  "args": {
+    "_": []
+  },
+  "debug": false,
+  "safe": false,
+  "silent": false,
+  "env": "development",
+  "version": "5.4.0",
+  "cmd": "generate",
+  "init": true
+}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script></head>
 
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
@@ -545,12 +549,15 @@ if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && lo
      
 </script>
 </div></div><style>*[hexo-adsense="ads-content"] {
-  display: inline-block;
+  display: block;
   background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
   color: #303030;
   /*min-height: 18px;
   min-width: 81px;*/
   min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style><script>/**
  * Browser processor
@@ -588,18 +595,19 @@ function insertAfter(newElement, oldElement) {
  * @param {HTMLElement} oldElement
  */
 function replaceWith(newElement, oldElement) {
-  /*
   if (!oldElement.parentNode) {
     console.log(oldElement, "parent null");
     let d = document.createElement("div");
     d.appendChild(oldElement);
   } else {
+    //console.log(oldElement.parentNode.tagName);
     oldElement.parentNode.replaceChild(newElement, oldElement);
   }
-  */
+  /*
   try {
     oldElement.parentNode.replaceChild(newElement, oldElement);
   } catch (e) {}
+  */
 }
 
 let createElementFromHTML = function (htmlString) {
@@ -652,26 +660,6 @@ function newMethod() {
       let ads;
       let targetArticle = article.item(0);
 
-      /**
-       * auto ads on br
-       */
-      // eslint-disable-next-line no-unused-vars
-      const auto_br = function () {
-        let linebreak = targetArticle.querySelectorAll("br");
-        if (linebreak.length > 0) {
-          if (linebreak.length == 1) {
-            ads = adscont[0];
-            replaceWith(createElementFromHTML(ads), linebreak.item(0));
-          } else {
-            for (let index = 0; index < adscont.length; index++) {
-              ads = adscont[index];
-              replaceWith(createElementFromHTML(ads), linebreak.item(ranumb(0, linebreak.length)));
-            }
-          }
-          adshide.remove();
-        }
-      };
-
       // prioritize hexo-adsense-fill before auto ads on other elements
       const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
       if (ads_fill.length > 0) {
@@ -687,7 +675,7 @@ function newMethod() {
       adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
       //console.log(adscont.length, "ads left");
       if (adscont.length > 0) {
-        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6,hr");
+        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
         if (headers.length > 0) {
           // generate index of headers
           let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
@@ -706,18 +694,26 @@ function newMethod() {
       // the rest of the ads will show automatically to linebreak elements
       adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
       if (adscont.length > 0) {
-        const linebreaks = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6,hr");
+        const linebreaks = targetArticle.querySelectorAll("br,hr");
         if (linebreaks.length > 0) {
           // generate index of linebreaks
           let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
           //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
           for (let index = 0; index < adscont.length; index++) {
             ads = adscont[index];
-            const rlinebreaks = shuffleArr2(linebreaks_index);
             // pick a random index
             const rlinebreak = rlinebreaks.next().value;
-            const linebreak = linebreaks.item(rlinebreak);
-            replaceWith(createElementFromHTML(ads), linebreak);
+            if (typeof rlinebreak == "number") {
+              const linebreak = linebreaks.item(rlinebreak);
+              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
           }
         }
       }

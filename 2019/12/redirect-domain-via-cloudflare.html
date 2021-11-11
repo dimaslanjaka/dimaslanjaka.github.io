@@ -7,7 +7,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="renderer" content="webkit" />
 
+  <link rel="dns-prefetch" href="//secure.gravatar.com" />
+  <link rel="dns-prefetch" href="//static.codepen.io" />
+  <link rel="dns-prefetch" href="//res.cloudinary.com" />
+  <link rel="dns-prefetch" href="//ad.doubleclick.com" />
+  <link rel="dns-prefetch" href="//s3.buysellads.com" />
+  <link rel="dns-prefetch" href="//srv.buysellads.com" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//tpc.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//adservice.google.com" />
+  <link rel="dns-prefetch" href="//www.googletagservices.com" />
+  <link rel="dns-prefetch" href="//git.webmanajemen.com" />
+
   
+
   <title>Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare | WMI Gitlab</title>
 
   <link rel="shortcut icon" href="/images/favicon.png"> <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml"> <meta name="description" content="Step 1.Migrasi domain (host) ke cloudflare dengan mengubah nameserver nyaBelum ta">
@@ -21,17 +38,15 @@
 <meta property="og:image" content="https://1.bp.blogspot.com/-8UFKrpBeVuI/XegeaeZLNrI/AAAAAAAAAhI/zEQF27_xadQ113FMrPf1LtxR4xg9DLQygCLcBGAsYHQ/s640/Screenshot_1.png">
 <meta property="og:image" content="https://1.bp.blogspot.com/-XcZ4ifQNnnA/XegcYe4HtkI/AAAAAAAAAgs/5oSjgaP9gk0DAGTHF5xvHD-otMfKe9MCACLcBGAsYHQ/s640/Screenshot_1.png">
 <meta property="article:published_time" content="2019-12-04T14:03:00.000Z">
-<meta property="article:modified_time" content="2021-11-10T17:13:36.671Z">
-<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:modified_time" content="2021-11-11T10:45:56.960Z">
+<meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="SEO">
 <meta property="article:tag" content="Tips &amp; Tricks">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://1.bp.blogspot.com/-vaafAtA7fJ0/XegbZIw3CYI/AAAAAAAAAgg/0S7WeEzqKLg1nPSyrd1zJ-ZaVjXVORKZgCLcBGAsYHQ/s640/Screenshot_1.png">
 
-  <meta
-    name="keywords"
-    content=",SEO,Tips &amp; Tricks"
-  />
+  <meta name="keywords"
+    content=",SEO,Tips &amp; Tricks" />
   <meta name="format-detection" content="telephone=no,email=no" />
   <meta name="theme-color" content="#9C27B0" />
 
@@ -43,6 +58,10 @@
   <meta name="apple-mobile-web-app-title" content="Website Management Indonesia" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon" href="/images/favicon.png" />
+
+  <!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
 
   
   <link rel="canonical" href="https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html" />
@@ -78,7 +97,6 @@
   "cmd": "generate",
   "init": true
 }</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script></head>
-
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
@@ -112,7 +130,7 @@
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
-                <div class="mdui-grid-tile-title">Dimas Lanjaka</div>
+                <div class="mdui-grid-tile-title">Unknown Author</div>
                 <div class="mdui-grid-tile-subtitle"><i
                             class="mdui-icon material-icons">art_track</i>WMI Gitlab</div>
             </div>
@@ -230,8 +248,7 @@
   <header class="mdui-card-media">
     <img
       src="https://1.bp.blogspot.com/-vaafAtA7fJ0/XegbZIw3CYI/AAAAAAAAAgg/0S7WeEzqKLg1nPSyrd1zJ-ZaVjXVORKZgCLcBGAsYHQ/s640/Screenshot_1.png"
-      style="max-height: 240px"
-    />
+      style="max-height: 240px" />
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare</div>
@@ -252,8 +269,7 @@
         <li class="mdui-menu-item" disabled>
           
           <img
-            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&chld=M|2"
-          />
+            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&chld=M|2" />
           
         </li>
       </ul>
@@ -263,57 +279,32 @@
       </button>
       <ul class="mdui-menu" id="share_menu">
         <li class="mdui-menu-item">
-          <a
-            href="http://service.weibo.com/share/share.php?appkey=&title=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&pic=https://www.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Weibo</a
-          >
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&pic=https://www.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
+            target="_blank" class="mdui-ripple">Share to Weibo</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://twitter.com/intent/tweet?text=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&via=[object Object]"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Twitter</a
-          >
+          <a href="https://twitter.com/intent/tweet?text=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&via=[object Object]"
+            target="_blank" class="mdui-ripple">Share to Twitter</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Facebook</a
-          >
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html" target="_blank"
+            class="mdui-ripple">Share to Facebook</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html" target="_blank" class="mdui-ripple"
-            >Share to Google+</a
-          >
+          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html" target="_blank"
+            class="mdui-ripple">Share to Google+</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&title=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to LinkedIn</a
-          >
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&title=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare"
+            target="_blank" class="mdui-ripple">Share to LinkedIn</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare&pics=https://www.webmanajemen.com/images/favicon.png&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to QQ</a
-          >
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare&pics=https://www.webmanajemen.com/images/favicon.png&url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html"
+            target="_blank" class="mdui-ripple">Share to QQ</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&text=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Telegram</a
-          >
+          <a href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html&text=Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare" target="_blank"
+            class="mdui-ripple">Share to Telegram</a>
         </li>
       </ul>
       
@@ -323,7 +314,7 @@
     <div dir="ltr" style="text-align: left;" trbidi="on">Step 1.<br><br>Migrasi domain (host) ke cloudflare dengan mengubah nameserver nya<br><br>Belum tahu caranya ? Klik tautan&nbsp;<a href="https://web-manajemen.blogspot.com/p/search.html?q=host+domain+cloudflare" rel="noopener external nofollow noreferrer" target="_blank">Cara host domain ke cloudflare</a><br><br>Step 2.<br><br>Set DNS point ke 192.0.2.1 sebagai dummy saja atau ip yang lain boleh, dan aktifkan <b>Proxied DNS</b>, seperti gambar berikut yang saya tandai mark kuning :<br><img height="99" src="https://1.bp.blogspot.com/-vaafAtA7fJ0/XegbZIw3CYI/AAAAAAAAAgg/0S7WeEzqKLg1nPSyrd1zJ-ZaVjXVORKZgCLcBGAsYHQ/s640/Screenshot_1.png" width="640"><br><br>Step 3.<br><br>Setup <b>Page Rules</b>.<br><br><blockquote>Setup HTTP dan HTTPS secara terpisah untuk domain lama. Contoh milik saya: <b>blog.akarmas.com</b></blockquote><figure>  <img border="0" src="https://1.bp.blogspot.com/-8UFKrpBeVuI/XegeaeZLNrI/AAAAAAAAAhI/zEQF27_xadQ113FMrPf1LtxR4xg9DLQygCLcBGAsYHQ/s640/Screenshot_1.png" width="640" height="291" data-original-width="1365" data-original-height="620">  <figcaption>Screenshot 1 (http)</figcaption></figure> <figure>  <img border="0" data-original-height="767" data-original-width="1365" height="358" src="https://1.bp.blogspot.com/-XcZ4ifQNnnA/XegcYe4HtkI/AAAAAAAAAgs/5oSjgaP9gk0DAGTHF5xvHD-otMfKe9MCACLcBGAsYHQ/s640/Screenshot_1.png" style="margin-left: auto; margin-right: auto;" width="640">  <figcaption>Screenshot 2 (https)</figcaption></figure> <br>Keterangan diatas :<br>Saya ingin meredirect http(s)://blog.akarmas.com/* ke https://www.webmanajemen.com/$1<br><br>Setting Rules :<br>&nbsp;- Forwarding URL<br>&nbsp;- 301 - Permanent Redirect<br><br>Keterangan (<b>*</b>) di URL pertama menandakan semua PATH dan QUERY url<br>Keterangan <b>($1)</b> pada URL kedua menandakan FORWARDING dari (<b>*</b>) URL pertama<br><br><b>Selesai.</b><br>Tunggu minimal 30 menit agar Bekerja Dengan Sempurna.<br><br>sekarang semua URL http(s)://blog.akarmas.com/* akan di redirect sepenuhnya ke https://www.webmanajemen.com/$1</div> 
     <blockquote>
       
-      <strong>PermaLink: </strong><br /><a href="https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html">https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html</a>
+      <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html">https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare.html</a>
     </blockquote>
   </div>
   <footer class="mdui-card-actions">
@@ -386,34 +377,25 @@
                                                   rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
-  
-</main>
+  </main>
   <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-    <div class="mdui-p-y-0 mdui-text-center">
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </div>
-    <div class="mdui-p-y-1 mdui-text-center">
-        Copyright &copy;
-        2014 -
-        
-        2021 Dimas Lanjaka<br>
-        Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent"
-                      rel="nofollow noopener noreferrer" style="margin-right: 2px">Hexo</a>
-        Website Manajemen Indonesia
-        
-        
-    </div>
+  <div class="mdui-p-y-0 mdui-text-center">
+               
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2014 -  2021 Unknown Author<br />
+    Powered by
+    <a
+      href="https://hexo.io/"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="mdui-text-color-theme-accent"
+      rel="nofollow noopener noreferrer"
+      style="margin-right: 2px"
+      >Hexo</a
+    >
+    Website Manajemen Indonesia  
+  </div>
 </footer>
 
   <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>

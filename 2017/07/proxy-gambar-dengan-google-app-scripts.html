@@ -7,7 +7,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="renderer" content="webkit" />
 
+  <link rel="dns-prefetch" href="//secure.gravatar.com" />
+  <link rel="dns-prefetch" href="//static.codepen.io" />
+  <link rel="dns-prefetch" href="//res.cloudinary.com" />
+  <link rel="dns-prefetch" href="//ad.doubleclick.com" />
+  <link rel="dns-prefetch" href="//s3.buysellads.com" />
+  <link rel="dns-prefetch" href="//srv.buysellads.com" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//tpc.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//adservice.google.com" />
+  <link rel="dns-prefetch" href="//www.googletagservices.com" />
+  <link rel="dns-prefetch" href="//git.webmanajemen.com" />
+
   
+
   <title>Proxy Gambar dengan Google App Scripts | WMI Gitlab</title>
 
   <link rel="shortcut icon" href="/images/favicon.png"> <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml"> <meta property="og:type" content="article">
@@ -17,16 +34,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1">
 <meta property="article:published_time" content="2017-07-11T09:51:00.001Z">
-<meta property="article:modified_time" content="2021-11-10T17:13:36.843Z">
-<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:modified_time" content="2021-11-11T10:45:57.168Z">
+<meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1">
 
-  <meta
-    name="keywords"
-    content=",JS"
-  />
+  <meta name="keywords"
+    content=",JS" />
   <meta name="format-detection" content="telephone=no,email=no" />
   <meta name="theme-color" content="#9C27B0" />
 
@@ -38,6 +53,10 @@
   <meta name="apple-mobile-web-app-title" content="Website Management Indonesia" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon" href="/images/favicon.png" />
+
+  <!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
 
   
   <link rel="canonical" href="https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html" />
@@ -73,7 +92,6 @@
   "cmd": "generate",
   "init": true
 }</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script></head>
-
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
@@ -107,7 +125,7 @@
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
-                <div class="mdui-grid-tile-title">Dimas Lanjaka</div>
+                <div class="mdui-grid-tile-title">Unknown Author</div>
                 <div class="mdui-grid-tile-subtitle"><i
                             class="mdui-icon material-icons">art_track</i>WMI Gitlab</div>
             </div>
@@ -225,8 +243,7 @@
   <header class="mdui-card-media">
     <img
       src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1"
-      style="max-height: 240px"
-    />
+      style="max-height: 240px" />
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">Proxy Gambar dengan Google App Scripts</div>
@@ -247,8 +264,7 @@
         <li class="mdui-menu-item" disabled>
           
           <img
-            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&chld=M|2"
-          />
+            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&chld=M|2" />
           
         </li>
       </ul>
@@ -258,57 +274,32 @@
       </button>
       <ul class="mdui-menu" id="share_menu">
         <li class="mdui-menu-item">
-          <a
-            href="http://service.weibo.com/share/share.php?appkey=&title=Proxy Gambar dengan Google App Scripts&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&pic=https://www.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Weibo</a
-          >
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Proxy Gambar dengan Google App Scripts&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&pic=https://www.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
+            target="_blank" class="mdui-ripple">Share to Weibo</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://twitter.com/intent/tweet?text=Proxy Gambar dengan Google App Scripts&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&via=[object Object]"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Twitter</a
-          >
+          <a href="https://twitter.com/intent/tweet?text=Proxy Gambar dengan Google App Scripts&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&via=[object Object]"
+            target="_blank" class="mdui-ripple">Share to Twitter</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Facebook</a
-          >
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html" target="_blank"
+            class="mdui-ripple">Share to Facebook</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html" target="_blank" class="mdui-ripple"
-            >Share to Google+</a
-          >
+          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html" target="_blank"
+            class="mdui-ripple">Share to Google+</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&title=Proxy Gambar dengan Google App Scripts"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to LinkedIn</a
-          >
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&title=Proxy Gambar dengan Google App Scripts"
+            target="_blank" class="mdui-ripple">Share to LinkedIn</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Proxy Gambar dengan Google App Scripts&pics=https://www.webmanajemen.com/images/favicon.png&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to QQ</a
-          >
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Proxy Gambar dengan Google App Scripts&pics=https://www.webmanajemen.com/images/favicon.png&url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html"
+            target="_blank" class="mdui-ripple">Share to QQ</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&text=Proxy Gambar dengan Google App Scripts"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Telegram</a
-          >
+          <a href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html&text=Proxy Gambar dengan Google App Scripts" target="_blank"
+            class="mdui-ripple">Share to Telegram</a>
         </li>
       </ul>
       
@@ -318,7 +309,7 @@
     <div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><img alt="Contoh script aplikasi google" height="179" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1" style="border: 0px; height: auto; max-width: 100%; vertical-align: middle;" width="320"></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Saya telah menjadi penggemar berat&nbsp;<a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=https://developers.google.com/apps-script/&amp;usg=ALkJrhj9lA4tiLsXRrlYky_VCJvMqmXdBA" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">Google App Scripts</a>&nbsp;.</span>&nbsp;<span class="notranslate">Layanan ini memungkinkan Anda membuat skrip canggih yang dapat dijadwalkan dan terintegrasi dengan Google (email, Google Documents, Excel) dan API eksternal.</span>&nbsp;<span class="notranslate">Anda menulis dalam JavaScript, dalam editor kode berbasis browser tepat di Google Drive dan skripnya bahkan dapat dipublikasikan sebagai aplikasi web.</span>&nbsp;<span class="notranslate">Kuota atau batasannya&nbsp;<a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=https://developers.google.com/apps-script/guides/services/quotas&amp;usg=ALkJrhgRXlcPFGAKiqBPQ1MfYW2LWzuA8g#current_quotas" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">cukup bagus</a>&nbsp;sehingga Anda bisa dengan cepat&nbsp;<strong>membangun sesuatu yang kuat secara gratis</strong>&nbsp;.</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Hari ini, saya akan menunjukkan cara membuat Proxy Gambar dengan Google App Scripts yang memungkinkan Anda mengambil gambar dari domain lain atau membahas&nbsp;<a target="_blank" href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://en.wikipedia.org/wiki/Same-origin_policy&amp;usg=ALkJrhg-BEwgNcWIPMcBlpE3IQi1945qNg" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">kebijakan asal-usul</a>browser yang&nbsp;<a target="_blank" href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://en.wikipedia.org/wiki/Same-origin_policy&amp;usg=ALkJrhg-BEwgNcWIPMcBlpE3IQi1945qNg" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">sama</a>&nbsp;.</span>&nbsp;<span class="notranslate">Pada dasarnya, Google App Script adalah proxy sisi server untuk permintaan sisi klien Anda.</span>&nbsp;<span class="notranslate">Jadi, jika Anda&nbsp;<a target="_blank" href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://techslides.com/save-svg-as-an-image&amp;usg=ALkJrhhrr3kl16yi2_dzUZY7Oxxo13U3AQ" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">mengekspor SVG sebagai gambar</a>&nbsp;dengan gambar yang dihosting di domain lain atau menyimpan kanvas HTML5 dengan toDataURL (), ini dapat membantu Anda menghindari kesalahan kanvas dan browser yang tercemar.</span>&nbsp;<span class="notranslate">Tapi, sungguh, ini hanyalah&nbsp;<strong>contoh sederhana dari Google App Script yang diterbitkan sebagai aplikasi web</strong>&nbsp;.</span><br><span id="more-5872"></span><br><span class="notranslate">Konsepnya sederhana.</span>&nbsp;<span class="notranslate">Saya menjalankan skrip dan meneruskannya ke url gambar yang naskahnya akan diambil dan dikonversi ke data dalam&nbsp;<a target="_blank" href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://en.wikipedia.org/wiki/Base64&amp;usg=ALkJrhjhqICRLPUCpOaSFDlKiaw25ZjQ0A" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">pengkodean base64</a>&nbsp;.</span>&nbsp;<span class="notranslate">Akan lebih mudah untuk hanya proxy atau mengembalikan gambar biner</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">tapi kelas&nbsp;<a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=https://developers.google.com/apps-script/reference/content/content-service&amp;usg=ALkJrhi1BS8_R4X_bZuYKVBaBMfuGV0f7w" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">App Script Content Service</a>&nbsp;tidak mengizinkan&nbsp;<a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=https://code.google.com/p/google-apps-script-issues/issues/detail%3Fid%3D2582&amp;usg=ALkJrhj2TN4fO-Zh9NA3o7euyJ-InoTUrA" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">output konten biner</a>&nbsp;.</span>&nbsp;<span class="notranslate">Jadi, script harus mengubah gambar biner menjadi teks dan meneruskannya kembali ke respon.</span>&nbsp;<span class="notranslate">Mari kita lihat kodenya.</span><br><span class="notranslate"><br></span></div><pre>function doGet(e) {<br>  var url = decodeURIComponent(e.parameter.url);<br>  try {<br>    var response = UrlFetchApp.fetch(url);<br>  } catch (e) {<br>    return e.toString();<br>  }<br>  var type = response.getHeaders()['Content-Type'];<br>  var b64 = Utilities.base64Encode(response.getContent());<br>  var data = 'data:'+type+';base64,'+b64;<br>  return ContentService.createTextOutput(data);<br>}</pre><br><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Kami memiliki satu fungsi yang mengambil parameter kueri URL, membuat permintaan ke url tersebut dengan panggilan UrlFetchApp, menggunakan layanan Utilities.base64Encode untuk mengubah gambar biner menjadi teks, dan kemudian mengembalikannya ke metode ContentService.createTextOutput.</span><span class="notranslate">Berikut adalah contoh untuk&nbsp;<a target="_blank" href="http://techslides.com/demos/samples/sample.png" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">gambar</a>ini:</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate"><a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=https://script.google.com/macros/s/AKfycby_WcmX-_rrdqP8tKPwlz1Gw3amIJ3lZQUVYRaIkAKWQZbauNo/exec%3Furl%3Dhttp://techslides.com/demos/samples/sample.png&amp;usg=ALkJrhgPn64KX7XQocEwSh6uKTfPc0UTbQ" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">Https://script.google.com/macros/s/AKfycby_WcmX-_rrdqP8tKPwlz1Gw3amIJ3lZQUVYRaIkAKWQZbauNo/exec?url=http://techslides.com/demos/samples/sample.png</a></span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Ini adalah Url Gambar ke DataURL Converter:</span><br><span class="notranslate"><strong>Https://script.google.com/macros/s/AKfycby_WcmX-_rrdqP8tKPwlz1Gw3amIJ3lZQUVYRaIkAKWQZbauNo/exec?url=INSERT-IMAGE-URL-HERE</strong></span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Tentu saja, jika server hosting gambar memang memiliki&nbsp;<a target="_blank" href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://enable-cors.org/&amp;usg=ALkJrhglmoSQJY5hUneaOj2OsnLWcGDBEw" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">CORS</a>&nbsp;, maka Anda bisa menarik dan mengubah atau&nbsp;<a target="_blank" href="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://jsfiddle.net/handtrix/YvQ5y/&amp;usg=ALkJrhj8HYc-42T35zBM9MCvsvZ5ZTgyTg" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">mengakses data gambar tanpa memerlukan proxy sisi server</a>&nbsp;.</span>&nbsp;<span class="notranslate">Tapi tanpa header CORS,&nbsp;permintaan semacam&nbsp;itu akan gagal dengan "diblokir dari pemuatan oleh Kebijakan Bagi Hasil Lintas Sumber Asal: Tidak ada header 'Access-Control-Allow-Origin' ada pada kesalahan" sumber daya yang diminta.</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Berikut adalah&nbsp;<a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=https://sites.google.com/site/scriptsexamples/&amp;usg=ALkJrhjZOLi5bLuwe9RDbdpWzqzuCtuU-g" rel="noopener external nofollow noreferrer noreferer" style="color: #0645ad; text-decoration: none;">contoh Google App Script lainnya</a>&nbsp;.</span></div> 
     <blockquote>
       
-      <strong>PermaLink: </strong><br /><a href="https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html">https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html</a>
+      <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html">https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html</a>
     </blockquote>
   </div>
   <footer class="mdui-card-actions">
@@ -379,34 +370,25 @@
                                                   rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
-  
-</main>
+  </main>
   <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-    <div class="mdui-p-y-0 mdui-text-center">
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </div>
-    <div class="mdui-p-y-1 mdui-text-center">
-        Copyright &copy;
-        2014 -
-        
-        2021 Dimas Lanjaka<br>
-        Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent"
-                      rel="nofollow noopener noreferrer" style="margin-right: 2px">Hexo</a>
-        Website Manajemen Indonesia
-        
-        
-    </div>
+  <div class="mdui-p-y-0 mdui-text-center">
+               
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2014 -  2021 Unknown Author<br />
+    Powered by
+    <a
+      href="https://hexo.io/"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="mdui-text-color-theme-accent"
+      rel="nofollow noopener noreferrer"
+      style="margin-right: 2px"
+      >Hexo</a
+    >
+    Website Manajemen Indonesia  
+  </div>
 </footer>
 
   <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>

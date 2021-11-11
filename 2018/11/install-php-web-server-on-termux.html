@@ -7,7 +7,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="renderer" content="webkit" />
 
+  <link rel="dns-prefetch" href="//secure.gravatar.com" />
+  <link rel="dns-prefetch" href="//static.codepen.io" />
+  <link rel="dns-prefetch" href="//res.cloudinary.com" />
+  <link rel="dns-prefetch" href="//ad.doubleclick.com" />
+  <link rel="dns-prefetch" href="//s3.buysellads.com" />
+  <link rel="dns-prefetch" href="//srv.buysellads.com" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//tpc.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//adservice.google.com" />
+  <link rel="dns-prefetch" href="//www.googletagservices.com" />
+  <link rel="dns-prefetch" href="//git.webmanajemen.com" />
+
   
+
   <title>Install PHP Web Server on Termux | WMI Gitlab</title>
 
   <link rel="shortcut icon" href="/images/favicon.png"> <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml"> <meta name="description" content="Install PHP Web Server on Termux">
@@ -20,8 +37,8 @@
 <meta property="og:image" content="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no">
 <meta property="og:image" content="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no">
 <meta property="article:published_time" content="2018-11-12T19:19:00.001Z">
-<meta property="article:modified_time" content="2021-11-10T17:13:36.771Z">
-<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:modified_time" content="2021-11-11T10:45:57.100Z">
+<meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="PHP">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="Tools">
@@ -29,10 +46,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no">
 
-  <meta
-    name="keywords"
-    content=",PHP,Android,Tools,Tips &amp; Tricks"
-  />
+  <meta name="keywords"
+    content=",PHP,Android,Tools,Tips &amp; Tricks" />
   <meta name="format-detection" content="telephone=no,email=no" />
   <meta name="theme-color" content="#9C27B0" />
 
@@ -44,6 +59,10 @@
   <meta name="apple-mobile-web-app-title" content="Website Management Indonesia" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon" href="/images/favicon.png" />
+
+  <!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
 
   
   <link rel="canonical" href="https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html" />
@@ -79,7 +98,6 @@
   "cmd": "generate",
   "init": true
 }</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script></head>
-
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
@@ -113,7 +131,7 @@
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
-                <div class="mdui-grid-tile-title">Dimas Lanjaka</div>
+                <div class="mdui-grid-tile-title">Unknown Author</div>
                 <div class="mdui-grid-tile-subtitle"><i
                             class="mdui-icon material-icons">art_track</i>WMI Gitlab</div>
             </div>
@@ -231,8 +249,7 @@
   <header class="mdui-card-media">
     <img
       src="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no"
-      style="max-height: 240px"
-    />
+      style="max-height: 240px" />
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">Install PHP Web Server on Termux</div>
@@ -253,8 +270,7 @@
         <li class="mdui-menu-item" disabled>
           
           <img
-            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&chld=M|2"
-          />
+            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&chld=M|2" />
           
         </li>
       </ul>
@@ -264,57 +280,32 @@
       </button>
       <ul class="mdui-menu" id="share_menu">
         <li class="mdui-menu-item">
-          <a
-            href="http://service.weibo.com/share/share.php?appkey=&title=Install PHP Web Server on Termux&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&pic=https://www.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Weibo</a
-          >
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Install PHP Web Server on Termux&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&pic=https://www.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
+            target="_blank" class="mdui-ripple">Share to Weibo</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://twitter.com/intent/tweet?text=Install PHP Web Server on Termux&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&via=[object Object]"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Twitter</a
-          >
+          <a href="https://twitter.com/intent/tweet?text=Install PHP Web Server on Termux&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&via=[object Object]"
+            target="_blank" class="mdui-ripple">Share to Twitter</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Facebook</a
-          >
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html" target="_blank"
+            class="mdui-ripple">Share to Facebook</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html" target="_blank" class="mdui-ripple"
-            >Share to Google+</a
-          >
+          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html" target="_blank"
+            class="mdui-ripple">Share to Google+</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&title=Install PHP Web Server on Termux"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to LinkedIn</a
-          >
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&title=Install PHP Web Server on Termux"
+            target="_blank" class="mdui-ripple">Share to LinkedIn</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Install PHP Web Server on Termux&pics=https://www.webmanajemen.com/images/favicon.png&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to QQ</a
-          >
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Install PHP Web Server on Termux&pics=https://www.webmanajemen.com/images/favicon.png&url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html"
+            target="_blank" class="mdui-ripple">Share to QQ</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&text=Install PHP Web Server on Termux"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Telegram</a
-          >
+          <a href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html&text=Install PHP Web Server on Termux" target="_blank"
+            class="mdui-ripple">Share to Telegram</a>
         </li>
       </ul>
       
@@ -324,7 +315,7 @@
     <h1 for="title"> Install PHP Web Server on Termux</h1><div class="container-fluid container" id="wrapper"><div class="row-fluid" id="mainbody"><!--    --><br><div class="span8 content" id="content"><div class="post"><h1 class="post-3408 post type-post status-publish format-standard hentry category-android category-linux category-operating-sistem category-review tag-install-apache2-in-termux tag-install-web-server-di-android tag-install-web-server-di-termux tag-install-web-server-php-di-android tag-linux-in-android" id="post-3408"> <span class="notranslate"> </span> <a alt=" Install PHP Web Server on Termux " href="https://web-manajemen.blogspot.com/p/search.html?q=install%20server%20termux#internal_link_http://www.goblooge.com/blog/install-php-web-server-di-termux/" rel="noopener external nofollow noreferrer follow, referer, index" target="_blank" title=" Install PHP Web Server on Termux "><img alt=" Install PHP Web Server on Termux " height="auto" src="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no" title=" Install PHP Web Server on Termux " width="100%"></a> <span class="notranslate"> Install PHP Web Server on Termux</span> </h1><div class="entry"><span class="notranslate"> connect the previous article about how to install maria db in termux ( <a alt=" Install PHP Web Server on Termux " href="https://web-manajemen.blogspot.com/p/search.html?q=install%20mariadb%20termux#internal_link_http://www.goblooge.com/blog/install-mariadb-di-termux/" rel="noopener external nofollow noreferrer follow, referer, index" target="_blank" title=" Install PHP Web Server on Termux ">Install MariaDB on Termux</a> ), as a complement we will <em>install the apache web server</em> in <em>termux</em> .</span> <span class="notranslate"> due to the differences in termux compared to native Linux, the default ports for <em>web servers</em> like 80 etc cannot be used, so later we will use other <em>ports</em> to run the <em>web server</em> .</span> <br><div class="wp-caption aligncenter"><a alt=" Install PHP Web Server on Termux «j " href="https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no" rel="noopener external nofollow noreferrer noreferer" target="_blank" title=" Install PHP Web Server on Termux "><img alt=" Install PHP Web Server on Termux " class="size-medium" height="auto" src="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no" title=" Install PHP Web Server on Termux " width="100%"></a> <br><div class="wp-caption-text"><span class="notranslate"> Install Apache WEb server</span> </div></div><span class="notranslate"> to install Apache web server is quite easy, just type</span> <br><pre class="wp-code-highlight prettyprint linenums:1"> <span class="notranslate"> #apt install Apache2</span> </pre><span class="notranslate"> wait until the process is complete, if it's already running it it's easy enough.</span> <span class="notranslate"> all we need to do is type the command.</span> <br><pre class="wp-code-highlight prettyprint linenums:1"> <span class="notranslate"> #php -S ip: port -t /path/to/web/file.php</span> </pre><span class="notranslate"> where ip is the ip address of the web that we want, the port is the port we want to use as an http port, if by chance port 80 is not used it can use port 80, and /path/to/web/file.php is the directory of the php file that we want to run.</span> <br><span class="notranslate"> suppose I have a file at /sdcard/www/html/index.php.</span> <span class="notranslate"> then the ip address of my cellphone on the WLAN network is 192.168.1.200 and I want to use port 8080 as the port just type</span> <br><pre class="wp-code-highlight prettyprint linenums:1"> <span class="notranslate"> #php -S 192.168.1.200:8080 -t / sdcard / www / html / index.php</span>  </pre><span class="notranslate"> to try it just type in the android browser localhost / index.php or if you happen to be connected to the network can use the direct ip address 192.168.1.200, and try accessing it from another cellphone or computer.</span> <span class="notranslate"> if it happens to not have a LAN / Wifi network then ip can be filled with 127.0.0.1.</span> <br><span class="notranslate"> maybe this is what I can <em>share</em> , in the next article I will discuss about ssh server in termux, so we can tamper with <em>console thermux</em> directly using the ssh <em>server</em> .</span> <span class="notranslate"> it can even be used for <em>debugging</em> when we <em>develop</em> applications on Android.</span><br><span class="notranslate">see you in the next article</span><br><!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ -->     </div><!--entry--> </div></div><!--content--> <!--WP Code Highlight_start--><!--WP Code Highlight_end--> </div><!--mainbody--> <!--footer --> <script src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201846" type="text/javascript"></script><script async="async" defer="" src="https://stats.wp.com/e-201846.js" type="text/javascript"></script> </div><!--wrapper-->    
     <blockquote>
       
-      <strong>PermaLink: </strong><br /><a href="https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html">https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html</a>
+      <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html">https://www.webmanajemen.com/2018/11/install-php-web-server-on-termux.html</a>
     </blockquote>
   </div>
   <footer class="mdui-card-actions">
@@ -391,34 +382,25 @@
                                                   rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
-  
-</main>
+  </main>
   <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-    <div class="mdui-p-y-0 mdui-text-center">
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </div>
-    <div class="mdui-p-y-1 mdui-text-center">
-        Copyright &copy;
-        2014 -
-        
-        2021 Dimas Lanjaka<br>
-        Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent"
-                      rel="nofollow noopener noreferrer" style="margin-right: 2px">Hexo</a>
-        Website Manajemen Indonesia
-        
-        
-    </div>
+  <div class="mdui-p-y-0 mdui-text-center">
+               
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2014 -  2021 Unknown Author<br />
+    Powered by
+    <a
+      href="https://hexo.io/"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="mdui-text-color-theme-accent"
+      rel="nofollow noopener noreferrer"
+      style="margin-right: 2px"
+      >Hexo</a
+    >
+    Website Manajemen Indonesia  
+  </div>
 </footer>
 
   <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>

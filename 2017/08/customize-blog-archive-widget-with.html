@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://1.bp.blogspot.com/-GV7abCMrwuY/VFjH5bdO0II/AAAAAAAAHgI/zvsV7trZFXY/s1600/archive%2Bcopy.jpg">
 <meta property="og:image" content="https://2.bp.blogspot.com/-jpOSPDZEpGI/VFjgTZZ65XI/AAAAAAAAHgY/2Y7jOF63hHE/s280/Untitled-1%2Bcopy.jpg">
 <meta property="article:published_time" content="2017-08-03T02:06:00.000Z">
-<meta property="article:modified_time" content="2021-11-11T13:10:19.595Z">
+<meta property="article:modified_time" content="2021-11-11T15:45:46.034Z">
 <meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="Blogger">
 <meta property="article:tag" content="CSS">
@@ -80,7 +80,7 @@
   "pub": "ca-pub-1165447249910969",
   "adblock": true,
   "https": true,
-  "field": "site",
+  "field": "post",
   "exclude": [
     "*.min.html",
     "exclude/**/*"
@@ -311,7 +311,304 @@
     </div>
   </header>
   <div class="mdui-card-content mdui-typo">
-    <h3>How Can You Style the Blog Archive Widget With Scrollbar</h3><div><div><a target="_blank" href="https://1.bp.blogspot.com/-GV7abCMrwuY/VFjH5bdO0II/AAAAAAAAHgI/zvsV7trZFXY/s1600/archive%2Bcopy.jpg" rel="noopener external nofollow noreferrer noreferer"><img alt="Scrollable Blog Archive widget by Anjana" border="0" src="https://1.bp.blogspot.com/-GV7abCMrwuY/VFjH5bdO0II/AAAAAAAAHgI/zvsV7trZFXY/s1600/archive%2Bcopy.jpg" title="Scrollable Blog Archive widget"></a></div>The Blog Document gadget is one of Blogger's legitimate gadgets. The main issue with the default Blog File gadget is that it will take up an extensive space when you have many number of posts on your blog. Here comes the need of a scrollable Blog Chronicle gadget. Immaculate CSS is utilized to style this gadget. Here I have utilized the Level Rundown style.<br><br></div><div></div><div><strong>Step 1: Adding the Blog Archive Widget to Your Blog</strong></div><br><div>Go to your Blog's Dashboard --&gt; Layout--&gt; Add a Gadget and select Blog Archive from the list.<br><a target="_blank" href="https://draft.blogger.com/null" rel="noopener external nofollow noreferrer noreferer" name="more"></a></div><div></div><div><a target="_blank" href="https://2.bp.blogspot.com/-jpOSPDZEpGI/VFjgTZZ65XI/AAAAAAAAHgY/2Y7jOF63hHE/s1600/Untitled-1%2Bcopy.jpg" rel="noopener external nofollow noreferrer noreferer"><img alt="configuring the blog archive widget by Anjana" border="0" height="287" src="https://2.bp.blogspot.com/-jpOSPDZEpGI/VFjgTZZ65XI/AAAAAAAAHgY/2Y7jOF63hHE/s280/Untitled-1%2Bcopy.jpg" title="configuring the blog archive widget" width="280"></a></div><br><div>Don't forget to select Flat List Style. Select the Date Format you prefer from the drop down list and save the Gadget.</div><br><div><strong>Step II: Replacing the Default CSS (&nbsp;<em>If you are using Simple or Travel Template, ignore Step II and go to Step III&nbsp;</em>)</strong></div><br><div>From your Blog's Dashboard, explore to Layout. Tap on the Reinforcement/Reestablish catch on upper right and take a reinforcement of the layout. Presently click Alter HTML.</div><br><div>(i): Press Ctrl+F and search for "<em>Archive</em>". You may find the below code:</div><br><em>.main-inner .widget ul, .main-inner .widget #ArchiveList ul.flat {code}&nbsp;</em><br><br>Please be careful while editing the template. We need to delete the part "&nbsp;<em>, .main-inner .widget #ArchiveList ul.flat</em>" from the above code.<br><br>(ii) Now you could see another code which look like the below one:<br><br><em>.main-inner .widget ul li, .main-inner .widget #ArchiveList ul.flat li {code}&nbsp;</em><br><br>Carefully delete "<em>, .main-inner .widget #ArchiveList ul.flat li</em>" from the above code.<br><br>(iii) Press Ctrl+F and search for "&nbsp;<em>.main-inner .widget #ArchiveList ul li</em>". You may find something similar to the below code (Only some templates have this code):<br><br><em>.main-inner .widget #ArchiveList ul li {padding-top: .25em; padding-bottom: .25em;}&nbsp;</em><br><br><div>Delete the above code.</div><br><strong>Step III: Adding CSS</strong><br><br>Okay. Now Press Ctrl+F and search for "]]&gt;&lt;/b:skin&gt;". Add the below code above "]]&gt;&lt;/b:skin&gt;".<br><br><pre class="css"><em>.BlogArchive .widget-content {margin:0; padding:0;}</em><br><em>.BlogArchive #ArchiveList {height: 142px; overflow: auto;}</em><br><em>.main-inner .widget #ArchiveList {margin: 0; padding:0; border: 1px ridge #999;}&nbsp;</em><br><em>.BlogArchive #ArchiveList ul{margin:0; padding:8px 8px 0 8px;}</em><br><em>.main-inner .widget #ArchiveList ul.flat li {padding:8px 0 8px 0;}</em><br><em>.main-inner .widget #ArchiveList ul.flat li a {font:14px Verdana; text-decoration:none; color:#666;}&nbsp;</em></pre><br><div>Now Save the Template.<br><br>Done. I hope this article be help you. Please share ya...</div> 
+    <h3>How Can You Style the Blog Archive Widget With Scrollbar</h3><div><div><a target="_blank" href="https://1.bp.blogspot.com/-GV7abCMrwuY/VFjH5bdO0II/AAAAAAAAHgI/zvsV7trZFXY/s1600/archive%2Bcopy.jpg" rel="noopener external nofollow noreferrer noreferer"><img alt="Scrollable Blog Archive widget by Anjana" border="0" src="https://1.bp.blogspot.com/-GV7abCMrwuY/VFjH5bdO0II/AAAAAAAAHgI/zvsV7trZFXY/s1600/archive%2Bcopy.jpg" title="Scrollable Blog Archive widget"></a></div>The Blog Document gadget is one of Blogger's legitimate gadgets. The main issue with the default Blog File gadget is that it will take up an extensive space when you have many number of posts on your blog. Here comes the need of a scrollable Blog Chronicle gadget. Immaculate CSS is utilized to style this gadget. Here I have utilized the Level Rundown style.<br><br></div><div></div><div><strong>Step 1: Adding the Blog Archive Widget to Your Blog</strong></div><br><div>Go to your Blog's Dashboard --&gt; Layout--&gt; Add a Gadget and select Blog Archive from the list.<br><a target="_blank" href="https://draft.blogger.com/null" rel="noopener external nofollow noreferrer noreferer" name="more"></a></div><div></div><div><a target="_blank" href="https://2.bp.blogspot.com/-jpOSPDZEpGI/VFjgTZZ65XI/AAAAAAAAHgY/2Y7jOF63hHE/s1600/Untitled-1%2Bcopy.jpg" rel="noopener external nofollow noreferrer noreferer"><img alt="configuring the blog archive widget by Anjana" border="0" height="287" src="https://2.bp.blogspot.com/-jpOSPDZEpGI/VFjgTZZ65XI/AAAAAAAAHgY/2Y7jOF63hHE/s280/Untitled-1%2Bcopy.jpg" title="configuring the blog archive widget" width="280"></a></div><br><div>Don't forget to select Flat List Style. Select the Date Format you prefer from the drop down list and save the Gadget.</div><br><div><strong>Step II: Replacing the Default CSS (&nbsp;<em>If you are using Simple or Travel Template, ignore Step II and go to Step III&nbsp;</em>)</strong></div><br><div>From your Blog's Dashboard, explore to Layout. Tap on the Reinforcement/Reestablish catch on upper right and take a reinforcement of the layout. Presently click Alter HTML.</div><br><div>(i): Press Ctrl+F and search for "<em>Archive</em>". You may find the below code:</div><br><em>.main-inner .widget ul, .main-inner .widget #ArchiveList ul.flat {code}&nbsp;</em><br><br>Please be careful while editing the template. We need to delete the part "&nbsp;<em>, .main-inner .widget #ArchiveList ul.flat</em>" from the above code.<br><br>(ii) Now you could see another code which look like the below one:<br><br><em>.main-inner .widget ul li, .main-inner .widget #ArchiveList ul.flat li {code}&nbsp;</em><br><br>Carefully delete "<em>, .main-inner .widget #ArchiveList ul.flat li</em>" from the above code.<br><br>(iii) Press Ctrl+F and search for "&nbsp;<em>.main-inner .widget #ArchiveList ul li</em>". You may find something similar to the below code (Only some templates have this code):<br><br><em>.main-inner .widget #ArchiveList ul li {padding-top: .25em; padding-bottom: .25em;}&nbsp;</em><br><br><div>Delete the above code.</div><br><strong>Step III: Adding CSS</strong><br><br>Okay. Now Press Ctrl+F and search for "]]&gt;&lt;/b:skin&gt;". Add the below code above "]]&gt;&lt;/b:skin&gt;".<br><br><pre class="css"><em>.BlogArchive .widget-content {margin:0; padding:0;}</em><br><em>.BlogArchive #ArchiveList {height: 142px; overflow: auto;}</em><br><em>.main-inner .widget #ArchiveList {margin: 0; padding:0; border: 1px ridge #999;}&nbsp;</em><br><em>.BlogArchive #ArchiveList ul{margin:0; padding:8px 8px 0 8px;}</em><br><em>.main-inner .widget #ArchiveList ul.flat li {padding:8px 0 8px 0;}</em><br><em>.main-inner .widget #ArchiveList ul.flat li a {font:14px Verdana; text-decoration:none; color:#666;}&nbsp;</em></pre><br><div>Now Save the Template.<br><br>Done. I hope this article be help you. Please share ya...</div><div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="8418182273"></ins>
+<script>
+     
+</script>
+</div><div hexo-adsense="ads-content">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="7823254087"></ins>
+<script>
+     
+</script>
+</div></div><style>*[hexo-adsense="ads-content"] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style><script>/**
+ * Browser processor
+ */
+
+const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
+
+/**
+ * @type {import("../lib/config")}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement && newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error("cannot insert element");
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, "parent null");
+    let d = document.createElement("div");
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName("article");
+  let adscont = document.getElementById("hexo-adsense-ads-content");
+  if (adscont && adscont.length) {
+    if (article && article.length) {
+      let linebreak = article.item(0).getElementsByTagName("br");
+      if (linebreak.length > 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
+      if (headings && headings.length > 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById("hexo-adsense-hidden");
+  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+  const article = document.querySelectorAll("article");
+  if (article.length > 0 && adscont.length > 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log("webpage is post");
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
+      if (ads_fill.length > 0) {
+        for (let index = 0; index < ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== "undefined") {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      //console.log(adscont.length, "ads left");
+      if (adscont.length > 0) {
+        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        if (headers.length > 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === "number") {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      if (adscont.length > 0) {
+        const linebreaks = targetArticle.querySelectorAll("br,hr");
+        if (linebreaks.length > 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == "number") {
+              const linebreak = linebreaks.item(rlinebreak);
+              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log("webpage is not post");
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index < adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == "number") {
+          //console.log("adsense display to article index", rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener("DOMContentLoaded", function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector("a[name=more]");
+
+    // here is your adsense code
+    var _adsenseCode = " [replace this with code from the last step] ";
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) => {
+    if (command === "checkConsent") {
+      callback(true);
+    }
+    if (command === "addEventListener") {
+      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == "function") {
+    document.addEventListener("DOMContentLoaded", newMethod);
+  } else if (typeof window.attachEvent == "function") {
+    window.attachEvent("onload", newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+</script> 
     <blockquote>
       
       <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2017/08/customize-blog-archive-widget-with.html">https://www.webmanajemen.com/2017/08/customize-blog-archive-widget-with.html</a>
@@ -525,286 +822,5 @@ if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && lo
   var e = document.getElementsByTagName("script")[0];
   e.parentNode.insertBefore(b, e);
 })();
-</script><div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1165447249910969"
-     data-ad-slot="8418182273"></ins>
-<script>
-     
-</script>
-</div><div hexo-adsense="ads-content">
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1165447249910969"
-     data-ad-slot="7823254087"></ins>
-<script>
-     
-</script>
-</div></div><style>*[hexo-adsense="ads-content"] {
-  display: block;
-  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
-  color: #303030;
-  /*min-height: 18px;
-  min-width: 81px;*/
-  min-width: 250px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style><script>/**
- * Browser processor
- */
-
-const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
-
-/**
- * @type {import("../lib/config")}
- */
-const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
-//console.log(hexoAdsenseConfig);
-
-/**
- * Insert after element
- * @param {HTMLElement} newElement
- * @param {HTMLElement} oldElement
- */
-function insertAfter(newElement, oldElement) {
-  if (oldElement && newElement) {
-    let parent = oldElement.parentNode;
-    if (parent.lastChild == oldElement) {
-      parent.appendChild(newElement);
-    } else {
-      parent.insertBefore(newElement, oldElement.nextSibling);
-    }
-  } else {
-    console.error("cannot insert element");
-  }
-}
-
-/**
- * Replace elements with new
- * @param {HTMLElement} newElement
- * @param {HTMLElement} oldElement
- */
-function replaceWith(newElement, oldElement) {
-  if (!oldElement.parentNode) {
-    console.log(oldElement, "parent null");
-    let d = document.createElement("div");
-    d.appendChild(oldElement);
-  } else {
-    //console.log(oldElement.parentNode.tagName);
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  }
-  /*
-  try {
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  } catch (e) {}
-  */
-}
-
-let createElementFromHTML = function (htmlString) {
-  if (htmlString instanceof HTMLElement) {
-    return htmlString;
-  }
-  var div = document.createElement("div");
-  div.innerHTML = htmlString.trim();
-
-  // Change this to div.childNodes to support multiple top-level nodes
-  return div.firstChild;
-};
-
-function oldMethod() {
-  let article = document.getElementsByTagName("article");
-  let adscont = document.getElementById("hexo-adsense-ads-content");
-  if (adscont && adscont.length) {
-    if (article && article.length) {
-      let linebreak = article.item(0).getElementsByTagName("br");
-      if (linebreak.length > 0) {
-        return replaceWith(adscont, linebreak.item(0));
-      }
-
-      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
-      if (headings && headings.length > 0) {
-        return insertAfter(adscont, headings.item(0));
-      }
-    }
-  }
-}
-
-/**
- * random number between min and max
- */
-function ranumb(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function newMethod() {
-  const adshide = document.getElementById("hexo-adsense-hidden");
-  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-  const article = document.querySelectorAll("article");
-  if (article.length > 0 && adscont.length > 0) {
-    if (article.length == 1) {
-      console.log("webpage is post");
-      /**
-       * @type {HTMLElement}
-       */
-      let ads;
-      let targetArticle = article.item(0);
-
-      // prioritize hexo-adsense-fill before auto ads on other elements
-      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
-      if (ads_fill.length > 0) {
-        for (let index = 0; index < ads_fill.length; index++) {
-          const toFill = ads_fill[index];
-          if (typeof adscont[index] !== "undefined") {
-            toFill.appendChild(adscont[index]);
-          }
-        }
-      }
-
-      // the rest of the ads will show automatically after headers elements
-      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-      //console.log(adscont.length, "ads left");
-      if (adscont.length > 0) {
-        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
-        if (headers.length > 0) {
-          // generate index of headers
-          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
-          //console.log(headers_index);
-          for (let index = 0; index < adscont.length; index++) {
-            ads = adscont[index];
-            const rheaders = shuffleArr2(headers_index);
-            // pick a random index
-            const rheader = rheaders.next().value;
-            const header = headers.item(rheader);
-            insertAfter(createElementFromHTML(ads), header);
-          }
-        }
-      }
-
-      // the rest of the ads will show automatically to linebreak elements
-      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-      if (adscont.length > 0) {
-        const linebreaks = targetArticle.querySelectorAll("br,hr");
-        if (linebreaks.length > 0) {
-          // generate index of linebreaks
-          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
-          //console.log(linebreaks_index);
-          // randomize linebreaks index
-          const rlinebreaks = shuffleArr2(linebreaks_index);
-          for (let index = 0; index < adscont.length; index++) {
-            ads = adscont[index];
-            // pick a random index
-            const rlinebreak = rlinebreaks.next().value;
-            if (typeof rlinebreak == "number") {
-              const linebreak = linebreaks.item(rlinebreak);
-              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
-                index--;
-                continue;
-              }
-              //console.log(linebreak.tagName);
-              replaceWith(createElementFromHTML(ads), linebreak);
-            }
-          }
-        }
-      }
-    } else {
-      console.log("webpage is not post");
-    }
-
-    // summon adsbygoogle.push()
-    adsensePush();
-  }
-}
-
-function eventMethod() {
-  document.addEventListener("DOMContentLoaded", function () {
-    // we look for the jump break
-    var _moreElm = document.querySelector("a[name=more]");
-
-    // here is your adsense code
-    var _adsenseCode = " [replace this with code from the last step] ";
-
-    // This inserts the ad inside of the blog post
-    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
-
-    // Initialize the ads here
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  });
-}
-
-/**
- * Shuffle Array
- * @param {any[]} array
- * @see {@link https://stackoverflow.com/a/18806417}
- * @returns
- */
-function shuffleArr(array) {
-  var i = array.length,
-    j = 0,
-    temp;
-
-  while (i--) {
-    j = Math.floor(Math.random() * (i + 1));
-
-    // swap randomly chosen element with current element
-    temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-
-  return array;
-}
-
-/**
- * Next generation of non-repeated randomizer
- * @see {@link shuffleArr}
- * @param {any[]} array
- */
-function* shuffleArr2(array) {
-  var i = array.length;
-
-  while (i--) {
-    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
-  }
-}
-
-function adsensePush() {
-  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: hexoAdsenseConfig.pub,
-    });
-  }
-}
-
-if (!isBrowser()) {
-  module.exports = {
-    replaceWith,
-    insertAfter,
-  };
-} else {
-  window.__tcfapi = (command, parameter, callback) => {
-    if (command === "checkConsent") {
-      callback(true);
-    }
-    if (command === "addEventListener") {
-      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
-    }
-  };
-
-  if (typeof document.addEventListener == "function") {
-    document.addEventListener("DOMContentLoaded", newMethod);
-  } else if (typeof window.attachEvent == "function") {
-    window.attachEvent("onload", newMethod);
-  } else {
-    window.onload = newMethod;
-  }
-}
 </script></body>
 </html>

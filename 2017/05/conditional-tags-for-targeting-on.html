@@ -37,7 +37,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg">
 <meta property="article:published_time" content="2017-05-18T23:39:00.000Z">
-<meta property="article:modified_time" content="2021-11-11T13:10:19.631Z">
+<meta property="article:modified_time" content="2021-11-11T15:45:46.070Z">
 <meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="Blogger">
 <meta name="twitter:card" content="summary">
@@ -78,7 +78,7 @@
   "pub": "ca-pub-1165447249910969",
   "adblock": true,
   "https": true,
-  "field": "site",
+  "field": "post",
   "exclude": [
     "*.min.html",
     "exclude/**/*"
@@ -310,7 +310,304 @@
   </header>
   <div class="mdui-card-content mdui-typo">
     <p>I’ll explain a little what it is conditional tags. Conditional tags are<br>limiting a program command on certain conditions use a specific syntax or<br>in plain language is a process where the process under certain conditions<br>should be done or not done. I guess you already know who the notion of<br>conditional tags, set out alone.<br><br><img height="204" src="https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg" width="320"><br><br>Further, like other programming languages ​​like php,<br>javascript, and so forth, blogger or blogspot also have conditional tags.<br>From what I learned conditional tags bloggers tend to be a little, easy and<br>simple compared to other tags conditional.<br><br>Here I am trying to register right some conditional tags in blogger or<br>blogspot that may be useful to you in making and editing templates.<br><br><strong>condition #and</strong><br><strong><br></strong><em>    In layman’s language if the conditions A and B conditions are met then run<br>    this command.<br></em><br><em>In logic, yes.</em><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType == “index”’&gt; &lt;b:if cond=‘data:blog.searchQuery’&gt; &lt;!-- Perintah ini dijalankan di halaman search_page AND index_page --&gt; &lt;/b:if&gt; &lt;/b:if&gt;</code> </pre><br><strong>condition #OR</strong><br><br><em>    In layman’s language if either condition A or condition B is met then run<br>    this command.<br></em><br><em>In logic, yes.</em><br><br><pre><code>&lt;b:if cond=‘data:blog.url == data:blog.canonicalHomepageUrl + “p/foo.html”’&gt; &lt;!-- Perintah ini dijalankan di halaman static_site foo OR static_site bar --&gt; &lt;b:else/&gt; &lt;b:if cond=‘data:blog.url == data:blog.canonicalHomepageUrl + “p/bar.html”’&gt; &lt;!-- Perintah ini dijalankan di halaman static_site foo OR static_site bar --&gt; &lt;/b:if&gt; &lt;/b:if&gt;</code> </pre><br><strong>condition #NOT</strong><br><br><em>    In layman’s language if it is not in condition A, then run this command.<br></em><br><em>In logic, yes.</em><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType != “index”’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman NOT(kecuali) halaman index pages --&gt; &lt;/b:if&gt; &lt;b:if cond=‘data:blog.url != data:blog.homepageUrl’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman NOT(kecuali) homepage --&gt; &lt;/b:if&gt;</code> </pre><br>Ok I guess up here you already know about the logic of the conditional tag<br>blogger or blogspot use if then else of API blogger.<br><br>Cont. Here is a list of specific conditions for a conditional tag in<br>blogger or blogspot<br><br><strong>In the archive page.</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType == “archive”’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman archive–&gt; &lt;/b:if&gt;</code> </pre><br><strong>On the page or 404 error.</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType == “error_page”’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman error --&gt; &lt;/b:if&gt;</code> </pre><br><strong>In index_page.</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType == “index”’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman index --&gt; &lt;/b:if&gt; &lt;b:if cond=‘data:blog.url == data:blog.homepageUrl’&gt; &lt;!-- Perintah ini dijalankan hanya di halaman homepage --&gt; &lt;/b:if&gt;</code> </pre><br><strong>In item</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType == “item”’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman item --&gt; &lt;/b:if&gt; &lt;b:if cond=‘data:blog.url == data:blog.canonicalHomepageUrl + “2014/08/foo.html”’&gt; &lt;!-- Perintah ini dijalankan hanya pada halaman item dengan url <a target="_blank" href="http://namablog.com/2014/08/foo.html--" rel="noopener external nofollow noreferrer">namablog.com/2014/08/foo.html--</a>&gt; &lt;/b:if&gt;</code> </pre><br><strong>On page labels</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.searchLabel’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman label --&gt; &lt;/b:if&gt; &lt;b:if cond=‘data:blog.searchLabel == “foo”’&gt; &lt;!-- Perintah ini dijalankan hanya pada halaman label dengan nama label ‘foo’ --&gt; &lt;/b:if&gt;</code> </pre><br><strong>On the search page or search</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.searchQuery’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman pencarian atau search --&gt; &lt;/b:if&gt; &lt;b:if cond=‘data:blog.searchQuery == “foo”’&gt; &lt;!-- Perintah ini dijalankan hanya pada halaman pencarian dengan kata kunci ‘foo’ --&gt; &lt;/b:if&gt;</code> </pre><br><strong>In the static page</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.pageType == “static_page”’&gt; &lt;!-- Perintah ini dijalankan pada semua halaman static atau statik --&gt; &lt;/b:if&gt; &lt;b:if cond=‘data:blog.url == data:blog.canonicalHomepageUrl + “p/foo.html”’&gt; &lt;!-- Perintah ini dijalankan hanya pada halaman statik dengan nama halaman ‘foo’ --&gt; &lt;/b:if&gt;</code> </pre><br><strong>In the mobile custom template</strong><br><br><pre><code>&lt;b:if cond=‘data:blog.isMobile == “true”’&gt; &lt;!-- Perintah ini dijalankan pada semua custom template mobile --&gt; &lt;/b:if&gt;</code> </pre><br>Other conditions you can try search templates, respectively, such as you<br>find the following conditions:<br><br><pre><code>&lt;b:if cond=‘data:post.thumbnailUrl’&gt; &lt;!-- Perintah ini dijalankan jika ada perintah data:post.thumbnailUrl --&gt; &lt;/b:if&gt;</code> </pre><br>This means that if<br><br><kbd>a data command: post.thumbnailUrl</kbd><br>not materialize or null then the tag inside the command will not be<br>executed.<br><br>Sample case: I do not want to show<br><br><kbd>&lt;div class = “gmr”&gt; Hello I is an HTML element &lt;/ div&gt;</kbd><br>on a page other items that please be displayed, from here we can read the<br>corresponding logic.Then you have to do is insert a tag as follows:<br><br><pre><code>&lt;b:if cond=‘data:blog.pageType != “item”’&gt; &lt;div class=“gmr”&gt;Halo saya adalah element HTML&lt;/div&gt; &lt;/b:if&gt;</code> </pre><br>Programming should not you memorize all the existing tags, but how do you<br>create a logic program that can be run in accordance with our wishes or in<br>a cool language programming algorithms.<br><br>Easy is not it. Please play with the existing conditional tags, conditional<br>tags are still many who do not I have written above.</p>
- 
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="8418182273"></ins>
+<script>
+     
+</script>
+</div><div hexo-adsense="ads-content">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="7823254087"></ins>
+<script>
+     
+</script>
+</div></div><style>*[hexo-adsense="ads-content"] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style><script>/**
+ * Browser processor
+ */
+
+const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
+
+/**
+ * @type {import("../lib/config")}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement && newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error("cannot insert element");
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, "parent null");
+    let d = document.createElement("div");
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName("article");
+  let adscont = document.getElementById("hexo-adsense-ads-content");
+  if (adscont && adscont.length) {
+    if (article && article.length) {
+      let linebreak = article.item(0).getElementsByTagName("br");
+      if (linebreak.length > 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
+      if (headings && headings.length > 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById("hexo-adsense-hidden");
+  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+  const article = document.querySelectorAll("article");
+  if (article.length > 0 && adscont.length > 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log("webpage is post");
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
+      if (ads_fill.length > 0) {
+        for (let index = 0; index < ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== "undefined") {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      //console.log(adscont.length, "ads left");
+      if (adscont.length > 0) {
+        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        if (headers.length > 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === "number") {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      if (adscont.length > 0) {
+        const linebreaks = targetArticle.querySelectorAll("br,hr");
+        if (linebreaks.length > 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == "number") {
+              const linebreak = linebreaks.item(rlinebreak);
+              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log("webpage is not post");
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index < adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == "number") {
+          //console.log("adsense display to article index", rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener("DOMContentLoaded", function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector("a[name=more]");
+
+    // here is your adsense code
+    var _adsenseCode = " [replace this with code from the last step] ";
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) => {
+    if (command === "checkConsent") {
+      callback(true);
+    }
+    if (command === "addEventListener") {
+      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == "function") {
+    document.addEventListener("DOMContentLoaded", newMethod);
+  } else if (typeof window.attachEvent == "function") {
+    window.attachEvent("onload", newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+</script> 
     <blockquote>
       
       <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2017/05/conditional-tags-for-targeting-on.html">https://www.webmanajemen.com/2017/05/conditional-tags-for-targeting-on.html</a>
@@ -522,286 +819,5 @@ if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && lo
   var e = document.getElementsByTagName("script")[0];
   e.parentNode.insertBefore(b, e);
 })();
-</script><div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1165447249910969"
-     data-ad-slot="8418182273"></ins>
-<script>
-     
-</script>
-</div><div hexo-adsense="ads-content">
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1165447249910969"
-     data-ad-slot="7823254087"></ins>
-<script>
-     
-</script>
-</div></div><style>*[hexo-adsense="ads-content"] {
-  display: block;
-  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
-  color: #303030;
-  /*min-height: 18px;
-  min-width: 81px;*/
-  min-width: 250px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style><script>/**
- * Browser processor
- */
-
-const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
-
-/**
- * @type {import("../lib/config")}
- */
-const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
-//console.log(hexoAdsenseConfig);
-
-/**
- * Insert after element
- * @param {HTMLElement} newElement
- * @param {HTMLElement} oldElement
- */
-function insertAfter(newElement, oldElement) {
-  if (oldElement && newElement) {
-    let parent = oldElement.parentNode;
-    if (parent.lastChild == oldElement) {
-      parent.appendChild(newElement);
-    } else {
-      parent.insertBefore(newElement, oldElement.nextSibling);
-    }
-  } else {
-    console.error("cannot insert element");
-  }
-}
-
-/**
- * Replace elements with new
- * @param {HTMLElement} newElement
- * @param {HTMLElement} oldElement
- */
-function replaceWith(newElement, oldElement) {
-  if (!oldElement.parentNode) {
-    console.log(oldElement, "parent null");
-    let d = document.createElement("div");
-    d.appendChild(oldElement);
-  } else {
-    //console.log(oldElement.parentNode.tagName);
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  }
-  /*
-  try {
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  } catch (e) {}
-  */
-}
-
-let createElementFromHTML = function (htmlString) {
-  if (htmlString instanceof HTMLElement) {
-    return htmlString;
-  }
-  var div = document.createElement("div");
-  div.innerHTML = htmlString.trim();
-
-  // Change this to div.childNodes to support multiple top-level nodes
-  return div.firstChild;
-};
-
-function oldMethod() {
-  let article = document.getElementsByTagName("article");
-  let adscont = document.getElementById("hexo-adsense-ads-content");
-  if (adscont && adscont.length) {
-    if (article && article.length) {
-      let linebreak = article.item(0).getElementsByTagName("br");
-      if (linebreak.length > 0) {
-        return replaceWith(adscont, linebreak.item(0));
-      }
-
-      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
-      if (headings && headings.length > 0) {
-        return insertAfter(adscont, headings.item(0));
-      }
-    }
-  }
-}
-
-/**
- * random number between min and max
- */
-function ranumb(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function newMethod() {
-  const adshide = document.getElementById("hexo-adsense-hidden");
-  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-  const article = document.querySelectorAll("article");
-  if (article.length > 0 && adscont.length > 0) {
-    if (article.length == 1) {
-      console.log("webpage is post");
-      /**
-       * @type {HTMLElement}
-       */
-      let ads;
-      let targetArticle = article.item(0);
-
-      // prioritize hexo-adsense-fill before auto ads on other elements
-      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
-      if (ads_fill.length > 0) {
-        for (let index = 0; index < ads_fill.length; index++) {
-          const toFill = ads_fill[index];
-          if (typeof adscont[index] !== "undefined") {
-            toFill.appendChild(adscont[index]);
-          }
-        }
-      }
-
-      // the rest of the ads will show automatically after headers elements
-      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-      //console.log(adscont.length, "ads left");
-      if (adscont.length > 0) {
-        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
-        if (headers.length > 0) {
-          // generate index of headers
-          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
-          //console.log(headers_index);
-          for (let index = 0; index < adscont.length; index++) {
-            ads = adscont[index];
-            const rheaders = shuffleArr2(headers_index);
-            // pick a random index
-            const rheader = rheaders.next().value;
-            const header = headers.item(rheader);
-            insertAfter(createElementFromHTML(ads), header);
-          }
-        }
-      }
-
-      // the rest of the ads will show automatically to linebreak elements
-      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-      if (adscont.length > 0) {
-        const linebreaks = targetArticle.querySelectorAll("br,hr");
-        if (linebreaks.length > 0) {
-          // generate index of linebreaks
-          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
-          //console.log(linebreaks_index);
-          // randomize linebreaks index
-          const rlinebreaks = shuffleArr2(linebreaks_index);
-          for (let index = 0; index < adscont.length; index++) {
-            ads = adscont[index];
-            // pick a random index
-            const rlinebreak = rlinebreaks.next().value;
-            if (typeof rlinebreak == "number") {
-              const linebreak = linebreaks.item(rlinebreak);
-              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
-                index--;
-                continue;
-              }
-              //console.log(linebreak.tagName);
-              replaceWith(createElementFromHTML(ads), linebreak);
-            }
-          }
-        }
-      }
-    } else {
-      console.log("webpage is not post");
-    }
-
-    // summon adsbygoogle.push()
-    adsensePush();
-  }
-}
-
-function eventMethod() {
-  document.addEventListener("DOMContentLoaded", function () {
-    // we look for the jump break
-    var _moreElm = document.querySelector("a[name=more]");
-
-    // here is your adsense code
-    var _adsenseCode = " [replace this with code from the last step] ";
-
-    // This inserts the ad inside of the blog post
-    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
-
-    // Initialize the ads here
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  });
-}
-
-/**
- * Shuffle Array
- * @param {any[]} array
- * @see {@link https://stackoverflow.com/a/18806417}
- * @returns
- */
-function shuffleArr(array) {
-  var i = array.length,
-    j = 0,
-    temp;
-
-  while (i--) {
-    j = Math.floor(Math.random() * (i + 1));
-
-    // swap randomly chosen element with current element
-    temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-
-  return array;
-}
-
-/**
- * Next generation of non-repeated randomizer
- * @see {@link shuffleArr}
- * @param {any[]} array
- */
-function* shuffleArr2(array) {
-  var i = array.length;
-
-  while (i--) {
-    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
-  }
-}
-
-function adsensePush() {
-  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: hexoAdsenseConfig.pub,
-    });
-  }
-}
-
-if (!isBrowser()) {
-  module.exports = {
-    replaceWith,
-    insertAfter,
-  };
-} else {
-  window.__tcfapi = (command, parameter, callback) => {
-    if (command === "checkConsent") {
-      callback(true);
-    }
-    if (command === "addEventListener") {
-      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
-    }
-  };
-
-  if (typeof document.addEventListener == "function") {
-    document.addEventListener("DOMContentLoaded", newMethod);
-  } else if (typeof window.attachEvent == "function") {
-    window.attachEvent("onload", newMethod);
-  } else {
-    window.onload = newMethod;
-  }
-}
 </script></body>
 </html>

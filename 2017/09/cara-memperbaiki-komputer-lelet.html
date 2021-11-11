@@ -37,7 +37,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://imgdb.net/images/3181.png">
 <meta property="article:published_time" content="2017-09-19T02:11:00.000Z">
-<meta property="article:modified_time" content="2021-11-11T13:10:19.587Z">
+<meta property="article:modified_time" content="2021-11-11T15:45:46.026Z">
 <meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="Tips &amp; Tricks">
 <meta name="twitter:card" content="summary">
@@ -78,7 +78,7 @@
   "pub": "ca-pub-1165447249910969",
   "adblock": true,
   "https": true,
-  "field": "site",
+  "field": "post",
   "exclude": [
     "*.min.html",
     "exclude/**/*"
@@ -310,7 +310,304 @@
   </header>
   <div class="mdui-card-content mdui-typo">
     <p>Memperbaiki komputer lelet atau lemot menjadi komputer serasa baru.<br><div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://imgdb.net/images/3181.png" rel="noopener external nofollow noreferrer noreferer" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://imgdb.net/images/3181.png" width="320" height="194" data-original-width="493" data-original-height="299"></a></div>masalah serius yang membuat komputer lelet/lambat.<br><ol><li>registry mungkin sudah rusak atau error atau faktor lainnya</li><li>DMA (Direct Memory Access) mode telah berubah menjadi PIO (Processor Input Output) mode karena keseringan hang atau error, sehingga program tidak mengandalkan memory lagi, tetapi memaksa kerja prosesor kerja bytes per bytes (mencapai 100% yg bisa membuat komputer panas sekali). Setiap crash/error DMA mode turun dari Ultra DMA mode 5… 4… 3… hingga PIO. 6x crash = lemot.</li></ol><div><span id="span_da14_0">solusi :</span><br><ol><li><span id="span_da14_1">instal CC cleaner ato regcure</span></li><ul><li>Download CC Cleaner -&gt; <a target="_blank" href="https://web-manajemen.blogspot.com/p/search.html?q=CC+Cleaner" rel="noopener external nofollow noreferrer follow" alt="CC Cleaner" title="Download CC Cleaner Full">Disini</a></li><li>Download RegCure (Rekomendasi) -&gt; <a target="_blank" href="https://web-manajemen.blogspot.com/p/search.html?q=regcure" rel="noopener external nofollow noreferrer follow" alt="Regcure" title="Download regcure">Disini</a></li></ul><blockquote>Install -&gt; jalankan -&gt; Scan -&gt; Lalu fix problems</blockquote><li>masuk : control panel -&gt; system -&gt; hardware -&gt; device manager -&gt; IDE ATA/ATAPI controller -&gt; Primary IDE Channel - double click (klik 2x) -&gt; Advanced Setting -&gt; Pada Device 0 dan Device 1 transfer modenya ubah menjadi : DMA if available -&gt; klik OK.</li><li>Kalau masih lelet/lemot/hang Download ResetDMA.vbs atau ResettingDMA.vbs dari <a href="http://winhlp.com/node/10" rel="noopener external nofollow noreferrer noreferer" target="_blank">http://winhlp.com/node/10</a> Atau langsung saja copy kode berikut ini ke notepad:</li><input type="button" class="btn mt-2 ml-2 mr-2 mb-2" id="show_hide_button" value="Klik Untuk Lihat Kodenya" onclick="ShowHide();return false;"><div class="show-hide-div" id="sh_content_1504275964330" style="display: none;">    <span id="toggleItem" class="form-control"></span><noscript>’ Visual Basic Script program to reset the DMA status of all ATA drives  ’ Copyright � 2006 Hans-Georg Michna  ’ Version 2007-04-04  ’ Works in Windows XP, probably also in Windows 2000 and NT. ’ Does no harm if Windows version is incompatible.  If MsgBox(“This program will now reset the DMA status of all ATA drives with Windows drivers.” _   &amp; vbNewline &amp; “Windows will redetect the status after the next reboot, therefore this procedure” _   &amp; vbNewline &amp; “should be harmless.”, _     vbOkCancel, “Program start message”) _   = vbOk Then  RegPath = “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class{4D36E96A-E325-11CE-BFC1-08002BE10318}” ValueName1Master = “MasterIdDataChecksum” ValueName1Slave = “SlaveIdDataChecksum” ValueName2Master = “UserMasterDeviceTimingModeAllowed” ValueName2Slave = “UserSlaveDeviceTimingModeAllowed” ValueName3 = “ResetErrorCountersOnSuccess” MessageText = “The following ATA channels have been reset:” MessageTextLen0 = Len(MessageText) ConsecutiveMisses = 0 Set WshShell = WScript.CreateObject(“WScript.Shell”)  For i = 0 to 999   RegSubPath = Right(“000” &amp; i, 4) &amp; “”    ’ Master    Err.Clear   On Error Resume Next   WshShell.RegRead RegPath &amp; RegSubPath &amp; ValueName1Master   errMaster = Err.Number   On Error Goto 0   If errMaster = 0 Then     On Error Resume Next     WshShell.RegDelete RegPath &amp; RegSubPath &amp; ValueName1Master     WshShell.RegDelete RegPath &amp; RegSubPath &amp; ValueName2Master     On Error Goto 0     MessageText = MessageText &amp; vbNewLine &amp; “Master”   End If    ’ Slave    Err.Clear   On Error Resume Next   WshShell.RegRead RegPath &amp; RegSubPath &amp; ValueName1Slave   errSlave = Err.Number   On Error Goto 0   If errSlave = 0 Then     On Error Resume Next     WshShell.RegDelete RegPath &amp; RegSubPath &amp; ValueName1Slave     WshShell.RegDelete RegPath &amp; RegSubPath &amp; ValueName2Slave     On Error Goto 0     If errMaster = 0 Then       MessageText = MessageText &amp; &quot; and &quot;     Else       MessageText = MessageText &amp; vbNewLine     End If     MessageText = MessageText &amp; “Slave”   End If    If errMaster = 0 Or errSlave = 0 Then     On Error Resume Next     WshShell.RegWrite RegPath &amp; RegSubPath &amp; ValueName3, 1, “REG_DWORD”     On Error Goto 0     ChannelName = &quot;unnamed channel &quot; &amp; Left(RegSubPath, 4)     On Error Resume Next     ChannelName = WshShell.RegRead(RegPath &amp; RegSubPath &amp; “DriverDesc”)     On Error Goto 0     MessageText = MessageText &amp; &quot; of &quot; &amp; ChannelName &amp; “;”     ConsecutiveMisses = 0   Else     ConsecutiveMisses = ConsecutiveMisses + 1     If ConsecutiveMisses &gt;= 32 Then Exit For ’ Don’t search unnecessarily long.   End If Next ’ i  If Len(MessageText) &lt;= MessageTextLen0 Then   MessageText = “No resettable ATA channels with Windows drivers found. Nothing changed.” Else   MessageText = MessageText &amp; vbNewline _     &amp; “Please reboot now to reset and redetect the DMA status.” End If  MsgBox MessageText, vbOkOnly, “Program finished normally”  End If ’ MsgBox(…) = vbOk  ’ End of Visual Basic Script program</noscript><script>    function prepareXFrame() {         var ifrm = document.createElement(“iframe”);         ifrm.setAttribute(“src”, “<a target="_blank" href="https://www.fromasia.biz/ipk.php/winhlp.com/tools/resetdma.vbs" rel="noopener external nofollow noreferrer">https://www.fromasia.biz/ipk.php/winhlp.com/tools/resetdma.vbs</a>”);         ifrm.setAttribute(“frameborder”, “0”);         ifrm.style.width = “100%”;         ifrm.style.height = “500px”;         document.getElementById(‘toggleItem’).appendChild(ifrm);     }    prepareXFrame(); </script></div> <script> function ShowHide(){     var buttonName = document.getElementById(‘show_hide_button’);     var shContent = document.getElementById(‘sh_content_1504275964330’);    if(buttonName.value == ‘Show Codes’){        buttonName.value = ‘Hide Codes’;        shContent.style.display = ‘block’;      }else{        buttonName.value = ‘Show Codes’;        shContent.style.display = ‘none’;    }  }  </script><li>Save pada notepad dengan nama dan ektensi .vbs -&gt; resetDMA.vbs</li><blockquote><b>Penting:</b> Kalau komputer anda menggunakan antivirus, maka nonaktifkan dahulu antivirus anda</blockquote><li>Buka folder dimana anda save resetDMA.vbs tadi. Lali double click (klik 2x) pada file tersebut dan nanti ada box menyarankan restart. Klik Restart Now. setelah restart baru terasa performanya.</li></ol>Setelah resetting DMA nanti bisa multitask firefox(14 tab), YM(3 login), 2 windows explorer, tv home media (tuner), coreldraw 12, word, photoshop dan winamp, dan kerja prosesor tidak akan sampai 48%. </div><div class="mark" id="mark">Demikian artikel kami tentang bagaimana cara memperbaiki komputer lemot atau bagaimana cara mempercepat komputer lelet seperti baru</div></p>
- 
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="8418182273"></ins>
+<script>
+     
+</script>
+</div><div hexo-adsense="ads-content">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="7823254087"></ins>
+<script>
+     
+</script>
+</div></div><style>*[hexo-adsense="ads-content"] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style><script>/**
+ * Browser processor
+ */
+
+const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
+
+/**
+ * @type {import("../lib/config")}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement && newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error("cannot insert element");
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, "parent null");
+    let d = document.createElement("div");
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName("article");
+  let adscont = document.getElementById("hexo-adsense-ads-content");
+  if (adscont && adscont.length) {
+    if (article && article.length) {
+      let linebreak = article.item(0).getElementsByTagName("br");
+      if (linebreak.length > 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
+      if (headings && headings.length > 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById("hexo-adsense-hidden");
+  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+  const article = document.querySelectorAll("article");
+  if (article.length > 0 && adscont.length > 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log("webpage is post");
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
+      if (ads_fill.length > 0) {
+        for (let index = 0; index < ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== "undefined") {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      //console.log(adscont.length, "ads left");
+      if (adscont.length > 0) {
+        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        if (headers.length > 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === "number") {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      if (adscont.length > 0) {
+        const linebreaks = targetArticle.querySelectorAll("br,hr");
+        if (linebreaks.length > 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == "number") {
+              const linebreak = linebreaks.item(rlinebreak);
+              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log("webpage is not post");
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index < adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == "number") {
+          //console.log("adsense display to article index", rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener("DOMContentLoaded", function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector("a[name=more]");
+
+    // here is your adsense code
+    var _adsenseCode = " [replace this with code from the last step] ";
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) => {
+    if (command === "checkConsent") {
+      callback(true);
+    }
+    if (command === "addEventListener") {
+      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == "function") {
+    document.addEventListener("DOMContentLoaded", newMethod);
+  } else if (typeof window.attachEvent == "function") {
+    window.attachEvent("onload", newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+</script> 
     <blockquote>
       
       <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2017/09/cara-memperbaiki-komputer-lelet.html">https://www.webmanajemen.com/2017/09/cara-memperbaiki-komputer-lelet.html</a>
@@ -522,286 +819,5 @@ if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && lo
   var e = document.getElementsByTagName("script")[0];
   e.parentNode.insertBefore(b, e);
 })();
-</script><div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1165447249910969"
-     data-ad-slot="8418182273"></ins>
-<script>
-     
-</script>
-</div><div hexo-adsense="ads-content">
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-1165447249910969"
-     data-ad-slot="7823254087"></ins>
-<script>
-     
-</script>
-</div></div><style>*[hexo-adsense="ads-content"] {
-  display: block;
-  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
-  color: #303030;
-  /*min-height: 18px;
-  min-width: 81px;*/
-  min-width: 250px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style><script>/**
- * Browser processor
- */
-
-const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
-
-/**
- * @type {import("../lib/config")}
- */
-const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
-//console.log(hexoAdsenseConfig);
-
-/**
- * Insert after element
- * @param {HTMLElement} newElement
- * @param {HTMLElement} oldElement
- */
-function insertAfter(newElement, oldElement) {
-  if (oldElement && newElement) {
-    let parent = oldElement.parentNode;
-    if (parent.lastChild == oldElement) {
-      parent.appendChild(newElement);
-    } else {
-      parent.insertBefore(newElement, oldElement.nextSibling);
-    }
-  } else {
-    console.error("cannot insert element");
-  }
-}
-
-/**
- * Replace elements with new
- * @param {HTMLElement} newElement
- * @param {HTMLElement} oldElement
- */
-function replaceWith(newElement, oldElement) {
-  if (!oldElement.parentNode) {
-    console.log(oldElement, "parent null");
-    let d = document.createElement("div");
-    d.appendChild(oldElement);
-  } else {
-    //console.log(oldElement.parentNode.tagName);
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  }
-  /*
-  try {
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  } catch (e) {}
-  */
-}
-
-let createElementFromHTML = function (htmlString) {
-  if (htmlString instanceof HTMLElement) {
-    return htmlString;
-  }
-  var div = document.createElement("div");
-  div.innerHTML = htmlString.trim();
-
-  // Change this to div.childNodes to support multiple top-level nodes
-  return div.firstChild;
-};
-
-function oldMethod() {
-  let article = document.getElementsByTagName("article");
-  let adscont = document.getElementById("hexo-adsense-ads-content");
-  if (adscont && adscont.length) {
-    if (article && article.length) {
-      let linebreak = article.item(0).getElementsByTagName("br");
-      if (linebreak.length > 0) {
-        return replaceWith(adscont, linebreak.item(0));
-      }
-
-      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
-      if (headings && headings.length > 0) {
-        return insertAfter(adscont, headings.item(0));
-      }
-    }
-  }
-}
-
-/**
- * random number between min and max
- */
-function ranumb(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function newMethod() {
-  const adshide = document.getElementById("hexo-adsense-hidden");
-  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-  const article = document.querySelectorAll("article");
-  if (article.length > 0 && adscont.length > 0) {
-    if (article.length == 1) {
-      console.log("webpage is post");
-      /**
-       * @type {HTMLElement}
-       */
-      let ads;
-      let targetArticle = article.item(0);
-
-      // prioritize hexo-adsense-fill before auto ads on other elements
-      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
-      if (ads_fill.length > 0) {
-        for (let index = 0; index < ads_fill.length; index++) {
-          const toFill = ads_fill[index];
-          if (typeof adscont[index] !== "undefined") {
-            toFill.appendChild(adscont[index]);
-          }
-        }
-      }
-
-      // the rest of the ads will show automatically after headers elements
-      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-      //console.log(adscont.length, "ads left");
-      if (adscont.length > 0) {
-        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
-        if (headers.length > 0) {
-          // generate index of headers
-          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
-          //console.log(headers_index);
-          for (let index = 0; index < adscont.length; index++) {
-            ads = adscont[index];
-            const rheaders = shuffleArr2(headers_index);
-            // pick a random index
-            const rheader = rheaders.next().value;
-            const header = headers.item(rheader);
-            insertAfter(createElementFromHTML(ads), header);
-          }
-        }
-      }
-
-      // the rest of the ads will show automatically to linebreak elements
-      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
-      if (adscont.length > 0) {
-        const linebreaks = targetArticle.querySelectorAll("br,hr");
-        if (linebreaks.length > 0) {
-          // generate index of linebreaks
-          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
-          //console.log(linebreaks_index);
-          // randomize linebreaks index
-          const rlinebreaks = shuffleArr2(linebreaks_index);
-          for (let index = 0; index < adscont.length; index++) {
-            ads = adscont[index];
-            // pick a random index
-            const rlinebreak = rlinebreaks.next().value;
-            if (typeof rlinebreak == "number") {
-              const linebreak = linebreaks.item(rlinebreak);
-              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
-                index--;
-                continue;
-              }
-              //console.log(linebreak.tagName);
-              replaceWith(createElementFromHTML(ads), linebreak);
-            }
-          }
-        }
-      }
-    } else {
-      console.log("webpage is not post");
-    }
-
-    // summon adsbygoogle.push()
-    adsensePush();
-  }
-}
-
-function eventMethod() {
-  document.addEventListener("DOMContentLoaded", function () {
-    // we look for the jump break
-    var _moreElm = document.querySelector("a[name=more]");
-
-    // here is your adsense code
-    var _adsenseCode = " [replace this with code from the last step] ";
-
-    // This inserts the ad inside of the blog post
-    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
-
-    // Initialize the ads here
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  });
-}
-
-/**
- * Shuffle Array
- * @param {any[]} array
- * @see {@link https://stackoverflow.com/a/18806417}
- * @returns
- */
-function shuffleArr(array) {
-  var i = array.length,
-    j = 0,
-    temp;
-
-  while (i--) {
-    j = Math.floor(Math.random() * (i + 1));
-
-    // swap randomly chosen element with current element
-    temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-
-  return array;
-}
-
-/**
- * Next generation of non-repeated randomizer
- * @see {@link shuffleArr}
- * @param {any[]} array
- */
-function* shuffleArr2(array) {
-  var i = array.length;
-
-  while (i--) {
-    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
-  }
-}
-
-function adsensePush() {
-  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: hexoAdsenseConfig.pub,
-    });
-  }
-}
-
-if (!isBrowser()) {
-  module.exports = {
-    replaceWith,
-    insertAfter,
-  };
-} else {
-  window.__tcfapi = (command, parameter, callback) => {
-    if (command === "checkConsent") {
-      callback(true);
-    }
-    if (command === "addEventListener") {
-      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
-    }
-  };
-
-  if (typeof document.addEventListener == "function") {
-    document.addEventListener("DOMContentLoaded", newMethod);
-  } else if (typeof window.attachEvent == "function") {
-    window.attachEvent("onload", newMethod);
-  } else {
-    window.onload = newMethod;
-  }
-}
 </script></body>
 </html>

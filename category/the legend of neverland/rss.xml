@@ -94,7 +94,304 @@ This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;co
 &lt;p&gt;&lt;a href=&#34;/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json&#34;&gt;Download Macros Auto Fishing&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-to-import-script&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#how-to-import-script&#34;&gt;&lt;/a&gt; How to import script ?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;/The%20Legend%20Of%20Neverland/Macros.html&#34;&gt;Read Here&lt;/a&gt;&lt;/p&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html</guid>
@@ -140,7 +437,304 @@ This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;co
   &lt;img src=&#34;https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png&#34; width=&#34;300px&#34; height=&#34;250px&#34; alt=&#34;Save Link As&#34; style=&#34;display:inline-block;float:left;&#34; /&gt;
 &lt;/div&gt;
 &lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros.html</guid>
@@ -209,7 +803,294 @@ This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;co
 &lt;em&gt;Select JSON macros script then import&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/12471057/132939502-c9bb6e0c-284b-47a9-84b5-8863af2266f5.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
 &lt;em&gt;Import successful&lt;/em&gt;&lt;/p&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Winged%20Hairband.html</guid>
@@ -245,7 +1126,304 @@ This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;co
 &lt;h2 id=&#34;video-tutorial&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#video-tutorial&#34;&gt;&lt;/a&gt; Video tutorial&lt;/h2&gt;
 &lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/psOnlBSRBjA&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 &lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/yRbP_fSP3xY&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html</guid>
@@ -355,7 +1533,304 @@ This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;co
 &lt;h3 id=&#34;how-to-create-musicsong-mp3-to-midi&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#how-to-create-musicsong-mp3-to-midi&#34;&gt;&lt;/a&gt; How to create music/song mp3 to midi&lt;/h3&gt;
 &lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/tik3ZFwFsJA&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 &lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/kIXXv8oUqOc&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html</guid>
@@ -391,7 +1866,304 @@ This time you can auto-fish using &lt;code&gt;bluestacks&lt;/code&gt; and &lt;co
 &lt;img src=&#34;Colorful%20Auspicious%20Nimbus%20Cloud/tr3-overview.png&#34; alt=&#34;overview&#34; /&gt;&lt;br /&gt;
 &lt;img src=&#34;Colorful%20Auspicious%20Nimbus%20Cloud/tr3-detail.png&#34; alt=&#34;detail&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Colorful Auspicious Nimbus Cloud Video Tutorial&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/hVhzL_q1IOs&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt; ]]></description>
+&lt;div class=&#34;video-container&#34;&gt;&lt;iframe src=&#34;https://www.youtube.com/embed/hVhzL_q1IOs&#34; frameborder=&#34;0&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html</guid>
@@ -423,7 +2195,294 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 &lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/12471057/136435907-f0b7241e-a0c0-4091-8c2c-f04358acbfcc.png&#34; alt=&#34;Troublemaker&#34;&gt;&lt;br&gt;
 &lt;em&gt;Troublemaker - Defeat adult kappa&lt;/em&gt;&lt;/p&gt;
 &lt;style&gt;em::before{content:&#34;Gate Name : &#34;;}&lt;/style&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html</guid>
@@ -507,7 +2566,294 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 &lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/12471057/133885294-5c64c56c-bb09-414f-a479-b300b0c7cb88.png&#34; alt=&#34;Mechanic&#34;&gt;&lt;br&gt;
 &lt;em&gt;Mechanic&lt;/em&gt;&lt;/p&gt;
 &lt;style&gt;em::before{content: &#34;Gate Name : &#34;;}&lt;/style&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html</guid>
@@ -550,7 +2896,294 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 &lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/12471057/131433100-70aa2477-fc05-4e1d-be15-b63ac72b8841.png&#34; alt=&#34;Flaming Heart&#34;&gt;&lt;br&gt;
 &lt;em&gt;Flaming Heart&lt;/em&gt;&lt;/p&gt;
 &lt;style&gt;em::before{content:&#34;Gate Name : &#34;;}&lt;/style&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html</guid>
@@ -571,7 +3204,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      11/11/2021, 8:10:23 PM
+      11/11/2021, 10:45:49 PM
     &lt;/small&gt;
   &lt;/div&gt;
   &lt;ul id=&#34;questions&#34;&gt;
@@ -1202,7 +3835,304 @@ function parse_url(url) {
   return parse;
 }
 &lt;/script&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Recipes.html</guid>
@@ -1589,7 +4519,294 @@ function CalculateTR(table) {
     }
   }
 &lt;/script&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34; style=&#34;display:block; text-align:center;&#34; data-ad-layout=&#34;in-article&#34; data-ad-format=&#34;fluid&#34; data-ad-client=&#34;ca-pub-1165447249910969&#34; data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html</guid>
@@ -1600,7 +4817,304 @@ function CalculateTR(table) {
             <description><![CDATA[ &lt;h1 id=&#34;trial-of-time-gate-locations&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#trial-of-time-gate-locations&#34;&gt;&lt;/a&gt; Trial of time gate locations&lt;/h1&gt;
 &lt;h2 id=&#34;fog-swamp-f2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fog-swamp-f2&#34;&gt;&lt;/a&gt; Fog Swamp F2&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png&#34; alt=&#34;Fog Swamp F2&#34; /&gt;&lt;/p&gt;
- ]]></description>
+&lt;div id=&#34;hexo-adsense-hidden&#34; style=&#34;display:none&#34;&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;8418182273&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;div hexo-adsense=&#34;ads-content&#34;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-1165447249910969&#34;
+     data-ad-slot=&#34;7823254087&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     
+&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;style&gt;*[hexo-adsense=&#34;ads-content&#34;] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;&lt;script&gt;/**
+ * Browser processor
+ */
+
+const isBrowser = new Function(&#34;try {return this===window;}catch(e){ return false;}&#34;);
+
+/**
+ * @type {import(&#34;../lib/config&#34;)}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById(&#34;hexo-adsense-config&#34;).textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement &amp;&amp; newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error(&#34;cannot insert element&#34;);
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, &#34;parent null&#34;);
+    let d = document.createElement(&#34;div&#34;);
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement(&#34;div&#34;);
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName(&#34;article&#34;);
+  let adscont = document.getElementById(&#34;hexo-adsense-ads-content&#34;);
+  if (adscont &amp;&amp; adscont.length) {
+    if (article &amp;&amp; article.length) {
+      let linebreak = article.item(0).getElementsByTagName(&#34;br&#34;);
+      if (linebreak.length &gt; 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll(&#34;h2,h3,h4,h5&#34;);
+      if (headings &amp;&amp; headings.length &gt; 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById(&#34;hexo-adsense-hidden&#34;);
+  let adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+  const article = document.querySelectorAll(&#34;article&#34;);
+  if (article.length &gt; 0 &amp;&amp; adscont.length &gt; 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log(&#34;webpage is post&#34;);
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll(&#34;*[hexo-adsense-fill]&#34;);
+      if (ads_fill.length &gt; 0) {
+        for (let index = 0; index &lt; ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== &#34;undefined&#34;) {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      //console.log(adscont.length, &#34;ads left&#34;);
+      if (adscont.length &gt; 0) {
+        const headers = targetArticle.querySelectorAll(&#34;h1,h2,h3,h4,h5,h6&#34;);
+        if (headers.length &gt; 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === &#34;number&#34;) {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;);
+      if (adscont.length &gt; 0) {
+        const linebreaks = targetArticle.querySelectorAll(&#34;br,hr&#34;);
+        if (linebreaks.length &gt; 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index &lt; adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == &#34;number&#34;) {
+              const linebreak = linebreaks.item(rlinebreak);
+              if ([&#34;blockquote&#34;, &#34;img&#34;, &#34;a&#34;].includes(linebreak.parentNode.tagName.toLowerCase())) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log(&#34;webpage is not post&#34;);
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index &lt; adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == &#34;number&#34;) {
+          //console.log(&#34;adsense display to article index&#34;, rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector(&#34;a[name=more]&#34;);
+
+    // here is your adsense code
+    var _adsenseCode = &#34; [replace this with code from the last step] &#34;;
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML(&#34;afterend&#34;, &#39;&lt;div class=&#34;adsense-after-break&#34;&gt;&#39; + _adsenseCode + &#34;&lt;/div&gt;&#34;);
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index &lt; document.querySelectorAll(&#39;[hexo-adsense=&#34;ads-content&#34;]&#39;).length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) =&gt; {
+    if (command === &#34;checkConsent&#34;) {
+      callback(true);
+    }
+    if (command === &#34;addEventListener&#34;) {
+      callback({ eventStatus: &#34;tcloaded&#34;, gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == &#34;function&#34;) {
+    document.addEventListener(&#34;DOMContentLoaded&#34;, newMethod);
+  } else if (typeof window.attachEvent == &#34;function&#34;) {
+    window.attachEvent(&#34;onload&#34;, newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+&lt;/script&gt; ]]></description>
         </item>
     </channel>
 </rss>

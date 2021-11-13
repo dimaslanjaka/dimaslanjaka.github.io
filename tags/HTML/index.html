@@ -1185,11 +1185,11 @@ function newMethod() {
         }
       }
 
-      // the rest of the ads will show automatically after headers elements
+      // the rest of the ads will show automatically after headers, pre elements
       adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
       //console.log(adscont.length, "ads left");
       if (adscont.length > 0) {
-        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");
         if (headers.length > 0) {
           // generate index of headers
           let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
@@ -1223,7 +1223,11 @@ function newMethod() {
             const rlinebreak = rlinebreaks.next().value;
             if (typeof rlinebreak == "number") {
               const linebreak = linebreaks.item(rlinebreak);
-              if (["blockquote", "img", "a"].includes(linebreak.parentNode.tagName.toLowerCase())) {
+              if (
+                ["blockquote", "img", "a", "pre", "code", "em", "strong", "i", "u"].includes(
+                  linebreak.parentNode.tagName.toLowerCase()
+                )
+              ) {
                 index--;
                 continue;
               }

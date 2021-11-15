@@ -17,10 +17,10 @@
         <category>Wordpress</category>
         <category>Blogger</category>
         <category>Blogging</category>
+        <category>CSS</category>
         <category>SEO</category>
         <category>Adsense</category>
         <category>JS</category>
-        <category>CSS</category>
         <category>PHP</category>
         <category>HTML</category>
         <category>AMP</category>
@@ -42,6 +42,7 @@
         <category>Movies</category>
         <category>Musics</category>
         <category>Popular</category>
+        <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
         <category>Java</category>
@@ -51,7 +52,6 @@
         <category>TS</category>
         <category>Windows</category>
         <category>Genshin Impact</category>
-        <category>Fonts</category>
         <category>Chest Location</category>
         <category>Quest</category>
         <item>
@@ -198,8 +198,8 @@
             <title>How to Install Advertising Box on Blogger</title>
             <link>https://www.webmanajemen.com/2017/08/how-to-install-advertising-box-on-blogger.html</link>
             <category>Blogger</category>
-            <category>Adsense</category>
             <category>CSS</category>
+            <category>Adsense</category>
             <category>HTML</category>
             <pubDate>Tue, 22 Aug 2017 08:21:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;How to Install Advertising Box on Blog - On this occasion I will discuss about the tutorial to create an ad box on the blog size 125x125 pixels. Maybe you already know that the activities of writing articles on blogs is now no longer just a hobbyist release or fill the void of time. Creating a blog and managing it well and correctly can also produce material in the form of money that most of the bloggers make it as one of the livelihood &lt;br&gt;&lt;div&gt;&lt;img src=&#34;data:image/webp;base64,UklGRlADAABXRUJQVlA4IEQDAACQIACdASpsAaUAPu12tFOpqKUoJRYIkTAdiWVu4FEQDkSqBPM/CmSHXAOgtvPVPHCpMDTgIx0EKogHQQoe93oC8LavBiT8qCpFkr2FB9NBl/cv+Izgst/3FZjx+gKofOCKbQECpIMLO1BxyMzNWFwqXhHSQU9uF9vgnAjYfhcjPjtFqkDD0OwrF9W00e0/G3+zLBLKl0AhXCpmXDPbB9ImkqOT2yZ12s0cO0yy1agGQM2H4sRtAHAmDOOL7NAj9RMOts8QkepKIB0ChX024TRbaKSng/cwz4I3TqGDPFHbqtYvzYqRZZSfcPjCUkjg4wz4NRhEXy8e+jm94uywqiAdBCqIBwJNDnjcGoMEAAD+7wB+JZY54ehNjUtE8als0Xs26SFxlW18i5UXU/yYRNUap1FE2bx/R6NG3aqQoa/lbJt+IP8nA9x8m2RVbfgRkMDHRbwjmhV9md4eKjPBcumLLocX1lHfX3FAypEYlIug0sMxhQfb4V0h8PC02vbM0UBDkfd//LSHvTmiyjEoKpDXgSsEqaQwt/wQ4EzWYYNty3gXnAjq8IccSn//iJBPPjR14sxGtSmItJISE4eINyO3WsT0K+fTiEM0oefljmD5e8yuotEgJEetAzJkFkV2fkYdSiWj5WsKsS7+bjMX2ArPGaxpY8K7fpKn5ofn3udLqfFzUFsrG4/+gAioAR78Enx6LUuteGQoASM15//zceFcVkxaFgmMbaadnQBHjnOMQVoK0rB8Fy1Zr6oftUsnccS/az8hKlBNQmkx3k+czqfkC8LHC4cJMsgzUNeVIe7aWAaL7al01vP3jW0AD2DVC46ORvYJ0q0uqY230E8BpqL3VnKHljF81jONju9qOj02TsadpOVSqQTUa0mUZbxohoxwRwENSWtStOjKP5oP9XFI906sOLMgRyjvgh5YhScNFcsw6PcSrukcuijxYGQOUZ6WZC/hw8A9HpuqToopQwLixyPdARdjq4F2Z1xCjL/dbHTlNg4aAiZ2hlbsqeTku1K3xun5UjFpsk/Xe/KpFYCBKs/tL7kg1QiUwUbt2/DuViYRe2yXbRYiAYprrALlyPB9YsUvmNcB08DpymiJqA669caAAA==&#34;&gt;&lt;/div&gt;&lt;br&gt;Displaying or creating ad space in the form of banners on the website / blog is usually used as a separate business opportunity by a blog or website that has many visitors and has popularity in search engines. But do not rule out your new blog can bid by the advertise to put their ads into the blog you have. If you are interested in providing or creating an ad box on a blog, follow the blogger tutorial that I will explain below.&lt;br&gt;&lt;div&gt;&lt;div id=&#34;lite-ad-2&#34;&gt;&lt;/div&gt;&lt;/div&gt;&lt;br&gt;I need to say before you make a box de blog ad is a matter to consider in displaying the ad banner space is the location and arrangement to attract more people. So no origin pairs of images that eventually displayed ads to be less attractive because of a mess.&lt;br&gt;&lt;br&gt;&lt;br&gt;1. Please login to your Blogger&amp;gt; Theme&amp;gt; Click Edit HTML &amp;gt; Then add the code below before the code &lt;kbd&gt;&amp;lt;/ b: skin&amp;gt; &lt;/kbd&gt;or &amp;lt;/ style&amp;gt;&lt;br&gt;&lt;pre&gt;&lt;code&gt;/* Kotak Iklan */&lt;br&gt;.kotak_iklan &amp;#123;text-align: center;&amp;#125;&lt;br&gt;.kotak_iklan  img &amp;#123;margin:0px 5px 5px 0px;padding:5px;text-align:center;border:1px solid #ddd;&amp;#125;&lt;br&gt;.kotak_iklan  img:hover &amp;#123;border:1px solid #aaa&amp;#125;&lt;br&gt;.kotak_iklan  img.noborder &amp;#123;border:0;&amp;#125;&lt;/code&gt;&lt;/pre&gt;2. Save the template&lt;br&gt;&lt;br&gt;3. Then click on Layout&amp;gt; Add Gadget&amp;gt; Select HTML / JavaScript&amp;gt; next please insert the following code into the new widget.&lt;br&gt;&lt;pre&gt;&amp;lt;div class=“kotak_iklan”&amp;gt;&lt;br&gt;&amp;lt;a href=“target url ads” title=“title ads”&amp;gt;&amp;lt;img class=“noborder” src=“Url Images” alt=“alt images” width=“125” height=“125” /&amp;gt;&amp;lt;/a&amp;gt;&lt;br&gt;&amp;lt;a href=“target url ads” title=“title ads”&amp;gt;&amp;lt;img class=“noborder” src=“Url Images” alt=“alt images” width=“125” height=“125” /&amp;gt;&amp;lt;/a&amp;gt;&lt;br&gt;&amp;lt;a href=“target url ads” title=“title ads”&amp;gt;&amp;lt;img class=“noborder” src=“Url Images” alt=“alt images” width=“125” height=“125” /&amp;gt;&amp;lt;/a&amp;gt; &lt;br&gt;&amp;lt;a href=“target url ads” title=“title ads”&amp;gt;&amp;lt;img class=“noborder” src=“Url Images” alt=“alt images” width=“125” height=“125” /&amp;gt;&amp;lt;/a&amp;gt; &lt;br&gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;/pre&gt;&lt;br&gt;Fill with your ads description. &lt;br&gt;&lt;br&gt;4. When finished, save and see the results&lt;br&gt;&lt;br&gt;I think it’s not hard to create an ad box on a blog, just need to add some code into the blog template. For that I just end the tutorial how to create an ad box on this blog. May be useful.&lt;/p&gt;

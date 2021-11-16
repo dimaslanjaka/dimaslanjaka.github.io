@@ -20,19 +20,17 @@ npx gulp article:copy # safely using npx
 npx hexo generate
 ```
 
+<!--<div hidden>
+<img src="https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg?style=flat-square&label=webmanajemen.com" hidden/>
+<img src="https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=http%3A%2F%2Fwebmanajemen.com" hidden />
+<img src="https://img.shields.io/badge/webmanajemen.com-up-down-green-red" hidden/>
+</div>-->
+
 # Hexo NodeJS Blogging System
 
 [![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
-[![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=http%3A%2F%2Fwebmanajemen.com)](https://webmanajemen.com)
-<!--
-original
-[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg?style=flat-square&label=webmanajemen.com)](https://webmanajemen.com/)
-redirected
-[![Website](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=http%3A%2F%2Fwebmanajemen.com)](https://webmanajemen.com)
-only badge label
-[![Website](https://img.shields.io/badge/webmanajemen.com-up-down-green-red)](https://dimaslanjaka.github.io)
--->
+[![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&cacheSeconds=999&url=http%3A%2F%2Fwebmanajemen.com)](https://webmanajemen.com) 
 
 ## hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)

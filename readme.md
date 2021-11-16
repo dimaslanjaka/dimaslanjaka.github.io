@@ -29,13 +29,16 @@ npx hexo generate
 [![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
 
 ## hexo-adsense
+[![npm version](https://badge.fury.io/js/hexo-adsense.svg)](https://badge.fury.io/js/hexo-adsense)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
 
 ## hexo-seo
+[![npm version](https://badge.fury.io/js/hexo-seo.svg)](https://badge.fury.io/js/hexo-seo)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo)](https://npmjs.com/package/hexo-seo)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-seo)](https://npmjs.com/package/hexo-seo)
 
 ## hexo-blogger-xml
+[![npm version](https://badge.fury.io/js/hexo-blogger-xml.svg)](https://badge.fury.io/js/hexo-blogger-xml)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)

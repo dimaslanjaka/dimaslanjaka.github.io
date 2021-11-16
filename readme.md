@@ -24,9 +24,11 @@ npx hexo generate
 
 [![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
-[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg?style=flat-square&label=webmanajemen.com)](https://webmanajemen.com/)
+[![Website](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=http%3A%2F%2Fwebmanajemen.com)](https://webmanajemen.com)
 <!--
 original
+[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg?style=flat-square&label=webmanajemen.com)](https://webmanajemen.com/)
+redirected
 [![Website](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=http%3A%2F%2Fwebmanajemen.com)](https://webmanajemen.com)
 only badge label
 [![Website](https://img.shields.io/badge/webmanajemen.com-up-down-green-red)](https://dimaslanjaka.github.io)
@@ -38,11 +40,11 @@ only badge label
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
 
 ## hexo-seo
-[![npm version](https://badge.fury.io/js/hexo-seo.svg)](https://badge.fury.io/js/hexo-seo)
+[![npm version](https://badge.fury.io/js/hexo-seo.svg?style=flat-square)](https://badge.fury.io/js/hexo-seo)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo?style=flat-square)](https://npmjs.com/package/hexo-seo)
-[![Minimum node.js version](https://badgen.net/npm/node/hexo-seo)](https://npmjs.com/package/hexo-seo)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-seo?style=flat-square)](https://npmjs.com/package/hexo-seo)
 
 ## hexo-blogger-xml
-[![npm version](https://badge.fury.io/js/hexo-blogger-xml.svg)](https://badge.fury.io/js/hexo-blogger-xml)
-[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)
-[![Minimum node.js version](https://badgen.net/npm/node/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)
+[![npm version](https://badge.fury.io/js/hexo-blogger-xml.svg?style=flat-square)](https://badge.fury.io/js/hexo-blogger-xml)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-blogger-xml?style=flat-square)](https://npmjs.com/package/hexo-blogger-xml)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-blogger-xml?style=flat-square)](https://npmjs.com/package/hexo-blogger-xml)

@@ -20,24 +20,25 @@ npx gulp article:copy # safely using npx
 npx hexo generate
 ```
 
-### Website Generated With Hexo
+# Hexo NodeJS Blogging System
+
 [![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
-[<img src="https://img.shields.io/badge/webmanajemen.com-up-green"/>](https://dimaslanjaka.github.io)
-[![Website dimaslanjaka.github.io](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)
-[![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
+[![Website](https://img.shields.io/badge/webmanajemen.com-up-green)](https://dimaslanjaka.github.io)
+[![Website](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)
+[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
 
-### hexo-adsense
+## hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg)](https://badge.fury.io/js/hexo-adsense)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
 
-### hexo-seo
+## hexo-seo
 [![npm version](https://badge.fury.io/js/hexo-seo.svg)](https://badge.fury.io/js/hexo-seo)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo)](https://npmjs.com/package/hexo-seo)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-seo)](https://npmjs.com/package/hexo-seo)
 
-### hexo-blogger-xml
+## hexo-blogger-xml
 [![npm version](https://badge.fury.io/js/hexo-blogger-xml.svg)](https://badge.fury.io/js/hexo-blogger-xml)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Website Management Indonesia • Posts by &#34;kotlin&#34; tag</title>
-        <link>https://www.webmanajemen.com</link>
+        <link>https://git.webmanajemen.com</link>
         <description>External source WMI Github Laboratory</description>
         <language>en</language>
         <pubDate>Fri, 23 Oct 2020 19:19:00 +0000</pubDate>
@@ -55,17 +55,17 @@
         <category>Chest Location</category>
         <category>Quest</category>
         <item>
-            <guid isPermalink="true">https://www.webmanajemen.com/2020/10/example-getting-properties-value-from.html</guid>
+            <guid isPermalink="true">https://git.webmanajemen.com/2020/10/example-getting-properties-value-from.html</guid>
             <title>Example getting properties value from settings.gradle.kts</title>
-            <link>https://www.webmanajemen.com/2020/10/example-getting-properties-value-from.html</link>
+            <link>https://git.webmanajemen.com/2020/10/example-getting-properties-value-from.html</link>
             <category>Kotlin</category>
             <pubDate>Fri, 23 Oct 2020 19:19:00 +0000</pubDate>
             <description><![CDATA[ &lt;pre&gt;&lt;br&gt;pluginManagement {&lt;br&gt;    resolutionStrategy {&lt;br&gt;        eachPlugin {&lt;br&gt;            // Work around https://github.com/gradle/gradle/issues/1697.&lt;br&gt;            if (requested.version == null) {&lt;br&gt;                def pluginName = requested.id.name.split(&#39;-&#39;).collect { it.capitalize() }.join().uncapitalize()&lt;br&gt;                def versionPropertyName = (requested.id.id == &#39;org.jetbrains.kotlin.jvm&#39;) ?&lt;br&gt;                        &#34;kotlinPluginVersion&#34; : &#34;${pluginName}PluginVersion&#34;&lt;br&gt;                logger.info(&#34;Checking for plugin version property &#39;$versionPropertyName&#39;.&#34;)&lt;br&gt;                if (gradle.rootProject.hasProperty(versionPropertyName)) {&lt;br&gt;                    def version = gradle.rootProject.properties[versionPropertyName]&lt;br&gt;                    logger.info(&#34;Setting &#39;${requested.id.id}&#39; plugin version to $version.&#34;)&lt;br&gt;                    useVersion version&lt;br&gt;                } else {&lt;br&gt;                    logger.warn(&#34;No version specified for plugin &#39;${requested.id.id}&#39; and property &#34; +&lt;br&gt;                            &#34;&#39;$versionPropertyName&#39; does not exist.&#34;)&lt;br&gt;                }&lt;br&gt;            }&lt;br&gt;        }&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;&lt;/pre&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html</guid>
+            <guid isPermalink="true">https://git.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html</guid>
             <title>build.gradle with custom repository</title>
-            <link>https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html</link>
+            <link>https://git.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html</link>
             <category>Android</category>
             <category>Java</category>
             <category>Gradle</category>

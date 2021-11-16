@@ -22,7 +22,7 @@ npx hexo generate
 
 # Hexo NodeJS Blogging System
 
-[![Build www.webmanajemen.com](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
+[![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
 [<img src="https://img.shields.io/badge/webmanajemen.com-up-green"/>](https://dimaslanjaka.github.io)
 [![Website dimaslanjaka.github.io](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)

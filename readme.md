@@ -23,19 +23,23 @@ npx hexo generate
 # Hexo NodeJS Blogging System
 
 [![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
-[![Website](https://img.shields.io/badge/webmanajemen.com-up-green)](https://dimaslanjaka.github.io)
-[![Website](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)
-[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
+[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg?style=flat-square&label=webmanajemen.com)](https://webmanajemen.com/)
+<!--
+original
+[![Website](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=http%3A%2F%2Fwebmanajemen.com)](https://webmanajemen.com)
+only badge label
+[![Website](https://img.shields.io/badge/webmanajemen.com-up-down-green-red)](https://dimaslanjaka.github.io)
+-->
 
 ## hexo-adsense
-[![npm version](https://badge.fury.io/js/hexo-adsense.svg)](https://badge.fury.io/js/hexo-adsense)
-[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
-[![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
+[![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
 
 ## hexo-seo
 [![npm version](https://badge.fury.io/js/hexo-seo.svg)](https://badge.fury.io/js/hexo-seo)
-[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo)](https://npmjs.com/package/hexo-seo)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo?style=flat-square)](https://npmjs.com/package/hexo-seo)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-seo)](https://npmjs.com/package/hexo-seo)
 
 ## hexo-blogger-xml

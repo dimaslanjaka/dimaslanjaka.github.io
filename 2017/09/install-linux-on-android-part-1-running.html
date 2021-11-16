@@ -1,26 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="renderer" content="webkit">
 
-  
-  <title>Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android | Website Management Indonesia</title>
+  <link rel="dns-prefetch" href="//secure.gravatar.com">
+  <link rel="dns-prefetch" href="//static.codepen.io">
+  <link rel="dns-prefetch" href="//res.cloudinary.com">
+  <link rel="dns-prefetch" href="//ad.doubleclick.com">
+  <link rel="dns-prefetch" href="//s3.buysellads.com">
+  <link rel="dns-prefetch" href="//srv.buysellads.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+  <link rel="dns-prefetch" href="//adservice.google.com">
+  <link rel="dns-prefetch" href="//www.googletagservices.com">
+  <link rel="dns-prefetch" href="//git.webmanajemen.com">
 
-  <link rel="shortcut icon" href="/images/favicon.png">
-  <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
+  
+
+  <title>Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android | WMI Gitlab</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png"> <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
   <meta property="og:type" content="article">
-<meta property="og:title" content="Install Linux on the Android part 1-running Linux (Ubuntu&#x2F;Xenial) on Android">
-<meta property="og:url" content="https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">
+<meta property="og:title" content="Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">
 <meta property="og:site_name" content="Website Management Indonesia">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://image.ibb.co/fFtDUF/unnamed_5.png">
 <meta property="article:published_time" content="2017-09-01T09:41:00.000Z">
-<meta property="article:modified_time" content="2021-11-16T08:56:50.379Z">
-<meta property="article:author" content="[object Object]">
+<meta property="article:modified_time" content="2021-11-16T09:51:56.621Z">
+<meta property="article:author" content="Dimas Lanjaka 2">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="Tips &amp; Tricks">
 <meta name="twitter:card" content="summary">
@@ -32,69 +46,64 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Website Management Indonesia">
-  <meta name="msapplication-starturl" content="https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">
+  <meta name="msapplication-starturl" content="https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Website Management Indonesia">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
-  
-    <link rel="canonical" href="https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">
-  
+  <!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
 
   
-  
-
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create','UA-106238155-1','auto');ga('send','pageview');
+  <link rel="canonical" href="https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">
+     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('send', 'pageview');
 </script>
-  
-  
 
-  
+<script>gtag('config', 'UA-106238155-1', {
+    'page_title': document.title,
+    'page_path': location.pathname,
+    'page_location': location.href
+  });
+</script>
+
+<script>gtag('config', 'G-BG75CLNJZ1', {
+    'page_title': document.title,
+    'page_path': location.pathname,
+    'page_location': location.href
+  });
+</script>
+   
 <link rel="stylesheet" href="/css/mdui.css">
 <link rel="stylesheet" href="/css/style.css">
-
-  
+ 
 <link rel="stylesheet" href="/custom.css">
 
-<meta name="generator" content="Hexo 5.4.0"><script id="hexo-adsense-config" type="application/json">{
-  "enable": true,
-  "article_ads": [
-    "source/ads/in_article.html",
-    "source/ads/in_article2.html"
-  ],
-  "pub": "ca-pub-1165447249910969",
-  "adblock": true,
-  "https": true,
-  "field": "site",
-  "exclude": [
-    "*.min.html",
-    "exclude/**/*"
-  ],
-  "development": false
-}</script></head>
+<meta name="generator" content="Hexo 5.4.0"><script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article.html","source/ads/in_article2.html"],"pub":"ca-pub-1165447249910969","adblock":true,"https":true,"field":"site","exclude":["*.min.html","exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"5.4.0","cmd":"generate","init":true}</script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android","alternativeHeadline":"Another of the features of the android smartphone that we can take advantage of IE running OS Ubuntu Xenial at 6 or more times There in","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/120px-No_image_available.svg.png","author":{"@type":"Person","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png","name":"Dimas Lanjaka 2","sameAs":"link"},"award":"Best article ever written","editor":"Dimas Lanjaka 2","genre":"Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android, Android, Tips & Tricks","keywords":"Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android, Android, Tips & Tricks","wordcount":"7700","publisher":{"@type":"Organization","name":"Dimas Lanjaka 2","logo":{"@type":"ImageObject","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"}},"url":"https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article","mainEntity":{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://developers.google.com/search/docs/advanced/structured-data/breadcrumb","name":"breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Android","item":"https://www.webmanajemen.com/tags/Android/"},{"@type":"ListItem","position":2,"name":"Tips & Tricks","item":"https://www.webmanajemen.com/tags/Tips-Tricks/"},{"@type":"ListItem","position":3,"name":"Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android","item":"https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html"}]}},"datePublished":"2015-09-20","dateCreated":"2015-09-20","dateModified":"2015-09-20","description":"Another of the features of the android smartphone that we can take advantage of IE running OS Ubuntu Xenial at 6 or more times There in","articleBody":"Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android\n        \n           2017-09-01 /  Dimas Lanjaka 2 \n        \n      \n    \n    \n      \n      \n        devices\n      \n      \n        \n        Send to phone\n        \n        \n          \n          \n          \n        \n      \n       \n      \n        share\n      \n      \n        \n          Share to Weibo\n        \n        \n          Share to Twitter\n        \n        \n          Share to Facebook\n        \n        \n          Share to Google+\n        \n        \n          Share to LinkedIn\n        \n        \n          Share to QQ\n        \n        \n          Share to Telegram\n        \n      \n      \n    \n  \n  \n    Another of the features of the android smartphone that we can take advantage of IE running OS Ubuntu Xenial at 16 or more times There in the android smartphone OS with Ubuntu, where or Times be installed on android smartphone we then automatically features that exist on Ubuntu OS or at 16 times also we can use. PC again when we run OS Ubuntu or the Time, we don't need to shut down the android OS on our smartphone OS, both Ubuntu and android OS can be run simultaneously so that the features on android Smartphones such as telephone, sms, whatsapp, BBM, line, and so on will still work.Ubuntu is one of the linux operating system on the basis of the debian operating system. Ubuntu was first released circa 2004 and have experienced the development until now with final release of Ubuntu Xenial at 16. Some software that we can take advantage of ubuntu are:Office Software (word, excel, powerpoint) use Libreoffice 5.-Software development web server for local use apache2, php and mysql.-Code editor with features of interest to developers.-Browsing using web browser just like on a PC.-And so on.Another thing to keep in mind in the process of installing ubuntu on a smartphone cannot be ascertained that the installation will succeed 100% due to the characteristics of the hardware on every android smartphone. Here also I remind that the installation process may have to be repeated several times until the os installation of ubuntu on a smartphone successful, so it is recommended to use a wifi connection with good speed, or data connection smartpone with large quotas.All the steps in this tutorial is a safe, all the steps done in software but does not cover the possibility if the later will be faced with some problems even though the odds are small so we must be ready with the risk that would be faced. By following this tutorial I think have agreed that all the risks are borne by themselves.To run ubuntu, android smartphone we should meet the minimum specification, namely:-at least 1 Ghz processor-1 GB RAM-sdcard with the rest of the space at least 5 GB-mandatory android smartphone is already in the root.Actually not just ubuntu that can be installed, other linux distros like debian, opensuse, slackware, times, and centos could also be installed. But from my experience installing linux on android, ubuntu only the most stable. I chose ubuntu latest version namely xenial at 16 because the repository for application installation in ubuntu like office, apache, mysql, php, etc. are still complete and we can get the latest versions of these applications with a nicer look and a more complete feature. As for the Time There there are some applications that still use the old version in the repository, and if we want to install the latest version, we harus embodying other repository manually, but the benefits of Time There terasa lighter. After the minimum specifications of android smartphone, we now begin to stage installation. Previously used to prepare supporting applications as follows:1. Deploy Linux Applications. Download here2. application Busybox installer. Download here3. Applications the bVNC. Download here4. application Terminal Emulator. Download hereAfter all the applications installed, we start ubuntu installation phase as follows:1. open busybox installer app, and then click install busybox.2. Go to deploy linux applications, and then open the installation settings (picture the arrow down) and make the settings as follows:a) distribution: ubuntu, if you want to use the time pbe selected times. b) Distribution suite: xenial, if you use the select time there.c) Architecture: armhf.d) Mirror: Let alone without change, according to their standard. e) installation type: file.f) Installation path:/sdcard/linuximg.g) image size: 4000h) file system: auto.I) User name: android.j) Password: changeme.k: LXDE Desktop environment).l) Select component: give ceklist on a desktop environment, ssh server, vnc servers.m) marked ceklist on ssh and gui.n) Graphic subsystem: vnc.o) Gui settings: display 0, 24 depth, width and height, the appropriate screen resolution recommended hp.3. Back to the top of the settings menu, select install. Then download and install process will begin. The process will last for quite a while, depending on the speed of the internet. The downloaded data is approximately 300-500 MB. Wait until it is finished.4. After the installation process is complete, click on the stop button, wait for the stop process is complete, then click on the start button. If on the status of ssh and vnc done, then the installation was successful, if it fail, then your installation failed. 5. If the download fails, click the stop button, click on the install button on the settings menu of the installation. Then the installation process will be repeated.6. If the installation is successful, we can be checked by clicking on the stop button, then after the stop process is complete click on the start button wait a few moments until the emerging status of ssh and vnc done done. If the status of ssh and vnc fail means installation fails, try signing in lagi settings then click reconfigure. If the status still fail, repeat from step no. 3.7. If it appears the status of ssh and vnc done, to start using ubuntu use bVNC applications. Open application settings then bVNC at:a) server: 127.0.0.1b) port: 5900c) username: androidd) password: changeme8. Click on the connect button that is in the application, if any error bVNC disregard it, just click on the OK button. The look of ubuntu with its menu is already displayed and we can already start using it.9. At this point ubuntu still in a State of blank without any application except the file manager and terminal.10. To install software, use the terminal. To access the root use the command sudo-i then enter. Do update reposotory with type apt-get update on terminal then enter.Until this stage been successfully installed ubuntu at 16. We can make a backup of the file mengkopikan with the way linux. img on sdcard to another folder so that if there is an error because of the wrong software to install or other error we can restore the backup of the last we created so no need to do the installation from the beginning.For installing software via terminal for unfamiliar with linux system can find tutorials on google. Use the keyword install for ubuntu, it's usually way installation using apt-get. Keep in mind that our install ubuntu is ubuntu with a special arm processor architecture, so software-software that requires intel processor will not be installed. Examples of available software for the arm processors are: libreoffice, apache2, php, mysql, phpmyadmin, mysql workbench, gedit, firefox and many more.The tutorial running ubuntu xenial at 16 or more times there in android, may be useful. \n    \n      \n      PermaLink:  https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html\n      \n      Rich Snippets\n    \n  \n  \n    \n    \n    \n    Android\n    \n    Tips & Tricks"}</script></head>
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
   <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
   <div class="mdui-toolbar mdui-color-theme">
-    <a href="javascript:;" rel="noopener external nofollow noreferrer" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="/" class="mdui-typo-headline">Website Management Indonesia</a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" rel="noopener external nofollow noreferrer" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
     <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
 <div class="mdui-dialog" id="search">
   
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Insert The Keywords"><input type="hidden" name="sitesearch" value="https://git.webmanajemen.com"></form>
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Insert The Keywords"><input type="hidden" name="sitesearch" value="https://www.webmanajemen.com"></form>
     <div class="search-result"></div>
   
 </div>
@@ -107,14 +116,12 @@
     <div class="mdui-grid-tile">
         <img src="/images/banner.png" style="height: 160px;">
         
-        <img src="/images/avatar.png" class="avatar-animation"
-                                      style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
                 <div class="mdui-grid-tile-title">Dimas Lanjaka</div>
-                <div class="mdui-grid-tile-subtitle"><i
-                            class="mdui-icon material-icons">art_track</i>WMI Gitlab</div>
+                <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>WMI</div>
             </div>
             
         </div>
@@ -172,7 +179,7 @@
             </div>
             <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
                 
-                <a class="mdui-ripple sidebar_archives-link" href="/tags/AMP/" rel="tag">AMP<span class="mdui-ripple sidebar_archives-count">15</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Adsense/" rel="tag">Adsense<span class="mdui-ripple sidebar_archives-count">31</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Android/" rel="tag">Android<span class="mdui-ripple sidebar_archives-count">92</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Auto-Click/" rel="tag">Auto Click<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Blogger/" rel="tag">Blogger<span class="mdui-ripple sidebar_archives-count">110</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Blogging/" rel="tag">Blogging<span class="mdui-ripple sidebar_archives-count">59</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/CSS/" rel="tag">CSS<span class="mdui-ripple sidebar_archives-count">72</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Chest-Location/" rel="tag">Chest Location<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/CodeIgniter/" rel="tag">CodeIgniter<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Durango/" rel="tag">Durango<span class="mdui-ripple sidebar_archives-count">14</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Event/" rel="tag">Event<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Facebook/" rel="tag">Facebook<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Fonts/" rel="tag">Fonts<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Game-Control/" rel="tag">Game Control<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Games/" rel="tag">Games<span class="mdui-ripple sidebar_archives-count">58</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Genshin-Impact/" rel="tag">Genshin Impact<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Github/" rel="tag">Github<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Gradle/" rel="tag">Gradle<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/HTML/" rel="tag">HTML<span class="mdui-ripple sidebar_archives-count">96</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Hosting/" rel="tag">Hosting<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/JS/" rel="tag">JS<span class="mdui-ripple sidebar_archives-count">89</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Java/" rel="tag">Java<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Kotlin/" rel="tag">Kotlin<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Life-Skill/" rel="tag">Life Skill<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux-Unix/" rel="tag">Linux/Unix<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Macros/" rel="tag">Macros<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Marketing-Strategies/" rel="tag">Marketing Strategies<span class="mdui-ripple sidebar_archives-count">12</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Miscellaneous/" rel="tag">Miscellaneous<span class="mdui-ripple sidebar_archives-count">13</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Movies/" rel="tag">Movies<span class="mdui-ripple sidebar_archives-count">48</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Musics/" rel="tag">Musics<span class="mdui-ripple sidebar_archives-count">128</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/PHP/" rel="tag">PHP<span class="mdui-ripple sidebar_archives-count">50</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Popular/" rel="tag">Popular<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Proxy/" rel="tag">Proxy<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Quest/" rel="tag">Quest<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/RegExp/" rel="tag">RegExp<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/SEO/" rel="tag">SEO<span class="mdui-ripple sidebar_archives-count">39</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Script/" rel="tag">Script<span class="mdui-ripple sidebar_archives-count">20</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Share/" rel="tag">Share<span class="mdui-ripple sidebar_archives-count">22</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Social-Media/" rel="tag">Social Media<span class="mdui-ripple sidebar_archives-count">21</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Software/" rel="tag">Software<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/TS/" rel="tag">TS<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Test/" rel="tag">Test<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Tips-Tricks/" rel="tag">Tips & Tricks<span class="mdui-ripple sidebar_archives-count">182</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Tools/" rel="tag">Tools<span class="mdui-ripple sidebar_archives-count">27</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/VainGlory/" rel="tag">VainGlory<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Windows/" rel="tag">Windows<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Wordpress/" rel="tag">Wordpress<span class="mdui-ripple sidebar_archives-count">40</span></a>
+                <a class="mdui-ripple sidebar_archives-link" href="/tags/AMP/" rel="tag">AMP<span class="mdui-ripple sidebar_archives-count">15</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Adsense/" rel="tag">Adsense<span class="mdui-ripple sidebar_archives-count">31</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Android/" rel="tag">Android<span class="mdui-ripple sidebar_archives-count">92</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Auto-Click/" rel="tag">Auto Click<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Blogger/" rel="tag">Blogger<span class="mdui-ripple sidebar_archives-count">110</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Blogging/" rel="tag">Blogging<span class="mdui-ripple sidebar_archives-count">59</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/CSS/" rel="tag">CSS<span class="mdui-ripple sidebar_archives-count">72</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Chest-Location/" rel="tag">Chest Location<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/CodeIgniter/" rel="tag">CodeIgniter<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Durango/" rel="tag">Durango<span class="mdui-ripple sidebar_archives-count">14</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Event/" rel="tag">Event<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Facebook/" rel="tag">Facebook<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Fonts/" rel="tag">Fonts<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Game-Control/" rel="tag">Game Control<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Games/" rel="tag">Games<span class="mdui-ripple sidebar_archives-count">58</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Genshin-Impact/" rel="tag">Genshin Impact<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Github/" rel="tag">Github<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Gradle/" rel="tag">Gradle<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/HTML/" rel="tag">HTML<span class="mdui-ripple sidebar_archives-count">96</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Hosting/" rel="tag">Hosting<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/JS/" rel="tag">JS<span class="mdui-ripple sidebar_archives-count">89</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Java/" rel="tag">Java<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Kotlin/" rel="tag">Kotlin<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Life-Skill/" rel="tag">Life Skill<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux-Unix/" rel="tag">Linux/Unix<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Macros/" rel="tag">Macros<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Marketing-Strategies/" rel="tag">Marketing Strategies<span class="mdui-ripple sidebar_archives-count">12</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Miscellaneous/" rel="tag">Miscellaneous<span class="mdui-ripple sidebar_archives-count">13</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Movies/" rel="tag">Movies<span class="mdui-ripple sidebar_archives-count">48</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Musics/" rel="tag">Musics<span class="mdui-ripple sidebar_archives-count">128</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/PHP/" rel="tag">PHP<span class="mdui-ripple sidebar_archives-count">50</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Popular/" rel="tag">Popular<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Proxy/" rel="tag">Proxy<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Quest/" rel="tag">Quest<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/RegExp/" rel="tag">RegExp<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/SEO/" rel="tag">SEO<span class="mdui-ripple sidebar_archives-count">39</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Script/" rel="tag">Script<span class="mdui-ripple sidebar_archives-count">20</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Share/" rel="tag">Share<span class="mdui-ripple sidebar_archives-count">22</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Social-Media/" rel="tag">Social Media<span class="mdui-ripple sidebar_archives-count">21</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Software/" rel="tag">Software<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/TS/" rel="tag">TS<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Test/" rel="tag">Test<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Tips-Tricks/" rel="tag">Tips &amp; Tricks<span class="mdui-ripple sidebar_archives-count">182</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Tools/" rel="tag">Tools<span class="mdui-ripple sidebar_archives-count">27</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/VainGlory/" rel="tag">VainGlory<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Windows/" rel="tag">Windows<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Wordpress/" rel="tag">Wordpress<span class="mdui-ripple sidebar_archives-count">40</span></a>
                 
             </div>
         </div>
@@ -186,14 +193,11 @@
 
     <div class="mdui-list" mdui-collapse="{accordion: true}">
         
-            <a href="/page/about-me"
-               class="mdui-list-item mdui-ripple">About Me</a>
+            <a href="/page/about-me" class="mdui-list-item mdui-ripple">About Me</a>
         
-            <a href="/page/bot-detect"
-               class="mdui-list-item mdui-ripple">Bot Detect</a>
+            <a href="/page/bot-detect" class="mdui-list-item mdui-ripple">Bot Detect</a>
         
-            <a href="/contact"
-               class="mdui-list-item mdui-ripple">Contact</a>
+            <a href="/contact" class="mdui-list-item mdui-ripple">Contact</a>
         
         <div class="mdui-collapse-item">
             <script>var a = localStorage.getItem("mdui-collapse-item-3");
@@ -208,8 +212,7 @@
             <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
                 
                 
-                    <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple"
-                       style="justify-content: center;">No Links</a>
+                    <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">No Links</a>
                 
             </div>
         </div>
@@ -217,7 +220,7 @@
 </aside>
 
   <main id="main" class="mdui-m-t-5 fadeIn animated"> 
-<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
 <style>
   #main article .mdui-card-content .center-block {
@@ -228,15 +231,12 @@
 </style>
 <article class="mdui-card mdui-m-b-5">
   <header class="mdui-card-media">
-    <img
-      src="https://image.ibb.co/fFtDUF/unnamed_5.png"
-      style="max-height: 240px"
-    />
+    <img src="https://image.ibb.co/fFtDUF/unnamed_5.png" style="max-height: 240px">
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android</div>
         <div class="mdui-card-primary-subtitle">
-          <i class="iconfont">&#xe697;</i> 2017-09-01 / <i class="iconfont">&#xe601;</i> Dimas Lanjaka 2 
+          <i class="iconfont"></i> 2017-09-01 / <i class="iconfont"></i> Dimas Lanjaka 2 
         </div>
       </div>
     </div>
@@ -249,11 +249,9 @@
         
         <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to phone</a></li>
         
-        <li class="mdui-menu-item" disabled>
+        <li class="mdui-menu-item" disabled="">
           
-          <img
-            src="https://chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&chld=M|2"
-          />
+          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&amp;chld=M|2">
           
         </li>
       </ul>
@@ -263,83 +261,53 @@
       </button>
       <ul class="mdui-menu" id="share_menu">
         <li class="mdui-menu-item">
-          <a
-            href="http://service.weibo.com/share/share.php?appkey=&title=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android&url=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&pic=https://git.webmanajemen.com/images/favicon.png&searchPic=false&style=simple"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Weibo</a
-          >
+          <a href="http://service.weibo.com/share/share.php?appkey=&amp;title=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android&amp;url=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&amp;pic=https://www.webmanajemen.com/images/favicon.png&amp;searchPic=false&amp;style=simple" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to Weibo</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://twitter.com/intent/tweet?text=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android&url=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&via=[object Object]"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Twitter</a
-          >
+          <a href="https://twitter.com/intent/tweet?text=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android&amp;url=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&amp;via=[object Object]" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to Twitter</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Facebook</a
-          >
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to Facebook</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html" target="_blank" class="mdui-ripple"
-            >Share to Google+</a
-          >
+          <a href="https://plus.google.com/share?url=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to Google+</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://www.linkedin.com/shareArticle?mini=true&url=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&title=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to LinkedIn</a
-          >
+          <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&amp;title=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to LinkedIn</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&title=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android&pics=https://git.webmanajemen.com/images/favicon.png&url=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to QQ</a
-          >
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Website Management Indonesia&amp;title=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android&amp;pics=https://www.webmanajemen.com/images/favicon.png&amp;url=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to QQ</a>
         </li>
         <li class="mdui-menu-item">
-          <a
-            href="https://telegram.me/share/url?url=https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&text=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android"
-            target="_blank"
-            class="mdui-ripple"
-            >Share to Telegram</a
-          >
+          <a href="https://telegram.me/share/url?url=https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html&amp;text=Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android" target="_blank" class="mdui-ripple" rel="nofollow noopener noreferer noreferrer">Share to Telegram</a>
         </li>
       </ul>
       
     </div>
   </header>
   <div class="mdui-card-content mdui-typo">
-    <div id="div_f9fe_0" len="5534"><a target="_blank" href="https://imgbb.com/" rel="noopener external nofollow noreferrer noreferer" alt="imgdb" title="imgdb"><img src="https://image.ibb.co/fFtDUF/unnamed_5.png" alt="unnamed_5" title="imgDb" border="0"></a><span id="span_f9fe_0" len="4642"><span lang="en">Another of the features of the android smartphone that we can take advantage of IE running OS Ubuntu Xenial at 16&nbsp;<span len="15">or more times There&nbsp;</span>in the android smartphone OS with Ubuntu, where or Times be installed on android smartphone we then automatically features that exist on Ubuntu OS or at 16 times also we can use.&nbsp;</span><span lang="en">PC again when we run OS Ubuntu or the Time, we don't need to shut down the android OS on our smartphone OS, both Ubuntu and android OS can be run simultaneously so that the features on android Smartphones such as telephone, sms, whatsapp, BBM, line, and so on will still work.</span><br len="0"><br len="0"><span lang="en">Ubuntu is one of the linux operating system on the basis of the debian operating system.&nbsp;</span><span lang="en">Ubuntu was first released circa 2004 and have experienced the development until now with final release of Ubuntu Xenial at 16.&nbsp;</span><span lang="en">Some software that we can take advantage of ubuntu are:</span><br len="0"><br len="0"><span lang="en">Office Software (word, excel, powerpoint) use Libreoffice 5.</span><br len="0"><span lang="en">-Software development web server for local use apache2, php and mysql.</span><br len="0"><span lang="en">-Code editor with features of interest to developers.</span><br len="0"><span lang="en">-Browsing using web browser just like on a PC.</span><br len="0"><span lang="en">-And so on.</span><br len="0"><br len="0"><span lang="en">Another thing to keep in mind in the process of installing ubuntu on a smartphone cannot be ascertained that the installation will succeed 100% due to the characteristics of the hardware on every android smartphone.&nbsp;</span><span lang="en">Here also I remind that the installation process may have to be repeated several times until the os installation of ubuntu on a smartphone successful, so it is recommended to use a wifi connection with good speed, or data connection smartpone with large quotas.</span><br len="0"><br len="0"><span lang="en">All the steps in this tutorial is a safe, all the steps done in software but does not cover the possibility if the later will be faced with some problems even though the odds are small so we must be ready with the risk that would be faced.&nbsp;</span><span lang="en">By following this tutorial I think have agreed that all the risks are borne by themselves.</span><br len="0"><br len="0"><span lang="en">To run ubuntu, android smartphone we should meet the minimum specification, namely:</span><br len="0"><br len="0"><span lang="en">-at least 1 Ghz processor</span><br len="0"><span lang="en">-1 GB RAM</span><br len="0"><span lang="en">-sdcard with the rest of the space at least 5 GB</span><br len="0"><span lang="en">-mandatory android smartphone is already in the root.</span><br len="0"><br len="0"><span lang="en">Actually not just ubuntu that can be installed, other linux distros like debian, opensuse, slackware, times, and centos could also be installed.&nbsp;</span><span lang="en">But from my experience installing linux on android, ubuntu only the most stable.&nbsp;</span><span lang="en">I chose ubuntu latest version namely xenial at 16 because the repository for application installation in ubuntu like office, apache, mysql, php, etc. are still complete and we can get the latest versions of these applications with a nicer look and a more complete feature.&nbsp;</span><span lang="en">As for the Time There there are some applications that still use the old version in the repository, and if we want to install&nbsp;<span len="479">the latest version, we harus embodying other repository manually, but the benefits of Time There terasa lighter.&nbsp;</span></span><br len="0"><br len="0"><span lang="en">After the minimum specifications of android smartphone, we now begin to stage installation.&nbsp;</span><span lang="en">Previously used to prepare supporting applications as follows:</span><br len="0"><br len="0"><span lang="en">1. Deploy Linux Applications.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://play.google.com/store/apps/details?id=ru.meefik.linuxdeploy" rel="noopener external nofollow noreferrer noreferer" id="a_f9fe_0" len="7" target="_top">here</a></span><br len="0"><span lang="en">2. application Busybox installer.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://www.blogger.com/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dru.meefik.busybox" rel="noopener external nofollow noreferrer noreferer" id="a_f9fe_1" len="7" target="_top">here</a></span><br len="0"><span lang="en">3. Applications the bVNC.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://www.blogger.com/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.iiordanov.freebVNC" rel="noopener external nofollow noreferrer noreferer" id="a_f9fe_2" len="7" target="_top">here</a></span></span><br><span id="span_f9fe_1" len="648"><span lang="en">4. application Terminal Emula</span><span len="201"><span lang="en">tor.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://www.blogger.com/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Djackpal.androidterm" rel="noopener external nofollow noreferrer noreferer" id="a_f9fe_3" target="_top">here</a></span><br len="0"><br len="0"><span lang="en">After all the applications installed, we start ubuntu installation phase as follows:</span><br len="0"><br len="0"><span lang="en">1. open busybox installer app, and then click install busybox.</span><br len="0"><span lang="en">2. Go to deploy linux applications, and then open the installation settings (picture the arrow down) and make the settings as follows:</span></span></span></div><div id="div_f9fe_1" len="1528"><span id="span_f9fe_2" len="1408"><br len="0"><span lang="en">a) distribution: ubuntu<span len="160">, if you want to use the time pbe selected times.&nbsp;</span></span><br len="0"><span lang="en">b) Distribution suite: xenial<span len="35">, if you use the select time there.</span></span><br len="0"><span lang="en">c) Architecture: armhf.</span><br len="0"><span lang="en">d) Mirror:&nbsp;<span len="167">Let&nbsp;alone without change, according to their standard.&nbsp;</span></span><br len="0"><span lang="en">e) installation type: file.</span><br len="0"><span lang="en">f) Installation path:/sdcard/<span len="5">linux</span>img.</span><br len="0"><span lang="en">g) image size: 4000</span><br len="0"><span lang="en">h) file system: auto.</span><br len="0"><span lang="en">I) User name: android.</span><br len="0"><span lang="en">j) Password: changeme.</span><br len="0"><span lang="en">k: LXDE Desktop environment).</span><br len="0"><span lang="en">l) Select component: give ceklist on a desktop environment, ssh server, vnc servers.</span><br len="0"><span lang="en">m) marked ceklist on ssh and gui.</span><br len="0"><span lang="en">n) Graphic subsystem: vnc.</span><br len="0"><span lang="en">o) Gui settings: display 0, 24 depth, width and height, the appropriate screen resolution recommended hp.</span></span></div><div id="div_f9fe_2" len="858"><span id="span_f9fe_3" len="738"><br len="0"><span lang="en">3. Back to the top of the settings menu, select install.&nbsp;</span><span lang="en">Then download and install process will begin.&nbsp;</span><span lang="en">The process will last for quite a while, depending on the speed of the internet.&nbsp;</span><span lang="en">The downloaded data is approximately 300-500 MB.&nbsp;</span><span lang="en">Wait until it is finished.</span><br len="0"><span lang="en">4. After the installation process is complete, click on the stop button, wait for the stop process is complete, then click on the start button.&nbsp;</span><span lang="en">If on the status of ssh and vnc done, then the installation was successful, if it fail, then your installation failed.&nbsp;</span><br len="0"><span lang="en">5. If&nbsp;<span len="15">the download</span>&nbsp;fails, click the stop button, click on the install button on the settings menu of the installation.&nbsp;</span><span lang="en">Then the installation process will be repeated.</span></span></div><div id="div_f9fe_3" len="980"><span id="span_f9fe_4" len="860"><span lang="en">6. If the installation is successful, we can be checked by clicking on the stop button, then after the stop process is complete click on the start button wait a few moments until the emerging status of ssh and vnc done done.&nbsp;</span><span lang="en">If the status of ssh and vnc fail means installation fails</span><span lang="en">, try signing in la</span><span lang="en">gi settings then click reconf</span><span lang="en">igure</span>.&nbsp;<span lang="en">If the status still fail, repeat from step no. 3.</span></span></div><div id="div_f9fe_4" len="265"><span id="span_f9fe_5" len="145"><span lang="en">7. If it appears the status of ssh and vnc done, to start using ubuntu use bVNC applications.&nbsp;</span><span lang="en">Open application settings then bVNC at:</span></span></div><div id="div_f9fe_5" len="1"></div><div id="div_f9fe_6" len="146"><span id="span_f9fe_6" lang="en" len="26">a) server: 127.0.0.1</span></div><div id="div_f9fe_7" len="139"><span id="span_f9fe_7" lang="en" len="19">b) port: 5900</span></div><div id="div_f9fe_8" len="146"><span id="span_f9fe_8" lang="en" len="26">c) username: android</span></div><div id="div_f9fe_9" len="147"><span id="span_f9fe_9" lang="en" len="27">d) password: changeme</span></div><div id="div_f9fe_10" len="1"></div><div id="div_f9fe_11" len="328"><span id="span_f9fe_10" len="208"><span lang="en">8. Click on the connect button that is in the application, if any error bVNC disregard it, just click on the OK button.&nbsp;</span><span lang="en">The look of ubuntu with its menu is already displayed and we can already start using it.</span></span></div><div id="div_f9fe_12" len="237"><span id="span_f9fe_11" lang="en" len="117">9. At this point ubuntu still in a State of blank without any application except the file manager and terminal.</span></div><div id="div_f9fe_13" len="325"><span id="span_f9fe_12" len="205"><span lang="en">10. To install software, use the terminal.&nbsp;</span><span lang="en">To access the root use the command sudo-i then enter.&nbsp;</span><span lang="en">Do update reposotory with type apt-get update on terminal then enter.</span></span></div><div id="div_f9fe_14" len="1"></div><div id="div_f9fe_15" len="573"><span id="span_f9fe_13" len="453"><span lang="en">Until this stage been successfully installed ubuntu at 16.&nbsp;</span><span lang="en">We can make a backup of the file mengkopikan with the way&nbsp;linux. img on sdcard to another folder so that if there is an error because of the wrong software to install or other error we can restore the backup of the last we created so no need to do the installation from the beginning.</span></span></div><div id="div_f9fe_16" len="1"></div><div id="div_f9fe_17" len="688"><span id="span_f9fe_14" len="568"><span lang="en">For installing software via terminal for unfamiliar with linux system can find tutorials on google.&nbsp;</span><span lang="en">Use the keyword install for ubuntu, it's usually way installation using apt-get.&nbsp;</span><span lang="en">Keep in mind that our install ubuntu is ubuntu with a special arm processor architecture, so software-software that requires intel processor will not be installed.&nbsp;</span><span lang="en">Examples of available software for the arm processors are: libreoffice, apache2, php, mysql, phpmyadmin, mysql workbench, gedit, firefox and many more.</span></span></div><div id="div_f9fe_18" len="124"><span id="span_f9fe_15" len="4"><br len="0"></span></div><div id="div_f9fe_19" len="213"><span id="span_f9fe_16" lang="en" len="93">The tutorial running ubuntu xenial at 16 or more times there in android, may be useful.</span></div> 
+    <div id="div_f9fe_0" len="5534"><a target="_blank" href="https://imgbb.com/" rel="noopener noreferer nofollow noreferrer" alt="imgdb" title="imgdb"><img src="https://image.ibb.co/fFtDUF/unnamed_5.png" alt="unnamed_5" title="imgDb" border="0"></a><span id="span_f9fe_0" len="4642"><span lang="en">Another of the features of the android smartphone that we can take advantage of IE running OS Ubuntu Xenial at 16&nbsp;<span len="15">or more times There&nbsp;</span>in the android smartphone OS with Ubuntu, where or Times be installed on android smartphone we then automatically features that exist on Ubuntu OS or at 16 times also we can use.&nbsp;</span><span lang="en">PC again when we run OS Ubuntu or the Time, we don't need to shut down the android OS on our smartphone OS, both Ubuntu and android OS can be run simultaneously so that the features on android Smartphones such as telephone, sms, whatsapp, BBM, line, and so on will still work.</span><br len="0"><br len="0"><span lang="en">Ubuntu is one of the linux operating system on the basis of the debian operating system.&nbsp;</span><span lang="en">Ubuntu was first released circa 2004 and have experienced the development until now with final release of Ubuntu Xenial at 16.&nbsp;</span><span lang="en">Some software that we can take advantage of ubuntu are:</span><br len="0"><br len="0"><span lang="en">Office Software (word, excel, powerpoint) use Libreoffice 5.</span><br len="0"><span lang="en">-Software development web server for local use apache2, php and mysql.</span><br len="0"><span lang="en">-Code editor with features of interest to developers.</span><br len="0"><span lang="en">-Browsing using web browser just like on a PC.</span><br len="0"><span lang="en">-And so on.</span><br len="0"><br len="0"><span lang="en">Another thing to keep in mind in the process of installing ubuntu on a smartphone cannot be ascertained that the installation will succeed 100% due to the characteristics of the hardware on every android smartphone.&nbsp;</span><span lang="en">Here also I remind that the installation process may have to be repeated several times until the os installation of ubuntu on a smartphone successful, so it is recommended to use a wifi connection with good speed, or data connection smartpone with large quotas.</span><br len="0"><br len="0"><span lang="en">All the steps in this tutorial is a safe, all the steps done in software but does not cover the possibility if the later will be faced with some problems even though the odds are small so we must be ready with the risk that would be faced.&nbsp;</span><span lang="en">By following this tutorial I think have agreed that all the risks are borne by themselves.</span><br len="0"><br len="0"><span lang="en">To run ubuntu, android smartphone we should meet the minimum specification, namely:</span><br len="0"><br len="0"><span lang="en">-at least 1 Ghz processor</span><br len="0"><span lang="en">-1 GB RAM</span><br len="0"><span lang="en">-sdcard with the rest of the space at least 5 GB</span><br len="0"><span lang="en">-mandatory android smartphone is already in the root.</span><br len="0"><br len="0"><span lang="en">Actually not just ubuntu that can be installed, other linux distros like debian, opensuse, slackware, times, and centos could also be installed.&nbsp;</span><span lang="en">But from my experience installing linux on android, ubuntu only the most stable.&nbsp;</span><span lang="en">I chose ubuntu latest version namely xenial at 16 because the repository for application installation in ubuntu like office, apache, mysql, php, etc. are still complete and we can get the latest versions of these applications with a nicer look and a more complete feature.&nbsp;</span><span lang="en">As for the Time There there are some applications that still use the old version in the repository, and if we want to install&nbsp;<span len="479">the latest version, we harus embodying other repository manually, but the benefits of Time There terasa lighter.&nbsp;</span></span><br len="0"><br len="0"><span lang="en">After the minimum specifications of android smartphone, we now begin to stage installation.&nbsp;</span><span lang="en">Previously used to prepare supporting applications as follows:</span><br len="0"><br len="0"><span lang="en">1. Deploy Linux Applications.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://play.google.com/store/apps/details?id=ru.meefik.linuxdeploy" id="a_f9fe_0" len="7" rel="noopener noreferer nofollow noreferrer" target="_top">here</a></span><br len="0"><span lang="en">2. application Busybox installer.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://www.blogger.com/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dru.meefik.busybox" id="a_f9fe_1" len="7" rel="noopener noreferer nofollow noreferrer" target="_top">here</a></span><br len="0"><span lang="en">3. Applications the bVNC.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://www.blogger.com/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.iiordanov.freebVNC" id="a_f9fe_2" len="7" rel="noopener noreferer nofollow noreferrer" target="_top">here</a></span></span><br><span id="span_f9fe_1" len="648"><span lang="en">4. application Terminal Emula</span><span len="201"><span lang="en">tor.&nbsp;</span><span lang="en">Download&nbsp;<a href="https://www.blogger.com/https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Djackpal.androidterm" id="a_f9fe_3" rel="noopener noreferer nofollow noreferrer" target="_top">here</a></span><br len="0"><br len="0"><span lang="en">After all the applications installed, we start ubuntu installation phase as follows:</span><br len="0"><br len="0"><span lang="en">1. open busybox installer app, and then click install busybox.</span><br len="0"><span lang="en">2. Go to deploy linux applications, and then open the installation settings (picture the arrow down) and make the settings as follows:</span></span></span></div><div id="div_f9fe_1" len="1528"><span id="span_f9fe_2" len="1408"><br len="0"><span lang="en">a) distribution: ubuntu<span len="160">, if you want to use the time pbe selected times.&nbsp;</span></span><br len="0"><span lang="en">b) Distribution suite: xenial<span len="35">, if you use the select time there.</span></span><br len="0"><span lang="en">c) Architecture: armhf.</span><br len="0"><span lang="en">d) Mirror:&nbsp;<span len="167">Let&nbsp;alone without change, according to their standard.&nbsp;</span></span><br len="0"><span lang="en">e) installation type: file.</span><br len="0"><span lang="en">f) Installation path:/sdcard/<span len="5">linux</span>img.</span><br len="0"><span lang="en">g) image size: 4000</span><br len="0"><span lang="en">h) file system: auto.</span><br len="0"><span lang="en">I) User name: android.</span><br len="0"><span lang="en">j) Password: changeme.</span><br len="0"><span lang="en">k: LXDE Desktop environment).</span><br len="0"><span lang="en">l) Select component: give ceklist on a desktop environment, ssh server, vnc servers.</span><br len="0"><span lang="en">m) marked ceklist on ssh and gui.</span><br len="0"><span lang="en">n) Graphic subsystem: vnc.</span><br len="0"><span lang="en">o) Gui settings: display 0, 24 depth, width and height, the appropriate screen resolution recommended hp.</span></span></div><div id="div_f9fe_2" len="858"><span id="span_f9fe_3" len="738"><br len="0"><span lang="en">3. Back to the top of the settings menu, select install.&nbsp;</span><span lang="en">Then download and install process will begin.&nbsp;</span><span lang="en">The process will last for quite a while, depending on the speed of the internet.&nbsp;</span><span lang="en">The downloaded data is approximately 300-500 MB.&nbsp;</span><span lang="en">Wait until it is finished.</span><br len="0"><span lang="en">4. After the installation process is complete, click on the stop button, wait for the stop process is complete, then click on the start button.&nbsp;</span><span lang="en">If on the status of ssh and vnc done, then the installation was successful, if it fail, then your installation failed.&nbsp;</span><br len="0"><span lang="en">5. If&nbsp;<span len="15">the download</span>&nbsp;fails, click the stop button, click on the install button on the settings menu of the installation.&nbsp;</span><span lang="en">Then the installation process will be repeated.</span></span></div><div id="div_f9fe_3" len="980"><span id="span_f9fe_4" len="860"><span lang="en">6. If the installation is successful, we can be checked by clicking on the stop button, then after the stop process is complete click on the start button wait a few moments until the emerging status of ssh and vnc done done.&nbsp;</span><span lang="en">If the status of ssh and vnc fail means installation fails</span><span lang="en">, try signing in la</span><span lang="en">gi settings then click reconf</span><span lang="en">igure</span>.&nbsp;<span lang="en">If the status still fail, repeat from step no. 3.</span></span></div><div id="div_f9fe_4" len="265"><span id="span_f9fe_5" len="145"><span lang="en">7. If it appears the status of ssh and vnc done, to start using ubuntu use bVNC applications.&nbsp;</span><span lang="en">Open application settings then bVNC at:</span></span></div><div id="div_f9fe_5" len="1"></div><div id="div_f9fe_6" len="146"><span id="span_f9fe_6" lang="en" len="26">a) server: 127.0.0.1</span></div><div id="div_f9fe_7" len="139"><span id="span_f9fe_7" lang="en" len="19">b) port: 5900</span></div><div id="div_f9fe_8" len="146"><span id="span_f9fe_8" lang="en" len="26">c) username: android</span></div><div id="div_f9fe_9" len="147"><span id="span_f9fe_9" lang="en" len="27">d) password: changeme</span></div><div id="div_f9fe_10" len="1"></div><div id="div_f9fe_11" len="328"><span id="span_f9fe_10" len="208"><span lang="en">8. Click on the connect button that is in the application, if any error bVNC disregard it, just click on the OK button.&nbsp;</span><span lang="en">The look of ubuntu with its menu is already displayed and we can already start using it.</span></span></div><div id="div_f9fe_12" len="237"><span id="span_f9fe_11" lang="en" len="117">9. At this point ubuntu still in a State of blank without any application except the file manager and terminal.</span></div><div id="div_f9fe_13" len="325"><span id="span_f9fe_12" len="205"><span lang="en">10. To install software, use the terminal.&nbsp;</span><span lang="en">To access the root use the command sudo-i then enter.&nbsp;</span><span lang="en">Do update reposotory with type apt-get update on terminal then enter.</span></span></div><div id="div_f9fe_14" len="1"></div><div id="div_f9fe_15" len="573"><span id="span_f9fe_13" len="453"><span lang="en">Until this stage been successfully installed ubuntu at 16.&nbsp;</span><span lang="en">We can make a backup of the file mengkopikan with the way&nbsp;linux. img on sdcard to another folder so that if there is an error because of the wrong software to install or other error we can restore the backup of the last we created so no need to do the installation from the beginning.</span></span></div><div id="div_f9fe_16" len="1"></div><div id="div_f9fe_17" len="688"><span id="span_f9fe_14" len="568"><span lang="en">For installing software via terminal for unfamiliar with linux system can find tutorials on google.&nbsp;</span><span lang="en">Use the keyword install for ubuntu, it's usually way installation using apt-get.&nbsp;</span><span lang="en">Keep in mind that our install ubuntu is ubuntu with a special arm processor architecture, so software-software that requires intel processor will not be installed.&nbsp;</span><span lang="en">Examples of available software for the arm processors are: libreoffice, apache2, php, mysql, phpmyadmin, mysql workbench, gedit, firefox and many more.</span></span></div><div id="div_f9fe_18" len="124"><span id="span_f9fe_15" len="4"><br len="0"></span></div><div id="div_f9fe_19" len="213"><span id="span_f9fe_16" lang="en" len="93">The tutorial running ubuntu xenial at 16 or more times there in android, may be useful.</span></div> 
     <blockquote>
       
-      <strong>PermaLink: </strong><br /><a href="https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html">https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html</a>
+      <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html" rel="internal follow bookmark">https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html</a>
+      <hr>
+      <a target="_blank" href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fwww.webmanajemen.com%2F2017%2F09%2Finstall-linux-on-android-part-1-running.html" rel="nofollow noopener noreferer noreferrer"><i>Rich Snippets</i></a>
     </blockquote>
   </div>
   <footer class="mdui-card-actions">
     
     <!--a: 'mdui-ripple article_tags-link'-->
     
-    <a href="/Tags/Android" class="mdui-ripple article_tags-link" rel="link">Android</a>
+    <a href="/tags/Android" class="mdui-ripple article_tags-link" rel="link">Android</a>
     
-    <a href="/Tags/Tips & Tricks" class="mdui-ripple article_tags-link" rel="link">Tips & Tricks</a>
+    <a href="/tags/Tips &amp; Tricks" class="mdui-ripple article_tags-link" rel="link">Tips &amp; Tricks</a>
     
   </footer>
   
 </article>
 
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <script>
   $("#main article .mdui-card-content img.fancybox").on("click", function (e) {
@@ -372,8 +340,8 @@
 <div id="comment" class="mdui-m-t-5"><div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = 'https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html';
-    this.page.identifier = 'https://git.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html';
+    this.page.url = 'https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html';
+    this.page.identifier = 'https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html';
   };
   (function () {
     var d = document, s = d.createElement('script');
@@ -386,34 +354,17 @@
                                                   rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
-  
-</main>
+  </main>
   <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-    <div class="mdui-p-y-0 mdui-text-center">
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </div>
-    <div class="mdui-p-y-1 mdui-text-center">
-        Copyright &copy;
-        2014 -
-        
-        2021 Dimas Lanjaka<br>
-        Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent"
-                      rel="nofollow noopener noreferrer" style="margin-right: 2px">Hexo</a>
-        Website Manajemen Indonesia
-        
-        
-    </div>
+  <div class="mdui-p-y-0 mdui-text-center">
+               
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright © 2014 -  2021 Dimas Lanjaka<br>
+    Powered by
+    <a href="https://hexo.io/" target="_blank" rel="nofollow noopener noreferrer noreferer" class="mdui-text-color-theme-accent" style="margin-right: 2px">Hexo</a>
+    Website Manajemen Indonesia  
+  </div>
 </footer>
 
   <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
@@ -535,7 +486,7 @@ if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && lo
   var b = document.createElement("script");
   b.type = "text/javascript";
   b.async = !0;
-  b.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  b.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
   b.onerror = function () {
     f();
     window.adblock = !0;
@@ -543,5 +494,296 @@ if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && lo
   var e = document.getElementsByTagName("script")[0];
   e.parentNode.insertBefore(b, e);
 })();
-</script></body>
-</html>
+</script><div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content">
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8418182273"></ins>
+<script>
+     
+</script>
+</div><div hexo-adsense="ads-content">
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7823254087"></ins>
+<script>
+     
+</script>
+</div></div><style>*[hexo-adsense="ads-content"] {
+  display: block;
+  background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+  color: #303030;
+  /*min-height: 18px;
+  min-width: 81px;*/
+  min-width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style><script>/**
+ * Browser processor
+ */
+
+const isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
+
+/**
+ * @type {import("../src/config")}
+ */
+const hexoAdsenseConfig = JSON.parse(document.getElementById("hexo-adsense-config").textContent);
+//console.log(hexoAdsenseConfig);
+
+/**
+ * Insert after element
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function insertAfter(newElement, oldElement) {
+  if (oldElement && newElement) {
+    let parent = oldElement.parentNode;
+    if (parent.lastChild == oldElement) {
+      parent.appendChild(newElement);
+    } else {
+      parent.insertBefore(newElement, oldElement.nextSibling);
+    }
+  } else {
+    console.error("cannot insert element");
+  }
+}
+
+/**
+ * Replace elements with new
+ * @param {HTMLElement} newElement
+ * @param {HTMLElement} oldElement
+ */
+function replaceWith(newElement, oldElement) {
+  if (!oldElement.parentNode) {
+    console.log(oldElement, "parent null");
+    let d = document.createElement("div");
+    d.appendChild(oldElement);
+  } else {
+    //console.log(oldElement.parentNode.tagName);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  }
+  /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+}
+
+let createElementFromHTML = function (htmlString) {
+  if (htmlString instanceof HTMLElement) {
+    return htmlString;
+  }
+  var div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+};
+
+function oldMethod() {
+  let article = document.getElementsByTagName("article");
+  let adscont = document.getElementById("hexo-adsense-ads-content");
+  if (adscont && adscont.length) {
+    if (article && article.length) {
+      let linebreak = article.item(0).getElementsByTagName("br");
+      if (linebreak.length > 0) {
+        return replaceWith(adscont, linebreak.item(0));
+      }
+
+      let headings = article.item(0).querySelectorAll("h2,h3,h4,h5");
+      if (headings && headings.length > 0) {
+        return insertAfter(adscont, headings.item(0));
+      }
+    }
+  }
+}
+
+/**
+ * random number between min and max
+ */
+function ranumb(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function newMethod() {
+  const adshide = document.getElementById("hexo-adsense-hidden");
+  let adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+  const article = document.querySelectorAll("article");
+  if (article.length > 0 && adscont.length > 0) {
+    /**
+     * @type {HTMLElement}
+     */
+    let ads;
+    if (article.length == 1) {
+      console.log("webpage is post");
+      let targetArticle = article.item(0);
+
+      // prioritize hexo-adsense-fill before auto ads on other elements
+      const ads_fill = targetArticle.querySelectorAll("*[hexo-adsense-fill]");
+      if (ads_fill.length > 0) {
+        for (let index = 0; index < ads_fill.length; index++) {
+          const toFill = ads_fill[index];
+          if (typeof adscont[index] !== "undefined") {
+            toFill.appendChild(adscont[index]);
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically after headers, pre elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      //console.log(adscont.length, "ads left");
+      if (adscont.length > 0) {
+        const headers = targetArticle.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");
+        if (headers.length > 0) {
+          // generate index of headers
+          let headers_index = Array.apply(null, { length: headers.length }).map(Number.call, Number);
+          //console.log(headers_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            const rheaders = shuffleArr2(headers_index);
+            // pick a random index
+            const rheader = rheaders.next().value;
+            if (typeof rheader === "number") {
+              const header = headers.item(rheader);
+              insertAfter(createElementFromHTML(ads), header);
+            }
+          }
+        }
+      }
+
+      // the rest of the ads will show automatically to linebreak elements
+      adscont = adshide.querySelectorAll('[hexo-adsense="ads-content"]');
+      if (adscont.length > 0) {
+        const linebreaks = targetArticle.querySelectorAll("br,hr");
+        if (linebreaks.length > 0) {
+          // generate index of linebreaks
+          let linebreaks_index = Array.apply(null, { length: linebreaks.length }).map(Number.call, Number);
+          //console.log(linebreaks_index);
+          // randomize linebreaks index
+          const rlinebreaks = shuffleArr2(linebreaks_index);
+          for (let index = 0; index < adscont.length; index++) {
+            ads = adscont[index];
+            // pick a random index
+            const rlinebreak = rlinebreaks.next().value;
+            if (typeof rlinebreak == "number") {
+              const linebreak = linebreaks.item(rlinebreak);
+              if (
+                ["blockquote", "img", "a", "pre", "code", "em", "strong", "i", "u"].includes(
+                  linebreak.parentNode.tagName.toLowerCase()
+                )
+              ) {
+                index--;
+                continue;
+              }
+              //console.log(linebreak.tagName);
+              replaceWith(createElementFromHTML(ads), linebreak);
+            }
+          }
+        }
+      }
+    } else {
+      console.log("webpage is not post");
+      // generate index of articles
+      let articles_index = Array.apply(null, { length: article.length }).map(Number.call, Number);
+      // randomize linebreaks index
+      const rArticles = shuffleArr2(articles_index);
+      for (let index = 0; index < adscont.length; index++) {
+        ads = adscont[index];
+        // pick a random index
+        const rArticle = rArticles.next().value;
+        if (typeof rArticle == "number") {
+          //console.log("adsense display to article index", rArticle);
+          const pickArticle = article.item(rArticle);
+          pickArticle.appendChild(createElementFromHTML(ads));
+        }
+      }
+    }
+
+    // summon adsbygoogle.push()
+    adsensePush();
+  }
+}
+
+function eventMethod() {
+  document.addEventListener("DOMContentLoaded", function () {
+    // we look for the jump break
+    var _moreElm = document.querySelector("a[name=more]");
+
+    // here is your adsense code
+    var _adsenseCode = " [replace this with code from the last step] ";
+
+    // This inserts the ad inside of the blog post
+    _moreElm.insertAdjacentHTML("afterend", '<div class="adsense-after-break">' + _adsenseCode + "</div>");
+
+    // Initialize the ads here
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+}
+
+/**
+ * Shuffle Array
+ * @param {any[]} array
+ * @see {@link https://stackoverflow.com/a/18806417}
+ * @returns
+ */
+function shuffleArr(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+/**
+ * Next generation of non-repeated randomizer
+ * @see {@link shuffleArr}
+ * @param {any[]} array
+ */
+function* shuffleArr2(array) {
+  var i = array.length;
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+  }
+}
+
+function adsensePush() {
+  for (let index = 0; index < document.querySelectorAll('[hexo-adsense="ads-content"]').length; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: hexoAdsenseConfig.pub,
+    });
+  }
+}
+
+if (!isBrowser()) {
+  module.exports = {
+    replaceWith,
+    insertAfter,
+  };
+} else {
+  window.__tcfapi = (command, parameter, callback) => {
+    if (command === "checkConsent") {
+      callback(true);
+    }
+    if (command === "addEventListener") {
+      callback({ eventStatus: "tcloaded", gdprApplies: false }, true);
+    }
+  };
+
+  if (typeof document.addEventListener == "function") {
+    document.addEventListener("DOMContentLoaded", newMethod);
+  } else if (typeof window.attachEvent == "function") {
+    window.attachEvent("onload", newMethod);
+  } else {
+    window.onload = newMethod;
+  }
+}
+</script>
+</body></html>

@@ -2,11 +2,11 @@
     "version": "https://jsonfeed.org/version/1",
     "title": "Website Management Indonesia • All posts by \"gradle\" tag",
     "description": "External source WMI Github Laboratory",
-    "home_page_url": "https://git.webmanajemen.com",
+    "home_page_url": "https://www.webmanajemen.com",
     "items": [
         {
-            "id": "https://git.webmanajemen.com/2021/04/import-composite-build-plugin-as.html",
-            "url": "https://git.webmanajemen.com/2021/04/import-composite-build-plugin-as.html",
+            "id": "https://www.webmanajemen.com/2021/04/import-composite-build-plugin-as.html",
+            "url": "https://www.webmanajemen.com/2021/04/import-composite-build-plugin-as.html",
             "title": "Import composite build plugin as subtitue module dependency [Gradle]",
             "date_published": "2021-04-20T02:40:00.001Z",
             "content_html": "<pre><br>// change folder path inside bracket<br>includeBuild(\"plugin\") {<br>    dependencySubstitution {<br>    \t// change your artifact group and id<br>        // iam using <a href=\"https://github.com/dimaslanjaka/gradle-plugin/\" target=\"_blank\" rel=\"noopener noreferer nofollow\">https://github.com/dimaslanjaka/gradle-plugin/</a> for example<br>        substitute(module(\"com.dimaslanjaka:gradle-plugin\")).with(project(\":\"))<br>    }<br>}<br></pre> <img src=\"https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png\">",
@@ -17,8 +17,8 @@
             ]
         },
         {
-            "id": "https://git.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html",
-            "url": "https://git.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html",
+            "id": "https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html",
+            "url": "https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html",
             "title": "build.gradle with custom repository",
             "date_published": "2020-08-03T04:02:00.005Z",
             "content_html": "<p>Fix missing dependencies from your gradle project (android, maven, etc) with this build.gradle. <br>insert into <kbd>YOUR_PROJECT_GRADLE/build.gradle</kbd> <pre>// Top-level build file where you can add configuration options common to all sub-projects/modules.<br><br>buildscript {<br>    repositories {<br>        maven { url “<a href=\"https://maven.google.com\">https://maven.google.com</a>” }<br>        jcenter()<br>        maven { url “<a href=\"https://jitpack.io\">https://jitpack.io</a>” }<br>        maven { url “<a href=\"https://dl.bintray.com/android/android-tools\">https://dl.bintray.com/android/android-tools</a>” }<br>        maven { url “<a href=\"https://plugins.gradle.org/m2/\">https://plugins.gradle.org/m2/</a>” }<br>        maven { url “<a href=\"https://maven.fabric.io/public\">https://maven.fabric.io/public</a>” }<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:3.2.1’<br>    }<br>}<br><br>allprojects {<br>    repositories {<br>        maven { url “<a href=\"https://maven.google.com\">https://maven.google.com</a>” }<br>        jcenter()<br>        maven { url “<a href=\"https://jitpack.io\">https://jitpack.io</a>” }<br>        maven { url “<a href=\"https://dl.bintray.com/android/android-tools\">https://dl.bintray.com/android/android-tools</a>” }<br>        maven { url “<a href=\"https://plugins.gradle.org/m2/\">https://plugins.gradle.org/m2/</a>” }<br>        maven { url “<a href=\"https://maven.fabric.io/public\">https://maven.fabric.io/public</a>” }<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>}<br></pre> <h5>Kotlin</h5><kbd>YOUR_PROJECT_GRADLE/build.gradle.kts</kbd><pre><br>buildscript {<br>    repositories {<br>        maven (“<a href=\"https://maven.google.com\">https://maven.google.com</a>”)<br>        jcenter()<br>        maven (“<a href=\"https://jitpack.io\">https://jitpack.io</a>”)<br>        maven (“<a href=\"https://dl.bintray.com/android/android-tools\">https://dl.bintray.com/android/android-tools</a>”)<br>        maven (“<a href=\"https://plugins.gradle.org/m2/\">https://plugins.gradle.org/m2/</a>”)<br>        maven (“<a href=\"https://maven.fabric.io/public\">https://maven.fabric.io/public</a>”)<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>}<br>allprojects {<br>    repositories {<br>        maven (“<a href=\"https://maven.google.com\">https://maven.google.com</a>”)<br>        jcenter()<br>        maven (“<a href=\"https://jitpack.io\">https://jitpack.io</a>”)<br>        maven (“<a href=\"https://dl.bintray.com/android/android-tools\">https://dl.bintray.com/android/android-tools</a>”)<br>        maven (“<a href=\"https://plugins.gradle.org/m2/\">https://plugins.gradle.org/m2/</a>”)<br>        maven (“<a href=\"https://maven.fabric.io/public\">https://maven.fabric.io/public</a>”)<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>}<br></pre></p>\n",

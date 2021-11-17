@@ -1,4 +1,4 @@
-<html lang="en"><head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://imgdb.net/images/3203.jpg">
 <meta property="article:published_time" content="2017-11-11T09:34:00.000Z">
-<meta property="article:modified_time" content="2021-11-17T17:47:46.730Z">
+<meta property="article:modified_time" content="2021-11-17T18:18:52.284Z">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 <meta property="article:tag" content="Wordpress">
 <meta property="article:tag" content="Adsense">
@@ -118,9 +118,9 @@
       }
       ;</script>
     <div class="mdui-grid-tile">
-        <img src="/images/banner.png" style="height: 160px;" title="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" itemprop="image">
+        <img src="/images/banner.png" style="height: 160px;">
         
-        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;" title="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" itemprop="image">
+        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
@@ -241,7 +241,7 @@
 </style>
 <article class="mdui-card mdui-m-b-5">
   <header class="mdui-card-media">
-    <img src="https://imgdb.net/images/3203.jpg" style="max-height: 240px" title="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" itemprop="image">
+    <img src="https://imgdb.net/images/3203.jpg" style="max-height: 240px">
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin</div>
@@ -261,7 +261,7 @@
         
         <li class="mdui-menu-item" disabled="">
           
-          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html&amp;chld=M|2" title="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" itemprop="image">
+          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html&amp;chld=M|2">
           
         </li>
       </ul>
@@ -296,7 +296,7 @@
     </div>
   </header>
   <div class="mdui-card-content mdui-typo">
-    <center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA Plugin</h2></center><img src="https://imgdb.net/images/3203.jpg" title="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" itemprop="image"><br><h2>Call Adsense JavaScript (adsbygoogle.js)</h2><pre>function saotn_loadAdsByGoogleJs() {<br>  wp_register_script( 'google-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', '', '', true );<br>  wp_enqueue_script( 'google-adsense' );<br>}<br>add_action( 'wp_enqueue_scripts', 'saotn_loadAdsByGoogleJs' );<br></pre><h2>Create In Article Ads Shortcode</h2><b>Goto Adsense Dashboard -&gt; My Ads -&gt; Add New -&gt; Choose In Article Ads -&gt; Set with your defined settings -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;/ins&gt;.</b><br><pre>//In Article Ads<br>function IAA($atts) {<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    //echo 'Car exists.';<br>    return '&lt;amp-ad layout="fixed-height" height=100 type="adsense" data-ad-client="ca-pub-7975270895217217" data-ad-slot="7382733759"&gt;<br>&lt;/amp-ad&gt;';<br>} else {<br>  return '&lt;ins class="adsbygoogle"<br>     style="display:block; text-align:center;"<br>     data-ad-layout="in-article"<br>     data-ad-format="fluid"<br>     data-ad-client="ca-pub-XXXXXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>     (adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>       }<br>}<br>add_shortcode('ads', 'IAA');<br></pre>Add shortcode <b>[ads]</b> in every post Location.<br>Replace ad-client and ad-slot with your in article ads client and slot number. <br><h2>Add Shortcode Responsive Adsense</h2><i class="fa fa-info"></i> <b>Goto Adsense.Google.com -&gt; My Ads -&gt; Ad New -&gt; Choose Text And Image Ads -&gt; Choose Responsive Ads -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;ins&gt;.</b><br><pre>//Single Adsense<br>function adsens($atts) {<br>   extract(shortcode_atts(array(<br>      'adsid' =&gt; h50,<br>      'height' =&gt; 250,<br>   ), $atts));<br>    $google_code = '&lt;ins id="'.$adsid.'" class="adsbygoogle"<br>     style="display:block"<br>     data-ad-client="ca-pub-XXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"<br>     data-ad-format="auto"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>(adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>$ampr = '&lt;amp-ad layout="fixed-height" id="'.$adsid.'" height='.$height.' type="adsense" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXXXXXX"&gt;&lt;/amp-ad&gt;';<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    return $ampr;<br>} else {<br>return $google_code;<br>}<br>}<br>add_shortcode('adsense', 'adsens');</pre>add shortcode <b>[adsense height="50" id="YOURID"]</b><br>Change number 50 to your defined height in pixel (px).<br>YOURID change with your defined ID (if you have css to styling this ads).<br><br>Done.&nbsp;In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin hope be functionally for your adsense. 
+    <center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA Plugin</h2></center><img src="https://imgdb.net/images/3203.jpg"><br><h2>Call Adsense JavaScript (adsbygoogle.js)</h2><pre>function saotn_loadAdsByGoogleJs() {<br>  wp_register_script( 'google-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', '', '', true );<br>  wp_enqueue_script( 'google-adsense' );<br>}<br>add_action( 'wp_enqueue_scripts', 'saotn_loadAdsByGoogleJs' );<br></pre><h2>Create In Article Ads Shortcode</h2><b>Goto Adsense Dashboard -&gt; My Ads -&gt; Add New -&gt; Choose In Article Ads -&gt; Set with your defined settings -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;/ins&gt;.</b><br><pre>//In Article Ads<br>function IAA($atts) {<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    //echo 'Car exists.';<br>    return '&lt;amp-ad layout="fixed-height" height=100 type="adsense" data-ad-client="ca-pub-7975270895217217" data-ad-slot="7382733759"&gt;<br>&lt;/amp-ad&gt;';<br>} else {<br>  return '&lt;ins class="adsbygoogle"<br>     style="display:block; text-align:center;"<br>     data-ad-layout="in-article"<br>     data-ad-format="fluid"<br>     data-ad-client="ca-pub-XXXXXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>     (adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>       }<br>}<br>add_shortcode('ads', 'IAA');<br></pre>Add shortcode <b>[ads]</b> in every post Location.<br>Replace ad-client and ad-slot with your in article ads client and slot number. <br><h2>Add Shortcode Responsive Adsense</h2><i class="fa fa-info"></i> <b>Goto Adsense.Google.com -&gt; My Ads -&gt; Ad New -&gt; Choose Text And Image Ads -&gt; Choose Responsive Ads -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;ins&gt;.</b><br><pre>//Single Adsense<br>function adsens($atts) {<br>   extract(shortcode_atts(array(<br>      'adsid' =&gt; h50,<br>      'height' =&gt; 250,<br>   ), $atts));<br>    $google_code = '&lt;ins id="'.$adsid.'" class="adsbygoogle"<br>     style="display:block"<br>     data-ad-client="ca-pub-XXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"<br>     data-ad-format="auto"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>(adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>$ampr = '&lt;amp-ad layout="fixed-height" id="'.$adsid.'" height='.$height.' type="adsense" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXXXXXX"&gt;&lt;/amp-ad&gt;';<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    return $ampr;<br>} else {<br>return $google_code;<br>}<br>}<br>add_shortcode('adsense', 'adsens');</pre>add shortcode <b>[adsense height="50" id="YOURID"]</b><br>Change number 50 to your defined height in pixel (px).<br>YOURID change with your defined ID (if you have css to styling this ads).<br><br>Done.&nbsp;In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin hope be functionally for your adsense. 
     <blockquote>
       
       <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html" rel="internal follow bookmark" title="https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html">https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html</a>
@@ -374,7 +374,8 @@
     (d.head || d.body).appendChild(s);
   })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank"
+                                                  rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
   </main>

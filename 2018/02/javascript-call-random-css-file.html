@@ -1,4 +1,4 @@
-<html lang="en"><head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://goo.gl/dzGpyo">
 <meta property="article:published_time" content="2018-02-09T16:57:00.000Z">
-<meta property="article:modified_time" content="2021-11-17T17:47:46.706Z">
+<meta property="article:modified_time" content="2021-11-17T18:18:52.256Z">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 <meta property="article:tag" content="JS">
 <meta property="article:tag" content="CSS">
@@ -116,9 +116,9 @@
       }
       ;</script>
     <div class="mdui-grid-tile">
-        <img src="/images/banner.png" style="height: 160px;" title="JavaScript Call Random CSS file" alt="JavaScript Call Random CSS file" itemprop="image">
+        <img src="/images/banner.png" style="height: 160px;">
         
-        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;" title="JavaScript Call Random CSS file" alt="JavaScript Call Random CSS file" itemprop="image">
+        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
@@ -239,7 +239,7 @@
 </style>
 <article class="mdui-card mdui-m-b-5">
   <header class="mdui-card-media">
-    <img src="https://goo.gl/dzGpyo" style="max-height: 240px" title="JavaScript Call Random CSS file" alt="JavaScript Call Random CSS file" itemprop="image">
+    <img src="https://goo.gl/dzGpyo" style="max-height: 240px">
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">JavaScript Call Random CSS file</div>
@@ -259,7 +259,7 @@
         
         <li class="mdui-menu-item" disabled="">
           
-          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2018/02/javascript-call-random-css-file.html&amp;chld=M|2" title="JavaScript Call Random CSS file" alt="JavaScript Call Random CSS file" itemprop="image">
+          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2018/02/javascript-call-random-css-file.html&amp;chld=M|2">
           
         </li>
       </ul>
@@ -294,7 +294,7 @@
     </div>
   </header>
   <div class="mdui-card-content mdui-typo">
-    <p>Someone talk to stack overflow like this : </p><div class="w3-border w3-round w3-border-red"><p>    I am trying to rotate random CSS sheets via JS - I have the following     script but when I am using it - it doesnt seem to work ? </p><pre><code>function getRand(){<br>    return Math.round(Math.random()<em>(css.length-1));<br>}<br>var css = new Array(<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/1.css”&gt;’,<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/2.css”&gt;’,<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/3.css”&gt;’,<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/4.css”&gt;’<br>);<br>rand = getRand();<br>document.write(css[rand]);</em></code></pre><p><em>    Appreciate any help? </em></p></div><em><br><img src="https://goo.gl/dzGpyo" title="Ask and Answer" alt="ask and Answer" itemprop="image"><br></em><div class="w3-border w3-round w3-border-green"><em><blockquote>The best answer is : <b>Try to create the <kbd>link</kbd> element programmatically and appending it to the head</b></blockquote></em><pre><em>function applyRandCSS(){<br>  var css = [“css/1.css”, “css/2.css”, “css/3.css”, “css/4.css”];<br>  var randomFile = css[Math.round(Math.random()</em>(css.length-1))];<br>  var ss = document.createElement(“link”);<br><br>  ss.type = “text/css”;<br>  ss.rel = “stylesheet”;<br>  ss.href = randomFile;<br><br>  document.getElementsByTagName(“head”)[0].appendChild(ss);<br>}</pre></div><br><div class="w3-green w3-panel">Source : <a target="_blank" href="https://stackoverflow.com/questions/1244877/random-css-via-js" title="source" alt="source" rel="noopener noreferer nofollow noreferrer">https://stackoverflow.com/questions/1244877/random-css-via-js</a></div><p></p>
+    <p>Someone talk to stack overflow like this : </p><div class="w3-border w3-round w3-border-red"><p>    I am trying to rotate random CSS sheets via JS - I have the following     script but when I am using it - it doesnt seem to work ? </p><pre><code>function getRand(){<br>    return Math.round(Math.random()<em>(css.length-1));<br>}<br>var css = new Array(<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/1.css”&gt;’,<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/2.css”&gt;’,<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/3.css”&gt;’,<br>’&lt;link rel=“stylesheet” type=“text/css” href=“css/4.css”&gt;’<br>);<br>rand = getRand();<br>document.write(css[rand]);</em></code></pre><p><em>    Appreciate any help? </em></p></div><em><br><img src="https://goo.gl/dzGpyo" title="Ask and Answer" alt="ask and Answer"><br></em><div class="w3-border w3-round w3-border-green"><em><blockquote>The best answer is : <b>Try to create the <kbd>link</kbd> element programmatically and appending it to the head</b></blockquote></em><pre><em>function applyRandCSS(){<br>  var css = [“css/1.css”, “css/2.css”, “css/3.css”, “css/4.css”];<br>  var randomFile = css[Math.round(Math.random()</em>(css.length-1))];<br>  var ss = document.createElement(“link”);<br><br>  ss.type = “text/css”;<br>  ss.rel = “stylesheet”;<br>  ss.href = randomFile;<br><br>  document.getElementsByTagName(“head”)[0].appendChild(ss);<br>}</pre></div><br><div class="w3-green w3-panel">Source : <a target="_blank" href="https://stackoverflow.com/questions/1244877/random-css-via-js" title="source" alt="source" rel="noopener noreferer nofollow noreferrer">https://stackoverflow.com/questions/1244877/random-css-via-js</a></div><p></p>
  
     <blockquote>
       
@@ -369,7 +369,8 @@
     (d.head || d.body).appendChild(s);
   })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank"
+                                                  rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
   </main>

@@ -5,8 +5,10 @@
         <link>https://www.webmanajemen.com</link>
         <description>External source WMI Github Laboratory</description>
         <language>en</language>
-        <pubDate>Tue, 21 Sep 2021 17:00:00 +0000</pubDate>
-        <lastBuildDate>Tue, 21 Sep 2021 17:00:00 +0000</lastBuildDate>
+        <pubDate>Wed, 17 Nov 2021 09:00:00 +0000</pubDate>
+        <lastBuildDate>Wed, 17 Nov 2021 09:00:00 +0000</lastBuildDate>
+        <category>JS</category>
+        <category>NodeJS</category>
         <category>RegExp</category>
         <category>Test</category>
         <category>Game Control</category>
@@ -20,7 +22,6 @@
         <category>CSS</category>
         <category>SEO</category>
         <category>Adsense</category>
-        <category>JS</category>
         <category>PHP</category>
         <category>HTML</category>
         <category>AMP</category>
@@ -54,6 +55,33 @@
         <category>Genshin Impact</category>
         <category>Chest Location</category>
         <category>Quest</category>
+        <item>
+            <guid isPermalink="true">https://www.webmanajemen.com/NodeJS/node-options.html</guid>
+            <title>Node Options For NodeJS</title>
+            <link>https://www.webmanajemen.com/NodeJS/node-options.html</link>
+            <category>JS</category>
+            <category>NodeJS</category>
+            <pubDate>Wed, 17 Nov 2021 09:00:00 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;nodejs-options-node_options&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nodejs-options-node_options&#34;&gt;&lt;/a&gt; NODEJS OPTIONS [ NODE_OPTIONS ]&lt;/h1&gt;
+&lt;p&gt;Node.js accompanies an assortment of CLI choices. These choices uncover worked in investigating, different ways of executing scripts, and other accommodating runtime choices.&lt;/p&gt;
+&lt;p&gt;To see this documentation as a manual page in a terminal, run ‘man hub’. &lt;a href=&#34;https://nodejs.org/api/cli.html&#34;&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-setup-multiple-options-on-github-workflow&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#how-to-setup-multiple-options-on-github-workflow&#34;&gt;&lt;/a&gt; How to setup multiple options on GitHub Workflow&lt;/h2&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;jobs:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;build:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Build&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;www.webmanajemen.com&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;runs-on:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ubuntu-latest&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;env:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;NODE_OPTIONS:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;--experimental-vm-modules --max_old_space_size=8192&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;how-to-performance-run-nodejs-on-low-devices&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#how-to-performance-run-nodejs-on-low-devices&#34;&gt;&lt;/a&gt; How to performance run nodejs on low devices&lt;/h2&gt;
+&lt;p&gt;The recommended amounts for a “low memory device”.&lt;/p&gt;
+&lt;p&gt;for 32-bit and/or Android are:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;node --max-executable-size=96 --max-old-space-size=128 --max-semi-space-size=1 app.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;for 64-bit non-android are:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;node --max-executable-size=192 --max-old-space-size=256 --max-semi-space-size=2 app.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;These above codes would limit the heap totals to 225mb and 450mb respectively. It doesn’t include memory usage outside JS. For instance buffers are allocated as “c memory” , not in the JavaScript heap.&lt;/p&gt;
+&lt;h3 id=&#34;flags&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#flags&#34;&gt;&lt;/a&gt; Flags&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--max-executable-size&lt;/code&gt; the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--max-old-space-size&lt;/code&gt; the maximum size of heap reserved for long term objects&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--max-semi-space-size&lt;/code&gt; the maximum size of heap reserved for short term objects&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://www.webmanajemen.com/RegExp/RegExp.html</guid>
             <title>What is RegExp</title>
@@ -873,7 +901,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
     &lt;/div&gt;
     &lt;small id=&#34;search-questionsHelpBlock&#34; class=&#34;form-text text-muted&#34;&gt;
       Last updated
-      11/17/2021, 11:19:06 AM
+      11/18/2021, 12:47:50 AM
     &lt;/small&gt;
   &lt;/div&gt;
   &lt;ul id=&#34;questions&#34;&gt;
@@ -1933,101 +1961,6 @@ function CalculateTR(table) {
     &lt;p&gt;While inside a box, cats feel that they cannot be snuck up on from behind or the side — anything that wants to approach them must come directly into their field of vision. In effect, such hiding spaces allow them to watch the world around them without being seen.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html</guid>
-            <title>Update Genshin Impact 1.6.1 Manual</title>
-            <link>https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html</link>
-            <category>Games</category>
-            <category>Genshin Impact</category>
-            <pubDate>Wed, 09 Jun 2021 17:00:00 +0000</pubDate>
-            <description><![CDATA[ &lt;p&gt;Update genshin impact &lt;code&gt;1.6.1&lt;/code&gt; manual via download manager (IDM).&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;h2 id=&#34;patch-160-161&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#patch-160-161&#34;&gt;&lt;/a&gt; Patch 1.6.0 - 1.6.1&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip&#34;&gt;en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip&#34;&gt;game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip&#34;&gt;ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip&#34;&gt;ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip&#34;&gt;zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;how-to-update&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#how-to-update&#34;&gt;&lt;/a&gt; How to update&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Download Update Version Or Full Game Version&lt;/li&gt;
-&lt;li&gt;Copy all to your Genshin Impact\Genshin Impact Game\ folder&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.. Preview Example::&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|-- C:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    |-- Program Files&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        |-- Genshin Impact&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            |-- Genshin Impact Game&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                |-- game_..._diff_H8LGSgKU.zip&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                |-- ja-jp_..._diff_hfBOW6ym.zip&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                |-- ko-kr_..._diff_NcX8UP1L.zip&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                |-- en-us_..._diff_KdXT5Pi0.zip&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                `-- zh-cn_..._diff_hvg2F3QM.zip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;screenshot&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#screenshot&#34;&gt;&lt;/a&gt; Screenshot&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/zHDw2i0.png&#34; alt=&#34;preview&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;full-game&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#full-game&#34;&gt;&lt;/a&gt; Full Game&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20201111_8e266b33e565ddf8/GenshinImpact_1.1.0.zip&#34;&gt;GenshinImpact_1.1.0.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210317_67c8f1002bb26672/GenshinImpact_1.4.0.zip&#34;&gt;GenshinImpact_1.4.0.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;h2 id=&#34;151&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#151&#34;&gt;&lt;/a&gt; 1.5.1&lt;/h2&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/GenshinImpact_1.5.1.zip&#34;&gt;GenshinImpact_1.5.1.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_English(US)_1.5.1.zip&#34;&gt;Audio_English(US)_1.5.1.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Korean_1.5.1.zip&#34;&gt;Audio_Korean_1.5.1.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Japanese_1.5.1.zip&#34;&gt;Audio_Japanese_1.5.1.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/pc_mihoyo/20210430_27ad367085356fd4/Audio_Chinese_1.5.1.zip&#34;&gt;Audio_Chinese_1.5.1.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;another-components&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#another-components&#34;&gt;&lt;/a&gt; Another Components&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/plugins/DXSETUP.zip&#34;&gt;DXSETUP.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;old-version&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#old-version&#34;&gt;&lt;/a&gt; Old Version&lt;/h1&gt;
-&lt;h2 id=&#34;chinesse-version&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#chinesse-version&#34;&gt;&lt;/a&gt; Chinesse Version&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/YuanShen_1.2.0.zip&#34;&gt;YuanShen_1.2.0.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;patch-v150-v151&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#patch-v150-v151&#34;&gt;&lt;/a&gt; Patch v.1.5.0 - v.1.5.1&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip&#34;&gt;en-us_1.5.0_1.5.1_diff_Gg3Q5aOK.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.5.0_1.5.1_diff_MF8HJNzT.zip&#34;&gt;game_1.5.0_1.5.1_diff_MF8HJNzT.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip&#34;&gt;ja-jp_1.5.0_1.5.1_diff_P72LxVCa.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip&#34;&gt;ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip&#34;&gt;zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Title&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;URL&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Blogger&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://webmanajemen.com&#34;&gt;webmanajemen.com&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Git Page&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://www.webmanajemen.com&#34;&gt;www.webmanajemen.com&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
  ]]></description>
         </item>
     </channel>

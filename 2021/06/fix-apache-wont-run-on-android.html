@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg">
 <meta property="article:published_time" content="2021-06-02T16:00:00.002Z">
-<meta property="article:modified_time" content="2021-11-17T18:30:17.027Z">
+<meta property="article:modified_time" content="2021-11-18T04:20:48.303Z">
 <meta property="article:author" content="Dimas Lanjaka">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="Tips &amp; Tricks">
@@ -116,9 +116,9 @@
       }
       ;</script>
     <div class="mdui-grid-tile">
-        <img src="/images/banner.png" style="height: 160px;">
+        <img src="/images/banner.png" style="height: 160px;" title="Fix apache wont run on android" alt="Fix apache wont run on android" itemprop="image">
         
-        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;" title="Fix apache wont run on android" alt="Fix apache wont run on android" itemprop="image">
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
@@ -239,7 +239,7 @@
 </style>
 <article class="mdui-card mdui-m-b-5">
   <header class="mdui-card-media">
-    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg" style="max-height: 240px">
+    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg" style="max-height: 240px" title="Fix apache wont run on android" alt="Fix apache wont run on android" itemprop="image">
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">Fix apache wont run on android</div>
@@ -259,7 +259,7 @@
         
         <li class="mdui-menu-item" disabled="">
           
-          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2021/06/fix-apache-wont-run-on-android.html&amp;chld=M|2">
+          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2021/06/fix-apache-wont-run-on-android.html&amp;chld=M|2" title="Fix apache wont run on android" alt="Fix apache wont run on android" itemprop="image">
           
         </li>
       </ul>
@@ -294,7 +294,7 @@
     </div>
   </header>
   <div class="mdui-card-content mdui-typo">
-    <div id="bootstrap-wrapper">  Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow" title="Install XAMPP apache on android termux">Install XAMPP apache on android termux</a>  <h2>Fix error starting apache on android</h2>  <p>  </p><ul>    <li>Open <b>httpd.conf</b>      <pre><code class="lang-bash"><span class="hljs-keyword">nano</span> /data/data/com.termux/files/usr/etc/apache2/httpd.conf</code></pre>    </li>    <li>Find the lines that contain <b>LoadModule</b>. Comment the following line with <b>hash(#)</b>:       <pre><code class="lang-conf">LoadModule mpm_worker_module <span class="hljs-regexp">libexec/apache2/mod_mpm_worker.so</span></code></pre>      to       <pre><code class="lang-conf"><span class="hljs-regexp">#</span>LoadModule mpm_worker_module <span class="hljs-regexp">libexec/apache2/mod_mpm_worker.so</span></code></pre>    </li>    <li>Then uncomment the following line (remove hash[#]):       <pre><code class="lang-conf"><span class="hljs-regexp">#</span>LoadModule mpm_prefork_module <span class="hljs-regexp">libexec/apache2/mod_mpm_prefork.so</span></code></pre>      to       <pre><code class="lang-conf">LoadModule mpm_prefork_module <span class="hljs-regexp">libexec/apache2/mod_mpm_prefork.so</span></code></pre>    </li>    Preview:     <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg" alt="Preview">  </ul>  <p></p></div><script>hljs.initHighlightingOnLoad();</script> 
+    <div id="bootstrap-wrapper">  Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow" title="Install XAMPP apache on android termux">Install XAMPP apache on android termux</a>  <h2>Fix error starting apache on android</h2>  <p>  </p><ul>    <li>Open <b>httpd.conf</b>      <pre><code class="lang-bash"><span class="hljs-keyword">nano</span> /data/data/com.termux/files/usr/etc/apache2/httpd.conf</code></pre>    </li>    <li>Find the lines that contain <b>LoadModule</b>. Comment the following line with <b>hash(#)</b>:       <pre><code class="lang-conf">LoadModule mpm_worker_module <span class="hljs-regexp">libexec/apache2/mod_mpm_worker.so</span></code></pre>      to       <pre><code class="lang-conf"><span class="hljs-regexp">#</span>LoadModule mpm_worker_module <span class="hljs-regexp">libexec/apache2/mod_mpm_worker.so</span></code></pre>    </li>    <li>Then uncomment the following line (remove hash[#]):       <pre><code class="lang-conf"><span class="hljs-regexp">#</span>LoadModule mpm_prefork_module <span class="hljs-regexp">libexec/apache2/mod_mpm_prefork.so</span></code></pre>      to       <pre><code class="lang-conf">LoadModule mpm_prefork_module <span class="hljs-regexp">libexec/apache2/mod_mpm_prefork.so</span></code></pre>    </li>    Preview:     <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg" alt="Preview" title="Fix apache wont run on android" itemprop="image">  </ul>  <p></p></div><script>hljs.initHighlightingOnLoad();</script> 
     <blockquote>
       
       <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2021/06/fix-apache-wont-run-on-android.html" rel="internal follow bookmark" title="https://www.webmanajemen.com/2021/06/fix-apache-wont-run-on-android.html">https://www.webmanajemen.com/2021/06/fix-apache-wont-run-on-android.html</a>
@@ -368,8 +368,7 @@
     (d.head || d.body).appendChild(s);
   })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank"
-                                                  rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
   </main>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://i.stack.imgur.com/Grwsc.png">
 <meta property="og:image" content="https://i.stack.imgur.com/QAtRy.jpg">
 <meta property="article:published_time" content="2019-10-14T08:15:00.000Z">
-<meta property="article:modified_time" content="2021-11-17T18:30:17.119Z">
+<meta property="article:modified_time" content="2021-11-18T04:20:48.435Z">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 <meta property="article:tag" content="Blogger">
 <meta property="article:tag" content="Blogging">
@@ -118,9 +118,9 @@
       }
       ;</script>
     <div class="mdui-grid-tile">
-        <img src="/images/banner.png" style="height: 160px;">
+        <img src="/images/banner.png" style="height: 160px;" title="Menonaktifkan Chrome Cache Untuk Web Development" alt="Menonaktifkan Chrome Cache Untuk Web Development" itemprop="image">
         
-        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+        <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;" title="Menonaktifkan Chrome Cache Untuk Web Development" alt="Menonaktifkan Chrome Cache Untuk Web Development" itemprop="image">
         
         <div class="mdui-grid-tile-actions">
             <div class="mdui-grid-tile-text">
@@ -241,7 +241,7 @@
 </style>
 <article class="mdui-card mdui-m-b-5">
   <header class="mdui-card-media">
-    <img src="https://i.stack.imgur.com/Grwsc.png" style="max-height: 240px">
+    <img src="https://i.stack.imgur.com/Grwsc.png" style="max-height: 240px" title="Menonaktifkan Chrome Cache Untuk Web Development" alt="Menonaktifkan Chrome Cache Untuk Web Development" itemprop="image">
     <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
         <div class="mdui-card-primary-title">Menonaktifkan Chrome Cache Untuk Web Development</div>
@@ -261,7 +261,7 @@
         
         <li class="mdui-menu-item" disabled="">
           
-          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web.html&amp;chld=M|2">
+          <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=246x246&amp;chl=https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web.html&amp;chld=M|2" title="Menonaktifkan Chrome Cache Untuk Web Development" alt="Menonaktifkan Chrome Cache Untuk Web Development" itemprop="image">
           
         </li>
       </ul>
@@ -296,7 +296,7 @@
     </div>
   </header>
   <div class="mdui-card-content mdui-typo">
-    <div dir="ltr" style="text-align: left;" trbidi="on"><b>Bagaimana cara menonaktifkan (disable) chrome cache untuk website development ?</b><br>Jawabannya&nbsp;<span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;">The Chrome DevTools</span><br><span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;"><br></span><span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;">Tutorial :</span><br><br><ol style="text-align: left;"><li><span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;">Buka development tools (devtools) dengan cara</span><ul><li>Click <kbd>F12</kbd></li><li>      <kbd>Command</kbd>+      <kbd>Option</kbd>+      <kbd>i</kbd> on Mac    </li><li>      <kbd>Control</kbd>+      <kbd>Shift</kbd>+      <kbd>i</kbd> on Windows or Linux    </li></ul></li><li>Click <kbd><b>Network</b></kbd> Tab</li><li><strong>Check</strong>&nbsp;the&nbsp;   <code>Disable cache</code> </li></ol><a target="_blank" href="https://i.stack.imgur.com/Grwsc.png" imageanchor="1" rel="noopener noreferer nofollow noreferrer" title=""><img border="0" data-original-height="137" data-original-width="800" src="https://i.stack.imgur.com/Grwsc.png"></a><br><blockquote>Settingan ini hanya akan berfungsi <b>Hanya bila DevTools Terbuka Saja</b></blockquote><h4>Alternatif DevTools (Hard Reload &amp;&amp; Empty Cache and Reload)</h4>Tutorial: <br><ul><li>    <kbd>Command</kbd>+     <kbd>Option</kbd>+     <kbd>R</kbd> on Mac   </li><li>    <kbd>Control</kbd>+     <kbd>Shift</kbd>+     <kbd>R</kbd> on Windows/Linux </li></ul><a target="_blank" href="https://i.stack.imgur.com/QAtRy.jpg" imageanchor="1" rel="noopener noreferer nofollow noreferrer" title=""><img border="0" data-original-height="109" data-original-width="360" src="https://i.stack.imgur.com/QAtRy.jpg"></a> <h4>Opsional lain (Menggunakan .htaccess)</h4><pre><br>&lt;filesMatch "\.(html|htm|js|css)$"&gt;<br>  FileETag None<br>  &lt;ifModule mod_headers.c&gt;<br>     Header unset ETag<br>     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"<br>     Header set Pragma "no-cache"<br>     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"<br>  &lt;/ifModule&gt;<br>&lt;/filesMatch&gt;<br></pre></div> 
+    <div dir="ltr" style="text-align: left;" trbidi="on"><b>Bagaimana cara menonaktifkan (disable) chrome cache untuk website development ?</b><br>Jawabannya&nbsp;<span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;">The Chrome DevTools</span><br><span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;"><br></span><span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;">Tutorial :</span><br><br><ol style="text-align: left;"><li><span style="background-color: white; color: #242729; font-family: &quot;arial&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , sans-serif; font-size: 15px;">Buka development tools (devtools) dengan cara</span><ul><li>Click <kbd>F12</kbd></li><li>      <kbd>Command</kbd>+      <kbd>Option</kbd>+      <kbd>i</kbd> on Mac    </li><li>      <kbd>Control</kbd>+      <kbd>Shift</kbd>+      <kbd>i</kbd> on Windows or Linux    </li></ul></li><li>Click <kbd><b>Network</b></kbd> Tab</li><li><strong>Check</strong>&nbsp;the&nbsp;   <code>Disable cache</code> </li></ol><a target="_blank" href="https://i.stack.imgur.com/Grwsc.png" imageanchor="1" rel="noopener noreferer nofollow noreferrer" title=""><img border="0" data-original-height="137" data-original-width="800" src="https://i.stack.imgur.com/Grwsc.png" title="Menonaktifkan Chrome Cache Untuk Web Development" alt="Menonaktifkan Chrome Cache Untuk Web Development" itemprop="image"></a><br><blockquote>Settingan ini hanya akan berfungsi <b>Hanya bila DevTools Terbuka Saja</b></blockquote><h4>Alternatif DevTools (Hard Reload &amp;&amp; Empty Cache and Reload)</h4>Tutorial: <br><ul><li>    <kbd>Command</kbd>+     <kbd>Option</kbd>+     <kbd>R</kbd> on Mac   </li><li>    <kbd>Control</kbd>+     <kbd>Shift</kbd>+     <kbd>R</kbd> on Windows/Linux </li></ul><a target="_blank" href="https://i.stack.imgur.com/QAtRy.jpg" imageanchor="1" rel="noopener noreferer nofollow noreferrer" title=""><img border="0" data-original-height="109" data-original-width="360" src="https://i.stack.imgur.com/QAtRy.jpg" title="Menonaktifkan Chrome Cache Untuk Web Development" alt="Menonaktifkan Chrome Cache Untuk Web Development" itemprop="image"></a> <h4>Opsional lain (Menggunakan .htaccess)</h4><pre><br>&lt;filesMatch "\.(html|htm|js|css)$"&gt;<br>  FileETag None<br>  &lt;ifModule mod_headers.c&gt;<br>     Header unset ETag<br>     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"<br>     Header set Pragma "no-cache"<br>     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"<br>  &lt;/ifModule&gt;<br>&lt;/filesMatch&gt;<br></pre></div> 
     <blockquote>
       
       <strong>PermaLink: </strong> <a href="https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web.html" rel="internal follow bookmark" title="https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web.html">https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web.html</a>
@@ -372,8 +372,7 @@
     (d.head || d.body).appendChild(s);
   })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank"
-                                                  rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
 </noscript>
 </div>
   </main>

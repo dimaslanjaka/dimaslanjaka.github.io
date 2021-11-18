@@ -29,7 +29,7 @@ npx hexo generate
 <img src="https://img.shields.io/badge/webmanajemen.com-up-down-green-red" hidden/>
 </div>-->
 
-# Hexo NodeJS Blogging System
+# Website using Hexo NodeJS Blogging System
 
 [![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)

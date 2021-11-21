@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://goo.gl/dzGpyo">
 <meta property="article:published_time" content="2018-02-09T16:57:00.000Z">
-<meta property="article:modified_time" content="2021-11-20T06:35:54.443Z">
+<meta property="article:modified_time" content="2021-11-21T02:13:25.510Z">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 <meta property="article:tag" content="JS">
 <meta property="article:tag" content="CSS">
@@ -135,10 +135,11 @@
 <link rel="stylesheet" href="/.css" src="/.js">
 
 <meta name="generator" content="Hexo 5.4.0"><script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article.html","source/ads/in_article2.html"],"pub":"ca-pub-1165447249910969","adblock":true,"https":true,"field":"site","exclude":["*.min.html","exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"5.4.0","cmd":"generate","init":true}</script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"JavaScript Call Random CSS file","alternativeHeadline":"I am trying to rotate random CSS sheets via JS I have the following script but when I am using it it doesnt seem to work","image":"http://example.com/image.jpg","author":{"@type":"Person","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png","name":"Dimas Lanjaka Kumala Indra","sameAs":"https://www.webmanajemen.com"},"award":"Best article ever written","editor":"Dimas Lanjaka Kumala Indra","genre":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,JavaScript Call Random CSS file,JS,CSS","keywords":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,JavaScript Call Random CSS file,JS,CSS","wordcount":"1056","publisher":{"@type":"Organization","name":"Dimas Lanjaka Kumala Indra","logo":{"@type":"ImageObject","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"}},"url":"https://www.webmanajemen.com/2018/02/javascript-call-random-css-file.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article","mainEntity":{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://developers.google.com/search/docs/advanced/structured-data/breadcrumb","name":"breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"JS","item":"https://www.webmanajemen.com/tags/JS/"},{"@type":"ListItem","position":2,"name":"CSS","item":"https://www.webmanajemen.com/tags/CSS/"}]}},"datePublished":"2018-02-09T16:57:00.000Z","dateCreated":"2018-02-09T16:57:00.000Z","dateModified":"2019-07-21T20:23:18.057Z","description":"I am trying to rotate random CSS sheets via JS I have the following script but when I am using it it doesnt seem to work","articleBody":"Someone talk to stack overflow like this :     I am trying to rotate random CSS sheets via JS - I have the following     script but when I am using it - it doesnt seem to work ? function getRand()    return Math.round(Math.random()(css.length-1));var css = new Array(’<link rel=“stylesheet” type=“text/css” href=“css/1.css”>’,’<link rel=“stylesheet” type=“text/css” href=“css/2.css”>’,’<link rel=“stylesheet” type=“text/css” href=“css/3.css”>’,’<link rel=“stylesheet” type=“text/css” href=“css/4.css”>’);rand = getRand();document.write(css[rand]);    Appreciate any help? The best answer is : Try to create the link element programmatically and appending it to the headfunction applyRandCSS()  var css = [“css/1.css”, “css/2.css”, “css/3.css”, “css/4.css”];  var randomFile = css[Math.round(Math.random()(css.length-1))];  var ss = document.createElement(“link”);  ss.type = “text/css”;  ss.rel = “stylesheet”;  ss.href = randomFile;  document.getElementsByTagName(“head”)[0].appendChild(ss);Source : //stackoverflow.com/questions/1244877/random-css-via-js"}</script></head>
+
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
-  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <script>var a = localStorage.getItem("mdui-theme-layout-dark"); if (a) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>var a = localStorage.getItem("mdui-drawer-close"); if (!a) { document.getElementsByTagName("body")[0].className += " mdui-drawer-body-left" };</script>
   <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
   <div class="mdui-toolbar mdui-color-theme">
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}" title="menu"><i class="mdui-icon material-icons">menu</i></a>
@@ -969,4 +970,5 @@ if (!isBrowser()) {
   }
 }
 </script>
+
 </body></html>

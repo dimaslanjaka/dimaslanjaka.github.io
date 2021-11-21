@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg">
 <meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/hello-world-php-widget.png">
 <meta property="article:published_time" content="2017-08-03T18:05:00.000Z">
-<meta property="article:modified_time" content="2021-11-20T06:35:54.523Z">
+<meta property="article:modified_time" content="2021-11-21T02:13:25.582Z">
 <meta property="article:author" content="Unknown">
 <meta property="article:tag" content="Wordpress">
 <meta property="article:tag" content="PHP">
@@ -136,10 +136,11 @@
 <link rel="stylesheet" href="/.css" src="/.js">
 
 <meta name="generator" content="Hexo 5.4.0"><script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article.html","source/ads/in_article2.html"],"pub":"ca-pub-1165447249910969","adblock":true,"https":true,"field":"site","exclude":["*.min.html","exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"5.4.0","cmd":"generate","init":true}</script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin","alternativeHeadline":"p Terkadang kita perlu mengeksekusi skrip PHP di widget teks namun secara default WordPress tidak hadir dengan fitur ini karena masalah keamanan br","image":"http://example.com/image.jpg","author":{"@type":"Person","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png","name":"Unknown","sameAs":"https://www.webmanajemen.com"},"award":"Best article ever written","editor":"Unknown","genre":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin,Wordpress,PHP","keywords":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin,Wordpress,PHP","wordcount":"1126","publisher":{"@type":"Organization","name":"Unknown","logo":{"@type":"ImageObject","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"}},"url":"https://www.webmanajemen.com/2017/08/cara-mengeksekusi-kode-php-di-text.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article","mainEntity":{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://developers.google.com/search/docs/advanced/structured-data/breadcrumb","name":"breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Wordpress","item":"https://www.webmanajemen.com/tags/Wordpress/"},{"@type":"ListItem","position":2,"name":"PHP","item":"https://www.webmanajemen.com/tags/PHP/"}]}},"datePublished":"2017-08-03T18:05:00.000Z","dateCreated":"2017-08-03T18:05:00.000Z","dateModified":"2017-08-04T01:05:15.759Z","description":"p Terkadang kita perlu mengeksekusi skrip PHP di widget teks namun secara default WordPress tidak hadir dengan fitur ini karena masalah keamanan br","articleBody":"Terkadang kita perlu mengeksekusi skrip PHP di widget teks namun secara default WordPress tidak hadir dengan fitur ini karena masalah keamanan.Anda bisa menggunakan beberapa plugin seperti PHP Text Widget dan PHP Code widget tapi mengapa ada orang yang menggunakannya saat kita bisa melakukannya dalam sepersekian detik. Anda tahu apa, Butuh waktu jauh lebih sedikit daripada memasang plugin.Edit file functions.php dari tema Anda saat ini dan tambahkan kode berikut di bagian akhir file.//Run php on text widgetfunction php_execute(html)<br>if(strpos(html,<.?php)!==false) ob_start(); eval(?.>.html);<br>html);<br>html);<br>html=ob_get_contents();ob_end_clean();return $html;add_filter(‘widget_text’,‘php_execute’,100);Sekarang hapus cache jika Anda menggunakan Plugin Cache seperti cache WPSuper Cache atau W3 Total.Untuk mengecek kerja, Tempel kode PHP berikut di widget teks<? Php echo ‘Halo Dunia !!!’ ?>Sekarang periksa tempat di mana Anda telah menempatkan widget, Anda harus melihat  Hello World !!! Jika Anda ingin memahami kode itu kemudian kunjungi -  Emanuele Feronato - italian geek dan PROgrammer.Via -  WPSquare"}</script></head>
+
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
-  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <script>var a = localStorage.getItem("mdui-theme-layout-dark"); if (a) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>var a = localStorage.getItem("mdui-drawer-close"); if (!a) { document.getElementsByTagName("body")[0].className += " mdui-drawer-body-left" };</script>
   <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
   <div class="mdui-toolbar mdui-color-theme">
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}" title="menu"><i class="mdui-icon material-icons">menu</i></a>
@@ -970,4 +971,5 @@ if (!isBrowser()) {
   }
 }
 </script>
+
 </body></html>

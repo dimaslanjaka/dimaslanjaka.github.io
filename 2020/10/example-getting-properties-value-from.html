@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -34,7 +34,7 @@
 <meta property="og:description" content="pluginManagement {    resolutionStrategy {        eachPlugin {            // Work around https://github.com/gradle/gradle/issues/">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-23T19:19:00.000Z">
-<meta property="article:modified_time" content="2021-11-20T06:35:54.163Z">
+<meta property="article:modified_time" content="2021-11-21T02:13:25.274Z">
 <meta property="article:author" content="Kuswati">
 <meta property="article:tag" content="Kotlin">
 <meta name="twitter:card" content="summary">
@@ -132,10 +132,11 @@
 <link rel="stylesheet" href="/.css" src="/.js">
 
 <meta name="generator" content="Hexo 5.4.0"><script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article.html","source/ads/in_article2.html"],"pub":"ca-pub-1165447249910969","adblock":true,"https":true,"field":"site","exclude":["*.min.html","exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"5.4.0","cmd":"generate","init":true}</script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Example getting properties value from settings.gradle.kts","alternativeHeadline":"pre br pluginManagement br resolutionStrategy br eachPlugin br Work around","image":"http://example.com/image.jpg","author":{"@type":"Person","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png","name":"Kuswati","sameAs":"https://www.webmanajemen.com"},"award":"Best article ever written","editor":"Kuswati","genre":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,Example getting properties value from settings.gradle.kts,Kotlin","keywords":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,Example getting properties value from settings.gradle.kts,Kotlin","wordcount":"984","publisher":{"@type":"Organization","name":"Kuswati","logo":{"@type":"ImageObject","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"}},"url":"https://www.webmanajemen.com/2020/10/example-getting-properties-value-from.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article","mainEntity":{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://developers.google.com/search/docs/advanced/structured-data/breadcrumb","name":"breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Kotlin","item":"https://www.webmanajemen.com/tags/Kotlin/"}]}},"datePublished":"2020-10-23T19:19:00.000Z","dateCreated":"2020-10-23T19:19:00.000Z","dateModified":"2020-10-24T02:19:53.448Z","description":"pre br pluginManagement br resolutionStrategy br eachPlugin br Work around","articleBody":"pluginManagement     resolutionStrategy         eachPlugin             // Work around //github.com/gradle/gradle/issues/1697.            if (requested.version == null)                 def pluginName = requested.id.name.split(-).collect  it.capitalize() .join().uncapitalize()                def versionPropertyName = (requested.id.id == org.jetbrains.kotlin.jvm) ?                        kotlinPluginVersion : $pluginNamePluginVersion                logger.info(Checking for plugin version property $versionPropertyName.)                if (gradle.rootProject.hasProperty(versionPropertyName))                     def version = gradle.rootProject.properties[versionPropertyName]                    logger.info(Setting $requested.id.id plugin version to $version.)                    useVersion version                 else                     logger.warn(No version specified for plugin $requested.id.id and property  +                            $versionPropertyName does not exist.)"}</script></head>
+
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
-  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <script>var a = localStorage.getItem("mdui-theme-layout-dark"); if (a) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>var a = localStorage.getItem("mdui-drawer-close"); if (!a) { document.getElementsByTagName("body")[0].className += " mdui-drawer-body-left" };</script>
   <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
   <div class="mdui-toolbar mdui-color-theme">
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}" title="menu"><i class="mdui-icon material-icons">menu</i></a>
@@ -963,4 +964,5 @@ if (!isBrowser()) {
   }
 }
 </script>
+
 </body></html>

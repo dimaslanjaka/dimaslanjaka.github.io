@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -34,7 +34,7 @@
 <meta property="og:description" content="Usage: var_dump(get_client_ip()); /** * Detect is localhost * * @return boolean */function isLocalHost">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-16T14:26:00.004Z">
-<meta property="article:modified_time" content="2021-11-20T06:35:54.159Z">
+<meta property="article:modified_time" content="2021-11-21T02:13:25.266Z">
 <meta property="article:author" content="Kuswati">
 <meta property="article:tag" content="PHP">
 <meta property="article:tag" content="Script">
@@ -134,10 +134,11 @@
 <link rel="stylesheet" href="/.css" src="/.js">
 
 <meta name="generator" content="Hexo 5.4.0"><script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article.html","source/ads/in_article2.html"],"pub":"ca-pub-1165447249910969","adblock":true,"https":true,"field":"site","exclude":["*.min.html","exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"5.4.0","cmd":"generate","init":true}</script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"[PHP] Detect User Client IP (XAMPP or Localhost Machine Supported)","alternativeHeadline":"pre br Usage var dump get client ip br pre pre br br Detect is localhost br br return boolean br","image":"http://example.com/image.jpg","author":{"@type":"Person","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png","name":"Kuswati","sameAs":"https://www.webmanajemen.com"},"award":"Best article ever written","editor":"Kuswati","genre":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,[PHP] Detect User Client IP (XAMPP or Localhost Machine Supported),PHP,Script,Tips & Tricks","keywords":"the legend of neverland,genshin impact,games,how to,tips and tricks,php,javascript,jquery,mysql,seo,e-commerce,[PHP] Detect User Client IP (XAMPP or Localhost Machine Supported),PHP,Script,Tips & Tricks","wordcount":"1969","publisher":{"@type":"Organization","name":"Kuswati","logo":{"@type":"ImageObject","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"}},"url":"https://www.webmanajemen.com/2020/10/php-detect-user-client-ip-xampp-or.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article","mainEntity":{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://developers.google.com/search/docs/advanced/structured-data/breadcrumb","name":"breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"PHP","item":"https://www.webmanajemen.com/tags/PHP/"},{"@type":"ListItem","position":2,"name":"Script","item":"https://www.webmanajemen.com/tags/Script/"},{"@type":"ListItem","position":3,"name":"Tips & Tricks","item":"https://www.webmanajemen.com/tags/Tips-Tricks/"}]}},"datePublished":"2020-10-16T14:26:00.004Z","dateCreated":"2020-10-16T14:26:00.004Z","dateModified":"2020-10-16T21:26:36.608Z","description":"pre br Usage var dump get client ip br pre pre br br Detect is localhost br br return boolean br","articleBody":"Usage: var_dump(get_client_ip()); /** * Detect is localhost * * @return boolean */function isLocalHost()  $whitelist = [    127.0.0.1,    ::1,  ];  return in_array($_SERVER[REMOTE_ADDR], $whitelist);/** * Get client ip, when getenv supported (maybe cli) * * @return string */function get_client_ip()  $ipaddress = ;  if (isLocalHost())     $ipaddress = getLocalIp();   else     if (getenv(HTTP_CLIENT_IP))       $ipaddress = getenv(HTTP_CLIENT_IP);     elseif (getenv(HTTP_X_FORWARDED_FOR))       $ipaddress = getenv(HTTP_X_FORWARDED_FOR);     elseif (getenv(HTTP_X_FORWARDED))       $ipaddress = getenv(HTTP_X_FORWARDED);     elseif (getenv(HTTP_FORWARDED_FOR))       $ipaddress = getenv(HTTP_FORWARDED_FOR);     elseif (getenv(HTTP_FORWARDED))       $ipaddress = getenv(HTTP_FORWARDED);     elseif (getenv(REMOTE_ADDR))       $ipaddress = $ipaddress = getenv(REMOTE_ADDR);     else       /**       * Return to method 2       */      $ipaddress = get_client_ip2();        return $ipaddress;/** * Get client ip, when running on webserver * * @return void */function get_client_ip2()  $ipaddress = ;  if (isLocalHost())     $ipaddress = getLocalIp();   else     if (isset($_SERVER[HTTP_CLIENT_IP]))       $ipaddress = $_SERVER[HTTP_CLIENT_IP];     elseif (isset($_SERVER[HTTP_X_FORWARDED_FOR]))       $ipaddress = $_SERVER[HTTP_X_FORWARDED_FOR];     elseif (isset($_SERVER[HTTP_X_FORWARDED]))       $ipaddress = $_SERVER[HTTP_X_FORWARDED];     elseif (isset($_SERVER[HTTP_FORWARDED_FOR]))       $ipaddress = $_SERVER[HTTP_FORWARDED_FOR];     elseif (isset($_SERVER[HTTP_FORWARDED]))       $ipaddress = $_SERVER[HTTP_FORWARDED];     elseif (isset($_SERVER[REMOTE_ADDR]))       $ipaddress = $_SERVER[REMOTE_ADDR];     else       $ipaddress = UNKNOWN;        return $ipaddress;function getLocalIp()  if (defined(PHP_MAJOR_VERSION) && PHP_MAJOR_VERSION >= 5)     $localIP = gethostbyname(gethostname());   else     $localIP = gethostbyname(php_uname(n));    return $localIP;"}</script></head>
+
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
-  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <script>var a = localStorage.getItem("mdui-theme-layout-dark"); if (a) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) { document.getElementsByTagName("body")[0].className += " mdui-theme-layout-dark" };</script>
+  <script>var a = localStorage.getItem("mdui-drawer-close"); if (!a) { document.getElementsByTagName("body")[0].className += " mdui-drawer-body-left" };</script>
   <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
   <div class="mdui-toolbar mdui-color-theme">
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}" title="menu"><i class="mdui-icon material-icons">menu</i></a>
@@ -969,4 +970,5 @@ if (!isBrowser()) {
   }
 }
 </script>
+
 </body></html>

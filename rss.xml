@@ -9,7 +9,7 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>External source WMI Github Laboratory</description>
-    <pubDate>Mon, 06 Dec 2021 20:42:37 GMT</pubDate>
+    <pubDate>Tue, 07 Dec 2021 09:15:02 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -98,6 +98,31 @@ fascinati</description>
       
       
       <comments>https://www.webmanajemen.com/Seven%20Knight/guide.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Eslint Prettier In Typescript Project Using Vscode</title>
+      <link>https://www.webmanajemen.com/NodeJS/TS-detect-nodelist-or-htmlcollections.html</link>
+      <guid>https://www.webmanajemen.com/NodeJS/TS-detect-nodelist-or-htmlcollections.html</guid>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;how-to-detect-htmlcollectionnodelist-in-javascripttypescript&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-detect-htmlcollectionnodelist-in-java</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="how-to-detect-htmlcollectionnodelist-in-javascripttypescript"><a class="markdownIt-Anchor" href="#how-to-detect-htmlcollectionnodelist-in-javascripttypescript"></a> How to detect HTMLCollection/NodeList in JavaScript/Typescript?</h1><h2 id="htmlcollection-detect"><a class="markdownIt-Anchor" href="#htmlcollection-detect"></a> HTMLCollection Detect</h2><pre><code class="highlight js"><span class="comment">// check if variable is instance of HTMLCollection</span>HTMLCollection.prototype.isPrototypeOf(variable)</code></pre><h2 id="nodelist-detect"><a class="markdownIt-Anchor" href="#nodelist-detect"></a> NodeList Detect</h2><pre><code class="highlight js"><span class="comment">// check if variable is instance of NodeList</span>NodeList.prototype.isPrototypeOf(variable)</code></pre><h2 id="typescript-comparator-example"><a class="markdownIt-Anchor" href="#typescript-comparator-example"></a> Typescript Comparator Example</h2><pre><code class="highlight ts"><span class="keyword">let</span> loaders: NodeListOf&lt;Element&gt; | HTMLCollectionOf&lt;Element&gt;;loaders = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;className&quot;</span>); <span class="comment">// will return typeof HTMLCollectionOf&lt;Element&gt;</span>loaders = <span class="built_in">document</span>.querySelectorAll(<span class="string">&quot;[class*=&#x27;className&#x27;]&quot;</span>); <span class="comment">// will return typeof NodeListOf&lt;Element&gt;</span><span class="keyword">if</span> (HTMLCollection.prototype.isPrototypeOf(<span class="built_in">this</span>.loaders)) &#123;  <span class="built_in">console</span>.log(<span class="string">&#x27;loaders is instanceof HTMLCollection&#x27;</span>);&#125; <span class="keyword">else</span> <span class="keyword">if</span> (NodeList.prototype.isPrototypeOf(<span class="built_in">this</span>.loaders)) &#123;  <span class="built_in">console</span>.log(<span class="string">&#x27;loaders is instanceof NodeList&#x27;</span>);&#125;</code></pre><h2 id="typescript-how-to-iterate-nodelist-or-htmlcollection-variable-type"><a class="markdownIt-Anchor" href="#typescript-how-to-iterate-nodelist-or-htmlcollection-variable-type"></a> Typescript how to iterate Nodelist or HTMLCollection variable type</h2><h3 id="wrongbad"><a class="markdownIt-Anchor" href="#wrongbad"></a> Wrong/Bad</h3><pre><code class="highlight ts">loaders.forEach(<span class="function">(<span class="params">el</span>) =&gt;</span> &#123;  <span class="built_in">console</span>.log(el);&#125;);</code></pre><blockquote><p>above will thrown:</p><p>Property ‘forEach’ does not exist on type ‘NodeListOf<Element> | HTMLCollectionOf<Element>’.</p><p>  Property ‘forEach’ does not exist on type ‘HTMLCollectionOf<Element>’. ts(2339)</p></blockquote><h3 id="good"><a class="markdownIt-Anchor" href="#good"></a> Good</h3><pre><code class="highlight ts"><span class="keyword">let</span> loaders: NodeListOf&lt;Element&gt; | HTMLCollectionOf&lt;Element&gt;;loaders = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;className&quot;</span>); <span class="comment">// will return typeof HTMLCollectionOf&lt;Element&gt;</span>loaders = <span class="built_in">document</span>.querySelectorAll(<span class="string">&quot;[class*=&#x27;className&#x27;]&quot;</span>); <span class="comment">// will return typeof NodeListOf&lt;Element&gt;</span><span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; loaders.length; index++) &#123;  <span class="keyword">const</span> element: Element = loaders.item(index); <span class="comment">// or loaders[index]</span>  <span class="built_in">console</span>.log(element);&#125;</code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/TS/">TS</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/JS/">JS</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/TS-detect-nodelist-or-htmlcollections.html#disqus_thread</comments>
       
     </item>
     
@@ -508,33 +533,6 @@ fascinati</description>
       
       
       <comments>https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Highest Fairies Exp And Crystals Expel Incident</title>
-      <link>https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html</link>
-      <guid>https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html</guid>
-      <pubDate>Mon, 16 Aug 2021 17:00:00 GMT</pubDate>
-      
-      <description>&lt;!-- toc --&gt;
-&lt;h2 id=&quot;Intro&quot;&gt;Expel Incident The Legend Of NeverLand&lt;/h2&gt;
-In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incid</description>
-      
-      
-      
-      <content:encoded><![CDATA[<!-- toc --><h2 id="Intro">Expel Incident The Legend Of NeverLand</h2>In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most FAIRY EXP AND CRYSTALS.<h2 id="gaya-snow-mountain-f2"><a class="markdownIt-Anchor" href="#gaya-snow-mountain-f2"></a> Gaya Snow Mountain F2</h2><p><img src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png" alt="" /></p><h2 id="gaya-snow-mountain-f3"><a class="markdownIt-Anchor" href="#gaya-snow-mountain-f3"></a> Gaya Snow Mountain F3</h2><p><img src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png" alt="" /></p><h2 id="skala-desert-f2"><a class="markdownIt-Anchor" href="#skala-desert-f2"></a> Skala Desert F2</h2><p><img src="https://user-images.githubusercontent.com/12471057/136436283-942699d6-be8d-4b55-9ebc-6641ca9884ac.png" alt="Scorpion's Revenge" /><br /><em>Scorpion’s Revenge - Kill toxic desert scorpions</em></p><h2 id="skala-desert-f3"><a class="markdownIt-Anchor" href="#skala-desert-f3"></a> Skala Desert F3</h2><p><img src="Crystals%20Fairy%20Exp/Skala%20Desert%203F.png" alt="" /></p><h2 id="maple-grove-f1"><a class="markdownIt-Anchor" href="#maple-grove-f1"></a> Maple Grove F1</h2><p><img src="https://user-images.githubusercontent.com/12471057/136435907-f0b7241e-a0c0-4091-8c2c-f04358acbfcc.png" alt="Troublemaker" /><br /><em>Troublemaker - Defeat adult kappa</em></p><style>em::before{content:"Gate Name : ";}</style>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/Games/">Games</category>
-      
-      <category domain="https://www.webmanajemen.com/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/Quest/">Quest</category>
-      
-      
-      <comments>https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html#disqus_thread</comments>
       
     </item>
     

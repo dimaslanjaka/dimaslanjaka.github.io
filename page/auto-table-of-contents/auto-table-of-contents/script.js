@@ -21,7 +21,7 @@ if (Wrapper) {
 				elementId = el.getAttribute('id');
 			}
 
-			console.log(generatedId, elementId);
+			//console.log(generatedId, elementId);
 			/**
 			 * @type {TocObject}
 			 */
@@ -111,11 +111,22 @@ if (Wrapper) {
  */
 function iterateTOC(toc) {
 	if (toc.length) return null;
-	const descendants = toc.descendants ? toc.descendants.map(iterateTOC).join('\n') : '';
+	/**
+	 *
+	 * @param {TocDescendant} descendant
+	 * @returns
+	 */
+	const parseDescendant = descendant => {
+		const text = descendant.id.split('-').join(' ');
+		return `<a href="#${descendant.id}">${text}</a>`;
+	};
+	const descendants = toc.descendants ? toc.descendants.map(parseDescendant).join('<br/>') : '';
+	if (descendants.length) console.log(descendants);
 	const inner = toc.inner ? toc.inner : '';
 	const loop = inner.length ? inner.map(iterateTOC).join('\n') : '';
-	let build = `<li><a href="#${toc.id}">${toc.text}</a> ${descendants}`;
-	//if (descendants.length) build += `\n${descendants}`;
+	let build = `<li><a href="#${toc.id}">${toc.text}</a>`;
+	if (descendants.length)
+		build += `\n<p class="table-of-contents" style="margin:0px;margin-left:1.7em;border:0px;padding:0px">${descendants}</p>`;
 	if (loop.length) build += `\n<ul>${loop}</ul>`;
 	return build + '</li>';
 }

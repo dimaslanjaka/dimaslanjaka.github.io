@@ -6,6 +6,7 @@
 var sample = [];
 var root = '#contents';
 var Wrapper = document.querySelector(root);
+if (!Wrapper) Wrapper = document;
 if (Wrapper) {
 	var inner = Wrapper.querySelectorAll('h1,h2,h3,h4,h5,h6,*[id]');
 	if (inner.length) {
@@ -92,16 +93,14 @@ if (Wrapper) {
 	}
 
 	// build ul li
-	// console.log(sample.length);
 	if (sample.length) {
 		const iterate = sample.map(iterateTOC).join('\n\n');
-		/*const format = prettier.format(iterate, {
-			parser: 'html',
-			plugins: prettierPlugins,
-		});*/
-		//console.log(format);
-		document.getElementById('toc').innerHTML =
-			'<nav class="table-of-contents" role="toc"><ul>' + iterate + '</ul></nav>';
+		const tocWrapper = document.getElementById('toc');
+		tocWrapper.innerHTML = '<nav class="table-of-contents" role="toc"><ul>' + iterate + '</ul></nav>';
+		// integrate highlight
+		tocWrapper.querySelectorAll('a[href^="#"]').forEach(el => {
+			el.addEventListener('click', () => highlightToc(el.getAttribute('href').replace(/^\#/, '')));
+		});
 	}
 }
 
@@ -121,7 +120,6 @@ function iterateTOC(toc) {
 		return `<a href="#${descendant.id}">${text}</a>`;
 	};
 	const descendants = toc.descendants ? toc.descendants.map(parseDescendant).join('<br/>') : '';
-	if (descendants.length) console.log(descendants);
 	const inner = toc.inner ? toc.inner : '';
 	const loop = inner.length ? inner.map(iterateTOC).join('\n') : '';
 	let build = `<li><a href="#${toc.id}">${toc.text}</a>`;
@@ -129,6 +127,14 @@ function iterateTOC(toc) {
 		build += `\n<p class="table-of-contents" style="margin:0px;margin-left:1.7em;border:0px;padding:0px">${descendants}</p>`;
 	if (loop.length) build += `\n<ul>${loop}</ul>`;
 	return build + '</li>';
+}
+
+function highlightToc(id) {
+	const select = document.getElementById(id);
+	document.querySelectorAll('.highlight-string').forEach(el => el.classList.remove('highlight-string'));
+	if (select) {
+		select.classList.toggle('highlight-string', true);
+	}
 }
 
 /**

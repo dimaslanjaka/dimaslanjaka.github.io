@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2022-01-06T22:03:04.450Z</updated>
+  <updated>2022-01-15T21:01:12.418Z</updated>
   <id>urn:uuid:c68af752-e424-4888-8ced-23df247a4b9f</id>
   
   <author>
@@ -19,10 +19,10 @@
   <entry>
     <title>Fix FRP Redmi GO Tiare Via MiFlash</title>
     <link href="https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix.html" />
-    <id>urn:uuid:989bb136-6f40-b402-c877-fb8993651507</id>
+    <id>urn:uuid:f306f863-c41a-3828-213f-df24e3e571b1</id>
     
     <published>2022-01-03T22:27:00.000Z</published>
-    <updated>2022-01-06T22:03:04.450Z</updated>
+    <updated>2022-01-15T21:01:12.418Z</updated>
     
     <content type="html"><![CDATA[<h1 id="fix-frp-redmi-go-latest-security-patch-updated-2022"><a class="markdownIt-Anchor" href="#fix-frp-redmi-go-latest-security-patch-updated-2022"></a> Fix FRP Redmi GO Latest Security Patch (Updated 2022)</h1><span id="more"></span><ul><li>Download Firmware redmi go <code>tiare_global_images_V10.2.6.0.OCLMIXM_8.1</code> customized with <code>frp bypasser</code></li></ul><blockquote><p><a href="https://mega.nz/file/OEFVBYJD#ptfhr6ADL6vwFu9ZikLnUkJqu9RfS-dUtBfvzDU_qMw">Download Firmware Redmi GO Tiare FRP Fix From MEGA</a></p></blockquote><h2 id="edl-mode"><a class="markdownIt-Anchor" href="#edl-mode"></a> EDL Mode</h2><ul><li>Open Back Cashing Redmi Go Tiare M1903C3GG And Connect Two Point (Look at this screenshot)<br /><img src="/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg" alt="" /></li><li>Connect USB while connected two points above</li><li>EDL Mode Loaded as Qualcom HS-USB QDLoader (Look at this screenshot)<br /><img src="/2022/01/04/frp-redmi-go-tiare-fix/Qualcomm-HS-USB-Drivers-EDL-Mode.webp" alt="Qualcom HS-USB QDLoader" /></li></ul><h2 id="flashing"><a class="markdownIt-Anchor" href="#flashing"></a> Flashing</h2><ul><li>Open MiFlash</li><li>Select Firmware <code>tiare_global_images_V10.2.6.0.OCLMIXM_8.1\images</code><br /><img src="/2022/01/04/frp-redmi-go-tiare-fix/select%20firmware.jpg" alt="" /></li><li>Select Option <code>CLEAN ALL</code> at bottom<br /><img src="/2022/01/04/frp-redmi-go-tiare-fix/full%20example.jpg" alt="" /></li><li>Tap <code>refresh</code> if your REDMI GO not shown</li><li>Tap <code>flash</code> if your REDMI GO ready</li></ul>]]></content>
     
@@ -47,7 +47,7 @@
     <published>2021-12-19T01:07:43.000Z</published>
     <updated>2021-12-19T01:20:44.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="nodejs-replace-matched-string-from-regex"><a class="markdownIt-Anchor" href="#nodejs-replace-matched-string-from-regex"></a> NodeJS Replace Matched String From Regex</h1><p>How to match regex from string and replace matched string $1-$9</p><p>for example: were going to replace all markdown extensions to html extension.</p><pre class="highlight"><code class="js"><span class="hljs-keyword">const</span> str = <span class="hljs-string">`[text1](url.html) [txt](http://webmanajemen.com/post.md)`</span>; <span class="hljs-comment">// string to replace</span><span class="hljs-keyword">const</span> regex = <span class="hljs-regexp">/\[.*\]\(.*(.md)\)/gm</span>; <span class="hljs-comment">// regex to match group index 1 (.md)</span><span class="hljs-keyword">if</span> (regex.exec(str)) &#123; <span class="hljs-comment">// check if regex match</span>  <span class="hljs-keyword">const</span> replaced = str.replace(regex, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">wholeMatch, index1</span>) </span>&#123;    <span class="hljs-built_in">console</span>.log(wholeMatch, index1);    <span class="hljs-keyword">return</span> wholeMatch.replace(index1, <span class="hljs-string">".html"</span>); <span class="hljs-comment">// replace .md to .html</span>  &#125;);  <span class="hljs-built_in">console</span>.log(replaced); <span class="hljs-comment">// [text1](url.html) [txt](http://webmanajemen.com/post.html)</span>&#125;<span class="hljs-string">``</span><span class="hljs-string">`&lt;script&gt;document.querySelectorAll("pre,code");  pretext.forEach(function (el) &#123;    el.classList.toggle("notranslate", true);  &#125;);&lt;/script&gt;</span></code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="nodejs-replace-matched-string-from-regex"><a class="markdownIt-Anchor" href="#nodejs-replace-matched-string-from-regex"></a> NodeJS Replace Matched String From Regex</h1><p>How to match regex from string and replace matched string $1-$9</p><blockquote><p>$1 = matched index 1 and so on</p></blockquote><p>for example: were going to replace all markdown extensions to html extension.</p><pre><code class="highlight js"><span class="keyword">const</span> str = <span class="string">`[text1](url.html) [txt](http://webmanajemen.com/post.md)`</span>; <span class="comment">// string to replace</span><span class="keyword">const</span> regex = <span class="regexp">/\[.*\]\(.*(.md)\)/gm</span>; <span class="comment">// regex to match group index 1 (.md)</span><span class="keyword">if</span> (regex.exec(str)) &#123; <span class="comment">// check if regex match</span>  <span class="keyword">const</span> replaced = str.replace(regex, <span class="function"><span class="keyword">function</span> (<span class="params">wholeMatch, index1</span>) </span>&#123;    <span class="built_in">console</span>.log(wholeMatch, index1);    <span class="keyword">return</span> wholeMatch.replace(index1, <span class="string">&quot;.html&quot;</span>); <span class="comment">// replace .md to .html</span>  &#125;);  <span class="built_in">console</span>.log(replaced); <span class="comment">// [text1](url.html) [txt](http://webmanajemen.com/post.html)</span>&#125;</code></pre><script>  document.querySelectorAll("pre,code");  pretext.forEach(function (el) {    el.classList.toggle("notranslate", true);  });</script>]]></content>
     
     
     <summary type="html">How to match regex from string and replace matched string $1-$9</summary>

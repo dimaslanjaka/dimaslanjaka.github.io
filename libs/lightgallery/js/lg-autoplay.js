@@ -3,5 +3,214 @@
  * http://sachinchoolur.github.io/lg-autoplay.js
  * Copyright (c) 2016 Sachin N; 
  * @license Apache 2.0 
- */
-!function(o){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=o();else if("function"==typeof define&&define.amd)define([],o);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).LgAutoplay=o()}}((function(){return function e(o,t,r){function s(n,u){if(!t[n]){if(!o[n]){var i="function"==typeof require&&require;if(!u&&i)return i(n,!0);if(l)return l(n,!0);var c=new Error("Cannot find module '"+n+"'");throw c.code="MODULE_NOT_FOUND",c}var a=t[n]={exports:{}};o[n][0].call(a.exports,(function(t){var r=o[n][1][t];return s(r||t)}),a,a.exports,e,o,t,r)}return t[n].exports}for(var l="function"==typeof require&&require,n=0;n<r.length;n++)s(r[n]);return s}({1:[function(o,t,r){!function(o,t){if(void 0!==r)t();else{t(),o.lgAutoplay={}}}(this,(function(){"use strict";var o=Object.assign||function(o){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var l in r)Object.prototype.hasOwnProperty.call(r,l)&&(o[l]=r[l])}return o},t={autoplay:!1,pause:5e3,progressBar:!0,fourceAutoplay:!1,autoplayControls:!0,appendAutoplayControlsTo:".lg-toolbar"},Autoplay=function(r){return this.el=r,this.core=window.lgData[this.el.getAttribute("lg-uid")],!(this.core.items.length<2)&&(this.core.s=o({},t,this.core.s),this.interval=!1,this.fromAuto=!0,this.canceledOnTouch=!1,this.fourceAutoplayTemp=this.core.s.fourceAutoplay,this.core.doCss()||(this.core.s.progressBar=!1),this.init(),this)};Autoplay.prototype.init=function(){var o=this;o.core.s.autoplayControls&&o.controls(),o.core.s.progressBar&&o.core.outer.querySelector(".lg").insertAdjacentHTML("beforeend",'<div class="lg-progress-bar"><div class="lg-progress"></div></div>'),o.progress(),o.core.s.autoplay&&o.startlAuto(),utils.on(o.el,"onDragstart.lgtm touchstart.lgtm",(function(){o.interval&&(o.cancelAuto(),o.canceledOnTouch=!0)})),utils.on(o.el,"onDragend.lgtm touchend.lgtm onSlideClick.lgtm",(function(){!o.interval&&o.canceledOnTouch&&(o.startlAuto(),o.canceledOnTouch=!1)}))},Autoplay.prototype.progress=function(){var o,t,r=this;utils.on(r.el,"onBeforeSlide.lgtm",(function(){r.core.s.progressBar&&r.fromAuto&&(o=r.core.outer.querySelector(".lg-progress-bar"),t=r.core.outer.querySelector(".lg-progress"),r.interval&&(t.removeAttribute("style"),utils.removeClass(o,"lg-start"),setTimeout((function(){utils.setVendor(t,"Transition","width "+(r.core.s.speed+r.core.s.pause)+"ms ease 0s"),utils.addClass(o,"lg-start")}),20))),r.fromAuto||r.core.s.fourceAutoplay||r.cancelAuto(),r.fromAuto=!1}))},Autoplay.prototype.controls=function(){var o=this;o.core.outer.querySelector(this.core.s.appendAutoplayControlsTo).insertAdjacentHTML("beforeend",'<span class="lg-autoplay-button lg-icon"></span>'),utils.on(o.core.outer.querySelector(".lg-autoplay-button"),"click.lg",(function(){utils.hasClass(o.core.outer,"lg-show-autoplay")?(o.cancelAuto(),o.core.s.fourceAutoplay=!1):o.interval||(o.startlAuto(),o.core.s.fourceAutoplay=o.fourceAutoplayTemp)}))},Autoplay.prototype.startlAuto=function(){var o=this;utils.setVendor(o.core.outer.querySelector(".lg-progress"),"Transition","width "+(o.core.s.speed+o.core.s.pause)+"ms ease 0s"),utils.addClass(o.core.outer,"lg-show-autoplay"),utils.addClass(o.core.outer.querySelector(".lg-progress-bar"),"lg-start"),o.interval=setInterval((function(){o.core.index+1<o.core.items.length?o.core.index++:o.core.index=0,o.fromAuto=!0,o.core.slide(o.core.index,!1,!1)}),o.core.s.speed+o.core.s.pause)},Autoplay.prototype.cancelAuto=function(){clearInterval(this.interval),this.interval=!1,this.core.outer.querySelector(".lg-progress")&&this.core.outer.querySelector(".lg-progress").removeAttribute("style"),utils.removeClass(this.core.outer,"lg-show-autoplay"),utils.removeClass(this.core.outer.querySelector(".lg-progress-bar"),"lg-start")},Autoplay.prototype.destroy=function(){this.cancelAuto(),this.core.outer.querySelector(".lg-progress-bar")&&this.core.outer.querySelector(".lg-progress-bar").parentNode.removeChild(this.core.outer.querySelector(".lg-progress-bar"))},window.lgModules.autoplay=Autoplay}))},{}]},{},[1])(1)}));
+ */(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.LgAutoplay = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function (global, factory) {
+    if (typeof define === "function" && define.amd) {
+        define([], factory);
+    } else if (typeof exports !== "undefined") {
+        factory();
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory();
+        global.lgAutoplay = mod.exports;
+    }
+})(this, function () {
+    'use strict';
+
+    var _extends = Object.assign || function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+
+            for (var key in source) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                    target[key] = source[key];
+                }
+            }
+        }
+
+        return target;
+    };
+
+    var autoplayDefaults = {
+        autoplay: false,
+        pause: 5000,
+        progressBar: true,
+        fourceAutoplay: false,
+        autoplayControls: true,
+        appendAutoplayControlsTo: '.lg-toolbar'
+    };
+
+    /**
+     * Creates the autoplay plugin.
+     * @param {object} element - lightGallery element
+     */
+    var Autoplay = function Autoplay(element) {
+
+        this.el = element;
+
+        this.core = window.lgData[this.el.getAttribute('lg-uid')];
+
+        // Execute only if items are above 1
+        if (this.core.items.length < 2) {
+            return false;
+        }
+
+        this.core.s = _extends({}, autoplayDefaults, this.core.s);
+        this.interval = false;
+
+        // Identify if slide happened from autoplay
+        this.fromAuto = true;
+
+        // Identify if autoplay canceled from touch/drag
+        this.canceledOnTouch = false;
+
+        // save fourceautoplay value
+        this.fourceAutoplayTemp = this.core.s.fourceAutoplay;
+
+        // do not allow progress bar if browser does not support css3 transitions
+        if (!this.core.doCss()) {
+            this.core.s.progressBar = false;
+        }
+
+        this.init();
+
+        return this;
+    };
+
+    Autoplay.prototype.init = function () {
+        var _this = this;
+
+        // append autoplay controls
+        if (_this.core.s.autoplayControls) {
+            _this.controls();
+        }
+
+        // Create progress bar
+        if (_this.core.s.progressBar) {
+            _this.core.outer.querySelector('.lg').insertAdjacentHTML('beforeend', '<div class="lg-progress-bar"><div class="lg-progress"></div></div>');
+        }
+
+        // set progress
+        _this.progress();
+
+        // Start autoplay
+        if (_this.core.s.autoplay) {
+            _this.startlAuto();
+        }
+
+        // cancel interval on touchstart and dragstart
+        utils.on(_this.el, 'onDragstart.lgtm touchstart.lgtm', function () {
+            if (_this.interval) {
+                _this.cancelAuto();
+                _this.canceledOnTouch = true;
+            }
+        });
+
+        // restore autoplay if autoplay canceled from touchstart / dragstart
+        utils.on(_this.el, 'onDragend.lgtm touchend.lgtm onSlideClick.lgtm', function () {
+            if (!_this.interval && _this.canceledOnTouch) {
+                _this.startlAuto();
+                _this.canceledOnTouch = false;
+            }
+        });
+    };
+
+    Autoplay.prototype.progress = function () {
+
+        var _this = this;
+        var _progressBar;
+        var _progress;
+
+        utils.on(_this.el, 'onBeforeSlide.lgtm', function () {
+
+            // start progress bar animation
+            if (_this.core.s.progressBar && _this.fromAuto) {
+                _progressBar = _this.core.outer.querySelector('.lg-progress-bar');
+                _progress = _this.core.outer.querySelector('.lg-progress');
+                if (_this.interval) {
+                    _progress.removeAttribute('style');
+                    utils.removeClass(_progressBar, 'lg-start');
+                    setTimeout(function () {
+                        utils.setVendor(_progress, 'Transition', 'width ' + (_this.core.s.speed + _this.core.s.pause) + 'ms ease 0s');
+                        utils.addClass(_progressBar, 'lg-start');
+                    }, 20);
+                }
+            }
+
+            // Remove setinterval if slide is triggered manually and fourceautoplay is false
+            if (!_this.fromAuto && !_this.core.s.fourceAutoplay) {
+                _this.cancelAuto();
+            }
+
+            _this.fromAuto = false;
+        });
+    };
+
+    // Manage autoplay via play/stop buttons
+    Autoplay.prototype.controls = function () {
+        var _this = this;
+        var _html = '<span class="lg-autoplay-button lg-icon"></span>';
+
+        // Append autoplay controls
+        _this.core.outer.querySelector(this.core.s.appendAutoplayControlsTo).insertAdjacentHTML('beforeend', _html);
+
+        utils.on(_this.core.outer.querySelector('.lg-autoplay-button'), 'click.lg', function () {
+            if (utils.hasClass(_this.core.outer, 'lg-show-autoplay')) {
+                _this.cancelAuto();
+                _this.core.s.fourceAutoplay = false;
+            } else {
+                if (!_this.interval) {
+                    _this.startlAuto();
+                    _this.core.s.fourceAutoplay = _this.fourceAutoplayTemp;
+                }
+            }
+        });
+    };
+
+    // Autostart gallery
+    Autoplay.prototype.startlAuto = function () {
+        var _this = this;
+
+        utils.setVendor(_this.core.outer.querySelector('.lg-progress'), 'Transition', 'width ' + (_this.core.s.speed + _this.core.s.pause) + 'ms ease 0s');
+        utils.addClass(_this.core.outer, 'lg-show-autoplay');
+        utils.addClass(_this.core.outer.querySelector('.lg-progress-bar'), 'lg-start');
+
+        _this.interval = setInterval(function () {
+            if (_this.core.index + 1 < _this.core.items.length) {
+                _this.core.index++;
+            } else {
+                _this.core.index = 0;
+            }
+
+            _this.fromAuto = true;
+            _this.core.slide(_this.core.index, false, false);
+        }, _this.core.s.speed + _this.core.s.pause);
+    };
+
+    // cancel Autostart
+    Autoplay.prototype.cancelAuto = function () {
+        clearInterval(this.interval);
+        this.interval = false;
+        if (this.core.outer.querySelector('.lg-progress')) {
+            this.core.outer.querySelector('.lg-progress').removeAttribute('style');
+        }
+
+        utils.removeClass(this.core.outer, 'lg-show-autoplay');
+        utils.removeClass(this.core.outer.querySelector('.lg-progress-bar'), 'lg-start');
+    };
+
+    Autoplay.prototype.destroy = function () {
+
+        this.cancelAuto();
+        if (this.core.outer.querySelector('.lg-progress-bar')) {
+            this.core.outer.querySelector('.lg-progress-bar').parentNode.removeChild(this.core.outer.querySelector('.lg-progress-bar'));
+        }
+    };
+
+    window.lgModules.autoplay = Autoplay;
+});
+
+},{}]},{},[1])(1)
+});

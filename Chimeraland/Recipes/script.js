@@ -1,1 +1,13 @@
-const e=document.querySelectorAll("article table#recipes td");Array.from(e).forEach((e=>{let l=e.innerHTML;l=l.replace("fullness",'<img src="Recipes/fullness.jpg" class="img-inline-text" />'),l=l.replace("atk",'<img src="Recipes/attack.png" class="img-inline-text atk" />'),e.innerHTML=l}));
+const td = document.querySelectorAll("article table#recipes td");
+Array.from(td).forEach((el) => {
+  let text = el.innerHTML;
+  text = text.replace(
+    "fullness",
+    '<img src="Recipes/fullness.jpg" class="img-inline-text" />'
+  );
+  text = text.replace(
+    "atk",
+    '<img src="Recipes/attack.png" class="img-inline-text atk" />'
+  );
+  el.innerHTML = text;
+});

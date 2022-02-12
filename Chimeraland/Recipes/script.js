@@ -1,1 +1,1 @@
-const e=document.querySelectorAll("article table td");Array.from(e).forEach((e=>{let l=e.innerHTML;l=l.replace("fullness",'<img src="Recipes/fullness.jpg" class="img-inline-text" />'),l=l.replace("atk",'<img src="Recipes/attack.png" class="img-inline-text atk" />'),e.innerHTML=l}));
+const e=document.querySelectorAll("article table#recipes td");Array.from(e).forEach((e=>{let l=e.innerHTML;l=l.replace("fullness",'<img src="Recipes/fullness.jpg" class="img-inline-text" />'),l=l.replace("atk",'<img src="Recipes/attack.png" class="img-inline-text atk" />'),e.innerHTML=l}));

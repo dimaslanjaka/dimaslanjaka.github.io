@@ -104,7 +104,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -220,7 +220,11 @@
         
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://dimaslanjaka.github.io/assets/img/javascript.png" rel="gallery_ckzjbt8r500py5rnf6paf527a noopener">
+    <a class="gallery-item" target="_blank" href="https://dimaslanjaka.github.io/assets/img/javascript.png" rel="gallery_ckzjc59w500q063o71vlg5csp noopener">
+        <img src="https://dimaslanjaka.github.io/assets/img/javascript.png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" target="_blank" href="https://dimaslanjaka.github.io/assets/img/javascript.png" rel="gallery_ckzjc59w500q063o71vlg5csp noopener">
         <img src="https://dimaslanjaka.github.io/assets/img/javascript.png" itemprop="image" />
     </a>
     
@@ -233,17 +237,14 @@
 
             
 
-            <blockquote>  Press F12 for console debug    <br>  <pre type="Info"><br>  requirements:<br>  1. jQuery<br>  2. Bootstrap 4 css<br>  3. <a target="_blank" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/f3dfa14a3848a8282eb39b1e2f01e1d6e62d7c44/js/jquery.progressBarTimer.min.js" rel="noopener noreferer nofollow noopener">https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/f3dfa14a3848a8282eb39b1e2f01e1d6e62d7c44/js/jquery.progressBarTimer.min.js</a> Read <a href="https://web-manajemen.blogspot.com/2019/07/cara-defer-loading-javascript.html" target="_blank" rel="follow">How to async defer CSS JS perfectly</a><br>  <br>  attribute info:<br>    countdown = to start countdown<br>    data-callback = function name of callback<br>    data-warning = bar warning style <br>    data-success = bar success style<br>    data-base = bar progress style<br>  </pre></blockquote><b>HTML code</b><pre type="HTML"><br>&lt;div data-callback="fn" countdown="5"&gt;&lt;/div&gt;<br>&lt;div data-callback="fi" countdown="10"&gt;&lt;/div&gt;<br></pre><b>Javascript code</b><pre type="JS"><br>var elm = $("[countdown]"); <br><br>function fc() {<br>    console.log("callback Succedeed")<br>}<br><br>function ctd(elm) { //main function<br>    var tl = 0 &lt; elm.attr("countdown") ? elm.attr("countdown") : 5,<br>        bs = elm.data("base") ? elm.data("base") : "bg-info",<br>        bw = elm.data("warning") ? elm.data("warning") : "bg-danger",<br>        bc = elm.data("success") ? elm.data("success") : "bg-success",<br>        myCountdown = elm.progressBarTimer({<br>            warningThreshold: 5,<br>            timeLimit: tl,<br>            baseStyle: bs,<br>            warningStyle: bw,<br>            completeStyle: bc,<br>            smooth: !0,<br>            striped: !0,<br>            animated: !0,<br>            height: 0,<br>            onFinish: function() {<br>                var callback = elm.data("callback"),<br>                    xn = window[callback];<br>                if ("function" == typeof xn) {<br>                    var x = eval(callback);<br>                    x()<br>                } else console.log(callback + " isn't function ")<br>            },<br>            label: {<br>                show: !0,<br>                type: "percent"<br>            },<br>            autoStart: !0<br>        })<br>}<br>0 &lt; elm.length &amp;&amp; elm.each(function(e) { //looping elements with attribute countdown<br>    ctd($(this))<br>});<br></pre> <b>Live example</b><img src="https://dimaslanjaka.github.io/assets/img/javascript.png"><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="oKLOrB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Bootstrap 4 progress bar countdown">  <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/oKLOrB/" rel="noopener noreferer nofollow noopener">  Bootstrap 4 progress bar countdown</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://codepen.io" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+            <blockquote>  Press F12 for console debug    <br>  <pre type="Info"><br>  requirements:<br>  1. jQuery<br>  2. Bootstrap 4 css<br>  3. <a target="_blank" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/f3dfa14a3848a8282eb39b1e2f01e1d6e62d7c44/js/jquery.progressBarTimer.min.js" rel="noopener noreferer nofollow noopener">https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/f3dfa14a3848a8282eb39b1e2f01e1d6e62d7c44/js/jquery.progressBarTimer.min.js</a> Read <a href="https://web-manajemen.blogspot.com/2019/07/cara-defer-loading-javascript.html" target="_blank" rel="follow">How to async defer CSS JS perfectly</a><br>  <br>  attribute info:<br>    countdown = to start countdown<br>    data-callback = function name of callback<br>    data-warning = bar warning style <br>    data-success = bar success style<br>    data-base = bar progress style<br>  </pre></blockquote><b>HTML code</b><pre type="HTML"><br>&lt;div data-callback="fn" countdown="5"&gt;&lt;/div&gt;<br>&lt;div data-callback="fi" countdown="10"&gt;&lt;/div&gt;<br></pre><b>Javascript code</b><pre type="JS"><br>var elm = $("[countdown]"); <br><br>function fc() {<br>    console.log("callback Succedeed")<br>}<br><br>function ctd(elm) { //main function<br>    var tl = 0 &lt; elm.attr("countdown") ? elm.attr("countdown") : 5,<br>        bs = elm.data("base") ? elm.data("base") : "bg-info",<br>        bw = elm.data("warning") ? elm.data("warning") : "bg-danger",<br>        bc = elm.data("success") ? elm.data("success") : "bg-success",<br>        myCountdown = elm.progressBarTimer({<br>            warningThreshold: 5,<br>            timeLimit: tl,<br>            baseStyle: bs,<br>            warningStyle: bw,<br>            completeStyle: bc,<br>            smooth: !0,<br>            striped: !0,<br>            animated: !0,<br>            height: 0,<br>            onFinish: function() {<br>                var callback = elm.data("callback"),<br>                    xn = window[callback];<br>                if ("function" == typeof xn) {<br>                    var x = eval(callback);<br>                    x()<br>                } else console.log(callback + " isn't function ")<br>            },<br>            label: {<br>                show: !0,<br>                type: "percent"<br>            },<br>            autoStart: !0<br>        })<br>}<br>0 &lt; elm.length &amp;&amp; elm.each(function(e) { //looping elements with attribute countdown<br>    ctd($(this))<br>});<br></pre> <b>Live example</b><img src="https://dimaslanjaka.github.io/assets/img/javascript.png"><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="oKLOrB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Bootstrap 4 progress bar countdown">  <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/oKLOrB/" rel="noopener noreferer nofollow noopener">  Bootstrap 4 progress bar countdown</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://codepen.io" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2019/07/bootstrap-4-auto-progress-bar.html" data-id="ckzjbt8r500py5rnf6paf527a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2019/07/bootstrap-4-auto-progress-bar.html" data-id="ckzjc59w500q063o71vlg5csp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -322,7 +323,7 @@
         "dateModified": "2019-07-25",
         "url": "https://www.webmanajemen.com/2019/07/bootstrap-4-auto-progress-bar.html",
         "description": "  Press F12 for console debug        requirements:  1. jQuery  2. Bootstrap 4 css  3. https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/f3dfa14a3848a8282eb39b1e2f01e1d6e62d7c44/js/jquery.progressB",
-        "wordCount": 620
+        "wordCount": 609
     }
 </script>
 </article>
@@ -450,7 +451,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/style.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -470,7 +471,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/table.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -488,7 +489,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Games/Chimeraland/">Chimeraland</a></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes.html" class="title">Cooking Recipes Chimeraland</a></p>
                             <p class="item-date"><time datetime="2022-01-10T17:00:00.000Z" itemprop="datePublished">2022-01-11</time></p>
                         </div>
@@ -543,7 +544,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 

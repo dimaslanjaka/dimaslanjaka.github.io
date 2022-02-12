@@ -104,7 +104,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -220,7 +220,11 @@
         
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" rel="gallery_ckzjbt8y6014l5rnfgh8m0tnq noopener">
+    <a class="gallery-item" target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" rel="gallery_ckzjc5a3l014n63o7c6i2db70 noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" rel="gallery_ckzjc5a3l014n63o7c6i2db70 noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="image" />
     </a>
     
@@ -233,18 +237,14 @@
 
             
 
-            <pre>#!/bin/bash<br>#clean page cache<br>#sync<br>#echo 1 &gt;/proc/sys/vm/drop_caches<br>#clean dentries and inodes<br>#sync<br>#echo 2 &gt;/proc/sys/vm/drop_caches<br>#clean page cache and dentries inodes, but it is not recommended in production instead use "echo 1"<br>#sync<br>#echo 3 &gt;/proc/sys/vm/drop_caches<br><br>##################<br># begin refresh script<br>##################<br><br>sync<br>if [ $(dpkg-query -W -f='${Status}' polipo 2&gt;/dev/null | grep -c "ok installed") -eq 0 ]; then<br>  apt-get install polipo -y<br>fi<br>polipo -x<br>echo 3 &gt;/proc/sys/vm/drop_caches<br>swapoff -a &amp;&amp; swapon -a<br>printf '\n%s\n\n' 'Ram-cache and Swap Cleared'<br>/opt/lampp/xampp restart<br>free -h<br></pre><br>this script used for better performance your vps (LINUX). <br><br><ul><li>fix apache slow response</li><li>fix xampp web server slow</li><li>fix overload ram vps</li><li>fix mysqld overheat</li><li>fix java machine overheat ram</li></ul><script>document.querySelectorAll("pre,code");
-<p>pretext.forEach(function (el) {<br />
-el.classList.toggle(“notranslate”, true);<br />
-});</script></p>
-
+            <pre>#!/bin/bash<br>#clean page cache<br>#sync<br>#echo 1 &gt;/proc/sys/vm/drop_caches<br>#clean dentries and inodes<br>#sync<br>#echo 2 &gt;/proc/sys/vm/drop_caches<br>#clean page cache and dentries inodes, but it is not recommended in production instead use "echo 1"<br>#sync<br>#echo 3 &gt;/proc/sys/vm/drop_caches<br><br>##################<br># begin refresh script<br>##################<br><br>sync<br>if [ $(dpkg-query -W -f='${Status}' polipo 2&gt;/dev/null | grep -c "ok installed") -eq 0 ]; then<br>  apt-get install polipo -y<br>fi<br>polipo -x<br>echo 3 &gt;/proc/sys/vm/drop_caches<br>swapoff -a &amp;&amp; swapon -a<br>printf '\n%s\n\n' 'Ram-cache and Swap Cleared'<br>/opt/lampp/xampp restart<br>free -h<br></pre><br>this script used for better performance your vps (LINUX). <br><br><ul><li>fix apache slow response</li><li>fix xampp web server slow</li><li>fix overload ram vps</li><li>fix mysqld overheat</li><li>fix java machine overheat ram</li></ul>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2020/05/linux-clear-cache.html" data-id="ckzjbt8y6014l5rnfgh8m0tnq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2020/05/linux-clear-cache.html" data-id="ckzjc5a3l014n63o7c6i2db70" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -323,7 +323,7 @@ el.classList.toggle(“notranslate”, true);<br />
         "dateModified": "2020-05-29",
         "url": "https://www.webmanajemen.com/2020/05/linux-clear-cache.html",
         "description": "#!/bin/bash#clean page cache#sync#echo 1 &gt;/proc/sys/vm/drop_caches#clean dentries and inodes#sync#echo 2 &gt;/proc/sys/vm/drop_caches#clean page cache and dentries inodes, but it is not recommended",
-        "wordCount": 95
+        "wordCount": 90
     }
 </script>
 </article>
@@ -451,7 +451,7 @@ el.classList.toggle(“notranslate”, true);<br />
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/style.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -471,7 +471,7 @@ el.classList.toggle(“notranslate”, true);<br />
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/table.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -489,7 +489,7 @@ el.classList.toggle(“notranslate”, true);<br />
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Games/Chimeraland/">Chimeraland</a></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes.html" class="title">Cooking Recipes Chimeraland</a></p>
                             <p class="item-date"><time datetime="2022-01-10T17:00:00.000Z" itemprop="datePublished">2022-01-11</time></p>
                         </div>
@@ -544,7 +544,7 @@ el.classList.toggle(“notranslate”, true);<br />
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 

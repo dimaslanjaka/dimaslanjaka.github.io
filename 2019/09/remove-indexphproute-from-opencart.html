@@ -103,7 +103,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -219,7 +219,11 @@
         
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png" rel="gallery_ckzjbt8s900s45rnfabld4g8n noopener">
+    <a class="gallery-item" target="_blank" href="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png" rel="gallery_ckzjc59xe00s663o7h2ow6ss7 noopener">
+        <img src="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" target="_blank" href="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png" rel="gallery_ckzjc59xe00s663o7h2ow6ss7 noopener">
         <img src="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png" itemprop="image" />
     </a>
     
@@ -232,17 +236,14 @@
 
             
 
-            <h3>How to remove index.php?route= common issue from url bar for SEO url</h3><img src="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png"><p>    I Also have the same problem and any that I found not solved my problem. But!     I remember that I also working with Laravel and in this engine well working     url path. Don't ask why I associated OpenCart with Laravel. So I enable SEO     radio button in <em>System -&gt; Settings -&gt; Server</em> you also can     disable it I don't see difference in the site work. </p><p>    This solution consist from several part: </p><p>    <strong>1.</strong>    In your root folder replace <em>.htaccess</em> file content with next     shapshot: </p><pre><code>&lt;IfModule mod_rewrite.c&gt;<br>    &lt;IfModule mod_negotiation.c&gt;<br>        Options -MultiViews -Indexes<br>    &lt;/IfModule&gt;<br><br>    RewriteEngine On<br><br>    # Handle Authorization Header<br>    RewriteCond %&#123;HTTP:Authorization&#125; .<br>    RewriteRule .* - [E=HTTP_AUTHORIZATION:%&#123;HTTP:Authorization&#125;]<br><br>    # Redirect Trailing Slashes If Not A Folder...<br>    RewriteCond %&#123;REQUEST_FILENAME&#125; !-d<br>    RewriteCond %&#123;REQUEST_URI&#125; (.+)/$<br>    RewriteRule ^ %1 [L,R=301]<br><br>    # Handle Front Controller...<br>    RewriteCond %&#123;REQUEST_FILENAME&#125; !-d<br>    RewriteCond %&#123;REQUEST_FILENAME&#125; !-f<br>    RewriteRule ^(.*)$ index.php?route=$1 [L]<br>&lt;/IfModule&gt;</code></pre><p>    <strong>2.</strong>    Go to <em>/system/library/url.php</em> and find <code>link</code> method     and replace it with next: </p><pre><code>public function link($route, $args = '', $secure = false) &#123;<br>  if ($this-&gt;ssl &amp;&amp; $secure) &#123;<br>    $url = $this-&gt;ssl . 'index.php?route=' . $route;<br>  &#125; else &#123;<br>    $url = $this-&gt;url . 'index.php?route=' . $route;<br>  &#125;<br><br>  if ($args) &#123;<br>    if (is_array($args)) &#123;<br>      $url .= '&amp;amp;' . http_build_query($args);<br>    &#125; else &#123;<br>      $url .= str_replace('&amp;', '&amp;amp;', '&amp;' . ltrim($args, '&amp;'));<br>    &#125;<br>  &#125;<br><br>  foreach ($this-&gt;rewrite as $rewrite) &#123;<br>    $url = $rewrite-&gt;rewrite($url);<br>  &#125;<br><br>  $url = str_replace('index.php?route=', '', $url);<br><br>  return $url; <br>&#125;</code></pre><p>    Since you changed <em>.htaccess</em> in root folder and change url     generating method you also need remember about admin part. If you what see pretty url in admin just    <strong>copy .htaccess from root folder to /admin folder</strong>. </p><p>If you want save orignal url in admin side you must little bit change    <code>link</code> method with next: </p><pre><code>public function link($route, $args = '', $secure = false) &#123;<br>  if ($this-&gt;ssl &amp;&amp; $secure) &#123;<br>    $url = $this-&gt;ssl . 'index.php?route=' . $route;<br>  &#125; else &#123;<br>    $url = $this-&gt;url . 'index.php?route=' . $route;<br>  &#125;<br><br>  if ($args) &#123;<br>    if (is_array($args)) &#123;<br>      $url .= '&amp;amp;' . http_build_query($args);<br>    &#125; else &#123;<br>      $url .= str_replace('&amp;', '&amp;amp;', '&amp;' . ltrim($args, '&amp;'));<br>    &#125;<br>  &#125;<br><br>  foreach ($this-&gt;rewrite as $rewrite) &#123;<br>    $url = $rewrite-&gt;rewrite($url);<br>  &#125;<br><br>  //  Skip admin path<br>  if (strpos($_SERVER['REQUEST_URI'], '/admin') !== 0) &#123;<br>    $url = str_replace('index.php?route=', '', $url);<br>  &#125;<br><br>  return $url; <br>&#125;</code></pre><p>    <strong>Result:</strong></p><p>    <em>Before</em></p><p>    <code>        http://YOUR_SITE/index.php?route=product/product&amp;product_id=52     </code></p><p>    <em>After</em></p><p>    <code>http://YOUR_SITE/product/product&amp;product_id=52</code></p><p>    <em>Before</em></p><p>    <code>http://YOUR_SITE/index.php?route=account/login</code></p><p>    <em>After</em></p><p>    <code>http://YOUR_SITE/account/login</code></p><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+            <h3>How to remove index.php?route= common issue from url bar for SEO url</h3><img src="https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png"><p>    I Also have the same problem and any that I found not solved my problem. But!     I remember that I also working with Laravel and in this engine well working     url path. Don't ask why I associated OpenCart with Laravel. So I enable SEO     radio button in <em>System -&gt; Settings -&gt; Server</em> you also can     disable it I don't see difference in the site work. </p><p>    This solution consist from several part: </p><p>    <strong>1.</strong>    In your root folder replace <em>.htaccess</em> file content with next     shapshot: </p><pre><code>&lt;IfModule mod_rewrite.c&gt;<br>    &lt;IfModule mod_negotiation.c&gt;<br>        Options -MultiViews -Indexes<br>    &lt;/IfModule&gt;<br><br>    RewriteEngine On<br><br>    # Handle Authorization Header<br>    RewriteCond %&#123;HTTP:Authorization&#125; .<br>    RewriteRule .* - [E=HTTP_AUTHORIZATION:%&#123;HTTP:Authorization&#125;]<br><br>    # Redirect Trailing Slashes If Not A Folder...<br>    RewriteCond %&#123;REQUEST_FILENAME&#125; !-d<br>    RewriteCond %&#123;REQUEST_URI&#125; (.+)/$<br>    RewriteRule ^ %1 [L,R=301]<br><br>    # Handle Front Controller...<br>    RewriteCond %&#123;REQUEST_FILENAME&#125; !-d<br>    RewriteCond %&#123;REQUEST_FILENAME&#125; !-f<br>    RewriteRule ^(.*)$ index.php?route=$1 [L]<br>&lt;/IfModule&gt;</code></pre><p>    <strong>2.</strong>    Go to <em>/system/library/url.php</em> and find <code>link</code> method     and replace it with next: </p><pre><code>public function link($route, $args = '', $secure = false) &#123;<br>  if ($this-&gt;ssl &amp;&amp; $secure) &#123;<br>    $url = $this-&gt;ssl . 'index.php?route=' . $route;<br>  &#125; else &#123;<br>    $url = $this-&gt;url . 'index.php?route=' . $route;<br>  &#125;<br><br>  if ($args) &#123;<br>    if (is_array($args)) &#123;<br>      $url .= '&amp;amp;' . http_build_query($args);<br>    &#125; else &#123;<br>      $url .= str_replace('&amp;', '&amp;amp;', '&amp;' . ltrim($args, '&amp;'));<br>    &#125;<br>  &#125;<br><br>  foreach ($this-&gt;rewrite as $rewrite) &#123;<br>    $url = $rewrite-&gt;rewrite($url);<br>  &#125;<br><br>  $url = str_replace('index.php?route=', '', $url);<br><br>  return $url; <br>&#125;</code></pre><p>    Since you changed <em>.htaccess</em> in root folder and change url     generating method you also need remember about admin part. If you what see pretty url in admin just    <strong>copy .htaccess from root folder to /admin folder</strong>. </p><p>If you want save orignal url in admin side you must little bit change    <code>link</code> method with next: </p><pre><code>public function link($route, $args = '', $secure = false) &#123;<br>  if ($this-&gt;ssl &amp;&amp; $secure) &#123;<br>    $url = $this-&gt;ssl . 'index.php?route=' . $route;<br>  &#125; else &#123;<br>    $url = $this-&gt;url . 'index.php?route=' . $route;<br>  &#125;<br><br>  if ($args) &#123;<br>    if (is_array($args)) &#123;<br>      $url .= '&amp;amp;' . http_build_query($args);<br>    &#125; else &#123;<br>      $url .= str_replace('&amp;', '&amp;amp;', '&amp;' . ltrim($args, '&amp;'));<br>    &#125;<br>  &#125;<br><br>  foreach ($this-&gt;rewrite as $rewrite) &#123;<br>    $url = $rewrite-&gt;rewrite($url);<br>  &#125;<br><br>  //  Skip admin path<br>  if (strpos($_SERVER['REQUEST_URI'], '/admin') !== 0) &#123;<br>    $url = str_replace('index.php?route=', '', $url);<br>  &#125;<br><br>  return $url; <br>&#125;</code></pre><p>    <strong>Result:</strong></p><p>    <em>Before</em></p><p>    <code>        http://YOUR_SITE/index.php?route=product/product&amp;product_id=52     </code></p><p>    <em>After</em></p><p>    <code>http://YOUR_SITE/product/product&amp;product_id=52</code></p><p>    <em>Before</em></p><p>    <code>http://YOUR_SITE/index.php?route=account/login</code></p><p>    <em>After</em></p><p>    <code>http://YOUR_SITE/account/login</code></p>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2019/09/remove-indexphproute-from-opencart.html" data-id="ckzjbt8s900s45rnfabld4g8n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2019/09/remove-indexphproute-from-opencart.html" data-id="ckzjc59xe00s663o7h2ow6ss7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -321,7 +322,7 @@
         "dateModified": "2019-09-27",
         "url": "https://www.webmanajemen.com/2019/09/remove-indexphproute-from-opencart.html",
         "description": "How to remove index.php?route= common issue from url bar for SEO url    I Also have the same problem and any that I found not solved my problem. But!     I remember that I also working with Laravel an",
-        "wordCount": 621
+        "wordCount": 610
     }
 </script>
 </article>
@@ -449,7 +450,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/style.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -469,7 +470,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/table.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -487,7 +488,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Games/Chimeraland/">Chimeraland</a></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes.html" class="title">Cooking Recipes Chimeraland</a></p>
                             <p class="item-date"><time datetime="2022-01-10T17:00:00.000Z" itemprop="datePublished">2022-01-11</time></p>
                         </div>
@@ -542,7 +543,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 

@@ -102,7 +102,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -218,7 +218,11 @@
         
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" rel="gallery_ckzjbt8xt013z5rnfhvwhd6z7 noopener">
+    <a class="gallery-item" target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" rel="gallery_ckzjc5a39014163o7ctm0afwm noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" rel="gallery_ckzjc5a39014163o7ctm0afwm noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="image" />
     </a>
     
@@ -231,18 +235,14 @@
 
             
 
-            <pre><br>&lt;LinearLayout<br>	android:id="@+id/main_adTopBanner"<br>	android:orientation="vertical" <br>	android:layout_height="50dp"<br>	android:layout_width="match_parent"&gt;        <br>&lt;/LinearLayout&gt;<br><br><br>@Override<br>protected void onCreate(Bundle savedInstanceState)<br>{<br>	super.onCreate(savedInstanceState);<br>	setContentView(R.layout.activity_main);<br><br>	LoadAds();			    	   <br>}<br>	<br>private AdView AD_TOP_BANNER = null;<br>public void LoadAds()<br>{<br>	// Create the adView.<br>	this.AD_TOP_BANNER = new AdView(this);<br>	this.AD_TOP_BANNER.setAdUnitId("MY_SPECIAL AND_UNIQUE_AD_ID");<br>	// this.AD_TOP_BANNER.setAdSize(AdSize.BANNER);<br>	this.AD_TOP_BANNER.setAdSize(AdSize.SMART_BANNER);<br><br>	// Lookup your LinearLayout assuming it's been given	<br>	LinearLayout layout = (LinearLayout) findViewById(R.id.main_adTopBanner);<br><br>	// Add the adView to it.<br>	layout.addView(this.AD_TOP_BANNER);<br><br>	// Initiate a generic request.<br>	AdRequest adRequest = null;<br>	adRequest = new AdRequest.Builder().build();<br>	//FOR TESTING AND LOADING TEST ADS<br>	//adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("AC98C820A50B4AD8A2106EDE96FB87D4").build();	<br><br>	// Load the adView with the ad request.<br>	this.AD_TOP_BANNER.loadAd(adRequest);<br>}<br></pre><script>document.querySelectorAll("pre,code");
-<p>pretext.forEach(function (el) {<br />
-el.classList.toggle(“notranslate”, true);<br />
-});</script></p>
-
+            <pre><br>&lt;LinearLayout<br>	android:id="@+id/main_adTopBanner"<br>	android:orientation="vertical" <br>	android:layout_height="50dp"<br>	android:layout_width="match_parent"&gt;        <br>&lt;/LinearLayout&gt;<br><br><br>@Override<br>protected void onCreate(Bundle savedInstanceState)<br>{<br>	super.onCreate(savedInstanceState);<br>	setContentView(R.layout.activity_main);<br><br>	LoadAds();			    	   <br>}<br>	<br>private AdView AD_TOP_BANNER = null;<br>public void LoadAds()<br>{<br>	// Create the adView.<br>	this.AD_TOP_BANNER = new AdView(this);<br>	this.AD_TOP_BANNER.setAdUnitId("MY_SPECIAL AND_UNIQUE_AD_ID");<br>	// this.AD_TOP_BANNER.setAdSize(AdSize.BANNER);<br>	this.AD_TOP_BANNER.setAdSize(AdSize.SMART_BANNER);<br><br>	// Lookup your LinearLayout assuming it's been given	<br>	LinearLayout layout = (LinearLayout) findViewById(R.id.main_adTopBanner);<br><br>	// Add the adView to it.<br>	layout.addView(this.AD_TOP_BANNER);<br><br>	// Initiate a generic request.<br>	AdRequest adRequest = null;<br>	adRequest = new AdRequest.Builder().build();<br>	//FOR TESTING AND LOADING TEST ADS<br>	//adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("AC98C820A50B4AD8A2106EDE96FB87D4").build();	<br><br>	// Load the adView with the ad request.<br>	this.AD_TOP_BANNER.loadAd(adRequest);<br>}<br></pre>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2020/02/dynamic-load-admob-ads.html" data-id="ckzjbt8xt013z5rnfhvwhd6z7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2020/02/dynamic-load-admob-ads.html" data-id="ckzjc5a39014163o7ctm0afwm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -321,7 +321,7 @@ el.classList.toggle(“notranslate”, true);<br />
         "dateModified": "2020-03-02",
         "url": "https://www.webmanajemen.com/2020/02/dynamic-load-admob-ads.html",
         "description": "&lt;LinearLayout	android:id="@+id/main_adTopBanner"	android:orientation="vertical" 	android:layout_height="50dp"	android:layout_width="match_parent"&gt;        &lt;/LinearLayout&gt;@Overrideprotected ",
-        "wordCount": 80
+        "wordCount": 75
     }
 </script>
 </article>
@@ -449,7 +449,7 @@ el.classList.toggle(“notranslate”, true);<br />
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/style.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -469,7 +469,7 @@ el.classList.toggle(“notranslate”, true);<br />
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/table.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -487,7 +487,7 @@ el.classList.toggle(“notranslate”, true);<br />
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Games/Chimeraland/">Chimeraland</a></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes.html" class="title">Cooking Recipes Chimeraland</a></p>
                             <p class="item-date"><time datetime="2022-01-10T17:00:00.000Z" itemprop="datePublished">2022-01-11</time></p>
                         </div>
@@ -542,7 +542,7 @@ el.classList.toggle(“notranslate”, true);<br />
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 

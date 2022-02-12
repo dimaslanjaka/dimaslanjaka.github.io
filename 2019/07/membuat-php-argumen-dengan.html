@@ -102,7 +102,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -218,7 +218,11 @@
         
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" rel="gallery_ckzjbt8rq00qx5rnfgbp9050v noopener">
+    <a class="gallery-item" target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" rel="gallery_ckzjc59wn00qz63o7axyy6ei1 noopener">
+        <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" rel="gallery_ckzjc59wn00qz63o7axyy6ei1 noopener">
         <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" itemprop="image" />
     </a>
     
@@ -231,17 +235,14 @@
 
             
 
-            <p>Cara Membuat argumen PHP CLI dengan '<b>=</b>' '<b>--=</b>' </p><b>Buat file php</b><pre><br>&lt;?php<br>function arguments($argv) {<br>    $_ARG = array();<br>    foreach ($argv as $arg) {<br>      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {<br>        $_ARG[$reg[1]] = $reg[2];<br>      } elseif(ereg('-([a-zA-Z0-9])',$arg,$reg)) {<br>            $_ARG[$reg[1]] = 'true';<br>        }<br>  <br>    }<br>  return $_ARG;<br>}<br>?&gt;<br></pre><b>Contoh penggunaan</b><pre><br>php myscript.php --user=nobody --password=secret -p --access="host=127.0.0.1 port=456"<br></pre><b>Output</b><pre><br>Array<br>(<br>    [user] =&gt; nobody<br>    [password] =&gt; secret<br>    [p] =&gt; true<br>    [access] =&gt; host=127.0.0.1 port=456<br>)<br></pre> <div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" data-original-width="700" data-original-height="350"></a></div><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+            <p>Cara Membuat argumen PHP CLI dengan '<b>=</b>' '<b>--=</b>' </p><b>Buat file php</b><pre><br>&lt;?php<br>function arguments($argv) {<br>    $_ARG = array();<br>    foreach ($argv as $arg) {<br>      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {<br>        $_ARG[$reg[1]] = $reg[2];<br>      } elseif(ereg('-([a-zA-Z0-9])',$arg,$reg)) {<br>            $_ARG[$reg[1]] = 'true';<br>        }<br>  <br>    }<br>  return $_ARG;<br>}<br>?&gt;<br></pre><b>Contoh penggunaan</b><pre><br>php myscript.php --user=nobody --password=secret -p --access="host=127.0.0.1 port=456"<br></pre><b>Output</b><pre><br>Array<br>(<br>    [user] =&gt; nobody<br>    [password] =&gt; secret<br>    [p] =&gt; true<br>    [access] =&gt; host=127.0.0.1 port=456<br>)<br></pre> <div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" data-original-width="700" data-original-height="350"></a></div>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2019/07/membuat-php-argumen-dengan.html" data-id="ckzjbt8rq00qx5rnfgbp9050v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2019/07/membuat-php-argumen-dengan.html" data-id="ckzjc59wn00qz63o7axyy6ei1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -320,7 +321,7 @@
         "dateModified": "2019-07-29",
         "url": "https://www.webmanajemen.com/2019/07/membuat-php-argumen-dengan.html",
         "description": "Cara Membuat argumen PHP CLI dengan '=' '--=' Buat file php&lt;?phpfunction arguments($argv) {    $_ARG = array();    foreach ($argv as $arg) {      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {        $_AR",
-        "wordCount": 146
+        "wordCount": 135
     }
 </script>
 </article>
@@ -448,7 +449,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/style.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -468,7 +469,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/table.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -486,7 +487,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Games/Chimeraland/">Chimeraland</a></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes.html" class="title">Cooking Recipes Chimeraland</a></p>
                             <p class="item-date"><time datetime="2022-01-10T17:00:00.000Z" itemprop="datePublished">2022-01-11</time></p>
                         </div>
@@ -541,7 +542,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 

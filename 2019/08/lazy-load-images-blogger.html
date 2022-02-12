@@ -102,7 +102,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/">Games</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Regular-Expression/">Regular Expression</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -218,7 +218,11 @@
         
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" rel="gallery_ckzjbt8s200rp5rnfh15tc2xv noopener">
+    <a class="gallery-item" target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" rel="gallery_ckzjc59x500rr63o72fuo1v19 noopener">
+        <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" rel="gallery_ckzjc59x500rr63o72fuo1v19 noopener">
         <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" itemprop="image" />
     </a>
     
@@ -231,17 +235,14 @@
 
             
 
-            <div dir="ltr" style="text-align: left;" trbidi="on"><figure>  <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" alt="Lazy load images blogger" style="width:100%">  <figcaption>Lazy load images blogger</figcaption></figure><br><ol style="text-align: left;">lazy loading blogger berguna untuk : <li>Mempercepat laman web</li><li>Meningkatkan rating pagespeed</li></ol><div><b>HTML (Usage)</b><pre><br>&lt;img alt='' data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg=='/&gt;<br></pre><blockquote style="overflow:auto"><ul><li>src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==' : source gambar dengan resolusi paling rendah</li><li>data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' : source gambar asli</li></ul></blockquote></div><div><b>JS (taruh diatas <i>&lt;/body&gt;</i>)</b><pre><br>&lt;script&gt;<br>//&lt;![CDATA[<br>const config = {<br>  rootMargin: '0px 0px 50px 0px',<br>  threshold: 0<br>};<br>const imgs = document.querySelectorAll('[data-src]');<br><br>if (typeof intersectionObserver != 'undefined') {<br>  // register the config object with an instance<br>  // of intersectionObserver<br>  let observer = new intersectionObserver(function (entries, self) {<br>    // iterate over each entry<br>    entries.forEach(entry =&gt; {<br>      // process just the images that are intersecting.<br>      // isIntersecting is a property exposed by the interface<br>      if (entry.isIntersecting) {<br>        // custom function that copies the path to the img<br>        // from data-src to src<br>        preloadImage(entry.target);<br>        // the image is now in place, stop watching<br>        self.unobserve(entry.target);<br>      }<br>    });<br>  }, config);<br>  <br>  imgs.forEach(img =&gt; {<br>    observer.observe(img);<br>  });<br>} else {<br>  imgs.forEach(img =&gt; {<br>    preloadImage(img)<br>  });<br>}<br><br>function preloadImage(e) {<br>  var a = e.getAttribute('src'), b = e.getAttribute('data-src');<br>  if (b.trim() != ''){<br>    e.src = b.trim();<br>  }<br>}<br>]]&gt;<br>&lt;/script&gt;<br></pre></div><b>FULL DEMO</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="pMRowj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure javascript lazy load images">  <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/pMRowj/" rel="noopener noreferer nofollow noopener">  Pure javascript lazy load images</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://codepen.io" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+            <div dir="ltr" style="text-align: left;" trbidi="on"><figure>  <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" alt="Lazy load images blogger" style="width:100%">  <figcaption>Lazy load images blogger</figcaption></figure><br><ol style="text-align: left;">lazy loading blogger berguna untuk : <li>Mempercepat laman web</li><li>Meningkatkan rating pagespeed</li></ol><div><b>HTML (Usage)</b><pre><br>&lt;img alt='' data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg=='/&gt;<br></pre><blockquote style="overflow:auto"><ul><li>src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==' : source gambar dengan resolusi paling rendah</li><li>data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' : source gambar asli</li></ul></blockquote></div><div><b>JS (taruh diatas <i>&lt;/body&gt;</i>)</b><pre><br>&lt;script&gt;<br>//&lt;![CDATA[<br>const config = {<br>  rootMargin: '0px 0px 50px 0px',<br>  threshold: 0<br>};<br>const imgs = document.querySelectorAll('[data-src]');<br><br>if (typeof intersectionObserver != 'undefined') {<br>  // register the config object with an instance<br>  // of intersectionObserver<br>  let observer = new intersectionObserver(function (entries, self) {<br>    // iterate over each entry<br>    entries.forEach(entry =&gt; {<br>      // process just the images that are intersecting.<br>      // isIntersecting is a property exposed by the interface<br>      if (entry.isIntersecting) {<br>        // custom function that copies the path to the img<br>        // from data-src to src<br>        preloadImage(entry.target);<br>        // the image is now in place, stop watching<br>        self.unobserve(entry.target);<br>      }<br>    });<br>  }, config);<br>  <br>  imgs.forEach(img =&gt; {<br>    observer.observe(img);<br>  });<br>} else {<br>  imgs.forEach(img =&gt; {<br>    preloadImage(img)<br>  });<br>}<br><br>function preloadImage(e) {<br>  var a = e.getAttribute('src'), b = e.getAttribute('data-src');<br>  if (b.trim() != ''){<br>    e.src = b.trim();<br>  }<br>}<br>]]&gt;<br>&lt;/script&gt;<br></pre></div><b>FULL DEMO</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="pMRowj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure javascript lazy load images">  <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/pMRowj/" rel="noopener noreferer nofollow noopener">  Pure javascript lazy load images</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://codepen.io" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2019/08/lazy-load-images-blogger.html" data-id="ckzjbt8s200rp5rnfh15tc2xv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2019/08/lazy-load-images-blogger.html" data-id="ckzjc59x500rr63o72fuo1v19" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -320,7 +321,7 @@
         "dateModified": "2019-07-31",
         "url": "https://www.webmanajemen.com/2019/08/lazy-load-images-blogger.html",
         "description": "    Lazy load images bloggerlazy loading blogger berguna untuk : Mempercepat laman webMeningkatkan rating pagespeedHTML (Usage)&lt;img alt='' data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBc",
-        "wordCount": 335
+        "wordCount": 324
     }
 </script>
 </article>
@@ -448,7 +449,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/style.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -468,7 +469,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes/table.html" class="title"></a></p>
-                            <p class="item-date"><time datetime="2022-02-12T04:15:52.532Z" itemprop="datePublished">2022-02-12</time></p>
+                            <p class="item-date"><time datetime="2022-02-12T04:25:12.828Z" itemprop="datePublished">2022-02-12</time></p>
                         </div>
                     </li>
                 
@@ -486,7 +487,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Games/">Games</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Games/Chimeraland/">Chimeraland</a></p>
                             <p class="item-title"><a href="/Chimeraland/Recipes.html" class="title">Cooking Recipes Chimeraland</a></p>
                             <p class="item-date"><time datetime="2022-01-10T17:00:00.000Z" itemprop="datePublished">2022-01-11</time></p>
                         </div>
@@ -541,7 +542,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/">Games</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Chimeraland/">Chimeraland</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Genshin-Impact/">Genshin Impact</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/Seven-Knight/">Seven Knight</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regular-Expression/">Regular Expression</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 

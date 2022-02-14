@@ -33,7 +33,7 @@ if (isset($_POST['add'], $_POST['q'], $_POST['a'])) {
           <input type="hidden" name="add" value="<?= $session ?>">
           <div class="row">
             <div class="form-group row col-md-12">
-              <label for="firstName" class="col-1 col-form-label">First Name</label>
+              <label for="firstName" class="col-1 col-form-label">Question</label>
               <div class="col-9">
                 <input type="text" name="q" class="form-control" placeholder="Insert a quiz question" required>
               </div>

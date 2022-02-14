@@ -1,6 +1,7 @@
 <?php
 
-class PHP_AES_Cipher {
+class PHP_AES_Cipher
+{
 
     private static $OPENSSL_CIPHER_NAME = "aes-128-cbc"; //Name of OpenSSL Cipher
     private static $CIPHER_KEY_LEN = 16; //128 bits
@@ -14,7 +15,8 @@ class PHP_AES_Cipher {
      * @return encrypted data in base64 encoding with iv attached at end after a :
      */
 
-    static function encrypt($key, $iv, $data) {
+    static function encrypt($key, $iv, $data)
+    {
         if (strlen($key) < PHP_AES_Cipher::$CIPHER_KEY_LEN) {
             $key = str_pad("$key", PHP_AES_Cipher::$CIPHER_KEY_LEN, "0"); //0 pad to len 16
         } else if (strlen($key) > PHP_AES_Cipher::$CIPHER_KEY_LEN) {
@@ -23,20 +25,20 @@ class PHP_AES_Cipher {
 
         $encodedEncryptedData = base64_encode(openssl_encrypt($data, PHP_AES_Cipher::$OPENSSL_CIPHER_NAME, $key, OPENSSL_RAW_DATA, $iv));
         $encodedIV = base64_encode($iv);
-        $encryptedPayload = $encodedEncryptedData.":".$encodedIV;
+        $encryptedPayload = $encodedEncryptedData . ":" . $encodedIV;
 
         return $encryptedPayload;
-
     }
 
     /**
      * Decrypt data using AES Cipher (CBC) with 128 bit key
      *
-     * @param type $key - key to use should be 16 bytes long (128 bits)
-     * @param type $data - data to be decrypted in base64 encoding with iv attached at the end after a :
+     * @param string $key - key to use should be 16 bytes long (128 bits)
+     * @param string $data - data to be decrypted in base64 encoding with iv attached at the end after a :
      * @return decrypted data
      */
-    static function decrypt($key, $data) {
+    static function decrypt($key, $data)
+    {
         if (strlen($key) < PHP_AES_Cipher::$CIPHER_KEY_LEN) {
             $key = str_pad("$key", PHP_AES_Cipher::$CIPHER_KEY_LEN, "0"); //0 pad to len 16
         } else if (strlen($key) > PHP_AES_Cipher::$CIPHER_KEY_LEN) {
@@ -48,7 +50,6 @@ class PHP_AES_Cipher {
 
         return $decryptedData;
     }
-
 }
 
 /*

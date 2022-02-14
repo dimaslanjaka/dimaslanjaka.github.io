@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/CrossPlatformCiphers/PHP_CIPHER/PHP_CIPHER/index.php';
+require __DIR__ . '/CrossPlatformCiphers/PHP_CIPHER/index.php';
 
 $IV = substr(md5(random_bytes(10)), 0, 16);
 $KEY = substr(md5(random_bytes(10)), 0, 16);

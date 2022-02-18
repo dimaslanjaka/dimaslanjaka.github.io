@@ -24,7 +24,7 @@
 				"type": "node-terminal"
 			},
 			{
-				"command": "cd ../../ && npx gulp article:copy && git add . && git commit -m 'update' && npx hexo generate",
+				"command": "cd ../../ && npx gulp article:copy && git add . && git commit -m 'update' && npx hexo generate && php -S localhost:8000 -t docs",
 				"name": "Commit && Generate",
 				"request": "launch",
 				"type": "node-terminal"

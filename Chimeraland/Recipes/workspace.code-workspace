@@ -22,6 +22,12 @@
 				"name": "Commit && Server",
 				"request": "launch",
 				"type": "node-terminal"
+			},
+			{
+				"command": "cd ../../ && npx gulp article:copy && git add . && git commit -m 'update' && npx hexo generate",
+				"name": "Commit && Generate",
+				"request": "launch",
+				"type": "node-terminal"
 			}
 		]
 	}

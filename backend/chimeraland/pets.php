@@ -1,13 +1,49 @@
 <?php
+require_once(__DIR__ . '/../vendor/autoload.php');
 session_start();
 header("Access-Control-Allow-Origin: *");
+if (!isset($_SESSION['visitor'])) {
+  $new_session = uniqid();
+  $_SESSION['visitor'] = $new_session;
+};
+$session = $_SESSION['visitor'];
 
 $file = __DIR__ . '/pets.json';
-$read = json_decode(file_get_contents($file));
+$data = json_decode(file_get_contents($file), true);
 
 if (isset($_REQUEST['json'])) {
   header('content-type: application/json');
-  exit(json_encode($read));
+  exit(json_encode($data));
+}
+
+if (isset($_POST['add'])) {
+  header('content-type: text/plain');
+  $petName = $_POST['pet-name'];
+  $attr = array_map(function ($value) {
+    return trim($value);
+  }, explode("\n", $_POST['attr']));
+
+  $search = $petName;
+  $found = array_filter($data['data'], function ($v, $k) use ($search) {
+    //var_dump($v);
+    return $v['name'] == $search;
+  }, ARRAY_FILTER_USE_BOTH);
+
+  if (empty($found) && count($attr) >= 2) {
+    $data['data'][] = ['name' => ucwords($petName), 'qty' => 'ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
+    file_put_contents($file, json_encode($data));
+    header('Location: ?done');
+    $_SESSION['submit'] = 1;
+  } else {
+    if (!empty($found)) {
+      $_SESSION['submit'] = 1;
+      header('Location: ?duplicate');
+    } else {
+      $_SESSION['submit'] = 1;
+      header('Location: ?missing');
+    }
+  }
+  exit;
 }
 
 ?>
@@ -48,13 +84,37 @@ if (isset($_REQUEST['json'])) {
 
   <center>
     <main>
-      <form action="?ok" method="post" class="form-horizontal">
+      <?php
+      if (isset($_SESSION['submit'])) {
+        unset($_SESSION['submit']);
+        if (isset($_REQUEST['done'])) {
+      ?>
+          <div class="alert alert-success" role="alert">
+            Done Pet Information Added
+          </div>
+        <?php
+        } else if (isset($_REQUEST['duplicate'])) {
+        ?>
+          <div class="alert alert-danger" role="alert">
+            That pet information already added before (duplicated).
+          </div>
+        <?php
+        } else if (isset($_REQUEST['missing'])) {
+        ?>
+          <div class="alert alert-danger" role="alert">
+            Pet attributes information missing (required).
+          </div>
+      <?php
+        }
+      }
+      ?>
+      <form action="?<?= $session ?>" method="post" class="form-horizontal">
         <input type="hidden" name="add" value="<?= $session ?>">
         <div class="row">
           <div class="form-group row col-md-12 mb-2">
             <label for="BeastName" class="col-2 col-form-label">Beast Name</label>
             <div class="col-10">
-              <input type="text" name="dish-name" id="BeastName" class="form-control" placeholder="Insert Animal Name" required>
+              <input type="text" name="pet-name" id="BeastName" class="form-control" placeholder="Insert Animal Name" required>
             </div>
           </div>
 
@@ -83,15 +143,15 @@ if (isset($_REQUEST['json'])) {
           </div>
 
           <div class="form-group row col-md-12 mb-2">
-            <label for="Buffs" class="col-2 col-form-label">Skill Attributes</label>
+            <label for="Attr" class="col-2 col-form-label">Skill Attributes</label>
             <div class="col-10">
-              <textarea type="text" id="Buffs" name="buffs" cols="10" rows="10" class="form-control" placeholder="Pet Attributes" required></textarea>
+              <textarea type="text" id="Attr" name="attr" cols="10" rows="10" class="form-control" placeholder="Pet Attributes" required>Attributes Conversion Rate 4.0%</textarea>
               <small class="form-text text-muted">Must Be Separated by line</small>
             </div>
           </div>
 
           <div class="text-center col-md-12 p-2">
-            <button type="submit" class="btn btn-block btn-primary mb-2">Confirm recipe</button>
+            <button type="submit" class="btn btn-block btn-primary mb-2">Confirm pet</button>
           </div>
         </div>
       </form>

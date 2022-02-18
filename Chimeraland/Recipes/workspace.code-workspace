@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../source/backend"
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"command": "cd ../../ && npx gulp article:copy && npx hexo server",
+				"name": "Hexo Server",
+				"request": "launch",
+				"type": "node-terminal"
+			}
+		]
+	}
+}

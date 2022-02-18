@@ -1,15 +1,70 @@
 <?php
-$session = uniqid();
+session_start();
+header("Access-Control-Allow-Origin: *");
 
-if (isset($_POST['add'], $_POST['q'], $_POST['a'])) {
-  if (!empty(trim($_POST['q'])) && strlen(trim($_POST['q'])) > 10) {
-    header('content-type: application/json');
-    //$build = trim($_POST['q'] . ' (' . strtoupper($_POST['a']) . ')') . PHP_EOL;
-    //file_put_contents(__DIR__ . '/recipes.txt', $build, FILE_APPEND);
-    //echo json_encode(['msg' => 'Recipe added']);
-    var_dump($_POST);
+$session = uniqid();
+// read recipes.json
+$jsonfile = __DIR__ . '/recipes.json';
+$data = json_decode(file_get_contents($jsonfile), true);
+
+if (isset($_REQUEST['json'])) {
+  header('content-type: application/json');
+  exit(json_encode($data));
+}
+
+if (isset($_POST['add'])) {
+  if (!empty(trim($_POST['dish-name'])) && strlen(trim($_POST['dish-name'])) > 5) {
+    //header('content-type: application/json');
+    header('content-type: text/plain');
+
+    $grade = ucfirst($_POST['grade']);
+    $material = $_POST['material'];
+    $buff = $_POST['buffs'];
+    $facility = str_replace('-', ' ', $_POST['facility']);
+    $dishName = ucwords($_POST['dish-name']);
+    $array = [
+      $dishName, $material, $facility, $buff, $grade, '-'
+    ];
+
+    $search = $dishName;
+    $found = array_filter($data['data'], function ($v, $k) use ($search) {
+      //var_dump($v);
+      return $v[0] == $search;
+    }, ARRAY_FILTER_USE_BOTH);
+
+    if (is_empty_array($found) && strlen($material) > 10) {
+      $data['data'][] = $array;
+      $data['post'] = $_POST;
+
+      $build = json_encode($data);
+      file_put_contents($jsonfile, $build);
+      header('Location: ?done');
+    } else {
+      if (strlen($material) < 10) {
+        echo 'Error Adding Recipe: Material Requirements Not Meet';
+      } else {
+        echo 'Error Adding Recipe: Duplicate Dish';
+      }
+    }
+
+    //echo json_encode($data);
     return;
   }
+}
+
+function array_filter_recursive(array $arr)
+{
+  array_walk($arr, function (&$item) {
+    if (is_array($item)) {
+      $item = array_filter_recursive($item);
+    }
+  });
+  return array_filter($arr);
+}
+
+function is_empty_array(array $arr): bool
+{
+  return count(array_filter_recursive($arr)) == 0;
 }
 ?>
 
@@ -38,9 +93,33 @@ if (isset($_POST['add'], $_POST['q'], $_POST['a'])) {
 <body>
 
   <main>
+    <?php
+    if (isset($_REQUEST['done'])) {
+      exit('<div class="text-center m-5">Recipes Added Successful, <a class="btn btn-success" href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Back to recipe lists</a>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1165447249910969"
+     data-ad-slot="7724988334"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>');
+    }
+    ?>
     <form action="?ok" method="post" class="form-horizontal">
       <input type="hidden" name="add" value="<?= $session ?>">
       <div class="row">
+        <div class="form-group row col-md-12 mb-2">
+          <label for="DishName" class="col-2 col-form-label">Dish Name</label>
+          <div class="col-10">
+            <input type="text" name="dish-name" id="DishName" class="form-control">
+          </div>
+        </div>
+
         <div class="form-group row col-md-12 mb-2">
           <label for="Ingredients" class="col-2 col-form-label">Ingredients</label>
           <div class="col-10">
@@ -88,9 +167,14 @@ if (isset($_POST['add'], $_POST['q'], $_POST['a'])) {
               <span class="custom-control-description"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Purplecom.jpg/200px-Purplecom.jpg" alt="" class="img-s"> Epic</span>
             </label>
             <label class="custom-control custom-radio">
-              <input id="grade-mythic" name="grade" type="radio" class="custom-control-input" value="mythic" required>
+              <input id="grade-legendary" name="grade" type="radio" class="custom-control-input" value="legendary" required>
               <span class="custom-control-indicator"></span>
-              <span class="custom-control-description"><img src="https://htmlcolorcodes.com/assets/images/colors/golden-yellow-color-solid-background-1920x1080.png" alt="" class="img-s"> Mythic</span>
+              <span class="custom-control-description"><img src="https://htmlcolorcodes.com/assets/images/colors/golden-yellow-color-solid-background-1920x1080.png" alt="" class="img-s"> Legendary</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input id="grade-ultimate" name="grade" type="radio" class="custom-control-input" value="ultimate" required>
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description"><img src="https://png.pngtree.com/thumb_back/fw800/background/20200821/pngtree-simple-dark-red-solid-color-wallpaper-image_396557.jpg" alt="" class="img-s"> Ultimate</span>
             </label>
           </div>
         </div>
@@ -105,6 +189,13 @@ if (isset($_POST['add'], $_POST['q'], $_POST['a'])) {
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <script src="https://raw.githack.com/dimaslanjaka/smartform/master/dist/release/bundle.js"></script>
+  <script>
+    (function() {
+      formsaver(true);
+    })();
+  </script>
 
 </body>
 

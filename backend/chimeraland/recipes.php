@@ -116,7 +116,7 @@ function is_empty_array(array $arr): bool
         <div class="form-group row col-md-12 mb-2">
           <label for="DishName" class="col-2 col-form-label">Dish Name</label>
           <div class="col-10">
-            <input type="text" name="dish-name" id="DishName" class="form-control">
+            <input type="text" name="dish-name" id="DishName" class="form-control" required>
           </div>
         </div>
 

@@ -29,89 +29,74 @@ if (isset($_REQUEST['json'])) {
     }
 
     label {
-      text-align: center;
+      text-align: right;
+    }
+
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    main {
+      width: fit-content;
+      text-align: left;
     }
   </style>
 </head>
 
 <body>
 
-  <main>
-    <form action="?ok" method="post" class="form-horizontal">
-      <input type="hidden" name="add" value="<?= $session ?>">
-      <div class="row">
-        <div class="form-group row col-md-12 mb-2">
-          <label for="DishName" class="col-2 col-form-label">Dish Name</label>
-          <div class="col-10">
-            <input type="text" name="dish-name" id="DishName" class="form-control">
+  <center>
+    <main>
+      <form action="?ok" method="post" class="form-horizontal">
+        <input type="hidden" name="add" value="<?= $session ?>">
+        <div class="row">
+          <div class="form-group row col-md-12 mb-2">
+            <label for="BeastName" class="col-2 col-form-label">Beast Name</label>
+            <div class="col-10">
+              <input type="text" name="dish-name" id="BeastName" class="form-control" placeholder="Insert Animal Name" required>
+            </div>
+          </div>
+
+          <div class="form-group row col-md-12 mb-2">
+            <label for="Ingredients" class="col-2 col-form-label">Quality</label>
+            <div class="col-10">
+              <div class="form-group row col mb-2">
+                <label for="Atk" class="col-1 col-form-label">ATK</label>
+                <div class="col-2">
+                  <input type="number" name="atk" id="Atk" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group row col mb-2">
+                <label for="Hp" class="col-1 col-form-label">HP</label>
+                <div class="col-2">
+                  <input type="number" name="hp" id="Hp" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group row col mb-2">
+                <label for="Def" class="col-1 col-form-label">DEF</label>
+                <div class="col-2">
+                  <input type="number" name="def" id="Def" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row col-md-12 mb-2">
+            <label for="Buffs" class="col-2 col-form-label">Skill Attributes</label>
+            <div class="col-10">
+              <textarea type="text" id="Buffs" name="buffs" cols="10" rows="10" class="form-control" placeholder="Pet Attributes" required></textarea>
+              <small class="form-text text-muted">Must Be Separated by line</small>
+            </div>
+          </div>
+
+          <div class="text-center col-md-12 p-2">
+            <button type="submit" class="btn btn-block btn-primary mb-2">Confirm recipe</button>
           </div>
         </div>
-
-        <div class="form-group row col-md-12 mb-2">
-          <label for="Ingredients" class="col-2 col-form-label">Ingredients</label>
-          <div class="col-10">
-            <textarea name="material" id="Ingredients" cols="10" rows="10" class="form-control" required>-</textarea>
-          </div>
-        </div>
-
-        <div class="form-group row col-md-12 mb-2">
-          <label for="Buffs" class="col-2 col-form-label">Buffs</label>
-          <div class="col-10">
-            <textarea type="text" id="Buffs" name="buffs" cols="10" rows="10" class="form-control" placeholder="Food buffs" required>-</textarea>
-          </div>
-        </div>
-
-        <div class="form-group row col-md-12 mb-2">
-          <label for="Facility" class="col-2 col-form-label">Facility</label>
-          <div class="col-10">
-            <select class="form-control" id="Facility" name="facility">
-              <option value="stove-i">Stove I</option>
-              <option value="stove-ii">Stove II</option>
-              <option value="mixer">Mixer</option>
-              <option value="camp-i">Camp I</option>
-              <option value="camp-ii">Camp II</option>
-              <option value="-">Others</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group row col-md-12 mb-2">
-          <label class="col-2 col-form-label">Grade</label>
-          <div class="col-10">
-            <label class="custom-control custom-radio">
-              <input id="grade-common" name="grade" type="radio" class="custom-control-input" value="common" required>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description"><img src="https://cf.shopee.co.id/file/7cffeac9f9326369f87ab3b84ebe2853" alt="" class="img-s"> Common</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input id="grade-rare" name="grade" type="radio" class="custom-control-input" value="rare" required>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description"><img src="https://media-cdn.tripadvisor.com/media/photo-s/13/81/eb/d7/indigo-blue.jpg" alt="" class="img-s"> Rare</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input id="grade-epic" name="grade" type="radio" class="custom-control-input" value="epic" required>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Purplecom.jpg/200px-Purplecom.jpg" alt="" class="img-s"> Epic</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input id="grade-legendary" name="grade" type="radio" class="custom-control-input" value="legendary" required>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description"><img src="https://htmlcolorcodes.com/assets/images/colors/golden-yellow-color-solid-background-1920x1080.png" alt="" class="img-s"> Legendary</span>
-            </label>
-            <label class="custom-control custom-radio">
-              <input id="grade-ultimate" name="grade" type="radio" class="custom-control-input" value="ultimate" required>
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description"><img src="https://png.pngtree.com/thumb_back/fw800/background/20200821/pngtree-simple-dark-red-solid-color-wallpaper-image_396557.jpg" alt="" class="img-s"> Ultimate</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="text-center col-md-12">
-          <button type="submit" class="btn btn-block btn-primary mb-2">Confirm recipe</button>
-        </div>
-      </div>
-    </form>
-  </main>
+      </form>
+    </main>
+  </center>
 
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

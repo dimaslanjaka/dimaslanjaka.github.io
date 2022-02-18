@@ -10,55 +10,11 @@
     
      <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
     
-    <pubDate>Fri, 18 Feb 2022 06:36:51 GMT</pubDate>
+    <pubDate>Fri, 18 Feb 2022 00:55:00 GMT</pubDate>
     <generator>http://webmanajemen.com/</generator>
     <ttl>1800</ttl>
     <copyright>Copyright 2022 &#xA9; www.webmanajemen.com. All rights reserved. Do not copy articles from this website and related sites on this website. Copyright is a form of protection based on the U.S. Constitution. and is granted by law for original works of authorship set in a tangible medium of expression. Copyright includes both published and unpublished works.</copyright>
 
-    
-    <item>
-      <title></title>
-      <link>https://www.webmanajemen.com/Chimeraland/Pets/style.html</link>
-      <guid isPermaLink="false">3b3cc925-e8e8-4888-87cd-51367dc96174</guid>
-      <pubDate>Fri, 18 Feb 2022 06:36:51 GMT</pubDate>
-      
-        
-        
-      <description>.img-inline-text{width:16px;margin:0 2px 0 2px;padding:0;height:100%;vertical-align:sub;display:inline-block!important}table a.gallery-item{</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[.img-inline-text{width:16px;margin:0 2px 0 2px;padding:0;height:100%;vertical-align:sub;display:inline-block!important}table a.gallery-item{margin:0;padding:0;display:inline-block;width:fit-content}.atk{color:red}.def{color:#00f}table span.caption{display:none!important}]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://www.webmanajemen.com/Chimeraland/Pets/style.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.webmanajemen.com/Chimeraland/Recipes/style.html</link>
-      <guid isPermaLink="false">dd5f15dd-3710-4888-80e1-9ef15dd25438</guid>
-      <pubDate>Fri, 18 Feb 2022 06:36:51 GMT</pubDate>
-      
-        
-        
-      <description>.img-inline-text{width:15px;height:100%;vertical-align:sub}table a.gallery-item{margin:0;padding:0;display:inline-block;width:fit-content}.a</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[.img-inline-text{width:15px;height:100%;vertical-align:sub}table a.gallery-item{margin:0;padding:0;display:inline-block;width:fit-content}.atk{color:red}.def{color:#00f}img.img-recipe{display:inline-block;width:35px}table span.caption{display:none!important}]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://www.webmanajemen.com/Chimeraland/Recipes/style.html#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>Pets</title>
@@ -496,6 +452,54 @@
       
       
       <comments>https://www.webmanajemen.com/GitHub/workflows-caches.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>GitHub Workflows</title>
+      <link>https://www.webmanajemen.com/GitHub/workflows.html</link>
+      <guid isPermaLink="false">741baa72-98c8-4888-8c0f-96eee0b56067</guid>
+      <pubDate>Thu, 18 Nov 2021 08:00:00 GMT</pubDate>
+      
+      <description>Semua yang kamu harus tau tentang GitHub Workflows</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>GitHub menyediakan templat alur kerja (<i>preconfigured workflow templates</i>) yang telah dikonfigurasi sebelumnya yang dapat Anda sesuaikan untuk membuat alur kerja integrasi berkelanjutan (<i>CI</i>) Anda sendiri. GitHub menganalisis kode Anda dan menunjukkan template <i>CI</i> yang mungkin berguna untuk repositori Anda. Misalnya, jika repositori Anda berisi Node/Program. [<a href="https://docs.github.com/en/actions/quickstart">source</a>]</p><p>Simplenya kamu dapat menggunakan program kamu dengan VPS gratis yang disediakan oleh GitHub. Meskipun begitu, kamu tidak dapat leluasa menggunakannya seperti VPS provider lain. Di GitHub Workflow kamu hanya dapat menggunakannya dengan logic/logika program-mu dalam 1x jalan.</p><p>Github Workflow merupakan alternatif Continous Integration Gratis Dari Github. Sama halnya Travis CI, CircleCI, Jenkins, AppVeyor, <a href="http://Drone.io">Drone.io</a>, GitLab, dan lain sebagainya.</p><h2 id="fitur-fitur-dari-github-workflow"><a class="markdownIt-Anchor" href="#fitur-fitur-dari-github-workflow"></a> Fitur-fitur dari GitHub Workflow</h2><ul><li>CI (Continous Integration) adalah praktik mengotomatiskan integrasi perubahan kode dari banyak kontributor ke dalam satu proyek perangkat lunak.</li><li>Membangun GitHub Pages</li><li>Test kode-mu di cloud tanpa menggunakan resources device-mu</li><li>Test kode-mu dengan berbagai tipe device/machine, misal MAC, Windows, Linux (ubuntu, debian, dan lain-lain)</li><li>Dan banyak lagi</li></ul><h2 id="konfigurasi"><a class="markdownIt-Anchor" href="#konfigurasi"></a> Konfigurasi</h2><p>Sama halnya dengan Continous Integration (CI) lain, GitHub Workflow juga membutuhkan konfigurasi dalam bentuk <code>yaml</code> file.</p><h3 id="berikut-struktur-konfigurasi-github-workflow"><a class="markdownIt-Anchor" href="#berikut-struktur-konfigurasi-github-workflow"></a> Berikut struktur konfigurasi github workflow:</h3><pre><code class="highlight yaml"><span class="string">github-project/</span><span class="string">├─</span> <span class="string">.github/</span><span class="string">│</span>  <span class="string">├─</span> <span class="string">workflow/</span><span class="string">│</span>  <span class="string">│</span>  <span class="string">├─</span> <span class="string">github-workflow-config.yml</span> <span class="string">&lt;--</span> <span class="string">konfigurasi</span> <span class="string">github</span> <span class="string">workflow</span><span class="string">├─</span> <span class="string">.git/</span><span class="string">├─</span> <span class="string">.gitignore</span></code></pre><h3 id="isi-konfigurasi-github-workflow-github-workflow-configyml"><a class="markdownIt-Anchor" href="#isi-konfigurasi-github-workflow-github-workflow-configyml"></a> Isi konfigurasi github workflow <code>github-workflow-config.yml</code></h3><pre><code class="highlight yaml"><span class="attr">name:</span> <span class="string">GitHub</span> <span class="string">Actions</span> <span class="string">Demo</span> <span class="comment"># nama flow</span><span class="attr">on:</span> [<span class="string">push</span>] <span class="comment"># CI akan jalan pada saat push event</span><span class="attr">jobs:</span>  <span class="attr">NodeJS:</span>    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span> <span class="comment"># OS yang akan kamu gunakan</span>    <span class="attr">steps:</span> <span class="comment"># daftar urutan command line yang akan dijalankan</span>      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;🎉 job otomatis berjalan saat dipicu oleh $<span class="template-variable">&#123;&#123; github.event_name &#125;&#125;</span> event.&quot;</span>      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;🐧 job ini berjalan pada sistem operasi $<span class="template-variable">&#123;&#123; runner.os &#125;&#125;</span> server hosted dari GitHub!&quot;</span>      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;🔎 nama branch repository-mu adalah $<span class="template-variable">&#123;&#123; github.ref &#125;&#125;</span> and repository-mu ialah $<span class="template-variable">&#123;&#123; github.repository &#125;&#125;</span>.&quot;</span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Check</span> <span class="string">out</span> <span class="string">repository</span> <span class="string">code</span>        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span> <span class="comment"># ini wajib ya, untuk memuat repository kamu ke dalam home os</span>      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;💡 The $<span class="template-variable">&#123;&#123; github.repository &#125;&#125;</span> repository berhasil di duplikasi ke dalam os $<span class="template-variable">&#123;&#123; runner.os &#125;&#125;</span>&quot;</span>      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;🖥️ Workflow ini sekarang sudah siap untuk melakukan rangkaian program yang ada pada repository $<span class="template-variable">&#123;&#123; github.repository &#125;&#125;</span>#$<span class="template-variable">&#123;&#123; github.ref &#125;&#125;</span>&quot;</span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Daftar</span> <span class="string">keseluruhan</span> <span class="string">file</span> <span class="string">di</span> <span class="string">dalam</span> <span class="string">repository</span>        <span class="attr">run:</span> <span class="string">|</span><span class="string">          ls $&#123;&#123; github.workspace &#125;&#125;</span><span class="string"></span>      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;🍏 Job status $<span class="template-variable">&#123;&#123; job.status &#125;&#125;</span>.&quot;</span></code></pre><h1 id="berikut-ini-daftar-penggunaan-dan-tips-trick-untuk-github-workflow"><a class="markdownIt-Anchor" href="#berikut-ini-daftar-penggunaan-dan-tips-trick-untuk-github-workflow"></a> Berikut ini daftar penggunaan dan tips trick untuk github workflow</h1><p><a href="workflows-caches.html">Cara mempercepat kinerja github workflows</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/GitHub/">GitHub</category>
+      
+      
+      <comments>https://www.webmanajemen.com/GitHub/workflows.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Node Options For NodeJS</title>
+      <link>https://www.webmanajemen.com/NodeJS/node-options.html</link>
+      <guid isPermaLink="false">586f70e0-6dec-4888-8cac-99671aad2296</guid>
+      <pubDate>Wed, 17 Nov 2021 02:00:00 GMT</pubDate>
+      
+      <description>Usage, explanations of node options for nodejs</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="nodejs-options-node_options"><a class="markdownIt-Anchor" href="#nodejs-options-node_options"></a> NODEJS OPTIONS [ NODE_OPTIONS ]</h1><p>Node.js accompanies an assortment of CLI choices. These choices uncover worked in investigating, different ways of executing scripts, and other accommodating runtime choices.</p><p>To see this documentation as a manual page in a terminal, run ‘man hub’. <a href="https://nodejs.org/api/cli.html">Read more</a></p><h2 id="how-to-setup-multiple-options-on-github-workflow"><a class="markdownIt-Anchor" href="#how-to-setup-multiple-options-on-github-workflow"></a> How to setup multiple options on GitHub Workflow</h2><pre><code class="highlight yaml"><span class="attr">jobs:</span>  <span class="attr">build:</span>    <span class="attr">name:</span> <span class="string">Build</span> <span class="string">www.webmanajemen.com</span>    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span>    <span class="attr">env:</span>      <span class="attr">NODE_OPTIONS:</span> <span class="string">&quot;--experimental-vm-modules --max_old_space_size=8192&quot;</span></code></pre><h2 id="how-to-performance-run-nodejs-on-low-devices"><a class="markdownIt-Anchor" href="#how-to-performance-run-nodejs-on-low-devices"></a> How to performance run nodejs on low devices</h2><p>The recommended amounts for a “low memory device”.</p><p>for 32-bit and/or Android are:</p><pre><code class="highlight shell">node --max-executable-size=96 --max-old-space-size=128 --max-semi-space-size=1 app.js</code></pre><p>for 64-bit non-android are:</p><pre><code class="highlight shell">node --max-executable-size=192 --max-old-space-size=256 --max-semi-space-size=2 app.js</code></pre><p>These above codes would limit the heap totals to 225mb and 450mb respectively. It doesn’t include memory usage outside JS. For instance buffers are allocated as “c memory” , not in the JavaScript heap.</p><h3 id="flags"><a class="markdownIt-Anchor" href="#flags"></a> Flags</h3><ul><li><code>--max-executable-size</code> the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).</li><li><code>--max-old-space-size</code> the maximum size of heap reserved for long term objects</li><li><code>--max-semi-space-size</code> the maximum size of heap reserved for short term objects</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/JS/">JS</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/NodeJS/">NodeJS</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/node-options.html#disqus_thread</comments>
       
     </item>
     

@@ -29,7 +29,7 @@ if (isset($_POST['add'])) {
     return $v['name'] == $search;
   }, ARRAY_FILTER_USE_BOTH);
 
-  if (empty($found) && count($attr) >= 2) {
+  if (empty($found) && count($attr) >= 1) {
     $data['data'][] = ['name' => ucwords($petName), 'qty' => 'ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
     file_put_contents($file, json_encode($data));
     header('Location: ?done');
@@ -90,7 +90,7 @@ if (isset($_POST['add'])) {
         if (isset($_REQUEST['done'])) {
       ?>
           <div class="alert alert-success" role="alert">
-            Done Pet Information Added
+            Done Pet Information Added (Reload Page To View Changes).
           </div>
         <?php
         } else if (isset($_REQUEST['duplicate'])) {

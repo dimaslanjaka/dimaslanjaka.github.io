@@ -123,19 +123,19 @@ if (isset($_POST['add'])) {
             <div class="col-10">
               <div class="form-group row col mb-2">
                 <label for="Atk" class="col-1 col-form-label">ATK</label>
-                <div class="col-2">
+                <div class="col-9">
                   <input type="number" name="atk" id="Atk" class="form-control" required>
                 </div>
               </div>
               <div class="form-group row col mb-2">
                 <label for="Hp" class="col-1 col-form-label">HP</label>
-                <div class="col-2">
+                <div class="col-9">
                   <input type="number" name="hp" id="Hp" class="form-control" required>
                 </div>
               </div>
               <div class="form-group row col mb-2">
                 <label for="Def" class="col-1 col-form-label">DEF</label>
-                <div class="col-2">
+                <div class="col-9">
                   <input type="number" name="def" id="Def" class="form-control" required>
                 </div>
               </div>

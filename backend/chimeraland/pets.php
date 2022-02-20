@@ -30,7 +30,7 @@ if (isset($_POST['add'])) {
   }, ARRAY_FILTER_USE_BOTH);
 
   if (empty($found) && count($attr) >= 1) {
-    $data['data'][] = ['name' => ucwords($petName), 'qty' => 'ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
+    $data['data'][] = ['name' => ucwords($petName), 'qty' => 'GRADE ' . strtoupper($_POST['grade']) . ' ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
     file_put_contents($file, json_encode($data));
     header('Location: ?done');
     $_SESSION['submit'] = 1;
@@ -119,8 +119,20 @@ if (isset($_POST['add'])) {
           </div>
 
           <div class="form-group row col-md-12 mb-2">
-            <label for="Ingredients" class="col-2 col-form-label">Quality</label>
+            <label for="Ingredients" class="col-2 col-form-label">Default Quality</label>
             <div class="col-10">
+              <div class="form-group row col mb-2">
+                <label for="Grade" class="col-1 col-form-label">Grade</label>
+                <div class="col-9">
+                  <select name="grade" id="Grade" class="form-control" required>
+                    <option value="a">A Noble</option>
+                    <option value="b">B Grand</option>
+                    <option value="c" selected>C Rare</option>
+                    <option value="s">S Illustrious</option>
+                  </select>
+                </div>
+              </div>
+
               <div class="form-group row col mb-2">
                 <label for="Atk" class="col-1 col-form-label">ATK</label>
                 <div class="col-9">

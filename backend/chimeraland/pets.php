@@ -25,7 +25,6 @@ if (isset($_POST['add'])) {
 
   $search = $petName;
   $found = array_filter($data['data'], function ($v, $k) use ($search) {
-    //var_dump($v);
     return $v['name'] == $search;
   }, ARRAY_FILTER_USE_BOTH);
 
@@ -122,7 +121,7 @@ if (isset($_POST['add'])) {
             <label for="Ingredients" class="col-2 col-form-label">Default Quality</label>
             <div class="col-10">
               <div class="form-group row col mb-2">
-                <label for="Grade" class="col-1 col-form-label">Grade</label>
+                <label for="Grade" class="col-1 col-form-label text-left">Grade</label>
                 <div class="col-9">
                   <select name="grade" id="Grade" class="form-control" required>
                     <option value="a">A Noble</option>
@@ -134,19 +133,19 @@ if (isset($_POST['add'])) {
               </div>
 
               <div class="form-group row col mb-2">
-                <label for="Atk" class="col-1 col-form-label">ATK</label>
+                <label for="Atk" class="col-1 col-form-label text-left">ATK</label>
                 <div class="col-9">
                   <input type="number" name="atk" id="Atk" class="form-control" required>
                 </div>
               </div>
               <div class="form-group row col mb-2">
-                <label for="Hp" class="col-1 col-form-label">HP</label>
+                <label for="Hp" class="col-1 col-form-label text-left">HP</label>
                 <div class="col-9">
                   <input type="number" name="hp" id="Hp" class="form-control" required>
                 </div>
               </div>
               <div class="form-group row col mb-2">
-                <label for="Def" class="col-1 col-form-label">DEF</label>
+                <label for="Def" class="col-1 col-form-label text-left">DEF</label>
                 <div class="col-9">
                   <input type="number" name="def" id="Def" class="form-control" required>
                 </div>

@@ -29,11 +29,16 @@ if (isset($_POST['add'])) {
 
     $search = $dishName;
     $found = array_filter($data['data'], function ($v, $k) use ($search) {
-      //var_dump($v);
-      return $v[0] == $search;
+      $exclude = ['dark cuisine'];
+      $re = '/' . implode('|', $exclude) . '/mi';
+      $str = $v[0];
+      // check if exclude matched with dish name
+      $matchExclude = preg_match_all($re, $search, $matches, PREG_SET_ORDER, 0);
+      // return not matched exclude and input not matched existing recipes
+      return !$matchExclude && preg_match_all('/' . $search . '/mi', $str);
     }, ARRAY_FILTER_USE_BOTH);
 
-    if (is_empty_array($found) && strlen($material) > 10) {
+    if (empty($found) && strlen($material) > 10) {
       $data['data'][] = $array;
       $data['post'] = $_POST;
 

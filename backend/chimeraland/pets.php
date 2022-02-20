@@ -124,9 +124,10 @@ if (isset($_POST['add'])) {
                 <label for="Grade" class="col-1 col-form-label text-left">Grade</label>
                 <div class="col-9">
                   <select name="grade" id="Grade" class="form-control" required>
+                    <option value="">Select Default Grade</option>
                     <option value="a">A Noble</option>
                     <option value="b">B Grand</option>
-                    <option value="c" selected>C Rare</option>
+                    <option value="c">C Rare</option>
                     <option value="s">S Illustrious</option>
                   </select>
                 </div>

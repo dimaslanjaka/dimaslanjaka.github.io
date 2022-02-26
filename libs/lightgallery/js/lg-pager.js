@@ -3,5 +3,118 @@
  * http://sachinchoolur.github.io/lg-pager.js
  * Copyright (c) 2016 Sachin N; 
  * @license Apache 2.0 
- */
-!function(t){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).LgPager=t()}}((function(){return function e(t,r,n){function s(i,a){if(!r[i]){if(!t[i]){var l="function"==typeof require&&require;if(!a&&l)return l(i,!0);if(o)return o(i,!0);var c=new Error("Cannot find module '"+i+"'");throw c.code="MODULE_NOT_FOUND",c}var u=r[i]={exports:{}};t[i][0].call(u.exports,(function(r){var n=t[i][1][r];return s(n||r)}),u,u.exports,e,t,r,n)}return r[i].exports}for(var o="function"==typeof require&&require,i=0;i<n.length;i++)s(n[i]);return s}({1:[function(t,r,n){!function(t,r){if(void 0!==n)r();else{r(),t.lgPager={}}}(this,(function(){"use strict";var t=Object.assign||function(t){for(var r=1;r<arguments.length;r++){var n=arguments[r];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(t[o]=n[o])}return t},r={pager:!1},Pager=function(n){return this.el=n,this.core=window.lgData[this.el.getAttribute("lg-uid")],this.core.s=t({},r,this.core.s),this.core.s.pager&&this.core.items.length>1&&this.init(),this};Pager.prototype.init=function(){var t,r,n,o=this,i="";if(o.core.outer.querySelector(".lg").insertAdjacentHTML("beforeend",'<div class="lg-pager-outer"></div>'),o.core.s.dynamic)for(var a=0;a<o.core.s.dynamicEl.length;a++)i+='<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="'+o.core.s.dynamicEl[a].thumb+'" /></div></span>';else for(var l=0;l<o.core.items.length;l++)o.core.s.exThumbImage?i+='<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="'+o.core.items[l].getAttribute(o.core.s.exThumbImage)+'" /></div></span>':i+='<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="'+o.core.items[l].querySelector("img").getAttribute("src")+'" /></div></span>';(r=o.core.outer.querySelector(".lg-pager-outer")).innerHTML=i,t=o.core.outer.querySelectorAll(".lg-pager-cont");for(var c=0;c<t.length;c++)!function(r){utils.on(t[r],"click.lg touchend.lg",(function(){o.core.index=r,o.core.slide(o.core.index,!1,!1)}))}(c);utils.on(r,"mouseover.lg",(function(){clearTimeout(n),utils.addClass(r,"lg-pager-hover")})),utils.on(r,"mouseout.lg",(function(){n=setTimeout((function(){utils.removeClass(r,"lg-pager-hover")}))})),utils.on(o.core.el,"onBeforeSlide.lgtm",(function(r){for(var n=0;n<t.length;n++)utils.removeClass(t[n],"lg-pager-active"),r.detail.index===n&&utils.addClass(t[n],"lg-pager-active")}))},Pager.prototype.destroy=function(){},window.lgModules.pager=Pager}))},{}]},{},[1])(1)}));
+ */(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.LgPager = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function (global, factory) {
+    if (typeof define === "function" && define.amd) {
+        define([], factory);
+    } else if (typeof exports !== "undefined") {
+        factory();
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory();
+        global.lgPager = mod.exports;
+    }
+})(this, function () {
+    'use strict';
+
+    var _extends = Object.assign || function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+
+            for (var key in source) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                    target[key] = source[key];
+                }
+            }
+        }
+
+        return target;
+    };
+
+    var pagerDefaults = {
+        pager: false
+    };
+
+    var Pager = function Pager(element) {
+
+        this.el = element;
+
+        this.core = window.lgData[this.el.getAttribute('lg-uid')];
+        this.core.s = _extends({}, pagerDefaults, this.core.s);
+
+        if (this.core.s.pager && this.core.items.length > 1) {
+            this.init();
+        }
+
+        return this;
+    };
+
+    Pager.prototype.init = function () {
+        var _this = this;
+        var pagerList = '';
+        var $pagerCont;
+        var $pagerOuter;
+        var timeout;
+
+        _this.core.outer.querySelector('.lg').insertAdjacentHTML('beforeend', '<div class="lg-pager-outer"></div>');
+
+        if (_this.core.s.dynamic) {
+            for (var j = 0; j < _this.core.s.dynamicEl.length; j++) {
+                pagerList += '<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="' + _this.core.s.dynamicEl[j].thumb + '" /></div></span>';
+            }
+        } else {
+            for (var i = 0; i < _this.core.items.length; i++) {
+                if (!_this.core.s.exThumbImage) {
+                    pagerList += '<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="' + _this.core.items[i].querySelector('img').getAttribute('src') + '" /></div></span>';
+                } else {
+                    pagerList += '<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="' + _this.core.items[i].getAttribute(_this.core.s.exThumbImage) + '" /></div></span>';
+                }
+            }
+        }
+
+        $pagerOuter = _this.core.outer.querySelector('.lg-pager-outer');
+
+        $pagerOuter.innerHTML = pagerList;
+
+        $pagerCont = _this.core.outer.querySelectorAll('.lg-pager-cont');
+        for (var k = 0; k < $pagerCont.length; k++) {
+
+            /*jshint loopfunc: true */
+            (function (index) {
+                utils.on($pagerCont[index], 'click.lg touchend.lg', function () {
+                    _this.core.index = index;
+                    _this.core.slide(_this.core.index, false, false);
+                });
+            })(k);
+        }
+
+        utils.on($pagerOuter, 'mouseover.lg', function () {
+            clearTimeout(timeout);
+            utils.addClass($pagerOuter, 'lg-pager-hover');
+        });
+
+        utils.on($pagerOuter, 'mouseout.lg', function () {
+            timeout = setTimeout(function () {
+                utils.removeClass($pagerOuter, 'lg-pager-hover');
+            });
+        });
+
+        utils.on(_this.core.el, 'onBeforeSlide.lgtm', function (e) {
+            for (var n = 0; n < $pagerCont.length; n++) {
+                utils.removeClass($pagerCont[n], 'lg-pager-active');
+                if (e.detail.index === n) {
+                    utils.addClass($pagerCont[n], 'lg-pager-active');
+                }
+            }
+        });
+    };
+
+    Pager.prototype.destroy = function () {};
+
+    window.lgModules.pager = Pager;
+});
+
+},{}]},{},[1])(1)
+});

@@ -13,7 +13,7 @@ $data = json_decode(file_get_contents($file), true);
 
 if (isset($_REQUEST['json'])) {
   header('content-type: application/json');
-  exit(json_encode($data));
+  exit(json_encode($data, JSON_PRETTY_PRINT));
 }
 
 if (isset($_POST['add'])) {
@@ -30,7 +30,7 @@ if (isset($_POST['add'])) {
 
   if (empty($found) && count($attr) >= 1) {
     $data['data'][] = ['name' => ucwords($petName), 'qty' => 'GRADE ' . strtoupper($_POST['grade']) . ' ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
-    file_put_contents($file, json_encode($data));
+    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
     header('Location: ?done');
     $_SESSION['submit'] = 1;
   } else {

@@ -10,7 +10,7 @@ $data = json_decode(file_get_contents($jsonfile), true);
 
 if (isset($_REQUEST['json'])) {
   header('content-type: application/json');
-  exit(json_encode($data));
+  exit(json_encode($data, JSON_PRETTY_PRINT));
 }
 
 if (isset($_POST['add'])) {
@@ -42,7 +42,7 @@ if (isset($_POST['add'])) {
       $data['data'][] = $array;
       $data['post'] = $_POST;
 
-      $build = json_encode($data);
+      $build = json_encode($data, JSON_PRETTY_PRINT);
       file_put_contents($jsonfile, $build);
       header('Location: ?done');
     } else {

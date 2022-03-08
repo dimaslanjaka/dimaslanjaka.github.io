@@ -47,9 +47,11 @@ if (isset($_POST['add'])) {
       header('Location: ?done');
     } else {
       if (strlen($material) < 10) {
-        echo 'Error Adding Recipe: Material Requirements Not Meet';
+        header("Content-Type: text/html");
+        echo 'Error Adding Recipe: Material Requirements Not Meet. <a class="btn btn-success" href="?back">Back</a>'; 
       } else {
-        echo 'Error Adding Recipe: Duplicate Dish';
+      	header("Content-Type: text/html");
+      	echo 'Error Adding Recipe: Duplicate Dish. <a class="btn btn-success" href="?back">Back</a>'; 
       }
     }
 
@@ -101,7 +103,7 @@ function is_empty_array(array $arr): bool
   <main>
     <?php
     if (isset($_REQUEST['done'])) {
-      exit('<div class="text-center m-5">Recipes Added Successful, <a class="btn btn-success" href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Back to recipe lists</a>
+      echo('<div class="text-center m-5">Recipes Added Successful, <u>refresh page to view changes</u>. <a class="btn btn-success" href="?back">Back</a>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -200,6 +202,21 @@ function is_empty_array(array $arr): bool
   <script>
     (function() {
       formsaver(true);
+      
+      var forms = document.querySelectorAll("form");
+Array.from(forms).forEach((form) => {
+  form.addEventListener(
+    "submit",
+    function (e) { 
+      var buttons = this.querySelectorAll('[type="submit"]');
+      buttons.forEach(function (button) {
+        button.setAttribute("disabled", "disabled");
+      });
+    },
+    false
+  );
+});
+
     })();
   </script>
 

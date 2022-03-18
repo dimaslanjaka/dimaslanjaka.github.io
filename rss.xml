@@ -42,21 +42,20 @@
     </item>
     
     <item>
-      <title>VSCode Integrated Terminal Options</title>
+      <title>Custom PATH VSCode Integrated Terminal Options</title>
       <link>https://www.webmanajemen.com/2022/02/20/vscode-integrated-terminal-options.html</link>
-      <guid isPermaLink="false">d187db4f-84c5-4888-845d-a57a9da1f610</guid>
+      <guid isPermaLink="false">3b1b7031-6ca3-4888-8c93-4812c6cc40c2</guid>
       <pubDate>Sat, 19 Feb 2022 17:00:00 GMT</pubDate>
       
         
         
-      <description>&lt;h2 id=&quot;windows-env&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#windows-env&quot;&gt;&lt;/a&gt; Windows Env&lt;/h2&gt;
-&lt;p&gt;Add path into vscode terminal windows&lt;/p&gt;
-&lt;pr</description>
+      <description>&lt;p&gt;Determining custom path on vscode IDE made easily development programs within multiple platforms.&lt;/p&gt;
+&lt;h2 id=&quot;linux-env&quot;&gt;&lt;a class=&quot;markdo</description>
         
       
       
       
-      <content:encoded><![CDATA[<h2 id="windows-env"><a class="markdownIt-Anchor" href="#windows-env"></a> Windows Env</h2><p>Add path into vscode terminal windows</p><pre><code class="highlight json"><span class="punctuation">&#123;</span>  <span class="attr">&quot;terminal.integrated.env.windows&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>    <span class="attr">&quot;PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;env:PATH&#125;;C:\\bin;C:\\another\\folder&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></code></pre><h2 id="mac-osx-env"><a class="markdownIt-Anchor" href="#mac-osx-env"></a> MAC OSX Env</h2><p>Add path into vscode terminal mac osx</p><pre><code class="highlight json"><span class="punctuation">&#123;</span>  <span class="attr">&quot;terminal.integrated.env.osx&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>    <span class="attr">&quot;PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/home&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></code></pre><p>Now open Terminal and look at PATH</p><pre><code class="highlight shell">echo $PATH/usr/local/bin:/usr/bin:/bin:/usr/sbin:/home</code></pre>]]></content:encoded>
+      <content:encoded><![CDATA[<p>Determining custom path on vscode IDE made easily development programs within multiple platforms.</p><h2 id="linux-env"><a class="markdownIt-Anchor" href="#linux-env"></a> Linux Env</h2><p>Add custom path to terminal linux</p><pre><code class="highlight json"><span class="punctuation">&#123;</span>  <span class="attr">&quot;terminal.integrated.env.linux&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>    <span class="attr">&quot;PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./bin:$&#123;env:PATH&#125;&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></code></pre><h2 id="windows-env"><a class="markdownIt-Anchor" href="#windows-env"></a> Windows Env</h2><p>Add path into vscode terminal windows</p><pre><code class="highlight json"><span class="punctuation">&#123;</span>  <span class="attr">&quot;terminal.integrated.env.windows&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>    <span class="attr">&quot;PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;env:PATH&#125;;C:\\bin;C:\\another\\folder&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></code></pre><h2 id="mac-osx-env"><a class="markdownIt-Anchor" href="#mac-osx-env"></a> MAC OSX Env</h2><p>Add path into vscode terminal mac osx</p><pre><code class="highlight json"><span class="punctuation">&#123;</span>  <span class="attr">&quot;terminal.integrated.env.osx&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>    <span class="attr">&quot;PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/home&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></code></pre><p>Now open Terminal and look at PATH</p><pre><code class="highlight shell">echo $PATH/usr/local/bin:/usr/bin:/bin:/usr/sbin:/home</code></pre>]]></content:encoded>
       
       
       

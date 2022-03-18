@@ -123,7 +123,7 @@ if (isset($_POST['add'])) {
               <div class="form-group row col mb-2">
                 <label for="Grade" class="col-1 col-form-label text-left">Grade</label>
                 <div class="col-9">
-                  <select name="grade" id="Grade" class="form-control" required>
+                  <select name="grade" id="Grade" class="form-control" required no-save>
                     <option value="">Select Default Grade</option>
                     <option value="a">A Noble</option>
                     <option value="b">B Grand</option>
@@ -157,7 +157,7 @@ if (isset($_POST['add'])) {
           <div class="form-group row col-md-12 mb-2">
             <label for="Attr" class="col-2 col-form-label">Skill Attributes</label>
             <div class="col-10">
-              <textarea type="text" nosave="true" id="Attr" name="attr" cols="10" rows="10" class="form-control" placeholder="Pet Attributes" required>Attributes Conversion Rate 4.0%</textarea>
+              <textarea type="text" no-save="true" id="Attr" name="attr" cols="10" rows="10" class="form-control" placeholder="Pet Attributes" required>Attributes Conversion Rate 4.0%</textarea>
               <small class="form-text text-muted">Must Be Separated by line</small>
             </div>
           </div>
@@ -180,18 +180,18 @@ if (isset($_POST['add'])) {
       formsaver(true);
     })();
     var forms = document.querySelectorAll("form");
-    Array.from(forms).forEach((form) => {
-      form.addEventListener(
-        "submit",
-        function(e) {
-          var buttons = this.querySelectorAll('[type="submit"]');
-          buttons.forEach(function(button) {
-            button.setAttribute("disabled", "disabled");
-          });
-        },
-        false
-      );
-    });
+Array.from(forms).forEach((form) => {
+  form.addEventListener(
+    "submit",
+    function (e) { 
+      var buttons = this.querySelectorAll('[type="submit"]');
+      buttons.forEach(function (button) {
+        button.setAttribute("disabled", "disabled");
+      });
+    },
+    false
+  );
+});
   </script>
 
 </body>

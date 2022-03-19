@@ -6,10 +6,10 @@ tested on:
 
 # NodeJS Blogging System
 todo:
-- Admin Panel
-- Blogger XML Import
-- External to local images
-- SEO improvement
+- [ ] Admin Panel
+- [x] Blogger XML Import
+- [ ] External to local images
+- [x] SEO improvement
 
 # Project Structure
 - Source posts

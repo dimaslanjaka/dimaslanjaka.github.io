@@ -179,9 +179,9 @@
       <content:encoded><![CDATA[<h1 id="nodejs-replace-matched-string-from-regex"><a class="markdownIt-Anchor" href="#nodejs-replace-matched-string-from-regex"></a> NodeJS Replace Matched String From Regex</h1><p>How to match regex from string and replace matched string $1-$9</p><blockquote><p>$1 = matched index 1 and so on</p></blockquote><p>for example: were going to replace all markdown extensions to html extension.</p><pre><code class="highlight js"><span class="keyword">const</span> str = <span class="string">`[text1](url.html) [txt](http://webmanajemen.com/post.md)`</span>; <span class="comment">// string to replace</span><span class="keyword">const</span> regex = <span class="regexp">/\[.*\]\(.*(.md)\)/gm</span>; <span class="comment">// regex to match group index 1 (.md)</span><span class="keyword">if</span> (regex.<span class="title function_">exec</span>(str)) &#123; <span class="comment">// check if regex match</span>  <span class="keyword">const</span> replaced = str.<span class="title function_">replace</span>(regex, <span class="keyword">function</span> (<span class="params">wholeMatch, index1</span>) &#123;    <span class="variable language_">console</span>.<span class="title function_">log</span>(wholeMatch, index1);    <span class="keyword">return</span> wholeMatch.<span class="title function_">replace</span>(index1, <span class="string">&quot;.html&quot;</span>); <span class="comment">// replace .md to .html</span>  &#125;);  <span class="variable language_">console</span>.<span class="title function_">log</span>(replaced); <span class="comment">// [text1](url.html) [txt](http://webmanajemen.com/post.html)</span>&#125;</code></pre><script>  document.querySelectorAll("pre,code");  pretext.forEach(function (el) {    el.classList.toggle("notranslate", true);  });</script>]]></content:encoded>
       
       
-      <category domain="https://www.webmanajemen.com/categories/JS/">JS</category>
+      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
       
-      <category domain="https://www.webmanajemen.com/categories/JS/Programming/">Programming</category>
+      <category domain="https://www.webmanajemen.com/categories/Programming/JS/">JS</category>
       
       
       <category domain="https://www.webmanajemen.com/tags/JS/">JS</category>

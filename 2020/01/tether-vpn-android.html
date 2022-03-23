@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="How to tethering vpn on android ROOT is required Requirement Terminal Emulator Tutorial Start your">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png">
+<meta property="og:image" content="https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pages2020/01/tether-vpn-android/imgingest-2117968900021071073.png">
 <meta property="article:published_time" content="2020-01-30T10:36:00.001Z">
 <meta property="article:modified_time" content="2020-03-01T05:40:59.000Z">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
@@ -31,7 +31,7 @@
 <meta property="article:tag" content="Tips &amp; Tricks">
 <meta property="article:tag" content="Share">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png">
+<meta name="twitter:image" content="https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pages2020/01/tether-vpn-android/imgingest-2117968900021071073.png">
     
 
     
@@ -247,7 +247,7 @@
 <div class="article-gallery">
     
     <a class="gallery-item" target="_blank" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkY0LmJwLmJsb2dzcG90LmNvbSUyRi00X2FPUzNGN0ZnMCUyRlhsdXRVOC1Qcm5JJTJGQUFBQUFBQUFBSzAlMkY3S3ZIVXBYNzhXUXc4YS0yTVlRam8tUDFPcTlNdjF6VEFDTGNCR0FzWUhRJTJGczE2MDAlMkZpbWdpbmdlc3QtMjExNzk2ODkwMDAyMTA3MTA3My5wbmc=" rel="nofollow noopener noreferer">
-        <img src="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png" itemprop="image" title="Tether VPN Android" alt="Tether VPN Android">
+        <img src="https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pages2020/01/tether-vpn-android/imgingest-2117968900021071073.png" itemprop="image" title="Tether VPN Android" alt="Tether VPN Android">
     </a>
     
 </div>
@@ -259,14 +259,14 @@
 
             
 
-            <div dir="ltr" style="text-align: left;" trbidi="on">  <b>How to tethering vpn on android</b><a target="_blank" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkY0LmJwLmJsb2dzcG90LmNvbSUyRi00X2FPUzNGN0ZnMCUyRlhsdXRVOC1Qcm5JJTJGQUFBQUFBQUFBSzAlMkY3S3ZIVXBYNzhXUXc4YS0yTVlRam8tUDFPcTlNdjF6VEFDTGNCR0FzWUhRJTJGczE2MDAlMkZpbWdpbmdlc3QtMjExNzk2ODkwMDAyMTA3MTA3My5wbmc=" imageanchor="1" rel="nofollow noopener noreferer"><img border="0" src="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png" data-original-width="300" data-original-height="300" title="Tether VPN Android" alt="Tether VPN Android" itemprop="image"></a>  <br>  <blockquote>    <b>ROOT</b> is required</blockquote>  <h4 style="text-align: left;">    Requirement</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0RqYWNrcGFsLmFuZHJvaWR0ZXJtJTI2aGwlM0Rpbg==" rel="nofollow noopener noreferer" target="_blank">Terminal Emulator</a></li>  </ol>  <h4 style="text-align: left;">    Tutorial</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li>Start your VPN until connected</li>    <li>Open terminal emulator</li>   <blockquote>    Type:<br>    <pre><br>su<br>ip link show<br>id<br>iptables -t filter -F FORWARD<br>iptables -t nat -F POSTROUTING<br>iptables -t filter -l FORWARD -j ACCEPT<br>iptables -t nat -I POSTROUTING -j MASQUERADE<br>ip rule del from 192.168.43.0/24 lookup 61<br>ip route del default dev tun0 scope link table 61<br>ip route del 192.168.43.0/24 dev wlan0 scope link table 61<br>ip route broadcast 255.255.255.255 dev wlan0 scope link table 61<br>exit<br></pre>  </blockquote>  <li>Now connect your other devices to your android hotspot, try browsing any websites now :)</li></ol><h3>Alternative</h3><p>  install <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20uYXJkYWRlbS52cG50ZXRoZXJpbmclMjZobCUzRGVu" target="_blank" rel="nofollow noopener noreferer">VPN tethering</a> from <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20uYXJkYWRlbS52cG50ZXRoZXJpbmclMjZobCUzRGVu" target="_blank" rel="nofollow noopener noreferer">play store</a></p></div>
+            <div dir="ltr" style="text-align: left;" trbidi="on">  <b>How to tethering vpn on android</b><a target="_blank" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkY0LmJwLmJsb2dzcG90LmNvbSUyRi00X2FPUzNGN0ZnMCUyRlhsdXRVOC1Qcm5JJTJGQUFBQUFBQUFBSzAlMkY3S3ZIVXBYNzhXUXc4YS0yTVlRam8tUDFPcTlNdjF6VEFDTGNCR0FzWUhRJTJGczE2MDAlMkZpbWdpbmdlc3QtMjExNzk2ODkwMDAyMTA3MTA3My5wbmc=" imageanchor="1" rel="nofollow noopener noreferer"><img border="0" src="https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pages2020/01/tether-vpn-android/imgingest-2117968900021071073.png" data-original-width="300" data-original-height="300" title="Tether VPN Android" alt="Tether VPN Android" itemprop="image"></a>  <br>  <blockquote>    <b>ROOT</b> is required</blockquote>  <h4 style="text-align: left;">    Requirement</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0RqYWNrcGFsLmFuZHJvaWR0ZXJtJTI2aGwlM0Rpbg==" rel="nofollow noopener noreferer" target="_blank">Terminal Emulator</a></li>  </ol>  <h4 style="text-align: left;">    Tutorial</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li>Start your VPN until connected</li>    <li>Open terminal emulator</li>   <blockquote>    Type:<br>    <pre><br>su<br>ip link show<br>id<br>iptables -t filter -F FORWARD<br>iptables -t nat -F POSTROUTING<br>iptables -t filter -l FORWARD -j ACCEPT<br>iptables -t nat -I POSTROUTING -j MASQUERADE<br>ip rule del from 192.168.43.0/24 lookup 61<br>ip route del default dev tun0 scope link table 61<br>ip route del 192.168.43.0/24 dev wlan0 scope link table 61<br>ip route broadcast 255.255.255.255 dev wlan0 scope link table 61<br>exit<br></pre>  </blockquote>  <li>Now connect your other devices to your android hotspot, try browsing any websites now :)</li></ol><h3>Alternative</h3><p>  install <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20uYXJkYWRlbS52cG50ZXRoZXJpbmclMjZobCUzRGVu" target="_blank" rel="nofollow noopener noreferer">VPN tethering</a> from <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20uYXJkYWRlbS52cG50ZXRoZXJpbmclMjZobCUzRGVu" target="_blank" rel="nofollow noopener noreferer">play store</a></p></div>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2020/01/tether-vpn-android.html" data-id="cl132svn001fb7jnme5c1c3hv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2020/01/tether-vpn-android.html" data-id="cl1348obk01fb4qmxa9iwc7fc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -337,7 +337,7 @@
             "name": "Dimas Lanjaka Kumala Indra"
         },
         "headline": "Tether VPN Android",
-        "image": "https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png",
+        "image": "https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pages2020/01/tether-vpn-android/imgingest-2117968900021071073.png",
         "keywords": "Android Tips & Tricks Share",
         "genre": "",
         "datePublished": "2020-01-30",
@@ -523,7 +523,7 @@
                             <a href="/2022/02/20/vscode-integrated-terminal-options.html" class="thumbnail">
     
     
-        <span style="background-image:url(https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png)" alt="Custom PATH VSCode Integrated Terminal Options" class="thumbnail-image"></span>
+        <span style="background-image:url(https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pages2022/02/20/vscode-integrated-terminal-options/vscode-logo.png)" alt="Custom PATH VSCode Integrated Terminal Options" class="thumbnail-image"></span>
     
     
 </a>
@@ -543,7 +543,7 @@
                             <a href="/Chimeraland/index.html" class="thumbnail">
     
     
-        <span style="background-image:url(https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg)" alt="Index Chimeraland" class="thumbnail-image"></span>
+        <span style="background-image:url(https://www.webmanajemen.com//media/dimaslanjaka/DATA/Repositories/gh-pagesChimeraland/index/maxresdefault.jpg)" alt="Index Chimeraland" class="thumbnail-image"></span>
     
     
 </a>

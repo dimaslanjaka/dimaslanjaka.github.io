@@ -10,7 +10,7 @@
     
 
     
-    <title>Fix Uncaught Error Call to undefined function str_starts_with() | WMI Gitlab</title>
+    <title>Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with | PHP</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -18,7 +18,7 @@
     
     <meta name="description" content="h5&gt;Uncaught Error: Call to undefined function str_starts_with() Fix Solutions">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fix Uncaught Error Call to undefined function str_starts_with()">
+<meta property="og:title" content="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with">
 <meta property="og:url" content="https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="h5&gt;Uncaught Error: Call to undefined function str_starts_with() Fix Solutions">
@@ -203,7 +203,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Fix Uncaught Error Call to undefined function str_starts_with()
+        Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with
         </h1>
     
 
@@ -246,7 +246,7 @@
 <div class="article-gallery">
     
     <a class="gallery-item" target="_blank" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZyZXMuY2xvdWRpbmFyeS5jb20lMkZkaW1hc2xhbmpha2ElMkZpbWFnZSUyRmZldGNoJTJGaHR0cHMlM0ElMkYlMkZrdWxpYWhpdGJsb2cuZmlsZXMud29yZHByZXNzLmNvbSUyRjIwMTklMkYwOCUyRjFkYmRiLWZhdGFsMmJlcnJvcjJidW5jYXVnaHQyYmVycm9yMmJjYWxsMmJ0bzJidW5kZWZpbmVkMmJmdW5jdGlvbjJibXlzcWxfY29ubmVjdDI1MjgyNTI5LnBuZw==" rel="nofollow noopener noreferer">
-        <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" itemprop="image" title="Fix Uncaught Error Call to undefined function str_starts_with()" alt="Fix Uncaught Error Call to undefined function str_starts_with()">
+        <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" itemprop="image" title="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with" alt="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with">
     </a>
     
 </div>
@@ -258,14 +258,61 @@
 
             
 
-            <h5>Uncaught Error: Call to undefined function str_starts_with() Fix Solutions</h5><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" alt="PHP Thumbnail" title="Fix Uncaught Error Call to undefined function str_starts_with()" itemprop="image"><pre><br>if (!function_exists('str_starts_with')) {<br>  function str_starts_with($haystack, $needle, $case = true)<br>  {<br>    if ($case) {<br>      return strpos($haystack, $needle, 0) === 0;<br>    }<br>    return stripos($haystack, $needle, 0) === 0;<br>  }<br>}<br><br>if (!function_exists('str_ends_with')) {<br>  function str_ends_with($haystack, $needle, $case = true)<br>  {<br>    $expectedPosition = strlen($haystack) - strlen($needle);<br>    if ($case) {<br>      return strrpos($haystack, $needle, 0) === $expectedPosition;<br>    }<br>    return strripos($haystack, $needle, 0) === $expectedPosition;<br>  }<br>}<br></pre>
+            <h2 id="uncaught-error-call-to-undefined-function-str_starts_with-fix-solutions"><a class="markdownIt-Anchor" href="#uncaught-error-call-to-undefined-function-str_starts_with-fix-solutions"></a> Uncaught Error: Call to undefined function str_starts_with() Fix Solutions</h2>
+<pre><code class="highlight php"><span class="keyword">if</span> (!<span class="title function_ invoke__">function_exists</span>(<span class="string">&#x27;str_starts_with&#x27;</span>)) &#123;
+  <span class="function"><span class="keyword">function</span> <span class="title">str_starts_with</span>(<span class="params"><span class="variable">$haystack</span>, <span class="variable">$needle</span>, <span class="variable">$case</span> = <span class="literal">true</span></span>)</span>
+<span class="function">  </span>&#123;
+    <span class="keyword">if</span> (<span class="variable">$case</span>) &#123;
+      <span class="keyword">return</span> <span class="title function_ invoke__">strpos</span>(<span class="variable">$haystack</span>, <span class="variable">$needle</span>, <span class="number">0</span>) === <span class="number">0</span>;
+    &#125;
+    <span class="keyword">return</span> <span class="title function_ invoke__">stripos</span>(<span class="variable">$haystack</span>, <span class="variable">$needle</span>, <span class="number">0</span>) === <span class="number">0</span>;
+  &#125;
+&#125;</code></pre>
+<h3 id="example-with-the-empty-string"><a class="markdownIt-Anchor" href="#example-with-the-empty-string"></a> Example with the empty string ‘’</h3>
+<pre><code class="highlight php"><span class="meta">&lt;?php</span>
+<span class="keyword">if</span> (<span class="title function_ invoke__">str_starts_with</span>(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;&#x27;</span>)) &#123;
+    <span class="keyword">echo</span> <span class="string">&quot;All strings start with the empty string&quot;</span>; <span class="comment">// &lt;-- this will show as output</span>
+&#125;
+<span class="meta">?&gt;</span></code></pre>
+<h3 id="example-case-sensitivity"><a class="markdownIt-Anchor" href="#example-case-sensitivity"></a> Example case-sensitivity</h3>
+<ul>
+<li><strong>Case Sensitive</strong> is a case where uppercase and lowercase letters are interpreted differently.</li>
+<li><strong>Case Insensitive</strong> is a case where uppercase and lowercase letters are interpreted the same.</li>
+</ul>
+<pre><code class="highlight php"><span class="meta">&lt;?php</span>
+<span class="variable">$string</span> = <span class="string">&#x27;The lazy fox jumped over the fence&#x27;</span>;
+
+<span class="keyword">if</span> (<span class="title function_ invoke__">str_starts_with</span>(<span class="variable">$string</span>, <span class="string">&#x27;The&#x27;</span>)) &#123;
+    <span class="keyword">echo</span> <span class="string">&quot;The string starts with &#x27;The&#x27;\n&quot;</span>; <span class="comment">// &lt;-- this will show as output</span>
+&#125;
+
+<span class="keyword">if</span> (<span class="title function_ invoke__">str_starts_with</span>(<span class="variable">$string</span>, <span class="string">&#x27;the&#x27;</span>)) &#123;
+    <span class="keyword">echo</span> <span class="string">&#x27;The string starts with &quot;the&quot;&#x27;</span>; <span class="comment">// this ignored because insensitive</span>
+&#125; <span class="keyword">else</span> &#123;
+    <span class="keyword">echo</span> <span class="string">&#x27;&quot;the&quot; was not found because the case does not match&#x27;</span>; <span class="comment">// &lt;-- this will show as output</span>
+&#125;
+
+<span class="meta">?&gt;</span></code></pre>
+<h2 id="uncaught-error-call-to-undefined-function-str_ends_with-fix-solutions"><a class="markdownIt-Anchor" href="#uncaught-error-call-to-undefined-function-str_ends_with-fix-solutions"></a> Uncaught Error: Call to undefined function str_ends_with() Fix Solutions</h2>
+<pre><code class="highlight php"><span class="keyword">if</span> (!<span class="title function_ invoke__">function_exists</span>(<span class="string">&#x27;str_ends_with&#x27;</span>)) &#123;
+  <span class="function"><span class="keyword">function</span> <span class="title">str_ends_with</span>(<span class="params"><span class="variable">$haystack</span>, <span class="variable">$needle</span>, <span class="variable">$case</span> = <span class="literal">true</span></span>)</span>
+<span class="function">  </span>&#123;
+    <span class="variable">$expectedPosition</span> = <span class="title function_ invoke__">strlen</span>(<span class="variable">$haystack</span>) - <span class="title function_ invoke__">strlen</span>(<span class="variable">$needle</span>);
+    <span class="keyword">if</span> (<span class="variable">$case</span>) &#123;
+      <span class="keyword">return</span> <span class="title function_ invoke__">strrpos</span>(<span class="variable">$haystack</span>, <span class="variable">$needle</span>, <span class="number">0</span>) === <span class="variable">$expectedPosition</span>;
+    &#125;
+    <span class="keyword">return</span> <span class="title function_ invoke__">strripos</span>(<span class="variable">$haystack</span>, <span class="variable">$needle</span>, <span class="number">0</span>) === <span class="variable">$expectedPosition</span>;
+  &#125;
+&#125;</code></pre>
+<p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" alt="PHP Thumbnail" title="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with" itemprop="image"></p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined.html" data-id="cl13l35qe01hn9jn6c5u7f9tv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined.html" data-id="cl13lmlul01yl5cn6b8iz6y0g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -335,7 +382,7 @@
             "@type": "Person",
             "name": "Dimas Lanjaka"
         },
-        "headline": "Fix Uncaught Error Call to undefined function str_starts_with()",
+        "headline": "Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with",
         "image": "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png",
         "keywords": "PHP Script",
         "genre": "Programming PHP",
@@ -344,7 +391,7 @@
         "dateModified": "2021-05-13",
         "url": "https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined.html",
         "description": "h5>Uncaught Error: Call to undefined function str_starts_with() Fix Solutions<img",
-        "wordCount": 106
+        "wordCount": 368
     }
 </script>
 </article>

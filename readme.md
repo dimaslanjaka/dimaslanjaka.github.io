@@ -7,9 +7,9 @@ tested on:
 # NodeJS Blogging System
 todo:
 - [ ] Admin Panel
-- [x] Blogger XML Import
-- [ ] External to local images
-- [x] SEO improvement
+- [x] Blogger XML Import `packages/hexo-blogger-xml`
+- [x] External to local images `gulp article:img`
+- [x] SEO improvement `packages/hexo-seo`
 
 # Project Structure
 - Source posts

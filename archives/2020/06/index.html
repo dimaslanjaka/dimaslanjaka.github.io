@@ -171,8 +171,9 @@
                         <nav id="sub-nav">
                             <div id="search-form-wrap">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" >
+    <form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+        <meta itemprop="target" content="https://www.webmanajemen.com/p/search.html?q={search_term_string}">
+        <input itemprop="query-input" type="text" name="search_term_string" class="ins-search-input search-form-input" placeholder="Search" >
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -326,7 +327,7 @@
     
 
         <p class="article-excerpt">
-            PHP12 bytes:&lt;?php echo date(B'); ?&gt;48 bytes:&lt;?php echo&nbsp;sprintf("%03d",((time()+3600)%86400)/86.4|0); ?&gt;  C,&nbsp;56 bytes  main()&#123;printf("%03d",(int)((time(0)+3600)%86400/86.4))
+            PHP12 bytes:&lt;?php echo date(B); ?&gt;48 bytes:&lt;?php echo&nbsp;sprintf(%03d,((time()+3600)%86400)/86.4|0); ?&gt;  C,&nbsp;56 bytes  main()&#123;printf(%03d,(int)((time(0)+3600)%86400/86.4))
         </p>
     </div>
 </article>

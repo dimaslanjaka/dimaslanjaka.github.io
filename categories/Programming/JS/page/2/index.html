@@ -171,8 +171,9 @@
                         <nav id="sub-nav">
                             <div id="search-form-wrap">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" >
+    <form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+        <meta itemprop="target" content="https://www.webmanajemen.com/p/search.html?q={search_term_string}">
+        <input itemprop="query-input" type="text" name="search_term_string" class="ins-search-input search-form-input" placeholder="Search" >
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -425,7 +426,7 @@ function
     
 
         <p class="article-excerpt">
-            var oddoreven = function (n = false, type = odd') {  var time = !n ? new Date().getDay() : Number(n);    if (!/^-{0,1}\d+$/.test(time)){    alert('arguments is not number, please remove quote');    r
+            var oddoreven = function (n = false, type = odd) {  var time = !n ? new Date().getDay() : Number(n);    if (!/^-{0,1}\d+$/.test(time)){    alert(arguments is not number, please remove quote);    r
         </p>
     </div>
 </article>

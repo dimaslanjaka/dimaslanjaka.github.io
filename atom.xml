@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2022-03-26T16:43:28.000Z</updated>
+  <updated>2022-03-27T09:46:00.000Z</updated>
   <id>urn:uuid:c68af752-e424-4888-8ced-23df247a4b9f</id>
   
   <author>
@@ -18,21 +18,31 @@
   
   <entry>
     <title>How to solve Error Apache shutdown unexpectedly updated 2022</title>
-    <link href="https://www.webmanajemen.com/2022/03/how-to-solve-error-apache-shutdown-unexpectedly.html" />
+    <link href="https://www.webmanajemen.com/2022/03/27/how-to-solve-error-apache-shutdown-unexpectedly.html" />
     <id>urn:uuid:60adad91-cafd-4888-8da8-a84bfff539a9</id>
     
-    <published>2022-03-26T16:43:28.000Z</published>
-    <updated>2022-03-26T16:43:28.000Z</updated>
+    <published>2022-03-26T09:46:00.000Z</published>
+    <updated>2022-03-27T09:46:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="how-to-solve-error-apache-shutdown-unexpectedly"><a class="markdownIt-Anchor" href="#how-to-solve-error-apache-shutdown-unexpectedly"></a> How to solve “Error: Apache shutdown unexpectedly”?</h2><h3 id="xampp-log-error"><a class="markdownIt-Anchor" href="#xampp-log-error"></a> XAMPP Log Error</h3><pre><code class="highlight log">16:50:25  [Apache]     Status change detected: running16:50:26  [Apache]     Status change detected: stopped16:50:26  [Apache]     Error: Apache shutdown unexpectedly.16:50:26  [Apache]     This may be due to a blocked port, missing dependencies,16:50:26  [Apache]     improper privileges, a crash, or a shutdown by another method.16:50:26  [Apache]     Press the Logs button to view error logs and check16:50:26  [Apache]     the Windows Event Viewer for more clues16:50:26  [Apache]     If you need more help, copy and post this16:50:26  [Apache]     entire log window on the forums</code></pre><p>how to solve above log ?</p><h4 id="folder-location"><a class="markdownIt-Anchor" href="#folder-location"></a> Folder Location</h4>]]></content>
+    <content type="html"><![CDATA[<h2 id="how-to-solve-error-apache-shutdown-unexpectedly"><a class="markdownIt-Anchor" href="#how-to-solve-error-apache-shutdown-unexpectedly"></a> How to solve “Error: Apache shutdown unexpectedly”?</h2><h3 id="xampp-log-error"><a class="markdownIt-Anchor" href="#xampp-log-error"></a> XAMPP Log Error</h3><pre><code class="highlight log">16:50:25  [Apache]     Status change detected: running16:50:26  [Apache]     Status change detected: stopped16:50:26  [Apache]     Error: Apache shutdown unexpectedly.16:50:26  [Apache]     This may be due to a blocked port, missing dependencies,16:50:26  [Apache]     improper privileges, a crash, or a shutdown by another method.16:50:26  [Apache]     Press the Logs button to view error logs and check16:50:26  [Apache]     the Windows Event Viewer for more clues16:50:26  [Apache]     If you need more help, copy and post this16:50:26  [Apache]     entire log window on the forums</code></pre><p>how to solve above log ?</p><h4 id="folder-location"><a class="markdownIt-Anchor" href="#folder-location"></a> Folder Location</h4><p>Make sure the location of the <code>XAMPP</code> folder is outside the drive. Basically xampp only reads from your drive letter. for example:</p><pre><code class="highlight text">D:\xamppC:\xampp</code></pre><h4 id="changing-port"><a class="markdownIt-Anchor" href="#changing-port"></a> Changing Port</h4><ul><li>Try changing port.</li></ul><blockquote><p>in <strong>Control Panel</strong> change apache port <code>80</code> -&gt; <code>8081</code>, <code>443</code> -&gt; <code>4433</code><br /><img src="https://i.stack.imgur.com/McjHN.png" alt="Port XAMPP" /></p></blockquote><ul><li>Open folder <code>D:\xampp\apache\conf\extra</code> and open all conf files one by one. (change <code>D:</code> with your drive letter)</li></ul><blockquote><p>Find <code>&lt;VirtualHost _default_:443&gt;</code> and change it to <code>&lt;VirtualHost _default_:4443&gt;</code>.</p><p>Find <code>ServerName localhost:443</code>. It’s possible that this hasn’t been set up yet and it reads <code>ServerName www.example.com:443</code>. In any case, change it to <code>ServerName localhost:4443</code>.</p></blockquote><h4 id="restart-xampp"><a class="markdownIt-Anchor" href="#restart-xampp"></a> Restart XAMPP</h4><ul><li>Stop and Start apache</li><li>Stop and start mysql</li></ul>]]></content>
     
     
     <summary type="html">Various step to fix xampp windows updated 2022</summary>
     
     
     
-    <category term="Uncategorized" scheme="https://www.webmanajemen.com/categories/Uncategorized/"/>
+    <category term="Programming" scheme="https://www.webmanajemen.com/categories/Programming/"/>
     
+    <category term="PHP" scheme="https://www.webmanajemen.com/categories/Programming/PHP/"/>
+    
+    
+    <category term="PHP" scheme="https://www.webmanajemen.com/tags/PHP/"/>
+    
+    <category term="MySQL" scheme="https://www.webmanajemen.com/tags/MySQL/"/>
+    
+    <category term="Apache" scheme="https://www.webmanajemen.com/tags/Apache/"/>
+    
+    <category term="XAMPP" scheme="https://www.webmanajemen.com/tags/XAMPP/"/>
     
   </entry>
   

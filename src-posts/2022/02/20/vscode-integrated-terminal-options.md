@@ -2,7 +2,7 @@
 title: Custom PATH VSCode Integrated Terminal Options
 webtitle: VSCode
 date: 2022-02-20T07:00:00+07:00
-updated: 2022-02-20T07:00:00+07:00
+updated: 2022-03-29T21:23:48+0000
 cover: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 tags:
   - VSCode

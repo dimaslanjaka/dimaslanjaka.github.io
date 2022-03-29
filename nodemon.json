@@ -16,10 +16,10 @@
     "restart": "gulp"
   },
   "watch": [
-    "src-posts/",
-    "gulpfile.ts",
-    "source/_posts",
-    "template/"
+    "./src-posts/",
+    "./gulpfile.ts",
+    "./source/_posts",
+    "./template/"
   ],
   "env": {
     "NODE_ENV": "development"

@@ -1,0 +1,39 @@
+root = true
+
+[search.exclude]
+**/node_modules
+**/bower_components
+.svn
+.git
+.hg
+.sass-cache
+.tmp
+node_modules
+CVS
+.sources
+
+[files.exclude]
+**/.git
+**/.DS_Store
+**/source/.images
+docs/
+.deploy_git/
+**/tmp
+**/temp
+**/build
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+ij_javascript_enforce_trailing_comma = whenmultiline
+ij_javascript_use_double_quotes = true
+ij_javascript_wrap_comments = true
+ij_javascript_block_brace_style = end_of_line
+
+[*.md]
+trim_trailing_whitespace = false
+

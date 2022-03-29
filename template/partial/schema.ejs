@@ -1,0 +1,32 @@
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+      "@type": "Person",
+      "name": "<%- author_name(page) %>",
+      "url": "<%- author_link(page, config) %>"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "email": "webmanajemen@gmail.com",
+    "name": "webmanajemen",
+    "telephone": "(62) 85-655-667-573",
+    "url": "http://www.webmanajemen.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.webmanajemen.com/images/PicsArt_09-09-12.12.25.jpg",
+      "width": "600",
+      "height": "194"
+    }
+  },
+  "headline": "<%- page.title %>",
+  "image": "<%- thumbnail(page) %>",
+  "keywords": "<%- keywords(page) %>",
+  "genre": "<%- page.category.join(',') %>",
+  "datePublished": "<%- date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') %>",
+  "dateCreated": "<%- date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') %>",
+  "dateModified": "<%- date_format(page.updated, 'YYYY-MM-DDTHH:mm:ssZ') %>",
+  "url": "<%- page.url %> ",
+  "description": "<%- page.subtitle||page.excerpt||page.description %> ",
+  "wordCount": 147
+}</script>

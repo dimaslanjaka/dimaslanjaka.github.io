@@ -1,0 +1,33 @@
+{
+  "name": "gh-pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/dimaslanjaka.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/dimaslanjaka.github.io/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/dimaslanjaka.github.io#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "ejs": "^3.1.6",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "markdown-it": "^12.3.2",
+    "prettier": "^2.6.1"
+  }
+}

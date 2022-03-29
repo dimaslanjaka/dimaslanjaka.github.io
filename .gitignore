@@ -1,0 +1,33 @@
+.DS_Store
+Thumbs.db
+db.json
+twitter-db.json
+*.log
+node_modules
+vendor
+public/
+.deploy*/
+tmp/
+exclude/
+docs/
+#package-lock.json
+firebase.js
+
+# git filter-branch
+.git-rewrite
+
+# remove dynamic idea objects
+.idea/vcs.xml
+.idea/workspace.xml
+**/.idea/vcs.xml
+**/.idea/workspace.xml
+
+# custom build for cache hexo-seo
+build/*
+#!build/hexo-seo/
+
+tmp
+temo
+*.tar.xz
+*.zip
+*.7z

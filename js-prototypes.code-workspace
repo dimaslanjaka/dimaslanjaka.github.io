@@ -1,0 +1,42 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../js-prototypes"
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.linux": {
+			"PATH": "node_modules/.bin:bin:${env:PATH}"
+		},
+		"terminal.integrated.env.windows": {
+			"PATH": "node_modules\\.bin:bin:${env:PATH}"
+		},
+		"files.autoSave": "onWindowChange",
+		"files.autoSaveDelay": 30000,
+		"typescript.tsc.autoDetect": "off",
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"**/node_modules": true,
+			"exclude/**": true,
+			"**/.idea": true
+		},
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/*/**": true,
+			"**/tmp/*/**": true,
+			"**/build/*/**": true,
+			"**/dist/*/**": true,
+			"**/.hg/store/**": true,
+			"docs/*/**": true,
+		},
+	}
+}

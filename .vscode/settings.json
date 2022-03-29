@@ -1,4 +1,14 @@
 {
+  "terminal.integrated.env.linux": {
+    "PATH": "node_modules/.bin:bin:${env:PATH}"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "node_modules\\.bin:bin:${env:PATH}"
+  },
+  "npm.enableRunFromFolder": true,
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 30000,
+  "typescript.tsc.autoDetect": "off",
   "editor.fontFamily": "Consolas",
   "emmet.includeLanguages": {
     "ejs": "html",
@@ -20,4 +30,8 @@
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
   "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true
+  },
 }

@@ -8,7 +8,7 @@
   "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
-  "typescript.tsc.autoDetect": "off",
+  "typescript.tsc.autoDetect": "on",
   "editor.fontFamily": "Consolas",
   "emmet.includeLanguages": {
     "ejs": "html",
@@ -16,7 +16,7 @@
   "editor.wordWrap": "on",
   "editor.bracketPairColorization.enabled": true,
   "javascript.suggestionActions.enabled": false,
-  "typescript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true // let ESLint take formating and linting
   },
@@ -34,4 +34,9 @@
     "**/node_modules": true,
     "**/vendor": true
   },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.tsserver.enableTracing": true,
+  "typescript.tsserver.log": "verbose",
+  "typescript.tsserver.trace": "verbose",
+  "editor.autoClosingBrackets": "always",
 }

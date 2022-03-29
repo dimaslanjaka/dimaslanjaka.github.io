@@ -47,3 +47,7 @@ Now open Terminal and look at PATH
 echo $PATH
 /usr/local/bin:/usr/bin:/bin:/usr/sbin:/home
 ```
+
+### Also See
+- [vscode alert: CommonJS may be converted to an es module](/2022/03/26/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html)
+- [vscode crossplatform settings](/p/search.html?q=vscode+crossplatform+setting)

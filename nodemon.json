@@ -1,0 +1,27 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "docs"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+    "restartx": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'",
+    "restart": "kill -9 $(ps aux | grep '\\snode\\s' | awk '{print $2}') && gulp",
+    "start": "gulp"
+  },
+  "watch": [
+    "src-posts/",
+    "gulpfile.ts",
+    "source/_posts",
+    "template/"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "ts,ejs,md"
+}

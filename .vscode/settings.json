@@ -14,6 +14,10 @@
     "editor.formatOnSave": true, // enable json formating with default vscode formatter
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
   "editor.formatOnSave": false,
-  "editor.tabSize": 2, // disable default vscode formatter
+  "editor.tabSize": 2,
+  "files.eol": "\n",
 }

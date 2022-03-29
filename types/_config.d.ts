@@ -52,12 +52,6 @@ export type Hexo_Config = {
   seo: Seo;
 };
 
-type Writable<T> = { -readonly [K in keyof T]: T[K] };
-
-type Mutable<T> = {
-  -readonly [k in keyof T]: T[k];
-};
-
 export type Author =
   | string
   | {

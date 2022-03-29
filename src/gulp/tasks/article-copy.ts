@@ -15,6 +15,9 @@ import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
 import { cwd } from 'process';
 import { Hexo_Config } from '../../../types/_config';
+import modifyFile from '../modules/modify-file';
+import { config } from '../hexo-config';
+import gulp from 'gulp';
 
 let tryCount = 0;
 
@@ -32,7 +35,7 @@ function removeMultipleWhiteSpaces(text: string) {
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
  */
-export default function articleCopy(config: Hexo_Config, done?: TaskCallback) {
+export function articleCopy(config: Hexo_Config, done?: TaskCallback) {
   //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
   const srcPostDir = join(cwd(), 'src-posts');
   // path source_dir from _config.yml
@@ -210,4 +213,31 @@ export function modifyPost(parse: parsePostReturn) {
     result.error = true;
   }
   return result;
+}
+
+/**
+ * copy src-posts to source_dir
+ * @returns
+ */
+export default function taskCopy() {
+  return gulp
+    .src(join(config.post_source_dir, 'Chimeraland/Recipes.md'))
+    .pipe(
+      modifyFile(function (content, path, _file) {
+        const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
+        if (parse) {
+          parse.fileTree = {
+            source: path.toString().replace('/source/_posts/', '/src-posts/'),
+            public: path.toString().replace('/src-posts/', '/source/_posts/'),
+          };
+        }
+        const modify = modifyPost(parse);
+        console.log(modify.error);
+        if (!modify.error) {
+          return Buffer.from(modify.content);
+        }
+        return content;
+      })
+    )
+    .pipe(gulp.dest(join(config.post_public_dir)));
 }

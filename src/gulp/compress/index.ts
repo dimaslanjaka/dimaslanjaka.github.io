@@ -1,14 +1,14 @@
-import yaml from "yaml";
-import { readFileSync } from "fs";
-import path from "path";
-import readDir from "./readDir";
-import minimatch from "minimatch";
-import writeFile from "./writeFile";
-import minifyHtml from "./html";
-import compress_img from "./img";
+import yaml from 'yaml';
+import { readFileSync } from 'fs';
+import path from 'path';
+import readDir from './readDir';
+import minimatch from 'minimatch';
+import writeFile from './writeFile';
+import minifyHtml from './html';
+import compress_img from './img';
 
-const root = path.join(__dirname, "../../../");
-const config = yaml.parse(readFileSync(path.join(root, "_config.yml")).toString());
+const root = path.join(__dirname, '../../../');
+const config = yaml.parse(readFileSync(path.join(root, '_config.yml')).toString());
 const public_dir = path.join(root, config.public_dir);
 //const source_dir = path.join(root, config.source_dir);
 let exclude = [];
@@ -19,11 +19,11 @@ if (Array.isArray(config.exclude)) exclude = exclude.concat(config.exclude);
 
 //compress_img([path.join(public_dir, "/**/*.{jpg,jpeg,webp,png,gif,svg}")], path.join(public_dir, "compressed"));
 
-readDirW(require("./img3"));
+readDirW(require('./img3'));
 
 // eslint-disable-next-line no-unused-vars
 function readDirW(cb: (value: string[]) => string[] | PromiseLike<string[]>) {
-  let logTxt = "";
+  let logTxt = '';
   readDir(public_dir)
     .then(function (files: string[]) {
       if (Array.isArray(files)) {
@@ -35,19 +35,19 @@ function readDirW(cb: (value: string[]) => string[] | PromiseLike<string[]>) {
             const matchGlobPattern = minimatch(file, ex, { matchBase: true });
             //console.log(match, ex, file.replace(root, ""));
             if (matchGlobPattern) {
-              logTxt += ex + " " + file.replace(root, "") + "\n";
+              logTxt += ex + ' ' + file.replace(root, '') + '\n';
               return false;
             }
 
             // if pattern isn't glob
-            if (!ex.includes("*")) {
+            if (!ex.includes('*')) {
               // test path start with substring
-              const startStr = ex.replace(public_dir, "");
-              const Str = file.replace(public_dir, "");
+              const startStr = ex.replace(public_dir, '');
+              const Str = file.replace(public_dir, '');
               const matchStartStr = Str.startsWith(startStr);
               if (matchStartStr) {
                 //console.log(Str, startStr, matchStartStr);
-                logTxt += ex + " " + file.replace(root, "") + "\n";
+                logTxt += ex + ' ' + file.replace(root, '') + '\n';
                 return false;
               }
             }

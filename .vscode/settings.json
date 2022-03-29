@@ -1,0 +1,18 @@
+{
+  "editor.fontFamily": "Consolas",
+  "emmet.includeLanguages": {
+    "ejs": "html",
+  },
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // let ESLint take formating and linting
+  },
+  "[json]": {
+    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.formatOnSave": false, // disable default vscode formatter
+}

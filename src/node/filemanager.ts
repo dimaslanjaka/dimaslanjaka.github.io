@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import * as fs from 'fs';
-import { default as nodePath } from 'path';
+import * as fs from "fs";
+import { default as nodePath } from "path";
 import ErrnoException = NodeJS.ErrnoException;
 
 /**
@@ -54,8 +54,8 @@ const filemanager = {
   write: (path: fs.PathLike, content: any) => {
     const dir = nodePath.dirname(path.toString());
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (typeof content != 'string') {
-      if (typeof content == 'object' || Array.isArray(content)) {
+    if (typeof content != "string") {
+      if (typeof content == "object" || Array.isArray(content)) {
         content = JSON.stringify(content, null, 4);
       } else {
         content = String(content);

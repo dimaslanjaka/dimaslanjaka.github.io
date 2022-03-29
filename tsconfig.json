@@ -43,15 +43,13 @@
   "buildOnSave": true,
   "compileOnSave": true,
   "exclude": [
-    "./plugins/**/*",
     "./types/**/*",
     "./node_modules/**/*",
     "./libs/compiler/**/*"
   ],
   "include": [
     "./gulpfile.ts",
-    "./src/**/*",
-    "./userscripts/**/*"
+    "./src/**/*"
   ],
   "ts-node": {
     "compilerOptions": {

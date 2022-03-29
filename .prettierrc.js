@@ -1,10 +1,10 @@
 module.exports = {
-  printWidth: 120,
+  printWidth: 180,
   tabWidth: 2,
   useTabs: false,
   bracketSpacing: true,
   semi: true,
-  singleQuote: false,
+  singleQuote: true,
   trailingComma: 'es5',
   endOfLine: 'lf',
   quoteProps: 'as-needed',

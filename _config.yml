@@ -1,0 +1,309 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: "WMI"
+subtitle: "Website Management Indonesia"
+description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.
+subtitle_desc: "External source WMI Github Laboratory"
+keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
+language:
+  - en
+  - id
+timezone: "Asia/Jakarta"
+introduction: "introduction"
+
+# https://github.com/wzpan/hexo-generator-search
+# https://github.com/next-theme/hexo-generator-searchdb
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+  #template: ./template/search.xml
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://www.webmanajemen.com/
+root: /
+permalink: :title.html #:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: docs
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+# https://hexo.io/docs/configuration.html
+skip_render:
+  - "yandex_*"
+  - "ahrefs_*"
+  - "glx_*"
+  - "Midi"
+  - "Midi/**/*"
+  - "page"
+  - "page/**/*"
+  - "backend"
+  - "backend/**/*"
+  # https://github.com/hexojs/hexo/issues/1797
+  - "*.json"
+  - "**/*.json"
+  - "_posts/**/*.json"
+  - "_posts/**/*.js"
+  - "_posts/**/*.css"
+  - "_posts/The Legend Of Neverland/Midi/readme.md"
+  - "**/__test__/**"
+  - "_posts/Chimeraland/**/*.html"
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ""
+filename_case: 0
+render_drafts: false
+
+# https://hexo.io/docs/asset-folders
+post_asset_folder: true
+
+relative_link: false
+future: true
+# https://github.com/hexojs/hexo-util
+# https://hexo.io/docs/syntax-highlight.html
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: "  " # replace tabs with 2 spaces
+  wrap: false
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ""
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ""
+  per_page: 8
+  order_by: -date #updated | date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+## Use post's date for updated date unless set in front-matter
+updated_option: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 8
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# https://www.npmjs.com/package/hexo-server
+server:
+  port: 8000
+  log: false
+  ip: 0.0.0.0
+  host: adsense.webmanajemen.com
+  proxy: adsense.webmanajemen.com
+  compress: false
+  cache: false
+  header: false
+  serveStatic:
+    extensions:
+      - html
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+
+theme: hueman
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
+  branch: master
+  message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+author:
+  name: "Dimas Lanjaka"
+  link: "https://www.webmanajemen.com/"
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944 # <= 600
+    height: 2592 # >= 60
+
+social_links:
+  github: https://github.com/dimaslanjaka
+  youtube: https://youtube.com/p/L3n4r0x
+
+# Feed Atom https://github.com/hexojs/hexo-generator-feed
+feed:
+  # include contents in feeds
+  content: true
+  # Generate both atom and rss2 feeds
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss.xml
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+
+# https://github.com/sergeyzwezdin/hexo-related-posts#Configuration
+related_posts:
+  enabled: true
+  enable_env_name: prod
+  filter_threshold: 0.3
+  related_count: 3
+  weight:
+    title: 0.05
+    description: 0.05
+    keywords: 0.01
+    tags: 0.005
+    categories: 0.005
+    text: 1
+  stemmers:
+    - en
+    - ru
+    - id
+  reserved:
+    - asp.net
+    - vs.net
+    - ado.net
+    - .net
+    - games
+    - js
+    - ts
+
+# https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  #quotes: “”‘’
+  pre_class: highlight
+  plugins:
+    - plugin:
+        # https://www.npmjs.com/package/markdown-it-attrs
+        name: markdown-it-attrs
+        enable: true
+        options:
+          leftDelimiter: "{"
+          rightDelimiter: "}"
+          allowedAttributes: [] # empty array = all attributes are allowed
+
+# https://github.com/hexojs/hexo-browsersync
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+  instanceName: "customInstance"
+  port: 3001
+  browser: "firefox"
+  open: false
+
+# https://github.com/dimaslanjaka/hexo-adsense
+adsense:
+  enable: true
+  pub: ca-pub-1165447249910969
+  # in-article ads source
+  article_ads:
+    - "source/ads/in_article.html"
+    - "source/ads/in_article2.html"
+  # ads field
+  field: "site" # post=only post, site=all pages and posts
+  # auto redirect to https
+  https: false
+  # block user with adblock enabled
+  adblock: false
+  # amp or javascript
+  type: amp
+  # exclude pattern, disable adding adsense
+  exclude:
+    - "*.min.html"
+    - "exclude/**/*"
+
+# next project: hexo-analytics
+analytics:
+  # google tag manager
+  tagmanager: GTM-NJNNXSR
+  # google analytics v4
+  GA4: G-BG75CLNJZ1
+  # google analytics
+  GA3: UA-106238155-1
+  # cloudflare web statistics
+  cloudflare: 2157c0f3b9e74a92badffe39156166b9
+
+# https://github.com/dimaslanjaka/hexo-seo
+seo:
+  html:
+    # fix invalid html
+    fix: true
+    # exclude from minify
+    exclude:
+      - "*.min.{htm,html}"
+  css: true
+  js: true
+  schema: false
+  img:
+    # fix broken images
+    broken: false
+    # default broken images
+    default: https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg
+    # broken images methods
+    # serverside : process broken images from server side (caused javascript heap out of memory, if your post large and your device has insufficient memory)
+    # clientside : process broken image from client side browser with webjs
+    onerror: serverside
+  # external links fix
+  links:
+    # enable or false
+    enable: true
+    # allowed following links, otherwise nofollow others
+    exclude:
+      - webmanajemen.com
+      - web-manajemen.blogspot.com
+      - dimaslanjaka.github.io
+  sitemap: true

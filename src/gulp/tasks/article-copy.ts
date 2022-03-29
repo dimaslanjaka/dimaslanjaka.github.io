@@ -13,10 +13,10 @@ import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
+import { post_public_dir, post_source_dir } from '../../../_config';
 import { cwd } from 'process';
 import { Hexo_Config } from '../../../types/_config';
 import modifyFile from '../modules/modify-file';
-import { config } from '../hexo-config';
 import gulp from 'gulp';
 
 let tryCount = 0;
@@ -221,7 +221,7 @@ export function modifyPost(parse: parsePostReturn) {
  */
 export default function taskCopy() {
   return gulp
-    .src(join(config.post_source_dir, 'Chimeraland/Recipes.md'))
+    .src(join(post_source_dir, 'Chimeraland/Recipes.md'))
     .pipe(
       modifyFile(function (content, path, _file) {
         const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
@@ -239,5 +239,5 @@ export default function taskCopy() {
         return content;
       })
     )
-    .pipe(gulp.dest(join(config.post_public_dir)));
+    .pipe(gulp.dest(join(post_public_dir)));
 }

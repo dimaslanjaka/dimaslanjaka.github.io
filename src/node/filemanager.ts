@@ -1,7 +1,15 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import * as fs from "fs";
-import { default as nodePath } from "path";
+import * as fs from 'fs';
+import { default as nodePath } from 'path';
 import ErrnoException = NodeJS.ErrnoException;
+import { cwd as nodeCwd } from 'process';
+import 'js-prototypes';
+
+type Mutable<T> = {
+  -readonly [k in keyof T]: T[k];
+};
+const modPath = nodePath as Mutable<typeof nodePath>;
+//modPath.sep = '/';
 
 /**
  * Directory iterator recursive
@@ -9,14 +17,14 @@ import ErrnoException = NodeJS.ErrnoException;
  * @param done
  */
 // eslint-disable-next-line no-unused-vars
-const walk = function (dir, done: (err: ErrnoException | null, results?: string[]) => any) {
+const walk = function (dir: fs.PathLike, done: (err: ErrnoException | null, results?: string[]) => any) {
   let results = [];
   fs.readdir(dir, function (err, list) {
     if (err) return done(err);
     let pending = list.length;
     if (!pending) return done(null, results);
     list.forEach(function (file) {
-      file = nodePath.resolve(dir, file);
+      file = modPath.resolve(dir.toString(), file);
       fs.stat(file, function (err, stat) {
         if (stat && stat.isDirectory()) {
           walk(file, function (err, res) {
@@ -52,10 +60,10 @@ const filemanager = {
    * @param content
    */
   write: (path: fs.PathLike, content: any) => {
-    const dir = nodePath.dirname(path.toString());
+    const dir = modPath.dirname(path.toString());
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (typeof content != "string") {
-      if (typeof content == "object" || Array.isArray(content)) {
+    if (typeof content != 'string') {
+      if (typeof content == 'object' || Array.isArray(content)) {
         content = JSON.stringify(content, null, 4);
       } else {
         content = String(content);
@@ -75,8 +83,28 @@ const filemanager = {
   },
 };
 
+const grouped = {};
+/**
+ * Join and force forward-slash
+ * @returns
+ */
+export function slash(...paths: string[]): string {
+  const j = paths.join('/');
+  if (grouped[j]) return grouped[j];
+  const jx = j.split('\\').join('/');
+  //console.log(jx);
+  grouped[j] = jx;
+  return j;
+}
+
 export default filemanager;
+export const join = slash;
+export const normalize = slash;
 export const writeFileSync = filemanager.write;
+export const cwd = function () {
+  return slash(nodeCwd());
+};
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
-export const { existsSync, readFileSync, appendFileSync } = fs;
-export const { basename, dirname, join, relative, extname } = nodePath;
+export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
+export const { basename, dirname, relative, extname } = modPath;
+export const PATH_SEPARATOR = modPath.sep;

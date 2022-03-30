@@ -1,12 +1,14 @@
 'use strict';
 // https://www.npmjs.com/package/gulp-rename
 import Stream from 'stream';
-import Path from 'path';
+import vinyl from 'vinyl';
+import { basename, dirname, join, extname as ExtName } from '../../node/filemanager';
 
 interface ParsedPath {
   dirname: string;
   basename: string;
   extname: string;
+  fullpath: string;
 }
 
 interface Options {
@@ -21,24 +23,31 @@ interface PluginOptions {
   multiExt?: boolean | undefined;
 }
 
-// return NodeJS.ReadWriteStream
-export default function gulpRename(obj: string | Options | ((path: ParsedPath, file: File) => ParsedPath | void), options?: PluginOptions) {
+/**
+ * Gulp rename
+ * @param obj
+ * @param options
+ * @returns NodeJS.ReadWriteStream
+ * @see {@link https://www.npmjs.com/package/gulp-rename}
+ */
+export default function gulpRename(obj: string | Options | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void), options?: PluginOptions) {
   options = options || {};
 
   const stream = new Stream.Transform({ objectMode: true });
 
-  function parsePath(path: string) {
-    const extname = options.multiExt ? Path.basename(path).slice(Path.basename(path).indexOf('.')) : Path.extname(path);
+  function parsePath(path: string, fullpath?: string) {
+    const extname = options.multiExt ? basename(path).slice(basename(path).indexOf('.')) : ExtName(path);
     return {
-      dirname: Path.dirname(path),
-      basename: Path.basename(path, extname),
+      dirname: dirname(path),
+      basename: basename(path, extname),
       extname: extname,
+      fullpath: fullpath,
     };
   }
 
-  stream._transform = function (originalFile, unused, callback) {
+  stream._transform = function (originalFile: vinyl.BufferFile, unused, callback) {
     const file = originalFile.clone({ contents: false });
-    let parsedPath = parsePath(file.relative);
+    let parsedPath = parsePath(file.relative, originalFile.history[0]);
     let path: string;
 
     if (typeof obj === 'string' && obj !== '') {
@@ -49,7 +58,7 @@ export default function gulpRename(obj: string | Options | ((path: ParsedPath, f
         parsedPath = newParsedPath;
       }
 
-      path = Path.join(parsedPath.dirname, parsedPath.basename + parsedPath.extname);
+      path = join(parsedPath.dirname, parsedPath.basename + parsedPath.extname);
     } else if (typeof obj === 'object' && obj !== undefined && obj !== null) {
       const dirname = 'dirname' in obj ? obj.dirname : parsedPath.dirname,
         prefix = obj.prefix || '',
@@ -57,13 +66,13 @@ export default function gulpRename(obj: string | Options | ((path: ParsedPath, f
         basename = 'basename' in obj ? obj.basename : parsedPath.basename,
         extname = 'extname' in obj ? obj.extname : parsedPath.extname;
 
-      path = Path.join(dirname, prefix + basename + suffix + extname);
+      path = join(dirname, prefix + basename + suffix + extname);
     } else {
       callback(new Error('Unsupported renaming parameter type supplied'), undefined);
       return;
     }
 
-    file.path = Path.join(file.base, path);
+    file.path = join(file.base, path);
 
     // Rename sourcemap if present
     if (file.sourceMap) {

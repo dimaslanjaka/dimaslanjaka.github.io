@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 //** copy from src-posts to source/_posts **//
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync } from 'fs';
+import { existsSync, mkdirSync, statSync, join, cwd, write, PATH_SEPARATOR, basename, dirname } from '../../node/filemanager';
 import moment from 'moment';
-import { join } from 'path';
 import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
 import { shortcodeCss } from '../shortcode/css';
@@ -14,10 +13,11 @@ import { copyDir, loopDir, slash } from '../utils';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
 import { post_public_dir, post_source_dir } from '../../../_config';
-import { cwd } from 'process';
 import { Hexo_Config } from '../../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
+import gulpRename from '../modules/rename';
+import vinyl from 'vinyl';
 
 let tryCount = 0;
 
@@ -216,28 +216,53 @@ export function modifyPost(parse: parsePostReturn) {
 }
 
 /**
- * copy src-posts to source_dir
+ * Crossplatform path replacer
+ * @param str
+ * @param from
+ * @param to
+ * @returns
+ */
+export function replacePath(str: string, from: string, to: string) {
+  const normalize = (x: string) => x.replace(/\\/gim, '/');
+  str = normalize(str);
+  from = normalize(from);
+  to = normalize(to);
+  return str.replace(from, to);
+}
+
+/**
+ * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
  */
 export default function taskCopy() {
+  const copyImg = () => {
+    return gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}'));
+  };
   return gulp
     .src(join(post_source_dir, 'Chimeraland/Recipes.md'))
     .pipe(
-      modifyFile(function (content, path, _file) {
+      modifyFile(function (content, path, file) {
         const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {
-            source: path.toString().replace('/source/_posts/', '/src-posts/'),
-            public: path.toString().replace('/src-posts/', '/source/_posts/'),
+            source: replacePath(path.toString(), '/source/_posts/', '/src-posts/'),
+            public: replacePath(path.toString(), '/src-posts/', '/source/_posts/'),
           };
+          write(join(cwd(), 'tmp/parsed.json'), JSON.stringify(parse, null, 4));
         }
         const modify = modifyPost(parse);
-        console.log(modify.error);
         if (!modify.error) {
-          return Buffer.from(modify.content);
+          content = modify.content;
         }
         return content;
       })
     )
-    .pipe(gulp.dest(join(post_public_dir)));
+    .pipe(
+      gulpRename((file) => {
+        const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
+        file.dirname = dname;
+        console.log(dname, file);
+      })
+    )
+    .pipe(gulp.dest(post_public_dir));
 }

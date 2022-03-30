@@ -3,6 +3,10 @@
   "restartable": "rs",
   "ignore": [
     ".git",
+    "*.test.js",
+    ".gitignore",
+    ".vscode",
+    "__tests__/*",
     "**/node_modules/**",
     "docs"
   ],
@@ -12,17 +16,14 @@
     "js": "node --harmony",
     "ts": "node -r ts-node/register"
   },
-  "events": {
-    "restart": "gulp"
-  },
   "watch": [
     "./src-posts/",
     "./gulpfile.ts",
-    "./source/_posts",
-    "./template/"
+    "./template/",
+    "./src/"
   ],
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "ts,ejs,md"
+  "ext": "ts,ejs,md,js"
 }

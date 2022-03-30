@@ -10,6 +10,7 @@ import { readFileSync } from 'fs';
 import chalk from 'chalk';
 import YAML from 'yaml';
 import { Hexo_Config } from '../../types/_config';
+import { replacePath } from '../gulp/tasks/article-copy';
 
 export interface LooseObject {
   [key: string]: any;
@@ -180,8 +181,8 @@ export function parsePost(text: string): parsePostReturn | null {
         // put fileTree
         if (isFile) {
           result.fileTree = {
-            source: originalArg.replace('/source/_posts/', '/src-posts/'),
-            public: originalArg.replace('/src-posts/', '/source/_posts/'),
+            source: replacePath(originalArg, '/source/_posts/', '/src-posts/'),
+            public: replacePath(originalArg, '/src-posts/', '/source/_posts/'),
           };
           //console.log(result.fileTree);
         }

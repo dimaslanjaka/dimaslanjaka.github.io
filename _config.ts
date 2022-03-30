@@ -14,5 +14,8 @@ export const post_public_dir = join(__dirname, config.source_dir, '_posts');
  * Generated directory
  */
 export const post_generated_dir = join(__dirname, config.public_dir);
+/**
+ * src-posts directory
+ */
 export const post_source_dir = join(__dirname, 'src-posts');
 export default config;

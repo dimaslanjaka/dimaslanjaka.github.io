@@ -13,6 +13,7 @@ const logname = chalk.bgBlue.whiteBright('[include]');
 function parseShortCodeInclude(file: string, str: string) {
   const regex = /<!--\s+?include\s+?(.+?)\s+?-->/gim;
   let m: RegExpExecArray;
+  let found = false;
 
   while ((m = regex.exec(str)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches
@@ -29,6 +30,7 @@ function parseShortCodeInclude(file: string, str: string) {
       console.info(`${logname} found from direct ${directFile.replace(cwd() + '/', '')}`);
       const directRead = readFileSync(directFile).toString();
       str = str.replace(allmatch, directRead);
+      found = true;
     } else {
       // search from workspace directory
       const rootFile = join(cwd(), bracketmatch);
@@ -36,6 +38,7 @@ function parseShortCodeInclude(file: string, str: string) {
         console.info(`${logname} found from direct ${rootFile.replace(cwd() + '/', '')}`);
         const rootRead = readFileSync(rootFile).toString();
         str = str.replace(allmatch, rootRead);
+        found = true;
       } else {
         console.error(chalk.redBright('[include][error]'), "couldn't find any file from root", rootFile);
         console.error(chalk.redBright('[include][error]'), "couldn't find any file from direct", directFile);
@@ -43,8 +46,8 @@ function parseShortCodeInclude(file: string, str: string) {
     }
   }
 
-  // repeat if still has include shortcode
-  // if (str.match(regex)) return parseShortCodeInclude(file, str);
+  // match shortcode and found otherwise repeat
+  if (found && str.match(regex)) return parseShortCodeInclude(file, str);
   return str;
 }
 export default parseShortCodeInclude;

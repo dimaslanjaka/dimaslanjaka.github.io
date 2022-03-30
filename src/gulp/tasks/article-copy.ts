@@ -261,7 +261,6 @@ export default function taskCopy() {
       gulpRename((file) => {
         const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
         file.dirname = dname;
-        console.log(dname, file);
       })
     )
     .pipe(gulp.dest(post_public_dir));

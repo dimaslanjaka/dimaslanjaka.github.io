@@ -16,7 +16,7 @@ import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_co
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
-import Bluebird from 'bluebird';
+import { toUnix } from 'upath';
 
 let tryCount = 0;
 
@@ -236,16 +236,18 @@ export default function taskCopy() {
   function determineDirname(pipe: NodeJS.ReadWriteStream) {
     return pipe.pipe(
       gulpRename((file) => {
-        const dname = dirname(replacePath(file.fullpath, post_public_dir, ''));
+        const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ''))
+          .replace(cwd(), '')
+          .replace('/src-posts/', '');
         file.dirname = dname;
-        if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir);
+        //if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir, file);
       })
     );
   }
   const copyAssets = () => {
     const src = join(post_source_dir, '**/**');
     const run = gulp.src([src, `!${src}.md`]);
-    return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
+    return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
   const copyPosts = () => {
     const src = join(post_source_dir, 'Chimeraland/Recipes.md');
@@ -266,8 +268,9 @@ export default function taskCopy() {
         return content;
       })
     );
-    return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
+    return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
 
-  return copyAssets().then(copyPosts);
+  return copyAssets().on('end', copyPosts);
+  //return copyPosts();
 }

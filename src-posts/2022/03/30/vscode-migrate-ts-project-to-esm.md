@@ -44,7 +44,18 @@ match your configuration (points A, B, C)
 -   Line B ([`"moduleResolution"`](https://www.typescriptlang.org/tsconfig#moduleResolution)): This value is needed for Node.js.
 -   Line C ([`"allowSyntheticDefaultImports"`](https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports)): I needed this setting in order to import a legacy CommonJS module. The `module.exports` were the default export in that case.
 
+## VSCode settings.json
+open your `settings.json` or `.vscode/settings.json`, add following keys
+```jsonc
+{
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
+}
+```
+
 ## Replace non extension of imports
+add filename extensions to existing local imports (within a package):
+### Method 1
 - Open Search And Replace VSCode
 - Insert below pattern to search input and check Regex Search Flag
 ```regexp
@@ -57,3 +68,6 @@ $1.js$3
 - Insert folder to `files to input` bar for example `src/`
 - Replace all
 ![image](https://user-images.githubusercontent.com/12471057/160769725-41b16e7d-ef33-4886-8113-d59a30a63482.png)
+### Method 2
+-   Search: `^(import [^';]* from '(\./|(\.\./)+)[^';.]*)';`
+-   Replace: `$1.js';`

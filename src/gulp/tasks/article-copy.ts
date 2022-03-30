@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 //** copy from src-posts to source/_posts **//
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, write, dirname } from '../../node/filemanager';
+import { existsSync, mkdirSync, statSync, join, cwd, dirname } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -228,22 +228,29 @@ export function replacePath(str: string, from: string, to: string) {
   to = normalize(to);
   return str.replace(from, to);
 }
+
+/**
+ * Determine gulp.dest location
+ * @param pipe
+ * @returns
+ */
+export function determineDirname(pipe: NodeJS.ReadWriteStream) {
+  return pipe.pipe(
+    gulpRename((file) => {
+      const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ''))
+        .replace(cwd(), '')
+        .replace('/src-posts/', '');
+      file.dirname = dname;
+      //if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir, file);
+    })
+  );
+}
+
 /**
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
  */
 export default function taskCopy() {
-  function determineDirname(pipe: NodeJS.ReadWriteStream) {
-    return pipe.pipe(
-      gulpRename((file) => {
-        const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ''))
-          .replace(cwd(), '')
-          .replace('/src-posts/', '');
-        file.dirname = dname;
-        //if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir, file);
-      })
-    );
-  }
   const copyAssets = () => {
     const src = join(post_source_dir, '**/**');
     const run = gulp.src([src, `!${src}.md`]);
@@ -252,18 +259,19 @@ export default function taskCopy() {
   const copyPosts = () => {
     const src = join(post_source_dir, 'Chimeraland/Recipes.md');
     const run = gulp.src(src).pipe(
-      modifyFile(function (content, path, _file) {
+      modifyFile(function (content, path, file) {
         const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {
             source: replacePath(path.toString(), '/source/_posts/', '/src-posts/'),
             public: replacePath(path.toString(), '/src-posts/', '/source/_posts/'),
           };
-          write(join(cwd(), 'tmp/parsed.json'), JSON.stringify(parse, null, 4));
         }
         const modify = modifyPost(parse);
         if (!modify.error) {
           content = modify.content;
+          file.contents = Buffer.from(modify.content);
+          //write(join(cwd(), 'tmp/modify.md'), modify.content);
         }
         return content;
       })

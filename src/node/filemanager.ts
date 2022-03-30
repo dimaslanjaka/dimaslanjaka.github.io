@@ -92,7 +92,7 @@ const grouped = {};
 export function slash(...paths: string[]): string {
   const j = paths.join('/');
   if (grouped[j]) return grouped[j];
-  const jx = j.split('\\').join('/');
+  const jx = j.split(/\//g).join('/');
   //console.log(jx);
   grouped[j] = jx;
   return j;

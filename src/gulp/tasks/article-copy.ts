@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 //** copy from src-posts to source/_posts **//
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, write, PATH_SEPARATOR, basename, dirname } from '../../node/filemanager';
+import { existsSync, mkdirSync, statSync, join, cwd, write, dirname } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -17,8 +17,7 @@ import { Hexo_Config } from '../../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
-import vinyl from 'vinyl';
-import internal from 'stream';
+import Bluebird from 'bluebird';
 
 let tryCount = 0;
 
@@ -236,7 +235,7 @@ export function replacePath(str: string, from: string, to: string) {
  * @returns
  */
 export default function taskCopy() {
-  function determineDirname(pipe: internal.Transform) {
+  function determineDirname(pipe: NodeJS.ReadWriteStream) {
     return pipe.pipe(
       gulpRename((file) => {
         const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
@@ -245,10 +244,11 @@ export default function taskCopy() {
     );
   }
   const copyImg = () => {
-    return gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}'));
+    const run = gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}'));
+    return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
   };
   const copyPosts = () => {
-    return gulp.src(join(post_source_dir, 'Chimeraland/Recipes.md')).pipe(
+    const run = gulp.src(join(post_source_dir, 'Chimeraland/Recipes.md')).pipe(
       modifyFile(function (content, path, _file) {
         const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
@@ -265,6 +265,7 @@ export default function taskCopy() {
         return content;
       })
     );
+    return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
   };
-  return determineDirname(copyPosts()).pipe(gulp.dest(post_public_dir));
+  return copyPosts().then(copyImg);
 }

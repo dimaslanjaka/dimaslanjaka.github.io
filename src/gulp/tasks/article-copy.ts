@@ -12,8 +12,7 @@ import { shortcodeNow } from '../shortcode/time.js';
 import { copyDir, loopDir, slash } from '../utils.js';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include.js';
-import { post_public_dir, post_source_dir } from '../../../_config.js';
-import { Hexo_Config } from '../../../types/_config.js';
+import Hexo_Config, { post_public_dir, post_source_dir } from '../../../types/_config.js';
 import modifyFile from '../modules/modify-file.js';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename.js';
@@ -40,7 +39,7 @@ function removeMultipleWhiteSpaces(text: string) {
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
  */
-export function articleCopy(config: Hexo_Config, done?: TaskCallback) {
+export function articleCopy(config: typeof Hexo_Config, done?: TaskCallback) {
   //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
   const srcPostDir = join(cwd(), 'src-posts');
   // path source_dir from _config.yml

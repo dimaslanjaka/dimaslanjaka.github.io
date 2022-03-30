@@ -11,6 +11,7 @@ import path from "path";
 import fs from "fs";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
+const __dirname = path.resolve();
 const cookieJarFile = path.join(__dirname, "/../../build/cookiejar.txt");
 
 interface CurlOpt {

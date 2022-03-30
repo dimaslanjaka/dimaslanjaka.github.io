@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // https://github.com/sindresorhus/slugify
 import escapeStringRegexp from '../escape-string-regexp.js';
-import transliterate from '../transliterate.js';
+import transliterate from '../transliterate/index.js';
 import builtinOverridableReplacements from './replacements.js';
 
 const decamelize = (string) => {

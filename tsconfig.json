@@ -2,11 +2,11 @@
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./build",
-    "module": "ES2020",
-    "target": "ES2020",
+    "module": "NodeNext",
+    "target": "ES5",
     "moduleResolution": "Node",
-    //"experimentalDecorators": true,
-    //"emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "strict": false,
     "inlineSourceMap": true,
     "allowSyntheticDefaultImports": true,
@@ -24,7 +24,8 @@
     "skipLibCheck": true,
     "lib": [
       "ES2020",
-      "DOM"
+      "DOM",
+      "ES6"
     ],
     "noLib": false,
     "esModuleInterop": true,
@@ -40,12 +41,12 @@
   "buildOnSave": true,
   "compileOnSave": true,
   "exclude": [
-    "./types/**/*",
+    //"./types/**/*",
     "./node_modules/**/*",
     "./libs/compiler/**/*"
   ],
   "include": [
-    "./gulpfile.ts",
+    "gulpfile.esm.js",
     "./src/**/*"
   ],
   "ts-node": {

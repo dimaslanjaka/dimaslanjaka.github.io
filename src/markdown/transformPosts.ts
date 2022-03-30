@@ -11,6 +11,7 @@ import chalk from 'chalk';
 import YAML from 'yaml';
 import { Hexo_Config } from '../../types/_config.js';
 import { replacePath } from '../gulp/tasks/article-copy.js';
+const __dirname = path.resolve();
 
 export interface LooseObject {
   [key: string]: any;

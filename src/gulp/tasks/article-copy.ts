@@ -238,7 +238,7 @@ export default function taskCopy() {
       gulpRename((file) => {
         const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
         file.dirname = dname;
-        //console.log(dname, file);
+        if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir);
       })
     );
   }

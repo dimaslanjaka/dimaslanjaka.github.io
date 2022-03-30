@@ -102,10 +102,11 @@ export default filemanager;
 export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = function () {
-  return slash(nodeCwd());
+  return upath.toUnix(nodeCwd());
 };
 export const dirname = (str: string) => upath.toUnix(upath.dirname(str));
+export const join = slash;
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
-export const { basename, relative, extname, join } = upath;
+export const { basename, relative, extname } = upath;
 export const PATH_SEPARATOR = modPath.sep;

@@ -236,9 +236,9 @@ export default function taskCopy() {
   function determineDirname(pipe: NodeJS.ReadWriteStream) {
     return pipe.pipe(
       gulpRename((file) => {
-        const dname = dirname(replacePath(file.fullpath, post_source_dir, '')).replace(/\//g, '/');
+        const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
         file.dirname = dname;
-        console.log(file);
+        //console.log(dname, file);
       })
     );
   }

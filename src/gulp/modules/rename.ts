@@ -1,6 +1,7 @@
 'use strict';
 // https://www.npmjs.com/package/gulp-rename
 import Stream from 'stream';
+import { toUnix } from 'upath';
 import vinyl from 'vinyl';
 import { basename, dirname, join, extname as ExtName } from '../../node/filemanager';
 
@@ -41,7 +42,7 @@ export default function gulpRename(obj: string | Options | ((path: ParsedPath, f
       dirname: dirname(path),
       basename: basename(path, extname),
       extname: extname,
-      fullpath: fullpath,
+      fullpath: toUnix(fullpath),
     };
   }
 

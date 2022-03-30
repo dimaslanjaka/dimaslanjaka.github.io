@@ -8,7 +8,8 @@
     ".vscode",
     "__tests__/*",
     "**/node_modules/**",
-    "docs"
+    "docs",
+    "**/_config_data.json"
   ],
   "verbose": true,
   "exec": "ts-node src/generator.ts",

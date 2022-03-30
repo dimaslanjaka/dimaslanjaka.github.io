@@ -6,6 +6,7 @@ updated: 2022-03-30T06:57:37+0000
 ---
 
 ## How to migrate typescript commonjs to esm with vscode
+
 ## package.json
 add following key to package.json
 ```jsonc
@@ -16,7 +17,8 @@ add following key to package.json
 ```
 
 ## tsconfig.json
-```json
+match your configuration (points A, B, C)
+```jsonc
 {
   "compilerOptions": {
     "rootDir": "./",
@@ -29,13 +31,18 @@ add following key to package.json
     "moduleResolution": "Node", // (B)
     "strict": true,
     "sourceMap": true,
-    // Needed for CommonJS modules
+    // Needed for importing CommonJS modules
     "allowSyntheticDefaultImports": true, // (C)
     // Compile d.ts
     "declaration": true,
   }
 }
 ```
+-   Line A ([`"module"`](https://www.typescriptlang.org/tsconfig#module)): We are telling TypeScript to generate ECMAScript modules.
+    -   `"ES6"`, `"ES2015"`: support for basic ESM features
+    -   `"2020"`: additionally, support for dynamic imports and `import.meta`.
+-   Line B ([`"moduleResolution"`](https://www.typescriptlang.org/tsconfig#moduleResolution)): This value is needed for Node.js.
+-   Line C ([`"allowSyntheticDefaultImports"`](https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports)): I needed this setting in order to import a legacy CommonJS module. The `module.exports` were the default export in that case.
 
 ## Replace non extension of imports
 - Open Search And Replace VSCode

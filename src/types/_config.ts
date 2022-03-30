@@ -22,7 +22,7 @@ export const post_generated_dir = join(root, config.public_dir);
 export const post_source_dir = join(root, 'src-posts');
 export default config;
 
-write(join(__dirname, '_config.json'), JSON.stringify(config));
+write(join(__dirname, '_config_data.json'), JSON.stringify(config));
 
 export type Hexo_Config = {
   title: string;

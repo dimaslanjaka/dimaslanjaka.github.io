@@ -99,13 +99,13 @@ export function slash(...paths: string[]): string {
 }
 
 export default filemanager;
-export const join = upath.join;
 export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = function () {
   return slash(nodeCwd());
 };
+export const dirname = (str: string) => upath.toUnix(upath.dirname(str));
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
-export const { basename, dirname, relative, extname } = modPath;
+export const { basename, relative, extname, join } = upath;
 export const PATH_SEPARATOR = modPath.sep;

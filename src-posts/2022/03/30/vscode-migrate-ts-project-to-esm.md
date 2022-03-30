@@ -11,11 +11,34 @@ updated: 2022-03-30T06:57:37+0000
 add following key to package.json
 ```jsonc
 {
-  //...
-  "type": "module"
-  //...
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "exports": {
+    ".": "./dist/src/main.js"
+  },
+  "typesVersions": {
+    "*": {
+      "main.d.ts": ["dist/src/main.d.ts"]
+    }
+  }
 }
 ```
+Nicer module specifiers for a subtree:
+```jsonc
+{
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "exports": {
+    "./*": "./dist/src/*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["dist/src/*"]
+    }
+  }
+}
+```
+- [`"typesVersions"`](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions) performs the same mapping as `"exports"`, but for TypeScript's type definitions.
 
 ## tsconfig.json
 match your configuration (points A, B, C)

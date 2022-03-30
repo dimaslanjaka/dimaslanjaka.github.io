@@ -18,7 +18,6 @@ import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import Bluebird from 'bluebird';
 import cache from 'gulp-cache';
-import imagemin from 'gulp-imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminZopfli from 'imagemin-zopfli';
 import imageminGiflossy from 'imagemin-giflossy';
@@ -233,7 +232,8 @@ export function replacePath(str: string, from: string, to: string) {
   to = normalize(to);
   return str.replace(from, to);
 }
-
+type Awaited<T> = T extends PromiseLike<infer U> ? U : T;
+let imagemin: Awaited<typeof import('gulp-imagemin')>;
 /**
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
@@ -248,54 +248,64 @@ export default async function taskCopy() {
     );
   }
   const copyImg = () => {
-    const run = gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}')).pipe(
-      cache(
-        imagemin([
-          //png
-          imageminPngquant({
-            speed: 1,
-            quality: [0.95, 1], //lossy settings
-          }),
-          imageminZopfli({
-            more: true,
-            // iterations: 50 // very slow but more effective
-          }),
-          //gif
-          // imagemin.gifsicle({
-          //     interlaced: true,
-          //     optimizationLevel: 3
-          // }),
-          //gif very light lossy, use only one of gifsicle or Giflossy
-          imageminGiflossy({
-            optimizationLevel: 3,
-            optimize: 3, //keep-empty: Preserve empty transparent frames
-            lossy: 2,
-          }),
-          //svg
-          imagemin.svgo({
-            plugins: [
-              {
-                name: 'removeViewBox',
-                active: false,
-              },
-            ],
-          }),
-          //jpg lossless
-          /* imagemin.jpegtran({
-            progressive: true,
-          }),*/
-          imagemin.mozjpeg({
-            quality: 90,
-            progressive: true,
-          }),
-          //jpg very light lossy, use vs jpegtran
-          /*imageminMozjpeg({
-            quality: 90,
-          }),*/
-        ])
-      )
-    );
-    return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
+    const run = () => {
+      gulp.series(
+        async () => {
+          imagemin = <any>await import('gulp-imagemin');
+        },
+        () => {
+          const run = gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}')).pipe(
+            cache(
+              imagemin([
+                //png
+                imageminPngquant({
+                  speed: 1,
+                  quality: [0.95, 1], //lossy settings
+                }),
+                imageminZopfli({
+                  more: true,
+                  // iterations: 50 // very slow but more effective
+                }),
+                //gif
+                // imagemin.gifsicle({
+                //     interlaced: true,
+                //     optimizationLevel: 3
+                // }),
+                //gif very light lossy, use only one of gifsicle or Giflossy
+                imageminGiflossy({
+                  optimizationLevel: 3,
+                  optimize: 3, //keep-empty: Preserve empty transparent frames
+                  lossy: 2,
+                }),
+                //svg
+                imagemin.svgo({
+                  plugins: [
+                    {
+                      name: 'removeViewBox',
+                      active: false,
+                    },
+                  ],
+                }),
+                //jpg lossless
+                /* imagemin.jpegtran({
+              progressive: true,
+            }),*/
+                imagemin.mozjpeg({
+                  quality: 90,
+                  progressive: true,
+                }),
+                //jpg very light lossy, use vs jpegtran
+                /*imageminMozjpeg({
+              quality: 90,
+            }),*/
+              ])
+            )
+          );
+          return determineDirname(run).pipe(gulp.dest(post_public_dir));
+        }
+      );
+    };
+    return Bluebird.resolve(run());
   };
   const copyPosts = () => {
     const run = gulp.src(join(post_source_dir, 'Chimeraland/Recipes.md')).pipe(

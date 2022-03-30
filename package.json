@@ -18,7 +18,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "deploy": "git subtree push --prefix docs origin master"
   },
   "repository": {
     "type": "git",

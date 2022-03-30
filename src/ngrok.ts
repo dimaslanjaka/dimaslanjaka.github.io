@@ -1,19 +1,19 @@
-import ngrokc = require("ngrok");
-import fs = require("fs");
-import path = require("path");
+import ngrokc from 'ngrok';
+import { existsSync, join, normalize, readFileSync, write } from './node/filemanager.js';
+
 /*
 "token": "1Szs4cJp7MoUlFPT3nyRjD5P05v_3BREWhqf8z2NdcNHMneUm",
     "port": "4000"
  */
 
-let fileNgrok = path.normalize(path.join(process.cwd(), "build/ngrok.txt"));
+const fileNgrok = normalize(join(process.cwd(), 'build/ngrok.txt'));
 
 /**
  * Get hosted ngrok base url
  */
 export function getNgrokUrl() {
-  if (fs.existsSync(fileNgrok)) {
-    return fs.readFileSync(fileNgrok).toString("utf-8").trim();
+  if (existsSync(fileNgrok)) {
+    return readFileSync(fileNgrok).toString('utf-8').trim();
   }
   return undefined;
 }
@@ -24,7 +24,7 @@ export function getNgrokUrl() {
  * @param token ngrok port
  * @param override ngrok options override
  */
-export default async (port = 4000, token = "", override: ngrokc.Ngrok.Options = {}) => {
+export default async (port = 4000, token = '', override: ngrokc.Ngrok.Options = {}) => {
   let options: ngrokc.Ngrok.Options = {
     addr: port,
   };
@@ -36,6 +36,6 @@ export default async (port = 4000, token = "", override: ngrokc.Ngrok.Options = 
   const url = await ngrokc.connect(options);
   console.log(`Node.js local server is publicly-accessible at ${url}`);
   console.log(`url saved to ${fileNgrok}`);
-  fs.writeFileSync(fileNgrok, url);
+  write(fileNgrok, url);
   return url;
 };

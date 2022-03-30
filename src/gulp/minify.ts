@@ -3,7 +3,7 @@ import htmlmin from 'html-minifier-terser';
 import through from 'through2';
 import Promise from 'bluebird';
 
-export = (options: htmlmin.Options) => {
+export default (options: htmlmin.Options) => {
   return through.obj(function (file, enc, next) {
     if (file.isNull()) {
       next(null, file);

@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 //** copy from src-posts to source/_posts **//
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, write, dirname } from '../../node/filemanager';
+import { existsSync, mkdirSync, statSync, join, cwd, write, dirname } from '../../node/filemanager.js';
 import moment from 'moment';
-import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
-import replaceMD2HTML from '../fix/hyperlinks';
-import { shortcodeCss } from '../shortcode/css';
-import extractText from '../shortcode/extract-text';
-import { shortcodeScript } from '../shortcode/script';
-import { shortcodeNow } from '../shortcode/time';
-import { copyDir, loopDir, slash } from '../utils';
+import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts.js';
+import replaceMD2HTML from '../fix/hyperlinks.js';
+import { shortcodeCss } from '../shortcode/css.js';
+import extractText from '../shortcode/extract-text.js';
+import { shortcodeScript } from '../shortcode/script.js';
+import { shortcodeNow } from '../shortcode/time.js';
+import { copyDir, loopDir, slash } from '../utils.js';
 import { TaskCallback } from 'undertaker';
-import parseShortCodeInclude from '../shortcode/include';
-import { post_public_dir, post_source_dir } from '../../../_config';
-import { Hexo_Config } from '../../../types/_config';
-import modifyFile from '../modules/modify-file';
+import parseShortCodeInclude from '../shortcode/include.js';
+import { post_public_dir, post_source_dir } from '../../../_config.js';
+import { Hexo_Config } from '../../../types/_config.js';
+import modifyFile from '../modules/modify-file.js';
 import gulp from 'gulp';
-import gulpRename from '../modules/rename';
+import gulpRename from '../modules/rename.js';
 import Bluebird from 'bluebird';
 import cache from 'gulp-cache';
 import imagemin from 'gulp-imagemin';

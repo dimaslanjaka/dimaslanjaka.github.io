@@ -236,7 +236,7 @@ export default function taskCopy() {
   function determineDirname(pipe: NodeJS.ReadWriteStream) {
     return pipe.pipe(
       gulpRename((file) => {
-        const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
+        const dname = dirname(replacePath(file.fullpath, post_public_dir, ''));
         file.dirname = dname;
         if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir);
       })

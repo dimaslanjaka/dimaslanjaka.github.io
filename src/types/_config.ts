@@ -1,4 +1,4 @@
-import { join, readFileSync, write } from '../node/filemanager';
+import { join, readFileSync, resolve, write } from '../node/filemanager';
 import yaml from 'yaml';
 export interface ProjectConfig extends Hexo_Config {
   [keys: string]: any;
@@ -11,15 +11,15 @@ const config: ProjectConfig = yaml.parse(str);
 /**
  * Public Source Post Dir
  */
-export const post_public_dir = join(root, config.source_dir, '_posts');
+export const post_public_dir = resolve(join(root, config.source_dir, '_posts'));
 /**
  * Generated directory
  */
-export const post_generated_dir = join(root, config.public_dir);
+export const post_generated_dir = resolve(join(root, config.public_dir));
 /**
  * src-posts directory
  */
-export const post_source_dir = join(root, 'src-posts');
+export const post_source_dir = resolve(join(root, 'src-posts'));
 export default config;
 
 write(join(__dirname, '_config_data.json'), JSON.stringify(config));

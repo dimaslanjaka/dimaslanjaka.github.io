@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { parsePostReturn } from '../../markdown/transformPosts.js';
+import { parsePostReturn } from '../../markdown/transformPosts';
 import 'js-prototypes';
 
 export function keywords(page: parsePostReturn['metadata']) {

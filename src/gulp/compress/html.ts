@@ -2,7 +2,7 @@ import minimatch from 'minimatch';
 import * as htmlMin from 'html-minifier-terser';
 import * as htmlMin2 from 'html-minifier';
 import { readFileSync } from 'fs';
-import writeFile from './writeFile.js';
+import writeFile from './writeFile';
 import path from 'path';
 
 const once = false;

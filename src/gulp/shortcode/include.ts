@@ -1,6 +1,6 @@
 import 'js-prototypes';
 import chalk from 'chalk';
-import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager.js';
+import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
 
 const logname = chalk.bgBlue.whiteBright('[include]');
 

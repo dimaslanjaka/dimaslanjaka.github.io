@@ -3,7 +3,7 @@
     "rootDir": "./src/",
     "sourceRoot": "./src/",
     "outDir": "./build",
-    "module": "NodeNext",
+    "module": "CommonJS",
     "target": "ES5",
     "moduleResolution": "Node",
     "experimentalDecorators": true,
@@ -50,7 +50,6 @@
     "./src/**/*"
   ],
   "ts-node": {
-    "esm": true,
     "compilerOptions": {
       "module": "ES2020",
       "esModuleInterop": true,

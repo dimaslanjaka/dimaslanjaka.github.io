@@ -6,7 +6,7 @@ import { appendFileSync, existsSync, mkdirSync, statSync, unlinkSync, writeFileS
 import moment from "moment";
 import { dirname, join } from "path";
 import { cwd } from "process";
-import { LooseObject, parsePostReturn } from "../../markdown/transformPosts.js";
+import { LooseObject, parsePostReturn } from "../../markdown/transformPosts";
 
 const logfile = join(cwd(), "tmp/article-dates.json");
 if (!existsSync(dirname(logfile))) mkdirSync(dirname(logfile), { recursive: true });

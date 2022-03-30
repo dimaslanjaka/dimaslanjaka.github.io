@@ -8,7 +8,7 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItAbbr from 'markdown-it-abbr';
-import slugify from '../node/slugify/index.js';
+import slugify from '../node/slugify/index';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 

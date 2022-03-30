@@ -1,5 +1,5 @@
 import ngrokc from 'ngrok';
-import { existsSync, join, normalize, readFileSync, write } from './node/filemanager.js';
+import { existsSync, join, normalize, readFileSync, write } from './node/filemanager';
 
 /*
 "token": "1Szs4cJp7MoUlFPT3nyRjD5P05v_3BREWhqf8z2NdcNHMneUm",

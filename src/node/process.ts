@@ -1,9 +1,9 @@
 import fs from 'fs';
 import upath from 'upath';
-import { MD5 } from 'crypto-js';
+import { MD5 } from 'crypto';
 import coreProcess from 'process';
-import spawner from './spawner.js';
-import { makeid } from '../translator/TranslateUrl.js';
+import spawner from './spawner';
+import { makeid } from '../translator/TranslateUrl';
 
 const tempFolder = coreProcess.cwd() + '/tmp/compiler';
 if (fs.existsSync(tempFolder)) {

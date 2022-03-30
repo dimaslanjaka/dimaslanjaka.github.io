@@ -1,4 +1,4 @@
-import { join, readFileSync, write } from '../node/filemanager.js';
+import { join, readFileSync, write } from '../node/filemanager';
 import yaml from 'yaml';
 import path from 'path';
 export const __dirname = path.resolve();

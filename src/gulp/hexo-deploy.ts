@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import config from '../types/_config.js';
+import config from '../types/_config';
 
 export function method1() {
   exec('git init', { cwd: config.public_dir }, (err, stdout, stderr) => {

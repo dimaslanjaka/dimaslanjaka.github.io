@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import * as author from './helper/author.js';
-import * as date from './helper/date.js';
-import * as ejs from 'ejs';
-import * as locale from './helper/locales.js';
-import * as thumbnail from './helper/thumbnail.js';
-import * as keywords from './helper/keywords.js';
+import * as author from './helper/author';
+import * as date from './helper/date';
+import * as ejs from '';
+import * as locale from './helper/locales';
+import * as thumbnail from './helper/thumbnail';
+import * as keywords from './helper/keywords';
 
 interface DynamicObject {
   [keys: string]: any;

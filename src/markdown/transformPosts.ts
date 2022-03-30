@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import filemanager from '../node/filemanager.js';
+import filemanager from '../node/filemanager';
 import path, { join } from 'path';
 import * as fs from 'fs';
-import toHtml from './toHtml.js';
+import toHtml from './toHtml';
 import yaml from 'yaml';
-import notranslate from '../translator/notranslate.js';
+import notranslate from '../translator/notranslate';
 import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
 import YAML from 'yaml';
-import { Hexo_Config } from '../types/_config.js';
-import { replacePath } from '../gulp/tasks/article-copy.js';
+import { Hexo_Config } from '../types/_config';
+import { replacePath } from '../gulp/tasks/article-copy';
 const __dirname = path.resolve();
 
 export interface LooseObject {

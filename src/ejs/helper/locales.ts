@@ -1,4 +1,4 @@
-import { parsePostReturn } from '../../markdown/transformPosts.js';
+import { parsePostReturn } from '../../markdown/transformPosts';
 
 const localeMap = {
   en: 'en_US',

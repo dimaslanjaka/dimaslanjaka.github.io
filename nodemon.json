@@ -11,7 +11,7 @@
     "docs"
   ],
   "verbose": true,
-  "exec": "ts-node gulpfile.ts",
+  "exec": "ts-node src/generator.ts",
   "execMap": {
     "js": "node --harmony",
     "ts": "node -r ts-node/register"

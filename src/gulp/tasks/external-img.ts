@@ -1,5 +1,5 @@
 import { curly } from "node-libcurl";
-import { parsePostReturn, saveParsedPost } from "../../markdown/transformPosts.js";
+import { parsePostReturn, saveParsedPost } from "../../markdown/transformPosts";
 import crypto from "crypto";
 import { basename, dirname, join } from "path";
 import { cwd } from "process";

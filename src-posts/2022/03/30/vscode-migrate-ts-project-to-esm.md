@@ -11,6 +11,7 @@ updated: 2022-03-30T06:57:37+0000
 add following key to package.json
 ```jsonc
 {
+  //...
   "type": "module"
   //...
 }
@@ -48,8 +49,10 @@ match your configuration (points A, B, C)
 open your `settings.json` or `.vscode/settings.json`, add following keys
 ```jsonc
 {
+  //...
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "typescript.preferences.importModuleSpecifierEnding": "js"
+  //...
 }
 ```
 

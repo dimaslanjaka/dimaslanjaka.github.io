@@ -18,6 +18,7 @@ import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import vinyl from 'vinyl';
+import internal from 'stream';
 
 let tryCount = 0;
 
@@ -235,13 +236,20 @@ export function replacePath(str: string, from: string, to: string) {
  * @returns
  */
 export default function taskCopy() {
+  function determineDirname(pipe: internal.Transform) {
+    return pipe.pipe(
+      gulpRename((file) => {
+        const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
+        file.dirname = dname;
+      })
+    );
+  }
   const copyImg = () => {
     return gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}'));
   };
-  return gulp
-    .src(join(post_source_dir, 'Chimeraland/Recipes.md'))
-    .pipe(
-      modifyFile(function (content, path, file) {
+  const copyPosts = () => {
+    return gulp.src(join(post_source_dir, 'Chimeraland/Recipes.md')).pipe(
+      modifyFile(function (content, path, _file) {
         const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {
@@ -256,12 +264,7 @@ export default function taskCopy() {
         }
         return content;
       })
-    )
-    .pipe(
-      gulpRename((file) => {
-        const dname = dirname(replacePath(file.fullpath, post_source_dir, ''));
-        file.dirname = dname;
-      })
-    )
-    .pipe(gulp.dest(post_public_dir));
+    );
+  };
+  return determineDirname(copyPosts()).pipe(gulp.dest(post_public_dir));
 }

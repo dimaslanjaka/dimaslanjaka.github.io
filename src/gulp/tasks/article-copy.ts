@@ -17,6 +17,7 @@ import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
+import { renderMarkdownIt } from '../../markdown/toHtml';
 
 let tryCount = 0;
 
@@ -259,8 +260,8 @@ export default function taskCopy() {
   const copyPosts = () => {
     const src = join(post_source_dir, 'Chimeraland/Recipes.md');
     const run = gulp.src(src).pipe(
-      modifyFile(function (content, path, file) {
-        const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
+      modifyFile(function (content, path, _file) {
+        let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {
             source: replacePath(path.toString(), '/source/_posts/', '/src-posts/'),
@@ -269,8 +270,12 @@ export default function taskCopy() {
         }
         const modify = modifyPost(parse);
         if (!modify.error) {
-          content = modify.content;
-          file.contents = Buffer.from(modify.content);
+          // reparse
+          parse = parsePost(modify.content);
+          parse.body = renderMarkdownIt(parse.body);
+          return buildPost(parse);
+          //return modify.content;
+          //file.contents = Buffer.from(modify.content);
           //write(join(cwd(), 'tmp/modify.md'), modify.content);
         }
         return content;

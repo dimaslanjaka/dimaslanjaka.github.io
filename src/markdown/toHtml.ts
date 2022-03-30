@@ -60,5 +60,5 @@ md.renderer.rules.footnote_block_open = () => '<h4 class="mt-3">Footnotes</h4>\n
  * @returns
  */
 export function renderMarkdownIt(str: string) {
-  return md.render(str);
+  return md.render(str, { langPrefix: 'language-' });
 }

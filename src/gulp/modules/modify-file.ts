@@ -8,11 +8,7 @@ import through, { FileObject } from 'through2';
 export default function modifyFile(fn: (content: string | Buffer, path: Buffer | string, file: FileObject) => any) {
   return through.obj(function (file, enc, cb) {
     const contents = fn(String(file.contents), file.path, file) || file.contents;
-
-    if (Buffer.isBuffer(file)) {
-      (<any>file).contents = Buffer.from(contents);
-    }
-
+    file.contents = !Buffer.isBuffer(contents) ? Buffer.from(contents) : contents;
     cb(null, file);
   });
 }

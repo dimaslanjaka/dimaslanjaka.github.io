@@ -18,6 +18,12 @@ import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import Bluebird from 'bluebird';
+import cache from 'gulp-cache';
+import imagemin from 'gulp-imagemin';
+import imageminPngquant from 'imagemin-pngquant';
+import imageminZopfli from 'imagemin-zopfli';
+import imageminMozjpeg from 'imagemin-mozjpeg'; //need to run 'brew install libpng'
+import imageminGiflossy from 'imagemin-giflossy';
 
 let tryCount = 0;
 
@@ -234,7 +240,7 @@ export function replacePath(str: string, from: string, to: string) {
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
  */
-export default function taskCopy() {
+export default async function taskCopy() {
   function determineDirname(pipe: NodeJS.ReadWriteStream) {
     return pipe.pipe(
       gulpRename((file) => {
@@ -244,7 +250,48 @@ export default function taskCopy() {
     );
   }
   const copyImg = () => {
-    const run = gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}'));
+    const run = gulp.src(join(post_source_dir, '**/**.{jpeg,jpg,png,webp,svg,gif}')).pipe(
+      cache(
+        imagemin([
+          //png
+          imageminPngquant({
+            speed: 1,
+            quality: [0.95, 1], //lossy settings
+          }),
+          imageminZopfli({
+            more: true,
+            // iterations: 50 // very slow but more effective
+          }),
+          //gif
+          // imagemin.gifsicle({
+          //     interlaced: true,
+          //     optimizationLevel: 3
+          // }),
+          //gif very light lossy, use only one of gifsicle or Giflossy
+          imageminGiflossy({
+            optimizationLevel: 3,
+            optimize: 3, //keep-empty: Preserve empty transparent frames
+            lossy: 2,
+          }),
+          //svg
+          imagemin.svgo({
+            plugins: [
+              {
+                removeViewBox: false,
+              },
+            ],
+          }),
+          //jpg lossless
+          imagemin.jpegtran({
+            progressive: true,
+          }),
+          //jpg very light lossy, use vs jpegtran
+          imageminMozjpeg({
+            quality: 90,
+          }),
+        ])
+      )
+    );
     return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
   };
   const copyPosts = () => {
@@ -267,5 +314,6 @@ export default function taskCopy() {
     );
     return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
   };
-  return copyPosts().then(copyImg);
+  await copyImg();
+  return copyPosts();
 }

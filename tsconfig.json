@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "rootDir": "./",
+    "rootDir": "./src/",
+    "sourceRoot": "./src/",
     "outDir": "./build",
     "module": "NodeNext",
     "target": "ES5",
@@ -32,7 +33,7 @@
     "importHelpers": true,
     "typeRoots": [
       "./node_modules/@types",
-      "./types"
+      "src/types"
     ],
     "types": [
       "node"
@@ -46,7 +47,6 @@
     "./libs/compiler/**/*"
   ],
   "include": [
-    "gulpfile.esm.js",
     "./src/**/*"
   ],
   "ts-node": {

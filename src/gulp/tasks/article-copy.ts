@@ -12,7 +12,7 @@ import { shortcodeNow } from '../shortcode/time.js';
 import { copyDir, loopDir, slash } from '../utils.js';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include.js';
-import Hexo_Config, { post_public_dir, post_source_dir } from '../../../types/_config.js';
+import Hexo_Config, { post_public_dir, post_source_dir } from '../../types/_config.js';
 import modifyFile from '../modules/modify-file.js';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename.js';

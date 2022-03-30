@@ -1,6 +1,6 @@
 import { join } from "path";
 import { parse as parseHTML } from "node-html-parser";
-import { Hexo_Config } from "../../../types/_config.js";
+import { Hexo_Config } from "../../types/_config.js";
 import { loopDir } from "../utils.js";
 import "js-prototypes";
 import { readFileSync, writeFileSync } from "fs";

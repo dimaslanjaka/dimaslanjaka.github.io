@@ -1,4 +1,4 @@
-import { join, readFileSync, write } from '../src/node/filemanager.js';
+import { join, readFileSync, write } from '../node/filemanager.js';
 import yaml from 'yaml';
 import path from 'path';
 export const __dirname = path.resolve();
@@ -6,7 +6,7 @@ export const __dirname = path.resolve();
 const file = join(__dirname, '_config.yml');
 const str = readFileSync(file, 'utf-8');
 const config: Hexo_Config = yaml.parse(str);
-write(join(__dirname, 'types/_config.json'), JSON.stringify(config));
+write(join(__dirname, '_config.json'), JSON.stringify(config));
 /**
  * Public Source Post Dir
  */

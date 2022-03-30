@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Hexo_Config } from '../../../types/_config.js';
+import { Hexo_Config } from '../../types/_config.js';
 import { parsePostReturn } from '../../markdown/transformPosts.js';
 /**
  * get author name

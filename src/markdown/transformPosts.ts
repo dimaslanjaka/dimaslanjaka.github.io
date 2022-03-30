@@ -9,7 +9,7 @@ import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
 import YAML from 'yaml';
-import { Hexo_Config } from '../../types/_config.js';
+import { Hexo_Config } from '../types/_config.js';
 import { replacePath } from '../gulp/tasks/article-copy.js';
 const __dirname = path.resolve();
 

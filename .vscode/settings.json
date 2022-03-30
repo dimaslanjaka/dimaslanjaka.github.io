@@ -22,6 +22,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true // let ESLint take formating and linting
   },
+  "[ejs]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "[json]": {
     "editor.formatOnSave": true, // enable json formating with default vscode formatter
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -31,11 +35,16 @@
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[jsonc]": {
-    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
@@ -45,8 +54,12 @@
     "**/vendor": true
   },
   "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.format.enable": true,
   "typescript.tsserver.enableTracing": true,
   "typescript.tsserver.log": "verbose",
   "typescript.tsserver.trace": "verbose",
   "editor.autoClosingBrackets": "always",
+  "prettier.enableDebugLogs": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.printWidth": 180,
 }

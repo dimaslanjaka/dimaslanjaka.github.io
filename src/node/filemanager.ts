@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import * as fs from 'fs';
 import { default as nodePath } from 'path';
+import upath from 'upath';
 import ErrnoException = NodeJS.ErrnoException;
 import { cwd as nodeCwd } from 'process';
 import 'js-prototypes';
@@ -98,8 +99,8 @@ export function slash(...paths: string[]): string {
 }
 
 export default filemanager;
-export const join = slash;
-export const normalize = slash;
+export const join = upath.join;
+export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = function () {
   return slash(nodeCwd());

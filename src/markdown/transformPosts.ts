@@ -9,9 +9,8 @@ import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
 import YAML from 'yaml';
-import { Hexo_Config } from '../types/_config';
+import { ProjectConfig } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
-const __dirname = path.resolve();
 
 export interface LooseObject {
   [key: string]: any;
@@ -35,7 +34,7 @@ export type parsePostReturn = LooseObject & {
   /**
    * _config.yml
    */
-  config?: Hexo_Config | null;
+  config?: ProjectConfig | null;
   /**
    * Article metadata
    */
@@ -120,7 +119,7 @@ export function parsePost(text: string): parsePostReturn | null {
 
   // determine and parse _config.yml
   let config_file: string;
-  let config_yml: Hexo_Config;
+  let config_yml: ProjectConfig;
   if (fs.existsSync(join(process.cwd(), '_config.yml'))) {
     config_file = join(process.cwd(), '_config.yml');
   }

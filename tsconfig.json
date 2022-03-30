@@ -32,17 +32,14 @@
       "ES6"
     ],
     "typeRoots": [
-      "./node_modules/@types",
-      "src/types"
+      "./node_modules/@types"
     ],
     "types": [
       "node"
     ]
   },
   "exclude": [
-    //"./types/**/*",
-    "./node_modules/**/*",
-    "./libs/compiler/**/*"
+    "./node_modules/**/*"
   ],
   "include": [
     "./src/**/*"

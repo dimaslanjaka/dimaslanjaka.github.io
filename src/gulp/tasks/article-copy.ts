@@ -12,7 +12,7 @@ import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
-import Hexo_Config, { post_public_dir, post_source_dir } from '../../types/_config';
+import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
@@ -38,7 +38,7 @@ function removeMultipleWhiteSpaces(text: string) {
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
  */
-export function articleCopy(config: typeof Hexo_Config, done?: TaskCallback) {
+export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
   //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
   const srcPostDir = join(cwd(), 'src-posts');
   // path source_dir from _config.yml
@@ -308,7 +308,9 @@ export default async function taskCopy() {
     return Bluebird.resolve(run());
   };
   const copyPosts = () => {
-    const run = gulp.src(join(post_source_dir, 'Chimeraland/Recipes.md')).pipe(
+    const src = join(post_source_dir, 'Chimeraland/Recipes.md');
+    console.log(src);
+    const run = gulp.src(src).pipe(
       modifyFile(function (content, path, _file) {
         const parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
@@ -327,6 +329,6 @@ export default async function taskCopy() {
     );
     return Bluebird.resolve(determineDirname(run).pipe(gulp.dest(post_public_dir)));
   };
-  await copyImg();
+  //await copyImg();
   return copyPosts();
 }

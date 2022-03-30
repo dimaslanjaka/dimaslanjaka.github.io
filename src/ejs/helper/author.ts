@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Hexo_Config } from '../../types/_config';
+import { ProjectConfig } from '../../types/_config';
 import { parsePostReturn } from '../../markdown/transformPosts';
 /**
  * get author name
@@ -19,7 +19,7 @@ export function author_name(page: parsePostReturn['metadata']) {
  * @param page
  * @returns
  */
-export function author_link(page: parsePostReturn['metadata'], config?: Hexo_Config) {
+export function author_link(page: parsePostReturn['metadata'], config?: ProjectConfig) {
   const author = page['author'];
   if (author['link']) return author['link'];
   if (config.author) {

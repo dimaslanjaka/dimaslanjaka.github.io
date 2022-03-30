@@ -2,7 +2,7 @@
 // https://www.npmjs.com/package/gulp-rename
 import Stream from 'stream';
 import vinyl from 'vinyl';
-import { basename, dirname, join, extname as ExtName } from '../../node/filemanager';
+import { basename, dirname, join, extname as ExtName } from '../../node/filemanager.js';
 
 interface ParsedPath {
   dirname: string;

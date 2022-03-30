@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // https://github.com/sindresorhus/transliterate
 import deburr from 'lodash.deburr';
-import escapeStringRegexp from '../escape-string-regexp';
-import builtinReplacements from './replacements';
+import escapeStringRegexp from '../escape-string-regexp.js';
+import builtinReplacements from './replacements.js';
 
 const doCustomReplacements = (string, replacements) => {
   for (const [key, value] of replacements) {

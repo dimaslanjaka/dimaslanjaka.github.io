@@ -26,6 +26,10 @@
     "editor.formatOnSave": true, // enable json formating with default vscode formatter
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
   "[jsonc]": {
     "editor.formatOnSave": true, // enable json formating with default vscode formatter
     "editor.defaultFormatter": "vscode.json-language-features"

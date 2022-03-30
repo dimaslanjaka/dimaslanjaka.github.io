@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 
-import { parsePostReturn } from '../../markdown/transformPosts';
+import { parsePostReturn } from '../../markdown/transformPosts.js';
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 const noimage = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import moment from 'moment';
-import { parsePostReturn } from '../../markdown/transformPosts';
+import { parsePostReturn } from '../../markdown/transformPosts.js';
 
 export function date_local(page: parsePostReturn['metadata']) {
   if (page.lang) {

@@ -38,6 +38,23 @@ Nicer module specifiers for a subtree:
   }
 }
 ```
+Default [typescript documentation](https://www.typescriptlang.org/docs/handbook/esm-node.html)
+```jsonc
+{
+    "name": "my-package",
+    "type": "module",
+    "exports": {
+        ".": {
+            // Entry-point for `import "my-package"` in ESM
+            "import": "./esm/index.js",
+            // Entry-point for `require("my-package") in CJS
+            "require": "./commonjs/index.cjs",
+        },
+    },
+    // CJS fall-back for older versions of Node.js
+    "main": "./commonjs/index.cjs",
+}
+```
 - [`"typesVersions"`](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions) performs the same mapping as `"exports"`, but for TypeScript's type definitions.
 
 ## tsconfig.json

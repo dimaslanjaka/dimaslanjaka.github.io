@@ -22,7 +22,6 @@ import cache from 'gulp-cache';
 import imagemin from 'gulp-imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminZopfli from 'imagemin-zopfli';
-import imageminMozjpeg from 'imagemin-mozjpeg'; //need to run 'brew install libpng'
 import imageminGiflossy from 'imagemin-giflossy';
 
 let tryCount = 0;
@@ -277,18 +276,23 @@ export default async function taskCopy() {
           imagemin.svgo({
             plugins: [
               {
-                removeViewBox: false,
+                name: 'removeViewBox',
+                active: false,
               },
             ],
           }),
           //jpg lossless
-          imagemin.jpegtran({
+          /* imagemin.jpegtran({
+            progressive: true,
+          }),*/
+          imagemin.mozjpeg({
+            quality: 90,
             progressive: true,
           }),
           //jpg very light lossy, use vs jpegtran
-          imageminMozjpeg({
+          /*imageminMozjpeg({
             quality: 90,
-          }),
+          }),*/
         ])
       )
     );

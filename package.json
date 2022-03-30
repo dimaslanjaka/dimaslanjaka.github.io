@@ -4,6 +4,16 @@
   "description": "",
   "type": "module",
   "main": "build/gulpfile.js",
+  "exports": {
+    "./*": "./build/src/*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "build/src/*"
+      ]
+    }
+  },
   "directories": {
     "doc": "docs"
   },
@@ -30,8 +40,10 @@
     "@types/fancy-log": "^1.3.1",
     "@types/gulp": "^4.0.9",
     "@types/gulp-cache": "^0.4.5",
+    "@types/gulp-imagemin": "^8.0.1",
     "@types/html-minifier-terser": "^6.1.0",
     "@types/imagemin": "^8.0.0",
+    "@types/imagemin-mozjpeg": "^8.0.1",
     "@types/imagemin-zopfli": "^7.0.1",
     "@types/node": "^12.20.47",
     "@types/readable-stream": "^2.3.13",

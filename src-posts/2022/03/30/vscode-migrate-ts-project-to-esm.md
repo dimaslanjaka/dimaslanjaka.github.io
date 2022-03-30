@@ -5,6 +5,38 @@ date: 2022-03-30T06:57:37+0000
 updated: 2022-03-30T06:57:37+0000 
 ---
 
+## How to migrate typescript commonjs to esm with vscode
+## package.json
+add following key to package.json
+```jsonc
+{
+  "type": "module"
+  //...
+}
+```
+
+## tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "target": "ES2020",
+    "lib": [
+      "ES2020", "DOM"
+    ],
+    "module": "ES2020", // (A)
+    "moduleResolution": "Node", // (B)
+    "strict": true,
+    "sourceMap": true,
+    // Needed for CommonJS modules
+    "allowSyntheticDefaultImports": true, // (C)
+    // Compile d.ts
+    "declaration": true,
+  }
+}
+```
+
 ## Replace non extension of imports
 - Open Search And Replace VSCode
 - Insert below pattern to search input and check Regex Search Flag

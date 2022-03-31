@@ -29,7 +29,7 @@ wordcount: 1124
 
 
 <h2 id="what-is-regular-expression" tabindex="-1"><a class="header-anchor" href="#what-is-regular-expression">What Is Regular Expression ?</a></h2>
-<p>Regular Expression (RegExp) a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUmVndWxhcl9leHByZXNzaW9u" target="_blank" rel="nofollow noopener">Read More</a></p>
+<p>Regular Expression (RegExp) a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text. <a href="https://en.wikipedia.org/wiki/Regular_expression">Read More</a></p>
 <h2 id="what-can-a-regular-expression-be-used-for" tabindex="-1"><a class="header-anchor" href="#what-can-a-regular-expression-be-used-for">What can a regular expression be used for ?</a></h2>
 <p>A regular expression can be a single character, or a more complicated pattern. Regular expressions can be used to perform all types of text search and text replace operations. /w3schools/i is a regular expression.</p>
 <h2 id="which-is-the-best-example-of-a-regex" tabindex="-1"><a class="header-anchor" href="#which-is-the-best-example-of-a-regex">Which is the best example of a regex ?</a></h2>
@@ -46,7 +46,7 @@ wordcount: 1124
 <tbody>
 <tr>
 <td><b>^</b>Hello</td>
-<td>matches any string that <em>starts with <strong>Hello</strong></em> -&gt;  <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yZWdleDEwMS5jb20vci9jTzhscXMvMg==" target="_blank" rel="nofollow noopener">Try it!</a></td>
+<td>matches any string that <em>starts with <strong>Hello</strong></em> -&gt;  <a href="https://regex101.com/r/cO8lqs/2">Try it!</a></td>
 </tr>
 <tr>
 <td>world<b>$</b></td>
@@ -75,7 +75,7 @@ wordcount: 1124
 <tbody>
 <tr>
 <td>abc*</td>
-<td>matches a string that has ab followed by zero or more c -&gt;  <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yZWdleDEwMS5jb20vci9jTzhscXMvMQ==" target="_blank" rel="nofollow noopener">Try it!</a></td>
+<td>matches a string that has ab followed by zero or more c -&gt;  <a href="https://regex101.com/r/cO8lqs/1">Try it!</a></td>
 </tr>
 <tr>
 <td>abc+</td>
@@ -120,7 +120,7 @@ wordcount: 1124
 <tbody>
 <tr>
 <td>a(b|c)</td>
-<td>matches a string that has <strong><em>a</em> followed by <em>b</em> or <em>c</em></strong> (and captures <strong><em>b</em> or <em>c</em></strong>) -&gt; <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yZWdleDEwMS5jb20vci9jTzhscXMvMw==" target="_blank" rel="nofollow noopener">Try it!</a></td>
+<td>matches a string that has <strong><em>a</em> followed by <em>b</em> or <em>c</em></strong> (and captures <strong><em>b</em> or <em>c</em></strong>) -&gt; <a href="https://regex101.com/r/cO8lqs/3">Try it!</a></td>
 </tr>
 <tr>
 <td>a[bc]</td>

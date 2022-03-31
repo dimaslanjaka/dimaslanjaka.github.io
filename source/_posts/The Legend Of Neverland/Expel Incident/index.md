@@ -29,7 +29,7 @@ wordcount: 26
 <h2 id="expel-incident-lists" tabindex="-1"><a class="header-anchor" href="#expel-incident-lists">Expel Incident Lists</a></h2>
 <p>Daily task the legend of neverland lists</p>
 <ul>
-<li><a href="//webmanajemen.com/page/safelink.html?url=U3RhbmRhcmQlMjBSZXdhcmRzLmh0bWw=" target="_blank" rel="nofollow noopener">Standard Rewards</a></li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=RXhwJTIwQ2hhci5odG1s" target="_blank" rel="nofollow noopener">Highest Exp Char</a></li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=Q3J5c3RhbHMlMjBGYWlyeSUyMEV4cC5odG1s" target="_blank" rel="nofollow noopener">Highest Exp Fairies</a></li>
+<li><a href="Standard%20Rewards.html">Standard Rewards</a></li>
+<li><a href="Exp%20Char.html">Highest Exp Char</a></li>
+<li><a href="Crystals%20Fairy%20Exp.html">Highest Exp Fairies</a></li>
 </ul>

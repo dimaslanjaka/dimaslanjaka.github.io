@@ -31,5 +31,5 @@ wordcount: 9
 <pre><code id="regexp-main" class="language-regexp">^((?!badword).)*$
 </code></pre>
 <h2 id="try-it" tabindex="-1"><a class="header-anchor" href="#try-it">Try It</a></h2>
-<p><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cucmVnZXh0ZXN0ZXIuY29tLzE1" target="_blank" rel="nofollow noopener">Click Here</a></p>
+<p><a href="https://www.regextester.com/15">Click Here</a></p>
 

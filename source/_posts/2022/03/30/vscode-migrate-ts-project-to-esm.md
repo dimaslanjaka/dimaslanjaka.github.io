@@ -47,7 +47,7 @@ wordcount: 420
   }
 }
 </code></pre>
-<p>Default <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL2RvY3MvaGFuZGJvb2svZXNtLW5vZGUuaHRtbA==" target="_blank" rel="nofollow noopener">typescript documentation</a></p>
+<p>Default <a href="https://www.typescriptlang.org/docs/handbook/esm-node.html">typescript documentation</a></p>
 <pre><code class="language-jsonc">{
     &quot;name&quot;: &quot;my-package&quot;,
     &quot;type&quot;: &quot;module&quot;,
@@ -64,7 +64,7 @@ wordcount: 420
 }
 </code></pre>
 <ul>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL2RvY3MvaGFuZGJvb2svZGVjbGFyYXRpb24tZmlsZXMvcHVibGlzaGluZy5odG1sI3ZlcnNpb24tc2VsZWN0aW9uLXdpdGgtdHlwZXN2ZXJzaW9ucw==" target="_blank" rel="nofollow noopener"><code>&quot;typesVersions&quot;</code></a> performs the same mapping as <code>&quot;exports&quot;</code>, but for TypeScript’s type definitions.</li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions"><code>&quot;typesVersions&quot;</code></a> performs the same mapping as <code>&quot;exports&quot;</code>, but for TypeScript’s type definitions.</li>
 </ul>
 <h2 id="tsconfig-json" tabindex="-1"><a class="header-anchor" href="#tsconfig-json">tsconfig.json</a></h2>
 <p>match your configuration (points A, B, C)</p>
@@ -88,14 +88,14 @@ wordcount: 420
 }
 </code></pre>
 <ul>
-<li>Line A (<a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3RzY29uZmlnI21vZHVsZQ==" target="_blank" rel="nofollow noopener"><code>&quot;module&quot;</code></a>): We are telling TypeScript to generate ECMAScript modules.
+<li>Line A (<a href="https://www.typescriptlang.org/tsconfig#module"><code>&quot;module&quot;</code></a>): We are telling TypeScript to generate ECMAScript modules.
 <ul>
 <li><code>&quot;ES6&quot;</code>, <code>&quot;ES2015&quot;</code>: support for basic ESM features</li>
 <li><code>&quot;2020&quot;</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
 </ul>
 </li>
-<li>Line B (<a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3RzY29uZmlnI21vZHVsZVJlc29sdXRpb24=" target="_blank" rel="nofollow noopener"><code>&quot;moduleResolution&quot;</code></a>): This value is needed for Node.js.</li>
-<li>Line C (<a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3RzY29uZmlnI2FsbG93U3ludGhldGljRGVmYXVsdEltcG9ydHM=" target="_blank" rel="nofollow noopener"><code>&quot;allowSyntheticDefaultImports&quot;</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
+<li>Line B (<a href="https://www.typescriptlang.org/tsconfig#moduleResolution"><code>&quot;moduleResolution&quot;</code></a>): This value is needed for Node.js.</li>
+<li>Line C (<a href="https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports"><code>&quot;allowSyntheticDefaultImports&quot;</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
 </ul>
 <h2 id="vs-code-settings-json" tabindex="-1"><a class="header-anchor" href="#vs-code-settings-json">VSCode settings.json</a></h2>
 <p>open your <code>settings.json</code> or <code>.vscode/settings.json</code>, add following keys</p>

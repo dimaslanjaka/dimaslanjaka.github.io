@@ -30,7 +30,7 @@ wordcount: 216
 ---
 
 <h1 id="kondisional-pada-git-hub-workflow" tabindex="-1"><a class="header-anchor" href="#kondisional-pada-git-hub-workflow">Kondisional pada GitHub Workflow</a></h1>
-<p>Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vYWN0aW9ucy9sZWFybi1naXRodWItYWN0aW9ucy9leHByZXNzaW9ucw==" target="_blank" rel="nofollow noopener">source</a> Misalnya:</p>
+<p>Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. <a href="https://docs.github.com/en/actions/learn-github-actions/expressions">source</a> Misalnya:</p>
 <h2 id="menjalankan-command-apabila-repository-di-push-dengan-commit-yang-memiliki-substring-tertentu-match-substring-from-github-commit-messages" tabindex="-1"><a class="header-anchor" href="#menjalankan-command-apabila-repository-di-push-dengan-commit-yang-memiliki-substring-tertentu-match-substring-from-github-commit-messages">Menjalankan command apabila repository di push dengan commit yang memiliki substring tertentu (match substring from github commit messages)</a></h2>
 <pre><code class="language-yaml">jobs:
   build:

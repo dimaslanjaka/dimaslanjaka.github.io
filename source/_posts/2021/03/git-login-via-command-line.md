@@ -35,4 +35,4 @@ wordcount: 17
 <br>
 <br>git config --global github.token mytoken
 <br></pre>
- <div class="separator" style="clear: both;"><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9pLnl0aW1nLmNvbS92aS95RG50Q0lzLUlKTS9ocWRlZmF1bHQuanBn" style="display: block; padding: 1em 0; text-align: center; " rel="nofollow noopener" target="_blank"><img alt="" border="0" data-original-height="360" data-original-width="480" src="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg"></a></div>
+ <div class="separator" style="clear: both;"><a href="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg" style="display: block; padding: 1em 0; text-align: center; " rel="noopener noreferer nofollow"><img alt="" border="0" data-original-height="360" data-original-width="480" src="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg"></a></div>

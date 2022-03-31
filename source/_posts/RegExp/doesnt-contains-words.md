@@ -107,4 +107,4 @@ import notranslate from '../translator/notranslate'; // &lt;-- i want match this
 <li><code>m</code> modifier: <strong>m</strong>ulti line. Causes <code>^</code> and <code>$</code> to match the begin/end of each line (not only begin/end of string)</li>
 </ul>
 <h2 id="reg-exp-online-playground" tabindex="-1"><a class="header-anchor" href="#reg-exp-online-playground">RegExp Online Playground</a></h2>
-<p><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yZWdleDEwMS5jb20vci90cDFlUVo=" target="_blank" rel="nofollow noopener">RegExp Playground <strong>regex101</strong></a></p>
+<p><a href="https://regex101.com/r/tp1eQZ">RegExp Playground <strong>regex101</strong></a></p>

@@ -73,7 +73,7 @@ on:
       - requested
 </code></pre>
 <h2 id="contoh-github-workflow-run-after-other-workflow" tabindex="-1"><a class="header-anchor" href="#contoh-github-workflow-run-after-other-workflow">Contoh Github workflow run after other workflow</a></h2>
-<p><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9hLzY3NTM0OTIw" target="_blank" rel="nofollow noopener">source idea</a></p>
+<p><a href="https://stackoverflow.com/a/67534920">source idea</a></p>
 <pre><code class="language-yaml"> on:
    workflow_run:
      workflows: [&quot;Other Workflow Name&quot;]

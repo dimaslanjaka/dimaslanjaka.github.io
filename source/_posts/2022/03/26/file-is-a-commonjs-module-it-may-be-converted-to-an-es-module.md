@@ -27,7 +27,7 @@ wordcount: 137
 
 <h1 id="file-is-a-common-js-module-it-may-be-converted-to-an-es-module" tabindex="-1"><a class="header-anchor" href="#file-is-a-common-js-module-it-may-be-converted-to-an-es-module">File is a CommonJS module; it may be converted to an ES module</a></h1>
 <p>This is a new feature added in Visual Studio Code called “Suggestion Code Actions”. “Suggestion Code Actions” are enabled by default in JavaScript and TypeScript.</p>
-<p>You can disable them by setting: <code>&quot;typescript.suggestionActions.enabled&quot;: false</code> or <code>&quot;javascript.suggestionActions.enabled&quot;: false</code> in your user/workspace settings. The documentation can be found <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20vZG9jcy9nZXRzdGFydGVkL3NldHRpbmdz" target="_blank" rel="nofollow noopener">here</a>.</p>
+<p>You can disable them by setting: <code>&quot;typescript.suggestionActions.enabled&quot;: false</code> or <code>&quot;javascript.suggestionActions.enabled&quot;: false</code> in your user/workspace settings. The documentation can be found <a href="https://code.visualstudio.com/docs/getstarted/settings">here</a>.</p>
 <h3 id="open-settings-json-file" tabindex="-1"><a class="header-anchor" href="#open-settings-json-file">open settings.json file</a></h3>
 <p>insert below option</p>
 <pre><code class="language-jsonc">{

@@ -217,10 +217,10 @@ Cara unlock <strong>Stove II</strong></p>
 <p>Cara mendapatkan attendant <strong>Vulorman</strong></p>
 <h3 id="astakat" tabindex="-1"><a class="header-anchor" href="#astakat">Astakat</a></h3>
 <p>Cara mendapatkan attendant <strong>Astakat</strong></p>
-<center><i>cooking recipes chimeraland updated january 2022</i> <a href="//webmanajemen.com/page/safelink.html?url=aW5kZXguaHRtbA==" target="_blank" rel="nofollow noopener">Back to index chimeraland</a></center>
+<center><i>cooking recipes chimeraland updated january 2022</i> <a href="index.html">Back to index chimeraland</a></center>
 <h3 id="others" tabindex="-1"><a class="header-anchor" href="#others">Others</a></h3>
 <p>see also other chimeraland articles:</p>
 <ul>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aW5kZXguaHRtbA==" target="_blank" rel="nofollow noopener">index chimeraland</a></li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=UGV0cy5odG1s" target="_blank" rel="nofollow noopener">Pet Informations</a></li>
+<li><a href="index.html">index chimeraland</a></li>
+<li><a href="Pets.html">Pet Informations</a></li>
 </ul>

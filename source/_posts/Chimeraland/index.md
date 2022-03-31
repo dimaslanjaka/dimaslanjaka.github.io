@@ -23,6 +23,6 @@ wordcount: 11
 ---
 
 <h2 id="cooking-recipes" tabindex="-1"><a class="header-anchor" href="#cooking-recipes">Cooking Recipes</a></h2>
-<p><a href="//webmanajemen.com/page/safelink.html?url=UmVjaXBlcy5odG1s" target="_blank" rel="nofollow noopener">View Cooking Recipes</a></p>
+<p><a href="Recipes.html">View Cooking Recipes</a></p>
 <h2 id="pets" tabindex="-1"><a class="header-anchor" href="#pets">Pets</a></h2>
-<p><a href="//webmanajemen.com/page/safelink.html?url=UGV0cy5odG1s" target="_blank" rel="nofollow noopener">View Chimeraland Pets</a></p>
+<p><a href="Pets.html">View Chimeraland Pets</a></p>

@@ -33,7 +33,7 @@ wordcount: 216
 
 <h1 id="nodejs-options-node-options" tabindex="-1"><a class="header-anchor" href="#nodejs-options-node-options">NODEJS OPTIONS [ NODE_OPTIONS ]</a></h1>
 <p>Node.js accompanies an assortment of CLI choices. These choices uncover worked in investigating, different ways of executing scripts, and other accommodating runtime choices.</p>
-<p>To see this documentation as a manual page in a terminal, run ‘man hub’. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ub2RlanMub3JnL2FwaS9jbGkuaHRtbA==" target="_blank" rel="nofollow noopener">Read more</a></p>
+<p>To see this documentation as a manual page in a terminal, run ‘man hub’. <a href="https://nodejs.org/api/cli.html">Read more</a></p>
 <h2 id="how-to-setup-multiple-options-on-git-hub-workflow" tabindex="-1"><a class="header-anchor" href="#how-to-setup-multiple-options-on-git-hub-workflow">How to setup multiple options on GitHub Workflow</a></h2>
 <pre><code class="language-yaml">jobs:
   build:

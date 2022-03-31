@@ -20,10 +20,10 @@ wordcount: 640
 ---
 
 <p>** If I get a new one, I will always update the list. For now and also for the future, I suggest making between dofollow backlinks and nofollow backlinks that lead to a balanced blog, or still in a very reasonable category**, if you don’t want your blog to get Google Penalty sanctions later.</p>
-<p>Because it will be quite difficult to improve the ranking of blogs that have been subject to these sanctions. Therefore, from now on, it is better to get used to commenting naturally, on <strong>dofollow</strong> or <strong>nofollow</strong> blogs. Then be diligent with routine to submit articles to <a href="//webmanajemen.com/page/safelink.html?url=bGlzdC1vZi1sYXRlc3QtZG9mb2xsb3ctYmxvZ3MuaHRtbA==" target="_blank" rel="nofollow noopener"><strong>dofollow blog directory.</strong> </a> That’s my post cal* <em>In the following I try to share some lists of the most essential blog directories that have been proven to provide significant traffic and linkbacks.</em>* All <a href="//webmanajemen.com/page/safelink.html?url=bGlzdC1vZi1sYXRlc3QtZG9mb2xsb3ctYmxvZ3MubWQ=" target="_blank" rel="nofollow noopener"><strong>dofollow blog directory lists</strong></a> it has a high pagerank. Each directory has a different registration method. Some of them require you to provide a reciprocal link from your blog, but some don’t.</p>
+<p>Because it will be quite difficult to improve the ranking of blogs that have been subject to these sanctions. Therefore, from now on, it is better to get used to commenting naturally, on <strong>dofollow</strong> or <strong>nofollow</strong> blogs. Then be diligent with routine to submit articles to <a href="list-of-latest-dofollow-blogs.html"><strong>dofollow blog directory.</strong> </a> That’s my post cal* <em>In the following I try to share some lists of the most essential blog directories that have been proven to provide significant traffic and linkbacks.</em>* All <a href="list-of-latest-dofollow-blogs.md"><strong>dofollow blog directory lists</strong></a> it has a high pagerank. Each directory has a different registration method. Some of them require you to provide a reciprocal link from your blog, but some don’t.</p>
 <p><strong>The important thing that you have to pay attention to is the way the process is done so that there are no errors when you register in each of these directories.</strong> Pay attention to the writing of <strong>anchor text</strong> and also <strong>categories</strong>, <strong>keywords</strong>, * <em>meta tags</em>*, <strong>description</strong>, and other things that may be important for you to fill in when registering. In addition, you should prepare from the beginning all the data that will be needed, at least it can save time making it easier for you during the registration process later.</p>
 <p><img src="https://3.bp.blogspot.com/-6veBHLXbOls/Ua5SXmU1WEI/AAAAAAAAAtA/bLFjLW3SnBY/s1600/Directory+Dofollow.jpg" alt="Directory Dofollow" title="Directory Dofollow"></p>
-<p><strong>Your attempt to register your blog to this directory is one way to build link building so that <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL2dvb2dsZS5jb20vc2VhcmNoP3E9c2l0ZTp3ZWJtYW5hamVtZW4uY29tK0ZyZWUrZ29vZ2xlK0JhY2tsaW5rcw==" target="_blank" rel="nofollow noopener">get free backlinks</a> , whose purpose is to improve optimization</strong> SEO <strong>and <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL2dvb2dsZS5jb20vc2VhcmNoP3E9c2l0ZTp3ZWJtYW5hamVtZW4uY29tK0luY3JlYXNpbmcrYmxvZyt0cmFmZmlj" target="_blank" rel="nofollow noopener">blog traffic</a></strong>. Why do you have to do that, because blogs that have been registered in various directories can have the opportunity to get traffic or visitors from the directory in question. I hope this is useful and can help.</p>
+<p><strong>Your attempt to register your blog to this directory is one way to build link building so that <a href="http://google.com/search?q=site:webmanajemen.com+Free+google+Backlinks">get free backlinks</a> , whose purpose is to improve optimization</strong> SEO <strong>and <a href="http://google.com/search?q=site:webmanajemen.com+Increasing+blog+traffic">blog traffic</a></strong>. Why do you have to do that, because blogs that have been registered in various directories can have the opportunity to get traffic or visitors from the directory in question. I hope this is useful and can help.</p>
 <table>
 <thead>
 <tr>
@@ -35,117 +35,117 @@ wordcount: 640
 </thead>
 <tbody>
 <tr>
-<td>1. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3RlY2hub3JhdGkuY29t" target="_blank" rel="nofollow noopener">technorati.com</a></td>
+<td>1. <a href="http://technorati.com">technorati.com</a></td>
 <td>8</td>
-<td>20. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2VybGlzdC5uZXQ=" target="_blank" rel="nofollow noopener">www.bloggerlist.net</a></td>
+<td>20. <a href="http://www.bloggerlist.net">www.bloggerlist.net</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>2. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2Vybml0eS5jb20=" target="_blank" rel="nofollow noopener">www.bloggernity.com</a></td>
+<td>2. <a href="http://www.bloggernity.com">www.bloggernity.com</a></td>
 <td>7</td>
-<td>21. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9ndG9wbGlzdC5jb20=" target="_blank" rel="nofollow noopener">www.blogtoplist.com</a></td>
+<td>21. <a href="http://www.blogtoplist.com">www.blogtoplist.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>3. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL2Jsb2dnZXJzLmNvbQ==" target="_blank" rel="nofollow noopener">bloggers.com</a></td>
+<td>3. <a href="http://bloggers.com">bloggers.com</a></td>
 <td>6</td>
-<td>22. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5mdWVsbXlibG9nLmNvbQ==" target="_blank" rel="nofollow noopener">www.fuelmyblog.com</a></td>
+<td>22. <a href="http://www.fuelmyblog.com">www.fuelmyblog.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>4. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9naHViLmNvbQ==" target="_blank" rel="nofollow noopener">www.bloghub.com</a></td>
+<td>4. <a href="http://www.bloghub.com">www.bloghub.com</a></td>
 <td>6</td>
-<td>23. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5zZ2Jsb2cuY29t" target="_blank" rel="nofollow noopener">www.sgblog.com</a></td>
+<td>23. <a href="http://www.sgblog.com">www.sgblog.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>5. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL2Rpci5ibG9nZmx1eC5jb20=" target="_blank" rel="nofollow noopener">dir.blogflux.com</a></td>
+<td>5. <a href="http://dir.blogflux.com">dir.blogflux.com</a></td>
 <td>6</td>
-<td>24. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy41c3RhcmJsb2dzLmNvbQ==" target="_blank" rel="nofollow noopener">www.5starblogs.com</a></td>
+<td>24. <a href="http://www.5starblogs.com">www.5starblogs.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>6. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5nbG9iZW9mYmxvZ3MuY29t" target="_blank" rel="nofollow noopener">www.globeofblogs.com</a></td>
+<td>6. <a href="http://www.globeofblogs.com">www.globeofblogs.com</a></td>
 <td>6</td>
-<td>25. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy53ZWJsb2ctaW5kZXguY29t" target="_blank" rel="nofollow noopener">www.weblog-index.com</a></td>
+<td>25. <a href="http://www.weblog-index.com">www.weblog-index.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>7. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2FwZWRpYS5jb20=" target="_blank" rel="nofollow noopener">www.bloggapedia.com</a></td>
+<td>7. <a href="http://www.bloggapedia.com">www.bloggapedia.com</a></td>
 <td>6</td>
-<td>26. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nb3JpZmZpYy5jb20=" target="_blank" rel="nofollow noopener">www.blogoriffic.com</a></td>
+<td>26. <a href="http://www.blogoriffic.com">www.blogoriffic.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>8. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nYXJhbWEuY29t" target="_blank" rel="nofollow noopener">www.blogarama.com</a></td>
+<td>8. <a href="http://www.blogarama.com">www.blogarama.com</a></td>
 <td>6</td>
-<td>27. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9ncG9pbnQuY29t" target="_blank" rel="nofollow noopener">www.blogpoint.com</a></td>
+<td>27. <a href="http://www.blogpoint.com">www.blogpoint.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>9. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nY2F0YWxvZy5jb20=" target="_blank" rel="nofollow noopener">www.blogcatalog.com</a></td>
+<td>9. <a href="http://www.blogcatalog.com">www.blogcatalog.com</a></td>
 <td>6</td>
-<td>28. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2VydGFsay5uZXQ=" target="_blank" rel="nofollow noopener">www.bloggertalk.net</a></td>
+<td>28. <a href="http://www.bloggertalk.net">www.bloggertalk.net</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>10. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nbGlzdGluZy5uZXQ=" target="_blank" rel="nofollow noopener">www.bloglisting.net</a></td>
+<td>10. <a href="http://www.bloglisting.net">www.bloglisting.net</a></td>
 <td>5</td>
-<td>29. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5lYmxvZ3ppbGxhLmNvbQ==" target="_blank" rel="nofollow noopener">www.eblogzilla.com</a></td>
+<td>29. <a href="http://www.eblogzilla.com">www.eblogzilla.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>11. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2luZ2Z1c2lvbi5jb20=" target="_blank" rel="nofollow noopener">www.bloggingfusion.com</a></td>
+<td>11. <a href="http://www.bloggingfusion.com">www.bloggingfusion.com</a></td>
 <td>5</td>
-<td>30. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5teWJsb2dkaXJlY3RvcnkubmV0" target="_blank" rel="nofollow noopener">www.myblogdirectory.net</a></td>
+<td>30. <a href="http://www.myblogdirectory.net">www.myblogdirectory.net</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>12. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2VyaWVzLmNvbQ==" target="_blank" rel="nofollow noopener">www.bloggeries.com</a></td>
+<td>12. <a href="http://www.bloggeries.com">www.bloggeries.com</a></td>
 <td>5</td>
-<td>31. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZWxpdGVzLmNvbQ==" target="_blank" rel="nofollow noopener">www.blogelites.com</a></td>
+<td>31. <a href="http://www.blogelites.com">www.blogelites.com</a></td>
 <td>4</td>
 </tr>
 <tr>
-<td>13. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50b3BibG9nYXJlYS5jb20=" target="_blank" rel="nofollow noopener">www.topblogarea.com</a></td>
+<td>13. <a href="http://www.topblogarea.com">www.topblogarea.com</a></td>
 <td>5</td>
-<td>32. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5teWJsb2dnaW5nYXJlYS5jb20=" target="_blank" rel="nofollow noopener">www.mybloggingarea.com</a></td>
+<td>32. <a href="http://www.mybloggingarea.com">www.mybloggingarea.com</a></td>
 <td>3</td>
 </tr>
 <tr>
-<td>14. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5teWJsb2cydS5jb20=" target="_blank" rel="nofollow noopener">www.myblog2u.com</a></td>
+<td>14. <a href="http://www.myblog2u.com">www.myblog2u.com</a></td>
 <td>5</td>
-<td>33. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5hdmVibG9ncy5jb20=" target="_blank" rel="nofollow noopener">www.aveblogs.com</a></td>
+<td>33. <a href="http://www.aveblogs.com">www.aveblogs.com</a></td>
 <td>3</td>
 </tr>
 <tr>
-<td>15. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5nZXRibG9ncy5jb20=" target="_blank" rel="nofollow noopener">www.getblogs.com</a></td>
+<td>15. <a href="http://www.getblogs.com">www.getblogs.com</a></td>
 <td>5</td>
-<td>34. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5nb2Jsb2d6LmNvbQ==" target="_blank" rel="nofollow noopener">www.goblogz.com</a></td>
+<td>34. <a href="http://www.goblogz.com">www.goblogz.com</a></td>
 <td>3</td>
 </tr>
 <tr>
-<td>16. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nZ2Vybm93LmNvbQ==" target="_blank" rel="nofollow noopener">www.bloggernow.com</a></td>
+<td>16. <a href="http://www.bloggernow.com">www.bloggernow.com</a></td>
 <td>5</td>
-<td>35. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nc2hvd29mZi5jb20=" target="_blank" rel="nofollow noopener">www.blogshowoff.com</a></td>
+<td>35. <a href="http://www.blogshowoff.com">www.blogshowoff.com</a></td>
 <td>3</td>
 </tr>
 <tr>
-<td>17. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9ncy1jb2xsZWN0aW9uLmNvbQ==" target="_blank" rel="nofollow noopener">www.blogs-collection.com</a></td>
+<td>17. <a href="http://www.blogs-collection.com">www.blogs-collection.com</a></td>
 <td>5</td>
-<td>36. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5ibG9nLXNlYXJjaC5jb20=" target="_blank" rel="nofollow noopener">www.blog-search.com</a></td>
+<td>36. <a href="http://www.blog-search.com">www.blog-search.com</a></td>
 <td>3</td>
 </tr>
 <tr>
-<td>18. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50b3BibG9nbGlzdHMuY29t" target="_blank" rel="nofollow noopener">www.topbloglists.com</a></td>
+<td>18. <a href="http://www.topbloglists.com">www.topbloglists.com</a></td>
 <td>5</td>
-<td>37. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL2Jsb2d2aWxsYWdlLmdvdG9wMTAwLmNvbQ==" target="_blank" rel="nofollow noopener">blogvillage.gotop100.com</a></td>
+<td>37. <a href="http://blogvillage.gotop100.com">blogvillage.gotop100.com</a></td>
 <td>3</td>
 </tr>
 <tr>
-<td>19. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5sc2Jsb2dzLmNvbQ==" target="_blank" rel="nofollow noopener">www.lsblogs.com</a></td>
+<td>19. <a href="http://www.lsblogs.com">www.lsblogs.com</a></td>
 <td>5</td>
-<td>38. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5zZWFyY2g0YmxvZ3MuY29t" target="_blank" rel="nofollow noopener">www.search4blogs.com</a></td>
+<td>38. <a href="http://www.search4blogs.com">www.search4blogs.com</a></td>
 <td>3</td>
 </tr>
 </tbody>

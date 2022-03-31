@@ -37,10 +37,10 @@ wordcount: 1083
   <h2 id="php-apache-setup-on-android-with-termux-without-root-">php apache setup on android with Termux (without root)</h2>
   <ul>
     <li>
-      <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mLWRyb2lkLm9yZy9yZXBvc2l0b3J5L2Jyb3dzZS8/ZmRpZD1jb20udGVybXV4" rel="nofollow noopener" target="_blank"> Download Termux </a> (allow
+      <a href="https://f-droid.org/repository/browse/?fdid=com.termux" rel="noopener noreferer nofollow"> Download Termux </a> (allow
       installation from unknwon sources and install the termux app)
     </li>
-<li> <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cubWVkaWFmaXJlLmNvbS9maWxlL3YzZDRuazkzM2xlNnQxdS9odGRvY3MucmFyL2ZpbGU=" target="_blank" rel="nofollow noopener">Example htdocs files</a>
+<li> <a href="https://www.mediafire.com/file/v3d4nk933le6t1u/htdocs.rar/file">Example htdocs files</a>
   </li></ul>
   <h2 id="termux-setup-steps">Termux Setup Steps</h2>
   <ul>

@@ -29,4 +29,4 @@ excerpt: Movies App Flutter Project
 wordcount: 13
 ---
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL21hZGVhZHJpYW5kcC9tb3ZpZXNfYXBw" rel="nofollow noopener" target="_blank">Movies App (Flutter Project)</a></li></ol></div>
+<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>

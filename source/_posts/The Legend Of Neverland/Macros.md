@@ -31,7 +31,7 @@ wordcount: 317
 <p>Indeed, in case you’re on BlueStacks construct 4.130 or higher, you’ll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs/monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.</p>
   
 <h4 id="introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more" tabindex="-1"><a class="header-anchor" href="#introduction-macros-barely-used-for-collect-assets-update-abilities-train-troops-assault-brutes-farming-monsters-and-more">Introduction: Macros barely used for Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.</a></h4>
-<p>Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYmx1ZXN0YWNrcy5jb20vZmVhdHVyZXMvbWFjcm9zLmh0bWw=" target="_blank" rel="nofollow noopener">Read more</a></p>
+<p>Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. <a href="https://www.bluestacks.com/features/macros.html">Read more</a></p>
 <h1 id="features" tabindex="-1"><a class="header-anchor" href="#features">Features</a></h1>
 <ul>
 <li>Collect materials</li>
@@ -50,22 +50,22 @@ wordcount: 317
 <table class="table table-responsive">
   <tr>
     <td rowspan="2">Auto Farming Materials</td>
-    <td><a href="//webmanajemen.com/page/safelink.html?url=TWFjcm9zL2F1dG8lMjBhY3Rpb24lMjAlNUJuJTVELmpzb24=" target="_blank" rel="nofollow noopener">Download (normal mode)</a></td>
+    <td><a href="Macros/auto%20action%20%5Bn%5D.json">Download (normal mode)</a></td>
   </tr>
   <tr>
-    <td><a href="//webmanajemen.com/page/safelink.html?url=TWFjcm9zL2F1dG8lMjBhY3Rpb24lMjAlNUJ1MSU1RC5qc29u" target="_blank" rel="nofollow noopener">Download (unlimited mode)</a></td>
+    <td><a href="Macros/auto%20action%20%5Bu1%5D.json">Download (unlimited mode)</a></td>
   </tr>
   <tr>
     <td>Auto accept Trial Of Time Captain Invitation</td>
-    <td><a href="//webmanajemen.com/page/safelink.html?url=TWFjcm9zL2F1dG8lMjBhY2MlMjB0dC5qc29u" target="_blank" rel="nofollow noopener">Download</a></td>
+    <td><a href="Macros/auto%20acc%20tt.json">Download</a></td>
   </tr>
   <tr>
     <td>Auto Claim Abyss Rewards</td>
-    <td><a href="//webmanajemen.com/page/safelink.html?url=TWFjcm9zL2F1dG8lMjBjbGFpbSUyMGFieXNzLmpzb24=" target="_blank" rel="nofollow noopener">Download</a></td>
+    <td><a href="Macros/auto%20claim%20abyss.json">Download</a></td>
   </tr>
   <tr>
     <td>Auto target monsters</td>
-    <td><a href="//webmanajemen.com/page/safelink.html?url=TWFjcm9zL2F1dG8lMjB0YXJnZXQuanNvbg==" target="_blank" rel="nofollow noopener">Download</a></td>
+    <td><a href="Macros/auto%20target.json">Download</a></td>
   </tr>
 </table>
 <h3 id="how-to-import-the-macros-script-into-bluestacks" tabindex="-1"><a class="header-anchor" href="#how-to-import-the-macros-script-into-bluestacks">How to import the macros script into bluestacks</a></h3>

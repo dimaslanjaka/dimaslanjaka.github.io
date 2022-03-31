@@ -29,9 +29,9 @@ excerpt: Semua yang kamu harus tau tentang GitHub Workflows
 wordcount: 426
 ---
 
-<p>GitHub menyediakan templat alur kerja (<i>preconfigured workflow templates</i>) yang telah dikonfigurasi sebelumnya yang dapat Anda sesuaikan untuk membuat alur kerja integrasi berkelanjutan (<i>CI</i>) Anda sendiri. GitHub menganalisis kode Anda dan menunjukkan template <i>CI</i> yang mungkin berguna untuk repositori Anda. Misalnya, jika repositori Anda berisi Node/Program. [<a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vYWN0aW9ucy9xdWlja3N0YXJ0" target="_blank" rel="nofollow noopener">source</a>]</p>
+<p>GitHub menyediakan templat alur kerja (<i>preconfigured workflow templates</i>) yang telah dikonfigurasi sebelumnya yang dapat Anda sesuaikan untuk membuat alur kerja integrasi berkelanjutan (<i>CI</i>) Anda sendiri. GitHub menganalisis kode Anda dan menunjukkan template <i>CI</i> yang mungkin berguna untuk repositori Anda. Misalnya, jika repositori Anda berisi Node/Program. [<a href="https://docs.github.com/en/actions/quickstart">source</a>]</p>
 <p>Simplenya kamu dapat menggunakan program kamu dengan VPS gratis yang disediakan oleh GitHub. Meskipun begitu, kamu tidak dapat leluasa menggunakannya seperti VPS provider lain. Di GitHub Workflow kamu hanya dapat menggunakannya dengan logic/logika program-mu dalam 1x jalan.</p>
-<p>Github Workflow merupakan alternatif Continous Integration Gratis Dari Github. Sama halnya Travis CI, CircleCI, Jenkins, AppVeyor, <a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL0Ryb25lLmlv" target="_blank" rel="nofollow noopener">Drone.io</a>, GitLab, dan lain sebagainya.</p>
+<p>Github Workflow merupakan alternatif Continous Integration Gratis Dari Github. Sama halnya Travis CI, CircleCI, Jenkins, AppVeyor, <a href="http://Drone.io">Drone.io</a>, GitLab, dan lain sebagainya.</p>
 <h2 id="fitur-fitur-dari-git-hub-workflow" tabindex="-1"><a class="header-anchor" href="#fitur-fitur-dari-git-hub-workflow">Fitur-fitur dari GitHub Workflow</a></h2>
 <ul>
 <li>CI (Continous Integration) adalah praktik mengotomatiskan integrasi perubahan kode dari banyak kontributor ke dalam satu proyek perangkat lunak.</li>
@@ -70,4 +70,4 @@ jobs:
       - run: echo &quot;🍏 Job status ${{ job.status }}.&quot;
 </code></pre>
 <h1 id="berikut-ini-daftar-penggunaan-dan-tips-trick-untuk-github-workflow" tabindex="-1"><a class="header-anchor" href="#berikut-ini-daftar-penggunaan-dan-tips-trick-untuk-github-workflow">Berikut ini daftar penggunaan dan tips trick untuk github workflow</a></h1>
-<p><a href="//webmanajemen.com/page/safelink.html?url=d29ya2Zsb3dzLWNhY2hlcy5odG1s" target="_blank" rel="nofollow noopener">Cara mempercepat kinerja github workflows</a></p>
+<p><a href="workflows-caches.html">Cara mempercepat kinerja github workflows</a></p>

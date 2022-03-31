@@ -48,7 +48,10 @@ wordcount: 24144
             **Join the Seven Knights 2 Discord server here:
         </p>
         <div>
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNjb3JkLmdnL3dOYXhNeEpNVjQ=" rel="nofollow noopener" target="_blank">
+            <a                 href="https://discord.gg/wNaxMxJMV4"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://discord.gg/wNaxMxJMV4
             </a>
         </div>
@@ -382,7 +385,10 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
             <strong>
                 Refer to this post for each hero's equipment and usage:
             </strong>
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cucmVkZGl0LmNvbS9yLzdrZ2xvYmFsL2NvbW1lbnRzL3F3YXd1bS9zZXZlbl9rbmlnaHRzXzJfaGVyb191c2FnZV9hbmRfZXF1aXBtZW50X2d1aWRlLw==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://www.reddit.com/r/7kglobal/comments/qwawum/seven_knights_2_hero_usage_and_equipment_guide/"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://www.reddit.com/r/7kglobal/comments/qwawum/seven_knights_2_hero_usage_and_equipment_guide/
             </a>
         </p>
@@ -985,7 +991,10 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
             tickets with the best efficiency.
         </p>
         <p>
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1lMGtGSXplb2F4WQ==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://www.youtube.com/watch?v=e0kFIzeoaxY"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://www.youtube.com/watch?v=e0kFIzeoaxY
             </a>
         </p>
@@ -1056,7 +1065,10 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
             </strong>
         </p>
         <p>
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj02dTRUalZrN056OA==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://www.youtube.com/watch?v=6u4TjVk7Nz8"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://www.youtube.com/watch?v=6u4TjVk7Nz8
             </a>
         </p>
@@ -1132,13 +1144,19 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
         </p>
         <p>
             Elixir:
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1Bc0hPMTJLcTh4Yw==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://www.youtube.com/watch?v=AsHO12Kq8xc"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://www.youtube.com/watch?v=AsHO12Kq8xc
             </a>
         </p>
         <p>
             Divinity:
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1VTHR2eTJCNGJKZw==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://www.youtube.com/watch?v=ULtvy2B4bJg"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://www.youtube.com/watch?v=ULtvy2B4bJg
             </a>
             (Video starts around 1 min)
@@ -1160,7 +1178,10 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
             <strong>Experience Dungeon</strong>
         </p>
         <p>
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1mejdGSTdaNnE2OA==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://www.youtube.com/watch?v=fz7FI7Z6q68"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://www.youtube.com/watch?v=fz7FI7Z6q68
             </a>
         </p>
@@ -1631,7 +1652,10 @@ and once you have that move on to                    <strong>8 pieces forgotten 
             </li>
         </ul>
         <p>
-            <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly95b3V0dS5iZS8xTkJxQzYyVlVMZw==" rel="nofollow noopener" target="_blank">
+            <a                 href="https://youtu.be/1NBqC62VULg"
+                rel="noopener nofollow ugc"
+                target="_blank"
+            >
                 https://youtu.be/1NBqC62VULg
             </a>
         </p>

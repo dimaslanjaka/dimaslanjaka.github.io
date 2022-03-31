@@ -58,8 +58,8 @@ jobs:
 <p><strong>Metode Cache Menggunakan In-Memory Cache (In-Program)</strong></p>
 <p>Metode ini harus kamu tulis sendiri di dalam program-mu. Setiap bahasa pemrograman berbeda caranya. Berikut metode-metode yang bisa kamu buat di dalam program-mu.</p>
 <ul>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2Uvbm9kZS1jYWNoZQ==" target="_blank" rel="nofollow noopener">NodeJS node-cache</a></li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5waHAtY2FjaGUuY29tL2VuL2xhdGVzdC8=" target="_blank" rel="nofollow noopener">PHP Cache</a></li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy40L2xpYnJhcnkvZnVuY3Rvb2xzLmh0bWwjZnVuY3Rvb2xzLmxydV9jYWNoZQ==" target="_blank" rel="nofollow noopener">Python Cache</a></li>
+<li><a href="https://www.npmjs.com/package/node-cache">NodeJS node-cache</a></li>
+<li><a href="http://www.php-cache.com/en/latest/">PHP Cache</a></li>
+<li><a href="https://docs.python.org/3.4/library/functools.html#functools.lru_cache">Python Cache</a></li>
 </ul>
 <p>Sekian artikel tentang metode cache github workflow. <strong>Artikel ini akan terus di update</strong>, <strong>jangan lupa di bookmark</strong>. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.</p>

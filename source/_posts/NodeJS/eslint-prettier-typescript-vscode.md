@@ -42,9 +42,9 @@ wordcount: 584
 <h1 id="auto-lint-and-format-typescript-using-vs-code-with-eslint-and-prettier" tabindex="-1"><a class="header-anchor" href="#auto-lint-and-format-typescript-using-vs-code-with-eslint-and-prettier">Auto Lint And Format Typescript Using VSCode With Eslint And Prettier</a></h1>
 <p>Linter becomes 2 types:</p>
 <ul>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wYWxhbnRpci5naXRodWIuaW8vdHNsaW50Lw==" target="_blank" rel="nofollow noopener">TSLint</a> is a linter that must be utilized for TypeScript.</li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9lc2xpbnQub3JnLw==" target="_blank" rel="nofollow noopener">ESLint</a> is a linter supports both JavaScript and TypeScript.
-<strong>ESLint has a more performant architecture than TSLint</strong> and that they will <strong>only be focusing on ESLint</strong> when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without <strong><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWVzYmVucC5wcmV0dGllci12c2NvZGU=" target="_blank" rel="nofollow noopener">prettier plugin</a></strong></li>
+<li><a href="https://palantir.github.io/tslint/">TSLint</a> is a linter that must be utilized for TypeScript.</li>
+<li><a href="https://eslint.org/">ESLint</a> is a linter supports both JavaScript and TypeScript.
+<strong>ESLint has a more performant architecture than TSLint</strong> and that they will <strong>only be focusing on ESLint</strong> when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without <strong><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">prettier plugin</a></strong></li>
 </ul>
 <h2 id="install-dependencies" tabindex="-1"><a class="header-anchor" href="#install-dependencies">Install dependencies</a></h2>
 <p>install using npm:</p>
@@ -54,7 +54,7 @@ wordcount: 584
 <pre><code class="language-shell">yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 </code></pre>
 <h2 id="install-and-activate-vs-code-es-lint-extension-for-auto-linter-and-formatter" tabindex="-1"><a class="header-anchor" href="#install-and-activate-vs-code-es-lint-extension-for-auto-linter-and-formatter">install and activate VSCode ESLint extension for auto Linter And Formatter</a></h2>
-<p><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWRiYWV1bWVyLnZzY29kZS1lc2xpbnQ=" target="_blank" rel="nofollow noopener">Download Here</a></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">Download Here</a></p>
 <h2 id="create-eslintrc-js" tabindex="-1"><a class="header-anchor" href="#create-eslintrc-js">Create .eslintrc.js</a></h2>
 <pre><code class="language-js">module.exports = {
   root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules

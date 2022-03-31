@@ -30,7 +30,7 @@ wordcount: 163
 <li>Download Firmware redmi go <code>tiare_global_images_V10.2.6.0.OCLMIXM_8.1</code> customized with <code>frp bypasser</code></li>
 </ul>
 <blockquote>
-<p><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tZWdhLm56L2ZpbGUvT0VGVkJZSkQjcHRmaHI2QURMNnZ3RnU5WmlrTG5Va0pxdTlSZlMtZFV0QmZ2ekRVX3FNdw==" target="_blank" rel="nofollow noopener">Download Firmware Redmi GO Tiare FRP Fix From MEGA</a></p>
+<p><a href="https://mega.nz/file/OEFVBYJD#ptfhr6ADL6vwFu9ZikLnUkJqu9RfS-dUtBfvzDU_qMw">Download Firmware Redmi GO Tiare FRP Fix From MEGA</a></p>
 </blockquote>
 <h2 id="edl-mode" tabindex="-1"><a class="header-anchor" href="#edl-mode">EDL Mode</a></h2>
 <ul>

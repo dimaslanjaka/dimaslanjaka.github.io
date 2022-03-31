@@ -36,7 +36,7 @@ wordcount: 126
 
 <h3 id="requirements" tabindex="-1"><a class="header-anchor" href="#requirements">Requirements</a></h3>
 <ul>
-<li>Bluestacks (4 or 5 supported) ( <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYmx1ZXN0YWNrcy5jb20vYmx1ZXN0YWNrcy01Lmh0bWw=" target="_blank" rel="nofollow noopener">Download Bluestacks</a> )</li>
+<li>Bluestacks (4 or 5 supported) ( <a href="https://www.bluestacks.com/bluestacks-5.html">Download Bluestacks</a> )</li>
 </ul>
 <h3 id="features" tabindex="-1"><a class="header-anchor" href="#features">Features</a></h3>
 <ul>
@@ -63,7 +63,7 @@ wordcount: 126
 <h5 id="switch-fairies-ability-preview" tabindex="-1"><a class="header-anchor" href="#switch-fairies-ability-preview">Switch Fairies Ability Preview</a></h5>
 <p></p>
 <hr>
-<center><b><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RpbWFzbGFuamFrYS9kaW1hc2xhbmpha2EuZ2l0aHViLmlvL2NvbXBpbGVyL3NyYy1wb3N0cy9UaGUlMjBMZWdlbmQlMjBPZiUyME5ldmVybGFuZC9CbHVlc3RhY2tzJTIwR2FtZSUyMENvbnRyb2wvVGhlJTIwTGVnZW5kJTIwb2YlMjBOZXZlcmxhbmQlMjAlNUJjdXN0b20lMjBzY3JpcHQlNUQuY2Zn" target="_blank" rel="nofollow noopener">Download Game Control</a></b></center>
+<center><b><a href="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg">Download Game Control</a></b></center>
 <hr>
 <h5 id="how-to-download" tabindex="-1"><a class="header-anchor" href="#how-to-download">How to download</a></h5>
 <div style="clear:both;"></div>

@@ -33,7 +33,7 @@ wordcount: 42
 ---
 
 <p>If you Got this issue today on windows, but don’t need to downgrade node, just as discussed on</p>
-<p><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9hLzU4MTk5ODY2" target="_blank" rel="nofollow noopener">Stackoverflow</a></p>
+<p><a href="https://stackoverflow.com/a/58199866">Stackoverflow</a></p>
 <p>just need to change some hashes on your project:</p>
 <p><code>node_modules\react-native\packager\blacklist.js</code></p>
 <pre><code class="language-javascript">var sharedBlacklist = [

@@ -50,7 +50,7 @@ wordcount: 678
 <p><code>data:blog.url</code> is the code to display the original opened url. In the latest version can use <code>data:view.url</code>. When the url is the same as the filled url, then the result will be true so that . If you move to a custom domain, the Page Url from blogspot must also be replaced with a custom domain.</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.url == &amp;quot;Url Post Or Page&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
-<p>Example: Determine current page is <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93ZWItbWFuYWplbWVuLmJsb2dzcG90LmNvbS8yMDE3LzA0L2luc3RhbC1waHAtY2xpLXBhZGEtYW5kcm9pZC1pbnN0YWxhc2kuaHRtbA==" target="_blank" rel="nofollow noopener">https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html</a></p>
+<p>Example: Determine current page is <a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html">https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html</a></p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.url == &amp;quot;https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="index" tabindex="-1"><a class="header-anchor" href="#index">Index</a></h2>
@@ -75,7 +75,7 @@ wordcount: 678
 <pre><code class="language-xml">&lt;b:if cond='data:view.search.label == &amp;quot;Label Name&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="search-page" tabindex="-1"><a class="header-anchor" href="#search-page">Search Page</a></h2>
-<p>Blogger conditional tag to display an element when it is on a search page or query data in a blog. ex: <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93ZWItbWFuYWplbWVuLmJsb2dzcG90LmNvbS9zZWFyY2g/cT1JbnN0YWxsK3BocCtjbGk=" target="_blank" rel="nofollow noopener">https://web-manajemen.blogspot.com/search?q=Install+php+cli</a></p>
+<p>Blogger conditional tag to display an element when it is on a search page or query data in a blog. ex: <a href="https://web-manajemen.blogspot.com/search?q=Install+php+cli">https://web-manajemen.blogspot.com/search?q=Install+php+cli</a></p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.searchQuery'&gt;&lt;/b:if&gt;
 </code></pre>
 <p>or</p>
@@ -107,7 +107,7 @@ wordcount: 678
 <pre><code class="language-xml">&lt;b:if cond='data:view.isLayoutMode and data:view.isPreview'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="mobile-requests" tabindex="-1"><a class="header-anchor" href="#mobile-requests">Mobile Requests</a></h2>
-<p>This blogger conditional tag code will only read for HTML code that is displayed specifically on mobile devices aka HandPhones and Tablets. ex: <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93ZWItbWFuYWplbWVuLmJsb2dzcG90LmNvbS8yMDE3LzA0L2luc3RhbC1waHAtY2xpLXBhZGEtYW5kcm9pZC1pbnN0YWxhc2kuaHRtbD9tPTE=" target="_blank" rel="nofollow noopener">https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1</a></p>
+<p>This blogger conditional tag code will only read for HTML code that is displayed specifically on mobile devices aka HandPhones and Tablets. ex: <a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1">https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1</a></p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.isMobileRequest'&gt;&lt;/b:if&gt;
 </code></pre>
 <h1 id="not-and-or-declaration-function-in-blogger-conditional-tags" tabindex="-1"><a class="header-anchor" href="#not-and-or-declaration-function-in-blogger-conditional-tags">NOT, AND, OR Declaration Function in Blogger Conditional Tags</a></h1>

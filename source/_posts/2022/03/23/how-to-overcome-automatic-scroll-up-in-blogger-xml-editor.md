@@ -28,8 +28,8 @@ wordcount: 537
 <p>On this new system, there is an issue related to the behavior of the XML editor when the XML save process is complete. The editor interface will automatically scroll to the top every time the save process is complete. This is certainly very disturbing because we have to go back and forth to the last editing position. Especially for XML code that already involves tens of thousands of code, this will greatly hinder editing activities.</p>
 <h3 id="forum-problem-posts" tabindex="-1"><a class="header-anchor" href="#forum-problem-posts">Forum Problem Posts</a></h3>
 <ul>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYmxvZ2dlci90aHJlYWQvMTE3OTYwMDgzL2h0bWwtZWRpdG9yLWF1dG8tc2Nyb2xsLXVwP2hsPWVu" target="_blank" rel="nofollow noopener">https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en</a></li>
-<li><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cucXVvcmEuY29tL0hvdy1kby1JLW1ha2UtbXktYmxvZy1oZWFkZXItc3RvcC1zaG93aW5nLXVwLXdoZW4tc2Nyb2xsaW5nLXVw" target="_blank" rel="nofollow noopener">https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up</a></li>
+<li><a href="https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en">https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en</a></li>
+<li><a href="https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up">https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up</a></li>
 </ul>
 <h2 id="solution" tabindex="-1"><a class="header-anchor" href="#solution">Solution</a></h2>
 <p>This problem can be solved by injecting javascript code to prevent the blogger auto scroll event effect. Simply put, when the auto scroll is running and the scroll position is at the top, this function will reset the scroll position to the last position before saving. Function injection is performed using the browser’s <em>bookmark system</em>.</p>

@@ -22,7 +22,7 @@
 	<header>
 		<div class="menu content-width">
 			<div class="logo">
-				<a href="https://www.dessinerstore.com">
+				<a href="<%- config.url %>">
 					<amp-img src="/img/logo.png" layout="responsive" width="180" height="60"></amp-img>
 				</a>
 			</div>
@@ -54,9 +54,9 @@
 			</a>
 		</ul>
 		<div class="branding">
-			<p>&#169; 2018 <a href="https://www.amptemplates.io">amptemplates.io</a>. All Rights Reserved.</p>
-			<p>Designed & Developed by <a href="https://twitter.com/yomeshgupta">Yomesh Gupta</a>. Powered by <a
-					href="https://www.dessinerstore.com">Dessiner
+			<p>&#169; 2018 <a href="<%- config.url %>"><%- new URL(config.url).host %></a>. All Rights Reserved.</p>
+			<p>Designed & Developed by <a href="#https://twitter.com/yomeshgupta">Yomesh Gupta</a>. Powered by <a
+					href="#https://www.dessinerstore.com">Dessiner
 					Store</a>.</p>
 		</div>
 	</amp-sidebar>
@@ -76,23 +76,11 @@
 					Photo by Cathryn Lavery on Unsplash
 				</p>
 			</div>
-			<div class="article-body"><%- page.content %></div>
+			<div class="article-body"><%= page.content %></div>
 			<div class="article-meta">
 				<ul class="tags">
 					<a href="#" class="tag">
 						<li>AMP</li>
-					</a>
-					<a href="#" class="tag">
-						<li>AMP Templates</li>
-					</a>
-					<a href="#" class="tag">
-						<li>Blog</li>
-					</a>
-					<a href="#" class="tag">
-						<li>Publisher</li>
-					</a>
-					<a href="#" class="tag">
-						<li>Demo</li>
 					</a>
 				</ul>
 			</div>

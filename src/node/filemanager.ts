@@ -6,7 +6,7 @@ import ErrnoException = NodeJS.ErrnoException;
 import { cwd as nodeCwd } from 'process';
 import 'js-prototypes';
 
-type Mutable<T> = {
+export type Mutable<T> = {
   -readonly [k in keyof T]: T[k];
 };
 const modPath = nodePath as Mutable<typeof nodePath>;

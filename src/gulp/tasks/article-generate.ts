@@ -1,19 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, join, resolve, rmdirSync } from '../../node/filemanager';
+import { cwd, existsSync, join, resolve, rmdirSync } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
 import 'js-prototypes';
 import Bluebird from 'bluebird';
+import ejs_object, { DynamicObject } from '../../ejs';
+import { parsePost } from '../../markdown/transformPosts';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
 export const theme_dir = toUnix(resolve(join(root, 'theme', config.theme)));
-console.log(theme_dir);
-
+const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
+//console.log(existsSync(layout), layout);
 //rmdirSync(generated_dir);
+
 export default function generate() {
   const src: string[] = [];
   const exclude = (arr: string[]) => {
@@ -53,16 +56,30 @@ export default function generate() {
   const renderArticle = () => {
     // only markdown files
     src.length = 0;
-    include(['**.md', '_posts/**/**.md']);
+    //include(['**.md', '_posts/**/**.md']);
+    include(['_posts/Chimeraland/Recipes.md']);
     exclude(['_data/**', '_drafts/**', '**/readme.md', '**/**.code-workspace']);
     //console.log(src);
     return gulp.src(src, { nocase: true }).pipe(
-      through.obj((file: vinyl, encoding, cb) => {
+      through.obj(async (file: vinyl, encoding, cb) => {
+        const self = this;
+        const parse = parsePost(file.contents.toString(encoding));
         const filepath = toUnix(file.path);
         file.extname = '.html';
-        //filepath.replace(cwd(), ''),
         if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
         if (file.dirname.match(/readme/gi)) console.log(file.dirname);
+        if (parse) {
+          const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
+          ejs_opt.content = parse.body;
+          return ejs_object
+            .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir })
+            .then((rendered) => {
+              file.contents = Buffer.from(rendered);
+              if (self) self.push(rendered);
+            })
+            .catch(console.error)
+            .finally(() => cb(null, file));
+        }
 
         cb(null, file);
       })

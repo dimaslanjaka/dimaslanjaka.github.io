@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import * as author from './helper/author';
 import * as date from './helper/date';
-import * as ejs from '';
+import * as ejs from 'ejs';
 import * as locale from './helper/locales';
 import * as thumbnail from './helper/thumbnail';
 import * as keywords from './helper/keywords';
+import { theme_dir } from '../gulp/tasks/article-generate';
+import { join } from '../node/filemanager';
+import { parsePostReturn } from '../markdown/transformPosts';
+import config from '../types/_config';
 
-interface DynamicObject {
+export interface DynamicObject {
   [keys: string]: any;
 }
 type helper_types = typeof keywords | typeof thumbnail | typeof locale | typeof author | typeof date | DynamicObject;
@@ -21,10 +25,13 @@ let helpers: helper_types = {
 
 interface EJSOption extends ejs.Options, DynamicObject {
   _?: typeof helpers;
+  page?: parsePostReturn;
+  config?: typeof config;
 }
 
 function renderFile(file: string, opts: EJSOption = {}) {
-  opts._ = helpers;
+  //opts._ = helpers;
+  opts.root = join(theme_dir, 'layout/layout.ejs');
   opts = Object.assign(helpers, opts);
   return ejs.renderFile(file, opts);
 }

@@ -69,10 +69,12 @@ description: Chimeraland cooking recipes and food functions such as buffs and
     width: 100%;
   }
 </style>
+
 <div class="goog-widget-wrapper">
   <div id="google_translate_element"></div> <button onclick="restoreLang()" class="notranslate" id="resetLang">Show
     Original Language</button>
 </div>
+
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({ pageLanguage: 'auto' }, 'google_translate_element');
@@ -96,24 +98,27 @@ description: Chimeraland cooking recipes and food functions such as buffs and
 </script>
 <script type="text/javascript"
   src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<h2 id="chimeraland-cooking-guide" tabindex="-1"><a class="header-anchor" href="#chimeraland-cooking-guide">Chimeraland Cooking Guide</a></h2>
-<p>Makanan sangat penting di Chimeraland karena memberikan buff dan stat sementara selama durasi. Dengan memasak dan mengonsumsi makanan atau minuman tertentu, Anda akan mendapatkan buff tertentu, dan untuk memasak makanan atau minuman tersebut Anda ingin memahami Resep Makanan Chimeraland.
-Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan menjelaskan kepada Anda semua Resep Makanan Chimeraland. jadi tanpa bicara tentang chimeraland lebih lanjut mari kita mulai.</p>
-<p>Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan.</p>
-<blockquote>
-<p><strong>Informasi waktu dalam memasak di chimeraland:</strong>
-5 detik = sukses (rate keberhasilan 100%)
-10 detik = Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda (rate keberhasilan 50%)
-15 detik = gagal (rate keberhasilan 10%)</p>
-</blockquote>
-<p>Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan (10 detik atau lebih), tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di <strong>Camp</strong> dan <strong>Stove</strong>, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya <strong>Mixer</strong> (Anda perlu membukanya di Home Tech (Spirit Orb) dan membuatnya).</p>
-<h2 id="daftar-resep-masakan" tabindex="-1"><a class="header-anchor" href="#daftar-resep-masakan">Daftar resep masakan</a></h2>
-<blockquote>
-<p><strong>Informasi table:</strong>
-Nama material[Jumlah]</p>
-</blockquote>
-<p><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid"
-data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins></p>
+
+## Chimeraland Cooking Guide
+Makanan sangat penting di Chimeraland karena memberikan buff dan stat sementara selama durasi. Dengan memasak dan mengonsumsi makanan atau minuman tertentu, Anda akan mendapatkan buff tertentu, dan untuk memasak makanan atau minuman tersebut Anda ingin memahami Resep Makanan Chimeraland.
+Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan menjelaskan kepada Anda semua Resep Makanan Chimeraland. jadi tanpa bicara tentang chimeraland lebih lanjut mari kita mulai.
+
+Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan.
+
+> **Informasi waktu dalam memasak di chimeraland:**
+> 5 detik = sukses (rate keberhasilan 100%)
+> 10 detik = Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda (rate keberhasilan 50%)
+> 15 detik = gagal (rate keberhasilan 10%)
+
+Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan (10 detik atau lebih), tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di **Camp** dan **Stove**, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya **Mixer** (Anda perlu membukanya di Home Tech (Spirit Orb) dan membuatnya).
+
+## Daftar resep masakan
+
+> **Informasi table:**
+> Nama material[Jumlah]
+
+<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid"
+  data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -140,13 +145,16 @@ data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins></p>
       <td></td>
     </tr>
 -->
+
 <h5>Add New Chimeraland Recipe</h5>
 <iframe src="https://backend.webmanajemen.com/chimeraland/recipes.php" frameborder="0" width="100%"
   height="700px"></iframe>
+
 <!-- references
   https://zilliongamer.com/chimeraland/c/items-list/food-epic-grad
   https://theclashify.com/chimeraland-cooking-recipes/
 -->
+
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -162,15 +170,17 @@ data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins></p>
     color: white;
     font-family: "Courier New", Courier, monospace;
   }
-<p>.mdui-theme-layout-dark table.dataTable * {
-background-color: black !important;
-background-repeat: no-repeat;
-color: white;
-}</p>
-<p>.mdui-theme-layout-dark table.dataTable td {
-border: 0.1em solid white;
-}
-</style></p>
+
+  .mdui-theme-layout-dark table.dataTable * {
+    background-color: black !important;
+    background-repeat: no-repeat;
+    color: white;
+  }
+
+  .mdui-theme-layout-dark table.dataTable td {
+    border: 0.1em solid white;
+  }
+</style>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     fetch("https://backend.webmanajemen.com/chimeraland/recipes.php?json")
@@ -204,32 +214,42 @@ border: 0.1em solid white;
       }, 4000);
   });
 </script>
+
 <!-- playground https://codepen.io/dimaslanjaka/pen/gOXWPra -->
 <link rel="stylesheet" href="Recipes/style.css" />
 <script src="Recipes/script.js"></script>
-<h3 id="unlock-stove-ii" tabindex="-1"><a class="header-anchor" href="#unlock-stove-ii">Unlock Stove II</a></h3>
-<p>Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2</p>
-<blockquote>
-<p>Menggunakan <strong>Camp 2</strong> untuk unlock <strong>Stove II</strong></p>
-<p><strong>Camp 2</strong> tidak permanen, bangunan camp II akan hilang dalam 15 menit setelah diletakkan.</p>
-</blockquote>
-<p>Recipe :</p>
-<ul>
-<li>grilled mushroom = any mushroom (unlock at camp 2)</li>
-<li>mushroom broth = any mushroom + any meat + dew/ice piece (unlock at camp 2)</li>
-</ul>
-<p>Video Tutorial:
-Cara unlock <strong>Stove II</strong></p>
-<h3 id="windoo" tabindex="-1"><a class="header-anchor" href="#windoo">Windoo</a></h3>
-<p>Cara mendapatkan attendant <strong>Windoo</strong></p>
-<h3 id="vulorman" tabindex="-1"><a class="header-anchor" href="#vulorman">Vulorman</a></h3>
-<p>Cara mendapatkan attendant <strong>Vulorman</strong></p>
-<h3 id="astakat" tabindex="-1"><a class="header-anchor" href="#astakat">Astakat</a></h3>
-<p>Cara mendapatkan attendant <strong>Astakat</strong></p>
+
+### Unlock Stove II
+Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
+
+> Menggunakan **Camp 2** untuk unlock **Stove II**
+>
+> **Camp 2** tidak permanen, bangunan camp II akan hilang dalam 15 menit setelah diletakkan.
+
+Recipe :
+- grilled mushroom = any mushroom (unlock at camp 2)
+- mushroom broth = any mushroom + any meat + dew/ice piece (unlock at camp 2)
+
+Video Tutorial:
+Cara unlock **Stove II**
+{% youtube I_QH6jv7rzA %}
+
+### Windoo
+Cara mendapatkan attendant **Windoo**
+{% youtube P5uAFGr33YA %}
+
+### Vulorman
+Cara mendapatkan attendant **Vulorman**
+{% youtube 5K-X_U2YwAI %}
+
+### Astakat
+Cara mendapatkan attendant **Astakat**
+{% youtube NYYoisSMqkM %}
+
 <center><i>cooking recipes chimeraland updated january 2022</i> <a href="index.html">Back to index chimeraland</a></center>
-<h3 id="others" tabindex="-1"><a class="header-anchor" href="#others">Others</a></h3>
-<p>see also other chimeraland articles:</p>
-<ul>
-<li><a href="index.html">index chimeraland</a></li>
-<li><a href="Pets.html">Pet Informations</a></li>
-</ul>
+
+### Others
+see also other chimeraland articles:
+- [index chimeraland](index.html)
+- [Pet Informations](Pets.html)
+

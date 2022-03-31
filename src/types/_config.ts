@@ -1,8 +1,10 @@
 import { join, readFileSync, resolve, write } from '../node/filemanager';
 import yaml from 'yaml';
-export interface ProjectConfig extends Hexo_Config {
+import data from './_config_data.json';
+
+export type ProjectConfig = (typeof data & Hexo_Config) & {
   [keys: string]: any;
-}
+};
 export const root = join(__dirname, '../../');
 const file = join(root, '_config.yml');
 const str = readFileSync(file, 'utf-8');

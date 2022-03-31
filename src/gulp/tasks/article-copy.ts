@@ -12,12 +12,13 @@ import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
-import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
+import config, { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
 import { renderMarkdownIt } from '../../markdown/toHtml';
+import { parse as parseHTML } from 'node-html-parser';
 
 let tryCount = 0;
 
@@ -247,6 +248,24 @@ export function determineDirname(pipe: NodeJS.ReadWriteStream) {
   );
 }
 
+const fixUrl = (s: string) => {
+  if (!s) return s;
+  if (s.startsWith('//')) return 'http:' + s;
+  if (!s.match(/^https?:\/\//g)) return 'http://' + s;
+  return s;
+};
+const external_link = config.external_link;
+const exclude_link: string[] = (Array.isArray(config.external_link.exclude) ? config.external_link.exclude : [config.external_link.exclude]).add(config.url).map(fixUrl);
+const site_url = new URL(config.url);
+export const getDomainWithoutSubdomain = (url: string | URL) => {
+  const urlParts = new URL(url).hostname.split('.');
+
+  return urlParts
+    .slice(0)
+    .slice(-(urlParts.length === 4 ? 3 : 2))
+    .join('.');
+};
+
 /**
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
@@ -272,7 +291,17 @@ export default function taskCopy() {
         if (!modify.error) {
           // reparse
           parse = parsePost(modify.content);
-          parse.body = renderMarkdownIt(parse.body);
+          const body = renderMarkdownIt(parse.body);
+          const html = parseHTML(body);
+          if (external_link.enable) {
+            html.querySelectorAll('a').forEach((a) => {
+              let href = a.getAttribute('href');
+              if (href.startsWith('//')) href = 'http:' + href;
+              if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
+              if (href.trim().match(/^[#/]/) || href.trim().length == 0) return;
+              if (exclude_link.some((s) => href.trim().includes(s))) return;
+            });
+          }
           return buildPost(parse);
           //return modify.content;
           //file.contents = Buffer.from(modify.content);

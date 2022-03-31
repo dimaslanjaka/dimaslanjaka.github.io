@@ -69,7 +69,10 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ""
+  exclude:
+    - webmanajemen.com
+    - web-manajemen.blogspot.com
+    - dimaslanjaka.github.io
 filename_case: 0
 render_drafts: false
 

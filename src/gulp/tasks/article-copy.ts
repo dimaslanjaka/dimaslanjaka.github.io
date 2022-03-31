@@ -364,11 +364,16 @@ export default function taskCopy() {
               if (exclude_link.some((s) => href.trim().includes(s)) || href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
               a.setAttribute('target', '_blank');
               a.setAttribute('rel', 'nofollow noopener');
+              a.setAttribute('href', '//webmanajemen.com/page/safelink.html?url=' + Buffer.from(href).toString('base64'));
             });
           }
 
-          write(tmp(parse.metadata.uuid, 'article.html'), html.toString());
-          return buildPost(parse);
+          const bodyHtml = html.toString();
+          parse.body = bodyHtml;
+          write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
+          const build = buildPost(parse);
+          write(tmp(parse.metadata.uuid, 'article.md'), build);
+          return build;
           //return modify.content;
           //file.contents = Buffer.from(modify.content);
           //write(join(cwd(), 'tmp/modify.md'), modify.content);

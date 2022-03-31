@@ -95,11 +95,6 @@ export function modifyPost(parse: parsePostReturn) {
     const sourceFile = parse.fileTree.source;
     const publicFile = parse.fileTree.public;
     if (parse.metadata) {
-      // fix special char in metadata
-      parse.metadata.title = cleanString(parse.metadata.title);
-      parse.metadata.subtitle = removeMultipleWhiteSpaces(cleanString(parse.metadata.subtitle));
-      parse.metadata.excerpt = removeMultipleWhiteSpaces(cleanString(parse.metadata.excerpt));
-      parse.metadata.description = removeMultipleWhiteSpaces(cleanString(parse.metadata.description));
       // fix post time
       if (parse.metadata.modified) {
         if (!parse.metadata.updated) {
@@ -126,21 +121,32 @@ export function modifyPost(parse: parsePostReturn) {
       if (!parse.metadata.date.includes('+')) {
         parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
       }
+
       // fix lang
       if (!parse.metadata.lang) parse.metadata.lang = 'en';
+
       // fix post description
       if (parse.metadata.subtitle) {
         if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
         if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
-      }
-      if (parse.metadata.excerpt) {
-        if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
-        if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
-      }
-      if (parse.metadata.description) {
-        if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
-        if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
-      }
+      } else
+        if (parse.metadata.excerpt) {
+          if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
+          if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
+        } else
+          if (parse.metadata.description) {
+            if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
+            if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
+          } else {
+            parse.metadata.description = parse.metadata.title;
+            parse.metadata.subtitle = parse.metadata.title;
+            parse.metadata.excerpt = parse.metadata.title;
+          }
+      // fix special char in metadata
+      parse.metadata.title = cleanString(parse.metadata.title);
+      parse.metadata.subtitle = removeMultipleWhiteSpaces(cleanString(parse.metadata.subtitle));
+      parse.metadata.excerpt = removeMultipleWhiteSpaces(cleanString(parse.metadata.excerpt));
+      parse.metadata.description = removeMultipleWhiteSpaces(cleanString(parse.metadata.description));
       // fix thumbnail
       if (parse.metadata.cover) {
         if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;

@@ -13,12 +13,16 @@ import writeFile from '../compress/writeFile';
 import chalk from 'chalk';
 import scheduler from '../../node/scheduler';
 import { inspect } from 'util';
+import { modifyPost } from './article-copy';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 //console.log(existsSync(layout), layout);
 //rmdirSync(generated_dir);
+
+const logname = chalk.hex('#fcba03')('[render]');
+const log = [logname];
 
 export default function taskGenerate() {
   const src: string[] = [];
@@ -67,14 +71,26 @@ export default function taskGenerate() {
     //include(['_posts/Chimeraland/Recipes.md']);
     exclude(['_data/**', '_drafts/**', '**/readme.md', '**/**.code-workspace', '**/guzzle/**', ...config.skip_render]);
     if (Array.isArray(config.exclude)) exclude(config.exclude);
-    const logname = chalk.hex('#fcba03')('[render]');
+
     const sitemap: string[] = [];
     return gulp.src(src, { nocase: true }).pipe(
       through.obj(async (file: vinyl, encoding, cb) => {
-        if (file.extname != '.md' || file.path.match(/(readme|changelog|contribute).md$/gi) || file.stat.size == 0) return cb(null, file);
-        console.log(logname, file.path.replace(cwd(), ''));
+        if (file.extname != '.md' || file.path.match(/(readme|changelog|contribute).md$/gi) || file.stat.size == 0) {
+          log.push(chalk.red('excluded'));
+          console.log(log.join(' '));
+          return cb(null, file);
+        }
+        log.push(file.path.replace(cwd(), ''));
         const self = this;
-        const parse = parsePost(file.contents.toString(encoding));
+        let parse = parsePost(file.contents.toString(encoding));
+        const modify = modifyPost(parse);
+        if (modify.error) {
+          log.push(chalk.red('fail modify'));
+          console.log(log.join(' '));
+          return cb(null, file);
+        }
+        // reparse
+        parse = parsePost(modify.content);
         const filepath = toUnix(file.path);
         file.extname = '.html';
         if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
@@ -82,6 +98,7 @@ export default function taskGenerate() {
         if (parse) {
           const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
           ejs_opt.content = parse.body;
+          //delete parse.body;
           const page_url = new URL(config.url);
           page_url.pathname = filepath.replaceArr([post_public_dir, join(cwd(), 'source')], '').replace(/.md$/, '.html');
           ejs_opt.url = page_url.toString();
@@ -91,6 +108,7 @@ export default function taskGenerate() {
             .then((rendered) => {
               file.contents = Buffer.from(rendered);
               if (self) self.push(rendered);
+              log.push(chalk.green('success'));
               return rendered;
             })
             .catch((e) => {
@@ -109,6 +127,7 @@ export default function taskGenerate() {
                   write(join(generated_dir, 'sitemap.html'), rendered);
                 });
               });
+              console.log(log);
               cb(null, file);
             });
         }

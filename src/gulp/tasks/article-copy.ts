@@ -283,7 +283,7 @@ export default function taskCopy() {
     return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
   const copyPosts = () => {
-    const src = join(post_source_dir, 'Chimeraland/Recipes.md');
+    const src = join(post_source_dir, '**/**.md');
     const run = gulp.src(src).pipe(
       modifyFile(function (content, path, _file) {
         console.log(chalk.cyan('[copy][md]'), path);
@@ -315,10 +315,11 @@ export default function taskCopy() {
             if (Object.prototype.hasOwnProperty.call(re, key)) {
               const regex = re[key];
               const matchedScript = body.match(regex);
-              matchedScript.forEach((str, i) => {
-                extracted[key][i] = str;
-                body = body.replace(str, `<!--${key}${i}-->`);
-              });
+              if (matchedScript)
+                matchedScript.forEach((str, i) => {
+                  extracted[key][i] = str;
+                  body = body.replace(str, `<!--${key}${i}-->`);
+                });
             }
           }
           write(tmp(parse.metadata.uuid, 'body.md'), body);
@@ -358,6 +359,7 @@ export default function taskCopy() {
           if (external_link.enable) {
             html.querySelectorAll('a').forEach((a) => {
               let href = a.getAttribute('href');
+              if (!href) return;
               if (href.startsWith('//')) href = 'http:' + href;
               //if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
               if (href.trim().match(/^[#/]/) || href.trim().length == 0) return;

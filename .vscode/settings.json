@@ -9,7 +9,9 @@
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
   "typescript.tsc.autoDetect": "on",
-  "editor.fontFamily": "Consolas",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
   "emmet.includeLanguages": {
     "ejs": "html",
   },
@@ -60,4 +62,5 @@
   "prettier.enableDebugLogs": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.printWidth": 180,
+  "npm.packageManager": "npm"
 }

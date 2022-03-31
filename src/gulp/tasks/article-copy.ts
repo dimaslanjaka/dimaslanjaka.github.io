@@ -259,23 +259,14 @@ const fixUrl = (s: string) => {
   if (!s.match(/^https?:\/\//g)) return 'http://' + s;
   return s;
 };
-const external_link = config.external_link;
-const exclude_link: string[] = (Array.isArray(config.external_link.exclude) ? config.external_link.exclude : [config.external_link.exclude]).add(config.url).map(fixUrl);
-const site_url = new URL(config.url);
-export const getDomainWithoutSubdomain = (url: string | URL) => {
-  const urlParts = new URL(url).hostname.split('.');
 
-  return urlParts
-    .slice(0)
-    .slice(-(urlParts.length === 4 ? 3 : 2))
-    .join('.');
-};
 function countWords(str: string) {
   str = str.replace(/(^\s*)|(\s*$)/gi, '');
   str = str.replace(/[ ]{2,}/gi, ' ');
   str = str.replace(/\n /, '\n');
   return str.split(' ').length;
 }
+
 /**
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
@@ -359,21 +350,7 @@ export default function taskCopy() {
             .map((e) => e.text)
             .join('\n');
           parse.metadata.wordcount = countWords(words);
-          // +filter
-          if (external_link.enable) {
-            html.querySelectorAll('a').forEach((a) => {
-              let href = a.getAttribute('href');
-              if (!href) return;
-              if (href.startsWith('//')) href = 'http:' + href;
-              //if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
-              if (href.trim().match(/^[#/]/) || href.trim().length == 0) return;
-              if (exclude_link.some((s) => href.trim().includes(s)) || href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
-              a.setAttribute('target', '_blank');
-              a.setAttribute('rel', 'nofollow noopener');
-              a.setAttribute('href', '//webmanajemen.com/page/safelink.html?url=' + Buffer.from(href).toString('base64'));
-            });
-          }
-
+          // build article
           const bodyHtml = html.toString();
           parse.body = bodyHtml;
           write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);

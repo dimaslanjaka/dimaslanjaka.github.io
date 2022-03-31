@@ -88,7 +88,7 @@ class scheduler {
   }
   /**
    * Add function with key to list
-   * @param key
+   * @param key existing key (duplicate) will be overwritten
    * @param value
    */
   static add(key: string, value: () => any) {

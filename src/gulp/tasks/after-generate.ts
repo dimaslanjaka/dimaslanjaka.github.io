@@ -7,6 +7,36 @@ import { readFileSync, writeFileSync } from 'fs';
 import bluebird from 'bluebird';
 import { cwd } from 'process';
 
+export const getDomainWithoutSubdomain = (url: string | URL) => {
+  const urlParts = new URL(url).hostname.split('.');
+
+  return urlParts
+    .slice(0)
+    .slice(-(urlParts.length === 4 ? 3 : 2))
+    .join('.');
+};
+
+/*
+const external_link = config.external_link;
+const exclude_link: string[] = (Array.isArray(config.external_link.exclude) ? config.external_link.exclude : [config.external_link.exclude]).add(config.url).map(fixUrl);
+const site_url = new URL(config.url);
+if (external_link.enable) {
+            html.querySelectorAll('a').forEach((a) => {
+              let href = a.getAttribute('href');
+              if (!href) return;
+              if (href.startsWith('//')) href = 'http:' + href;
+              //if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
+              if (href.trim().match(/^[#/]/) || href.trim().length == 0) return;
+              if (exclude_link.some((s) => href.trim().includes(s)) || href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
+              a.setAttribute('target', '_blank');
+              a.setAttribute('rel', 'nofollow noopener');
+              if (href.trim().match(/^https?:\/\//)) {
+                a.setAttribute('href', '//webmanajemen.com/page/safelink.html?url=' + Buffer.from(href).toString('base64'));
+              }
+            });
+          }
+*/
+
 export default function afterGenerate(config: ProjectConfig) {
   // iterate public_dir of _config.yml (hexo generate)
   const public_dir = join(cwd(), config.public_dir);

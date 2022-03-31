@@ -90,7 +90,7 @@
             layout="responsive"
             sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
             resizable
-            src="https://webmanajemen.com/comment.html#<%- new URL(page.url).pathname %>"
+            src="https://webmanajemen.com/comment.html?url=<%- encodeURIComponent(page.url) %> #<%- page.uuid||new URL(page.url).pathname %>"
 >
     <div overflow
          tabindex=0

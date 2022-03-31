@@ -9,4 +9,3 @@ new scheduler();
 
 // article copy
 if (typeof exports != 'undefined') exports.copy = taskCopy;
-taskCopy();

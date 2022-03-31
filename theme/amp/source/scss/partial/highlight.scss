@@ -1,0 +1,158 @@
+.article__entry {
+    .gist {
+        overflow: auto;
+        margin-top: 15px;
+        padding: 7px 15px;
+        border: 1px solid color(border);
+        border-radius: 2px;
+        background: #eee;
+        color: #666;
+        line-height: 1.6;
+        .gist-file {
+            margin: 0;
+            border: none;
+            font-size: 0.9em;
+            font-family: inherit;
+            .gist-data {
+                border-bottom: none;
+                background: none;
+                pre {
+                    padding: 0;
+                    font-family: font-mono;
+                }
+            }
+            .gist-meta {
+                margin-top: 5px;
+                padding: 0;
+                background: none;
+                color: color(sub);
+                font-size: 100%;
+            }
+        }
+    }
+    figure {
+        margin: 0;
+        &.highlight {
+            padding: 7px 10px;
+            border: 1px solid color(border);
+            border-radius: 2px;
+            background: #fff;
+            overflow-x: auto;
+            margin: 1em 0;
+            line-height: 1.1;
+            font-size: 1.4rem;
+            figcaption {
+                margin-bottom: 5px;
+                color: color(sub);
+                position: relative;
+                a {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+        pre {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        table {
+            margin-top: 0;
+            border-spacing: 0;
+            td {
+                border: none;
+            }
+        }
+
+        .gutter {
+            padding: 0 10px 0 0;
+            border-right: 1px solid color(border);
+            color: color(sub);
+            text-align: right;
+        }
+        .code {
+            padding: 0 0 0 10px;
+            border-left: 1px solid #fff;
+            color: #2E2E2E;
+        }
+        .line {
+            line-height: 20px;
+        }
+    }
+    pre {
+        // GitHub Gist Theme
+        // Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+
+        .comment,
+        .bash .shebang,
+        .javascript .javadoc {
+            color: #969896;
+        }
+
+        .string,
+        .javascript .regexp,
+        .json .attribute,
+        .php .regexp,
+        .xml .value,
+        .scss .built_in {
+            color: #df5000;
+        }
+
+        .keyword,
+        .css .at_rule,
+        .css .important,
+        .javascript .tag,
+        .javascript .javadoctag,
+        .php .phpdoc,
+        .scss .tag,
+        .scss .at_rule,
+        .scss .important {
+            color: #a71d5d;
+        }
+
+        .bash .literal,
+        .bash .built_in,
+        .css .attribute,
+        .css .hexcolor,
+        .css .number,
+        .css .function,
+        .javascript .built_in,
+        .javascript .literal,
+        .javascript .number,
+        .json .number,
+        .php .literal,
+        .php .number,
+        .scss .preprocessor,
+        .scss .number,
+        .scss .hexcolor,
+        .scss .function,
+        .scss .attribute {
+            color: #0086b3;
+        }
+
+        .css .tag {
+            color: #63a35c;
+        }
+
+        .bash .variable,
+        .css .attr_selector,
+        .css .value,
+        .javascript .tag .title,
+        .scss .variable {
+            color: #333333;
+        }
+
+        .bash .title,
+        .css .id,
+        .css .class,
+        .css .pseudo,
+        .javascript .title,
+        .php .title,
+        .scss .id,
+        .scss .pseudo,
+        .scss .class {
+            color: #795da3;
+        }
+    }
+}

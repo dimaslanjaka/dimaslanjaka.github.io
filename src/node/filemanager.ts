@@ -51,8 +51,8 @@ const filemanager = {
    * Remove dir recursively (non-empty folders supported)
    * @param path
    */
-  rmdirSync: (path: fs.PathLike, options: fs.RmDirOptions = {}) => {
-    return fs.rmdirSync(path, Object.assign({ recursive: true }, options));
+  rmdirSync: (path: fs.PathLike, options: fs.RmOptions = {}) => {
+    return fs.rmSync(path, Object.assign({ recursive: true }, options));
   },
 
   /**

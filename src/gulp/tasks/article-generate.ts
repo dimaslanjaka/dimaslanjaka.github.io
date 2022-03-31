@@ -10,6 +10,7 @@ import Bluebird from 'bluebird';
 import ejs_object, { DynamicObject } from '../../ejs';
 import { parsePost } from '../../markdown/transformPosts';
 import writeFile from '../compress/writeFile';
+import chalk from 'chalk';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -64,9 +65,12 @@ export default function generate() {
     include(['**.md', '_posts/**/**.md']);
     //include(['_posts/Chimeraland/Recipes.md']);
     exclude(['_data/**', '_drafts/**', '**/readme.md', '**/**.code-workspace']);
-    //console.log(src);
+    const logname = chalk.hex('#fcba03')('[render]');
+    const sitemap: string[] = [];
     return gulp.src(src, { nocase: true }).pipe(
       through.obj(async (file: vinyl, encoding, cb) => {
+        if (file.extname != '.md') return cb(null, file);
+        console.log(logname, file.path.replace(cwd(), ''));
         const self = this;
         const parse = parsePost(file.contents.toString(encoding));
         const filepath = toUnix(file.path);
@@ -79,6 +83,7 @@ export default function generate() {
           const page_url = new URL(config.url);
           page_url.pathname = filepath.replace(post_public_dir, '').replace(/.md$/, '.html');
           ejs_opt.url = page_url.toString();
+          sitemap.push(ejs_opt.url);
           return ejs_object
             .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir })
             .then((rendered) => {

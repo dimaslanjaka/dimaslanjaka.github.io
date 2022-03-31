@@ -1,16 +1,14 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import filemanager from '../node/filemanager';
-import path, { join } from 'path';
-import * as fs from 'fs';
+import filemanager, { basename, dirname, existsSync, join, mkdirSync, statSync, writeFileSync } from '../node/filemanager';
 import toHtml from './toHtml';
 import yaml from 'yaml';
 import notranslate from '../translator/notranslate';
 import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
-import YAML from 'yaml';
-import { ProjectConfig } from '../types/_config';
+import config_yml, { ProjectConfig } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
+import { toUnix } from 'upath';
 
 export interface LooseObject {
   [key: string]: any;
@@ -112,19 +110,9 @@ export function parsePost(text: string): parsePostReturn | null {
    * source file if `text` is file
    */
   const originalArg = text;
-  const isFile = fs.existsSync(text) && fs.statSync(text).isFile();
+  const isFile = existsSync(text) && statSync(text).isFile();
   if (isFile) {
     text = readFileSync(text).toString();
-  }
-
-  // determine and parse _config.yml
-  let config_file: string;
-  let config_yml: ProjectConfig;
-  if (fs.existsSync(join(process.cwd(), '_config.yml'))) {
-    config_file = join(process.cwd(), '_config.yml');
-  }
-  if (config_file) {
-    config_yml = YAML.parse(readFileSync(config_file, 'utf-8'));
   }
 
   try {
@@ -222,8 +210,8 @@ export function fixPostBody(str: string) {
  * @param file file path to save
  */
 export function saveParsedPost(parsed: parsePostReturn, file: string) {
-  if (!fs.existsSync(path.dirname(file))) fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, buildPost(parsed));
+  if (!existsSync(dirname(file))) mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, buildPost(parsed));
 }
 
 /**
@@ -245,13 +233,13 @@ export function transformPostBody(
   // eslint-disable-next-line no-unused-vars
   callback?: (filename: string, filedir: string, filepath: string) => any
 ) {
-  filemanager.readdirSync(path.join(__dirname, '../../src-posts'), function (err, results) {
+  filemanager.readdirSync(join(__dirname, '../../src-posts'), function (err, results) {
     if (!err) {
       results.forEach(function (file) {
-        const read = fs.readFileSync(file, { encoding: 'utf-8' });
-        const filename = path.basename(file, '.md') + '.html';
-        const filedir = path.normalize(path.dirname(file).replace('src-posts', outputDir));
-        const filepath = path.join(filedir, filename);
+        const read = readFileSync(file, { encoding: 'utf-8' });
+        const filename = basename(file, '.md') + '.html';
+        const filedir = toUnix(dirname(file).replace('src-posts', outputDir));
+        const filepath = join(filedir, filename);
         //console.log(filename, filedir, filepath);
         if (typeof callback == 'function') {
           callback(filename, filedir, filepath);
@@ -273,18 +261,18 @@ export function transformPostBody(
  * @param outputDir custom output, default source/_posts
  */
 export default function transformPosts(outputDir = 'source/_posts') {
-  filemanager.readdirSync(path.join(__dirname, '../../src-posts'), function (err, results) {
+  filemanager.readdirSync(join(__dirname, '../../src-posts'), function (err, results) {
     if (!err) {
       results.forEach(function (file) {
-        const read = fs.readFileSync(file, { encoding: 'utf-8' });
-        const filename = path.basename(file);
-        const filedir = path.normalize(path.dirname(file).replace('src-posts', outputDir));
-        const filepath = path.join(filedir, filename);
+        const read = readFileSync(file, { encoding: 'utf-8' });
+        const filename = basename(file);
+        const filedir = toUnix(dirname(file).replace('src-posts', outputDir));
+        const filepath = join(filedir, filename);
         const parse = parsePost(read);
         if (parse !== null && parse.body) {
           const html = toHtml(parse.body);
           const filter_notranslate = notranslate(html);
-          fs.writeFileSync(filepath, `${parse.metadataString}\n\n${filter_notranslate}`);
+          writeFileSync(filepath, `${parse.metadataString}\n\n${filter_notranslate}`);
         }
       });
     }

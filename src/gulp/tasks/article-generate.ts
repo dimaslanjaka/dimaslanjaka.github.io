@@ -2,13 +2,14 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, existsSync, join, resolve, rmdirSync } from '../../node/filemanager';
-import config, { post_public_dir, root } from '../../types/_config';
+import config, { post_public_dir, root, tmp } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
 import 'js-prototypes';
 import Bluebird from 'bluebird';
 import ejs_object, { DynamicObject } from '../../ejs';
 import { parsePost } from '../../markdown/transformPosts';
+import writeFile from '../compress/writeFile';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -53,11 +54,15 @@ export default function generate() {
     //.pipe(gulp.dest(generated_dir));
   };
 
+  const copyTemplate = () => {
+    return gulp.src(join(theme_dir, 'source/**/**'));
+  };
+
   const renderArticle = () => {
     // only markdown files
     src.length = 0;
-    //include(['**.md', '_posts/**/**.md']);
-    include(['_posts/Chimeraland/Recipes.md']);
+    include(['**.md', '_posts/**/**.md']);
+    //include(['_posts/Chimeraland/Recipes.md']);
     exclude(['_data/**', '_drafts/**', '**/readme.md', '**/**.code-workspace']);
     //console.log(src);
     return gulp.src(src, { nocase: true }).pipe(
@@ -80,7 +85,9 @@ export default function generate() {
               file.contents = Buffer.from(rendered);
               if (self) self.push(rendered);
             })
-            .catch(console.error)
+            .catch((e) => {
+              writeFile(tmp(parse.metadata.uuid, 'error.json'), JSON.stringify(e));
+            })
             .finally(() => cb(null, file));
         }
 
@@ -90,7 +97,8 @@ export default function generate() {
   };
 
   //return copyAssets().once('end', () => renderArticle().pipe(gulp.dest(generated_dir)));
-  Bluebird.resolve(copyAssets())
-    .then((copy) => [copy, renderArticle()])
+  Bluebird.resolve(copyTemplate())
+    .then((template) => [template, copyAssets()])
+    .then((arr) => [...arr, renderArticle()])
     .then((arr) => arr.map((s) => s.pipe(gulp.dest(generated_dir))));
 }

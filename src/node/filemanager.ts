@@ -52,7 +52,7 @@ const filemanager = {
    * @param path
    */
   rmdirSync: (path: fs.PathLike, options: fs.RmOptions = {}) => {
-    return fs.rmSync(path, Object.assign({ recursive: true }, options));
+    if (fs.existsSync(path)) return fs.rmSync(path, Object.assign({ recursive: true }, options));
   },
 
   /**
@@ -92,7 +92,7 @@ const grouped = {};
 export function slash(...paths: string[]): string {
   const j = paths.join('/');
   if (grouped[j]) return grouped[j];
-  const jx = j.split(/\//g).join('/');
+  const jx = j.split(/\//g).removeEmpties().join('/');
   //console.log(jx);
   grouped[j] = jx;
   return j;

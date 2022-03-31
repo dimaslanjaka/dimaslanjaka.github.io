@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, existsSync, join, resolve, rmdirSync } from '../../node/filemanager';
-import config, { root } from '../../types/_config';
+import config, { post_public_dir, root } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
 import 'js-prototypes';
@@ -71,6 +71,9 @@ export default function generate() {
         if (parse) {
           const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
           ejs_opt.content = parse.body;
+          const page_url = new URL(config.url);
+          page_url.pathname = filepath.replace(post_public_dir, '').replace(/.md$/, '.html');
+          ejs_opt.url = page_url.toString();
           return ejs_object
             .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir })
             .then((rendered) => {

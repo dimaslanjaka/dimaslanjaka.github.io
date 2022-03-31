@@ -27,6 +27,6 @@
   "dateCreated": "<%- date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') %>",
   "dateModified": "<%- date_format(page.updated, 'YYYY-MM-DDTHH:mm:ssZ') %>",
   "url": "<%- page.url %> ",
-  "description": "<%- page.subtitle||page.excerpt||page.description %> ",
-  "wordCount": 147
+  "description": "<%- page.subtitle||page.excerpt||page.description||page.title %> ",
+  "wordCount": <%- page.wordcount||null %>
 }</script>

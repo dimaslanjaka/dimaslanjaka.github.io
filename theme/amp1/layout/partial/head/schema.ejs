@@ -23,9 +23,9 @@
   "image": "<%- thumbnail(page) %>",
   "keywords": "<%- keywords(page) %>",
   "genre": "<%- page.category.join(',') %>",
-  "datePublished": "<%- date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') %>",
-  "dateCreated": "<%- date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') %>",
-  "dateModified": "<%- date_format(page.updated, 'YYYY-MM-DDTHH:mm:ssZ') %>",
+  "datePublished": "<%- page.date ? date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') : null %>",
+  "dateCreated": "<%- page.date ? date_format(page.date, 'YYYY-MM-DDTHH:mm:ssZ') : null %>",
+  "dateModified": "<%- page.updated ? date_format(page.updated, 'YYYY-MM-DDTHH:mm:ssZ') : null %>",
   "url": "<%- page.url %> ",
   "description": "<%- page.subtitle||page.excerpt||page.description||page.title %> ",
   "wordCount": <%- page.wordcount||null %>

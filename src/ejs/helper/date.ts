@@ -12,9 +12,17 @@ export function date_local(page: parsePostReturn['metadata']) {
 }
 
 export function date_format(str: string, pattern: 'MMMM Do YYYY, h:mm:ss a') {
-  try {
-    return moment(str).format(pattern);
-  } catch (error) {
-    return `${error.message} ${moment().format()}`;
+  if (!str) return null;
+
+  if (typeof str == 'string') {
+    const time = str.trim();
+    if (time.length > 0) {
+      try {
+        return moment(time).format(pattern);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   }
+  return null;
 }

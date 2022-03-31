@@ -8,10 +8,11 @@
 	<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 	<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 	<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
 	<link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/2980/5252/files/favicon_32x32.png?v=1521894486"
 		type="image/png">
-	<title><%= page.title %> - <%= config.title %></title>
+	<title><%= page.title %> - <%= page.webtitle||config.title %></title>
 	<link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<%- include('partial/head/schema', { page: page, config: config}) %>
@@ -84,6 +85,22 @@
 					</a>
 				</ul>
 			</div>
+
+			<amp-iframe width=600 height=600
+            layout="responsive"
+            sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+            resizable
+            src="https://webmanajemen.com/comment.html#<%- new URL(page.url).pathname %>"
+>
+    <div overflow
+         tabindex=0
+         role=button
+         aria-label="Load more"
+         style="display:block;font-size:12px;font-weight:500;font-family:Helvetica Neue, arial, sans-serif;text-align:center;line-height:1.1;padding:12px 16px;border-radius:4px;background:rgba(29,47,58,0.6);color:rgb(255,255,255)"
+    >
+        Load more
+    </div>
+</amp-iframe>
 		</div>
 		<div id="additional-info">
 			<div class="related-box">
@@ -122,9 +139,9 @@
 	<footer>
 		<div class="content content-width">
 			<div class="branding">
-				<p>&#169; 2018 <a href="https://www.amptemplates.io">amptemplates.io</a>. All Rights Reserved.</p>
-				<p>Designed & Developed by <a href="https://twitter.com/yomeshgupta">Yomesh Gupta</a>. Powered by <a
-						href="https://www.dessinerstore.com">Dessiner
+				<p>&#169; 2018 <a href="https://www.amptemplates.io" rel="nofollow noopener">amptemplates.io</a>. All Rights Reserved.</p>
+				<p>Designed & Developed by <a href="https://twitter.com/yomeshgupta" rel="nofollow noopener">Yomesh Gupta</a>. Powered by <a
+						href="https://www.dessinerstore.com" rel="nofollow noopener">Dessiner
 						Store</a>.</p>
 			</div>
 		</div>

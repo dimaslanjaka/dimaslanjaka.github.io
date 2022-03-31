@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, existsSync, join, resolve, rmdirSync } from '../../node/filemanager';
+import { cwd, existsSync, join, resolve, rmdirSync, write } from '../../node/filemanager';
 import config, { post_public_dir, root, tmp } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
@@ -64,7 +64,7 @@ export default function generate() {
     src.length = 0;
     include(['**.md', '_posts/**/**.md']);
     //include(['_posts/Chimeraland/Recipes.md']);
-    exclude(['_data/**', '_drafts/**', '**/readme.md', '**/**.code-workspace']);
+    exclude(['_data/**', '_drafts/**', '**/readme.md', '**/**.code-workspace', '**/guzzle/**', ...config.skip_render]);
     const logname = chalk.hex('#fcba03')('[render]');
     const sitemap: string[] = [];
     return gulp.src(src, { nocase: true }).pipe(
@@ -81,7 +81,7 @@ export default function generate() {
           const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
           ejs_opt.content = parse.body;
           const page_url = new URL(config.url);
-          page_url.pathname = filepath.replace(post_public_dir, '').replace(/.md$/, '.html');
+          page_url.pathname = filepath.replaceArr([post_public_dir, join(cwd(), 'source')], '').replace(/.md$/, '.html');
           ejs_opt.url = page_url.toString();
           sitemap.push(ejs_opt.url);
           return ejs_object
@@ -93,7 +93,19 @@ export default function generate() {
             .catch((e) => {
               writeFile(tmp(parse.metadata.uuid, 'error.json'), JSON.stringify(e));
             })
-            .finally(() => cb(null, file));
+            .finally(() => {
+              // generate sitemap
+              write(join(generated_dir, 'sitemap.txt'), sitemap.join('\n'));
+              ejs_opt.content = sitemap.map((s) => `<a href='${s}'>${s}</a>`).join('<br/>');
+              ejs_opt.title = 'Sitemap';
+              ejs_opt.category = ['Sitemap'];
+              ejs_opt.tags = ['Sitemap'];
+              ejs_opt.webtitle = 'WMI';
+              ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir }).then((rendered) => {
+                write(join(generated_dir, 'sitemap.html'), rendered);
+              });
+              cb(null, file);
+            });
         }
 
         cb(null, file);

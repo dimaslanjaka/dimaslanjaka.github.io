@@ -28,107 +28,72 @@ photos:
 wordcount: 246
 ---
 
-<h2 id="npc-s-favorite-musical-instrument" tabindex="-1"><a class="header-anchor" href="#npc-s-favorite-musical-instrument">NPC’s favorite musical instrument</a></h2>
-<blockquote>
-<p>Did you know that playing music with certain instruments to the npc who gave you the quest “Music Performance Request” will give you better rewards, such as ff seeds, cabala, etc.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>NPC Name</th>
-<th>NPC Location</th>
-<th>musical instrument</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Colin</td>
-<td>Sophila</td>
-<td>Flute</td>
-</tr>
-<tr>
-<td>Maggie</td>
-<td>Oak Town</td>
-<td>Piano</td>
-</tr>
-<tr>
-<td>Guard</td>
-<td>Sophila</td>
-<td>Drum</td>
-</tr>
-<tr>
-<td>Anna</td>
-<td></td>
-<td>Violin</td>
-</tr>
-<tr>
-<td>Freya</td>
-<td>Sophila</td>
-<td>Guitar</td>
-</tr>
-</tbody>
-</table>
-<h2 id="list-best-midi-hold-tap-right-click-to-copy" tabindex="-1"><a class="header-anchor" href="#list-best-midi-hold-tap-right-click-to-copy">List Best Midi (Hold tap/Right click to copy)</a></h2>
-<table>
-<thead>
-<tr>
-<th>Title</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deep purple - soldier of fortune</td>
-<td><a href="https://bitmidi.com/uploads/38563.mid">https://bitmidi.com/uploads/38563.mid</a></td>
-</tr>
-<tr>
-<td>Deep purple - soldier of fortune [2]</td>
-<td><a href="https://bitmidi.com/uploads/38560.mid">https://bitmidi.com/uploads/38560.mid</a></td>
-</tr>
-<tr>
-<td>Only The Lonely</td>
-<td><a href="https://bitmidi.com/uploads/112561.mid">https://bitmidi.com/uploads/112561.mid</a></td>
-</tr>
-<tr>
-<td>Final Fantasy VII (Battle Theme)</td>
-<td><a href="https://bitmidi.com/uploads/46430.mid">https://bitmidi.com/uploads/46430.mid</a></td>
-</tr>
-<tr>
-<td>Queen - Bohemian Rhapsody</td>
-<td><a href="https://bitmidi.com/uploads/87216.mid">https://bitmidi.com/uploads/87216.mid</a></td>
-</tr>
-<tr>
-<td>Janis Joplin - Me and Bobby McGee</td>
-<td><a href="https://bitmidi.com/uploads/62322.mid">https://bitmidi.com/uploads/62322.mid</a></td>
-</tr>
-<tr>
-<td>Clout - Save me</td>
-<td><a href="https://bitmidi.com/uploads/24659.mid">https://bitmidi.com/uploads/24659.mid</a></td>
-</tr>
-<tr>
-<td>TokiMeki</td>
-<td><a href="https://bitmidi.com/uploads/24659.mid">https://bitmidi.com/uploads/24659.mid</a></td>
-</tr>
-<tr>
-<td>Hatsune Miku</td>
-<td><a href="https://bitmidi.com/uploads/55292.mid">https://bitmidi.com/uploads/55292.mid</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="how-to-convert-youtube-videos-to-midi" tabindex="-1"><a class="header-anchor" href="#how-to-convert-youtube-videos-to-midi">How to convert Youtube Videos to MIDI</a></h2>
-<p>Visit <a href="https://youtube2midi.github.io/">YT2MIDI</a></p>
-<h3 id="available-midi-sites" tabindex="-1"><a class="header-anchor" href="#available-midi-sites">Available Midi Sites</a></h3>
-<ul>
-<li><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi">https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi</a></li>
-<li><a href="https://www.mfiles.co.uk/midi-files.htm">https://www.mfiles.co.uk/midi-files.htm</a></li>
-<li><a href="https://midisfree.com/">https://midisfree.com/</a></li>
-<li><a href="https://www.midiworld.com/">https://www.midiworld.com/</a></li>
-<li><a href="http://www.midishrine.com/">http://www.midishrine.com/</a></li>
-<li><a href="https://midistock.ru/">https://midistock.ru/</a></li>
-<li><a href="https://freemidi.org/topmidi">https://freemidi.org/topmidi</a></li>
-<li><a href="https://sheet.host/">https://sheet.host/</a></li>
-<li><a href="http://www.hamienet.com/">http://www.hamienet.com/</a></li>
-</ul>
-<h3 id="how-to-create-music-song-mp3-to-midi" tabindex="-1"><a class="header-anchor" href="#how-to-create-music-song-mp3-to-midi">How to create music/song mp3 to midi</a></h3>
-<p></p>
-<p></p>
+## NPC's favorite musical instrument
+
+> Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
+
+| NPC Name | NPC Location | musical instrument |
+| -------- | ------------ | ------------------ |
+| Colin    | Sophila      | Flute              |
+| Maggie   | Oak Town     | Piano              |
+| Guard    | Sophila      | Drum               |
+| Anna     |              | Violin             |
+| Freya    | Sophila      | Guitar             |
+
+## List Best Midi (Hold tap/Right click to copy)
+
+| Title                                | Link                                   |
+| ------------------------------------ | -------------------------------------- |
+| Deep purple - soldier of fortune     | https://bitmidi.com/uploads/38563.mid  |
+| Deep purple - soldier of fortune [2] | https://bitmidi.com/uploads/38560.mid  |
+| Only The Lonely                      | https://bitmidi.com/uploads/112561.mid |
+| Final Fantasy VII (Battle Theme)     | https://bitmidi.com/uploads/46430.mid  |
+| Queen - Bohemian Rhapsody            | https://bitmidi.com/uploads/87216.mid  |
+| Janis Joplin - Me and Bobby McGee    | https://bitmidi.com/uploads/62322.mid  |
+| Clout - Save me                      | https://bitmidi.com/uploads/24659.mid  |
+| TokiMeki                             | https://bitmidi.com/uploads/24659.mid  |
+| Hatsune Miku                         | https://bitmidi.com/uploads/55292.mid  |
+
+## How to convert Youtube Videos to MIDI
+Visit [YT2MIDI](https://youtube2midi.github.io/)
+
+### Available Midi Sites
+- https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi
+- https://www.mfiles.co.uk/midi-files.htm
+- https://midisfree.com/
+- https://www.midiworld.com/
+- http://www.midishrine.com/
+- https://midistock.ru/
+- https://freemidi.org/topmidi
+- https://sheet.host/
+- http://www.hamienet.com/
+
+### How to create music/song mp3 to midi
+
+<amp-youtube
+      id="video-container-7"
+      data-videoid="tik3ZFwFsJA"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/tik3ZFwFsJA/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
+
+<amp-youtube
+      id="video-container-8"
+      data-videoid="kIXXv8oUqOc"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/kIXXv8oUqOc/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>

@@ -29,38 +29,40 @@ photos:
 wordcount: 105
 ---
 
-<pre><code class="language-bash">#!/bin/bash
+```bash
+#!/bin/bash
 #clean page cache
 #sync
-#echo 1 &gt;/proc/sys/vm/drop_caches
+#echo 1 >/proc/sys/vm/drop_caches
 #clean dentries and inodes
 #sync
-#echo 2 &gt;/proc/sys/vm/drop_caches
-#clean page cache and dentries inodes, but it is not recommended in production instead use &quot;echo 1&quot;
+#echo 2 >/proc/sys/vm/drop_caches
+#clean page cache and dentries inodes, but it is not recommended in production instead use "echo 1"
 #sync
-#echo 3 &gt;/proc/sys/vm/drop_caches
+#echo 3 >/proc/sys/vm/drop_caches
 
 ##################
 # begin refresh script
 ##################
 
 sync
-if [ $(dpkg-query -W -f='${Status}' polipo 2&gt;/dev/null | grep -c &quot;ok installed&quot;) -eq 0 ]; then
+if [ $(dpkg-query -W -f='${Status}' polipo 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   apt-get install polipo -y
 fi
 polipo -x
-echo 3 &gt;/proc/sys/vm/drop_caches
-swapoff -a &amp;&amp; swapon -a
+echo 3 >/proc/sys/vm/drop_caches
+swapoff -a && swapon -a
 printf '\n%s\n\n' 'Ram-cache and Swap Cleared'
 /opt/lampp/xampp restart
 free -h
-</code></pre>
-<p>this script used for better performance your linux vps.</p>
-<p>incoming terms:</p>
-<ul>
-<li>fix apache slow response</li>
-<li>fix xampp web server slow</li>
-<li>fix overload ram vps</li>
-<li>fix mysqld overheat</li>
-<li>fix java machine overheat ram</li>
-</ul>
+```
+
+
+this script used for better performance your linux vps.
+
+incoming terms:
+* fix apache slow response
+* fix xampp web server slow
+* fix overload ram vps
+* fix mysqld overheat
+* fix java machine overheat ram

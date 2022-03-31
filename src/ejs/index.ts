@@ -5,10 +5,9 @@ import * as ejs from 'ejs';
 import * as locale from './helper/locales';
 import * as thumbnail from './helper/thumbnail';
 import * as keywords from './helper/keywords';
-import { theme_dir } from '../gulp/tasks/article-generate';
 import { join } from '../node/filemanager';
 import { parsePostReturn } from '../markdown/transformPosts';
-import config from '../types/_config';
+import config, { ThemeOpt, theme_dir } from '../types/_config';
 
 export interface DynamicObject {
   [keys: string]: any;
@@ -27,6 +26,7 @@ interface EJSOption extends ejs.Options, DynamicObject {
   _?: typeof helpers;
   page?: parsePostReturn;
   config?: typeof config;
+  theme?: ThemeOpt;
 }
 
 function renderFile(file: string, opts: EJSOption = {}) {

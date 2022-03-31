@@ -26,10 +26,14 @@ excerpt: Match string not containing string, exclude badwords
 wordcount: 9
 ---
 
+<!--toc-->
 
-<h2 id="main-expression" tabindex="-1"><a class="header-anchor" href="#main-expression">Main Expression</a></h2>
-<pre><code id="regexp-main" class="language-regexp">^((?!badword).)*$
-</code></pre>
-<h2 id="try-it" tabindex="-1"><a class="header-anchor" href="#try-it">Try It</a></h2>
-<p><a href="https://www.regextester.com/15">Click Here</a></p>
+## Main Expression
+```regexp {#regexp-main}
+^((?!badword).)*$
+```
 
+## Try It
+[Click Here](https://www.regextester.com/15)
+
+<!-- script /RegExp/RegExp/badwords.js -->

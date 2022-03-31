@@ -28,6 +28,8 @@ excerpt: Trial Of Time the legend of neverland stage location
 wordcount: 13
 ---
 
-<h1 id="trial-of-time-gate-locations" tabindex="-1"><a class="header-anchor" href="#trial-of-time-gate-locations">Trial of time gate locations</a></h1>
-<h2 id="fog-swamp-f2" tabindex="-1"><a class="header-anchor" href="#fog-swamp-f2">Fog Swamp F2</a></h2>
-<p><img src="./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png" alt="Fog Swamp F2"></p>
+  # Trial of time gate locations
+
+## Fog Swamp F2
+
+![Fog Swamp F2](./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png)

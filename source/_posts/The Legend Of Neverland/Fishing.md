@@ -28,11 +28,13 @@ excerpt: Macros Auto Fishing Bluestacks for the legend of neverland download
 wordcount: 366
 ---
 
-<p>Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the <code>cooking shop</code>. You can see the recipe at <a href="/The%20Legend%20Of%20Neverland/Recipes.html">Cooking Recipes</a>.
-You can cook buffs for your character or make dishes to increase the level of <code>Fairies</code> you have.
-This time you can auto-fish using <code>bluestacks</code> and <code>macros</code>.</p>
-<p><img src="https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png" alt="Fishing the legend of neverland"></p>
-<h2 id="calculating-the-fishing-actions" tabindex="-1"><a class="header-anchor" href="#calculating-the-fishing-actions">Calculating the fishing actions</a></h2>
+Fishing in the legend of neverland is an important activity to collect fish and then sell them and get 'water essences'. Water Essences are used to buy ingredients in the `cooking shop`. You can see the recipe at [Cooking Recipes](/The%20Legend%20Of%20Neverland/Recipes.html).
+You can cook buffs for your character or make dishes to increase the level of `Fairies` you have.
+This time you can auto-fish using `bluestacks` and `macros`.
+
+  ![Fishing the legend of neverland](https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png)
+
+  ## Calculating the fishing actions
 <ul>
   <li><span>1 bottle = 300 staminas</span> &divide; 5/action &rarr; <span>
       <script>
@@ -48,16 +50,18 @@ This time you can auto-fish using <code>bluestacks</code> and <code>macros</code
       </script> minutes
     </span> <span>to finish 1 stamina bottle</span></li>
 </ul>
-<h2 id="configuration" tabindex="-1"><a class="header-anchor" href="#configuration">Configuration</a></h2>
-<ul>
-<li>First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot
-<img src="https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png" alt="image"></li>
-<li>set <code>repeat actions</code> with the total stamina bottle you have, or my recommendation is to subtract a little from the total stamina bottle you have. for example you have 55 bottles, set just 50 repeat actions, this to prevent other items to be used unexpectedly/unintentionally.
-<img src="https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png" alt="Setup total stamina bottles as repeat action"></li>
-</ul>
-<h2 id="how-to-download-script" tabindex="-1"><a class="header-anchor" href="#how-to-download-script">How to download script</a></h2>
-<p><a href="/The%20Legend%20Of%20Neverland/Macros.html">Read Here</a></p>
-<h2 id="auto-fishing-script" tabindex="-1"><a class="header-anchor" href="#auto-fishing-script">Auto fishing script</a></h2>
-<p><a href="/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json">Download Macros Auto Fishing</a></p>
-<h2 id="how-to-import-script" tabindex="-1"><a class="header-anchor" href="#how-to-import-script">How to import script ?</a></h2>
-<p><a href="/The%20Legend%20Of%20Neverland/Macros.html">Read Here</a></p>
+
+  ## Configuration
+  - First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot
+    ![image](https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png)
+  - set `repeat actions` with the total stamina bottle you have, or my recommendation is to subtract a little from the total stamina bottle you have. for example you have 55 bottles, set just 50 repeat actions, this to prevent other items to be used unexpectedly/unintentionally.
+    ![Setup total stamina bottles as repeat action](https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png)
+
+  ## How to download script
+  [Read Here](/The%20Legend%20Of%20Neverland/Macros.html)
+
+  ## Auto fishing script
+  [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
+
+  ## How to import script ?
+  [Read Here](/The%20Legend%20Of%20Neverland/Macros.html)

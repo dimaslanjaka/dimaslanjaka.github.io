@@ -26,10 +26,8 @@ excerpt: Expel Incident Specific Rewards The Legend Of Neverland
 wordcount: 26
 ---
 
-<h2 id="expel-incident-lists" tabindex="-1"><a class="header-anchor" href="#expel-incident-lists">Expel Incident Lists</a></h2>
-<p>Daily task the legend of neverland lists</p>
-<ul>
-<li><a href="Standard%20Rewards.html">Standard Rewards</a></li>
-<li><a href="Exp%20Char.html">Highest Exp Char</a></li>
-<li><a href="Crystals%20Fairy%20Exp.html">Highest Exp Fairies</a></li>
-</ul>
+## Expel Incident Lists
+Daily task the legend of neverland lists
+- [Standard Rewards](Standard%20Rewards.html)
+- [Highest Exp Char](Exp%20Char.html)
+- [Highest Exp Fairies](Crystals%20Fairy%20Exp.html)

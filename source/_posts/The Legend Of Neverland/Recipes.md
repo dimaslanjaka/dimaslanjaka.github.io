@@ -26,103 +26,25 @@ excerpt: Cooking recipes in the legend of neverland game android ios
 wordcount: 1016
 ---
 
-  
-<h2 id="ingredients-water-essence-prices" tabindex="-1"><a class="header-anchor" href="#ingredients-water-essence-prices">Ingredients Water Essence Prices</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ingredients</th>
-<th style="text-align:center">Price</th>
-<th style="text-align:left">ingredients</th>
-<th style="text-align:center">Price</th>
-<th style="text-align:left">ingredients</th>
-<th style="text-align:center">Price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Eeg</td>
-<td style="text-align:center">50</td>
-<td style="text-align:left">Fresh Cheese</td>
-<td style="text-align:center">500</td>
-<td style="text-align:left">Barley</td>
-<td style="text-align:center">150</td>
-</tr>
-<tr>
-<td style="text-align:left">Meat Chunk</td>
-<td style="text-align:center">2000</td>
-<td style="text-align:left">Carrot</td>
-<td style="text-align:center">500</td>
-<td style="text-align:left">Mushroom</td>
-<td style="text-align:center">150</td>
-</tr>
-<tr>
-<td style="text-align:left">Cheese</td>
-<td style="text-align:center">2000</td>
-<td style="text-align:left">Onion</td>
-<td style="text-align:center">500</td>
-<td style="text-align:left">Corn</td>
-<td style="text-align:center">50</td>
-</tr>
-<tr>
-<td style="text-align:left">Chicken Wing</td>
-<td style="text-align:center">2000</td>
-<td style="text-align:left">Celery</td>
-<td style="text-align:center">500</td>
-<td style="text-align:left">Potato</td>
-<td style="text-align:center">50</td>
-</tr>
-<tr>
-<td style="text-align:left">Meat</td>
-<td style="text-align:center">1500</td>
-<td style="text-align:left">Butter</td>
-<td style="text-align:center">300</td>
-<td style="text-align:left">Thyme</td>
-<td style="text-align:center">2000</td>
-</tr>
-<tr>
-<td style="text-align:left">Shrimp</td>
-<td style="text-align:center">1500</td>
-<td style="text-align:left">Black Pepper</td>
-<td style="text-align:center">300</td>
-<td style="text-align:left">Red Wine</td>
-<td style="text-align:center">2000</td>
-</tr>
-<tr>
-<td style="text-align:left">Tomato</td>
-<td style="text-align:center">750</td>
-<td style="text-align:left">Milk</td>
-<td style="text-align:center">300</td>
-<td style="text-align:left">Chocolate Material</td>
-<td style="text-align:center">950</td>
-</tr>
-<tr>
-<td style="text-align:left">Bacon</td>
-<td style="text-align:center">750</td>
-<td style="text-align:left">Wheat</td>
-<td style="text-align:center">300</td>
-<td style="text-align:left">Strawberry</td>
-<td style="text-align:center">750</td>
-</tr>
-<tr>
-<td style="text-align:left">Sugar</td>
-<td style="text-align:center">750</td>
-<td style="text-align:left">Water</td>
-<td style="text-align:center">150</td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Rice</td>
-<td style="text-align:center">700</td>
-<td style="text-align:left">Salt</td>
-<td style="text-align:center">150</td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="char-buff-dish" tabindex="-1"><a class="header-anchor" href="#char-buff-dish">Char Buff Dish</a></h2>
+  <!-- toc -->
+
+## Ingredients Water Essence Prices
+
+| ingredients  | Price | ingredients  | Price | ingredients        | Price |
+| :----------- | :---: | :----------- | :---: | :----------------- | :---: |
+| Eeg          |  50   | Fresh Cheese |  500  | Barley             |  150  |
+| Meat Chunk   | 2000  | Carrot       |  500  | Mushroom           |  150  |
+| Cheese       | 2000  | Onion        |  500  | Corn               |  50   |
+| Chicken Wing | 2000  | Celery       |  500  | Potato             |  50   |
+| Meat         | 1500  | Butter       |  300  | Thyme              | 2000  |
+| Shrimp       | 1500  | Black Pepper |  300  | Red Wine           | 2000  |
+| Tomato       |  750  | Milk         |  300  | Chocolate Material |  950  |
+| Bacon        |  750  | Wheat        |  300  | Strawberry         |  750  |
+| Sugar        |  750  | Water        |  150  |
+| Rice         |  700  | Salt         |  150  |
+
+## Char Buff Dish
+
 <table id="char-dish">
 	<thead>
 		<tr>
@@ -243,7 +165,9 @@ wordcount: 1016
 		</tr>
 	</tbody>
 </table>
-<h2 id="flower-fairy-upgrade-dish" tabindex="-1"><a class="header-anchor" href="#flower-fairy-upgrade-dish">Flower Fairy Upgrade Dish</a></h2>
+
+## Flower Fairy Upgrade Dish
+
 <table id="fairy-dish">
 	<thead>
 		<tr>
@@ -328,7 +252,9 @@ wordcount: 1016
 		</tr>
 	</tbody>
 </table>
-<h2 id="compare-100x-boiled-corns" tabindex="-1"><a class="header-anchor" href="#compare-100x-boiled-corns">Compare 100x boiled corns</a></h2>
+
+## Compare 100x boiled corns
+
 <div style="margin:10px">
   <b>Calculate x100 foods</b>
   <ul>
@@ -338,7 +264,10 @@ wordcount: 1016
   <em>if the total price of ham is calculated into boiled corn food</em> <b i="hamprice"></b> &divide; <b i="bcprice"></b> &#61; <b i="ham-bc"></b> &times <b i="bcexp">-</b> (x100 Boiled Corn) &#61; <b i='bctotal'></b> total exp
 </div>
 
-<p><img src="https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png" alt="Recipes"></p>
+<!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
+
+![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
+
   <script>console.clear();
 
 CalculateTR(document.getElementById("char-dish"));

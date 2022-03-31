@@ -39,24 +39,29 @@ photos:
 wordcount: 584
 ---
 
-<h1 id="auto-lint-and-format-typescript-using-vs-code-with-eslint-and-prettier" tabindex="-1"><a class="header-anchor" href="#auto-lint-and-format-typescript-using-vs-code-with-eslint-and-prettier">Auto Lint And Format Typescript Using VSCode With Eslint And Prettier</a></h1>
-<p>Linter becomes 2 types:</p>
-<ul>
-<li><a href="https://palantir.github.io/tslint/">TSLint</a> is a linter that must be utilized for TypeScript.</li>
-<li><a href="https://eslint.org/">ESLint</a> is a linter supports both JavaScript and TypeScript.
-<strong>ESLint has a more performant architecture than TSLint</strong> and that they will <strong>only be focusing on ESLint</strong> when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without <strong><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">prettier plugin</a></strong></li>
-</ul>
-<h2 id="install-dependencies" tabindex="-1"><a class="header-anchor" href="#install-dependencies">Install dependencies</a></h2>
-<p>install using npm:</p>
-<pre><code class="language-shell">npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-</code></pre>
-<p>install using yarn:</p>
-<pre><code class="language-shell">yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
-</code></pre>
-<h2 id="install-and-activate-vs-code-es-lint-extension-for-auto-linter-and-formatter" tabindex="-1"><a class="header-anchor" href="#install-and-activate-vs-code-es-lint-extension-for-auto-linter-and-formatter">install and activate VSCode ESLint extension for auto Linter And Formatter</a></h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">Download Here</a></p>
-<h2 id="create-eslintrc-js" tabindex="-1"><a class="header-anchor" href="#create-eslintrc-js">Create .eslintrc.js</a></h2>
-<pre><code class="language-js">module.exports = {
+# Auto Lint And Format Typescript Using VSCode With Eslint And Prettier
+
+Linter becomes 2 types:
+- [TSLint](https://palantir.github.io/tslint/) is a linter that must be utilized for TypeScript.
+- [ESLint](https://eslint.org/) is a linter supports both JavaScript and TypeScript.
+**ESLint has a more performant architecture than TSLint** and that they will **only be focusing on ESLint** when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without **[prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
+
+## Install dependencies
+install using npm:
+```shell
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+install using yarn:
+```shell
+yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
+```
+
+## install and activate VSCode ESLint extension for auto Linter And Formatter
+[Download Here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+## Create .eslintrc.js
+```js
+module.exports = {
   root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
@@ -75,89 +80,98 @@ wordcount: 584
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   // override rules for js files
-  &quot;overrides&quot;: [
+  "overrides": [
     {
-      &quot;files&quot;: [
-        &quot;*.js&quot;
+      "files": [
+        "*.js"
       ],
-      &quot;rules&quot;: {
-        &quot;@typescript-eslint/no-var-requires&quot;: &quot;off&quot; // disable require warning on js files
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off" // disable require warning on js files
       }
     }
   ],
   // specify your desired rules for eslint
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off', // disable function without return type
-    &quot;no-unused-vars&quot;: &quot;off&quot;, // disable original eslint unused-vars
-    &quot;@typescript-eslint/no-unused-vars&quot;: [&quot;error&quot;, { argsIgnorePattern: &quot;^_&quot; }], // enable typescript-eslint unused-vars and allow unused vars start with underscore (_)
-    &quot;@typescript-eslint/no-explicit-any&quot;: &quot;off&quot;, // allow any types
-    &quot;@typescript-eslint/no-this-alias&quot;: [ // rules for this binding
-      &quot;error&quot;,
+    "no-unused-vars": "off", // disable original eslint unused-vars
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // enable typescript-eslint unused-vars and allow unused vars start with underscore (_)
+    "@typescript-eslint/no-explicit-any": "off", // allow any types
+    "@typescript-eslint/no-this-alias": [ // rules for this binding
+      "error",
       {
         allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
-        allowedNames: [&quot;self&quot;], // Allow `const self = this`; `[]` by default
+        allowedNames: ["self"], // Allow `const self = this`; `[]` by default
       },
     ],
-    // &quot;arrow-body-style&quot; and &quot;prefer-arrow-callback&quot; are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.
-    &quot;arrow-body-style&quot;: &quot;off&quot;,
-    &quot;prefer-arrow-callback&quot;: &quot;off&quot;,
+    // "arrow-body-style" and "prefer-arrow-callback" are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
   },
 };
-</code></pre>
-<h2 id="create-prettier-config" tabindex="-1"><a class="header-anchor" href="#create-prettier-config">Create Prettier Config</a></h2>
-<p>specify your desired config for prettier</p>
-<h3 id="using-prettierrc-js" tabindex="-1"><a class="header-anchor" href="#using-prettierrc-js">Using .prettierrc.js</a></h3>
-<pre><code class="language-js">module.exports = {
+```
+
+## Create Prettier Config
+specify your desired config for prettier
+### Using .prettierrc.js
+```js
+module.exports = {
   semi: true,
-  trailingComma: &quot;all&quot;,
+  trailingComma: "all",
   singleQuote: true,
   printWidth: 120,
   tabWidth: 2
 };
-</code></pre>
-<h3 id="using-prettierc" tabindex="-1"><a class="header-anchor" href="#using-prettierc">Using .prettierc</a></h3>
-<pre><code class="language-json">{
-  &quot;$schema&quot;: &quot;https://json.schemastore.org/prettierrc&quot;,
-  &quot;semi&quot;: true,
-  &quot;printWidth&quot;: 120,
-  &quot;singleQuote&quot;: true,
-  &quot;trailingComma&quot;: &quot;none&quot;,
-  &quot;tabWidth&quot;: 2
+```
+### Using .prettierc
+```json
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2
 }
-</code></pre>
-<h2 id="create-vscode-settings-json" tabindex="-1"><a class="header-anchor" href="#create-vscode-settings-json">Create .vscode/settings.json</a></h2>
-<p>this will automate lint and format your codes when saving.</p>
-<pre><code class="language-json">{
-  &quot;editor.codeActionsOnSave&quot;: {
-    &quot;source.fixAll.eslint&quot;: true // let ESLint take formating and linting
+```
+
+## Create .vscode/settings.json
+this will automate lint and format your codes when saving.
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // let ESLint take formating and linting
   },
-  &quot;[json]&quot;: {
-    &quot;editor.formatOnSave&quot;: true // enable json formating with default vscode formatter
+  "[json]": {
+    "editor.formatOnSave": true // enable json formating with default vscode formatter
   },
-  &quot;editor.formatOnSave&quot;: false, // disable default vscode formatter
+  "editor.formatOnSave": false, // disable default vscode formatter
 }
-</code></pre>
-<h1 id="create-tsconfig-json-if-not-created-yet" tabindex="-1"><a class="header-anchor" href="#create-tsconfig-json-if-not-created-yet">create tsconfig.json (if not created yet)</a></h1>
-<p>for example tsconfig.json for node 12</p>
-<pre><code class="language-json">{
-  &quot;$schema&quot;: &quot;https://json.schemastore.org/tsconfig&quot;,
-  &quot;display&quot;: &quot;Node 12&quot;,
-  &quot;extends&quot;: &quot;@tsconfig/node12/tsconfig.json&quot;,
-  &quot;compilerOptions&quot;: {
-    &quot;preserveConstEnums&quot;: true,
-    &quot;allowJs&quot;: true,
-    &quot;outDir&quot;: &quot;./dist&quot;
+```
+
+# create tsconfig.json (if not created yet)
+for example tsconfig.json for node 12
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 12",
+  "extends": "@tsconfig/node12/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "outDir": "./dist"
   },
-  &quot;include&quot;: [
-    &quot;src/**/*&quot;
+  "include": [
+    "src/**/*"
   ],
-  &quot;exclude&quot;: [
-    &quot;**/node_modules/**&quot;,
-    &quot;**/*.spec.ts&quot;,
-    &quot;**/*.test.ts&quot;,
-    &quot;**/__tests__/**&quot;
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**"
   ]
 }
-</code></pre>
-<h2 id="finish" tabindex="-1"><a class="header-anchor" href="#finish">Finish</a></h2>
-<p>now your vscode format and lint your codes automatically.</p>
+```
+
+## Finish
+now your vscode format and lint your codes automatically.
+

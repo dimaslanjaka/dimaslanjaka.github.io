@@ -38,8 +38,17 @@ wordcount: 24144
             fascinating heroes that I grew fond of. My favorites are the
             crusader heroes Shane, Sieg, Nia, and Rury.
         </p>
-        <img src="https://user-images.githubusercontent.com/12471057/144593163-8c842636-4d5f-4997-8adc-2051531d7619.png" alt="thumbnail" >
-            
+        <img src="https://user-images.githubusercontent.com/12471057/144593163-8c842636-4d5f-4997-8adc-2051531d7619.png" alt="thumbnail" />
+            <!--p>
+                <a
+                    href="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA3MjJfMTI1%2FMDAxNjI2OTU5OTM5MDk5.SRJb1tE3-72MOuEsFqbq1Zcc4UtLGujvHRjDGQ4sm7og.LDvJj9ILAjq5qvKZCl4WhLpFUIrnct-TbmEHF-gAH6Ig.JPEG.dustpeodls%2F1.jpg&amp;type=sc960_832"
+                    rel="noopener nofollow ugc"
+                    target="_blank"
+                >
+                    https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA3MjJfMTI1%2FMDAxNjI2OTU5OTM5MDk5.SRJb1tE3-72MOuEsFqbq1Zcc4UtLGujvHRjDGQ4sm7og.LDvJj9ILAjq5qvKZCl4WhLpFUIrnct-TbmEHF-gAH6Ig.JPEG.dustpeodls%2F1.jpg&amp;type=sc960_832
+                </a>
+            </p>
+        </blockquote-->
         <p>
             ^ If you click that, you will see Sieg from SK2. My first awakening
             hero in SK1 😄
@@ -48,14 +57,15 @@ wordcount: 24144
             **Join the Seven Knights 2 Discord server here:
         </p>
         <div>
-            <a                 href="https://discord.gg/wNaxMxJMV4"
+            <a
+                href="https://discord.gg/wNaxMxJMV4"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
                 https://discord.gg/wNaxMxJMV4
             </a>
         </div>
-        <hr>
+        <hr/>
         <p>
             <em>
                 I highly recommend viewing this guide on PC because it is vast.
@@ -67,7 +77,7 @@ wordcount: 24144
             I have spent 0 money on this game, and still feel no absolute need
             at all 10 months in.
         </div>
-        <hr>
+        <hr/>
         <p>
             Disclaimer:
         </p>
@@ -89,7 +99,7 @@ wordcount: 24144
                 F to find what you need in the post before asking. Thank you!
             </strong>
         </p>
-        <hr>
+        <hr/>
         <p>
             This guide contains core information to help you guys get maximum
             efficiency while playing.
@@ -140,7 +150,7 @@ wordcount: 24144
         <p>
             Anyway, enough ranting. We will get started.
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>How to invest rubies</strong>
         </p>
@@ -215,7 +225,7 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>
                 So what are moonstones, and how should I obtain and use my
@@ -245,7 +255,7 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
                 STORE, NOTHING ELSE. You've been told.
             </strong>
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>What to buy from Alice Store/Mole Emporium?</strong>
         </p>
@@ -377,7 +387,7 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             Now, let's get into heroes:
         </p>
@@ -385,14 +395,15 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
             <strong>
                 Refer to this post for each hero's equipment and usage:
             </strong>
-            <a                 href="https://www.reddit.com/r/7kglobal/comments/qwawum/seven_knights_2_hero_usage_and_equipment_guide/"
+            <a
+                href="https://www.reddit.com/r/7kglobal/comments/qwawum/seven_knights_2_hero_usage_and_equipment_guide/"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
                 https://www.reddit.com/r/7kglobal/comments/qwawum/seven_knights_2_hero_usage_and_equipment_guide/
             </a>
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>Heroes worth investing in the beginning</strong>
         </p>
@@ -450,7 +461,7 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
         <p>
             <strong>Heroes you will use for a long time listed below:</strong>
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>Common tier (White):</strong>
         </p>
@@ -470,7 +481,7 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Greater tier (Green):</strong>
         </p>
@@ -498,7 +509,7 @@ hero.                    <strong>This gauge RESETS when the deadline comes,</str
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Celestial Tower rare hero selection reward:</strong>
         </p>
@@ -587,7 +598,7 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
             but they will be replaced eventually by their legendary hero
             counterparts as an alternate boss suppressor hero.
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>Rare+ tier (Brighter blue frame):</strong>
         </p>
@@ -623,7 +634,7 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Legendary tier (Red):</strong>
         </p>
@@ -706,7 +717,7 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Legendary+ hero (Brighter red frame):</strong>
         </p>
@@ -761,7 +772,7 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>So what deck to you recommend for PvE and PvP?</strong>
         </p>
@@ -977,7 +988,7 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
                 defensive deck would require all defensive masteries, and etc.
             </strong>
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>GROWTH DUNGEONS</strong>
         </p>
@@ -991,7 +1002,8 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
             tickets with the best efficiency.
         </p>
         <p>
-            <a                 href="https://www.youtube.com/watch?v=e0kFIzeoaxY"
+            <a
+                href="https://www.youtube.com/watch?v=e0kFIzeoaxY"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
@@ -1058,14 +1070,15 @@ I recommend giving Lukey<strong>Crit/Skill level up,</strong> Shay              
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>
                 Soulstone quarry, your main source of growing your heroes:
             </strong>
         </p>
         <p>
-            <a                 href="https://www.youtube.com/watch?v=6u4TjVk7Nz8"
+            <a
+                href="https://www.youtube.com/watch?v=6u4TjVk7Nz8"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
@@ -1138,13 +1151,14 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Elixir Dungeon/Divinity Dungeon</strong>
         </p>
         <p>
             Elixir:
-            <a                 href="https://www.youtube.com/watch?v=AsHO12Kq8xc"
+            <a
+                href="https://www.youtube.com/watch?v=AsHO12Kq8xc"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
@@ -1153,7 +1167,8 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
         </p>
         <p>
             Divinity:
-            <a                 href="https://www.youtube.com/watch?v=ULtvy2B4bJg"
+            <a
+                href="https://www.youtube.com/watch?v=ULtvy2B4bJg"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
@@ -1173,12 +1188,13 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Experience Dungeon</strong>
         </p>
         <p>
-            <a                 href="https://www.youtube.com/watch?v=fz7FI7Z6q68"
+            <a
+                href="https://www.youtube.com/watch?v=fz7FI7Z6q68"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
@@ -1199,7 +1215,7 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Scenario Strategy</strong>
         </p>
@@ -1241,11 +1257,11 @@ Alice soulstone store.                    <strong>Don't buy them with rubies</st
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Equipment</strong>
         </p>
-        <hr>
+        <hr/>
         <p>
 Before we discuss about equipment, let me introduce you to            <em>presets.</em>
         </p>
@@ -1291,7 +1307,7 @@ Before we discuss about equipment, let me introduce you to            <em>preset
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <ul>
             <li>
                 <p>
@@ -1417,7 +1433,7 @@ As for legendary equipment to complete first, create                    <strong>
             of the raids so they are the hardest equipment set (mercenary set)
             to make.
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>GROWING YOUR ACCOUNT</strong>
         </p>
@@ -1444,7 +1460,7 @@ As for legendary equipment to complete first, create                    <strong>
         <p>
             Then level 10 on swift for field of exploration and PvP.
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>Methods to raise codex buff:</strong>
         </p>
@@ -1494,7 +1510,7 @@ As for legendary equipment to complete first, create                    <strong>
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>How to gain proficiency exp:</strong>
             <em>IMPORTANT! Please read.</em>
@@ -1559,7 +1575,7 @@ proficiency levels. I highly recommend                    <strong>using clear re
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>2)Potentials</strong>
         </p>
@@ -1589,7 +1605,7 @@ proficiency levels. I highly recommend                    <strong>using clear re
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>3)Hero levels/hero skill level</strong>
         </p>
@@ -1602,7 +1618,7 @@ proficiency levels. I highly recommend                    <strong>using clear re
                 </p>
             </li>
         </ul>
-        <hr>
+        <hr/>
         <p>
             <strong>Field of Exploration</strong>
         </p>
@@ -1652,14 +1668,15 @@ and once you have that move on to                    <strong>8 pieces forgotten 
             </li>
         </ul>
         <p>
-            <a                 href="https://youtu.be/1NBqC62VULg"
+            <a
+                href="https://youtu.be/1NBqC62VULg"
                 rel="noopener nofollow ugc"
                 target="_blank"
             >
                 https://youtu.be/1NBqC62VULg
             </a>
         </p>
-        <hr>
+        <hr/>
         <p>
             <strong>Miscellaneous: Hero and Pet shard fusion:</strong>
         </p>
@@ -1683,7 +1700,7 @@ and once you have that move on to                    <strong>8 pieces forgotten 
             fuse common and greater hero shards once you 50 level cap them
             though, since they are easy to come by with gacha.
         </p>
-        <hr>
+        <hr/>
         <p>
             That's about all I have for now, I'll update if I have more. I'll
             be happy to help if you have any questions below. Thanks for

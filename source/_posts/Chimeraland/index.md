@@ -22,7 +22,8 @@ subtitle: Index Tree Chimeraland
 wordcount: 11
 ---
 
-<h2 id="cooking-recipes" tabindex="-1"><a class="header-anchor" href="#cooking-recipes">Cooking Recipes</a></h2>
-<p><a href="Recipes.html">View Cooking Recipes</a></p>
-<h2 id="pets" tabindex="-1"><a class="header-anchor" href="#pets">Pets</a></h2>
-<p><a href="Pets.html">View Chimeraland Pets</a></p>
+## Cooking Recipes
+[View Cooking Recipes](Recipes.html)
+
+## Pets
+[View Chimeraland Pets](Pets.html)

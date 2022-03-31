@@ -33,43 +33,55 @@ excerpt: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
 wordcount: 172
 ---
 
-<h1 id="how-to-detect-html-collection-node-list-in-java-script-typescript" tabindex="-1"><a class="header-anchor" href="#how-to-detect-html-collection-node-list-in-java-script-typescript">How to detect HTMLCollection/NodeList in JavaScript/Typescript?</a></h1>
-<p>Detecting HTML Collection or NodeList in typescript.</p>
-<h2 id="html-collection-detect" tabindex="-1"><a class="header-anchor" href="#html-collection-detect">HTMLCollection Detect</a></h2>
-<pre><code class="language-javascript">// check if variable is instance of HTMLCollection
+# How to detect HTMLCollection/NodeList in JavaScript/Typescript?
+Detecting HTML Collection or NodeList in typescript.
+
+## HTMLCollection Detect
+```javascript
+// check if variable is instance of HTMLCollection
 HTMLCollection.prototype.isPrototypeOf(variable)
-</code></pre>
-<h2 id="node-list-detect" tabindex="-1"><a class="header-anchor" href="#node-list-detect">NodeList Detect</a></h2>
-<pre><code class="language-javascript">// check if variable is instance of NodeList
+```
+
+## NodeList Detect
+```javascript
+// check if variable is instance of NodeList
 NodeList.prototype.isPrototypeOf(variable)
-</code></pre>
-<h2 id="typescript-comparator-example" tabindex="-1"><a class="header-anchor" href="#typescript-comparator-example">Typescript Comparator Example</a></h2>
-<pre><code class="language-typescript">let loaders: NodeListOf&lt;Element&gt; | HTMLCollectionOf&lt;Element&gt;;
-loaders = document.getElementsByClassName(&quot;className&quot;); // will return typeof HTMLCollectionOf&lt;Element&gt;
-loaders = document.querySelectorAll(&quot;[class*='className']&quot;); // will return typeof NodeListOf&lt;Element&gt;
+```
+
+## Typescript Comparator Example
+
+```typescript
+let loaders: NodeListOf<Element> | HTMLCollectionOf<Element>;
+loaders = document.getElementsByClassName("className"); // will return typeof HTMLCollectionOf<Element>
+loaders = document.querySelectorAll("[class*='className']"); // will return typeof NodeListOf<Element>
 if (HTMLCollection.prototype.isPrototypeOf(this.loaders)) {
   console.log('loaders is instanceof HTMLCollection');
 } else if (NodeList.prototype.isPrototypeOf(this.loaders)) {
   console.log('loaders is instanceof NodeList');
 }
-</code></pre>
-<h2 id="typescript-how-to-iterate-nodelist-or-html-collection-variable-type" tabindex="-1"><a class="header-anchor" href="#typescript-how-to-iterate-nodelist-or-html-collection-variable-type">Typescript how to iterate Nodelist or HTMLCollection variable type</a></h2>
-<h3 id="wrong-bad" tabindex="-1"><a class="header-anchor" href="#wrong-bad">Wrong/Bad</a></h3>
-<pre><code class="language-typescript">loaders.forEach((el) =&gt; {
+```
+
+## Typescript how to iterate Nodelist or HTMLCollection variable type
+### Wrong/Bad
+```typescript
+loaders.forEach((el) => {
   console.log(el);
 });
-</code></pre>
-<blockquote>
-<p>codes above will thrown:</p>
-<p>Property ‘forEach’ does not exist on type <code>NodeListOf&lt;Element&gt; | HTMLCollectionOf&lt;Element&gt;</code>.</p>
-<p>Property ‘forEach’ does not exist on type <code>HTMLCollectionOf&lt;Element&gt;</code>. ts(2339)</p>
-</blockquote>
-<h3 id="good" tabindex="-1"><a class="header-anchor" href="#good">Good</a></h3>
-<pre><code class="language-typescript">let loaders: NodeListOf&lt;Element&gt; | HTMLCollectionOf&lt;Element&gt;;
-loaders = document.getElementsByClassName(&quot;className&quot;); // will return typeof HTMLCollectionOf&lt;Element&gt;
-loaders = document.querySelectorAll(&quot;[class*='className']&quot;); // will return typeof NodeListOf&lt;Element&gt;
-for (let index = 0; index &lt; loaders.length; index++) {
+```
+
+> codes above will thrown:
+>
+> Property 'forEach' does not exist on type `NodeListOf<Element> | HTMLCollectionOf<Element>`.
+>
+> Property 'forEach' does not exist on type `HTMLCollectionOf<Element>`. ts(2339)
+
+### Good
+```typescript
+let loaders: NodeListOf<Element> | HTMLCollectionOf<Element>;
+loaders = document.getElementsByClassName("className"); // will return typeof HTMLCollectionOf<Element>
+loaders = document.querySelectorAll("[class*='className']"); // will return typeof NodeListOf<Element>
+for (let index = 0; index < loaders.length; index++) {
   const element: Element = loaders.item(index); // or loaders[index]
   console.log(element);
 }
-</code></pre>
+```

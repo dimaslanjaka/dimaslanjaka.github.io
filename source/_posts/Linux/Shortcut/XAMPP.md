@@ -35,27 +35,26 @@ excerpt: How to configure shortcut desktop for xampp linux
 wordcount: 107
 ---
 
-<h1 id="desktop-start-menu-shortcut-xampp-linux-ubuntu-etc" tabindex="-1"><a class="header-anchor" href="#desktop-start-menu-shortcut-xampp-linux-ubuntu-etc">Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)</a></h1>
-<blockquote>
-<p>are you took below errors ?</p>
-</blockquote>
+# Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
+
+> are you took below errors ?
 <pre><code>sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel
 Traceback (most recent call last):
   File "xampp-control-panel.py", line 18, in &lt;module&gt;
     import gtk
 ImportError: No module named gtk</code></pre>
-<h2 id="here-how-to-fix-show-xampp-panel-on-linux" tabindex="-1"><a class="header-anchor" href="#here-how-to-fix-show-xampp-panel-on-linux">Here how to fix show XAMPP Panel on Linux</a></h2>
-<ul>
-<li>Open Terminal, Type below codes</li>
-</ul>
-<pre><code class="language-shell">XAMPP=/usr/share/applications/xampp-control-panel.desktop
+
+## Here how to fix show XAMPP Panel on Linux
+- Open Terminal, Type below codes
+```shell
+XAMPP=/usr/share/applications/xampp-control-panel.desktop
 sudo touch $XAMPP
 sudo gedit $XAMPP
-</code></pre>
-<ul>
-<li>content <code>/usr/share/applications/xampp-control-panel.desktop</code></li>
-</ul>
-<pre><code class="language-desktop">[Desktop Entry]
+```
+
+- content `/usr/share/applications/xampp-control-panel.desktop`
+```desktop
+[Desktop Entry]
 Encoding=UTF-8
 Name=XAMPP Control Panel
 Comment=Start and Stop XAMPP
@@ -64,16 +63,15 @@ Icon=/opt/lampp/htdocs/favicon.ico
 Categories=Application
 Type=Application
 Terminal=false
-</code></pre>
-<ul>
-<li>If you use a 32-bit system:</li>
-</ul>
-<pre><code class="language-shell">sudo -H /opt/lampp/manager-linux.run
-</code></pre>
-<ul>
-<li>If you use a 64-bit system:</li>
-</ul>
-<pre><code class="language-shell">sudo -H /opt/lampp/manager-linux-x64.run
-</code></pre>
-<h2 id="result" tabindex="-1"><a class="header-anchor" href="#result">Result</a></h2>
-<p><img src="https://user-images.githubusercontent.com/12471057/144911998-7459f8b8-1816-447e-a0c7-898a2cd4da49.png" alt="Screenshot from 2021-12-07 02-45-08"></p>
+```
+- If you use a 32-bit system:
+```shell
+sudo -H /opt/lampp/manager-linux.run
+```
+- If you use a 64-bit system:
+```shell
+sudo -H /opt/lampp/manager-linux-x64.run
+```
+
+## Result
+![Screenshot from 2021-12-07 02-45-08](https://user-images.githubusercontent.com/12471057/144911998-7459f8b8-1816-447e-a0c7-898a2cd4da49.png)

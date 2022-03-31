@@ -28,49 +28,49 @@ wordcount: 199
 ---
 
 <div id="proxy_result_wrapper">
+         <div class="w3-card-4">
+
+           <header class="w3-container w3-blue">
+             <div class="d-flex justify-content-between">
+               <div>
+                 <h2>Fresh proxy <i class="fab fa-google">oogle</i> passed</h2>
+                 <small id="descr">Google passed proxies, updated at 2020-01-13</small>
+               </div>
+               <div>
+                 <a class="btn btn-warning w3-text-white w3-hide" id="blogger" href="https://web-manajemen.blogspot.com" rel="follow" title="Free Google Proxy List">Create article <i class="fab fa-blogger"></i></a>
+               </div>
+             </div>
+           </header>
+
+           <div class="w3-container">
+             <p>
+               </p><table id="proxies_result" class="w3-table w3-striped">
+                 <thead>
+                   <tr>
+                     <th>Proxy</th>
+                     <th>Google passed</th>
+                   </tr>
+                 </thead>
+                 <tbody><tr><td>84.201.170.222:3128</td><td id="842011702223128"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>110.74.222.212:8080</td><td id="110742222128080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>167.172.62.34:8080</td><td id="16717262348080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>90.150.87.172:81</td><td id="901508717281"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>27.116.51.119:8080</td><td id="27116511198080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>163.172.190.160:8811</td><td id="1631721901608811"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>178.215.76.193:53281</td><td id="1782157619353281"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>198.98.58.178:8080</td><td id="19898581788080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>119.18.154.202:80</td><td id="1191815420280"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>202.52.234.236:35931</td><td id="2025223423635931"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>177.91.111.233:8080</td><td id="177911112338080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>51.68.141.240:3128</td><td id="51681412403128"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>163.172.152.52:8811</td><td id="163172152528811"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>49.156.35.22:8080</td><td id="4915635228080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>163.172.136.226:8811</td><td id="1631721362268811"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>103.4.164.206:8080</td><td id="10341642068080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr><tr><td>178.128.108.120:8080</td><td id="1781281081208080"><i class="fas fa-check w3-text-green checked working-proxy"></i></td></tr></tbody>
+               </table>
+             <p></p>
+           </div>
+
+           <footer class="w3-container w3-blue">
+             <div class="d-flex justify-content-between">
+               <div>
+                 <h5><a href="https://www.webmanajemen.com/AGC/proxy" class="w3-text-white" style="pointer-events: none;">WMI Proxy checker 2019</a></h5>
+               </div>
+
+               <div>
+                 <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview" alt="Google" width="30px" height="30px" class="w3-margin w3-hide">
+               </div>
+             </div>
+             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+           </footer>
+
          </div>
-<pre><code>       &lt;header class=&quot;w3-container w3-blue&quot;&gt;
-         &lt;div class=&quot;d-flex justify-content-between&quot;&gt;
-           &lt;div&gt;
-             &lt;h2&gt;Fresh proxy &lt;i class=&quot;fab fa-google&quot;&gt;oogle&lt;/i&gt; passed&lt;/h2&gt;
-             &lt;small id=&quot;descr&quot;&gt;Google passed proxies, updated at 2020-01-13&lt;/small&gt;
-           &lt;/div&gt;
-           &lt;div&gt;
-             &lt;a class=&quot;btn btn-warning w3-text-white w3-hide&quot; id=&quot;blogger&quot; href=&quot;https://web-manajemen.blogspot.com&quot; rel=&quot;follow&quot; title=&quot;Free Google Proxy List&quot;&gt;Create article &lt;i class=&quot;fab fa-blogger&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-       &lt;/header&gt;
 
-       &lt;div class=&quot;w3-container&quot;&gt;
-         &lt;p&gt;
-           &lt;/p&gt;&lt;table id=&quot;proxies_result&quot; class=&quot;w3-table w3-striped&quot;&gt;
-             &lt;thead&gt;
-               &lt;tr&gt;
-                 &lt;th&gt;Proxy&lt;/th&gt;
-                 &lt;th&gt;Google passed&lt;/th&gt;
-               &lt;/tr&gt;
-             &lt;/thead&gt;
-             &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;84.201.170.222:3128&lt;/td&gt;&lt;td id=&quot;842011702223128&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;110.74.222.212:8080&lt;/td&gt;&lt;td id=&quot;110742222128080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;167.172.62.34:8080&lt;/td&gt;&lt;td id=&quot;16717262348080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;90.150.87.172:81&lt;/td&gt;&lt;td id=&quot;901508717281&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;27.116.51.119:8080&lt;/td&gt;&lt;td id=&quot;27116511198080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;163.172.190.160:8811&lt;/td&gt;&lt;td id=&quot;1631721901608811&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;178.215.76.193:53281&lt;/td&gt;&lt;td id=&quot;1782157619353281&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;198.98.58.178:8080&lt;/td&gt;&lt;td id=&quot;19898581788080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;119.18.154.202:80&lt;/td&gt;&lt;td id=&quot;1191815420280&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;202.52.234.236:35931&lt;/td&gt;&lt;td id=&quot;2025223423635931&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;177.91.111.233:8080&lt;/td&gt;&lt;td id=&quot;177911112338080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;51.68.141.240:3128&lt;/td&gt;&lt;td id=&quot;51681412403128&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;163.172.152.52:8811&lt;/td&gt;&lt;td id=&quot;163172152528811&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;49.156.35.22:8080&lt;/td&gt;&lt;td id=&quot;4915635228080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;163.172.136.226:8811&lt;/td&gt;&lt;td id=&quot;1631721362268811&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;103.4.164.206:8080&lt;/td&gt;&lt;td id=&quot;10341642068080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;178.128.108.120:8080&lt;/td&gt;&lt;td id=&quot;1781281081208080&quot;&gt;&lt;i class=&quot;fas fa-check w3-text-green checked working-proxy&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
-           &lt;/table&gt;
-         &lt;p&gt;&lt;/p&gt;
-       &lt;/div&gt;
-
-       &lt;footer class=&quot;w3-container w3-blue&quot;&gt;
-         &lt;div class=&quot;d-flex justify-content-between&quot;&gt;
-           &lt;div&gt;
-             &lt;h5&gt;&lt;a href=&quot;https://www.webmanajemen.com/AGC/proxy&quot; class=&quot;w3-text-white&quot; style=&quot;pointer-events: none;&quot;&gt;WMI Proxy checker 2019&lt;/a&gt;&lt;/h5&gt;
-           &lt;/div&gt;
-
-           &lt;div&gt;
-             &lt;img src=&quot;https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview&quot; alt=&quot;Google&quot; width=&quot;30px&quot; height=&quot;30px&quot; class=&quot;w3-margin w3-hide&quot;&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.w3schools.com/w3css/4/w3.css&quot;&gt;
-         &lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.12.0/css/all.css&quot;&gt;
-         &lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css&quot;&gt;
-       &lt;/footer&gt;
-
-     &lt;/div&gt;
-
-   &lt;/div&gt;
-</code></pre>
+       </div>

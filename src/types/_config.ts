@@ -1,6 +1,7 @@
 import { join, readFileSync, resolve, write } from '../node/filemanager';
 import yaml from 'yaml';
 import data from './_config_data.json';
+import { toUnix } from 'upath';
 
 export type ProjectConfig = (typeof data & Hexo_Config) & {
   [keys: string]: any;
@@ -22,7 +23,26 @@ export const post_generated_dir = resolve(join(root, config.public_dir));
  * src-posts directory
  */
 export const post_source_dir = resolve(join(root, 'src-posts'));
+/**
+ * path to temp folder
+ * @param path file path inside temp folder
+ * @returns
+ */
 export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
+
+//// THEME
+const theme_def_opt = {
+  amp: false,
+};
+export type ThemeOpt =
+  | typeof theme_def_opt
+  | {
+      [key: string]: any;
+    };
+export const theme_dir = toUnix(resolve(join(root, 'theme', config.theme)));
+const theme_yml = join(theme_dir, '_config.yml');
+export const theme_config: ThemeOpt = Object.assign(theme_def_opt, yaml.parse(readFileSync(theme_yml, 'utf-8')));
+
 export default config;
 
 write(join(__dirname, '_config_data.json'), JSON.stringify(config));

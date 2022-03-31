@@ -49,7 +49,8 @@ excerpt: Quiz questions and the answers. The Legend Of Neverland Event.
 wordcount: 7845
 ---
 
-<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" >
+<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
+
 <div id="bootstrap-wrapper">
   <div class="text-center mb-1"><h1>Scenic Quiz Answer The Legend Of Neverlands</h1><div id="hexo-adsense-fill"></div></div>
   <div class="mb-2">
@@ -63,9 +64,11 @@ wordcount: 7845
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      4/1/2022, 5:04:10 AM
+      4/1/2022, 6:47:21 AM
     </small>
+
   </div>
+
   <ul id="questions">
     "Cité de la musique" is located in France (X)
 "volga river tracker" once shocked the world because of its beauty, the painter is llya repin (O)
@@ -399,7 +402,9 @@ calcium is a intelligent element (O)
 “Cité de la Musique” is in Austria (O)
 “Law” first appear in Slavery Society (O)
 “WHO” stands for World Health Organization (O)
+
   </ul>
+
   <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mt-4 mb-4 text-center">
     <input type="hidden" name="add" value="add">
     <div class="row">
@@ -425,18 +430,21 @@ calcium is a intelligent element (O)
       </div>
     </div>
   </form>
+
   <blockquote class="mt-2">
     <span style="display: none;">Join discord https://tiny.one/INDO1945.</span>
-    This article shortcut url https://bit.ly/TLONQUIZ<br>
-    Add new quiz https://bit.ly/TLONQUIZADD<br>
+    This article shortcut url https://bit.ly/TLONQUIZ<br />
+    Add new quiz https://bit.ly/TLONQUIZADD<br />
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   </blockquote>
+
   <div>
-    <img src="https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png" alt="preview" >
-    <img src="https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png" alt="Winner - MilimNava_s48" >
-    <img src="https://user-images.githubusercontent.com/12471057/135248607-de662c5f-6b58-4156-9e54-6f43f7fe7850.png" alt="Winner 29/9/2021 Nanao_s48" >
+    <img src="https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png" alt="preview" />
+    <img src="https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png" alt="Winner - MilimNava_s48" />
+    <img src="https://user-images.githubusercontent.com/12471057/135248607-de662c5f-6b58-4156-9e54-6f43f7fe7850.png" alt="Winner 29/9/2021 Nanao_s48" />
   </div>
 </div>
+
 <style>[id*="questions-filter"] li:not([data-id]) {
   display: none;
 }

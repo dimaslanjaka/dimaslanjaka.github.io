@@ -41,7 +41,7 @@ wordcount: 1083
       installation from unknwon sources and install the termux app)
     </li>
 <li> <a href="https://www.mediafire.com/file/v3d4nk933le6t1u/htdocs.rar/file">Example htdocs files</a>
-  </li></ul>
+  </ul>
   <h2 id="termux-setup-steps">Termux Setup Steps</h2>
   <ul>
     <li>
@@ -83,8 +83,9 @@ wordcount: 1083
   </p>
   <p>
     Now above steps looks like:
-    <img       src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg"
-      alt="Preview" >
+    <img
+      src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg"
+      alt="Preview" />
   </p>
   <ul>
     <li>Change Index</li>
@@ -114,10 +115,12 @@ wordcount: 1083
   <p>On the off chance that it doesn't show errors at that point all is well.</p>
   <p>
     apache is running a threaded mpm but your php module is not compiled to be threadsafe, How to fix ?
-    <a       href="/2021/06/fix-apache-wont-run-on-android.html"
+    <a
+      href="/2021/06/fix-apache-wont-run-on-android.html"
       alt="How to fix apache is running a threaded mpm but your php module is not compiled to be 		threadsafe"
-      >See here</a>
-    <br>
+      >See here</a
+    >
+    <br />
     Fix error retrieving pid file apache. <a href="/2021/06/fix-error-retrieving-pid-file-on-termux.html">See here</a>
   </p>
   <div class="mt-3">

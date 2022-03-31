@@ -39,7 +39,8 @@ wordcount: 2813
     Original post:
 </p>
 <p>
-    <a         href="/Seven Knight/guide.html"
+    <a
+        href="/Seven Knight/guide.html"
         rel="follow"
         target="_blank"
     >

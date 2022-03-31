@@ -31,29 +31,36 @@ excerpt: Usage, explanations of node options for nodejs
 wordcount: 216
 ---
 
-<h1 id="nodejs-options-node-options" tabindex="-1"><a class="header-anchor" href="#nodejs-options-node-options">NODEJS OPTIONS [ NODE_OPTIONS ]</a></h1>
-<p>Node.js accompanies an assortment of CLI choices. These choices uncover worked in investigating, different ways of executing scripts, and other accommodating runtime choices.</p>
-<p>To see this documentation as a manual page in a terminal, run ‘man hub’. <a href="https://nodejs.org/api/cli.html">Read more</a></p>
-<h2 id="how-to-setup-multiple-options-on-git-hub-workflow" tabindex="-1"><a class="header-anchor" href="#how-to-setup-multiple-options-on-git-hub-workflow">How to setup multiple options on GitHub Workflow</a></h2>
-<pre><code class="language-yaml">jobs:
+# NODEJS OPTIONS [ NODE_OPTIONS ]
+
+Node.js accompanies an assortment of CLI choices. These choices uncover worked in investigating, different ways of executing scripts, and other accommodating runtime choices.
+
+To see this documentation as a manual page in a terminal, run 'man hub'. [Read more](https://nodejs.org/api/cli.html)
+
+## How to setup multiple options on GitHub Workflow
+```yaml
+jobs:
   build:
     name: Build www.webmanajemen.com
     runs-on: ubuntu-latest
     env:
-      NODE_OPTIONS: &quot;--experimental-vm-modules --max_old_space_size=8192&quot;
-</code></pre>
-<h2 id="how-to-performance-run-nodejs-on-low-devices" tabindex="-1"><a class="header-anchor" href="#how-to-performance-run-nodejs-on-low-devices">How to performance run nodejs on low devices</a></h2>
-<p>The recommended amounts for a “low memory device”.</p>
-<p>for 32-bit and/or Android are:</p>
-<pre><code class="language-shell">node --max-executable-size=96 --max-old-space-size=128 --max-semi-space-size=1 app.js
-</code></pre>
-<p>for 64-bit non-android are:</p>
-<pre><code class="language-shell">node --max-executable-size=192 --max-old-space-size=256 --max-semi-space-size=2 app.js
-</code></pre>
-<p>These above codes would limit the heap totals to 225mb and 450mb respectively. It doesn’t include memory usage outside JS. For instance buffers are allocated as “c memory” , not in the JavaScript heap.</p>
-<h3 id="flags" tabindex="-1"><a class="header-anchor" href="#flags">Flags</a></h3>
-<ul>
-<li><code>--max-executable-size</code> the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).</li>
-<li><code>--max-old-space-size</code> the maximum size of heap reserved for long term objects</li>
-<li><code>--max-semi-space-size</code> the maximum size of heap reserved for short term objects</li>
-</ul>
+      NODE_OPTIONS: "--experimental-vm-modules --max_old_space_size=8192"
+```
+
+## How to performance run nodejs on low devices
+The recommended amounts for a "low memory device".
+
+for 32-bit and/or Android are:
+```shell
+node --max-executable-size=96 --max-old-space-size=128 --max-semi-space-size=1 app.js
+```
+for 64-bit non-android are:
+```shell
+node --max-executable-size=192 --max-old-space-size=256 --max-semi-space-size=2 app.js
+```
+These above codes would limit the heap totals to 225mb and 450mb respectively. It doesn't include memory usage outside JS. For instance buffers are allocated as "c memory" , not in the JavaScript heap.
+
+### Flags
+- `--max-executable-size` the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).
+- `--max-old-space-size` the maximum size of heap reserved for long term objects
+- `--max-semi-space-size` the maximum size of heap reserved for short term objects

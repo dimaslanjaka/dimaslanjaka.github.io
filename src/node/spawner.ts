@@ -1,7 +1,7 @@
 // noinspection DuplicatedCode
 
-import { ChildProcess, ChildProcessWithoutNullStreams, spawn, SpawnOptions } from "child_process";
-import process from "process";
+import { ChildProcess, ChildProcessWithoutNullStreams, spawn, SpawnOptions } from 'child_process';
+import process from 'process';
 
 class spawner {
   static children: ChildProcessWithoutNullStreams[] = [];
@@ -15,26 +15,26 @@ class spawner {
    */
   // eslint-disable-next-line no-unused-vars
   static spawn(command: string, args?: string[], callback?: (path: ChildProcess) => any) {
-    const defaultOption: SpawnOptions = { stdio: "pipe", detached: false };
-    if (["npm", "ts-node", "tsc", "npx", "hexo"].includes(command)) {
+    const defaultOption: SpawnOptions = { stdio: 'pipe', detached: false };
+    if (['npm', 'ts-node', 'tsc', 'npx', 'hexo'].includes(command)) {
       command = /^win/.test(process.platform) ? `${command}.cmd` : command;
     }
     const child = spawn(command, args, defaultOption);
     child.unref();
 
-    child.stdout.setEncoding("utf8");
-    child.stdout.on("data", function (data) {
+    child.stdout.setEncoding('utf8');
+    child.stdout.on('data', function (data) {
       process.stdout.write(data);
     });
-    child.stderr.setEncoding("utf8");
-    child.stderr.on("data", function (data) {
+    child.stderr.setEncoding('utf8');
+    child.stderr.on('data', function (data) {
       process.stdout.write(data);
     });
-    child.stdin.on("data", function (data) {
+    child.stdin.on('data', function (data) {
       process.stdout.write(data);
     });
 
-    if (typeof callback == "function") {
+    if (typeof callback == 'function') {
       callback(child);
     }
     spawner.children.push(child);
@@ -42,15 +42,15 @@ class spawner {
 
     if (!this.onExit) {
       this.onExit = true;
-      console.log("registering children killer");
-      process.on("exit", function () {
-        console.log("Finished", new Date().getTime());
+      console.log('registering children killer');
+      process.on('exit', function () {
+        console.log('Finished', new Date().getTime());
         spawner.children_kill();
       });
-      process.on("uncaughtException", spawner.children_kill);
-      process.on("SIGINT", spawner.children_kill);
-      process.on("SIGTERM", spawner.children_kill);
-      process.on("SIGKILL", spawner.children_kill);
+      process.on('uncaughtException', spawner.children_kill);
+      process.on('SIGINT', spawner.children_kill);
+      process.on('SIGTERM', spawner.children_kill);
+      process.on('SIGKILL', spawner.children_kill);
     }
 
     return child;
@@ -60,11 +60,11 @@ class spawner {
    * Kill all ChildProcessWithoutNullStreams[]
    */
   static children_kill() {
-    console.log("killing", spawner.children.length, spawner.children.length > 1 ? "child processes" : "child process");
+    console.log('killing', spawner.children.length, spawner.children.length > 1 ? 'child processes' : 'child process');
 
     for (let i = 0; i < spawner.children.length; i++) {
       const child = spawner.children[i];
-      if (typeof child != "undefined") {
+      if (typeof child != 'undefined') {
         child.kill();
         console.log(`Child ${child.pid} killed ${child.killed}`);
         delete spawner.children[i];

@@ -20,6 +20,7 @@ import { toUnix } from 'upath';
 import { renderMarkdownIt } from '../../markdown/toHtml';
 import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
+import { shortcodeYoutube } from '../shortcode/youtube';
 
 let tryCount = 0;
 
@@ -206,6 +207,7 @@ export function modifyPost(parse: parsePostReturn) {
       parse.body = replaceMD2HTML(parse.body);
       parse.body = shortcodeCss(publicFile, parse.body);
       parse.body = extractText(publicFile, parse.body);
+      parse.body = shortcodeYoutube(parse.body);
     }
 
     if (parse.metadata && parse.body) {
@@ -350,10 +352,11 @@ export default function taskCopy() {
             .map((e) => e.text)
             .join('\n');
           parse.metadata.wordcount = countWords(words);
+
           // build article
-          const bodyHtml = html.toString();
-          parse.body = bodyHtml;
-          write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
+          //const bodyHtml = html.toString();
+          //parse.body = bodyHtml;
+          //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
           const build = buildPost(parse);
           write(tmp(parse.metadata.uuid, 'article.md'), build);
           log.push(chalk.green('success'));
@@ -365,7 +368,7 @@ export default function taskCopy() {
           log[0] = chalk.red('[copy][md]');
           log.push(chalk.red('error'));
         }
-        console.log(log.join(' '));
+        //console.log(log.join(' '));
         return content;
       })
     );

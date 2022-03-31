@@ -29,25 +29,25 @@ excerpt: Macam-macam kondisional pada GitHub Workflows
 wordcount: 216
 ---
 
-<h1 id="kondisional-pada-git-hub-workflow" tabindex="-1"><a class="header-anchor" href="#kondisional-pada-git-hub-workflow">Kondisional pada GitHub Workflow</a></h1>
-<p>Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. <a href="https://docs.github.com/en/actions/learn-github-actions/expressions">source</a> Misalnya:</p>
-<h2 id="menjalankan-command-apabila-repository-di-push-dengan-commit-yang-memiliki-substring-tertentu-match-substring-from-github-commit-messages" tabindex="-1"><a class="header-anchor" href="#menjalankan-command-apabila-repository-di-push-dengan-commit-yang-memiliki-substring-tertentu-match-substring-from-github-commit-messages">Menjalankan command apabila repository di push dengan commit yang memiliki substring tertentu (match substring from github commit messages)</a></h2>
-<pre><code class="language-yaml">jobs:
+# Kondisional pada GitHub Workflow
+Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. [source](https://docs.github.com/en/actions/learn-github-actions/expressions) Misalnya:
+## Menjalankan command apabila repository di push dengan commit yang memiliki substring tertentu (match substring from github commit messages)
+```yaml
+jobs:
   build:
     name: Nama Workflow
     runs-on: ubuntu-latest
     steps:
-      - run: echo &quot;git commit contains hello&quot; # run this command if commit contains hello
+      - run: echo "git commit contains hello" # run this command if commit contains hello
         if: contains(github.event.head_commit.message, 'hello')
-      - run: echo &quot;git commit any&quot;
-</code></pre>
-<p>selain <code>contains</code> untuk mencari sebuah substring pada string. Adapun fungsi’’ lain seperti:</p>
-<ul>
-<li><code>startsWith</code> untuk memeriksa apakah string memiliki <strong>awalan</strong> tertentu (penggunaannya sama seperti contoh kode diatas)</li>
-<li><code>endsWith</code> untuk memeriksa apakah string memiliki <strong>akhiran</strong> tertentu (penggunaannya sama seperti contoh kode diatas)</li>
-</ul>
-<h2 id="melanjutkan-steps-meskipun-command-gagal-continue-on-error" tabindex="-1"><a class="header-anchor" href="#melanjutkan-steps-meskipun-command-gagal-continue-on-error">Melanjutkan steps meskipun command gagal (continue on error)</a></h2>
-<pre><code class="language-yaml">jobs:
+      - run: echo "git commit any"
+```
+selain `contains` untuk mencari sebuah substring pada string. Adapun fungsi'' lain seperti:
+- `startsWith` untuk memeriksa apakah string memiliki **awalan** tertentu (penggunaannya sama seperti contoh kode diatas)
+- `endsWith` untuk memeriksa apakah string memiliki **akhiran** tertentu (penggunaannya sama seperti contoh kode diatas)
+## Melanjutkan steps meskipun command gagal (continue on error)
+```yaml
+jobs:
   build:
     name: Nama Workflow
     runs-on: ubuntu-latest
@@ -55,6 +55,7 @@ wordcount: 216
       - run: this_command_is_not_found xxxxx # ini akan membuat workflow berhenti
         continue-on-error: true # namun dengan ini tidak akan membuat workflow berhenti
         id: custom-id # membuat id khusus (opsional)
-      - run: echo &quot;git commit any&quot;
-</code></pre>
-<p>Artikel ini untuk mempermudah visitor untuk memahami github workflow.</p>
+      - run: echo "git commit any"
+```
+
+Artikel ini untuk mempermudah visitor untuk memahami github workflow.

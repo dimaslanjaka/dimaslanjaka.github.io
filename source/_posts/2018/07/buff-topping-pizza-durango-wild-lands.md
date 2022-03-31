@@ -32,4 +32,4 @@ excerpt: Ulat, Lebah Buff WIL Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan
 wordcount: 17
 ---
 
-<p>Ulat, Lebah = Buff WIL  Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan Pisang = Produksi Tangan</p>
+Ulat, Lebah = Buff WIL  Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan Pisang = Produksi Tangan

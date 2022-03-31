@@ -34,41 +34,47 @@ excerpt: Game control the legend of neverland bluestacks Support change fairy
 wordcount: 126
 ---
 
-<h3 id="requirements" tabindex="-1"><a class="header-anchor" href="#requirements">Requirements</a></h3>
-<ul>
-<li>Bluestacks (4 or 5 supported) ( <a href="https://www.bluestacks.com/bluestacks-5.html">Download Bluestacks</a> )</li>
-</ul>
-<h3 id="features" tabindex="-1"><a class="header-anchor" href="#features">Features</a></h3>
-<ul>
-<li>Switch Fairies
-<ul>
-<li>Team 1 (CTRL+Z)</li>
-<li>Team 2 (CTRL+X)</li>
-<li>Team 3 (CTRL+C)</li>
-<li>Team 4 (CTRL+V)</li>
-</ul>
-</li>
-<li>Switch Jobs/Classes
-<ul>
-<li>Job 1 (CTRL+A)</li>
-<li>Job 2 (CTRL+S)</li>
-<li>Job 3 (CTRL+D)</li>
-</ul>
-</li>
-<li>Zoom in (-) - Zoom out (+)</li>
-<li>Rotate Camera Using D-PAD Arrows</li>
-<li>2 Skill Fairies (E &amp; Q)</li>
-<li>And More</li>
-</ul>
-<h5 id="switch-fairies-ability-preview" tabindex="-1"><a class="header-anchor" href="#switch-fairies-ability-preview">Switch Fairies Ability Preview</a></h5>
-<p></p>
-<hr>
+### Requirements
+  - Bluestacks (4 or 5 supported) ( [Download Bluestacks](https://www.bluestacks.com/bluestacks-5.html) )
+
+### Features
+  - Switch Fairies
+    - Team 1 (CTRL+Z)
+    - Team 2 (CTRL+X)
+    - Team 3 (CTRL+C)
+    - Team 4 (CTRL+V)
+  - Switch Jobs/Classes
+    - Job 1 (CTRL+A)
+    - Job 2 (CTRL+S)
+    - Job 3 (CTRL+D)
+  - Zoom in (-) - Zoom out (+)
+  - Rotate Camera Using D-PAD Arrows
+  - 2 Skill Fairies (E & Q)
+  - And More
+
+##### Switch Fairies Ability Preview
+<amp-youtube
+      id="video-container-6"
+      data-videoid="9ZEqUD5piB4"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/9ZEqUD5piB4/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
+
+<hr/>
 <center><b><a href="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg">Download Game Control</a></b></center>
-<hr>
-<h5 id="how-to-download" tabindex="-1"><a class="header-anchor" href="#how-to-download">How to download</a></h5>
+<hr/>
+
+##### How to download
 <div style="clear:both;"></div>
 <div>
-  <img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="300px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" >
-  <img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="300px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" >
+  <img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="300px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" />
+  <img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="300px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" />
 </div>
 <div style="clear:both;"></div>

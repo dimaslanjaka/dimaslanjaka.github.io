@@ -17,116 +17,112 @@ photos:
 wordcount: 420
 ---
 
-<h2 id="how-to-migrate-typescript-commonjs-to-esm-with-vscode" tabindex="-1"><a class="header-anchor" href="#how-to-migrate-typescript-commonjs-to-esm-with-vscode">How to migrate typescript commonjs to esm with vscode</a></h2>
-<h2 id="package-json" tabindex="-1"><a class="header-anchor" href="#package-json">package.json</a></h2>
-<p>add following key to package.json</p>
-<pre><code class="language-jsonc">{
-  &quot;type&quot;: &quot;module&quot;,
-  &quot;main&quot;: &quot;./dist/src/main.js&quot;,
-  &quot;exports&quot;: {
-    &quot;.&quot;: &quot;./dist/src/main.js&quot;
+## How to migrate typescript commonjs to esm with vscode
+
+## package.json
+add following key to package.json
+```jsonc
+{
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "exports": {
+    ".": "./dist/src/main.js"
   },
-  &quot;typesVersions&quot;: {
-    &quot;*&quot;: {
-      &quot;main.d.ts&quot;: [&quot;dist/src/main.d.ts&quot;]
+  "typesVersions": {
+    "*": {
+      "main.d.ts": ["dist/src/main.d.ts"]
     }
   }
 }
-</code></pre>
-<p>Nicer module specifiers for a subtree:</p>
-<pre><code class="language-jsonc">{
-  &quot;type&quot;: &quot;module&quot;,
-  &quot;main&quot;: &quot;./dist/src/main.js&quot;,
-  &quot;exports&quot;: {
-    &quot;./*&quot;: &quot;./dist/src/*&quot;
+```
+Nicer module specifiers for a subtree:
+```jsonc
+{
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "exports": {
+    "./*": "./dist/src/*"
   },
-  &quot;typesVersions&quot;: {
-    &quot;*&quot;: {
-      &quot;*&quot;: [&quot;dist/src/*&quot;]
+  "typesVersions": {
+    "*": {
+      "*": ["dist/src/*"]
     }
   }
 }
-</code></pre>
-<p>Default <a href="https://www.typescriptlang.org/docs/handbook/esm-node.html">typescript documentation</a></p>
-<pre><code class="language-jsonc">{
-    &quot;name&quot;: &quot;my-package&quot;,
-    &quot;type&quot;: &quot;module&quot;,
-    &quot;exports&quot;: {
-        &quot;.&quot;: {
-            // Entry-point for `import &quot;my-package&quot;` in ESM
-            &quot;import&quot;: &quot;./esm/index.js&quot;,
-            // Entry-point for `require(&quot;my-package&quot;) in CJS
-            &quot;require&quot;: &quot;./commonjs/index.cjs&quot;,
+```
+Default [typescript documentation](https://www.typescriptlang.org/docs/handbook/esm-node.html)
+```jsonc
+{
+    "name": "my-package",
+    "type": "module",
+    "exports": {
+        ".": {
+            // Entry-point for `import "my-package"` in ESM
+            "import": "./esm/index.js",
+            // Entry-point for `require("my-package") in CJS
+            "require": "./commonjs/index.cjs",
         },
     },
     // CJS fall-back for older versions of Node.js
-    &quot;main&quot;: &quot;./commonjs/index.cjs&quot;,
+    "main": "./commonjs/index.cjs",
 }
-</code></pre>
-<ul>
-<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions"><code>&quot;typesVersions&quot;</code></a> performs the same mapping as <code>&quot;exports&quot;</code>, but for TypeScript’s type definitions.</li>
-</ul>
-<h2 id="tsconfig-json" tabindex="-1"><a class="header-anchor" href="#tsconfig-json">tsconfig.json</a></h2>
-<p>match your configuration (points A, B, C)</p>
-<pre><code class="language-jsonc">{
-  &quot;compilerOptions&quot;: {
-    &quot;rootDir&quot;: &quot;./&quot;,
-    &quot;outDir&quot;: &quot;./dist&quot;,
-    &quot;target&quot;: &quot;ES2020&quot;,
-    &quot;lib&quot;: [
-      &quot;ES2020&quot;, &quot;DOM&quot;
+```
+- [`"typesVersions"`](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions) performs the same mapping as `"exports"`, but for TypeScript's type definitions.
+
+## tsconfig.json
+match your configuration (points A, B, C)
+```jsonc
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "target": "ES2020",
+    "lib": [
+      "ES2020", "DOM"
     ],
-    &quot;module&quot;: &quot;ES2020&quot;, // (A)
-    &quot;moduleResolution&quot;: &quot;Node&quot;, // (B)
-    &quot;strict&quot;: true,
-    &quot;sourceMap&quot;: true,
+    "module": "ES2020", // (A)
+    "moduleResolution": "Node", // (B)
+    "strict": true,
+    "sourceMap": true,
     // Needed for importing CommonJS modules
-    &quot;allowSyntheticDefaultImports&quot;: true, // (C)
+    "allowSyntheticDefaultImports": true, // (C)
     // Compile d.ts
-    &quot;declaration&quot;: true,
+    "declaration": true,
   }
 }
-</code></pre>
-<ul>
-<li>Line A (<a href="https://www.typescriptlang.org/tsconfig#module"><code>&quot;module&quot;</code></a>): We are telling TypeScript to generate ECMAScript modules.
-<ul>
-<li><code>&quot;ES6&quot;</code>, <code>&quot;ES2015&quot;</code>: support for basic ESM features</li>
-<li><code>&quot;2020&quot;</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
-</ul>
-</li>
-<li>Line B (<a href="https://www.typescriptlang.org/tsconfig#moduleResolution"><code>&quot;moduleResolution&quot;</code></a>): This value is needed for Node.js.</li>
-<li>Line C (<a href="https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports"><code>&quot;allowSyntheticDefaultImports&quot;</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
-</ul>
-<h2 id="vs-code-settings-json" tabindex="-1"><a class="header-anchor" href="#vs-code-settings-json">VSCode settings.json</a></h2>
-<p>open your <code>settings.json</code> or <code>.vscode/settings.json</code>, add following keys</p>
-<pre><code class="language-jsonc">{
+```
+-   Line A ([`"module"`](https://www.typescriptlang.org/tsconfig#module)): We are telling TypeScript to generate ECMAScript modules.
+    -   `"ES6"`, `"ES2015"`: support for basic ESM features
+    -   `"2020"`: additionally, support for dynamic imports and `import.meta`.
+-   Line B ([`"moduleResolution"`](https://www.typescriptlang.org/tsconfig#moduleResolution)): This value is needed for Node.js.
+-   Line C ([`"allowSyntheticDefaultImports"`](https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports)): I needed this setting in order to import a legacy CommonJS module. The `module.exports` were the default export in that case.
+
+## VSCode settings.json
+open your `settings.json` or `.vscode/settings.json`, add following keys
+```jsonc
+{
   //...
-  &quot;javascript.preferences.importModuleSpecifierEnding&quot;: &quot;js&quot;,
-  &quot;typescript.preferences.importModuleSpecifierEnding&quot;: &quot;js&quot;
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
   //...
 }
-</code></pre>
-<h2 id="replace-non-extension-of-imports" tabindex="-1"><a class="header-anchor" href="#replace-non-extension-of-imports">Replace non extension of imports</a></h2>
-<p>add filename extensions to existing local imports (within a package):</p>
-<h3 id="method-1" tabindex="-1"><a class="header-anchor" href="#method-1">Method 1</a></h3>
-<ul>
-<li>Open Search And Replace VSCode</li>
-<li>Insert below pattern to search input and check Regex Search Flag</li>
-</ul>
-<pre><code class="language-regexp">(^import.*\/((?!.js).)*)(['&quot;];)$
-</code></pre>
-<ul>
-<li>Insert below replacement pattern to replacement input</li>
-</ul>
-<pre><code class="language-regexp">$1.js$3
-</code></pre>
-<ul>
-<li>Insert folder to <code>files to input</code> bar for example <code>src/</code></li>
-<li>Replace all
-<img src="https://user-images.githubusercontent.com/12471057/160769725-41b16e7d-ef33-4886-8113-d59a30a63482.png" alt="image"></li>
-</ul>
-<h3 id="method-2" tabindex="-1"><a class="header-anchor" href="#method-2">Method 2</a></h3>
-<ul>
-<li>Search: <code>^(import [^';]* from '(\./|(\.\./)+)[^';.]*)';</code></li>
-<li>Replace: <code>$1.js';</code></li>
-</ul>
+```
+
+## Replace non extension of imports
+add filename extensions to existing local imports (within a package):
+### Method 1
+- Open Search And Replace VSCode
+- Insert below pattern to search input and check Regex Search Flag
+```regexp
+(^import.*\/((?!.js).)*)(['"];)$
+```
+- Insert below replacement pattern to replacement input
+```regexp
+$1.js$3
+```
+- Insert folder to `files to input` bar for example `src/`
+- Replace all
+![image](https://user-images.githubusercontent.com/12471057/160769725-41b16e7d-ef33-4886-8113-d59a30a63482.png)
+### Method 2
+-   Search: `^(import [^';]* from '(\./|(\.\./)+)[^';.]*)';`
+-   Replace: `$1.js';`

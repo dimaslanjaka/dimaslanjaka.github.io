@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { ProjectConfig } from '../../types/_config';
+import config, { ProjectConfig } from '../../types/_config';
 import { parsePostReturn } from '../../markdown/transformPosts';
 /**
  * get author name
@@ -13,7 +13,6 @@ export function author_name(page: parsePostReturn['metadata']) {
     if (author.nick) return author.nick;
     if (author.name) return author.name;
   }
-  return 'Default Author';
 }
 
 /**
@@ -21,7 +20,7 @@ export function author_name(page: parsePostReturn['metadata']) {
  * @param page
  * @returns
  */
-export function author_link(page: parsePostReturn['metadata'], config?: ProjectConfig) {
+export function author_link(page: parsePostReturn['metadata']) {
   const author = page['author'];
   if (typeof author == 'object') {
     if (author['link']) return author['link'];

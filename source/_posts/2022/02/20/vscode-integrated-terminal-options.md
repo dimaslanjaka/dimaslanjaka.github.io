@@ -22,37 +22,43 @@ photos:
 wordcount: 97
 ---
 
-<p>Determining custom path on vscode IDE made easily development programs within multiple platforms.</p>
-<h2 id="linux-env" tabindex="-1"><a class="header-anchor" href="#linux-env">Linux Env</a></h2>
-<p>Add custom path to terminal linux</p>
-<pre><code class="language-json">{
-  &quot;terminal.integrated.env.linux&quot;: {
-    &quot;PATH&quot;: &quot;./bin:${env:PATH}&quot;
+Determining custom path on vscode IDE made easily development programs within multiple platforms.
+
+## Linux Env
+Add custom path to terminal linux
+```json
+{
+  "terminal.integrated.env.linux": {
+    "PATH": "./bin:${env:PATH}"
   }
 }
-</code></pre>
-<h2 id="windows-env" tabindex="-1"><a class="header-anchor" href="#windows-env">Windows Env</a></h2>
-<p>Add path into vscode terminal windows</p>
-<pre><code class="language-json">{
-  &quot;terminal.integrated.env.windows&quot;: {
-    &quot;PATH&quot;: &quot;${env:PATH};C:\\bin;C:\\another\\folder&quot;
+```
+
+## Windows Env
+Add path into vscode terminal windows
+```json
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH};C:\\bin;C:\\another\\folder"
   }
 }
-</code></pre>
-<h2 id="mac-osx-env" tabindex="-1"><a class="header-anchor" href="#mac-osx-env">MAC OSX Env</a></h2>
-<p>Add path into vscode terminal mac osx</p>
-<pre><code class="language-json">{
-  &quot;terminal.integrated.env.osx&quot;: {
-    &quot;PATH&quot;: &quot;/home&quot;
+```
+
+## MAC OSX Env
+Add path into vscode terminal mac osx
+```json
+{
+  "terminal.integrated.env.osx": {
+    "PATH": "/home"
   }
 }
-</code></pre>
-<p>Now open Terminal and look at PATH</p>
-<pre><code class="language-shell">echo $PATH
+```
+Now open Terminal and look at PATH
+```shell
+echo $PATH
 /usr/local/bin:/usr/bin:/bin:/usr/sbin:/home
-</code></pre>
-<h3 id="also-see" tabindex="-1"><a class="header-anchor" href="#also-see">Also See</a></h3>
-<ul>
-<li><a href="/2022/03/26/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html">vscode alert: CommonJS may be converted to an es module</a></li>
-<li><a href="/p/search.html?q=vscode+crossplatform+setting">vscode crossplatform settings</a></li>
-</ul>
+```
+
+### Also See
+- [vscode alert: CommonJS may be converted to an es module](/2022/03/26/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html)
+- [vscode crossplatform settings](/p/search.html?q=vscode+crossplatform+setting)

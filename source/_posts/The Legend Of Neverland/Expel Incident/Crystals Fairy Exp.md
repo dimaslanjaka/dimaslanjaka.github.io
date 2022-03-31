@@ -26,26 +26,32 @@ excerpt: Expel Incident With The Highest Fairies Exp And Crystals Rewards.
 wordcount: 75
 ---
 
+<!-- toc -->
 
 <h2 id="Intro">Expel Incident The Legend Of NeverLand</h2>
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most FAIRY EXP AND CRYSTALS.
-<h2 id="gaya-snow-mountain-f2" tabindex="-1"><a class="header-anchor" href="#gaya-snow-mountain-f2">Gaya Snow Mountain F2</a></h2>
-<p><img src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png" alt=""></p>
-<h2 id="gaya-snow-mountain-f3" tabindex="-1"><a class="header-anchor" href="#gaya-snow-mountain-f3">Gaya Snow Mountain F3</a></h2>
-<p><img src="Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png" alt=""></p>
-<h2 id="skala-desert-f2" tabindex="-1"><a class="header-anchor" href="#skala-desert-f2">Skala Desert F2</a></h2>
-<p><img src="https://user-images.githubusercontent.com/12471057/136436283-942699d6-be8d-4b55-9ebc-6641ca9884ac.png" alt="Scorpion's Revenge">
-<em>Scorpion’s Revenge - Kill toxic desert scorpions</em></p>
-<h2 id="skala-desert-f3" tabindex="-1"><a class="header-anchor" href="#skala-desert-f3">Skala Desert F3</a></h2>
-<p><img src="Crystals%20Fairy%20Exp/Skala%20Desert%203F.png" alt=""></p>
-<h2 id="maple-grove-f1" tabindex="-1"><a class="header-anchor" href="#maple-grove-f1">Maple Grove F1</a></h2>
-<p><img src="https://user-images.githubusercontent.com/12471057/136435907-f0b7241e-a0c0-4091-8c2c-f04358acbfcc.png" alt="Troublemaker">
-<em>Troublemaker - Defeat adult kappa</em></p>
-<h2 id="expel-incident-lists" tabindex="-1"><a class="header-anchor" href="#expel-incident-lists">Expel Incident Lists</a></h2>
-<p>Daily task the legend of neverland lists</p>
-<ul>
-<li><a href="Standard%20Rewards.html">Standard Rewards</a></li>
-<li><a href="Exp%20Char.html">Highest Exp Char</a></li>
-<li><a href="Crystals%20Fairy%20Exp.html">Highest Exp Fairies</a></li>
-</ul>
+
+## Gaya Snow Mountain F2
+![](Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png)
+
+## Gaya Snow Mountain F3
+![](Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png)
+
+## Skala Desert F2
+![Scorpion's Revenge](https://user-images.githubusercontent.com/12471057/136436283-942699d6-be8d-4b55-9ebc-6641ca9884ac.png)
+*Scorpion's Revenge - Kill toxic desert scorpions*
+
+## Skala Desert F3
+![](Crystals%20Fairy%20Exp/Skala%20Desert%203F.png)
+
+## Maple Grove F1
+![Troublemaker](https://user-images.githubusercontent.com/12471057/136435907-f0b7241e-a0c0-4091-8c2c-f04358acbfcc.png)
+*Troublemaker - Defeat adult kappa*
+
+## Expel Incident Lists
+Daily task the legend of neverland lists
+- [Standard Rewards](Standard%20Rewards.html)
+- [Highest Exp Char](Exp%20Char.html)
+- [Highest Exp Fairies](Crystals%20Fairy%20Exp.html)
+
 <style>em::before{content:"Gate Name : ";}</style>

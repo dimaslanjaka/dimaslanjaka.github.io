@@ -27,31 +27,58 @@ excerpt: Chest Winged Hairband location in the legend of neverland
 wordcount: 144
 ---
 
-<h2 id="requirement" tabindex="-1"><a class="header-anchor" href="#requirement">Requirement</a></h2>
-<ul>
-<li>
-<p>Blueprint (Buy to Npc in Sophila)
-<img src="./Winged%20Hairband/blueprint.webp" alt="Blueprint"></p>
-</li>
-<li>
-<p>Feather Decoration Chest Location</p>
-<p>Goto <code>Fog Swamp F1</code></p>
-<p><img src="./Winged%20Hairband/fs1-map.webp" alt="Feather Decoration Chest Location">
-<img src="https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png" alt="Feather Decoration Chest Detail Location"></p>
-</li>
-<li>
-<p>Mysterious Yarn Chest Location</p>
-<p>Goto <code>Fog Swamp F2</code>, near house of NPC named Robin.</p>
-<p><img src="./Winged%20Hairband/fs2-map.webp" alt="Mysterious Yarn Chest Location">
-<img src="https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png" alt="Mysterious Yarn Chest Detail Location"></p>
-</li>
-<li>
-<p>Vitalization Dust Chest Location</p>
-<p>Goto <code>Fog Swamp F3</code>, large purple and dark green trees, with early trees appearing bright blue and forming a circle.</p>
-<p><img src="./Winged%20Hairband/fs3-map.webp" alt="Vitalization Dust Location">
-<img src="./Winged%20Hairband/fs3-detail.png" alt="Vitalization Dust Chest Detail Location"></p>
-</li>
-</ul>
-<h2 id="video-tutorial" tabindex="-1"><a class="header-anchor" href="#video-tutorial">Video tutorial</a></h2>
-<p></p>
-<p></p>
+## Requirement
+
+- Blueprint (Buy to Npc in Sophila)
+  ![Blueprint](./Winged%20Hairband/blueprint.webp)
+
+- Feather Decoration Chest Location
+
+  Goto `Fog Swamp F1`
+
+  ![Feather Decoration Chest Location](./Winged%20Hairband/fs1-map.webp)
+  ![Feather Decoration Chest Detail Location](https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png)
+
+- Mysterious Yarn Chest Location
+
+  Goto `Fog Swamp F2`, near house of NPC named Robin.
+
+  ![Mysterious Yarn Chest Location](./Winged%20Hairband/fs2-map.webp)
+  ![Mysterious Yarn Chest Detail Location](https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png)
+
+- Vitalization Dust Chest Location
+
+  Goto `Fog Swamp F3`, large purple and dark green trees, with early trees appearing bright blue and forming a circle.
+
+  ![Vitalization Dust Location](./Winged%20Hairband/fs3-map.webp)
+  ![Vitalization Dust Chest Detail Location](./Winged%20Hairband/fs3-detail.png)
+
+## Video tutorial
+
+<amp-youtube
+      id="video-container-10"
+      data-videoid="psOnlBSRBjA"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/psOnlBSRBjA/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
+
+<amp-youtube
+      id="video-container-11"
+      data-videoid="yRbP_fSP3xY"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/yRbP_fSP3xY/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>

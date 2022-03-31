@@ -31,19 +31,20 @@ excerpt: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br />
 wordcount: 38
 ---
 
-<pre><code class="language-java">  ArrayList&lt;String&gt; firstArr = new ArrayList&lt;&gt;();
-  firstArr.add(&quot;1&quot;);
-  firstArr.add(&quot;2&quot;);
-  firstArr.add(&quot;3&quot;);
+```java
+  ArrayList<String> firstArr = new ArrayList<>();
+  firstArr.add("1");
+  firstArr.add("2");
+  firstArr.add("3");
   
   // array/list to be removed from firstArr
-  ArrayList&lt;String&gt; filterArr = new ArrayList&lt;&gt;();
-  filterArr.add(&quot;1&quot;);
-  filterArr.add(&quot;3&quot;);
+  ArrayList<String> filterArr = new ArrayList<>();
+  filterArr.add("1");
+  filterArr.add("3");
   
   // filter now
   filterArr.removeAll(blockedArr);
   
   // Dump
   System.out.println(filterArr.toString); // output 1 and 3
-</code></pre>
+```

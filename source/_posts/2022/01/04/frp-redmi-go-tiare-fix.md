@@ -24,29 +24,23 @@ photos:
 wordcount: 163
 ---
 
-<h1 id="fix-frp-redmi-go-latest-security-patch-updated-2022" tabindex="-1"><a class="header-anchor" href="#fix-frp-redmi-go-latest-security-patch-updated-2022">Fix FRP Redmi GO Latest Security Patch (Updated 2022)</a></h1>
+# Fix FRP Redmi GO Latest Security Patch (Updated 2022)
+<!-- more -->
+- Download Firmware redmi go `tiare_global_images_V10.2.6.0.OCLMIXM_8.1` customized with `frp bypasser`
+> [Download Firmware Redmi GO Tiare FRP Fix From MEGA](https://mega.nz/file/OEFVBYJD#ptfhr6ADL6vwFu9ZikLnUkJqu9RfS-dUtBfvzDU_qMw)
 
-<ul>
-<li>Download Firmware redmi go <code>tiare_global_images_V10.2.6.0.OCLMIXM_8.1</code> customized with <code>frp bypasser</code></li>
-</ul>
-<blockquote>
-<p><a href="https://mega.nz/file/OEFVBYJD#ptfhr6ADL6vwFu9ZikLnUkJqu9RfS-dUtBfvzDU_qMw">Download Firmware Redmi GO Tiare FRP Fix From MEGA</a></p>
-</blockquote>
-<h2 id="edl-mode" tabindex="-1"><a class="header-anchor" href="#edl-mode">EDL Mode</a></h2>
-<ul>
-<li>Open Back Cashing Redmi Go Tiare M1903C3GG And Connect Two Point (Look at this screenshot)
-<img src="./frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg" alt=""></li>
-<li>Connect USB while connected two points above</li>
-<li>EDL Mode Loaded as Qualcom HS-USB QDLoader (Look at this screenshot)
-<img src="./frp-redmi-go-tiare-fix/Qualcomm-HS-USB-Drivers-EDL-Mode.webp" alt="Qualcom HS-USB QDLoader"></li>
-</ul>
-<h2 id="flashing" tabindex="-1"><a class="header-anchor" href="#flashing">Flashing</a></h2>
-<ul>
-<li>Open MiFlash</li>
-<li>Select Firmware <code>tiare_global_images_V10.2.6.0.OCLMIXM_8.1\images</code>
-<img src="./frp-redmi-go-tiare-fix/select%20firmware.jpg" alt=""></li>
-<li>Select Option <code>CLEAN ALL</code> at bottom
-<img src="./frp-redmi-go-tiare-fix/full%20example.jpg" alt=""></li>
-<li>Tap <code>refresh</code> if your REDMI GO not shown</li>
-<li>Tap <code>flash</code> if your REDMI GO ready</li>
-</ul>
+## EDL Mode
+- Open Back Cashing Redmi Go Tiare M1903C3GG And Connect Two Point (Look at this screenshot)
+![](./frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg)
+- Connect USB while connected two points above
+- EDL Mode Loaded as Qualcom HS-USB QDLoader (Look at this screenshot)
+![Qualcom HS-USB QDLoader](./frp-redmi-go-tiare-fix/Qualcomm-HS-USB-Drivers-EDL-Mode.webp)
+
+## Flashing
+- Open MiFlash
+- Select Firmware `tiare_global_images_V10.2.6.0.OCLMIXM_8.1\images`
+![](./frp-redmi-go-tiare-fix/select%20firmware.jpg)
+- Select Option `CLEAN ALL` at bottom
+![](./frp-redmi-go-tiare-fix/full%20example.jpg)
+- Tap `refresh` if your REDMI GO not shown
+- Tap `flash` if your REDMI GO ready

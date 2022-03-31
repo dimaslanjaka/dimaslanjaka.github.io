@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, existsSync, join, resolve, rmdirSync, write } from '../../node/filemanager';
-import config, { post_public_dir, root, tmp } from '../../types/_config';
+import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
 import 'js-prototypes';
@@ -16,7 +16,6 @@ import { inspect } from 'util';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
-export const theme_dir = toUnix(resolve(join(root, 'theme', config.theme)));
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 //console.log(existsSync(layout), layout);
 //rmdirSync(generated_dir);
@@ -88,7 +87,7 @@ export default function taskGenerate() {
           ejs_opt.url = page_url.toString();
           sitemap.push(ejs_opt.url);
           return ejs_object
-            .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir })
+            .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
             .then((rendered) => {
               file.contents = Buffer.from(rendered);
               if (self) self.push(rendered);
@@ -106,7 +105,7 @@ export default function taskGenerate() {
                 ejs_opt.category = ['Sitemap'];
                 ejs_opt.tags = ['Sitemap'];
                 ejs_opt.webtitle = 'WMI';
-                ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir }).then((rendered) => {
+                ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config }).then((rendered) => {
                   write(join(generated_dir, 'sitemap.html'), rendered);
                 });
               });

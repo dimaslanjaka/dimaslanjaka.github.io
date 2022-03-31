@@ -1,0 +1,22 @@
+---
+category:
+  - Programming
+  - MYSQL
+date: 2022-03-26T00:00:00+07:00
+tags:
+  - MySQL
+title: MySQL Command to create new database user
+updated: 2022-03-26
+uuid: abcdca48-acd1-4888-8a33-cdcdb7b877dc
+subtitle: null
+excerpt: null
+description: null
+lang: en
+wordcount: 48
+---
+
+<pre><code class="language-mysql">CREATE USER 'dimaslanjaka'@'%' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'dimaslanjaka'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `dimaslanjaka\_%`.* TO 'dimaslanjaka'@'%';
+</code></pre>
+<blockquote>
+<p>creating user with username <code>dimaslanjaka</code> with all previleges</p>
+</blockquote>

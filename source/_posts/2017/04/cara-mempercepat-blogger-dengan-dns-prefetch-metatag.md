@@ -1,0 +1,36 @@
+---
+author:
+  nick: Unknown
+  link: ""
+  email: noreply@blogger.com
+category:
+  - Programming
+  - HTML
+comments: true
+cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
+date: 2017-04-30T01:34:00.002+07:00
+lang: en
+location: ""
+modified: 2017-04-30T01:38:00.433+07:00
+subtitle: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
+  AMP.</b><br /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
+tags:
+  - Blogger
+  - HTML
+  - AMP
+title: Cara Mempercepat Blogger Dengan dns-prefetch metatag
+type: post
+uuid: 5289e74a-6ef9-4888-8f2e-f29add41b8b5
+webtitle: WMI Gitlab
+updated: 2017-04-30T01:38:00+07:00
+thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
+photos:
+  - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
+description: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
+  AMP.</b><br /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
+excerpt: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON AMP.</b><br
+  /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
+wordcount: 345
+---
+
+<p><b>Bagaimana Cara mempercepat loading blogger AMP maupun NON AMP.</b><br><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun Blogger dengan template biasa (mengandung javascript).</b><br><img height="221" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz" width="400"><br>Link <i>dns-prefetch</i> metatag merupakan metatags untuk mempercepat loading external source. Dengan kata lain <i>defer loading external sources</i>. <br><br>Kali ini saya akan share bagaimana cara mempercepat lagi loading <i>AMP Blogger</i> yang biasanya mengandung banyak <i>&lt;amp-iframe&gt;</i>.<br><br>Ga pake lama, cekidot tutorialnya:<br><br>1. Buka dashboard <i class="fa fa-blogger"></i> <b>Blogger</b>.<br>2. Klik tab <i>Layout</i> --&gt; klik <b>Edit HTML</b>.<br>Kemudian, taruh kode dibawah ini dibawah <mark>&lt;head&gt;</mark> atau diatas <mark>&lt;/head&gt;</mark>.<br><br><pre>&lt;link rel=“dns-prefetch” href=“<a href="https://cdn.ampproject.org">https://cdn.ampproject.org</a>”/&gt;</pre><br>Bila anda juga menggunakan fonts dari google cdn maka juga tambahkan: <br><br><pre>&lt;link rel=“dns-prefetch” href=“<a href="https://fonts.googleapis.com">https://fonts.googleapis.com</a>”/&gt;</pre><br>Dan bila anda juga menggunakan <b>Fontawesome.css</b> dari <i><a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9uZXRkbmEuYm9vdHN0cmFwY2RuLmNvbS9mb250LWF3ZXNvbWUvJTVCVkVSU0lPTiU1RC9jc3MvZm9udC1hd2Vzb21lLmNzcw==" target="_blank" rel="nofollow noopener">https://netdna.bootstrapcdn.com/font-awesome/[VERSION]/css/font-awesome.css</a>.</i><br>Maka juga tambahakan kode dibawah ini:<br><br><pre>&lt;link rel=“dns-prefetch” href=“<a href="https://netdna.boostrapcdn.com">https://netdna.boostrapcdn.com</a>”/&gt;</pre><br>Bila digabungkan akan seperti ini:<br><br><pre>&lt;link rel=“dns-prefetch” href=“<a href="https://cdn.ampproject.org">https://cdn.ampproject.org</a>”/&gt;<br>&lt;link rel=“dns-prefetch” href=“<a href="https://fonts.googleapis.com">https://fonts.googleapis.com</a>”/&gt;<br>&lt;link rel=“dns-prefetch” href=“<a href="https://netdna.boostrapcdn.com">https://netdna.boostrapcdn.com</a>”/&gt;</pre><br>Untuk <b>HTML5</b> Markup seperti ini:<br><br><pre>&lt;link href=“<a href="https://cdn.ampproject.org">https://cdn.ampproject.org</a>” rel=“dns-prefetch”/&gt;</pre><pre>&lt;link href=“<a href="https://fonts.googleapis.com">https://fonts.googleapis.com</a>” rel=“dns-prefetch”/&gt;</pre><pre>&lt;link href=“<a href="https://netdna.boostrapcdn.com">https://netdna.boostrapcdn.com</a>” rel=“dns-prefetch”/&gt;</pre><br><b>Bedanya</b> HTML biasa dengan HTML5 cuma <mark>href</mark> yang di dahulukan.<br><br><h3>Untuk kalian yang menggunakan template biasa</h3>kalian juga bisa menerapkan teknik diatas cuman ganti saja <mark>href</mark> source nya dengan source external anda. <b>Malah lebih joss bila kalian juga menerapkan defer load javascript</b>. Baca disini: <a href="//webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93ZWItbWFuYWplbWVuLmJsb2dzcG90LmNvbS9zZWFyY2g/cT1kZWZlcitqYXZhc2NyaXB0" target="_blank" rel="nofollow noopener">Bagaimana cara defer javascript</a>.<br><br>Selesai. Semoga tulisan saya ini membantu kalian. :) . Jangan lupa share yah…<br><br><b>Incoming Terms:</b> <i>Mempercepat loading blog dengan dns-prefetch | prefetching external script dan css | Mempercepat loading AMP Blogger | Mempercepat loading blog tahap awal | &lt;link rel=“dns-prefetch” | Bagaimana cara mempercepat loading blog dengan link metatag | Bagaimana cara mempercepat loading blogger AMP maupun NON AMP.</i></p>

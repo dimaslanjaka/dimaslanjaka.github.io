@@ -286,7 +286,7 @@ export default function taskCopy() {
     const src = join(post_source_dir, '**/**.md');
     const run = gulp.src(src).pipe(
       modifyFile(function (content, path, _file) {
-        console.log(chalk.cyan('[copy][md]'), path);
+        const log = [chalk.cyan('[copy][md]'), path];
         let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {

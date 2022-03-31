@@ -12,7 +12,7 @@ date: 2017-09-04T08:57:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.956+07:00
-subtitle: ""
+subtitle: Widget untuk meningkatkan traffic blogger
 tags:
   - JS
   - Blogger
@@ -24,8 +24,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-excerpt: null
-description: null
+description: Widget untuk meningkatkan traffic blogger
+excerpt: Widget untuk meningkatkan traffic blogger
 wordcount: 640
 ---
 

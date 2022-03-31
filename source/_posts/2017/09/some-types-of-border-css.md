@@ -12,7 +12,7 @@ date: 2017-09-29T02:13:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-29T02:13:11.604+07:00
-subtitle: ""
+subtitle: SOME TYPES OF BORDER CSS
 tags:
   - CSS
 title: SOME TYPES OF BORDER CSS
@@ -23,8 +23,8 @@ updated: 2017-09-29T02:13:11+07:00
 thumbnail: https://imgdb.net/images/3197.jpg
 photos:
   - https://imgdb.net/images/3197.jpg
-excerpt: null
-description: null
+description: SOME TYPES OF BORDER CSS
+excerpt: SOME TYPES OF BORDER CSS
 wordcount: 817
 ---
 

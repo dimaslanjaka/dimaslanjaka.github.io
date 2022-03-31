@@ -11,7 +11,7 @@ date: 2017-10-22T10:30:00.000+07:00
 lang: en
 location: ""
 modified: 2017-10-22T10:30:15.314+07:00
-subtitle: ""
+subtitle: Cara Menggunakan Alat Webmaster Yandex
 tags:
   - SEO
   - Blogging
@@ -24,8 +24,8 @@ updated: 2017-10-22T10:30:15+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-yandex-1024x513.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-yandex-1024x513.png
-excerpt: null
-description: null
+description: Cara Menggunakan Alat Webmaster Yandex
+excerpt: Cara Menggunakan Alat Webmaster Yandex
 wordcount: 106
 ---
 

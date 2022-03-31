@@ -8,10 +8,10 @@ tags:
 title: MySQL Command to create new database user
 updated: 2022-03-26
 uuid: abcdca48-acd1-4888-8a33-cdcdb7b877dc
-subtitle: null
-excerpt: null
-description: null
 lang: en
+description: MySQL Command to create new database user
+subtitle: MySQL Command to create new database user
+excerpt: MySQL Command to create new database user
 wordcount: 48
 ---
 

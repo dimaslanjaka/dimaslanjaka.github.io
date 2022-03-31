@@ -12,7 +12,7 @@ date: 2018-04-05T23:33:00.000+07:00
 lang: en
 location: ""
 modified: 2018-04-05T23:34:19.535+07:00
-subtitle: ""
+subtitle: FTP Backup File Recursively PHP Script
 tags:
   - Hosting
   - Script
@@ -25,8 +25,8 @@ updated: 2018-04-05T23:34:19+07:00
 thumbnail: https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
-excerpt: null
-description: null
+description: FTP Backup File Recursively PHP Script
+excerpt: FTP Backup File Recursively PHP Script
 wordcount: 271
 ---
 

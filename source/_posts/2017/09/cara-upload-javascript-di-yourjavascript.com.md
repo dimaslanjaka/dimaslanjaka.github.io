@@ -12,7 +12,7 @@ date: 2017-09-09T22:01:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-12T01:58:08.681+07:00
-subtitle: ""
+subtitle: Multilingual hreflang tag for blogger
 tags:
   - Blogger
   - HTML
@@ -24,8 +24,8 @@ updated: 2017-09-12T01:58:08+07:00
 thumbnail: https://imgdb.net/images/3191.png
 photos:
   - https://imgdb.net/images/3191.png
-excerpt: null
-description: null
+description: Multilingual hreflang tag for blogger
+excerpt: Multilingual hreflang tag for blogger
 wordcount: 718
 ---
 

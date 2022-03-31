@@ -12,7 +12,7 @@ date: 2017-04-20T09:40:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-23T16:10:41.022+07:00
-subtitle: ""
+subtitle: Expandable Search Box
 tags:
   - CSS
   - HTML
@@ -24,8 +24,8 @@ updated: 2017-04-23T16:10:41+07:00
 thumbnail: https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSLZVZeQ2rpoUkl-KFH5E9004wBHmgCLcB/s320/Screenshot_2017-04-20-07-39-35.jpg
 photos:
   - https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSLZVZeQ2rpoUkl-KFH5E9004wBHmgCLcB/s320/Screenshot_2017-04-20-07-39-35.jpg
-excerpt: null
-description: null
+description: Expandable Search Box
+excerpt: Expandable Search Box
 wordcount: 430
 ---
 

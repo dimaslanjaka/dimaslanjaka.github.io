@@ -11,7 +11,7 @@ date: 2020-02-05T23:39:00.002+07:00
 lang: en
 location: ""
 modified: 2020-02-07T02:19:57.063+07:00
-subtitle: ""
+subtitle: Find Backlink From Google Dork
 tags:
   - SEO
   - Share
@@ -26,8 +26,8 @@ updated: 2020-02-07T02:19:57+07:00
 thumbnail: https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
 photos:
   - https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
-excerpt: null
-description: null
+description: Find Backlink From Google Dork
+excerpt: Find Backlink From Google Dork
 wordcount: 1462
 ---
 

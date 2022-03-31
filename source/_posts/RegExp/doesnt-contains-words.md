@@ -7,10 +7,10 @@ uuid: 838eebf3-a7ed-4888-884d-2b361639e7c9
 category:
   - Uncategorized
 tags: []
-subtitle: null
-excerpt: null
-description: null
 lang: en
+description: RegExp Match Doesnt Contain Words
+subtitle: RegExp Match Doesnt Contain Words
+excerpt: RegExp Match Doesnt Contain Words
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://images.ctfassets.net/f20lfrunubsq/3VjnlRLGZqdWhDPENCTGQl/ab3c078638607cf2a3d35f4b0cf10fa1/Screenshot_2019-11-03_at_16.57.11__2_.png
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/https://images.ctfassets.net/f20lfrunubsq/3VjnlRLGZqdWhDPENCTGQl/ab3c078638607cf2a3d35f4b0cf10fa1/Screenshot_2019-11-03_at_16.57.11__2_.png

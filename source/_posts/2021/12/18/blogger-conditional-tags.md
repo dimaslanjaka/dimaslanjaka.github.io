@@ -17,9 +17,9 @@ updated: 2022-03-20T20:57:28+07:00
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://3.bp.blogspot.com/-2x-KTSHQ7Sk/V3fogcBcWjI/AAAAAAAAASk/JIZkwUf6r5QLH3soYaG0q0LeLxp2xjhOACLcB/w1200-h630-p-k-no-nu/blogger-conditioanl-tags-ultimate-blogger-guide.jpg
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://3.bp.blogspot.com/-2x-KTSHQ7Sk/V3fogcBcWjI/AAAAAAAAASk/JIZkwUf6r5QLH3soYaG0q0LeLxp2xjhOACLcB/w1200-h630-p-k-no-nu/blogger-conditioanl-tags-ultimate-blogger-guide.jpg
-subtitle: null
-excerpt: null
-description: null
+description: Blogger Conditional Tags
+subtitle: Blogger Conditional Tags
+excerpt: Blogger Conditional Tags
 wordcount: 678
 ---
 

@@ -12,7 +12,7 @@ date: 2017-09-11T18:43:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-11T18:43:44.280+07:00
-subtitle: ""
+subtitle: Cara mempercepat loading webfonts
 tags:
   - HTML
   - Miscellaneous
@@ -25,8 +25,8 @@ updated: 2017-09-11T18:43:44+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc
-excerpt: null
-description: null
+description: Cara mempercepat loading webfonts
+excerpt: Cara mempercepat loading webfonts
 wordcount: 79
 ---
 

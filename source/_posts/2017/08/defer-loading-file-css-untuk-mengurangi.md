@@ -12,7 +12,7 @@ date: 2017-08-07T19:11:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:18.074+07:00
-subtitle: ""
+subtitle: Defer Loading File CSS untuk Mengurangi Waktu Pemuatan Halaman
 tags:
   - Wordpress
   - JS
@@ -27,8 +27,8 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKpYAOy9FD3qAngAFoLYAB9faenCIkJi44YFLGAmFBWDa5
 photos:
   - https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKpYAOy9FD3qAngAFoLYAB9faenCIkJi44YFLGAmFBWDa5
-excerpt: null
-description: null
+description: Defer Loading File CSS untuk Mengurangi Waktu Pemuatan Halaman
+excerpt: Defer Loading File CSS untuk Mengurangi Waktu Pemuatan Halaman
 wordcount: 94
 ---
 

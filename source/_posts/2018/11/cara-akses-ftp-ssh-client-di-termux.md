@@ -11,7 +11,7 @@ date: 2018-11-08T00:08:00.000+07:00
 lang: en
 location: ""
 modified: 2018-11-12T12:48:36.946+07:00
-subtitle: ""
+subtitle: Cara akses FTP SSH client di termux
 tags:
   - Android
   - Tips & Tricks
@@ -23,8 +23,8 @@ updated: 2018-11-12T12:48:36+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechronicle.com/wp-content/uploads/2012/09/FTP-icon.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechronicle.com/wp-content/uploads/2012/09/FTP-icon.jpg
-excerpt: null
-description: null
+description: Cara akses FTP SSH client di termux
+excerpt: Cara akses FTP SSH client di termux
 wordcount: 869
 ---
 

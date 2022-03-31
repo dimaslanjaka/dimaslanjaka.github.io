@@ -12,7 +12,7 @@ date: 2018-02-07T16:36:00.000+07:00
 lang: en
 location: ""
 modified: 2018-02-07T16:41:41.664+07:00
-subtitle: ""
+subtitle: Create External Link Icons Using SVG without JavaScript In Blogger
 tags:
   - CSS
   - Blogger
@@ -27,8 +27,8 @@ updated: 2018-02-07T16:41:41+07:00
 thumbnail: https://goo.gl/ZDjCRk
 photos:
   - https://goo.gl/ZDjCRk
-excerpt: null
-description: null
+description: Create External Link Icons Using SVG without JavaScript In Blogger
+excerpt: Create External Link Icons Using SVG without JavaScript In Blogger
 wordcount: 85
 ---
 

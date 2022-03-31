@@ -11,7 +11,7 @@ date: 2021-03-28T09:54:00.004+07:00
 lang: en
 location: ""
 modified: 2021-03-29T07:50:58.964+07:00
-subtitle: ""
+subtitle: Git Login Via Command Line
 tags:
   - Tips & Tricks
 title: Git Login Via Command Line
@@ -22,8 +22,8 @@ updated: 2021-03-29T07:50:58+07:00
 thumbnail: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
-excerpt: null
-description: null
+description: Git Login Via Command Line
+excerpt: Git Login Via Command Line
 wordcount: 17
 ---
 

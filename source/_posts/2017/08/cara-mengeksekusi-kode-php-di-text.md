@@ -12,7 +12,7 @@ date: 2017-08-04T08:05:00.000+07:00
 lang: en
 location: ""
 modified: 2017-08-04T08:05:15.759+07:00
-subtitle: ""
+subtitle: Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin
 tags:
   - Wordpress
   - PHP
@@ -24,8 +24,8 @@ updated: 2017-08-04T08:05:15+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
-excerpt: null
-description: null
+description: Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin
+excerpt: Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin
 wordcount: 44
 ---
 

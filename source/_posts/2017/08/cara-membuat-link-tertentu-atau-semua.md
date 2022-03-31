@@ -12,7 +12,8 @@ date: 2017-08-01T16:48:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.872+07:00
-subtitle: ""
+subtitle: Cara membuat link tertentu atau semua link menjadi adf.ly tanpa
+  menggunakan full page script
 tags:
   - JS
   - Tips & Tricks
@@ -25,8 +26,10 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
 photos:
   - https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
-excerpt: null
-description: null
+description: Cara membuat link tertentu atau semua link menjadi adf.ly tanpa
+  menggunakan full page script
+excerpt: Cara membuat link tertentu atau semua link menjadi adf.ly tanpa
+  menggunakan full page script
 wordcount: 91
 ---
 

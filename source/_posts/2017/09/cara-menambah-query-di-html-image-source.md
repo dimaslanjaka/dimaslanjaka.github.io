@@ -12,7 +12,7 @@ date: 2017-09-12T09:00:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.946+07:00
-subtitle: ""
+subtitle: Cara menambah query di html image source
 tags:
   - JS
   - Tips & Tricks
@@ -24,8 +24,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://imgdb.net/images/3190.jpg
 photos:
   - https://imgdb.net/images/3190.jpg
-excerpt: null
-description: null
+description: Cara menambah query di html image source
+excerpt: Cara menambah query di html image source
 wordcount: 265
 ---
 

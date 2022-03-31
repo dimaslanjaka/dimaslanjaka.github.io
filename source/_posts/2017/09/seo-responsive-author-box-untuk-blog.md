@@ -12,7 +12,7 @@ date: 2017-09-12T22:21:00.001+07:00
 lang: en
 location: ""
 modified: 2017-09-12T22:21:28.821+07:00
-subtitle: ""
+subtitle: SEO Responsive Author Box Untuk Blog
 tags:
   - CSS
   - HTML
@@ -25,8 +25,8 @@ updated: 2017-09-12T22:21:28+07:00
 thumbnail: https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2YaDb94PqUXRdkwXbOVSMWfn1USCwCLcBGAs/s320/PicsArt_09-12-10.18.11.png
 photos:
   - https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2YaDb94PqUXRdkwXbOVSMWfn1USCwCLcBGAs/s320/PicsArt_09-12-10.18.11.png
-excerpt: null
-description: null
+description: SEO Responsive Author Box Untuk Blog
+excerpt: SEO Responsive Author Box Untuk Blog
 wordcount: 383
 ---
 

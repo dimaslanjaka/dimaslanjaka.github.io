@@ -11,7 +11,7 @@ date: 2017-07-21T02:32:00.001+07:00
 lang: en
 location: ""
 modified: 2017-07-21T02:32:38.662+07:00
-subtitle: ""
+subtitle: Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain
 tags:
   - Blogger
 title: Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain
@@ -22,8 +22,8 @@ updated: 2017-07-21T02:32:38+07:00
 thumbnail: https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
 photos:
   - https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
-excerpt: null
-description: null
+description: Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain
+excerpt: Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain
 wordcount: 4187
 ---
 

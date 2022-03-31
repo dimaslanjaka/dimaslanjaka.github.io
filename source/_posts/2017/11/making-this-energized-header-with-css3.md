@@ -12,7 +12,7 @@ date: 2017-11-19T10:00:00.000+07:00
 lang: en
 location: ""
 modified: 2017-11-19T10:00:12.194+07:00
-subtitle: ""
+subtitle: Making this energized header with CSS3 properties
 tags:
   - CSS
 title: Making this energized header with CSS3 properties
@@ -23,8 +23,8 @@ updated: 2017-11-19T10:00:12+07:00
 thumbnail: https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.webdesignerdepot.com/uploads/2014/05/thumbnail8.jpg
 photos:
   - https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.webdesignerdepot.com/uploads/2014/05/thumbnail8.jpg
-excerpt: null
-description: null
+description: Making this energized header with CSS3 properties
+excerpt: Making this energized header with CSS3 properties
 wordcount: 710
 ---
 

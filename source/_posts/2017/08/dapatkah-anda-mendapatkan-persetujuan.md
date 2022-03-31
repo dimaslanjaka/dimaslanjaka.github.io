@@ -11,7 +11,7 @@ date: 2017-08-24T15:30:00.000+07:00
 lang: en
 location: ""
 modified: 2017-08-24T15:30:05.089+07:00
-subtitle: ""
+subtitle: Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?
 tags:
   - Adsense
   - Wordpress
@@ -26,8 +26,8 @@ updated: 2017-08-24T15:30:05+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
-excerpt: null
-description: null
+description: Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?
+excerpt: Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?
 wordcount: 174
 ---
 

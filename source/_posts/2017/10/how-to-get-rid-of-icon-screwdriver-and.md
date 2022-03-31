@@ -12,7 +12,7 @@ date: 2017-10-24T18:29:00.000+07:00
 lang: en
 location: ""
 modified: 2017-10-24T18:29:03.635+07:00
-subtitle: ""
+subtitle: How to Get Rid of Icon Screwdriver and Pliers Wrenches Quick Edit Wrench
 tags:
   - CSS
   - Blogger
@@ -25,8 +25,8 @@ updated: 2017-10-24T18:29:03+07:00
 thumbnail: https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3RPXenY/s320/quick+edit+and+wrench+icon.jpg
 photos:
   - https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3RPXenY/s320/quick+edit+and+wrench+icon.jpg
-excerpt: null
-description: null
+description: How to Get Rid of Icon Screwdriver and Pliers Wrenches Quick Edit Wrench
+excerpt: How to Get Rid of Icon Screwdriver and Pliers Wrenches Quick Edit Wrench
 wordcount: 50
 ---
 

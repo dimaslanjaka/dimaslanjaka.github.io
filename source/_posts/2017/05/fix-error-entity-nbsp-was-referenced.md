@@ -12,7 +12,7 @@ date: 2017-05-26T03:53:00.000+07:00
 lang: en
 location: ""
 modified: 2017-05-26T03:53:02.926+07:00
-subtitle: ""
+subtitle: Fix Error The entity nbsp was referenced, but not declared
 tags:
   - HTML
 title: Fix Error The entity nbsp was referenced, but not declared
@@ -23,8 +23,8 @@ updated: 2017-05-26T03:53:02+07:00
 thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1oyNv0g8JghoA700vJYvtBk-2E4NgQss7ztfOGGt37brH
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1oyNv0g8JghoA700vJYvtBk-2E4NgQss7ztfOGGt37brH
-excerpt: null
-description: null
+description: Fix Error The entity nbsp was referenced, but not declared
+excerpt: Fix Error The entity nbsp was referenced, but not declared
 wordcount: 124
 ---
 

@@ -11,7 +11,7 @@ date: 2017-09-03T15:36:00.003+07:00
 lang: en
 location: ""
 modified: 2017-09-03T15:36:41.894+07:00
-subtitle: ""
+subtitle: Tutorial Cara symlink file di android
 tags:
   - Android
   - Tips & Tricks
@@ -23,8 +23,8 @@ updated: 2017-09-03T15:36:41+07:00
 thumbnail: https://imgdb.net/images/3179.png
 photos:
   - https://imgdb.net/images/3179.png
-excerpt: null
-description: null
+description: Tutorial Cara symlink file di android
+excerpt: Tutorial Cara symlink file di android
 wordcount: 442
 ---
 

@@ -12,7 +12,7 @@ date: 2017-09-17T02:41:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-17T02:41:06.970+07:00
-subtitle: ""
+subtitle: AMP Social Sharing Button Added BBM and WhatsApp
 tags:
   - CSS
   - Blogger
@@ -26,8 +26,8 @@ updated: 2017-09-17T02:41:06+07:00
 thumbnail: https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
 photos:
   - https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
-excerpt: null
-description: null
+description: AMP Social Sharing Button Added BBM and WhatsApp
+excerpt: AMP Social Sharing Button Added BBM and WhatsApp
 wordcount: 1139
 ---
 

@@ -11,7 +11,7 @@ date: 2019-06-23T19:43:00.001+07:00
 lang: en
 location: ""
 modified: 2019-06-24T00:15:11.906+07:00
-subtitle: ""
+subtitle: Simontok Update Terbaru 19 Juni 2019
 tags:
   - Android
 title: Simontok Update Terbaru 19 Juni 2019
@@ -22,8 +22,8 @@ updated: 2019-06-24T00:15:11+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-excerpt: null
-description: null
+description: Simontok Update Terbaru 19 Juni 2019
+excerpt: Simontok Update Terbaru 19 Juni 2019
 wordcount: 80
 ---
 

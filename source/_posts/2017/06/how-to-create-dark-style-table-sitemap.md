@@ -12,7 +12,7 @@ date: 2017-06-24T21:08:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:18.050+07:00
-subtitle: ""
+subtitle: How to Create Dark Style Table Sitemap Blogger
 tags:
   - CSS
   - JS
@@ -26,8 +26,8 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s320/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s320/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
-excerpt: null
-description: null
+description: How to Create Dark Style Table Sitemap Blogger
+excerpt: How to Create Dark Style Table Sitemap Blogger
 wordcount: 113
 ---
 

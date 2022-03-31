@@ -11,7 +11,7 @@ date: 2017-09-03T15:08:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-03T15:08:04.012+07:00
-subtitle: ""
+subtitle: Install perl on android 2017
 tags:
   - Android
   - Tips & Tricks
@@ -23,8 +23,8 @@ updated: 2017-09-03T15:08:04+07:00
 thumbnail: https://imgdb.net/images/3178.png
 photos:
   - https://imgdb.net/images/3178.png
-excerpt: null
-description: null
+description: Install perl on android 2017
+excerpt: Install perl on android 2017
 wordcount: 252
 ---
 

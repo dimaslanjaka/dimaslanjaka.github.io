@@ -12,7 +12,7 @@ date: 2017-09-27T02:03:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-27T02:03:01.797+07:00
-subtitle: ""
+subtitle: HOW TO MAKE IFRAME
 tags:
   - HTML
   - Tips & Tricks
@@ -24,8 +24,8 @@ updated: 2017-09-27T02:03:01+07:00
 thumbnail: https://imgdb.net/images/3196.jpg
 photos:
   - https://imgdb.net/images/3196.jpg
-excerpt: null
-description: null
+description: HOW TO MAKE IFRAME
+excerpt: HOW TO MAKE IFRAME
 wordcount: 138
 ---
 

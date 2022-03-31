@@ -12,7 +12,7 @@ date: 2018-11-26T19:41:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.838+07:00
-subtitle: ""
+subtitle: "[JS] Get List Facebook Groups ID"
 tags:
   - JS
   - Social Media
@@ -25,8 +25,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4379.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4379.png
-excerpt: null
-description: null
+description: "[JS] Get List Facebook Groups ID"
+excerpt: "[JS] Get List Facebook Groups ID"
 wordcount: 1182
 ---
 

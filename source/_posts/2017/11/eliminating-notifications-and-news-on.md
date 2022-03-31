@@ -11,7 +11,7 @@ date: 2017-11-22T23:28:00.000+07:00
 lang: en
 location: ""
 modified: 2017-11-22T23:28:24.988+07:00
-subtitle: ""
+subtitle: Eliminating Notifications and News on UCBROWSER
 tags:
   - Tips & Tricks
 title: Eliminating Notifications and News on UCBROWSER
@@ -22,8 +22,8 @@ updated: 2017-11-22T23:28:24+07:00
 thumbnail: https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQggOobwQe8koB_YqLft3FeLj9jp8xgCEwYBhgL/s320/Screenshot_2017-11-20-15-17-10-330_com.UCMobile.intl.png
 photos:
   - https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQggOobwQe8koB_YqLft3FeLj9jp8xgCEwYBhgL/s320/Screenshot_2017-11-20-15-17-10-330_com.UCMobile.intl.png
-excerpt: null
-description: null
+description: Eliminating Notifications and News on UCBROWSER
+excerpt: Eliminating Notifications and News on UCBROWSER
 wordcount: 62
 ---
 

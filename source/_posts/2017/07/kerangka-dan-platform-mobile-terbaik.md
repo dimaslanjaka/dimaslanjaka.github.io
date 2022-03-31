@@ -12,7 +12,7 @@ date: 2017-07-13T00:50:00.000+07:00
 lang: en
 location: ""
 modified: 2017-07-13T00:50:05.703+07:00
-subtitle: ""
+subtitle: Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid
 tags:
   - HTML
 title: Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid
@@ -23,8 +23,8 @@ updated: 2017-07-13T00:50:05+07:00
 thumbnail: http://i.imgur.com/4kHlYlw.png
 photos:
   - http://i.imgur.com/4kHlYlw.png
-excerpt: null
-description: null
+description: Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid
+excerpt: Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid
 wordcount: 2347
 ---
 

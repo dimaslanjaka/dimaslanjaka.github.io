@@ -11,7 +11,7 @@ date: 2018-12-18T13:18:00.000+07:00
 lang: en
 location: ""
 modified: 2018-12-18T13:25:09.685+07:00
-subtitle: ""
+subtitle: PUBGM v.0.10.0 APK DATA
 tags:
   - Games
   - Android
@@ -23,8 +23,8 @@ updated: 2018-12-18T13:25:09+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4579.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4579.jpg
-excerpt: null
-description: null
+description: PUBGM v.0.10.0 APK DATA
+excerpt: PUBGM v.0.10.0 APK DATA
 wordcount: 173
 ---
 

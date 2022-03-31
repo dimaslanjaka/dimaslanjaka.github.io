@@ -11,7 +11,7 @@ date: 2017-04-15T20:43:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-15T20:43:13.202+07:00
-subtitle: ""
+subtitle: Cara membuat halaman contact form di blog AMP
 tags:
   - Blogger
 title: Cara membuat halaman contact form di blog AMP
@@ -22,8 +22,8 @@ updated: 2017-04-15T20:43:13+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-excerpt: null
-description: null
+description: Cara membuat halaman contact form di blog AMP
+excerpt: Cara membuat halaman contact form di blog AMP
 wordcount: 623
 ---
 

@@ -12,7 +12,7 @@ date: 2017-04-17T04:31:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.908+07:00
-subtitle: ""
+subtitle: How to beautify html javascript and css using script on the fly
 tags:
   - Wordpress
   - CSS
@@ -28,8 +28,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
-excerpt: null
-description: null
+description: How to beautify html javascript and css using script on the fly
+excerpt: How to beautify html javascript and css using script on the fly
 wordcount: 89
 ---
 

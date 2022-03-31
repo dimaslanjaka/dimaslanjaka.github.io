@@ -12,7 +12,7 @@ date: 2017-04-20T18:27:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-21T00:40:51.347+07:00
-subtitle: ""
+subtitle: Expandable Search Bar [CSS]
 tags:
   - CSS
   - HTML
@@ -24,8 +24,8 @@ updated: 2017-04-21T00:40:51+07:00
 thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPiiyCAjSBQpwIQYKGS6wUqFGHQWSK9W7UhmZ5mu9eAPavFkA-
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPiiyCAjSBQpwIQYKGS6wUqFGHQWSK9W7UhmZ5mu9eAPavFkA-
-excerpt: null
-description: null
+description: Expandable Search Bar [CSS]
+excerpt: Expandable Search Bar [CSS]
 wordcount: 11
 ---
 

@@ -11,7 +11,7 @@ date: 2017-11-14T10:00:00.000+07:00
 lang: en
 location: ""
 modified: 2017-11-14T10:00:13.670+07:00
-subtitle: ""
+subtitle: The 7 Most Effective and Efficient Online Marketing Strategies
 tags:
   - Marketing Strategies
 title: The 7 Most Effective and Efficient Online Marketing Strategies
@@ -22,8 +22,8 @@ updated: 2017-11-14T10:00:13+07:00
 thumbnail: https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
 photos:
   - https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
-excerpt: null
-description: null
+description: The 7 Most Effective and Efficient Online Marketing Strategies
+excerpt: The 7 Most Effective and Efficient Online Marketing Strategies
 wordcount: 6862
 ---
 

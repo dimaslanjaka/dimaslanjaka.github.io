@@ -11,7 +11,7 @@ date: 2018-11-27T21:20:00.001+07:00
 lang: en
 location: ""
 modified: 2018-11-27T21:25:36.268+07:00
-subtitle: ""
+subtitle: Youtube Vanced v.13.43.50 Premium Pro Mod Apk [NON-ROOT]
 tags:
   - Software
   - Movies
@@ -25,8 +25,8 @@ updated: 2018-11-27T21:25:36+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4380.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4380.png
-excerpt: null
-description: null
+description: Youtube Vanced v.13.43.50 Premium Pro Mod Apk [NON-ROOT]
+excerpt: Youtube Vanced v.13.43.50 Premium Pro Mod Apk [NON-ROOT]
 wordcount: 798
 ---
 

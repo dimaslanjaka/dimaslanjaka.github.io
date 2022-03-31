@@ -11,7 +11,7 @@ date: 2017-09-04T16:07:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-05T12:52:12.997+07:00
-subtitle: ""
+subtitle: Cara menggunakan Directory Bind Android
 tags:
   - Android
   - Tips & Tricks
@@ -23,8 +23,8 @@ updated: 2017-09-05T12:52:12+07:00
 thumbnail: https://imgdb.net/images/3180.jpg
 photos:
   - https://imgdb.net/images/3180.jpg
-excerpt: null
-description: null
+description: Cara menggunakan Directory Bind Android
+excerpt: Cara menggunakan Directory Bind Android
 wordcount: 266
 ---
 

@@ -11,7 +11,7 @@ date: 2018-08-24T21:40:00.000+07:00
 lang: en
 location: ""
 modified: 2018-09-21T11:14:47.908+07:00
-subtitle: ""
+subtitle: BLACKLIST PLAYER Durango
 tags:
   - Durango
 title: BLACKLIST PLAYER Durango
@@ -22,8 +22,8 @@ updated: 2018-09-21T11:14:47+07:00
 thumbnail: https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMomHV9R07ECo_Z7zC1dLgP2gPtxc0ACLcBGAs/s1600/blacklist-rubber-stamp-clip-art-vector_csp42894667.jpg
 photos:
   - https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMomHV9R07ECo_Z7zC1dLgP2gPtxc0ACLcBGAs/s1600/blacklist-rubber-stamp-clip-art-vector_csp42894667.jpg
-excerpt: null
-description: null
+description: BLACKLIST PLAYER Durango
+excerpt: BLACKLIST PLAYER Durango
 wordcount: 5
 ---
 

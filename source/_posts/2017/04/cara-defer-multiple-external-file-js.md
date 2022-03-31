@@ -12,7 +12,7 @@ date: 2017-04-25T21:29:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:18.034+07:00
-subtitle: ""
+subtitle: Cara defer multiple external file js
 tags:
   - Wordpress
   - JS
@@ -26,8 +26,8 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSD3Z65uK5mWj1kFiaYKxcVJ8w0XiysZTz3V3ak8FIwpkFiTpnc
 photos:
   - https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSD3Z65uK5mWj1kFiaYKxcVJ8w0XiysZTz3V3ak8FIwpkFiTpnc
-excerpt: null
-description: null
+description: Cara defer multiple external file js
+excerpt: Cara defer multiple external file js
 wordcount: 54
 ---
 

@@ -12,7 +12,7 @@ date: 2017-09-15T01:48:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-15T01:48:06.741+07:00
-subtitle: ""
+subtitle: Shortcode amp list new
 tags:
   - HTML
   - AMP
@@ -24,8 +24,8 @@ updated: 2017-09-15T01:48:06+07:00
 thumbnail: https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
 photos:
   - https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
-excerpt: null
-description: null
+description: Shortcode amp list new
+excerpt: Shortcode amp list new
 wordcount: 235
 ---
 

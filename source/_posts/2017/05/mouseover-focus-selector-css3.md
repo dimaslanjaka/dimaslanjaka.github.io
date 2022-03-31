@@ -12,7 +12,7 @@ date: 2017-05-03T08:40:00.000+07:00
 lang: en
 location: ""
 modified: 2017-05-03T08:40:07.539+07:00
-subtitle: ""
+subtitle: Mouseover Focus Selector CSS3 Transitions Code HTML and CSS3
 tags:
   - CSS
   - HTML
@@ -24,8 +24,8 @@ updated: 2017-05-03T08:40:07+07:00
 thumbnail: https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9KOA4gg9ERDx3YEY_tg9r4KTY8LQCLcB/s320/Screenshot_2017-04-20-08-38-25.jpg
 photos:
   - https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9KOA4gg9ERDx3YEY_tg9r4KTY8LQCLcB/s320/Screenshot_2017-04-20-08-38-25.jpg
-excerpt: null
-description: null
+description: Mouseover Focus Selector CSS3 Transitions Code HTML and CSS3
+excerpt: Mouseover Focus Selector CSS3 Transitions Code HTML and CSS3
 wordcount: 155
 ---
 

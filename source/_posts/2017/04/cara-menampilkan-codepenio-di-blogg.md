@@ -12,7 +12,7 @@ date: 2017-04-20T13:39:00.001+07:00
 lang: en
 location: ""
 modified: 2017-04-21T00:45:13.046+07:00
-subtitle: ""
+subtitle: Cara menampilkan codepen.io di blog
 tags:
   - HTML
 title: Cara menampilkan codepen.io di blog
@@ -23,8 +23,8 @@ updated: 2017-04-21T00:45:13+07:00
 thumbnail: https://lh6.googleusercontent.com/proxy/4Jrx-c1qmdyJBBFWaTVYP6cr1OXxZADd8-8FRy0T0GJ041YEC_g6DBddYsU20X7p0UPshwbJY7vxAoJOqppV5HbWDVBpnr7lMTRrNw4bgI_0i2VHIhFR0Vc=w543-h271-nc
 photos:
   - https://lh6.googleusercontent.com/proxy/4Jrx-c1qmdyJBBFWaTVYP6cr1OXxZADd8-8FRy0T0GJ041YEC_g6DBddYsU20X7p0UPshwbJY7vxAoJOqppV5HbWDVBpnr7lMTRrNw4bgI_0i2VHIhFR0Vc=w543-h271-nc
-excerpt: null
-description: null
+description: Cara menampilkan codepen.io di blog
+excerpt: Cara menampilkan codepen.io di blog
 wordcount: 188
 ---
 

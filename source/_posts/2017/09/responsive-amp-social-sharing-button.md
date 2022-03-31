@@ -12,7 +12,7 @@ date: 2017-09-16T02:15:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-16T02:15:12.156+07:00
-subtitle: ""
+subtitle: Responsive AMP Social Sharing Button
 tags:
   - Blogger
   - HTML
@@ -25,8 +25,8 @@ updated: 2017-09-16T02:15:12+07:00
 thumbnail: https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6g556I05TKO6xT2Xahym5NTp-ArQCLcBGAs/s320/images%2B%252810%2529.jpg
 photos:
   - https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6g556I05TKO6xT2Xahym5NTp-ArQCLcBGAs/s320/images%2B%252810%2529.jpg
-excerpt: null
-description: null
+description: Responsive AMP Social Sharing Button
+excerpt: Responsive AMP Social Sharing Button
 wordcount: 237
 ---
 

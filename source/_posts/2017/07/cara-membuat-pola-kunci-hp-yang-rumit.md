@@ -11,7 +11,7 @@ date: 2017-07-19T19:38:00.002+07:00
 lang: en
 location: ""
 modified: 2017-07-19T19:39:25.593+07:00
-subtitle: ""
+subtitle: Cara membuat pola kunci hp yang rumit
 tags:
   - Tips & Tricks
 title: Cara membuat pola kunci hp yang rumit
@@ -22,8 +22,8 @@ updated: 2017-07-19T19:39:25+07:00
 thumbnail: https://image.ibb.co/eyVsN5/13438874_1966615786928595_9194443384423239792_n.jpg
 photos:
   - https://image.ibb.co/eyVsN5/13438874_1966615786928595_9194443384423239792_n.jpg
-excerpt: null
-description: null
+description: Cara membuat pola kunci hp yang rumit
+excerpt: Cara membuat pola kunci hp yang rumit
 wordcount: 139
 ---
 

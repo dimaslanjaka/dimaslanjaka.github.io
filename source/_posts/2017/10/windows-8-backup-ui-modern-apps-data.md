@@ -11,7 +11,7 @@ date: 2017-10-16T00:45:00.000+07:00
 lang: en
 location: ""
 modified: 2017-10-16T00:45:05.839+07:00
-subtitle: ""
+subtitle: "Windows 8: Backup UI Modern Apps Data Offline, Restore dengan mudah"
 tags:
   - Tips & Tricks
 title: "Windows 8: Backup UI Modern Apps Data Offline,  Restore dengan mudah"
@@ -22,8 +22,8 @@ updated: 2017-10-16T00:45:05+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-excerpt: null
-description: null
+description: "Windows 8: Backup UI Modern Apps Data Offline, Restore dengan mudah"
+excerpt: "Windows 8: Backup UI Modern Apps Data Offline, Restore dengan mudah"
 wordcount: 368
 ---
 

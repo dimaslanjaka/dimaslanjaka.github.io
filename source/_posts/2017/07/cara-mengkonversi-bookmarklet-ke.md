@@ -11,7 +11,7 @@ date: 2017-07-13T07:34:00.000+07:00
 lang: en
 location: ""
 modified: 2017-07-13T07:34:15.785+07:00
-subtitle: ""
+subtitle: Cara Mengkonversi Bookmarklet ke Ekstensi Chrome
 tags:
   - Tips & Tricks
 title: Cara Mengkonversi Bookmarklet ke Ekstensi Chrome
@@ -22,8 +22,8 @@ updated: 2017-07-13T07:34:15+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png
-excerpt: null
-description: null
+description: Cara Mengkonversi Bookmarklet ke Ekstensi Chrome
+excerpt: Cara Mengkonversi Bookmarklet ke Ekstensi Chrome
 wordcount: 784
 ---
 

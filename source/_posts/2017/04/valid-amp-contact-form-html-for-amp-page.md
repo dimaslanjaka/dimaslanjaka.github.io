@@ -12,7 +12,7 @@ date: 2017-04-16T23:22:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-17T03:11:36.758+07:00
-subtitle: ""
+subtitle: Valid AMP Contact Form Html For AMP Page
 tags:
   - Wordpress
   - Blogger
@@ -26,8 +26,8 @@ updated: 2017-04-17T03:11:36+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxmme5yXnxWiCKL71LNDgDbdXJxGC31KXn6aG-PyQdmuOFvQ
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxmme5yXnxWiCKL71LNDgDbdXJxGC31KXn6aG-PyQdmuOFvQ
-excerpt: null
-description: null
+description: Valid AMP Contact Form Html For AMP Page
+excerpt: Valid AMP Contact Form Html For AMP Page
 wordcount: 470
 ---
 

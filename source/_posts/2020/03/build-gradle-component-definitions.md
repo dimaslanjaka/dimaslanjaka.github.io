@@ -11,7 +11,7 @@ date: 2020-03-07T15:48:00.001+07:00
 lang: en
 location: ""
 modified: 2020-03-13T17:12:44.914+07:00
-subtitle: ""
+subtitle: Build Gradle Component Definitions
 tags:
   - Android
 title: Build Gradle Component Definitions
@@ -22,8 +22,8 @@ updated: 2020-03-13T17:12:44+07:00
 thumbnail: https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBLK56IMCbfHmazdWHifnYzigxC7hgCLcBGAsYHQ/s320/gradle.png
 photos:
   - https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBLK56IMCbfHmazdWHifnYzigxC7hgCLcBGAsYHQ/s320/gradle.png
-excerpt: null
-description: null
+description: Build Gradle Component Definitions
+excerpt: Build Gradle Component Definitions
 wordcount: 267
 ---
 

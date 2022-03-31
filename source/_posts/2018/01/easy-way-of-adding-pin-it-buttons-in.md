@@ -12,7 +12,7 @@ date: 2018-01-29T22:31:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.900+07:00
-subtitle: ""
+subtitle: Easy Way of Adding Pin It Buttons in Images
 tags:
   - Script
   - JS
@@ -27,8 +27,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: //urlz.fr/6tog
 photos:
   - //urlz.fr/6tog
-excerpt: null
-description: null
+description: Easy Way of Adding Pin It Buttons in Images
+excerpt: Easy Way of Adding Pin It Buttons in Images
 wordcount: 42
 ---
 

@@ -12,7 +12,7 @@ date: 2017-11-11T04:51:00.000+07:00
 lang: en
 location: ""
 modified: 2017-11-11T04:51:03.833+07:00
-subtitle: ""
+subtitle: CSS Only Responsive Social Share Buttons For Blogger
 tags:
   - CSS
   - Blogger
@@ -24,8 +24,8 @@ updated: 2017-11-11T04:51:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-522nPhSnyvQ/WgODKCDGFjI/AAAAAAAAt2M/quoqrtMi1jcuXJOFDeBDUoaASkA_tD0jgCLcBGAs/w1100/Screenshot_87.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-522nPhSnyvQ/WgODKCDGFjI/AAAAAAAAt2M/quoqrtMi1jcuXJOFDeBDUoaASkA_tD0jgCLcBGAs/w1100/Screenshot_87.jpg
-excerpt: null
-description: null
+description: CSS Only Responsive Social Share Buttons For Blogger
+excerpt: CSS Only Responsive Social Share Buttons For Blogger
 wordcount: 1101
 ---
 

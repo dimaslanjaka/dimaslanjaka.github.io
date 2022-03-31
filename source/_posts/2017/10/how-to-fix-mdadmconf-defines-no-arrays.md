@@ -11,7 +11,7 @@ date: 2017-10-02T21:42:00.000+07:00
 lang: en
 location: ""
 modified: 2017-10-02T21:42:04.295+07:00
-subtitle: ""
+subtitle: how to fix mdadm.conf defines no arrays on UBUNTU SERVER 16.04
 tags:
   - Tips & Tricks
   - Linux/Unix
@@ -23,8 +23,8 @@ updated: 2017-10-02T21:42:04+07:00
 thumbnail: https://imgdb.net/images/3212.jpg
 photos:
   - https://imgdb.net/images/3212.jpg
-excerpt: null
-description: null
+description: how to fix mdadm.conf defines no arrays on UBUNTU SERVER 16.04
+excerpt: how to fix mdadm.conf defines no arrays on UBUNTU SERVER 16.04
 wordcount: 49
 ---
 

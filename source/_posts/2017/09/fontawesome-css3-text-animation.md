@@ -12,7 +12,7 @@ date: 2017-09-20T11:36:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.829+07:00
-subtitle: ""
+subtitle: FontAwesome CSS3 Text Animation
 tags:
   - CSS
   - JS
@@ -25,8 +25,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://1.bp.blogspot.com/-JTaqhxiYd1E/WcU1hIQLgxI/AAAAAAAAAHk/sZcV1Nd5gf8nN_sb9B26g69ev9WkebldACLcBGAs/s320/Screenshot_2017-09-22-23-08-01-400_com.android.chrome.png
 photos:
   - https://1.bp.blogspot.com/-JTaqhxiYd1E/WcU1hIQLgxI/AAAAAAAAAHk/sZcV1Nd5gf8nN_sb9B26g69ev9WkebldACLcBGAs/s320/Screenshot_2017-09-22-23-08-01-400_com.android.chrome.png
-excerpt: null
-description: null
+description: FontAwesome CSS3 Text Animation
+excerpt: FontAwesome CSS3 Text Animation
 wordcount: 896
 ---
 

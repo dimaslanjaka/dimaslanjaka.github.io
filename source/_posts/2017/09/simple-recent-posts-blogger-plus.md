@@ -12,7 +12,7 @@ date: 2017-09-12T00:23:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.811+07:00
-subtitle: ""
+subtitle: Simple Recent Posts Blogger Plus Thumbnails
 tags:
   - JS
   - Blogger
@@ -28,8 +28,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png
 photos:
   - https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png
-excerpt: null
-description: null
+description: Simple Recent Posts Blogger Plus Thumbnails
+excerpt: Simple Recent Posts Blogger Plus Thumbnails
 wordcount: 90
 ---
 

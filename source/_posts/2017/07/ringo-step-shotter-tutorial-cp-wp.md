@@ -11,7 +11,7 @@ date: 2017-07-07T16:55:00.001+07:00
 lang: en
 location: ""
 modified: 2017-07-07T17:10:01.833+07:00
-subtitle: ""
+subtitle: Ringo Step Shotter Tutorial CP WP
 tags:
   - VainGlory
 title: Ringo Step Shotter Tutorial CP WP
@@ -22,8 +22,8 @@ updated: 2017-07-07T17:10:01+07:00
 thumbnail: https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 photos:
   - https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
-excerpt: null
-description: null
+description: Ringo Step Shotter Tutorial CP WP
+excerpt: Ringo Step Shotter Tutorial CP WP
 wordcount: 8904
 ---
 

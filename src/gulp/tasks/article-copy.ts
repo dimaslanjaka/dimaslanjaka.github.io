@@ -129,19 +129,17 @@ export function modifyPost(parse: parsePostReturn) {
       if (parse.metadata.subtitle) {
         if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
         if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
-      } else
-        if (parse.metadata.excerpt) {
-          if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
-          if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
-        } else
-          if (parse.metadata.description) {
-            if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
-            if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
-          } else {
-            parse.metadata.description = parse.metadata.title;
-            parse.metadata.subtitle = parse.metadata.title;
-            parse.metadata.excerpt = parse.metadata.title;
-          }
+      } else if (parse.metadata.excerpt) {
+        if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
+        if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
+      } else if (parse.metadata.description) {
+        if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
+        if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
+      } else {
+        parse.metadata.description = parse.metadata.title;
+        parse.metadata.subtitle = parse.metadata.title;
+        parse.metadata.excerpt = parse.metadata.title;
+      }
       // fix special char in metadata
       parse.metadata.title = cleanString(parse.metadata.title);
       parse.metadata.subtitle = removeMultipleWhiteSpaces(cleanString(parse.metadata.subtitle));
@@ -289,8 +287,8 @@ export default function taskCopy() {
     return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
   const copyPosts = () => {
-    const src = join(post_source_dir, '**/**.md');
-    const run = gulp.src(src).pipe(
+    const src = join(post_source_dir, '**/**');
+    const run = gulp.src([src + '.md', '!' + join(post_source_dir, '**/.git')]).pipe(
       modifyFile(function (content, path, _file) {
         const log = [chalk.cyan('[copy][md]'), path];
         let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);

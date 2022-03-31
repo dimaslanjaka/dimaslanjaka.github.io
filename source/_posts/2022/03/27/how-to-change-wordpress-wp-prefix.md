@@ -10,10 +10,10 @@ uuid: a69fa1b4-3f2c-4888-8757-27179d208826
 category:
   - Programming
   - MYSQL
-subtitle: null
-excerpt: null
-description: null
 lang: en
+description: Change wordpress table prefix updated 2022
+subtitle: Change wordpress table prefix updated 2022
+excerpt: Change wordpress table prefix updated 2022
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 photos:
   - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg

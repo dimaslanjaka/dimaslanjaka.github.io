@@ -11,7 +11,7 @@ date: 2020-03-08T14:10:00.002+07:00
 lang: en
 location: ""
 modified: 2020-03-08T14:10:38.621+07:00
-subtitle: ""
+subtitle: Git CLI Delete History Commit
 tags:
   - Tips & Tricks
 title: Git CLI Delete History Commit
@@ -22,8 +22,8 @@ updated: 2020-03-08T14:10:38+07:00
 thumbnail: https://cdn.icon-icons.com/icons2/1488/PNG/512/5347-github_102542.png
 photos:
   - https://cdn.icon-icons.com/icons2/1488/PNG/512/5347-github_102542.png
-excerpt: null
-description: null
+description: Git CLI Delete History Commit
+excerpt: Git CLI Delete History Commit
 wordcount: 79
 ---
 

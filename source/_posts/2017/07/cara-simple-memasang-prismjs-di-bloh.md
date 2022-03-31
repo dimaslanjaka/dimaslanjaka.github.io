@@ -12,7 +12,7 @@ date: 2017-07-21T02:11:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:18.077+07:00
-subtitle: ""
+subtitle: Cara simple memasang prismjs di blog 100 Work
 tags:
   - CSS
   - JS
@@ -24,8 +24,8 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.com/wp-content/uploads/2014/07/PrismJS_Blog_NEW.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.com/wp-content/uploads/2014/07/PrismJS_Blog_NEW.jpg
-excerpt: null
-description: null
+description: Cara simple memasang prismjs di blog 100 Work
+excerpt: Cara simple memasang prismjs di blog 100 Work
 wordcount: 113
 ---
 

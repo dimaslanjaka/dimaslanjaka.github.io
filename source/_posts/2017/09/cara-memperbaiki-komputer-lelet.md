@@ -11,7 +11,7 @@ date: 2017-09-19T16:11:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-19T16:11:05.364+07:00
-subtitle: ""
+subtitle: Cara Memperbaiki komputer lelet
 tags:
   - Tips & Tricks
 title: Cara Memperbaiki komputer lelet
@@ -22,8 +22,8 @@ updated: 2017-09-19T16:11:05+07:00
 thumbnail: https://imgdb.net/images/3181.png
 photos:
   - https://imgdb.net/images/3181.png
-excerpt: null
-description: null
+description: Cara Memperbaiki komputer lelet
+excerpt: Cara Memperbaiki komputer lelet
 wordcount: 2343
 ---
 

@@ -12,7 +12,7 @@ date: 2017-09-11T00:49:00.000+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.984+07:00
-subtitle: ""
+subtitle: Create a Countdown Clock for the purposes of 1 Hour Promo
 tags:
   - CSS
   - JS
@@ -26,8 +26,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
 photos:
   - https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
-excerpt: null
-description: null
+description: Create a Countdown Clock for the purposes of 1 Hour Promo
+excerpt: Create a Countdown Clock for the purposes of 1 Hour Promo
 wordcount: 498
 ---
 

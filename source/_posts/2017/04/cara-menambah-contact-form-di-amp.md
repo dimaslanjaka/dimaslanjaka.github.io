@@ -12,7 +12,7 @@ date: 2017-04-17T03:18:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-17T03:18:07.651+07:00
-subtitle: ""
+subtitle: Cara Menambah Contact Form Di AMP Blogger Tanpa Menggunakan amp-iframe
 tags:
   - CSS
   - Blogger
@@ -26,8 +26,8 @@ updated: 2017-04-17T03:18:07+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxmme5yXnxWiCKL71LNDgDbdXJxGC31KXn6aG-PyQdmuOFvQ
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxmme5yXnxWiCKL71LNDgDbdXJxGC31KXn6aG-PyQdmuOFvQ
-excerpt: null
-description: null
+description: Cara Menambah Contact Form Di AMP Blogger Tanpa Menggunakan amp-iframe
+excerpt: Cara Menambah Contact Form Di AMP Blogger Tanpa Menggunakan amp-iframe
 wordcount: 394
 ---
 

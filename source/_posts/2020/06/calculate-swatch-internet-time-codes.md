@@ -12,7 +12,7 @@ date: 2020-06-06T01:11:00.002+07:00
 lang: en
 location: ""
 modified: 2020-06-06T01:15:54.664+07:00
-subtitle: ""
+subtitle: Calculate Swatch Internet Time Codes
 tags:
   - Script
   - PHP
@@ -24,8 +24,8 @@ updated: 2020-06-06T01:15:54+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-excerpt: null
-description: null
+description: Calculate Swatch Internet Time Codes
+excerpt: Calculate Swatch Internet Time Codes
 wordcount: 1181
 ---
 

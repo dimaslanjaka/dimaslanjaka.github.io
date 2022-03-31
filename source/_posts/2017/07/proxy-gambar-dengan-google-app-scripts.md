@@ -12,7 +12,7 @@ date: 2017-07-11T23:51:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:17.807+07:00
-subtitle: ""
+subtitle: Proxy Gambar dengan Google App Scripts
 tags:
   - JS
 title: Proxy Gambar dengan Google App Scripts
@@ -23,8 +23,8 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1
-excerpt: null
-description: null
+description: Proxy Gambar dengan Google App Scripts
+excerpt: Proxy Gambar dengan Google App Scripts
 wordcount: 633
 ---
 

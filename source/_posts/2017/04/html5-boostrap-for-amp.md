@@ -12,7 +12,7 @@ date: 2017-04-16T21:38:00.001+07:00
 lang: en
 location: ""
 modified: 2017-04-21T00:48:32.542+07:00
-subtitle: ""
+subtitle: HTML5 Boostrap For AMP
 tags:
   - Wordpress
   - CSS
@@ -26,8 +26,8 @@ updated: 2017-04-21T00:48:32+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
-excerpt: null
-description: null
+description: HTML5 Boostrap For AMP
+excerpt: HTML5 Boostrap For AMP
 wordcount: 807
 ---
 

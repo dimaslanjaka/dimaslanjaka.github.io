@@ -12,7 +12,7 @@ date: 2019-08-02T19:10:00.000+07:00
 lang: en
 location: ""
 modified: 2019-08-02T19:10:04.879+07:00
-subtitle: ""
+subtitle: Check number is Odd or Even [JS]
 tags:
   - JS
 title: Check number is Odd or Even [JS]
@@ -23,8 +23,8 @@ updated: 2019-08-02T19:10:04+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/jFazrvLodrA/maxresdefault.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/jFazrvLodrA/maxresdefault.jpg
-excerpt: null
-description: null
+description: Check number is Odd or Even [JS]
+excerpt: Check number is Odd or Even [JS]
 wordcount: 69
 ---
 

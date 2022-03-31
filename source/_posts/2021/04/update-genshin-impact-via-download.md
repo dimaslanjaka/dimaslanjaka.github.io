@@ -11,7 +11,7 @@ date: 2021-04-27T00:17:00.006+07:00
 lang: en
 location: ""
 modified: 2021-06-01T02:20:08.616+07:00
-subtitle: ""
+subtitle: Update Genshin Impact Via Download Manager
 tags:
   - Genshin Impact
   - Games
@@ -24,8 +24,8 @@ updated: 2021-06-01T02:20:08+07:00
 thumbnail: https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
 photos:
   - https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
-excerpt: null
-description: null
+description: Update Genshin Impact Via Download Manager
+excerpt: Update Genshin Impact Via Download Manager
 wordcount: 58
 ---
 

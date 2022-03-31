@@ -12,7 +12,8 @@ date: 2017-09-02T23:46:00.000+07:00
 lang: en
 location: ""
 modified: 2017-09-02T23:46:07.062+07:00
-subtitle: ""
+subtitle: Install Linux on the Android part 2-How to Install Apache2, PHP and
+  MYSQL on Android
 tags:
   - Android
   - Tips & Tricks
@@ -26,8 +27,10 @@ updated: 2017-09-02T23:46:07+07:00
 thumbnail: https://image.ibb.co/fFtDUF/unnamed_5.png
 photos:
   - https://image.ibb.co/fFtDUF/unnamed_5.png
-excerpt: null
-description: null
+description: Install Linux on the Android part 2-How to Install Apache2, PHP and
+  MYSQL on Android
+excerpt: Install Linux on the Android part 2-How to Install Apache2, PHP and
+  MYSQL on Android
 wordcount: 673
 ---
 

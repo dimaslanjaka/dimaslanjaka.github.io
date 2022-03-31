@@ -12,7 +12,7 @@ date: 2017-11-20T23:35:00.000+07:00
 lang: en
 location: ""
 modified: 2017-11-20T23:35:07.382+07:00
-subtitle: ""
+subtitle: LESS CSS Animasi Ajaib Magic Sphere
 tags:
   - CSS
   - HTML
@@ -24,8 +24,8 @@ updated: 2017-11-20T23:35:07+07:00
 thumbnail: https://2.bp.blogspot.com/-5d_OvW33fDo/WhBervqePKI/AAAAAAAAAJQ/R6hFARO2rXspRWC5wdtu-_XHj1j-miz9ACLcBGAs/s400/Screenshot_2017-11-18-23-18-35-554_com.android.chrome.png
 photos:
   - https://2.bp.blogspot.com/-5d_OvW33fDo/WhBervqePKI/AAAAAAAAAJQ/R6hFARO2rXspRWC5wdtu-_XHj1j-miz9ACLcBGAs/s400/Screenshot_2017-11-18-23-18-35-554_com.android.chrome.png
-excerpt: null
-description: null
+description: LESS CSS Animasi Ajaib Magic Sphere
+excerpt: LESS CSS Animasi Ajaib Magic Sphere
 wordcount: 1587
 ---
 

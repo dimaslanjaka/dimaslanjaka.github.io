@@ -11,7 +11,7 @@ date: 2018-10-26T20:14:00.000+07:00
 lang: en
 location: ""
 modified: 2018-11-12T12:47:16.497+07:00
-subtitle: ""
+subtitle: Install deb package via Termux
 tags:
   - Script
   - Android
@@ -24,8 +24,8 @@ updated: 2018-11-12T12:47:16+07:00
 thumbnail: https://imgdb.net/images/4271.png
 photos:
   - https://imgdb.net/images/4271.png
-excerpt: null
-description: null
+description: Install deb package via Termux
+excerpt: Install deb package via Termux
 wordcount: 338
 ---
 

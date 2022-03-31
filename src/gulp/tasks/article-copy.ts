@@ -375,12 +375,16 @@ export default function taskCopy() {
           write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
           const build = buildPost(parse);
           write(tmp(parse.metadata.uuid, 'article.md'), build);
-          return build;
+          log.push(chalk.green('success'));
+          content = build;
           //return modify.content;
           //file.contents = Buffer.from(modify.content);
           //write(join(cwd(), 'tmp/modify.md'), modify.content);
+        } else {
+          log[0] = chalk.red('[copy][md]');
+          log.push(chalk.red('error'));
         }
-        console.error(chalk.red('[copy][md]'), path);
+        console.log(log.join(' '));
         return content;
       })
     );

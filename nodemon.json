@@ -9,9 +9,10 @@
     "__tests__/*",
     "**/node_modules/**",
     "docs",
-    "**/_config_data.json"
+    "**/_config_data.json",
+    "tmp/"
   ],
-  "verbose": true,
+  "verbose": false,
   "exec": "ts-node src/generator.ts",
   "execMap": {
     "js": "node --harmony",

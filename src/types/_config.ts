@@ -22,6 +22,7 @@ export const post_generated_dir = resolve(join(root, config.public_dir));
  * src-posts directory
  */
 export const post_source_dir = resolve(join(root, 'src-posts'));
+export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
 export default config;
 
 write(join(__dirname, '_config_data.json'), JSON.stringify(config));

@@ -29,6 +29,7 @@ const md = new MarkdownIt({
   // Enable some language-neutral replacement + quotes beautification
   // For the full list of replacements, see https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js
   typographer: true,
+  breaks: false,
   langPrefix: 'language-', // CSS language prefix for fenced blocks. Can be useful for external highlighters.
 });
 md.linkify.set({ fuzzyEmail: false }); // disables converting email to link
@@ -60,5 +61,5 @@ md.renderer.rules.footnote_block_open = () => '<h4 class="mt-3">Footnotes</h4>\n
  * @returns
  */
 export function renderMarkdownIt(str: string) {
-  return md.render(str, { langPrefix: 'language-' });
+  return md.render(str);
 }

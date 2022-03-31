@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 //** copy from src-posts to source/_posts **//
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, dirname } from '../../node/filemanager';
+import { existsSync, mkdirSync, statSync, join, cwd, dirname, write } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -12,13 +12,14 @@ import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
-import config, { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
+import config, { ProjectConfig, post_public_dir, post_source_dir, tmp } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
 import { renderMarkdownIt } from '../../markdown/toHtml';
 import { parse as parseHTML } from 'node-html-parser';
+import chalk from 'chalk';
 
 let tryCount = 0;
 
@@ -265,7 +266,12 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
     .slice(-(urlParts.length === 4 ? 3 : 2))
     .join('.');
 };
-
+function countWords(str: string) {
+  str = str.replace(/(^\s*)|(\s*$)/gi, '');
+  str = str.replace(/[ ]{2,}/gi, ' ');
+  str = str.replace(/\n /, '\n');
+  return str.split(' ').length;
+}
 /**
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
@@ -280,6 +286,7 @@ export default function taskCopy() {
     const src = join(post_source_dir, 'Chimeraland/Recipes.md');
     const run = gulp.src(src).pipe(
       modifyFile(function (content, path, _file) {
+        console.log(chalk.cyan('[copy][md]'), path);
         let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {
@@ -291,28 +298,88 @@ export default function taskCopy() {
         if (!modify.error) {
           // reparse
           parse = parsePost(modify.content);
-          const body = renderMarkdownIt(parse.body);
-          const html = parseHTML(body);
+          let body = parse.body;
+          // extract style, script
+          const re = {
+            script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/g,
+            style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/g,
+          };
+          const extracted: {
+            script: any[];
+            style: any[];
+          } = {
+            script: [],
+            style: [],
+          };
+          for (const key in re) {
+            if (Object.prototype.hasOwnProperty.call(re, key)) {
+              const regex = re[key];
+              const matchedScript = body.match(regex);
+              matchedScript.forEach((str, i) => {
+                extracted[key][i] = str;
+                body = body.replace(str, `<!--${key}${i}-->`);
+              });
+            }
+          }
+          write(tmp(parse.metadata.uuid, 'body.md'), body);
+          write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
+          // render extracted script, style
+          let md = renderMarkdownIt(body);
+          write(tmp(parse.metadata.uuid, 'render.md'), md);
+          // restore extracted script, style
+          for (const key in re) {
+            if (Object.prototype.hasOwnProperty.call(re, key)) {
+              const regex = new RegExp(`<!--(${key})(\\d{1,2})-->`, 'gm');
+              //const rematch = md.match(regex);
+              let m: RegExpExecArray;
+
+              while ((m = regex.exec(md)) !== null) {
+                // This is necessary to avoid infinite loops with zero-width matches
+                if (m.index === regex.lastIndex) {
+                  regex.lastIndex++;
+                }
+                const keyname = m[1];
+                const index = m[2];
+                const extractmatch = extracted[keyname][index];
+                md = md.replace(m[0], extractmatch);
+              }
+            }
+          }
+          write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
+          const html = parseHTML(md);
+          // +article wordcount
+          const extractTextHtml = html;
+          const words = extractTextHtml
+            .querySelectorAll('*:not(script,style,meta,link)')
+            .map((e) => e.text)
+            .join('\n');
+          parse.metadata.wordcount = countWords(words);
+          // +filter
           if (external_link.enable) {
             html.querySelectorAll('a').forEach((a) => {
               let href = a.getAttribute('href');
               if (href.startsWith('//')) href = 'http:' + href;
-              if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
+              //if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
               if (href.trim().match(/^[#/]/) || href.trim().length == 0) return;
-              if (exclude_link.some((s) => href.trim().includes(s))) return;
+              if (exclude_link.some((s) => href.trim().includes(s)) || href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
+              a.setAttribute('target', '_blank');
+              a.setAttribute('rel', 'nofollow noopener');
             });
           }
+
+          write(tmp(parse.metadata.uuid, 'article.html'), html.toString());
           return buildPost(parse);
           //return modify.content;
           //file.contents = Buffer.from(modify.content);
           //write(join(cwd(), 'tmp/modify.md'), modify.content);
         }
+        console.error(chalk.red('[copy][md]'), path);
         return content;
       })
     );
     return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
 
-  return copyAssets().on('end', copyPosts);
+  return copyAssets().on('end', () => copyPosts());
   //return copyPosts();
 }

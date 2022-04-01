@@ -56,7 +56,7 @@ const renderAssets = () => {
   ];
   return gulp.src(src, { cwd: root }).pipe(
     through.obj((file: vinyl, enc, next) => {
-      if (file.isNull() || file.isStream()) next()
+      if (file.isNull() || file.isStream()) next();
       if (!file.isDirectory()) console.log(file.path);
       next(null, file);
     })

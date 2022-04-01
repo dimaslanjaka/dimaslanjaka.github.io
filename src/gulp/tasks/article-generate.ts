@@ -14,6 +14,7 @@ import chalk from 'chalk';
 import scheduler from '../../node/scheduler';
 import { inspect } from 'util';
 import { modifyPost } from './article-copy';
+import { TaskCallback } from 'undertaker';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -24,7 +25,7 @@ const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 const logname = chalk.hex('#fcba03')('[render]');
 const log = [logname];
 
-export default function taskGenerate() {
+export default function taskGenerate(done?: TaskCallback) {
   const src: string[] = [];
   const exclude = (arr: string[]) => {
     arr.map((s) => '!' + join(source_dir, '**', s)).forEach((s) => src.push(s));
@@ -33,7 +34,7 @@ export default function taskGenerate() {
     arr.map((s) => join(source_dir, '**', s)).forEach((s) => src.push(s));
   };
 
-  const copyAssets = () => {
+  const renderAssets = () => {
     include(['**/**']);
     // exclude markdown files
     exclude(['_data/**', '_drafts/**', '**/**.md', '_posts/**/**.md', '**/**.code-workspace']);
@@ -60,7 +61,7 @@ export default function taskGenerate() {
     //.pipe(gulp.dest(generated_dir));
   };
 
-  const copyTemplate = () => {
+  const renderTemplate = () => {
     return gulp.src(join(theme_dir, 'source/**/**'));
   };
 
@@ -75,12 +76,15 @@ export default function taskGenerate() {
     const sitemap: string[] = [];
     return gulp.src(src, { nocase: true }).pipe(
       through.obj(async (file: vinyl, encoding, cb) => {
-        if (file.extname != '.md' || file.path.match(/(readme|changelog|contribute).md$/gi) || file.stat.size == 0) {
+        log.push(file.path.replace(cwd(), ''));
+
+        if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi) || file.stat.size == 0) {
           log.push(chalk.red('excluded'));
           console.log(log.join(' '));
           return cb(null, file);
         }
-        log.push(file.path.replace(cwd(), ''));
+
+        console.log('parsing');
         const self = this;
         let parse = parsePost(file.contents.toString(encoding));
         const modify = modifyPost(parse);
@@ -131,15 +135,16 @@ export default function taskGenerate() {
               cb(null, file);
             });
         }
-
+        console.log(log);
         cb(null, file);
       })
     );
   };
 
-  //return copyAssets().once('end', () => renderArticle().pipe(gulp.dest(generated_dir)));
-  return Bluebird.resolve(copyTemplate())
-    .then((template) => [template, copyAssets()])
+  //return renderAssets().once('end', () => renderArticle().pipe(gulp.dest(generated_dir)));
+  /*return Bluebird.resolve(renderTemplate())
+    .then((template) => [template, renderAssets()])
     .then((arr) => [...arr, renderArticle()])
-    .then((arr) => arr.map((s) => s.pipe(gulp.dest(generated_dir))));
+    .then((arr) => arr.map((s) => s.pipe(gulp.dest(generated_dir))));*/
+  return gulp.series(renderTemplate, renderAssets, renderArticle)(done);
 }

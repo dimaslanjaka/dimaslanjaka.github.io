@@ -273,7 +273,7 @@ function countWords(str: string) {
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @returns
  */
-export default function taskCopy() {
+export default function taskCopy(done?: TaskCallback) {
   const copyAssets = () => {
     const src = join(post_source_dir, '**/**');
     const run = gulp.src([src, `!${src}.md`]);
@@ -375,6 +375,7 @@ export default function taskCopy() {
     return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
 
-  return copyAssets().on('end', () => copyPosts());
+  //return copyAssets().on('end', () => copyPosts());
   //return copyPosts();
+  return gulp.series(copyAssets, copyPosts)(done);
 }

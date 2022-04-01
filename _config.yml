@@ -161,7 +161,7 @@ deploy:
   type: git
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
   branch: master
-  message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+  #message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
   name: dimaslanjaka
   email: dimaslanjaka@gmail.com
 

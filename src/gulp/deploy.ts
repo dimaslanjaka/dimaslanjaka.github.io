@@ -1,14 +1,11 @@
 import Promise from 'bluebird';
 import chalk from 'chalk';
-import { exec } from 'child_process';
-import spawner from '../node/spawner';
+import { exec, spawn } from 'child_process';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
-import { existsSync, join, resolve } from '../node/filemanager';
-import config, { post_generated_dir, root } from '../types/_config';
+import { appendFileSync, existsSync, join, resolve, write } from '../node/filemanager';
+import config, { post_generated_dir, root, tmp } from '../types/_config';
 import moment from 'moment';
-
-const spawn = spawner.spawn;
 
 export function method1() {
   exec('git init', { cwd: config.public_dir }, (err, stdout, stderr) => {
@@ -35,7 +32,7 @@ export function method2() {
 const deployDir = resolve(join(root, '.deploy_git'));
 const generatedDir = post_generated_dir;
 function git(...args: string[]) {
-  return new Promise((resolve: ({ code: number, stdout: any }) => any, reject: (err: Error) => any) => {
+  return new Promise((resolve: (args: { code: number; stdout: any }) => any, reject: (args: { args: string[]; err: Error }) => any) => {
     const summon = spawn('git', args, {
       cwd: deployDir,
       stdio: 'inherit',
@@ -43,11 +40,11 @@ function git(...args: string[]) {
     summon.on('close', function (code) {
       // Should probably be 'exit', not 'close'
       // *** Process completed
-      resolve({ code: code, stdout: summon.stdout });
+      return resolve({ code: code, stdout: summon.stdout });
     });
     summon.on('error', function (err) {
       // *** Process creation failed
-      reject(err);
+      return reject({ args: args, err: err });
     });
   });
 }
@@ -68,13 +65,37 @@ export default function taskDeploy(done?: TaskCallback) {
           .then(setupGit);
       }
       console.log(logname, 'merge branch', configDeploy.branch);
-      git('remote', 'set-url', 'origin', configDeploy.repo)
-        .then(() => git('add', '-A'))
-        .then(() => git('commit', '-m', (configDeploy.message || 'Site updated:').capitalize() + moment().format('"yyyy-MM-dd HH:mm:ss"')))
-        .catch((e) => {
-          throw new Error(e);
-        });
+      return git('remote', 'set-url', 'origin', configDeploy.repo).catch((e) => {
+        appendFileSync(tmp('deploy.log'), JSON.stringify(e, null, 2));
+        console.log(chalk.red('log:'), tmp('deploy.log'));
+        if (e instanceof Error) throw e;
+        if (e.err) throw e.err;
+      });
     }
   };
-  if (typeof done == 'function') done();
+
+  const pullGit = () => {
+    console.log(logname + chalk.greenBright('[pull]'), 'merge branch', configDeploy.branch);
+    return git('pull', 'origin', configDeploy.branch).catch((e) => {
+      appendFileSync(tmp('deploy-pull.log'), JSON.stringify(e, null, 2) + '\n');
+      console.log(chalk.red('log:'), tmp('deploy-pull.log'));
+      if (e instanceof Error) throw e;
+      if (e.err) throw e.err;
+    });
+  };
+
+  const pushGit = () => {
+    console.log(logname + chalk.greenBright('[push]'), 'merge branch', configDeploy.branch);
+    return git('add', '-A')
+      .then(() => git('commit', '-m', (configDeploy.message || 'Site updated: ').capitalize() + moment().format()))
+      .then(() => git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force'))
+      .catch((e) => {
+        appendFileSync(tmp('deploy-push.log'), JSON.stringify(e, null, 2) + '\n');
+        console.log(chalk.red('log:'), tmp('deploy-push.log'));
+        if (e instanceof Error) throw e;
+        if (e.err) throw e.err;
+      });
+  };
+
+  return gulp.series(copyGenerated, setupGit, pullGit, pushGit)(done);
 }

@@ -96,29 +96,21 @@ export function modifyPost(parse: parsePostReturn) {
     const sourceFile = parse.fileTree.source;
     const publicFile = parse.fileTree.public;
     if (parse.metadata) {
-      // fix post time
-      if (parse.metadata.modified) {
-        if (!parse.metadata.updated) {
-          parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
-        } else {
-          const updated = moment(parse.metadata.updated);
-          const modified = moment(parse.metadata.modified);
-          const same = updated.isSame(modified, 'date');
-          // if meta.modified != meta.updated apply meta.modified to meta.updated
-          if (!same) {
-            // java format yyyy-MM-dd'T'HH:mm:ssZ
-            parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
-          }
-        }
+      // fix date
+      if (!parse.metadata.date) {
+        parse.metadata.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
       }
+
+      if (parse.metadata.modified && !parse.metadata.updated) {
+        parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
+      }
+
       const stats = statSync(sourceFile);
       if (!parse.metadata.updated) {
         const mtime = stats.mtime;
         parse.metadata.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
       }
-      if (!parse.metadata.date) {
-        parse.metadata.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
-      }
+
       if (!parse.metadata.date.includes('+')) {
         parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
       }
@@ -141,11 +133,13 @@ export function modifyPost(parse: parsePostReturn) {
         parse.metadata.subtitle = parse.metadata.title;
         parse.metadata.excerpt = parse.metadata.title;
       }
+
       // fix special char in metadata
       parse.metadata.title = cleanString(parse.metadata.title);
       parse.metadata.subtitle = removeMultipleWhiteSpaces(cleanString(parse.metadata.subtitle));
       parse.metadata.excerpt = removeMultipleWhiteSpaces(cleanString(parse.metadata.excerpt));
       parse.metadata.description = removeMultipleWhiteSpaces(cleanString(parse.metadata.description));
+
       // fix thumbnail
       if (parse.metadata.cover) {
         if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
@@ -287,8 +281,8 @@ export default function taskCopy(done?: TaskCallback) {
         let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
         if (parse) {
           parse.fileTree = {
-            source: replacePath(path.toString(), '/source/_posts/', '/src-posts/'),
-            public: replacePath(path.toString(), '/src-posts/', '/source/_posts/'),
+            source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
+            public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
           };
         }
         const modify = modifyPost(parse);

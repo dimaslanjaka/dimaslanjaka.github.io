@@ -19,7 +19,7 @@ title: How to Multiple Delete With CodeIgniter
 type: post
 uuid: 47c30314-bfb9-4888-8c55-7c27fc5c6d79
 webtitle: WMI Gitlab
-updated: 2022-03-18T20:38:03+07:00
+updated: 2017-08-29T20:38:03+07:00
 thumbnail: https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
 photos:
   - https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png

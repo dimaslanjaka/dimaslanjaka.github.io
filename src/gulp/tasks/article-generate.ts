@@ -13,7 +13,7 @@ import writeFile from '../compress/writeFile';
 import chalk from 'chalk';
 import scheduler from '../../node/scheduler';
 import { inspect } from 'util';
-import { modifyPost } from './article-copy';
+import { modifyPost, replacePath } from './article-copy';
 import { TaskCallback } from 'undertaker';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
@@ -23,7 +23,7 @@ const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 //rmdirSync(generated_dir);
 
 const logname = chalk.hex('#fcba03')('[render]');
-const log = [logname];
+let log = [logname];
 
 export default function taskGenerate(done?: TaskCallback) {
   const src: string[] = [];
@@ -76,6 +76,7 @@ export default function taskGenerate(done?: TaskCallback) {
     const sitemap: string[] = [];
     return gulp.src(src, { nocase: true }).pipe(
       through.obj(async (file: vinyl, encoding, cb) => {
+        log = [logname];
         log.push(file.path.replace(cwd(), ''));
 
         if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi) || file.stat.size == 0) {
@@ -84,9 +85,14 @@ export default function taskGenerate(done?: TaskCallback) {
           return cb(null, file);
         }
 
-        console.log('parsing');
         const self = this;
         let parse = parsePost(file.contents.toString(encoding));
+        if (parse) {
+          parse.fileTree = {
+            source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
+            public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
+          };
+        }
         const modify = modifyPost(parse);
         if (modify.error) {
           log.push(chalk.red('fail modify'));
@@ -131,11 +137,13 @@ export default function taskGenerate(done?: TaskCallback) {
                   write(join(generated_dir, 'sitemap.html'), rendered);
                 });
               });
-              console.log(log);
+              console.log(log.join(' '));
               cb(null, file);
             });
+        } else {
+          log.push(chalk.red('fail 2nd parse'));
         }
-        console.log(log);
+        console.log(log.join(' '));
         cb(null, file);
       })
     );

@@ -74,10 +74,10 @@
 				<amp-img src="<%- page.cover || '/img/main-image2.jpg' %>" layout="responsive" width="1484" height="989">
 				</amp-img>
 				<p class="subtext">
-					Photo by Cathryn Lavery on Unsplash
+					<% page.title %>
 				</p>
 			</div>
-			<div class="article-body"><%- page.content %></div>
+			<div class="article-body" id="<%- page.uuid %> "><%- page.content %></div>
 			<div class="article-meta">
 				<ul class="tags">
 					<a href="#" class="tag">

@@ -100,7 +100,7 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
   }
   write(tmp(parse.metadata.uuid, 'body.md'), body);
   write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
-  // render extracted script, style
+  // render markdown, after extracted script, style
   let md = renderMarkdownIt(body);
   write(tmp(parse.metadata.uuid, 'render.md'), md);
   // restore extracted script, style

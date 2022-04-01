@@ -6,6 +6,7 @@ import 'js-prototypes';
 import { readFileSync, writeFileSync } from 'fs';
 import bluebird from 'bluebird';
 import { cwd } from 'process';
+import chalk from 'chalk';
 
 export const getDomainWithoutSubdomain = (url: string | URL) => {
   const urlParts = new URL(url).hostname.split('.');
@@ -53,6 +54,7 @@ export default function afterGenerate() {
   ].uniqueStringArray();
 
   return bluebird.all(loop).each((file) => {
+    console.log(chalk.blue('[after]'), file);
     const isHtml = file.endsWith('.html');
     if (isHtml) {
       const doc = parseHTML(readFileSync(file, 'utf-8'));

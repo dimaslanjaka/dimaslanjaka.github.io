@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, join, normalize, resolve } from '../../node/filemanager';
+import { cwd, join, normalize, readFileSync, resolve } from '../../node/filemanager';
 import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
@@ -69,15 +69,20 @@ export default function taskGenerate(done?: TaskCallback) {
           cb(null, file);
         })
       )
-      .pipe(gulp.dest(normalize(generated_dir)));
+      .pipe(gulp.dest(normalize(generated_dir)))
+      .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));
   };
 
   const renderTemplate = () => {
     console.log(logname + chalk.magentaBright('[template]'), 'start');
-    return gulp.src(join(theme_dir, 'source/**/**')).pipe(gulp.dest(generated_dir));
+    return gulp
+      .src(join(theme_dir, 'source/**/**'))
+      .pipe(gulp.dest(generated_dir))
+      .on('end', () => console.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
   };
 
   const grabArticle = () => {
+    console.log(logname + chalk.magentaBright('[grab]'), 'start');
     // only markdown files
     src.length = 0;
     include(['**.md', '_posts/**/**.md']);
@@ -96,7 +101,8 @@ export default function taskGenerate(done?: TaskCallback) {
             console.log(log.join(' '));
             return cb(null, file);
           }
-
+          console.log(...log, 'passed');
+          file.dirname = file.dirname.replace('/_posts/', '/');
           // set encoding
           file.encoding = encoding;
           // set permalink
@@ -104,74 +110,80 @@ export default function taskGenerate(done?: TaskCallback) {
             .replaceArr([post_public_dir, join(cwd(), 'source')], '')
             .replace(/.md$/, '.html');
           file.url = page_url.toString();
-          // push to queue
-          articles.push(file);
-          log.push(chalk.redBright(`total [${articles.length}]`));
-          console.log(log.join(' '));
+          // push to sitemap
+          sitemap.push(page_url.toString());
+          // change extension to .html
+          file.extname = '.html';
+          let parse = parsePost(file.contents.toString(file.encoding));
+          parse.fileTree = {
+            source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
+            public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
+          };
+          const modify = modifyPost(parse);
+          // skip error modification
+          if (modify.error) {
+            log.push(chalk.red('fail modify'));
+            console.log(log.join(' '));
+            return;
+          }
+          // reparse
+          parse = parsePost(modify.content);
+          // render markdown to html
+          parse.body = renderBodyMarkdown(parse);
+          // ejs render preparation
+          const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
+          ejs_opt.content = parse.body; // html rendered markdown
+          ejs_opt.url = file.url; // permalink
+          const ejs_data = { page: ejs_opt, config: config, root: theme_dir, theme: theme_config };
+          const rendered = ejs_object.render(readFileSync(layout, 'utf-8'), ejs_data);
+          file.contents = Buffer.from(rendered);
+          this.push(file);
           cb(null, file);
         })
       )
-      .pipe(gulp.dest(generated_dir));
+      .pipe(gulp.dest(generated_dir))
+      .on('end', () => console.log(logname + chalk.magentaBright('[grab]'), chalk.green('finish')));
   };
 
-  return gulp.series(renderTemplate, renderAssets, grabArticle, iterateArticles)(done);
+  //return gulp.series(renderTemplate, renderAssets, grabArticle)(done);
+  return renderTemplate().on('end', () => {
+    return renderAssets().on('end', () => {
+      return grabArticle();
+    });
+  });
 }
 
-async function iterateArticles(done?: TaskCallback) {
-  log = [logname, chalk.blueBright(articles.length)];
-  const skip = (done?: TaskCallback): ReturnType<typeof iterateArticles> | null => {
-    articles.shift();
-    if (articles.length) return iterateArticles(done);
-  };
-  if (articles.length) {
-    const file = articles[0];
-    log.push(file.path.replace(cwd(), ''));
-    let parse = parsePost(file.contents.toString(file.encoding));
-    if (parse) {
-      parse.fileTree = {
-        source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
-        public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
-      };
-      const modify = modifyPost(parse);
-      // skip error modification
-      if (modify.error) {
-        log.push(chalk.red('fail modify'));
-        console.log(log.join(' '));
-        return skip(done);
-      }
+async function renderArticle(this: any, file: vinyl) {
+  log.push(file.path.replace(cwd(), ''));
+  let parse = parsePost(file.contents.toString(file.encoding));
+  if (parse) {
+    parse.fileTree = {
+      source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
+      public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
+    };
+    const modify = modifyPost(parse);
 
-      // push to sitemap
-      sitemap.push(file.url);
-      // reparse
-      parse = parsePost(modify.content);
-      // render markdown to html
-      parse.body = renderBodyMarkdown(parse);
-      // change extension to .html
-      file.extname = '.html';
-      // replace /_posts/ to / for permalink
-      if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
-      // ejs render preparation
-      const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
-      ejs_opt.content = parse.body; // html rendered markdown
-      ejs_opt.url = file.url; // permalink
-      // ejs render start
-      return ejs_object
-        .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
-        .then((rendered) => {
-          file.contents = Buffer.from(rendered);
-          if (self) self.push(rendered);
-          log.push(chalk.green('success'));
-          console.log(log.join(' '));
-          return skip(done);
-        })
-        .catch((e) => {
-          writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
-        });
+    // reparse
+    parse = parsePost(modify.content);
+    // render markdown to html
+    parse.body = renderBodyMarkdown(parse);
+    // replace /_posts/ to / for permalink
+    if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
+    // ejs render preparation
+    const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
+    ejs_opt.content = parse.body; // html rendered markdown
+    ejs_opt.url = file.url; // permalink
+    // ejs render start
+    try {
+      const rendered = await ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config });
+      file.contents = Buffer.from(rendered);
+      //if (self) self.push(rendered);
+      this.push(file);
+      log.push(chalk.green('success'));
+      console.log(log.join(' '));
+    } catch (e) {
+      writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
     }
-  } else {
-    log.push('article emptied');
-    console.log(log.join(' '));
-    done();
   }
 }
 

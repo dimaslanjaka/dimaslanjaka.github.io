@@ -10,7 +10,7 @@ import extractText from '../shortcode/extract-text';
 import { shortcodeScript } from '../shortcode/script';
 import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
-import { TaskCallback } from 'undertaker';
+import { TaskCallback, TaskFunction } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
 import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
@@ -324,7 +324,7 @@ export default function taskCopy(done?: TaskCallback) {
     return determineDirname(run).pipe(gulp.dest(post_public_dir));
   };
 
-  //return copyAssets().on('end', () => copyPosts());
+  return copyAssets().on('end', () => copyPosts());
   //return copyPosts();
-  return gulp.series(copyAssets, copyPosts)(done);
+  //return gulp.series(copyAssets, copyPosts)(done);
 }

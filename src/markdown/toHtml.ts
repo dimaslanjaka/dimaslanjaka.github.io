@@ -12,6 +12,7 @@ import slugify from '../node/slugify/index';
 import { tmp } from '../types/_config';
 import { write } from '../node/filemanager';
 import { parsePostReturn } from './transformPosts';
+import memoize from 'memoizee';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 
@@ -73,7 +74,7 @@ export function renderMarkdownIt(str: string) {
  * @param parse
  * @returns
  */
-export function renderBodyMarkdown(parse: parsePostReturn) {
+function renderBodyMarkdownOri(parse: parsePostReturn) {
   let body = parse.body;
   // extract style, script
   const re = {
@@ -98,11 +99,11 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
         });
     }
   }
-  write(tmp(parse.metadata.uuid, 'body.md'), body);
-  write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
+  //write(tmp(parse.metadata.uuid, 'body.md'), body);
+  //write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
   // render markdown, after extracted script, style
   let md = renderMarkdownIt(body);
-  write(tmp(parse.metadata.uuid, 'render.md'), md);
+  //write(tmp(parse.metadata.uuid, 'render.md'), md);
   // restore extracted script, style
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {
@@ -122,6 +123,8 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
       }
     }
   }
-  write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
+  //write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
   return md;
 }
+
+export const renderBodyMarkdown = memoize(renderBodyMarkdownOri);

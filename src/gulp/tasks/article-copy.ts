@@ -303,7 +303,7 @@ export default function taskCopy(done?: TaskCallback) {
           //parse.body = bodyHtml;
           //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
           const build = buildPost(parse);
-          write(tmp(parse.metadata.uuid, 'article.md'), build);
+          //write(tmp(parse.metadata.uuid, 'article.md'), build);
           log.push(chalk.green('success'));
           content = build;
           //return modify.content;

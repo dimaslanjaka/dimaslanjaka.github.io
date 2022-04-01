@@ -9,6 +9,7 @@ import chalk from 'chalk';
 import config_yml, { ProjectConfig } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
 import { toUnix } from 'upath';
+import memoize from 'memoizee';
 
 export interface LooseObject {
   [key: string]: any;
@@ -102,7 +103,7 @@ export function md5(data: string) {
  * * return null == failed
  * @param text file or string text
  */
-export function parsePost(text: string): parsePostReturn | null {
+function parsePostOri(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;
   const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -183,6 +184,7 @@ export function parsePost(text: string): parsePostReturn | null {
   }
   return null;
 }
+export const parsePost = memoize(parsePostOri);
 
 /**
  * Fix post body

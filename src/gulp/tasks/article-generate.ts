@@ -16,6 +16,7 @@ import { inspect } from 'util';
 import { modifyPost, replacePath } from './article-copy';
 import { TaskCallback } from 'undertaker';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
+import sanitizeFilename from '../../node/sanitize-filename';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -25,6 +26,13 @@ const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 
 const logname = chalk.hex('#fcba03')('[render]');
 let log = [logname];
+interface extendedVinyl extends vinyl {
+  url: string;
+  encoding: BufferEncoding;
+}
+const articles: extendedVinyl[] = [];
+const page_url = new URL(config.url);
+const sitemap: string[] = [];
 
 export default function taskGenerate(done?: TaskCallback) {
   const src: string[] = [];
@@ -69,7 +77,7 @@ export default function taskGenerate(done?: TaskCallback) {
     return gulp.src(join(theme_dir, 'source/**/**')).pipe(gulp.dest(generated_dir));
   };
 
-  const renderArticle = () => {
+  const grabArticle = () => {
     // only markdown files
     src.length = 0;
     include(['**.md', '_posts/**/**.md']);
@@ -77,60 +85,116 @@ export default function taskGenerate(done?: TaskCallback) {
     exclude(['_data/**', '_drafts/**', '**/guide/**', '**/test/**', '**/readme.md', '**/**.code-workspace', '**/guzzle/**', ...config.skip_render]);
     if (Array.isArray(config.exclude)) exclude(config.exclude);
 
-    const sitemap: string[] = [];
-    return gulp
-      .src(src, { nocase: true })
-      .pipe(
-        through.obj(async (file: vinyl, encoding, cb) => {
-          log = [logname];
+    return (
+      gulp
+        .src(src, { nocase: true })
+        .pipe(
+          through.obj(async (file: extendedVinyl, encoding, cb) => {
+            // exclude
+            if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi)) {
+              log.push(chalk.red('excluded'));
+              console.log(log.join(' '));
+              return cb(null, file);
+            }
+            // set encoding
+            file.encoding = encoding;
+            // set permalink
+            page_url.pathname = toUnix(file.path)
+              .replaceArr([post_public_dir, join(cwd(), 'source')], '')
+              .replace(/.md$/, '.html');
+            file.url = page_url.toString();
+            // push to queue
+            articles.push(file);
+            cb(null, file);
+          })
+        )
+        //.pipe(gulp.dest(generated_dir));
+        .pipe(gulp.dest(tmp('generated')))
+    );
+  };
+
+  //return renderAssets().once('end', () => renderArticle().pipe(gulp.dest(generated_dir)));
+  /*return Bluebird.resolve(renderTemplate())
+    .then((template) => [template, renderAssets()])
+    .then((arr) => [...arr, renderArticle()])
+    .then((arr) => arr.map((s) => s.pipe(gulp.dest(generated_dir))));*/
+  return gulp.series(renderTemplate, renderAssets, grabArticle, iterateArticles)(done);
+}
+
+function iterateArticles(done?: TaskCallback) {
+  const skip = () => {
+    articles.shift();
+    return iterateArticles();
+  };
+  log = [logname];
+  if (articles.length) {
+    const file = articles[0];
+    let parse = parsePost(file.contents.toString(file.encoding));
+    if (parse) {
+      parse.fileTree = {
+        source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
+        public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
+      };
+      const modify = modifyPost(parse);
+      // skip error modification
+      if (modify.error) {
+        log.push(chalk.red('fail modify'));
+        console.log(log.join(' '));
+        return skip();
+      }
+
+      // push to sitemap
+      sitemap.push(file.url);
+      // reparse
+      parse = parsePost(modify.content);
+      if (parse) {
+        // render markdown to html
+        parse.body = renderBodyMarkdown(parse);
+        // change extension to .html
+        file.extname = '.html';
+        // replace /_posts/ to / for permalink
+        if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
+        // ejs render preparation
+        const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
+        ejs_opt.content = parse.body; // html rendered markdown
+        ejs_opt.url = file.url; // permalink
+        // ejs render start
+        return ejs_object
+          .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
+          .then((rendered) => {
+            file.contents = Buffer.from(rendered);
+            if (self) self.push(rendered);
+            log.push(chalk.green('success'));
+            console.log(log.join(' '));
+            return rendered;
+          })
+          .catch((e) => {
+            writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
+          });
+      }
+    }
+  } else if (typeof done == 'function') done();
+}
+
+/*
           log.push(file.path.replace(cwd(), ''));
 
-          if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi)) {
-            log.push(chalk.red('excluded'));
-            console.log(log.join(' '));
-            return cb(null, file);
-          }
+
 
           const self = this;
-          let parse = parsePost(file.contents.toString(encoding));
-          if (parse) {
-            parse.fileTree = {
-              source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
-              public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
-            };
-          }
-          const modify = modifyPost(parse);
-          if (modify.error) {
-            log.push(chalk.red('fail modify'));
-            console.log(log.join(' '));
-            return cb(null, file);
-          }
+
+
           // reparse
-          parse = parsePost(modify.content);
-          parse.body = renderBodyMarkdown(parse);
+
           const filepath = toUnix(file.path);
-          file.extname = '.html';
-          if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
+
+
           if (file.dirname.match(/readme/gi)) console.log(file.dirname);
           if (parse) {
-            const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
-            ejs_opt.content = parse.body;
+
             //delete parse.body;
-            const page_url = new URL(config.url);
-            page_url.pathname = filepath.replaceArr([post_public_dir, join(cwd(), 'source')], '').replace(/.md$/, '.html');
-            ejs_opt.url = page_url.toString();
-            sitemap.push(ejs_opt.url);
-            return ejs_object
-              .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
-              .then((rendered) => {
-                file.contents = Buffer.from(rendered);
-                if (self) self.push(rendered);
-                log.push(chalk.green('success'));
-                return rendered;
-              })
-              .catch((e) => {
-                writeFile(tmp(parse.metadata.uuid, 'error.log'), inspect(e));
-              })
+
+
               .finally(() => {
                 scheduler.add('sitemap', () => {
                   // generate sitemap
@@ -151,16 +215,4 @@ export default function taskGenerate(done?: TaskCallback) {
             log.push(chalk.red('fail 2nd parse'));
           }
           console.log(log.join(' '));
-          cb(null, file);
-        })
-      )
-      .pipe(gulp.dest(generated_dir));
-  };
-
-  //return renderAssets().once('end', () => renderArticle().pipe(gulp.dest(generated_dir)));
-  /*return Bluebird.resolve(renderTemplate())
-    .then((template) => [template, renderAssets()])
-    .then((arr) => [...arr, renderArticle()])
-    .then((arr) => arr.map((s) => s.pipe(gulp.dest(generated_dir))));*/
-  return gulp.series(renderTemplate, renderAssets, renderArticle)(done);
-}
+          cb(null, file);*/

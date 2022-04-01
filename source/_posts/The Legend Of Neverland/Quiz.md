@@ -64,7 +64,7 @@ wordcount: 7845
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      4/1/2022, 11:28:09 AM
+      4/1/2022, 4:03:48 PM
     </small>
 
   </div>

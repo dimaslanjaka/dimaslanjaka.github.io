@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/dimaslanjaka/dimaslanjaka.github.io#readme",
   "dependencies": {
-    "js-prototypes": "github:dimaslanjaka/js-prototypes"
+    "js-prototypes": "github:dimaslanjaka/js-prototypes",
+    "memoizee": "^0.4.15"
   },
   "devDependencies": {
     "@types/amphtml-validator": "^1.0.1",
@@ -33,6 +34,8 @@
     "@types/gulp": "^4.0.9",
     "@types/gulp-imagemin": "^8.0.1",
     "@types/lru-cache": "^7.6.1",
+    "@types/markdown-it-attrs": "^4.1.0",
+    "@types/memoizee": "^0.4.7",
     "@types/node": "^17.0.23",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "@types/undertaker": "^1.2.7",

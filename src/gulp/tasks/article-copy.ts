@@ -112,7 +112,11 @@ export function modifyPost(parse: parsePostReturn) {
       }
 
       if (!parse.metadata.date.includes('+')) {
-        parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
+        try {
+          parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
+        } catch (e) {
+          console.log(parse.metadata.date, 'invalid moment date format');
+        }
       }
 
       // fix lang

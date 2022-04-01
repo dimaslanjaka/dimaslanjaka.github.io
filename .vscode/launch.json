@@ -8,7 +8,21 @@
       "command": "ts-node src/generator.ts",
       "name": "Generate",
       "request": "launch",
-      "type": "node-terminal"
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "gulp",
+      "name": "gulp default",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "cwd": "${workspaceFolder}"
     },
     {
       "command": "php -S localhost:4000 -t docs",

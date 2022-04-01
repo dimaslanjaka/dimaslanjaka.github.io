@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, existsSync, join, resolve, rmdirSync, write } from '../../node/filemanager';
+import { cwd, join, resolve } from '../../node/filemanager';
 import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
 import through from 'through2';
 import vinyl from 'vinyl';
@@ -11,7 +11,6 @@ import ejs_object, { DynamicObject } from '../../ejs';
 import { parsePost } from '../../markdown/transformPosts';
 import writeFile from '../compress/writeFile';
 import chalk from 'chalk';
-import scheduler from '../../node/scheduler';
 import { inspect } from 'util';
 import { modifyPost, replacePath } from './article-copy';
 import { TaskCallback } from 'undertaker';
@@ -113,19 +112,15 @@ export default function taskGenerate(done?: TaskCallback) {
     );
   };
 
-  //return renderAssets().once('end', () => renderArticle().pipe(gulp.dest(generated_dir)));
-  /*return Bluebird.resolve(renderTemplate())
-    .then((template) => [template, renderAssets()])
-    .then((arr) => [...arr, renderArticle()])
-    .then((arr) => arr.map((s) => s.pipe(gulp.dest(generated_dir))));*/
   return gulp.series(renderTemplate, renderAssets, grabArticle, iterateArticles)(done);
 }
 
-function iterateArticles(done?: TaskCallback) {
-  const skip = () => {
-    articles.shift();
-    return iterateArticles();
-  };
+const skip = (done?: TaskCallback): ReturnType<typeof iterateArticles> | null => {
+  articles.shift();
+  if (articles.length) return iterateArticles(done);
+};
+
+async function iterateArticles(done?: TaskCallback) {
   log = [logname];
   if (articles.length) {
     const file = articles[0];
@@ -140,40 +135,40 @@ function iterateArticles(done?: TaskCallback) {
       if (modify.error) {
         log.push(chalk.red('fail modify'));
         console.log(log.join(' '));
-        return skip();
+        return skip(done);
       }
 
       // push to sitemap
       sitemap.push(file.url);
       // reparse
       parse = parsePost(modify.content);
-      if (parse) {
-        // render markdown to html
-        parse.body = renderBodyMarkdown(parse);
-        // change extension to .html
-        file.extname = '.html';
-        // replace /_posts/ to / for permalink
-        if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
-        // ejs render preparation
-        const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
-        ejs_opt.content = parse.body; // html rendered markdown
-        ejs_opt.url = file.url; // permalink
-        // ejs render start
-        return ejs_object
-          .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
-          .then((rendered) => {
-            file.contents = Buffer.from(rendered);
-            if (self) self.push(rendered);
-            log.push(chalk.green('success'));
-            console.log(log.join(' '));
-            return rendered;
-          })
-          .catch((e) => {
-            writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
-          });
-      }
+      // render markdown to html
+      parse.body = renderBodyMarkdown(parse);
+      // change extension to .html
+      file.extname = '.html';
+      // replace /_posts/ to / for permalink
+      if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
+      // ejs render preparation
+      const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
+      ejs_opt.content = parse.body; // html rendered markdown
+      ejs_opt.url = file.url; // permalink
+      // ejs render start
+      return ejs_object
+        .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
+        .then((rendered) => {
+          file.contents = Buffer.from(rendered);
+          if (self) self.push(rendered);
+          log.push(chalk.green('success'));
+          console.log(log.join(' '));
+          return skip(done);
+        })
+        .catch((e) => {
+          writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
+        });
     }
-  } else if (typeof done == 'function') done();
+  } else {
+    done();
+  }
 }
 
 /*

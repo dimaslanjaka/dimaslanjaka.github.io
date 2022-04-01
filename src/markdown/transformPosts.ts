@@ -103,7 +103,7 @@ export function md5(data: string) {
  * * return null == failed
  * @param text file or string text
  */
-function parsePostOri(text: string): parsePostReturn | null {
+export function parsePost(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;
   const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -184,7 +184,6 @@ function parsePostOri(text: string): parsePostReturn | null {
   }
   return null;
 }
-export const parsePost = memoize(parsePostOri);
 
 /**
  * Fix post body

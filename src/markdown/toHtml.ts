@@ -74,7 +74,7 @@ export function renderMarkdownIt(str: string) {
  * @param parse
  * @returns
  */
-function renderBodyMarkdownOri(parse: parsePostReturn) {
+export function renderBodyMarkdown(parse: parsePostReturn) {
   let body = parse.body;
   // extract style, script
   const re = {
@@ -126,5 +126,3 @@ function renderBodyMarkdownOri(parse: parsePostReturn) {
   //write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
   return md;
 }
-
-export const renderBodyMarkdown = memoize(renderBodyMarkdownOri);

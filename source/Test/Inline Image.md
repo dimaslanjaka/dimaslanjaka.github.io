@@ -5,7 +5,7 @@ subtitle: "Test Inline Image"
 
 lang: en
 
-date: 2021-7-17
+date: 2021-07-17
 
 type: post
 

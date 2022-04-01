@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 //** copy from src-posts to source/_posts **//
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, dirname, write } from '../../node/filemanager';
+import { existsSync, mkdirSync, statSync, join, cwd, dirname } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -12,12 +12,12 @@ import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
 import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
-import config, { ProjectConfig, post_public_dir, post_source_dir, tmp } from '../../types/_config';
+import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
-import { renderBodyMarkdown, renderMarkdownIt } from '../../markdown/toHtml';
+import { renderBodyMarkdown } from '../../markdown/toHtml';
 import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
 import { shortcodeYoutube } from '../shortcode/youtube';
@@ -111,7 +111,7 @@ export function modifyPost(parse: parsePostReturn) {
         parse.metadata.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
       }
 
-      if (!parse.metadata.date.includes('+')) {
+      if (parse.metadata.date && !parse.metadata.date.includes('+')) {
         try {
           parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
         } catch (e) {

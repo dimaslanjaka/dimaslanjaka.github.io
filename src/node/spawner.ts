@@ -2,6 +2,7 @@
 
 import { ChildProcess, ChildProcessWithoutNullStreams, spawn, SpawnOptions } from 'child_process';
 import process from 'process';
+import scheduler from './scheduler';
 
 class spawner {
   static children: ChildProcessWithoutNullStreams[] = [];
@@ -14,12 +15,12 @@ class spawner {
    * @param callback callback for children process
    */
   // eslint-disable-next-line no-unused-vars
-  static spawn(command: string, args?: string[], callback?: (path: ChildProcess) => any) {
+  static spawn(command: string, args?: string[], opt: SpawnOptions = {}, callback?: (path: ChildProcess) => any) {
     const defaultOption: SpawnOptions = { stdio: 'pipe', detached: false };
     if (['npm', 'ts-node', 'tsc', 'npx', 'hexo'].includes(command)) {
       command = /^win/.test(process.platform) ? `${command}.cmd` : command;
     }
-    const child = spawn(command, args, defaultOption);
+    const child = spawn(command, args, Object.assign(defaultOption, opt));
     child.unref();
 
     child.stdout.setEncoding('utf8');
@@ -41,7 +42,8 @@ class spawner {
     console.log(`Child Process ${spawner.children.length}`);
 
     if (!this.onExit) {
-      this.onExit = true;
+      scheduler.add('spawner', spawner.children_kill);
+      /*this.onExit = true;
       console.log('registering children killer');
       process.on('exit', function () {
         console.log('Finished', new Date().getTime());
@@ -50,7 +52,7 @@ class spawner {
       process.on('uncaughtException', spawner.children_kill);
       process.on('SIGINT', spawner.children_kill);
       process.on('SIGTERM', spawner.children_kill);
-      process.on('SIGKILL', spawner.children_kill);
+      process.on('SIGKILL', spawner.children_kill);*/
     }
 
     return child;

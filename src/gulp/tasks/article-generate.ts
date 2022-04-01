@@ -16,6 +16,7 @@ import { modifyPost, replacePath } from './article-copy';
 import { TaskCallback } from 'undertaker';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import sanitizeFilename from '../../node/sanitize-filename';
+import gulpDebugSrc from '../modules/print';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -41,27 +42,19 @@ const include = (arr: string[]) => {
   arr.map((s) => join(source_dir, '**', s)).forEach((s) => src.push(s));
 };
 
+const globalExcludePatterns = ['!source/_data/**', '!source/_drafts/**'];
+
 const renderAssets = () => {
   console.log(logname + chalk.magentaBright('[assets]'), 'start');
-  const src = [
-    'source/**/**',
-    '!source/_data/**',
-    '!source/_drafts/**',
-    '!**/**.{md,php}',
-    '!_posts/**/**.md',
-    '!**/**.code-workspace',
-    '!source/page/webassembly/**',
-    '!source/backend/**',
-    '!source/Midi/MIDI.js/**/**',
-  ];
-  return gulp.src(src, { cwd: root }).pipe(
-    through.obj((file: vinyl, enc, next) => {
-      if (file.isNull() || file.isStream()) next();
-      if (!file.isDirectory()) console.log(file.path);
-      next(null, file);
-    })
-  );
-  /*.pipe(
+  const src = ['source/**/**', '!**/**.{md,php}', '!_posts/**/**.md', ...config.exclude];
+  src.addAll(globalExcludePatterns);
+  return gulp
+    .src(src, { cwd: root })
+    .pipe(gulp.dest(normalize(generated_dir)))
+    .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));
+
+  /*
+    .pipe(
       through.obj(function (file: vinyl, enc, cb) {
         if (file.path.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
         //const pathfile = toUnix(file.path);
@@ -71,15 +64,14 @@ const renderAssets = () => {
       cb(null, file);
     })
   )
-  .pipe(gulp.dest(normalize(generated_dir)))
-  .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));*/
+  */
 };
 
 gulp.task('generate:assets', renderAssets);
 
 gulp.task('generate', gulp.series('generate:assets'));
 
-export default function taskGenerate(done?: TaskCallback) {
+export default function taskGenerate() {
   const renderTemplate = () => {
     console.log(logname + chalk.magentaBright('[template]'), 'start');
     return gulp
@@ -94,7 +86,7 @@ export default function taskGenerate(done?: TaskCallback) {
     src.length = 0;
     include(['**.md', '_posts/**/**.md']);
     //include(['_posts/Chimeraland/Recipes.md']);
-    exclude(['_data/**', '_drafts/**', '**/guide/**', '**/test/**', '**/readme.md', '**/**.code-workspace', '**/guzzle/**', ...config.skip_render]);
+    exclude(['_data/**', '_drafts/**', '**/guide/**', '**/test/**', '**/readme.md', '**/**.code-workspace', '**/guzzle/**']);
     if (Array.isArray(config.exclude)) exclude(config.exclude);
 
     return gulp

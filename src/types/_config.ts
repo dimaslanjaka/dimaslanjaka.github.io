@@ -14,6 +14,7 @@ const config: ProjectConfig = yaml.parse(str);
 if (!config.exclude) config.exclude = [];
 if (!config.ignore) config.ignore = [];
 if (!config.include) config.include = [];
+if (!config.skip_render) config.skip_render = [];
 
 if (process.env.NODE_ENV == 'development') {
   config.url = 'http://adsense.webmanajemen.com:' + config.server.port;

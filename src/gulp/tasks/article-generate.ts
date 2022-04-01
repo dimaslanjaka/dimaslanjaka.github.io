@@ -33,46 +33,51 @@ const articles: extendedVinyl[] = [];
 const page_url = new URL(config.url);
 const sitemap: string[] = [];
 
+const src: string[] = [];
+const exclude = (arr: string[]) => {
+  arr.map((s) => '!' + join(source_dir, '**', s)).forEach((s) => src.push(s));
+};
+const include = (arr: string[]) => {
+  arr.map((s) => join(source_dir, '**', s)).forEach((s) => src.push(s));
+};
+
+const renderAssets = () => {
+  console.log(logname + chalk.magentaBright('[assets]'), 'start');
+  const src = [
+    'source/**/**',
+    '!source/_data/**',
+    '!source/_drafts/**',
+    '!**/**.{md,php}',
+    '!_posts/**/**.md',
+    '!**/**.code-workspace',
+    '!source/page/webassembly/**',
+    '!source/backend/**',
+  ];
+  return gulp.src(src, { cwd: root }).pipe(
+    through.obj((file: vinyl, enc, next) => {
+      if (!file.isDirectory()) console.log(file.path);
+      next(null, file);
+    })
+  );
+  /*.pipe(
+      through.obj(function (file: vinyl, enc, cb) {
+        if (file.path.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
+        //const pathfile = toUnix(file.path);
+        //const contents = fn(String(file.contents), toUnix(file.path), file) || file.contents;
+        //file.contents = !Buffer.isBuffer(contents) ? Buffer.from(contents) : contents;
+
+      cb(null, file);
+    })
+  )
+  .pipe(gulp.dest(normalize(generated_dir)))
+  .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));*/
+};
+
+gulp.task('generate:assets', renderAssets);
+
+gulp.task('generate', gulp.series('generate:assets'));
+
 export default function taskGenerate(done?: TaskCallback) {
-  const src: string[] = [];
-  const exclude = (arr: string[]) => {
-    arr.map((s) => '!' + join(source_dir, '**', s)).forEach((s) => src.push(s));
-  };
-  const include = (arr: string[]) => {
-    arr.map((s) => join(source_dir, '**', s)).forEach((s) => src.push(s));
-  };
-
-  const renderAssets = () => {
-    console.log(logname + chalk.magentaBright('[assets]'), 'start');
-    include(['**/**']);
-    // exclude markdown files
-    exclude(['_data/**', '_drafts/**', '**/**.md', '_posts/**/**.md', '**/**.code-workspace']);
-    return gulp
-      .src(src)
-      .pipe(
-        through.obj(function (file: vinyl, enc, cb) {
-          if (file.path.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
-          //const pathfile = toUnix(file.path);
-          //const contents = fn(String(file.contents), toUnix(file.path), file) || file.contents;
-          //file.contents = !Buffer.isBuffer(contents) ? Buffer.from(contents) : contents;
-          /*if (!file.basename.toString().match(/\.min\.[js,css,html]/gi)) {
-          switch (file.extname) {
-            case '.js':
-              // minify js
-              console.log(file.basename);
-              break;
-
-            default:
-              break;
-          }
-        }*/
-          cb(null, file);
-        })
-      )
-      .pipe(gulp.dest(normalize(generated_dir)))
-      .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));
-  };
-
   const renderTemplate = () => {
     console.log(logname + chalk.magentaBright('[template]'), 'start');
     return gulp
@@ -93,25 +98,25 @@ export default function taskGenerate(done?: TaskCallback) {
     return gulp
       .src(src, { nocase: true })
       .pipe(
-        through.obj(async (file: extendedVinyl, encoding, cb) => {
+        through.obj(async (file: extendedVinyl, encoding, next) => {
           log = [logname, file.path.replace(cwd(), '')];
           // exclude
           if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi)) {
             log.push(chalk.red('excluded'));
-            console.log(log.join(' '));
-            return cb(null, file);
+            console.log(...log);
+            return next(null, file);
           }
-          console.log(...log, 'passed');
+          console.log(...log, chalk.yellow('passed'));
           file.dirname = file.dirname.replace('/_posts/', '/');
           // set encoding
-          file.encoding = encoding;
+          // file.encoding = encoding;
           // set permalink
           page_url.pathname = toUnix(file.path)
             .replaceArr([post_public_dir, join(cwd(), 'source')], '')
             .replace(/.md$/, '.html');
-          file.url = page_url.toString();
+          const permalink = page_url.toString();
           // push to sitemap
-          sitemap.push(page_url.toString());
+          sitemap.push(permalink);
           // change extension to .html
           file.extname = '.html';
           let parse = parsePost(file.contents.toString(file.encoding));
@@ -123,7 +128,7 @@ export default function taskGenerate(done?: TaskCallback) {
           // skip error modification
           if (modify.error) {
             log.push(chalk.red('fail modify'));
-            console.log(log.join(' '));
+            console.log(...log);
             return;
           }
           // reparse
@@ -133,12 +138,13 @@ export default function taskGenerate(done?: TaskCallback) {
           // ejs render preparation
           const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
           ejs_opt.content = parse.body; // html rendered markdown
-          ejs_opt.url = file.url; // permalink
+          ejs_opt.url = permalink; // permalink
           const ejs_data = { page: ejs_opt, config: config, root: theme_dir, theme: theme_config };
           const rendered = ejs_object.render(readFileSync(layout, 'utf-8'), ejs_data);
           file.contents = Buffer.from(rendered);
           this.push(file);
-          cb(null, file);
+          console.log(...log, chalk.green('success'));
+          next(null, file);
         })
       )
       .pipe(gulp.dest(generated_dir))
@@ -180,7 +186,7 @@ async function renderArticle(this: any, file: vinyl) {
       //if (self) self.push(rendered);
       this.push(file);
       log.push(chalk.green('success'));
-      console.log(log.join(' '));
+      console.log(...log);
     } catch (e) {
       writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
     }
@@ -219,11 +225,11 @@ async function renderArticle(this: any, file: vinyl) {
                     write(join(generated_dir, 'sitemap.html'), rendered);
                   });
                 });
-                console.log(log.join(' '));
+                console.log(...log);
                 cb(null, file);
               });
           } else {
             log.push(chalk.red('fail 2nd parse'));
           }
-          console.log(log.join(' '));
+          console.log(...log);
           cb(null, file);*/

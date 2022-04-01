@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 //** copy from src-posts to source/_posts **//
+/**
+ * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
+ */
+
 import 'js-prototypes';
 import { existsSync, mkdirSync, statSync, join, cwd, dirname } from '../../node/filemanager';
 import moment from 'moment';
@@ -267,64 +272,61 @@ function countWords(str: string) {
   return str.split(' ').length;
 }
 
-/**
- * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
- * @returns
- */
-export default function taskCopy(done?: TaskCallback) {
-  const copyAssets = () => {
-    const src = join(post_source_dir, '**/**');
-    const run = gulp.src([src, `!${src}.md`]);
-    return determineDirname(run).pipe(gulp.dest(post_public_dir));
-  };
-  const copyPosts = () => {
-    const src = join(post_source_dir, '**/**');
-    const run = gulp.src([src + '.md', '!' + join(post_source_dir, '**/.git')]).pipe(
-      modifyFile(function (content, path, _file) {
-        const log = [chalk.cyan('[copy][md]'), path];
-        let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
-        if (parse) {
-          parse.fileTree = {
-            source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
-            public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
-          };
-        }
-        const modify = modifyPost(parse);
-        if (!modify.error) {
-          // reparse
-          parse = parsePost(modify.content);
-          const html = parseHTML(renderBodyMarkdown(parse));
-          // +article wordcount
-          const extractTextHtml = html;
-          const words = extractTextHtml
-            .querySelectorAll('*:not(script,style,meta,link)')
-            .map((e) => e.text)
-            .join('\n');
-          parse.metadata.wordcount = countWords(words);
+const copyAssets = () => {
+  const src = join(post_source_dir, '**/**');
+  const run = gulp.src([src, `!${src}.md`]);
+  return determineDirname(run).pipe(gulp.dest(post_public_dir));
+};
 
-          // build article
-          //const bodyHtml = html.toString();
-          //parse.body = bodyHtml;
-          //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
-          const build = buildPost(parse);
-          //write(tmp(parse.metadata.uuid, 'article.md'), build);
-          log.push(chalk.green('success'));
-          content = build;
-          //return modify.content;
-          //file.contents = Buffer.from(modify.content);
-          //write(join(cwd(), 'tmp/modify.md'), modify.content);
-        } else {
-          log[0] = chalk.red('[copy][md]');
-          log.push(chalk.red('error'));
-        }
-        //console.log(log.join(' '));
-        return content;
-      })
-    );
-    return determineDirname(run).pipe(gulp.dest(post_public_dir));
-  };
+gulp.task('copy:assets', copyAssets);
 
-  return copyAssets().on('end', () => copyPosts());
-  //return copyPosts();
-  //return gulp.series(copyAssets, copyPosts)(done);
-}
+const copyPosts = () => {
+  const src = join(post_source_dir, '**/**');
+  const run = gulp.src([src + '.md', '!' + join(post_source_dir, '**/.git')]).pipe(
+    modifyFile(function (content, path, _file) {
+      const log = [chalk.cyan('[copy][md]'), path];
+      let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
+      if (parse) {
+        parse.fileTree = {
+          source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
+          public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
+        };
+      }
+      const modify = modifyPost(parse);
+      if (!modify.error) {
+        // reparse
+        parse = parsePost(modify.content);
+        const html = parseHTML(renderBodyMarkdown(parse));
+        // +article wordcount
+        const extractTextHtml = html;
+        const words = extractTextHtml
+          .querySelectorAll('*:not(script,style,meta,link)')
+          .map((e) => e.text)
+          .join('\n');
+        parse.metadata.wordcount = countWords(words);
+
+        // build article
+        //const bodyHtml = html.toString();
+        //parse.body = bodyHtml;
+        //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
+        const build = buildPost(parse);
+        //write(tmp(parse.metadata.uuid, 'article.md'), build);
+        log.push(chalk.green('success'));
+        content = build;
+        //return modify.content;
+        //file.contents = Buffer.from(modify.content);
+        //write(join(cwd(), 'tmp/modify.md'), modify.content);
+      } else {
+        log[0] = chalk.red('[copy][md]');
+        log.push(chalk.red('error'));
+      }
+      //console.log(log.join(' '));
+      return content;
+    })
+  );
+  return determineDirname(run).pipe(gulp.dest(post_public_dir));
+};
+
+gulp.task('copy:posts', copyPosts);
+
+gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));

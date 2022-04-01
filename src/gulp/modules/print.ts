@@ -2,6 +2,7 @@
 'use strict';
 import through from 'through2';
 import { toUnix } from 'upath';
+import { cwd } from '../../node/filemanager';
 
 /**
  * gulp debug to print result of `gulp.src`
@@ -13,7 +14,7 @@ export default function gulpDebugSrc() {
     if (file.isNull() || file.isStream()) {
       return next();
     }
-    console.log(toUnix(file.path));
+    console.log(toUnix(file.path).replace(cwd(), ''));
     next(null, file);
   });
 }

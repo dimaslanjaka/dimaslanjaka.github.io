@@ -36,11 +36,19 @@ function renderFile(file: string, opts: EJSOption = {}) {
   return ejs.renderFile(file, opts);
 }
 
+function render(content: string, opts: EJSOption = {}) {
+  opts.root = join(theme_dir, 'layout/layout.ejs');
+  opts = Object.assign(helpers, opts);
+  const render = ejs.render(content, opts);
+  if (opts.async) return Promise.resolve(render);
+  return render;
+}
+
 const ejs_object: typeof ejs = {
   renderFile: renderFile,
   resolveInclude: ejs.resolveInclude,
   compile: ejs.compile,
-  render: ejs.render,
+  render: <any>render,
   clearCache: ejs.clearCache,
   escapeXML: ejs.escapeXML,
   VERSION: ejs.VERSION,

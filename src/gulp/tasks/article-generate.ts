@@ -46,7 +46,7 @@ const globalExcludePatterns = ['!source/_data/**', '!source/_drafts/**'];
 
 const renderAssets = () => {
   console.log(logname + chalk.magentaBright('[assets]'), 'start');
-  const src = ['source/**/**', '!**/**.{md,php}', '!_posts/**/**.md', ...config.exclude];
+  const src = ['source/**/**', '!source/**/**.{md,php}', '!source/_posts/**/**.md', ...config.exclude];
   src.addAll(globalExcludePatterns);
   return gulp
     .src(src, { cwd: root })
@@ -69,66 +69,69 @@ const renderAssets = () => {
 
 gulp.task('generate:assets', renderAssets);
 
-gulp.task('generate', gulp.series('generate:assets'));
+const renderTemplate = () => {
+  console.log(logname + chalk.magentaBright('[template]'), 'start');
+  return gulp
+    .src(join(theme_dir, 'source/**/**'), { cwd: root })
+    .pipe(gulp.dest(generated_dir))
+    .on('end', () => console.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
+};
 
-export default function taskGenerate() {
-  const renderTemplate = () => {
-    console.log(logname + chalk.magentaBright('[template]'), 'start');
-    return gulp
-      .src(join(theme_dir, 'source/**/**'))
-      .pipe(gulp.dest(generated_dir))
-      .on('end', () => console.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
-  };
+gulp.task('generate:template', renderTemplate);
 
-  const grabArticle = () => {
-    console.log(logname + chalk.magentaBright('[grab]'), 'start');
-    // only markdown files
-    src.length = 0;
-    include(['**.md', '_posts/**/**.md']);
-    //include(['_posts/Chimeraland/Recipes.md']);
-    exclude(['_data/**', '_drafts/**', '**/guide/**', '**/test/**', '**/readme.md', '**/**.code-workspace', '**/guzzle/**']);
-    if (Array.isArray(config.exclude)) exclude(config.exclude);
-
-    return gulp
-      .src(src, { nocase: true })
+const renderArticle = function () {
+  const src = ['source/**/**.md', 'source/_posts/**/**.md', ...config.exclude];
+  src.addAll(globalExcludePatterns);
+  return (
+    gulp
+      .src(src, { cwd: root })
       .pipe(
         through.obj(async (file: extendedVinyl, encoding, next) => {
           log = [logname, file.path.replace(cwd(), '')];
           // exclude
-          if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi)) {
+          if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute).md$/gi)) {
             log.push(chalk.red('excluded'));
             console.log(...log);
-            return next(null, file);
+            return next();
           }
-          console.log(...log, chalk.yellow('passed'));
-          file.dirname = file.dirname.replace('/_posts/', '/');
-          // set encoding
-          // file.encoding = encoding;
+
+          //console.log(...log, chalk.yellow('passed'));
+
+          // remove source/ & /_posts from path
+          file.dirname = file.dirname.replace('/_posts/', '/').replace('/source/', '/');
+
+          // change extension to .html
+          file.extname = '.html';
+
           // set permalink
           page_url.pathname = toUnix(file.path)
             .replaceArr([post_public_dir, join(cwd(), 'source')], '')
             .replace(/.md$/, '.html');
           const permalink = page_url.toString();
+
           // push to sitemap
           sitemap.push(permalink);
-          // change extension to .html
-          file.extname = '.html';
+
           let parse = parsePost(file.contents.toString(file.encoding));
           parse.fileTree = {
             source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
             public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
           };
           const modify = modifyPost(parse);
+
           // skip error modification
           if (modify.error) {
             log.push(chalk.red('fail modify'));
             console.log(...log);
-            return;
+            return next();
           }
+
           // reparse
           parse = parsePost(modify.content);
+
           // render markdown to html
           parse.body = renderBodyMarkdown(parse);
+
           // ejs render preparation
           const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
           ejs_opt.content = parse.body; // html rendered markdown
@@ -138,22 +141,21 @@ export default function taskGenerate() {
           file.contents = Buffer.from(rendered);
           this.push(file);
           console.log(...log, chalk.green('success'));
+
           next(null, file);
         })
       )
+      //.pipe(gulpDebugSrc());
       .pipe(gulp.dest(generated_dir))
-      .on('end', () => console.log(logname + chalk.magentaBright('[grab]'), chalk.green('finish')));
-  };
+      .on('end', () => console.log(logname + chalk.magentaBright('[grab]'), chalk.green('finish')))
+  );
+};
 
-  //return gulp.series(renderTemplate, renderAssets, grabArticle)(done);
-  return renderTemplate().on('end', () => {
-    return renderAssets().on('end', () => {
-      return grabArticle();
-    });
-  });
-}
+gulp.task('generate:article', renderArticle);
 
-async function renderArticle(this: any, file: vinyl) {
+gulp.task('generate', gulp.series('generate:assets', 'generate:template'));
+
+async function renderArticlex(this: any, file: vinyl) {
   log.push(file.path.replace(cwd(), ''));
   let parse = parsePost(file.contents.toString(file.encoding));
   if (parse) {

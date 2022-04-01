@@ -85,7 +85,7 @@ export default function taskGenerate(done?: TaskCallback) {
           log = [logname];
           log.push(file.path.replace(cwd(), ''));
 
-          if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi) || file.stat.size == 0) {
+          if (file.isNull() || file.isStream() || file.extname != '.md' || file.path.match(/(readme|changelog|contribute|404).md$/gi)) {
             log.push(chalk.red('excluded'));
             console.log(log.join(' '));
             return cb(null, file);

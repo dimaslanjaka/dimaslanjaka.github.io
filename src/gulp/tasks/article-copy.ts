@@ -17,7 +17,7 @@ import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
-import { renderMarkdownIt } from '../../markdown/toHtml';
+import { renderBodyMarkdown, renderMarkdownIt } from '../../markdown/toHtml';
 import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
 import { shortcodeYoutube } from '../shortcode/youtube';
@@ -289,56 +289,7 @@ export default function taskCopy(done?: TaskCallback) {
         if (!modify.error) {
           // reparse
           parse = parsePost(modify.content);
-          let body = parse.body;
-          // extract style, script
-          const re = {
-            script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/g,
-            style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/g,
-          };
-          const extracted: {
-            script: any[];
-            style: any[];
-          } = {
-            script: [],
-            style: [],
-          };
-          for (const key in re) {
-            if (Object.prototype.hasOwnProperty.call(re, key)) {
-              const regex = re[key];
-              const matchedScript = body.match(regex);
-              if (matchedScript)
-                matchedScript.forEach((str, i) => {
-                  extracted[key][i] = str;
-                  body = body.replace(str, `<!--${key}${i}-->`);
-                });
-            }
-          }
-          write(tmp(parse.metadata.uuid, 'body.md'), body);
-          write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
-          // render extracted script, style
-          let md = renderMarkdownIt(body);
-          write(tmp(parse.metadata.uuid, 'render.md'), md);
-          // restore extracted script, style
-          for (const key in re) {
-            if (Object.prototype.hasOwnProperty.call(re, key)) {
-              const regex = new RegExp(`<!--(${key})(\\d{1,2})-->`, 'gm');
-              //const rematch = md.match(regex);
-              let m: RegExpExecArray;
-
-              while ((m = regex.exec(md)) !== null) {
-                // This is necessary to avoid infinite loops with zero-width matches
-                if (m.index === regex.lastIndex) {
-                  regex.lastIndex++;
-                }
-                const keyname = m[1];
-                const index = m[2];
-                const extractmatch = extracted[keyname][index];
-                md = md.replace(m[0], extractmatch);
-              }
-            }
-          }
-          write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
-          const html = parseHTML(md);
+          const html = parseHTML(renderBodyMarkdown(parse));
           // +article wordcount
           const extractTextHtml = html;
           const words = extractTextHtml

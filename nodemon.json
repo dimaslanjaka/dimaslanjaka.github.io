@@ -14,10 +14,14 @@
   ],
   "verbose": false,
   "delay": 3000,
-  "exec": "ts-node src/generator.ts",
+  "execX": "ts-node src/generator.ts",
+  "exec": "gulp",
   "execMap": {
     "js": "node --harmony",
     "ts": "node -r ts-node/register"
+  },
+  "events": {
+    "restart": "pkill -f 'gulpfile'"
   },
   "watch": [
     "./src-posts/",

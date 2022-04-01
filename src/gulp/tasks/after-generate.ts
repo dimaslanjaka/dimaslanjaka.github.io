@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { parse as parseHTML } from 'node-html-parser';
-import { ProjectConfig } from '../../types/_config';
+import config, { ProjectConfig, root } from '../../types/_config';
 import { loopDir } from '../utils';
 import 'js-prototypes';
 import { readFileSync, writeFileSync } from 'fs';
@@ -37,13 +37,14 @@ if (external_link.enable) {
           }
 */
 
-export default function afterGenerate(config: ProjectConfig) {
+export default function afterGenerate() {
   // iterate public_dir of _config.yml (hexo generate)
-  const public_dir = join(cwd(), config.public_dir);
+  const public_dir = join(root, config.public_dir);
   const loop = loopDir(public_dir);
   const hexoURL = new URL(config.url);
   const exclude = [
     ...config.seo.links.exclude,
+    ...config.external_link.exclude,
     hexoURL.host,
     'www.webmanajemen.com',
     'https://github.com/dimaslanjaka',

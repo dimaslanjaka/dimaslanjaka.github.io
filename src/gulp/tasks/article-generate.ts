@@ -15,6 +15,7 @@ import scheduler from '../../node/scheduler';
 import { inspect } from 'util';
 import { modifyPost, replacePath } from './article-copy';
 import { TaskCallback } from 'undertaker';
+import { renderBodyMarkdown } from '../../markdown/toHtml';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -101,6 +102,7 @@ export default function taskGenerate(done?: TaskCallback) {
         }
         // reparse
         parse = parsePost(modify.content);
+        parse.body = renderBodyMarkdown(parse);
         const filepath = toUnix(file.path);
         file.extname = '.html';
         if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');

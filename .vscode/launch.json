@@ -9,6 +9,12 @@
       "name": "Generate",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "command": "php -S localhost:4000 -t docs",
+      "name": "PHP SERVER",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

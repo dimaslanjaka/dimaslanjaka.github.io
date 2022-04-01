@@ -29,7 +29,7 @@
    */
   let params = (new URL(document.location)).searchParams;
   var disqus_config = function () {
-    this.page.url = decodeURIComponent(params.get('url'));  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.url = decodeURIComponent(params.get('url') || encodeURIComponent(location.href));  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = window.location.hash; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     console.log(this)
   };

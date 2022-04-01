@@ -9,6 +9,9 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import slugify from '../node/slugify/index';
+import { tmp } from '../types/_config';
+import { write } from '../node/filemanager';
+import { parsePostReturn } from './transformPosts';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 
@@ -62,4 +65,63 @@ md.renderer.rules.footnote_block_open = () => '<h4 class="mt-3">Footnotes</h4>\n
  */
 export function renderMarkdownIt(str: string) {
   return md.render(str);
+}
+
+/**
+ * Fixable render markdown mixed with html
+ * @todo render markdown to html
+ * @param parse
+ * @returns
+ */
+export function renderBodyMarkdown(parse: parsePostReturn) {
+  let body = parse.body;
+  // extract style, script
+  const re = {
+    script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/g,
+    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/g,
+  };
+  const extracted: {
+    script: any[];
+    style: any[];
+  } = {
+    script: [],
+    style: [],
+  };
+  for (const key in re) {
+    if (Object.prototype.hasOwnProperty.call(re, key)) {
+      const regex = re[key];
+      const matchedScript = body.match(regex);
+      if (matchedScript)
+        matchedScript.forEach((str, i) => {
+          extracted[key][i] = str;
+          body = body.replace(str, `<!--${key}${i}-->`);
+        });
+    }
+  }
+  write(tmp(parse.metadata.uuid, 'body.md'), body);
+  write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
+  // render extracted script, style
+  let md = renderMarkdownIt(body);
+  write(tmp(parse.metadata.uuid, 'render.md'), md);
+  // restore extracted script, style
+  for (const key in re) {
+    if (Object.prototype.hasOwnProperty.call(re, key)) {
+      const regex = new RegExp(`<!--(${key})(\\d{1,2})-->`, 'gm');
+      //const rematch = md.match(regex);
+      let m: RegExpExecArray;
+
+      while ((m = regex.exec(md)) !== null) {
+        // This is necessary to avoid infinite loops with zero-width matches
+        if (m.index === regex.lastIndex) {
+          regex.lastIndex++;
+        }
+        const keyname = m[1];
+        const index = m[2];
+        const extractmatch = extracted[keyname][index];
+        md = md.replace(m[0], extractmatch);
+      }
+    }
+  }
+  write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
+  return md;
 }

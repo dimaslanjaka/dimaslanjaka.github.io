@@ -11,6 +11,10 @@ const file = join(root, '_config.yml');
 const str = readFileSync(file, 'utf-8');
 const config: ProjectConfig = yaml.parse(str);
 
+if (process.env.NODE_ENV == 'development') {
+  config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
+}
+
 /**
  * Public Source Post Dir
  */

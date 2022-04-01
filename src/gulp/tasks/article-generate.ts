@@ -52,6 +52,7 @@ const renderAssets = () => {
     '!**/**.code-workspace',
     '!source/page/webassembly/**',
     '!source/backend/**',
+    '!source/Midi/MIDI.js/**/**',
   ];
   return gulp.src(src, { cwd: root }).pipe(
     through.obj((file: vinyl, enc, next) => {

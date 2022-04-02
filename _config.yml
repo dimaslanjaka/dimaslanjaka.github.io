@@ -133,12 +133,14 @@ pagination_dir: page
 # https://hexo.io/docs/configuration.html#Include-x2F-Exclude-Files-or-Folders
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+## glob exclude, used by `glob(pattern, {ignore: exclude})
 exclude:
   - "!**/**.code-workspace"
   - "!source/page/webassembly/**"
   - "!source/backend/**"
   - "!source/Midi/MIDI.js/**/**"
   - "!source/page/guzzle/**/*"
+  - "**/{readme,README,CHANGELOG,changelog}.{md,MD}"
 ignore:
 
 # https://www.npmjs.com/package/hexo-server

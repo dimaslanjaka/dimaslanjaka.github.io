@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, getAllFiles, join, normalize, resolve } from '../../node/filemanager';
+import { cwd, getAllFiles, join, normalize, resolve, write } from '../../node/filemanager';
 import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
 import vinyl from 'vinyl';
 import 'js-prototypes';
@@ -14,6 +14,9 @@ import { modifyPost, replacePath } from './article-copy';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import sanitizeFilename from '../../node/sanitize-filename';
 import micromatch from 'micromatch';
+import minimatch from 'minimatch';
+import glob from 'glob';
+import Bluebird from 'bluebird';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -78,15 +81,48 @@ gulp.task('generate:template', renderTemplate);
 
 export const renderArticle = function () {
   console.log('[render]', 'generating to', generated_dir);
-  const src = ['source/**/**.md', 'source/_posts/**/**.md', ...config.exclude];
-  src.addAll(globalExcludePatterns);
-  const get = getAllFiles(post_public_dir).map((str) => str.replace(/(\/)+/g, '$1'));
-  console.log(get.length);
-  //.filter(minimatch.filter('*.md', { matchBase: true }));
-  const filter = micromatch(get, src, { matchBase: true, dot: true, regex: true, windows: true, contains: true, nocase: true });
-  console.log(get.length);
+  const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
+  const ignore = ['/_drafts/', '/_data/', ...exclude];
 
-  console.log(filter);
+  const getGlob = function (pattern: string) {
+    return new Bluebird((resolve: (arg: string[]) => any, reject) => {
+      glob(pattern, { ignore: ignore, cwd: post_public_dir, dot: true, matchBase: true }, function (err, files) {
+        if (err) {
+          return reject(err);
+        }
+        resolve(files);
+      });
+    });
+  };
+
+  return getGlob('**/*.md').map((file, index) => {
+    //const file = files[0];
+    const result = {
+      /** Full path */
+      path: file,
+      /** Permalink path */
+      permalink: file.replaceArr([cwd(), '/_posts/'], '/'),
+    };
+    (() => console.log).once(result);
+    //write(tmp('glob.log'), files.join('\n'));
+  });
+
+  //**/{readme,README,changelog,CHANGELOG}.{md,MD}
+  /*
+  const filters = src.map((pattern) => {
+    const match = minimatch.match(get, pattern, { matchBase: true });
+    console.log(match.length, pattern);
+  });
+  .filter((path) => {
+      const matched = [];
+      const matchBase = micromatch.some(path, src, { matchBase: true, dot: true, windows: true });
+      //const matchContains = micromatch.some(path, src, { matchBase: true, dot: true, windows: true, contains: true });
+      console.log(matchBase, path, src);
+    });
+  //const filter = micromatch(get, src, { matchBase: true, dot: true, regex: true, windows: true, contains: true, nocase: true });
+  //console.log(filter.length);
+
+  //console.log(micromatch(get, '*.md', { matchBase: true }).length);
 
   /*.pipe(
       through.obj(async (file: extendedVinyl, encoding, next) => {

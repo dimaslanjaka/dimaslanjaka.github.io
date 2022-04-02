@@ -22,6 +22,21 @@
       "env": {
         "NODE_ENV": "development"
       },
+      "outFiles": [
+        "${workspaceFolder}/**/*.js",
+        "!**/node_modules/**"
+      ],
+      "pauseForSourceMap": false,
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "gulp generate:article",
+      "name": "gulp gen:article",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
       "cwd": "${workspaceFolder}"
     },
     {

@@ -86,6 +86,8 @@ export const renderArticle = function () {
   const filter = micromatch(get, src, { matchBase: true, dot: true, regex: true, windows: true, contains: true, nocase: true });
   console.log(get.length);
 
+  console.log(filter);
+
   /*.pipe(
       through.obj(async (file: extendedVinyl, encoding, next) => {
         const filepath = file.path;

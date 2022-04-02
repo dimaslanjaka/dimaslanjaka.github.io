@@ -21,15 +21,15 @@ if (process.env.NODE_ENV == 'development') {
 }
 
 /**
- * Public Source Post Dir
+ * Public Source Post Dir (`source/`)
  */
 export const post_public_dir = resolve(join(root, config.source_dir, '_posts'));
 /**
- * Generated directory
+ * Generated directory (`config.public_dir`)
  */
 export const post_generated_dir = resolve(join(root, config.public_dir));
 /**
- * src-posts directory
+ * `src-posts/` directory
  */
 export const post_source_dir = resolve(join(root, 'src-posts'));
 /**

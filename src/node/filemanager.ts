@@ -43,7 +43,7 @@ const walk = function (dir: fs.PathLike, done: (err: ErrnoException | null, resu
 
 const filemanager = {
   // eslint-disable-next-line no-unused-vars
-  readdirSync: (path, callback) => {
+  readdirSync: (path: fs.PathLike, callback: (err: ErrnoException, results?: string[]) => any) => {
     return walk(path, callback);
   },
 
@@ -84,6 +84,10 @@ const filemanager = {
   },
 };
 
+export function removeMultiSlashes(str: string) {
+  return str.replace(/(\/)+/g, '$1');
+}
+
 const grouped = {};
 /**
  * Join and force forward-slash
@@ -91,12 +95,35 @@ const grouped = {};
  */
 export function slash(...paths: string[]): string {
   const j = paths.join('/');
-  if (grouped[j]) return grouped[j];
-  const jx = j.split(/\//g).removeEmpties().join('/');
+  if (grouped[j]) return removeMultiSlashes(grouped[j]);
+  const jx = removeMultiSlashes(j.split(/\//g).removeEmpties().join('/'));
   //console.log(jx);
   grouped[j] = jx;
   return j;
 }
+
+let files: string[];
+/**
+ * Read dir recursive synchronous
+ * @param dirPath
+ * @param arrayOfFiles
+ * @returns
+ */
+export const getAllFiles = function (dirPath: fs.PathLike, arrayOfFiles?: string[]) {
+  files = fsreadDirSync(dirPath);
+
+  arrayOfFiles = arrayOfFiles || [];
+
+  files.forEach(function (file: string) {
+    if (statSync(dirPath + '/' + file).isDirectory()) {
+      arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
+    } else {
+      arrayOfFiles.push(join(__dirname, String(dirPath), '/', file));
+    }
+  });
+
+  return arrayOfFiles;
+};
 
 export default filemanager;
 export const normalize = upath.normalize;
@@ -106,6 +133,7 @@ export const dirname = (str: string) => upath.toUnix(upath.dirname(str));
 export const resolve = (str: string) => upath.toUnix(upath.resolve(str));
 export const join = slash;
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
+export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
 export const { basename, relative, extname } = upath;
 export const PATH_SEPARATOR = modPath.sep;

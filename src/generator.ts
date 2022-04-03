@@ -20,4 +20,4 @@ const clean = (done?: TaskCallback) =>
     .map((s) => rmdirSync(s))
     .then(() => done);
 gulp.task('clean', clean);
-gulp.task('default', gulp.series('clean', 'copy', 'generate'));
+gulp.task('default', gulp.series('copy', 'generate'));

@@ -13,6 +13,7 @@ import { inspect } from 'util';
 import { modifyPost, replacePath } from './article-copy';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import sanitizeFilename from '../../node/sanitize-filename';
+import CacheFile from '../../node/cache';
 
 /**
  * @see {@link config.source_dir}
@@ -55,12 +56,14 @@ const renderTemplate = () => {
 
 gulp.task('generate:template', renderTemplate);
 
+const renderCache = new CacheFile('renderArticle');
 export const renderArticle = function () {
   console.log(logname, 'generating to', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
   const ignore = ['_drafts/', '_data/', ...exclude];
   return (
     globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
+      // validate excluded
       .filter((file) => {
         if (file.match(/_(drafts|data)\//)) return false;
         return true;
@@ -74,13 +77,17 @@ export const renderArticle = function () {
         }
         return data;
       })
+      // transform path and others
       .map((file) => {
         const result = {
-          /** Full path */
+          /** Full path (also cache key) */
           path: join(source_dir, file),
           /** Permalink path */
           permalink: removeMultiSlashes(file.replaceArr([cwd(), '_posts/'], '/')).replace(/.md$/, '.html'),
+          /** Is Cached */
+          cached: false,
         };
+        result.cached = renderCache.has(result.path);
 
         return result;
       })
@@ -95,10 +102,37 @@ export const renderArticle = function () {
       // remove unparsed markdowns
       .filter((parsed) => typeof parsed.metadata != 'undefined')
       .then(function (result) {
+        /**
+         * Queue for process first item
+         * @returns
+         */
         const runner = () => {
           return new Promise<void>((resolve) => {
             if (!result.length) return resolve();
+            // get first item
             const parsed = result[0];
+            /**
+             * remove first item, skip
+             * @returns
+             */
+            const skip = () => result.shift();
+            const save = (rendered: string) => {
+              const saveto = join(generated_dir, parsed.permalink);
+              console.log(logname, chalk.greenBright('generated'), saveto);
+              write(saveto, rendered);
+              parsed.generated = rendered;
+              parsed.generated_path = saveto;
+              renderCache.set(parsed.path, rendered);
+              //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
+              return parsed;
+            };
+            if (parsed.cached) {
+              if (renderCache.isFileChanged(parsed.path)) {
+                console.warn(logname + chalk.blueBright('[cache]'), 'is file changed');
+              } else {
+                skip();
+              }
+            }
             // render markdown to html
             parsed.body = renderBodyMarkdown(parsed);
             // ejs render preparation
@@ -108,15 +142,8 @@ export const renderArticle = function () {
             ejs_opt.url = page_url.toString(); // permalink
             ejs_object
               .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
-              .then((rendered) => {
-                const saveto = join(generated_dir, parsed.permalink);
-                console.log(logname, chalk.greenBright('generated'), saveto);
-                write(saveto, rendered);
-                parsed.generated = rendered;
-                parsed.generated_path = saveto;
-                //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
-                result.shift();
-              })
+              .then(save)
+              .then(skip)
               .catch((e) => {
                 console.log(logname, chalk.red('[error]'), parsed.path);
                 console.error(e);

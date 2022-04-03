@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import { root } from '../types/_config';
 import { existsSync, join, mkdirSync, readFileSync, write } from './filemanager';
 import logger from './logger';
@@ -16,7 +17,9 @@ const buildFolder = join(root, 'databases');
 export default class CacheFile {
   md5Cache: Objek = {};
   dbFile: string;
+  private currentHash: string;
   constructor(hash = null, verbose = false) {
+    this.currentHash = hash;
     logger.active = verbose;
     if (!hash) {
       const stack = new Error().stack.split('at')[2];
@@ -43,8 +46,8 @@ export default class CacheFile {
   set(key: string, value: any) {
     this.md5Cache[key] = value;
     // save cache on process exit
-    scheduler.add('writeCacheFile', () => {
-      logger.log('saved cache', this.dbFile);
+    scheduler.add('writeCacheFile-' + this.currentHash, () => {
+      logger.log(chalk.magentaBright(this.currentHash), 'saved cache', this.dbFile);
       write(this.dbFile, JSON.stringify(this.md5Cache));
     });
   }

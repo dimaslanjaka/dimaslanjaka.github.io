@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+gulp copy:assets
+gulp copy:posts
+gulp generate:assets
+gulp generate:template
+gulp generate:posts

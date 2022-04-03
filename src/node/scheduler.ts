@@ -73,7 +73,7 @@ const functions: { [key: string]: () => any }[] = [];
  */
 class scheduler {
   constructor() {
-    scheduler.register();
+    if (!scheduler.registered) scheduler.register();
   }
   private static registered = false;
   /**

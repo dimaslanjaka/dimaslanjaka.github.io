@@ -29,7 +29,7 @@ interface EJSOption extends ejs.Options, DynamicObject {
   theme?: ThemeOpt;
 }
 
-function renderFile(file: string, opts: EJSOption = {}) {
+export function renderFile(file: string, opts: EJSOption = {}) {
   //opts._ = helpers;
   opts.root = join(theme_dir, 'layout/layout.ejs');
   opts = Object.assign(helpers, opts);
@@ -44,7 +44,7 @@ function render(content: string, opts: EJSOption = {}) {
   return render;
 }
 
-const ejs_object: typeof ejs = {
+const ejs_object = {
   renderFile: renderFile,
   resolveInclude: ejs.resolveInclude,
   compile: ejs.compile,

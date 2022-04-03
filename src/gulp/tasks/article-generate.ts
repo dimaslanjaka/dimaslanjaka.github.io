@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, globSrc, join, normalize, removeMultiSlashes, resolve } from '../../node/filemanager';
+import { cwd, globSrc, join, normalize, removeMultiSlashes, resolve, write } from '../../node/filemanager';
 import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
 import vinyl from 'vinyl';
 import 'js-prototypes';
@@ -14,11 +14,19 @@ import { modifyPost, replacePath } from './article-copy';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import sanitizeFilename from '../../node/sanitize-filename';
 
+/**
+ * @see {@link config.source_dir}
+ */
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
+/**
+ * @see {@link config.public_dir}
+ */
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
+/**
+ * layout.ejs from theme_dir
+ * @see {@link theme_dir}
+ */
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
-//console.log(existsSync(layout), layout);
-//rmdirSync(generated_dir);
 
 const logname = chalk.hex('#fcba03')('[render]');
 const log = [logname];
@@ -48,19 +56,6 @@ const renderAssets = () => {
     .src(src, { cwd: root })
     .pipe(gulp.dest(normalize(generated_dir)))
     .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));
-
-  /*
-    .pipe(
-      through.obj(function (file: vinyl, enc, cb) {
-        if (file.path.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
-        //const pathfile = toUnix(file.path);
-        //const contents = fn(String(file.contents), toUnix(file.path), file) || file.contents;
-        //file.contents = !Buffer.isBuffer(contents) ? Buffer.from(contents) : contents;
-
-      cb(null, file);
-    })
-  )
-  */
 };
 
 gulp.task('generate:assets', renderAssets);
@@ -79,138 +74,79 @@ export const renderArticle = function () {
   console.log(logname, 'generating to', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
   const ignore = ['_drafts/', '_data/', ...exclude];
-  const srcdir = join(root, config.source_dir); // source/
-  return globSrc('**/*.md', { ignore: ignore, cwd: srcdir })
-    .then((data) => {
-      if (!data.length) {
-        console.log(ignore);
-      } else {
-        console.log(logname, 'markdown sources total', data.length);
-      }
-      return data;
-    })
-    .map((file, index) => {
-      const result = {
-        /** Full path */
-        path: join(srcdir, file),
-        /** Permalink path */
-        permalink: removeMultiSlashes(file.replaceArr([cwd(), '_posts/'], '/')),
-      };
-
-      return result;
-    })
-    .map((result) => {
-      const parse = Object.assign(result, parsePost(result.path));
-      if (!parse) {
-        console.log(logname, chalk.red('[fail]'), result.path);
-        return null;
-      }
-      return parse;
-    });
-
-  //**/{readme,README,changelog,CHANGELOG}.{md,MD}
-  /*
-  const filters = src.map((pattern) => {
-    const match = minimatch.match(get, pattern, { matchBase: true });
-    console.log(match.length, pattern);
-  });
-  .filter((path) => {
-      const matched = [];
-      const matchBase = micromatch.some(path, src, { matchBase: true, dot: true, windows: true });
-      //const matchContains = micromatch.some(path, src, { matchBase: true, dot: true, windows: true, contains: true });
-      console.log(matchBase, path, src);
-    });
-  //const filter = micromatch(get, src, { matchBase: true, dot: true, regex: true, windows: true, contains: true, nocase: true });
-  //console.log(filter.length);
-
-  //console.log(micromatch(get, '*.md', { matchBase: true }).length);
-
-  /*.pipe(
-      through.obj(async (file: extendedVinyl, encoding, next) => {
-        const filepath = file.path;
-        const self = this;
-        log = [logname, filepath];
-        // exclude
-        if (file.isNull() || file.isStream() || file.extname != '.md' || filepath.match(/(readme|changelog|contribute).md$/gi)) {
-          log.push(chalk.red('excluded'));
-          console.log(...log);
-          next();
-          return;
+  return (
+    globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
+      .filter((file) => {
+        if (file.match(/_(drafts|data)\//)) return false;
+        return true;
+      })
+      // validate sources
+      .then((data) => {
+        if (!data.length) {
+          console.log(ignore);
+        } else {
+          console.log(logname, 'markdown sources total', data.length);
         }
+        return data;
+      })
+      .map((file, index) => {
+        const result = {
+          /** Full path */
+          path: join(source_dir, file),
+          /** Permalink path */
+          permalink: removeMultiSlashes(file.replaceArr([cwd(), '_posts/'], '/')).replace(/.md$/, '.html'),
+        };
 
-        const parse = parsePost(file.contents.toString(encoding));
+        return result;
+      })
+      .map((result) => {
+        const parse = Object.assign(result, parsePost(result.path));
         if (!parse) {
-          log.push(chalk.red('fail parse'));
-          console.log(...log);
-          next();
+          console.log(logname, chalk.red('[fail]'), result.path);
           return;
         }
-        //parse.fileTree = {
-        //  source: replacePath(toUnix(filepath.toString()), '/source/_posts/', '/src-posts/'),
-        //  public: replacePath(toUnix(filepath.toString()), '/src-posts/', '/source/_posts/'),
-        //};
-        //const modify = modifyPost(parse);
-
-        // skip error modification
-        //if (modify.error) {
-        //  log.push(chalk.red('fail modify'));
-        //  console.log(...log);
-        //  return next();
-        //}
-
-        // reparse
-        //parse = parsePost(modify.content);
-
-        // render markdown to html
-        parse.body = renderBodyMarkdown(parse);
-
-        // set permalink
-        page_url.pathname = toUnix(filepath)
-          .replaceArr([post_public_dir, join(cwd(), 'source')], '')
-          .replace(/.md$/, '.html');
-        const permalink = page_url.toString();
-
-        // push to sitemap
-        sitemap.push(permalink);
-
-        // ejs render preparation
-        const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
-        ejs_opt.content = parse.body; // html rendered markdown
-        ejs_opt.url = permalink; // permalink
-        const ejs_data = { page: ejs_opt, config: config, root: theme_dir, theme: theme_config };
-        //const rendered = ejs_object.render(readFileSync(layout, 'utf-8'), ejs_data);
-        return ejs_object
-          .renderFile(layout, ejs_data)
-          .then((rendered) => {
-            // emit changes
-            file.contents = Buffer.from(rendered);
-            if (self) self.push(file);
-            console.log(...log, chalk.green('success'));
-            next(null, file);
-          })
-          .catch((e) => {
-            console.log(...log, chalk.red('fail render ejs'));
-            next();
+        return parse;
+      })
+      // remove unparsed markdowns
+      .filter((parsed) => typeof parsed.metadata != 'undefined')
+      .then(function (result) {
+        const runner = () => {
+          return new Promise<void>((resolve) => {
+            if (!result.length) return resolve();
+            const parsed = result[0];
+            // render markdown to html
+            parsed.body = renderBodyMarkdown(parsed);
+            // ejs render preparation
+            const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
+            ejs_opt.content = parsed.body; // html rendered markdown
+            page_url.pathname = parsed.permalink;
+            ejs_opt.url = page_url.toString(); // permalink
+            ejs_object
+              .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
+              .then((rendered) => {
+                const saveto = join(generated_dir, parsed.permalink);
+                console.log(logname, chalk.greenBright('generated'), saveto);
+                write(saveto, rendered);
+                parsed.generated = rendered;
+                parsed.generated_path = saveto;
+                //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
+                result.shift();
+              })
+              .catch((e) => {
+                console.log(logname, chalk.red('[error]'), parsed.path);
+                console.error(e);
+              })
+              .finally(runner);
           });
+        };
+        return runner();
       })
-    )
-    .pipe(
-      through.obj((file, enc, next) => {
-        // remove source/ & /_posts from path
-        file.dirname = file.dirname.replace('/_posts/', '/').replace('/source/', '/');
-
-        // change extension to .html
-        file.extname = '.html';
-      })
-    )
-    .pipe(gulpDebugSrc());*/
-  //.pipe(gulp.dest(generated_dir))
-  //.on('end', () => console.log(logname + chalk.magentaBright('[grab]'), chalk.green('finish')))
+  );
 };
 
 gulp.task('generate:posts', renderArticle);
 
-gulp.task('generate', gulp.series('generate:assets', 'generate:template'));
+gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts'));
 
 async function renderArticlex(this: any, file: vinyl) {
   log.push(file.path.replace(cwd(), ''));

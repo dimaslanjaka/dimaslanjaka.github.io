@@ -1,10 +1,9 @@
-import Promise from 'bluebird';
 import chalk from 'chalk';
 import { exec, spawn } from 'child_process';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
-import { appendFileSync, existsSync, join, resolve, write } from '../node/filemanager';
-import config, { post_generated_dir, root, tmp } from '../types/_config';
+import { appendFileSync, existsSync, join, mkdirSync, resolve } from '../../node/filemanager';
+import config, { post_generated_dir, root, tmp } from '../../types/_config';
 import moment from 'moment';
 
 export function method1() {
@@ -50,11 +49,14 @@ function git(...args: string[]) {
 }
 const logname = chalk.magentaBright('[deploy][git]');
 const configDeploy = config.deploy;
-export default function taskDeploy(done?: TaskCallback) {
+
+const copyGenerated = () => {
+  return gulp.src('**/**', { cwd: generatedDir }).pipe(gulp.dest(deployDir));
+};
+
+function taskDeploy(done?: TaskCallback) {
   //console.log(existsSync(deployDir), configDeploy, deployDir);
-  const copyGenerated = () => {
-    return gulp.src(join(generatedDir, '**/**')).pipe(gulp.dest(deployDir));
-  };
+
   const setupGit = () => {
     if (existsSync(deployDir)) {
       if (!existsSync(join(deployDir, '.git'))) {
@@ -99,3 +101,16 @@ export default function taskDeploy(done?: TaskCallback) {
 
   return gulp.series(copyGenerated, setupGit, pullGit, pushGit)(done);
 }
+
+gulp.task('deploy', async () => {
+  if (!existsSync(deployDir)) mkdirSync(deployDir);
+  if (!existsSync(join(deployDir, '.git'))) await git('init');
+  await git('remote', 'set-url', 'origin', configDeploy.repo);
+  await git('pull', 'origin', configDeploy.branch);
+
+  copyGenerated().on('end', async () => {
+    await git('add', '-A');
+    await git('commit', '-m', 'Update site: ', moment().format());
+    await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');
+  });
+});

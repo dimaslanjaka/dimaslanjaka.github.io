@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, getAllFiles, join, normalize, resolve, write } from '../../node/filemanager';
+import { cwd, globSrc, join, normalize, removeMultiSlashes, resolve } from '../../node/filemanager';
 import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
 import vinyl from 'vinyl';
 import 'js-prototypes';
@@ -13,10 +13,6 @@ import { inspect } from 'util';
 import { modifyPost, replacePath } from './article-copy';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import sanitizeFilename from '../../node/sanitize-filename';
-import micromatch from 'micromatch';
-import minimatch from 'minimatch';
-import glob from 'glob';
-import Bluebird from 'bluebird';
 
 const source_dir = toUnix(resolve(join(root, config.source_dir)));
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
@@ -80,32 +76,37 @@ const renderTemplate = () => {
 gulp.task('generate:template', renderTemplate);
 
 export const renderArticle = function () {
-  console.log('[render]', 'generating to', generated_dir);
+  console.log(logname, 'generating to', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
-  const ignore = ['/_drafts/', '/_data/', ...exclude];
+  const ignore = ['_drafts/', '_data/', ...exclude];
+  const srcdir = join(root, config.source_dir); // source/
+  return globSrc('**/*.md', { ignore: ignore, cwd: srcdir })
+    .then((data) => {
+      if (!data.length) {
+        console.log(ignore);
+      } else {
+        console.log(logname, 'markdown sources total', data.length);
+      }
+      return data;
+    })
+    .map((file, index) => {
+      const result = {
+        /** Full path */
+        path: join(srcdir, file),
+        /** Permalink path */
+        permalink: removeMultiSlashes(file.replaceArr([cwd(), '_posts/'], '/')),
+      };
 
-  const getGlob = function (pattern: string) {
-    return new Bluebird((resolve: (arg: string[]) => any, reject) => {
-      glob(pattern, { ignore: ignore, cwd: post_public_dir, dot: true, matchBase: true }, function (err, files) {
-        if (err) {
-          return reject(err);
-        }
-        resolve(files);
-      });
+      return result;
+    })
+    .map((result) => {
+      const parse = Object.assign(result, parsePost(result.path));
+      if (!parse) {
+        console.log(logname, chalk.red('[fail]'), result.path);
+        return null;
+      }
+      return parse;
     });
-  };
-
-  return getGlob('**/*.md').map((file, index) => {
-    //const file = files[0];
-    const result = {
-      /** Full path */
-      path: file,
-      /** Permalink path */
-      permalink: file.replaceArr([cwd(), '/_posts/'], '/'),
-    };
-    (() => console.log).once(result);
-    //write(tmp('glob.log'), files.join('\n'));
-  });
 
   //**/{readme,README,changelog,CHANGELOG}.{md,MD}
   /*
@@ -207,7 +208,7 @@ export const renderArticle = function () {
   //.on('end', () => console.log(logname + chalk.magentaBright('[grab]'), chalk.green('finish')))
 };
 
-gulp.task('generate:article', renderArticle);
+gulp.task('generate:posts', renderArticle);
 
 gulp.task('generate', gulp.series('generate:assets', 'generate:template'));
 

@@ -134,13 +134,16 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 ## glob exclude, used by `glob(pattern, {ignore: exclude})
+## ignore pattern from config.source_dir
 exclude:
-  - "!**/**.code-workspace"
-  - "!source/page/webassembly/**"
-  - "!source/backend/**"
-  - "!source/Midi/MIDI.js/**/**"
-  - "!source/page/guzzle/**/*"
-  - "**/{readme,README,CHANGELOG,changelog}.{md,MD}"
+  - "**/**.code-workspace"
+  - "source/page/webassembly/**"
+  - "source/backend/**"
+  - "source/Midi/MIDI.js/**/**"
+  - "source/page/guzzle/**/*"
+  - "**/vendor/**"
+  - "**/node_modules/**"
+  - "**/{readme,README,CHANGELOG,changelog,UPGRADING}.{md,MD}"
 ignore:
 
 # https://www.npmjs.com/package/hexo-server

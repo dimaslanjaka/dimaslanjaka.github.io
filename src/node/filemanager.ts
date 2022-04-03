@@ -5,6 +5,8 @@ import upath from 'upath';
 import ErrnoException = NodeJS.ErrnoException;
 import { cwd as nodeCwd } from 'process';
 import 'js-prototypes';
+import Bluebird = require('bluebird');
+import glob = require('glob');
 
 export type Mutable<T> = {
   -readonly [k in keyof T]: T[k];
@@ -88,28 +90,16 @@ export function removeMultiSlashes(str: string) {
   return str.replace(/(\/)+/g, '$1');
 }
 
-
-let files: string[];
-/**
- * Read dir recursive synchronous
- * @param dirPath
- * @param arrayOfFiles
- * @returns
- */
-export const getAllFiles = function (dirPath: fs.PathLike, arrayOfFiles?: string[]) {
-  files = fsreadDirSync(dirPath);
-
-  arrayOfFiles = arrayOfFiles || [];
-
-  files.forEach(function (file: string) {
-    if (statSync(dirPath + '/' + file).isDirectory()) {
-      arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
-    } else {
-      arrayOfFiles.push(join(__dirname, String(dirPath), '/', file));
-    }
+export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
+  return new Bluebird((resolve: (arg: string[]) => any, reject) => {
+    const opt: glob.IOptions = Object.assign({ cwd: cwd(), dot: true, matchBase: true }, opts);
+    glob(pattern, opt, function (err, files) {
+      if (err) {
+        return reject(err);
+      }
+      resolve(files.map(upath.toUnix));
+    });
   });
-
-  return arrayOfFiles;
 };
 
 export default filemanager;
@@ -118,7 +108,7 @@ export const writeFileSync = filemanager.write;
 export const cwd = () => upath.toUnix(nodeCwd());
 export const dirname = (str: string) => removeMultiSlashes(upath.toUnix(upath.dirname(str)));
 export const resolve = (str: string) => removeMultiSlashes(upath.toUnix(upath.resolve(str)));
-export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)))
+export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;

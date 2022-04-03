@@ -100,7 +100,7 @@ export function md5(data: string) {
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return metadata {string & object} and body
  * * return null == failed
- * @param text file or string text
+ * @param text file path or string markdown contents
  */
 export function parsePost(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;

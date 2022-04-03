@@ -5,72 +5,64 @@
   "terminal.integrated.env.windows": {
     "PATH": "node_modules\\.bin;bin;${env:PATH}"
   },
-  "editor.formatOnSave": false,
-  "[ejs]": {
-    "editor.formatOnSave": false
-  },
-  "[json]": {
-    "editor.formatOnSave": true
-  },
+  "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
-  "typescript.tsc.autoDetect": "off",
-  "gulptasks.pattern": "**/gulpfile.ts",
-  "gulptasks.args": [
-    "-r",
-    "ts-node/register"
-  ],
-  "gulptasks.filters": [
-    "!**/node_modules/**",
-    "!**/bower_components/**",
-    "!**/packages/**",
-    "!**/themes/**"
-  ],
-  "npm.enableRunFromFolder": true,
+  "typescript.tsc.autoDetect": "on",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "emmet.includeLanguages": {
+    "ejs": "html",
+  },
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
   "javascript.suggestionActions.enabled": false,
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/node_modules": true,
-    "exclude/**": true,
-    "**/.idea": true,
-    "packages/hexo-admin": true,
-    "packages/hexo-admin-ehc": true,
-    "packages/hexo-toc": true,
-    "packages/hexo-related*": true,
-    "packages/hexo": true,
-    "packages/common": true,
-    "packages/ga-analytics": true
-  },
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/*/**": true,
-    "**/tmp/*/**": true,
-    "**/build/*/**": true,
-    "**/dist/*/**": true,
-    "**/.hg/store/**": true,
-    "docs/*/**": true,
-  },
-  "git.detectSubmodulesLimit": 10,
-  "git.detectSubmodules": true,
-  // format code with eslint-prettier and vscode
+  "typescript.suggestionActions.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true // let ESLint take formating and linting
   },
-  "github.copilot.enable": {
-    "typescript": true,
-    "javascript": true,
-    "html": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": false
+  "[ejs]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "github.copilot.toggleCopilot": "on",
-  "npm.packageManager": "yarn"
-  //"editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
+  "[json]": {
+    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.format.enable": true,
+  "typescript.tsserver.enableTracing": false,
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.trace": "off",
+  "editor.autoClosingBrackets": "always",
+  "editor.matchBrackets": "always",
+  "prettier.enableDebugLogs": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.printWidth": 180,
+  "npm.packageManager": "npm",
+  "eslint.packageManager": "npm"
 }

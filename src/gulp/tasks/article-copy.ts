@@ -5,37 +5,37 @@
  * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  */
 
-import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, dirname } from '../../node/filemanager';
-import moment from 'moment';
-import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
-import replaceMD2HTML from '../fix/hyperlinks';
-import { shortcodeCss } from '../shortcode/css';
-import extractText from '../shortcode/extract-text';
-import { shortcodeScript } from '../shortcode/script';
-import { shortcodeNow } from '../shortcode/time';
-import { copyDir, loopDir, slash } from '../utils';
-import { TaskCallback } from 'undertaker';
-import parseShortCodeInclude from '../shortcode/include';
-import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
-import modifyFile from '../modules/modify-file';
-import gulp from 'gulp';
-import gulpRename from '../modules/rename';
-import { toUnix } from 'upath';
-import { renderBodyMarkdown } from '../../markdown/toHtml';
-import { parse as parseHTML } from 'node-html-parser';
-import chalk from 'chalk';
-import { shortcodeYoutube } from '../shortcode/youtube';
+import "js-prototypes";
+import { existsSync, mkdirSync, statSync, join, cwd, dirname } from "../../node/filemanager";
+import moment from "moment";
+import { buildPost, parsePost, parsePostReturn, saveParsedPost } from "../../markdown/transformPosts";
+import replaceMD2HTML from "../fix/hyperlinks";
+import { shortcodeCss } from "../shortcode/css";
+import extractText from "../shortcode/extract-text";
+import { shortcodeScript } from "../shortcode/script";
+import { shortcodeNow } from "../shortcode/time";
+import { copyDir, loopDir, slash } from "../utils";
+import { TaskCallback } from "undertaker";
+import parseShortCodeInclude from "../shortcode/include";
+import { ProjectConfig, post_public_dir, post_source_dir } from "../../types/_config";
+import modifyFile from "../modules/modify-file";
+import gulp from "gulp";
+import gulpRename from "../modules/rename";
+import { toUnix } from "upath";
+import { renderBodyMarkdown } from "../../markdown/toHtml";
+import { parse as parseHTML } from "node-html-parser";
+import chalk from "chalk";
+import { shortcodeYoutube } from "../shortcode/youtube";
 
 let tryCount = 0;
 
 function cleanString(text: string) {
-  if (typeof text == 'string') return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
+  if (typeof text == "string") return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, "");
   return text;
 }
 
 function removeMultipleWhiteSpaces(text: string) {
-  if (typeof text == 'string') return text.replace(/\s+/gm, ' ');
+  if (typeof text == "string") return text.replace(/\s+/gm, " ");
   return text;
 }
 
@@ -45,9 +45,9 @@ function removeMultipleWhiteSpaces(text: string) {
  */
 export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
   //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
-  const srcPostDir = join(cwd(), 'src-posts');
+  const srcPostDir = join(cwd(), "src-posts");
   // path source_dir from _config.yml
-  const prodPostDir = join(cwd(), config.source_dir, '/_posts');
+  const prodPostDir = join(cwd(), config.source_dir, "/_posts");
   const srcDir = slash(srcPostDir);
   const destDir = slash(prodPostDir);
   if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
@@ -56,14 +56,14 @@ export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
   copyDir(srcDir, destDir, function (err) {
     if (err) {
       console.error(err);
-      console.error('error');
+      console.error("error");
       if (tryCount == 0) {
         tryCount++;
         return articleCopy(config, done);
       }
     } else {
-      console.log('copied successful!');
-      console.log('starting process article shortcodes...');
+      console.log("copied successful!");
+      console.log("starting process article shortcodes...");
 
       // process
       const loop = loopDir(destDir);
@@ -71,7 +71,7 @@ export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
         //const sourceFile = file.replace(prodPostDir, srcPostDir);
         //const publicAssetDir = join(dirname(file), basename(file, '.md'));
         //const sourceAssetDir = join(dirname(sourceFile), basename(sourceFile, '.md'));
-        if (statSync(file).isFile() && file.endsWith('.md')) {
+        if (statSync(file).isFile() && file.endsWith(".md")) {
           const parse = parsePost(file);
           if (parse) {
             modifyPost(parse);
@@ -82,7 +82,7 @@ export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
       });
 
       // notify gulp process has done
-      if (typeof done == 'function') done(null);
+      if (typeof done == "function") done(null);
     }
   });
 }
@@ -94,7 +94,7 @@ export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
  */
 export function modifyPost(parse: parsePostReturn) {
   const result = {
-    content: '',
+    content: "",
     error: false,
   };
   if (parse) {
@@ -103,29 +103,29 @@ export function modifyPost(parse: parsePostReturn) {
     if (parse.metadata) {
       // fix date
       if (!parse.metadata.date) {
-        parse.metadata.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
+        parse.metadata.date = moment(new Date()).format("YYYY-MM-DDTHH:mm:ssZ");
       }
 
       if (parse.metadata.modified && !parse.metadata.updated) {
-        parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
+        parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
       }
 
       const stats = statSync(sourceFile);
       if (!parse.metadata.updated) {
         const mtime = stats.mtime;
-        parse.metadata.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+        parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
       }
 
-      if (parse.metadata.date && !parse.metadata.date.includes('+')) {
+      if (parse.metadata.date && !parse.metadata.date.includes("+")) {
         try {
-          parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
+          parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
         } catch (e) {
-          console.log(parse.metadata.date, 'invalid moment date format');
+          console.log(parse.metadata.date, "invalid moment date format");
         }
       }
 
       // fix lang
-      if (!parse.metadata.lang) parse.metadata.lang = 'en';
+      if (!parse.metadata.lang) parse.metadata.lang = "en";
 
       // fix post description
       if (parse.metadata.subtitle) {
@@ -163,7 +163,19 @@ export function modifyPost(parse: parsePostReturn) {
       }
       // merge php js css to programming
       if (Array.isArray(parse.metadata.tags)) {
-        const programTags = ['php', 'css', 'js', 'kotlin', 'java', 'ts', 'typescript', 'javascript', 'html', 'mysql', 'database'];
+        const programTags = [
+          "php",
+          "css",
+          "js",
+          "kotlin",
+          "java",
+          "ts",
+          "typescript",
+          "javascript",
+          "html",
+          "mysql",
+          "database",
+        ];
         const containsTag = programTags.some((r) => {
           const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
           if (matchTag) {
@@ -172,18 +184,18 @@ export function modifyPost(parse: parsePostReturn) {
           return matchTag;
         });
         if (containsTag) {
-          parse.metadata.category.push('Programming');
+          parse.metadata.category.push("Programming");
           // remove uncategorized if programming category pushed
-          if (parse.metadata.category.includes('Uncategorized')) {
-            parse.metadata.category = parse.metadata.category.filter((e) => e !== 'Uncategorized');
+          if (parse.metadata.category.includes("Uncategorized")) {
+            parse.metadata.category = parse.metadata.category.filter((e) => e !== "Uncategorized");
           }
         }
         // remove duplicated tags and categories
         const filterTagCat = function (arr: string[]) {
           return arr.map((item) => {
-            if (item.toLowerCase() === 'programming') return 'Programming';
-            if (item.toLowerCase() === 'github') return 'GitHub';
-            if (item.toLowerCase() === 'mysql') return 'MySQL';
+            if (item.toLowerCase() === "programming") return "Programming";
+            if (item.toLowerCase() === "github") return "GitHub";
+            if (item.toLowerCase() === "mysql") return "MySQL";
             // make child of programming tags uppercase
             if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
             // fallback
@@ -193,9 +205,9 @@ export function modifyPost(parse: parsePostReturn) {
         parse.metadata.category = parse.metadata.category.uniqueStringArray();
         parse.metadata.tags = filterTagCat(parse.metadata.tags.uniqueStringArray());
         // move 'programming' to first index
-        if (parse.metadata.category.includes('Programming'))
+        if (parse.metadata.category.includes("Programming"))
           parse.metadata.category.forEach((str, i) => {
-            if (str.toLowerCase().trim() === 'programming') {
+            if (str.toLowerCase().trim() === "programming") {
               parse.metadata.category = parse.metadata.category.move(i, 0);
             }
           });
@@ -234,7 +246,7 @@ export function modifyPost(parse: parsePostReturn) {
  * @returns
  */
 export function replacePath(str: string, from: string, to: string) {
-  const normalize = (x: string) => x.replace(/\\/gim, '/');
+  const normalize = (x: string) => x.replace(/\\/gim, "/");
   str = normalize(str);
   from = normalize(from);
   to = normalize(to);
@@ -249,46 +261,46 @@ export function replacePath(str: string, from: string, to: string) {
 export function determineDirname(pipe: NodeJS.ReadWriteStream) {
   return pipe.pipe(
     gulpRename((file) => {
-      const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ''))
-        .replace(cwd(), '')
-        .replace('/src-posts/', '');
+      const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ""))
+        .replace(cwd(), "")
+        .replace("/src-posts/", "");
       file.dirname = dname;
       //if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir, file);
     })
   );
 }
 
-const fixUrl = (s: string) => {
+export const fixUrl = (s: string) => {
   if (!s) return s;
-  if (s.startsWith('//')) return 'http:' + s;
-  if (!s.match(/^https?:\/\//g)) return 'http://' + s;
+  if (s.startsWith("//")) return "http:" + s;
+  if (!s.match(/^https?:\/\//g)) return "http://" + s;
   return s;
 };
 
 function countWords(str: string) {
-  str = str.replace(/(^\s*)|(\s*$)/gi, '');
-  str = str.replace(/[ ]{2,}/gi, ' ');
-  str = str.replace(/\n /, '\n');
-  return str.split(' ').length;
+  str = str.replace(/(^\s*)|(\s*$)/gi, "");
+  str = str.replace(/[ ]{2,}/gi, " ");
+  str = str.replace(/\n /, "\n");
+  return str.split(" ").length;
 }
 
 const copyAssets = () => {
-  const src = join(post_source_dir, '**/**');
+  const src = join(post_source_dir, "**/**");
   const run = gulp.src([src, `!${src}.md`]);
   return determineDirname(run).pipe(gulp.dest(post_public_dir));
 };
 
-gulp.task('copy:assets', copyAssets);
+gulp.task("copy:assets", copyAssets);
 
 const copyPosts = () => {
-  const run = gulp.src(['**/*.md',  '**/.git'], {cwd: post_source_dir}).pipe(
+  const run = gulp.src(["**/*.md", "**/.git"], { cwd: post_source_dir }).pipe(
     modifyFile(function (content, path, _file) {
-      const log = [chalk.cyan('[copy][md]'), path];
+      const log = [chalk.cyan("[copy][md]"), path];
       let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
       if (parse) {
         parse.fileTree = {
-          source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
-          public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
+          source: replacePath(toUnix(path.toString()), "/source/_posts/", "/src-posts/"),
+          public: replacePath(toUnix(path.toString()), "/src-posts/", "/source/_posts/"),
         };
       }
       const modify = modifyPost(parse);
@@ -299,9 +311,9 @@ const copyPosts = () => {
         // +article wordcount
         const extractTextHtml = html;
         const words = extractTextHtml
-          .querySelectorAll('*:not(script,style,meta,link)')
+          .querySelectorAll("*:not(script,style,meta,link)")
           .map((e) => e.text)
-          .join('\n');
+          .join("\n");
         parse.metadata.wordcount = countWords(words);
 
         // build article
@@ -310,14 +322,14 @@ const copyPosts = () => {
         //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
         const build = buildPost(parse);
         //write(tmp(parse.metadata.uuid, 'article.md'), build);
-        log.push(chalk.green('success'));
+        log.push(chalk.green("success"));
         content = build;
         //return modify.content;
         //file.contents = Buffer.from(modify.content);
         //write(join(cwd(), 'tmp/modify.md'), modify.content);
       } else {
-        log[0] = chalk.red('[copy][md]');
-        log.push(chalk.red('error'));
+        log[0] = chalk.red("[copy][md]");
+        log.push(chalk.red("error"));
       }
       //console.log(log.join(' '));
       return content;
@@ -326,6 +338,6 @@ const copyPosts = () => {
   return determineDirname(run).pipe(gulp.dest(post_public_dir));
 };
 
-gulp.task('copy:posts', copyPosts);
+gulp.task("copy:posts", copyPosts);
 
-gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));
+gulp.task("copy", gulp.series("copy:assets", "copy:posts"));

@@ -24,8 +24,8 @@
     "gulp:test": "ts-node --project tsconfig.json gulpfile.test.ts",
     "intaller": "npm install --save hexo-autoprefixer hexo-filter-cleanup hexo-generator-feed hexo-generator-sitemap hexo-renderer-sass hexo-renderer-swig mamboer/lunr.js moment node-sass object-assign",
     "fix-sharp": "rm node_modules/sharp -rf && npm install --ignore-scripts=false --verbose sharp",
-    "lint": "eslint . --ext .ts",
-    "lint:format": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint": "eslint src --ext .ts",
+    "lint:format": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "postinstall": "cd themes/hueman && npm install",
     "wsl-install": "rm -r node_modules && npm install --platform=win32",
     "prototypes": "npm un js-prototypes && npm i git+https://github.com/dimaslanjaka/js-prototypes.git"
@@ -82,15 +82,16 @@
     "xml": "^1.0.1",
     "yaml": "^1.10.2"
   },
-  "peerDependencies": {
-    "hexo": "6.0.0"
-  },
   "devDependencies": {
     "@types/gulp": "^4.0.9",
     "@types/hexo": "github:dimaslanjaka/nodejs-package-types#hexo",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
     "browser-sync": "^2.27.7",
     "eslint": "^8.12.0",
+    "eslint-config-hexo": "^5.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-jsdom": "^1.1.0",
     "html-minifier-terser": "^5.1.1",
@@ -105,6 +106,6 @@
     "through2": "^4.0.2",
     "ts-node": "^10.2.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.6.3"
   }
 }

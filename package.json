@@ -76,6 +76,7 @@
     "object-assign": "^4.1.1",
     "rimraf": "^3.0.2",
     "showdown": "^1.9.1",
+    "upath": "^2.0.1",
     "xml": "^1.0.1",
     "yaml": "^1.10.2"
   },
@@ -85,8 +86,10 @@
   "devDependencies": {
     "@types/gulp": "^4.0.9",
     "@types/hexo": "github:dimaslanjaka/nodejs-package-types#hexo",
+    "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "browser-sync": "^2.27.7",
     "gulp": "^4.0.2",
+    "gulp-jsdom": "^1.1.0",
     "html-minifier-terser": "^5.1.1",
     "js-prototypes": "github:dimaslanjaka/js-prototypes",
     "jsdom": "^19.0.0",

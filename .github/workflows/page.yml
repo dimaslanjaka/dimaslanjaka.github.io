@@ -80,7 +80,8 @@ jobs:
       - run: npx hexo clean
         # run if commit contains substring 'clean cache'
         if: "contains(github.event.head_commit.message, 'clean cache')"
-      - run: |
+      - name: Hexo Generate
+        run: |
           npx hexo generate
           git add .
           git commit -m "saved hexo database ${{ steps.date.outputs.date }}" -a

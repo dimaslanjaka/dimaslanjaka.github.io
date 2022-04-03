@@ -3,7 +3,7 @@
     "PATH": "node_modules/.bin:bin:${env:PATH}"
   },
   "terminal.integrated.env.windows": {
-    "PATH": "node_modules\\.bin:bin:${env:PATH}"
+    "PATH": "node_modules\\.bin;bin;${env:PATH}"
   },
   "editor.formatOnSave": false,
   "[ejs]": {

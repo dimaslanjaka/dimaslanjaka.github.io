@@ -17,18 +17,18 @@ import GoogleNewsSitemap, { ClassItemType } from "./packages/google-news-sitemap
 import moment from "moment";
 import YAML from "yaml";
 //import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
-import { Hexo_Config } from "./types/_config";
 import downloadImg from "./src/gulp/tasks/external-img";
 import bluebird from "bluebird";
 // `gulp article:copy`
-import articleCopy from "./src/gulp/tasks/article-copy";
+import { articleCopy } from "./src/gulp/tasks/article-copy";
 // `gulp article:date`
 import "./src/gulp/tasks/article-date";
 import articleDate from "./src/gulp/tasks/article-date";
 import afterGenerate from "./src/gulp/tasks/after-generate";
+import { ProjectConfig } from "./src/types/_config";
 
 //import { gulpCore } from "hexo-blogger-xml";
-const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
+const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as ProjectConfig;
 // generate definition config https://jvilk.com/MakeTypes/
 fs.writeFileSync(__dirname + "/types/_config.json", JSON.stringify(config));
 
@@ -111,7 +111,7 @@ gulp.task("article:date", (done) => {
 });
 
 gulp.task("article:after-gen", (done) => {
-  return afterGenerate(config);
+  return afterGenerate();
 });
 
 gulp.task("article:clean", function (done) {

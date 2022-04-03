@@ -195,7 +195,7 @@ const cache = new CacheFile('parsePost', true);
  */
 export function parsePost(text: string, hash: string = null) {
   let result: parsePostReturn;
-  const key = String(hash || text);
+  const key = hash || text;
   if (cache.isFileChanged(key)) {
     result = parsePostOri(text);
     cache.set(key, result);
@@ -265,7 +265,7 @@ export function transformPostBody(
         if (typeof callback == 'function') {
           callback(filename, filedir, filepath);
         }
-        const parse = parsePost(read);
+        const parse = parsePost(read, file);
         //console.log(parse.metadata); //<--- debug
         if (parse && parse.body) {
           const html = toHtml(parse.body);
@@ -289,7 +289,7 @@ export default function transformPosts(outputDir = 'source/_posts') {
         const filename = basename(file);
         const filedir = toUnix(dirname(file).replace('src-posts', outputDir));
         const filepath = join(filedir, filename);
-        const parse = parsePost(read);
+        const parse = parsePost(read, file);
         if (parse !== null && parse.body) {
           const html = toHtml(parse.body);
           const filter_notranslate = notranslate(html);

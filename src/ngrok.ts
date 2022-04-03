@@ -1,21 +1,23 @@
-import ngrokc = require("ngrok");
-import fs = require("fs");
-import path = require("path");
+import ngrokc from 'ngrok';
+import { toUnix } from 'upath';
+import { existsSync, readFileSync, write } from './node/filemanager';
+import scheduler from './node/scheduler';
+import { tmp } from './types/_config';
+
 /*
 "token": "1Szs4cJp7MoUlFPT3nyRjD5P05v_3BREWhqf8z2NdcNHMneUm",
     "port": "4000"
  */
 
-let fileNgrok = path.normalize(path.join(process.cwd(), "build/ngrok.txt"));
+const fileNgrok = toUnix(tmp('ngrok.txt'));
 
 /**
  * Get hosted ngrok base url
  */
 export function getNgrokUrl() {
-  if (fs.existsSync(fileNgrok)) {
-    return fs.readFileSync(fileNgrok).toString("utf-8").trim();
+  if (existsSync(fileNgrok)) {
+    return readFileSync(fileNgrok).toString('utf-8').trim();
   }
-  return undefined;
 }
 
 /**
@@ -24,7 +26,7 @@ export function getNgrokUrl() {
  * @param token ngrok port
  * @param override ngrok options override
  */
-export default async (port = 4000, token = "", override: ngrokc.Ngrok.Options = {}) => {
+export default async function ngrokStart(port = 4000, token = '', override: ngrokc.Ngrok.Options = {}) {
   let options: ngrokc.Ngrok.Options = {
     addr: port,
   };
@@ -34,8 +36,11 @@ export default async (port = 4000, token = "", override: ngrokc.Ngrok.Options = 
   options = Object.assign(options, override);
 
   const url = await ngrokc.connect(options);
-  console.log(`Node.js local server is publicly-accessible at ${url}`);
-  console.log(`url saved to ${fileNgrok}`);
-  fs.writeFileSync(fileNgrok, url);
+  console.log(`[ngrok] Node.js local server is publicly-accessible at ${url}`);
+  console.log(`[ngrok] url saved to ${fileNgrok}`);
+  write(fileNgrok, url);
+  scheduler.add('ngrok-kill', () => {
+    ngrokc.kill();
+  });
   return url;
-};
+}

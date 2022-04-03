@@ -2,25 +2,21 @@
 //https://translate.googleusercontent.com/translate_p?hl=en&sl=id&tl=en&u=https://27f5494720ed.ngrok.io/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html&depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=ALkJrhgAAAAAYMQOKGM4S-JILFfc9xbdqOesOtUAwuqL
 // https://4fca314b6878-ngrok-io.translate.goog/2020/6/7/update-genshin-impact-1.5.1-1.6.0.html?_x_tr_sl=id&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=ajax,nv
 
-import { makeid } from "../js/utility";
+export const makeid = (n = 36, prefix = '') => prefix + Math.random().toString(n).slice(2);
 
 class TranslateUrl {
-  base = new URL(
-    `https://translate.google.com/translate?depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=${makeid(
-      21
-    )}-${makeid(22)}`
-  );
+  base = new URL(`https://translate.google.com/translate?depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=${makeid(21)}-${makeid(22)}`);
 
   static main(args?: string[]) {
     console.log(args);
     const clazz = new TranslateUrl();
-    clazz.from("id").to("en");
-    console.log("direct class", clazz);
-    console.log("toString", clazz.toString());
+    clazz.from('id').to('en');
+    console.log('direct class', clazz);
+    console.log('toString', clazz.toString());
   }
 
   url(url: string) {
-    this.base.searchParams.append("u", encodeURIComponent(url));
+    this.base.searchParams.append('u', encodeURIComponent(url));
     return this;
   }
 
@@ -29,7 +25,7 @@ class TranslateUrl {
    * @param sl
    */
   from(sl: string) {
-    this.base.searchParams.append("sl", sl);
+    this.base.searchParams.append('sl', sl);
     return this;
   }
 
@@ -38,8 +34,8 @@ class TranslateUrl {
    * @param tl
    */
   to(tl: string) {
-    this.base.searchParams.append("tl", tl);
-    this.base.searchParams.append("hl", tl);
+    this.base.searchParams.append('tl', tl);
+    this.base.searchParams.append('hl', tl);
     return this;
   }
 

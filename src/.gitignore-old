@@ -1,0 +1,25 @@
+*
+
+# files
+!config.ts
+!*.md
+!ngrok.ts
+
+# subdir
+!__test__
+!__test__/*
+!node
+!node/*
+!js
+!js/*
+!express
+!express/middleware
+!express/middleware/*
+!express/views
+!express/views/themes
+!express/views/themes/layout.ejs
+!express/views/themes/header.ejs
+!express/views/themes/landing.ejs
+!express/views/themes/**/*
+!express/types
+!express/types/*

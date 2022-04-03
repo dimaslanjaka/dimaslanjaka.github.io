@@ -1,5 +1,5 @@
-import fs from "fs";
-import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
+import fs from 'fs';
+import 'js-prototypes';
 
 /**
  * Current date time
@@ -9,11 +9,11 @@ export function now() {
   return (
     new Date()
       //.toISOString()
-      .toLocaleString("en-US", {
-        timeZone: "Asia/Jakarta",
+      .toLocaleString('en-US', {
+        timeZone: 'Asia/Jakarta',
       })
-      .replace(/T/, " ") // replace T with a space
-      .replace(/\..+/, "")
+      .replace(/T/, ' ') // replace T with a space
+      .replace(/\..+/, '')
   ); // delete the dot and everything after
 }
 

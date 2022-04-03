@@ -1,11 +1,11 @@
-import fs from "fs";
-import upath from "upath";
-import { MD5 } from "crypto-js";
-import coreProcess from "process";
-import { makeid } from "../js/utility";
-import spawner from "./spawner";
+import fs from 'fs';
+import upath from 'upath';
+import { MD5 } from 'crypto';
+import coreProcess from 'process';
+import spawner from './spawner';
+import { makeid } from '../translator/TranslateUrl';
 
-const tempFolder = coreProcess.cwd() + "/tmp/compiler";
+const tempFolder = coreProcess.cwd() + '/tmp/compiler';
 if (fs.existsSync(tempFolder)) {
   fs.unlinkSync(upath.join(coreProcess.cwd(), tempFolder));
 }
@@ -26,13 +26,13 @@ class process {
   /**
    * Current process unique id
    */
-  static id: string = makeid(5, "_");
+  static id: string = makeid(5, '_');
 
   /**
    * process instance `import coreProcess from "process";`
    */
   static core = coreProcess;
-  static isWin = coreProcess.platform === "win32";
+  static isWin = coreProcess.platform === 'win32';
   static spawner = spawner;
 
   /**
@@ -60,8 +60,8 @@ class process {
    * @param options
    * @param callback
    */
-  static doProcess(lockfile: string, options: { verbose: boolean } | any, callback: Function) {
-    if (typeof options.verbose == "boolean") {
+  static doProcess(lockfile: string, options: { verbose: boolean } | any, callback: any) {
+    if (typeof options.verbose == 'boolean') {
       this.verbose = options.verbose;
     }
     lockfile = process.lockCreate(lockfile);
@@ -70,15 +70,15 @@ class process {
       return null;
     }
     const doCall = function () {
-      if (typeof callback == "function") {
+      if (typeof callback == 'function') {
         return callback(lockfile);
-      } else if (typeof options == "function") {
+      } else if (typeof options == 'function') {
         return options(lockfile);
       }
     };
     process.lockProcess(lockfile);
     // eslint-disable-next-line no-unused-vars
-    const load = new Promise((resolve, reject) => {
+    const load = new Promise((resolve, _reject) => {
       doCall();
       resolve(true);
     });
@@ -93,12 +93,12 @@ class process {
    */
   private static lockProcess(lockfile: string) {
     if (this.verbose) {
-      console.log("locking process");
+      console.log('locking process');
     }
     if (!upath.resolve(upath.dirname(lockfile))) {
       fs.mkdirSync(upath.dirname(lockfile), { recursive: true });
     }
-    fs.writeFileSync(lockfile, "lockfile");
+    fs.writeFileSync(lockfile, 'lockfile');
   }
 
   /**
@@ -107,13 +107,13 @@ class process {
    */
   private static releaseLock(lockfile: string) {
     if (this.verbose) {
-      console.log("releasing process");
+      console.log('releasing process');
     }
     if (fs.existsSync(lockfile)) {
       fs.unlinkSync(lockfile);
     } else {
       if (this.verbose) {
-        console.error("process file already deleted");
+        console.error('process file already deleted');
       }
     }
   }

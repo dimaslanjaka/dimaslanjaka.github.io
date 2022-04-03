@@ -76,7 +76,7 @@ jobs:
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
-      - run: npx gulp article:img
+      #- run: npx gulp article:img
       - run: npx hexo clean
         # run if commit contains substring 'clean cache'
         if: "contains(github.event.head_commit.message, 'clean cache')"
@@ -97,20 +97,19 @@ jobs:
           node userscripts/after_generated.js
           echo "Validating"
           node userscripts/validate.js
-          echo "Generating Sitemap Text"
-          gulp sitemap
-          echo "Generating Google News Sitemap"
-          gulp sitemap-gn
           echo "Copy Robots.txt"
           cp -rf source/robots.txt docs/robots.txt
       - name: After Generated
+        if: ${{ false }}
         if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
-        run: gulp article:after-gen
+        run: gulp article:after
       - name: Minify HTML
         if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         run: gulp hexo:minify
         # continue on error, prevent failing/exited
         continue-on-error: true
+      #- run: gulp sitemap
+      #- run: gulp sitemap-gn
 
       - name: Commit Files
         id: git-commit

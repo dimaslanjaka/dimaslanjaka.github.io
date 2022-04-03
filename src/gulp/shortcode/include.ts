@@ -1,7 +1,8 @@
-// noinspection ES6PreferShortImport
-import * as path from "path";
-import * as fs from "fs";
-import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
+import 'js-prototypes';
+import chalk from 'chalk';
+import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
+
+const logname = chalk.bgBlue.whiteBright('[include]');
 
 /**
  * Process `shortcode include` to included in file, shortcode below:
@@ -9,9 +10,10 @@ import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
  * <!-- include file.ext -->
  * ```
  */
-function parseShortCodeInclude(file: string | fs.PathLike, str: string) {
-  const regex = /\<\!\-\-\s+?include\s+?(.+?)\s+?\-\-\>/gim;
+function parseShortCodeInclude(file: string, str: string) {
+  const regex = /<!--\s+?include\s+?(.+?)\s+?-->/gim;
   let m: RegExpExecArray;
+  let found = false;
 
   while ((m = regex.exec(str)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches
@@ -23,22 +25,29 @@ function parseShortCodeInclude(file: string | fs.PathLike, str: string) {
     const bracketmatch = m[1];
 
     // search from file directory
-    const directFile = path.join(path.dirname(file.toString()), bracketmatch);
-    if (fs.existsSync(directFile)) {
-      const directRead = fs.readFileSync(directFile).toString();
+    const directFile = join(dirname(file.toString()), bracketmatch);
+    if (existsSync(directFile)) {
+      console.info(`${logname} found from direct ${directFile.replace(cwd() + '/', '')}`);
+      const directRead = readFileSync(directFile).toString();
       str = str.replace(allmatch, directRead);
+      found = true;
     } else {
       // search from workspace directory
-      const rootFile = path.join(process.cwd(), bracketmatch);
-      if (fs.existsSync(rootFile)) {
-        const rootRead = fs.readFileSync(rootFile).toString();
+      const rootFile = join(cwd(), bracketmatch);
+      if (existsSync(rootFile)) {
+        console.info(`${logname} found from direct ${rootFile.replace(cwd() + '/', '')}`);
+        const rootRead = readFileSync(rootFile).toString();
         str = str.replace(allmatch, rootRead);
+        found = true;
+      } else {
+        console.error(chalk.redBright('[include][error]'), "couldn't find any file from root", rootFile);
+        console.error(chalk.redBright('[include][error]'), "couldn't find any file from direct", directFile);
       }
     }
   }
 
-  // repeat if still has include shortcode
-  if (str.match(regex)) return parseShortCodeInclude(file, str);
+  // match shortcode and found otherwise repeat
+  if (found && str.match(regex)) return parseShortCodeInclude(file, str);
   return str;
 }
 export default parseShortCodeInclude;

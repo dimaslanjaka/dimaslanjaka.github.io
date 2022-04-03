@@ -1,8 +1,10 @@
-import path from "path";
-import * as fs from "fs";
-import chalk from "chalk";
+/* eslint-disable no-useless-escape */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import path from 'path';
+import * as fs from 'fs';
+import chalk from 'chalk';
 
-const logname = chalk.bgMagenta.whiteBright("[extract-text]");
+const logname = chalk.bgMagenta.whiteBright('[extract-text]');
 
 export function extractText(file: string, str: string) {
   const regex = /\<\!\-\-\s+?extract-text\s+?(.+?)\s+?\-\-\>/gim;
@@ -20,12 +22,12 @@ export function extractText(file: string, str: string) {
     // search from file directory
     const directFile = path.join(path.dirname(file.toString()), bracketmatch);
     if (fs.existsSync(directFile)) {
-      console.info(`${logname} found from direct ${directFile.replace(process.cwd() + "/", "")}`);
+      console.info(`${logname} found from direct ${directFile.replace(process.cwd() + '/', '')}`);
       const directRead = fs.readFileSync(directFile).toString();
       str = str.replace(allmatch, directRead);
     } else {
       // search from workspace directory
-      console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + "/", "")}`);
+      console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + '/', '')}`);
       const rootFile = path.join(process.cwd(), bracketmatch);
       if (fs.existsSync(rootFile)) {
         const rootRead = fs.readFileSync(rootFile).toString();

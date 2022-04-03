@@ -46,7 +46,9 @@
     "./plugins/**/*",
     "./types/**/*",
     "./node_modules/**/*",
-    "./libs/compiler/**/*"
+    "./libs/compiler/**/*",
+    "./src/js",
+    "./src/gulp/compress"
   ],
   "include": [
     "./gulpfile.ts",

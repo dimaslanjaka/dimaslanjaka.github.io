@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
+import fs from 'fs';
+import path from 'path';
+import 'js-prototypes';
 
 /**
  * Parse shortcode css

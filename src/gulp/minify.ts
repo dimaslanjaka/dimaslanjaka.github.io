@@ -1,9 +1,9 @@
-import PluginError from "plugin-error";
-import htmlmin from "html-minifier-terser";
-import through from "through2";
-import Promise from "bluebird";
+import PluginError from 'plugin-error';
+import htmlmin from 'html-minifier-terser';
+import through from 'through2';
+import Promise from 'bluebird';
 
-export = (options: htmlmin.Options) => {
+export default (options: htmlmin.Options) => {
   return through.obj(function (file, enc, next) {
     if (file.isNull()) {
       next(null, file);
@@ -33,7 +33,7 @@ export = (options: htmlmin.Options) => {
         })
         .catch((err) => {
           const opts = Object.assign({}, options, { fileName: file.path });
-          const error = new PluginError("gulp-html-minifier-terser", err, opts);
+          const error = new PluginError('gulp-html-minifier-terser', err, opts);
           if (next !== cb) {
             next(error);
             return;

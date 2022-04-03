@@ -1,14 +1,14 @@
-import { join, readFileSync, resolve, write } from '../node/filemanager';
-import yaml from 'yaml';
-import data from './_config_data.json';
-import { toUnix } from 'upath';
+import { join, readFileSync, resolve, write } from "../node/filemanager";
+import yaml from "yaml";
+import data from "./_config_data.json";
+import { toUnix } from "upath";
 
 export type ProjectConfig = (typeof data & Hexo_Config) & {
   [keys: string]: any;
 };
-export const root = join(__dirname, '../../');
-const file = join(root, '_config.yml');
-const str = readFileSync(file, 'utf-8');
+export const root = join(__dirname, "../../");
+const file = join(root, "_config.yml");
+const str = readFileSync(file, "utf-8");
 const config: ProjectConfig = yaml.parse(str);
 
 if (!config.exclude) config.exclude = [];
@@ -16,14 +16,14 @@ if (!config.ignore) config.ignore = [];
 if (!config.include) config.include = [];
 if (!config.skip_render) config.skip_render = [];
 
-if (process.env.NODE_ENV == 'development') {
-  config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
+if (process.env.NODE_ENV == "development") {
+  config.url = "http://adsense.webmanajemen.com:" + config.server.port;
 }
 
 /**
- * Public Source Post Dir (`source/`)
+ * Public Source Post Dir (`source/_posts`)
  */
-export const post_public_dir = resolve(join(root, config.source_dir, '_posts'));
+export const post_public_dir = resolve(join(root, config.source_dir, "_posts"));
 /**
  * Generated directory (`config.public_dir`)
  */
@@ -31,15 +31,15 @@ export const post_generated_dir = resolve(join(root, config.public_dir));
 /**
  * `src-posts/` directory
  */
-export const post_source_dir = resolve(join(root, 'src-posts'));
+export const post_source_dir = resolve(join(root, "src-posts"));
 /**
  * path to temp folder
  * @param path file path inside temp folder
  * @returns
  */
-export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
+export const tmp = (...path: string[]) => join(root, "tmp", path.join("/"));
 
-//// THEME
+// // THEME
 const theme_def_opt = {
   amp: false,
 };
@@ -48,13 +48,13 @@ export type ThemeOpt =
   | {
       [key: string]: any;
     };
-export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
-const theme_yml = join(theme_dir, '_config.yml');
-export const theme_config: ThemeOpt = Object.assign(theme_def_opt, yaml.parse(readFileSync(theme_yml, 'utf-8')));
+export const theme_dir = toUnix(resolve(join(root, "themes", config.theme)));
+const theme_yml = join(theme_dir, "_config.yml");
+export const theme_config: ThemeOpt = Object.assign(theme_def_opt, yaml.parse(readFileSync(theme_yml, "utf-8")));
 
 export default config;
 
-write(join(__dirname, '_config_data.json'), JSON.stringify(config));
+write(join(__dirname, "_config_data.json"), JSON.stringify(config));
 
 export type Hexo_Config = {
   title: string;
@@ -80,7 +80,7 @@ export type Hexo_Config = {
   new_post_name: string;
   default_layout: string;
   titlecase: boolean;
-  //external_link: ExternalLink;
+  // external_link: ExternalLink;
   filename_case: number;
   render_drafts: boolean;
   post_asset_folder: boolean;

@@ -1,0 +1,79 @@
+name: Hexo
+
+on:
+  push:
+    branches:
+      - compiler # run when this branch pushed
+
+# cancel previous workflows, run only one workflow
+concurrency:
+  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
+      GITFLOW: true
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          #persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          #fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      #- name: Checkout packages
+      #uses: actions/checkout@v2
+      #with:
+      #repository: dimaslanjaka/hexo-seo
+      #path: packages/hexo-seo
+      #submodules: recursive
+      #token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+      - name: Setup GitHub
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: hexo-seo update
+        run: cd packages/hexo-seo && git submodule update --init --recursive
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get Caches
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ./node_modules
+            ~/.npm
+            ./tmp
+            ./build
+            ./packages
+            ./databases
+          key: ${{ runner.os }}-xnodex-${{ hashFiles('**/.guid') }}
+          restore-keys: ${{ runner.os }}-xnodex-
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
+        # run global install when cache not written
+        # if: steps.npm-cache.outputs.cache-hit != 'true'
+      - run: rm -rf node_modules tmp build
+        # run if commit contains substring 'clean cache'
+        if: "contains(github.event.head_commit.message, 'clean cache')"
+      - run: npm install
+      - run: gulp
+      - run: cd docs/page && npm install
+      - run: cp -rf source/robots.txt docs/robots.txt
+      - run: echo www.webmanajemen.com > docs/CNAME

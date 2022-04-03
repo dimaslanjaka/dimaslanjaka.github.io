@@ -1,0 +1,34 @@
+
+      - name: Commit Files
+        id: git-commit
+        if: ${{ false }}
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        run: git commit -m "Add changes ${{ steps.date.outputs.date }}" -a
+
+      - name: Deploy 🚀
+        if: ${{ false }}
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: master # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+
+      - name: Deploy to firebase
+        # deploy if commit message contains firebase string
+        # if: "contains(github.event.head_commit.message, 'firebase') && steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'"
+        if: ${{ false }}
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDROID_008 }}"
+          channelId: live
+          projectId: android-008
+
+      - name: Push changes
+        if: ${{ false }}
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          directory: build

@@ -88,19 +88,6 @@ export function removeMultiSlashes(str: string) {
   return str.replace(/(\/)+/g, '$1');
 }
 
-const grouped = {};
-/**
- * Join and force forward-slash
- * @returns
- */
-export function slash(...paths: string[]): string {
-  const j = paths.join('/');
-  if (grouped[j]) return removeMultiSlashes(grouped[j]);
-  const jx = removeMultiSlashes(j.split(/\//g).removeEmpties().join('/'));
-  //console.log(jx);
-  grouped[j] = jx;
-  return j;
-}
 
 let files: string[];
 /**
@@ -129,9 +116,9 @@ export default filemanager;
 export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = () => upath.toUnix(nodeCwd());
-export const dirname = (str: string) => upath.toUnix(upath.dirname(str));
-export const resolve = (str: string) => upath.toUnix(upath.resolve(str));
-export const join = slash;
+export const dirname = (str: string) => removeMultiSlashes(upath.toUnix(upath.dirname(str)));
+export const resolve = (str: string) => removeMultiSlashes(upath.toUnix(upath.resolve(str)));
+export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)))
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;

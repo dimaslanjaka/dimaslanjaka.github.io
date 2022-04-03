@@ -3,6 +3,11 @@
   "version": "1.0.1",
   "private": true,
   "main": "gulpfile.ts",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "start": "npx ts-node src/express/app.ts",
     "build": "node deploy.js",
@@ -90,6 +95,7 @@
     "@types/hexo": "github:dimaslanjaka/nodejs-package-types#hexo",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "browser-sync": "^2.27.7",
+    "eslint": "^8.12.0",
     "gulp": "^4.0.2",
     "gulp-jsdom": "^1.1.0",
     "html-minifier-terser": "^5.1.1",

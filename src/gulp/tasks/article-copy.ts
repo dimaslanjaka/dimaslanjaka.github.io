@@ -15,7 +15,7 @@ import extractText from '../shortcode/extract-text';
 import { shortcodeScript } from '../shortcode/script';
 import { shortcodeNow } from '../shortcode/time';
 import { copyDir, loopDir, slash } from '../utils';
-import { TaskCallback, TaskFunction } from 'undertaker';
+import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
 import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
@@ -281,8 +281,7 @@ const copyAssets = () => {
 gulp.task('copy:assets', copyAssets);
 
 const copyPosts = () => {
-  const src = join(post_source_dir, '**/**');
-  const run = gulp.src([src + '.md', '!' + join(post_source_dir, '**/.git')]).pipe(
+  const run = gulp.src(['**/*.md',  '**/.git'], {cwd: post_source_dir}).pipe(
     modifyFile(function (content, path, _file) {
       const log = [chalk.cyan('[copy][md]'), path];
       let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);

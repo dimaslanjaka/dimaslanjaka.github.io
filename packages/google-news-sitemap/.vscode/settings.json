@@ -1,0 +1,66 @@
+{
+  "cSpell.words": [
+    "Agustina",
+    "Beaucachu",
+    "Dimas",
+    "dimaslanjaka",
+    "webmanajemen",
+    "Gitlab",
+    "Goldbach",
+    "Hexo",
+    "INDO",
+    "Lanjaka",
+    "Maulinda",
+    "Neverland",
+    "Praha",
+    "apgus",
+    "browsersync",
+    "delim",
+    "epiphyllum",
+    "filemanager",
+    "genshin",
+    "livereload",
+    "maxdepth",
+    "musique",
+    "notranslate",
+    "shortcode",
+    "titlecase",
+    "tlon",
+    "youtube"
+  ],
+  "terminal.integrated.env.linux": {
+    "PATH": "bin:${env:PATH}"
+  },
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 30000,
+  "typescript.tsc.autoDetect": "on",
+  "gulptasks.pattern": "**/gulpfile.ts",
+  "gulptasks.args": [
+    "-r",
+    "ts-node/register"
+  ],
+  "gulptasks.filters": [
+    "!**/node_modules/**",
+    "!**/bower_components/**",
+    "!**/packages/**",
+    "!**/themes/**"
+  ],
+  "npm.enableRunFromFolder": true,
+  "javascript.suggestionActions.enabled": false,
+  "git.detectSubmodulesLimit": 10,
+  "git.detectSubmodules": false,
+  // format code with eslint-prettier and vscode
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "github.copilot.enable": {
+    "typescript": true,
+    "javascript": true,
+    "html": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "github.copilot.toggleCopilot": "on"
+  //"editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
+}

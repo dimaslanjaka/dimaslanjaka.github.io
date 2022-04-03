@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+
+    <title>CodePen - Fake browser UI</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+
+    <link rel="stylesheet" href="main.css" />
+
+    <script src="main.js"></script>
+  </head>
+
+  <body translate="no">
+    <div class="container">
+      <div class="fake-browser">
+        <header class="fake-browser-header">
+          <div class="action-btns">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="address-bar">
+            <label>
+              <input type="text" id="addr-bar" value="https://google.com" />
+            </label>
+          </div>
+          <div class="setting-more">
+            <span class="more-btn"></span>
+          </div>
+        </header>
+        <section class="fake-window-body">
+          <webview src="https://www.webmanajemen.com/" httpreferrer="https://google.com" disablewebsecurity></webview>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+.gallery {
+  display: block;
+  position: absolute;
+  top: 110px;
+  right: 70px;
+  z-index: 100;
+  width: 400px;
+  height: 500px;
+  background-color: #FFFFFF;
+  border: 1px solid #666666;
+
+  -moz-box-shadow: 1px 1px 1px 1px #CCC;
+  -webkit-box-shadow: 1px 1px 1px 1px #CCC;
+  box-shadow: 1px 1px 1px 1px #CCC;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #666666;
+  position: relative;
+  left: 190px;
+  top: -10px;
+}
+
+.header {
+  position: relative;
+  top: -10px;
+  // width: 100%;
+  height: 40px;
+  background-color: #333333;
+  color: #FFFFFF;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  position: relative;
+  top: -10px;
+  // FIXME, cannot use this
+  // width: 100%;
+  height: 452px;
+  padding: 4px;
+  line-height: 1;
+  overflow-y: scroll;
+
+  .img-grid {
+    margin-top: 4px;
+  }
+
+  .img-ctnr {
+    display: inline-block;
+  }
+
+  .sending {
+    color: #FFFFFF;
+    position: absolute;
+    font-size: 1.0rem;
+    width: 96px;
+    height: 72px;
+    background-color: #000000;
+    opacity: 0.6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .img-cell {
+    width: 94px;
+    height: 70px;
+    margin-right: 2px;
+    border: 1px solid #CCCCCC;
+  }
+}
+
+.btn-ctnr {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+.upload_image {
+  .pb-button;
+
+  opacity: 1;
+  width: 100%;
+  position: inherit;
+  color: #FFFFFF;
+  background-color: rgb(24, 149, 49);
+  text-shadow: 1px 1px #666666;
+
+  &:hover {
+    background-color: rgb(18, 218, 50);
+  }
+}
+
+.footer {
+  position: relative;
+  top: -10px;
+  // width: 100%;
+  padding: 4px;
+}
+
+// Uploading x files...
+h3 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.dropzone {
+  width: 390px;
+  height: 80px;
+  border-width: 2px;
+  border-color: #666;
+  border-style: dashed;
+  border-radius: 5px;
+}
+
+.drop-zone-txt {
+  padding: 10px;
+  margin: 10px;
+}
+
+
+
+// ...

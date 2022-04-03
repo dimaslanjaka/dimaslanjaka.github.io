@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "experimentalDecorators": true,
+    "strict": false,
+    "emitDecoratorMetadata": true,
+    "inlineSourceMap": true,
+    "allowUnreachableCode": true,
+    "noImplicitReturns": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "allowUnusedLabels": true,
+    "allowUmdGlobalAccess": true,
+    "inlineSources": false,
+    "allowJs": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "lib": [
+      "DOM",
+      "ES7",
+      "DOM.Iterable",
+      "ES2015",
+      "ESNext",
+      "ES2016",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES2020"
+    ],
+    "outDir": "./build",
+    "noLib": false,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "importHelpers": true
+  },
+  "typeAcquisition": {
+    "enable": true,
+    "include": [
+      "electron"
+    ]
+  },
+  "exclude": [
+    "**/node_modules/**",
+    "**/build/**"
+  ],
+  "include": [
+    "./src/**/*",
+    "../traffic-generator/src/context-menu"
+  ]
+}

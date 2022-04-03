@@ -1,0 +1,39 @@
+{
+  "name": "electron-browser",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Electron Browser Helper",
+  "main": "index.js",
+  "scripts": {
+    "start": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:dev": "tsc --watch",
+    "runner": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron -r ts-node/register src/main/runner.ts",
+    "wsl-install": "npm install --platform=win32",
+    "wsl-rebuild": "npm rebuild --platform=win32"
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "Dimas Lanjaka",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.17.3",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "electron": "^13.1.4",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.0.0",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "electron-reload": "^1.5.0",
+    "remote": "^0.2.6"
+  }
+}

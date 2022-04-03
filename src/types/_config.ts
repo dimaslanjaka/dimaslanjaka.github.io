@@ -48,7 +48,7 @@ export type ThemeOpt =
   | {
       [key: string]: any;
     };
-export const theme_dir = toUnix(resolve(join(root, 'theme', config.theme)));
+export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
 const theme_yml = join(theme_dir, '_config.yml');
 export const theme_config: ThemeOpt = Object.assign(theme_def_opt, yaml.parse(readFileSync(theme_yml, 'utf-8')));
 

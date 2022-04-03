@@ -16,9 +16,7 @@ const buildFolder = join(root, 'databases');
 export default class CacheFile {
   md5Cache: Objek = {};
   dbFile: string;
-  private verbose = false;
   constructor(hash = null, verbose = false) {
-    this.verbose = verbose;
     logger.active = verbose;
     if (!hash) {
       const stack = new Error().stack.split('at')[2];

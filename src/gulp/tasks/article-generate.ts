@@ -29,22 +29,7 @@ const generated_dir = toUnix(resolve(join(root, config.public_dir)));
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 
 const logname = chalk.hex('#fcba03')('[render]');
-const log = [logname];
-interface extendedVinyl extends vinyl {
-  url: string;
-  encoding: BufferEncoding;
-}
-const articles: extendedVinyl[] = [];
 const page_url = new URL(config.url);
-const sitemap: string[] = [];
-
-const src: string[] = [];
-const exclude = (arr: string[]) => {
-  arr.map((s) => '!' + join(source_dir, '**', s)).forEach((s) => src.push(s));
-};
-const include = (arr: string[]) => {
-  arr.map((s) => join(source_dir, '**', s)).forEach((s) => src.push(s));
-};
 
 const globalExcludePatterns = ['!source/_data/**', '!source/_drafts/**'];
 
@@ -89,7 +74,7 @@ export const renderArticle = function () {
         }
         return data;
       })
-      .map((file, index) => {
+      .map((file) => {
         const result = {
           /** Full path */
           path: join(source_dir, file),
@@ -147,40 +132,6 @@ export const renderArticle = function () {
 gulp.task('generate:posts', renderArticle);
 
 gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts'));
-
-async function renderArticlex(this: any, file: vinyl) {
-  log.push(file.path.replace(cwd(), ''));
-  let parse = parsePost(file.contents.toString(file.encoding));
-  if (parse) {
-    parse.fileTree = {
-      source: replacePath(toUnix(file.path.toString()), '/source/_posts/', '/src-posts/'),
-      public: replacePath(toUnix(file.path.toString()), '/src-posts/', '/source/_posts/'),
-    };
-    const modify = modifyPost(parse);
-
-    // reparse
-    parse = parsePost(modify.content);
-    // render markdown to html
-    parse.body = renderBodyMarkdown(parse);
-    // replace /_posts/ to / for permalink
-    if (file.dirname.includes('/_posts')) file.dirname = file.dirname.replace('/_posts/', '/');
-    // ejs render preparation
-    const ejs_opt: DynamicObject = Object.assign(parse.metadata, parse);
-    ejs_opt.content = parse.body; // html rendered markdown
-    ejs_opt.url = file.url; // permalink
-    // ejs render start
-    try {
-      const rendered = await ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config });
-      file.contents = Buffer.from(rendered);
-      //if (self) self.push(rendered);
-      this.push(file);
-      log.push(chalk.green('success'));
-      console.log(...log);
-    } catch (e) {
-      writeFile(tmp(sanitizeFilename(parse.metadata.title) + '.log'), inspect(e));
-    }
-  }
-}
 
 /*
 

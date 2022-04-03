@@ -1,0 +1,25 @@
+<% if (typeof(script) !== 'undefined' && script) { %>
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '<%= theme.comment.valine.meta %>';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = '<%= theme.comment.valine.avatar_cdn %>' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "<%= theme.comment.valine.notify %>",
+            verify: "<%= theme.comment.valine.verify %>",
+            appId: "<%= theme.comment.valine.appId %>",
+            appKey: "<%= theme.comment.valine.appKey %>",
+            placeholder: "<%= theme.comment.valine.placeholder %>",
+            avatar:"<%= theme.comment.valine.avatar %>",
+            recordIP:"<%= theme.comment.valine.recordip %>",
+            visitor: "<%= theme.comment.valine.visitor %>"
+        });
+    </script>
+<% } else { %>
+    <!-- Valine -->
+    <div class="vcomments"></div>
+<% } %>

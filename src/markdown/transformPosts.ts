@@ -1,14 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import filemanager, { basename, dirname, existsSync, join, mkdirSync, statSync, writeFileSync } from '../node/filemanager';
-import toHtml from './toHtml';
+import { dirname, existsSync, mkdirSync, statSync, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
-import notranslate from '../translator/notranslate';
 import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
 import config_yml, { ProjectConfig } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
-import { toUnix } from 'upath';
 import CacheFile from '../node/cache';
 
 export interface LooseObject {
@@ -242,60 +239,4 @@ export function saveParsedPost(parsed: parsePostReturn, file: string) {
  */
 export function buildPost(parsed: parsePostReturn) {
   return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
-}
-
-/**
- * Transform only post body without metadata
- * @param outputDir custom output, default source/_posts
- * @param callback
- */
-export function transformPostBody(
-  outputDir = 'source/_posts',
-  // eslint-disable-next-line no-unused-vars
-  callback?: (filename: string, filedir: string, filepath: string) => any
-) {
-  filemanager.readdirSync(join(__dirname, '../../src-posts'), function (err, results) {
-    if (!err) {
-      results.forEach(function (file) {
-        const read = readFileSync(file, { encoding: 'utf-8' });
-        const filename = basename(file, '.md') + '.html';
-        const filedir = toUnix(dirname(file).replace('src-posts', outputDir));
-        const filepath = join(filedir, filename);
-        //console.log(filename, filedir, filepath);
-        if (typeof callback == 'function') {
-          callback(filename, filedir, filepath);
-        }
-        const parse = parsePost(read, file);
-        //console.log(parse.metadata); //<--- debug
-        if (parse && parse.body) {
-          const html = toHtml(parse.body);
-          const filter_notranslate = notranslate(html);
-          filemanager.write(filepath, String(filter_notranslate));
-        }
-      });
-    }
-  });
-}
-
-/**
- * Transform entire post
- * @param outputDir custom output, default source/_posts
- */
-export default function transformPosts(outputDir = 'source/_posts') {
-  filemanager.readdirSync(join(__dirname, '../../src-posts'), function (err, results) {
-    if (!err) {
-      results.forEach(function (file) {
-        const read = readFileSync(file, { encoding: 'utf-8' });
-        const filename = basename(file);
-        const filedir = toUnix(dirname(file).replace('src-posts', outputDir));
-        const filepath = join(filedir, filename);
-        const parse = parsePost(read, file);
-        if (parse !== null && parse.body) {
-          const html = toHtml(parse.body);
-          const filter_notranslate = notranslate(html);
-          writeFileSync(filepath, `${parse.metadataString}\n\n${filter_notranslate}`);
-        }
-      });
-    }
-  });
 }

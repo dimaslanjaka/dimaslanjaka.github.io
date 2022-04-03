@@ -9,6 +9,7 @@ import chalk from 'chalk';
 import config_yml, { ProjectConfig } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
 import { toUnix } from 'upath';
+import CacheFile from '../node/cache';
 
 export interface LooseObject {
   [key: string]: any;
@@ -102,7 +103,7 @@ export function md5(data: string) {
  * * return null == failed
  * @param text file path or string markdown contents
  */
-export function parsePost(text: string): parsePostReturn | null {
+function parsePostOri(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;
   const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -182,6 +183,24 @@ export function parsePost(text: string): parsePostReturn | null {
     console.error('fail parse markdown post', chalk.redBright(originalArg), 'original file of', chalk.magentaBright(originalArg.replace('/source/_posts/', '/src-posts/')));
   }
   return null;
+}
+
+const cache = new CacheFile('parsePost', true);
+
+/**
+ * Cacheable parsePost
+ * @param text file path or content markdown
+ * @returns
+ */
+export function parsePost(text: string) {
+  let result: parsePostReturn;
+  if (cache.isFileChanged(text)) {
+    result = parsePostOri(text);
+    cache.set(text, result);
+  } else {
+    result = <ReturnType<typeof parsePostOri>>cache.get(text);
+  }
+  return result;
 }
 
 /**

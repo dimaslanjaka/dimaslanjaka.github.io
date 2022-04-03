@@ -1,9 +1,9 @@
 import { root } from '../types/_config';
-import { join, readFileSync, write } from './filemanager';
+import { existsSync, join, mkdirSync, readFileSync, write } from './filemanager';
+import logger from './logger';
 import { md5FileSync, md5FileSync as md5 } from './md5-file';
 import scheduler from './scheduler';
 
-const logger = console;
 interface Objek {
   [key: string]: any;
 }
@@ -16,13 +16,17 @@ const buildFolder = join(root, 'databases');
 export default class CacheFile {
   md5Cache: Objek = {};
   dbFile: string;
-  constructor(hash = null) {
+  private verbose = false;
+  constructor(hash = null, verbose = false) {
+    this.verbose = verbose;
+    logger.active = verbose;
     if (!hash) {
       const stack = new Error().stack.split('at')[2];
       hash = md5(stack);
     }
+    if (!existsSync(buildFolder)) mkdirSync(buildFolder);
     this.dbFile = join(buildFolder, 'db-' + hash + '.json');
-    let db = readFileSync(this.dbFile, 'utf-8');
+    let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
     if (typeof db != 'object') {
       try {
         db = JSON.parse(db.toString());

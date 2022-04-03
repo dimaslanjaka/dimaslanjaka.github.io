@@ -103,7 +103,7 @@ gulp.task('article:render', function () {
     .src(join(source_dir, '/Chimeraland/Recipes.md'))
     .pipe(
       through2['default'].obj(function (file, enc, callback) {
-        const _this = this;
+        const self = this;
         const filePath = relative(file.base, file.path);
         const content = file.contents.toString();
         const parse = parsePost(content);
@@ -115,7 +115,7 @@ gulp.task('article:render', function () {
             .renderFile(join(__dirname, 'template/index'), { page: parse, config: config })
             .then(function (rendered) {
               file.contents = Buffer.from(rendered);
-              _this.push(file);
+              self.push(file);
               console.log(rendered);
             })
             ['catch'](console.error)

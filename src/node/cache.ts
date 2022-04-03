@@ -42,6 +42,9 @@ export default class CacheFile {
   }
   setCache = (key: string, value: any) => this.set(key, value);
   resolveKey(key: string) {
+    // if key is file path
+    if (existsSync(key)) return key;
+    // if key is long text
     if (key.length > 32) return key.substring(0, 32);
     return key;
   }

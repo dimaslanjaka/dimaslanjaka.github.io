@@ -75,6 +75,7 @@ jobs:
       - run: "gulp copy:posts"
       - run: "gulp generate:assets"
       - run: "gulp generate:template"
+      - run: "gulp generate:posts"
       - run: cd docs/page && npm install
       - run: cp -rf source/robots.txt docs/robots.txt
       - run: echo www.webmanajemen.com > docs/CNAME

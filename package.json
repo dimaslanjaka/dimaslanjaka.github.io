@@ -3,11 +3,6 @@
   "version": "1.0.1",
   "private": true,
   "main": "gulpfile.ts",
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
     "start": "npx ts-node src/express/app.ts",
     "build": "node deploy.js",

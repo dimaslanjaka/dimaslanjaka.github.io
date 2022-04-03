@@ -9,7 +9,6 @@ import chalk from 'chalk';
 import config_yml, { ProjectConfig } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
 import { toUnix } from 'upath';
-import memoize from 'memoizee';
 
 export interface LooseObject {
   [key: string]: any;

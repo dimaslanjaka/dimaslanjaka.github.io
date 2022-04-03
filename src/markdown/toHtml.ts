@@ -9,10 +9,7 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import slugify from '../node/slugify/index';
-import { tmp } from '../types/_config';
-import { write } from '../node/filemanager';
 import { parsePostReturn } from './transformPosts';
-import memoize from 'memoizee';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 

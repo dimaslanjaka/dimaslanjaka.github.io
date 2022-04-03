@@ -232,7 +232,7 @@ const copyPosts = () => {
   const run = gulp.src(['**/*.md', '**/.git'], { cwd: post_source_dir }).pipe(
     modifyFile(function (content, path, _file) {
       const log = [chalk.cyan('[copy][md]'), path];
-      let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content);
+      let parse = parsePost(Buffer.isBuffer(content) ? content.toString() : content, String(path));
       if (parse) {
         parse.fileTree = {
           source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
@@ -242,7 +242,7 @@ const copyPosts = () => {
       const modify = modifyPost(parse);
       if (!modify.error) {
         // reparse
-        parse = parsePost(modify.content);
+        parse = parsePost(modify.content, String(path));
         const html = parseHTML(renderBodyMarkdown(parse));
         // +article wordcount
         const extractTextHtml = html;

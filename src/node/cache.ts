@@ -40,10 +40,13 @@ export default class CacheFile {
       this.md5Cache = db;
     }
   }
-  setCache(key: string, value: any) {
-    return this.set(key, value);
+  setCache = (key: string, value: any) => this.set(key, value);
+  resolveKey(key: string) {
+    if (key.length > 32) return key.substring(0, 32);
+    return key;
   }
   set(key: string, value: any) {
+    key = this.resolveKey(key);
     this.md5Cache[key] = value;
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
@@ -52,6 +55,7 @@ export default class CacheFile {
     });
   }
   has(key: string): boolean {
+    key = this.resolveKey(key);
     return typeof this.md5Cache[key] !== undefined;
   }
   /**
@@ -61,13 +65,12 @@ export default class CacheFile {
    * @returns
    */
   get(key: string, fallback = null) {
+    key = this.resolveKey(key);
     const Get = this.md5Cache[key];
     if (Get === undefined) return fallback;
     return Get;
   }
-  getCache(key: string, fallback = null) {
-    return this.get(key, fallback);
-  }
+  getCache = (key: string, fallback = null) => this.get(key, fallback);
   /**
    * Check file is changed with md5 algorithm
    * @param path0

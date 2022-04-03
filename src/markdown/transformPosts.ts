@@ -190,15 +190,17 @@ const cache = new CacheFile('parsePost', true);
 /**
  * Cacheable parsePost
  * @param text file path or content markdown
+ * @param hash cache key
  * @returns
  */
-export function parsePost(text: string) {
+export function parsePost(text: string, hash: string = null) {
   let result: parsePostReturn;
-  if (cache.isFileChanged(text)) {
+  const key = String(hash || text);
+  if (cache.isFileChanged(key)) {
     result = parsePostOri(text);
-    cache.set(text, result);
+    cache.set(key, result);
   } else {
-    result = <ReturnType<typeof parsePostOri>>cache.get(text);
+    result = <ReturnType<typeof parsePostOri>>cache.get(key);
   }
   return result;
 }

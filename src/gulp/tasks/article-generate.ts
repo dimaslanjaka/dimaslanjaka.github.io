@@ -128,7 +128,7 @@ export const renderArticle = function () {
             };
             if (parsed.cached) {
               if (renderCache.isFileChanged(parsed.path)) {
-                console.warn(logname + chalk.blueBright('[cache]'), 'is file changed');
+                console.warn(logname + chalk.blueBright('[cache]'), parsed.path, 'changed');
               } else {
                 skip();
               }

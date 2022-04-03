@@ -6,18 +6,16 @@
  */
 
 import 'js-prototypes';
-import { existsSync, mkdirSync, statSync, join, cwd, dirname } from '../../node/filemanager';
+import { statSync, join, cwd, dirname } from '../../node/filemanager';
 import moment from 'moment';
-import { buildPost, parsePost, parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
+import { buildPost, parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
 import { shortcodeCss } from '../shortcode/css';
 import extractText from '../shortcode/extract-text';
 import { shortcodeScript } from '../shortcode/script';
 import { shortcodeNow } from '../shortcode/time';
-import { copyDir, loopDir, slash } from '../utils';
-import { TaskCallback } from 'undertaker';
 import parseShortCodeInclude from '../shortcode/include';
-import { ProjectConfig, post_public_dir, post_source_dir } from '../../types/_config';
+import { post_public_dir, post_source_dir } from '../../types/_config';
 import modifyFile from '../modules/modify-file';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
@@ -27,8 +25,6 @@ import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
 import { shortcodeYoutube } from '../shortcode/youtube';
 
-let tryCount = 0;
-
 function cleanString(text: string) {
   if (typeof text == 'string') return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
   return text;
@@ -37,54 +33,6 @@ function cleanString(text: string) {
 function removeMultipleWhiteSpaces(text: string) {
   if (typeof text == 'string') return text.replace(/\s+/gm, ' ');
   return text;
-}
-
-/**
- * Copy source post directly into production posts without transform to multiple languages
- * @param done Callback
- */
-export function articleCopy(config: ProjectConfig, done?: TaskCallback) {
-  //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
-  const srcPostDir = join(cwd(), 'src-posts');
-  // path source_dir from _config.yml
-  const prodPostDir = join(cwd(), config.source_dir, '/_posts');
-  const srcDir = slash(srcPostDir);
-  const destDir = slash(prodPostDir);
-  if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
-
-  // To copy a folder
-  copyDir(srcDir, destDir, function (err) {
-    if (err) {
-      console.error(err);
-      console.error('error');
-      if (tryCount == 0) {
-        tryCount++;
-        return articleCopy(config, done);
-      }
-    } else {
-      console.log('copied successful!');
-      console.log('starting process article shortcodes...');
-
-      // process
-      const loop = loopDir(destDir);
-      loop.forEach(function (file) {
-        //const sourceFile = file.replace(prodPostDir, srcPostDir);
-        //const publicAssetDir = join(dirname(file), basename(file, '.md'));
-        //const sourceAssetDir = join(dirname(sourceFile), basename(sourceFile, '.md'));
-        if (statSync(file).isFile() && file.endsWith('.md')) {
-          const parse = parsePost(file);
-          if (parse) {
-            modifyPost(parse);
-            // save parsed post to public _config.yml
-            saveParsedPost(parse, parse.fileTree.public);
-          }
-        }
-      });
-
-      // notify gulp process has done
-      if (typeof done == 'function') done(null);
-    }
-  });
 }
 
 /**

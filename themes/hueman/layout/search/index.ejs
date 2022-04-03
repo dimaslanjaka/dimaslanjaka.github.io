@@ -1,8 +1,7 @@
 <div id="search-form-wrap">
 <% if (theme.search.insight) { %>
-    <form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
-        <meta itemprop="target" content="<%= config.url %>/p/search.html?q={search_term_string}"/>
-        <input itemprop="query-input" type="text" name="search_term_string" class="ins-search-input search-form-input" placeholder="<%= __('index.search') %>" />
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="<%= __('index.search') %>" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <%- partial('search/insight') %>

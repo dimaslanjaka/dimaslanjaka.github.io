@@ -21,11 +21,7 @@
     "firebase": "firebase deploy",
     "firebase:local": "firebase emulators:start --project android-008",
     "firebase:preview": "firebase hosting:channel:deploy --project android-008",
-    "gulp:test": "ts-node --project tsconfig.json gulpfile.test.ts",
-    "intaller": "npm install --save hexo-autoprefixer hexo-filter-cleanup hexo-generator-feed hexo-generator-sitemap hexo-renderer-sass hexo-renderer-swig mamboer/lunr.js moment node-sass object-assign",
     "fix-sharp": "rm node_modules/sharp -rf && npm install --ignore-scripts=false --verbose sharp",
-    "lint": "eslint src --ext .ts",
-    "lint:format": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "postinstall": "cd themes/hueman && npm install",
     "wsl-install": "rm -r node_modules && npm install --platform=win32",
     "prototypes": "npm un js-prototypes && npm i git+https://github.com/dimaslanjaka/js-prototypes.git"

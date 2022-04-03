@@ -131,9 +131,11 @@ pagination_dir: page
 include:
 exclude:
   - "**/.git"
-  - "**/MIDI.js/"
+  - "**/MIDI.js/**"
   - "**/{readme,README,changelog,CHANGELOG}.md"
-  - "/Test/"
+  - "**/Test/**"
+  - "**/guzzle/**"
+  - "**/exclude/**"
 ignore:
 
 # https://www.npmjs.com/package/hexo-server

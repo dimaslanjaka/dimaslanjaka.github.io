@@ -21,7 +21,7 @@ const cmds = [
 ];
 
 function run() {
-  exec(cmds[0],/* set max buffer 500Kb */ { maxBuffer: 1024 * 500 }, function (err, stdout, stderr) {
+  exec(cmds[0], /* set max buffer 500Kb */ { maxBuffer: 1024 * 500 }, function (err, stdout, stderr) {
     if (!err) {
       cmds.shift();
       //if (stdout) console.log(stdout);

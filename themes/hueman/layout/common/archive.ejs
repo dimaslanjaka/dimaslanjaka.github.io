@@ -1,6 +1,6 @@
-<% let last, postCount = 0; %>
+<% var last, postCount = 0; %>
 <% page.posts.each(function(post, i) { %>
-    <% let year = post.date.year(); %>
+    <% var year = post.date.year(); %>
     <% if (last != year) { %>
         <% if (last != null) { %>
             </div></section>

@@ -2,7 +2,7 @@
     <h1 class="header">
     <%
         var title = page.title;
-    if (page.archive) {
+        if (page.archive) {
             title = __('index.archive');
             if (page.month) {
                 title += ': ' + page.year + '/' + page.month;
@@ -11,7 +11,7 @@
             }
             title = '<i class="icon fa fa-archive"></i>' + title;
 	} else if (page.author && !is_post()) {
-	    title = get_author_name(page, config);
+	    title = page.author.name;
 	    if (page.author.about) {
 	        title += ' - ' + page.author.about;
 	    }

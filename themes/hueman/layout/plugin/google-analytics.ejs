@@ -2,31 +2,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.plugins.google_analytics %>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('config', '<%= theme.plugins.google_analytics %>', {
-    page_title: document.title,
-    page_path: location.pathname,
-    cookie_prefix: location.host.replace('www.', '').replace('.com', ''),
-    cookie_domain: location.host,
-    cookie_expires: 28 * 24 * 60 * 60, // 28 hari, dalam detik
-  });
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('event', 'page_view');
-  // track links clicked
-  const trackLinks = document.getElementsByTagName('a');
-  for (var i = 0, len = trackLinks.length; i < len; i++) {
-    const href = trackLinks[i].href;
-    if (!href.startsWith('#')) {
-      trackLinks[i].onclick = function () {
-        gtag('event', 'outbound-link', {
-          event_category: 'outbound',
-          event_label: this.href,
-          transport_type: 'beacon',
-        });
-      };
-    }
-  }
+
+  gtag('config', '<%= theme.plugins.google_analytics %>');
 </script>
 <!-- End Google Analytics -->

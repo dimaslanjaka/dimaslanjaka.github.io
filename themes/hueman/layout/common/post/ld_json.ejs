@@ -4,10 +4,10 @@
         "@type": "BlogPosting",
         "author": {
             "@type": "Person",
-            "name": "<%= get_author_name(page, config) %>"
+            "name": "<%= config.author %>"
         },
         <% if (post.title) { %>"headline": "<%= post.title %>",<% } %>
-        "image": "<%- img_url(post, config) %>",
+        "image": "<%- url_for(config.url + thumbnail(post)) %>",
         <% if (post.tags) { %>"keywords": "<%- post.tags.map(t => t.name).join(' ') %>",<% } %>
         <% if (post.categories) { %>"genre": "<%- post.categories.map(c => c.name).join(' ') %>",<% } %>
         "datePublished": "<%- date(post.date, 'YYYY-MM-DD') %>",

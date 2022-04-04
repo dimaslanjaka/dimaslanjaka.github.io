@@ -2,13 +2,13 @@ import chalk from 'chalk';
 import { root } from '../types/_config';
 import { existsSync, join, mkdirSync, readFileSync, write } from './filemanager';
 import logger from './logger';
-import { md5FileSync, md5FileSync as md5 } from './md5-file';
+import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
 
 interface Objek {
   [key: string]: any;
 }
-const buildFolder = join(root, 'databases');
+export const dbFolder = join(root, 'databases');
 
 /**
  * @summary IN FILE CACHE.
@@ -24,8 +24,8 @@ export default class CacheFile {
       const stack = new Error().stack.split('at')[2];
       hash = md5(stack);
     }
-    if (!existsSync(buildFolder)) mkdirSync(buildFolder);
-    this.dbFile = join(buildFolder, 'db-' + hash + '.json');
+    if (!existsSync(dbFolder)) mkdirSync(dbFolder);
+    this.dbFile = join(dbFolder, 'db-' + hash + '.json');
     let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
     if (typeof db != 'object') {
       try {

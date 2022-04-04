@@ -1,9 +1,9 @@
 import fs from 'fs';
 import upath from 'upath';
-import { MD5 } from 'crypto';
 import coreProcess from 'process';
 import spawner from './spawner';
 import { makeid } from '../translator/TranslateUrl';
+import { md5FileSync } from './md5-file';
 
 const tempFolder = coreProcess.cwd() + '/tmp/compiler';
 if (fs.existsSync(tempFolder)) {
@@ -51,7 +51,7 @@ class process {
    * @param file
    */
   static lockCreate(file: string) {
-    return upath.join(coreProcess.cwd(), this.tmp, MD5(file).toString());
+    return upath.join(coreProcess.cwd(), this.tmp, md5FileSync(file));
   }
 
   /**

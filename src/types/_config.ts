@@ -5,12 +5,13 @@ import { toUnix } from 'upath';
 
 export type ProjectConfig = (typeof data & Hexo_Config) & {
   [keys: string]: any;
+  verbose?: boolean;
 };
 export const root = join(__dirname, '../../');
 const file = join(root, '_config.yml');
 const str = readFileSync(file, 'utf-8');
 const config: ProjectConfig = yaml.parse(str);
-
+if (!config.verbose) config.verbose = false;
 if (!config.exclude) config.exclude = [];
 if (!config.ignore) config.ignore = [];
 if (!config.include) config.include = [];

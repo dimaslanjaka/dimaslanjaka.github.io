@@ -1,11 +1,10 @@
 import { join } from 'path';
 import { parse as parseHTML } from 'node-html-parser';
-import config, { ProjectConfig, root } from '../../types/_config';
+import config, { root } from '../../types/_config';
 import { loopDir } from '../utils';
 import 'js-prototypes';
 import { readFileSync, writeFileSync } from 'fs';
 import bluebird from 'bluebird';
-import { cwd } from 'process';
 import chalk from 'chalk';
 
 export const getDomainWithoutSubdomain = (url: string | URL) => {

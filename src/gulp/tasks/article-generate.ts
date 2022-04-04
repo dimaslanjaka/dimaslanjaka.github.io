@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, globSrc, join, removeMultiSlashes, resolve, write } from '../../node/filemanager';
+import { cwd, dirname, existsSync, globSrc, join, mkdirSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
 import config, { root, theme_config, theme_dir } from '../../types/_config';
 import 'js-prototypes';
 import ejs_object, { DynamicObject } from '../../ejs';
@@ -10,6 +10,7 @@ import chalk from 'chalk';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
+import { copyFileSync } from 'fs';
 
 /**
  * @see {@link config.source_dir}
@@ -19,6 +20,7 @@ const source_dir = toUnix(resolve(join(root, config.source_dir)));
  * @see {@link config.public_dir}
  */
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
+if (!existsSync(generated_dir)) mkdirSync(generated_dir);
 /**
  * layout.ejs from theme_dir
  * @see {@link theme_dir}
@@ -26,18 +28,30 @@ const generated_dir = toUnix(resolve(join(root, config.public_dir)));
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 const logname = chalk.hex('#fcba03')('[render]');
 const page_url = new URL(config.url);
+const global_exclude = ['**/_drafts/**', '**/_data/**'];
 
 const renderAssets = () => {
   logger.log(logname + chalk.magentaBright('[assets]'), 'copy ->', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
-  const ignore = ['**/*.md', '_drafts/', '_data/', ...exclude].map((e) => '!' + e);
-  return globSrc('**/*', { cwd: source_dir, ignore: ignore })
+  const ignore = ['**/*.md', ...exclude, ...global_exclude];
+  return globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true })
     .then((s) => {
-      logger.log('total', s.length);
-      logger.log(ignore);
+      if (config.verbose) {
+        logger.log(logname + '[total]', s.length);
+        logger.log(ignore);
+      }
       return s;
     })
-    .each((s) => logger.log(s));
+    .each((file, i) => {
+      const src = join(source_dir, file);
+      const stat = statSync(src);
+      const dest = join(generated_dir, file.replace('_posts/', '/'));
+      if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
+      if (!stat.isDirectory()) {
+        copyFileSync(src, dest);
+        if (config.verbose) logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
+      }
+    });
 };
 
 gulp.task('generate:assets', renderAssets);

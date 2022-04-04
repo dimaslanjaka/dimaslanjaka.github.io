@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { dirname, existsSync, mkdirSync, statSync, writeFileSync } from '../node/filemanager';
+import { dirname, existsSync, mkdirSync, statSync, write, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
 import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
-import config_yml, { ProjectConfig } from '../types/_config';
+import config_yml, { ProjectConfig, tmp } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
 import CacheFile from '../node/cache';
+import ErrorMarkdown from './error-markdown';
+import { md5 } from '../node/md5-file';
+import uuidv4 from '../node/uuid';
 
 export interface LooseObject {
   [key: string]: any;
@@ -59,40 +62,6 @@ export type parsePostReturn = LooseObject & {
    */
   body?: string;
 };
-
-/**
- * UUID V4 Generator
- * @param fromString generate based on string (unique based on this string)
- * @returns ex: a2d6fee8-369b-bebc-3d8e-b8ff2faf40d3
- */
-export function uuidv4(fromString?: string) {
-  let original = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'; // length 8-4-4-4-12
-  if (fromString) {
-    const hash = md5(fromString);
-    original = original.replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13)).replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
-  }
-  return original.replace(/[xy]/g, function (c) {
-    if (!fromString) {
-      const r = (Math.random() * 16) | 0,
-        v = c == 'x' ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    } else {
-      const r = 0;
-      let v = r | 0x8;
-      if (c == 'y') v = (r & 0x3) | 0x8;
-      return v.toString(16);
-    }
-  });
-}
-
-/**
- * PHP MD5 Equivalent
- * @param data
- * @returns
- */
-export function md5(data: string) {
-  return crypto.createHash('md5').update(data).digest('hex');
-}
 
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
@@ -188,16 +157,28 @@ const cache = new CacheFile('parsePost');
  * Cacheable parsePost
  * @param text file path or content markdown
  * @param hash cache key
+ * @see {@link parsePostOri}
  * @returns
  */
 export function parsePost(text: string, hash: string = null) {
-  let result: parsePostReturn;
+  let result: ReturnType<typeof parsePostOri>;
   const key = hash || text;
   if (cache.isFileChanged(key)) {
     result = parsePostOri(text);
     cache.set(key, result);
   } else {
-    result = <ReturnType<typeof parsePostOri>>cache.get(key);
+    result = cache.get(key);
+    if (typeof result == 'string') {
+      try {
+        result = JSON.parse(result);
+      } catch (error) {
+        const ef = tmp('parsePost.md');
+        const em = new ErrorMarkdown({ argument: '```\n' + text + '\n```' });
+        em.add('get', '```json\n' + JSON.stringify(result) + '\n```');
+        write(ef, em.toString());
+        throw new Error('fail parse post ' + ef);
+      }
+    }
   }
   return result;
 }
@@ -207,7 +188,7 @@ export function parsePost(text: string, hash: string = null) {
  * * remove *.wp.com cdn
  * @param str
  */
-export function fixPostBody(str: string) {
+function fixPostBody(str: string) {
   // remote i2.wp.com i1.wp.com etc
   const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
   str = str.replace(regex, 'https://res.cloudinary.com/practicaldev/image/fetch/');

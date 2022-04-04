@@ -1,13 +1,14 @@
 import scheduler from './node/scheduler';
 import gulp from 'gulp';
 import afterGenerate from './gulp/tasks/after-generate';
-import { join, rmdirSync } from './node/filemanager';
+import { join, mkdirSync, rmdirSync } from './node/filemanager';
 import config, { root, tmp } from './types/_config';
 import Bluebird from 'bluebird';
 import { TaskCallback } from 'undertaker';
 import './gulp/tasks/article-copy';
 import './gulp/tasks/article-generate';
 import './gulp/tasks/deploy';
+import { dbFolder } from './node/cache';
 
 // register scheduler
 new scheduler();
@@ -16,8 +17,9 @@ new scheduler();
 gulp.task('after-generate', afterGenerate);
 
 const clean = (done?: TaskCallback) =>
-  Bluebird.all([join(root, config.public_dir), tmp()])
+  Bluebird.all([join(root, config.public_dir), join(root, config.source_dir, '_posts'), join(dbFolder), tmp()])
     .map((s) => rmdirSync(s))
-    .then(() => done);
+    .then(() => mkdirSync(tmp()))
+    .finally(() => done());
 gulp.task('clean', clean);
 gulp.task('default', gulp.series('copy', 'generate'));

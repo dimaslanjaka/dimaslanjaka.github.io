@@ -1,21 +1,13 @@
-import { curly } from "node-libcurl";
-import { parsePostReturn, saveParsedPost } from "../../markdown/transformPosts";
-import crypto from "crypto";
-import { basename, dirname, join } from "path";
-import { cwd } from "process";
-import {
-  appendFileSync,
-  existsSync,
-  mkdirSync,
-  PathLike,
-  readFileSync,
-  rmdirSync,
-  unlinkSync,
-  writeFileSync,
-} from "fs";
-import "js-prototypes";
-import chalk from "chalk";
-import bluebird from "bluebird";
+/* eslint-disable no-useless-escape */
+import { curly } from 'node-libcurl';
+import { parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
+import { basename, dirname, join } from 'path';
+import { appendFileSync, existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
+import 'js-prototypes';
+import chalk from 'chalk';
+import bluebird from 'bluebird';
+import { md5 } from '../../node/md5-file';
+import { cwd } from '../../node/filemanager';
 
 export interface ImgLib {
   /**
@@ -56,7 +48,7 @@ export interface ImgLibData {
   /**
    * @see {@link parsePostReturn.fileTree}
    */
-  fileTree?: parsePostReturn["fileTree"];
+  fileTree?: parsePostReturn['fileTree'];
 }
 
 /**
@@ -64,11 +56,11 @@ export interface ImgLibData {
  * @see {@link tmp/gulp.log}
  */
 let libraries: ImgLib = {};
-const filesave = join(cwd(), "/source/_data/external-images.json");
+const filesave = join(cwd(), '/source/_data/external-images.json');
 export { filesave as imagesDBFile };
 if (existsSync(filesave)) {
   try {
-    libraries = JSON.parse(readFileSync(filesave, "utf-8"));
+    libraries = JSON.parse(readFileSync(filesave, 'utf-8'));
   } catch (error) {
     console.log(chalk.red(`JSON DATA LOST at ${new Date()}`));
   }
@@ -78,10 +70,10 @@ if (existsSync(filesave)) {
 const downloadedKeys: string[] = [];
 
 // delete log file
-if (existsSync(join(cwd(), "tmp/images.log"))) unlinkSync(join(cwd(), "tmp/images.log"));
+if (existsSync(join(cwd(), 'tmp/images.log'))) unlinkSync(join(cwd(), 'tmp/images.log'));
 
 // result all images for current post
-let images: string[] = [];
+const images: string[] = [];
 let HexoURL: URL;
 
 /**
@@ -123,14 +115,14 @@ export default async function downloadImg(parse: parsePostReturn) {
     // remove duplicates
     .unique()
     // filter src length > 0 and not local domain
-    .filter((src) => src.length > 0 && !src.match(new RegExp("^https?://" + HexoURL.host)))
+    .filter((src) => src.length > 0 && !src.match(new RegExp('^https?://' + HexoURL.host)))
     .map((src) => {
       // fix if src startwith dynamic protocol `//`
-      if (src.startsWith("//")) src = "http:" + src;
+      if (src.startsWith('//')) src = 'http:' + src;
       // moved domains ['old domain', 'new domain']
-      [["cdn.woorkup.com", "woorkup.com"]].forEach((domainArr) => {
-        const regex = new RegExp("^https?://" + domainArr[0], "gi");
-        if (src.match(regex)) src = src.replace(regex, "http://" + domainArr[1]);
+      [['cdn.woorkup.com', 'woorkup.com']].forEach((domainArr) => {
+        const regex = new RegExp('^https?://' + domainArr[0], 'gi');
+        if (src.match(regex)) src = src.replace(regex, 'http://' + domainArr[1]);
       });
       // setup key with md5
       const key = md5(src);
@@ -141,7 +133,7 @@ export default async function downloadImg(parse: parsePostReturn) {
           url: src,
           err: false,
           file: null,
-          dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, ".md")),
+          dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, '.md')),
           fileTree: parse.fileTree,
         },
         libraries[key] || {}
@@ -178,7 +170,7 @@ export default async function downloadImg(parse: parsePostReturn) {
                   parse.body.replace(data.url, data.fullpath);
                 }
               } else {
-                console.error(chalk.red("[img][error]"), data);
+                console.error(chalk.red('[img][error]'), data);
               }
             }
             return data;
@@ -189,10 +181,6 @@ export default async function downloadImg(parse: parsePostReturn) {
           });
       });
     });
-}
-
-function md5(src: string) {
-  return crypto.createHash("md5").update(src).digest("hex");
 }
 
 const processed: ImgLibData[] = [];
@@ -219,7 +207,7 @@ function download(callback: (processed: ImgLibData[]) => any) {
   const key = md5(src);
   if (!libraries[key]) libraries[key] = { url: src };
   // [github workflow] process from `filesave`
-  if (typeof process.env.GITFLOW !== "undefined") {
+  if (typeof process.env.GITFLOW !== 'undefined') {
     if (libraries[key]) processed.push(libraries[key]);
     return retry();
   }
@@ -228,7 +216,7 @@ function download(callback: (processed: ImgLibData[]) => any) {
   return curly
     .get(src, {
       FOLLOWLOCATION: true,
-      REFERER: "https://www.google.com",
+      REFERER: 'https://www.google.com',
       SSL_VERIFYPEER: 0,
       SSL_VERIFYHOST: 0,
     })
@@ -237,27 +225,25 @@ function download(callback: (processed: ImgLibData[]) => any) {
       const headers = res.headers;
       const statusCode = res.statusCode;
       if (statusCode === 200) {
-        const contentType = headers[0]["content-type"];
-        if (contentType && contentType.startsWith("image/")) {
+        const contentType = headers[0]['content-type'];
+        if (contentType && contentType.startsWith('image/')) {
           libraries[key].type = contentType;
-          let imgtype = contentType.replace("image/", "");
+          let imgtype = contentType.replace('image/', '');
           // fix svg+xml
-          if (imgtype.includes("+")) {
-            imgtype = imgtype.split("+")[0];
+          if (imgtype.includes('+')) {
+            imgtype = imgtype.split('+')[0];
           }
           // @todo [libres] add property file
-          libraries[key].file = join(libraries[key].dir, md5(src) + "." + imgtype);
+          libraries[key].file = join(libraries[key].dir, md5(src) + '.' + imgtype);
           if (!existsSync(libraries[key].dir)) mkdirSync(libraries[key].dir, { recursive: true });
           // save images content
           writeFileSync(libraries[key].file, data);
           // determine full path url
           const fullpath = HexoURL;
-          fullpath.pathname = libraries[key].file
-            .replace(new RegExp("^" + cwd()), "")
-            .replace(new RegExp("^/source/_posts/"), "/");
+          fullpath.pathname = libraries[key].file.replace(new RegExp('^' + cwd()), '').replace(new RegExp('^/source/_posts/'), '/');
           libraries[key].fullpath = fullpath.toString();
           // save images log
-          const logfile = join(cwd(), "tmp/images.log");
+          const logfile = join(cwd(), 'tmp/images.log');
           if (!existsSync(dirname(logfile))) mkdirSync(dirname(logfile), { recursive: true });
           appendFileSync(logfile, `[img] saved ${libraries[key].file}\n`);
         }

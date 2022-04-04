@@ -11,6 +11,15 @@ export function md5FileSync(path: string) {
   return hashSum.digest('hex');
 }
 
+/**
+ * PHP MD5 Equivalent
+ * @param data
+ * @returns
+ */
+export function md5(data: string) {
+  return crypto.createHash('md5').update(data).digest('hex');
+}
+
 export default function md5File(path: string) {
   return new Promise((resolve, reject) => {
     const output = crypto.createHash('md5');

@@ -5,7 +5,7 @@ import upath from 'upath';
 import ErrnoException = NodeJS.ErrnoException;
 import { cwd as nodeCwd } from 'process';
 import 'js-prototypes';
-import Bluebird = require('bluebird');
+import Bluebird from 'bluebird';
 import glob = require('glob');
 
 export type Mutable<T> = {
@@ -58,9 +58,17 @@ const filemanager = {
   },
 
   /**
-   * Write to file recursively
+   * Write to file recursively (synchronous)
    * @param path
    * @param content
+   * @returns Promise.resolve(path);
+   * @example
+   * // write directly
+   * const input = write('/folder/file.txt', {'a':'v'});
+   * // log here
+   * console.log('written successfully');
+   * // or log using async
+   * input.then((file)=> console.log('written to', file));
    */
   write: (path: fs.PathLike, content: any) => {
     const dir = modPath.dirname(path.toString());
@@ -73,6 +81,7 @@ const filemanager = {
       }
     }
     fs.writeFileSync(path, content);
+    return Bluebird.resolve(path);
   },
 
   /**

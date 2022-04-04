@@ -1,4 +1,4 @@
-import { join, readFileSync, resolve, write } from '../node/filemanager';
+import { existsSync, join, mkdirSync, readFileSync, resolve, write } from '../node/filemanager';
 import yaml from 'yaml';
 import data from './_config_data.json';
 import { toUnix } from 'upath';
@@ -39,7 +39,7 @@ export const post_source_dir = resolve(join(root, 'src-posts'));
  * @returns
  */
 export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
-
+if (!existsSync(tmp())) mkdirSync(tmp());
 // // THEME
 const theme_def_opt = {
   amp: false,

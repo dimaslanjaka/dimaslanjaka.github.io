@@ -11,6 +11,7 @@ import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
+import { modifyPost } from './article-copy';
 
 /**
  * @see {@link config.source_dir}
@@ -149,7 +150,7 @@ export const renderArticle = function () {
             }
           }
           // render markdown to html
-          parsed.body = renderBodyMarkdown(parsed);
+          parsed.body = renderBodyMarkdown(modifyPost(parsed));
           if (parsed.path.match(/a.md$/)) console.log(parsed.body);
           // ejs render preparation
           const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);

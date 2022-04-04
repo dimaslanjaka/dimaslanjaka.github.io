@@ -10,6 +10,8 @@ import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import slugify from '../node/slugify/index';
 import { parsePostReturn } from './transformPosts';
+import { write } from '../node/filemanager';
+import { tmp } from '../types/_config';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 
@@ -22,7 +24,6 @@ export default function renderShowdown(str: string) {
   const converter = new showdown.Converter(converterOpt);
   return converter.makeHtml(str);
 }
-
 const md = new MarkdownIt({
   html: true,
   // Autoconvert URL-like text to links
@@ -65,6 +66,8 @@ export function renderMarkdownIt(str: string) {
   return md.render(str);
 }
 
+const verbose = false;
+
 /**
  * Fixable render markdown mixed with html
  * @todo render markdown to html
@@ -75,8 +78,8 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
   let body = parse.body;
   // extract style, script
   const re = {
-    script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/g,
-    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/g,
+    script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gm,
+    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gm,
   };
   const extracted: {
     script: any[];
@@ -88,38 +91,41 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {
       const regex = re[key];
-      const matchedScript = body.match(regex);
-      if (matchedScript)
+      Array.from(body.matchAll(regex)).forEach((m, i) => {
+        const str = m[0];
+        extracted[key][i] = str;
+        body = body.replace(str, `<!--${key}${i}-->`);
+      });
+      /*const matchedScript = body.match(regex);
+      if (matchedScript) {
         matchedScript.forEach((str, i) => {
           extracted[key][i] = str;
           body = body.replace(str, `<!--${key}${i}-->`);
         });
+      }*/
     }
   }
-  //write(tmp(parse.metadata.uuid, 'body.md'), body);
-  //write(tmp(parse.metadata.uuid, 'extracted-body.json'), JSON.stringify(extracted, null, 2));
-  // render markdown, after extracted script, style
-  let md = renderMarkdownIt(body);
-  //write(tmp(parse.metadata.uuid, 'render.md'), md);
+  if (verbose) {
+    write(tmp('renderBodyMarkdown', 'extracted.md'), body);
+    write(tmp('renderBodyMarkdown', 'extracted.json'), JSON.stringify(extracted, null, 2));
+  }
+  let rendered = renderMarkdownIt(body);
+  if (verbose) write(tmp('renderBodyMarkdown', 'rendered.md'), rendered);
   // restore extracted script, style
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {
       const regex = new RegExp(`<!--(${key})(\\d{1,2})-->`, 'gm');
       //const rematch = md.match(regex);
-      let m: RegExpExecArray;
-
-      while ((m = regex.exec(md)) !== null) {
-        // This is necessary to avoid infinite loops with zero-width matches
-        if (m.index === regex.lastIndex) {
-          regex.lastIndex++;
-        }
+      const match = rendered.matchAll(regex);
+      Array.from(match).forEach((m) => {
+        //console.log(match.length, regex, m[0], m[1], m[2]);
         const keyname = m[1];
         const index = m[2];
         const extractmatch = extracted[keyname][index];
-        md = md.replace(m[0], extractmatch);
-      }
+        rendered = rendered.replace(m[0], extractmatch);
+      });
     }
   }
-  //write(tmp(parse.metadata.uuid, 'restored-render.md'), md);
-  return md;
+  if (verbose) write(tmp('renderBodyMarkdown', 'restored.md'), rendered);
+  return rendered;
 }

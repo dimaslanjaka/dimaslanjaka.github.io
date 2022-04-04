@@ -182,7 +182,7 @@ function parsePostOri(text: string): parsePostReturn | null {
   return null;
 }
 
-const cache = new CacheFile('parsePost', true);
+const cache = new CacheFile('parsePost');
 
 /**
  * Cacheable parsePost

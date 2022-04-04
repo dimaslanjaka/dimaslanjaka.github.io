@@ -1,9 +1,11 @@
 /* eslint-disable prefer-rest-params */
-interface newConsole extends Console {
-  [key: string]: any;
-}
-const original = console;
-const logger: newConsole = {
+
+//const original = console;
+const logger = {
+  /**
+   * false to deactivate logger
+   */
+  active: true,
   assert: function () {
     if (logger.active && logger.doAssert) {
       console.assert.apply(null, arguments);
@@ -99,10 +101,6 @@ const logger: newConsole = {
       console.warn.apply(null, arguments);
     }
   },
-  /**
-   * false to deactivate logger
-   */
-  active: true,
   doAssert: true,
   doClear: true,
   doCount: true,
@@ -129,4 +127,8 @@ const logger: newConsole = {
     return console.profileEnd(label);
   },
 };
-export default logger;
+type newConsole = typeof logger &
+  Console & {
+    [key: string]: any;
+  };
+export default logger as newConsole;

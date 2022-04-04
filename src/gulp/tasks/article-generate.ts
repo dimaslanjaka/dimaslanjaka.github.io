@@ -1,19 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, globSrc, join, normalize, removeMultiSlashes, resolve, write } from '../../node/filemanager';
-import config, { post_public_dir, root, theme_config, theme_dir, tmp } from '../../types/_config';
-import vinyl from 'vinyl';
+import { cwd, globSrc, join, removeMultiSlashes, resolve, write } from '../../node/filemanager';
+import config, { root, theme_config, theme_dir } from '../../types/_config';
 import 'js-prototypes';
 import ejs_object, { DynamicObject } from '../../ejs';
 import { parsePost } from '../../markdown/transformPosts';
-import writeFile from '../compress/writeFile';
 import chalk from 'chalk';
-import { inspect } from 'util';
-import { modifyPost, replacePath } from './article-copy';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
-import sanitizeFilename from '../../node/sanitize-filename';
 import CacheFile from '../../node/cache';
+import logger from '../../node/logger';
 
 /**
  * @see {@link config.source_dir}
@@ -28,37 +24,37 @@ const generated_dir = toUnix(resolve(join(root, config.public_dir)));
  * @see {@link theme_dir}
  */
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
-
 const logname = chalk.hex('#fcba03')('[render]');
 const page_url = new URL(config.url);
 
-const globalExcludePatterns = ['!source/_data/**', '!source/_drafts/**'];
-
 const renderAssets = () => {
-  console.log(logname + chalk.magentaBright('[assets]'), 'start');
-  const src = ['source/**/**', '!source/**/**.{md,php}', '!source/_posts/**/**.md', ...config.exclude];
-  src.addAll(globalExcludePatterns);
-  return gulp
-    .src(src, { cwd: root })
-    .pipe(gulp.dest(normalize(generated_dir)))
-    .on('end', () => console.log(logname + chalk.magentaBright('[assets]'), chalk.green('finish')));
+  logger.log(logname + chalk.magentaBright('[assets]'), 'copy ->', generated_dir);
+  const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
+  const ignore = ['**/*.md', '_drafts/', '_data/', ...exclude].map((e) => '!' + e);
+  return globSrc('**/*', { cwd: source_dir, ignore: ignore })
+    .then((s) => {
+      logger.log('total', s.length);
+      logger.log(ignore);
+      return s;
+    })
+    .each((s) => logger.log(s));
 };
 
 gulp.task('generate:assets', renderAssets);
 
 const renderTemplate = () => {
-  console.log(logname + chalk.magentaBright('[template]'), 'start');
+  logger.log(logname + chalk.magentaBright('[template]'), 'start');
   return gulp
     .src(join(theme_dir, 'source/**/**'), { cwd: root })
     .pipe(gulp.dest(generated_dir))
-    .on('end', () => console.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
+    .on('end', () => logger.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
 };
 
 gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
 export const renderArticle = function () {
-  console.log(logname, 'generating to', generated_dir);
+  logger.log(logname, 'generating to', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
   const ignore = ['_drafts/', '_data/', ...exclude];
   return (
@@ -71,9 +67,9 @@ export const renderArticle = function () {
       // validate sources
       .then((data) => {
         if (!data.length) {
-          console.log(ignore);
+          logger.log(ignore);
         } else {
-          console.log(logname, 'markdown sources total', data.length);
+          logger.log(logname, 'markdown sources total', data.length);
         }
         return data;
       })
@@ -94,7 +90,7 @@ export const renderArticle = function () {
       .map((result) => {
         const parse = Object.assign(result, parsePost(result.path));
         if (!parse) {
-          console.log(logname, chalk.red('[fail]'), result.path);
+          logger.log(logname, chalk.red('[fail]'), result.path);
           return;
         }
         return parse;
@@ -118,7 +114,7 @@ export const renderArticle = function () {
             const skip = () => result.shift();
             const save = (rendered: string) => {
               const saveto = join(generated_dir, parsed.permalink);
-              console.log(logname, chalk.greenBright('generated'), saveto);
+              logger.log(logname, chalk.greenBright('generated'), saveto);
               write(saveto, rendered);
               parsed.generated = rendered;
               parsed.generated_path = saveto;
@@ -128,7 +124,7 @@ export const renderArticle = function () {
             };
             if (parsed.cached) {
               if (renderCache.isFileChanged(parsed.path)) {
-                console.warn(logname + chalk.blueBright('[cache]'), parsed.path, 'changed');
+                logger.warn(logname + chalk.blueBright('[cache]'), parsed.path, 'changed');
               } else {
                 skip();
               }
@@ -145,8 +141,8 @@ export const renderArticle = function () {
               .then(save)
               .then(skip)
               .catch((e) => {
-                console.log(logname, chalk.red('[error]'), parsed.path);
-                console.error(e);
+                logger.log(logname, chalk.red('[error]'), parsed.path);
+                logger.error(e);
               })
               .finally(runner);
           });
@@ -173,7 +169,7 @@ gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'gener
           const filepath = toUnix(file.path);
 
 
-          if (file.dirname.match(/readme/gi)) console.log(file.dirname);
+          if (file.dirname.match(/readme/gi)) logger.log(file.dirname);
           if (parse) {
 
             //delete parse.body;
@@ -192,11 +188,11 @@ gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'gener
                     write(join(generated_dir, 'sitemap.html'), rendered);
                   });
                 });
-                console.log(...log);
+                logger.log(...log);
                 cb(null, file);
               });
           } else {
             log.push(chalk.red('fail 2nd parse'));
           }
-          console.log(...log);
+          logger.log(...log);
           cb(null, file);*/

@@ -18,9 +18,8 @@ export default class CacheFile {
   md5Cache: Objek = {};
   dbFile: string;
   private currentHash: string;
-  constructor(hash = null, verbose = false) {
+  constructor(hash = null) {
     this.currentHash = hash;
-    logger.active = verbose;
     if (!hash) {
       const stack = new Error().stack.split('at')[2];
       hash = md5(stack);
@@ -41,11 +40,21 @@ export default class CacheFile {
     }
   }
   setCache = (key: string, value: any) => this.set(key, value);
+  /**
+   * resolve long text on key
+   */
   resolveKey(key: string) {
     // if key is file path
     if (existsSync(key)) return key;
     // if key is long text
-    if (key.length > 32) return key.substring(0, 32);
+    if (key.length > 32) {
+      // search uuid
+      const regex = /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
+      const m = regex.exec(key);
+      if (typeof m[1] == 'string') return m[1];
+      // return first 32 byte text
+      return key.substring(0, 32);
+    }
     return key;
   }
   set(key: string, value: any) {

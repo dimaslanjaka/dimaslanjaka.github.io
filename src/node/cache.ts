@@ -13,8 +13,14 @@ export const dbFolder = resolve(cacheDir);
 export interface CacheOpt {
   /**
    * immediately save cache value
+   * * default false
    */
   sync?: boolean;
+  /**
+   * root/folder to save entire databases
+   * * default node_modules/.cache/dimaslanjaka
+   */
+  folder?: string;
 }
 
 /**
@@ -26,6 +32,7 @@ export default class CacheFile {
   dbFile: string;
   static options: CacheOpt = {
     sync: false,
+    folder: dbFolder,
   };
   private currentHash: string;
   constructor(hash = null, opt?: CacheOpt) {
@@ -35,8 +42,8 @@ export default class CacheFile {
       const stack = new Error().stack.split('at')[2];
       hash = md5(stack);
     }
-    if (!existsSync(dbFolder)) mkdirSync(dbFolder);
-    this.dbFile = join(dbFolder, 'db-' + hash + '.json');
+    if (!existsSync(CacheFile.options.folder)) mkdirSync(CacheFile.options.folder);
+    this.dbFile = join(CacheFile.options.folder, 'db-' + hash);
     let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
     if (typeof db != 'object') {
       try {
@@ -54,7 +61,7 @@ export default class CacheFile {
     return new Promise((resolve: (arg: Array<Error>) => any) => {
       const opt = { recursive: true, retryDelay: 3000, maxRetries: 3 };
       // delete current hash folders
-      rm(join(dbFolder, this.currentHash), opt, (e) => {
+      rm(join(CacheFile.options.folder, this.currentHash), opt, (e) => {
         // delete current hash db
         rm(this.dbFile, opt, (ee) => {
           resolve([e, ee]);
@@ -81,11 +88,11 @@ export default class CacheFile {
     return key;
   }
   /**
-   * locate ${dbFolder}/${currentHash}/${unique key hash}
+   * locate ${CacheFile.options.folder}/${currentHash}/${unique key hash}
    * @param key
    * @returns
    */
-  locateKey = (key: string) => join(dbFolder, this.currentHash, this.resolveKey(key));
+  locateKey = (key: string) => join(CacheFile.options.folder, this.currentHash, md5(this.resolveKey(key)));
   dump(key?: string) {
     if (key) {
       return {

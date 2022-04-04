@@ -68,10 +68,10 @@ gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
 export const renderArticle = function () {
-  logger.log(logname, 'generating to', generated_dir);
-  const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
-  const ignore = ['_drafts/', '_data/', ...exclude];
-  return (
+  return new Promise((resolve) => {
+    logger.log(logname, 'generating to', generated_dir);
+    const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
+    const ignore = ['_drafts/', '_data/', ...exclude];
     globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
       // validate excluded
       .filter((file) => {
@@ -117,53 +117,58 @@ export const renderArticle = function () {
          * @returns
          */
         const runner = () => {
-          return new Promise<void>((resolve) => {
-            if (!result.length) return resolve();
-            // get first item
-            const parsed = result[0];
-            /**
-             * remove first item, skip
-             * @returns
-             */
-            const skip = () => result.shift();
-            const save = (rendered: string) => {
-              const saveto = join(generated_dir, parsed.permalink);
-              logger.log(logname, chalk.greenBright('generated'), saveto);
-              write(saveto, rendered);
-              parsed.generated = rendered;
-              parsed.generated_path = saveto;
-              renderCache.set(parsed.path, rendered);
-              //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
-              return parsed;
-            };
-            if (parsed.cached) {
-              if (renderCache.isFileChanged(parsed.path)) {
-                logger.warn(logname + chalk.blueBright('[cache]'), parsed.path, 'changed');
-              } else {
-                skip();
-              }
+          if (!result.length) return resolve(result.length);
+          // get first item
+          const parsed = result[0];
+          /**
+           * remove first item, skip
+           * @returns
+           */
+          const skip = () => result.shift();
+          /**
+           * Save rendered ejs to `config.public_dir`
+           * @param rendered
+           * @returns
+           */
+          const save = (rendered: string) => {
+            const saveto = join(generated_dir, parsed.permalink);
+            logger.log(logname, chalk.greenBright('generated'), saveto);
+            write(saveto, rendered);
+            parsed.generated = rendered;
+            parsed.generated_path = saveto;
+            renderCache.set(parsed.path, rendered);
+            //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
+            logger.log(logname + chalk.cyanBright('[remaining]', result.length));
+            return parsed;
+          };
+          if (parsed.cached) {
+            if (renderCache.isFileChanged(parsed.path)) {
+              logger.warn(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
+            } else {
+              skip();
             }
-            // render markdown to html
-            parsed.body = renderBodyMarkdown(parsed);
-            // ejs render preparation
-            const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
-            ejs_opt.content = parsed.body; // html rendered markdown
-            page_url.pathname = parsed.permalink;
-            ejs_opt.url = page_url.toString(); // permalink
-            ejs_object
-              .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
-              .then(save)
-              .then(skip)
-              .catch((e) => {
-                logger.log(logname, chalk.red('[error]'), parsed.path);
-                logger.error(e);
-              })
-              .finally(runner);
-          });
+          }
+          // render markdown to html
+          parsed.body = renderBodyMarkdown(parsed);
+          if (parsed.path.match(/a.md$/)) console.log(parsed.body);
+          // ejs render preparation
+          const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
+          ejs_opt.content = parsed.body; // html rendered markdown
+          page_url.pathname = parsed.permalink;
+          ejs_opt.url = page_url.toString(); // permalink
+          ejs_object
+            .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
+            .then(save)
+            .then(skip)
+            .catch((e) => {
+              logger.log(logname, chalk.red('[error]'), parsed.path);
+              logger.error(e);
+            })
+            .finally(runner);
         };
         return runner();
-      })
-  );
+      });
+  });
 };
 
 gulp.task('generate:posts', renderArticle);

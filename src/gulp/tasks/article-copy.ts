@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-//** copy from src-posts to source/_posts **//
 /**
- * copy, parsing shortcodes, render html body, etc from src-posts to source_dir
+ * @description copy, parsing shortcodes, render html body, etc from src-posts to source_dir
+ * @summary copy from src-posts to source/_posts
  */
 
 import 'js-prototypes';
-import { statSync, cwd, dirname, write } from '../../node/filemanager';
+import { statSync, cwd, dirname } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -15,7 +15,7 @@ import extractText from '../shortcode/extract-text';
 import { shortcodeScript } from '../shortcode/script';
 import { shortcodeNow } from '../shortcode/time';
 import parseShortCodeInclude from '../shortcode/include';
-import config, { post_public_dir, post_source_dir, tmp } from '../../types/_config';
+import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
@@ -25,7 +25,6 @@ import chalk from 'chalk';
 import { shortcodeYoutube } from '../shortcode/youtube';
 import CacheFile from '../../node/cache';
 import through2 from 'through2';
-import { toJSON } from 'flatted';
 import ErrorMarkdown from '../../markdown/error-markdown';
 
 function cleanString(text: string) {
@@ -266,6 +265,7 @@ const validateParser = (parse: ReturnType<typeof parsePost>) => {
   }
   return true;
 };
+
 const copyPosts = () => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
   const run = gulp.src(['**/*.md', '!**/.git', ...exclude], { cwd: post_source_dir }).pipe(

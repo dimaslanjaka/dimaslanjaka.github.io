@@ -66,7 +66,7 @@ export function renderMarkdownIt(str: string) {
   return md.render(str);
 }
 
-const verbose = false;
+const verbose = true;
 
 /**
  * Fixable render markdown mixed with html
@@ -107,7 +107,7 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
   }
   if (verbose) {
     write(tmp('renderBodyMarkdown', 'extracted.md'), body);
-    write(tmp('renderBodyMarkdown', 'extracted.json'), JSON.stringify(extracted, null, 2));
+    write(tmp('renderBodyMarkdown', 'extracted.json'), extracted);
   }
   let rendered = renderMarkdownIt(body);
   if (verbose) write(tmp('renderBodyMarkdown', 'rendered.md'), rendered);

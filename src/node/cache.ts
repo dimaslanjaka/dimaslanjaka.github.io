@@ -58,12 +58,13 @@ export default class CacheFile {
     return key;
   }
   set(key: string, value: any) {
+    const self = this;
     key = this.resolveKey(key);
     this.md5Cache[key] = value;
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
-      logger.log(chalk.magentaBright(this.currentHash), 'saved cache', this.dbFile);
-      write(this.dbFile, JSON.stringify(this.md5Cache));
+      logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
+      write(self.dbFile, JSON.stringify(self.md5Cache));
     });
   }
   has(key: string): boolean {

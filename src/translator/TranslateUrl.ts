@@ -2,7 +2,7 @@
 //https://translate.googleusercontent.com/translate_p?hl=en&sl=id&tl=en&u=https://27f5494720ed.ngrok.io/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html&depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=ALkJrhgAAAAAYMQOKGM4S-JILFfc9xbdqOesOtUAwuqL
 // https://4fca314b6878-ngrok-io.translate.goog/2020/6/7/update-genshin-impact-1.5.1-1.6.0.html?_x_tr_sl=id&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=ajax,nv
 
-export const makeid = (n = 36, prefix = '') => prefix + Math.random().toString(n).slice(2);
+import { makeid } from '../node/uuid';
 
 class TranslateUrl {
   base = new URL(`https://translate.google.com/translate?depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=${makeid(21)}-${makeid(22)}`);

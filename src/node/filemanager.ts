@@ -7,6 +7,8 @@ import { cwd as nodeCwd } from 'process';
 import 'js-prototypes';
 import Bluebird from 'bluebird';
 import glob = require('glob');
+import findCacheDir from 'find-cache-dir';
+export const cacheDir = findCacheDir({ name: 'dimaslanjaka' });
 
 export type Mutable<T> = {
   -readonly [k in keyof T]: T[k];

@@ -1,15 +1,21 @@
 import chalk from 'chalk';
-import { root } from '../types/_config';
-import { existsSync, join, mkdirSync, readFileSync, write } from './filemanager';
+import { cacheDir, existsSync, join, mkdirSync, readFileSync, resolve, write } from './filemanager';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
-import { deserialize, serialize } from './serializer';
+import { serialize, unserialize } from 'php-serialize';
+import { rm } from 'fs';
 
 interface Objek {
   [key: string]: any;
 }
-export const dbFolder = join(root, 'databases');
+export const dbFolder = resolve(cacheDir);
+export interface CacheOpt {
+  /**
+   * immediately save cache value
+   */
+  sync?: boolean;
+}
 
 /**
  * @summary IN FILE CACHE.
@@ -18,8 +24,12 @@ export const dbFolder = join(root, 'databases');
 export default class CacheFile {
   md5Cache: Objek = {};
   dbFile: string;
+  static options: CacheOpt = {
+    sync: false,
+  };
   private currentHash: string;
-  constructor(hash = null) {
+  constructor(hash = null, opt?: CacheOpt) {
+    if (opt) CacheFile.options = Object.assign(CacheFile.options, opt);
     this.currentHash = hash;
     if (!hash) {
       const stack = new Error().stack.split('at')[2];
@@ -30,7 +40,7 @@ export default class CacheFile {
     let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
     if (typeof db != 'object') {
       try {
-        db = deserialize(db.toString());
+        db = unserialize(db.toString());
       } catch (e) {
         logger.error('cache database lost');
         logger.error(e);
@@ -39,6 +49,18 @@ export default class CacheFile {
     if (typeof db == 'object') {
       this.md5Cache = db;
     }
+  }
+  clear() {
+    return new Promise((resolve: (arg: Array<Error>) => any) => {
+      const opt = { recursive: true, retryDelay: 3000, maxRetries: 3 };
+      // delete current hash folders
+      rm(join(dbFolder, this.currentHash), opt, (e) => {
+        // delete current hash db
+        rm(this.dbFile, opt, (ee) => {
+          resolve([e, ee]);
+        });
+      });
+    });
   }
   setCache = (key: string, value: any) => this.set(key, value);
   /**
@@ -52,21 +74,66 @@ export default class CacheFile {
       // search uuid
       const regex = /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
       const m = regex.exec(key);
-      if (typeof m[1] == 'string') return m[1];
+      if (m && typeof m[1] == 'string') return m[1];
       // return first 32 byte text
-      return key.substring(0, 32);
+      return md5(key.substring(0, 32));
     }
     return key;
   }
+  /**
+   * locate ${dbFolder}/${currentHash}/${unique key hash}
+   * @param key
+   * @returns
+   */
+  locateKey = (key: string) => join(dbFolder, this.currentHash, this.resolveKey(key));
+  dump(key?: string) {
+    if (key) {
+      return {
+        resolveKey: this.resolveKey(key),
+        locateKey: this.locateKey(key),
+        db: this.dbFile,
+      };
+    }
+  }
+  /**
+   * Dont worry to this queue process
+   */
+  queue = {
+    sets: [] as (() => any)[],
+    start: () => {
+      if (this.queue.sets.length) {
+        Promise.resolve(this.queue.sets[0]()).then(this.queue.restart);
+      }
+    },
+    restart: () => {
+      if (this.queue.sets.length) this.queue.sets.shift();
+      this.queue.start();
+    },
+  };
   set(key: string, value: any) {
     const self = this;
+    // resolve key hash
     key = this.resolveKey(key);
-    this.md5Cache[key] = value;
+    // locate key location file
+    const locationCache = this.locateKey(key);
+    // +key value
+    this.md5Cache[key] = locationCache;
+
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
       write(self.dbFile, serialize(self.md5Cache));
     });
+    if (!CacheFile.options.sync) {
+      // +queue async
+      this.queue.sets.push(() => {
+        // save db value
+        write(locationCache, serialize(value));
+      });
+      this.queue.start();
+    } else {
+      write(self.dbFile, serialize(self.md5Cache));
+    }
   }
   has(key: string): boolean {
     key = this.resolveKey(key);
@@ -79,10 +146,14 @@ export default class CacheFile {
    * @returns
    */
   get(key: string, fallback = null) {
+    // resolve key hash
     key = this.resolveKey(key);
+    // locate key location file
+    const locationCache = this.locateKey(key);
     const Get = this.md5Cache[key];
-    if (Get === undefined) return fallback;
-    return deserialize(Get);
+    if (!Get) return fallback;
+    if (existsSync(locationCache)) return unserialize(readFileSync(locationCache, 'utf-8'));
+    return fallback;
   }
   getCache = (key: string, fallback = null) => this.get(key, fallback);
   /**

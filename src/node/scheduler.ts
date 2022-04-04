@@ -93,6 +93,12 @@ class scheduler {
    */
   static add(key: string, value: () => any) {
     functions[key] = value;
+    const self = this;
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(self.register());
+      }, 3000);
+    });
   }
   private static postponeCounter = 0;
   /**

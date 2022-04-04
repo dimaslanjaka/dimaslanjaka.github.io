@@ -144,7 +144,7 @@ export const renderArticle = function () {
           };
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
-              logger.warn(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
+              logger.log(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
             } else {
               skip();
             }

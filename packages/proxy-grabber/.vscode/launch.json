@@ -1,0 +1,32 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "gulp",
+      "name": "Test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "gulp test",
+      "name": "Test Proxy",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "gulp db",
+      "name": "Test Database",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npm run build && gulp get",
+      "name": "Get Proxies",
+      "request": "launch",
+      "type": "node-terminal"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { existsSync, join, mkdirSync, readFileSync, write } from './filemanager'
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
+import { deserialize, serialize } from './serializer';
 
 interface Objek {
   [key: string]: any;
@@ -29,7 +30,7 @@ export default class CacheFile {
     let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
     if (typeof db != 'object') {
       try {
-        db = JSON.parse(db.toString());
+        db = deserialize(db.toString());
       } catch (e) {
         logger.error('cache database lost');
         logger.error(e);
@@ -64,7 +65,7 @@ export default class CacheFile {
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
-      write(self.dbFile, JSON.stringify(self.md5Cache));
+      write(self.dbFile, serialize(self.md5Cache));
     });
   }
   has(key: string): boolean {
@@ -81,7 +82,7 @@ export default class CacheFile {
     key = this.resolveKey(key);
     const Get = this.md5Cache[key];
     if (Get === undefined) return fallback;
-    return Get;
+    return deserialize(Get);
   }
   getCache = (key: string, fallback = null) => this.get(key, fallback);
   /**

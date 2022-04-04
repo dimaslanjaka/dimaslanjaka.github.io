@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "rootDir": "./src/",
+    "rootDirs": [
+      "./src",
+      "./packages"
+    ],
     "sourceRoot": "./src/",
     "outDir": "./build",
     "module": "CommonJS",

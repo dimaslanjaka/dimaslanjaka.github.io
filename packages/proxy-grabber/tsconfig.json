@@ -1,0 +1,33 @@
+{
+  //"extends": "../../../hexo-seo/packages/js-prototypes/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "allowJs": true,
+    "allowUnusedLabels": true,
+    "outDir": "./dist",
+    "target": "ES5",
+    //"declarationDir": "./dist/@types",
+    "resolveJsonModule": true,
+    //"emitDeclarationOnly": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "checkJs": false,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/.git/**",
+    "./dist/**/*"
+  ],
+  "include": [
+    "index.js",
+    //"src/**/*",
+    //"../../../hexo-seo/packages/js-prototypes/src/**/*"
+  ]
+}

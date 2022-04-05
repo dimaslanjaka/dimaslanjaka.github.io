@@ -72,6 +72,7 @@ jobs:
       - run: cp -rf docs/sitemap.html docs/index.html
       - run: cd docs/page && npm install
       - run: cp -rf source/robots.txt docs/robots.txt
+      - run: cp -rf .gitignore docs/.gitignore
       - run: echo www.webmanajemen.com > docs/CNAME
       - name: Deploy 🚀
         #if: ${{ false }}

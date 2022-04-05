@@ -34,7 +34,7 @@ export function shortcodeYoutube(content: string) {
       <iframe src="https://www.youtube.com/embed/${ytid}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>`;
     }
-    if (html) content = content.replace(allmatch, html);
+    if (html) content = content.replace(allmatch, () => html);
     count++;
   }
 

@@ -1,44 +1,43 @@
-import fs from 'fs';
-import path from 'path';
 import 'js-prototypes';
+import chalk from 'chalk';
+import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
+import { root } from '../../types/_config';
 
+const logname = chalk.blue('[css]');
 /**
  * Parse shortcode css
  * ```html
  * <!-- css /path/file.css -->
  * ```
  * @param file file path
- * @param read body content
+ * @param str body content
  * @returns
  */
-export function shortcodeCss(file: string, read: string) {
-  const matchFile = read.match(/\<\!\-\-\s+?css\s+?.+?\s+?\-\-\>/gm);
-  if (matchFile && matchFile.length > 0) {
-    matchFile.forEach(function (readied) {
-      const match = readied.match(/\<\!\-\-\s+?css\s+?(.+?)\s+?\-\-\>/);
-      //console.log("matched ", match);
-      if (match && match.length > 1) {
-        const directFile = path.join(path.dirname(file), match[1]);
-        const directFind = fs.existsSync(directFile);
-        if (directFind) {
-          //console.log("[direct] Processing shortcode " + directFile);
-          const directRead = fs.readFileSync(directFile).toString();
-          read = read.replace(match[0], `<style>${directRead}</style>`);
-          //fs.writeFileSync(file, directReplace);
-          //console.log("[shortcode css] " + file.replace(process.cwd(), "") + " include style successfully");
-        } else {
-          //console.error("[shortcode css] " + match[1] + " not inline with " + file.replace(process.cwd(), ""));
-          const rootFind = path.join(process.cwd(), match[1]);
-          if (fs.existsSync(rootFind)) {
-            //console.log("[shortcode css][root] Processing shortcode " + directFile);
-            const rootRead = fs.readFileSync(rootFind).toString();
-            read = read.replace(match[0], `<style>${rootRead}</style>`);
-            //fs.writeFileSync(file, rootReplace);
-            //console.log("[shortcode css] " + file.replace(process.cwd(), "") + " include style successfully");
-          }
+export function shortcodeCss(file: string, str: string) {
+  const log = [logname];
+  const regex = /<!--\s+?css\s+?(.+?)\s+?-->/gim;
+  const execs = Array.from(str.matchAll(regex));
+  execs.forEach((m) => {
+    const htmlTag = m[0];
+    const includefile = m[1];
+    const dirs = {
+      directFile: join(dirname(file.toString()), includefile),
+      cwdFile: join(cwd(), includefile),
+      rootFile: join(root, includefile),
+    };
+    for (const key in dirs) {
+      if (Object.prototype.hasOwnProperty.call(dirs, key)) {
+        const filepath = dirs[key];
+        if (existsSync(filepath)) {
+          console.log(...log, chalk.greenBright(`[${key}]`), file);
+          const read = readFileSync(filepath, 'utf-8');
+          str = str.replace(htmlTag, () => `<style>${read}</style>`);
+          //console.log('match tag', str.match(new RegExp(htmlTag, 'm'))[0]);
+          //write(tmp('shortcode', 'script.txt'), mod).then(console.log);
+          break;
         }
       }
-    });
-  }
-  return read;
+    }
+  });
+  return str;
 }

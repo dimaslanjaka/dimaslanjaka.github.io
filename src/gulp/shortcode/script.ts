@@ -1,6 +1,10 @@
-import fs from 'fs';
-import path from 'path';
+/* eslint-disable no-useless-escape */
+import chalk from 'chalk';
 import 'js-prototypes';
+import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
+import { root } from '../../types/_config';
+
+const logname = chalk.blue('[script]');
 
 /**
  * Parse shortcode script
@@ -8,34 +12,35 @@ import 'js-prototypes';
  * <!-- script /path/file.js -->
  * ```
  * @param file markdown file
+ * @param str content to replace
  * @returns
  */
-export function shortcodeScript(file: string, read: string) {
-  const matchFile = read.match(/\<\!\-\-\s+?script\s+?.+?\s+?\-\-\>/gm);
-  if (matchFile && matchFile.length > 0) {
-    matchFile.forEach(function (readied) {
-      const match = readied.match(/\<\!\-\-\s+?script\s+?(.+?)\s+?\-\-\>/);
-      //console.log("matched ", match);
-      if (match && match.length > 1) {
-        const directFile = path.join(path.dirname(file), match[1]);
-        const directFind = fs.existsSync(directFile);
-        if (directFind) {
-          //console.log("[shortcode script][direct] Processing shortcode " + directFile);
-          const directRead = fs.readFileSync(directFile).toString();
-          read = read.replace(match[0], `<script>${directRead}</script>`);
-          //console.log(file.replace(process.cwd(), "") + " include script successfully");
-        } else {
-          //console.error("[shortcode script] " + match[1] + " not inline with " + file.replace(process.cwd(), ""));
-          const rootFind = path.join(process.cwd(), match[1]);
-          if (fs.existsSync(rootFind)) {
-            //console.log("[shortcode script][root] Processing shortcode " + directFile);
-            const rootRead = fs.readFileSync(rootFind).toString();
-            read = read.replace(match[0], `<script>${rootRead}</script>`);
-            //console.log("[shortcode script] " + file.replace(process.cwd(), "") + " include script successfully");
-          }
+export function shortcodeScript(file: string, str: string) {
+  const log = [logname];
+  const regex = /<!--\s+?script\s+?(.+?)\s+?-->/gim;
+  const execs = Array.from(str.matchAll(regex));
+  execs.forEach((m, i) => {
+    const htmlTag = m[0];
+    const includefile = m[1];
+    const dirs = {
+      directFile: join(dirname(file.toString()), includefile),
+      cwdFile: join(cwd(), includefile),
+      rootFile: join(root, includefile),
+    };
+    for (const key in dirs) {
+      if (Object.prototype.hasOwnProperty.call(dirs, key)) {
+        const filepath = dirs[key];
+        if (existsSync(filepath)) {
+          log[0] += chalk.greenBright(`[${key}]`);
+          console.log(...log, file);
+          const read = readFileSync(filepath, 'utf-8');
+          str = str.replace(htmlTag, () => `<script>${read}</script>`);
+          //console.log('match tag', str.match(new RegExp(htmlTag, 'm'))[0]);
+          //write(tmp('shortcode', 'script.txt'), mod).then(console.log);
+          break;
         }
       }
-    });
-  }
-  return read;
+    }
+  });
+  return str;
 }

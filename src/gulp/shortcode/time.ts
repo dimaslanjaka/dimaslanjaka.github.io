@@ -29,7 +29,7 @@ export function shortcodeNow(file: string | fs.PathLike, read: string) {
   const rex = /<!-- now\(\) -->/gm;
   const matchRegex = read.match(rex);
   if (matchRegex && matchRegex.length > 0) {
-    read = read.replace(rex, now());
+    read = read.replace(rex, () => now());
     //console.log("[shortcode now][" + file.toString().replace(process.cwd(), "") + "] done");
   }
   return read;

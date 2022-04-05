@@ -31,7 +31,7 @@ export function extractText(file: string, str: string) {
       const rootFile = path.join(process.cwd(), bracketmatch);
       if (fs.existsSync(rootFile)) {
         const rootRead = fs.readFileSync(rootFile).toString();
-        str = str.replace(allmatch, rootRead);
+        str = str.replace(allmatch, () => rootRead);
       }
     }
   }

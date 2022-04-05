@@ -173,7 +173,7 @@ export const renderArticle = function () {
               if (!result.length) {
                 // generate sitemap
                 write(join(generated_dir, 'sitemap.txt'), sitemaps.map((o) => o.url).join('\n'));
-                ejs_opt.content = sitemaps.map((o) => `[${o.title}](${o.url})`).join('\n\n');
+                ejs_opt.content = sitemaps.map((o) => `<a href="${o.url}" title="${o.url}" alt="${o.url}" rel="follow">${o.title}</a>`).join('<br/>');
                 ejs_opt.title = 'Sitemap';
                 ejs_opt.category = ['Sitemap'];
                 ejs_opt.tags = ['Sitemap'];

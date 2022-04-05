@@ -17,7 +17,7 @@ export default class ErrorMarkdown {
   stack?: string;
   filelog: string;
 
-  constructor(obj?: object | string) {
+  constructor(obj?: object | string, hash?: string) {
     // assign the error class name in your custom error (as a shortcut)
     this.name = this.constructor.name;
 
@@ -27,7 +27,7 @@ export default class ErrorMarkdown {
     const frame = e.stack.split('\n')[2]; // change to 3 for grandparent func
     //const lineNumber = frame.split(':').reverse()[1];
     //const functionName = frame.split(' ')[5];
-    this.filelog = tmp('errors', md5(toUnix(frame))) + '.md';
+    this.filelog = tmp('errors', md5(hash ? hash : toUnix(frame))) + '.md';
     this.message = 'error messages log at ' + this.filelog;
 
     if (typeof obj == 'object') {
@@ -39,6 +39,7 @@ export default class ErrorMarkdown {
           }
         }
       }
+      this.writeLog();
     }
     return this;
   }
@@ -60,6 +61,9 @@ export default class ErrorMarkdown {
   writeLog() {
     write(this.filelog, this.toString());
     return this;
+  }
+  getFileLog() {
+    return this.filelog;
   }
   /**
    * Remove property log

@@ -1,14 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { dirname, existsSync, mkdirSync, statSync, write, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
-import crypto from 'crypto';
 import { readFileSync } from 'fs';
 import chalk from 'chalk';
 import config_yml, { ProjectConfig, tmp } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
 import CacheFile from '../node/cache';
 import ErrorMarkdown from './error-markdown';
-import { md5 } from '../node/md5-file';
 import uuidv4 from '../node/uuid';
 
 export interface LooseObject {
@@ -62,6 +60,9 @@ export type parsePostReturn = LooseObject & {
    */
   body?: string;
 };
+
+const logname = chalk.blueBright('[parsePost]');
+const verbose = true;
 
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
@@ -151,23 +152,27 @@ function parsePostOri(text: string): parsePostReturn | null {
   return null;
 }
 
-const cache = new CacheFile('parsePost');
+const parseCache = new CacheFile('parsePost');
 
 /**
  * Cacheable parsePost
  * @param text file path or content markdown
  * @param hash cache key
+ * @param cache using cache
  * @see {@link parsePostOri}
  * @returns
  */
-export function parsePost(text: string, hash: string = null) {
+export function parsePost(text: string, hash: string = null, cache = true) {
   let result: ReturnType<typeof parsePostOri>;
   const key = hash || text;
-  if (cache.isFileChanged(key)) {
+  if (parseCache.isFileChanged(key) || !cache) {
+    // parse changed or no cache
+    //console.log('parse no cache');
     result = parsePostOri(text);
-    cache.set(key, result);
+    parseCache.set(key, result);
   } else {
-    result = cache.get(key);
+    // restore cache
+    result = parseCache.get(key);
     if (typeof result == 'string') {
       try {
         result = JSON.parse(result);

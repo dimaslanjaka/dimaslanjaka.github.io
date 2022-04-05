@@ -5,14 +5,15 @@ import { tmp } from '../types/_config';
 import Promise from 'bluebird';
 import { modifyPost } from '../gulp/tasks/article-copy';
 
-const targets = ['D:/Repositories/gh-pages/source/p/a.md', 'D:\\Repositories\\gh-pages\\source\\_posts\\Chimeraland\\Recipes.md'];
+const targets = ['D:\\Repositories\\gh-pages\\source\\_posts\\The Legend Of Neverland\\Quiz.md'];
 const target = targets[0];
 if (!existsSync(target)) console.error(target, 'not found');
-Promise.resolve(parsePost(target)).then((parsed) => {
+Promise.resolve(parsePost(target, target, false)).then((parsed) => {
   write(tmp('tests', 'generate-parsed.json'), parsed)
     .then((lf) => console.log('->', lf))
     .then(() => {
-      Promise.resolve(modifyPost(parsed)).then((modified) => {
+      Promise.resolve(modifyPost(parsed, false)).then((modified) => {
+        write(tmp('tests', 'generate-modified.md'), modified.body).then((lf) => console.log('->'.repeat(2), lf));
         write(tmp('tests', 'generate-modified.json'), modified)
           .then((lf) => console.log('->'.repeat(2), lf))
           .then(() => {

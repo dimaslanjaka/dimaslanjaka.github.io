@@ -29,10 +29,10 @@ export function bindProcessExit(key: string, fn: () => void): void {
  */
 function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
   Object.keys(fns).forEach((key) => {
-    logger.log(logname, `executing function key: ${key}`);
+    if (scheduler.verbose) logger.log(logname, `executing function key: ${key}`);
     fns[key]();
   });
-  if (options.cleanup) logger.log(logname, `clean exit(${exitCode})`);
+  if (options.cleanup && scheduler.verbose) logger.log(logname, `clean exit(${exitCode})`);
   if (options.exit) process.exit();
 }
 
@@ -72,6 +72,7 @@ const functions: { [key: string]: () => any }[] = [];
  * ```
  */
 class scheduler {
+  static verbose = true;
   constructor() {
     if (!scheduler.registered) scheduler.register();
   }
@@ -121,7 +122,7 @@ class scheduler {
       functions[key]();
       if (deleteAfter) delete functions[key];
     } else {
-      logger.error(`function with key: ${key} is not function`);
+      if (scheduler.verbose) logger.error(`function with key: ${key} is not function`);
     }
   }
   /**
@@ -129,7 +130,7 @@ class scheduler {
    */
   static executeAll() {
     Object.keys(functions).forEach((key) => {
-      logger.log(logname, 'executing', key);
+      if (scheduler.verbose) logger.log(logname, 'executing', key);
       functions[key]();
     });
     scheduler.clearArray(functions);

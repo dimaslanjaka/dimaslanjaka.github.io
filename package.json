@@ -11,7 +11,8 @@
     "dev": "nodemon",
     "deploy": "git subtree push --prefix docs origin master",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
-    "reinstall": "npm install --ignore-engines --ignore-platform"
+    "reinstall": "npm install --ignore-engines --ignore-platform",
+    "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -36,14 +37,17 @@
   "devDependencies": {
     "@types/amphtml-validator": "^1.0.1",
     "@types/bluebird": "^3.5.36",
+    "@types/chai": "^4.3.0",
     "@types/cross-spawn": "^6.0.2",
     "@types/ejs": "^3.1.0",
     "@types/find-cache-dir": "^3.2.1",
     "@types/gulp": "^4.0.9",
     "@types/gulp-imagemin": "^8.0.1",
+    "@types/jquery": "^3.5.14",
     "@types/lru-cache": "^7.6.1",
     "@types/markdown-it-attrs": "^4.1.0",
     "@types/micromatch": "^4.0.2",
+    "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.23",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "@types/undertaker": "^1.2.7",
@@ -51,6 +55,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "bluebird": "^3.7.2",
     "browser-sync": "^2.27.9",
+    "chai": "^4.3.6",
     "chalk": "^4.1.2",
     "crypto-js": "^4.1.1",
     "ejs": "^3.1.6",
@@ -85,6 +90,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "minimatch": "^5.0.1",
+    "mocha": "^9.2.2",
     "moment": "^2.29.1",
     "ngrok": "^4.3.1",
     "node-html-parser": "^5.3.3",

@@ -168,19 +168,25 @@ function modifyPostOri(parse: parsePostReturn) {
 }
 
 const modCache = new CacheFile('modifyPost');
+const postCache = new CacheFile('posts');
 /**
  * Cacheable {@link modifyPostOri}
  * @see {@link modifyPostOri}
  * @param parse
+ * @param cache enable cache. default true
  * @returns
  */
-export function modifyPost(parse: ReturnType<typeof modifyPostOri>) {
+export function modifyPost(parse: ReturnType<typeof modifyPostOri>, cache = true) {
   let result: ReturnType<typeof modifyPostOri>;
   const source = parse.fileTree.source;
-  if (modCache.isFileChanged(source)) {
-    for (let i = 3; i--; ) result = modifyPostOri(parse);
+
+  if (modCache.isFileChanged(source) || !cache) {
+    // file changed or no cache
+    result = modifyPostOri(parse);
+    postCache.set(source, result);
     modCache.set(source, result);
   } else {
+    // cache hit
     result = modCache.get(source);
     //<ReturnType<typeof modifyPostOri>>
     if (typeof result === 'string') {
@@ -193,6 +199,12 @@ export function modifyPost(parse: ReturnType<typeof modifyPostOri>) {
       }
     }
   }
+
+  /*if (result.fileTree.public.toLowerCase().includes('quiz.')) {
+    const em = new ErrorMarkdown({}, result.fileTree.public);
+    em.add('body', '```html\n' + result.body + '\n```');
+    console.log('saved', em.getFileLog());
+  }*/
 
   return result;
 }

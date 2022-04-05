@@ -20,7 +20,20 @@ if (!config.skip_render) config.skip_render = [];
 if (process.env.NODE_ENV == 'development') {
   config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
 }
-
+/**
+ * all sitemaps
+ */
+interface SitemapInfo {
+  [key: string]: any;
+  title?: string;
+  date?: string;
+  updated?: string;
+  excerpt?: string;
+  thumbnail?: string;
+  url?: string;
+  views?: number;
+}
+export const sitemaps: SitemapInfo[] = [];
 /**
  * Public Source Post Dir (`source/_posts`)
  */
@@ -40,6 +53,7 @@ export const post_source_dir = resolve(join(root, 'src-posts'));
  */
 export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
 if (!existsSync(tmp())) mkdirSync(tmp());
+
 // // THEME
 const theme_def_opt = {
   amp: false,

@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
-import config, { root, theme_config, theme_dir } from '../../types/_config';
+import config, { root, sitemaps, theme_config, theme_dir } from '../../types/_config';
 import 'js-prototypes';
 import ejs_object, { DynamicObject } from '../../ejs';
 import { parsePost } from '../../markdown/transformPosts';
@@ -113,6 +113,9 @@ export const renderArticle = function () {
       // remove unparsed markdowns
       .filter((parsed) => typeof parsed.metadata != 'undefined')
       .then(function (result) {
+        function push(array: typeof sitemaps, item: typeof sitemaps[0]) {
+          if (!array.some((el) => el.title === item.title)) array.push(item);
+        }
         /**
          * Queue for process first item
          * @returns
@@ -121,6 +124,7 @@ export const renderArticle = function () {
           if (!result.length) return resolve(result.length);
           // get first item
           const parsed = result[0];
+          push(sitemaps, parsed.metadata);
           /**
            * remove first item, skip
            * @returns
@@ -151,7 +155,6 @@ export const renderArticle = function () {
           }
           // render markdown to html
           parsed.body = renderBodyMarkdown(modifyPost(parsed));
-          if (parsed.path.match(/a.md$/)) console.log(parsed.body);
           // ejs render preparation
           const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
           ejs_opt.content = parsed.body; // html rendered markdown
@@ -165,7 +168,24 @@ export const renderArticle = function () {
               logger.log(logname, chalk.red('[error]'), parsed.path);
               logger.error(e);
             })
-            .finally(runner);
+            .finally(() => {
+              if (!result.length) {
+                // generate sitemap
+                write(join(generated_dir, 'sitemap.txt'), sitemaps.map((o) => o.url).join('\n'));
+                ejs_opt.content = sitemaps.map((o) => `[${o.title}](${o.url})`).join('\n\n');
+                ejs_opt.title = 'Sitemap';
+                ejs_opt.category = ['Sitemap'];
+                ejs_opt.tags = ['Sitemap'];
+                ejs_opt.webtitle = 'WMI';
+                ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config }).then((rendered) => {
+                  write(join(generated_dir, 'sitemap.html'), rendered).then(() => {
+                    return runner();
+                  });
+                });
+              } else {
+                return runner();
+              }
+            });
         };
         return runner();
       });
@@ -196,18 +216,7 @@ gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'gener
 
 
               .finally(() => {
-                scheduler.add('sitemap', () => {
-                  // generate sitemap
-                  write(join(generated_dir, 'sitemap.txt'), sitemap.join('\n'));
-                  ejs_opt.content = sitemap.map((s) => `<a href='${s}'>${s}</a>`).join('<br/>');
-                  ejs_opt.title = 'Sitemap';
-                  ejs_opt.category = ['Sitemap'];
-                  ejs_opt.tags = ['Sitemap'];
-                  ejs_opt.webtitle = 'WMI';
-                  ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config }).then((rendered) => {
-                    write(join(generated_dir, 'sitemap.html'), rendered);
-                  });
-                });
+
                 logger.log(...log);
                 cb(null, file);
               });

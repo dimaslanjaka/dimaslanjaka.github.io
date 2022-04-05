@@ -12,6 +12,7 @@ import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
 import { modifyPost } from './article-copy';
+import './after-generate';
 
 /**
  * @see {@link config.source_dir}
@@ -194,7 +195,7 @@ export const renderArticle = function () {
 
 gulp.task('generate:posts', renderArticle);
 
-gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts'));
+gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:after'));
 
 /*
 

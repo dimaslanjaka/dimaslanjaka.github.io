@@ -5,10 +5,10 @@ import { join, mkdirSync, rmdirSync } from './node/filemanager';
 import config, { root, tmp } from './types/_config';
 import Bluebird from 'bluebird';
 import { TaskCallback } from 'undertaker';
+import { dbFolder } from './node/cache';
 import './gulp/tasks/article-copy';
 import './gulp/tasks/article-generate';
 import './gulp/tasks/deploy';
-import { dbFolder } from './node/cache';
 
 // register scheduler
 new scheduler();

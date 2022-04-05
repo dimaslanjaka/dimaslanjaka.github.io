@@ -6,6 +6,7 @@ import 'js-prototypes';
 import { readFileSync, writeFileSync } from 'fs';
 import bluebird from 'bluebird';
 import chalk from 'chalk';
+import gulp from 'gulp';
 
 export const getDomainWithoutSubdomain = (url: string | URL) => {
   const urlParts = new URL(url).hostname.split('.');
@@ -16,28 +17,9 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
     .join('.');
 };
 
-/*
-const external_link = config.external_link;
-const exclude_link: string[] = (Array.isArray(config.external_link.exclude) ? config.external_link.exclude : [config.external_link.exclude]).add(config.url).map(fixUrl);
-const site_url = new URL(config.url);
-if (external_link.enable) {
-            html.querySelectorAll('a').forEach((a) => {
-              let href = a.getAttribute('href');
-              if (!href) return;
-              if (href.startsWith('//')) href = 'http:' + href;
-              //if (href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
-              if (href.trim().match(/^[#/]/) || href.trim().length == 0) return;
-              if (exclude_link.some((s) => href.trim().includes(s)) || href.trim().match(new RegExp('^https?://' + site_url.host, 'gi'))) return;
-              a.setAttribute('target', '_blank');
-              a.setAttribute('rel', 'nofollow noopener');
-              if (href.trim().match(/^https?:\/\//)) {
-                a.setAttribute('href', '//webmanajemen.com/page/safelink.html?url=' + Buffer.from(href).toString('base64'));
-              }
-            });
-          }
-*/
+const logname = chalk.blue('[after]');
 
-export default function afterGenerate() {
+function afterGenerate() {
   // iterate public_dir of _config.yml (hexo generate)
   const public_dir = join(root, config.public_dir);
   const loop = loopDir(public_dir);
@@ -53,9 +35,9 @@ export default function afterGenerate() {
   ].uniqueStringArray();
 
   return bluebird.all(loop).each((file) => {
-    console.log(chalk.blue('[after]'), file);
     const isHtml = file.endsWith('.html');
     if (isHtml) {
+      console.log(logname + chalk.cyan('[safelink]'), file);
       const doc = parseHTML(readFileSync(file, 'utf-8'));
       const html = doc.querySelector('html');
       if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
@@ -97,3 +79,5 @@ export default function afterGenerate() {
     }
   });
 }
+gulp.task('generate:after', afterGenerate);
+export default afterGenerate;

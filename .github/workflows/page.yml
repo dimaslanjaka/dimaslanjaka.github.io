@@ -24,15 +24,6 @@ jobs:
         with:
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
-          #persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          #fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-      #- name: Checkout packages
-      #uses: actions/checkout@v2
-      #with:
-      #repository: dimaslanjaka/hexo-seo
-      #path: packages/hexo-seo
-      #submodules: recursive
-      #token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v1
         with:
@@ -77,6 +68,7 @@ jobs:
       - run: "gulp generate:assets"
       - run: "gulp generate:template"
       - run: "gulp generate:posts"
+      - run: "gulp generate:after"
       - run: cd docs/page && npm install
       - run: cp -rf source/robots.txt docs/robots.txt
       - run: echo www.webmanajemen.com > docs/CNAME

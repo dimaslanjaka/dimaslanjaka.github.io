@@ -8,6 +8,9 @@ import 'js-prototypes';
 import Bluebird from 'bluebird';
 import glob = require('glob');
 import findCacheDir from 'find-cache-dir';
+/**
+ * node_modules/.cache/${name}
+ */
 export const cacheDir = findCacheDir({ name: 'dimaslanjaka' });
 
 export type Mutable<T> = {

@@ -8,12 +8,9 @@ import CacheFile from '../node/cache';
 import ErrorMarkdown from './error-markdown';
 import uuidv4 from '../node/uuid';
 import moment from 'moment';
+import { DynamicObject } from '../types';
 
-export interface LooseObject {
-  [key: string]: any;
-}
-
-export type parsePostReturn = LooseObject & {
+export type parsePostReturn = DynamicObject & {
   /**
    * Article metadata
    */
@@ -35,7 +32,7 @@ export type parsePostReturn = LooseObject & {
   /**
    * Article metadata
    */
-  metadata?: LooseObject & {
+  metadata?: DynamicObject & {
     /**
      * Article language code
      */

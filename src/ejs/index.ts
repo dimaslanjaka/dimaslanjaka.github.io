@@ -5,13 +5,11 @@ import * as ejs from 'ejs';
 import * as locale from './helper/locales';
 import * as thumbnail from './helper/thumbnail';
 import * as keywords from './helper/keywords';
-import { cwd, existsSync, join, readFileSync } from '../node/filemanager';
+import { join } from '../node/filemanager';
 import { parsePostReturn } from '../markdown/transformPosts';
 import config, { ThemeOpt, theme_dir } from '../types/_config';
+import { DynamicObject } from '../types';
 
-export interface DynamicObject {
-  [keys: string]: any;
-}
 type helper_types = typeof keywords | typeof thumbnail | typeof locale | typeof author | typeof date | DynamicObject;
 let helpers: helper_types = {
   iif: function <T>(cond: boolean, value: T): T {
@@ -40,7 +38,7 @@ function render(content: string, opts: EJSOption = {}) {
   opts.root = join(theme_dir, 'layout/layout.ejs');
   opts = Object.assign(helpers, opts);
   const render = ejs.render(content, opts);
-  if (opts.async) return Promise.resolve(render);
+  //if (opts.async) return Promise.resolve(render);
   return render;
 }
 

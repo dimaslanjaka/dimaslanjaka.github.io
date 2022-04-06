@@ -3,18 +3,19 @@ import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
 import config, { root, sitemaps, theme_config, theme_dir, tmp } from '../../types/_config';
-import 'js-prototypes';
-import ejs_object, { DynamicObject } from '../../ejs';
+import ejs_object from '../../ejs';
 import { parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import chalk from 'chalk';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
-import { modifyPost } from './article-copy';
 import './after-generate';
 import { isEmpty } from '../utils';
 import { minify as minHTML } from 'html-minifier-terser';
+import { DynamicObject } from '../../types';
+import 'js-prototypes';
+import { inspect } from 'util';
 
 /**
  * @see {@link config.source_dir}
@@ -247,10 +248,7 @@ const helpers = {
 };
 
 interface RendererOpt {
-  /**
-   * minify rendered
-   */
-  min?: boolean | Parameters<typeof minHTML>[1];
+  [key: string]: any;
 }
 
 /**
@@ -259,42 +257,39 @@ interface RendererOpt {
  * @param override override ejs data
  * @returns
  */
-export function renderer(parsed: parsePostReturn, override: DynamicObject = {}, opt: RendererOpt = {}) {
-  opt = Object.assign({}, opt);
-
+export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) {
   return new Promise((resolve, reject) => {
     // render markdown to html
-    parsed.body = renderBodyMarkdown(parsed);
+    const body = renderBodyMarkdown(parsed);
 
     // ejs render preparation
-    const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed, override);
+    const ejs_opt: parsePostReturn = Object.assign(parsed.metadata, parsed, override);
+    // delete body to reduce memory
+    parsed.body = undefined;
+    // assign body
+    const pagedata = Object.assign(parsed.metadata, parsed);
 
     page_url.pathname = parsed.permalink;
-    ejs_opt.url = page_url.toString(); // permalink
     const ejs_data = Object.assign(helpers, {
-      page: ejs_opt,
+      // page metadata
+      page: pagedata,
+      // site config
       config: config,
+      // layout theme
       root: theme_dir,
+      // theme config
       theme: theme_config,
+      // permalink
+      url: page_url.toString(),
+      // content
+      content: null,
     });
-
+    write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
     // render body html to ejs compiled
-    ejs_data.page.body = ejs_object.ejs.render(parsed.body, ejs_data);
+    ejs_data.page.content = ejs_object.render(body, ejs_data);
     //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
 
-    ejs_opt.content = ejs_data.page.body; // clone body to content
-
     ejs_object.renderFile(layout, ejs_data).then(async (rendered) => {
-      if (opt.min) {
-        logger.log('original length', rendered.length);
-        const min = await minHTML(
-          rendered,
-          Object.assign({ minifyCSS: true, minifyJS: true, collapseWhitespace: true, removeComments: true }, typeof opt.min == 'object' ? opt.min : {})
-        );
-        logger.log('minified length', min.length);
-        return resolve(min);
-      }
-
       resolve(rendered);
     });
   });

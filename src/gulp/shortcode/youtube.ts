@@ -2,15 +2,17 @@ import { theme_config } from '../../types/_config';
 
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
-let count = 0;
+
 export function shortcodeYoutube(content: string) {
   let m: RegExpExecArray;
+  let count = 0;
 
   while ((m = regex.exec(content)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches
     if (m.index === regex.lastIndex) {
       regex.lastIndex++;
     }
+    count++;
     const ytid = m[1].split(',').map((s) => s.trim())[0];
     const allmatch = m[0];
     let html: string;
@@ -35,7 +37,6 @@ export function shortcodeYoutube(content: string) {
     </div>`;
     }
     if (html) content = content.replace(allmatch, () => html);
-    count++;
   }
 
   return content;

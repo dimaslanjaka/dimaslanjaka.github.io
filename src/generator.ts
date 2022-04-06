@@ -17,7 +17,7 @@ new scheduler();
 gulp.task('after-generate', afterGenerate);
 
 const clean = (done?: TaskCallback) =>
-  Bluebird.all([join(root, config.public_dir), join(root, config.source_dir, '_posts'), join(dbFolder), tmp()])
+  Bluebird.all([join(root, config.public_dir), join(root, config.source_dir, '_posts'), dbFolder, tmp()])
     .map((s) => rmdirSync(s))
     .then(() => mkdirSync(tmp()))
     .finally(() => done());

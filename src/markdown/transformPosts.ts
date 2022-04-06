@@ -2,12 +2,12 @@
 import { dirname, existsSync, mkdirSync, statSync, write, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
 import { readFileSync } from 'fs';
-import chalk from 'chalk';
 import config_yml, { ProjectConfig, tmp } from '../types/_config';
 import { replacePath } from '../gulp/tasks/article-copy';
 import CacheFile from '../node/cache';
 import ErrorMarkdown from './error-markdown';
 import uuidv4 from '../node/uuid';
+import moment from 'moment';
 
 export interface LooseObject {
   [key: string]: any;
@@ -20,7 +20,7 @@ export type parsePostReturn = LooseObject & {
   metadataString?: string;
   fileTree?: {
     /**
-     * [post source] post file from src-posts
+     * [post source] post file from `src-posts/`
      */
     source?: string;
     /**
@@ -61,19 +61,17 @@ export type parsePostReturn = LooseObject & {
   body?: string;
 };
 
-const logname = chalk.blueBright('[parsePost]');
-const verbose = true;
-
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return metadata {string & object} and body
  * * return null == failed
+ * * no cacheable
  * @param text file path or string markdown contents
  */
-function parsePostOri(text: string): parsePostReturn | null {
-  ///const regex = /---([\s\S]*?)---/;
-  const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
-  let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
+export function parsePostOri(text: string): parsePostReturn | null {
+  const regex = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+  //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
+  //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   /**
    * source file if `text` is file
    */
@@ -82,74 +80,99 @@ function parsePostOri(text: string): parsePostReturn | null {
   if (isFile) {
     text = readFileSync(text).toString();
   }
+  // process parsing
+  return Array.from(text.matchAll(regex)).map((m) => {
+    let meta: parsePostReturn['metadata'] = yaml.parse(m[1]);
+    const body = m[2];
+    write(tmp('parsePost', 'original.log'), body).then(console.log);
+    if (!meta.uuid) {
+      // assign uuid
+      let uid = m[0];
+      if (meta.title && meta.webtitle) {
+        uid = meta.title + meta.webtitle;
+      } else if (meta.subtitle) {
+        uid = meta.subtitle;
+      } else if (meta.excerpt) {
+        uid = meta.excerpt;
+      } else if (meta.title) {
+        uid = meta.title;
+      }
+      meta.uuid = uuidv4(uid);
+      meta = Object.keys(meta)
+        .sort()
+        .reduce(
+          (acc, key) => ({
+            ...acc,
+            [key]: meta[key],
+          }),
+          {}
+        ) as parsePostReturn['metadata'];
+    }
+    // default category and tags
+    if (!meta.category) meta.category = ['Uncategorized'];
+    if (!meta.category.length) meta.category.push('Uncategorized');
+    if (!meta.tags) meta.tags = [];
 
-  try {
-    while ((m = regex.exec(text)) !== null) {
-      //if (originalArg.includes("Pets")) console.log(m);
-      if (m[0]) {
-        let meta: parsePostReturn['metadata'] = yaml.parse(m[1]); // header post
-        //if (originalArg.includes("Pets")) console.log(meta);
-        if (!meta.uuid) {
-          let uid = m[0];
-          if (meta.title && meta.webtitle) {
-            uid = meta.title + meta.webtitle;
-          } else if (meta.subtitle) {
-            uid = meta.subtitle;
-          } else if (meta.excerpt) {
-            uid = meta.excerpt;
-          } else if (meta.title) {
-            uid = meta.title;
-          }
-          meta.uuid = uuidv4(uid);
-          meta = Object.keys(meta)
-            .sort()
-            .reduce(
-              (acc, key) => ({
-                ...acc,
-                [key]: meta[key],
-              }),
-              {}
-            ) as parsePostReturn['metadata'];
-        }
-        // default category and tags
-        if (!meta.category) meta.category = ['Uncategorized'];
-        if (!meta.category.length) meta.category.push('Uncategorized');
-        if (!meta.tags) meta.tags = [];
-
-        // default excerpt/description
-        if (meta.subtitle) {
-          meta.excerpt = meta.subtitle;
-          meta.description = meta.subtitle;
-        }
-        if (meta.description && !meta.excerpt) {
-          meta.excerpt = meta.description;
-        }
-        if (meta.excerpt && !meta.description) {
-          meta.description = meta.excerpt;
-        }
-
-        const result: parsePostReturn = {
-          metadataString: m[0],
-          metadata: meta,
-          body: fixPostBody(text.replace(m[0], '')),
-          config: config_yml,
-        };
-        // put fileTree
-        if (isFile) {
-          result.fileTree = {
-            source: replacePath(originalArg, '/source/_posts/', '/src-posts/'),
-            public: replacePath(originalArg, '/src-posts/', '/source/_posts/'),
-          };
-          //console.log(result.fileTree);
-        }
-        return result;
+    // default date post
+    if (!meta.date) meta.date = moment().format();
+    if (!meta.updated) {
+      if (meta.modified) {
+        // fix for hexo-blogger-xml
+        meta.updated = meta.modified;
+      } else {
+        meta.updated = meta.date;
       }
     }
-  } catch (e) {
-    //if (debug) console.error(e.message, originalArg);
-    console.error('fail parse markdown post', chalk.redBright(originalArg), 'original file of', chalk.magentaBright(originalArg.replace('/source/_posts/', '/src-posts/')));
+
+    if (!meta.comments) meta.comments = true;
+    if (!meta.wordcount) meta.wordcount = null;
+
+    // default excerpt/description
+    if (meta.subtitle) {
+      meta.excerpt = meta.subtitle;
+      meta.description = meta.subtitle;
+    }
+    if (meta.description && !meta.excerpt) {
+      meta.subtitle = meta.description;
+      meta.excerpt = meta.description;
+    }
+    if (meta.excerpt && !meta.description) {
+      meta.description = meta.excerpt;
+      meta.subtitle = meta.excerpt;
+    }
+    const result: parsePostReturn = {
+      metadata: meta,
+      body: body,
+      config: config_yml,
+    };
+    // put fileTree
+    if (isFile) {
+      result.fileTree = {
+        source: replacePath(originalArg, '/source/_posts/', '/src-posts/'),
+        public: replacePath(originalArg, '/src-posts/', '/source/_posts/'),
+      };
+      //console.log(result.fileTree);
+    }
+    return result;
+  })[0];
+}
+
+/**
+ * generate {@link parsePostReturn.fileTree}
+ * @param source
+ * @param parsed
+ * @returns
+ */
+export function generateFileTree(source: string, parsed: parsePostReturn) {
+  if (existsSync(source)) {
+    parsed.fileTree = {
+      source: replacePath(source, '/source/_posts/', '/src-posts/'),
+      public: replacePath(source, '/src-posts/', '/source/_posts/'),
+    };
+  } else {
+    console.log('cannot generate file tree', parsed.metadata.title);
   }
-  return null;
+  return parsed;
 }
 
 const parseCache = new CacheFile('parsePost');
@@ -167,8 +190,8 @@ export function parsePost(text: string, hash: string = null, cache = true) {
   const key = hash || text;
   if (parseCache.isFileChanged(key) || !cache) {
     // parse changed or no cache
-    //console.log('parse no cache');
     result = parsePostOri(text);
+    //console.log('parse no cache', Array.isArray(result));
     parseCache.set(key, result);
   } else {
     // restore cache
@@ -185,27 +208,8 @@ export function parsePost(text: string, hash: string = null, cache = true) {
       }
     }
   }
-  return result;
-}
 
-/**
- * Fix post body
- * * remove *.wp.com cdn
- * @param str
- */
-function fixPostBody(str: string) {
-  // remote i2.wp.com i1.wp.com etc
-  const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
-  str = str.replace(regex, 'https://res.cloudinary.com/practicaldev/image/fetch/');
-  // add notranslate
-  if (!str.includes('document.querySelectorAll("pre,code")')) {
-    const notranslate = `<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>`;
-    str = str.replace(notranslate, '');
-  }
-  return str;
+  return generateFileTree(text, result);
 }
 
 /**

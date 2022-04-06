@@ -65,7 +65,7 @@ export type ThemeOpt =
     };
 export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
 const theme_yml = join(theme_dir, '_config.yml');
-export const theme_config: ThemeOpt = Object.assign(theme_def_opt, yaml.parse(readFileSync(theme_yml, 'utf-8')));
+export const theme_config: ThemeOpt = Object.assign(theme_def_opt, existsSync(theme_yml) ? yaml.parse(readFileSync(theme_yml, 'utf-8')) : {});
 
 export default config;
 

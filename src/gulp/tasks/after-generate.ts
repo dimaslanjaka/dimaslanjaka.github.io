@@ -74,10 +74,21 @@ function afterGenerate() {
       //fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
 
       // save modified html
-      const result = doc.toString();
+      const result = removeWordpressCDN(doc.toString());
       writeFileSync(file, result);
     }
   });
 }
 gulp.task('generate:after', afterGenerate);
 export default afterGenerate;
+
+/**
+ * remove i2.wp.com i1.wp.com etc
+ * @param str url string
+ * @param replacement replacement string, default: https://res.cloudinary.com/practicaldev/image/fetch/
+ * @returns
+ */
+export function removeWordpressCDN(str: string, replacement = 'https://res.cloudinary.com/practicaldev/image/fetch/') {
+  const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
+  return str.replace(regex, replacement);
+}

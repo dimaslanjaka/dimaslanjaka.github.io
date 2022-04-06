@@ -118,7 +118,33 @@ export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = () => upath.toUnix(nodeCwd());
 export const dirname = (str: string) => removeMultiSlashes(upath.toUnix(upath.dirname(str)));
-export const resolve = (str: string) => removeMultiSlashes(upath.toUnix(upath.resolve(str)));
+interface ResolveOpt {
+  [key: string]: any;
+  /**
+   * validate path exists, otherwise null
+   */
+  validate?: boolean;
+}
+/**
+ * @see {@link upath.resolve}
+ * @param str
+ * @param opt
+ * @returns
+ */
+export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
+  const res = removeMultiSlashes(upath.toUnix(upath.resolve(str)));
+  opt = Object.assign(
+    {
+      validate: false,
+    },
+    opt
+  );
+  if (opt.validate) {
+    if (existsSync(res)) return res;
+    return null;
+  }
+  return res;
+};
 export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;

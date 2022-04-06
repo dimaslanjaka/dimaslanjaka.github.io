@@ -46,6 +46,12 @@
       "type": "node-terminal"
     },
     {
+      "command": "ts-node tests/index.ts --standalone",
+      "name": "standalone:test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "command": "php -S localhost:4000 -t docs",
       "name": "PHP SERVER",
       "request": "launch",

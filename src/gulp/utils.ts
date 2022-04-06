@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import * as fse from "fs-extra";
+import fs from 'fs';
+import path from 'path';
+import * as fse from 'fs-extra';
 
 //console.log(loopDir(path.join(process.cwd(), "source")));
 /**
@@ -18,7 +18,7 @@ export function loopDir(destDir: fs.PathLike | string, debug = false) {
 
   const readDir = fs.readdirSync(destDir);
   if (readDir) {
-    if (debug) console.log(readDir.length + " files to process");
+    if (debug) console.log(readDir.length + ' files to process');
     readDir.forEach(function (file) {
       const absolute = path.join(destDir.toString(), file);
       if (fs.statSync(absolute).isDirectory()) {
@@ -39,9 +39,9 @@ export function copyDir(
   callback = function (err: any | null) {
     if (err) {
       console.error(err);
-      console.error("error");
+      console.error('error');
     } else {
-      console.log("success!");
+      console.log('success!');
     }
   }
 ) {
@@ -64,5 +64,24 @@ export function slash(path: string) {
     return path;
   }
 
-  return path.replace(/\\/g, "/");
+  return path.replace(/\\/g, '/');
 }
+
+/**
+ * check variable is empty, null, undefined, object/array length 0, number is 0
+ * @param data
+ * @returns
+ */
+export const isEmpty = (data: any) => {
+  if (data === null) return true;
+  if (typeof data === 'string' && data.trim().length === 0) return true;
+  if (typeof data === 'undefined') return true;
+  if (typeof data === 'number') {
+    if (data === 0) return true;
+  }
+  if (typeof data === 'object') {
+    if (Array.isArray(data) && data.length === 0) return true;
+    if (data.constructor === Object && Object.keys(data).length === 0) return true;
+  }
+  return false;
+};

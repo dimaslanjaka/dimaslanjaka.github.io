@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, dirname, existsSync, globSrc, join, mkdirSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
+import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
 import config, { root, sitemaps, theme_config, theme_dir } from '../../types/_config';
 import 'js-prototypes';
 import ejs_object, { DynamicObject } from '../../ejs';
-import { parsePost } from '../../markdown/transformPosts';
+import { parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import chalk from 'chalk';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
@@ -13,6 +13,8 @@ import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
 import { modifyPost } from './article-copy';
 import './after-generate';
+import { isEmpty } from '../utils';
+import { minify as minHTML } from 'html-minifier-terser';
 
 /**
  * @see {@link config.source_dir}
@@ -70,7 +72,7 @@ gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
 export const renderArticle = function () {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     logger.log(logname, 'generating to', generated_dir);
     const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
     const ignore = ['_drafts/', '_data/', ...exclude];
@@ -92,6 +94,10 @@ export const renderArticle = function () {
       // transform path and others
       .map((file) => {
         const result = {
+          /**
+           * post type
+           */
+          type: file.includes('_posts/') ? 'post' : 'page',
           /** Full path (also cache key) */
           path: join(source_dir, file),
           /** Permalink path */
@@ -111,8 +117,21 @@ export const renderArticle = function () {
         }
         return parse;
       })
-      // remove unparsed markdowns
-      .filter((parsed) => typeof parsed.metadata != 'undefined')
+      // filter only non-empty object
+      .filter((parsed) => {
+        let success = true;
+        if (!parsed || !parsed.metadata) success = false;
+        if (success) {
+          const notEmpty = [!isEmpty(parsed.metadata.body), !isEmpty(parsed.metadata.title)].every(Boolean);
+          if (!notEmpty) {
+            success = false;
+            console.log(typeof parsed.metadata.title, typeof parsed.metadata.body);
+          } else {
+            success = true;
+          }
+        }
+        return success;
+      })
       .then(function (result) {
         function push(array: typeof sitemaps, item: typeof sitemaps[0]) {
           if (!array.some((el) => el.title === item.title)) array.push(item);
@@ -125,7 +144,12 @@ export const renderArticle = function () {
           if (!result.length) return resolve(result.length);
           // get first item
           const parsed = result[0];
-          push(sitemaps, parsed.metadata);
+          // push post metadata to sitemaps
+          if (parsed.metadata && parsed.metadata.title) {
+            push(sitemaps, parsed.metadata);
+          } else {
+            console.error('cannot push sitemap', parsed.permalink);
+          }
           /**
            * remove first item, skip
            * @returns
@@ -151,18 +175,12 @@ export const renderArticle = function () {
             if (renderCache.isFileChanged(parsed.path)) {
               logger.log(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
             } else {
+              // if cache hit, skip process
               skip();
+              return runner();
             }
           }
-          // render markdown to html
-          parsed.body = renderBodyMarkdown(modifyPost(parsed));
-          // ejs render preparation
-          const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
-          ejs_opt.content = parsed.body; // html rendered markdown
-          page_url.pathname = parsed.permalink;
-          ejs_opt.url = page_url.toString(); // permalink
-          ejs_object
-            .renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config })
+          renderer(parsed)
             .then(save)
             .then(skip)
             .catch((e) => {
@@ -172,6 +190,7 @@ export const renderArticle = function () {
             .finally(() => {
               if (!result.length) {
                 // generate sitemap
+                const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
                 write(join(generated_dir, 'sitemap.txt'), sitemaps.map((o) => o.url).join('\n'));
                 ejs_opt.content = sitemaps.map((o) => `<a href="${o.url}" title="${o.url}" alt="${o.url}" rel="follow">${o.title}</a>`).join('<br/>');
                 ejs_opt.title = 'Sitemap';
@@ -197,32 +216,74 @@ gulp.task('generate:posts', renderArticle);
 
 gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:after'));
 
-/*
+interface RendererOpt {
+  /**
+   * minify rendered
+   */
+  min?: boolean | Parameters<typeof minHTML>[1];
+}
 
-
-
-
-          const self = this;
-
-
-          // reparse
-
-          const filepath = toUnix(file.path);
-
-
-          if (file.dirname.match(/readme/gi)) logger.log(file.dirname);
-          if (parse) {
-
-            //delete parse.body;
-
-
-              .finally(() => {
-
-                logger.log(...log);
-                cb(null, file);
-              });
-          } else {
-            log.push(chalk.red('fail 2nd parse'));
+/**
+ * EJS Renderer Engine
+ * @param parsed
+ * @param override override ejs data
+ * @returns
+ */
+export function renderer(parsed: parsePostReturn, override: DynamicObject = {}, opt: RendererOpt = {}) {
+  opt = Object.assign({}, opt);
+  // render markdown to html
+  parsed.body = renderBodyMarkdown(parsed);
+  // ejs render preparation
+  const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed, override);
+  ejs_opt.content = parsed.body; // html rendered markdown
+  page_url.pathname = parsed.permalink;
+  ejs_opt.url = page_url.toString(); // permalink
+  const ejs_data = {
+    page: ejs_opt,
+    config: config,
+    root: theme_dir,
+    theme: theme_config,
+    css: (path: string, attributes: DynamicObject = {}) => {
+      const find = {
+        cwdFile: join(cwd(), path),
+        themeFile: join(theme_dir, path),
+        layoutFile: join(dirname(layout), path),
+      };
+      let cssStr: string;
+      for (const key in find) {
+        if (Object.prototype.hasOwnProperty.call(find, key)) {
+          const cssfile = find[key];
+          if (existsSync(cssfile)) {
+            cssStr = readFileSync(cssfile, 'utf-8');
+            break;
           }
-          logger.log(...log);
-          cb(null, file);*/
+        }
+      }
+      const build = [];
+      for (const key in attributes) {
+        if (Object.prototype.hasOwnProperty.call(attributes, key)) {
+          const v = attributes[key];
+          build.push(`${key}="${v}"`);
+        }
+      }
+      if (!cssStr) return `<!-- ${path} not found -->`;
+      if (!build.length) return `<style>${cssStr}</style>`;
+      return `<style ${build.join(' ')}>${cssStr}</style>`;
+    },
+  };
+  return new Promise((resolve, reject) => {
+    ejs_object.renderFile(layout, ejs_data).then(async (rendered) => {
+      if (opt.min) {
+        console.log('original length', rendered.length);
+        const min = await minHTML(
+          rendered,
+          Object.assign({ minifyCSS: true, minifyJS: true, collapseWhitespace: true, removeComments: true }, typeof opt.min == 'object' ? opt.min : {})
+        );
+        console.log('minified length', min.length);
+        return resolve(min);
+      }
+      console.log('failed minify');
+      resolve(rendered);
+    });
+  });
+}

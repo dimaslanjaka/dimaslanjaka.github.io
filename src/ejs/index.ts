@@ -45,10 +45,11 @@ function render(content: string, opts: EJSOption = {}) {
 }
 
 const ejs_object = {
+  ejs,
   renderFile: renderFile,
   resolveInclude: ejs.resolveInclude,
   compile: ejs.compile,
-  render: <any>render,
+  render: render,
   clearCache: ejs.clearCache,
   escapeXML: ejs.escapeXML,
   VERSION: ejs.VERSION,

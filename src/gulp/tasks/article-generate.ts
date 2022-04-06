@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
-import config, { root, sitemaps, theme_config, theme_dir } from '../../types/_config';
+import config, { root, sitemaps, theme_config, theme_dir, tmp } from '../../types/_config';
 import 'js-prototypes';
 import ejs_object, { DynamicObject } from '../../ejs';
 import { parsePost, parsePostReturn } from '../../markdown/transformPosts';
@@ -122,10 +122,10 @@ export const renderArticle = function () {
         let success = true;
         if (!parsed || !parsed.metadata) success = false;
         if (success) {
-          const notEmpty = [!isEmpty(parsed.metadata.body), !isEmpty(parsed.metadata.title)].every(Boolean);
+          const notEmpty = [!isEmpty(parsed.body), !isEmpty(parsed.metadata.title)].every(Boolean);
           if (!notEmpty) {
             success = false;
-            console.log(typeof parsed.metadata.title, typeof parsed.metadata.body);
+            logger.log(typeof parsed.metadata.title, typeof parsed.body);
           } else {
             success = true;
           }
@@ -148,7 +148,7 @@ export const renderArticle = function () {
           if (parsed.metadata && parsed.metadata.title) {
             push(sitemaps, parsed.metadata);
           } else {
-            console.error('cannot push sitemap', parsed.permalink);
+            logger.error('cannot push sitemap', parsed.permalink);
           }
           /**
            * remove first item, skip
@@ -216,6 +216,36 @@ gulp.task('generate:posts', renderArticle);
 
 gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:after'));
 
+const helpers = {
+  css: (path: string, attributes: DynamicObject = {}) => {
+    const find = {
+      cwdFile: join(cwd(), path),
+      themeFile: join(theme_dir, path),
+      layoutFile: join(dirname(layout), path),
+    };
+    let cssStr: string;
+    for (const key in find) {
+      if (Object.prototype.hasOwnProperty.call(find, key)) {
+        const cssfile = find[key];
+        if (existsSync(cssfile)) {
+          cssStr = readFileSync(cssfile, 'utf-8');
+          break;
+        }
+      }
+    }
+    const build = [];
+    for (const key in attributes) {
+      if (Object.prototype.hasOwnProperty.call(attributes, key)) {
+        const v = attributes[key];
+        build.push(`${key}="${v}"`);
+      }
+    }
+    if (!cssStr) return `<!-- ${path} not found -->`;
+    if (!build.length) return `<style>${cssStr}</style>`;
+    return `<style ${build.join(' ')}>${cssStr}</style>`;
+  },
+};
+
 interface RendererOpt {
   /**
    * minify rendered
@@ -231,58 +261,40 @@ interface RendererOpt {
  */
 export function renderer(parsed: parsePostReturn, override: DynamicObject = {}, opt: RendererOpt = {}) {
   opt = Object.assign({}, opt);
-  // render markdown to html
-  parsed.body = renderBodyMarkdown(parsed);
-  // ejs render preparation
-  const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed, override);
-  ejs_opt.content = parsed.body; // html rendered markdown
-  page_url.pathname = parsed.permalink;
-  ejs_opt.url = page_url.toString(); // permalink
-  const ejs_data = {
-    page: ejs_opt,
-    config: config,
-    root: theme_dir,
-    theme: theme_config,
-    css: (path: string, attributes: DynamicObject = {}) => {
-      const find = {
-        cwdFile: join(cwd(), path),
-        themeFile: join(theme_dir, path),
-        layoutFile: join(dirname(layout), path),
-      };
-      let cssStr: string;
-      for (const key in find) {
-        if (Object.prototype.hasOwnProperty.call(find, key)) {
-          const cssfile = find[key];
-          if (existsSync(cssfile)) {
-            cssStr = readFileSync(cssfile, 'utf-8');
-            break;
-          }
-        }
-      }
-      const build = [];
-      for (const key in attributes) {
-        if (Object.prototype.hasOwnProperty.call(attributes, key)) {
-          const v = attributes[key];
-          build.push(`${key}="${v}"`);
-        }
-      }
-      if (!cssStr) return `<!-- ${path} not found -->`;
-      if (!build.length) return `<style>${cssStr}</style>`;
-      return `<style ${build.join(' ')}>${cssStr}</style>`;
-    },
-  };
+
   return new Promise((resolve, reject) => {
+    // render markdown to html
+    parsed.body = renderBodyMarkdown(parsed);
+
+    // ejs render preparation
+    const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed, override);
+
+    page_url.pathname = parsed.permalink;
+    ejs_opt.url = page_url.toString(); // permalink
+    const ejs_data = Object.assign(helpers, {
+      page: ejs_opt,
+      config: config,
+      root: theme_dir,
+      theme: theme_config,
+    });
+
+    // render body html to ejs compiled
+    ejs_data.page.body = ejs_object.ejs.render(parsed.body, ejs_data);
+    //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
+
+    ejs_opt.content = ejs_data.page.body; // clone body to content
+
     ejs_object.renderFile(layout, ejs_data).then(async (rendered) => {
       if (opt.min) {
-        console.log('original length', rendered.length);
+        logger.log('original length', rendered.length);
         const min = await minHTML(
           rendered,
           Object.assign({ minifyCSS: true, minifyJS: true, collapseWhitespace: true, removeComments: true }, typeof opt.min == 'object' ? opt.min : {})
         );
-        console.log('minified length', min.length);
+        logger.log('minified length', min.length);
         return resolve(min);
       }
-      console.log('failed minify');
+
       resolve(rendered);
     });
   });

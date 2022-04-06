@@ -84,7 +84,7 @@ export function parsePostOri(text: string): parsePostReturn | null {
   return Array.from(text.matchAll(regex)).map((m) => {
     let meta: parsePostReturn['metadata'] = yaml.parse(m[1]);
     const body = m[2];
-    write(tmp('parsePost', 'original.log'), body).then(console.log);
+    //write(tmp('parsePost', 'original.log'), body).then(console.log);
     if (!meta.uuid) {
       // assign uuid
       let uid = m[0];
@@ -165,12 +165,13 @@ export function parsePostOri(text: string): parsePostReturn | null {
  */
 export function generateFileTree(source: string, parsed: parsePostReturn) {
   if (existsSync(source)) {
-    parsed.fileTree = {
-      source: replacePath(source, '/source/_posts/', '/src-posts/'),
-      public: replacePath(source, '/src-posts/', '/source/_posts/'),
-    };
+    if (parsed)
+      parsed.fileTree = {
+        source: replacePath(source, '/source/_posts/', '/src-posts/'),
+        public: replacePath(source, '/src-posts/', '/source/_posts/'),
+      };
   } else {
-    console.log('cannot generate file tree', parsed.metadata.title);
+    //console.log('cannot generate file tree', parsed.metadata.title);
   }
   return parsed;
 }

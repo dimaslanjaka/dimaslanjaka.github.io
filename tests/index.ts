@@ -35,5 +35,5 @@ parsed = Object.assign(
 );
 // render test
 renderer(parsed, {}, { min: { ignoreCustomComments: [/^!/, /^\s*#/] } }).then((rendered) => {
-  write(tmp('tests', 'rendered.html'), rendered).then(console.log);
+  write(generated_target, rendered).then(console.log);
 });

@@ -125,7 +125,11 @@ export const renderArticle = function () {
           // get first item
           const parsed = result[0];
           // push post metadata to sitemaps
-          if (parsed.metadata && parsed.metadata.title) {
+          const sitemapHash = parsed.metadata.title ? parsed.metadata.title : parsed.path;
+          if (!parsed.metadata.title) {
+            parsed.metadata.title = sitemapHash;
+          }
+          if (parsed.metadata) {
             push(sitemaps, parsed.metadata);
           } else {
             logger.error('cannot push sitemap', parsed.permalink);

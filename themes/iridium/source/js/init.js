@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
 	Iridium by TEMPLATED
     templated.co @templatedco
@@ -6,7 +7,7 @@
 
 skel.init(
   {
-    prefix: 'css/style',
+    prefix: '/css/style',
     resetCSS: true,
     boxModel: 'border',
     grid: {

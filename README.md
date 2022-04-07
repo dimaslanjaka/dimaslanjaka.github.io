@@ -6,3 +6,6 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 - typescript
 - ejs engine
 - vscode ide integrated settings
+
+## todo
+- admin panel

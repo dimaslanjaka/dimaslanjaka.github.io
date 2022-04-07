@@ -6,7 +6,7 @@
  */
 
 import 'js-prototypes';
-import { statSync, cwd, dirname } from '../../node/filemanager';
+import { statSync, cwd, dirname, removeMultiSlashes } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -36,6 +36,10 @@ function removeMultipleWhiteSpaces(text: string) {
   if (typeof text == 'string') return text.replace(/\s+/gm, ' ');
   return text;
 }
+
+const modCache = new CacheFile('modifyPost');
+const postCache = new CacheFile('posts');
+const homepage = new URL(config.url);
 
 /**
  * Modify Post With Defined Conditions
@@ -68,6 +72,11 @@ function modifyPostOri(parse: parsePostReturn) {
         console.log(parse.metadata.date, 'invalid moment date format');
       }
     }
+
+    // permalink
+    homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), '_posts/'], '/')).replace(/.md$/, '.html');
+    parse.metadata.url = homepage.toString();
+    parse.metadata.permalink = homepage.pathname;
 
     // fix lang
     if (!parse.metadata.lang) parse.metadata.lang = 'en';
@@ -106,6 +115,7 @@ function modifyPostOri(parse: parsePostReturn) {
       const photos: string[] = parse.metadata.photos;
       parse.metadata.photos = photos.unique();
     }
+
     // merge php js css to programming
     if (Array.isArray(parse.metadata.tags)) {
       const programTags = ['php', 'css', 'js', 'kotlin', 'java', 'ts', 'typescript', 'javascript', 'html', 'mysql', 'database'];
@@ -167,8 +177,6 @@ function modifyPostOri(parse: parsePostReturn) {
   return parse;
 }
 
-const modCache = new CacheFile('modifyPost');
-const postCache = new CacheFile('posts');
 /**
  * Cacheable {@link modifyPostOri}
  * @see {@link modifyPostOri}
@@ -179,12 +187,14 @@ const postCache = new CacheFile('posts');
 export function modifyPost(parse: ReturnType<typeof modifyPostOri>, cache = true) {
   let result: ReturnType<typeof modifyPostOri>;
   const source = parse.fileTree.source;
+  const logname = chalk.cyanBright('[copy][modify][md]');
 
   if (modCache.isFileChanged(source) || !cache) {
     // file changed or no cache
     result = modifyPostOri(parse);
     postCache.set(source, result);
     modCache.set(source, result);
+    console.log(logname, 'no cache');
   } else {
     // cache hit
     result = modCache.get(source);

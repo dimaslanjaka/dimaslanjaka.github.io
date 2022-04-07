@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
-import config, { root, sitemaps, theme_config, theme_dir, tmp } from '../../types/_config';
+import config, { root, sitemaps, theme_config, theme_dir } from '../../types/_config';
 import ejs_object from '../../ejs';
 import { parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import chalk from 'chalk';
@@ -11,10 +11,11 @@ import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
 import './after-generate';
-import { isEmpty } from '../utils';
 import { DynamicObject } from '../../types';
 import 'js-prototypes';
-import { inspect } from 'util';
+import yargs from 'yargs';
+const argv = yargs(process.argv.slice(2)).argv;
+const nocache = argv['nocache'];
 
 /**
  * @see {@link config.source_dir}
@@ -105,7 +106,7 @@ export const renderArticle = function () {
           /** Is Cached */
           cached: false,
         };
-        result.cached = renderCache.has(result.path);
+        result.cached = renderCache.has(result.path) && !nocache;
 
         const merge = Object.assign(result, parsePost(result.path));
         return merge;
@@ -124,16 +125,7 @@ export const renderArticle = function () {
           if (!result.length) return resolve(result.length);
           // get first item
           const parsed = result[0];
-          // push post metadata to sitemaps
-          const sitemapHash = parsed.metadata.title ? parsed.metadata.title : parsed.path;
-          if (!parsed.metadata.title) {
-            parsed.metadata.title = sitemapHash;
-          }
-          if (parsed.metadata) {
-            push(sitemaps, parsed.metadata);
-          } else {
-            logger.error('cannot push sitemap', parsed.permalink);
-          }
+
           /**
            * remove first item, skip
            * @returns
@@ -146,15 +138,23 @@ export const renderArticle = function () {
            */
           const save = (rendered: string) => {
             const saveto = join(generated_dir, parsed.permalink);
-            logger.log(logname, chalk.greenBright('generated'), saveto);
+            //logger.log(logname, chalk.greenBright('generated'), saveto);
             write(saveto, rendered);
             parsed.generated = rendered;
             parsed.generated_path = saveto;
             renderCache.set(parsed.path, rendered);
             //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
-            logger.log(logname + chalk.cyanBright('[remaining]', result.length));
+            //logger.log(logname + chalk.cyanBright('[remaining]', result.length));
             return parsed;
           };
+          // push post metadata to sitemaps
+          if (!parsed.path.match(/(404).html/)) {
+            if (parsed.metadata) {
+              push(sitemaps, parsed.metadata);
+            } else {
+              logger.log('cannot push sitemap', parsed.permalink);
+            }
+          }
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
               logger.log(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
@@ -271,8 +271,7 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
     // render body html to ejs compiled
     ejs_data.page.content = ejs_object.render(body, ejs_data);
     //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
-
-    write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
+    //write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
 
     ejs_object.renderFile(layout, ejs_data).then(async (rendered) => {
       resolve(rendered);

@@ -9,6 +9,9 @@ import ErrorMarkdown from './error-markdown';
 import uuidv4 from '../node/uuid';
 import moment from 'moment';
 import { DynamicObject } from '../types';
+import yargs from 'yargs';
+const argv = yargs(process.argv.slice(2)).argv;
+const nocache = argv['nocache'];
 
 export type parsePostReturn = DynamicObject & {
   /**
@@ -66,7 +69,7 @@ export type parsePostReturn = DynamicObject & {
  * @param text file path or string markdown contents
  */
 export function parsePostOri(text: string): parsePostReturn | null {
-  const regex = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+  const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   /**
@@ -77,10 +80,11 @@ export function parsePostOri(text: string): parsePostReturn | null {
   if (isFile) {
     text = readFileSync(text).toString();
   }
-  // process parsing
-  return Array.from(text.matchAll(regex)).map((m) => {
+
+  const mapper = (m: RegExpMatchArray) => {
     let meta: parsePostReturn['metadata'] = yaml.parse(m[1]);
-    const body = m[2];
+    let body = m[2];
+    if (!body) body = 'no content ' + (meta.title || '');
     //write(tmp('parsePost', 'original.log'), body).then(console.log);
     if (!meta.uuid) {
       // assign uuid
@@ -151,7 +155,15 @@ export function parsePostOri(text: string): parsePostReturn | null {
       //console.log(result.fileTree);
     }
     return result;
-  })[0];
+  };
+
+  // process parsing
+  const testPost = Array.from(text.matchAll(regexPost)).map(mapper)[0];
+  if (typeof testPost == 'object') return testPost;
+
+  const regexPage = /^---([\s\S]*?)---[\n\s\S]([\n\s\S]*)/gm;
+  const testPage = Array.from(text.matchAll(regexPage)).map(mapper)[0];
+  return testPage;
 }
 
 /**
@@ -179,7 +191,7 @@ const parseCache = new CacheFile('parsePost');
  * Cacheable parsePost
  * @param text file path or content markdown
  * @param hash cache key
- * @param cache using cache
+ * @param cache force using cache, default `true`
  * @see {@link parsePostOri}
  * @returns
  */
@@ -189,7 +201,7 @@ export function parsePost(text: string, hash: string = null, cache = true) {
   if (parseCache.isFileChanged(key) || !cache) {
     // parse changed or no cache
     result = parsePostOri(text);
-    //console.log('parse no cache', Array.isArray(result));
+    //console.log('parse no cache', result);
     parseCache.set(key, result);
   } else {
     // restore cache

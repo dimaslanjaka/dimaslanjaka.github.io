@@ -5,10 +5,9 @@ import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
 import { serialize, unserialize } from 'php-serialize';
 import { rm } from 'fs';
+import { DynamicObject } from '../types';
+import EventEmitter from 'events';
 
-interface Objek {
-  [key: string]: any;
-}
 export const dbFolder = resolve(cacheDir);
 export interface CacheOpt {
   /**
@@ -22,13 +21,46 @@ export interface CacheOpt {
    */
   folder?: string;
 }
+/**
+ * @default
+ */
+type ResovableValue = {
+  /**
+   * resolve all `cache value` instead `value location file`, default `true`
+   */
+  resolveValue?: boolean;
+  /**
+   * max result, default null
+   */
+  max?: number;
+  /**
+   * randomize entries, default false
+   */
+  randomize?: boolean;
+};
+const defaultResovableValue: ResovableValue = {
+  resolveValue: true,
+  max: null,
+  randomize: false,
+};
+
+import { TypedEmitter } from 'tiny-typed-emitter';
+interface CacheFileEvent {
+  update: () => void;
+}
 
 /**
  * @summary IN FILE CACHE.
  * @description Save cache to file (not in-memory), cache will be restored on next process restart.
  */
-export default class CacheFile {
-  md5Cache: Objek = {};
+export default class CacheFile extends TypedEmitter<CacheFileEvent> {
+  private total = 0;
+  getTotal() {
+    this.total = Object.keys(this.md5Cache).length;
+    return this.total;
+  }
+
+  md5Cache: DynamicObject = {};
   dbFile: string;
   static options: CacheOpt = {
     sync: false,
@@ -36,6 +68,7 @@ export default class CacheFile {
   };
   private currentHash: string;
   constructor(hash = null, opt?: CacheOpt) {
+    super();
     if (opt) CacheFile.options = Object.assign(CacheFile.options, opt);
     this.currentHash = hash;
     if (!hash) {
@@ -117,6 +150,8 @@ export default class CacheFile {
       write(self.dbFile, serialize(self.md5Cache));
     });
     if (value) write(locationCache, serialize(value));
+    this.emit('update');
+    return this;
   }
   has(key: string): boolean {
     key = this.resolveKey(key);
@@ -139,6 +174,43 @@ export default class CacheFile {
     return fallback;
   }
   getCache = (key: string, fallback = null) => this.get(key, fallback);
+  /**
+   * get all databases
+   * @param opt Options
+   * @returns object keys and values
+   */
+  getAll(opt = defaultResovableValue) {
+    opt = Object.assign(defaultResovableValue, opt);
+    if (opt.resolveValue) {
+      const self = this;
+      const result: DynamicObject = {};
+      Object.keys(this.md5Cache).forEach((key) => {
+        result[key] = self.get(key);
+      });
+      return result;
+    }
+    return this.md5Cache;
+  }
+
+  /**
+   * get all database values
+   * @param opt Options
+   * @returns array values
+   */
+  getValues(opt = defaultResovableValue) {
+    opt = Object.assign(defaultResovableValue, opt);
+    if (opt.resolveValue) {
+      const result = [];
+      const self = this;
+      Object.keys(this.md5Cache).forEach((key) => {
+        result.push(self.get(key));
+      });
+      if (opt.max) result.length = opt.max;
+      if (opt.randomize) return result.shuffle();
+      return result;
+    }
+    return Object.values(this.md5Cache);
+  }
   /**
    * Check file is changed with md5 algorithm
    * @param path0

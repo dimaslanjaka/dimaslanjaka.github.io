@@ -10,6 +10,7 @@ import config, { tmp } from '../src/types/_config';
 // copy assets to generated directory
 gulp.series('generate:assets', 'generate:template')(null);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const logname = chalk.red('[test][copy]');
 const targets = ['src-posts/Test/markdown-links.md', 'src-posts/The Legend Of Neverland/Quiz.md'].map((s) => join(cwd(), s));
 const target = targets[1];

@@ -116,7 +116,7 @@ export default class CacheFile {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
       write(self.dbFile, serialize(self.md5Cache));
     });
-    write(locationCache, serialize(value));
+    if (value) write(locationCache, serialize(value));
   }
   has(key: string): boolean {
     key = this.resolveKey(key);

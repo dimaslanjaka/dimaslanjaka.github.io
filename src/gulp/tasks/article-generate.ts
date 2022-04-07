@@ -102,7 +102,7 @@ export const renderArticle = function () {
           /** Full path (also cache key) */
           path: join(source_dir, file),
           /** Permalink path */
-          permalink: removeMultiSlashes(file.replaceArr([cwd(), '_posts/'], '/')).replace(/.md$/, '.html'),
+          permalink: removeMultiSlashes(file.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html'),
           /** Is Cached */
           cached: false,
         };
@@ -164,6 +164,7 @@ export const renderArticle = function () {
               return runner();
             }
           }
+
           renderer(parsed)
             .then(save)
             .then(skip)
@@ -176,7 +177,7 @@ export const renderArticle = function () {
                 // generate sitemap
                 const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
                 const content = sitemaps.map((o) => {
-                  o.url = String(o.url).replace('/source/', '/').replace('/_posts/', '/').replace('/src-posts/', '/');
+                  o.url = String(o.url).replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/');
                   return o;
                 });
                 write(join(generated_dir, 'sitemap.txt'), content.map((o) => o.url).join('\n'));

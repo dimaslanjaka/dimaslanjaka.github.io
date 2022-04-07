@@ -14,6 +14,7 @@ import './after-generate';
 import { DynamicObject } from '../../types';
 import 'js-prototypes';
 import yargs from 'yargs';
+import Bluebird from 'bluebird';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 
@@ -73,7 +74,7 @@ gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
 export const renderArticle = function () {
-  return new Promise((resolve, reject) => {
+  return new Bluebird((resolve, reject) => {
     logger.log(logname + chalk.blue('[posts]'), 'generating to', generated_dir);
     const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
     const ignore = ['_drafts/', '_data/', ...exclude];
@@ -82,15 +83,6 @@ export const renderArticle = function () {
       .filter((file) => {
         if (file.match(/_(drafts|data)\//)) return false;
         return true;
-      })
-      // validate sources
-      .then((data) => {
-        if (!data.length) {
-          logger.log(ignore);
-        } else {
-          logger.log(logname + chalk.blue('[posts]'), 'markdown sources total', data.length);
-        }
-        return data;
       })
       // transform path and others
       .map((file) => {
@@ -102,7 +94,7 @@ export const renderArticle = function () {
           /** Full path (also cache key) */
           path: join(source_dir, file),
           /** Permalink path */
-          permalink: removeMultiSlashes(file.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html'),
+          permalink: removeMultiSlashes(file.replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')).replace(/.md$/, '.html'),
           /** Is Cached */
           cached: false,
         };
@@ -114,9 +106,7 @@ export const renderArticle = function () {
       // filter only non-empty object
       .filter((parsed) => typeof parsed == 'object')
       .then(function (result) {
-        function push(array: typeof sitemaps, item: typeof sitemaps[0]) {
-          if (!array.some((el) => el.title === item.title)) array.push(item);
-        }
+        logger.log(logname + chalk.blue('[posts]'), 'markdown sources total', result.length);
         /**
          * Queue for process first item
          * @returns
@@ -130,7 +120,11 @@ export const renderArticle = function () {
            * remove first item, skip
            * @returns
            */
-          const skip = () => result.shift();
+          const skip = () => {
+            result.shift();
+            if (!result.length) return resolve();
+            return runner();
+          };
           /**
            * Save rendered ejs to `config.public_dir`
            * @param rendered
@@ -138,7 +132,7 @@ export const renderArticle = function () {
            */
           const save = (rendered: string) => {
             const saveto = join(generated_dir, parsed.permalink);
-            //logger.log(logname, chalk.greenBright('generated'), saveto);
+            logger.log(logname, chalk.greenBright('generated'), saveto);
             write(saveto, rendered);
             parsed.generated = rendered;
             parsed.generated_path = saveto;
@@ -147,21 +141,12 @@ export const renderArticle = function () {
             //logger.log(logname + chalk.cyanBright('[remaining]', result.length));
             return parsed;
           };
-          // push post metadata to sitemaps
-          if (!parsed.path.match(/(404).html/)) {
-            if (parsed.metadata) {
-              push(sitemaps, parsed.metadata);
-            } else {
-              logger.log('cannot push sitemap', parsed.permalink);
-            }
-          }
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
               logger.log(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
             } else {
               // if cache hit, skip process
-              skip();
-              return runner();
+              return skip();
             }
           }
 
@@ -171,30 +156,6 @@ export const renderArticle = function () {
             .catch((e) => {
               logger.log(logname, chalk.red('[error]'), parsed.path);
               logger.error(e);
-            })
-            .finally(() => {
-              if (!result.length) {
-                // generate sitemap
-                const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
-                const content = sitemaps.map((o) => {
-                  o.url = String(o.url).replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/');
-                  return o;
-                });
-                write(join(generated_dir, 'sitemap.txt'), content.map((o) => o.url).join('\n'));
-                ejs_opt.content = content.map((o) => `<a href="${o.url}" title="${o.url}" alt="${o.url}" rel="follow">${o.title}</a>`).join('<br/>');
-                ejs_opt.title = 'Sitemap';
-                ejs_opt.category = ['Sitemap'];
-                ejs_opt.tags = ['Sitemap'];
-                ejs_opt.webtitle = 'WMI';
-                ejs_opt.cover = 'https://cdn-icons-png.flaticon.com/512/580/580237.png';
-                ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config }).then((rendered) => {
-                  write(join(generated_dir, 'sitemap.html'), rendered).then(() => {
-                    return runner();
-                  });
-                });
-              } else {
-                return runner();
-              }
             });
         };
         return runner();

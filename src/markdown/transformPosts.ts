@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { dirname, existsSync, mkdirSync, statSync, write, writeFileSync } from '../node/filemanager';
+import { cwd, dirname, existsSync, mkdirSync, statSync, write, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
 import { readFileSync } from 'fs';
 import config_yml, { ProjectConfig, tmp } from '../types/_config';
@@ -10,8 +10,11 @@ import uuidv4 from '../node/uuid';
 import moment from 'moment';
 import { DynamicObject } from '../types';
 import yargs from 'yargs';
+import { toUnix } from 'upath';
+import config from '../types/_config';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
+const homepage = new URL(config.url);
 
 export type parsePostReturn = DynamicObject & {
   /**
@@ -141,6 +144,11 @@ export function parsePostOri(text: string): parsePostReturn | null {
       meta.description = meta.excerpt;
       meta.subtitle = meta.excerpt;
     }
+    if (isFile) {
+      meta.permalink = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/');
+      homepage.pathname = meta.permalink;
+      meta.url = homepage.toString();
+    }
     const result: parsePostReturn = {
       metadata: meta,
       body: body,
@@ -152,7 +160,6 @@ export function parsePostOri(text: string): parsePostReturn | null {
         source: replacePath(originalArg, '/source/_posts/', '/src-posts/'),
         public: replacePath(originalArg, '/src-posts/', '/source/_posts/'),
       };
-      //console.log(result.fileTree);
     }
     return result;
   };
@@ -198,10 +205,10 @@ const parseCache = new CacheFile('parsePost');
 export function parsePost(text: string, hash: string = null, cache = true) {
   let result: ReturnType<typeof parsePostOri>;
   const key = hash || text;
-  if (parseCache.isFileChanged(key) || !cache) {
+  if ((parseCache.isFileChanged(key) || !cache) && !nocache) {
     // parse changed or no cache
     result = parsePostOri(text);
-    //console.log('parse no cache', result);
+    console.log('parse no cache', typeof result);
     parseCache.set(key, result);
   } else {
     // restore cache

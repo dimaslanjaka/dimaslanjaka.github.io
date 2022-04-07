@@ -175,23 +175,12 @@ export const renderArticle = function () {
               if (!result.length) {
                 // generate sitemap
                 const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
-                write(
-                  join(generated_dir, 'sitemap.txt'),
-                  sitemaps
-                    .map((o) => {
-                      o.url = o.url.replace('/source/', '/');
-                      return o;
-                    })
-                    .map((o) => o.url)
-                    .join('\n')
-                );
-                ejs_opt.content = sitemaps
-                  .map((o) => {
-                    o.url = o.url.replace('/source/', '/');
-                    return o;
-                  })
-                  .map((o) => `<a href="${o.url}" title="${o.url}" alt="${o.url}" rel="follow">${o.title}</a>`)
-                  .join('<br/>');
+                const content = sitemaps.map((o) => {
+                  o.url = o.url.replace('/source/', '/').replace('/_posts/', '/').replace('/src-posts/', '/');
+                  return o;
+                });
+                write(join(generated_dir, 'sitemap.txt'), content.map((o) => o.url).join('\n'));
+                ejs_opt.content = content.map((o) => `<a href="${o.url}" title="${o.url}" alt="${o.url}" rel="follow">${o.title}</a>`).join('<br/>');
                 ejs_opt.title = 'Sitemap';
                 ejs_opt.category = ['Sitemap'];
                 ejs_opt.tags = ['Sitemap'];

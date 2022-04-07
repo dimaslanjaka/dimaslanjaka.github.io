@@ -15,7 +15,7 @@ export default class CachePost extends CacheFile {
   }
   /**
    * get latest posts
-   * @param by order descending by `date` or `updated`
+   * @param by order descending by `date` or default `updated`
    * @param max max result
    * @returns array of {@link parsePostReturn}
    */

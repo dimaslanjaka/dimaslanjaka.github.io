@@ -1,5 +1,8 @@
-# www.webmanajemen.com compiler
+# SBG (Static Blog Generator)
+
+www.webmanajemen.com compiler
 
 - nodejs
 - typescript
-- ejs
+- ejs engine
+- vscode ide integrated settings

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
 'use strict';
 
 const { toMomentLocale } = require('./date');
@@ -14,9 +15,7 @@ function listArchivesHelper(options = {}) {
   const showCount = Object.prototype.hasOwnProperty.call(options, 'show_count') ? options.show_count : true;
   const className = options.class || 'archive';
   const order = options.order || -1;
-  const compareFunc = type === 'monthly'
-    ? (yearA, monthA, yearB, monthB) => yearA === yearB && monthA === monthB
-    : (yearA, monthA, yearB, monthB) => yearA === yearB;
+  const compareFunc = type === 'monthly' ? (yearA, monthA, yearB, monthB) => yearA === yearB && monthA === monthB : (yearA, monthA, yearB, monthB) => yearA === yearB;
 
   let result = '';
 
@@ -30,7 +29,7 @@ function listArchivesHelper(options = {}) {
   const data = [];
   let length = 0;
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     // Clone the date object to avoid pollution
     let date = post.date.clone();
 
@@ -47,14 +46,14 @@ function listArchivesHelper(options = {}) {
         name,
         year,
         month,
-        count: 1
+        count: 1,
       });
     } else {
       lastData.count++;
     }
   });
 
-  const link = item => {
+  const link = (item) => {
     let url = `${archiveDir}/${item.year}/`;
 
     if (type === 'monthly') {

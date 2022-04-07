@@ -9,7 +9,7 @@
 <head>
 	<title><%- page.title %> | <%- page.webtitle||config.title %></title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="<%- excerpt(page) %> " />
+	<meta name="description" content="<%- excerpt(page) %>" />
 	<meta name="keywords" content="" />
 	<%- include('partial/cache', {page:page,config:config,theme:theme}) %>
 	<%- include('partial/seo', {page:page,config:config,theme:theme}) %>
@@ -185,8 +185,7 @@
 	<!-- Copyright -->
 	<div id="copyright">
 		<div class="container">
-			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a
-				href="http://unsplash.com/cc0">CC0</a>)
+			<%- config.title %> © <%- date_format(new Date(), 'YYYY') %> <%- author_name(page)||author_name(config) %>
 		</div>
 	</div>
 </body>

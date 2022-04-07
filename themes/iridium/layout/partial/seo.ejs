@@ -9,10 +9,11 @@
 <meta property="article:modified_time" content="<%- page.updated %>" />
 <meta property="article:author" content="<%- author_name(page) %>" />
 <% tags(page).forEach(tag => { %>
-  <meta property="article:tag" content="<%- tag.name %> " />
+  <meta property="article:tag" content="<%- tag.name %>" />
 <% }) %>
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:image" content="<%- thumbnail(page) %>" />
-<link rel="alternate" href="<%- config.rss||theme.rss||'/rss.xml' %>" title="<%- config.title %>" type="application/atom+xml" />
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
 <link rel="canonical" href="<%- page.url %>">

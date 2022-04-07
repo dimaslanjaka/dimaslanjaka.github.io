@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
 'use strict';
 
 const { parse, resolve } = require('url');
@@ -6,23 +7,23 @@ const { encodeURL, prettyUrls, htmlTag, stripHTML, escapeHTML } = require('hexo-
 const { default: moize } = require('moize');
 
 const localeMap = {
-  'en': 'en_US',
-  'de': 'de_DE',
-  'es': 'es_ES',
-  'fr': 'fr_FR',
-  'hu': 'hu_HU',
-  'id': 'id_ID',
-  'it': 'it_IT',
-  'ja': 'ja_JP',
-  'ko': 'ko_KR',
-  'nl': 'nl_NL',
-  'ru': 'ru_RU',
-  'th': 'th_TH',
-  'tr': 'tr_TR',
-  'vi': 'vi_VN'
+  en: 'en_US',
+  de: 'de_DE',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  hu: 'hu_HU',
+  id: 'id_ID',
+  it: 'it_IT',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+  nl: 'nl_NL',
+  ru: 'ru_RU',
+  th: 'th_TH',
+  tr: 'tr_TR',
+  vi: 'vi_VN',
 };
 
-const localeToTerritory = moize.shallow(str => {
+const localeToTerritory = moize.shallow((str) => {
   if (str.length === 2 && localeMap[str]) return localeMap[str];
 
   if (str.length === 5) {
@@ -56,7 +57,6 @@ const og = (name, content, escape) => {
 };
 
 function openGraphHelper(options = {}) {
-
   const { config, page } = this;
   const { content } = page;
   let images = options.image || options.images || page.photos || [];
@@ -75,8 +75,8 @@ function openGraphHelper(options = {}) {
   if (!Array.isArray(images)) images = [images];
 
   if (description) {
-    description = escapeHTML(stripHTML(description).substring(0, 200)
-      .trim() // Remove prefixing/trailing spaces
+    description = escapeHTML(
+      stripHTML(description).substring(0, 200).trim() // Remove prefixing/trailing spaces
     ).replace(/\n/g, ' '); // Replace new lines by spaces
   }
 
@@ -90,7 +90,6 @@ function openGraphHelper(options = {}) {
         images.push(img[1]);
       }
     }
-
   }
 
   let result = '';
@@ -117,7 +116,7 @@ function openGraphHelper(options = {}) {
     result += og('og:locale', localeToTerritory(language), false);
   }
 
-  images = images.map(path => {
+  images = images.map((path) => {
     if (!parse(path).host) {
       // resolve `path`'s absolute path relative to current page's url
       // `path` can be both absolute (starts with `/`) or relative.
@@ -127,7 +126,7 @@ function openGraphHelper(options = {}) {
     return path;
   });
 
-  images.forEach(path => {
+  images.forEach((path) => {
     result += og('og:image', path, false);
   });
 
@@ -150,11 +149,14 @@ function openGraphHelper(options = {}) {
   if (keywords) {
     if (typeof keywords === 'string') keywords = [keywords];
 
-    keywords.map(tag => {
-      return tag.name ? tag.name : tag;
-    }).filter(Boolean).forEach(keyword => {
-      result += og('article:tag', keyword);
-    });
+    keywords
+      .map((tag) => {
+        return tag.name ? tag.name : tag;
+      })
+      .filter(Boolean)
+      .forEach((keyword) => {
+        result += og('article:tag', keyword);
+      });
   }
 
   result += meta('twitter:card', twitterCard);

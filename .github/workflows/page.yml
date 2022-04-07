@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   build:
-    if: {{ $false }}
+    #if: {{ $false }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:

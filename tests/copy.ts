@@ -9,7 +9,7 @@ import config, { tmp } from '../src/types/_config';
 
 console.clear();
 // copy assets to generated directory
-gulp.series('generate:assets', 'generate:template')(null);
+// gulp.series('generate:assets', 'generate:template')(null);
 
 const logname = chalk.red('[test][copy]');
 const targets = ['src-posts/Test/markdown-links.md', 'src-posts/The Legend Of Neverland/Quiz.md'].map((s) => join(cwd(), s));

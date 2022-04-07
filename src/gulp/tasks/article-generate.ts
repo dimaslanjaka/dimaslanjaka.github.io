@@ -73,7 +73,7 @@ gulp.task('generate:template', renderTemplate);
 const renderCache = new CacheFile('renderArticle');
 export const renderArticle = function () {
   return new Promise((resolve, reject) => {
-    logger.log(logname, 'generating to', generated_dir);
+    logger.log(logname + chalk.blue('[posts]'), 'generating to', generated_dir);
     const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
     const ignore = ['_drafts/', '_data/', ...exclude];
     globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
@@ -87,7 +87,7 @@ export const renderArticle = function () {
         if (!data.length) {
           logger.log(ignore);
         } else {
-          logger.log(logname, 'markdown sources total', data.length);
+          logger.log(logname + chalk.blue('[posts]'), 'markdown sources total', data.length);
         }
         return data;
       })
@@ -107,31 +107,11 @@ export const renderArticle = function () {
         };
         result.cached = renderCache.has(result.path);
 
-        return result;
-      })
-      .map((result) => {
-        const parse = Object.assign(result, parsePost(result.path));
-        if (!parse) {
-          logger.log(logname, chalk.red('[fail]'), result.path);
-          return;
-        }
-        return parse;
+        const merge = Object.assign(result, parsePost(result.path));
+        return merge;
       })
       // filter only non-empty object
-      .filter((parsed) => {
-        let success = true;
-        if (!parsed || !parsed.metadata) success = false;
-        if (success) {
-          const notEmpty = [!isEmpty(parsed.body), !isEmpty(parsed.metadata.title)].every(Boolean);
-          if (!notEmpty) {
-            success = false;
-            logger.log(typeof parsed.metadata.title, typeof parsed.body);
-          } else {
-            success = true;
-          }
-        }
-        return success;
-      })
+      .filter((parsed) => typeof parsed == 'object')
       .then(function (result) {
         function push(array: typeof sitemaps, item: typeof sitemaps[0]) {
           if (!array.some((el) => el.title === item.title)) array.push(item);

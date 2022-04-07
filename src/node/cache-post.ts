@@ -1,11 +1,17 @@
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile from './cache';
 
-const postCache = new CacheFile('posts');
+let postCache: CacheFile;
 
 export default class CachePost extends CacheFile {
   constructor() {
     super('posts');
+    // initialize instance
+    postCache = new CacheFile('posts');
+    postCache.on('update', () => {
+      // re-update instance
+      postCache = new CacheFile('posts');
+    });
   }
   /**
    * get latest posts

@@ -5,18 +5,19 @@ import * as ejs from 'ejs';
 import * as locale from './helper/locales';
 import * as thumbnail from './helper/thumbnail';
 import * as keywords from './helper/keywords';
+import * as excerpt from './helper/excerpt';
 import { join } from '../node/filemanager';
 import { parsePostReturn } from '../markdown/transformPosts';
 import config, { ThemeOpt, theme_dir } from '../types/_config';
 import { DynamicObject } from '../types';
 
-type helper_types = typeof keywords | typeof thumbnail | typeof locale | typeof author | typeof date | DynamicObject;
+type helper_types = typeof keywords | typeof excerpt | typeof thumbnail | typeof locale | typeof author | typeof date | DynamicObject;
 let helpers: helper_types = {
   iif: function <T>(cond: boolean, value: T): T {
     if (cond) return value;
   },
 };
-[author, date, locale, thumbnail, keywords].forEach((obj) => {
+[author, date, locale, thumbnail, keywords, excerpt].forEach((obj) => {
   helpers = Object.assign(helpers, obj);
 });
 

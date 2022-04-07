@@ -1,12 +1,16 @@
 import chalk from 'chalk';
-import parseAfterGen, { filter_external_links } from '../src/gulp/tasks/after-generate';
+import gulp from 'gulp';
+import parseAfterGen from '../src/gulp/tasks/after-generate';
 import { modifyPost } from '../src/gulp/tasks/article-copy';
 import { renderer } from '../src/gulp/tasks/article-generate';
-import { buildPost, parsePost, parsePostReturn } from '../src/markdown/transformPosts';
+import { buildPost, parsePost } from '../src/markdown/transformPosts';
 import { cwd, join, removeMultiSlashes, write } from '../src/node/filemanager';
 import config, { tmp } from '../src/types/_config';
 
 console.clear();
+// copy assets to generated directory
+gulp.series('generate:assets', 'generate:template')(null);
+
 const logname = chalk.red('[test][copy]');
 const targets = ['src-posts/Test/markdown-links.md', 'src-posts/The Legend Of Neverland/Quiz.md'].map((s) => join(cwd(), s));
 const target = targets[0];

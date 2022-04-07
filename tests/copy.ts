@@ -16,9 +16,9 @@ const parsed = parsePost(target, target, false);
 parsed.fileTree.public = public_target;
 parsed.fileTree.source = target;
 write(tmp('tests', 'parsed.md'), buildPost(parsed)).then(console.log);
-const original = buildPost(parsed);
+const original = buildPost(parsed); // original markdown post
 const modify = modifyPost(parsed, false);
-const modified = buildPost(modify);
+const modified = buildPost(modify); // modified markdown post
 const prepare = Object.assign(
   {
     /**

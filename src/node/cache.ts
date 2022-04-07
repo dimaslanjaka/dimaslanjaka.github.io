@@ -102,21 +102,6 @@ export default class CacheFile {
       };
     }
   }
-  /**
-   * Dont worry to this queue process
-   */
-  queue = {
-    sets: [] as (() => any)[],
-    start: () => {
-      if (this.queue.sets.length) {
-        Promise.resolve(this.queue.sets[0]()).then(this.queue.restart);
-      }
-    },
-    restart: () => {
-      if (this.queue.sets.length) this.queue.sets.shift();
-      this.queue.start();
-    },
-  };
   set(key: string, value: any) {
     const self = this;
     // resolve key hash
@@ -131,16 +116,7 @@ export default class CacheFile {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
       write(self.dbFile, serialize(self.md5Cache));
     });
-    if (!CacheFile.options.sync) {
-      // +queue async
-      this.queue.sets.push(() => {
-        // save db value
-        write(locationCache, serialize(value));
-      });
-      this.queue.start();
-    } else {
-      write(self.dbFile, serialize(self.md5Cache));
-    }
+    write(locationCache, serialize(value));
   }
   has(key: string): boolean {
     key = this.resolveKey(key);

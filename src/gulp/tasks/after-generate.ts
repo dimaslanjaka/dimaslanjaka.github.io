@@ -69,7 +69,7 @@ function staticAfter(done: TaskCallback) {
   globSrc('**/*.html', { cwd: generated_dir })
     .map((file) => join(generated_dir, file))
     .then((files) => {
-      console.log(logname, 'total', files.length);
+      console.log(logname, 'html files total', files.length);
       return parseAfterGen(files, done);
     });
 }
@@ -99,7 +99,7 @@ const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
     // if files has members, shift first file, restart function
     if (files.length) {
       files.shift();
-      console.log(logname, 'remaining', files.length + 1);
+      //console.log(logname, 'remaining', files.length + 1);
       return parseAfterGen(null, callback);
     } else if (typeof callback == 'function') {
       return callback();

@@ -1,6 +1,6 @@
 # SBG (Static Blog Generator)
 
-www.webmanajemen.com compiler
+www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 
 - nodejs
 - typescript

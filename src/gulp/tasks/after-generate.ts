@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { join } from 'path';
 import config, { root } from '../../types/_config';
-import 'js-prototypes';
 import chalk from 'chalk';
 import gulp from 'gulp';
 import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import { JSDOM } from 'jsdom';
+import 'js-prototypes';
+import { TaskCallback } from 'undertaker';
 
 /**
  * get domain name without subdomain
@@ -63,41 +64,13 @@ export function filter_external_links(href: string) {
 }
 
 const generated_dir = join(root, config.public_dir);
-function staticAfter(done) {
+function staticAfter(done: TaskCallback) {
   // iterate public_dir of _config.yml (hexo generate)
-  return globSrc('**/*.html', { cwd: generated_dir })
+  globSrc('**/*.html', { cwd: generated_dir })
     .map((file) => join(generated_dir, file))
     .then((files) => {
-      console.log('total', files.length);
-      const parser = () => {
-        if (!files.length) return;
-        const file = files[0];
-        const content = readFileSync(file, 'utf-8');
-        const dom = new JSDOM(content);
-        const doc: Document = dom.window.document;
-        //const html = root.querySelector('html');
-        //if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
-        const hrefs = doc.querySelectorAll('a');
-        if (hrefs && hrefs.length > 0) {
-          for (let i = 0; i < hrefs.length; i++) {
-            const element = hrefs[i];
-            const href = element.getAttribute('href');
-            const filter = filter_external_links(href);
-            if (!filter.internal) {
-              element.setAttribute('rel', 'nofollow noopener noreferer');
-              element.setAttribute('target', '_blank');
-            }
-            element.setAttribute('href', filter.href);
-          }
-        }
-        dom.window.document = doc;
-
-        // save modified html
-        //const result = removeWordpressCDN(root.toString());
-        const result = doc.documentElement.outerHTML;
-        writeFileSync(file, result);
-      };
-      return parser();
+      console.log(logname, 'total', files.length);
+      return parseAfterGen(files, done);
     });
 }
 gulp.task('generate:after', staticAfter);
@@ -112,3 +85,51 @@ export function removeWordpressCDN(str: string, replacement = 'https://res.cloud
   const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
   return str.replace(regex, replacement);
 }
+
+const files: string[] = [];
+/**
+ * html fixer using queue method
+ * @param sources insert once
+ * @param callback callback after processed all files
+ * @returns
+ */
+const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
+  if (sources && sources.length) files.addAll(sources);
+  const skip = () => {
+    // if files has members, shift first file, restart function
+    if (files.length) {
+      files.shift();
+      console.log(logname, 'remaining', files.length + 1);
+      return parseAfterGen(null, callback);
+    } else if (typeof callback == 'function') {
+      return callback();
+    }
+  };
+  if (!files.length) return skip();
+
+  const file = files[0];
+  const content = readFileSync(file, 'utf-8');
+  const dom = new JSDOM(content);
+  //const html = dom.window.document.querySelector('html');
+  //if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
+  const hrefs = dom.window.document.querySelectorAll('a');
+  if (hrefs && hrefs.length > 0) {
+    for (let i = 0; i < hrefs.length; i++) {
+      const element = hrefs[i];
+      const href = element.getAttribute('href');
+      const filter = filter_external_links(href);
+      if (!filter.internal) {
+        element.setAttribute('rel', 'nofollow noopener noreferer');
+        element.setAttribute('target', '_blank');
+      }
+      element.setAttribute('href', filter.href);
+    }
+  }
+
+  let result = dom.serialize();
+  dom.window.close();
+  result = removeWordpressCDN(result);
+  writeFileSync(file, result);
+  return skip();
+};
+export default parseAfterGen;

@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { filter_external_links } from '../src/gulp/tasks/after-generate';
+import parseAfterGen, { filter_external_links } from '../src/gulp/tasks/after-generate';
 import { modifyPost } from '../src/gulp/tasks/article-copy';
 import { renderer } from '../src/gulp/tasks/article-generate';
 import { buildPost, parsePost, parsePostReturn } from '../src/markdown/transformPosts';
@@ -37,14 +37,6 @@ const prepare = Object.assign(
 
 // render test
 renderer(prepare, {} /*{ min: { ignoreCustomComments: [/^!/, /^\s*#/] } }*/).then((rendered) => {
-  const regex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm;
-  Array.from(rendered.matchAll(regex)).forEach((m) => {
-    const href = m[2];
-    const filter = filter_external_links(href);
-    if (!filter.internal) {
-      rendered = rendered.replace(href, filter.href);
-    }
-  });
-
   write(generated_target, rendered).then(console.log);
+  parseAfterGen([generated_target]);
 });

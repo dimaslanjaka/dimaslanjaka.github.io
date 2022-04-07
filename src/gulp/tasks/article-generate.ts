@@ -12,7 +12,6 @@ import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
 import './after-generate';
 import { isEmpty } from '../utils';
-import { minify as minHTML } from 'html-minifier-terser';
 import { DynamicObject } from '../../types';
 import 'js-prototypes';
 import { inspect } from 'util';
@@ -258,7 +257,7 @@ interface RendererOpt {
  * @returns
  */
 export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve: (arg: string) => any) => {
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
 
@@ -284,10 +283,12 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
       // content
       content: null,
     });
-    write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
+
     // render body html to ejs compiled
     ejs_data.page.content = ejs_object.render(body, ejs_data);
     //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
+
+    write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
 
     ejs_object.renderFile(layout, ejs_data).then(async (rendered) => {
       resolve(rendered);

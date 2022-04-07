@@ -1,6 +1,5 @@
 import scheduler from './node/scheduler';
 import gulp from 'gulp';
-import afterGenerate from './gulp/tasks/after-generate';
 import { join, mkdirSync, rmdirSync } from './node/filemanager';
 import config, { root, tmp } from './types/_config';
 import Bluebird from 'bluebird';
@@ -14,7 +13,6 @@ import './gulp/tasks/deploy';
 new scheduler();
 
 // tasks
-gulp.task('after-generate', afterGenerate);
 
 const clean = (done?: TaskCallback) =>
   Bluebird.all([join(root, config.public_dir), join(root, config.source_dir, '_posts'), dbFolder, tmp()])

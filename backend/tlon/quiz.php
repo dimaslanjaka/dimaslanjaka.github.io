@@ -6,6 +6,7 @@ if (isset($_POST['add'], $_POST['q'], $_POST['a'])) {
     header('content-type: application/json');
     $build = trim($_POST['q'] . ' (' . strtoupper($_POST['a']) . ')') . PHP_EOL;
     file_put_contents(__DIR__ . '/quiz.txt', $build, FILE_APPEND);
+    header( "Refresh:5; url=https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html", true, 303);
     echo json_encode(['msg' => 'Quiz added']);
     return;
   }

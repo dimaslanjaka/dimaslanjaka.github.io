@@ -1,1 +1,61 @@
-document.addEventListener("DOMContentLoaded",(function(){new DataTable("table#pet-tree",{ajax:function(e,t){fetch("https://backend.webmanajemen.com/chimeraland/pets.php?json").then((e=>e.json())).then((e=>{const a=e.data;for(let t=0;t<a.length;t++){const e=a[t],i=e.attr;e.attr=i.map((e=>`<li>${e}</li>`)).join(" ");let n=e.qty;n=n.replace(/HP/gim,' <img src="Pets/hp.webp" class="img-inline-text" title="Hit Points" />'),n=n.replace(/ATK/gim,'<img src="Recipes/attack.png" class="img-inline-text atk" title="Attack" /> '),n=n.replace(/DEF/gim,'<img src="Recipes/defense.png" class="img-inline-text def" title="Defense" /> '),n=n.replace(/GRADE A/gim,'<img src="Pets/grade-a.png" class="img-inline-text grade-a" title="Noble" /> '),n=n.replace(/GRADE B/gim,'<img src="Pets/grade-b.jpeg" class="img-inline-text grade-a" title="Grand" /> '),n=n.replace(/GRADE C/gim,'<img src="Pets/grade-c.png" class="img-inline-text grade-a" title="Rare" /> '),n=n.replace(/GRADE S/gim,'<img src="Pets/grade-s.png" class="img-inline-text grade-a" title="Illustrious" /> '),e.qty=n}return e.data=a,document.querySelector("div#raw-data").remove(),t(e)}))},columns:[{data:"name"},{data:"qty"},{data:"attr"}]})}));
+document.addEventListener("DOMContentLoaded", function () {
+  let table = new DataTable("table#pet-tree", {
+    ajax: function (d, cb) {
+      fetch("https://backend.webmanajemen.com/chimeraland/pets.php?json")
+        .then((response) => response.json())
+        .then((data) => {
+          /**
+           * @type {string[][]}
+           **/
+          const items = data.data;
+          for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            /**
+             * @type {string[]}
+             **/
+            const attr = item.attr;
+            item.attr = attr
+              .map((str) => {
+                return `<li>${str}</li>`;
+              })
+              .join(" ");
+            // switch icon quality
+            let quality = item.qty;
+            quality = quality.replace(
+              /HP/gim,
+              ' <img src="Pets/hp.webp" class="img-inline-text" title="Hit Points" />'
+            );
+            quality = quality.replace(
+              /ATK/gim,
+              '<img src="Recipes/attack.png" class="img-inline-text atk" title="Attack" /> '
+            );
+            quality = quality.replace(
+              /DEF/gim,
+              '<img src="Recipes/defense.png" class="img-inline-text def" title="Defense" /> '
+            );
+            quality = quality.replace(
+              /GRADE A/gim,
+              '<img src="Pets/grade-a.png" class="img-inline-text grade-a" title="Noble" /> '
+            );
+            quality = quality.replace(
+              /GRADE B/gim,
+              '<img src="Pets/grade-b.jpeg" class="img-inline-text grade-a" title="Grand" /> '
+            );
+            quality = quality.replace(
+              /GRADE C/gim,
+              '<img src="Pets/grade-c.png" class="img-inline-text grade-a" title="Rare" /> '
+            );
+            quality = quality.replace(
+              /GRADE S/gim,
+              '<img src="Pets/grade-s.png" class="img-inline-text grade-a" title="Illustrious" /> '
+            );
+            item.qty = quality;
+          }
+          data.data = items;
+          document.querySelector("div#raw-data").remove();
+          return cb(data);
+        });
+    },
+    columns: [{ data: "name" }, { data: "qty" }, { data: "attr" }],
+  });
+});

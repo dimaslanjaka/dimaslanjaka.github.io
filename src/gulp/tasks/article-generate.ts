@@ -196,6 +196,7 @@ export const renderArticle = function () {
                 ejs_opt.category = ['Sitemap'];
                 ejs_opt.tags = ['Sitemap'];
                 ejs_opt.webtitle = 'WMI';
+                ejs_opt.cover = 'https://cdn-icons-png.flaticon.com/512/580/580237.png';
                 ejs_object.renderFile(layout, { page: ejs_opt, config: config, root: theme_dir, theme: theme_config }).then((rendered) => {
                   write(join(generated_dir, 'sitemap.html'), rendered).then(() => {
                     return runner();

@@ -208,7 +208,7 @@ export function parsePost(text: string, hash: string = null, cache = true) {
   if ((parseCache.isFileChanged(key) || !cache) && !nocache) {
     // parse changed or no cache
     result = parsePostOri(text);
-    console.log('parse no cache', typeof result);
+    //console.log('parse no cache', typeof result);
     parseCache.set(key, result);
   } else {
     // restore cache

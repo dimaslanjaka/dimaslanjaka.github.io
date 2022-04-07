@@ -176,7 +176,7 @@ export const renderArticle = function () {
                 // generate sitemap
                 const ejs_opt: DynamicObject = Object.assign(parsed.metadata, parsed);
                 const content = sitemaps.map((o) => {
-                  o.url = o.url.replace('/source/', '/').replace('/_posts/', '/').replace('/src-posts/', '/');
+                  o.url = String(o.url).replace('/source/', '/').replace('/_posts/', '/').replace('/src-posts/', '/');
                   return o;
                 });
                 write(join(generated_dir, 'sitemap.txt'), content.map((o) => o.url).join('\n'));

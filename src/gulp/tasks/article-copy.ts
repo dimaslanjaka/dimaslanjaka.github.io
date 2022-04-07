@@ -74,7 +74,7 @@ function modifyPostOri(parse: parsePostReturn) {
     }
 
     // permalink
-    homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), '_posts/'], '/')).replace(/.md$/, '.html');
+    homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
     parse.metadata.url = homepage.toString();
     parse.metadata.permalink = homepage.pathname;
 

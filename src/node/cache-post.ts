@@ -37,7 +37,7 @@ export default class CachePost extends CacheFile {
    * @returns array of posts {@link CacheFile.getValues}
    */
   getAll(opt = defaultResovableValue) {
-    return super.getValues(opt);
+    return super.getValues(opt) as parsePostReturn[];
   }
 }
 

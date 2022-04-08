@@ -22,6 +22,14 @@ const homepage = new URL(config.url);
  * list tag of page
  * @param page page object
  * @returns array of tags
+ * @example
+ * ```html
+ * <% tags(page).forEach(tag => { %>
+ * tag url: <%- tag.url %>
+ * tag name: <%- tag.name %>
+ * tag pathname: <%- tag.pathname %>
+ * <% }) %>
+ * ```
  */
 export function tags(page: parsePostReturn) {
   const result: Tags[] = [];

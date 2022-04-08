@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
 import { exec, spawn } from 'child_process';
 import gulp from 'gulp';

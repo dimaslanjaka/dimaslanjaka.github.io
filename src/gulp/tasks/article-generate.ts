@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
-import config, { root, sitemaps, theme_config, theme_dir } from '../../types/_config';
+import config, { root, theme_config, theme_dir } from '../../types/_config';
 import ejs_object from '../../ejs';
 import { parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import chalk from 'chalk';

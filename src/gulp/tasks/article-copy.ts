@@ -26,6 +26,9 @@ import { shortcodeYoutube } from '../shortcode/youtube';
 import CacheFile from '../../node/cache';
 import through2 from 'through2';
 import ErrorMarkdown from '../../markdown/error-markdown';
+import yargs from 'yargs';
+const argv = yargs(process.argv.slice(2)).argv;
+const nocache = argv['nocache'];
 
 function cleanString(text: string) {
   if (typeof text == 'string') return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
@@ -297,7 +300,7 @@ const copyPosts = () => {
       const log = [logname, String(path)];
       let parse = parsePost(String(file.contents), String(path));
       if (!validateParser(parse)) {
-        console.log(...log, 'at 1st parse');
+        //console.log(...log, chalk.red('[fail]'), 'at 1st parse');
         return next();
       }
 

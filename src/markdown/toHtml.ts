@@ -75,7 +75,11 @@ const verbose = true;
  * @returns
  */
 export function renderBodyMarkdown(parse: parsePostReturn) {
+  if (!parse) throw new Error('cannot render markdown of undefined');
+
   let body = parse.body;
+  if (!body) throw new Error('cannot render undefined markdown body');
+
   // extract style, script
   const re = {
     script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gm,

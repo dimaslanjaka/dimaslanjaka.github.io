@@ -197,15 +197,14 @@ const parseCache = new CacheFile('parsePost');
 /**
  * Cacheable parsePost
  * @param text file path or content markdown
- * @param hash cache key
- * @param cache force using cache, default `true`
+ * @param hash set cache key if `text` isn't `file path`
  * @see {@link parsePostOri}
  * @returns
  */
-export function parsePost(text: string, hash: string = null, cache = true) {
+export function parsePost(text: string, hash: string = null) {
   let result: ReturnType<typeof parsePostOri>;
   const key = hash || text;
-  if ((parseCache.isFileChanged(key) || !cache) && !nocache) {
+  if (parseCache.isFileChanged(key) || !nocache) {
     // parse changed or no cache
     result = parsePostOri(text);
     //console.log('parse no cache', typeof result);

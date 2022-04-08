@@ -15,6 +15,7 @@ import { DynamicObject } from '../../types';
 import 'js-prototypes';
 import yargs from 'yargs';
 import Bluebird from 'bluebird';
+import Sitemap from '../../node/cache-sitemap';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 
@@ -73,6 +74,8 @@ const renderTemplate = () => {
 gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
+const sitemap = new Sitemap();
+
 export const renderArticle = function () {
   return new Bluebird((resolve, reject) => {
     logger.log(logname + chalk.blue('[posts]'), 'generating to', generated_dir);
@@ -125,6 +128,7 @@ export const renderArticle = function () {
             if (!result.length) return resolve();
             return runner();
           };
+
           /**
            * Save rendered ejs to `config.public_dir`
            * @param rendered
@@ -132,15 +136,17 @@ export const renderArticle = function () {
            */
           const save = (rendered: string) => {
             const saveto = join(generated_dir, parsed.permalink);
-            logger.log(logname, chalk.greenBright('generated'), saveto);
+            //logger.log(logname, chalk.greenBright('generated'), saveto);
             write(saveto, rendered);
             parsed.generated = rendered;
             parsed.generated_path = saveto;
             renderCache.set(parsed.path, rendered);
             //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
             //logger.log(logname + chalk.cyanBright('[remaining]', result.length));
+            sitemap.add(parsed.metadata);
             return parsed;
           };
+
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
               logger.log(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));

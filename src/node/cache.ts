@@ -3,10 +3,8 @@ import { cacheDir, existsSync, join, mkdirSync, readFileSync, resolve, write } f
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
-import { serialize, unserialize } from 'php-serialize';
 import { rm } from 'fs';
 import { DynamicObject } from '../types';
-import EventEmitter from 'events';
 
 export const dbFolder = resolve(cacheDir);
 export interface CacheOpt {
@@ -24,7 +22,7 @@ export interface CacheOpt {
 /**
  * @default
  */
-type ResovableValue = {
+export type ResovableValue = {
   /**
    * resolve all `cache value` instead `value location file`, default `true`
    */
@@ -38,7 +36,7 @@ type ResovableValue = {
    */
   randomize?: boolean;
 };
-const defaultResovableValue: ResovableValue = {
+export const defaultResovableValue: ResovableValue = {
   resolveValue: true,
   max: null,
   randomize: false,
@@ -80,7 +78,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
     if (typeof db != 'object') {
       try {
-        db = unserialize(db.toString());
+        db = JSON.parse(db.toString());
       } catch (e) {
         logger.error('cache database lost');
         logger.error(e);
@@ -147,9 +145,9 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
-      write(self.dbFile, serialize(self.md5Cache));
+      write(self.dbFile, JSON.stringify(self.md5Cache));
     });
-    if (value) write(locationCache, serialize(value));
+    if (value) write(locationCache, JSON.stringify(value));
     this.emit('update');
     return this;
   }
@@ -170,7 +168,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     const locationCache = this.locateKey(key);
     const Get = this.md5Cache[key];
     if (!Get) return fallback;
-    if (existsSync(locationCache)) return unserialize(readFileSync(locationCache, 'utf-8'));
+    if (existsSync(locationCache)) return JSON.parse(readFileSync(locationCache, 'utf-8'));
     return fallback;
   }
   getCache = (key: string, fallback = null) => this.get(key, fallback);

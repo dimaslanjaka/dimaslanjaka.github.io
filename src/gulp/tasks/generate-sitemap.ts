@@ -5,10 +5,14 @@ import { join, write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
+import chalk from 'chalk';
+
+const logname = chalk.cyanBright('[generate][sitemap]');
 
 export default function generateGoogleNewsSitemap(done: TaskCallback) {
   const pages = new Sitemap();
   const map = new GoogleNewsSitemap();
+  const log = logname + chalk.blue('[google-news]');
 
   Bluebird.all(pages.getValues())
     .map((item) => {
@@ -22,8 +26,10 @@ export default function generateGoogleNewsSitemap(done: TaskCallback) {
       return map.add(val);
     })
     .then((i) => {
-      console.log('total pages', i.length);
-      write(join(root, config.public_dir, 'sitemap-news.xml'), map.toString()).then(console.log);
+      console.log(log, 'total pages', i.length);
+      write(join(root, config.public_dir, 'sitemap-news.xml'), map.toString()).then((f) => {
+        console.log(log, 'saved', f);
+      });
     })
     .finally(() => done());
 }

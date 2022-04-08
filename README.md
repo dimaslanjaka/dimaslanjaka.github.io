@@ -8,6 +8,7 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 - ejs engine (ejs renderer)
 - vscode ide integrated settings
 - cache strategies (dont process any unmodified files to save memory usages)
+- github pages deployer (merged instead clean old files to syncronize with cache strategy)
 
 ## todo
 - admin panel

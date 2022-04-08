@@ -8,7 +8,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - After a few months, my posts have reached 800. hexojs is starting to become unfriendly, to the point that all my articles are corrupted (not rendered perfectly). And some posts got reduced from page rank.
 - And i got confused, then iam creating this project
 
-
+## compiler information
 www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 
 ## features

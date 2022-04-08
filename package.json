@@ -9,10 +9,9 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "deploy": "git subtree push --prefix docs origin master",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
-    "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.ts'",
+    "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.specs.ts'",
     "prototype": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes"
   },
   "repository": {

@@ -15,6 +15,13 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 - `src-posts/` contains all original posts with markdown formats
 - `source/`=`config.source_dir` in `_config.yml` contains all pages that should be on public directory `config.public_dir`
 
+## runner
+```bash
+gulp --tasks # to view all tasks
+gulp copy # copy and process all src-posts to source/_posts
+gulp generate # generate all source to public directory
+```
+
 ## todo
 - admin panel
 - template

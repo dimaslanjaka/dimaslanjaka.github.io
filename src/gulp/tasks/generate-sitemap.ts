@@ -15,6 +15,11 @@ import { renderer } from './generate';
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();
 
+/**
+ * Genearate Google News Sitemap
+ * * save to `config.public_dir/sitemap-news.xml`
+ * @param done
+ */
 function generateGoogleNewsSitemap(done: TaskCallback) {
   const map = new GoogleNewsSitemap();
   const log = logname + chalk.blue('[google-news]');
@@ -51,6 +56,11 @@ function fixURLSitemap(url: string) {
   return parseURL;
 }
 
+/**
+ * generate sitemap html
+ * * save to `config.public_dir/sitemap.html`
+ * @param done
+ */
 function generateSitemapHtml(done?: TaskCallback) {
   const log = logname + chalk.blue('[html]');
   Bluebird.all(pages.getValues())

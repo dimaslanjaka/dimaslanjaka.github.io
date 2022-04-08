@@ -9,3 +9,4 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 
 ## todo
 - admin panel
+- template

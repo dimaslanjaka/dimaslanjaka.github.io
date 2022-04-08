@@ -39,7 +39,7 @@ gulp deploy # deploy to github pages
 - [ ] admin panel
 - [ ] template
 - [ ] archives generator
-- [x] sitemap
+- [x] multiple type of sitemap (google news, sitemap text, sitemap html)
 
 ## contacts
 - dimaslanjaka@gmail.com

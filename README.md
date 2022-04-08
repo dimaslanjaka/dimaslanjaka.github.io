@@ -14,7 +14,8 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 ## features
 - nodejs (12.x - 17.x supported)
 - typescript (pure typescript commonjs with esmInterop project)
-- ejs engine (ejs renderer)
+- ejs engine (template renderer)
+- markdown engine (using markdown-it support footnotes, sup, sub, etc)
 - vscode ide integrated settings (development using vscode recommended)
 - cache strategies (dont process any unmodified files to save memory usages)
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)

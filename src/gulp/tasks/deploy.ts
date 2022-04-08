@@ -30,7 +30,7 @@ const logname = chalk.magentaBright('[deploy][git]');
 const configDeploy = config.deploy;
 
 const copyGenerated = () => {
-  return gulp.src(['**/**', '!**/.git'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
+  return gulp.src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };
 
 gulp.task('deploy', async (done?: TaskCallback) => {

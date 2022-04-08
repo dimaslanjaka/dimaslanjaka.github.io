@@ -144,7 +144,7 @@ exclude:
   - "**/vendor/**"
   - "**/node_modules/**"
   - "**/{readme,README,CHANGELOG,changelog,UPGRADING}.{md,MD}"
-  - "**/.git"
+  - "**/.git*"
 ignore:
 
 # https://www.npmjs.com/package/hexo-server

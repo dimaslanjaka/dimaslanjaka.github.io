@@ -293,7 +293,7 @@ const validateParser = (parse: ReturnType<typeof parsePost>) => {
 
 const copyPosts = () => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
-  const run = gulp.src(['**/*.md', '!**/.git', ...exclude], { cwd: post_source_dir }).pipe(
+  const run = gulp.src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir }).pipe(
     through2.obj(function (file, encoding, next) {
       const path = file.path;
       const log = [logname, String(path)];

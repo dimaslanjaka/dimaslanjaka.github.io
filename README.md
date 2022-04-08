@@ -42,7 +42,7 @@ gulp generate --nocache # generate all without reading cache instead write new c
 - [ ] admin panel
 - [ ] template
 - [ ] archives generator
-- [x] multiple type of sitemap (google news, sitemap text, sitemap html)
+- [x] multiple type of sitemap (google news, sitemap text, sitemap html, sitemap xml)
 
 ## contacts
 - dimaslanjaka@gmail.com

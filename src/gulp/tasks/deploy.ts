@@ -51,7 +51,7 @@ const logname = chalk.magentaBright('[deploy][git]');
 const configDeploy = config.deploy;
 
 const copyGenerated = () => {
-  return gulp.src('**/**', { cwd: generatedDir }).pipe(gulp.dest(deployDir));
+  return gulp.src(['**/**', '!**/.git'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };
 
 function taskDeploy(done?: TaskCallback) {
@@ -110,7 +110,7 @@ gulp.task('deploy', async () => {
 
   copyGenerated().on('end', async () => {
     await git('add', '-A');
-    await git('commit', '-m', 'Update site: ', moment().format());
+    await git('commit', '-m', 'Update site: ' + moment().format());
     await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');
   });
 });

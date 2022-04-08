@@ -47,7 +47,7 @@ function generatePost(done?: TaskCallback) {
   allPosts
     .map((post) => {
       const lastmod = moment(post.metadata.updated).format('YYYY-MM-DDTHH:mm:ssZ');
-      return `<url><loc>${post.metadata.url}</loc><lastmod>${lastmod}</lastmod></url>`;
+      return `<url><loc>${post.metadata.url}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>`;
     })
     .then((xmls) => {
       const buildXML = readXML.replace(/<url>+[\s\S\n]*<\/url>/gm, xmls.join('\n'));

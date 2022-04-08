@@ -13,3 +13,7 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 ## todo
 - admin panel
 - template
+
+## contacts
+- dimaslanjaka@gmail.com
+- +6285655667573

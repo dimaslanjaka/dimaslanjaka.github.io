@@ -7,6 +7,7 @@ import config, { post_generated_dir } from '../../../types/_config';
 import 'js-prototypes';
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
+import { parsePostReturn } from '../../../markdown/transformPosts';
 
 /// define global variable without refetch them
 const postCache = new CachePost();
@@ -38,6 +39,24 @@ function getLatestDateArray(arr: any[]) {
 }
 
 /**
+ * Sort post by date descending
+ * @param a
+ * @param b
+ * @returns
+ */
+function sortByDate(a: parsePostReturn, b: parsePostReturn) {
+  const dA = a.metadata.updated || a.metadata.date;
+  const dB = b.metadata.updated || b.metadata.date;
+  if (dA < dB) {
+    return 1;
+  }
+  if (dA > dB) {
+    return -1;
+  }
+  return 0;
+}
+
+/**
  * generate post sitemap
  * @param done
  */
@@ -45,6 +64,9 @@ function generatePost(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/post-sitemap.xml');
   const readXML = readFileSync(sourceIndexXML, 'utf-8');
   allPosts
+    .then((posts) => {
+      return posts.sort(sortByDate);
+    })
     .map((post) => {
       const lastmod = moment(post.metadata.updated).format('YYYY-MM-DDTHH:mm:ssZ');
       return `<url><loc>${post.metadata.url}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>`;

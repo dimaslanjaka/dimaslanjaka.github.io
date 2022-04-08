@@ -183,17 +183,16 @@ function modifyPostOri(parse: parsePostReturn) {
 /**
  * Cacheable {@link modifyPostOri}
  * @see {@link modifyPostOri}
- * @param parse
- * @param cache enable cache. default true
- * @returns
+ * @param parse parsed post object
+ * @returns modified parsed post object
  */
-export function modifyPost(parse: ReturnType<typeof modifyPostOri>, cache = true) {
+export function modifyPost(parse: ReturnType<typeof modifyPostOri>) {
   let result: ReturnType<typeof modifyPostOri>;
   const source = parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
 
-  if (modCache.isFileChanged(source) || !cache) {
+  if (modCache.isFileChanged(source) || !nocache) {
     // file changed or no cache
     result = modifyPostOri(parse);
     postCache.set(source, result);

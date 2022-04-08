@@ -5,8 +5,8 @@ import config, { root, tmp } from './types/_config';
 import Bluebird from 'bluebird';
 import { TaskCallback } from 'undertaker';
 import { dbFolder } from './node/cache';
-import './gulp/tasks/article-copy';
-import './gulp/tasks/article-generate';
+import './gulp/tasks/copy';
+import './gulp/tasks/generate';
 import './gulp/tasks/deploy';
 
 // register scheduler

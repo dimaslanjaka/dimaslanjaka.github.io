@@ -10,12 +10,14 @@ import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
 import { copyFileSync } from 'fs';
-import './after-generate';
 import { DynamicObject } from '../../types';
 import 'js-prototypes';
 import yargs from 'yargs';
 import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
+import './generate-sitemap';
+import './generate-after';
+
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 

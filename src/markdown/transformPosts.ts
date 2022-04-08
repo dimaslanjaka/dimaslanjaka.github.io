@@ -3,7 +3,7 @@ import { cwd, dirname, existsSync, mkdirSync, statSync, write, writeFileSync } f
 import yaml from 'yaml';
 import { readFileSync } from 'fs';
 import config_yml, { ProjectConfig, tmp } from '../types/_config';
-import { replacePath } from '../gulp/tasks/article-copy';
+import { replacePath } from '../gulp/tasks/copy';
 import CacheFile from '../node/cache';
 import ErrorMarkdown from './error-markdown';
 import uuidv4 from '../node/uuid';

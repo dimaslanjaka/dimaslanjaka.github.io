@@ -36,12 +36,14 @@ gulp deploy # deploy to github pages
 ```
 
 ## todo
-- admin panel
-- template
+- [ ] admin panel
+- [ ] template
+- [ ] archives generator
+- [x] sitemap
 
 ## contacts
 - dimaslanjaka@gmail.com
-- +6285655667573
+- whatsapp +6285655667573
 
 ## incoming terms
 - static blog generator

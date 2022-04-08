@@ -15,11 +15,16 @@ const logname = chalk.magentaBright('[sitemap-xml]');
 /**
  * all mapped posts
  */
-const allPosts = Bluebird.all(postCache.getAll()).map((i) => {
-  if (!i.metadata.type || !i.metadata.type.length)
-    if (i.fileTree) if (typeof i.fileTree.public == 'string') i.metadata.type = i.fileTree.public.includes('_posts') ? 'post' : 'page';
-  return i;
-});
+const allPosts = Bluebird.all(postCache.getAll())
+  .map((i) => {
+    if (!i.metadata.type || !i.metadata.type.length)
+      if (i.fileTree) if (typeof i.fileTree.public == 'string') i.metadata.type = i.fileTree.public.includes('_posts') ? 'post' : 'page';
+    return i;
+  })
+  .filter((i) => {
+    const u = i.metadata.url;
+    return !u.match(/\/.(guid|git|eslint|tslint|prettierc)/);
+  });
 
 /**
  * copy asset sitemaps
@@ -44,14 +49,23 @@ function getLatestDateArray(arr: any[]) {
  * @param b
  * @returns
  */
-function sortByDate(a: parsePostReturn, b: parsePostReturn) {
+function sortByDate(a: parsePostReturn, b: parsePostReturn, order: 'desc' | 'asc' = 'desc') {
   const dA = a.metadata.updated || a.metadata.date;
   const dB = b.metadata.updated || b.metadata.date;
-  if (dA < dB) {
-    return 1;
-  }
-  if (dA > dB) {
-    return -1;
+  if (order == 'desc') {
+    if (dA < dB) {
+      return 1;
+    }
+    if (dA > dB) {
+      return -1;
+    }
+  } else {
+    if (dA > dB) {
+      return 1;
+    }
+    if (dA < dB) {
+      return -1;
+    }
   }
   return 0;
 }
@@ -153,36 +167,3 @@ async function generateIndex(done?: TaskCallback) {
 }
 
 gulp.task('generate:sitemap-xml', gulp.series(copy, generateIndex, generatePost));
-
-interface sitemapItem {
-  loc: string;
-  lastmod: string;
-  changefreq: string;
-  priority: string;
-}
-interface sitemapObj {
-  urlset: {
-    url: sitemapItem[];
-  };
-}
-interface sitemapGroup {
-  post: sitemapObj;
-  page: sitemapObj;
-  tag: sitemapObj;
-  category: sitemapObj;
-}
-const sitemapGroup: sitemapGroup = {
-  post: undefined,
-  page: undefined,
-  tag: undefined,
-  category: undefined,
-};
-interface SitemapIndex {
-  sitemapindex: {
-    sitemap: SitemapIndexItem[];
-  };
-}
-interface SitemapIndexItem {
-  loc: string;
-  lastmod: string;
-}

@@ -1,77 +1,73 @@
-<!DOCTYPE HTML>
-<!--
+<!DOCTYPE html><!--
 	Iridium by TEMPLATED
     templated.co @templatedco
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-
-<head>
+--><html><head>
 	<title>VSCode Migrate Typescript CommonJS to ESM | WMI</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="VSCode Migrate Typescript CommonJS to ESM" />
-	<meta name="keywords" content="" />
-	<include expiration="7d" path="*.css"></include>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="VSCode Migrate Typescript CommonJS to ESM">
+	<meta name="keywords" content="">
+	</head><body class="no-sidebar"><include expiration="7d" path="*.css"></include>
 <include expiration="7d" path="*.js"></include>
 <include expiration="3d" path="*.gif"></include>
 <include expiration="3d" path="*.jpeg"></include>
 <include expiration="3d" path="*.jpg"></include>
 <include expiration="3d" path="*.png"></include>
-<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch" />
-	<meta property="og:type" content="article" />
-<meta property="og:title" content="VSCode Migrate Typescript CommonJS to ESM" />
-<meta property="og:url" content="https://www.webmanajemen.com///2022/03/30/vscode-migrate-ts-project-to-esm.md" />
-<meta property="og:site_name" content="WMI" />
-<meta property="og:description" content="VSCode Migrate Typescript CommonJS to ESM" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:image" content="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314" />
-<meta property="article:published_time" content="2022-03-30T06:57:37+0000" />
-<meta property="article:modified_time" content="2022-03-30T06:57:37+0000" />
-<meta property="article:author" content="" />
+<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
+	<meta property="og:type" content="article">
+<meta property="og:title" content="VSCode Migrate Typescript CommonJS to ESM">
+<meta property="og:url" content="https://www.webmanajemen.com///2022/03/30/vscode-migrate-ts-project-to-esm.md">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="VSCode Migrate Typescript CommonJS to ESM">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314">
+<meta property="article:published_time" content="2022-03-30T06:57:37+0000">
+<meta property="article:modified_time" content="2022-03-30T06:57:37+0000">
+<meta property="article:author" content="">
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314" />
-<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314">
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
 <link rel="canonical" href="https://www.webmanajemen.com///2022/03/30/vscode-migrate-ts-project-to-esm.md">
-	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+	<link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
 	<!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/skel-panels.min.js"></script>
 	<script src="/js/init.js?c=1"></script>
 	<noscript>
-		<link rel="stylesheet" href="/css/skel-noscript.css?c=1" />
-		<link rel="stylesheet" href="/css/style.css?c=1" />
-		<link rel="stylesheet" href="/css/style-desktop.css?c=1" />
+		<link rel="stylesheet" href="/css/skel-noscript.css?c=1">
+		<link rel="stylesheet" href="/css/style.css?c=1">
+		<link rel="stylesheet" href="/css/style-desktop.css?c=1">
 	</noscript>
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
@@ -84,11 +80,11 @@
 	</style>
 
 	
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
+		<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
 	
-</head>
 
-<body class="no-sidebar">
+
+
 
 	<!-- Header -->
 	<div id="header">
@@ -105,11 +101,8 @@
 				<ul>
 					<li><a href="/">Homepage</a></li>
 					
-					<!--
-						<li><a href="left-sidebar.html">Left Sidebar</a></li>
-						<li><a href="right-sidebar.html">Right Sidebar</a></li>
-						<li class="active"><a href="no-sidebar.html">No Sidebar</a></li>
-					-->
+
+					<li class="active"><a href="https://www.webmanajemen.com///2022/03/30/vscode-migrate-ts-project-to-esm.md">Current</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -135,88 +128,88 @@
 <h2 id="package-json" tabindex="-1"><a class="header-anchor" href="#package-json">package.json</a></h2>
 <p>add following key to package.json</p>
 <pre><code class="language-jsonc">{
-  &quot;type&quot;: &quot;module&quot;,
-  &quot;main&quot;: &quot;./dist/src/main.js&quot;,
-  &quot;exports&quot;: {
-    &quot;.&quot;: &quot;./dist/src/main.js&quot;
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "exports": {
+    ".": "./dist/src/main.js"
   },
-  &quot;typesVersions&quot;: {
-    &quot;*&quot;: {
-      &quot;main.d.ts&quot;: [&quot;dist/src/main.d.ts&quot;]
+  "typesVersions": {
+    "*": {
+      "main.d.ts": ["dist/src/main.d.ts"]
     }
   }
 }
 </code></pre>
 <p>Nicer module specifiers for a subtree:</p>
 <pre><code class="language-jsonc">{
-  &quot;type&quot;: &quot;module&quot;,
-  &quot;main&quot;: &quot;./dist/src/main.js&quot;,
-  &quot;exports&quot;: {
-    &quot;./*&quot;: &quot;./dist/src/*&quot;
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "exports": {
+    "./*": "./dist/src/*"
   },
-  &quot;typesVersions&quot;: {
-    &quot;*&quot;: {
-      &quot;*&quot;: [&quot;dist/src/*&quot;]
+  "typesVersions": {
+    "*": {
+      "*": ["dist/src/*"]
     }
   }
 }
 </code></pre>
-<p>Default <a href="https://www.typescriptlang.org/docs/handbook/esm-node.html">typescript documentation</a></p>
+<p>Default <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGZG9jcyUyRmhhbmRib29rJTJGZXNtLW5vZGUuaHRtbA==" rel="nofollow noopener noreferer" target="_blank">typescript documentation</a></p>
 <pre><code class="language-jsonc">{
-    &quot;name&quot;: &quot;my-package&quot;,
-    &quot;type&quot;: &quot;module&quot;,
-    &quot;exports&quot;: {
-        &quot;.&quot;: {
-            // Entry-point for `import &quot;my-package&quot;` in ESM
-            &quot;import&quot;: &quot;./esm/index.js&quot;,
-            // Entry-point for `require(&quot;my-package&quot;) in CJS
-            &quot;require&quot;: &quot;./commonjs/index.cjs&quot;,
+    "name": "my-package",
+    "type": "module",
+    "exports": {
+        ".": {
+            // Entry-point for `import "my-package"` in ESM
+            "import": "./esm/index.js",
+            // Entry-point for `require("my-package") in CJS
+            "require": "./commonjs/index.cjs",
         },
     },
     // CJS fall-back for older versions of Node.js
-    &quot;main&quot;: &quot;./commonjs/index.cjs&quot;,
+    "main": "./commonjs/index.cjs",
 }
 </code></pre>
 <ul>
-<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions"><code>&quot;typesVersions&quot;</code></a> performs the same mapping as <code>&quot;exports&quot;</code>, but for TypeScript’s type definitions.</li>
+<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGZG9jcyUyRmhhbmRib29rJTJGZGVjbGFyYXRpb24tZmlsZXMlMkZwdWJsaXNoaW5nLmh0bWwlMjN2ZXJzaW9uLXNlbGVjdGlvbi13aXRoLXR5cGVzdmVyc2lvbnM=" rel="nofollow noopener noreferer" target="_blank"><code>"typesVersions"</code></a> performs the same mapping as <code>"exports"</code>, but for TypeScript’s type definitions.</li>
 </ul>
 <h2 id="tsconfig-json" tabindex="-1"><a class="header-anchor" href="#tsconfig-json">tsconfig.json</a></h2>
 <p>match your configuration (points A, B, C)</p>
 <pre><code class="language-jsonc">{
-  &quot;compilerOptions&quot;: {
-    &quot;rootDir&quot;: &quot;./&quot;,
-    &quot;outDir&quot;: &quot;./dist&quot;,
-    &quot;target&quot;: &quot;ES2020&quot;,
-    &quot;lib&quot;: [
-      &quot;ES2020&quot;, &quot;DOM&quot;
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "target": "ES2020",
+    "lib": [
+      "ES2020", "DOM"
     ],
-    &quot;module&quot;: &quot;ES2020&quot;, // (A)
-    &quot;moduleResolution&quot;: &quot;Node&quot;, // (B)
-    &quot;strict&quot;: true,
-    &quot;sourceMap&quot;: true,
+    "module": "ES2020", // (A)
+    "moduleResolution": "Node", // (B)
+    "strict": true,
+    "sourceMap": true,
     // Needed for importing CommonJS modules
-    &quot;allowSyntheticDefaultImports&quot;: true, // (C)
+    "allowSyntheticDefaultImports": true, // (C)
     // Compile d.ts
-    &quot;declaration&quot;: true,
+    "declaration": true,
   }
 }
 </code></pre>
 <ul>
-<li>Line A (<a href="https://www.typescriptlang.org/tsconfig#module"><code>&quot;module&quot;</code></a>): We are telling TypeScript to generate ECMAScript modules.
+<li>Line A (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNtb2R1bGU=" rel="nofollow noopener noreferer" target="_blank"><code>"module"</code></a>): We are telling TypeScript to generate ECMAScript modules.
 <ul>
-<li><code>&quot;ES6&quot;</code>, <code>&quot;ES2015&quot;</code>: support for basic ESM features</li>
-<li><code>&quot;2020&quot;</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
+<li><code>"ES6"</code>, <code>"ES2015"</code>: support for basic ESM features</li>
+<li><code>"2020"</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
 </ul>
 </li>
-<li>Line B (<a href="https://www.typescriptlang.org/tsconfig#moduleResolution"><code>&quot;moduleResolution&quot;</code></a>): This value is needed for Node.js.</li>
-<li>Line C (<a href="https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports"><code>&quot;allowSyntheticDefaultImports&quot;</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
+<li>Line B (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNtb2R1bGVSZXNvbHV0aW9u" rel="nofollow noopener noreferer" target="_blank"><code>"moduleResolution"</code></a>): This value is needed for Node.js.</li>
+<li>Line C (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNhbGxvd1N5bnRoZXRpY0RlZmF1bHRJbXBvcnRz" rel="nofollow noopener noreferer" target="_blank"><code>"allowSyntheticDefaultImports"</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
 </ul>
 <h2 id="vs-code-settings-json" tabindex="-1"><a class="header-anchor" href="#vs-code-settings-json">VSCode settings.json</a></h2>
 <p>open your <code>settings.json</code> or <code>.vscode/settings.json</code>, add following keys</p>
 <pre><code class="language-jsonc">{
   //...
-  &quot;javascript.preferences.importModuleSpecifierEnding&quot;: &quot;js&quot;,
-  &quot;typescript.preferences.importModuleSpecifierEnding&quot;: &quot;js&quot;
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
   //...
 }
 </code></pre>
@@ -227,7 +220,7 @@
 <li>Open Search And Replace VSCode</li>
 <li>Insert below pattern to search input and check Regex Search Flag</li>
 </ul>
-<pre><code class="language-regexp">(^import.*\/((?!.js).)*)(['&quot;];)$
+<pre><code class="language-regexp">(^import.*\/((?!.js).)*)(['"];)$
 </code></pre>
 <ul>
 <li>Insert below replacement pattern to replacement input</li>
@@ -258,21 +251,21 @@
 			<div class="row">
 				<div class="4u">
 					<h2>Aenean elementum facilisis</h2>
-					<a href="#" class="image full"><img src="/images/pic01.jpg" alt="" /></a>
+					<a href="#" class="image full"><img src="/images/pic01.jpg" alt=""></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
 				</div>
 				<div class="4u">
 					<h2>Fusce ultrices fringilla</h2>
-					<a href="#" class="image full"><img src="/images/pic02.jpg" alt="" /></a>
+					<a href="#" class="image full"><img src="/images/pic02.jpg" alt=""></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
 				</div>
 				<div class="4u">
 					<h2>Etiam rhoncus volutpat erat</h2>
-					<a href="#" class="image full"><img src="/images/pic03.jpg" alt="" /></a>
+					<a href="#" class="image full"><img src="/images/pic03.jpg" alt=""></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
@@ -295,7 +288,7 @@
 				</script>
 				<noscript>
 					Please enable JavaScript to view the
-					<a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
 						comments powered by Disqus.
 					</a>
 				</noscript>
@@ -355,6 +348,6 @@
 			WMI ©  Dimas Lanjaka
 		</div>
 	</div>
-</body>
 
-</html>
+
+</body></html>

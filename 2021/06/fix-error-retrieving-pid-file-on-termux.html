@@ -1,81 +1,77 @@
-<!DOCTYPE HTML>
-<!--
+<!DOCTYPE html><!--
 	Iridium by TEMPLATED
     templated.co @templatedco
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-
-<head>
+--><html><head>
 	<title>Fix error retrieving pid file on termux apache | WMI Gitlab</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Solution to error retrieving pid file Termux and apache Apache errors overview: 20014 Internal error specific" />
-	<meta name="keywords" content="" />
-	<include expiration="7d" path="*.css"></include>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="Solution to error retrieving pid file Termux and apache Apache errors overview: 20014 Internal error specific">
+	<meta name="keywords" content="">
+	</head><body class="no-sidebar"><include expiration="7d" path="*.css"></include>
 <include expiration="7d" path="*.js"></include>
 <include expiration="3d" path="*.gif"></include>
 <include expiration="3d" path="*.jpeg"></include>
 <include expiration="3d" path="*.jpg"></include>
 <include expiration="3d" path="*.png"></include>
-<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch" />
-<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch" />
-	<meta property="og:type" content="article" />
-<meta property="og:title" content="Fix error retrieving pid file on termux apache" />
-<meta property="og:url" content="https://www.webmanajemen.com///2021/06/fix-error-retrieving-pid-file-on-termux.md" />
-<meta property="og:site_name" content="WMI" />
-<meta property="og:description" content="Solution to error retrieving pid file Termux and apache Apache errors overview: 20014 Internal error specific" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" />
-<meta property="article:published_time" content="2021-06-04T01:00:00.002+07:00" />
-<meta property="article:modified_time" content="2021-06-04T01:00:00+07:00" />
-<meta property="article:author" content="Dimas Lanjaka" />
+<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
+<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
+	<meta property="og:type" content="article">
+<meta property="og:title" content="Fix error retrieving pid file on termux apache">
+<meta property="og:url" content="https://www.webmanajemen.com///2021/06/fix-error-retrieving-pid-file-on-termux.md">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="Solution to error retrieving pid file Termux and apache Apache errors overview: 20014 Internal error specific">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png">
+<meta property="article:published_time" content="2021-06-04T01:00:00.002+07:00">
+<meta property="article:modified_time" content="2021-06-04T01:00:00+07:00">
+<meta property="article:author" content="Dimas Lanjaka">
 
-  <meta property="article:tag" content="Android" />
+  <meta property="article:tag" content="Android">
 
-  <meta property="article:tag" content="Tips & Tricks" />
+  <meta property="article:tag" content="Tips &amp; Tricks">
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" />
-<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png">
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
 <link rel="canonical" href="https://www.webmanajemen.com///2021/06/fix-error-retrieving-pid-file-on-termux.md">
-	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+	<link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
 	<!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/skel-panels.min.js"></script>
 	<script src="/js/init.js?c=1"></script>
 	<noscript>
-		<link rel="stylesheet" href="/css/skel-noscript.css?c=1" />
-		<link rel="stylesheet" href="/css/style.css?c=1" />
-		<link rel="stylesheet" href="/css/style-desktop.css?c=1" />
+		<link rel="stylesheet" href="/css/skel-noscript.css?c=1">
+		<link rel="stylesheet" href="/css/style.css?c=1">
+		<link rel="stylesheet" href="/css/style-desktop.css?c=1">
 	</noscript>
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
@@ -88,11 +84,11 @@
 	</style>
 
 	
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
+		<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
 	
-</head>
 
-<body class="no-sidebar">
+
+
 
 	<!-- Header -->
 	<div id="header">
@@ -109,15 +105,12 @@
 				<ul>
 					<li><a href="/">Homepage</a></li>
 					
-						<li><a href="https://www.webmanajemen.com/tags/Android">Android</a></li>
+						<li><a href="/tags/Android">Android</a></li>
 					
-						<li><a href="https://www.webmanajemen.com/tags/Tips%20&%20Tricks">Tips & Tricks</a></li>
+						<li><a href="/tags/Tips%20&amp;%20Tricks">Tips &amp; Tricks</a></li>
 					
-					<!--
-						<li><a href="left-sidebar.html">Left Sidebar</a></li>
-						<li><a href="right-sidebar.html">Right Sidebar</a></li>
-						<li class="active"><a href="no-sidebar.html">No Sidebar</a></li>
-					-->
+
+					<li class="active"><a href="https://www.webmanajemen.com///2021/06/fix-error-retrieving-pid-file-on-termux.md">Current</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -139,7 +132,7 @@
 							<a href="#" class="image full"><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="Fix error retrieving pid file on termux apache" /></a>
 							-->
 
-						<div id="bootstrap-wrapper">	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>  <p>    Apache errors overview:     </p><pre><code><br>      (20014) Internal error (specific information not available):<br><br>      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid<br><br>      AH00059: Remove it before continuing if it is corrupted.<br>    </code></pre>    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.     <h5>Solution</h5>    <ul>      <li>Stop apache first         <pre><code class="lang-bash">apachectl stop</code></pre>      </li>      <li>        Change dir:         <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>      </li>      <li>Then delete the <b>httpd.pid</b> file:       <pre><code class="lang-bash">rm httpd.pid</code></pre>      </li>      <li>Or using this script:         <pre><code class="lang-bash"><br>          #<br>          # This script is part of the video,<br>          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and<br>          # it's intended to be used on Termux Android 32 bits in order to fix the issue,<br>          # https://github.com/termux/termux-packages/issues/1727<br>          # Before executing this script you must install termux-chroot see de video,<br>          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk<br>          #<br>          #!/usr/bin/env bash<br>          aps=$(pidof httpd)<br>          pidf=/var/run/apache2/httpd.pid<br>          [[ -f $pidf ]] &amp;&amp; rm -f $pidf<br>          [[ "$aps" != "" ]] &amp;&amp; kill -9 $aps<br>        </code></pre>      </li>    </ul>  <p></p>   <p>    Github issues:     </p><ul>      <li><a href="https://github.com/termux/termux-packages/issues/1727" target="_blank" rel="noopener noreferer nofollow">https://github.com/termux/termux-packages/issues/1727</a></li>      <li><a href="https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid" target="_blank" rel="noopener noreferer nofollow">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>    </ul>  <p></p>   <p>    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">  </p></div><script>hljs.initHighlightingOnLoad();</script>
+						<div id="bootstrap-wrapper">	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>  <p>    Apache errors overview:     </p><pre><code><br>      (20014) Internal error (specific information not available):<br><br>      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid<br><br>      AH00059: Remove it before continuing if it is corrupted.<br>    </code></pre>    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.     <h5>Solution</h5>    <ul>      <li>Stop apache first         <pre><code class="lang-bash">apachectl stop</code></pre>      </li>      <li>        Change dir:         <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>      </li>      <li>Then delete the <b>httpd.pid</b> file:       <pre><code class="lang-bash">rm httpd.pid</code></pre>      </li>      <li>Or using this script:         <pre><code class="lang-bash"><br>          #<br>          # This script is part of the video,<br>          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and<br>          # it's intended to be used on Termux Android 32 bits in order to fix the issue,<br>          # https://github.com/termux/termux-packages/issues/1727<br>          # Before executing this script you must install termux-chroot see de video,<br>          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk<br>          #<br>          #!/usr/bin/env bash<br>          aps=$(pidof httpd)<br>          pidf=/var/run/apache2/httpd.pid<br>          [[ -f $pidf ]] &amp;&amp; rm -f $pidf<br>          [[ "$aps" != "" ]] &amp;&amp; kill -9 $aps<br>        </code></pre>      </li>    </ul>  <p></p>   <p>    Github issues:     </p><ul>      <li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJGdGVybXV4JTJGdGVybXV4LXBhY2thZ2VzJTJGaXNzdWVzJTJGMTcyNw==" target="_blank" rel="nofollow noopener noreferer">https://github.com/termux/termux-packages/issues/1727</a></li>      <li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZzdGFja292ZXJmbG93LmNvbSUyRnF1ZXN0aW9ucyUyRjI3ODYyNjY0JTJGMTNwZXJtaXNzaW9uLWRlbmllZC1lcnJvci1yZXRyaWV2aW5nLXBpZC1maWxlLXJ1bi1odHRwZC1waWQ=" target="_blank" rel="nofollow noopener noreferer">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>    </ul>  <p></p>   <p>    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">  </p></div><script>hljs.initHighlightingOnLoad();</script>
 					</section>
 				</div>
 
@@ -153,21 +146,21 @@
 			<div class="row">
 				<div class="4u">
 					<h2>Aenean elementum facilisis</h2>
-					<a href="#" class="image full"><img src="/images/pic01.jpg" alt="" /></a>
+					<a href="#" class="image full"><img src="/images/pic01.jpg" alt=""></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
 				</div>
 				<div class="4u">
 					<h2>Fusce ultrices fringilla</h2>
-					<a href="#" class="image full"><img src="/images/pic02.jpg" alt="" /></a>
+					<a href="#" class="image full"><img src="/images/pic02.jpg" alt=""></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
 				</div>
 				<div class="4u">
 					<h2>Etiam rhoncus volutpat erat</h2>
-					<a href="#" class="image full"><img src="/images/pic03.jpg" alt="" /></a>
+					<a href="#" class="image full"><img src="/images/pic03.jpg" alt=""></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
@@ -190,7 +183,7 @@
 				</script>
 				<noscript>
 					Please enable JavaScript to view the
-					<a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
 						comments powered by Disqus.
 					</a>
 				</noscript>
@@ -250,6 +243,6 @@
 			WMI ©  Dimas Lanjaka
 		</div>
 	</div>
-</body>
 
-</html>
+
+</body></html>

@@ -10,6 +10,7 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 - cache strategies (dont process any unmodified files to save memory usages)
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)
 - 1000+ posts supported
+- cross-platform supported (linux recommended) (android termux need c++ for packages including: jsdom, node-libcurl, imagemin, etc)
 
 ## project structure
 - `src-posts/` contains all original posts with markdown formats
@@ -31,3 +32,8 @@ gulp deploy # deploy to github pages
 ## contacts
 - dimaslanjaka@gmail.com
 - +6285655667573
+
+## incoming terms
+- static blog generator
+- termux static blog generator
+- simple static blog generator

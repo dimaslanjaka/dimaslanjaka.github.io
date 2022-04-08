@@ -1,4 +1,4 @@
-declare var skel: {
+declare let skel: {
   /******************************/
   /******************************/
   /**
@@ -203,7 +203,12 @@ declare var skel: {
    * @param {string} id ID.
    * @param {DOMElement} element DOM element.
    */
-  newAttachment: (id: any, element: any, priority: any, permanent: any) => {
+  newAttachment: (
+    id: any,
+    element: any,
+    priority: any,
+    permanent: any
+  ) => {
     id: any;
     element: any;
     priority: any;

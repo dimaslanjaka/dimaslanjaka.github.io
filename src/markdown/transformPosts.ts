@@ -42,7 +42,7 @@ export type parsePostReturn = DynamicObject & {
     /**
      * Article language code
      */
-    lang: string;
+    lang?: string;
     /**
      * Article title
      */

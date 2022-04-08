@@ -1,16 +1,21 @@
 import Sitemap from '../../node/cache-sitemap';
 import GoogleNewsSitemap, { ClassItemType } from 'google-news-sitemap/src';
 import Bluebird from 'bluebird';
-import { join, write } from '../../node/filemanager';
+import { cwd, join, write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
 import chalk from 'chalk';
+import 'js-prototypes';
+import moment from 'moment';
+import { modifyPost } from './copy';
+import { parsePostReturn } from '../../markdown/transformPosts';
+import { renderer } from './generate';
 
 const logname = chalk.cyanBright('[generate][sitemap]');
+const pages = new Sitemap();
 
-export default function generateGoogleNewsSitemap(done: TaskCallback) {
-  const pages = new Sitemap();
+function generateGoogleNewsSitemap(done: TaskCallback) {
   const map = new GoogleNewsSitemap();
   const log = logname + chalk.blue('[google-news]');
 
@@ -21,7 +26,7 @@ export default function generateGoogleNewsSitemap(done: TaskCallback) {
         publication_language: item.lang || 'en',
         publication_date: item.date,
         title: item.title,
-        location: item.location || '',
+        location: fixURLSitemap(item.url).toString(),
       };
       return map.add(val);
     })
@@ -34,4 +39,53 @@ export default function generateGoogleNewsSitemap(done: TaskCallback) {
     .finally(() => done());
 }
 
+/**
+ * fix url
+ * * fix multiple slashes
+ * @param url url string
+ * @returns instance {@link URL}
+ */
+function fixURLSitemap(url: string) {
+  const parseURL = new URL(url);
+  parseURL.pathname = parseURL.pathname.replace(/\/+/, '/').replace(/.md$/, '.html');
+  return parseURL;
+}
+
+function generateSitemapHtml(done?: TaskCallback) {
+  const log = logname + chalk.blue('[html]');
+  Bluebird.all(pages.getValues())
+    .map((item) => {
+      return `<a href="${fixURLSitemap(item.url).pathname}">${item.title}</a>`;
+    })
+    .then((items) => {
+      const content = items.join('<br/>');
+      const opt: parsePostReturn = {
+        metadata: {
+          title: 'Sitemap',
+          subtitle: 'Sitemap ' + new URL(config.url).host,
+          content: content,
+          date: moment().format(),
+          updated: moment().format(),
+          category: [],
+          tags: [],
+        },
+        body: content,
+        content: content,
+        fileTree: {
+          source: join(cwd(), '.guid'),
+          public: join(cwd(), '.guid'),
+        },
+      };
+      const modify = modifyPost(opt);
+      renderer(modify).then((rendered) => {
+        write(join(root, config.public_dir, 'sitemap.html'), rendered).then((f) => {
+          console.log(log, 'saved', f);
+          done();
+        });
+      });
+    });
+}
+
 gulp.task('generate:gn-sitemap', generateGoogleNewsSitemap);
+gulp.task('generate:sitemap-html', generateSitemapHtml);
+gulp.task('generate:sitemap', gulp.series('generate:gn-sitemap', 'generate:sitemap-html'));

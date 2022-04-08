@@ -6,6 +6,7 @@ import { existsSync, join, mkdirSync, resolve } from '../../node/filemanager';
 import config, { post_generated_dir, root } from '../../types/_config';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
+import CacheFile from '../../node/cache';
 
 const deployDir = resolve(join(root, '.deploy_git'));
 const generatedDir = post_generated_dir;
@@ -33,6 +34,8 @@ const copyGenerated = () => {
   return gulp.src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };
 
+const cache = new CacheFile('deploy');
+
 gulp.task('deploy', async (done?: TaskCallback) => {
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   if (!existsSync(join(deployDir, '.git'))) {
@@ -41,7 +44,22 @@ gulp.task('deploy', async (done?: TaskCallback) => {
     if (configDeploy.name) await git('config', 'user.name', configDeploy.name);
     if (configDeploy.email) await git('config', 'user.email', configDeploy.email);
   }
-  await git('gc'); // compress git databases
+
+  /**
+   * Do compress git object databases?
+   */
+  let compress = false;
+  if (cache.has('compress')) {
+    const lastCompress = moment(cache.get('compress'));
+    const now = moment();
+    // do compress 1 day once
+    if (now.diff(lastCompress, 'days') >= 1) compress = true;
+  }
+  if (compress) {
+    await git('gc'); // compress git databases
+    cache.set('compress', new Date().toString());
+  }
+
   await git('remote', 'set-url', 'origin', configDeploy.repo);
   await git('pull', 'origin', configDeploy.branch);
 

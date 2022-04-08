@@ -11,6 +11,7 @@ import moment from 'moment';
 import { modifyPost } from './copy';
 import { parsePostReturn } from '../../markdown/transformPosts';
 import { renderer } from './generate';
+import './sitemap';
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();
@@ -115,4 +116,4 @@ gulp.task('generate:gn-sitemap', generateGoogleNewsSitemap);
 gulp.task('generate:sitemap-html', generateSitemapHtml);
 gulp.task('generate:sitemap-txt', generateSitemapText);
 // combine all sitemap tasks
-gulp.task('generate:sitemap', gulp.series('generate:gn-sitemap', 'generate:sitemap-html', 'generate:sitemap-txt'));
+gulp.task('generate:sitemap', gulp.series('generate:gn-sitemap', 'generate:sitemap-html', 'generate:sitemap-txt', 'generate:sitemap-xml'));

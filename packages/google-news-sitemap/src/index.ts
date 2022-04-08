@@ -64,11 +64,11 @@ export interface ClassItemType {
    * Publisher or Author Name
    */
   publication_name:
-    | string
-    | {
-        name?: string;
-        url?: string;
-      };
+  | string
+  | {
+    name?: string;
+    url?: string;
+  };
   /**
    * Language Article. Default: en
    */
@@ -118,8 +118,8 @@ export default class GoogleNewsSitemap {
     let author = "Dimas Lanjaka (Default User)";
     if (typeof item.publication_name == "string") {
       author = item.publication_name;
-    } else if (item.publication_name.name) {
-      author = item.publication_name.name;
+    } else if (typeof item.publication_name == 'object') {
+      if (item.publication_name.name) author = item.publication_name.name;
     }
     const build: ItemType = {
       loc: item.location,
@@ -138,6 +138,10 @@ export default class GoogleNewsSitemap {
     }
     root.urlset.url.push(parse(build));
     this.items.push(build);
+    return build;
+  }
+  getTotal() {
+    return this.items.length
   }
   toString() {
     return xmlbuilder.create(root, { version: "1.0", encoding: "UTF-8" }).end({ pretty: true });

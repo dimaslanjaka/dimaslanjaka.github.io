@@ -64,11 +64,10 @@ const renderAssets = () => {
 gulp.task('generate:assets', renderAssets);
 
 const renderTemplate = () => {
-  logger.log(logname + chalk.magentaBright('[template]'), 'start');
-  return gulp
-    .src(join(theme_dir, 'source/**/**'), { cwd: root })
-    .pipe(gulp.dest(generated_dir))
-    .on('end', () => logger.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
+  const src = join(theme_dir, 'source/**/**');
+  logger.log(logname + chalk.magentaBright('[template]'), 'copy', src, '->', generated_dir);
+  return gulp.src(src, { cwd: root }).pipe(gulp.dest(generated_dir));
+  //.on('end', () => logger.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
 };
 
 gulp.task('generate:template', renderTemplate);
@@ -202,10 +201,6 @@ const helpers = {
     return `<style ${build.join(' ')}>${cssStr}</style>`;
   },
 };
-
-interface RendererOpt {
-  [key: string]: any;
-}
 
 /**
  * EJS Renderer Engine

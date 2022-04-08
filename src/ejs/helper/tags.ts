@@ -33,12 +33,10 @@ const homepage = new URL(config.url);
  */
 export function tags(page: parsePostReturn) {
   const result: Tags[] = [];
-  const target = page.tags || page.metadata.tags;
-  if (Array.isArray(target)) {
-    target.forEach((tag) => {
-      homepage.pathname = join(tag_dir, tag);
-      result.push({ name: tag, path: homepage.pathname, url: homepage.toString() });
-    });
-  }
+  const target = page.tags || page.metadata.tags || [];
+  target.forEach((tag: string) => {
+    homepage.pathname = join(tag_dir, tag);
+    result.push({ name: tag, path: homepage.pathname, url: homepage.toString() });
+  });
   return result;
 }

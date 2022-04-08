@@ -87,7 +87,8 @@ export default class GoogleNewsSitemap {
      */
     items: ItemType[];
     static date_pattern: string;
-    add(item: ClassItemType): void;
+    add(item: ClassItemType): ItemType;
+    getTotal(): number;
     toString(): string;
 }
 export {};

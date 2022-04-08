@@ -109,7 +109,7 @@ gulp.task('deploy', async () => {
   await git('remote', 'set-url', 'origin', configDeploy.repo);
   await git('pull', 'origin', configDeploy.branch);
 
-  copyGenerated().on('end', async () => {
+  return copyGenerated().on('end', async () => {
     await git('add', '-A');
     await git('commit', '-m', 'Update site: ' + moment().format());
     await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');

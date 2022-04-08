@@ -5,6 +5,7 @@ import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
 import { rm } from 'fs';
 import { DynamicObject } from '../types';
+import './cache-serialize';
 
 export const dbFolder = resolve(cacheDir);
 export interface CacheOpt {
@@ -145,9 +146,9 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
-      write(self.dbFile, JSON.stringify(self.md5Cache));
+      write(self.dbFile, JSON.stringifyWithCircularRefs(self.md5Cache));
     });
-    if (value) write(locationCache, JSON.stringify(value));
+    if (value) write(locationCache, JSON.stringifyWithCircularRefs(value));
     this.emit('update');
     return this;
   }

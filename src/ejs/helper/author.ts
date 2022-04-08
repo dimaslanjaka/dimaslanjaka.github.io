@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import config, { ProjectConfig } from '../../types/_config';
+import config from '../../types/_config';
 import { parsePostReturn } from '../../markdown/transformPosts';
+import { DynamicObject } from '../../types';
 /**
  * get author name
  * @param page
  * @returns
  */
-export function author_name(page: parsePostReturn['metadata']) {
+export function author_name(page: parsePostReturn['metadata'] | DynamicObject) {
   const author = page['author'];
   if (typeof author == 'string') return author;
   if (typeof author == 'object') {

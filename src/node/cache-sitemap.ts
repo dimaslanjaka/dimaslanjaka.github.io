@@ -1,5 +1,5 @@
 import { parsePostReturn } from '../markdown/transformPosts';
-import CacheFile from './cache';
+import CacheFile, { defaultResovableValue, ResovableValue } from './cache';
 
 /**
  * all sitemaps
@@ -22,8 +22,14 @@ export default class Sitemap extends CacheFile {
     // initialize instance
     //sitemapCache = new CacheFile('sitemap');
   }
+  getValues(opt = defaultResovableValue): SitemapInfo[] {
+    return super.getValues(opt);
+  }
   add(obj: SitemapInfo) {
     super.set(obj.title, obj);
     return this;
+  }
+  getTotal(): number {
+    return super.getValues().length;
   }
 }

@@ -1,79 +1,83 @@
-<!DOCTYPE html><!--
+<!DOCTYPE HTML>
+<!--
 	Iridium by TEMPLATED
     templated.co @templatedco
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><html><head>
+-->
+<html>
+
+<head>
 	<title>Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android | WMI Gitlab</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda">
-	<meta name="keywords" content="">
-	</head><body class="no-sidebar"><include expiration="7d" path="*.css"></include>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda" />
+	<meta name="keywords" content="" />
+	<include expiration="7d" path="*.css"></include>
 <include expiration="7d" path="*.js"></include>
 <include expiration="3d" path="*.gif"></include>
 <include expiration="3d" path="*.jpeg"></include>
 <include expiration="3d" path="*.jpg"></include>
 <include expiration="3d" path="*.png"></include>
-<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-	<meta property="og:type" content="article">
-<meta property="og:title" content="Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android">
-<meta property="og:url" content="https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html">
-<meta property="og:site_name" content="WMI">
-<meta property="og:description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png">
-<meta property="article:published_time" content="2017-09-03T13:33:00.000+07:00">
-<meta property="article:modified_time" content="2017-09-03T13:33:02+07:00">
-<meta property="article:author" content="Dimas Lanjaka 2">
+<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch" />
+	<meta property="og:type" content="article" />
+<meta property="og:title" content="Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android" />
+<meta property="og:url" content="https://www.webmanajemen.com///2017/09/cara-menggunakan-termux.md" />
+<meta property="og:site_name" content="WMI" />
+<meta property="og:description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" />
+<meta property="article:published_time" content="2017-09-03T13:33:00.000+07:00" />
+<meta property="article:modified_time" content="2017-09-03T13:33:02+07:00" />
+<meta property="article:author" content="Dimas Lanjaka 2" />
 
-  <meta property="article:tag" content="PHP">
+  <meta property="article:tag" content="PHP" />
 
-  <meta property="article:tag" content="Android">
+  <meta property="article:tag" content="Android" />
 
-  <meta property="article:tag" content="Tips &amp; Tricks">
+  <meta property="article:tag" content="Tips & Tricks" />
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png">
-<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" />
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
-<link rel="canonical" href="https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html">
-	<link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
+<link rel="canonical" href="https://www.webmanajemen.com///2017/09/cara-menggunakan-termux.md">
+	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
 	<!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/js/skel.min.js"></script>
 	<script src="/js/skel-panels.min.js"></script>
 	<script src="/js/init.js?c=1"></script>
 	<noscript>
-		<link rel="stylesheet" href="/css/skel-noscript.css?c=1">
-		<link rel="stylesheet" href="/css/style.css?c=1">
-		<link rel="stylesheet" href="/css/style-desktop.css?c=1">
+		<link rel="stylesheet" href="/css/skel-noscript.css?c=1" />
+		<link rel="stylesheet" href="/css/style.css?c=1" />
+		<link rel="stylesheet" href="/css/style-desktop.css?c=1" />
 	</noscript>
 	<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
@@ -85,8 +89,12 @@
 		}
 	</style>
 
+	
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
+	
+</head>
 
-
+<body class="no-sidebar">
 
 	<!-- Header -->
 	<div id="header">
@@ -107,7 +115,7 @@
 					
 						<li><a href="https://www.webmanajemen.com/tags/Android">Android</a></li>
 					
-						<li><a href="https://www.webmanajemen.com/tags/Tips%20&amp;%20Tricks">Tips &amp; Tricks</a></li>
+						<li><a href="https://www.webmanajemen.com/tags/Tips%20&%20Tricks">Tips & Tricks</a></li>
 					
 					<!--
 						<li><a href="left-sidebar.html">Left Sidebar</a></li>
@@ -135,7 +143,7 @@
 							<a href="#" class="image full"><img src="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" alt="Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android" /></a>
 							-->
 
-						<p><b>Menjalankan PHP di Android Menggunakan Termux</b><br>Aplikasi Termux memungkinkan menjalankan banyak aplikasi Linux yang     terkenal di ponsel Android, tablet, atau jenis perangkat lainnya. Hal ini     memungkinkan menjalankan PHP baik dari shell Termux sebagai script konsol     atau sebagai server Web. Baca artikel ini untuk mempelajari cara     menjalankan skrip PHP dari dalam perangkat Android dan membuka beberapa     fungsi Android dengan menggunakan aplikasi Termux. <br><img alt="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" height="280" src="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" title="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" width="600">  <br></p><h2> Apa itu Android Termux !!!  </h2><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20udGVybXV4" rel="nofollow noopener noreferer" target="_blank"> Aplikasi Termux    </a> Adalah aplikasi Android yang berguna yang memungkinkan kita menggunakan semacam konsol Linux di dalam perangkat Android kita, seperti ponsel, tablet, dan sebagainya.  <br>Ini membutuhkan    <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20udGVybXV4LmFwaQ==" rel="nofollow noopener noreferer" target="_blank"> Termux:API    </a> Aplikasi Add-on untuk dipasang, sehingga bisa menggunakan program command line yang mengekspos fungsi Android ke sistem Termux. Di dalam Termux kita bisa mengakses networking (wi-fi dan mobile internet). <br><h2> Apa itu PHP Termux API ? Tutorial Termux tentang Cara Menggunakan PHP </h2>Termux mendukung manajemen paket menggunakan file .deb dan tool apt. Di repositori paketnya sendiri ada banyak tool seperti imagemagick, compiler bahasa c, interpreter PHP 7.1, lighttpd, dan sebagainya. Membangun sebenarnya hanya mendukung platform ARM dan x86, sehingga tidak dapat dipasang di MIPS. <br>Jadi sekarang kita punya PHP 7.1 di smartphone juga … siap untuk memulai pengembangan aplikasi baru? Kita perlu mengakses beberapa fitur Android untuk menghidupkan proyek kita. Termux: API menambahkan beberapa alat baris perintah untuk ditangani; Kelas pembungkus adalah satu-satunya yang kita butuhkan untuk memanfaatkannya. <br><img alt="aplikasi termux di Google Play Store" height="716" src="https://files.phpclasses.org/files/blog/package/10192/file/01termux01.png" title="termux app di Google Play Store" width="480">  <br><h2> Tutorial Android Termux: Mengakses Fitur Perangkat Android menggunakan API Termux </h2>Paket PHP Termux API menyediakan metode untuk mengakses fungsi berikut yang terpapar pada aplikasi API Termux. <br><ul><li> Battery Status    </li><li> Camera Info    </li><li> Camera Photo    </li><li> Clipboard Get    </li><li> Clipboard Set    </li><li> Contact List    </li><li> Download file dengan Android Download Manager   </li><li> Lokasi via GPS, Mobile Network atau Wi-Fi   </li><li> Notification    </li><li> Open Url with default web browser    </li><li> Share file with Android actions    </li><li> SMS Inbox read    </li><li> SMS Send    </li><li> Info Perangkat Telepon   </li><li> Toast show over the screen    </li><li> TTS Engines in Android    </li><li> TTS Speak    </li><li> Vibrate the Phone    </li><li> Wi-Fi Connection Info    </li><li> Wi-Fi Scan info    </li></ul><h2> Tutorial PHP Termux: Langkah-langkah Memiliki Setup Lengkap untuk Menggunakan Termux PHP </h2><ul><li> Instal dan konfigurasi keyboard yang lebih umum yang Anda kenal dan gunakan (seperti <a alt="Hacker Keyboard" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvLmlkJTJGdXJsJTNGc2ElM0R0JTI2c291cmNlJTNEd2ViJTI2cmN0JTNEaiUyNnVybCUzRGh0dHBzJTNBJTJGJTJGcGxheS5nb29nbGUuY29tJTJGc3RvcmUlMkZhcHBzJTJGZGV0YWlscyUyNTNGaWQlMjUzRG9yZy5wb2NrZXR3b3Jrc3RhdGlvbi5wY2tleWJvYXJkJTI1MjZobCUyNTNEaWQlMjUyNnJlZmVycmVyJTI1M0R1dG1fc291cmNlJTI1MjUzRGdvb2dsZSUyNTI1MjZ1dG1fbWVkaXVtJTI1MjUzRG9yZ2FuaWMlMjUyNTI2dXRtX3Rlcm0lMjUyNTNEaGFja2VyJTI1MkJrZXlib2FyZCUyNTI2cGNhbXBhaWduaWQlMjUzREFQUFVfMV9YeVdmV2EyWE1zcld2QVRzamE3b0RnJTI2dmVkJTNEMGFoVUtFd2p0d3FXQXl2RFZBaFZLSzQ4S0hleUdDLTBROG9RQkNCOHdBQSUyNnVzZyUzREFGUWpDTkVwNUpndmNPTnRqTlRacnNfdVd1X3RROXI5S2c=" title="Hacker Keyboard" rel="nofollow noopener noreferer" target="_blank">Hacker’s Keyboard</a>)   </li><li> Install dan konfigurasikan FTP Server anda sekarang dan gunakan (seperti <a alt="FTP SERVER DEMO" demo="" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvLmlkJTJGdXJsJTNGc2ElM0R0JTI2c291cmNlJTNEd2ViJTI2cmN0JTNEaiUyNnVybCUzRGh0dHBzJTNBJTJGJTJGcGxheS5nb29nbGUuY29tJTJGc3RvcmUlMkZhcHBzJTJGZGV0YWlscyUyNTNGaGwlMjUzRGlkJTI1MjZpZCUyNTNEYmUucHBhcmVpdC5zd2lmdHBfZnJlZSUyNTI2cmVmZXJyZXIlMjUzRHV0bV9zb3VyY2UlMjUyNTNEZ29vZ2xlJTI1MjUyNnV0bV9tZWRpdW0lMjUyNTNEb3JnYW5pYyUyNTI1MjZ1dG1fdGVybSUyNTI1M0RmdHAlMjUyQnNlcnZlciUyNTJCZGVtbyUyNTJCYXBrJTI1MjZwY2FtcGFpZ25pZCUyNTNEQVBQVV8xX3lpV2ZXZmZ6T0l6VXZBU1RtNmlZRFElMjZ2ZWQlM0QwYWhVS0V3ajNnSy16eXZEVkFoVU1LbzhLSFpNTkN0TVE1WVFCQ0I0d0FBJTI2dXNnJTNEQUZRakNOR1IteWVfMGRmRFBxcWxJdXgzelNJZmhzbTN2dw==" servrr="" title="FTP" rel="nofollow noopener noreferer" target="_blank">FTP Server (demo)</a>)   </li><li> Install <a alt="termux" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvLmlkJTJGdXJsJTNGc2ElM0R0JTI2c291cmNlJTNEd2ViJTI2cmN0JTNEaiUyNnVybCUzRGh0dHBzJTNBJTJGJTJGcGxheS5nb29nbGUuY29tJTJGc3RvcmUlMkZhcHBzJTJGZGV0YWlscyUyNTNGaWQlMjUzRGNvbS50ZXJtdXglMjUyNmhsJTI1M0RpbiUyNTI2cmVmZXJyZXIlMjUzRHV0bV9zb3VyY2UlMjUyNTNEZ29vZ2xlJTI1MjUyNnV0bV9tZWRpdW0lMjUyNTNEb3JnYW5pYyUyNTI1MjZ1dG1fdGVybSUyNTI1M0R0ZXJtdXglMjUyNnBjYW1wYWlnbmlkJTI1M0RBUFBVXzFfR1NhZldmSERLNGprdmdTOThaYkFEUSUyNnZlZCUzRDBhaFVLRXdpeHRQZll5dkRWQWhVSXNvOEtIYjI0QmRnUThvUUJDQnd3QUElMjZ1c2clM0RBRlFqQ05GT21HQ2p4S0ZrYTVsemR1R3NpQm5YRG13am9R" title="termux" rel="nofollow noopener noreferer" target="_blank">Termux</a> and <a alt="Termux:API" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvLmlkJTJGdXJsJTNGc2ElM0R0JTI2c291cmNlJTNEd2ViJTI2cmN0JTNEaiUyNnVybCUzRGh0dHBzJTNBJTJGJTJGcGxheS5nb29nbGUuY29tJTJGc3RvcmUlMkZhcHBzJTJGZGV0YWlscyUyNTNGaWQlMjUzRGNvbS50ZXJtdXguYXBpJTI1MjZobCUyNTNEaW4lMjUyNnJlZmVycmVyJTI1M0R1dG1fc291cmNlJTI1MjUzRGdvb2dsZSUyNTI1MjZ1dG1fbWVkaXVtJTI1MjUzRG9yZ2FuaWMlMjUyNTI2dXRtX3Rlcm0lMjUyNTNEdGVybXV4JTI1MjZwY2FtcGFpZ25pZCUyNTNEQVBQVV8xX0dTYWZXZkhESzRqa3ZnUzk4WmJBRFElMjZ2ZWQlM0QwYWhVS0V3aXh0UGZZeXZEVkFoVUlzbzhLSGIyNEJkZ1E4b1FCQ0I0d0FRJTI2dXNnJTNEQUZRakNOSHdISjNocG9LOW5mX2RnMktrVUdTSWt2ZElBQQ==" title="Termux: API" rel="nofollow noopener noreferer" target="_blank">Termux:API</a> add-on dari beberapa repository (<a alt="F-Droid Apk" href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZmLWRyb2lkLm9yZyUyRkZEcm9pZC5hcGs=" rel="nofollow noopener noreferer" title="Download F-Droid Apk" target="_blank">F-Droid</a> or <a alt="play store" href="/page/safelink.html?url=aHR0cCUzQSUyRiUyRnBsYXkuZ29vZ2xlLmNvbSUyRg==" title="play store" rel="nofollow noopener noreferer" target="_blank">Play Store</a>)    </li><li> Di dalam konsol Termux, ketik:    </li></ul><pre>apt update<br>apt upgrade<br>apt install termux-api php<br>mkdir /sdcard/php<br></pre><h2>  Mengakses perangkat menggunakan keyboard </h2><h2>  </h2>Kita perlu mengetikkan emulator terminal yang mampu dan membutuhkan   <em> ctrl-c   </em>, jadi saya sarankan untuk memasang keyboard dengannya (seperti yang dilakukan keyboard Hacker). <br><h2> Termux FTP Files Access  </h2>Untuk mentransfer skrip PHP dan file lainnya dengan mudah di antara workstation dan perangkat Android, server FTP adalah suatu keharusan. <br>Sangat mudah untuk mengatur lingkungan desktop Anda untuk menggunakan server FTP LAN. Anda bisa memasang FTP client di sistem, atau bahkan menggunakan Mozilla Firefox (ekstensi FireFTP). Di Windows, ketik Explorer Address Bar, URL server, seperti: <br><a href="ftp://user@ipaddress">ftp://user@ipaddress</a>:port/  <br>Hal yang sama bisa dilakukan untuk lingkungan desktop sistem operasi lain, seperti Nautilus for Linux, dll.  <br><h2> Menjalankan PHP dari Termux dalam endless loop  </h2>Untuk polling endlessly beberapa kondisi. Di dalam naskah, loop harus memiliki sebuah    <em>sleep(detik)   </em> call, untuk menghindari memonopoli prosesor.  <br>Pada konsol Termux, ketik:  <br><pre>php endlessloop.php<br></pre><h2> Kontrol Tablet Android dengan Telepon via Web Server </h2>Salah satu cara untuk mengendalikan tablet atau jenis perangkat seluler lainnya dari ponsel adalah dengan menjalankan server Web pada perangkat tablet dan mengaksesnya melalui browser yang berjalan di telepon. <br>Jika Anda menjalankan PHP di perangkat tablet sebagai server Web dengan Termux, akan sangat mudah memprogram aplikasi sederhana yang bisa melakukan apapun yang Anda inginkan untuk mengendalikan tablet. <br><h2> Berjalan sebagai Android Server untuk Aplikasi Web Lokal PHP </h2><div>Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda yang tersimpan dalam sistem file memori perangkat Anda. </div>Di Termux, ketik Untuk memulai the development <b>Web server embedded</b> in PHP.  <br><code> php -S address:port -t /sdcard/php/rootdirectory/    <br>  </code>  <br>Jika Anda menggunakan alamat yang ada   <em>0.0.0.0   </em>, dan Server akan mendengarkan salah satu alamat IP jaringan perangkat. Jika alamatnya    <em>127.0.0.1   </em>, Server hanya mendengarkan koneksi lokal (di dalam perangkat atau telepon).  <br>Dan port nya harus ada nomor lebih dari 1024.    <em>rootdirectory   </em> Adalah jalur dasar yang berfungsi sebagai direktori web root, dengan semua sumber termasuk JavaScript, gambar, stylesheet CSS, file HTML, dan skrip PHP. <br><h2> Haruskah saya menggunakan termux lighttpd, Apache, NGINX atau PHP built-in Web Server? </h2>Biasanya PHP digunakan di lingkungan produksi bersama dengan server Web lainnya seperti lighttpd, Apache atau NGINX karena server Web tersebut telah dioptimalkan untuk menangani muatan tinggi. <br>Namun pada ponsel Anda hanya akan memiliki pengguna Anda sendiri mengakses server Web. Oleh karena itu, server Web PHP built-in cukup baik untuk tujuan ini, kecuali Anda memerlukan beberapa fitur server Web tertentu yang disediakan oleh server Web berkinerja tinggi. <br><h2> Menggunakan class PHP Termux API </h2><pre>    $termux = new termuxapi();<br>echo $termux-&gt;location();<br></pre><h2> Masalah Termux:API  </h2>Beberapa Fungsi Termux:API tahan lama dan padat sumber daya seperti misalnya cek kotak masuk SMS, daftar kontak, dan lokasi. <br>Karena program Termux disebut dengan   <em>shell_exec()   </em>, Perilaku sinkronnya dapat menunda dengan serius pendekatan Web Server. Pertimbangkan untuk membuat panggilan AJAX ke metode untuk menyembunyikan masalah ini. <br><h2> Solusi Masalah  </h2>Termux adalah aplikasi Android yang bagus yang memudahkan menjalankan PHP atau program lain yang biasanya tersedia di distro Linux. <br>Kemungkinan untuk menjalankan PHP baik sebagai script baris perintah atau sebagai server Web membuka segudang kemungkinan untuk menjalankan aplikasi yang bagus dengan menggunakan kode PHP seperti aplikasi Android asli lainnya. <br>Jika Anda menyukai artikel ini, bagikan dengan teman pengembang Anda. Jika ada pertanyaan atau saran, kirimkan komentar di sini.<p></p>
+						<p><b>Menjalankan PHP di Android Menggunakan Termux</b><br>Aplikasi Termux memungkinkan menjalankan banyak aplikasi Linux yang     terkenal di ponsel Android, tablet, atau jenis perangkat lainnya. Hal ini     memungkinkan menjalankan PHP baik dari shell Termux sebagai script konsol     atau sebagai server Web. Baca artikel ini untuk mempelajari cara     menjalankan skrip PHP dari dalam perangkat Android dan membuka beberapa     fungsi Android dengan menggunakan aplikasi Termux. <br><img alt="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" height="280" src="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" title="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" width="600">  <br><h2> Apa itu Android Termux !!!  </h2><a href="https://play.google.com/store/apps/details?id=com.termux" rel="noopener noreferer nofollow"> Aplikasi Termux    </a> Adalah aplikasi Android yang berguna yang memungkinkan kita menggunakan semacam konsol Linux di dalam perangkat Android kita, seperti ponsel, tablet, dan sebagainya.  <br>Ini membutuhkan    <a href="https://play.google.com/store/apps/details?id=com.termux.api" rel="noopener noreferer nofollow"> Termux:API    </a> Aplikasi Add-on untuk dipasang, sehingga bisa menggunakan program command line yang mengekspos fungsi Android ke sistem Termux. Di dalam Termux kita bisa mengakses networking (wi-fi dan mobile internet). <br><h2> Apa itu PHP Termux API ? Tutorial Termux tentang Cara Menggunakan PHP </h2>Termux mendukung manajemen paket menggunakan file .deb dan tool apt. Di repositori paketnya sendiri ada banyak tool seperti imagemagick, compiler bahasa c, interpreter PHP 7.1, lighttpd, dan sebagainya. Membangun sebenarnya hanya mendukung platform ARM dan x86, sehingga tidak dapat dipasang di MIPS. <br>Jadi sekarang kita punya PHP 7.1 di smartphone juga … siap untuk memulai pengembangan aplikasi baru? Kita perlu mengakses beberapa fitur Android untuk menghidupkan proyek kita. Termux: API menambahkan beberapa alat baris perintah untuk ditangani; Kelas pembungkus adalah satu-satunya yang kita butuhkan untuk memanfaatkannya. <br><img alt="aplikasi termux di Google Play Store" height="716" src="https://files.phpclasses.org/files/blog/package/10192/file/01termux01.png" title="termux app di Google Play Store" width="480">  <br><h2> Tutorial Android Termux: Mengakses Fitur Perangkat Android menggunakan API Termux </h2>Paket PHP Termux API menyediakan metode untuk mengakses fungsi berikut yang terpapar pada aplikasi API Termux. <br><ul><li> Battery Status    </li><li> Camera Info    </li><li> Camera Photo    </li><li> Clipboard Get    </li><li> Clipboard Set    </li><li> Contact List    </li><li> Download file dengan Android Download Manager   </li><li> Lokasi via GPS, Mobile Network atau Wi-Fi   </li><li> Notification    </li><li> Open Url with default web browser    </li><li> Share file with Android actions    </li><li> SMS Inbox read    </li><li> SMS Send    </li><li> Info Perangkat Telepon   </li><li> Toast show over the screen    </li><li> TTS Engines in Android    </li><li> TTS Speak    </li><li> Vibrate the Phone    </li><li> Wi-Fi Connection Info    </li><li> Wi-Fi Scan info    </li></ul><h2> Tutorial PHP Termux: Langkah-langkah Memiliki Setup Lengkap untuk Menggunakan Termux PHP </h2><ul><li> Instal dan konfigurasi keyboard yang lebih umum yang Anda kenal dan gunakan (seperti <a alt="Hacker Keyboard" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dorg.pocketworkstation.pckeyboard%26hl%3Did%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dhacker%2Bkeyboard%26pcampaignid%3DAPPU_1_XyWfWa2XMsrWvATsja7oDg&amp;ved=0ahUKEwjtwqWAyvDVAhVKK48KHeyGC-0Q8oQBCB8wAA&amp;usg=AFQjCNEp5JgvcONtjNTZrs_uWu_tQ9r9Kg" title="Hacker Keyboard" rel="noopener noreferer nofollow">Hacker’s Keyboard</a>)   </li><li> Install dan konfigurasikan FTP Server anda sekarang dan gunakan (seperti <a alt="FTP SERVER DEMO" demo="" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fhl%3Did%26id%3Dbe.ppareit.swiftp_free%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dftp%2Bserver%2Bdemo%2Bapk%26pcampaignid%3DAPPU_1_yiWfWffzOIzUvASTm6iYDQ&amp;ved=0ahUKEwj3gK-zyvDVAhUMKo8KHZMNCtMQ5YQBCB4wAA&amp;usg=AFQjCNGR-ye_0dfDPqqlIux3zSIfhsm3vw" servrr="" title="FTP" rel="noopener noreferer nofollow">FTP Server (demo)</a>)   </li><li> Install <a alt="termux" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dcom.termux%26hl%3Din%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dtermux%26pcampaignid%3DAPPU_1_GSafWfHDK4jkvgS98ZbADQ&amp;ved=0ahUKEwixtPfYyvDVAhUIso8KHb24BdgQ8oQBCBwwAA&amp;usg=AFQjCNFOmGCjxKFka5lzduGsiBnXDmwjoQ" title="termux" rel="noopener noreferer nofollow">Termux</a> and <a alt="Termux:API" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dcom.termux.api%26hl%3Din%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dtermux%26pcampaignid%3DAPPU_1_GSafWfHDK4jkvgS98ZbADQ&amp;ved=0ahUKEwixtPfYyvDVAhUIso8KHb24BdgQ8oQBCB4wAQ&amp;usg=AFQjCNHwHJ3hpoK9nf_dg2KkUGSIkvdIAA" title="Termux: API" rel="noopener noreferer nofollow">Termux:API</a> add-on dari beberapa repository (<a alt="F-Droid Apk" href="https://f-droid.org/FDroid.apk" rel="noopener noreferer nofollow" title="Download F-Droid Apk">F-Droid</a> or <a alt="play store" href="http://play.google.com/" title="play store" rel="noopener noreferer nofollow">Play Store</a>)    </li><li> Di dalam konsol Termux, ketik:    </li></ul><pre>apt update<br>apt upgrade<br>apt install termux-api php<br>mkdir /sdcard/php<br></pre><h2>  Mengakses perangkat menggunakan keyboard </h2><h2>  </h2>Kita perlu mengetikkan emulator terminal yang mampu dan membutuhkan   <em> ctrl-c   </em>, jadi saya sarankan untuk memasang keyboard dengannya (seperti yang dilakukan keyboard Hacker). <br><h2> Termux FTP Files Access  </h2>Untuk mentransfer skrip PHP dan file lainnya dengan mudah di antara workstation dan perangkat Android, server FTP adalah suatu keharusan. <br>Sangat mudah untuk mengatur lingkungan desktop Anda untuk menggunakan server FTP LAN. Anda bisa memasang FTP client di sistem, atau bahkan menggunakan Mozilla Firefox (ekstensi FireFTP). Di Windows, ketik Explorer Address Bar, URL server, seperti: <br><a href="ftp://user@ipaddress">ftp://user@ipaddress</a>:port/  <br>Hal yang sama bisa dilakukan untuk lingkungan desktop sistem operasi lain, seperti Nautilus for Linux, dll.  <br><h2> Menjalankan PHP dari Termux dalam endless loop  </h2>Untuk polling endlessly beberapa kondisi. Di dalam naskah, loop harus memiliki sebuah    <em>sleep(detik)   </em> call, untuk menghindari memonopoli prosesor.  <br>Pada konsol Termux, ketik:  <br><pre>php endlessloop.php<br></pre><h2> Kontrol Tablet Android dengan Telepon via Web Server </h2>Salah satu cara untuk mengendalikan tablet atau jenis perangkat seluler lainnya dari ponsel adalah dengan menjalankan server Web pada perangkat tablet dan mengaksesnya melalui browser yang berjalan di telepon. <br>Jika Anda menjalankan PHP di perangkat tablet sebagai server Web dengan Termux, akan sangat mudah memprogram aplikasi sederhana yang bisa melakukan apapun yang Anda inginkan untuk mengendalikan tablet. <br><h2> Berjalan sebagai Android Server untuk Aplikasi Web Lokal PHP </h2><div>Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda yang tersimpan dalam sistem file memori perangkat Anda. </div>Di Termux, ketik Untuk memulai the development <b>Web server embedded</b> in PHP.  <br><code> php -S address:port -t /sdcard/php/rootdirectory/    <br>  </code>  <br>Jika Anda menggunakan alamat yang ada   <em>0.0.0.0   </em>, dan Server akan mendengarkan salah satu alamat IP jaringan perangkat. Jika alamatnya    <em>127.0.0.1   </em>, Server hanya mendengarkan koneksi lokal (di dalam perangkat atau telepon).  <br>Dan port nya harus ada nomor lebih dari 1024.    <em>rootdirectory   </em> Adalah jalur dasar yang berfungsi sebagai direktori web root, dengan semua sumber termasuk JavaScript, gambar, stylesheet CSS, file HTML, dan skrip PHP. <br><h2> Haruskah saya menggunakan termux lighttpd, Apache, NGINX atau PHP built-in Web Server? </h2>Biasanya PHP digunakan di lingkungan produksi bersama dengan server Web lainnya seperti lighttpd, Apache atau NGINX karena server Web tersebut telah dioptimalkan untuk menangani muatan tinggi. <br>Namun pada ponsel Anda hanya akan memiliki pengguna Anda sendiri mengakses server Web. Oleh karena itu, server Web PHP built-in cukup baik untuk tujuan ini, kecuali Anda memerlukan beberapa fitur server Web tertentu yang disediakan oleh server Web berkinerja tinggi. <br><h2> Menggunakan class PHP Termux API </h2><pre>    $termux = new termuxapi();<br>echo $termux-&gt;location();<br></pre><h2> Masalah Termux:API  </h2>Beberapa Fungsi Termux:API tahan lama dan padat sumber daya seperti misalnya cek kotak masuk SMS, daftar kontak, dan lokasi. <br>Karena program Termux disebut dengan   <em>shell_exec()   </em>, Perilaku sinkronnya dapat menunda dengan serius pendekatan Web Server. Pertimbangkan untuk membuat panggilan AJAX ke metode untuk menyembunyikan masalah ini. <br><h2> Solusi Masalah  </h2>Termux adalah aplikasi Android yang bagus yang memudahkan menjalankan PHP atau program lain yang biasanya tersedia di distro Linux. <br>Kemungkinan untuk menjalankan PHP baik sebagai script baris perintah atau sebagai server Web membuka segudang kemungkinan untuk menjalankan aplikasi yang bagus dengan menggunakan kode PHP seperti aplikasi Android asli lainnya. <br>Jika Anda menyukai artikel ini, bagikan dengan teman pengembang Anda. Jika ada pertanyaan atau saran, kirimkan komentar di sini.</p>
 
 					</section>
 				</div>
@@ -147,24 +155,24 @@
 	<!-- Footer -->
 	<div id="featured">
 		<div class="container">
-			<div class="row d-none">
+			<div class="row">
 				<div class="4u">
 					<h2>Aenean elementum facilisis</h2>
-					<a href="#" class="image full"><img src="/images/pic01.jpg" alt=""></a>
+					<a href="#" class="image full"><img src="/images/pic01.jpg" alt="" /></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
 				</div>
 				<div class="4u">
 					<h2>Fusce ultrices fringilla</h2>
-					<a href="#" class="image full"><img src="/images/pic02.jpg" alt=""></a>
+					<a href="#" class="image full"><img src="/images/pic02.jpg" alt="" /></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
 				</div>
 				<div class="4u">
 					<h2>Etiam rhoncus volutpat erat</h2>
-					<a href="#" class="image full"><img src="/images/pic03.jpg" alt=""></a>
+					<a href="#" class="image full"><img src="/images/pic03.jpg" alt="" /></a>
 					<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in
 						augue praesent a lacus at urna congue rutrum. Quisque dictum. Pellentesque viverra vulputate enim.</p>
 					<p><a href="#" class="button">More Details</a></p>
@@ -175,7 +183,7 @@
 				<div id="disqus_thread"></div>
 				<script>
 					var disqus_shortname = "dimaslanjaka";
-					var disqus_url = "https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html";
+					var disqus_url = "https://www.webmanajemen.com///2017/09/cara-menggunakan-termux.md";
 					var disqus_identifier = new URL(disqus_url).pathname;
 					!(function () {
 						var e = document.createElement("script");
@@ -187,7 +195,7 @@
 				</script>
 				<noscript>
 					Please enable JavaScript to view the
-					<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
+					<a href="https://disqus.com/?ref_noscript" rel="nofollow">
 						comments powered by Disqus.
 					</a>
 				</noscript>
@@ -247,6 +255,6 @@
 			WMI ©  Dimas Lanjaka 2
 		</div>
 	</div>
+</body>
 
-
-</body></html>
+</html>

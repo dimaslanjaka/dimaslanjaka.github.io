@@ -96,6 +96,23 @@ function generateSitemapHtml(done?: TaskCallback) {
     });
 }
 
+function generateSitemapText(done?: TaskCallback) {
+  const log = logname + chalk.blue('[txt]');
+  Bluebird.all(pages.getValues())
+    .map((item) => {
+      return fixURLSitemap(item.url).toString();
+    })
+    .then((items) => {
+      write(join(root, config.public_dir, 'sitemap.txt'), items.join('\n')).then((f) => {
+        console.log(log, 'saved', f);
+        done();
+      });
+    });
+}
+
+// separate sitemap tasks
 gulp.task('generate:gn-sitemap', generateGoogleNewsSitemap);
 gulp.task('generate:sitemap-html', generateSitemapHtml);
-gulp.task('generate:sitemap', gulp.series('generate:gn-sitemap', 'generate:sitemap-html'));
+gulp.task('generate:sitemap-txt', generateSitemapText);
+// combine all sitemap tasks
+gulp.task('generate:sitemap', gulp.series('generate:gn-sitemap', 'generate:sitemap-html', 'generate:sitemap-txt'));

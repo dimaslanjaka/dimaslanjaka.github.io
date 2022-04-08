@@ -39,7 +39,7 @@
         images.forEach((img) => {
           if (img.parentElement.tagName == 'A') {
             getImageMeta(img.src, function (width, height) {
-              console.log(width + 'px ' + height + 'px');
+              //console.log(width + 'px ' + height + 'px');
               //img.width = width + 'px';
               //img.height = height + 'px';
               img.setAttribute('width', width + 'px');

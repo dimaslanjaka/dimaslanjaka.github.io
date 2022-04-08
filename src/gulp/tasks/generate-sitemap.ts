@@ -4,12 +4,13 @@ import Bluebird from 'bluebird';
 import { join, write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import gulp from 'gulp';
+import { TaskCallback } from 'undertaker';
 
-export default function generateGoogleNewsSitemap() {
+export default function generateGoogleNewsSitemap(done: TaskCallback) {
   const pages = new Sitemap();
   const map = new GoogleNewsSitemap();
 
-  return Bluebird.all(pages.getValues())
+  Bluebird.all(pages.getValues())
     .map((item) => {
       const val: ClassItemType = {
         publication_name: item.author,
@@ -23,7 +24,8 @@ export default function generateGoogleNewsSitemap() {
     .then((i) => {
       console.log('total pages', i.length);
       write(join(root, config.public_dir, 'sitemap-news.xml'), map.toString()).then(console.log);
-    });
+    })
+    .finally(() => done());
 }
 
 gulp.task('generate:gn-sitemap', generateGoogleNewsSitemap);

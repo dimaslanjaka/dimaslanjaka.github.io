@@ -33,6 +33,12 @@
 			background-size: cover;
 		}
 	</style>
+
+	<% if (theme.adsense.enable) {
+		var pub = theme.adsense.pub.replace('ca-pub', '').replace('pub', '');
+		%>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-<%- pub %>" crossorigin="anonymous"></script>
+	<% } %>
 </head>
 
 <body class="no-sidebar">

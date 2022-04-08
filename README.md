@@ -3,10 +3,10 @@
 www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 
 ## features
-- nodejs
-- typescript
+- nodejs (12.x - 17.x supported)
+- typescript (pure typescript commonjs with esmInterop project)
 - ejs engine (ejs renderer)
-- vscode ide integrated settings
+- vscode ide integrated settings (development using vscode recommended)
 - cache strategies (dont process any unmodified files to save memory usages)
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)
 - 1000+ posts supported

@@ -3,7 +3,6 @@ import { cwd, dirname, existsSync, mkdirSync, statSync, write, writeFileSync } f
 import yaml from 'yaml';
 import { readFileSync } from 'fs';
 import config_yml, { ProjectConfig, tmp } from '../types/_config';
-import { replacePath } from '../gulp/tasks/copy';
 import CacheFile from '../node/cache';
 import ErrorMarkdown from './error-markdown';
 import uuidv4 from '../node/uuid';
@@ -128,7 +127,8 @@ export function parsePostOri(text: string): parsePostReturn | null {
       }
     }
 
-    if (!meta.comments) meta.comments = true;
+    // default enable comments
+    if (typeof meta.comments == 'undefined' || meta.comments == null) meta.comments = true;
     if (!meta.wordcount) meta.wordcount = null;
 
     // default excerpt/description
@@ -144,6 +144,7 @@ export function parsePostOri(text: string): parsePostReturn | null {
       meta.description = meta.excerpt;
       meta.subtitle = meta.excerpt;
     }
+
     if (isFile) {
       meta.permalink = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/');
       homepage.pathname = meta.permalink;
@@ -157,8 +158,8 @@ export function parsePostOri(text: string): parsePostReturn | null {
     // put fileTree
     if (isFile) {
       result.fileTree = {
-        source: replacePath(originalArg, '/source/_posts/', '/src-posts/'),
-        public: replacePath(originalArg, '/src-posts/', '/source/_posts/'),
+        source: toUnix(originalArg).replaceArr(['source/_posts/', '_posts/'], 'src-posts/'),
+        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/'),
       };
     }
     return result;
@@ -183,8 +184,8 @@ export function generateFileTree(source: string, parsed: parsePostReturn) {
   if (existsSync(source)) {
     if (parsed)
       parsed.fileTree = {
-        source: replacePath(source, '/source/_posts/', '/src-posts/'),
-        public: replacePath(source, '/src-posts/', '/source/_posts/'),
+        source: toUnix(source).replaceArr(['source/_posts/', '_posts/'], 'src-posts/'),
+        public: toUnix(source).replaceArr(['src-posts/'], 'source/_posts/'),
       };
   } else {
     //console.log('cannot generate file tree', parsed.metadata.title);

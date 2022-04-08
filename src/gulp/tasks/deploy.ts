@@ -41,6 +41,7 @@ gulp.task('deploy', async (done?: TaskCallback) => {
     if (configDeploy.name) await git('config', 'user.name', configDeploy.name);
     if (configDeploy.email) await git('config', 'user.email', configDeploy.email);
   }
+  await git('gc'); // compress git databases
   await git('remote', 'set-url', 'origin', configDeploy.repo);
   await git('pull', 'origin', configDeploy.branch);
 

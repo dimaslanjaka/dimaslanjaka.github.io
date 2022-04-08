@@ -52,6 +52,24 @@
       "type": "node-terminal"
     },
     {
+      "command": "gulp generate --nocache",
+      "name": "gulp gen:no-cache",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+    },
+    {
+      "command": "gulp --nocache",
+      "name": "gulp no-cache",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+    },
+    {
       "command": "php -S localhost:4000 -t docs",
       "name": "PHP SERVER",
       "request": "launch",

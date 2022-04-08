@@ -15,6 +15,7 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 ## project structure
 - `src-posts/` contains all original posts with markdown formats
 - `source/` (`config.source_dir` in `_config.yml`) contains all pages that should be on public directory (`config.public_dir` in `_config.yml`)
+- database caches on `node_modules/.cache/dimaslanjaka`
 
 ## runner
 before all, setup `_config.yml` first

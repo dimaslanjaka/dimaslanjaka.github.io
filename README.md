@@ -32,3 +32,8 @@ gulp deploy # deploy to github pages
 ## contacts
 - dimaslanjaka@gmail.com
 - +6285655667573
+
+## incoming terms
+- static blog generator
+- termux static blog generator
+- simple static blog generator

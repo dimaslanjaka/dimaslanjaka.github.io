@@ -242,6 +242,7 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
 
     // render body html to ejs compiled
     ejs_data.page.content = ejs_object.render(body, ejs_data);
+    ejs_data.page.body = ejs_data.page.content;
     //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
     //write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
 

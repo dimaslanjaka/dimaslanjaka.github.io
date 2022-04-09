@@ -43,7 +43,7 @@
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
 	<meta property="og:type" content="article">
 <meta property="og:title" content="How to Make Colored Recent Post Widget Blogger">
-<meta property="og:url" content="https://www.webmanajemen.com///2017/08/how-to-make-colored-recent-post-widget.md">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="How to Make Colored Recent Post Widget Blogger">
 <meta property="og:locale" content="en_US">
@@ -64,7 +64,7 @@
 <meta name="twitter:image" content="data:image/webp;base64,UklGRr4CAABXRUJQVlA4ILICAABwHwCdASpsAbsAPu12uFQprT+kJBHYw/AdiWVu4XKRCBlf6XYA/PUTXZ/89i/1W8KdQB5/N8pCTBT2zAJJkgp7ZgEkyQU9swCSZIKe2YBJMkFPbMAkmSCntWm+23fbbvtkmGQhE/b+XIcygXdDtDFLVliPFLbllcZLNcz/RrZeclxmBShzXzWo2gFwVuL0oQpIASFC08qI3Hu6iKeNdvF9/6CcJB5ecetaE96ppf1JgN8aA5TkcWYNfBwOk/thIuLblKKy/D6LQU45AeUUGe5CeuSSYYsqAM1SZIKe2YBJMkFPbMAkmSCntmASTJBT2zAJJkgp7ZgEkyQU9swCSZIKe2XgAAD+/cUzgH0AAACC5zAwYpAmrQuknl/VFZgkQUMYcnqroF2uZBf5/L2eXHxhFXw4ClGJ9nTLPtfbnedyy1O2BCO5bl17mEwoIullp2iHwuR+qrXf5bjf35g1WT+/MGy49Pxv7NTdY6dgftM/o3fDqrhpXFg8r+19sZAa3KOh3cDEcEKHE6RgVZe+1Fww5Z2R1cHBkswXMRqyYl5j7FQQWLx/2KOF0qa3InBtfB7l1mUsJDtPxvn3EMWJcZveO53YtqW6JCWAtz0BolHgm4UE0SuyTbR4VjlRz88MwbwAMBP08jkJs5LnS08M1nH8paoVLYm3TledhjNuflug0JFYa0ClBjVvKMUseeX/tV9yc8i+1/pCh9tTV+d7D0UuWC5KFtvZgMftAgfPhSssoSEW6qtMFa48rSnx0ShCoMVguAk2PAYUVBsrqail5TRdrxttynmuByqopR0KZmm0uDpRw+0YyuuChZ6rM0C3FCwKq5EDdXOz1Fog+xpGBvjT2NStQB2d880f3+cv93HhCc7IU8E8Y5RmqWg3FuL/GKtzM8EuJTuLZamV+AAAAAAAAAA=">
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com///2017/08/how-to-make-colored-recent-post-widget.md">
+<link rel="canonical" href="https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
 	<link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
 	<!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
@@ -101,7 +101,7 @@
 
 			<!-- Logo -->
 			<div id="logo">
-				<h1><a href="https://www.webmanajemen.com///2017/08/how-to-make-colored-recent-post-widget.md">WMI</a></h1>
+				<h1><a href="https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">WMI</a></h1>
 				<span>How to Make Colored Recent Post Widget Blogger by Unknown</span>
 			</div>
 
@@ -184,25 +184,60 @@
 			</div>
 
 			<div id="comment">
-				<div id="disqus_thread"></div>
-				<script>
-					var disqus_shortname = "dimaslanjaka";
-					var disqus_url = "https://www.webmanajemen.com///2017/08/how-to-make-colored-recent-post-widget.md";
-					var disqus_identifier = new URL(disqus_url).pathname;
-					!(function () {
-						var e = document.createElement("script");
-						(e.type = "text/javascript"),
-							(e.async = !0),
-							(e.src = "//" + disqus_shortname + ".disqus.com/embed.js"),
-							(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(e);
-					})();
-				</script>
-				<noscript>
-					Please enable JavaScript to view the
-					<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
-						comments powered by Disqus.
-					</a>
-				</noscript>
+				<div id="disqus_thread" class="disqus"></div>
+				<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'How to Make Colored Recent Post Widget Blogger';
+      this.page.url = 'https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html';
+      this.page.identifier = new URL(disqus_url).pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
 			</div>
 		</div>
 	</div>

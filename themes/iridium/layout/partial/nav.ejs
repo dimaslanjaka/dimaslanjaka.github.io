@@ -1,0 +1,17 @@
+<!-- Nav -->
+<nav id="nav">
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <% tags(page).forEach((tag, index, all) => { %>
+    <% if (index == all.length -1 ) { %>
+    <li class="active"><a href="<%- tag.path %>"><%- tag.name %></a></li>
+    <% } else { %>
+    <li><a href="<%- tag.path %>"><%- tag.name %></a></li>
+    <% } %>
+    <% }) %>
+    <!--iterate navigation config-->
+    <% theme.nav.forEach(nav => { %>
+      <li><a href="<%- nav.url %>"><%- nav.title %></a></li>
+    <% }) %>
+  </ul>
+</nav>

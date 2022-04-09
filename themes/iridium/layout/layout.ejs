@@ -1,5 +1,52 @@
+<!DOCTYPE HTML>
+<!--
+	Iridium by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="<%- page.lang||'en' %>">
+
+<head>
+  <title><%- page.title %> | <%- page.webtitle||config.title %></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="<%- excerpt(page) %>" />
+  <meta name="keywords" content="" />
+  <%- include('partial/cache', {page:page,config:config,theme:theme}) %>
+  <%- include('partial/seo', {page:page,config:config,theme:theme}) %>
+  <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/skel.min.js"></script>
+  <!--<script src="/js/skel-panels.min.js"></script>-->
+  <script src="/js/init.js?c=1"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/skel-noscript.css?c=1" />
+    <link rel="stylesheet" href="/css/style.css?c=1" />
+    <link rel="stylesheet" href="/css/style-desktop.css?c=1" />
+  </noscript>
+  <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
+  <style>
+    div#header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%- thumbnail(page) %>'), no-repeat;
+      color: white;
+      background-size: cover;
+    }
+  </style>
+
+  <% if (theme.adsense.enable) {
+		var pub = theme.adsense.pub.replace('ca-pub', '').replace('pub', '');
+		%>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-<%- pub %>"
+    crossorigin="anonymous"></script>
+  <% } %>
+
+</head>
+
 <% if (page.type == 'post' || page.type == 'page') { %>
-  <%- include('post') %>
+<%- include('post') %>
 <% } else { %>
-  <%- include('archive') %>
+<%- include('archive') %>
 <% } %>
+
+</html>

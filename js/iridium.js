@@ -22,33 +22,4 @@
       false
     );
   }
-
-  ///// image controller
-  function getImageMeta(url, callback) {
-    var img = new Image();
-    img.src = url;
-    img.onload = function () {
-      callback(this.width, this.height);
-    };
-  }
-  // lazy image resizer
-  const indicators = {};
-  document.addEventListener('scroll', function () {
-    if (!indicators.images) {
-      indicators.images = true;
-      const images = main.querySelectorAll('img');
-      if (images.length) {
-        images.forEach((img) => {
-          getImageMeta(img.src, function (width, height) {
-            //console.log(width + 'px ' + height + 'px');
-            //img.width = width + 'px';
-            //img.height = height + 'px';
-            img.setAttribute('width', width + 'px');
-            //img.parentElement.replaceWith(img);
-            img.setAttribute('height', height + 'px');
-          });
-        });
-      }
-    }
-  });
 })();

@@ -80,8 +80,8 @@ function generateSitemapHtml(done?: TaskCallback) {
           category: [],
           tags: [],
         },
-        body: content,
-        content: content,
+        body: content || '',
+        content: content || '',
         fileTree: {
           source: join(cwd(), '.guid'),
           public: join(cwd(), '.guid'),

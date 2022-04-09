@@ -184,11 +184,12 @@ function modifyPostOri(parse: parsePostReturn) {
  * Cacheable {@link modifyPostOri}
  * @see {@link modifyPostOri}
  * @param parse parsed post object
+ * @param sourceFile source file path as cache key
  * @returns modified parsed post object
  */
-export function modifyPost(parse: ReturnType<typeof modifyPostOri>) {
+export function modifyPost(parse: ReturnType<typeof modifyPostOri>, sourceFile?: string) {
   let result: ReturnType<typeof modifyPostOri>;
-  const source = parse.fileTree.source;
+  const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
 

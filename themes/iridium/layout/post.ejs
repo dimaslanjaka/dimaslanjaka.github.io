@@ -123,25 +123,8 @@
 			</div>
 
 			<div id="comment">
-				<div id="disqus_thread"></div>
-				<script>
-					var disqus_shortname = "<%- theme.disqus_shortname %>";
-					var disqus_url = "<%- page.url %>";
-					var disqus_identifier = new URL(disqus_url).pathname;
-					!(function () {
-						var e = document.createElement("script");
-						(e.type = "text/javascript"),
-							(e.async = !0),
-							(e.src = "//" + disqus_shortname + ".disqus.com/embed.js"),
-							(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(e);
-					})();
-				</script>
-				<noscript>
-					Please enable JavaScript to view the
-					<a href="https://disqus.com/?ref_noscript" rel="nofollow">
-						comments powered by Disqus.
-					</a>
-				</noscript>
+				<div id="disqus_thread" class="disqus"></div>
+				<%- include('partial/disqus') %>
 			</div>
 		</div>
 	</div>

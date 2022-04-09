@@ -17,6 +17,12 @@ let helpers: helper_types = {
   iif: function <T>(cond: boolean, value: T): T {
     if (cond) return value;
   },
+  url_fix: (str: string) => {
+    const u = new URL(str);
+    // remove multiple slashes
+    u.pathname = u.pathname.replace(/\/+/, '/');
+    return u.toString();
+  },
 };
 [author, date, locale, thumbnail, keywords, excerpt, tag].forEach((obj) => {
   helpers = Object.assign(helpers, obj);

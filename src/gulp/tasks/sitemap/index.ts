@@ -48,9 +48,20 @@ const allPosts = Bluebird.all(postCache.getAll())
     }
     return post;
   })
+  // filter unecessary files
   .filter((post) => {
     const u = post.metadata.url;
-    return !u.match(/\/.(guid|git|eslint|tslint|prettierc)/);
+    const ex = {
+      /**
+       * standard non-sitemap files
+       */
+      major: !u.match(/\/.(guid|git|eslint|tslint|prettierc)|(404).html$/),
+      /**
+       * project test development files
+       */
+      dev: !u.match(/Test\/markdown-links.html$/),
+    };
+    return Object.values(ex).every(Boolean);
   });
 
 /**

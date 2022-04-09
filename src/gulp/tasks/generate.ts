@@ -17,6 +17,7 @@ import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
 import './generate-sitemap';
 import './generate-after';
+import { modifyPost } from './copy';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -104,7 +105,12 @@ export const renderArticle = function () {
         };
         result.cached = renderCache.has(result.path) && !nocache;
 
-        const merge = Object.assign(result, parsePost(result.path));
+        const merge = Object.assign(result, modifyPost(parsePost(result.path)), result.path);
+        if (typeof merge.metadata.url == 'string') {
+          const url = new URL(merge.metadata.url);
+          url.pathname = url.pathname.replace(/\/+/, '/');
+          merge.metadata.url = url.toString();
+        }
         return merge;
       })
       // filter only non-empty object
@@ -207,7 +213,7 @@ const helpers = {
 /**
  * EJS Renderer Engine
  * @param parsed
- * @param override override ejs data
+ * @param override override ejs page data such as: page.title, etc
  * @returns
  */
 export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) {
@@ -215,12 +221,8 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
 
-    // ejs render preparation
-    const ejs_opt: parsePostReturn = Object.assign(parsed.metadata, parsed, override);
-    // delete body to reduce memory
-    parsed.body = undefined;
     // assign body
-    const pagedata = Object.assign(parsed.metadata, parsed);
+    const pagedata = Object.assign(parsed.metadata, parsed, override);
 
     page_url.pathname = parsed.permalink;
     const ejs_data = Object.assign(helpers, {

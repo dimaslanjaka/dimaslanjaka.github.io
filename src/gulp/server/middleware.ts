@@ -8,6 +8,7 @@ import { parsePost } from '../../markdown/transformPosts';
 import { modifyPost } from '../tasks/copy';
 import { renderer } from '../tasks/generate';
 import { toUnix } from 'upath';
+import fixHtmlPost from '../tasks/generate-after';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
@@ -40,6 +41,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
             const parsed = modifyPost(parsePost(md));
             // render markdown post
             return renderer(parsed).then((rendered) => {
+              rendered = fixHtmlPost(rendered);
               write(dest, rendered);
               const content = rendered.replace('</body>', preview + '</body>');
               res.setHeader('Content-Type', 'text/html');

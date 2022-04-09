@@ -109,9 +109,22 @@ const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
 
   const file = files[0];
   const content = readFileSync(file, 'utf-8');
+  const result = fixHtmlPost(content);
+  writeFileSync(file, result);
+  return skip();
+};
+
+/**
+ * fix html content (safelink, nofollow, etc) using JSDOM
+ * @param content
+ * @returns
+ */
+export default function fixHtmlPost(content: string) {
   const dom = new JSDOM(content);
-  //const html = dom.window.document.querySelector('html');
-  //if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
+  // fix lang attr
+  const html = dom.window.document.querySelector('html');
+  if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
+  // safelink
   const hrefs = dom.window.document.querySelectorAll('a');
   if (hrefs && hrefs.length > 0) {
     for (let i = 0; i < hrefs.length; i++) {
@@ -126,10 +139,8 @@ const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
     }
   }
 
-  let result = dom.serialize();
+  const result = dom.serialize();
+  // close prevent memory leaks
   dom.window.close();
-  result = removeWordpressCDN(result);
-  writeFileSync(file, result);
-  return skip();
-};
-export default parseAfterGen;
+  return removeWordpressCDN(result);
+}

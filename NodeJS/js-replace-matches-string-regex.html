@@ -97,7 +97,7 @@
 			<!-- Logo -->
 			<div id="logo">
 				<h1><a href="https://www.webmanajemen.com/NodeJS/js-replace-matches-string-regex.html">WMI</a></h1>
-				<span>Replace Matched Regex 1-9 From String by Dimas Lanjaka</span>
+				<span>Replace Matched Regex 1-9 From String  by Dimas Lanjaka</span>
 			</div>
 
 			<!-- Nav -->
@@ -142,7 +142,7 @@
 <p>$1 = matched index 1 and so on</p>
 </blockquote>
 <p>for example: were going to replace all markdown extensions to html extension.</p>
-<pre><code class="language-js">const str = `[text1](url.html) [txt](http://webmanajemen.com/post.html)`; // string to replace
+<pre><code class="language-js">const str = `[text1](url.html) [txt](http://webmanajemen.com/post.md)`; // string to replace
 const regex = /\[.*\]\(.*(.md)\)/gm; // regex to match group index 1 (.md)
 if (regex.exec(str)) { // check if regex match
   const replaced = str.replace(regex, function (wholeMatch, index1) {

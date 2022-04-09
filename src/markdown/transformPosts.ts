@@ -158,6 +158,7 @@ export function parsePostOri(text: string): parsePostReturn | null {
     const result: parsePostReturn = {
       metadata: meta,
       body: body,
+      content: body,
       config: config_yml,
     };
     // put fileTree
@@ -210,7 +211,7 @@ const parseCache = new CacheFile('parsePost');
 export function parsePost(text: string, hash: string = null) {
   let result: ReturnType<typeof parsePostOri>;
   const key = hash || text;
-  if (parseCache.isFileChanged(key) || !nocache) {
+  if (parseCache.isFileChanged(key) || nocache) {
     // parse changed or no cache
     result = parsePostOri(text);
     //console.log('parse no cache', typeof result);

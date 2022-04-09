@@ -174,7 +174,7 @@ function modifyPostOri(parse: parsePostReturn) {
   if (parse.metadata && parse.body) {
     // remove duplicated metadata photos
     if (parse.metadata.photos && parse.metadata.photos.length) {
-      parse.metadata.photos = parse.metadata.photos.unique();
+      parse.metadata.photos = parse.metadata.photos.uniqueStringArray();
     }
   }
   return parse;
@@ -193,7 +193,7 @@ export function modifyPost(parse: ReturnType<typeof modifyPostOri>, sourceFile?:
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
 
-  if (modCache.isFileChanged(source) || !nocache) {
+  if (modCache.isFileChanged(source) || nocache) {
     // file changed or no cache
     result = modifyPostOri(parse);
     postCache.set(source, result);

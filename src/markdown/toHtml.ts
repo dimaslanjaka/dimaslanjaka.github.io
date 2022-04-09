@@ -66,7 +66,7 @@ export function renderMarkdownIt(str: string) {
   return md.render(str);
 }
 
-const verbose = true;
+const verbose = false;
 
 /**
  * Fixable render markdown mixed with html
@@ -77,7 +77,7 @@ const verbose = true;
 export function renderBodyMarkdown(parse: parsePostReturn) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
-  let body = parse.body;
+  let body = parse.body || parse.content;
   if (!body) throw new Error('cannot render undefined markdown body');
 
   // extract style, script

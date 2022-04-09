@@ -75,19 +75,20 @@ function generateSitemapHtml(done?: TaskCallback) {
         metadata: {
           title: 'Sitemap',
           subtitle: 'Sitemap ' + new URL(config.url).host,
-          content: content,
           date: moment().format(),
           updated: moment().format(),
           category: [],
           tags: [],
-          body: content,
         },
+        body: content,
+        content: content,
         fileTree: {
           source: join(cwd(), '.guid'),
           public: join(cwd(), '.guid'),
         },
       };
       const modify = modifyPost(opt);
+      //console.log(modify);
       renderer(modify).then((rendered) => {
         write(join(root, config.public_dir, 'sitemap.html'), rendered).then((f) => {
           console.log(log, 'saved', f);

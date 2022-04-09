@@ -111,7 +111,7 @@
     
     <!--iterate navigation config-->
     
-      <li><a href="/p/about.html">About Me</a></li>
+      <li><a href="/page/about-me.html">About Me</a></li>
     
       <li><a href="/p/search.html">Search Engine</a></li>
     
@@ -293,7 +293,7 @@ SET "PHP_EXE=%~dp0\php.exe"
     disqusConfig: function () {
       this.page.title = 'Cannot run php on powershell';
       this.page.url = 'https://www.webmanajemen.com/2022/03/27/cannot-call-php-from-powershell.html';
-      this.page.identifier = new URL(disqus_url).pathname;
+      this.page.identifier = new URL('https://www.webmanajemen.com/2022/03/27/cannot-call-php-from-powershell.html').pathname;
     }
   };
 

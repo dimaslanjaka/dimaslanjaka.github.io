@@ -105,7 +105,7 @@
     
     <!--iterate navigation config-->
     
-      <li><a href="/p/about.html">About Me</a></li>
+      <li><a href="/page/about-me.html">About Me</a></li>
     
       <li><a href="/p/search.html">Search Engine</a></li>
     
@@ -303,7 +303,7 @@ import notranslate from '../translator/notranslate'; // &lt;-- i want match this
     disqusConfig: function () {
       this.page.title = 'RegExp Match Doesnt Contain Words';
       this.page.url = 'https://www.webmanajemen.com/RegExp/doesnt-contains-words.html';
-      this.page.identifier = new URL(disqus_url).pathname;
+      this.page.identifier = new URL('https://www.webmanajemen.com/RegExp/doesnt-contains-words.html').pathname;
     }
   };
 

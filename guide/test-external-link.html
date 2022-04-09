@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="description" content="The Default Hexo Blog">
   <meta name="keywords" content="">
-  </head><body class="no-sidebar"><include expiration="7d" path="*.css"></include>
+  </head><body><include expiration="7d" path="*.css"></include>
 <include expiration="7d" path="*.js"></include>
 <include expiration="3d" path="*.gif"></include>
 <include expiration="3d" path="*.jpeg"></include>
@@ -100,8 +100,8 @@
 
 			<!-- Logo -->
 			<div id="logo">
-				<h1><a href="https://www.webmanajemen.com/source/guide/test-external-link.html">WMI</a></h1>
-				<span>Hello World  by Dimas Lanjaka</span>
+				<h1><a href="#">Iridium</a></h1>
+				<span>Design by TEMPLATED</span>
 			</div>
 
 			<!-- Nav -->
@@ -123,7 +123,7 @@
     
     <!--iterate navigation config-->
     
-      <li><a href="/p/about.html">About Me</a></li>
+      <li><a href="/page/about-me.html">About Me</a></li>
     
       <li><a href="/p/search.html">Search Engine</a></li>
     
@@ -138,21 +138,56 @@
 			<div class="row">
 
 				<!-- Content -->
-				<div id="content" class="12u skel-cell-important">
+				<div id="content" class="8u skel-cell-important">
 					<section>
 						<header>
 							<h2>Hello World</h2>
 							<span class="byline">The Default Hexo Blog</span>
 						</header>
-						<!--
-							<a href="#" class="image full"><img src="https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png" alt="Hello World" /></a>
-							-->
 
+						
+						<!--setup default page content for custom page markdown-->
 						<p><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZoZXhvLmlvJTJGZG9jcyUyRndyaXRpbmcuaHRtbA==" rel="nofollow noopener noreferer" target="_blank">External Link MD - Writing</a>
 <a href="/">Internal Link MD - Homepage</a></p>
 <p><a href="/">Homepage Anchor</a>
 <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJG" rel="nofollow noopener noreferer" target="_blank">Github Anchor</a></p>
 
+
+					</section>
+				</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar" class="4u">
+					<section>
+						<header>
+							<h2>Pellentesque vulputate</h2>
+						</header>
+						<ul class="style">
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="/images/pic04.jpg" alt="">
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="/images/pic05.jpg" alt="">
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="/images/pic06.jpg" alt="">
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="/images/pic05.jpg" alt="">
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+						</ul>
 					</section>
 				</div>
 
@@ -234,7 +269,7 @@
     disqusConfig: function () {
       this.page.title = 'Hello World';
       this.page.url = 'https://www.webmanajemen.com/source/guide/test-external-link.html';
-      this.page.identifier = new URL(disqus_url).pathname;
+      this.page.identifier = new URL('https://www.webmanajemen.com/source/guide/test-external-link.html').pathname;
     }
   };
 

@@ -34,8 +34,10 @@ gulp --tasks # to view all tasks
 gulp copy # copy and process all src-posts to source/_posts
 gulp generate # generate all source to public directory
 gulp deploy # deploy to github pages
+gulp server # development, render on-fly
 
 gulp generate --nocache # generate all without reading cache instead write new cache (fresh generate)
+gulp server --nocache # development without reading cache, instead write fresh cache
 ```
 
 ## todo

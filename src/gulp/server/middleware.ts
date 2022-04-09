@@ -1,5 +1,5 @@
 import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
-import config, { post_generated_dir, post_public_dir } from '../../types/_config';
+import config, { post_generated_dir } from '../../types/_config';
 import 'js-prototypes';
 import '../../node/cache-serialize';
 import ejs_object from '../../ejs';
@@ -7,7 +7,6 @@ import gulp from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
 import { modifyPost } from '../tasks/copy';
 import { renderer } from '../tasks/generate';
-import chalk from 'chalk';
 import { toUnix } from 'upath';
 
 let gulpIndicator = false;
@@ -40,14 +39,19 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
             // parse markdown metadata
             const parsed = modifyPost(parsePost(md));
             // render markdown post
-            renderer(parsed).then((rendered) => write(dest, rendered.replace('</body>', preview + '</body>')).then((f) => console.log(chalk.blueBright('preview saved'), f)));
+            return renderer(parsed).then((rendered) => {
+              write(dest, rendered);
+              const content = rendered.replace('</body>', preview + '</body>');
+              res.setHeader('Content-Type', 'text/html');
+              console.log('pre-processed', pathname);
+              res.end(content);
+            });
           }
-          // show previous generated
-          if (existsSync(dest)) return res.end(readFileSync(dest));
         }
       }
     }
-    // skip
+    // show previous generated
+    console.log('last processed', pathname);
     next();
   },
   {

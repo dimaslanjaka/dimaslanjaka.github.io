@@ -78,7 +78,7 @@ export function renderBodyMarkdown(parse: parsePostReturn) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
   let body = parse.body || parse.content;
-  if (!body) throw new Error('cannot render undefined markdown body');
+  if (typeof body != 'string') throw new Error('cannot render undefined markdown body');
 
   // extract style, script
   const re = {

@@ -14,60 +14,70 @@
 		</div>
 	</div>
 
-<!-- Main -->
-<div id="main">
-	<div class="container">
-		<div class="row">
+	<!-- Main -->
+	<div id="main">
+		<div class="container">
+			<div class="row">
 
-			<!-- Content -->
-			<div id="content" class="8u skel-cell-important">
-				<section>
-					<header>
-						<h2><%- page.title %></h2>
-						<span class="byline"><%- excerpt(page) %></span>
-					</header>
-					<!--
-						<a href="#" class="image full"><img src="<%- thumbnail(page) %>" alt="<%- page.title %>" /></a>
-						-->
+				<!-- Content -->
+				<div id="content" class="8u skel-cell-important">
+					<section>
+						<header>
+							<h2><%- page.title %></h2>
+							<span class="byline"><%- excerpt(page) %></span>
+						</header>
+						<!--setup sitedata for tags and categories-->
+						<script id="sitedata" type="application/json"><%- sitedata||'[]' %></script>
+						<!--setup default page content for custom page markdown-->
+						<%- page.body||page.content %>
+						<!--parse site data archive (if exist)-->
+						<div id="archivedata"></div>
+						<script>
+							var data = JSON.parse(document.getElementById('sitedata').textContent);
+							// generate infinite scroll for tags and categories archive
+							if (data && data.length){}
+						</script>
+					</section>
+				</div>
 
-					<%- page.body||page.content %>
-				</section>
+				<!-- Sidebar -->
+				<div id="sidebar" class="4u">
+					<section>
+						<header>
+							<h2>Pellentesque vulputate</h2>
+						</header>
+						<ul class="style">
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="images/pic04.jpg" alt="" />
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="images/pic05.jpg" alt="" />
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="images/pic06.jpg" alt="" />
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+							<li>
+								<p class="posted">August 11, 2002 | (10 ) Comments</p>
+								<img src="images/pic05.jpg" alt="" />
+								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
+									enim.</p>
+							</li>
+						</ul>
+					</section>
+				</div>
+
 			</div>
-
-			<!-- Sidebar -->
-			<div id="sidebar" class="4u">
-				<section>
-					<header>
-						<h2>Pellentesque vulputate</h2>
-					</header>
-					<ul class="style">
-						<li>
-							<p class="posted">August 11, 2002  |  (10 )  Comments</p>
-							<img src="images/pic04.jpg" alt="" />
-							<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-						</li>
-						<li>
-							<p class="posted">August 11, 2002  |  (10 )  Comments</p>
-							<img src="images/pic05.jpg" alt="" />
-							<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-						</li>
-						<li>
-							<p class="posted">August 11, 2002  |  (10 )  Comments</p>
-							<img src="images/pic06.jpg" alt="" />
-							<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-						</li>
-						<li>
-							<p class="posted">August 11, 2002  |  (10 )  Comments</p>
-							<img src="images/pic05.jpg" alt="" />
-							<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-						</li>
-					</ul>
-				</section>
-			</div>
-
 		</div>
 	</div>
-</div>
 
 	<%- include('partial/footer') %>
 

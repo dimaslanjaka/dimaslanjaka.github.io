@@ -17,6 +17,7 @@ import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
 import './generate-sitemap';
 import './generate-after';
+import './generate-archives';
 import { modifyPost } from './copy';
 
 const argv = yargs(process.argv.slice(2)).argv;
@@ -103,6 +104,7 @@ export const renderArticle = function () {
           /** Is Cached */
           cached: false,
         };
+        // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && !nocache;
 
         const merge = Object.assign(result, modifyPost(parsePost(result.path)), result.path);
@@ -225,7 +227,7 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
     const pagedata = Object.assign(parsed.metadata, parsed, override);
 
     page_url.pathname = parsed.permalink;
-    const ejs_data = Object.assign(helpers, {
+    const ejs_data = Object.assign(parsed, helpers, {
       // page metadata
       page: pagedata,
       // site config

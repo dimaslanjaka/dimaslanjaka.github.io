@@ -42,6 +42,7 @@ gulp generate --nocache # generate all without reading cache instead write new c
 gulp server --nocache # development without reading cache, instead write fresh cache
 ```
 ### standalone
+more information run: `gulp --tasks`
 ```bash
 gulp copy:assets
 gulp copy:posts

@@ -60,7 +60,7 @@ const allPosts = Bluebird.all(postCache.getAll())
       /**
        * project test development files
        */
-      dev: !u.match(/Test\/markdown-links.html$/),
+      dev: !u.match(/(Test|guide)\//),
     };
     return Object.values(ex).every(Boolean);
   });

@@ -12,6 +12,8 @@ import { parsePostReturn } from '../markdown/transformPosts';
 import config, { ThemeOpt, theme_dir } from '../types/_config';
 import { DynamicObject } from '../types';
 
+const homepage = new URL(config.url);
+
 type helper_types = typeof tag | typeof keywords | typeof excerpt | typeof thumbnail | typeof locale | typeof author | typeof date | DynamicObject;
 let helpers: helper_types = {
   iif: function <T>(cond: boolean, value: T): T {
@@ -22,6 +24,10 @@ let helpers: helper_types = {
     // remove multiple slashes
     u.pathname = u.pathname.replace(/\/+/, '/');
     return u.toString();
+  },
+  url_for: (str: string) => {
+    homepage.pathname = str.replace(/\/+/, '/');
+    return homepage.toString();
   },
 };
 [author, date, locale, thumbnail, keywords, excerpt, tag].forEach((obj) => {

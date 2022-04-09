@@ -9,6 +9,7 @@ import { modifyPost } from '../tasks/copy';
 import { renderer } from '../tasks/generate';
 import { toUnix } from 'upath';
 import fixHtmlPost from '../tasks/generate-after';
+import compress from 'compression';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
@@ -18,38 +19,50 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
     homepage.pathname = req.url; // let URL instance parse the url
     const pathname = homepage.pathname; // just get pathname
+    res.setHeader('X-Powered-By', 'SBG'); // send X-Powered-By
+    if (!config.server.cache) {
+      res.setHeader('Expires', 'on, 01 Jan 1970 00:00:00 GMT');
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+      res.setHeader('Cache-Control', 'post-check=0, pre-check=0');
+      res.setHeader('Pragma', 'no-cache');
+    }
     if (!/\/api/.test(pathname)) {
       /*res.writeHead(302, {
         Location: '/src/public/index.html#/App1/Dashboard',
       });
       res.end();*/
 
-      if (pathname.endsWith('.html')) {
+      if (pathname.match(/(.html|\/)$/)) {
         // find post and pages
         const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
           s.replace(/.html$/, '.md')
         );
+        sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
         for (let index = 0; index < sourceMD.length; index++) {
-          const md = sourceMD[index];
-          const dest = join(post_generated_dir, toUnix(md).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
+          const file = sourceMD[index];
+          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
           // start generating
-          if (existsSync(md)) {
-            // pre-process markdown
-            if (!gulpIndicator) {
-              gulpIndicator = true;
-              gulp.series('generate:assets', 'generate:template')(() => (gulpIndicator = false));
+          if (existsSync(file)) {
+            try {
+              // pre-process markdown
+              if (!gulpIndicator) {
+                gulpIndicator = true;
+                gulp.series('generate:assets', 'generate:template')(() => (gulpIndicator = false));
+              }
+              // parse markdown metadata
+              const parsed = modifyPost(parsePost(file));
+              // render markdown post
+              return renderer(parsed).then((rendered) => {
+                rendered = fixHtmlPost(rendered).replace(new RegExp(config.url + '/', 'gm'), '/');
+                write(dest, rendered);
+                const content = rendered.replace('</body>', preview + '</body>');
+                res.setHeader('Content-Type', 'text/html');
+                console.log('pre-processed', pathname);
+                res.end(content);
+              });
+            } catch (error) {
+              return res.end(readFileSync(file));
             }
-            // parse markdown metadata
-            const parsed = modifyPost(parsePost(md));
-            // render markdown post
-            return renderer(parsed).then((rendered) => {
-              rendered = fixHtmlPost(rendered);
-              write(dest, rendered);
-              const content = rendered.replace('</body>', preview + '</body>');
-              res.setHeader('Content-Type', 'text/html');
-              console.log('pre-processed', pathname);
-              res.end(content);
-            });
           }
         }
       }
@@ -79,5 +92,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     },
   },
 ];
-
+if (config.server.compress) {
+  // push compression to first index
+  ServerMiddleWare.unshift.apply(compress());
+}
 export default ServerMiddleWare;

@@ -126,26 +126,12 @@ table {
 	Table Generic Styling, for Desktops/Laptops
 */
 table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-/* Table Zebra striping */
-tr:nth-of-type(odd) {
-	background: #eee;
-}
-
-th {
-	background: #333;
-	color: white;
-	font-weight: bold;
-}
-
-td,
-th {
-	padding: 6px;
-	border: 1px solid #ccc;
-	text-align: left;
+  margin: 0 auto;
+  width: 100%;
+  clear: both;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap:break-word;
 }
 
 header {
@@ -368,6 +354,10 @@ ul.style .first {
 	display: block;
 	margin-bottom: 2em;
 	font-size: 1.4em;
+}
+
+#featured img {
+	height: 200px;
 }
 
 /*********************************************************************************/

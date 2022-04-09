@@ -4,6 +4,7 @@ import { ChildProcess } from 'child_process';
 import spawn from 'cross-spawn';
 import gulp from 'gulp';
 import { join, write } from './src/node/filemanager';
+import ServerMiddleWare from './src/gulp/server/middleware';
 import config from './src/types/_config';
 import 'js-prototypes';
 //import './src/generator';
@@ -14,18 +15,7 @@ gulp.task('server', () => {
     server: './' + config.public_dir,
     port: config.server.port,
     open: false,
-    middleware: [
-      {
-        route: '/api',
-        handle: function (req, res, next) {
-          // write source/.guid
-          if (req.url.includes('generate')) write(join(__dirname, config.source_dir, '.guid'), new Date());
-          // write public_dir/.guid
-          if (req.url.includes('copy')) write(join(__dirname, config.public_dir, '.guid'), new Date());
-          next();
-        },
-      },
-    ],
+    middleware: ServerMiddleWare,
   });
 
   // handling spawner to reduce memory usages

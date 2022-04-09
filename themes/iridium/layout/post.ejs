@@ -7,7 +7,7 @@
 			<!-- Logo -->
 			<div id="logo">
 				<h1><a href="<%- page.url %>"><%- config.title %></a></h1>
-				<span><%- page.title %> by <%- author_name(page)||author_name(config) %></span>
+				<span><%- page.title %> <%- page.webtitle %> by <%- author_name(page)||author_name(config) %></span>
 			</div>
 
 			<%- include('partial/nav') %>

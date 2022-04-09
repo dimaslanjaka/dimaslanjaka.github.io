@@ -1,17 +1,74 @@
-import { join, readFileSync, write } from '../../node/filemanager';
-import config from '../../types/_config';
+import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
+import config, { post_generated_dir, post_public_dir } from '../../types/_config';
 import 'js-prototypes';
 import '../../node/cache-serialize';
 import ejs_object from '../../ejs';
-
+import gulp from 'gulp';
+import { parsePost } from '../../markdown/transformPosts';
+import { modifyPost } from '../tasks/copy';
+import { renderer } from '../tasks/generate';
+let gulpIndicator = false;
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
+  async function (req, res, next) {
+    const pathname = req.url;
+    if (!/\/api/.test(pathname)) {
+      /*res.writeHead(302, {
+        Location: '/src/public/index.html#/App1/Dashboard',
+      });
+      res.end();*/
+
+      if (pathname.endsWith('.html')) {
+        // find post and pages
+        const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
+          s.replace(/.html$/, '.md')
+        );
+        for (let index = 0; index < sourceMD.length; index++) {
+          const md = sourceMD[index];
+          const dest = join(post_generated_dir, md.replaceArr([join(cwd(), 'source/', '_posts/')], ''));
+          // start generating
+          if (existsSync(md)) {
+            // pre-process markdown
+            if (!gulpIndicator) {
+              gulpIndicator = true;
+              gulp.series('generate:assets', 'generate:template')(() => (gulpIndicator = false));
+            }
+            // parse markdown metadata
+            const parsed = modifyPost(parsePost(md));
+            // render markdown post
+            const rendered = await renderer(parsed);
+
+            const preview = `
+            <style>#preview {
+              position: relative;
+          }
+          #preview img {
+              position: absolute;
+              top: 0px;
+              right: 0px;
+          }</style>
+
+          <div id="preview">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/preview-6-458363.png" class="ribbon"/>
+              <div>Preview</div>
+          </div>
+          `;
+            write(dest, rendered.replace('</body>', preview + '</body>'));
+          }
+          // show previous generated
+          if (existsSync(dest)) return res.end(readFileSync(dest));
+        }
+      }
+    }
+    // skip
+    next();
+  },
   {
     route: '/api',
     handle: function (req, res, next) {
       // write source/.guid
-      if (req.url.includes('generate')) write(join(__dirname, config.source_dir, '.guid'), new Date());
+      if (req.url.includes('generate')) write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() => console.log('gulp generate start'));
       // write public_dir/.guid
-      if (req.url.includes('copy')) write(join(__dirname, config.public_dir, '.guid'), new Date());
+      if (req.url.includes('copy')) write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
       res.writeHead(200, {
         'Content-Type': 'text/plain',
       });

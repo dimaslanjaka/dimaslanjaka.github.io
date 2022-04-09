@@ -4,6 +4,7 @@
  * @author <Dimas Lanjaka <dimaslanjaka@gmail.com>>
  */
 (function () {
+  const main = document.getElementById('main');
   ///// navbar controller
   const navs = document.querySelector('#nav');
   if (navs) {
@@ -30,23 +31,22 @@
       callback(this.width, this.height);
     };
   }
+  // lazy image resizer
   const indicators = {};
   document.addEventListener('scroll', function () {
     if (!indicators.images) {
       indicators.images = true;
-      const images = document.querySelectorAll('img');
+      const images = main.querySelectorAll('img');
       if (images.length) {
         images.forEach((img) => {
-          if (img.parentElement.tagName == 'A') {
-            getImageMeta(img.src, function (width, height) {
-              //console.log(width + 'px ' + height + 'px');
-              //img.width = width + 'px';
-              //img.height = height + 'px';
-              img.setAttribute('width', width + 'px');
-              //img.parentElement.replaceWith(img);
-              img.setAttribute('height', height + 'px');
-            });
-          }
+          getImageMeta(img.src, function (width, height) {
+            //console.log(width + 'px ' + height + 'px');
+            //img.width = width + 'px';
+            //img.height = height + 'px';
+            img.setAttribute('width', width + 'px');
+            //img.parentElement.replaceWith(img);
+            img.setAttribute('height', height + 'px');
+          });
         });
       }
     }

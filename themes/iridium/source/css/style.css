@@ -22,11 +22,16 @@ body {
 
 /* Browser specific (not valid) styles to make preformatted text wrap */
 pre {
-	white-space: pre-wrap;       /* css-3 */
-	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-	white-space: -pre-wrap;      /* Opera 4-6 */
-	white-space: -o-pre-wrap;    /* Opera 7 */
-	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	white-space: pre-wrap;
+	/* css-3 */
+	white-space: -moz-pre-wrap;
+	/* Mozilla, since 1999 */
+	white-space: -pre-wrap;
+	/* Opera 4-6 */
+	white-space: -o-pre-wrap;
+	/* Opera 7 */
+	word-wrap: break-word;
+	/* Internet Explorer 5.5+ */
 }
 
 img {
@@ -115,6 +120,32 @@ ol,
 dl,
 table {
 	margin-bottom: 1em;
+}
+
+/*
+	Table Generic Styling, for Desktops/Laptops
+*/
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* Table Zebra striping */
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+th {
+	background: #333;
+	color: white;
+	font-weight: bold;
+}
+
+td,
+th {
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: left;
 }
 
 header {

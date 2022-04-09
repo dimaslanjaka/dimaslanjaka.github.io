@@ -6,7 +6,7 @@
  */
 
 import 'js-prototypes';
-import { statSync, cwd, dirname, removeMultiSlashes } from '../../node/filemanager';
+import { statSync, cwd, dirname, removeMultiSlashes, existsSync } from '../../node/filemanager';
 import moment from 'moment';
 import { buildPost, parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import replaceMD2HTML from '../fix/hyperlinks';
@@ -62,10 +62,12 @@ function modifyPostOri(parse: parsePostReturn) {
       parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
     }
 
-    const stats = statSync(sourceFile);
-    if (!parse.metadata.updated) {
-      const mtime = stats.mtime;
-      parse.metadata.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+    if (existsSync(sourceFile)) {
+      const stats = statSync(sourceFile);
+      if (!parse.metadata.updated) {
+        const mtime = stats.mtime;
+        parse.metadata.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+      }
     }
 
     if (parse.metadata.date && !parse.metadata.date.includes('+')) {

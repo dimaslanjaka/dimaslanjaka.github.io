@@ -12,10 +12,12 @@ import fixHtmlPost from '../tasks/generate-after';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
+const homepage = new URL(config.url);
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
-    const pathname = req.url;
+    homepage.pathname = req.url; // let URL instance parse the url
+    const pathname = homepage.pathname; // just get pathname
     if (!/\/api/.test(pathname)) {
       /*res.writeHead(302, {
         Location: '/src/public/index.html#/App1/Dashboard',

@@ -146,9 +146,14 @@ export function parsePostOri(text: string): parsePostReturn | null {
     }
 
     if (isFile) {
-      meta.permalink = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/');
+      // setup permalink
+      homepage.pathname = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/').replace(/\/+/, '/');
+      meta.permalink = homepage.pathname;
       homepage.pathname = meta.permalink;
       meta.url = homepage.toString();
+
+      // determine post type
+      meta.type = toUnix(originalArg).match(/(_posts|src-posts)\//) ? 'post' : 'page';
     }
     const result: parsePostReturn = {
       metadata: meta,

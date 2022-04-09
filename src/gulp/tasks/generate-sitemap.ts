@@ -69,6 +69,7 @@ function generateSitemapHtml(done?: TaskCallback) {
       return `<a href="${fixURLSitemap(item.url).pathname}">${item.title}</a>`;
     })
     .then((items) => {
+      if (!items.length) return console.log(log, 'sitemap item empty');
       const content = items.join('<br/>');
       const opt: parsePostReturn = {
         metadata: {
@@ -79,9 +80,8 @@ function generateSitemapHtml(done?: TaskCallback) {
           updated: moment().format(),
           category: [],
           tags: [],
+          body: content,
         },
-        body: content || '',
-        content: content || '',
         fileTree: {
           source: join(cwd(), '.guid'),
           public: join(cwd(), '.guid'),

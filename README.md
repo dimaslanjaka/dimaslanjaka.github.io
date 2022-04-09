@@ -51,6 +51,6 @@ gulp server --nocache # development without reading cache, instead write fresh c
 - whatsapp +6285655667573
 
 ## incoming terms
-- static blog generator
-- termux static blog generator
-- simple static blog generator
+- nodejs static blog generator
+- nodejs termux static blog generator
+- nodejs simple static blog generator

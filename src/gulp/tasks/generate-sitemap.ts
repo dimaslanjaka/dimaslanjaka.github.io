@@ -71,6 +71,8 @@ function generateSitemapHtml(done?: TaskCallback) {
     .then((items) => {
       if (!items.length) return console.log(log, 'sitemap item empty');
       const content = items.join('<br/>');
+      const url = new URL(config.url);
+      url.pathname = '/sitemap.html';
       const opt: parsePostReturn = {
         metadata: {
           title: 'Sitemap',
@@ -79,6 +81,7 @@ function generateSitemapHtml(done?: TaskCallback) {
           updated: moment().format(),
           category: [],
           tags: [],
+          url: url.toString(),
         },
         body: content,
         content: content,

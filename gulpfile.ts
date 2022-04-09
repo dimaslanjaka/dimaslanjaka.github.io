@@ -8,10 +8,11 @@ import ServerMiddleWare from './src/gulp/server/middleware';
 import config from './src/types/_config';
 import 'js-prototypes';
 import './src/generator';
+import { TaskCallback } from 'undertaker';
 
 const browserSync = createServer();
-gulp.task('server', function () {
-  browserSync.init({
+gulp.task('server', function (done?: TaskCallback) {
+  const bsi = browserSync.init({
     server: './' + config.public_dir,
     port: config.server.port,
     open: false,
@@ -49,5 +50,5 @@ gulp.task('server', function () {
   });
   // watch public dir/.guid to reload browsersync
   //gulp.watch(join(config.public_dir, '.guid')).on('change', browserSync.reload);
-  return Promise.resolve();
+  done();
 });

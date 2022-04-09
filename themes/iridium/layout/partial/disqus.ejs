@@ -38,7 +38,7 @@
     disqusConfig: function () {
       this.page.title = '<%- page.title %>';
       this.page.url = '<%- page.url %>';
-      this.page.identifier = new URL(disqus_url).pathname;
+      this.page.identifier = new URL('<%- page.url %>').pathname;
     }
   };
 

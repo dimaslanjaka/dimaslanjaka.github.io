@@ -51,6 +51,8 @@ const allPosts = Bluebird.all(postCache.getAll())
   })
   // filter unecessary files
   .filter((post) => {
+    if (!post) return false;
+    if (!post.metadata) return false;
     const u = post.metadata.url;
     const ex = {
       /**
@@ -238,7 +240,7 @@ async function generateIndex(done?: TaskCallback) {
   const buildStr = [latestTag, latestCat, latestPost, latestPage];
   const buildXML = readXML.replace(/<sitemap>+[\s\S\n]*<\/sitemap>/gm, buildStr.join('\n'));
   write(join(post_generated_dir, 'sitemap.xml'), buildXML).then((f) => {
-    console.log(f);
+    console.log(logname, f);
     if (typeof done == 'function') done();
   });
 }

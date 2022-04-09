@@ -26,17 +26,65 @@
 							<h2><%- page.title %></h2>
 							<span class="byline"><%- excerpt(page) %></span>
 						</header>
+
+						<% if (typeof sitedata != 'undefined') { %>
 						<!--setup sitedata for tags and categories-->
 						<script id="sitedata" type="application/json"><%- sitedata||'[]' %></script>
+						<!--parse site data archive (if exist)-->
+						<div class="container" id="archive-posts"></div>
+						<script>
+							(function () {
+								var data = JSON.parse(document.getElementById('sitedata').textContent);
+								// generate infinite scroll for tags and categories archive
+								if (data && data.length) {
+									console.log(data);
+									var total = data.length;
+									var listElm = document.querySelector('#archive-posts');
+									var loadMore = function () {
+										var grid = '<div class="row">';
+										for (var i = 0; i < 2; i++) {
+											var item = data[i];
+											grid += `<div class="4u">
+									<h2>${item.title}</h2>
+									<a href="${item.url}" class="image full"><img src="${item.thumbnail}" alt="${item.title}"></a>
+									<p>${item.excerpt}</p>
+									<p><a href="${item.url}" class="button">More Details</a>
+									</p>
+								</div>`;
+											//listElm.innerHTML += str;
+											//listElm.appendChild(item);
+										}
+										listElm.innerHTML += grid;
+									}
+
+									// Detect when scrolled to bottom.
+									listElm.addEventListener('scroll', function () {
+										if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+											loadMore();
+										}
+									});
+
+									// Initially load some items.
+									loadMore();
+								}
+							})()
+						</script>
+						<style>
+							#archive-posts {
+								overflow: auto;
+							}
+							#archive-posts img {
+								width: 480px;
+								height: 250px;
+							}
+							#archive-posts h2 {
+								height: 80px;
+							}
+						</style>
+						<% } %>
 						<!--setup default page content for custom page markdown-->
 						<%- page.body||page.content %>
-						<!--parse site data archive (if exist)-->
-						<div id="archivedata"></div>
-						<script>
-							var data = JSON.parse(document.getElementById('sitedata').textContent);
-							// generate infinite scroll for tags and categories archive
-							if (data && data.length){}
-						</script>
+
 					</section>
 				</div>
 
@@ -49,25 +97,25 @@
 						<ul class="style">
 							<li>
 								<p class="posted">August 11, 2002 | (10 ) Comments</p>
-								<img src="images/pic04.jpg" alt="" />
+								<img src="/images/pic04.jpg" alt="" />
 								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
 									enim.</p>
 							</li>
 							<li>
 								<p class="posted">August 11, 2002 | (10 ) Comments</p>
-								<img src="images/pic05.jpg" alt="" />
+								<img src="/images/pic05.jpg" alt="" />
 								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
 									enim.</p>
 							</li>
 							<li>
 								<p class="posted">August 11, 2002 | (10 ) Comments</p>
-								<img src="images/pic06.jpg" alt="" />
+								<img src="/images/pic06.jpg" alt="" />
 								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
 									enim.</p>
 							</li>
 							<li>
 								<p class="posted">August 11, 2002 | (10 ) Comments</p>
-								<img src="images/pic05.jpg" alt="" />
+								<img src="/images/pic05.jpg" alt="" />
 								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
 									enim.</p>
 							</li>

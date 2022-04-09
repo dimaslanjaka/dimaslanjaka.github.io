@@ -2,9 +2,9 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
-import config, { root, theme_config, theme_dir } from '../../types/_config';
+import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
 import ejs_object from '../../ejs';
-import { parsePost, parsePostReturn } from '../../markdown/transformPosts';
+import { buildPost, parsePost, parsePostReturn } from '../../markdown/transformPosts';
 import chalk from 'chalk';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
@@ -106,8 +106,9 @@ export const renderArticle = function () {
         };
         // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && !nocache;
-
-        const merge = Object.assign(result, modifyPost(parsePost(result.path)), result.path);
+        const modify = modifyPost(parsePost(result.path));
+        if (result.path.includes('Grid')) write(tmp('modify.md'), buildPost(modify)).then(console.log);
+        const merge = Object.assign(result, modify, result.path);
         if (typeof merge.metadata.url == 'string') {
           const url = new URL(merge.metadata.url);
           url.pathname = url.pathname.replace(/\/+/, '/');
@@ -180,7 +181,7 @@ export const renderArticle = function () {
 
 gulp.task('generate:posts', renderArticle);
 
-gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:after', 'generate:sitemap'));
+gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:after', 'generate:archive', 'generate:sitemap'));
 
 const helpers = {
   css: (path: string, attributes: DynamicObject = {}) => {

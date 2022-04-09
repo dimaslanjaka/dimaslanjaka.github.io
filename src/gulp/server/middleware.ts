@@ -26,6 +26,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       res.setHeader('Cache-Control', 'post-check=0, pre-check=0');
       res.setHeader('Pragma', 'no-cache');
     }
+
     if (!/\/api/.test(pathname)) {
       /*res.writeHead(302, {
         Location: '/src/public/index.html#/App1/Dashboard',
@@ -33,14 +34,17 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       res.end();*/
 
       if (pathname.match(/(.html|\/)$/)) {
+        res.setHeader('Content-Type', 'text/html');
         // find post and pages
         const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
           s.replace(/.html$/, '.md')
         );
         sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
         for (let index = 0; index < sourceMD.length; index++) {
-          const file = sourceMD[index];
+          let file = sourceMD[index];
           const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
+          if (file.endsWith('/')) file += 'index.html';
+
           // start generating
           if (existsSync(file)) {
             try {
@@ -51,16 +55,18 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               }
               // parse markdown metadata
               const parsed = modifyPost(parsePost(file));
+              console.log(parsed);
               // render markdown post
               return renderer(parsed).then((rendered) => {
                 rendered = fixHtmlPost(rendered).replace(new RegExp(config.url + '/', 'gm'), '/');
                 write(dest, rendered);
                 const content = rendered.replace('</body>', preview + '</body>');
-                res.setHeader('Content-Type', 'text/html');
+
                 console.log('pre-processed', pathname);
                 res.end(content);
               });
             } catch (error) {
+              console.error(error);
               return res.end(readFileSync(file));
             }
           }

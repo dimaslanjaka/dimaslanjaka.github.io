@@ -4,7 +4,7 @@ import { thumbnail } from '../../ejs/helper/thumbnail';
 import { parsePostReturn } from '../../markdown/transformPosts';
 import CachePost from '../../node/cache-post';
 import { cwd, join, write } from '../../node/filemanager';
-import config from '../../types/_config';
+import config, { tmp } from '../../types/_config';
 import 'js-prototypes';
 import { modifyPost } from './copy';
 import { renderer } from './generate';
@@ -14,6 +14,7 @@ import { excerpt } from '../../ejs/helper/excerpt';
 
 const posts = new CachePost();
 const generated_tag_dir = join(cwd(), config.public_dir, config.tag_dir);
+const homepage = new URL(config.url);
 const all = Bluebird.all(posts.getAll());
 /** all generated tags dir */
 type ArchivePost = {
@@ -28,6 +29,11 @@ function generateArchiveTag(done?: TaskCallback) {
   const tag_posts: { [key: string]: ArchivePost[] } = {};
 
   all
+    .filter((item) => {
+      if (!item) return false;
+      if (!item.metadata) return false;
+      return true;
+    })
     .each((post: parsePostReturn) => {
       if (post.metadata.tags.length) {
         post.metadata.tags.removeEmpties().forEach((tag) => {
@@ -54,6 +60,7 @@ function generateArchiveTag(done?: TaskCallback) {
         if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
           const posts = tag_posts[tagname];
           const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
+          homepage.pathname = join(config.tag_dir, 'index.html');
 
           const opt: parsePostReturn = {
             metadata: {
@@ -64,14 +71,15 @@ function generateArchiveTag(done?: TaskCallback) {
               category: [],
               tags: [],
               type: 'archive',
+              url: homepage.toString(),
             },
             /** setup sitedata array as json */
             sitedata: JSON.stringifyWithCircularRefs(posts),
             body: '',
             content: '',
             fileTree: {
-              source: join(cwd(), '.guid'),
-              public: join(cwd(), '.guid'),
+              source: tagPermalink,
+              public: join(tmp(), tagPermalink),
             },
           };
           const mod = modifyPost(opt);

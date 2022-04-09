@@ -6,8 +6,8 @@
 
 			<!-- Logo -->
 			<div id="logo">
-				<h1><a href="#">Iridium</a></h1>
-				<span>Design by TEMPLATED</span>
+				<h1><a href="<%- page.url %>"><%- config.title %></a></h1>
+				<span><%- page.title %> <%- page.webtitle %> by <%- author_name(page)||author_name(config) %></span>
 			</div>
 
 			<%- include('partial/nav') %>

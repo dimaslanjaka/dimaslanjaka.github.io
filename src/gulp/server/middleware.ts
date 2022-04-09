@@ -7,7 +7,12 @@ import gulp from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
 import { modifyPost } from '../tasks/copy';
 import { renderer } from '../tasks/generate';
+import chalk from 'chalk';
+import { toUnix } from 'upath';
+
 let gulpIndicator = false;
+const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
+
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
     const pathname = req.url;
@@ -24,7 +29,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         );
         for (let index = 0; index < sourceMD.length; index++) {
           const md = sourceMD[index];
-          const dest = join(post_generated_dir, md.replaceArr([join(cwd(), 'source/', '_posts/')], ''));
+          const dest = join(post_generated_dir, toUnix(md).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
           // start generating
           if (existsSync(md)) {
             // pre-process markdown
@@ -35,24 +40,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
             // parse markdown metadata
             const parsed = modifyPost(parsePost(md));
             // render markdown post
-            const rendered = await renderer(parsed);
-
-            const preview = `
-            <style>#preview {
-              position: relative;
-          }
-          #preview img {
-              position: absolute;
-              top: 0px;
-              right: 0px;
-          }</style>
-
-          <div id="preview">
-              <img src="https://cdn.iconscout.com/icon/free/png-256/preview-6-458363.png" class="ribbon"/>
-              <div>Preview</div>
-          </div>
-          `;
-            write(dest, rendered.replace('</body>', preview + '</body>'));
+            renderer(parsed).then((rendered) => write(dest, rendered.replace('</body>', preview + '</body>')).then((f) => console.log(chalk.blueBright('preview saved'), f)));
           }
           // show previous generated
           if (existsSync(dest)) return res.end(readFileSync(dest));

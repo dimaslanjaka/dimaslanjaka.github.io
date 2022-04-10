@@ -20,6 +20,7 @@ if (!config.skip_render) config.skip_render = [];
 if (process.env.NODE_ENV == 'development') {
   config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
 }
+config.url = config.url.replace(/\/+$/, '');
 
 /**
  * Public Source Post Dir (`source/_posts`)

@@ -24,7 +24,7 @@ function showPreview(str: string | Buffer) {
   const dom = new JSDOM(str);
   dom.window.document.body.innerHTML += preview;
   let body = dom.serialize();
-  body = body.replace(new RegExp(config.url + '/', 'gm'), '/');
+  body = body.replace(new RegExp(config.url + '/', 'gm'), '/').replace(new RegExp(config.url, 'gm'), '');
   dom.window.close();
   return body;
 }

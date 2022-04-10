@@ -57,11 +57,20 @@ new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
-  enable: true # Open external links in new tab
+  # true: Open ext in new tab, rel nofollow
+  enable: true
   # site: apply to the whole site
   # post: apply only to post
   field: site
-  safelink: true
+  safelink:
+    # enable salink redirector
+    enable: true
+    # all external links should be redirected from this page
+    # below path located in source/page/safelink.html
+    path: /page/safelink.html
+    # safelink query. below query should be /page/safelink.html?url=
+    query: url
+  # exclude host from external link filter
   exclude:
     - webmanajemen.com
     - web-manajemen.blogspot.com

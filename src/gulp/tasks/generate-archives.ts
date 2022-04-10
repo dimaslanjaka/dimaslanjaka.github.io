@@ -99,7 +99,7 @@ function generateArchive(done?: TaskCallback) {
               url: homepage.toString(),
             },
             /** setup sitedata array as json */
-            sitedata: JSON.stringifyWithCircularRefs(posts),
+            sitedata: JSON.stringify(posts),
             body: '',
             content: '',
             fileTree: {
@@ -132,7 +132,7 @@ function generateArchive(done?: TaskCallback) {
               url: homepage.toString(),
             },
             /** setup sitedata array as json */
-            sitedata: JSON.stringifyWithCircularRefs(posts),
+            sitedata: JSON.stringify(posts),
             body: '',
             content: '',
             fileTree: {
@@ -176,7 +176,7 @@ function generateIndex(done?: TaskCallback) {
           url: homepage.toString(),
         },
         /** setup sitedata array as json */
-        sitedata: JSON.stringifyWithCircularRefs(sitedata),
+        sitedata: JSON.stringify(sitedata),
         body: '',
         content: '',
         fileTree: {

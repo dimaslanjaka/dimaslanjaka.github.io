@@ -59,11 +59,11 @@ export function filter_external_links(href: string, debug = false) {
      *  javascript anchors, dot anchors, hash header
      */
     const isExternal = href.trim().isMatch(new RegExp('^(https?)://'));
-    const isInternal = href.trim().isMatch(/^(\.+|\#|javascript:)/i) && !isExternal;
+    const isInternal = href.trim().isMatch(/^(\.+|#|(javascript|mailto|mail):)/i) && !isExternal;
     const isLength = href.trim().length > 0;
     const isAllowed = isExternal && isLength;
-    if (href.includes('seoserp')) {
-      console.log(isInternal, isExternal, isAllowed);
+    if (debug) {
+      console.log(isInternal, isExternal, isAllowed, href);
     }
 
     // skip hash and
@@ -79,8 +79,8 @@ export function filter_external_links(href: string, debug = false) {
          */
         const matchHref = internal_links.includes(href);
         result.internal = matchHost;
-        if (href.includes('seoserp')) {
-          console.log(!matchHost, !matchHref);
+        if (debug) {
+          console.log(!matchHost, !matchHref, href);
         }
         if (!matchHost && !matchHref) {
           result.href = '/page/safelink.html?url=' + Buffer.from(encodeURIComponent(href)).toString('base64');
@@ -137,7 +137,7 @@ const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
 
   const file = files[0];
   const content = readFileSync(file, 'utf-8');
-  const debug = strMatch(file, 'see-blog-position-in-search');
+  const debug = false; //strMatch(file, 'see-blog-position-in-search');
   const result = fixHtmlPost(content, debug);
   writeFileSync(file, result);
   return skip();

@@ -50,5 +50,5 @@ gulp.task('server', function (done?: TaskCallback) {
   });
   // watch public dir/.guid to reload browsersync
   //gulp.watch(join(config.public_dir, '.guid')).on('change', browserSync.reload);
-  done();
+  return Promise.resolve(bsi);
 });

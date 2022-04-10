@@ -1,9 +1,9 @@
-# SBG (Static Blog Generator)
+# SBG (Static Blog Generator) Project
 Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
 
 <details>
   <summary>Walkthrough</summary>
-  
+
   ## Project Walkthrough
   - I switched platforms from blogger to github page.
   ![image](https://user-images.githubusercontent.com/12471057/162500759-7bf0931e-ea5c-4925-b1cb-1653c9ba00bc.png)
@@ -25,6 +25,14 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)
 - 1000+ posts supported
 - cross-platform supported (linux recommended) (android termux need c++ for packages including: jsdom, node-libcurl, imagemin, etc)
+
+## Installation
+```bash
+git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
+cd foldername
+mkdir tmp
+npm install
+```
 
 ## project structure
 - `src-posts/` contains all original posts with markdown formats

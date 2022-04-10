@@ -83,10 +83,6 @@
     }
   </style>
 
-  
-  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
-  
-
 
 
 
@@ -142,7 +138,7 @@
 							<a href="#" class="image full"><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg" alt="Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin" /></a>
 							-->
 
-						<p>Terkadang kita perlu mengeksekusi skrip PHP di widget teks namun secara default WordPress tidak hadir dengan fitur ini karena masalah keamanan.<br></p><div class="separator" style="clear: both; text-align: center;"><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZyZXMuY2xvdWRpbmFyeS5jb20lMkZkaW1hc2xhbmpha2ElMkZpbWFnZSUyRmZldGNoJTJGaHR0cCUzQSUyRiUyRnd3dy53cHN0dWZmcy5jb20lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMTMlMkYwNSUyRnBocC13b3JkcHJlc3MtMzAweDE5Ny5qcGc=" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="nofollow noopener noreferer" target="_blank"><img border="0" data-original-height="197" data-original-width="300" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg"></a></div>Anda bisa menggunakan beberapa plugin seperti PHP Text Widget dan PHP Code widget tapi mengapa ada orang yang menggunakannya saat kita bisa melakukannya dalam sepersekian detik. Anda tahu apa, Butuh waktu jauh lebih sedikit daripada memasang plugin.<br><br>Edit file functions.php dari tema Anda saat ini dan tambahkan kode berikut di bagian akhir file.<br><pre>//Run php on text widget<br>function php_execute($html){<br>if(strpos($html,“&lt;”.“?php”)!==false){ ob_start(); eval(“?”.“&gt;”.$html);<br>$html=ob_get_contents();<br>ob_end_clean();<br>}<br>return $html;<br>}<br>add_filter(‘widget_text’,‘php_execute’,100);</pre>Sekarang hapus cache jika Anda menggunakan Plugin Cache seperti cache WPSuper Cache atau W3 Total.<br><br>Untuk mengecek kerja, Tempel kode PHP berikut di widget teks<br><pre>&lt;? Php echo ‘Halo Dunia !!!’ ?&gt;</pre>Sekarang periksa tempat di mana Anda telah menempatkan widget, Anda harus melihat " <b>Hello World !!!</b> "<br><div class="separator" style="clear: both; text-align: center;"><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZyZXMuY2xvdWRpbmFyeS5jb20lMkZkaW1hc2xhbmpha2ElMkZpbWFnZSUyRmZldGNoJTJGaHR0cCUzQSUyRiUyRnd3dy53cHN0dWZmcy5jb20lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMTMlMkYwNSUyRmhlbGxvLXdvcmxkLXBocC13aWRnZXQucG5n" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="nofollow noopener noreferer" target="_blank"><img border="0" data-original-height="70" data-original-width="268" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/hello-world-php-widget.png"></a></div><br>Jika Anda ingin memahami kode itu kemudian kunjungi - <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ0cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tJTJGdHJhbnNsYXRlX2MlM0ZkZXB0aCUzRDIlMjZudiUzRDElMjZydXJsJTNEdHJhbnNsYXRlLmdvb2dsZS5jb20lMjZzbCUzRGVuJTI2c3AlM0RubXQ0JTI2dGwlM0RpZCUyNnUlM0RodHRwJTNBJTJGJTJGd3d3LmVtYW51ZWxlZmVyb25hdG8uY29tJTJGMjAxMSUyRjA0JTJGMTElMkZleGVjdXRpbmctcGhwLWluc2lkZS1hLXdvcmRwcmVzcy13aWRnZXQtd2l0aG91dC1hbnktcGx1Z2luJTJGJTI2dXNnJTNEQUxrSnJoaDM0YXhMRExBa0ZUNzNrYm1oZUNZZGxUSXZKdw==" target="_blank" rel="nofollow noopener noreferer"> Emanuele Feronato - italian geek dan PROgrammer</a>.<br><br>Via - <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ0cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tJTJGdHJhbnNsYXRlX2MlM0ZkZXB0aCUzRDIlMjZudiUzRDElMjZydXJsJTNEdHJhbnNsYXRlLmdvb2dsZS5jb20lMjZzbCUzRGVuJTI2c3AlM0RubXQ0JTI2dGwlM0RpZCUyNnUlM0RodHRwJTNBJTJGJTJGd3d3Lndwc3F1YXJlLmNvbSUyRmV4ZWN1dGUtcGhwLXdvcmRwcmVzcy10ZXh0LXdpZGdldC13aXRob3V0LXBsdWdpbiUyRiUyNnVzZyUzREFMa0pyaGdlWk5FTzEwQ29GUWZqd0pncGdwY09LRy11SkE=" target="_blank" rel="nofollow noopener noreferer"> WPSquare </a><p></p>
+						<p>Terkadang kita perlu mengeksekusi skrip PHP di widget teks namun secara default WordPress tidak hadir dengan fitur ini karena masalah keamanan.<br></p><div class="separator" style="clear: both; text-align: center;"><a href="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow"><img border="0" data-original-height="197" data-original-width="300" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg"></a></div>Anda bisa menggunakan beberapa plugin seperti PHP Text Widget dan PHP Code widget tapi mengapa ada orang yang menggunakannya saat kita bisa melakukannya dalam sepersekian detik. Anda tahu apa, Butuh waktu jauh lebih sedikit daripada memasang plugin.<br><br>Edit file functions.php dari tema Anda saat ini dan tambahkan kode berikut di bagian akhir file.<br><pre>//Run php on text widget<br>function php_execute($html){<br>if(strpos($html,“&lt;”.“?php”)!==false){ ob_start(); eval(“?”.“&gt;”.$html);<br>$html=ob_get_contents();<br>ob_end_clean();<br>}<br>return $html;<br>}<br>add_filter(‘widget_text’,‘php_execute’,100);</pre>Sekarang hapus cache jika Anda menggunakan Plugin Cache seperti cache WPSuper Cache atau W3 Total.<br><br>Untuk mengecek kerja, Tempel kode PHP berikut di widget teks<br><pre>&lt;? Php echo ‘Halo Dunia !!!’ ?&gt;</pre>Sekarang periksa tempat di mana Anda telah menempatkan widget, Anda harus melihat " <b>Hello World !!!</b> "<br><div class="separator" style="clear: both; text-align: center;"><a href="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/hello-world-php-widget.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow"><img border="0" data-original-height="70" data-original-width="268" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/hello-world-php-widget.png"></a></div><br>Jika Anda ingin memahami kode itu kemudian kunjungi - <a href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.emanueleferonato.com/2011/04/11/executing-php-inside-a-wordpress-widget-without-any-plugin/&amp;usg=ALkJrhh34axLDLAkFT73kbmheCYdlTIvJw" target="_blank" rel="noopener noreferer nofollow"> Emanuele Feronato - italian geek dan PROgrammer</a>.<br><br>Via - <a href="https://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.wpsquare.com/execute-php-wordpress-text-widget-without-plugin/&amp;usg=ALkJrhgeZNEO10CoFQfjwJgpgpcOKG-uJA" target="_blank" rel="noopener noreferer nofollow"> WPSquare </a><p></p>
 
 					</section>
 				</div>
@@ -180,6 +176,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Comment -->
 <div id="comment">
@@ -234,12 +231,13 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
     comments powered by Disqus.
   </a>
 </noscript>
   </div>
 </div>
+
 
 <!-- Footer -->
 <div id="footer">
@@ -300,6 +298,8 @@
   })();
 </script>
 <script src="/js/iridium.js"></script>
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
 <script>
@@ -309,6 +309,18 @@
 
   gtag('config', 'UA-106238155-1');
 </script>
+
+
+
+  <script type="text/javascript">//<![CDATA[
+    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+    //]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
 
 
 

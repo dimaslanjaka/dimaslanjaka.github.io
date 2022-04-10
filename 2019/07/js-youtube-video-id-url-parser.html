@@ -81,10 +81,6 @@
     }
   </style>
 
-  
-  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
-  
-
 
 
 
@@ -136,7 +132,7 @@
 							<a href="#" class="image full"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" alt="[JS] Youtube Video ID URL Parser" /></a>
 							-->
 
-						<div dir="ltr" style="text-align: left;" trbidi="on"><b>Extract video id from youtube URL with javascript function</b> <pre><br>function youtube_parser(url){<br>    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&amp;\?]*).*/;<br>    var match = url.match(regExp);<br>    if (match&amp;&amp;match[7].length==11) { return match[7]}<br>  <br>  var regExp2 = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&amp;v=)([^#\&amp;\?]*).*/;<br>  var match2 = url.match(regExp2);<br>  if (match2 &amp;&amp; match2[2].length == 11) {<br>    return match2[2];<br>  }<br>  <br>  var regex = /(?:[?&amp;]v=|\/embed\/|\/1\/|\/v\/|https?:\/\/(?:www\.)?youtu\.be\/)([^&amp;\n?#]+)/gm;<br>  let m = regex.exec(url);<br>  if (m[1].length){<br>    return m[1];<br>  }<br>  <br>  return url+' --failed--';<br>}<br>console.clear()<br>var n = [<br>  'http://www.youtube.com/watch?v=0zMd3nApSvMg&amp;feature=feedrec_grec_index', <br>  'http://www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/QdK8U-VIH_o', <br>  'http://www.youtube.com/v/0zM3nApSvMg?fs=1&amp;amp;hl=en_US&amp;amp;rel=0',<br>  'http://www.youtube.com/watch?v=0zMg3nApSvMg#t=0m10s',<br>  'http://www.youtube.com/embed/0zM3nApdSvMg?rel=0',<br>  'http://www.youtube.com/watch?v=0zM3nAxpSvMg',<br>  'http://youtu.be/0zM3nApgSvMg'<br>];<br>  n.forEach(function(i){<br>  document.write(youtube_parser(i)+'&lt;br&gt;')<br>});<br></pre> <b>demo</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="BggxgP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Youtube URL Parser">  <span>See the Pen <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJGZGltYXNsYW5qYWthJTJGcGVuJTJGQmdneGdQJTJG" rel="nofollow noopener noreferer" target="_blank">  Youtube URL Parser</a> by dimas lanjaka (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJGZGltYXNsYW5qYWth" rel="nofollow noopener noreferer" target="_blank">@dimaslanjaka</a>)   on <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlv" rel="nofollow noopener noreferer" target="_blank">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+						<div dir="ltr" style="text-align: left;" trbidi="on"><b>Extract video id from youtube URL with javascript function</b> <pre><br>function youtube_parser(url){<br>    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&amp;\?]*).*/;<br>    var match = url.match(regExp);<br>    if (match&amp;&amp;match[7].length==11) { return match[7]}<br>  <br>  var regExp2 = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&amp;v=)([^#\&amp;\?]*).*/;<br>  var match2 = url.match(regExp2);<br>  if (match2 &amp;&amp; match2[2].length == 11) {<br>    return match2[2];<br>  }<br>  <br>  var regex = /(?:[?&amp;]v=|\/embed\/|\/1\/|\/v\/|https?:\/\/(?:www\.)?youtu\.be\/)([^&amp;\n?#]+)/gm;<br>  let m = regex.exec(url);<br>  if (m[1].length){<br>    return m[1];<br>  }<br>  <br>  return url+' --failed--';<br>}<br>console.clear()<br>var n = [<br>  'http://www.youtube.com/watch?v=0zMd3nApSvMg&amp;feature=feedrec_grec_index', <br>  'http://www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/QdK8U-VIH_o', <br>  'http://www.youtube.com/v/0zM3nApSvMg?fs=1&amp;amp;hl=en_US&amp;amp;rel=0',<br>  'http://www.youtube.com/watch?v=0zMg3nApSvMg#t=0m10s',<br>  'http://www.youtube.com/embed/0zM3nApdSvMg?rel=0',<br>  'http://www.youtube.com/watch?v=0zM3nAxpSvMg',<br>  'http://youtu.be/0zM3nApgSvMg'<br>];<br>  n.forEach(function(i){<br>  document.write(youtube_parser(i)+'&lt;br&gt;')<br>});<br></pre> <b>demo</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="BggxgP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Youtube URL Parser">  <span>See the Pen <a href="https://codepen.io/dimaslanjaka/pen/BggxgP/" rel="noopener noreferer nofollow">  Youtube URL Parser</a> by dimas lanjaka (<a href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow">@dimaslanjaka</a>)   on <a href="https://codepen.io" rel="noopener noreferer nofollow">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
 					</section>
 				</div>
 
@@ -173,6 +169,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Comment -->
 <div id="comment">
@@ -227,12 +224,13 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
     comments powered by Disqus.
   </a>
 </noscript>
   </div>
 </div>
+
 
 <!-- Footer -->
 <div id="footer">
@@ -293,6 +291,8 @@
   })();
 </script>
 <script src="/js/iridium.js"></script>
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
 <script>
@@ -302,6 +302,18 @@
 
   gtag('config', 'UA-106238155-1');
 </script>
+
+
+
+  <script type="text/javascript">//<![CDATA[
+    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+    //]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
 
 
 

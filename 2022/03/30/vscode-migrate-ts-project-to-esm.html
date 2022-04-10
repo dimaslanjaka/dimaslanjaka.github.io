@@ -79,10 +79,6 @@
     }
   </style>
 
-  
-  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
-  
-
 
 
 
@@ -160,7 +156,7 @@
   }
 }
 </code></pre>
-<p>Default <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGZG9jcyUyRmhhbmRib29rJTJGZXNtLW5vZGUuaHRtbA==" rel="nofollow noopener noreferer" target="_blank">typescript documentation</a></p>
+<p>Default <a href="https://www.typescriptlang.org/docs/handbook/esm-node.html">typescript documentation</a></p>
 <pre><code class="language-jsonc">{
     "name": "my-package",
     "type": "module",
@@ -177,7 +173,7 @@
 }
 </code></pre>
 <ul>
-<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGZG9jcyUyRmhhbmRib29rJTJGZGVjbGFyYXRpb24tZmlsZXMlMkZwdWJsaXNoaW5nLmh0bWwlMjN2ZXJzaW9uLXNlbGVjdGlvbi13aXRoLXR5cGVzdmVyc2lvbnM=" rel="nofollow noopener noreferer" target="_blank"><code>"typesVersions"</code></a> performs the same mapping as <code>"exports"</code>, but for TypeScript’s type definitions.</li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions"><code>"typesVersions"</code></a> performs the same mapping as <code>"exports"</code>, but for TypeScript’s type definitions.</li>
 </ul>
 <h2 id="tsconfig-json" tabindex="-1"><a class="header-anchor" href="#tsconfig-json">tsconfig.json</a></h2>
 <p>match your configuration (points A, B, C)</p>
@@ -201,14 +197,14 @@
 }
 </code></pre>
 <ul>
-<li>Line A (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNtb2R1bGU=" rel="nofollow noopener noreferer" target="_blank"><code>"module"</code></a>): We are telling TypeScript to generate ECMAScript modules.
+<li>Line A (<a href="https://www.typescriptlang.org/tsconfig#module"><code>"module"</code></a>): We are telling TypeScript to generate ECMAScript modules.
 <ul>
 <li><code>"ES6"</code>, <code>"ES2015"</code>: support for basic ESM features</li>
 <li><code>"2020"</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
 </ul>
 </li>
-<li>Line B (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNtb2R1bGVSZXNvbHV0aW9u" rel="nofollow noopener noreferer" target="_blank"><code>"moduleResolution"</code></a>): This value is needed for Node.js.</li>
-<li>Line C (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNhbGxvd1N5bnRoZXRpY0RlZmF1bHRJbXBvcnRz" rel="nofollow noopener noreferer" target="_blank"><code>"allowSyntheticDefaultImports"</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
+<li>Line B (<a href="https://www.typescriptlang.org/tsconfig#moduleResolution"><code>"moduleResolution"</code></a>): This value is needed for Node.js.</li>
+<li>Line C (<a href="https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports"><code>"allowSyntheticDefaultImports"</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
 </ul>
 <h2 id="vs-code-settings-json" tabindex="-1"><a class="header-anchor" href="#vs-code-settings-json">VSCode settings.json</a></h2>
 <p>open your <code>settings.json</code> or <code>.vscode/settings.json</code>, add following keys</p>
@@ -281,6 +277,7 @@
   </div>
 </div>
 
+
 <!-- Comment -->
 <div id="comment">
   <div class="container">
@@ -334,12 +331,13 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
     comments powered by Disqus.
   </a>
 </noscript>
   </div>
 </div>
+
 
 <!-- Footer -->
 <div id="footer">
@@ -400,6 +398,8 @@
   })();
 </script>
 <script src="/js/iridium.js"></script>
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
 <script>
@@ -409,6 +409,18 @@
 
   gtag('config', 'UA-106238155-1');
 </script>
+
+
+
+  <script type="text/javascript">//<![CDATA[
+    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+    //]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
 
 
 

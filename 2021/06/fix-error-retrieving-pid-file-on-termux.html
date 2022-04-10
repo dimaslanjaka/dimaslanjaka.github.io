@@ -83,10 +83,6 @@
     }
   </style>
 
-  
-  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub--1165447249910969" crossorigin="anonymous"></script>
-  
-
 
 
 
@@ -142,7 +138,7 @@
 							<a href="#" class="image full"><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="Fix error retrieving pid file on termux apache" /></a>
 							-->
 
-						<div id="bootstrap-wrapper">	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>  <p>    Apache errors overview:     </p><pre><code><br>      (20014) Internal error (specific information not available):<br><br>      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid<br><br>      AH00059: Remove it before continuing if it is corrupted.<br>    </code></pre>    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.     <h5>Solution</h5>    <ul>      <li>Stop apache first         <pre><code class="lang-bash">apachectl stop</code></pre>      </li>      <li>        Change dir:         <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>      </li>      <li>Then delete the <b>httpd.pid</b> file:       <pre><code class="lang-bash">rm httpd.pid</code></pre>      </li>      <li>Or using this script:         <pre><code class="lang-bash"><br>          #<br>          # This script is part of the video,<br>          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and<br>          # it's intended to be used on Termux Android 32 bits in order to fix the issue,<br>          # https://github.com/termux/termux-packages/issues/1727<br>          # Before executing this script you must install termux-chroot see de video,<br>          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk<br>          #<br>          #!/usr/bin/env bash<br>          aps=$(pidof httpd)<br>          pidf=/var/run/apache2/httpd.pid<br>          [[ -f $pidf ]] &amp;&amp; rm -f $pidf<br>          [[ "$aps" != "" ]] &amp;&amp; kill -9 $aps<br>        </code></pre>      </li>    </ul>  <p></p>   <p>    Github issues:     </p><ul>      <li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJGdGVybXV4JTJGdGVybXV4LXBhY2thZ2VzJTJGaXNzdWVzJTJGMTcyNw==" target="_blank" rel="nofollow noopener noreferer">https://github.com/termux/termux-packages/issues/1727</a></li>      <li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZzdGFja292ZXJmbG93LmNvbSUyRnF1ZXN0aW9ucyUyRjI3ODYyNjY0JTJGMTNwZXJtaXNzaW9uLWRlbmllZC1lcnJvci1yZXRyaWV2aW5nLXBpZC1maWxlLXJ1bi1odHRwZC1waWQ=" target="_blank" rel="nofollow noopener noreferer">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>    </ul>  <p></p>   <p>    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">  </p></div><script>hljs.initHighlightingOnLoad();</script>
+						<div id="bootstrap-wrapper">	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>  <p>    Apache errors overview:     </p><pre><code><br>      (20014) Internal error (specific information not available):<br><br>      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid<br><br>      AH00059: Remove it before continuing if it is corrupted.<br>    </code></pre>    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.     <h5>Solution</h5>    <ul>      <li>Stop apache first         <pre><code class="lang-bash">apachectl stop</code></pre>      </li>      <li>        Change dir:         <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>      </li>      <li>Then delete the <b>httpd.pid</b> file:       <pre><code class="lang-bash">rm httpd.pid</code></pre>      </li>      <li>Or using this script:         <pre><code class="lang-bash"><br>          #<br>          # This script is part of the video,<br>          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and<br>          # it's intended to be used on Termux Android 32 bits in order to fix the issue,<br>          # https://github.com/termux/termux-packages/issues/1727<br>          # Before executing this script you must install termux-chroot see de video,<br>          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk<br>          #<br>          #!/usr/bin/env bash<br>          aps=$(pidof httpd)<br>          pidf=/var/run/apache2/httpd.pid<br>          [[ -f $pidf ]] &amp;&amp; rm -f $pidf<br>          [[ "$aps" != "" ]] &amp;&amp; kill -9 $aps<br>        </code></pre>      </li>    </ul>  <p></p>   <p>    Github issues:     </p><ul>      <li><a href="https://github.com/termux/termux-packages/issues/1727" target="_blank" rel="noopener noreferer nofollow">https://github.com/termux/termux-packages/issues/1727</a></li>      <li><a href="https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid" target="_blank" rel="noopener noreferer nofollow">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>    </ul>  <p></p>   <p>    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">  </p></div><script>hljs.initHighlightingOnLoad();</script>
 					</section>
 				</div>
 
@@ -179,6 +175,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Comment -->
 <div id="comment">
@@ -233,12 +230,13 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
     comments powered by Disqus.
   </a>
 </noscript>
   </div>
 </div>
+
 
 <!-- Footer -->
 <div id="footer">
@@ -299,6 +297,8 @@
   })();
 </script>
 <script src="/js/iridium.js"></script>
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
 <script>
@@ -308,6 +308,18 @@
 
   gtag('config', 'UA-106238155-1');
 </script>
+
+
+
+  <script type="text/javascript">//<![CDATA[
+    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+    //]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
 
 
 

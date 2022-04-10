@@ -39,3 +39,5 @@ gulp.task('generate:minify-html', (done?: TaskCallback) => {
     done
   );
 });
+
+gulp.task('generate:minify', gulp.series('generate:minify-html'));

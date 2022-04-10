@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-gulp copy:assets
-gulp copy:posts
-gulp generate:assets
-gulp generate:template
-gulp generate:posts
-gulp generate:sitemap
+gulp copy:assets "$@"
+gulp copy:posts "$@"
+gulp generate:assets "$@"
+gulp generate:template "$@"
+gulp generate:posts "$@"
+gulp generate:sitemap "$@"
+gulp generate:archive "$@"
+gulp generate:after "$@"
+gulp generate:minify "$@"

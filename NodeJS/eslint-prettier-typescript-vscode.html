@@ -41,27 +41,34 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="Eslint Prettier In Typescript Project Using Vscode">
 <meta property="og:url" content="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="How to configure eslint with prettier to automated lint and format codes in typescript project using vscode">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg">
+<!--article metadata-->
 <meta property="article:published_time" content="2021-11-28T07:00:00+07:00">
 <meta property="article:modified_time" content="2022-03-19T19:53:25+07:00">
 <meta property="article:author" content="Dimas Lanjaka">
 
-  <meta property="article:tag" content="JS">
+<meta property="article:tag" content="JS">
 
-  <meta property="article:tag" content="NodeJS">
+<meta property="article:tag" content="NodeJS">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -141,9 +148,9 @@
 						<h1 id="auto-lint-and-format-typescript-using-vs-code-with-eslint-and-prettier" tabindex="-1"><a class="header-anchor" href="#auto-lint-and-format-typescript-using-vs-code-with-eslint-and-prettier">Auto Lint And Format Typescript Using VSCode With Eslint And Prettier</a></h1>
 <p>Linter becomes 2 types:</p>
 <ul>
-<li><a href="https://palantir.github.io/tslint/">TSLint</a> is a linter that must be utilized for TypeScript.</li>
-<li><a href="https://eslint.org/">ESLint</a> is a linter supports both JavaScript and TypeScript.
-<strong>ESLint has a more performant architecture than TSLint</strong> and that they will <strong>only be focusing on ESLint</strong> when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without <strong><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">prettier plugin</a></strong></li>
+<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwYWxhbnRpci5naXRodWIuaW8lMkZ0c2xpbnQlMkY=" rel="nofollow noopener noreferer" target="_blank">TSLint</a> is a linter that must be utilized for TypeScript.</li>
+<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZlc2xpbnQub3JnJTJG" rel="nofollow noopener noreferer" target="_blank">ESLint</a> is a linter supports both JavaScript and TypeScript.
+<strong>ESLint has a more performant architecture than TSLint</strong> and that they will <strong>only be focusing on ESLint</strong> when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without <strong><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZtYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tJTJGaXRlbXMlM0ZpdGVtTmFtZSUzRGVzYmVucC5wcmV0dGllci12c2NvZGU=" rel="nofollow noopener noreferer" target="_blank">prettier plugin</a></strong></li>
 </ul>
 <h2 id="install-dependencies" tabindex="-1"><a class="header-anchor" href="#install-dependencies">Install dependencies</a></h2>
 <p>install using npm:</p>
@@ -153,7 +160,7 @@
 <pre><code class="language-shell">yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 </code></pre>
 <h2 id="install-and-activate-vs-code-es-lint-extension-for-auto-linter-and-formatter" tabindex="-1"><a class="header-anchor" href="#install-and-activate-vs-code-es-lint-extension-for-auto-linter-and-formatter">install and activate VSCode ESLint extension for auto Linter And Formatter</a></h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">Download Here</a></p>
+<p><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZtYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tJTJGaXRlbXMlM0ZpdGVtTmFtZSUzRGRiYWV1bWVyLnZzY29kZS1lc2xpbnQ=" rel="nofollow noopener noreferer" target="_blank">Download Here</a></p>
 <h2 id="create-eslintrc-js" tabindex="-1"><a class="header-anchor" href="#create-eslintrc-js">Create .eslintrc.js</a></h2>
 <pre><code class="language-js">module.exports = {
   root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules
@@ -352,7 +359,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

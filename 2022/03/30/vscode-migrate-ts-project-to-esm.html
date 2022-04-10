@@ -41,23 +41,30 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2022/03/30/vscode-migrate-ts-project-to-esm.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="VSCode Migrate Typescript CommonJS to ESM">
 <meta property="og:url" content="https://www.webmanajemen.com/2022/03/30/vscode-migrate-ts-project-to-esm.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="VSCode Migrate Typescript CommonJS to ESM">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314">
+<!--article metadata-->
 <meta property="article:published_time" content="2022-03-30T06:57:37+0000">
 <meta property="article:modified_time" content="2022-03-30T06:57:37+0000">
 <meta property="article:author" content="">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/2022/03/30/vscode-migrate-ts-project-to-esm.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -156,7 +163,7 @@
   }
 }
 </code></pre>
-<p>Default <a href="https://www.typescriptlang.org/docs/handbook/esm-node.html">typescript documentation</a></p>
+<p>Default <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGZG9jcyUyRmhhbmRib29rJTJGZXNtLW5vZGUuaHRtbA==" rel="nofollow noopener noreferer" target="_blank">typescript documentation</a></p>
 <pre><code class="language-jsonc">{
     "name": "my-package",
     "type": "module",
@@ -173,7 +180,7 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions"><code>"typesVersions"</code></a> performs the same mapping as <code>"exports"</code>, but for TypeScript’s type definitions.</li>
+<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGZG9jcyUyRmhhbmRib29rJTJGZGVjbGFyYXRpb24tZmlsZXMlMkZwdWJsaXNoaW5nLmh0bWwlMjN2ZXJzaW9uLXNlbGVjdGlvbi13aXRoLXR5cGVzdmVyc2lvbnM=" rel="nofollow noopener noreferer" target="_blank"><code>"typesVersions"</code></a> performs the same mapping as <code>"exports"</code>, but for TypeScript’s type definitions.</li>
 </ul>
 <h2 id="tsconfig-json" tabindex="-1"><a class="header-anchor" href="#tsconfig-json">tsconfig.json</a></h2>
 <p>match your configuration (points A, B, C)</p>
@@ -197,14 +204,14 @@
 }
 </code></pre>
 <ul>
-<li>Line A (<a href="https://www.typescriptlang.org/tsconfig#module"><code>"module"</code></a>): We are telling TypeScript to generate ECMAScript modules.
+<li>Line A (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNtb2R1bGU=" rel="nofollow noopener noreferer" target="_blank"><code>"module"</code></a>): We are telling TypeScript to generate ECMAScript modules.
 <ul>
 <li><code>"ES6"</code>, <code>"ES2015"</code>: support for basic ESM features</li>
 <li><code>"2020"</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
 </ul>
 </li>
-<li>Line B (<a href="https://www.typescriptlang.org/tsconfig#moduleResolution"><code>"moduleResolution"</code></a>): This value is needed for Node.js.</li>
-<li>Line C (<a href="https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports"><code>"allowSyntheticDefaultImports"</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
+<li>Line B (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNtb2R1bGVSZXNvbHV0aW9u" rel="nofollow noopener noreferer" target="_blank"><code>"moduleResolution"</code></a>): This value is needed for Node.js.</li>
+<li>Line C (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cudHlwZXNjcmlwdGxhbmcub3JnJTJGdHNjb25maWclMjNhbGxvd1N5bnRoZXRpY0RlZmF1bHRJbXBvcnRz" rel="nofollow noopener noreferer" target="_blank"><code>"allowSyntheticDefaultImports"</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
 </ul>
 <h2 id="vs-code-settings-json" tabindex="-1"><a class="header-anchor" href="#vs-code-settings-json">VSCode settings.json</a></h2>
 <p>open your <code>settings.json</code> or <code>.vscode/settings.json</code>, add following keys</p>
@@ -331,7 +338,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

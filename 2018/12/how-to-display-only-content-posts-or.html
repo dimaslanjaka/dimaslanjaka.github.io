@@ -41,27 +41,34 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2018/12/how-to-display-only-content-posts-or.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="How to display only content posts or pages on blogger">
 <meta property="og:url" content="https://www.webmanajemen.com/2018/12/how-to-display-only-content-posts-or.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC /><br />Usually a">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC">
+<!--article metadata-->
 <meta property="article:published_time" content="2018-12-13T23:45:00.000+07:00">
 <meta property="article:modified_time" content="2019-07-22T03:23:18+07:00">
 <meta property="article:author" content="Unknown">
 
-  <meta property="article:tag" content="JS">
+<meta property="article:tag" content="JS">
 
-  <meta property="article:tag" content="Blogger">
+<meta property="article:tag" content="Blogger">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/2018/12/how-to-display-only-content-posts-or.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -138,7 +145,7 @@
 							<a href="#" class="image full"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC" alt="How to display only content posts or pages on blogger" /></a>
 							-->
 
-						<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC"><br>Usually a blogger when creating a page on a blog that wants content that is displayed only content only. In other words a blogger wants to create a clean page.<br>Yes, the purpose of this article is to help you guys who want to create a clean page from comments, widgets, or navigation headers.<br><b>Here’s the <mark>tutorial</mark>:</b><br></p><blockquote>Make sure you had call jquery framework ( <kbd><a href="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js</a></kbd> ) before <kbd>&lt;/head&gt;</kbd></blockquote>Lets begun:<br><h3>Tutorial to display content of posts or pages only in blogger:</h3>When you create an article or page, put the code below at the end of your article or content page in HTML EDITOR.<br><pre>&lt;script&gt;<br>$(‘div:not(div[id^=post-body-])’).hide(); // hide everything except id=“post-body-xxxxxxxxxx”<br>$(“[id^=‘post-body-’]”).appendTo(‘body’); // move id=“post-body-xxxxxxxxx” up to the body<br>&lt;/script&gt;</pre><br>Done. I hope this post be help you…<br>Dont forget share this blog. Thank you…<br><br><i>Incoming Terms:</i><br><ol><li>Make clean pages on blogger</li><li>Make clean articles on blogger</li><li>Make articles or pages clean from comments, widget, and anything except the content articles or pages.</li></ol><p></p>
+						<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC"><br>Usually a blogger when creating a page on a blog that wants content that is displayed only content only. In other words a blogger wants to create a clean page.<br>Yes, the purpose of this article is to help you guys who want to create a clean page from comments, widgets, or navigation headers.<br><b>Here’s the <mark>tutorial</mark>:</b><br></p><blockquote>Make sure you had call jquery framework ( <kbd><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZhamF4Lmdvb2dsZWFwaXMuY29tJTJGYWpheCUyRmxpYnMlMkZqcXVlcnklMkYzLjEuMSUyRmpxdWVyeS5taW4uanM=" rel="nofollow noopener noreferer" target="_blank">https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js</a></kbd> ) before <kbd>&lt;/head&gt;</kbd></blockquote>Lets begun:<br><h3>Tutorial to display content of posts or pages only in blogger:</h3>When you create an article or page, put the code below at the end of your article or content page in HTML EDITOR.<br><pre>&lt;script&gt;<br>$(‘div:not(div[id^=post-body-])’).hide(); // hide everything except id=“post-body-xxxxxxxxxx”<br>$(“[id^=‘post-body-’]”).appendTo(‘body’); // move id=“post-body-xxxxxxxxx” up to the body<br>&lt;/script&gt;</pre><br>Done. I hope this post be help you…<br>Dont forget share this blog. Thank you…<br><br><i>Incoming Terms:</i><br><ol><li>Make clean pages on blogger</li><li>Make clean articles on blogger</li><li>Make articles or pages clean from comments, widget, and anything except the content articles or pages.</li></ol><p></p>
 
 					</section>
 				</div>
@@ -231,7 +238,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

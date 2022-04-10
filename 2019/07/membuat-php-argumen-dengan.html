@@ -41,25 +41,32 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2019/07/membuat-php-argumen-dengan.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="Membuat PHP argumen dengan =">
 <meta property="og:url" content="https://www.webmanajemen.com/2019/07/membuat-php-argumen-dengan.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="Cara Membuat argumen PHP CLI dengan --=">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png">
+<!--article metadata-->
 <meta property="article:published_time" content="2019-07-30T06:48:00.000+07:00">
 <meta property="article:modified_time" content="2019-07-30T06:48:00+07:00">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 
-  <meta property="article:tag" content="PHP">
+<meta property="article:tag" content="PHP">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/2019/07/membuat-php-argumen-dengan.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -132,7 +139,7 @@
 							<a href="#" class="image full"><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" alt="Membuat PHP argumen dengan =" /></a>
 							-->
 
-						<p>Cara Membuat argumen PHP CLI dengan '<b>=</b>' '<b>--=</b>' </p><b>Buat file php</b><pre><br>&lt;?php<br>function arguments($argv) {<br>    $_ARG = array();<br>    foreach ($argv as $arg) {<br>      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {<br>        $_ARG[$reg[1]] = $reg[2];<br>      } elseif(ereg('-([a-zA-Z0-9])',$arg,$reg)) {<br>            $_ARG[$reg[1]] = 'true';<br>        }<br>  <br>    }<br>  return $_ARG;<br>}<br>?&gt;<br></pre><b>Contoh penggunaan</b><pre><br>php myscript.php --user=nobody --password=secret -p --access="host=127.0.0.1 port=456"<br></pre><b>Output</b><pre><br>Array<br>(<br>    [user] =&gt; nobody<br>    [password] =&gt; secret<br>    [p] =&gt; true<br>    [access] =&gt; host=127.0.0.1 port=456<br>)<br></pre> <div class="separator" style="clear: both; text-align: center;"><a href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow"><img border="0" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" data-original-width="700" data-original-height="350"></a></div>
+						<p>Cara Membuat argumen PHP CLI dengan '<b>=</b>' '<b>--=</b>' </p><b>Buat file php</b><pre><br>&lt;?php<br>function arguments($argv) {<br>    $_ARG = array();<br>    foreach ($argv as $arg) {<br>      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {<br>        $_ARG[$reg[1]] = $reg[2];<br>      } elseif(ereg('-([a-zA-Z0-9])',$arg,$reg)) {<br>            $_ARG[$reg[1]] = 'true';<br>        }<br>  <br>    }<br>  return $_ARG;<br>}<br>?&gt;<br></pre><b>Contoh penggunaan</b><pre><br>php myscript.php --user=nobody --password=secret -p --access="host=127.0.0.1 port=456"<br></pre><b>Output</b><pre><br>Array<br>(<br>    [user] =&gt; nobody<br>    [password] =&gt; secret<br>    [p] =&gt; true<br>    [access] =&gt; host=127.0.0.1 port=456<br>)<br></pre> <div class="separator" style="clear: both; text-align: center;"><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZyZXMuY2xvdWRpbmFyeS5jb20lMkZkaW1hc2xhbmpha2ElMkZpbWFnZSUyRmZldGNoJTJGaHR0cHMlM0ElMkYlMkZzdGF0aWMuY2RuLWNkcGwuY29tJTJGNzAweDM1MCUyRjQ4MTdiNDQ3NzQ5MWI0MzZhMmEzY2I0ZGI1ZjM5NDNiJTJGUEhQX0xvZ28taW1hZ2U3MDB4MzUwLWNyb3AtaW1hZ2U3MDB4MzUwLWNyb3AtaW1hZ2UoNzAweDM1MC1jcm9wKS5wbmc=" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="nofollow noopener noreferer" target="_blank"><img border="0" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" data-original-width="700" data-original-height="350"></a></div>
 					</section>
 				</div>
 
@@ -224,7 +231,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

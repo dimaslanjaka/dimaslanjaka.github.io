@@ -41,29 +41,36 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/10/create-adsense-shortcode-for-wordpress.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="Create Adsense shortcode for WordPress">
 <meta property="og:url" content="https://www.webmanajemen.com/2017/10/create-adsense-shortcode-for-wordpress.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="img class=center w3-center height=250 src=https://imgdb.net/images/3202.jpg width=100 /><br /><ol><li>Go to Your Dashboard">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://imgdb.net/images/3202.jpg">
+<!--article metadata-->
 <meta property="article:published_time" content="2017-10-09T14:56:00.000+07:00">
 <meta property="article:modified_time" content="2017-10-09T14:56:42+07:00">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 
-  <meta property="article:tag" content="Adsense">
+<meta property="article:tag" content="Adsense">
 
-  <meta property="article:tag" content="Wordpress">
+<meta property="article:tag" content="Wordpress">
 
-  <meta property="article:tag" content="PHP">
+<meta property="article:tag" content="PHP">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://imgdb.net/images/3202.jpg">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/2017/10/create-adsense-shortcode-for-wordpress.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -144,7 +151,7 @@
 							<a href="#" class="image full"><img src="https://imgdb.net/images/3202.jpg" alt="Create Adsense shortcode for WordPress" /></a>
 							-->
 
-						<p><img class="center w3-center" height="250" src="https://imgdb.net/images/3202.jpg" width="100%"><br></p><ol><li>Go to Your Dashboard WordPress</li><li>Click menu -&gt; Appearance</li><li>Click editor -&gt; choose functions.php</li><li>Add below code inside <kbd>&lt;?php</kbd></li></ol><pre>/*<br> * enqueue adsbygoogle.js in the footer &amp; <br> * create a WordPress shortcode with your Google AdSense code<br> * follow me on Twitter: @DimasSkynetCybe<br> <em>/<br><br>function loadAdsenseJS() {<br>  wp_register_script( ‘google-adsense’, ‘<a href="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js</a>’, ‘’, ‘’, true );<br>  wp_enqueue_script( ‘google-adsense’ );<br>}<br>add_action( ‘wp_enqueue_scripts’, ‘loadAdsenseJS’ );<br><br>function AdSense() {<br>  $output = ‘&lt;ins class=“adsbygoogle”<br>    style=“background-color: transparent;<br>      text-decoration: none;<br>      display:inline-block;<br>      width:336px;<br>      height:280px”<br>    data-ad-client=“ca-pub-xxYourUniqueIdxx”<br>    data-ad-slot=“xxUniqueIdSlotxx”&gt;&lt;/ins&gt;<br>  &lt;script&gt;<br>  (adsbygoogle = window.adsbygoogle || []).push({});<br>  &lt;/script&gt;’;<br>  <br>  return $output;<br>}<br>add_shortcode( ‘adsense’, ‘AdSense’ );<br></em><h4><em><br>/</em><br> * Usage: add <i>[adsense]</i> in your WordPress posts <br> * where you want your ad to appear<br> */</h4><br></pre><p></p>
+						<p><img class="center w3-center" height="250" src="https://imgdb.net/images/3202.jpg" width="100%"><br></p><ol><li>Go to Your Dashboard WordPress</li><li>Click menu -&gt; Appearance</li><li>Click editor -&gt; choose functions.php</li><li>Add below code inside <kbd>&lt;?php</kbd></li></ol><pre>/*<br> * enqueue adsbygoogle.js in the footer &amp; <br> * create a WordPress shortcode with your Google AdSense code<br> * follow me on Twitter: @DimasSkynetCybe<br> <em>/<br><br>function loadAdsenseJS() {<br>  wp_register_script( ‘google-adsense’, ‘<a href="/page/safelink.html?url=aHR0cCUzQSUyRiUyRnBhZ2VhZDIuZ29vZ2xlc3luZGljYXRpb24uY29tJTJGcGFnZWFkJTJGanMlMkZhZHNieWdvb2dsZS5qcw==" rel="nofollow noopener noreferer" target="_blank">//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js</a>’, ‘’, ‘’, true );<br>  wp_enqueue_script( ‘google-adsense’ );<br>}<br>add_action( ‘wp_enqueue_scripts’, ‘loadAdsenseJS’ );<br><br>function AdSense() {<br>  $output = ‘&lt;ins class=“adsbygoogle”<br>    style=“background-color: transparent;<br>      text-decoration: none;<br>      display:inline-block;<br>      width:336px;<br>      height:280px”<br>    data-ad-client=“ca-pub-xxYourUniqueIdxx”<br>    data-ad-slot=“xxUniqueIdSlotxx”&gt;&lt;/ins&gt;<br>  &lt;script&gt;<br>  (adsbygoogle = window.adsbygoogle || []).push({});<br>  &lt;/script&gt;’;<br>  <br>  return $output;<br>}<br>add_shortcode( ‘adsense’, ‘AdSense’ );<br></em><h4><em><br>/</em><br> * Usage: add <i>[adsense]</i> in your WordPress posts <br> * where you want your ad to appear<br> */</h4><br></pre><p></p>
 
 					</section>
 				</div>
@@ -237,7 +244,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

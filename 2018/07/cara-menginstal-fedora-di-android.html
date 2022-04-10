@@ -41,31 +41,38 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2018/07/cara-menginstal-fedora-di-android.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="Cara Install Fedora Di Android">
 <meta property="og:url" content="https://www.webmanajemen.com/2018/07/cara-menginstal-fedora-di-android.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="Halo semuanya, hanya ingin memberi Anda pembaruan cepat di Fedora dalam proyek chroot Android. Berikut tutorial cara menginstal fedora di">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D">
+<!--article metadata-->
 <meta property="article:published_time" content="2018-07-27T11:57:00.000+07:00">
 <meta property="article:modified_time" content="2018-11-12T12:49:24+07:00">
 <meta property="article:author" content="Dimas Lanjaka Kumala Indra">
 
-  <meta property="article:tag" content="Tools">
+<meta property="article:tag" content="Tools">
 
-  <meta property="article:tag" content="PHP">
+<meta property="article:tag" content="PHP">
 
-  <meta property="article:tag" content="Android">
+<meta property="article:tag" content="Android">
 
-  <meta property="article:tag" content="Tips &amp; Tricks">
+<meta property="article:tag" content="Tips &amp; Tricks">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/2018/07/cara-menginstal-fedora-di-android.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -150,7 +157,7 @@
 							<a href="#" class="image full"><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D" alt="Cara Install Fedora Di Android" /></a>
 							-->
 
-						<p><img alt="Fedora android installation" class="w3-image w3-center" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D" title="fedora android installation"><br></p><div>Halo semuanya, hanya ingin memberi Anda pembaruan cepat di Fedora dalam proyek chroot Android. <br>Berikut tutorial cara menginstal fedora di android melalui termux emulator android :<br><br><br><ol><li>Install <a href="https://play.google.com/store/apps/details?id=com.termux" rel="noopener noreferer nofollow" target="_blank">Termux</a>&nbsp;(<a href="https://termux.com/" rel="noopener noreferer nofollow">https://termux.com</a>)</li><li>Buka termuxnya dan copy kode berikut, satu persatu. (Tanda [#] merupakan komentar). <br><pre><br>#Update &amp; upgrade command shell<br>apt update<br>#please wait -then<br>apt upgrade<br><br>#Installing Git<br>apt install git<br><br>#Installing Curl<br>apt install curl<br><br>#Installing Wget<br>apt install wget<br></pre><br>Instalasi Basic Command dan upgrade sudah selesai. Disini anda sudah memumpuni untuk menjalankan command prompt linux secara lancar. </li><li>Kemudian lanjutkan ke penginstalan nya. <br><blockquote>Disini saya menggunakan directory Root/Home dari Termux nya sendiri <b>Jadi <i>pastikan anda memiliki penyimpanan yang memumpuni, saya sarankan Free 2GB</i></b></blockquote><br><pre><br>git clone <a href="https://github.com/nmilosev/termux-fedora.git">https://github.com/nmilosev/termux-fedora.git</a><br>cd termux-fedora<br>chmod +x <a href="http://termux-fedora.sh">termux-fedora.sh</a><br></pre></li><li>Nah disini anda sudah mendownload fedora berbasis IMAGE. <br><b>Beberapa <i>IMAGE</i> untuk chipset tertentu yang sudah terdownload</b> (coba di masukkan command <i>ls</i>) <br><ol><li>f25_arm ini untuk chipset 32bit </li><li>f25_arm64 ini untuk chipset 64bit</li></ol><br><blockquote>Penjelasan : <ul><li>f26alpha_arm ini untuk install fedora versi 26 untuk chipset 32bit namun statusnya alpha belum stabil </li><li>f26alpha_arm64 sama seperti di atas namun untuk chipset 64bit </li></ul></blockquote>  Untuk menginstal ImageNya cukup ketik command berikut : <pre><br>#choose image <br>./termux-fedora.sh f25_arm<br></pre></li><li>Jika proses instalasi telah selesai kita bisa langsung masuk ke chroot fedora, dengan command berikut pada terminal termux. <pre>startfedora</pre>Untuk keluar dari fedora cukup masukkan command berikut di terminal. <pre>exit</pre></li></ol></div><br><div>Tag: <br> install Fedora Android, Fedora, Termux, Android, Termux Fedora </div><p></p>
+						<p><img alt="Fedora android installation" class="w3-image w3-center" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D" title="fedora android installation"><br></p><div>Halo semuanya, hanya ingin memberi Anda pembaruan cepat di Fedora dalam proyek chroot Android. <br>Berikut tutorial cara menginstal fedora di android melalui termux emulator android :<br><br><br><ol><li>Install <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZwbGF5Lmdvb2dsZS5jb20lMkZzdG9yZSUyRmFwcHMlMkZkZXRhaWxzJTNGaWQlM0Rjb20udGVybXV4" rel="nofollow noopener noreferer" target="_blank">Termux</a>&nbsp;(<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ0ZXJtdXguY29tJTJG" rel="nofollow noopener noreferer" target="_blank">https://termux.com</a>)</li><li>Buka termuxnya dan copy kode berikut, satu persatu. (Tanda [#] merupakan komentar). <br><pre><br>#Update &amp; upgrade command shell<br>apt update<br>#please wait -then<br>apt upgrade<br><br>#Installing Git<br>apt install git<br><br>#Installing Curl<br>apt install curl<br><br>#Installing Wget<br>apt install wget<br></pre><br>Instalasi Basic Command dan upgrade sudah selesai. Disini anda sudah memumpuni untuk menjalankan command prompt linux secara lancar. </li><li>Kemudian lanjutkan ke penginstalan nya. <br><blockquote>Disini saya menggunakan directory Root/Home dari Termux nya sendiri <b>Jadi <i>pastikan anda memiliki penyimpanan yang memumpuni, saya sarankan Free 2GB</i></b></blockquote><br><pre><br>git clone <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJGbm1pbG9zZXYlMkZ0ZXJtdXgtZmVkb3JhLmdpdA==" rel="nofollow noopener noreferer" target="_blank">https://github.com/nmilosev/termux-fedora.git</a><br>cd termux-fedora<br>chmod +x <a href="/page/safelink.html?url=aHR0cCUzQSUyRiUyRnRlcm11eC1mZWRvcmEuc2g=" rel="nofollow noopener noreferer" target="_blank">termux-fedora.sh</a><br></pre></li><li>Nah disini anda sudah mendownload fedora berbasis IMAGE. <br><b>Beberapa <i>IMAGE</i> untuk chipset tertentu yang sudah terdownload</b> (coba di masukkan command <i>ls</i>) <br><ol><li>f25_arm ini untuk chipset 32bit </li><li>f25_arm64 ini untuk chipset 64bit</li></ol><br><blockquote>Penjelasan : <ul><li>f26alpha_arm ini untuk install fedora versi 26 untuk chipset 32bit namun statusnya alpha belum stabil </li><li>f26alpha_arm64 sama seperti di atas namun untuk chipset 64bit </li></ul></blockquote>  Untuk menginstal ImageNya cukup ketik command berikut : <pre><br>#choose image <br>./termux-fedora.sh f25_arm<br></pre></li><li>Jika proses instalasi telah selesai kita bisa langsung masuk ke chroot fedora, dengan command berikut pada terminal termux. <pre>startfedora</pre>Untuk keluar dari fedora cukup masukkan command berikut di terminal. <pre>exit</pre></li></ol></div><br><div>Tag: <br> install Fedora Android, Fedora, Termux, Android, Termux Fedora </div><p></p>
 
 					</section>
 				</div>
@@ -243,7 +250,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

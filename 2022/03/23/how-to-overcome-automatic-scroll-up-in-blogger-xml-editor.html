@@ -41,23 +41,30 @@
 <link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
 <link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
-  <meta property="og:type" content="article">
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
 <meta property="og:title" content="How to Overcome Automatic Scroll Up in Blogger XML Editor">
 <meta property="og:url" content="https://www.webmanajemen.com/2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="How to Overcome Automatic Scroll Up in Blogger XML Editor">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg">
+<!--article metadata-->
 <meta property="article:published_time" content="2022-03-23T13:27:20+0000">
 <meta property="article:modified_time" content="2022-03-23T20:27:20+0000">
 <meta property="article:author" content="">
 
+<!--twitter metadata-->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg">
+<!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link rel="canonical" href="https://www.webmanajemen.com/2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html">
+<!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -135,8 +142,8 @@
 <p>On this new system, there is an issue related to the behavior of the XML editor when the XML save process is complete. The editor interface will automatically scroll to the top every time the save process is complete. This is certainly very disturbing because we have to go back and forth to the last editing position. Especially for XML code that already involves tens of thousands of code, this will greatly hinder editing activities.</p>
 <h3 id="forum-problem-posts" tabindex="-1"><a class="header-anchor" href="#forum-problem-posts">Forum Problem Posts</a></h3>
 <ul>
-<li><a href="https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en">https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en</a></li>
-<li><a href="https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up">https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up</a></li>
+<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZzdXBwb3J0Lmdvb2dsZS5jb20lMkZibG9nZ2VyJTJGdGhyZWFkJTJGMTE3OTYwMDgzJTJGaHRtbC1lZGl0b3ItYXV0by1zY3JvbGwtdXAlM0ZobCUzRGVu" rel="nofollow noopener noreferer" target="_blank">https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en</a></li>
+<li><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cucXVvcmEuY29tJTJGSG93LWRvLUktbWFrZS1teS1ibG9nLWhlYWRlci1zdG9wLXNob3dpbmctdXAtd2hlbi1zY3JvbGxpbmctdXA=" rel="nofollow noopener noreferer" target="_blank">https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up</a></li>
 </ul>
 <h2 id="solution" tabindex="-1"><a class="header-anchor" href="#solution">Solution</a></h2>
 <p>This problem can be solved by injecting javascript code to prevent the blogger auto scroll event effect. Simply put, when the auto scroll is running and the scroll position is at the top, this function will reset the scroll position to the last position before saving. Function injection is performed using the browser’s <em>bookmark system</em>.</p>
@@ -249,7 +256,7 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+  <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZkaXNxdXMuY29tJTJGJTNGcmVmX25vc2NyaXB0" rel="nofollow noopener noreferer" target="_blank">
     comments powered by Disqus.
   </a>
 </noscript>

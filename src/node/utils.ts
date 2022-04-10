@@ -15,6 +15,6 @@ export function cleanWhiteSpace(text: string) {
  * @returns
  */
 export function cleanString(text: string, exception = '.,-_ ') {
-  if (typeof text == 'string') return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']'), '');
+  if (typeof text == 'string') return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']', 'gm'), '');
   return text;
 }

@@ -13,6 +13,7 @@ import { shortcodeYoutube } from '../../shortcode/youtube';
 import yargs from 'yargs';
 import CacheFile from '../../../node/cache';
 import ErrorMarkdown from '../../../markdown/error-markdown';
+import moment from 'moment';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');

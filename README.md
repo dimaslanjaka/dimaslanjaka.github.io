@@ -43,6 +43,7 @@ npm install
 before all, setup `_config.yml` first
 ```bash
 gulp --tasks # to view all tasks
+gulp clean # clean cache, generated caches, tmp folder, databases
 gulp copy # copy and process all src-posts to source/_posts
 gulp generate # generate all source to public directory
 gulp deploy # deploy to github pages
@@ -58,6 +59,7 @@ Standalone: is useful for low device to run one by one the tasks. more informati
 - `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
 - `generate:` from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml)
 ```bash
+gulp clean # clean all caches
 gulp copy:assets # copy post assets
 gulp copy:posts # copy and process posts
 gulp generate:assets # copy all assets
@@ -67,6 +69,9 @@ gulp generate:sitemap # generate sitemaps
 gulp generate:archive # generate tags and categories
 gulp generate:index # generate homepage index
 ```
+
+## Github Action
+important: always run `gulp clean` to prevent deleted files on origin repository
 
 ## todo
 - [ ] admin panel

@@ -61,7 +61,6 @@ jobs:
         # if: steps.npm-cache.outputs.cache-hit != 'true'
       - run: npm install
       - run: gulp clean
-        if: "contains(github.event.head_commit.message, 'clean cache')"
       - run: "gulp copy:assets"
       - run: "gulp copy:posts"
       - run: "gulp generate:assets"

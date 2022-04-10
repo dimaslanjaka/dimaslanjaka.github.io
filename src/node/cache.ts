@@ -80,7 +80,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     if (!existsSync(CacheFile.options.folder)) mkdirSync(CacheFile.options.folder);
     this.dbFile = join(CacheFile.options.folder, 'db-' + hash);
     let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
-    if (typeof db != 'object') {
+    if (typeof db == 'string') {
       try {
         db = JSON.parse(db.toString());
       } catch (e) {

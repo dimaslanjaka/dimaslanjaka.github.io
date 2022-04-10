@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { parsePostReturn } from '../../markdown/transformPosts';
 
 /**
@@ -25,11 +26,21 @@ export function excerpt(page: parsePostReturn['metadata'], length = 200) {
   return cleanString(str).substring(0, length);
 }
 
-function cleanString(text) {
-  // return text.replace(/[\"\']/gim, '');
-  // @see {@link https://stackoverflow.com/a/6555220/6404439}
-  // get only text without special chars
-  // except spaces,.-_
-  if (typeof text == 'string') return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
+/**
+ * get only text without special chars
+ * * except spaces,.-_
+ * * encoded html entities
+ * @see {@link https://stackoverflow.com/a/6555220/6404439}
+ * @param text
+ * @returns
+ */
+function cleanString(text: string) {
+  if (typeof text == 'string') {
+    const rawStr = text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
+    const encodedStr = rawStr.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+      return '&#' + i.charCodeAt(0) + ';';
+    });
+    return encodedStr;
+  }
   return text;
 }

@@ -40,20 +40,21 @@
 									console.log(data);
 									var total = data.length;
 									var listElm = document.querySelector('#archive-posts');
+									var counter = 0;
 									var loadMore = function () {
-										var grid = '<div class="row">';
-										for (var i = 0; i < 2; i++) {
-											var item = data[i];
-											grid += `<div class="4u">
+										var grid = `<div class="row" id="row-${counter}">`;
+										for (var i = 0; i < 3; i++) {
+											var item = data[counter];
+											grid += `<div class="4u" id="post-${counter}">
 									<h2>${item.title}</h2>
 									<a href="${item.url}" class="image full"><img src="${item.thumbnail}" alt="${item.title}"></a>
 									<p>${item.excerpt}</p>
-									<p><a href="${item.url}" class="button">More Details</a>
-									</p>
+									<div class="footer"><a href="${item.url}" class="button">More Details</a>
+									</div>
 								</div>`;
-											//listElm.innerHTML += str;
-											//listElm.appendChild(item);
+											counter++;
 										}
+										grid += '</div>';
 										listElm.innerHTML += grid;
 									}
 
@@ -65,19 +66,47 @@
 									});
 
 									// Initially load some items.
-									loadMore();
+									for (var i = 0; i < 3; i++)	loadMore();
 								}
 							})()
 						</script>
 						<style>
 							#archive-posts {
 								overflow: auto;
-								max-width: 1000px;
+								width: 100%;
+								height: 1000px;
+								overflow-y: scroll;
 							}
+
+							#archive-posts .row {
+								height: 700px;
+							}
+
+							#archive-posts .\4u {
+								/* add flexbox rules */
+								display: flex;
+								flex-direction: column;
+								position: relative;
+							}
+
+							#archive-posts .footer {
+								padding: .75rem;
+								min-width: 100%;
+								/* push footer to bottom */
+								margin-top: auto;
+								/* ensure width includes padding */
+								box-sizing: border-box;
+							}
+
+							#archive-posts p {
+								height: 120px;
+							}
+
 							#archive-posts img {
 								width: 480px;
 								height: 250px;
 							}
+
 							#archive-posts h2 {
 								height: 80px;
 							}

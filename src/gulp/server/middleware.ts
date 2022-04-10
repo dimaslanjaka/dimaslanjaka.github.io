@@ -1,7 +1,5 @@
 import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
 import config, { post_generated_dir } from '../../types/_config';
-import 'js-prototypes';
-import '../../node/cache-serialize';
 import ejs_object from '../../ejs';
 import gulp from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
@@ -10,6 +8,8 @@ import { renderer } from '../tasks/generate';
 import { toUnix } from 'upath';
 import fixHtmlPost from '../tasks/generate-after';
 import compress from 'compression';
+import '../tasks/generate-archives';
+import 'js-prototypes';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
@@ -28,10 +28,18 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     }
 
     if (!/\/api/.test(pathname)) {
-      /*res.writeHead(302, {
-        Location: '/src/public/index.html#/App1/Dashboard',
-      });
-      res.end();*/
+      const isArchive = pathname.match(new RegExp(config.category_dir + '/', 'g')) || pathname.match(new RegExp(config.tag_dir + '/', 'g'));
+      const sourceArchive = join(cwd(), config.source_dir, decodeURIComponent(pathname), 'index.html');
+      if (isArchive) {
+        gulp.series('generate:archive')(null);
+        ///console.log('generate archive', sourceArchive);
+        if (existsSync(sourceArchive))
+          return res.end(
+            readFileSync(sourceArchive)
+              .toString()
+              .replace('</body>', () => preview + '</body>')
+          );
+      }
 
       if (pathname.match(/(.html|\/)$/)) {
         res.setHeader('Content-Type', 'text/html');
@@ -55,12 +63,12 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               }
               // parse markdown metadata
               const parsed = modifyPost(parsePost(file));
-              console.log(parsed);
+              //console.log(parsed);
               // render markdown post
               return renderer(parsed).then((rendered) => {
                 rendered = fixHtmlPost(rendered).replace(new RegExp(config.url + '/', 'gm'), '/');
                 write(dest, rendered);
-                const content = rendered.replace('</body>', preview + '</body>');
+                const content = rendered.replace('</body>', () => preview + '</body>');
 
                 console.log('pre-processed', pathname);
                 res.end(content);

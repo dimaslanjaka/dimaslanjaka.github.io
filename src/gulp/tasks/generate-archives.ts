@@ -25,7 +25,7 @@ type ArchivePost = {
   excerpt?: string;
 };
 
-function generateArchiveTag(done?: TaskCallback) {
+export function generateArchive(done?: TaskCallback) {
   const tag_posts: { [key: string]: ArchivePost[] } = {};
 
   all
@@ -92,4 +92,4 @@ function generateArchiveTag(done?: TaskCallback) {
     .finally(() => done());
 }
 
-gulp.task('generate:archive', generateArchiveTag);
+gulp.task('generate:archive', generateArchive);

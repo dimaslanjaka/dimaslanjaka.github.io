@@ -84,8 +84,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       try {
         db = JSON.parse(db.toString());
       } catch (e) {
-        logger.error('cache database lost');
-        logger.error(e);
+        logger.log('cache database lost');
+        logger.log(e);
       }
     }
     if (typeof db == 'object') {

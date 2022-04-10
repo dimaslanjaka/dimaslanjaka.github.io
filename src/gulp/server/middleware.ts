@@ -1,7 +1,7 @@
 import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
 import config, { post_generated_dir } from '../../types/_config';
 import ejs_object from '../../ejs';
-import gulp from 'gulp';
+import gulp, { TaskFunction } from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
 import { modifyPost } from '../tasks/copy';
 import { renderer } from '../tasks/generate';
@@ -12,6 +12,7 @@ import '../tasks/generate-archives';
 import 'js-prototypes';
 import { JSDOM } from 'jsdom';
 import chalk from 'chalk';
+import Bluebird from 'bluebird';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
@@ -26,6 +27,20 @@ function showPreview(str: string | Buffer) {
   dom.window.close();
   return body;
 }
+
+const copyAssets = (...fn: TaskFunction[] | string[]) => {
+  return new Bluebird((resolve) => {
+    if (!gulpIndicator) {
+      gulpIndicator = true;
+      const tasks = ['generate:assets', 'generate:template', ...fn].removeEmpties();
+
+      gulp.series(...tasks)(() => {
+        gulpIndicator = false;
+        resolve();
+      });
+    }
+  });
+};
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
@@ -43,7 +58,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       const isArchive = pathname.match(new RegExp(config.category_dir + '/', 'g')) || pathname.match(new RegExp(config.tag_dir + '/', 'g'));
       const sourceArchive = join(cwd(), config.source_dir, decodeURIComponent(pathname), 'index.html');
       if (isArchive) {
-        gulp.series('generate:archive')(null);
+        copyAssets('generate:archive');
         ///console.log('generate archive', sourceArchive);
         if (existsSync(sourceArchive)) {
           console.log('[archive] pre-processed', pathname);
@@ -51,7 +66,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         }
       }
 
-      if (pathname.match(/(.html|\/)$/)) {
+      const isHomepage = pathname === '';
+      const isPage = pathname.match(/(.html|\/)$/);
+
+      if (isPage || isHomepage) {
         res.setHeader('Content-Type', 'text/html');
         // find post and pages
         const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
@@ -67,10 +85,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           if (existsSync(file)) {
             try {
               // pre-process markdown
-              if (!gulpIndicator) {
-                gulpIndicator = true;
-                gulp.series('generate:assets', 'generate:template')(() => (gulpIndicator = false));
-              }
+              copyAssets();
               // parse markdown metadata
               const parsed = parsePost(file);
               if (!parsed) {
@@ -116,7 +131,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   {
     route: '/admin',
     handle: (req, res, next) => {
-      ejs_object.renderFile(join(__dirname, 'public/admin.ejs')).then((rendered) => res.end(rendered));
+      return ejs_object
+        .renderFile(join(__dirname, 'public/admin.ejs'))
+        .then((rendered) => res.end(rendered))
+        .catch(next);
     },
   },
 ];

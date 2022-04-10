@@ -53,6 +53,7 @@ const allPosts = Bluebird.all(postCache.getAll())
   .filter((post) => {
     if (!post) return false;
     if (!post.metadata) return false;
+    if (!post.metadata.url) return false;
     const u = post.metadata.url;
     const ex = {
       /**

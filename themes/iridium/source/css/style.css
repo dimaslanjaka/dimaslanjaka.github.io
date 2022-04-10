@@ -126,12 +126,12 @@ table {
 	Table Generic Styling, for Desktops/Laptops
 */
 table {
-  margin: 0 auto;
-  width: 100%;
-  clear: both;
-  border-collapse: collapse;
-  table-layout: fixed;
-  word-wrap:break-word;
+	margin: 0 auto;
+	width: 100%;
+	clear: both;
+	border-collapse: collapse;
+	table-layout: fixed;
+	word-wrap: break-word;
 }
 
 header {
@@ -250,6 +250,7 @@ ul.style li {
 	margin: 0;
 	padding: 2em 0em 1.5em 0em;
 	border-top: 1px solid #ECECEC;
+	min-height: 200px;
 }
 
 ul.style li:first-child {
@@ -303,6 +304,25 @@ ul.style .first {
 	background: #de3d27;
 	color: #FFF !important;
 }
+
+.button-more {
+	display: inline-block;
+	outline: 0;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	border-radius: 4px;
+	font-size: 13px;
+	height: 30px;
+	background-color: #0000000d;
+	color: #0e0e10;
+	padding: 0 20px;
+}
+
+.button-more:hover {
+	background-color: #0000001a;
+}
+
 
 /*********************************************************************************/
 /* Header                                                                        */

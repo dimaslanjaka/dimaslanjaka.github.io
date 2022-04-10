@@ -127,14 +127,15 @@
 				<div id="sidebar" class="4u">
 					<section>
 						<header>
-							<h2>Pellentesque vulputate</h2>
+							<h2>Latest Posts</h2>
 						</header>
 						<ul class="style">
 							<% getLatestPosts('date', 3).forEach(post => { %>
 								<li>
 									<p class="posted"><%- post.title %></p>
-									<img src="<%- thumbnail(post) %>" alt="" class="sidebar-img" />
+									<a href="<%- post.url %>" title="<%- post.title %>"><img src="<%- thumbnail(post) %>" alt="<%- post.title %>" class="sidebar-img" /></a>
 									<p class="text"><%- excerpt(post) %></p>
+									<a href="<%- post.url %>" class="button-more" title="<%- post.title %>">Read More &raquo;</a>
 								</li>
 							<% }) %>
 						</ul>

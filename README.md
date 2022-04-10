@@ -71,7 +71,7 @@ gulp generate:index # generate homepage index
 ```
 
 ## Github Action
-important: always run `gulp clean` to prevent deleted files on origin repository
+important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**
 
 ## todo
 - [ ] admin panel

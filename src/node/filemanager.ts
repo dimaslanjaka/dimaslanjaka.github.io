@@ -148,6 +148,15 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
   }
   return res;
 };
+/**
+ * nullable read file synchronous
+ * @param path
+ * @param opt
+ * @returns
+ */
+export function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]): ReturnType<typeof fs.readFileSync> {
+  if (existsSync(path)) return readFileSync(path, opt);
+}
 export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
 export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;

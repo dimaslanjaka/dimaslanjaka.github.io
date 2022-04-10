@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { cacheDir, existsSync, join, mkdirSync, readFileSync, resolve, write } from './filemanager';
+import { cacheDir, existsSync, join, mkdirSync, read, resolve, write } from './filemanager';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
@@ -79,13 +79,14 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     }
     if (!existsSync(CacheFile.options.folder)) mkdirSync(CacheFile.options.folder);
     this.dbFile = join(CacheFile.options.folder, 'db-' + hash);
-    let db = existsSync(this.dbFile) ? readFileSync(this.dbFile, 'utf-8') : {};
+    if (!existsSync(this.dbFile)) write(this.dbFile, {});
+    let db = read(this.dbFile, 'utf-8');
     if (typeof db == 'string') {
       try {
         db = JSON.parse(db.toString());
       } catch (e) {
         logger.log('cache database lost');
-        logger.log(e);
+        //logger.log(e);
       }
     }
     if (typeof db == 'object') {
@@ -184,7 +185,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     const locationCache = this.locateKey(key);
     const Get = this.md5Cache[key];
     if (!Get) return fallback;
-    if (existsSync(locationCache)) return JSON.parse(readFileSync(locationCache, 'utf-8'));
+    if (existsSync(locationCache)) return JSON.parse(String(read(locationCache, 'utf-8')));
     return fallback;
   }
   getCache = (key: string, fallback = null) => this.get(key, fallback);

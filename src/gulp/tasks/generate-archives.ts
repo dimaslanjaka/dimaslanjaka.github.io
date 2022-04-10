@@ -33,7 +33,7 @@ interface Archives {
   [key: string]: ArchivePost[];
 }
 
-async function generateArchive(done?: TaskCallback) {
+export async function generateArchive(done?: TaskCallback) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
   await Bluebird.all(postCache.getAll())
@@ -151,12 +151,12 @@ async function generateArchive(done?: TaskCallback) {
       });
     });
   };
-  return genTag()
-    .then(genCat)
-    .then(() => done());
+  await genTag();
+  await genCat();
+  if (typeof done == 'function') done();
 }
 
-async function generateIndex(done?: TaskCallback) {
+export async function generateIndex(done?: TaskCallback) {
   try {
     const posts = await Bluebird.all(postCache.getAll()).filter((item) => {
       if (!item) return false;
@@ -193,7 +193,7 @@ async function generateIndex(done?: TaskCallback) {
     return renderer(mod).then(async (rendered) => {
       const f = await write(indexPermalink, rendered);
       console.log(logname, 'index', f);
-      done();
+      if (typeof done == 'function') done();
     });
   } catch (e) {
     console.log(e);

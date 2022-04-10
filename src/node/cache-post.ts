@@ -4,7 +4,6 @@ import CacheFile, { defaultResovableValue } from './cache';
 type postResult = parsePostReturn & parsePostReturn['metadata'];
 
 export default class CachePost extends CacheFile {
-  private key = 'posts';
   constructor() {
     super('posts');
   }
@@ -16,8 +15,9 @@ export default class CachePost extends CacheFile {
    * @returns array of {@link postResult}
    */
   getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
-    const posts: parsePostReturn[] = new CacheFile(this.key).getValues();
+    const posts: parsePostReturn[] = new CacheFile('posts').getValues();
     return posts
+      .filter((post) => post.metadata.type == 'post')
       .sort((a, b) => {
         const c = new Date(a.metadata[by]);
         const d = new Date(b.metadata[by]);
@@ -37,7 +37,7 @@ export default class CachePost extends CacheFile {
    * @returns array of posts {@link CacheFile.getValues}
    */
   getAll(opt = defaultResovableValue) {
-    return new CacheFile(this.key).getValues(opt) as parsePostReturn[];
+    return new CacheFile('posts').getValues(opt).filter((post) => post.metadata.type == 'post') as parsePostReturn[];
   }
 }
 

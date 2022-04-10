@@ -58,7 +58,10 @@ default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
-  field: site # Apply to the whole site
+  # site: apply to the whole site
+  # post: apply only to post
+  field: site
+  safelink: true
   exclude:
     - webmanajemen.com
     - web-manajemen.blogspot.com
@@ -154,13 +157,18 @@ feed:
   type:
     - atom
     - rss2
-  path:
-    - atom.xml
-    - rss.xml
+
 
 # Sitemap
 sitemap:
-  path: sitemap.xml
+  # generate sitemap.html page
+  html: true
+  # generate sitemap.txt
+  text: true
+  # generate sitemap.xml (yoastseo style)
+  xml: true
+  # generate google news sitemap
+  news: true
 
 # https://github.com/dimaslanjaka/hexo-adsense
 adsense:

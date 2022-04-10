@@ -22,7 +22,7 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
     .join('.');
 };
 
-const logname = chalk.blue('[after]');
+const logname = chalk.magenta('[generate]') + chalk.blue('[after]');
 const hexoURL = new URL(config.url);
 const internal_links = [
   ...config.external_link.exclude,
@@ -38,21 +38,49 @@ const internal_links = [
  * @param href
  * @returns
  */
-export function filter_external_links(href: string) {
+export function filter_external_links(href: string, debug = false) {
   const result = {
+    /**
+     * is internal?
+     */
     internal: true,
+    /**
+     * original link or safelink
+     */
     href: href,
   };
   if (href && href.length > 2) {
     // fix dynamic protocol urls
-    if (href.startsWith('//')) href = config.url + href;
-    // skip hash and javascript anchors
-    if (!href.trim().match(/^(#|javascript:)/i) && href.trim().length) {
+    const homepage = new URL(config.url);
+    // fix dynamic url protocol
+    if (href.startsWith('//')) href = 'http:' + href;
+    /**
+     *  javascript anchors, dot anchors, hash header
+     */
+    const isExternal = href.trim().isMatch(new RegExp('^(https?)://'));
+    const isInternal = href.trim().isMatch(/^(\.+|#|javascript:)/i) && !isExternal;
+    const isLength = href.trim().length > 0;
+    const isAllowed = isExternal && isLength;
+    if (href.includes('seoserp')) {
+      console.log(isInternal, isExternal, isAllowed);
+    }
+
+    // skip hash and
+    if (isAllowed) {
       // only get external links with protocols
-      if (href.trim().match(/^https?:\/\//)) {
+      if (href.trim().match(new RegExp('^(https?|ftp)://'))) {
+        /**
+         * match host
+         */
         const matchHost = internal_links.includes(new URL(href).host);
+        /**
+         * match url
+         */
         const matchHref = internal_links.includes(href);
         result.internal = matchHost;
+        if (href.includes('seoserp')) {
+          console.log(!matchHost, !matchHref);
+        }
         if (!matchHost && !matchHref) {
           result.href = '/page/safelink.html?url=' + Buffer.from(encodeURIComponent(href)).toString('base64');
         }
@@ -108,7 +136,8 @@ const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
 
   const file = files[0];
   const content = readFileSync(file, 'utf-8');
-  const result = fixHtmlPost(content);
+  const debug = strMatch(file, 'see-blog-position-in-search');
+  const result = fixHtmlPost(content, debug);
   writeFileSync(file, result);
   return skip();
 };
@@ -118,23 +147,29 @@ const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
  * @param content
  * @returns
  */
-export default function fixHtmlPost(content: string) {
+export default function fixHtmlPost(content: string, debug = false) {
   const dom = new JSDOM(content);
   // fix lang attr
   const html = dom.window.document.querySelector('html');
   if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
-  // safelink
+  // external link filter
   const hrefs = dom.window.document.querySelectorAll('a');
   if (hrefs && hrefs.length > 0) {
     for (let i = 0; i < hrefs.length; i++) {
       const element = hrefs[i];
       const href = element.getAttribute('href');
-      const filter = filter_external_links(href);
+      const filter = filter_external_links(href, debug);
+      if (debug) {
+        if (href.includes('seoserp')) console.log(filter, href);
+      }
       if (!filter.internal) {
         element.setAttribute('rel', 'nofollow noopener noreferer');
         element.setAttribute('target', '_blank');
       }
-      element.setAttribute('href', filter.href);
+
+      if (config.external_link.safelink) {
+        element.setAttribute('href', filter.href);
+      }
     }
   }
 

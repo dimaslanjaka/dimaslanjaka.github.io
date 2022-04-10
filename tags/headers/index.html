@@ -52,8 +52,8 @@
 <meta property="og:description" content="Tag: headers www.webmanajemen.com" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" />
-<meta property="article:published_time" content="2022-04-10T15:10:52+07:00" />
-<meta property="article:modified_time" content="2022-04-10T15:10:52+07:00" />
+<meta property="article:published_time" content="2022-04-10T15:36:16+07:00" />
+<meta property="article:modified_time" content="2022-04-10T15:36:16+07:00" />
 <meta property="article:author" content="" />
 
 <meta name="twitter:card" content="summary" />
@@ -156,8 +156,8 @@
 							(function () {
 								var data = JSON.parse(document.getElementById('sitedata').textContent);
 								// generate infinite scroll for tags and categories archive
-								if (data && data.length) {
-									console.log(data);
+								if (Array.isArray(data) && data.length) {
+									//console.log(data);
 									var total = data.length;
 									var listElm = document.querySelector('#archive-posts');
 									var counter = 0;
@@ -165,14 +165,16 @@
 										var grid = `<div class="row" id="row-${counter}">`;
 										for (var i = 0; i < 3; i++) {
 											var item = data[counter];
-											grid += `<div class="4u" id="post-${counter}">
+											if (item) {
+												grid += `<div class="4u" id="post-${counter}">
 									<h2>${item.title}</h2>
 									<a href="${item.url}" class="image full"><img src="${item.thumbnail}" alt="${item.title}"></a>
 									<p>${item.excerpt}</p>
 									<div class="footer"><a href="${item.url}" class="button">More Details</a>
 									</div>
 								</div>`;
-											counter++;
+												counter++;
+											}
 										}
 										grid += '</div>';
 										listElm.innerHTML += grid;

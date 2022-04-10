@@ -250,6 +250,7 @@ ul.style li {
 	margin: 0;
 	padding: 2em 0em 1.5em 0em;
 	border-top: 1px solid #ECECEC;
+	min-height: 200px;
 }
 
 ul.style li:first-child {
@@ -320,6 +321,11 @@ ul.style .first {
 
 #nav ul {
 	margin: 0;
+}
+
+.sidebar-img {
+	width: 100px;
+	height: 100px;
 }
 
 /*********************************************************************************/

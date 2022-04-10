@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<!--
+	Iridium by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+
+<head>
+  <title>PHP Amazon S3 File Upload Code AWS Signature Version 4 | WMI Gitlab</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Amazon offers a PHP SDK for taking care of AWS and S asks for, yet it tips the scales at more than 500 documents and almost 5MB. In the" />
+  <meta name="keywords" content="" />
+  <include expiration="7d" path="*.css"></include>
+<include expiration="7d" path="*.js"></include>
+<include expiration="3d" path="*.gif"></include>
+<include expiration="3d" path="*.jpeg"></include>
+<include expiration="3d" path="*.jpg"></include>
+<include expiration="3d" path="*.png"></include>
+<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch" />
+<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch" />
+  <!--important canonical-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/07/php-amazon-s3-file-upload-code-aws.md">
+<!--facebook metadata-->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PHP Amazon S3 File Upload Code AWS Signature Version 4" />
+<meta property="og:url" content="https://www.webmanajemen.com/2017/07/php-amazon-s3-file-upload-code-aws.md" />
+<meta property="og:site_name" content="WMI" />
+<meta property="og:description" content="Amazon offers a PHP SDK for taking care of AWS and S asks for, yet it tips the scales at more than 500 documents and almost 5MB. In the" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" />
+<!--article metadata-->
+<meta property="article:published_time" content="2017-07-24T07:44:00.000+07:00" />
+<meta property="article:modified_time" content="2017-07-24T07:44:02+07:00" />
+<meta property="article:author" content="Unknown" />
+
+<meta property="article:tag" content="PHP" />
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" />
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+  <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/lazyload.js?c=1"></script>
+  <script src="/js/skel.min.js?c=1"></script>
+  <!--<script src="/js/skel-panels.min.js"></script>-->
+  <script src="/js/init.js?c=1"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/skel-noscript.css?c=1" />
+    <link rel="stylesheet" href="/css/style.css?c=1" />
+    <link rel="stylesheet" href="/css/style-desktop.css?c=1" />
+  </noscript>
+  <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
+  <style>
+    div#header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'), no-repeat;
+      color: white;
+      background-size: cover;
+    }
+  </style>
+  <script>const lazy = new lazyload();</script>
+</head>
+
+
+<body class="no-sidebar">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+
+			<!-- Logo -->
+			<div id="logo">
+				<h1><a href="https://www.webmanajemen.com/2017/07/php-amazon-s3-file-upload-code-aws.md">WMI</a></h1>
+				<span>PHP Amazon S3 File Upload Code AWS Signature Version 4 WMI Gitlab by Unknown</span>
+			</div>
+
+			<!-- Nav -->
+<nav id="nav">
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    
+    
+    <li class="active"><a href="/tags/PHP">PHP</a></li>
+    
+    
+    <!--iterate navigation config-->
+    
+      <li><a href="/page/about-me.html">About Me</a></li>
+    
+      <li><a href="/p/search.html">Search Engine</a></li>
+    
+  </ul>
+</nav>
+		</div>
+	</div>
+
+	<!-- Main -->
+	<div id="main">
+		<div class="container">
+			<div class="row">
+
+				<!-- Content -->
+				<div id="content" class="12u skel-cell-important">
+					<section>
+						<header>
+							<h2>PHP Amazon S3 File Upload Code AWS Signature Version 4</h2>
+							<span class="byline">Amazon offers a PHP SDK for taking care of AWS and S asks for, yet it tips the scales at more than 500 documents and almost 5MB. In the</span>
+						</header>
+						<!--
+							<a href="#" class="image full"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" alt="PHP Amazon S3 File Upload Code AWS Signature Version 4" /></a>
+							-->
+
+						<p><span id="span_a5da_0">Amazon offers a PHP SDK for taking care of AWS and S3 asks for, yet it tips the scales at more than 500 documents and almost 5MB. In the event that you simply need to transfer a record to a S3 basin utilizing PHP, you can make the HTTP POST ask for yourself utilizing just around 50 lines of code. This is likewise helpful on the off chance that you need to see how the demand and approval prepare function.</span><br><br id="br_a5da_1"><b id="b_a5da_0">AWS Signature Version 4</b><br><span id="span_a5da_1">This code uses Amazon AWS Signature Version 4. To view the old Version 2 code, see </span><a href="https://www.h3xed.com/programming/simple-php-code-for-uploading-a-file-to-an-amazon-s3-bucket" id="a_a5da_0" rel="noopener noreferer nofollow">this post</a><span id="span_a5da_2">.</span><br><br id="br_a5da_4"><b id="b_a5da_1">Sample Code</b><br>This is test PHP code to help you comprehend and test transferring to Amazon S3. Requires PHP variant 5.4 or fresher because of exhibit language structure. On the off chance that you need to utilize this in your venture, you ought to most likely alter this and place it into a capacity or strategy. I have it designed like this particularly to help demonstrate how the procedure functions.<br><br>Perused the inline code remarks for a clarification of each segment:<br><br id="br_a5da_9"><pre><code id="code_a5da_0">&lt;?php<br><br><span id="span_a5da_5">// USER OPTIONS</span><br><span id="span_a5da_6">// Replace these values with ones appropriate to you.</span><br>$accessKeyId = ‘YOUR_ACCESS_KEY_ID’;<br>$secretKey = ‘YOUR_SECRET_KEY’;<br>$bucket = ‘YOUR_BUCKET_NAME’;<br>$region = ‘BUCKET_AMAZON_REGION’; <span id="span_a5da_7">// us-west-2, us-east-1, etc</span><br>$acl = ‘ACCESS_CONTROL_LIST’; <span id="span_a5da_8">// private, public-read, etc</span><br>$filePath = ‘path/to/file.jpg’;<br>$fileName = ‘myimage.jpg’;<br>$fileType = ‘image/jpeg’;<br><br><span id="span_a5da_9">// VARIABLES</span><br><span id="span_a5da_10">// These are used throughout the request.</span><br>$longDate = gmdate(‘Ymd\THis\Z’);<br>$shortDate = gmdate(‘Ymd’);<br>$credential = $accessKeyId . ‘/’ . $shortDate . ‘/’ . $region . ‘/s3/aws4_request’;<br><br><span id="span_a5da_11">// POST POLICY</span><br><span id="span_a5da_12">// Amazon requires a base64-encoded POST policy written in JSON.</span><br><span id="span_a5da_13">// This tells Amazon what is acceptable for this request. For</span><br><span id="span_a5da_14">// simplicity, we set the expiration date to always be 24H in </span><br><span id="span_a5da_15">// the future. The two “starts-with” fields are used to restrict</span><br><span id="span_a5da_16">// the content of “key” and “Content-Type”, which are specified</span><br><span id="span_a5da_17">// later in the POST fields. Again for simplicity, we use blank</span><br><span id="span_a5da_18">// values (‘’) to not put any restrictions on those two fields.</span><br>$policy = base64_encode(json_encode([<br>    ‘expiration’ =&gt; gmdate(‘Y-m-d\TH:i:s\Z’, time() + 86400),<br>    ‘conditions’ =&gt; [<br>        [‘acl’ =&gt; $acl],<br>        [‘bucket’ =&gt; $bucket],<br>        [‘starts-with’, ‘$Content-Type’, ‘’],<br>        [‘starts-with’, ‘$key’, ‘’],<br>        [‘x-amz-algorithm’ =&gt; ‘AWS4-HMAC-SHA256’],<br>        [‘x-amz-credential’ =&gt; $credential],<br>        [‘x-amz-date’ =&gt; $longDate]<br>    ]<br>]));<br><br><span id="span_a5da_19">// SIGNATURE</span><br><span id="span_a5da_20">// A base64-encoded HMAC hashed signature with your secret key.</span><br><span id="span_a5da_21">// This is used so Amazon can verify your request, and will be</span><br><span id="span_a5da_22">// passed along in a POST field later.</span><br>$signingKey = hash_hmac(‘sha256’, $shortDate, ‘AWS4’ . $secretKey, true);<br>$signingKey = hash_hmac(‘sha256’, $region, $signingKey, true);<br>$signingKey = hash_hmac(‘sha256’, ‘s3’, $signingKey, true);<br>$signingKey = hash_hmac(‘sha256’, ‘aws4_request’, $signingKey, true);<br>$signature = hash_hmac(‘sha256’, $policy, $signingKey);<br><br><span id="span_a5da_23">// CURL</span><br><span id="span_a5da_24">// The cURL request. Passes in the full URL to your Amazon bucket.</span><br><span id="span_a5da_25">// Sets RETURNTRANSFER and HEADER to true to see the full response from</span><br><span id="span_a5da_26">// Amazon, including body and head. Sets POST fields for cURL.</span><br><span id="span_a5da_27">// Then executes the cURL request.</span><br>$ch = curl_init(‘https://’ . $bucket . ‘.s3-’ . $region . ‘.amazonaws.com’);<br>curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);<br>curl_setopt($ch, CURLOPT_HEADER, true);<br>curl_setopt($ch, CURLOPT_POST, true);<br>curl_setopt($ch, CURLOPT_POSTFIELDS, [<br>    ‘Content-Type’ =&gt;  $fileType,<br>    ‘acl’ =&gt; $acl,<br>    ‘key’ =&gt; $fileName,<br>    ‘policy’ =&gt;  $policy,<br>    ‘x-amz-algorithm’ =&gt; ‘AWS4-HMAC-SHA256’,<br>    ‘x-amz-credential’ =&gt; $credential,<br>    ‘x-amz-date’ =&gt; $longDate,<br>    ‘x-amz-signature’ =&gt; $signature,<br>    ‘file’ =&gt; new CurlFile(realpath($filePath), $fileType, $fileName)<br>]);<br>$response = curl_exec($ch);<br><br><span id="span_a5da_28">// RESPONSE</span><br><span id="span_a5da_29">// If Amazon returns a response code of 204, the request was</span><br><span id="span_a5da_30">// successful and the file should be sitting in your Amazon S3</span><br><span id="span_a5da_31">// bucket. If a code other than 204 is returned, there will be an</span><br><span id="span_a5da_32">// XML-formatted error code in the body. For simplicity, we use</span><br><span id="span_a5da_33">// substr to extract the error code and output it.</span><br>if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == 204) {<br>    echo ‘Success!’;<br>} else {<br>    $error = substr($response, strpos($response, ‘&lt;code&gt;’) + 6);<br>    echo substr($error, 0, strpos($error, ‘&lt;/code&gt;’));<br>}</code></pre><pre><span id="span_a5da_34">If you aren’t receiving any response at all, check if </span><samp id="samp_a5da_0">curl_exec($ch)</samp><span id="span_a5da_35"> is returning false. If it is, chances are it’s due to an SSL issue. You can check the error at </span><samp id="samp_a5da_1">curl_error($ch)</samp><span id="span_a5da_36">. For testing purposes, you can set these two additional cURL options and see if it works:</span></pre><pre><code id="code_a5da_1">curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);<br>curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);</code></pre><span id="span_a5da_37">But note that doing this is very insecure. Read </span><a href="http://stackoverflow.com/questions/21195530/does-turning-off-curlopt-ssl-verifypeer-in-curl-make-transmission-insecure" id="a_a5da_1" target="_blank" rel="noopener noreferer nofollow">this Stackoverflow post</a><span id="span_a5da_38"> and </span><a href="http://unitstep.net/blog/2009/05/05/using-curl-in-php-to-access-https-ssltls-protected-sites/" id="a_a5da_2" target="_blank" rel="noopener noreferer nofollow">this blog post</a><span id="span_a5da_39">.</span><br><br>Source: <a href="http://hex3d.com">hex3d.com</a></p>
+
+					</section>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+<div id="featured">
+  <div class="container">
+    <div class="row">
+      
+      <div class="4u">
+        <h2>Quiz The Legend Of Neverland</h2>
+        <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="image full"><img src="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz/SCENIC-QUIZ.jpg"
+            alt="Quiz The Legend Of Neverland" /></a>
+        <p>Quiz The Legend Of Neverland. Scenic Quiz Answer The Legend Of Neverland</p>
+        <p><a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="button">More Details</a></p>
+      </div>
+      
+      <div class="4u">
+        <h2>Install PHP CLI for android</h2>
+        <a href="http://www.webmanajemen.com/2017/04/instal-php-cli-pada-android-instalasi.html" class="image full"><img src="https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg"
+            alt="Install PHP CLI for android" /></a>
+        <p>Install PHP CLI for android. How to install php cli on android rooted</p>
+        <p><a href="http://www.webmanajemen.com/2017/04/instal-php-cli-pada-android-instalasi.html" class="button">More Details</a></p>
+      </div>
+      
+      <div class="4u">
+        <h2>Chimeraland Pets Information</h2>
+        <a href="https://www.webmanajemen.com/Chimeraland/Pets.html" class="image full"><img src="https://www.webmanajemen.com/Chimeraland/Pets/cover.jpg"
+            alt="Chimeraland Pets Information" /></a>
+        <p>Chimeraland Pets Information. Chimeraland Pets Information</p>
+        <p><a href="https://www.webmanajemen.com/Chimeraland/Pets.html" class="button">More Details</a></p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Comment -->
+<div id="comment">
+  <div class="container">
+    <div id="disqus_thread" class="disqus"></div>
+    <script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'PHP Amazon S3 File Upload Code AWS Signature Version 4';
+      this.page.url = 'https://www.webmanajemen.com/2017/07/php-amazon-s3-file-upload-code-aws.md';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/07/php-amazon-s3-file-upload-code-aws.md').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+    comments powered by Disqus.
+  </a>
+</noscript>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="4u">
+        <section>
+          <h2>Latest Posts</h2>
+          <ul class="default">
+            
+            <li><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html" title="Lokasi Spawn Bunga Di Chimeraland">Lokasi Spawn Bunga Di Chimeraland</a></li>
+            
+            <li><a href="https://www.webmanajemen.com/Chimeraland/Taming.html" title="Taming Pets Chimeraland">Taming Pets Chimeraland</a></li>
+            
+            <li><a href="https://www.webmanajemen.com/Chimeraland/Pets.html" title="Pets">Pets</a></li>
+            
+            <li><a href="https://www.webmanajemen.com/Chimeraland/index.html" title="Index Chimeraland">Index Chimeraland</a></li>
+            
+            <li><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html" title="Cooking Recipes Chimeraland">Cooking Recipes Chimeraland</a></li>
+            
+          </ul>
+        </section>
+      </div>
+      <div class="4u">
+        <section>
+          <h2>Ultrices fringilla</h2>
+          <ul class="default">
+            <li><a href="#">Pellentesque lectus gravida blandit</a></li>
+            <li><a href="#">Lorem ipsum consectetuer adipiscing</a></li>
+            <li><a href="#">Phasellus nibh pellentesque congue</a></li>
+            <li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+            <li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="4u">
+        <section>
+          <h2>Aenean elementum</h2>
+          <ul class="default">
+            <li><a href="#">Pellentesque lectus gravida blandit</a></li>
+            <li><a href="#">Lorem ipsum consectetuer adipiscing</a></li>
+            <li><a href="#">Phasellus nibh pellentesque congue</a></li>
+            <li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+            <li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copyright -->
+<div id="copyright">
+  <div class="container">
+    WMI ©  Unknown
+  </div>
+</div>
+
+	
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+  lazy.add('https://www.googletagmanager.com/gtag/js?id=UA-106238155-1', function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    console.log('google analystic loaded');
+    gtag('config', 'UA-106238155-1');
+  });
+</script>
+
+
+
+  <script type="text/javascript">//<![CDATA[
+    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+    //]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/vs.min.css">
+<script>
+  lazy.add('https://yandex.st/highlightjs/8.0/highlight.min.js', function () {
+    hljs.initHighlightingOnLoad();
+  });
+  lazy.add('/js/iridium.js');
+  lazy.exec();
+</script>
+</body>
+
+
+</html>

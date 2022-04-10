@@ -1,125 +1,128 @@
-<!--?xml version="1.0" encoding="UTF-8" ?--><!DOCTYPE html><html expr:dir="data:blog.languageDirection" lang="en"><head></head><body expr:class="data:blog.pageType" onload="var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l(&quot;mouseover&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute(&quot;data-href&quot;)||a.match(EXCLUDE)||(t.setAttribute(&quot;data-href&quot;,a),t.removeAttribute(&quot;href&quot;),t.style.textDecoration=&quot;underline&quot;,t.style.color=&quot;red&quot;)}}),l(&quot;click&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute(&quot;data-href&quot;);return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement(&quot;a&quot;),{target:&quot;_blank&quot;,href:&quot;https://dimaslanjaka.github.io/page/safelink.html?url=&quot;+btoa(t)}).click(),!1}});" style="margin:0;">&lt;head&gt;
-<meta charset="utf-8">
-<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<b:if cond="data:view.isSingleItem">
-<title>&lt;data:blog.pageName/&gt;</title>
-<b:elseif cond="data:view.isHomepage">
-<title>&lt;data:blog.title/&gt;</title>
-<b:elseif cond="data:view.search.label">
-<title>&lt;data:blog.pageTitle/&gt;</title>
-<b:elseif cond="data:view.search.query">
-<title>&lt;data:view.search.resultsMessage/&gt;</title>
-<b:elseif cond="data:view.search and !data:view.search.label and !data:view.search.query">
-<title>&lt;data:blog.pageTitle/&gt;</title>
-<b:elseif cond="data:view.isArchive">
-<title>&lt;data:view.archive.rangeMessage/&gt;</title>
-<b:elseif cond="data:view.isError">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<HTML expr:dir='data:blog.languageDirection'>
+&lt;head&gt;
+<meta charset='utf-8'/>
+<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<b:if cond='data:view.isSingleItem'>
+<title><data:blog.pageName/></title>
+<b:elseif cond='data:view.isHomepage'/>
+<title><data:blog.title/></title>
+<b:elseif cond='data:view.search.label'/>
+<title><data:blog.pageTitle/></title>
+<b:elseif cond='data:view.search.query'/>
+<title><data:view.search.resultsMessage/></title>
+<b:elseif cond='data:view.search and !data:view.search.label and !data:view.search.query'/>
+<title><data:blog.pageTitle/></title>
+<b:elseif cond='data:view.isArchive'/>
+<title><data:view.archive.rangeMessage/></title>
+<b:elseif cond='data:view.isError'/>
 <title>404 Not Found</title>
-</b:elseif></b:elseif></b:elseif></b:elseif></b:elseif></b:elseif></b:if>
-<b:if cond="data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery">
-<meta content="noindex/nofollow" name="robots">
-<meta content="noindex/nofollow" name="googlebot">
-<b:elseif cond="data:view.isSingleItem or data:view.isHomepage">
-<meta content="index/follow" name="robots">
-<meta content="index/follow" name="googlebot">
-</b:elseif></b:if>
-<meta content="blogger" name="generator">
-<link href="https://www.blogger.com/openid-server.g" rel="openid.server">
-<link expr:href="data:blog.homepageUrl" rel="openid.delegate">
-<link expr:href="data:blog.url.canonical.jsonEscaped" rel="canonical">
-<link expr:href="data:blog.homepageUrl + &quot;feeds/posts/default&quot;" expr:title="data:blog.title + &quot; - Atom&quot;" rel="alternate" type="application/atom+xml">
-<link expr:href="data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;" expr:title="data:blog.title + &quot; - RSS&quot;" rel="alternate" type="application/rss+xml">
-<link expr:href="&quot;https://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;" expr:title="data:blog.title + &quot; - Atom&quot;" rel="alternate" type="application/atom+xml">
-<meta expr:content="data:blog.homepageUrl + &quot;sitemap.xml&quot;" rel="sitemap" type="application/xml">
-<b:if cond="data:view.isMultipleItems">
-<meta expr:content="data:blog.metaDescription" name="description">
-<b:elseif cond="data:view.isSingleItem">
-<b:if cond="data:blog.metaDescription">
-<meta expr:content="data:blog.metaDescription" name="description">
-<b:else>
-<meta expr:content="data:blog.title" name="description">
-</b:else></b:if>
-</b:elseif></b:if>
-<meta content="#000000" name="msapplication-navbutton-color">
-<meta content="#000000" name="apple-mobile-web-app-status-bar-style">
-<meta content="#000000" name="theme-color">
-<b:if cond="data:view.isMultipleItems">
-<meta content="YOUR KEYWORD 1 HERE, YOUR KEYWORD 2 HERE, YOUR KEYWORD 3 HERE, YOUR KEYWORD 4 HERE" name="keywords">
-<b:elseif cond="data:view.isSingleItem">
-<meta expr:content="data:blog.pageName" name="keywords">
-</b:elseif></b:if>
-<b:if cond="data:view.isPost">
-<b:if cond="data:blog.postImageThumbnailUrl">
-<link expr:href="data:blog.postImageThumbnailUrl" rel="image_src">
+</b:if>
+<b:if cond='data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery'>
+<meta content='noindex/nofollow' name='robots'/>
+<meta content='noindex/nofollow' name='googlebot'/>
+<b:elseif cond='data:view.isSingleItem or data:view.isHomepage'/>
+<meta content='index/follow' name='robots'/>
+<meta content='index/follow' name='googlebot'/>
+</b:if>
+<meta content='blogger' name='generator'/>
+<link href='https://www.blogger.com/openid-server.g' rel='openid.server'/>
+<link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
+<link expr:href='data:blog.url.canonical.jsonEscaped' rel='canonical'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'/>
+<link expr:href='&quot;https://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+<meta expr:content='data:blog.homepageUrl + &quot;sitemap.xml&quot;' rel='sitemap' type='application/xml'/>
+<b:if cond='data:view.isMultipleItems'>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<b:else/>
+<meta expr:content='data:blog.title' name='description'/>
+</b:if>
+</b:if>
+<meta content='#000000' name='msapplication-navbutton-color'/>
+<meta content='#000000' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='#000000' name='theme-color'/>
+<b:if cond='data:view.isMultipleItems'>
+<meta content='YOUR KEYWORD 1 HERE, YOUR KEYWORD 2 HERE, YOUR KEYWORD 3 HERE, YOUR KEYWORD 4 HERE' name='keywords'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<meta expr:content='data:blog.pageName' name='keywords'/>
+</b:if>
+<b:if cond='data:view.isPost'>
+<b:if cond='data:blog.postImageThumbnailUrl'>
+<link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'/>
 </b:if></b:if>
-<link expr:href="data:blog.url" hreflang="x-default" rel="alternate">
-<link href="/favicon.ico" rel="icon" type="image/x-icon">
-<meta content="XXXXX" name="google-site-verification">
-<meta content="XXXXX" name="alexaVerifyID">
-<meta content="XXXXX" name="p:domain_verify">
-<meta content="XXXXX" name="yandex-verification">
-<meta content="XXXXX" name="msvalidate.01">
+<link expr:href='data:blog.url' hreflang='x-default' rel='alternate'/>
+<link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+<meta content='XXXXX' name='google-site-verification'/>
+<meta content='XXXXX' name='alexaVerifyID'/>
+<meta content='XXXXX' name='p:domain_verify'/>
+<meta content='XXXXX' name='yandex-verification'/>
+<meta content='XXXXX' name='msvalidate.01'/>
 <!-- Open Graph -->
-<b:if cond="data:view.isHomepage">
-<b:if cond="data:view.isSingleItem">
-<b:if cond="data:blog.url">
-<meta expr:content="data:blog.url" property="og:url">
+<b:if cond='data:view.isHomepage'>
+<b:if cond='data:view.isSingleItem'>
+<b:if cond='data:blog.url'>
+<meta expr:content='data:blog.url' property='og:url'/>
 </b:if>
-<meta expr:content="data:blog.title" property="og:site_name">
+<meta expr:content='data:blog.title' property='og:site_name'/>
 </b:if></b:if>
-<b:if cond="data:view.isPost">
-<meta expr:content="data:blog.pageName" property="og:title">
-<meta content="article" property="og:type">
-<b:else>
-<meta expr:content="data:blog.title" property="og:title">
-<meta content="website" property="og:type">
-</b:else></b:if>
-<meta expr:content="data:blog.canonicalUrl" property="og:url">
-<b:if cond="data:blog.postImageUrl">
-<meta expr:content="data:blog.postImageUrl" property="og:image">
-<b:else>
-<b:if cond="data:blog.postImageThumbnailUrl">
-<meta expr:content="data:blog.postThumbnailUrl" property="og:image">
-<b:else>
-<meta content="YOUR_IMAGE_URL_HERE" property="og:image">
-</b:else></b:if></b:else></b:if>
-<b:if cond="data:view.isMultipleItems">
-<meta expr:content="data:blog.metaDescription" property="og:description">
-<b:elseif cond="data:view.isSingleItem">
-<b:if cond="data:blog.metaDescription">
-<meta expr:content="data:blog.metaDescription" property="og:description">
-<b:else>
-<meta expr:content="data:blog.title" property="og:description">
-</b:else></b:if>
-</b:elseif></b:if>
-<meta expr:content="data:blog.title" property="og:site_name">
-<b:if cond="data:view.isSingleItem">
-<meta content="https://www.facebook.com/XXXXX" property="article:author">
-<meta content="https://www.facebook.com/XXXXX" property="article:publisher">
+<b:if cond='data:view.isPost'>
+<meta expr:content='data:blog.pageName' property='og:title'/>
+<meta content='article' property='og:type'/>
+<b:else/>
+<meta expr:content='data:blog.title' property='og:title'/>
+<meta content='website' property='og:type'/>
 </b:if>
-<meta content="XXXXX" property="fb:app_id">
-<meta content="XXXXX" property="fb:admins">
-<meta content="XXXXX" property="fb:profile_id">
-<meta content="XXXXX" property="fb:pages">
-<meta content="id" name="geo.country">
-<meta content="id_ID" property="og:locale">
-<meta content="en_US" property="og:locale:alternate">
-<meta content="Indonesia" name="geo.placename">
-<meta content="general" name="rating">
-<b:if cond="data:blog.pageType == &quot;item&quot;">
-<meta expr:content="data:blog.pageName" property="og:image:alt">
-<b:else>
-<meta expr:content="data:blog.title" property="og:image:alt">
-</b:else></b:if>
-<meta expr:content="data:blog.title" name="twitter:site">
-<meta content="summary_large_image" name="twitter:card">
-<meta content="@YOUR_TWITTER_USERNAME_HERE" name="twitter:creator">
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<b:if cond='data:blog.postImageUrl'>
+<meta expr:content='data:blog.postImageUrl' property='og:image'/>
+<b:else/>
+<b:if cond='data:blog.postImageThumbnailUrl'>
+<meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+<b:else/>
+<meta content='YOUR_IMAGE_URL_HERE' property='og:image'/>
+</b:if></b:if>
+<b:if cond='data:view.isMultipleItems'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:else/>
+<meta expr:content='data:blog.title' property='og:description'/>
+</b:if>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:if cond='data:view.isSingleItem'>
+<meta content='https://www.facebook.com/XXXXX' property='article:author'/>
+<meta content='https://www.facebook.com/XXXXX' property='article:publisher'/>
+</b:if>
+<meta content='XXXXX' property='fb:app_id'/>
+<meta content='XXXXX' property='fb:admins'/>
+<meta content='XXXXX' property='fb:profile_id'/>
+<meta content='XXXXX' property='fb:pages'/>
+<meta content='id' name='geo.country'/>
+<meta content='id_ID' property='og:locale'/>
+<meta content='en_US' property='og:locale:alternate'/>
+<meta content='Indonesia' name='geo.placename'/>
+<meta content='general' name='rating'/>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<meta expr:content='data:blog.pageName' property='og:image:alt'/>
+<b:else/>
+<meta expr:content='data:blog.title' property='og:image:alt'/>
+</b:if>
+<meta expr:content='data:blog.title' name='twitter:site'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='@YOUR_TWITTER_USERNAME_HERE' name='twitter:creator'/>
 <!-- Schema WebSite -->
-<script type="application/ld+json">{ &quot;@context&quot;: &quot;http://schema.org&quot;, &quot;@type&quot;: &quot;WebSite&quot;, &quot;@id&quot;: &quot;#website&quot;, &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;, &quot;potentialAction&quot;: { &quot;@type&quot;: &quot;SearchAction&quot;, &quot;target&quot;: &quot;<data:blog.homepageUrl/>search?q={search_term}&quot;, &quot;query-input&quot;: &quot;required name=search_term&quot; } }</script>
-<link href="//adservice.google.ca" rel="dns-prefetch"><link href="//googleads.g.doubleclick.net" rel="dns-prefetch"><link href="//adservice.google.com" rel="dns-prefetch"><link href="//www.googletagservices.com" rel="dns-prefetch"><link href="//pagead2.googlesyndication.com" rel="dns-prefetch"><link href="//maxcdn.bootstrapcdn.com" rel="dns-prefetch"><link href="//resources.blogblog.com" rel="dns-prefetch"><link href="//fonts.googleapis.com" rel="dns-prefetch"><link href="//disqus.com" rel="dns-prefetch"><link href="//github.com" rel="dns-prefetch"><link href="//cdn.rawgit.com" rel="dns-prefetch"><link href="//1.bp.blogspot.com" rel="dns-prefetch"><link href="//2.bp.blogspot.com" rel="dns-prefetch"><link href="//3.bp.blogspot.com" rel="dns-prefetch"><link href="//4.bp.blogspot.com" rel="dns-prefetch"><link href="//www.blogger.com" rel="dns-prefetch"><link href="//www.facebook.com" rel="dns-prefetch"><link href="//plus.google.com" rel="dns-prefetch"><link href="//twitter.com" rel="dns-prefetch"><link href="//www.youtube.com" rel="dns-prefetch"><link href="//feedburner.google.com" rel="dns-prefetch"><link href="//feeds.feedburner.com" rel="dns-prefetch"><link href="//platform.twitter.com" rel="dns-prefetch"><link href="//apis.google.com" rel="dns-prefetch"><link href="//connect.facebook.net" rel="dns-prefetch"><link href="//www.google-analytics.com" rel="dns-prefetch"><link href="//www.gstatic.com" rel="dns-prefetch"><link href="//static.xx.fbcdn.net" rel="dns-prefetch"><link href="//tpc.googlesyndication.com" rel="dns-prefetch"><link href="//syndication.twitter.com" rel="dns-prefetch"><link href="//fonts.gstatic.com" rel="dns-prefetch"><link href="https://3p.ampproject.net" rel="dns-prefetch"><link href="https://lh3.googleusercontent.com" rel="dns-prefetch"><link href="https://tpc.googlesyndication.com" rel="dns-prefetch"><link href="https://i.ytimg.com" rel="dns-prefetch"><link href="https://i3.ytimg.com" rel="dns-prefetch"><link href="https://img.youtube.com" rel="dns-prefetch"><link href="https://www.googletagmanager.com" rel="dns-prefetch"><link href="https://adservice.google.co.id/" rel="dns-prefetch"><link href="//cdnjs.cloudflare.com/" rel="dns-prefetch"><link href="//resources.blogblog.com/" rel="dns-prefetch">
-<b:if cond="data:blog.isMobileRequest == &quot;false&quot;">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<script type='application/ld+json'>{ &quot;@context&quot;: &quot;http://schema.org&quot;, &quot;@type&quot;: &quot;WebSite&quot;, &quot;@id&quot;: &quot;#website&quot;, &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;, &quot;potentialAction&quot;: { &quot;@type&quot;: &quot;SearchAction&quot;, &quot;target&quot;: &quot;<data:blog.homepageUrl/>search?q={search_term}&quot;, &quot;query-input&quot;: &quot;required name=search_term&quot; } }</script>
+<link href='//adservice.google.ca' rel='dns-prefetch'/><link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/><link href='//adservice.google.com' rel='dns-prefetch'/><link href='//www.googletagservices.com' rel='dns-prefetch'/><link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/><link href='//maxcdn.bootstrapcdn.com' rel='dns-prefetch'/><link href='//resources.blogblog.com' rel='dns-prefetch'/><link href='//fonts.googleapis.com' rel='dns-prefetch'/><link href='//disqus.com' rel='dns-prefetch'/><link href='//github.com' rel='dns-prefetch'/><link href='//cdn.rawgit.com' rel='dns-prefetch'/><link href='//1.bp.blogspot.com' rel='dns-prefetch'/><link href='//2.bp.blogspot.com' rel='dns-prefetch'/><link href='//3.bp.blogspot.com' rel='dns-prefetch'/><link href='//4.bp.blogspot.com' rel='dns-prefetch'/><link href='//www.blogger.com' rel='dns-prefetch'/><link href='//www.facebook.com' rel='dns-prefetch'/><link href='//plus.google.com' rel='dns-prefetch'/><link href='//twitter.com' rel='dns-prefetch'/><link href='//www.youtube.com' rel='dns-prefetch'/><link href='//feedburner.google.com' rel='dns-prefetch'/><link href='//feeds.feedburner.com' rel='dns-prefetch'/><link href='//platform.twitter.com' rel='dns-prefetch'/><link href='//apis.google.com' rel='dns-prefetch'/><link href='//connect.facebook.net' rel='dns-prefetch'/><link href='//www.google-analytics.com' rel='dns-prefetch'/><link href='//www.gstatic.com' rel='dns-prefetch'/><link href='//static.xx.fbcdn.net' rel='dns-prefetch'/><link href='//tpc.googlesyndication.com' rel='dns-prefetch'/><link href='//syndication.twitter.com' rel='dns-prefetch'/><link href='//fonts.gstatic.com' rel='dns-prefetch'/><link href='https://3p.ampproject.net' rel='dns-prefetch'/><link href='https://lh3.googleusercontent.com' rel='dns-prefetch'/><link href='https://tpc.googlesyndication.com' rel='dns-prefetch'/><link href='https://i.ytimg.com' rel='dns-prefetch'/><link href='https://i3.ytimg.com' rel='dns-prefetch'/><link href='https://img.youtube.com' rel='dns-prefetch'/><link href='https://www.googletagmanager.com' rel='dns-prefetch'/><link href='https://adservice.google.co.id/' rel='dns-prefetch'/><link href='//cdnjs.cloudflare.com/' rel='dns-prefetch'/><link href='//resources.blogblog.com/' rel='dns-prefetch'/>
+<b:if cond='data:blog.isMobileRequest == &quot;false&quot;'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'/>
 </b:if>
 <!--END OG CODE-->
 <!--CLASS-->
@@ -132,9 +135,9 @@ String.prototype.CSS = function() {
   h.parentNode.insertBefore(l, h);
 }
 </script>
-&lt;style type="text/css"&gt;
+&lt;style type=&quot;text/css&quot;&gt;
 &lt;!-- /*
-<b:skin><!--[CDATA[
+<b:skin><![CDATA[
 /*Blogger Template Style
 Name    : PinkTong
 Version : 1.0.0
@@ -149,26 +152,26 @@ body#layout .content-wrapper{padding:0;margin:0 auto}
 body#layout #main-wrapper{width:70%;float:left;margin:0;padding:0}
 body#layout #sidebar-wrapper{width:30%;float:right;margin:0}
 body#layout #sidebar-wrapper .sidebar{overflow:hidden}
-]]--></b:skin>
+]]></b:skin>
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/style.css&#39;.CSS();
 </script>
-<b:if cond="data:view.isMultipleItems">
+<b:if cond='data:view.isMultipleItems'>
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/multiviews.css&#39;.CSS();
 </script>
 </b:if>
-<b:if cond="data:view.isPost">
+<b:if cond='data:view.isPost'>
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/post.css&#39;.CSS();
 </script>
 </b:if>
-<b:if cond="data:view.isPage">
+<b:if cond='data:view.isPage'>
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/page.css&#39;.CSS();
 </script>
 </b:if>
-<b:if cond="data:blog.searchQuery">
+<b:if cond='data:blog.searchQuery'>
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/search.css&#39;.CSS();
 </script>
@@ -176,37 +179,37 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/style2.css&#39;.CSS();
 </script>
-&lt;/head&gt;&lt;!----&gt;
-
-<b:if cond="data:view.isError">
-<div id="error-page">
-<br><br><br><br>
-<div class="errorlabel">404</div><br><br>
-<div class="light-heading2">Laman yang anda cari sudah dipindahkan, dihapus atau mungkin tidak pernah dibuat...</div><br>
-<div class="bt404"><a expr:href="data:blog.homepageUrl" title="Homepage" href="null"><span>Let's Go Back To Homepage</span></a></div>
+&lt;/head&gt;&lt;!--<head/>--&gt;
+<body expr:class='data:blog.pageType' onload='var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l(&quot;mouseover&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute(&quot;data-href&quot;)||a.match(EXCLUDE)||(t.setAttribute(&quot;data-href&quot;,a),t.removeAttribute(&quot;href&quot;),t.style.textDecoration=&quot;underline&quot;,t.style.color=&quot;red&quot;)}}),l(&quot;click&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute(&quot;data-href&quot;);return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement(&quot;a&quot;),{target:&quot;_blank&quot;,href:&quot;https://dimaslanjaka.github.io/page/safelink.html?url=&quot;+btoa(t)}).click(),!1}});' style='margin:0;'>
+<b:if cond='data:view.isError'>
+<div id='error-page'>
+<br/><br/><br/><br/>
+<div class='errorlabel'>404</div><br/><br/>
+<div class='light-heading2'>Laman yang anda cari sudah dipindahkan, dihapus atau mungkin tidak pernah dibuat...</div><br/>
+<div class='bt404'><a expr:href='data:blog.homepageUrl' title='Homepage'><span>Let&#39;s Go Back To Homepage</span></a></div>
 </div>
 <script>
 &#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/error.css&#39;.CSS();
 </script>
-  <b:else>
-<div id="page_content">
-<header class="bg-color" id="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-<div class="full-row clearfloat" id="header-area">
-<div id="menu-icon"><svg id="icon-home" viewBox="0 0 24 24"><path d="M1 17h22v2h-22v-2zm0-12v2h22v-2h-22zm0 8h22v-2h-22v2z"></path></svg></div>
-<b:section id="header-wrapper" maxwidgets="1" showaddelement="no">
-  <b:widget id="Header1" locked="true" title="Website Development Indonesia (Header)" type="Header" version="1">
+  <b:else/>
+<div id='page_content'>
+<header class='bg-color' id='header' itemscope='itemscope' itemtype='http://schema.org/WPHeader'>
+<div class='full-row clearfloat' id='header-area'>
+<div id='menu-icon'><svg id='icon-home' viewBox='0 0 24 24'><path d='M1 17h22v2h-22v-2zm0-12v2h22v-2h-22zm0 8h22v-2h-22v2z'/></svg></div>
+<b:section id='header-wrapper' maxwidgets='1' showaddelement='no'>
+  <b:widget id='Header1' locked='true' title='Website Development Indonesia (Header)' type='Header' version='1'>
     <b:widget-settings>
-      <b:widget-setting name="displayUrl">
-      <b:widget-setting name="displayHeight">0</b:widget-setting>
-      <b:widget-setting name="sectionWidth">240</b:widget-setting>
-      <b:widget-setting name="useImage">false</b:widget-setting>
-      <b:widget-setting name="shrinkToFit">false</b:widget-setting>
-      <b:widget-setting name="imagePlacement">BEHIND</b:widget-setting>
-      <b:widget-setting name="displayWidth">0</b:widget-setting>
-    </b:widget-setting></b:widget-settings>
-    <b:includable id="main">
-  <b:if cond="data:useImage">
-    <b:if cond="data:imagePlacement == &quot;BEHIND&quot;">
+      <b:widget-setting name='displayUrl'/>
+      <b:widget-setting name='displayHeight'>0</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>240</b:widget-setting>
+      <b:widget-setting name='useImage'>false</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      <b:widget-setting name='displayWidth'>0</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:useImage'>
+    <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
       <!--
       Show image as background to text. You can't really calculate the width
       reliably in JS because margins are not taken into account by any of
@@ -215,234 +218,234 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
       This results in a margin-width's worth of pixels being cropped. If the
       user is not using shrink to fit then we expand the header.
       -->
-      <b:if cond="data:mobile">
-          <div id="header-inner">
-            <div class="titlewrapper" style="background: transparent">
-              <div class="title" style="background: transparent; border-width: 0px">
-                <b:include name="title">
-              </b:include></div>
+      <b:if cond='data:mobile'>
+          <div id='header-inner'>
+            <div class='titlewrapper' style='background: transparent'>
+              <div class='title' style='background: transparent; border-width: 0px'>
+                <b:include name='title'/>
+              </div>
             </div>
-            <b:include name="description">
-          </b:include></div>
-        <b:else>
-          <div expr:style="&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                        + &quot;background-position: &quot;                        + data:backgroundPositionStyleStr + &quot;; &quot;                        + data:widthStyleStr                        + &quot;min-height: &quot; + data:height                        + &quot;_height: &quot; + data:height                        + &quot;background-repeat: no-repeat; &quot;" id="header-inner">
-            <div class="titlewrapper" style="background: transparent">
-              <div class="title" style="background: transparent; border-width: 0px">
-                <b:include name="title">
-              </b:include></div>
+            <b:include name='description'/>
+          </div>
+        <b:else/>
+          <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                        + &quot;background-position: &quot;                        + data:backgroundPositionStyleStr + &quot;; &quot;                        + data:widthStyleStr                        + &quot;min-height: &quot; + data:height                        + &quot;_height: &quot; + data:height                        + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
+            <div class='titlewrapper' style='background: transparent'>
+              <div class='title' style='background: transparent; border-width: 0px'>
+                <b:include name='title'/>
+              </div>
             </div>
-            <b:include name="description">
-          </b:include></div>
-        </b:else></b:if>
-    <b:else>
+            <b:include name='description'/>
+          </div>
+        </b:if>
+    <b:else/>
       <!--Show the image only-->
-      <div id="header-inner">
-<b:if cond="data:view.isMultipleItems">
+      <div id='header-inner'>
+<b:if cond='data:view.isMultipleItems'>
 <h1>
-        <a expr:href="data:blog.homepageUrl" style="display: block" href="null">
-          <img expr:alt="data:title" expr:id="data:widget.instanceId + &quot;_headerimg&quot;" expr:src="data:sourceUrl" style="display: block">
+        <a expr:href='data:blog.homepageUrl' style='display: block'>
+          <img expr:alt='data:title' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' style='display: block'/>
         </a>
   </h1>
-    <b:else>
+    <b:else/>
 <h2>
-        <a expr:href="data:blog.homepageUrl" style="display: block" href="null">
-          <img expr:alt="data:title" expr:id="data:widget.instanceId + &quot;_headerimg&quot;" expr:src="data:sourceUrl" style="display: block">
+        <a expr:href='data:blog.homepageUrl' style='display: block'>
+          <img expr:alt='data:title' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' style='display: block'/>
         </a>
   </h2>
-    </b:else></b:if>
+    </b:if>
         <!--Show the description-->
-        <b:if cond="data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;">
-          <b:include name="description">
-        </b:include></b:if>
+        <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
+          <b:include name='description'/>
+        </b:if>
       </div>
-    </b:else></b:if>
-  <b:else>
+    </b:if>
+  <b:else/>
     <!--No header image -->
-    <div id="header-inner">
-      <div class="titlewrapper">
-                <b:include name="title">
-      </b:include></div>
-      <b:include name="description">
-    </b:include></div>
-  </b:else></b:if>
+    <div id='header-inner'>
+      <div class='titlewrapper'>
+                <b:include name='title'/>
+      </div>
+      <b:include name='description'/>
+    </div>
+  </b:if>
 </b:includable>
-    <b:includable id="description">
-  <div class="descriptionwrapper">
-    <p class="description"><span><data:description></data:description></span></p>
+    <b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
   </div>
 </b:includable>
-    <b:includable id="title">
-<b:if cond="data:view.isMultipleItems">
-<h1 class="title"><a expr:href="data:blog.homepageUrl" expr:title="data:title" itemprop="url" href="null"><span itemprop="name"><data:title></data:title></span></a></h1>
-  <b:else>
-<h2 class="title"><a expr:href="data:blog.homepageUrl" expr:title="data:title" itemprop="url" href="null"><span itemprop="name"><data:title></data:title></span></a></h2>
-  </b:else></b:if>
+    <b:includable id='title'>
+<b:if cond='data:view.isMultipleItems'>
+<h1 class='title'><a expr:href='data:blog.homepageUrl' expr:title='data:title' itemprop='url'><span itemprop='name'><data:title/></span></a></h1>
+  <b:else/>
+<h2 class='title'><a expr:href='data:blog.homepageUrl' expr:title='data:title' itemprop='url'><span itemprop='name'><data:title/></span></a></h2>
+  </b:if>
 </b:includable>
   </b:widget>
 </b:section>
-<div id="box">
-<div class="search-wrapper" id="search-wrapper">
-<form action="/search" id="searchbox" method="get">
-<label id="gosearch">
-<input name="q" placeholder="Type here" size="15" type="text">
-<input name="max-results" type="hidden" value="10">
-<span class="search-icon"><svg enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M19.7 18.3l-3.1-3.1c.9-1.2 1.4-2.6 1.4-4.2 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4zm-8.7-2.3c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"></path></svg></span>
+<div id='box'>
+<div class='search-wrapper' id='search-wrapper'>
+<form action='/search' id='searchbox' method='get'>
+<label id='gosearch'>
+<input name='q' placeholder='Type here' size='15' type='text'/>
+<input name='max-results' type='hidden' value='10'/>
+<span class='search-icon'><svg enable-background='new 0 0 24 24' viewBox='0 0 24 24'><path d='M19.7 18.3l-3.1-3.1c.9-1.2 1.4-2.6 1.4-4.2 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4zm-8.7-2.3c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z'/></svg></span>
 </label></form>
 			</div>
             </div>
-<nav class="mini-list">
-<ul id="show-list">
-<li><a href="/search/label/JS">JS</a></li>
-<li><a href="/search/label/PHP">PHP</a></li>
-<li><a href="/search/label/CSS">CSS</a></li>
-<li><a href="/search/label/Linux%2FUnix">Linux</a></li>
-<li><a href="/search/label/Movies">Movies</a></li>
+<nav class='mini-list'>
+<ul id='show-list'>
+<li><a href='/search/label/JS'>JS</a></li>
+<li><a href='/search/label/PHP'>PHP</a></li>
+<li><a href='/search/label/CSS'>CSS</a></li>
+<li><a href='/search/label/Linux%2FUnix'>Linux</a></li>
+<li><a href='/search/label/Movies'>Movies</a></li>
   </ul>
   </nav>
 </div>
 </header>
 <!-- /header-wrapper -->
-<div class="content-wrapper full-row">
+<div class='content-wrapper full-row'>
 <!-- iklan -->
-      <div id="iklan-atas"><b:if cond="data:blog.searchQuery or data:blog.pageType == &quot;static_page&quot;"><b:else>
-        <b:section class="iklan-atas section" id="iklan-atas-1" maxwidgets="1" showaddelement="yes">
-          <b:widget id="HTML1" locked="false" title="" type="HTML">
+      <div id='iklan-atas'><b:if cond='data:blog.searchQuery or data:blog.pageType == &quot;static_page&quot;'><b:else/>
+        <b:section class='iklan-atas section' id='iklan-atas-1' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='HTML1' locked='false' title='' type='HTML'>
             <b:widget-settings>
-              <b:widget-setting name="content"><!--[CDATA[<div id="ads1"--></b:widget-setting></b:widget-settings></b:widget></b:section></b:else></b:if></div>]]&gt;
-            
-            <b:includable id="main">
-  <!-- only display title if it's non-empty -->
-  <b:if cond="data:title != &quot;&quot;">
-    <h2 class="title"><data:title></data:title></h2>
-  </b:if>
-  <div class="widget-content">
-    <data:content>
-  </data:content></div>
-
-  <b:include name="quickedit">
-</b:include></b:includable>
-          
-        
-        </div>
-<div id="outer-wrapper">
-<div id="main-wrapper" role="main">
-<b:if cond="data:blog.pageType == &quot;item&quot;">
-</b:if>
-        <b:section class="main" id="main" showaddelement="no">
-          <b:widget id="Blog1" locked="true" title="Blog Posts" type="Blog" version="1">
-            <b:widget-settings>
-              <b:widget-setting name="showDateHeader">true</b:widget-setting>
-              <b:widget-setting name="style.textcolor">#000000</b:widget-setting>
-              <b:widget-setting name="showShareButtons">false</b:widget-setting>
-              <b:widget-setting name="authorLabel">by</b:widget-setting>
-              <b:widget-setting name="showCommentLink">false</b:widget-setting>
-              <b:widget-setting name="style.urlcolor">#008000</b:widget-setting>
-              <b:widget-setting name="postLocationLabel">Lokasi:</b:widget-setting>
-              <b:widget-setting name="showAuthor">true</b:widget-setting>
-              <b:widget-setting name="disableGooglePlusShare">true</b:widget-setting>
-              <b:widget-setting name="style.linkcolor">#0000ff</b:widget-setting>
-              <b:widget-setting name="style.unittype">TextAndImage</b:widget-setting>
-              <b:widget-setting name="style.bgcolor">#ffffff</b:widget-setting>
-              <b:widget-setting name="timestampLabel">on</b:widget-setting>
-              <b:widget-setting name="showAuthorProfile">true</b:widget-setting>
-              <b:widget-setting name="style.layout">1x1</b:widget-setting>
-              <b:widget-setting name="showLabels">true</b:widget-setting>
-              <b:widget-setting name="showLocation">false</b:widget-setting>
-              <b:widget-setting name="showTimestamp">true</b:widget-setting>
-              <b:widget-setting name="postsPerAd">1</b:widget-setting>
-              <b:widget-setting name="showBacklinks">false</b:widget-setting>
-              <b:widget-setting name="style.bordercolor">#ffffff</b:widget-setting>
-              <b:widget-setting name="showInlineAds">false</b:widget-setting>
-              <b:widget-setting name="showReactions">false</b:widget-setting>
+              <b:widget-setting name='content'><![CDATA[<div id="ads1"></div>]]></b:widget-setting>
             </b:widget-settings>
-            <b:includable id="main" var="top">
-<b:include data="posts" name="breadcrumb">
-  <b:if cond="data:mobileindex">
+            <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+          </b:widget>
+        </b:section>
+        </b:if></div>
+<div id='outer-wrapper'>
+<div id='main-wrapper' role='main'>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+</b:if>
+        <b:section class='main' id='main' showaddelement='no'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='1'>
+            <b:widget-settings>
+              <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+              <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+              <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+              <b:widget-setting name='authorLabel'>by</b:widget-setting>
+              <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+              <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+              <b:widget-setting name='postLocationLabel'>Lokasi:</b:widget-setting>
+              <b:widget-setting name='showAuthor'>true</b:widget-setting>
+              <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
+              <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+              <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+              <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+              <b:widget-setting name='timestampLabel'>on</b:widget-setting>
+              <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+              <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+              <b:widget-setting name='showLabels'>true</b:widget-setting>
+              <b:widget-setting name='showLocation'>false</b:widget-setting>
+              <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+              <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+              <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+              <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+              <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+              <b:widget-setting name='showReactions'>false</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main' var='top'>
+<b:include data='posts' name='breadcrumb'/>
+  <b:if cond='data:mobileindex'>
     <!-- mobile index -->
-    <div class="blog-posts hfeed">
-      <b:loop values="data:posts" var="post">
-        <b:if cond="data:post.isFirstPost == &quot;false&quot;">
+    <div class='blog-posts hfeed'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.isFirstPost == &quot;false&quot;'>
           &lt;/div&gt;
         </b:if>
-        &lt;div class="mobile-date-outer date-outer"&gt;
-        <div expr:onclick="data:post.indexOnclick">
-          <b:include data="post" name="mobile-index-post">
-        </b:include></div>
-        <b:if cond="data:post.trackLatency">
-          <data:post.latencyjs>
-        </data:post.latencyjs></b:if>
+        &lt;div class=&quot;mobile-date-outer date-outer&quot;&gt;
+        <div expr:onclick='data:post.indexOnclick'>
+          <b:include data='post' name='mobile-index-post'/>
+        </div>
+        <b:if cond='data:post.trackLatency'>
+          <data:post.latencyJs/>
+        </b:if>
       </b:loop>
     </div>
-  <b:else>
+  <b:else/>
 
     <!-- posts -->
-    <div class="blog-posts xhfeed clearfloat">
-      <b:loop index="x" values="data:posts" var="post">
-        <div class="article">
-        <b:include data="post" name="post">
-		</b:include></div>
+    <div class='blog-posts xhfeed clearfloat'>
+      <b:loop index='x' values='data:posts' var='post'>
+        <div class='article'>
+        <b:include data='post' name='post'/>
+		</div>
       </b:loop>
     </div>
-  </b:else></b:if>
+  </b:if>
   <!-- navigation -->
-  <b:if cond="data:mobile">
-    <b:include name="mobile-nextprev">
+  <b:if cond='data:mobile'>
+    <b:include name='mobile-nextprev'/>
     <!-- feed links -->
-    <b:include name="feedLinks">
-  </b:include></b:include></b:if>
-<b:if cond="data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;">
-    <div class="clear">
+    <b:include name='feedLinks'/>
+  </b:if>
+<b:if cond='data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
+    <div class='clear'/>
     <!-- navigation -->
-<b:include name="nextprev">
-
-  <b:if cond="data:top.showDummy">
-    <data:top.dummybootstrap>
-  </data:top.dummybootstrap></b:if>
-
-            <b:includable id="backlinkDeleteIcon" var="backlink">
-  <span expr:class="&quot;item-control &quot; + data:backlink.adminClass">
-    <a expr:href="data:backlink.deleteUrl" expr:title="data:top.deleteBacklinkMsg" href="null">
-      <img alt="delete icon" expr:title="data:top.deleteBacklinkMsg" height="13" src="//www.blogger.com/img/icon_delete13.gif" width="13">
+<b:include name='nextprev'/>
+</b:if>
+  <b:if cond='data:top.showDummy'>
+    <data:top.dummyBootstrap/>
+  </b:if>
+</b:includable>
+            <b:includable id='backlinkDeleteIcon' var='backlink'>
+  <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
+    <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
+      <img alt='delete icon' expr:title='data:top.deleteBacklinkMsg' height='13' src='//www.blogger.com/img/icon_delete13.gif' width='13'/>
     </a>
   </span>
 </b:includable>
-            <b:includable id="backlinks" var="post">
-  <a name="links" href="null"><h4><data:post.backlinkslabel></data:post.backlinkslabel></h4>
-  <b:if cond="data:post.numBacklinks != 0">
-    </b:if></a><dl class="comments-block" id="comments-block"><a name="links" href="null">
-      <b:loop values="data:post.backlinks" var="backlink">
-        </b:loop></a><div class="collapsed-backlink backlink-control"><a name="links" href="null">
-          </a><dt class="comment-title"><a name="links" href="null">
-            <span class="backlink-toggle-zippy">&nbsp;</span>
-            </a><a expr:href="data:backlink.url" expr:title="data:backlink.title" rel="nofollow" href="null"><data:backlink.title></data:backlink.title></a>
-            <b:include data="backlink" name="backlinkDeleteIcon">
-          </b:include></dt>
-          <dd class="comment-body collapseable">
-            <data:backlink.snippet>
-          </data:backlink.snippet></dd>
-          <dd class="comment-footer collapseable">
-            <span class="comment-author"><data:post.authorlabel> <data:backlink.author></data:backlink.author></data:post.authorlabel></span>
-            <span class="comment-timestamp"><data:post.timestamplabel> <data:backlink.timestamp></data:backlink.timestamp></data:post.timestamplabel></span>
+            <b:includable id='backlinks' var='post'>
+  <a name='links'/><h4><data:post.backlinksLabel/></h4>
+  <b:if cond='data:post.numBacklinks != 0'>
+    <dl class='comments-block' id='comments-block'>
+      <b:loop values='data:post.backlinks' var='backlink'>
+        <div class='collapsed-backlink backlink-control'>
+          <dt class='comment-title'>
+            <span class='backlink-toggle-zippy'>&#160;</span>
+            <a expr:href='data:backlink.url' expr:title='data:backlink.title' rel='nofollow'><data:backlink.title/></a>
+            <b:include data='backlink' name='backlinkDeleteIcon'/>
+          </dt>
+          <dd class='comment-body collapseable'>
+            <data:backlink.snippet/>
+          </dd>
+          <dd class='comment-footer collapseable'>
+            <span class='comment-author'><data:post.authorLabel/> <data:backlink.author/></span>
+            <span class='comment-timestamp'><data:post.timestampLabel/> <data:backlink.timestamp/></span>
           </dd>
         </div>
-      
+      </b:loop>
     </dl>
-  
-  <p class="comment-footer">
-    <a class="comment-link" expr:href="data:post.createLinkUrl" expr:id="data:widget.instanceId + &quot;_backlinks-create-link&quot;" expr:title="data:post.createLinkLabel" rel="nofollow" target="_blank" href="null"><data:post.createlinklabel></data:post.createlinklabel></a>
+  </b:if>
+  <p class='comment-footer'>
+    <a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' expr:title='data:post.createLinkLabel' rel='nofollow' target='_blank'><data:post.createLinkLabel/></a>
   </p>
 </b:includable>
-            <b:includable id="breadcrumb" var="post">
-<b:if cond="data:blog.homepageUrl != data:blog.url">
-<b:if cond="data:blog.pageType == &quot;item&quot;">
-<b:loop values="data:posts" var="post">
-<b:if cond="data:post.labels">
-<div class="breadcrumbs-box">
-<div class="breadcrumbs">
-<span itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-<a expr:href="data:blog.homepageUrl" itemprop="url" title="Home" href="null">
-  <span itemprop="name">Home</span></a></span><span class="gap">/</span><b:loop values="data:post.labels" var="label"><span itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a expr:href="data:label.url + &quot;?&amp;max-results=10&quot;" expr:title="data:label.name" itemprop="url" href="null">
-<span itemprop="name"><data:label.name></data:label.name></span></a></span><span class="gap">/</span></b:loop><span><data:post.title></data:post.title></span>
+            <b:includable id='breadcrumb' var='post'>
+<b:if cond='data:blog.homepageUrl != data:blog.url'>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:loop values='data:posts' var='post'>
+<b:if cond='data:post.labels'>
+<div class='breadcrumbs-box'>
+<div class='breadcrumbs'>
+<span itemscope='itemscope' itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a expr:href='data:blog.homepageUrl' itemprop='url' title='Home'>
+  <span itemprop='name'>Home</span></a></span><span class='gap'>/</span><b:loop values='data:post.labels' var='label'><span itemscope='itemscope' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;max-results=10&quot;' expr:title='data:label.name' itemprop='url'>
+<span itemprop='name'><data:label.name/></span></a></span><span class='gap'>/</span></b:loop><span><data:post.title/></span>
 </div>
 </div>
 </b:if>
@@ -450,16 +453,16 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 </b:if>
 </b:if>
 </b:includable>
-            <b:includable id="comment-form" var="post">
-  <div class="comment-form" id="commentreply">
-    <a name="comment-form" href="null">
-    <b:if cond="data:mobile">
-      </b:if></a><h4 id="comment-post-message"><a name="comment-form" href="null">
-        </a><a expr:id="data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;" href="javascript:void(0)"><data:postcommentmsg></data:postcommentmsg></a></h4>
-      <p><data:blogcommentmessage></data:blogcommentmessage></p>
-      <data:blogteamblogmessage>
-      <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src" href="null">
-      <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" style="display: none" width="100%">
+            <b:includable id='comment-form' var='post'>
+  <div class='comment-form' id='commentreply'>
+    <a name='comment-form'/>
+    <b:if cond='data:mobile'>
+      <h4 id='comment-post-message'>
+        <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
     <b:else/>
     <a class='a-undo' href='javascript:replyTo(0);'><data:text.undo/></a>
       <p><data:blogCommentMessage/></p>
@@ -1485,4 +1488,4 @@ function Up(e,a){a||(a=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");var l
 //]]>
 </script>
 &lt;!--</body>--&gt;&lt;/body&gt;
-</HTML></iframe></a></data:blogteamblogmessage></div></b:includable></b:include></div></b:if></b:include></b:includable></b:widget></b:section></div></div></div></b:else></b:if></body></html>
+</HTML>

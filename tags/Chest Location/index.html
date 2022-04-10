@@ -52,8 +52,8 @@
 <meta property="og:description" content="Tag: Chest Location www.webmanajemen.com" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" />
-<meta property="article:published_time" content="2022-04-10T15:36:16+07:00" />
-<meta property="article:modified_time" content="2022-04-10T15:36:16+07:00" />
+<meta property="article:published_time" content="2022-04-10T16:10:27+07:00" />
+<meta property="article:modified_time" content="2022-04-10T16:10:27+07:00" />
 <meta property="article:author" content="" />
 
 <meta name="twitter:card" content="summary" />
@@ -161,6 +161,7 @@
 									var total = data.length;
 									var listElm = document.querySelector('#archive-posts');
 									var counter = 0;
+									var empty = false;
 									var loadMore = function () {
 										var grid = `<div class="row" id="row-${counter}">`;
 										for (var i = 0; i < 3; i++) {
@@ -174,6 +175,8 @@
 									</div>
 								</div>`;
 												counter++;
+											} else {
+												empty = true;
 											}
 										}
 										grid += '</div>';
@@ -183,7 +186,7 @@
 									// Detect when scrolled to bottom.
 									listElm.addEventListener('scroll', function () {
 										if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-											loadMore();
+											if (!empty) loadMore();
 										}
 									});
 
@@ -428,7 +431,15 @@
   })();
 </script>
 <script src="/js/iridium.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
+  gtag('config', 'UA-106238155-1');
+</script>
 </body>
 
 

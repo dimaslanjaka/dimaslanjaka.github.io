@@ -53,6 +53,9 @@ interface CacheFileEvent {
  * @description Save cache to file (not in-memory), cache will be restored on next process restart.
  */
 export default class CacheFile extends TypedEmitter<CacheFileEvent> {
+  getInstance() {
+    return this;
+  }
   private total = 0;
   getTotal() {
     this.total = Object.keys(this.md5Cache).length;

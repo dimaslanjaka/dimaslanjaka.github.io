@@ -19,6 +19,7 @@ import './generate-sitemap';
 import './generate-after';
 import './generate-archives';
 import { modifyPost } from './copy';
+import CachePost from '../../node/cache-post';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -183,7 +184,7 @@ gulp.task('generate:posts', renderArticle);
 
 gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:archive', 'generate:sitemap', 'generate:after'));
 
-const helpers = {
+const helpers: DynamicObject = {
   css: (path: string, attributes: DynamicObject = {}) => {
     const find = {
       cwdFile: join(cwd(), path),
@@ -226,6 +227,10 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
 
     // assign body
     const pagedata = Object.assign(parsed.metadata, parsed, override);
+
+    // post instance
+    const ipost = new CachePost();
+    helpers.getLatestPosts = ipost.getLatestPosts;
 
     page_url.pathname = parsed.permalink;
     const ejs_data = Object.assign(parsed, helpers, {

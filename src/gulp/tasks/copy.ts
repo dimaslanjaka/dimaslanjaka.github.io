@@ -80,7 +80,7 @@ function modifyPostOri(parse: parsePostReturn) {
 
     // permalink
     homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
-    parse.metadata.url = homepage.toString();
+    if (!parse.metadata.url) parse.metadata.url = homepage.toString();
     parse.metadata.permalink = homepage.pathname;
 
     // fix lang

@@ -1,26 +1,22 @@
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
 
-//let postCache: CacheFile;
+type postResult = parsePostReturn & parsePostReturn['metadata'];
 
 export default class CachePost extends CacheFile {
+  private key = 'posts';
   constructor() {
     super('posts');
-    // initialize instance
-    //postCache = new CacheFile('posts');
-    /*postCache.on('update', () => {
-      // re-update instance
-      postCache = new CacheFile('posts');
-    });*/
   }
+
   /**
    * get latest posts
    * @param by order descending by `date` or default `updated`
    * @param max max result
-   * @returns array of {@link parsePostReturn}
+   * @returns array of {@link postResult}
    */
-  getLatest(by: 'date' | 'updated' = 'updated', max = 5) {
-    const posts: parsePostReturn[] = super.getValues();
+  getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
+    const posts: parsePostReturn[] = new CacheFile(this.key).getValues();
     return posts
       .sort((a, b) => {
         const c = new Date(a.metadata[by]);
@@ -29,15 +25,19 @@ export default class CachePost extends CacheFile {
         if (c > d) return -1;
         return 0;
       })
-      .splice(0, max);
+      .splice(0, max)
+      .map((post) => {
+        return Object.assign(post, post.metadata);
+      });
   }
+
   /**
    * get all posts
    * @param opt {@link defaultResovableValue}
    * @returns array of posts {@link CacheFile.getValues}
    */
   getAll(opt = defaultResovableValue) {
-    return super.getValues(opt) as parsePostReturn[];
+    return new CacheFile(this.key).getValues(opt) as parsePostReturn[];
   }
 }
 

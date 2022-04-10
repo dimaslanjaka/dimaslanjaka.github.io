@@ -11,6 +11,7 @@ import compress from 'compression';
 import '../tasks/generate-archives';
 import 'js-prototypes';
 import { JSDOM } from 'jsdom';
+import chalk from 'chalk';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
@@ -44,7 +45,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (isArchive) {
         gulp.series('generate:archive')(null);
         ///console.log('generate archive', sourceArchive);
-        if (existsSync(sourceArchive)) return res.end(showPreview(readFileSync(sourceArchive)));
+        if (existsSync(sourceArchive)) {
+          console.log('[archive] pre-processed', pathname);
+          return res.end(showPreview(readFileSync(sourceArchive)));
+        }
       }
 
       if (pathname.match(/(.html|\/)$/)) {
@@ -68,14 +72,19 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 gulp.series('generate:assets', 'generate:template')(() => (gulpIndicator = false));
               }
               // parse markdown metadata
-              const parsed = modifyPost(parsePost(file));
+              const parsed = parsePost(file);
+              if (!parsed) {
+                console.log(chalk.redBright('cannot parse'), file);
+                return next();
+              }
+              const modify = modifyPost(parsed);
               //console.log(parsed);
               // render markdown post
-              return renderer(parsed).then((rendered) => {
+              return renderer(modify).then((rendered) => {
                 rendered = showPreview(fixHtmlPost(rendered));
                 write(dest, rendered);
 
-                console.log('pre-processed', pathname);
+                console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname);
                 res.end(rendered);
               });
             } catch (error) {
@@ -87,7 +96,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       }
     }
     // show previous generated
-    console.log('last processed', pathname);
+    if (pathname.endsWith('.html')) console.log('last processed', pathname);
     next();
   },
   {

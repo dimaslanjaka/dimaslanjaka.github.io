@@ -130,13 +130,15 @@
 							<h2>Pellentesque vulputate</h2>
 						</header>
 						<ul class="style">
-							<li>
-								<p class="posted">August 11, 2002 | (10 ) Comments</p>
-								<img src="/images/pic04.jpg" alt="" />
-								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
-									enim.</p>
-							</li>
-							<li>
+							<% getLatestPosts().forEach(post => { %>
+								<li>
+									<p class="posted"><%- post.title %></p>
+									<img src="<%- thumbnail(post) %>" alt="" class="sidebar-img" />
+									<p class="text"><%- excerpt(post) %></p>
+								</li>
+							<% }) %>
+
+							<!--<li>
 								<p class="posted">August 11, 2002 | (10 ) Comments</p>
 								<img src="/images/pic05.jpg" alt="" />
 								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
@@ -153,7 +155,7 @@
 								<img src="/images/pic05.jpg" alt="" />
 								<p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra
 									enim.</p>
-							</li>
+							</li>-->
 						</ul>
 					</section>
 				</div>

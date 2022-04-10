@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { join } from 'path';
 import config, { root } from '../../types/_config';
@@ -58,7 +59,7 @@ export function filter_external_links(href: string, debug = false) {
      *  javascript anchors, dot anchors, hash header
      */
     const isExternal = href.trim().isMatch(new RegExp('^(https?)://'));
-    const isInternal = href.trim().isMatch(/^(\.+|#|javascript:)/i) && !isExternal;
+    const isInternal = href.trim().isMatch(/^(\.+|\#|javascript:)/i) && !isExternal;
     const isLength = href.trim().length > 0;
     const isAllowed = isExternal && isLength;
     if (href.includes('seoserp')) {

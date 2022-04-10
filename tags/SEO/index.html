@@ -52,8 +52,8 @@
 <meta property="og:description" content="Tag: SEO www.webmanajemen.com" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" />
-<meta property="article:published_time" content="2022-04-10T03:53:51+07:00" />
-<meta property="article:modified_time" content="2022-04-10T03:53:51+07:00" />
+<meta property="article:published_time" content="2022-04-10T15:10:51+07:00" />
+<meta property="article:modified_time" content="2022-04-10T15:10:51+07:00" />
 <meta property="article:author" content="" />
 
 <meta name="twitter:card" content="summary" />
@@ -168,7 +168,7 @@
     "title": "Auto Add Alt Attributes To Images Using jQuery",
     "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5Zj3AddI7sOew19yh8zjKsfJC3Wlu0dFXd2rVQ",
     "url": "https://www.webmanajemen.com/2017/04/auto-add-alt-attributes-to-images-using.html",
-    "excerpt": "Using jQuery to adding alt attributes to all images img> tags. Alt attributes of images are one of SEO Score. Alt Tag SEO is"
+    "excerpt": "Using jQuery to adding alt attributes to all images img&#62; tags. Alt attributes of images are one of SEO Score. Alt Tag SEO is"
   },
   {
     "tag_dir": "/media/dimaslanjaka/DATA/Repositories/gh-pages/docs/tags/SEO",
@@ -259,14 +259,14 @@
     "title": "Membuat semua link dan source html http menjadi https",
     "thumbnail": "https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png",
     "url": "https://www.webmanajemen.com/2017/09/membuat-semua-link-dan-source-html-http.html",
-    "excerpt": "Yo guys, kali ini akan saya share bagaimana cara mengubah semua source link atau iframe yang tidak menggunakan https.br />Mula mula anda"
+    "excerpt": "Yo guys, kali ini akan saya share bagaimana cara mengubah semua source link atau iframe yang tidak menggunakan https.br /&#62;Mula mula anda"
   },
   {
     "tag_dir": "/media/dimaslanjaka/DATA/Repositories/gh-pages/docs/tags/SEO",
     "title": "Schema Markup Untuk Homepage Blog",
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
     "url": "https://www.webmanajemen.com/2017/09/schema-markup-untuk-homepage-blog.html",
-    "excerpt": "pre>lt;script type=quot;application/ldjsonquot;gt;<br /><br /><br /><br />nbsp; nbsp; quot;@contextquot;:"
+    "excerpt": "pre&#62;lt;script type=quot;application/ldjsonquot;gt;&#60;br /&#62;&#60;br /&#62;&#60;br /&#62;&#60;br /&#62;nbsp; nbsp; quot;@contextquot;:"
   },
   {
     "tag_dir": "/media/dimaslanjaka/DATA/Repositories/gh-pages/docs/tags/SEO",
@@ -433,20 +433,21 @@
 									console.log(data);
 									var total = data.length;
 									var listElm = document.querySelector('#archive-posts');
+									var counter = 0;
 									var loadMore = function () {
-										var grid = '<div class="row">';
-										for (var i = 0; i < 2; i++) {
-											var item = data[i];
-											grid += `<div class="4u">
+										var grid = `<div class="row" id="row-${counter}">`;
+										for (var i = 0; i < 3; i++) {
+											var item = data[counter];
+											grid += `<div class="4u" id="post-${counter}">
 									<h2>${item.title}</h2>
 									<a href="${item.url}" class="image full"><img src="${item.thumbnail}" alt="${item.title}"></a>
 									<p>${item.excerpt}</p>
-									<p><a href="${item.url}" class="button">More Details</a>
-									</p>
+									<div class="footer"><a href="${item.url}" class="button">More Details</a>
+									</div>
 								</div>`;
-											//listElm.innerHTML += str;
-											//listElm.appendChild(item);
+											counter++;
 										}
+										grid += '</div>';
 										listElm.innerHTML += grid;
 									}
 
@@ -458,19 +459,47 @@
 									});
 
 									// Initially load some items.
-									loadMore();
+									for (var i = 0; i < 3; i++)	loadMore();
 								}
 							})()
 						</script>
 						<style>
 							#archive-posts {
 								overflow: auto;
-								max-width: 1000px;
+								width: 100%;
+								height: 1000px;
+								overflow-y: scroll;
 							}
+
+							#archive-posts .row {
+								height: 700px;
+							}
+
+							#archive-posts .\4u {
+								/* add flexbox rules */
+								display: flex;
+								flex-direction: column;
+								position: relative;
+							}
+
+							#archive-posts .footer {
+								padding: .75rem;
+								min-width: 100%;
+								/* push footer to bottom */
+								margin-top: auto;
+								/* ensure width includes padding */
+								box-sizing: border-box;
+							}
+
+							#archive-posts p {
+								height: 120px;
+							}
+
 							#archive-posts img {
 								width: 480px;
 								height: 250px;
 							}
+
 							#archive-posts h2 {
 								height: 80px;
 							}

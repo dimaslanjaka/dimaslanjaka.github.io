@@ -92,6 +92,11 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       this.md5Cache = db;
     }
   }
+
+  /**
+   * clear cache
+   * @returns
+   */
   clear() {
     return new Promise((resolve: (arg: Array<Error>) => any) => {
       const opt = { recursive: true, retryDelay: 3000, maxRetries: 3 };
@@ -104,6 +109,13 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       });
     });
   }
+
+  /**
+   * @see {@link CacheFile.set}
+   * @param key
+   * @param value
+   * @returns
+   */
   setCache = (key: string, value: any) => this.set(key, value);
   /**
    * resolve long text on key

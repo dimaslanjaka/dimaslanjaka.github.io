@@ -154,7 +154,7 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
  * @param opt
  * @returns
  */
-export function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]): ReturnType<typeof fs.readFileSync> {
+export function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]): ReturnType<typeof fs.readFileSync> | null {
   if (existsSync(path)) return readFileSync(path, opt);
 }
 export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)));

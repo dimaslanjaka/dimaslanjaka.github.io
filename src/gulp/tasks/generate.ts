@@ -18,8 +18,9 @@ import Sitemap from '../../node/cache-sitemap';
 import './generate-sitemap';
 import './generate-after';
 import './generate-archives';
-import { modifyPost } from './copy';
+import './minify';
 import CachePost from '../../node/cache-post';
+import { modifyPost } from './functions/modifyPost';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];

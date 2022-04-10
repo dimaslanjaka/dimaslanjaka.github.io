@@ -6,12 +6,12 @@ import CachePost from '../../node/cache-post';
 import { cwd, join, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
 import 'js-prototypes';
-import { modifyPost } from './copy';
 import { renderer } from './generate';
 import { TaskCallback } from 'undertaker';
 import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';
 import color from '../../node/color';
+import { modifyPost } from './functions/modifyPost';
 
 const postCache = new CachePost();
 const generated_tag_dir = join(cwd(), config.public_dir, config.tag_dir);

@@ -8,10 +8,10 @@ import { TaskCallback } from 'undertaker';
 import chalk from 'chalk';
 import 'js-prototypes';
 import moment from 'moment';
-import { modifyPost } from './copy';
 import { parsePostReturn } from '../../markdown/transformPosts';
 import { renderer } from './generate';
 import './sitemap';
+import { modifyPost } from './functions/modifyPost';
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();
@@ -64,6 +64,7 @@ function fixURLSitemap(url: string) {
  */
 function generateSitemapHtml(done?: TaskCallback) {
   const log = logname + chalk.blue('[html]');
+  const exclude = config.sitemap.exclude.map((s) => '!' + s.replace(/^!+/, ''));
   Bluebird.all(pages.getValues())
     .map((item) => {
       return `<a href="${fixURLSitemap(item.url).pathname}">${item.title}</a>`;

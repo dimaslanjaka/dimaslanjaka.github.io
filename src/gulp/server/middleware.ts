@@ -3,7 +3,6 @@ import config, { post_generated_dir } from '../../types/_config';
 import ejs_object from '../../ejs';
 import gulp, { TaskFunction } from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
-import { modifyPost } from '../tasks/copy';
 import { renderer } from '../tasks/generate';
 import { toUnix } from 'upath';
 import fixHtmlPost from '../tasks/generate-after';
@@ -13,6 +12,7 @@ import 'js-prototypes';
 import { JSDOM } from 'jsdom';
 import chalk from 'chalk';
 import Bluebird from 'bluebird';
+import { modifyPost } from '../tasks/functions/modifyPost';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);

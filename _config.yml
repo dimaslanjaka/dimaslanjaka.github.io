@@ -178,19 +178,32 @@ sitemap:
   xml: true
   # generate google news sitemap
   news: true
+  # exclude glob pattern or path
+  exclude:
+    - "source/ads"
+    - "**/*.min.html"
 
 # https://github.com/dimaslanjaka/hexo-adsense
+# to disable each ads, give `adsense: false` in metadata post/pages
 adsense:
+  # enable?
   enable: true
+  # ca-pub-xxxx
   pub: ca-pub-1165447249910969
   # in-article ads source
   article_ads:
     - "source/ads/in_article.html"
     - "source/ads/in_article2.html"
+  # multplex/autorelaxed ads source
+  multiplex_ads:
+    - "source/ads/multiplex.html"
+  # display ads source
+  display_ads:
+    - "source/ads/display.html"
   # ads field
-  field: "site" # post=only post, site=all pages and posts
-  # auto redirect to https
-  https: false
+  # post=only post
+  # site=all pages and posts
+  field: "site"
   # block user with adblock enabled
   adblock: false
   # amp or javascript
@@ -198,7 +211,7 @@ adsense:
   # exclude pattern, disable adding adsense
   exclude:
     - "*.min.html"
-    - "exclude/**/*"
+    - "**/exclude/**/*"
 
 # Site analytics
 analytics:

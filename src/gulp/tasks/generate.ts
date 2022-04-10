@@ -181,7 +181,7 @@ export const renderArticle = function () {
 
 gulp.task('generate:posts', renderArticle);
 
-gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:after', 'generate:archive', 'generate:sitemap'));
+gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:archive', 'generate:sitemap', 'generate:after'));
 
 const helpers = {
   css: (path: string, attributes: DynamicObject = {}) => {

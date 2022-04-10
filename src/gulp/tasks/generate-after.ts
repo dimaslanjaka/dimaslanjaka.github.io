@@ -25,7 +25,6 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
 const logname = chalk.blue('[after]');
 const hexoURL = new URL(config.url);
 const internal_links = [
-  ...config.seo.links.exclude,
   ...config.external_link.exclude,
   hexoURL.host,
   'www.webmanajemen.com',

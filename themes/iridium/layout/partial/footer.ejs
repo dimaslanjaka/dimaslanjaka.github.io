@@ -5,7 +5,8 @@
       <% theme.featured.forEach(featured => { %>
       <div class="4u">
         <h2><%- featured.title %></h2>
-        <a href="<%- featured.url %>" class="image full"><img src="<%- featured.img %>" alt="<%- featured.title %>" /></a>
+        <a href="<%- featured.url %>" class="image full"><img src="<%- featured.img %>"
+            alt="<%- featured.title %>" /></a>
         <p><%- featured.title %>. <%- featured.excerpt %></p>
         <p><a href="<%- featured.url %>" class="button">More Details</a></p>
       </div>
@@ -14,6 +15,7 @@
   </div>
 </div>
 
+<% if (page.type == 'post' || page.type == 'page') { %>
 <!-- Comment -->
 <div id="comment">
   <div class="container">
@@ -21,6 +23,7 @@
     <%- include('disqus') %>
   </div>
 </div>
+<% } %>
 
 <!-- Footer -->
 <div id="footer">

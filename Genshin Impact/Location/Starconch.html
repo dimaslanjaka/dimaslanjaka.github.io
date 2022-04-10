@@ -72,7 +72,8 @@
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="/js/skel.min.js"></script>
+  <script src="/js/lazyload.js?c=1"></script>
+  <script src="/js/skel.min.js?c=1"></script>
   <!--<script src="/js/skel-panels.min.js"></script>-->
   <script src="/js/init.js?c=1"></script>
   <noscript>
@@ -89,7 +90,7 @@
       background-size: cover;
     }
   </style>
-
+  <script>const lazy = new lazyload();</script>
 
 
 
@@ -314,24 +315,17 @@
   </div>
 </div>
 
-	<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/vs.min.css">
-<script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>
-  (function () {
-    hljs.initHighlightingOnLoad();
-  })();
-</script>
-<script src="/js/iridium.js"></script>
-
+	
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-106238155-1');
+  lazy.add('https://www.googletagmanager.com/gtag/js?id=UA-106238155-1', function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    console.log('google analystic loaded');
+    gtag('config', 'UA-106238155-1');
+  });
 </script>
 
 
@@ -345,6 +339,14 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/vs.min.css">
+<script>
+  lazy.add('https://yandex.st/highlightjs/8.0/highlight.min.js', function () {
+    hljs.initHighlightingOnLoad();
+  });
+  lazy.add('/js/iridium.js');
+  lazy.exec();
+</script>
 
 
 

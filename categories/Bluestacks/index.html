@@ -52,8 +52,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg">
 <!--article metadata-->
-<meta property="article:published_time" content="2022-04-10T19:07:56+07:00">
-<meta property="article:modified_time" content="2022-04-10T19:07:56+07:00">
+<meta property="article:published_time" content="2022-04-10T20:07:10+07:00">
+<meta property="article:modified_time" content="2022-04-10T20:07:10+07:00">
 <meta property="article:author" content="">
 
 <!--twitter metadata-->
@@ -68,7 +68,8 @@
   <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
   <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="/js/skel.min.js"></script>
+  <script src="/js/lazyload.js?c=1"></script>
+  <script src="/js/skel.min.js?c=1"></script>
   <!--<script src="/js/skel-panels.min.js"></script>-->
   <script src="/js/init.js?c=1"></script>
   <noscript>
@@ -85,7 +86,7 @@
       background-size: cover;
     }
   </style>
-
+  <script>const lazy = new lazyload();</script>
 
 
 
@@ -137,21 +138,21 @@
     "cat_dir": "/media/dimaslanjaka/DATA/Repositories/gh-pages/docs/categories/Bluestacks",
     "title": "Bluestacks Game Control The Legend Of Neverland",
     "thumbnail": "https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png",
-    "url": "https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html",
+    "url": "http://adsense.webmanajemen.com:4000/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html",
     "excerpt": "Game control the legend of neverland bluestacks Support change fairy and job skill"
   },
   {
     "cat_dir": "/media/dimaslanjaka/DATA/Repositories/gh-pages/docs/categories/Bluestacks",
     "title": "Auto Fishing",
     "thumbnail": "/The Legend Of Neverland/Fishing/Studio_Project.jpeg",
-    "url": "https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Fishing.html",
+    "url": "http://adsense.webmanajemen.com:4000/The%20Legend%20Of%20Neverland/Fishing.html",
     "excerpt": "Macros Auto Fishing Bluestacks for the legend of neverland download"
   },
   {
     "cat_dir": "/media/dimaslanjaka/DATA/Repositories/gh-pages/docs/categories/Bluestacks",
     "title": "Macros Auto Click Bluestacks",
     "thumbnail": "https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg",
-    "url": "https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros.html",
+    "url": "http://adsense.webmanajemen.com:4000/The%20Legend%20Of%20Neverland/Macros.html",
     "excerpt": "Macros Auto Click Bluestacks for the legend of neverland download"
   }
 ]</script>
@@ -370,24 +371,17 @@
   </div>
 </div>
 
-	<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/vs.min.css">
-<script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>
-  (function () {
-    hljs.initHighlightingOnLoad();
-  })();
-</script>
-<script src="/js/iridium.js"></script>
-
+	
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-106238155-1');
+  lazy.add('https://www.googletagmanager.com/gtag/js?id=UA-106238155-1', function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    console.log('google analystic loaded');
+    gtag('config', 'UA-106238155-1');
+  });
 </script>
 
 
@@ -401,6 +395,14 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/vs.min.css">
+<script>
+  lazy.add('https://yandex.st/highlightjs/8.0/highlight.min.js', function () {
+    hljs.initHighlightingOnLoad();
+  });
+  lazy.add('/js/iridium.js');
+  lazy.exec();
+</script>
 
 
 

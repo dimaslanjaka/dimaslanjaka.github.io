@@ -10,10 +10,21 @@ import fixHtmlPost from '../tasks/generate-after';
 import compress from 'compression';
 import '../tasks/generate-archives';
 import 'js-prototypes';
+import { JSDOM } from 'jsdom';
 
 let gulpIndicator = false;
 const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
 const homepage = new URL(config.url);
+
+function showPreview(str: string | Buffer) {
+  //.replace('</body>', () => preview + '</body>')
+  const dom = new JSDOM(str);
+  dom.window.document.body.innerHTML += preview;
+  let body = dom.serialize();
+  body = body.replace(new RegExp(config.url + '/', 'gm'), '/');
+  dom.window.close();
+  return body;
+}
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
@@ -33,12 +44,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (isArchive) {
         gulp.series('generate:archive')(null);
         ///console.log('generate archive', sourceArchive);
-        if (existsSync(sourceArchive))
-          return res.end(
-            readFileSync(sourceArchive)
-              .toString()
-              .replace('</body>', () => preview + '</body>')
-          );
+        if (existsSync(sourceArchive)) return res.end(showPreview(readFileSync(sourceArchive)));
       }
 
       if (pathname.match(/(.html|\/)$/)) {
@@ -66,12 +72,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               //console.log(parsed);
               // render markdown post
               return renderer(parsed).then((rendered) => {
-                rendered = fixHtmlPost(rendered).replace(new RegExp(config.url + '/', 'gm'), '/');
+                rendered = showPreview(fixHtmlPost(rendered));
                 write(dest, rendered);
-                const content = rendered.replace('</body>', () => preview + '</body>');
 
                 console.log('pre-processed', pathname);
-                res.end(content);
+                res.end(rendered);
               });
             } catch (error) {
               console.error(error);

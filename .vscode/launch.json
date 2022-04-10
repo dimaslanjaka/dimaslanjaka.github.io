@@ -53,7 +53,7 @@
     },
     {
       "command": "gulp generate --nocache",
-      "name": "gulp gen:no-cache",
+      "name": "[dev] gen:no-cache",
       "request": "launch",
       "type": "node-terminal",
       "env": {
@@ -62,7 +62,7 @@
     },
     {
       "command": "gulp --nocache",
-      "name": "gulp no-cache",
+      "name": "[dev] gulp:no-cache",
       "request": "launch",
       "type": "node-terminal",
       "env": {

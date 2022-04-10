@@ -27,7 +27,7 @@
 							<span class="byline"><%- excerpt(page) %></span>
 						</header>
 
-						<% if (typeof sitedata != 'undefined') { %>
+						<% if (typeof sitedata != 'undefined' && page.type == 'archive') { %>
 						<!--setup sitedata for tags and categories-->
 						<script id="sitedata" type="application/json"><%- sitedata||'[]' %></script>
 						<!--parse site data archive (if exist)-->
@@ -41,6 +41,7 @@
 									var total = data.length;
 									var listElm = document.querySelector('#archive-posts');
 									var counter = 0;
+									var empty = false;
 									var loadMore = function () {
 										var grid = `<div class="row" id="row-${counter}">`;
 										for (var i = 0; i < 3; i++) {
@@ -54,6 +55,8 @@
 									</div>
 								</div>`;
 												counter++;
+											} else {
+												empty = true;
 											}
 										}
 										grid += '</div>';
@@ -63,7 +66,7 @@
 									// Detect when scrolled to bottom.
 									listElm.addEventListener('scroll', function () {
 										if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-											loadMore();
+											if (!empty) loadMore();
 										}
 									});
 

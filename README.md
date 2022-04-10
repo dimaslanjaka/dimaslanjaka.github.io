@@ -42,14 +42,18 @@ gulp generate --nocache # generate all without reading cache instead write new c
 gulp server --nocache # development without reading cache, instead write fresh cache
 ```
 ### standalone
-more information run: `gulp --tasks`
+more information run: `gulp --tasks`.
+`copy:` copy and process from `src-posts` to `config.source_dir`
+`generate:` from `config.source_dir` to generated folder `config.public_dir` in `[_config.yml](./_config.yml)`
 ```bash
-gulp copy:assets
-gulp copy:posts
-gulp generate:assets
-gulp generate:template
-gulp generate:posts
-gulp generate:sitemap
+gulp copy:assets # copy post assets
+gulp copy:posts # copy and process posts
+gulp generate:assets # copy all assets
+gulp generate:template # copy and process template
+gulp generate:posts # generate posts
+gulp generate:sitemap # generate sitemaps
+gulp generate:archive # generate tags and categories
+gulp generate:index # generate homepage index
 ```
 
 ## todo

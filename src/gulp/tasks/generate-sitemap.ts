@@ -82,6 +82,7 @@ function generateSitemapHtml(done?: TaskCallback) {
           category: [],
           tags: [],
           url: url.toString(),
+          type: 'page',
         },
         body: content,
         content: content,
@@ -91,6 +92,7 @@ function generateSitemapHtml(done?: TaskCallback) {
         },
       };
       const modify = modifyPost(opt);
+      if (modify.sitedata) delete modify.sitedata;
       //console.log(modify);
       renderer(modify).then((rendered) => {
         write(join(root, config.public_dir, 'sitemap.html'), rendered).then((f) => {

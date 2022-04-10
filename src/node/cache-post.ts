@@ -1,7 +1,24 @@
+import { modifyPost } from '../gulp/tasks/functions/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
 
 type postResult = parsePostReturn & parsePostReturn['metadata'];
+
+/**
+ * fix post
+ * @param post
+ * @returns
+ */
+function fixPost(post: parsePostReturn) {
+  if (typeof post.metadata.url == 'string') {
+    const url = new URL(post.metadata.url);
+    if (url.pathname.isMatch(/.md$/)) {
+      url.pathname = url.pathname.replace(/.md$/, '.html');
+    }
+    post.metadata.url = String(url);
+  }
+  return post;
+}
 
 export default class CachePost extends CacheFile {
   constructor() {
@@ -28,27 +45,11 @@ export default class CachePost extends CacheFile {
         })
         //.splice(0, max)
         .removeEmpties()
-        .map((post) => new CachePost().fixPost(post))
+        .map((post) => fixPost(post))
         .map((post) => {
           return Object.assign(post, post.metadata);
         })
     );
-  }
-
-  /**
-   * fix post
-   * @param post
-   * @returns
-   */
-  fixPost(post: parsePostReturn) {
-    if (typeof post.metadata.url == 'string') {
-      const url = new URL(post.metadata.url);
-      if (url.pathname.isMatch(/.md$/)) {
-        url.pathname = url.pathname.replace(/.md$/, '.html');
-      }
-      post.metadata.url = String(url);
-    }
-    return post;
   }
 
   /**
@@ -59,8 +60,9 @@ export default class CachePost extends CacheFile {
   getAll(opt = defaultResovableValue) {
     return new CacheFile('posts')
       .getValues(opt)
-      .filter((post) => post.metadata.type == 'post')
-      .map((post) => new CachePost().fixPost(post));
+      .filter((post: parsePostReturn) => post.metadata.type == 'post')
+      .map((post) => modifyPost(post))
+      .map((post) => fixPost(post));
   }
 
   /**
@@ -73,7 +75,7 @@ export default class CachePost extends CacheFile {
     return new CacheFile('posts')
       .getValues(opt)
       .filter((post) => post.metadata.type == 'post')
-      .map((post) => new CachePost().fixPost(post));
+      .map((post) => fixPost(post));
   }
 }
 

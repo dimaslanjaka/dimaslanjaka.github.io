@@ -77,7 +77,7 @@ jobs:
       - run: cp -rf README.md docs/readme.md
       - run: echo www.webmanajemen.com > docs/CNAME
       - name: Deploy 🚀
-        if: ${{ false }}
+        #if: ${{ false }}
         #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:

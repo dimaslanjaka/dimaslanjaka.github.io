@@ -33,11 +33,9 @@
         <section>
           <h2>Latest Posts</h2>
           <ul class="default">
-            <li><a href="#">Pellentesque lectus gravida blandit</a></li>
-            <li><a href="#">Lorem ipsum consectetuer adipiscing</a></li>
-            <li><a href="#">Phasellus nibh pellentesque congue</a></li>
-            <li><a href="#">Cras vitae metus aliquam pharetra</a></li>
-            <li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+            <% getLatestPosts('updated', 5).forEach(post => { %>
+            <li><a href="<%- post.url %>" title="<%- post.title %>"><%- post.title %></a></li>
+            <% }) %>
           </ul>
         </section>
       </div>

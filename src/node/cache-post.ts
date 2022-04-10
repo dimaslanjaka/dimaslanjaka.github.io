@@ -15,22 +15,24 @@ export default class CachePost extends CacheFile {
    * @returns array of {@link postResult}
    */
   getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
-    const posts: parsePostReturn[] = new CacheFile('posts').getValues();
-    return posts
-      .filter((post) => post.metadata.type == 'post')
-      .sort((a, b) => {
-        const c = new Date(a.metadata[by]);
-        const d = new Date(b.metadata[by]);
-        if (c < d) return 1;
-        if (c > d) return -1;
-        return 0;
-      })
-      .splice(0, max)
-      .removeEmpties()
-      .map((post) => new CachePost().fixPost(post))
-      .map((post) => {
-        return Object.assign(post, post.metadata);
-      });
+    const posts: parsePostReturn[] = new CacheFile('posts').getValues({ max: max, resolveValue: true });
+    return (
+      posts
+        .filter((post) => post.metadata.type == 'post')
+        .sort((a, b) => {
+          const c = new Date(a.metadata[by]);
+          const d = new Date(b.metadata[by]);
+          if (c < d) return 1;
+          if (c > d) return -1;
+          return 0;
+        })
+        //.splice(0, max)
+        .removeEmpties()
+        .map((post) => new CachePost().fixPost(post))
+        .map((post) => {
+          return Object.assign(post, post.metadata);
+        })
+    );
   }
 
   /**
@@ -55,6 +57,19 @@ export default class CachePost extends CacheFile {
    * @returns array of posts {@link CacheFile.getValues}
    */
   getAll(opt = defaultResovableValue) {
+    return new CacheFile('posts')
+      .getValues(opt)
+      .filter((post) => post.metadata.type == 'post')
+      .map((post) => new CachePost().fixPost(post));
+  }
+
+  /**
+   * get random posts
+   * @param opt
+   * @returns
+   */
+  getRandomPosts(opt = defaultResovableValue) {
+    defaultResovableValue.randomize = true;
     return new CacheFile('posts')
       .getValues(opt)
       .filter((post) => post.metadata.type == 'post')

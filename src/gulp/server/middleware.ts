@@ -15,12 +15,12 @@ import chalk from 'chalk';
 import Bluebird from 'bluebird';
 
 let gulpIndicator = false;
-const previewfile = join(__dirname, 'public/preview.html');
-const preview = existsSync(previewfile) ? readFileSync(previewfile, 'utf-8') : 'NO PREVIEW AVAILABLE';
 const homepage = new URL(config.url);
+let preview: string;
 
 function showPreview(str: string | Buffer) {
-  //.replace('</body>', () => preview + '</body>')
+  const previewfile = join(__dirname, 'public/preview.html');
+  if (!preview) preview = existsSync(previewfile) ? readFileSync(previewfile, 'utf-8') : 'NO PREVIEW AVAILABLE';
   const dom = new JSDOM(str);
   dom.window.document.body.innerHTML += preview;
   let body = dom.serialize();

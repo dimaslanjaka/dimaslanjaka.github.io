@@ -1,25 +1,39 @@
 {
-  "name": "gh-pages",
+  "name": "static-blog-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static Blog Generator",
   "main": "./build/src/generator.js",
   "types": "./build/src/generator.d.ts",
-  "directories": {
-    "doc": "docs"
-  },
+  "files": [
+    "src",
+    "gulpfile.ts",
+    "themes",
+    "tsconfig.json",
+    "README.md",
+    "_config.yml",
+    "source/guide",
+    "build"
+  ],
+  "workspaces": [
+    "packages/google-news-sitemap"
+  ],
   "scripts": {
     "dev": "nodemon",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.specs.ts'",
-    "prototype": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes"
+    "preinstall": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/dimaslanjaka.github.io.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "Dimas Lanjaka",
+    "url": "https://webmanajemen.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dimaslanjaka/dimaslanjaka.github.io/issues"

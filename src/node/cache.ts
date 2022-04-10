@@ -220,8 +220,12 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       Object.keys(this.md5Cache).forEach((key) => {
         result.push(self.get(key));
       });
-      if (opt.max) result.length = opt.max;
+
       if (opt.randomize) return result.shuffle();
+      if (opt.max) {
+        result.length = opt.max;
+        return result.splice(0, opt.max);
+      }
       return result;
     }
     return Object.values(this.md5Cache);

@@ -43,8 +43,8 @@ gulp server --nocache # development without reading cache, instead write fresh c
 ```
 ### standalone
 more information run: `gulp --tasks`.
-`copy:` copy and process from `src-posts` to `config.source_dir`
-`generate:` from `config.source_dir` to generated folder `config.public_dir` in `[_config.yml](./_config.yml)`
+- `copy:` copy and process from `src-posts` to `config.source_dir`
+- `generate:` from `config.source_dir` to generated folder `config.public_dir` in `[_config.yml](./_config.yml)`
 ```bash
 gulp copy:assets # copy post assets
 gulp copy:posts # copy and process posts

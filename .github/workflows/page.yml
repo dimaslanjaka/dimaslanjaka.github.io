@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   build:
-    if: {{ $false }}
+    #if: {{ $false }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
@@ -67,11 +67,14 @@ jobs:
       - run: "gulp generate:assets"
       - run: "gulp generate:template"
       - run: "gulp generate:posts"
+      - run: "gulp generate:label"
+      - run: "gulp generate:index"
+      - run: "gulp generate:sitemap-txt"
+      - run: "gulp generate:sitemap-xml"
+      - run: "gulp generate:sitemap-news"
       - run: "gulp generate:after"
-      #- run: cp -rf docs/sitemap.html docs/index.html
       - run: cd docs/page && npm install
       - run: cp -rf source/robots.txt docs/robots.txt
-      #- run: cp -rf .gitignore docs/.gitignore
       - run: cp -rf README.md docs/readme.md
       - run: echo www.webmanajemen.com > docs/CNAME
       - name: Deploy 🚀

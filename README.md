@@ -24,7 +24,7 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 
 ## project structure
 - `src-posts/` contains all original posts with markdown formats
-- `source/` (`config.source_dir` in `_config.yml`) contains all pages that should be on public directory (`config.public_dir` in `_config.yml`)
+- `source/` (`config.source_dir` in [_config.yml](./_config.yml)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](./_config.yml))
 - database caches on `node_modules/.cache/dimaslanjaka`
 
 ## runner
@@ -43,7 +43,7 @@ gulp server --nocache # development without reading cache, instead write fresh c
 ```
 ### standalone
 more information run: `gulp --tasks`.
-- `copy:` copy and process from `src-posts` to `config.source_dir`
+- `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
 - `generate:` from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml)
 ```bash
 gulp copy:assets # copy post assets

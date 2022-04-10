@@ -46,7 +46,7 @@ gulp generate --nocache # generate all without reading cache instead write new c
 gulp server --nocache # development without reading cache, instead write fresh cache
 ```
 ### standalone
-more information run: `gulp --tasks`.
+Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
 - `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
 - `generate:` from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml)
 ```bash

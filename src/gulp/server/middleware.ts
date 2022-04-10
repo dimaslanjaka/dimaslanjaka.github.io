@@ -15,7 +15,8 @@ import chalk from 'chalk';
 import Bluebird from 'bluebird';
 
 let gulpIndicator = false;
-const preview = readFileSync(join(__dirname, 'public/preview.html'), 'utf-8');
+const previewfile = join(__dirname, 'public/preview.html');
+const preview = existsSync(previewfile) ? readFileSync(previewfile, 'utf-8') : 'NO PREVIEW AVAILABLE';
 const homepage = new URL(config.url);
 
 function showPreview(str: string | Buffer) {

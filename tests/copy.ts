@@ -1,9 +1,9 @@
 import chalk from 'chalk';
 import gulp from 'gulp';
-import parseAfterGen from '../src/gulp/tasks/after-generate';
-import { modifyPost } from '../src/gulp/tasks/article-copy';
-import { renderer } from '../src/gulp/tasks/article-generate';
+import { renderer } from '../src/gulp/tasks/generate-posts';
+import { parseAfterGen } from '../src/gulp/tasks/generate-after';
 import { buildPost, parsePost } from '../src/markdown/transformPosts';
+import { modifyPost } from '../src/markdown/transformPosts/modifyPost';
 import { cwd, join, write } from '../src/node/filemanager';
 import config, { tmp } from '../src/types/_config';
 
@@ -23,7 +23,7 @@ parsed.fileTree.source = target;
 
 const original = buildPost(parsed); // original markdown post
 write(tmp('tests', 'parsed.md'), original).then(console.log);
-const modify = modifyPost(parsed, false);
+const modify = modifyPost(parsed, null, false);
 const modified = buildPost(modify); // modified markdown post
 write(tmp('tests', 'modified.md'), modified).then(console.log);
 const prepare = Object.assign(

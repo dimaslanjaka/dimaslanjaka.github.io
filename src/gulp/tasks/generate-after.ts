@@ -121,7 +121,7 @@ const files: string[] = [];
  * @param callback callback after processed all files
  * @returns
  */
-const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
+export const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
   if (sources && sources.length) files.addAll(sources);
   const skip = () => {
     // if files has members, shift first file, restart function

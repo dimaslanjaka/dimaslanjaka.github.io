@@ -21,6 +21,10 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - restore_cache:
+          keys:
+            - node-v1-{{ checksum "package.json" }}
+            - node-v1-
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
       - node/install-packages:
@@ -28,7 +32,13 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: npm test
+          command: npx ts-node tests/index.ts
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - docs
+            - tmp
 
 workflows:
   # Below is the definition of your workflow.

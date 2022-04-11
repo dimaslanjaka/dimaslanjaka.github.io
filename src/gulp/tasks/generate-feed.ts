@@ -1,5 +1,6 @@
 import { Feed } from 'feed';
 import { helpers } from '../../ejs';
+import { author_link, author_name } from '../../ejs/helper/author';
 import config from '../../types/_config';
 
 const homepage = new URL(config.url);
@@ -17,12 +18,12 @@ const feed = new Feed({
   updated: new Date(2013, 6, 14), // optional, default = today
   generator: 'awesome', // optional, default = 'Feed for Node.js'
   feedLinks: {
-    json: 'https://example.com/json',
-    atom: 'https://example.com/atom',
+    json: urlfor('/feed.json'),
+    atom: urlfor('/atom.xml'),
   },
   author: {
-    name: 'John Doe',
+    name: author_name(config),
     email: 'johndoe@example.com',
-    link: 'https://example.com/johndoe',
+    link: author_link(config),
   },
 });

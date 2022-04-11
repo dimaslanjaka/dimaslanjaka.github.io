@@ -7,7 +7,7 @@ import { parsePostReturn } from '../../markdown/transformPosts';
  * @param page
  * @returns
  */
-export function author_name(page: parsePostReturn['metadata']) {
+export function author_name(page: parsePostReturn['metadata'] | typeof config) {
   const author = page['author'];
   if (typeof author == 'string') return author;
   if (typeof author == 'object') {
@@ -17,11 +17,27 @@ export function author_name(page: parsePostReturn['metadata']) {
 }
 
 /**
+ * get author email
+ * @param page post metadata or config from _config.yml
+ * @returns
+ */
+export function author_email(page: parsePostReturn['metadata'] | typeof config) {
+  const author = page['author'];
+
+  if (typeof author == 'object') {
+    if (author.mail) return author.mail;
+    if (author.email) return author.email;
+  }
+  // default email
+  return 'noreply@blogger.com';
+}
+
+/**
  * get author link
  * @param page
  * @returns
  */
-export function author_link(page: parsePostReturn['metadata']) {
+export function author_link(page: parsePostReturn['metadata'] | typeof config) {
   const author = page['author'];
   if (typeof author == 'object') {
     if (author['link']) return author['link'];

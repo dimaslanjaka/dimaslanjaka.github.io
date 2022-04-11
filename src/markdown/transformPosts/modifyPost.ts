@@ -1,24 +1,26 @@
 import chalk from 'chalk';
-import { parsePostReturn } from '../../../markdown/transformPosts';
-import { cwd, existsSync, removeMultiSlashes, statSync } from '../../../node/filemanager';
-import { cleanString, cleanWhiteSpace } from '../../../node/utils';
-import config from '../../../types/_config';
-import replaceMD2HTML from '../../fix/hyperlinks-md2html';
-import { shortcodeCss } from '../../shortcode/css';
-import extractText from '../../shortcode/extract-text';
-import parseShortCodeInclude from '../../shortcode/include';
-import { shortcodeScript } from '../../shortcode/script';
-import { shortcodeNow } from '../../shortcode/time';
-import { shortcodeYoutube } from '../../shortcode/youtube';
+import { parsePostReturn } from '../transformPosts';
+import { cwd, existsSync, removeMultiSlashes, statSync } from '../../node/filemanager';
+import { cleanString, cleanWhiteSpace } from '../../node/utils';
+import config from '../../types/_config';
+import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
+import { shortcodeCss } from '../../gulp/shortcode/css';
+import extractText from '../../gulp/shortcode/extract-text';
+import parseShortCodeInclude from '../../gulp/shortcode/include';
+import { shortcodeScript } from '../../gulp/shortcode/script';
+import { shortcodeNow } from '../../gulp/shortcode/time';
+import { shortcodeYoutube } from '../../gulp/shortcode/youtube';
 import yargs from 'yargs';
-import CacheFile from '../../../node/cache';
-import ErrorMarkdown from '../../../markdown/error-markdown';
+import CacheFile from '../../node/cache';
+import ErrorMarkdown from '../error-markdown';
 import moment from 'moment';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');
 const postCache = new CacheFile('posts');
 const homepage = new URL(config.url);
+
+const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 /**
  * Modify Post With Defined Conditions
@@ -195,4 +197,5 @@ export function cacheableModifyPost(parse: parsePostReturn, sourceFile?: string)
   return result;
 }
 
-export const modifyPost = originalModifyPost;
+export const modifyPost = cacheableModifyPost;
+_g.modifyPost = modifyPost;

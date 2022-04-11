@@ -20,7 +20,7 @@ import './generate-after';
 import './generate-archives';
 import './minify';
 import CachePost from '../../node/cache-post';
-import { modifyPost } from './functions/modifyPost';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];

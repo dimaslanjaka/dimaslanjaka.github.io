@@ -12,7 +12,7 @@ import 'js-prototypes';
 import { JSDOM } from 'jsdom';
 import chalk from 'chalk';
 import Bluebird from 'bluebird';
-import { modifyPost } from '../tasks/functions/modifyPost';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);

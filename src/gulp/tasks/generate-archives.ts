@@ -11,7 +11,7 @@ import { TaskCallback } from 'undertaker';
 import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';
 import color from '../../node/color';
-import { modifyPost } from './functions/modifyPost';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 
 const postCache = new CachePost();
 const generated_tag_dir = join(cwd(), config.public_dir, config.tag_dir);

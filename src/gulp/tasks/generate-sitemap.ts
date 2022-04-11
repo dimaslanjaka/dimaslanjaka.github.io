@@ -11,7 +11,7 @@ import moment from 'moment';
 import { parsePostReturn } from '../../markdown/transformPosts';
 import { renderer } from './generate';
 import './sitemap';
-import { modifyPost } from './functions/modifyPost';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();

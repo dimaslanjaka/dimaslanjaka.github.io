@@ -1,4 +1,4 @@
-import { modifyPost } from '../gulp/tasks/functions/modifyPost';
+import { modifyPost } from '../markdown/transformPosts/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
 

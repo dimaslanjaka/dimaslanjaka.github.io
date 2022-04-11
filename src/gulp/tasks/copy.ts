@@ -16,7 +16,7 @@ import { renderBodyMarkdown } from '../../markdown/toHtml';
 import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
 import through2 from 'through2';
-import { modifyPost } from './functions/modifyPost';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import CachePost from '../../node/cache-post';
 
 /**

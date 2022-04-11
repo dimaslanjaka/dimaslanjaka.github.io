@@ -75,7 +75,11 @@ export default class CachePost extends CacheFile {
     defaultResovableValue.max = max;
     return this.getValues(opt)
       .filter((post) => post.metadata.type == 'post')
-      .map((post) => fixPost(post));
+      .splice(0, max)
+      .map((post) => fixPost(post))
+      .map((post) => {
+        return Object.assign(post, post.metadata);
+      });
   }
 
   /**

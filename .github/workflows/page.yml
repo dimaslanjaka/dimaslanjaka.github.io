@@ -54,6 +54,7 @@ jobs:
             ./build
             ./packages
             ./databases
+            ./docs
           key: ${{ runner.os }}-xnodex-${{ hashFiles('**/.guid') }}
           restore-keys: ${{ runner.os }}-xnodex-
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node

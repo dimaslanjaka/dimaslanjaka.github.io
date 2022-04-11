@@ -3,7 +3,9 @@ import { globSrc, join, read, write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
+import color from '../../node/color';
 
+const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
 /**
  * Minify all generated html files
  * @see {@link https://github.com/terser/html-minifier-terser}
@@ -17,11 +19,10 @@ function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (()
     .map((path) => join(workdir, path))
     .each((file) => {
       const content = read(file);
-      console.log(file);
       const min = htmlmin.minify(String(content), options);
       min
         .then((minified) => {
-          write(file, minified);
+          write(file, minified).then((file) => console.log(logname, file));
         })
         .catch(console.log);
     })

@@ -4,7 +4,7 @@ import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
 import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
 import ejs_object from '../../ejs';
-import { buildPost, parsePost, parsePostReturn } from '../../markdown/transformPosts';
+import { buildPost, parsePost, parsePostReturn, validateParsed } from '../../markdown/transformPosts';
 import chalk from 'chalk';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
@@ -17,6 +17,7 @@ import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
 import CachePost from '../../node/cache-post';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import color from '../../node/color';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -104,7 +105,12 @@ export const renderArticle = function () {
         };
         // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && !nocache;
-        const modify = modifyPost(parsePost(result.path));
+        const parsed = parsePost(result.path);
+        if (!validateParsed(parsed)) {
+          console.log(logname, color.redBright('[fail]'), 'cannot parse', result.path);
+          return;
+        }
+        const modify = modifyPost(parsed);
         if (result.path.includes('Grid')) write(tmp('modify.md'), buildPost(modify)).then(console.log);
         const merge = Object.assign(result, modify, result.path);
         if (typeof merge.metadata.url == 'string') {
@@ -226,6 +232,7 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
     // post instance
     const ipost = new CachePost.ejs();
     helpers.getLatestPosts = ipost.getLatestPosts;
+    helpers.getRandomPosts = ipost.getRandomPosts;
 
     page_url.pathname = parsed.permalink;
     const ejs_data = Object.assign(parsed, helpers, {

@@ -3,12 +3,15 @@
 const { tocObj, escapeHTML, encodeURL } = require('hexo-util');
 
 function tocHelper(str, options = {}) {
-  options = Object.assign({
-    min_depth: 1,
-    max_depth: 6,
-    class: 'toc',
-    list_number: true
-  }, options);
+  options = Object.assign(
+    {
+      min_depth: 1,
+      max_depth: 6,
+      class: 'toc',
+      list_number: true,
+    },
+    options
+  );
 
   const data = tocObj(str, { min_depth: options.min_depth, max_depth: options.max_depth });
 
@@ -54,7 +57,6 @@ function tocHelper(str, options = {}) {
     } else {
       result += `<a class="${className}-link">`;
     }
-
 
     if (listNumber) {
       result += `<span class="${className}-number">`;

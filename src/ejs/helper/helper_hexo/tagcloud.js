@@ -47,7 +47,7 @@ function tagcloudHelper(tags, options) {
 
   const sizes = [];
 
-  tags.sort('length').forEach(tag => {
+  tags.sort('length').forEach((tag) => {
     const { length } = tag;
     if (sizes.includes(length)) return;
 
@@ -56,9 +56,9 @@ function tagcloudHelper(tags, options) {
 
   const length = sizes.length - 1;
 
-  tags.forEach(tag => {
+  tags.forEach((tag) => {
     const ratio = length ? sizes.indexOf(tag.length) / length : 0;
-    const size = min + ((max - min) * ratio);
+    const size = min + (max - min) * ratio;
     let style = `font-size: ${parseFloat(size.toFixed(2))}${unit};`;
     const attr = className ? ` class="${className}-${Math.round(ratio * level)}"` : '';
 
@@ -67,9 +67,7 @@ function tagcloudHelper(tags, options) {
       style += ` color: ${midColor.toString()}`;
     }
 
-    result.push(
-      `<a href="${url_for.call(this, tag.path)}" style="${style}"${attr}>${transform ? transform(tag.name) : tag.name}</a>`
-    );
+    result.push(`<a href="${url_for.call(this, tag.path)}" style="${style}"${attr}>${transform ? transform(tag.name) : tag.name}</a>`);
   });
 
   return result.join(separator);
@@ -88,7 +86,7 @@ function tagcloudHelperFactory(tags, options) {
   return moize(tagcloudHelper.bind(this), {
     maxSize: 5,
     isDeepEqual: true,
-    transformArgs
+    transformArgs,
   }).call(this, tags, options);
 }
 

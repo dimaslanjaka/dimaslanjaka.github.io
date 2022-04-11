@@ -18,6 +18,7 @@ interface Tags {
   url: string;
 }
 const homepage = new URL(config.url);
+
 /**
  * list tag of page
  * @param page page object

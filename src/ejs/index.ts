@@ -13,9 +13,7 @@ import config, { ThemeOpt, theme_dir } from '../types/_config';
 import { DynamicObject } from '../types';
 
 const homepage = new URL(config.url);
-
-type helper_types = typeof tag | typeof keywords | typeof excerpt | typeof thumbnail | typeof locale | typeof author | typeof date | DynamicObject;
-let helpers: helper_types = {
+const internal_helpers = {
   iif: function <T>(cond: boolean, value: T): T {
     if (cond) return value;
   },
@@ -30,9 +28,10 @@ let helpers: helper_types = {
     return homepage.toString();
   },
 };
-[author, date, locale, thumbnail, keywords, excerpt, tag].forEach((obj) => {
-  helpers = Object.assign(helpers, obj);
-});
+
+type helper_types = typeof tag & typeof keywords & typeof excerpt & typeof thumbnail & typeof locale & typeof author & typeof date & typeof internal_helpers & DynamicObject;
+
+const helpers: helper_types = Object.assign(author, date, locale, thumbnail, keywords, excerpt, tag, internal_helpers);
 
 interface EJSOption extends ejs.Options, DynamicObject {
   _?: typeof helpers;
@@ -58,6 +57,7 @@ function render(content: string, opts: EJSOption = {}) {
 
 const ejs_object = {
   ejs,
+  helpers,
   renderFile: renderFile,
   resolveInclude: ejs.resolveInclude,
   compile: ejs.compile,
@@ -77,3 +77,4 @@ const ejs_object = {
 };
 
 export default ejs_object;
+export { helpers };

@@ -12,9 +12,12 @@ import { TaskCallback } from 'undertaker';
  * @returns
  */
 function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (() => any)) {
-  return globSrc('**/*.html', { cwd: join(root, config.public_dir) })
+  const workdir = join(root, config.public_dir);
+  return globSrc('**/*.html', { cwd: workdir })
+    .map((path) => join(workdir, path))
     .each((file) => {
       const content = read(file);
+      console.log(file);
       const min = htmlmin.minify(String(content), options);
       min
         .then((minified) => {

@@ -28,7 +28,7 @@ const allPosts = Bluebird.all(postCache.getAll())
   .map((post) => {
     if (!post) return;
     if (!post.metadata.type || !post.metadata.type.length)
-      if (post.fileTree) if (typeof post.fileTree.public == 'string') post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
+      if (post.fileTree) if (typeof post.fileTree.public == 'string') if (!post.metadata.type) post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
     const cats = post.metadata.category;
     const tags = post.metadata.tags;
     if (cats) {

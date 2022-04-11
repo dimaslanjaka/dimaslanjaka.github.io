@@ -14,6 +14,7 @@ import config from '../types/_config';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const homepage = new URL(config.url);
+const parseCache = new CacheFile('parsePost');
 
 export type parsePostReturn = DynamicObject & {
   /**
@@ -56,6 +57,10 @@ export type parsePostReturn = DynamicObject & {
     photos?: string[];
     cover?: string;
     thumbnail?: string;
+    /**
+     * archive (index, tags, categories)
+     */
+    type?: 'post' | 'page' | 'archive';
   };
   /**
    * Article body
@@ -70,7 +75,7 @@ export type parsePostReturn = DynamicObject & {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function parsePostOri(text: string): parsePostReturn | null {
+export function parsePost(text: string, ..._: any[]): parsePostReturn | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -199,8 +204,6 @@ export function generateFileTree(source: string, parsed: parsePostReturn) {
   return parsed;
 }
 
-const parseCache = new CacheFile('parsePost');
-
 /**
  * Cacheable parsePost
  * @param text file path or content markdown
@@ -208,12 +211,12 @@ const parseCache = new CacheFile('parsePost');
  * @see {@link parsePostOri}
  * @returns
  */
-export function parsePost(text: string, hash: string = null) {
-  let result: ReturnType<typeof parsePostOri>;
+export function cacheableParsePost(text: string, hash: string = null) {
+  let result: parsePostReturn;
   const key = hash || text;
   if (parseCache.isFileChanged(key) || nocache) {
     // parse changed or no cache
-    result = parsePostOri(text);
+    result = parsePost(text);
     //console.log('parse no cache', typeof result);
     parseCache.set(key, result);
   } else {

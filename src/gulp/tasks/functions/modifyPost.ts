@@ -3,7 +3,7 @@ import { parsePostReturn } from '../../../markdown/transformPosts';
 import { cwd, existsSync, removeMultiSlashes, statSync } from '../../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../../node/utils';
 import config from '../../../types/_config';
-import replaceMD2HTML from '../../fix/hyperlinks';
+import replaceMD2HTML from '../../fix/hyperlinks-md2html';
 import { shortcodeCss } from '../../shortcode/css';
 import extractText from '../../shortcode/extract-text';
 import parseShortCodeInclude from '../../shortcode/include';
@@ -25,7 +25,7 @@ const homepage = new URL(config.url);
  * @param parse result of {@link parsePost}
  * @returns
  */
-function modifyPostOri(parse: parsePostReturn) {
+export function modifyPost(parse: parsePostReturn) {
   const sourceFile = parse.fileTree.source;
   const publicFile = parse.fileTree.public;
   if (parse.metadata) {
@@ -165,22 +165,22 @@ function modifyPostOri(parse: parsePostReturn) {
  * @param sourceFile source file path as cache key
  * @returns modified parsed post object
  */
-export function modifyPost(parse: ReturnType<typeof modifyPostOri>, sourceFile?: string) {
-  let result: ReturnType<typeof modifyPostOri>;
+export function cacheableModifyPost(parse: parsePostReturn, sourceFile?: string) {
+  let result: parsePostReturn;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
 
   if (modCache.isFileChanged(source) || nocache) {
     // file changed or no cache
-    result = modifyPostOri(parse);
+    result = modifyPost(parse);
     postCache.set(source, result);
     modCache.set(source, result);
     //console.log(logname, 'no cache');
   } else {
     // cache hit
     result = modCache.get(source);
-    //<ReturnType<typeof modifyPostOri>>
+    //<parsePostReturn>
     if (typeof result === 'string') {
       try {
         result = JSON.parse(result);
@@ -191,12 +191,6 @@ export function modifyPost(parse: ReturnType<typeof modifyPostOri>, sourceFile?:
       }
     }
   }
-
-  /*if (result.fileTree.public.toLowerCase().includes('quiz.')) {
-    const em = new ErrorMarkdown({}, result.fileTree.public);
-    em.add('body', '```html\n' + result.body + '\n```');
-    console.log('saved', em.getFileLog());
-  }*/
 
   return result;
 }

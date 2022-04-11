@@ -6,9 +6,9 @@
  */
 
 import 'js-prototypes';
-import { cwd, dirname } from '../../node/filemanager';
+import { cwd, dirname, write } from '../../node/filemanager';
 import { buildPost, parsePost } from '../../markdown/transformPosts';
-import config, { post_public_dir, post_source_dir } from '../../types/_config';
+import config, { post_public_dir, post_source_dir, tmp } from '../../types/_config';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
@@ -87,8 +87,9 @@ const copyPosts = () => {
       const path = file.path;
       const log = [logname, String(path)];
       let parse = parsePost(String(file.contents), String(path));
+
       if (!validateParser(parse)) {
-        //console.log(...log, chalk.red('[fail]'), 'at 1st parse');
+        console.log(...log, chalk.red('[fail]'), 'at 1st parse');
         return next();
       }
 
@@ -101,6 +102,8 @@ const copyPosts = () => {
         console.log(...log, 'at 2nd parse');
         return next();
       }
+      // set type post
+      parse.metadata.type = 'post';
       let html: ReturnType<typeof parseHTML>;
       try {
         html = parseHTML(renderBodyMarkdown(parse));
@@ -120,7 +123,7 @@ const copyPosts = () => {
 
       //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
       const build = buildPost(parse);
-      //write(tmp(parse.metadata.uuid, 'article.md'), build);
+      write(tmp(parse.metadata.uuid, 'article.md'), build);
       log.push(chalk.green('success'));
       file.contents = Buffer.from(build);
       if (this) this.push(file);

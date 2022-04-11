@@ -8,6 +8,8 @@ title: "WMI"
 description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others. External source WMI Github Laboratory
 keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
 timezone: "Asia/Jakarta"
+# favicon from source_dir
+favicon: "/favicon.ico"
 
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb
@@ -21,13 +23,17 @@ search:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.webmanajemen.com
-permalink: :title.html # permalink should follow directory path ends with .html
 
 # Directory
+# source directory (this directory should be on public website)
 source_dir: source
+# generated directory
 public_dir: docs
+# slug tag config.url/tag_dir/tagname
 tag_dir: tags
+# slug archive config.url/archive_dir/
 archive_dir: archives
+# slug category config.url/category_dir/categoryName
 category_dir: categories
 
 # https://hexo.io/docs/configuration.html
@@ -158,7 +164,7 @@ social_links:
   github: https://github.com/dimaslanjaka
   youtube: https://youtube.com/p/L3n4r0x
 
-# Feed Atom https://github.com/hexojs/hexo-generator-feed
+# Feed Atom
 feed:
   # include contents in feeds
   content: true

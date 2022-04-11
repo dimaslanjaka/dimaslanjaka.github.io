@@ -1,6 +1,7 @@
 import { modifyPost } from '../markdown/transformPosts/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
+import memoize from 'memoizee';
 
 type postResult = parsePostReturn & parsePostReturn['metadata'];
 
@@ -42,8 +43,8 @@ export default class CachePost extends CacheFile {
         if (c > d) return -1;
         return 0;
       })
-      .splice(0, max)
       .removeEmpties()
+      .splice(0, max)
       .map((post) => fixPost(post))
       .map((post) => {
         return Object.assign(post, post.metadata);
@@ -73,6 +74,7 @@ export default class CachePost extends CacheFile {
     defaultResovableValue.max = max;
     return this.getValues(opt)
       .filter((post) => post.metadata.type == 'post')
+      .removeEmpties()
       .splice(0, max)
       .map((post) => fixPost(post))
       .map((post) => {
@@ -84,9 +86,9 @@ export default class CachePost extends CacheFile {
    * ejs interopability helpers
    */
   static ejs = class {
-    getLatestPosts = new CachePost().getLatestPosts.bind(new CacheFile('posts'));
-    getRandomPosts = new CachePost().getRandomPosts.bind(new CacheFile('posts'));
-    getAll = new CachePost().getAll.bind(new CacheFile('posts'));
+    getLatestPosts = memoize(new CachePost().getLatestPosts.bind(new CacheFile('posts')));
+    getRandomPosts = memoize(new CachePost().getRandomPosts.bind(new CacheFile('posts')));
+    getAll = memoize(new CachePost().getAll.bind(new CacheFile('posts')));
   };
 }
 

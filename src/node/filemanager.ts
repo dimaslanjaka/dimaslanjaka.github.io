@@ -90,13 +90,13 @@ const filemanager = {
   },
 
   /**
-   * Make directory recursive default
+   * Make directory recursive default (only not exists dir)
    * @param path
    * @param options
    * @returns
    */
   mkdirSync: (path: fs.PathLike, options: fs.MakeDirectoryOptions = {}) => {
-    return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
+    if (!existsSync(path)) return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
   },
 };
 

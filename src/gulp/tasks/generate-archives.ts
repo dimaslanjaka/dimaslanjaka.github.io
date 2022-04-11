@@ -33,16 +33,17 @@ interface Archives {
   [key: string]: ArchivePost[];
 }
 
-export async function generateArchive(done?: TaskCallback) {
+export function generateArchive(done?: TaskCallback, labelname?: string) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
-  await Bluebird.all(postCache.getAll())
+  postCache
+    .getAll()
     .filter((item) => {
       if (!item) return false;
       if (!item.metadata) return false;
       return true;
     })
-    .each((post: parsePostReturn) => {
+    .forEach((post: parsePostReturn) => {
       if (post.metadata.tags.length) {
         post.metadata.tags.removeEmpties().forEach((tag) => {
           // setup tag dir
@@ -81,38 +82,41 @@ export async function generateArchive(done?: TaskCallback) {
       }
     });
   const genTag = () => {
+    const logname = color['Carnation Pink']('[tags]');
     const keys = Object.keys(tag_posts);
-    console.log('total tags', keys.length);
-    return Bluebird.all(keys).each((tagname) => {
-      const posts = tag_posts[tagname];
-      const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
-      homepage.pathname = join(config.tag_dir, 'index.html');
+    console.log(logname, 'total', keys.length);
+    for (const tagname in tag_posts) {
+      if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
+        const posts = tag_posts[tagname];
+        const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
+        homepage.pathname = join(config.tag_dir, 'index.html');
 
-      const opt_1: parsePostReturn = {
-        metadata: {
-          title: 'Tag: ' + tagname,
-          subtitle: 'Tag: ' + tagname + ' ' + new URL(config.url).host,
-          date: moment().format(),
-          updated: moment().format(),
-          category: [],
-          tags: [],
-          type: 'archive',
-          url: homepage.toString(),
-        },
-        /** setup sitedata array as json */
-        sitedata: JSON.stringify(posts),
-        body: '',
-        content: '',
-        fileTree: {
-          source: tagPermalink,
-          public: join(tmp(), tagPermalink),
-        },
-      };
-      const mod = modifyPost(opt_1);
-      renderer(mod).then((rendered) => {
-        write(tagPermalink, rendered).then((f) => console.log(logname, 'tag', f));
-      });
-    });
+        const opt_1: parsePostReturn = {
+          metadata: {
+            title: 'Tag: ' + tagname,
+            subtitle: 'Tag: ' + tagname + ' ' + new URL(config.url).host,
+            date: moment().format(),
+            updated: moment().format(),
+            category: [],
+            tags: [],
+            type: 'archive',
+            url: homepage.toString(),
+          },
+          /** setup sitedata array as json */
+          sitedata: JSON.stringify(posts),
+          body: '',
+          content: '',
+          fileTree: {
+            source: tagPermalink,
+            public: join(tmp(), tagPermalink),
+          },
+        };
+        const mod = modifyPost(opt_1);
+        renderer(mod).then((rendered) => {
+          write(tagPermalink, rendered); //.then((f) => console.log(logname, 'tag', f));
+        });
+      }
+    }
   };
   const genCat = () => {
     const keys = Object.keys(cat_posts);
@@ -151,8 +155,8 @@ export async function generateArchive(done?: TaskCallback) {
       });
     });
   };
-  await genTag();
-  await genCat();
+  genTag();
+  //genCat();
   if (typeof done == 'function') done();
 }
 

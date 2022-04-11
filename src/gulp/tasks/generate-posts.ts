@@ -79,8 +79,9 @@ const renderCache = new CacheFile('renderArticle');
 const sitemap = new Sitemap();
 
 export const renderArticle = function () {
+  const log = logname + chalk.blue('[posts]');
   return new Bluebird((resolve, reject) => {
-    logger.log(logname + chalk.blue('[posts]'), 'generating to', generated_dir);
+    logger.log(log, 'generating to', generated_dir);
     const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
     const ignore = ['_drafts/', '_data/', ...exclude];
     globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
@@ -105,9 +106,11 @@ export const renderArticle = function () {
         };
         // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && !nocache;
-        const parsed = parsePost(result.path);
+        let parsed = parsePost(result.path);
+        // try non-cache method
+        if (!validateParsed(parsed)) parsed = parsePost(result.path, null, false);
         if (!validateParsed(parsed)) {
-          console.log(logname, color.redBright('[fail]'), 'cannot parse', result.path);
+          console.log(log, color.redBright('[fail]'), 'cannot parse', result.path);
           return;
         }
         const modify = modifyPost(parsed);
@@ -123,7 +126,7 @@ export const renderArticle = function () {
       // filter only non-empty object
       .filter((parsed) => typeof parsed == 'object')
       .then(function (result) {
-        logger.log(logname + chalk.blue('[posts]'), 'markdown sources total', result.length);
+        logger.log(log, 'markdown sources total', result.length);
         /**
          * Queue for process first item
          * @returns
@@ -163,7 +166,7 @@ export const renderArticle = function () {
 
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
-              logger.log(logname + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
+              logger.log(log + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
             } else {
               // if cache hit, skip process
               return skip();

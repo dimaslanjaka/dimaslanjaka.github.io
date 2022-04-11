@@ -75,7 +75,7 @@ export type parsePostReturn = DynamicObject & {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function parsePost(text: string, ..._: any[]): parsePostReturn | null {
+export function originalParsePost(text: string, ..._: any[]): parsePostReturn | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -216,7 +216,7 @@ export function cacheableParsePost(text: string, hash: string = null) {
   const key = hash || text;
   if (parseCache.isFileChanged(key) || nocache) {
     // parse changed or no cache
-    result = parsePost(text);
+    result = originalParsePost(text);
     //console.log('parse no cache', typeof result);
     parseCache.set(key, result);
   } else {
@@ -237,6 +237,8 @@ export function cacheableParsePost(text: string, hash: string = null) {
 
   return generateFileTree(text, result);
 }
+
+export const parsePost = originalParsePost;
 
 /**
  * Save Parsed Hexo markdown post

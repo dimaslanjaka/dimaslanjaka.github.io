@@ -230,7 +230,7 @@ export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) 
     const pagedata = Object.assign(parsed.metadata, parsed, override);
 
     // post instance
-    const ipost = new CachePost();
+    const ipost = new CachePost.ejs();
     helpers.getLatestPosts = ipost.getLatestPosts;
 
     page_url.pathname = parsed.permalink;

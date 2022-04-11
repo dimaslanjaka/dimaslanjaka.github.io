@@ -17,6 +17,7 @@ import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
 import through2 from 'through2';
 import { modifyPost } from './functions/modifyPost';
+import CachePost from '../../node/cache-post';
 
 /**
  * Crossplatform path replacer
@@ -80,6 +81,7 @@ const validateParser = (parse: ReturnType<typeof parsePost>) => {
   return true;
 };
 
+const cachePost = new CachePost();
 const copyPosts = () => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
   const run = gulp.src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir }).pipe(
@@ -120,10 +122,12 @@ const copyPosts = () => {
         .map((e) => e.text)
         .join('\n');
       parse.metadata.wordcount = countWords(words);
+      // insert parsed to cache post
+      cachePost.set(path, parse);
 
       //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
       const build = buildPost(parse);
-      write(tmp(parse.metadata.uuid, 'article.md'), build);
+      //write(tmp(parse.metadata.uuid, 'article.md'), build);
       log.push(chalk.green('success'));
       file.contents = Buffer.from(build);
       if (this) this.push(file);

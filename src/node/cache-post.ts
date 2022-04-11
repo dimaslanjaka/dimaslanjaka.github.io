@@ -32,7 +32,7 @@ export default class CachePost extends CacheFile {
    * @returns array of {@link postResult}
    */
   getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
-    const posts: parsePostReturn[] = new CacheFile('posts').getValues({ max: max, resolveValue: true });
+    const posts: parsePostReturn[] = this.getValues({ max: max, resolveValue: true });
     return (
       posts
         .filter((post) => post.metadata.type == 'post')
@@ -58,8 +58,7 @@ export default class CachePost extends CacheFile {
    * @returns array of posts {@link CacheFile.getValues}
    */
   getAll(opt = defaultResovableValue) {
-    return new CacheFile('posts')
-      .getValues(opt)
+    return this.getValues(opt)
       .filter((post: parsePostReturn) => post.metadata.type == 'post')
       .map((post) => modifyPost(post))
       .map((post) => fixPost(post));
@@ -72,11 +71,19 @@ export default class CachePost extends CacheFile {
    */
   getRandomPosts(opt = defaultResovableValue) {
     defaultResovableValue.randomize = true;
-    return new CacheFile('posts')
-      .getValues(opt)
+    return this.getValues(opt)
       .filter((post) => post.metadata.type == 'post')
       .map((post) => fixPost(post));
   }
+
+  /**
+   * ejs interopability helpers
+   */
+  static ejs = class {
+    getLatestPosts = new CachePost().getLatestPosts.bind(new CacheFile('posts'));
+    getRandomPosts = new CachePost().getRandomPosts.bind(new CacheFile('posts'));
+    getAll = new CachePost().getAll.bind(new CacheFile('posts'));
+  };
 }
 
 export const Post = CachePost;

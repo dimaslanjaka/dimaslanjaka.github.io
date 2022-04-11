@@ -11,22 +11,16 @@
 
 
   <title>CodePen - Cookie Manager (Pure)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   
 
-  <script>
-  window.console = window.console || function(t) {};
-</script>
+  <script>window.console=window.console||function(o){}</script>
 
   
   
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
+  <script>document.location.search.match(/type=embed/gi)&&window.parent.postMessage("resize","*")</script>
 
 
 </head>
@@ -34,7 +28,7 @@
 <body translate="no">
   <div class="container h-100 m-5">
   <div class="row mb-2">
-    <pre id="allcookies" class=""></pre>
+    <pre id="allcookies"></pre>
   </div>
   <div class="row h-100 justify-content-center align-items-center">
     <form action="#create" id="create" class="form-inline col-12">
@@ -57,110 +51,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 <script src="https://raw.githack.com/dimaslanjaka/smartform/master/dist/js/form-saver.js?ver=1.0.5"></script>
-      <script id="rendered-js">
-(function () {
-  smartform();
-})();
-$("#create").on("submit", function (e) {
-  e.preventDefault();
-  var form = $(this);
-  var url = form.attr("action");
-  var data = $(this).serialize().split("&");
-  //console.log(data);
-  var obj = {};
-  for (var key in data) {
-    console.log(data[key]);
-    obj[data[key].split("=")[0]] = data[key].split("=")[1];
-  }
-  setCookie(`cookie_${obj.name}`, obj.value, 60);
-  //console.log(obj);
-});
-$("#deleteAllCookie").on("click", function (e) {
-  e.preventDefault();
-  deleteAllCookies();
-});
-
-console.clear();
-var browserData = {};
-$.get("https://www.cloudflare.com/cdn-cgi/trace", function (data) {
-  const object1 = data.split("\n");
-  object1.forEach(element => {
-    var key = element.split("=")[0];
-    var value = element.split("=")[1];
-    //console.log(key, value);
-    browserData[key] = value;
-  });
-  //console.log(browserData);
-});
-
-setInterval(() => {
-  var tobeprinted = getCookies();
-  tobeprinted.localStorageAvailable = localStorageAvailable();
-  tobeprinted.userAgent = navigator.userAgent;
-  tobeprinted.ip = browserData.ip;
-  $("#allcookies").text(JSON.stringify(tobeprinted, null, 4));
-}, 1000);
-
-function getCookies() {
-  var pairs = document.cookie.split(";");
-  var cookies = {};
-  for (var i = 0; i < pairs.length; i++) {
-    var pair = pairs[i].split("=");
-    cookies[(pair[0] + "").trim()] = unescape(pair.slice(1).join("="));
-  }
-  return cookies;
-}
-
-function setCookie(cname, cvalue, minutes) {
-  var d = new Date();
-  d.setTime(d.getTime() + minutes * 60 * 1000);
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    if (window.CP.shouldStopExecution(0)) break;
-    var c = ca[i];
-    while (c.charAt(0) == " ") {
-      if (window.CP.shouldStopExecution(1)) break;
-      c = c.substring(1);
-    }
-    window.CP.exitedLoop(1);
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  window.CP.exitedLoop(0);
-  return "";
-}
-
-function localStorageAvailable() {
-  var test = "test";
-  try {
-    localStorage.setItem(test, test);
-    localStorage.removeItem(test);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function deleteAllCookies() {
-  var cookies = document.cookie.split(";");
-
-  for (var i = 0; i < cookies.length; i++) {
-    var cookie = cookies[i];
-    var eqPos = cookie.indexOf("=");
-    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  }
-}
-//# sourceURL=pen.js
-    </script>
+      <script id="rendered-js">smartform(),$("#create").on("submit",(function(e){e.preventDefault();$(this).attr("action");var t=$(this).serialize().split("&"),o={};for(var i in t)console.log(t[i]),o[t[i].split("=")[0]]=t[i].split("=")[1];setCookie(`cookie_${o.name}`,o.value,60)})),$("#deleteAllCookie").on("click",(function(e){e.preventDefault(),deleteAllCookies()})),console.clear();var browserData={};function getCookies(){for(var e=document.cookie.split(";"),t={},o=0;o<e.length;o++){var i=e[o].split("=");t[(i[0]+"").trim()]=unescape(i.slice(1).join("="))}return t}function setCookie(e,t,o){var i=new Date;i.setTime(i.getTime()+60*o*1e3);var r="expires="+i.toUTCString();document.cookie=e+"="+t+";"+r+";path=/"}function getCookie(e){for(var t=e+"=",o=decodeURIComponent(document.cookie).split(";"),i=0;i<o.length&&!window.CP.shouldStopExecution(0);i++){for(var r=o[i];" "==r.charAt(0)&&!window.CP.shouldStopExecution(1);)r=r.substring(1);if(window.CP.exitedLoop(1),0==r.indexOf(t))return r.substring(t.length,r.length)}return window.CP.exitedLoop(0),""}function localStorageAvailable(){var e="test";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}function deleteAllCookies(){for(var e=document.cookie.split(";"),t=0;t<e.length;t++){var o=e[t],i=o.indexOf("="),r=i>-1?o.substr(0,i):o;document.cookie=r+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"}}$.get("https://www.cloudflare.com/cdn-cgi/trace",(function(e){e.split("\n").forEach((e=>{var t=e.split("=")[0],o=e.split("=")[1];browserData[t]=o}))})),setInterval((()=>{var e=getCookies();e.localStorageAvailable=localStorageAvailable(),e.userAgent=navigator.userAgent,e.ip=browserData.ip,$("#allcookies").text(JSON.stringify(e,null,4))}),1e3)</script>
 
   
 

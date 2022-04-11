@@ -8,7 +8,7 @@ on:
 # cancel previous workflows, run only one workflow
 concurrency:
   group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
-  #cancel-in-progress: true
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -61,7 +61,7 @@ jobs:
         # run global install when cache not written
         # if: steps.npm-cache.outputs.cache-hit != 'true'
       - run: npm install
-      - run: gulp clean
+      #- run: gulp clean
       - run: "gulp copy:assets"
       - run: "gulp copy:posts"
       - run: "gulp generate:assets"

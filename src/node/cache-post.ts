@@ -66,11 +66,13 @@ export default class CachePost extends CacheFile {
 
   /**
    * get random posts
-   * @param opt
+   * @param max max results
    * @returns
    */
-  getRandomPosts(opt = defaultResovableValue) {
+  getRandomPosts(max = 5) {
+    const opt = defaultResovableValue;
     defaultResovableValue.randomize = true;
+    defaultResovableValue.max = max;
     return this.getValues(opt)
       .filter((post) => post.metadata.type == 'post')
       .map((post) => fixPost(post));

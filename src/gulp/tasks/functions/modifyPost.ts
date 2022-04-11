@@ -25,7 +25,7 @@ const homepage = new URL(config.url);
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function modifyPost(parse: parsePostReturn) {
+export function originalModifyPost(parse: parsePostReturn) {
   const sourceFile = parse.fileTree.source;
   const publicFile = parse.fileTree.public;
   if (parse.metadata) {
@@ -173,7 +173,7 @@ export function cacheableModifyPost(parse: parsePostReturn, sourceFile?: string)
 
   if (modCache.isFileChanged(source) || nocache) {
     // file changed or no cache
-    result = modifyPost(parse);
+    result = originalModifyPost(parse);
     postCache.set(source, result);
     modCache.set(source, result);
     //console.log(logname, 'no cache');
@@ -194,3 +194,5 @@ export function cacheableModifyPost(parse: parsePostReturn, sourceFile?: string)
 
   return result;
 }
+
+export const modifyPost = originalModifyPost;

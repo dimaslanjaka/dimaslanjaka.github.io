@@ -9,7 +9,7 @@ import chalk from 'chalk';
 import 'js-prototypes';
 import moment from 'moment';
 import { parsePostReturn } from '../../markdown/transformPosts';
-import { renderer } from './generate';
+import { renderer } from './generate-posts';
 import './sitemap';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 

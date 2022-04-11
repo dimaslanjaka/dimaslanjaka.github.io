@@ -18,7 +18,6 @@ import chalk from 'chalk';
 import through2 from 'through2';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import CachePost from '../../node/cache-post';
-import { DynamicObject } from '../../types';
 
 /**
  * Crossplatform path replacer

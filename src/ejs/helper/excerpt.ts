@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { parsePostReturn } from '../../markdown/transformPosts';
+import { ProjectConfig } from '../../types/_config';
 
 /**
  * get excerpt of page
@@ -12,7 +13,7 @@ import { parsePostReturn } from '../../markdown/transformPosts';
  * // escaped html
  * <%= excerpt(page) %>
  */
-export function excerpt(page: parsePostReturn['metadata'], length = 200) {
+export function excerpt(page: parsePostReturn['metadata'] | ProjectConfig, length = 200) {
   let str = 'no excerpt';
   if (page.subtitle) {
     str = page.subtitle;

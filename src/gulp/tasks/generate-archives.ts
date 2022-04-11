@@ -6,7 +6,7 @@ import CachePost from '../../node/cache-post';
 import { cwd, join, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
 import 'js-prototypes';
-import { renderer } from './generate';
+import { renderer } from './generate-posts';
 import { TaskCallback } from 'undertaker';
 import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';

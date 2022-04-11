@@ -33,6 +33,19 @@ export function author_email(page: parsePostReturn['metadata'] | typeof config) 
 }
 
 /**
+ * transform author object
+ * @param page
+ * @returns
+ */
+export function author_object(page: parsePostReturn['metadata'] | typeof config) {
+  return {
+    name: String(author_name(page)),
+    email: String(author_email(page)),
+    link: String(author_link(page)),
+  };
+}
+
+/**
  * get author link
  * @param page
  * @returns

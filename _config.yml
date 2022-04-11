@@ -10,6 +10,8 @@ keywords: the legend of neverland, genshin impact, games, how to, tips and trick
 timezone: "Asia/Jakarta"
 # favicon from source_dir
 favicon: "/favicon.ico"
+# logo from source_dir
+logo: "/image/logo.png"
 
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb
@@ -168,10 +170,11 @@ social_links:
 feed:
   # include contents in feeds
   content: true
-  # Generate both atom and rss2 feeds
+  # Generate atom, rss2, and json feeds
   type:
     - atom
     - rss2
+    - json
 
 
 # Sitemap

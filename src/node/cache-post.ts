@@ -59,7 +59,7 @@ export default class CachePost extends CacheFile {
    */
   getAll(opt = defaultResovableValue) {
     return this.getValues(opt)
-      .filter((post: parsePostReturn) => post.metadata.type == 'post')
+      .filter((post: parsePostReturn) => post && post.metadata.type == 'post')
       .map((post) => modifyPost(post))
       .map((post) => fixPost(post));
   }

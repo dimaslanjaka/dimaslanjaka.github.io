@@ -203,14 +203,17 @@ function generateFileTree(source: string, parsed: parsePostReturn) {
 /**
  * Cacheable parsePost
  * @param text file path or content markdown
- * @param hash set cache key if `text` isn't `file path`
- * @see {@link parsePostOri}
+ * @param sourceFile set cache key if `text` isn't `file path`
+ * @param cache read cache? default true
+ * @see {@link parsePostOri }
  * @returns
  */
-export function cacheableParsePost(text: string, hash: string = null) {
+export function cacheableParsePost(text: string, sourceFile: string = null, cache = true) {
   let result: parsePostReturn;
-  const key = hash || text;
-  if (parseCache.isFileChanged(key) || nocache) {
+  const key = sourceFile || text;
+  // if file changed, --nocache, or cache parameter is false
+  // do write new cache
+  if (parseCache.isFileChanged(key) || nocache || !cache) {
     // parse changed or no cache
     result = originalParsePost(text);
     //console.log('parse no cache', typeof result);
@@ -218,6 +221,7 @@ export function cacheableParsePost(text: string, hash: string = null) {
   } else {
     // restore cache
     result = parseCache.get(key);
+    // try parsing
     if (typeof result == 'string') {
       try {
         result = JSON.parse(result);

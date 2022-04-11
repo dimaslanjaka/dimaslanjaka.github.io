@@ -6,9 +6,9 @@
  */
 
 import 'js-prototypes';
-import { cwd, dirname, write } from '../../node/filemanager';
-import { buildPost, parsePost } from '../../markdown/transformPosts';
-import config, { post_public_dir, post_source_dir, tmp } from '../../types/_config';
+import { cwd, dirname } from '../../node/filemanager';
+import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
+import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import gulp from 'gulp';
 import gulpRename from '../modules/rename';
 import { toUnix } from 'upath';
@@ -66,31 +66,17 @@ const copyAssets = () => {
 gulp.task('copy:assets', copyAssets);
 
 const logname = chalk.cyan('[copy][md]');
-/**
- * validate {@link parsePost}
- * @param parse
- * @returns
- */
-const validateParser = (parse: ReturnType<typeof parsePost>) => {
-  if (!parse) return false;
-  if (typeof parse === 'undefined') return false;
-  if (parse && !parse.body) {
-    console.log(chalk.red('body of null:'));
-    return false;
-  }
-  return true;
-};
 
 const cachePost = new CachePost();
 const copyPosts = () => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
   const run = gulp.src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir }).pipe(
-    through2.obj(function (file, encoding, next) {
+    through2.obj(function (file, _encoding, next) {
       const path = file.path;
       const log = [logname, String(path)];
       let parse = parsePost(String(file.contents), String(path));
 
-      if (!validateParser(parse)) {
+      if (!validateParsed(parse)) {
         console.log(...log, chalk.red('[fail]'), 'at 1st parse');
         return next();
       }
@@ -99,11 +85,16 @@ const copyPosts = () => {
         source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
         public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
       };
-      parse = modifyPost(parse);
-      if (!validateParser(parse)) {
-        console.log(...log, 'at 2nd parse');
+      //// modify post
+      let modify = modifyPost(parse);
+      // if null, get fresh cache
+      if (modify === null || typeof modify === 'undefined') modify = modifyPost(parse, null, false);
+      if (!validateParsed(modify)) {
+        console.log(...log, chalk.red('[fail]'), 'at 2nd parse');
+        //console.log('result', modify);
         return next();
       }
+      parse = modify;
       // set type post
       parse.metadata.type = 'post';
       let html: ReturnType<typeof parseHTML>;

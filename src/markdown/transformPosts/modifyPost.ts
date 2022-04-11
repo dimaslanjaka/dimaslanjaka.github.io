@@ -165,15 +165,18 @@ export function originalModifyPost(parse: parsePostReturn) {
  * @see {@link modifyPostOri}
  * @param parse parsed post object
  * @param sourceFile source file path as cache key
+ * @param cache read cache? default true
  * @returns modified parsed post object
  */
-export function cacheableModifyPost(parse: parsePostReturn, sourceFile?: string) {
+export function cacheableModifyPost(parse: parsePostReturn, sourceFile: string = null, cache = true) {
   let result: parsePostReturn;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
 
-  if (modCache.isFileChanged(source) || nocache) {
+  // if file changed, --nocache, or cache parameter is false
+  // do write new cache
+  if (modCache.isFileChanged(source) || nocache || !cache) {
     // file changed or no cache
     result = originalModifyPost(parse);
     postCache.set(source, result);

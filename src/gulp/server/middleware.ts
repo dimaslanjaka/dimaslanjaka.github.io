@@ -47,6 +47,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
     homepage.pathname = req.url; // let URL instance parse the url
     const pathname = homepage.pathname; // just get pathname
+
+    const isArchive = pathname.match(new RegExp(config.category_dir + '/', 'g')) || pathname.match(new RegExp(config.tag_dir + '/', 'g'));
+    const isHomepage = pathname === '/';
+    const isPage = pathname.isMatch(/(.html|\/)$/);
+
     res.setHeader('X-Powered-By', 'SBG'); // send X-Powered-By
     if (!config.server.cache) {
       res.setHeader('Expires', 'on, 01 Jan 1970 00:00:00 GMT');
@@ -56,21 +61,23 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     }
 
     if (!/\/api/.test(pathname)) {
-      const isArchive = pathname.match(new RegExp(config.category_dir + '/', 'g')) || pathname.match(new RegExp(config.tag_dir + '/', 'g'));
-      const sourceArchive = join(cwd(), config.source_dir, decodeURIComponent(pathname), 'index.html');
-      if (isArchive) {
-        copyAssets('generate:archive');
-        ///console.log('generate archive', sourceArchive);
+      const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
+      const sourceIndex = join(cwd(), config.public_dir, 'index.html');
+      if (isArchive || isHomepage) {
+        Promise.resolve(copyAssets(isArchive ? 'generate:label' : 'generate:index'));
+        let result: string;
         if (existsSync(sourceArchive)) {
-          console.log('[archive] pre-processed', pathname);
-          return res.end(showPreview(readFileSync(sourceArchive)));
+          result = sourceArchive;
+        } else if (existsSync(sourceIndex)) {
+          result = sourceIndex;
+        }
+        if (result) {
+          console.log('[archive] pre-processed', pathname, '->', result);
+          return res.end(showPreview(readFileSync(result)));
         }
       }
 
-      const isHomepage = pathname === '';
-      const isPage = pathname.match(/(.html|\/)$/);
-
-      if (isPage || isHomepage) {
+      if (isPage) {
         res.setHeader('Content-Type', 'text/html');
         // find post and pages
         const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
@@ -86,7 +93,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           if (existsSync(file)) {
             try {
               // pre-process markdown
-              copyAssets();
+              Promise.resolve(copyAssets());
               // parse markdown metadata
               const parsed = parsePost(file);
               if (!parsed) {
@@ -112,7 +119,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       }
     }
     // show previous generated
-    if (pathname.endsWith('.html')) console.log('last processed', pathname);
+    if (isHomepage || !pathname) console.log('last processed', pathname);
     next();
   },
   {

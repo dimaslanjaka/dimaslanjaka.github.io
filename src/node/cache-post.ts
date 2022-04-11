@@ -33,23 +33,21 @@ export default class CachePost extends CacheFile {
    */
   getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
     const posts: parsePostReturn[] = this.getValues({ max: max, resolveValue: true });
-    return (
-      posts
-        .filter((post) => post.metadata.type == 'post')
-        .sort((a, b) => {
-          const c = new Date(a.metadata[by]);
-          const d = new Date(b.metadata[by]);
-          if (c < d) return 1;
-          if (c > d) return -1;
-          return 0;
-        })
-        //.splice(0, max)
-        .removeEmpties()
-        .map((post) => fixPost(post))
-        .map((post) => {
-          return Object.assign(post, post.metadata);
-        })
-    );
+    return posts
+      .filter((post) => post.metadata.type == 'post')
+      .sort((a, b) => {
+        const c = new Date(a.metadata[by]);
+        const d = new Date(b.metadata[by]);
+        if (c < d) return 1;
+        if (c > d) return -1;
+        return 0;
+      })
+      .splice(0, max)
+      .removeEmpties()
+      .map((post) => fixPost(post))
+      .map((post) => {
+        return Object.assign(post, post.metadata);
+      });
   }
 
   /**

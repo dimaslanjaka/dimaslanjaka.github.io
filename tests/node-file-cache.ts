@@ -1,5 +1,6 @@
-import * as nodeFileCache from 'node-file-cache/src';
-const cache = nodeFileCache.create(); // default configuration
+import * as nodeFileCache from 'node-file-cache';
+import { join } from 'path';
+const cache = nodeFileCache.create({ file: 'tmp/store.json' }); // default configuration
 
 const key = 'my-cache-key';
 const item = {

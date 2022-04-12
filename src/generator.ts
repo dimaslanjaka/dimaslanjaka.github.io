@@ -29,5 +29,5 @@ gulp.task('clean:public', clean_public);
 gulp.task('clean:posts', clean_posts);
 gulp.task('clean:db', clean_db);
 gulp.task('clean:tmp', clean_tmp);
-gulp.task('clean', clean);
+gulp.task('clean', gulp.parallel('clean:db', 'clean:tmp', 'clean:posts', 'clean:public'));
 gulp.task('default', gulp.series('copy', 'generate'));

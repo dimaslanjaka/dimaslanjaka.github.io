@@ -31,7 +31,7 @@
     <div class="row">
       <div class="4u">
         <section>
-          <h2>Latest Posts</h2>
+          <h2 title="latest post by updated">Latest Posts</h2>
           <ul class="default">
             <% getLatestPosts('updated', 5).forEach(post => { %>
             <li><a href="<%- post.url %>" title="<%- post.title %>"><%- post.title %></a></li>

@@ -38,53 +38,53 @@ export function generateArchive(done?: TaskCallback, labelname?: string) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
   const iterate = () => {
-    postCache
-      .getAll()
-      .filter((item) => {
-        if (!item) return false;
-        if (!item.metadata) return false;
-        return true;
-      })
-      .forEach((post: parsePostReturn) => {
-        if (post.metadata.tags.length) {
-          post.metadata.tags.removeEmpties().forEach((tag) => {
-            // setup tag dir
-            const tag_dir = join(generated_tag_dir, tag);
-            const buildPost: ArchivePost = {
-              tag_dir: tag_dir,
-              title: post.metadata.title,
-              thumbnail: thumbnail(post.metadata),
-              url: post.metadata.url,
-              excerpt: excerpt(post.metadata),
-            };
+    if (!Object.values(cat_posts).length || !Object.values(tag_posts).length)
+      postCache
+        .getAll()
+        .filter((item) => {
+          if (!item) return false;
+          if (!item.metadata) return false;
+          return true;
+        })
+        .forEach((post: parsePostReturn) => {
+          if (post.metadata.tags.length) {
+            post.metadata.tags.removeEmpties().forEach((tag) => {
+              // setup tag dir
+              const tag_dir = join(generated_tag_dir, tag);
+              const buildPost: ArchivePost = {
+                tag_dir: tag_dir,
+                title: post.metadata.title,
+                thumbnail: thumbnail(post.metadata),
+                url: post.metadata.url,
+                excerpt: excerpt(post.metadata),
+              };
 
-            // initialize index tag if not exist
-            if (!tag_posts[tag]) tag_posts[tag] = [];
-            // push prevent duplicate object
-            if (!tag_posts[tag].find(({ title }) => title === post.metadata.title)) tag_posts[tag].push(buildPost);
-          });
-        }
-        if (post.metadata.category.length) {
-          post.metadata.category.removeEmpties().forEach((cat) => {
-            // setup tag dir
-            const cat_dir = join(generated_cat_dir, cat);
-            const buildPost_1: ArchivePost = {
-              cat_dir: cat_dir,
-              title: post.metadata.title,
-              thumbnail: thumbnail(post.metadata),
-              url: post.metadata.url,
-              excerpt: excerpt(post.metadata),
-            };
+              // initialize index tag if not exist
+              if (!tag_posts[tag]) tag_posts[tag] = [];
+              // push prevent duplicate object
+              if (!tag_posts[tag].find(({ title }) => title === post.metadata.title)) tag_posts[tag].push(buildPost);
+            });
+          }
+          if (post.metadata.category.length) {
+            post.metadata.category.removeEmpties().forEach((cat) => {
+              // setup tag dir
+              const cat_dir = join(generated_cat_dir, cat);
+              const buildPost_1: ArchivePost = {
+                cat_dir: cat_dir,
+                title: post.metadata.title,
+                thumbnail: thumbnail(post.metadata),
+                url: post.metadata.url,
+                excerpt: excerpt(post.metadata),
+              };
 
-            // initialize index tag if not exist
-            if (!cat_posts[cat]) cat_posts[cat] = [];
-            // push prevent duplicate object
-            if (!cat_posts[cat].find(({ title: title_1 }) => title_1 === post.metadata.title)) cat_posts[cat].push(buildPost_1);
-          });
-        }
-      });
+              // initialize index tag if not exist
+              if (!cat_posts[cat]) cat_posts[cat] = [];
+              // push prevent duplicate object
+              if (!cat_posts[cat].find(({ title: title_1 }) => title_1 === post.metadata.title)) cat_posts[cat].push(buildPost_1);
+            });
+          }
+        });
   };
-  const iterator = memoize(iterate);
   const genTag = () => {
     const logname = color['Carnation Pink']('[tags]');
     const keys = Object.keys(tag_posts);
@@ -169,7 +169,7 @@ export function generateArchive(done?: TaskCallback, labelname?: string) {
       keys.forEach(runner);
     }
   };
-  iterator();
+  iterate();
   genTag();
   genCat();
   if (typeof done == 'function') done();

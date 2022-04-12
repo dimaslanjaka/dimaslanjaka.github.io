@@ -64,7 +64,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
       if (isArchive || isHomepage) {
-        //Promise.resolve(copyAssets(isArchive ? 'generate:label' : 'generate:index'));
+        copyAssets();
         let result: string;
         if (existsSync(sourceArchive)) {
           result = sourceArchive;
@@ -93,7 +93,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           if (existsSync(file)) {
             try {
               // pre-process markdown
-              //Promise.resolve(copyAssets());
+              copyAssets();
               // parse markdown metadata
               const parsed = parsePost(file);
               if (!parsed) {

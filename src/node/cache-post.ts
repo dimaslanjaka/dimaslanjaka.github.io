@@ -21,6 +21,8 @@ function fixPost(post: parsePostReturn) {
   return post;
 }
 
+const testCache = new CacheFile('ejs');
+
 export default class CachePost extends CacheFile {
   constructor() {
     super('posts');
@@ -86,7 +88,16 @@ export default class CachePost extends CacheFile {
    * ejs interopability helpers
    */
   static ejs = class {
-    getLatestPosts = memoize(new CachePost().getLatestPosts.bind(new CacheFile('posts')));
+    getLatestPosts = function () {
+      let result: postResult[] = [];
+      if (!testCache.has('latest')) {
+        result = new CachePost().getLatestPosts.bind(new CacheFile('posts'));
+        testCache.set('latest', result);
+      } else {
+        result = testCache.get('latest');
+      }
+      return result;
+    };
     getRandomPosts = memoize(new CachePost().getRandomPosts.bind(new CacheFile('posts')));
     getAll = memoize(new CachePost().getAll.bind(new CacheFile('posts')));
   };

@@ -1,47 +1,34 @@
+Unused dependencies
+* fast-xml-parser
+* iridium
+* moment-timezone
+Unused devDependencies
+* @types/chai
+* @types/gulp-imagemin
+* @types/jquery
+* @types/lru-cache
+* chai
+* crypto-js
+* gulp-cache
+* gulp-imagemin
+* imagemin
+* imagemin-giflossy
+* imagemin-gifsicle
+* imagemin-jpeg-recompress
+* imagemin-jpegtran
+* imagemin-mozjpeg
+* imagemin-optipng
+* imagemin-pngquant
+* imagemin-svgo
+* imagemin-webp
+* imagemin-zopfli
+* nodejs-package-types
+* object-assign
+* plugin-error
 Missing dependencies
-* @typescript-eslint/parser: .\.eslintrc.js
-* @typescript-eslint/eslint-plugin: .\.eslintrc.js
-* browser-sync: .\browsersync.js
-* gulp: .\gulpfile.js
-* js-prototypes: .\gulpfile.js
-* through2: .\gulpfile.js
-* ngrok: .\src\ngrok.ts
-* jsdom: .\src\__test__\html2node.js
-* electron-browser: .\src\__test__\workspaces.ts
-* node-libcurl: .\src\translator\index.ts
-* node-html-parser: .\src\translator\notranslate.ts
-* upath: .\src\node\process.ts
-* crypto-js: .\src\node\process.ts
-* lodash.deburr: .\src\node\transliterate\index.ts
-* showdown: .\src\markdown\toHtml.ts
-* markdown-it-anchor: .\src\markdown\toHtml.ts
-* markdown-it-attrs: .\src\markdown\toHtml.ts
-* markdown-it-sup: .\src\markdown\toHtml.ts
-* markdown-it-sub: .\src\markdown\toHtml.ts
-* markdown-it-mark: .\src\markdown\toHtml.ts
-* markdown-it-footnote: .\src\markdown\toHtml.ts
-* markdown-it-abbr: .\src\markdown\toHtml.ts
-* yaml: .\src\markdown\transformPosts.ts
-* chalk: .\src\markdown\transformPosts.ts
-* plugin-error: .\src\gulp\minify.ts
-* html-minifier-terser: .\src\gulp\minify.ts
-* bluebird: .\src\gulp\minify.ts
-* fs-extra: .\src\gulp\utils.ts
-* moment: .\src\gulp\tasks\article-copy.ts
-* undertaker: .\src\gulp\tasks\article-copy.ts
-* minimatch: .\src\gulp\compress\html.ts
-* html-minifier: .\src\gulp\compress\html.ts
-* imagemin: .\src\gulp\compress\img.ts
-* imagemin-webp: .\src\gulp\compress\img.ts
-* imagemin-pngquant: .\src\gulp\compress\img.ts
-* imagemin-gifsicle: .\src\gulp\compress\img.ts
-* imagemin-jpegtran: .\src\gulp\compress\img.ts
-* imagemin-optipng: .\src\gulp\compress\img.ts
-* imagemin-svgo: .\src\gulp\compress\img.ts
-* imagemin-jpeg-recompress: .\src\gulp\compress\img.ts
-* object-assign: .\src\gulp\compress\img.ts
-* gulp-cache: .\src\gulp\compress\img2.ts
-* gulp-imagemin: .\src\gulp\compress\img2.ts
-* imagemin-zopfli: .\src\gulp\compress\img2.ts
-* imagemin-mozjpeg: .\src\gulp\compress\img2.ts
-* imagemin-giflossy: .\src\gulp\compress\img2.ts
+* cross-spawn: ./gulpfile.ts
+* micromatch: ./tests/done/mini-micro-match.ts
+* lodash: ./src/validator/after_generated.js
+* hexo-util: ./src/ejs/helper/helper_hexo/css.js
+* moize: ./src/ejs/helper/helper_hexo/css.js
+* titlecase: ./src/ejs/helper/helper_hexo/format.js

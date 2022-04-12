@@ -63,18 +63,15 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     }
 
     if (!/\/api/.test(pathname)) {
-      copyAssets();
+      //copyAssets();
       const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
       if (isArchive || isHomepage) {
-        //generateArchive(null, )
         let result: string;
         if (existsSync(sourceArchive) && isArchive) {
           const labelnames = pathname.split('/').last(1);
           if (labelnames.length && !isEmpty(labelnames[0])) {
-            return generateArchive(function (rendered: string) {
-              res.end(rendered);
-            }, labelnames[0]);
+            await generateArchive(null, labelnames[0]);
           }
           result = sourceArchive;
         } else if (existsSync(sourceIndex) && isHomepage) {

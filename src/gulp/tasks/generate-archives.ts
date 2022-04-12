@@ -91,7 +91,7 @@ export function generateArchive(done?: Callback, labelname?: string) {
   iterate();
 
   const tag_keys = Object.keys(tag_posts);
-  console.log(logname, 'total', tag_keys.length);
+  console.log(logname + '[tags]', 'total', tag_keys.length);
   const tag_runner = memoize(async (tagname: string) => {
     if (!tag_posts[tagname]) return;
     const posts = tag_posts[tagname];
@@ -131,7 +131,7 @@ export function generateArchive(done?: Callback, labelname?: string) {
   }
 
   const cat_keys = Object.keys(cat_posts);
-  console.log('total categories', cat_keys.length);
+  console.log(logname + '[categories]', 'total', cat_keys.length);
   const cat_runner = memoize(async (catname: string) => {
     const posts_1 = cat_posts[catname];
     const catPermalink = join(generated_cat_dir, catname, 'index.html');

@@ -1,6 +1,6 @@
 'use strict';
 
-import database from 'lowdb';
+import * as database from 'lowdb';
 import * as crypto from 'crypto';
 import * as util from 'util';
 
@@ -35,7 +35,7 @@ export class Cache {
       life: 3600  // one hour
     }, options || {});
 
-    this.db = new database(this.config.file);
+    this.db = database(this.config.file);
     this.db.defaults({
       index: []
     }).value();

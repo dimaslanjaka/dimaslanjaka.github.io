@@ -28,9 +28,7 @@ const modified = buildPost(modify); // modified markdown post
 write(tmp('tests', 'modified.md'), modified).then(console.log);
 const prepare = Object.assign(
   {
-    /**
-     * post type
-     */
+    /** post type */
     type: 'post',
     /** Full path (also cache key) */
     path: generated_target,
@@ -41,7 +39,7 @@ const prepare = Object.assign(
 );
 
 // render test
-renderer(prepare, {} /*{ min: { ignoreCustomComments: [/^!/, /^\s*#/] } }*/).then((rendered) => {
+renderer(prepare, {}).then((rendered) => {
   write(generated_target, rendered).then(console.log);
   parseAfterGen([generated_target]);
 });

@@ -12,6 +12,7 @@ import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';
 import color from '../../node/color';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import memoize from 'memoizee';
 
 const postCache = new CachePost();
 const generated_tag_dir = join(cwd(), config.public_dir, config.tag_dir);
@@ -36,92 +37,99 @@ interface Archives {
 export function generateArchive(done?: TaskCallback, labelname?: string) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
-  postCache
-    .getAll()
-    .filter((item) => {
-      if (!item) return false;
-      if (!item.metadata) return false;
-      return true;
-    })
-    .forEach((post: parsePostReturn) => {
-      if (post.metadata.tags.length) {
-        post.metadata.tags.removeEmpties().forEach((tag) => {
-          // setup tag dir
-          const tag_dir = join(generated_tag_dir, tag);
-          const buildPost: ArchivePost = {
-            tag_dir: tag_dir,
-            title: post.metadata.title,
-            thumbnail: thumbnail(post.metadata),
-            url: post.metadata.url,
-            excerpt: excerpt(post.metadata),
-          };
+  const iterate = () => {
+    postCache
+      .getAll()
+      .filter((item) => {
+        if (!item) return false;
+        if (!item.metadata) return false;
+        return true;
+      })
+      .forEach((post: parsePostReturn) => {
+        if (post.metadata.tags.length) {
+          post.metadata.tags.removeEmpties().forEach((tag) => {
+            // setup tag dir
+            const tag_dir = join(generated_tag_dir, tag);
+            const buildPost: ArchivePost = {
+              tag_dir: tag_dir,
+              title: post.metadata.title,
+              thumbnail: thumbnail(post.metadata),
+              url: post.metadata.url,
+              excerpt: excerpt(post.metadata),
+            };
 
-          // initialize index tag if not exist
-          if (!tag_posts[tag]) tag_posts[tag] = [];
-          // push prevent duplicate object
-          if (!tag_posts[tag].find(({ title }) => title === post.metadata.title)) tag_posts[tag].push(buildPost);
-        });
-      }
-      if (post.metadata.category.length) {
-        post.metadata.category.removeEmpties().forEach((cat) => {
-          // setup tag dir
-          const cat_dir = join(generated_cat_dir, cat);
-          const buildPost_1: ArchivePost = {
-            cat_dir: cat_dir,
-            title: post.metadata.title,
-            thumbnail: thumbnail(post.metadata),
-            url: post.metadata.url,
-            excerpt: excerpt(post.metadata),
-          };
+            // initialize index tag if not exist
+            if (!tag_posts[tag]) tag_posts[tag] = [];
+            // push prevent duplicate object
+            if (!tag_posts[tag].find(({ title }) => title === post.metadata.title)) tag_posts[tag].push(buildPost);
+          });
+        }
+        if (post.metadata.category.length) {
+          post.metadata.category.removeEmpties().forEach((cat) => {
+            // setup tag dir
+            const cat_dir = join(generated_cat_dir, cat);
+            const buildPost_1: ArchivePost = {
+              cat_dir: cat_dir,
+              title: post.metadata.title,
+              thumbnail: thumbnail(post.metadata),
+              url: post.metadata.url,
+              excerpt: excerpt(post.metadata),
+            };
 
-          // initialize index tag if not exist
-          if (!cat_posts[cat]) cat_posts[cat] = [];
-          // push prevent duplicate object
-          if (!cat_posts[cat].find(({ title: title_1 }) => title_1 === post.metadata.title)) cat_posts[cat].push(buildPost_1);
-        });
-      }
-    });
+            // initialize index tag if not exist
+            if (!cat_posts[cat]) cat_posts[cat] = [];
+            // push prevent duplicate object
+            if (!cat_posts[cat].find(({ title: title_1 }) => title_1 === post.metadata.title)) cat_posts[cat].push(buildPost_1);
+          });
+        }
+      });
+  };
+  const iterator = memoize(iterate);
   const genTag = () => {
     const logname = color['Carnation Pink']('[tags]');
     const keys = Object.keys(tag_posts);
     console.log(logname, 'total', keys.length);
-    for (const tagname in tag_posts) {
-      if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
-        const posts = tag_posts[tagname];
-        const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
-        homepage.pathname = join(config.tag_dir, 'index.html');
+    const runner = memoize((tagname: string) => {
+      if (!tag_posts[tagname]) return;
+      const posts = tag_posts[tagname];
+      const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
+      homepage.pathname = join(config.tag_dir, 'index.html');
 
-        const opt_1: parsePostReturn = {
-          metadata: {
-            title: 'Tag: ' + tagname,
-            subtitle: 'Tag: ' + tagname + ' ' + new URL(config.url).host,
-            date: moment().format(),
-            updated: moment().format(),
-            category: [],
-            tags: [],
-            type: 'archive',
-            url: homepage.toString(),
-          },
-          /** setup sitedata array as json */
-          sitedata: JSON.stringify(posts),
-          body: '',
-          content: '',
-          fileTree: {
-            source: tagPermalink,
-            public: join(tmp(), tagPermalink),
-          },
-        };
-        const mod = modifyPost(opt_1);
-        renderer(mod).then((rendered) => {
-          write(tagPermalink, rendered); //.then((f) => console.log(logname, 'tag', f));
-        });
-      }
+      const opt_1: parsePostReturn = {
+        metadata: {
+          title: 'Tag: ' + tagname,
+          subtitle: 'Tag: ' + tagname + ' ' + new URL(config.url).host,
+          date: moment().format(),
+          updated: moment().format(),
+          category: [],
+          tags: [],
+          type: 'archive',
+          url: homepage.toString(),
+        },
+        /** setup sitedata array as json */
+        sitedata: JSON.stringify(posts),
+        body: '',
+        content: '',
+        fileTree: {
+          source: tagPermalink,
+          public: join(tmp(), tagPermalink),
+        },
+      };
+      const mod = modifyPost(opt_1);
+      renderer(mod).then((rendered) => {
+        write(tagPermalink, rendered); //.then((f) => console.log(logname, 'tag', f));
+      });
+    });
+    if (labelname) {
+      runner(labelname);
+    } else {
+      keys.forEach(runner);
     }
   };
   const genCat = () => {
     const keys = Object.keys(cat_posts);
     console.log('total categories', keys.length);
-    return Bluebird.all(keys).each((catname) => {
+    const runner = memoize((catname: string) => {
       const posts_1 = cat_posts[catname];
       const catPermalink = join(generated_cat_dir, catname, 'index.html');
       homepage.pathname = join(config.category_dir, 'index.html');
@@ -154,9 +162,16 @@ export function generateArchive(done?: TaskCallback, labelname?: string) {
         });
       });
     });
+    if (labelname) {
+      // generate single
+      runner(labelname);
+    } else {
+      keys.forEach(runner);
+    }
   };
+  iterator();
   genTag();
-  //genCat();
+  genCat();
   if (typeof done == 'function') done();
 }
 

@@ -2,8 +2,20 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "outDir": "./lib",
+        "outDir": "./dist/lib",
+        "esModuleInterop": true,
+        "downlevelIteration": true,
         "declaration": true,
-        "sourceMap": true        
-    }
+        "baseUrl": "src",
+        "allowJs": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "sourceMap": true
+    },
+    "include": [
+        "src/index.ts"
+    ],
+    "exclude": [
+        "src/*.backup.ts"
+    ]
 }

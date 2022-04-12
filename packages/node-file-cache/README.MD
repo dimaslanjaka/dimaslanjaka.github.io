@@ -10,6 +10,12 @@ In your project folder run:
 
 Note: The module code uses few ES6 features, so at least 4.4.5 version of Node is required.
 
+## Dependencies
+```json
+{
+    "lowdb": "^0.14.0"
+}
+```
 
 ## Usage
 
@@ -60,7 +66,7 @@ const options = {
 
 cache.set(key, item, options);
 
-const cachedItem = cache.get(key); // depending on context this can either return cached data or null, if record is missing or expired 
+const cachedItem = cache.get(key); // depending on context this can either return cached data or null, if record is missing or expired
 ```
 
 Removing stuff from cache. Arguments for `expire` method are defined in previous example.

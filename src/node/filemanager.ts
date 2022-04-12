@@ -55,11 +55,36 @@ const filemanager = {
   },
 
   /**
-   * Remove dir recursively (non-empty folders supported)
+   * Remove dir or file recursive synchronously (non-empty folders supported)
    * @param path
    */
   rmdirSync: (path: fs.PathLike, options: fs.RmOptions = {}) => {
     if (fs.existsSync(path)) return fs.rmSync(path, Object.assign({ recursive: true }, options));
+  },
+
+  /**
+   * remove dir or file recursive asynchronously
+   * @param path
+   * @param options
+   * @param callback
+   * @returns
+   */
+  rm: (path: fs.PathLike, options: fs.RmOptions | fs.NoParamCallback = {}, callback?: fs.NoParamCallback) => {
+    if (fs.existsSync(path)) {
+      if (typeof options == 'function') {
+        return fs.rm(path, { recursive: true }, options);
+      } else if (typeof options == 'object') {
+        return fs.rm(
+          path,
+          Object.assign({ recursive: true }, options),
+          typeof callback == 'function'
+            ? callback
+            : () => {
+                // no callback? do nothing
+              }
+        );
+      }
+    }
   },
 
   /**
@@ -158,7 +183,7 @@ export function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]):
   if (existsSync(path)) return readFileSync(path, opt);
 }
 export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
-export const { write, readdirSync, rmdirSync, mkdirSync } = filemanager;
+export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
 export const { basename, relative, extname } = upath;

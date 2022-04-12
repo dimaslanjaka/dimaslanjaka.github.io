@@ -34,7 +34,9 @@ interface Archives {
   [key: string]: ArchivePost[];
 }
 
-export function generateArchive(done?: TaskCallback, labelname?: string) {
+type Callback = (rendered?: string) => any & (() => any) & ((error?: Error) => any);
+
+export function generateArchive(done?: Callback, labelname?: string) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
   const iterate = () => {
@@ -85,93 +87,88 @@ export function generateArchive(done?: TaskCallback, labelname?: string) {
           }
         });
   };
-  const genTag = () => {
-    const logname = color['Carnation Pink']('[tags]');
-    const keys = Object.keys(tag_posts);
-    console.log(logname, 'total', keys.length);
-    const runner = memoize((tagname: string) => {
-      if (!tag_posts[tagname]) return;
-      const posts = tag_posts[tagname];
-      const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
-      homepage.pathname = join(config.tag_dir, 'index.html');
 
-      const opt_1: parsePostReturn = {
-        metadata: {
-          title: 'Tag: ' + tagname,
-          subtitle: 'Tag: ' + tagname + ' ' + new URL(config.url).host,
-          date: moment().format(),
-          updated: moment().format(),
-          category: [],
-          tags: [],
-          type: 'archive',
-          url: homepage.toString(),
-        },
-        /** setup sitedata array as json */
-        sitedata: JSON.stringify(posts),
-        body: '',
-        content: '',
-        fileTree: {
-          source: tagPermalink,
-          public: join(tmp(), tagPermalink),
-        },
-      };
-      const mod = modifyPost(opt_1);
-      renderer(mod).then((rendered) => {
-        write(tagPermalink, rendered); //.then((f) => console.log(logname, 'tag', f));
-      });
-    });
-    if (labelname) {
-      runner(labelname);
-    } else {
-      keys.forEach(runner);
-    }
-  };
-  const genCat = () => {
-    const keys = Object.keys(cat_posts);
-    console.log('total categories', keys.length);
-    const runner = memoize((catname: string) => {
-      const posts_1 = cat_posts[catname];
-      const catPermalink = join(generated_cat_dir, catname, 'index.html');
-      homepage.pathname = join(config.category_dir, 'index.html');
-
-      const opt_2: parsePostReturn = {
-        metadata: {
-          title: 'Category: ' + catname,
-          subtitle: 'Category: ' + catname + ' ' + new URL(config.url).host,
-          date: moment().format(),
-          updated: moment().format(),
-          category: [],
-          tags: [],
-          type: 'archive',
-          url: homepage.toString(),
-        },
-        /** setup sitedata array as json */
-        sitedata: JSON.stringify(posts_1),
-        body: '',
-        content: '',
-        fileTree: {
-          source: catPermalink,
-          public: join(tmp(), catPermalink),
-        },
-      };
-      const mod_1 = modifyPost(opt_2);
-
-      renderer(mod_1).then((rendered_1) => {
-        write(catPermalink, rendered_1).then((f_1) => {
-          console.log(logname, 'category', f_1);
-        });
-      });
-    });
-    if (labelname) {
-      // generate single
-      runner(labelname);
-    } else {
-      keys.forEach(runner);
-    }
-  };
   iterate();
-  genTag();
-  genCat();
+
+  const tag_keys = Object.keys(tag_posts);
+  console.log(logname, 'total', tag_keys.length);
+  const tag_runner = memoize(async (tagname: string) => {
+    if (!tag_posts[tagname]) return;
+    const posts = tag_posts[tagname];
+    const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
+    homepage.pathname = join(config.tag_dir, 'index.html');
+
+    const opt_1: parsePostReturn = {
+      metadata: {
+        title: 'Tag: ' + tagname,
+        subtitle: 'Tag: ' + tagname + ' ' + new URL(config.url).host,
+        date: moment().format(),
+        updated: moment().format(),
+        category: [],
+        tags: [],
+        type: 'archive',
+        url: homepage.toString(),
+      },
+      /** setup sitedata array as json */
+      sitedata: JSON.stringify(posts),
+      body: '',
+      content: '',
+      fileTree: {
+        source: tagPermalink,
+        public: join(tmp(), tagPermalink),
+      },
+    };
+    const mod = modifyPost(opt_1);
+    const rendered = await renderer(mod);
+    write(tagPermalink, rendered).then((f) => console.log(logname, 'tag', f));
+    return rendered;
+  });
+  if (labelname) {
+    // return here if requested labelname found
+    if (tag_posts[labelname]) return tag_runner(labelname).then(done);
+  } else {
+    tag_keys.forEach(tag_runner);
+  }
+
+  const cat_keys = Object.keys(cat_posts);
+  console.log('total categories', cat_keys.length);
+  const cat_runner = memoize(async (catname: string) => {
+    const posts_1 = cat_posts[catname];
+    const catPermalink = join(generated_cat_dir, catname, 'index.html');
+    homepage.pathname = join(config.category_dir, 'index.html');
+
+    const opt_2: parsePostReturn = {
+      metadata: {
+        title: 'Category: ' + catname,
+        subtitle: 'Category: ' + catname + ' ' + new URL(config.url).host,
+        date: moment().format(),
+        updated: moment().format(),
+        category: [],
+        tags: [],
+        type: 'archive',
+        url: homepage.toString(),
+      },
+      /** setup sitedata array as json */
+      sitedata: JSON.stringify(posts_1),
+      body: '',
+      content: '',
+      fileTree: {
+        source: catPermalink,
+        public: join(tmp(), catPermalink),
+      },
+    };
+    const mod_1 = modifyPost(opt_2);
+
+    const rendered_1 = await renderer(mod_1);
+    write(catPermalink, rendered_1).then((f_1) => console.log(logname, 'category', f_1));
+    return rendered_1;
+  });
+  if (labelname) {
+    // return here if requested labelname found
+    if (cat_posts[labelname]) return cat_runner(labelname).then(done);
+  } else {
+    cat_keys.forEach(cat_runner);
+  }
   if (typeof done == 'function') done();
 }
 
@@ -220,5 +217,5 @@ export async function generateIndex(done?: TaskCallback) {
 }
 
 gulp.task('generate:index', generateIndex);
-gulp.task('generate:label', generateArchive);
+gulp.task('generate:label', <any>generateArchive);
 gulp.task('generate:archive', gulp.series('generate:index', 'generate:label'));

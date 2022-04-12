@@ -1,6 +1,6 @@
 import scheduler from './node/scheduler';
 import gulp from 'gulp';
-import { join, rm, rmdirSync } from './node/filemanager';
+import { join, rm } from './node/filemanager';
 import config, { root, tmp } from './types/_config';
 import { dbFolder } from './node/cache';
 import './gulp/tasks/copy';

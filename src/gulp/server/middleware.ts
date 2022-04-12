@@ -13,6 +13,8 @@ import { JSDOM } from 'jsdom';
 import chalk from 'chalk';
 import Bluebird from 'bluebird';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import { generateArchive } from '../tasks/generate-archives';
+import { isEmpty } from '../utils';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -61,14 +63,21 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     }
 
     if (!/\/api/.test(pathname)) {
+      copyAssets();
       const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
       if (isArchive || isHomepage) {
-        copyAssets();
+        //generateArchive(null, )
         let result: string;
-        if (existsSync(sourceArchive)) {
+        if (existsSync(sourceArchive) && isArchive) {
+          const labelnames = pathname.split('/').last(1);
+          if (labelnames.length && !isEmpty(labelnames[0])) {
+            return generateArchive(function (rendered: string) {
+              res.end(rendered);
+            }, labelnames[0]);
+          }
           result = sourceArchive;
-        } else if (existsSync(sourceIndex)) {
+        } else if (existsSync(sourceIndex) && isHomepage) {
           result = sourceIndex;
         }
         if (result) {
@@ -93,7 +102,6 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           if (existsSync(file)) {
             try {
               // pre-process markdown
-              copyAssets();
               // parse markdown metadata
               const parsed = parsePost(file);
               if (!parsed) {

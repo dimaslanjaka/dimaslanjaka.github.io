@@ -14,7 +14,8 @@ import chalk from 'chalk';
 import Bluebird from 'bluebird';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import { generateArchive } from '../tasks/generate-archives';
-import { isEmpty } from '../utils';
+import './gen-middleware';
+import routedata from './routes.json';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -47,13 +48,10 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   async function (req, res, next) {
-    homepage.pathname = req.url; // let URL instance parse the url
-    const pathname = homepage.pathname; // just get pathname
-
-    const isArchive = pathname.match(new RegExp(config.category_dir + '/', 'g')) || pathname.match(new RegExp(config.tag_dir + '/', 'g'));
-    const isHomepage = pathname === '/';
-    const isPage = pathname.isMatch(/(.html|\/)$/);
-
+    await copyAssets();
+    next();
+  },
+  async function (req, res, next) {
     res.setHeader('X-Powered-By', 'SBG'); // send X-Powered-By
     if (!config.server.cache) {
       res.setHeader('Expires', 'on, 01 Jan 1970 00:00:00 GMT');
@@ -62,27 +60,15 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       res.setHeader('Pragma', 'no-cache');
     }
 
-    if (!/\/api/.test(pathname)) {
-      //copyAssets();
-      const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
-      const sourceIndex = join(cwd(), config.public_dir, 'index.html');
-      if (isArchive || isHomepage) {
-        let result: string;
-        if (existsSync(sourceArchive) && isArchive) {
-          const labelnames = pathname.split('/').last(1);
-          if (labelnames.length && !isEmpty(labelnames[0])) {
-            await generateArchive(null, labelnames[0]);
-          }
-          result = sourceArchive;
-        } else if (existsSync(sourceIndex) && isHomepage) {
-          result = sourceIndex;
-        }
-        if (result) {
-          console.log('[archive] pre-processed', pathname, '->', result);
-          return res.end(showPreview(readFileSync(result)));
-        }
-      }
+    const isHomepage = req.url === '/';
+    if (isHomepage) return next();
 
+    homepage.pathname = req.url; // let URL instance parse the url
+    const pathname = homepage.pathname; // just get pathname
+
+    const isPage = pathname.isMatch(/(.html|\/)$/);
+
+    if (!/\/api/.test(pathname)) {
       if (isPage) {
         res.setHeader('Content-Type', 'text/html');
         // find post and pages
@@ -124,8 +110,19 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       }
     }
     // show previous generated
-    if (isHomepage || !pathname) console.log('last processed', pathname);
+    if (!pathname) console.log('last processed', pathname);
     next();
+  },
+  {
+    route: '/',
+    handle: function (req, res, next) {
+      const sourceIndex = join(cwd(), config.public_dir, 'index.html');
+      if (existsSync(sourceIndex)) {
+        console.log('[archive] pre-processed', req.url, '->', sourceIndex);
+        return res.end(showPreview(readFileSync(sourceIndex)));
+      }
+      next();
+    },
   },
   {
     route: '/api',
@@ -155,4 +152,27 @@ if (config.server.compress) {
   // push compression to first index
   ServerMiddleWare.unshift.apply(compress());
 }
+
+routedata.category.add(routedata.tag).forEach((path) => {
+  ServerMiddleWare.push({
+    route: path,
+    handle: async function (req, res, next) {
+      const pathname = req.url.replace(/\/+/, '/').replace(/^\//, '');
+      const labelname = req.url.split('/').last(1)[0];
+      const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
+      let result: string;
+      await generateArchive((str) => {
+        result = str;
+      }, labelname);
+      if (existsSync(sourceArchive)) {
+        result = readFileSync(sourceArchive, 'utf-8');
+      }
+      if (result) {
+        res.end(showPreview(readFileSync(result)));
+      }
+      next();
+    },
+  });
+});
+
 export default ServerMiddleWare;

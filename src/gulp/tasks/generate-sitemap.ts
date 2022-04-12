@@ -70,7 +70,10 @@ function generateSitemapHtml(done?: TaskCallback) {
       return `<a href="${fixURLSitemap(item.url).pathname}">${item.title}</a>`;
     })
     .then((items) => {
-      if (!items.length) return console.log(log, 'sitemap item empty');
+      if (!items.length) {
+        console.log(log, 'sitemap item empty');
+        return done();
+      }
       const content = items.join('<br/>');
       const url = new URL(config.url);
       url.pathname = '/sitemap.html';

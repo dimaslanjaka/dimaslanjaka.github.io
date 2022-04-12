@@ -66,8 +66,9 @@ gulp generate:assets # copy all assets
 gulp generate:template # copy and process template
 gulp generate:posts # generate posts
 gulp generate:sitemap # generate sitemaps
-gulp generate:archive # generate tags and categories
+gulp generate:label # generate tags and categories
 gulp generate:index # generate homepage index
+gulp generate:archive # generate homepage, tags, and categories
 ```
 
 ## Github Action

@@ -116,7 +116,7 @@ export const renderArticle = function () {
         const modify = modifyPost(parsed);
         if (result.path.includes('Grid')) write(tmp('modify.md'), buildPost(modify)).then(console.log);
         const merge = Object.assign(result, modify, result.path);
-        if (typeof merge.metadata.url == 'string') {
+        if (merge && merge.metadata && typeof merge.metadata.url == 'string') {
           const url = new URL(merge.metadata.url);
           url.pathname = url.pathname.replace(/\/+/, '/');
           merge.metadata.url = url.toString();

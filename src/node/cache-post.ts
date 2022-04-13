@@ -2,6 +2,7 @@ import { modifyPost } from '../markdown/transformPosts/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
 import memoize from 'memoizee';
+import config from '../types/_config';
 
 type postResult = parsePostReturn & parsePostReturn['metadata'];
 
@@ -27,6 +28,29 @@ export default class CachePost extends CacheFile {
   }
 
   /**
+   * order array
+   * @param array
+   * @param by
+   * @returns
+   */
+  private order_by(array: any[], by: 'updated' | 'date' | '-updated' | '-date' | string) {
+    return array.sort((a, b) => {
+      const modby = by.replace('-', '');
+      const c = new Date(a.metadata[modby]);
+      const d = new Date(b.metadata[modby]);
+      if (by.startsWith('-')) {
+        // descending
+        if (c < d) return 1;
+        if (c > d) return -1;
+      } else {
+        if (c > d) return 1;
+        if (c < d) return -1;
+      }
+      return 0;
+    });
+  }
+
+  /**
    * get latest posts
    * @param by order descending by `date` or default (`index_generator.order_by` in `_config.yml`)
    * @param max max result
@@ -34,14 +58,7 @@ export default class CachePost extends CacheFile {
    */
   getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
     const posts: parsePostReturn[] = this.getAll({ max: max, resolveValue: true });
-    return posts
-      .sort((a, b) => {
-        const c = new Date(a.metadata[by]);
-        const d = new Date(b.metadata[by]);
-        if (c < d) return 1;
-        if (c > d) return -1;
-        return 0;
-      })
+    return this.order_by(posts, by)
       .removeEmpties()
       .splice(0, max)
       .map((post) => fixPost(post))
@@ -56,7 +73,7 @@ export default class CachePost extends CacheFile {
    * @returns array of posts {@link CacheFile.getValues}
    */
   getAll(opt = defaultResovableValue) {
-    return this.getValues(opt)
+    return this.order_by(this.getValues(opt), config.index_generator.order_by)
       .filter((post: parsePostReturn) => post && post.metadata.type == 'post')
       .map((post) => modifyPost(post))
       .map((post) => fixPost(post));

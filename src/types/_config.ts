@@ -121,22 +121,22 @@ export type Author =
       image: string | Image;
     };
 
-export interface Search {
+interface Search {
   path: string;
   field: string;
   content: boolean;
   format: string;
 }
-export interface PrettyUrls {
+interface PrettyUrls {
   trailing_index: boolean;
   trailing_html: boolean;
 }
-export interface ExternalLink {
+interface ExternalLink {
   enable: boolean;
   field: string;
   exclude: string;
 }
-export interface Highlight {
+interface Highlight {
   enable: boolean;
   line_number: boolean;
   auto_detect: boolean;
@@ -144,18 +144,18 @@ export interface Highlight {
   wrap: boolean;
   hljs: boolean;
 }
-export interface Prismjs {
+interface Prismjs {
   enable: boolean;
   preprocess: boolean;
   line_number: boolean;
   tab_replace: string;
 }
-export interface IndexGenerator {
+interface IndexGenerator {
   path: string;
   per_page: number;
   order_by: string;
 }
-export interface Server {
+interface Server {
   port: number;
   log: boolean;
   ip: string;
@@ -166,10 +166,10 @@ export interface Server {
   header: boolean;
   serveStatic: ServeStatic;
 }
-export interface ServeStatic {
+interface ServeStatic {
   extensions?: string[] | null;
 }
-export interface Deploy {
+interface Deploy {
   type: string;
   repo: string;
   branch: string;
@@ -178,24 +178,24 @@ export interface Deploy {
   email: string;
 }
 
-export interface Image {
+interface Image {
   url: string;
   width: number;
   height: number;
 }
-export interface SocialLinks {
+interface SocialLinks {
   github: string;
   youtube: string;
 }
-export interface Feed {
+interface Feed {
   content: boolean;
   type?: string[] | null;
   path?: string[] | null;
 }
-export interface Sitemap {
+interface Sitemap {
   path: string;
 }
-export interface RelatedPosts {
+interface RelatedPosts {
   enabled: boolean;
   enable_env_name: string;
   filter_threshold: number;
@@ -204,7 +204,7 @@ export interface RelatedPosts {
   stemmers?: string[] | null;
   reserved?: string[] | null;
 }
-export interface Weight {
+interface Weight {
   title: number;
   description: number;
   keywords: number;
@@ -212,7 +212,7 @@ export interface Weight {
   categories: number;
   text: number;
 }
-export interface MarkdownItPlus {
+interface MarkdownItPlus {
   highlight: boolean;
   html: boolean;
   xhtmlOut: boolean;
@@ -223,20 +223,20 @@ export interface MarkdownItPlus {
   pre_class: string;
   plugins?: PluginsEntity[] | null;
 }
-export interface PluginsEntity {
+interface PluginsEntity {
   plugin: Plugin;
 }
-export interface Plugin {
+interface Plugin {
   name: string;
   enable: boolean;
   options: Options;
 }
-export interface Options {
+interface Options {
   leftDelimiter: string;
   rightDelimiter: string;
   allowedAttributes?: null[] | null;
 }
-export interface Browsersync {
+interface Browsersync {
   logLevel: string;
   ghostMode: GhostMode;
   instanceName: string;
@@ -244,10 +244,10 @@ export interface Browsersync {
   browser: string;
   open: boolean;
 }
-export interface GhostMode {
+interface GhostMode {
   scroll: boolean;
 }
-export interface Adsense {
+interface Adsense {
   enable: boolean;
   pub: string;
   article_ads?: string[] | null;
@@ -257,13 +257,13 @@ export interface Adsense {
   type: string;
   exclude?: string[] | null;
 }
-export interface Analytics {
+interface Analytics {
   tagmanager: string;
   GA4: string;
   GA3: string;
   cloudflare: string;
 }
-export interface Seo {
+interface Seo {
   html: Html;
   css: boolean;
   js: boolean;
@@ -272,16 +272,16 @@ export interface Seo {
   links: Links;
   sitemap: boolean;
 }
-export interface Html {
+interface Html {
   fix: boolean;
   exclude?: string[] | null;
 }
-export interface Img {
+interface Img {
   broken: boolean;
   default: string;
   onerror: string;
 }
-export interface Links {
+interface Links {
   enable: boolean;
   exclude?: string[] | null;
 }

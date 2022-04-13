@@ -70,6 +70,7 @@ gulp generate:sitemap # generate sitemaps
 gulp generate:label # generate tags and categories
 gulp generate:index # generate homepage index
 gulp generate:archive # generate homepage, tags, and categories
+gulp generate:feeds # generate atom, rss
 ```
 
 ## Github Action

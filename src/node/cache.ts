@@ -197,7 +197,14 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     const locationCache = this.locateKey(key);
     const Get = this.md5Cache[key];
     if (!Get) return fallback;
-    if (existsSync(locationCache)) return JSON.parse(String(read(locationCache, 'utf-8')));
+    if (existsSync(locationCache)) {
+      try {
+        return JSON.parse(String(read(locationCache, 'utf-8')));
+      } catch (e) {
+        console.log('cannot get cache key', key);
+        throw e;
+      }
+    }
     return fallback;
   }
   getCache = (key: string, fallback = null) => this.get(key, fallback);

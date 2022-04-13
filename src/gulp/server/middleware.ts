@@ -13,7 +13,7 @@ import { JSDOM } from 'jsdom';
 import chalk from 'chalk';
 import Bluebird from 'bluebird';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
-import { generateArchive } from '../tasks/generate-archives';
+import { generateIndex, generateLabel } from '../tasks/generate-archives';
 import './gen-middleware';
 import routedata from './routes.json';
 
@@ -114,8 +114,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   },
   {
     route: '/',
-    handle: function (req, res, next) {
+    handle: async function (req, res, next) {
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
+      const str = await generateIndex();
+      if (str) return res.end(showPreview(str));
       if (existsSync(sourceIndex)) {
         console.log('[archive] pre-processed', req.url, '->', sourceIndex);
         return res.end(showPreview(readFileSync(sourceIndex)));
@@ -161,7 +163,7 @@ routedata.category.addAll(routedata.tag).forEach((path) => {
       const labelname = req.url.split('/').last(1)[0];
       const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
       let result: string;
-      await generateArchive((str) => {
+      await generateLabel((str) => {
         result = str;
       }, labelname);
       if (existsSync(sourceArchive)) {

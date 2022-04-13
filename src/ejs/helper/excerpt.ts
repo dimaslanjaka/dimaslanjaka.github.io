@@ -14,7 +14,7 @@ import { ProjectConfig } from '../../types/_config';
  * <%= excerpt(page) %>
  */
 export function excerpt(page: parsePostReturn['metadata'] | ProjectConfig, length = 200) {
-  let str = 'no excerpt';
+  let str: string;
   if (page.subtitle) {
     str = page.subtitle;
   } else if (page.description) {
@@ -24,7 +24,18 @@ export function excerpt(page: parsePostReturn['metadata'] | ProjectConfig, lengt
   } else if (page.title) {
     str = page.title;
   }
-  return cleanString(str).substring(0, length);
+  if (str) return cleanString(str).substring(0, length);
+}
+
+/**
+ * nullable excerpt
+ * @param page
+ * @returns
+ */
+export function nExcerpt(page: parsePostReturn['metadata'] | ProjectConfig) {
+  const try1 = excerpt(page);
+  if (try1 == page.title) return null;
+  return try1;
 }
 
 /**

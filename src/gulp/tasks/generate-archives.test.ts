@@ -1,3 +1,3 @@
-import { generateArchive } from './generate-archives';
+import { generateLabel } from './generate-archives';
 
-generateArchive(null, 'Blogging');
+generateLabel(null, 'Blogging');

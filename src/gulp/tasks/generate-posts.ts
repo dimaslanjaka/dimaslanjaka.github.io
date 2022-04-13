@@ -189,13 +189,17 @@ gulp.task('generate:posts', renderArticle);
 
 const helpers: DynamicObject = {
   /**
-   * get latest posts (non cache)
+   * get latest posts (non-cache)
    */
   getLatestPosts: getLatestPosts,
   /**
-   * get random posts (non cache)
+   * get random posts (non-cache)
    */
   getRandomPosts: getRandomPosts,
+  /**
+   * get all posts (non-cache)
+   */
+  getAllPosts: getAllPosts,
   /**
    * get all posts (cached)
    */

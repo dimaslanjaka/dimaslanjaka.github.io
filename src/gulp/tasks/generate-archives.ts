@@ -36,7 +36,7 @@ interface Archives {
 
 type Callback = (rendered?: string) => any & (() => any) & ((error?: Error) => any);
 
-export function generateArchive(done?: Callback, labelname?: string) {
+export function generateLabel(done?: Callback, labelname?: string) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
   const iterate = () => {
@@ -171,7 +171,7 @@ export function generateArchive(done?: Callback, labelname?: string) {
   if (typeof done == 'function') done();
 }
 
-export async function generateIndex(done?: TaskCallback) {
+export async function generateIndex(done?: Callback) {
   try {
     const posts = await Bluebird.all(getAllPosts()).filter((item) => {
       if (!item) return false;
@@ -205,16 +205,16 @@ export async function generateIndex(done?: TaskCallback) {
       },
     };
     const mod = modifyPost(opt);
-    return renderer(mod).then(async (rendered) => {
-      const f = await write(indexPermalink, rendered);
-      console.log(logname, 'index', f);
-      if (typeof done == 'function') done();
-    });
+    const rendered = await renderer(mod);
+    const f = await write(indexPermalink, rendered);
+    console.log(logname, 'index', f);
+    if (typeof done == 'function') done(rendered);
+    return rendered;
   } catch (e) {
     console.log(e);
   }
 }
 
-gulp.task('generate:index', generateIndex);
-gulp.task('generate:label', <any>generateArchive);
+gulp.task('generate:index', () => generateIndex());
+gulp.task('generate:label', () => generateLabel());
 gulp.task('generate:archive', gulp.series('generate:index', 'generate:label'));

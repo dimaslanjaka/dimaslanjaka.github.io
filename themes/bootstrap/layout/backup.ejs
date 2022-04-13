@@ -1,0 +1,17 @@
+<% var allposts = getAllCachedPosts %>
+<div class="row">
+  <div class="col-lg-8">
+    <% for( let index = 1; index < 5; index++ ) { %>
+    <% var post = allposts[index] %>
+    <div class="card mb-4">
+      <a href="<%- post.url %>"><img class="card-img-top" src="<%- thumbnail(post) %>" alt="<%- post.title %>" /></a>
+      <div class="card-body">
+        <div class="small text-muted"><%- date_format(post.date, 'LL') %></div>
+        <h2 class="card-title h4"><%- post.title %></h2>
+        <p class="card-text"><%- excerpt(post) %></p>
+        <a class="btn btn-primary" href="<%- post.url %>">Read more →</a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>

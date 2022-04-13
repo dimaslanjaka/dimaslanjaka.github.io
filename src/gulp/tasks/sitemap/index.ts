@@ -111,7 +111,7 @@ function sortByDate(a: parsePostReturn, b: parsePostReturn, order: 'desc' | 'asc
   return 0;
 }
 
-function generateArchives(done?: TaskCallback) {
+function generateLabels(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/tag-sitemap.xml');
   const readXML = readFileSync(sourceIndexXML, 'utf-8');
   const mapTags = [];

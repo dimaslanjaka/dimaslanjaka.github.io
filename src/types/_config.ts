@@ -2,6 +2,7 @@ import { existsSync, join, mkdirSync, readFileSync, resolve, write } from '../no
 import yaml from 'yaml';
 import data from './_config_data.json';
 import { toUnix } from 'upath';
+import { hostname } from 'os';
 
 export type ProjectConfig = (typeof data & Hexo_Config) & {
   [keys: string]: any;
@@ -18,7 +19,7 @@ if (!config.include) config.include = [];
 if (!config.skip_render) config.skip_render = [];
 
 if (process.env.NODE_ENV == 'development') {
-  config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
+  if (hostname() == 'HP-14-bs0xx') config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
 }
 config.url = config.url.replace(/\/+$/, '');
 

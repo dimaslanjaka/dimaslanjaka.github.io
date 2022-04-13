@@ -1,13 +1,12 @@
-import CachePost from '../../node/cache-post';
+import { getAllPosts } from '../../node/cache-post';
 import 'js-prototypes';
 import config from '../../types/_config';
 import { join, write } from '../../node/filemanager';
 
 // middleware generator
-const cache = new CachePost();
 const cats: string[] = [],
   tags: string[] = [];
-cache.getAll().forEach((post) => {
+getAllPosts().forEach((post) => {
   cats.addAll(post.metadata.category);
   tags.addAll(post.metadata.tags);
 });

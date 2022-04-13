@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import moment from 'moment';
 import { thumbnail } from '../../ejs/helper/thumbnail';
 import { parsePostReturn } from '../../markdown/transformPosts';
-import CachePost from '../../node/cache-post';
+import CachePost, { getAllPosts } from '../../node/cache-post';
 import { cwd, join, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
 import 'js-prototypes';
@@ -174,7 +174,7 @@ export function generateArchive(done?: Callback, labelname?: string) {
 
 export async function generateIndex(done?: TaskCallback) {
   try {
-    const posts = await Bluebird.all(postCache.getAll()).filter((item) => {
+    const posts = await Bluebird.all(getAllPosts()).filter((item) => {
       if (!item) return false;
       if (!item.metadata) return false;
       return true;

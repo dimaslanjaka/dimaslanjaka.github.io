@@ -15,7 +15,7 @@ import 'js-prototypes';
 import yargs from 'yargs';
 import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
-import CachePost from '../../node/cache-post';
+import CachePost, { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import color from '../../node/color';
 
@@ -188,22 +188,19 @@ export const renderArticle = function () {
 
 gulp.task('generate:posts', renderArticle);
 
-// post instance
-const ipost = new CachePost();
-const postEjs = new CachePost.ejs();
 const helpers: DynamicObject = {
   /**
    * get latest posts (non cache)
    */
-  getLatestPosts: postEjs.getLatestPosts,
+  getLatestPosts: getLatestPosts,
   /**
    * get random posts (non cache)
    */
-  getRandomPosts: postEjs.getRandomPosts,
+  getRandomPosts: getRandomPosts,
   /**
    * get all posts (cached)
    */
-  getAllCachedPosts: ipost.getAll().map((parsed) => Object.assign(parsed, parsed.metadata)),
+  getAllCachedPosts: getAllPosts().map((parsed) => Object.assign(parsed, parsed.metadata)),
   css: (path: string, attributes: DynamicObject = {}) => {
     const find = {
       cwdFile: join(cwd(), path),

@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
-import CachePost from '../../../node/cache-post';
+import CachePost, { getAllPosts } from '../../../node/cache-post';
 import { join, readFileSync, write } from '../../../node/filemanager';
 import config, { post_generated_dir } from '../../../types/_config';
 import 'js-prototypes';
@@ -10,7 +10,6 @@ import chalk from 'chalk';
 import { parsePostReturn } from '../../../markdown/transformPosts';
 
 /// define global variable without refetch them
-const postCache = new CachePost();
 const logname = chalk.magentaBright('[sitemap-xml]');
 const homepage = new URL(config.url);
 /**
@@ -24,7 +23,7 @@ const listTags: { [key: string]: parsePostReturn[] } = {};
 /**
  * all mapped posts
  */
-const allPosts = Bluebird.all(postCache.getAll())
+const allPosts = Bluebird.all(getAllPosts())
   .map((post) => {
     if (!post) return;
     if (!post.metadata.type || !post.metadata.type.length)

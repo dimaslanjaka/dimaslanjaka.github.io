@@ -12,8 +12,11 @@ export function date_local(page: parsePostReturn['metadata']) {
   return page.lang || 'en';
 }
 
-export function date_format(str: string, pattern: 'MMMM Do YYYY, h:mm:ss a') {
+export function date_format(str: string | Date | moment.MomentInput, pattern: 'MMMM Do YYYY, h:mm:ss a') {
   if (!str) return null;
+
+  if (str instanceof Date) str = str.toString();
+  if (moment.isMoment(str)) return str.format(pattern);
 
   if (typeof str == 'string') {
     const time = str.trim();

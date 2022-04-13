@@ -3,7 +3,7 @@ import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
 import config from '../types/_config';
 
-type postResult = parsePostReturn & parsePostReturn['metadata'];
+export type postResult = parsePostReturn & parsePostReturn['metadata'];
 const postCache = new CacheFile('posts');
 
 /**

@@ -1,47 +1,67 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import moment, { isMoment } from 'moment';
-import { parsePostReturn } from '../../markdown/transformPosts';
+import moment, { isMoment } from 'moment-timezone';
+import { postResult } from '../../node/cache-post';
 import config from '../../types/_config';
 
-export function date_local(page: parsePostReturn['metadata']) {
-  if (page.lang) {
+/**
+ * get date local
+ * @param page
+ * @returns
+ */
+export function date_local(page: postResult) {
+  if (page.language) {
+    moment.locale(page.language);
+  } else if (page.lang) {
     moment.locale(page.lang);
+  } else if (config.lang) {
+    moment.locale(config.lang);
   } else {
     moment.locale('en');
   }
   return page.lang || 'en';
 }
 
-export function date_format(str: string | Date | moment.MomentInput, pattern: 'MMMM Do YYYY, h:mm:ss a') {
-  if (!str) return null;
-
-  if (str instanceof Date) str = str.toString();
-  if (moment.isMoment(str)) return str.format(pattern);
-
-  if (typeof str == 'string') {
-    const time = str.trim();
-    if (time.length > 0) {
-      try {
-        return moment(time).format(pattern);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+/**
+ * date format ejs helper
+ * @param str
+ * @param pattern
+ * @returns
+ * @example
+ * <%- date_format(page.date, 'LLLL') %>
+ */
+export function date_format(str: string | Date | moment.MomentInput, pattern: 'MMMM Do YYYY, h:mm:ss a', page: postResult = null) {
+  if (!str) {
+    console.log('invalid date variable');
+    return null;
   }
-  return null;
+  const imoment = getMoment(str, date_local(page), config.timezone);
+  return imoment.format(pattern);
 }
 
-export const isDate = (value) => typeof value === 'object' && value instanceof Date && !isNaN(value.getTime());
+/**
+ * check date is valid
+ * @param value
+ * @returns
+ */
+export const isDate = (value: moment.MomentInput) => typeof value === 'object' && value instanceof Date && !isNaN(value.getTime());
 
+/**
+ * get moment instance of date
+ * @param date
+ * @param lang
+ * @param timezone
+ * @returns
+ */
 export function getMoment(date: any, lang: any, timezone: string) {
-  if (date == null) date = moment();
-  if (!isMoment(date)) date = moment(isDate(date) ? date : new Date(date));
+  let imoment: moment.Moment;
+  if (date == null) imoment = moment();
+  if (!isMoment(date)) imoment = moment(isDate(date) ? date : new Date(date));
   lang = toMomentLocale(lang);
 
-  if (lang) date = date.locale(lang);
-  if (timezone) date = date.tz(timezone);
+  if (lang) imoment = imoment.locale(lang);
+  if (timezone) imoment = imoment.tz(timezone);
 
-  return date;
+  return imoment;
 }
 
 export function toISOString(date) {

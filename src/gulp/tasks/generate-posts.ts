@@ -221,16 +221,20 @@ const helpers: DynamicObject = {
 /**
  * EJS Renderer Engine
  * @param parsed
- * @param override override ejs page data such as: page.title, etc
+ * @param override override object ejs options {@link ejs.Options}, page data {@link parsePostReturn}
  * @returns
  */
-export function renderer(parsed: parsePostReturn, override: DynamicObject = {}) {
+export function renderer(parsed: parsePostReturn, override: ejs.Options = {}) {
   return new Promise((resolve: (arg: string) => any) => {
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
 
+    const defaultOpt: ejs.Options = {
+      cache: true,
+    };
+
     // assign body
-    const pagedata = Object.assign(parsed.metadata, parsed, override);
+    const pagedata = Object.assign(defaultOpt, parsed.metadata, parsed, override);
 
     // post instance
     const ipost = new CachePost.ejs();

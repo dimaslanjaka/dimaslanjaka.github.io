@@ -73,7 +73,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * * cached function result for reusable
    * @see {@link memoizer}
    */
-  static memoizer = memoizer;
+  static memoizer = new memoizer();
   md5Cache: DynamicObject = {};
   dbFile: string;
   static options: CacheOpt = {

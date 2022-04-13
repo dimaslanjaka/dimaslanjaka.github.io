@@ -99,3 +99,7 @@ class memoizer {
   }
 }
 export default memoizer;
+
+const mem = new memoizer();
+
+export const memoizeFs = mem.memoize;

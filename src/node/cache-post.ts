@@ -79,11 +79,12 @@ const randoms: { [key: string]: postResult[] } = {};
 /**
  * get random posts
  * @param max max results
+ * @param identifier cached result
  * @returns
  */
 export function getRandomPosts(max = 5, identifier = 'default') {
   const result = randoms[identifier];
-  if (Array.isArray(result)) return result;
+  if (Array.isArray(result) && result.length > 0) return result;
   const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;

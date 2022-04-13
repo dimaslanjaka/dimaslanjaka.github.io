@@ -4,10 +4,18 @@ import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
 import { rm } from 'fs';
+import { TypedEmitter } from 'tiny-typed-emitter';
+import memoizeFs from 'memoize-fs';
 import { DynamicObject } from '../types';
 import './cache-serialize';
 
+const memoizer = memoizeFs({ cachePath: join(cacheDir, 'memoize-fs') });
+
+/**
+ * default folder to save databases
+ */
 export const dbFolder = resolve(cacheDir);
+
 export interface CacheOpt {
   /**
    * immediately save cache value
@@ -43,7 +51,6 @@ export const defaultResovableValue: ResovableValue = {
   randomize: false,
 };
 
-import { TypedEmitter } from 'tiny-typed-emitter';
 interface CacheFileEvent {
   update: () => void;
 }

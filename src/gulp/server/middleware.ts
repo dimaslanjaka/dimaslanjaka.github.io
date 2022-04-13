@@ -47,8 +47,8 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
 };
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
-  async function (req, res, next) {
-    await copyAssets();
+  function (req, res, next) {
+    copyAssets();
     next();
   },
   async function (req, res, next) {
@@ -62,49 +62,48 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
     const isHomepage = req.url === '/';
     if (isHomepage) return next();
+    if (req.url.isMatch(/^\/api/)) return next();
 
     homepage.pathname = req.url; // let URL instance parse the url
     const pathname = homepage.pathname; // just get pathname
 
     const isPage = pathname.isMatch(/(.html|\/)$/);
 
-    if (!/\/api/.test(pathname)) {
-      if (isPage) {
-        res.setHeader('Content-Type', 'text/html');
-        // find post and pages
-        const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
-          s.replace(/.html$/, '.md')
-        );
-        sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
-        for (let index = 0; index < sourceMD.length; index++) {
-          let file = sourceMD[index];
-          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
-          if (file.endsWith('/')) file += 'index.html';
+    if (isPage) {
+      res.setHeader('Content-Type', 'text/html');
+      // find post and pages
+      const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
+        s.replace(/.html$/, '.md')
+      );
+      sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
+      for (let index = 0; index < sourceMD.length; index++) {
+        let file = sourceMD[index];
+        const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
+        if (file.endsWith('/')) file += 'index.html';
 
-          // start generating
-          if (existsSync(file)) {
-            try {
-              // pre-process markdown
-              // parse markdown metadata
-              const parsed = parsePost(file);
-              if (!parsed) {
-                console.log(chalk.redBright('cannot parse'), file);
-                return next();
-              }
-              const modify = modifyPost(parsed);
-              //console.log(parsed);
-              // render markdown post
-              return renderer(modify).then((rendered) => {
-                rendered = showPreview(fixHtmlPost(rendered));
-                write(dest, rendered);
-
-                console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname);
-                res.end(rendered);
-              });
-            } catch (error) {
-              console.error(error);
-              return res.end(readFileSync(file));
+        // start generating
+        if (existsSync(file)) {
+          try {
+            // pre-process markdown
+            // parse markdown metadata
+            const parsed = parsePost(file);
+            if (!parsed) {
+              console.log(chalk.redBright('cannot parse'), file);
+              return next();
             }
+            const modify = modifyPost(parsed);
+            //console.log(parsed);
+            // render markdown post
+            return renderer(modify).then((rendered) => {
+              rendered = showPreview(fixHtmlPost(rendered));
+              write(dest, rendered);
+
+              console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname);
+              res.end(rendered);
+            });
+          } catch (error) {
+            console.error(error);
+            return res.end(readFileSync(file));
           }
         }
       }
@@ -148,12 +147,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     },
   },
 ];
+
 if (config.server.compress) {
   // push compression to first index
   ServerMiddleWare.unshift.apply(compress());
 }
 
-routedata.category.add(routedata.tag).forEach((path) => {
+routedata.category.addAll(routedata.tag).forEach((path) => {
   ServerMiddleWare.push({
     route: path,
     handle: async function (req, res, next) {

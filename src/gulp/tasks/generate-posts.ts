@@ -188,7 +188,22 @@ export const renderArticle = function () {
 
 gulp.task('generate:posts', renderArticle);
 
+// post instance
+const ipost = new CachePost();
+const postEjs = new CachePost.ejs();
 const helpers: DynamicObject = {
+  /**
+   * get latest posts (non cache)
+   */
+  getLatestPosts: postEjs.getLatestPosts,
+  /**
+   * get random posts (non cache)
+   */
+  getRandomPosts: postEjs.getRandomPosts,
+  /**
+   * get all posts (cached)
+   */
+  getAllCachedPosts: ipost.getAll().map((parsed) => Object.assign(parsed, parsed.metadata)),
   css: (path: string, attributes: DynamicObject = {}) => {
     const find = {
       cwdFile: join(cwd(), path),
@@ -218,28 +233,40 @@ const helpers: DynamicObject = {
   },
 };
 
+interface Override extends ejs.Options {
+  [key: string]: any;
+}
+
 /**
  * EJS Renderer Engine
  * @param parsed
- * @param override override object ejs options {@link ejs.Options}, page data {@link parsePostReturn}
- * @returns
+ * @param override override {@link Override} object ejs options {@link ejs.Options}, page data {@link parsePostReturn} default empty object
+ * @returns rendered promise (Promise\<string\>)
+ * renderer injection
+ * ```js
+ * renderer(parsed, {
+ *  // new helper available on ejs layout
+ *  newhelper: function () {
+ *    return 'new helper';
+ *  }
+ * })
+ * ```
+ * ejs
+ * ```html
+ * <%- newhelper() %>
+ * ```
  */
-export function renderer(parsed: parsePostReturn, override: ejs.Options = {}) {
+export function renderer(parsed: parsePostReturn, override: Override = {}) {
   return new Promise((resolve: (arg: string) => any) => {
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
 
     const defaultOpt: ejs.Options = {
-      cache: true,
+      //cache: true,
     };
 
     // assign body
     const pagedata = Object.assign(defaultOpt, parsed.metadata, parsed, override);
-
-    // post instance
-    const ipost = new CachePost.ejs();
-    helpers.getLatestPosts = ipost.getLatestPosts;
-    helpers.getRandomPosts = ipost.getRandomPosts;
 
     page_url.pathname = parsed.permalink;
     const ejs_data = Object.assign(parsed, helpers, {

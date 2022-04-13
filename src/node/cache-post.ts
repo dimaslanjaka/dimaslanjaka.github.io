@@ -28,14 +28,13 @@ export default class CachePost extends CacheFile {
 
   /**
    * get latest posts
-   * @param by order descending by `date` or default `updated`
+   * @param by order descending by `date` or default (`index_generator.order_by` in `_config.yml`)
    * @param max max result
    * @returns array of {@link postResult}
    */
   getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
-    const posts: parsePostReturn[] = this.getValues({ max: max, resolveValue: true });
+    const posts: parsePostReturn[] = this.getAll({ max: max, resolveValue: true });
     return posts
-      .filter((post) => post.metadata.type == 'post')
       .sort((a, b) => {
         const c = new Date(a.metadata[by]);
         const d = new Date(b.metadata[by]);
@@ -72,8 +71,7 @@ export default class CachePost extends CacheFile {
     const opt = defaultResovableValue;
     defaultResovableValue.randomize = true;
     defaultResovableValue.max = max;
-    return this.getValues(opt)
-      .filter((post) => post.metadata.type == 'post')
+    return this.getAll(opt)
       .removeEmpties()
       .splice(0, max)
       .map((post) => fixPost(post))

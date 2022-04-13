@@ -87,12 +87,12 @@ external_link:
 render_drafts: false
 
 # Home page setting
-# path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
+# example order_by:
+# -updated : order by updated descending
+# updated : order by updated ascending
 index_generator:
-  path: ""
-  per_page: 8
   order_by: -updated #updated | date
 
 # Category & Tag
@@ -141,7 +141,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: iridium
+theme: bootstrap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -36,7 +36,7 @@ interface Archives {
 
 type Callback = (rendered?: string) => any & (() => any) & ((error?: Error) => any);
 
-export function generateLabel(done?: Callback, labelname?: string) {
+export async function generateLabel(done?: Callback, labelname?: string) {
   const tag_posts: Archives = {};
   const cat_posts: Archives = {};
   const iterate = () => {
@@ -168,7 +168,7 @@ export function generateLabel(done?: Callback, labelname?: string) {
   } else {
     cat_keys.forEach(cat_runner);
   }
-  if (typeof done == 'function') done();
+  if (typeof done == 'function') return done();
 }
 
 export async function generateIndex(done?: Callback) {

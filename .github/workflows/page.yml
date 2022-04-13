@@ -74,6 +74,7 @@ jobs:
       - run: "gulp generate:sitemap-xml"
       - run: "gulp generate:sitemap-news"
       - run: "gulp generate:after"
+      - run: "gulp generate:feeds"
       - run: "gulp generate:minify"
       - run: cd docs/page && npm install
       - run: cp -rf source/robots.txt docs/robots.txt

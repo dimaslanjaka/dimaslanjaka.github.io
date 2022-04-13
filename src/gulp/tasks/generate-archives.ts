@@ -41,8 +41,7 @@ export function generateArchive(done?: Callback, labelname?: string) {
   const cat_posts: Archives = {};
   const iterate = () => {
     if (!Object.values(cat_posts).length || !Object.values(tag_posts).length)
-      postCache
-        .getAll()
+      getAllPosts()
         .filter((item) => {
           if (!item) return false;
           if (!item.metadata) return false;

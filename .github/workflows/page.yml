@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - compilerx # run when this branch pushed
+      - compiler # run when this branch pushed
 
 # cancel previous workflows, run only one workflow
 concurrency:

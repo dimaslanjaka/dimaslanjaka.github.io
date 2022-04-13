@@ -8,13 +8,13 @@ import { TypedEmitter } from 'tiny-typed-emitter';
 import memoizeFs from 'memoize-fs';
 import { DynamicObject } from '../types';
 import './cache-serialize';
-
-const memoizer = memoizeFs({ cachePath: join(cacheDir, 'memoize-fs') });
+import { toUnix } from 'upath';
 
 /**
  * default folder to save databases
  */
-export const dbFolder = resolve(cacheDir);
+export const dbFolder = toUnix(resolve(cacheDir));
+export const memoizer = memoizeFs({ cachePath: join(dbFolder, 'memoize-fs') });
 
 export interface CacheOpt {
   /**
@@ -68,7 +68,12 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     this.total = Object.keys(this.md5Cache).length;
     return this.total;
   }
-
+  /**
+   * memoizer persistent file
+   * * cached function result for reusable
+   * @see {@link https://github.com/borisdiakur/memoize-fs}
+   */
+  static memoizer = memoizer;
   md5Cache: DynamicObject = {};
   dbFile: string;
   static options: CacheOpt = {

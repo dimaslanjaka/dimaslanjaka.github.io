@@ -1,5 +1,5 @@
 
-declare function memoizeFs(options: memoizeFs.MemoizeOptions): memoizeFs.Memoizer
+function memoizeFs<F extends memoizeFs.FnToMemoize>(options: memoizeFs.MemoizeOptions): memoizeFs.Memoizer
 
 declare namespace memoizeFs {
   export interface Options {
@@ -15,10 +15,10 @@ declare namespace memoizeFs {
   }
 
   export type MemoizeOptions = Options & { cachePath: string }
-  export type FnToMemoize = (...args: any[]) => any
+  export type FnToMemoize = (...args: any[]) => any | Promise<(...args: any[]) => any>
 
   export interface Memoizer {
-    fn: (fnToMemoize: FnToMemoize, options?: Options) => Promise<FnToMemoize>
+    fn: <F extends FnToMemoize>(fnToMemoize: F, options?: Options) => Promise<F>
     invalidate: (id?: string) => Promise<any>
     getCacheFilePath: (fnToMemoize: FnToMemoize, options: Options) => string
   }

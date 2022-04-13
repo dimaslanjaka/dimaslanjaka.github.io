@@ -11,7 +11,7 @@ const memoizer = memoizeFs({ cachePath: join(cacheDir, 'memoize-fs') });
 // }
 
 let idx = 0;
-const func = function foo(a: number, b: number) {
+const func = async function foo(a: number, b: number) {
   idx += a + b;
   return idx;
 };

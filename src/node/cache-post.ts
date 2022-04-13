@@ -1,6 +1,6 @@
 import { modifyPost } from '../markdown/transformPosts/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
-import CacheFile, { defaultResovableValue } from './cache';
+import CacheFile, { defaultResovableValue, memoizer } from './cache';
 import config from '../types/_config';
 
 export type postResult = parsePostReturn & parsePostReturn['metadata'];
@@ -82,19 +82,24 @@ const randoms: { [key: string]: postResult[] } = {};
  * @param identifier cached result
  * @returns
  */
-export function getRandomPosts(max = 5, identifier = 'default') {
+export async function getRandomPosts(max = 5, identifier = 'default') {
   const result = randoms[identifier];
   if (Array.isArray(result) && result.length > 0) return result;
   const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;
-  randoms[identifier] = getAllPosts(opt)
-    .removeEmpties()
-    .splice(0, max)
-    .map((post) => fixPost(post))
-    .map((post) => {
-      return Object.assign(post, post.metadata);
-    });
+  const get = await memoizer.fn((id: string) => {
+    const result = getAllPosts(opt)
+      .removeEmpties()
+      .splice(0, max)
+      .map((post) => fixPost(post))
+      .map((post) => {
+        return Object.assign(post, post.metadata);
+      });
+    randoms[id] = result;
+    return result;
+  });
+  randoms[identifier] = await get(identifier);
   return randoms[identifier];
 }
 

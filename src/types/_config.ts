@@ -19,6 +19,8 @@ if (!config.include) config.include = [];
 if (!config.skip_render) config.skip_render = [];
 
 if (process.env.NODE_ENV == 'development') {
+  // just change proxy localhost name to my localhost
+  // just run on my computer
   if (hostname() == 'HP-14-bs0xx') config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
 }
 config.url = config.url.replace(/\/+$/, '');

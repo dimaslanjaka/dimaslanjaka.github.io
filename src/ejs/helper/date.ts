@@ -9,16 +9,26 @@ import config from '../../types/_config';
  * @returns
  */
 export function date_local(page: postResult) {
-  if (page.language) {
-    moment.locale(page.language);
-  } else if (page.lang) {
-    moment.locale(page.lang);
-  } else if (config.lang) {
-    moment.locale(config.lang);
-  } else {
-    moment.locale('en');
+  if (typeof page == 'object' && page) {
+    if (Object.hasOwnProperty.call(page, 'metadata')) {
+      const meta = page.metadata;
+      if (meta.lang) {
+        moment.locale(toMomentLocale(meta.lang));
+        return toMomentLocale(meta.lang);
+      } else if (meta.language) {
+        moment.locale(toMomentLocale(meta.language));
+        return toMomentLocale(meta.language);
+      } else if (config.lang) {
+        moment.locale(toMomentLocale(config.lang));
+        return toMomentLocale(config.lang);
+      } else if (config.language) {
+        moment.locale(toMomentLocale(config.language));
+        return toMomentLocale(config.language);
+      }
+    }
   }
-  return page.lang || 'en';
+  moment.locale('en');
+  return 'en';
 }
 
 /**

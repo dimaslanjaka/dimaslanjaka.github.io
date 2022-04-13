@@ -1,6 +1,6 @@
 import { modifyPost } from '../markdown/transformPosts/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
-import CacheFile, { defaultResovableValue, memoizer } from './cache';
+import CacheFile, { defaultResovableValue } from './cache';
 import config from '../types/_config';
 
 export type postResult = parsePostReturn & parsePostReturn['metadata'];

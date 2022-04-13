@@ -2,6 +2,7 @@ import { modifyPost } from '../markdown/transformPosts/modifyPost';
 import { parsePostReturn } from '../markdown/transformPosts';
 import CacheFile, { defaultResovableValue } from './cache';
 import config from '../types/_config';
+import memoizer from './memoize-fs';
 
 export type postResult = parsePostReturn & parsePostReturn['metadata'];
 const postCache = new CacheFile('posts');
@@ -88,7 +89,7 @@ export async function getRandomPosts(max = 5, identifier = 'default') {
   const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;
-  const get = await memoizer.fn((id: string) => {
+  const get = new memoizer().fn((id: string) => {
     const result = getAllPosts(opt)
       .removeEmpties()
       .splice(0, max)

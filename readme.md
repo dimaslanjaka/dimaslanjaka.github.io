@@ -28,8 +28,9 @@ www.webmanajemen.com compiler [![Build](https://github.com/dimaslanjaka/dimaslan
 
 ## Installation
 ```bash
-git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
+git clone --single-branch --branch compiler https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
 cd foldername
+git checkout compiler
 mkdir tmp
 npm install
 ```

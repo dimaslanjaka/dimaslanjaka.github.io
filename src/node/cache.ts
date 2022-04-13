@@ -5,16 +5,15 @@ import { md5, md5FileSync } from './md5-file';
 import scheduler from './scheduler';
 import { rm } from 'fs';
 import { TypedEmitter } from 'tiny-typed-emitter';
-import memoizeFs from 'memoize-fs';
 import { DynamicObject } from '../types';
 import './cache-serialize';
 import { toUnix } from 'upath';
+import memoizer from './memoize-fs';
 
 /**
  * default folder to save databases
  */
 export const dbFolder = toUnix(resolve(cacheDir));
-export const memoizer = memoizeFs({ cachePath: join(dbFolder, 'memoize-fs') });
 
 export interface CacheOpt {
   /**
@@ -28,6 +27,7 @@ export interface CacheOpt {
    */
   folder?: string;
 }
+
 /**
  * @default
  */
@@ -71,7 +71,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
   /**
    * memoizer persistent file
    * * cached function result for reusable
-   * @see {@link https://github.com/borisdiakur/memoize-fs}
+   * @see {@link memoizer}
    */
   static memoizer = memoizer;
   md5Cache: DynamicObject = {};

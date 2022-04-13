@@ -1,7 +1,7 @@
-import memoizeFs from 'memoize-fs';
+import { default as mem } from '../src/node/memoize-fs';
 import { cacheDir, join } from '../src/node/filemanager';
 
-const memoizer = memoizeFs({ cachePath: join(cacheDir, 'memoize-fs') });
+const memoizer = new mem();
 
 //console.log(memoizer);
 // => {
@@ -11,15 +11,16 @@ const memoizer = memoizeFs({ cachePath: join(cacheDir, 'memoize-fs') });
 // }
 
 let idx = 0;
-const func = async function foo(a: number, b: number) {
+const func = function foo(a: number, b: number) {
   idx += a + b;
   return idx;
 };
 
 (async () => {
-  const memoizedFn = await memoizer.fn(func);
-  for (let index = 0; index < 4; index++) {
-    const resultOne = await memoizedFn(1, 2);
+  const memoizedFn = memoizer.fn(func);
+  memoizer.clear(func);
+  for (let index = 0; index < 10; index++) {
+    const resultOne = memoizedFn(1, 2);
     console.log(resultOne, idx, idx === 0 ? 'cached' : 'non-cached');
   }
 })();

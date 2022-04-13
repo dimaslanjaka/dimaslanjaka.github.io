@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
@@ -15,7 +14,7 @@ import 'js-prototypes';
 import yargs from 'yargs';
 import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
-import CachePost, { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
+import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import color from '../../node/color';
 
@@ -80,7 +79,7 @@ const sitemap = new Sitemap();
 
 export const renderArticle = function () {
   const log = logname + chalk.blue('[posts]');
-  return new Bluebird((resolve, reject) => {
+  return new Bluebird((resolve) => {
     logger.log(log, 'generating to', generated_dir);
     const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
     const ignore = ['_drafts/', '_data/', ...exclude];

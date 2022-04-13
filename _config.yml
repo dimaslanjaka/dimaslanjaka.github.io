@@ -2,16 +2,20 @@
 ## Inspired by HexoJS, some configuration usages forked from HexoJS
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
+## All the variables listed here will be used in theme/layout/layout.ejs and some will be used in `internal functions` for program reference
 
-# Site
+# Site title
 title: "WMI"
+# site description
 description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others. External source WMI Github Laboratory
+# site keywords
 keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
+# site timezone
 timezone: "Asia/Jakarta"
-# favicon from source_dir
+# site favicon from source_dir
 favicon: "/favicon.ico"
-# logo from source_dir
-logo: "/image/logo.png"
+# site logo from source_dir
+logo: "/image/logo.svg"
 
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb

@@ -75,22 +75,26 @@ export function getAllPosts(opt = defaultResovableValue) {
     .map((post) => fixPost(post));
 }
 
+const randoms: { [key: string]: postResult[] } = {};
 /**
  * get random posts
  * @param max max results
  * @returns
  */
-export function getRandomPosts(max = 5) {
+export function getRandomPosts(max = 5, identifier = 'default') {
+  const result = randoms[identifier];
+  if (Array.isArray(result)) return result;
   const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;
-  return getAllPosts(opt)
+  randoms[identifier] = getAllPosts(opt)
     .removeEmpties()
     .splice(0, max)
     .map((post) => fixPost(post))
     .map((post) => {
       return Object.assign(post, post.metadata);
     });
+  return randoms[identifier];
 }
 
 export default class CachePost extends CacheFile {

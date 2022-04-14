@@ -200,5 +200,12 @@ export function cacheableModifyPost(parse: parsePostReturn, sourceFile: string =
   return result;
 }
 
-export const modifyPost = cacheableModifyPost;
+let modifyPost: typeof cacheableModifyPost | typeof originalModifyPost;
+if (config.generator.cache) {
+  modifyPost = cacheableModifyPost;
+} else {
+  modifyPost = originalModifyPost;
+}
+export default modifyPost;
+export { modifyPost };
 _g.modifyPost = modifyPost;

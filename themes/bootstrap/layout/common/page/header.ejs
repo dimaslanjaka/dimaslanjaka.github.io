@@ -1,10 +1,11 @@
 <!-- Post header-->
 <header class="mb-4">
   <!-- Post title-->
-  <h1 class="fw-bolder mb-1">Welcome to Blog Post!</h1>
+  <h1 class="fw-bolder mb-1"><%- page.title %></h1>
   <!-- Post meta content-->
-  <div class="text-muted fst-italic mb-2">Posted on January 1, 2022 by Start Bootstrap</div>
+  <div class="text-muted fst-italic mb-2">Posted on <%- date_format(page.date, 'L') %> by <%- author_name(page) %></div>
   <!-- Post categories-->
-  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
-  <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+  <% page.categories.forEach(cat => { %>
+  <a class="badge bg-secondary text-decoration-none link-light" href="/<% config.category_dir %>/<%- cat %>"><%- cat %></a>
+  <% }) %>
 </header>

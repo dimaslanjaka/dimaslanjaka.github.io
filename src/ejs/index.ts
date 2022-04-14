@@ -6,7 +6,7 @@ import * as locale from './helper/locales';
 import * as thumbnail from './helper/thumbnail';
 import * as keywords from './helper/keywords';
 import * as excerpt from './helper/excerpt';
-import * as tag from './helper/tags';
+import * as tag from './helper/labels';
 import { join } from '../node/filemanager';
 import { parsePostReturn } from '../markdown/transformPosts';
 import config, { ThemeOpt, theme_dir } from '../types/_config';

@@ -11,9 +11,9 @@ interface ObjectCached {
 
 class memoizer {
   cache = {};
-  memoize = (fn: Func) => {
+  memoize = <F extends Func>(fn: F) => {
     const self = this;
-    return (...args: any[]) => {
+    return ((...args: any[]) => {
       const find = this.getCacheFilePath(fn, ...args);
 
       if (existsSync(find)) {
@@ -30,7 +30,7 @@ class memoizer {
         write(find, content);
         return result;
       }
-    };
+    }) as F;
   };
   /**
    * @see {@link memoizer.memoize}
@@ -90,10 +90,10 @@ class memoizer {
   /**
    * determine function
    * @param fn
-   * @param args
+   * @param _args
    * @returns
    */
-  private determinefn(fn: Func, ...args: any[]) {
+  private determinefn(fn: Func, ..._args: any[]) {
     const fnStr = String(fn);
     return md5(fnStr);
   }

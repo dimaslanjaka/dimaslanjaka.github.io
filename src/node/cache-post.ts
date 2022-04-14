@@ -89,7 +89,7 @@ export async function getRandomPosts(max = 5, identifier = 'default') {
   const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;
-  const get = memoizeFs((id: string) => {
+  const get = new memoizer().fn((id: string) => {
     const result = getAllPosts(opt)
       .removeEmpties()
       .splice(0, max)
@@ -100,7 +100,7 @@ export async function getRandomPosts(max = 5, identifier = 'default') {
     randoms[id] = result;
     return result;
   });
-  randoms[identifier] = await get(identifier);
+  randoms[identifier] = get(identifier);
   return randoms[identifier];
 }
 

@@ -1,12 +1,13 @@
 Unused dependencies
 * fast-xml-parser
 * iridium
-* moment-timezone
+* memoizee
 Unused devDependencies
 * @types/chai
 * @types/gulp-imagemin
 * @types/jquery
 * @types/lru-cache
+* @types/memoizee
 * chai
 * crypto-js
 * gulp-cache

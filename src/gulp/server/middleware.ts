@@ -16,19 +16,29 @@ import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import { generateIndex, generateLabel } from '../tasks/generate-archives';
 import './gen-middleware';
 import routedata from './routes.json';
+import jdom from '../../node/jsdom';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
 let preview: string;
 
+const dom = new jdom();
 function showPreview(str: string | Buffer) {
   const previewfile = join(__dirname, 'public/preview.html');
   if (!preview) preview = existsSync(previewfile) ? readFileSync(previewfile, 'utf-8') : 'NO PREVIEW AVAILABLE';
-  const dom = new JSDOM(str);
-  dom.window.document.body.innerHTML += preview;
-  let body = dom.serialize();
-  body = body.replace(new RegExp(config.url + '/', 'gm'), '/').replace(new RegExp(config.url, 'gm'), '');
-  dom.window.close();
+  const doc = dom.parse(String(str));
+  doc.body.innerHTML += preview;
+  Array.from(doc.querySelectorAll('a')).forEach((a) => {
+    let href = a.getAttribute('href');
+    if (typeof href == 'string') {
+      href = href.replace(new RegExp(config.url + '/', 'gm'), '/');
+      a.setAttribute('href', href);
+    }
+  });
+  const body = dom.serialize();
+  //body = body.replace(new RegExp(config.url + '/', 'gm'), '/').replace(new RegExp(config.url, 'gm'), '');
+
+  dom.close();
   return body;
 }
 

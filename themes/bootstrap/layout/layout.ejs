@@ -6,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="<%- author_name(page) %>" />
-  <% if (page.type == 'post') { %>
-  <title><%- page.title %> - <%- config.webtitle|config.title %></title>
-  <% } else { %>
-  <title><%- config.title %></title>
-  <% } %>
+  <title><%- page.title %> - <%- page.webtitle||config.title %></title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="<%- config.favicon||'/assets/favicon.ico' %>" />
   <!-- Core theme CSS (includes Bootstrap)-->

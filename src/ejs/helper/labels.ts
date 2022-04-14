@@ -42,7 +42,18 @@ export function tags(page: parsePostReturn) {
   return result;
 }
 
+/**
+ * extract categories from page
+ * @param page
+ * @returns array of object same as {@link tags}
+ * @see {@link tags}
+ */
 export function categories(page: parsePostReturn) {
   const result: Label[] = [];
   const target = page.category || page.metadata.category || [];
+  target.forEach((tag: string) => {
+    homepage.pathname = join(tag_dir, tag);
+    result.push({ name: tag, path: homepage.pathname, url: homepage.toString() });
+  });
+  return result;
 }

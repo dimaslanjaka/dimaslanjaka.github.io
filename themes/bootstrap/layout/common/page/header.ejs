@@ -5,7 +5,7 @@
   <!-- Post meta content-->
   <div class="text-muted fst-italic mb-2">Posted on <%- date_format(page.date, 'L') %> by <%- author_name(page) %></div>
   <!-- Post categories-->
-  <% page.metadata.categories.forEach(cat => { %>
-  <a class="badge bg-secondary text-decoration-none link-light" href="/<% config.category_dir %>/<%- cat %>"><%- cat %></a>
+  <% tags(page).forEach(obj => { %>
+  <a class="badge bg-secondary text-decoration-none link-light" href="<% obj.url %>"><%- obj.name %></a>
   <% }) %>
 </header>

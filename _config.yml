@@ -65,9 +65,6 @@ skip_render:
   - "_posts/Chimeraland/**/*.html"
 
 # Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
 external_link:
   # true: Open ext in new tab, rel nofollow
   enable: true
@@ -100,7 +97,12 @@ index_generator:
   order_by: -updated #updated | date
 
 # Category & Tag
-default_category: uncategorized
+default_category: Uncategorized
+
+# gulp generator task options
+generator:
+  # enable cache method globally
+  cache: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -145,7 +147,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: iridium
+theme: bootstrap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

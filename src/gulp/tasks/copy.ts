@@ -18,6 +18,7 @@ import chalk from 'chalk';
 import through2 from 'through2';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import CachePost from '../../node/cache-post';
+import './remove-inline-style';
 
 /**
  * Crossplatform path replacer
@@ -132,3 +133,4 @@ const copyPosts = () => {
 gulp.task('copy:posts', copyPosts);
 
 gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));
+gulp.task('copy:blogger', gulp.series('copy', 'copy:remove-inline-style'));

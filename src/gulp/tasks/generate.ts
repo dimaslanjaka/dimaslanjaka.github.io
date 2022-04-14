@@ -3,7 +3,6 @@ import './generate-after';
 import './generate-archives';
 import './generate-feed';
 import './generate-posts';
-import './remove-inline-style';
 import './minify';
 import gulp from 'gulp';
 

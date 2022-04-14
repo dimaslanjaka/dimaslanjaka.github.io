@@ -1,28 +1,33 @@
 import { existsSync, join, mkdirSync, readFileSync, resolve, write } from '../node/filemanager';
 import yaml from 'yaml';
-import data from './_config_data.json';
+import project_config_data from './_config_project.json';
+import theme_config_data from './_config_theme.json';
 import { toUnix } from 'upath';
 import { hostname } from 'os';
 
-export type ProjectConfig = (typeof data & Hexo_Config) & {
-  [keys: string]: any;
-  verbose?: boolean;
-};
 export const root = join(__dirname, '../../');
 const file = join(root, '_config.yml');
 const str = readFileSync(file, 'utf-8');
-const config: ProjectConfig = yaml.parse(str);
-if (!config.verbose) config.verbose = false;
-if (!config.exclude) config.exclude = [];
-if (!config.ignore) config.ignore = [];
-if (!config.include) config.include = [];
-if (!config.skip_render) config.skip_render = [];
+const def_config = {
+  verbose: false,
+  exclude: [],
+  include: [],
+  skip_render: [],
+  ignore: [],
+};
+
+const project_config_merge = Object.assign(def_config, yaml.parse(str) as typeof project_config_data);
+export type ProjectConfig = typeof project_config_merge & {
+  [keys: string]: any;
+};
+const config: ProjectConfig = project_config_merge;
 
 if (process.env.NODE_ENV == 'development') {
   // just change proxy localhost name to my localhost
   // just run on my computer
   if (hostname() == 'HP-14-bs0xx') config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
 }
+
 config.url = config.url.replace(/\/+$/, '');
 
 /**
@@ -45,246 +50,15 @@ export const post_source_dir = resolve(join(root, 'src-posts'));
 export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
 if (!existsSync(tmp())) mkdirSync(tmp());
 
-// // THEME
-const theme_def_opt = {
-  amp: false,
-};
-export type ThemeOpt =
-  | typeof theme_def_opt
-  | {
-      [key: string]: any;
-    };
+//// THEME
 export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
-const theme_yml = join(theme_dir, '_config.yml');
-export const theme_config: ThemeOpt = Object.assign(theme_def_opt, existsSync(theme_yml) ? yaml.parse(readFileSync(theme_yml, 'utf-8')) : {});
+export const theme_yml = join(theme_dir, '_config.yml');
+export const theme_config = Object.assign(theme_config_data, existsSync(theme_yml) ? yaml.parse(readFileSync(theme_yml, 'utf-8')) : {});
+export type ThemeOpt = typeof theme_config & {
+  [key: string]: any;
+};
 
 export default config;
 
-write(join(__dirname, '_config_data.json'), JSON.stringify(config));
-
-export type Hexo_Config = {
-  title: string;
-  subtitle: string;
-  description: string;
-  subtitle_desc: string;
-  keywords: string;
-  timezone: string;
-  introduction: string;
-  search: Search;
-  url: string;
-  root: string;
-  author: Author;
-  permalink: string;
-  pretty_urls: PrettyUrls;
-  source_dir: string;
-  public_dir: string;
-  tag_dir: string;
-  archive_dir: string;
-  category_dir: string;
-  code_dir: string;
-  i18n_dir: string;
-  new_post_name: string;
-  default_layout: string;
-  titlecase: boolean;
-  // external_link: ExternalLink;
-  filename_case: number;
-  render_drafts: boolean;
-  post_asset_folder: boolean;
-  relative_link: boolean;
-  future: boolean;
-  highlight: Highlight;
-  prismjs: Prismjs;
-  index_generator: IndexGenerator;
-  default_category: string;
-  meta_generator: boolean;
-  date_format: string;
-  time_format: string;
-  updated_option: boolean;
-  per_page: number;
-  pagination_dir: string;
-  server: Server;
-  theme: string;
-  deploy: Deploy;
-  social_links: SocialLinks;
-  feed: Feed;
-  sitemap: Sitemap;
-  related_posts: RelatedPosts;
-  markdown_it_plus: MarkdownItPlus;
-  browsersync: Browsersync;
-  adsense: Adsense;
-  analytics: Analytics;
-  seo: Seo;
-};
-
-export type Author =
-  | string
-  | {
-      name: string;
-      link: string;
-      image: string | Image;
-    };
-
-interface Search {
-  path: string;
-  field: string;
-  content: boolean;
-  format: string;
-}
-interface PrettyUrls {
-  trailing_index: boolean;
-  trailing_html: boolean;
-}
-interface ExternalLink {
-  enable: boolean;
-  field: string;
-  exclude: string;
-}
-interface Highlight {
-  enable: boolean;
-  line_number: boolean;
-  auto_detect: boolean;
-  tab_replace: string;
-  wrap: boolean;
-  hljs: boolean;
-}
-interface Prismjs {
-  enable: boolean;
-  preprocess: boolean;
-  line_number: boolean;
-  tab_replace: string;
-}
-interface IndexGenerator {
-  path: string;
-  per_page: number;
-  order_by: string;
-}
-interface Server {
-  port: number;
-  log: boolean;
-  ip: string;
-  host: string;
-  proxy: string;
-  compress: boolean;
-  cache: boolean;
-  header: boolean;
-  serveStatic: ServeStatic;
-}
-interface ServeStatic {
-  extensions?: string[] | null;
-}
-interface Deploy {
-  type: string;
-  repo: string;
-  branch: string;
-  message: string;
-  name: string;
-  email: string;
-}
-
-interface Image {
-  url: string;
-  width: number;
-  height: number;
-}
-interface SocialLinks {
-  github: string;
-  youtube: string;
-}
-interface Feed {
-  content: boolean;
-  type?: string[] | null;
-  path?: string[] | null;
-}
-interface Sitemap {
-  path: string;
-}
-interface RelatedPosts {
-  enabled: boolean;
-  enable_env_name: string;
-  filter_threshold: number;
-  related_count: number;
-  weight: Weight;
-  stemmers?: string[] | null;
-  reserved?: string[] | null;
-}
-interface Weight {
-  title: number;
-  description: number;
-  keywords: number;
-  tags: number;
-  categories: number;
-  text: number;
-}
-interface MarkdownItPlus {
-  highlight: boolean;
-  html: boolean;
-  xhtmlOut: boolean;
-  breaks: boolean;
-  langPrefix?: null;
-  linkify: boolean;
-  typographer?: null;
-  pre_class: string;
-  plugins?: PluginsEntity[] | null;
-}
-interface PluginsEntity {
-  plugin: Plugin;
-}
-interface Plugin {
-  name: string;
-  enable: boolean;
-  options: Options;
-}
-interface Options {
-  leftDelimiter: string;
-  rightDelimiter: string;
-  allowedAttributes?: null[] | null;
-}
-interface Browsersync {
-  logLevel: string;
-  ghostMode: GhostMode;
-  instanceName: string;
-  port: number;
-  browser: string;
-  open: boolean;
-}
-interface GhostMode {
-  scroll: boolean;
-}
-interface Adsense {
-  enable: boolean;
-  pub: string;
-  article_ads?: string[] | null;
-  field: string;
-  https: boolean;
-  adblock: boolean;
-  type: string;
-  exclude?: string[] | null;
-}
-interface Analytics {
-  tagmanager: string;
-  GA4: string;
-  GA3: string;
-  cloudflare: string;
-}
-interface Seo {
-  html: Html;
-  css: boolean;
-  js: boolean;
-  schema: boolean;
-  img: Img;
-  links: Links;
-  sitemap: boolean;
-}
-interface Html {
-  fix: boolean;
-  exclude?: string[] | null;
-}
-interface Img {
-  broken: boolean;
-  default: string;
-  onerror: string;
-}
-interface Links {
-  enable: boolean;
-  exclude?: string[] | null;
-}
+write(join(__dirname, '_config_project.json'), JSON.stringify(config));
+write(join(__dirname, '_config_theme.json'), JSON.stringify(theme_config));

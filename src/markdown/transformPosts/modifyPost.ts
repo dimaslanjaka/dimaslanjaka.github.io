@@ -58,8 +58,8 @@ export function originalModifyPost(parse: parsePostReturn) {
 
     // override permalink
     homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
-    if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://'))) parse.metadata.url = homepage.toString();
-    if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
+    parse.metadata.url = homepage.toString();
+    parse.metadata.permalink = homepage.pathname;
 
     // fix lang
     if (!parse.metadata.lang) parse.metadata.lang = 'en';

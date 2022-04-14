@@ -56,10 +56,10 @@ export function originalModifyPost(parse: parsePostReturn) {
       }
     }
 
-    // permalink
+    // override permalink
     homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
-    parse.metadata.url = homepage.toString();
-    parse.metadata.permalink = homepage.pathname;
+    if (!parse.metadata.url) parse.metadata.url = homepage.toString();
+    if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
 
     // fix lang
     if (!parse.metadata.lang) parse.metadata.lang = 'en';

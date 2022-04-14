@@ -99,11 +99,12 @@ const copyPosts = () => {
       parse.metadata.type = 'post';
       let html: ReturnType<typeof parseHTML>;
       try {
-        html = parseHTML(renderBodyMarkdown(parse));
+        const renderbody = renderBodyMarkdown(parse);
+        html = parseHTML(renderbody);
       } catch (error) {
-        log.push('render markdown and html failed');
+        console.log(...log, '[fail]', 'renderBodyMarkdown', error);
         //console.log(...log);
-        console.log(typeof parse.body);
+        //console.log(typeof parse.body);
         return next();
       }
       // +article wordcount

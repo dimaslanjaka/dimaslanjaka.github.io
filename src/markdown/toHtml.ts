@@ -70,6 +70,7 @@ const verbose = false;
 
 /**
  * Fixable render markdown mixed with html
+ * * render {@link parsePostReturn.body}
  * @todo render markdown to html
  * @param parse
  * @returns

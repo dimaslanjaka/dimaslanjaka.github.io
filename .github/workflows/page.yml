@@ -65,6 +65,7 @@ jobs:
         if: "contains(github.event.head_commit.message, 'clean')"
       - run: "gulp copy:assets"
       - run: "gulp copy:posts"
+      - run: "gulp copy:remove-inline-style"
       - run: "gulp generate:assets"
       - run: "gulp generate:template"
       - run: "gulp generate:posts"

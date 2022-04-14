@@ -55,6 +55,14 @@ export type parsePostReturn = DynamicObject & {
     cover?: string;
     thumbnail?: string;
     /**
+     * full url
+     */
+    url?: string;
+    /**
+     * just pathname
+     */
+    permalink?: string;
+    /**
      * archive (index, tags, categories)
      */
     type?: 'post' | 'page' | 'archive';
@@ -149,7 +157,7 @@ export function originalParsePost(text: string, ..._: any[]): parsePostReturn | 
 
     if (isFile) {
       // setup permalink
-      homepage.pathname = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/').replace(/\/+/, '/');
+      homepage.pathname = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/').replace(/\/+/, '/').replace(/.md$/, '.html');
       meta.permalink = homepage.pathname;
       homepage.pathname = meta.permalink;
       meta.url = homepage.toString();
@@ -240,3 +248,4 @@ export function cacheableParsePost(text: string, sourceFile: string = null, cach
 }
 
 export const parsePost = cacheableParsePost;
+export default parsePost;

@@ -12,6 +12,7 @@ const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const homepage = new URL(config.url);
 const parseCache = new CacheFile('parsePost');
+const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 export type parsePostReturn = DynamicObject & {
   /**
@@ -256,3 +257,4 @@ if (config.generator.cache) {
 
 export default parsePost;
 export { parsePost };
+__g.parsePost = parsePost;

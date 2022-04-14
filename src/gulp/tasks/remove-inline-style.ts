@@ -36,6 +36,7 @@ export function gulpInlineStyle() {
     .map((item) => {
       return { path: item, parsed: parsePost(item) };
     })
+    .filter((obj) => typeof obj.parsed == 'object' && typeof obj.parsed.body == 'string' && obj.parsed.body.length > 0)
     .each((obj) => {
       const parsed = obj.parsed;
       if (parsed.body.includes('<div dir="ltr" style="text-align: left;" trbidi="on">')) {

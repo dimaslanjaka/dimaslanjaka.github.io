@@ -55,8 +55,8 @@ jobs:
             ./packages
             ./databases
             ./docs
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/.guid') }}
-          restore-keys: ${{ runner.os }}-npm-
+          key: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
+          restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not written
         # if: steps.npm-cache.outputs.cache-hit != 'true'

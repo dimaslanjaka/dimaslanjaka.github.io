@@ -11,7 +11,7 @@ interface ObjectCached {
 
 class memoizer {
   cache = {};
-  memoize = <F extends Func>(fn: F) => {
+  memoize = <F extends Func>(fn: F): F => {
     const self = this;
     return ((...args: any[]) => {
       const find = this.getCacheFilePath(fn, ...args);

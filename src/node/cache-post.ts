@@ -83,7 +83,7 @@ const randoms: { [key: string]: postResult[] } = {};
  * @param identifier cached result
  * @returns
  */
-export async function getRandomPosts(max = 5, identifier = 'default') {
+export function getRandomPosts(max = 5, identifier = 'default') {
   const result = randoms[identifier];
   if (Array.isArray(result) && result.length > 0) return result;
   const opt = defaultResovableValue;

@@ -90,18 +90,25 @@ export function getRandomPosts(max = 5, identifier = 'default') {
   const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;
-  const get = new memoizer().fn((id: string) => {
-    const result = getAllPosts(opt)
-      .removeEmpties()
-      .splice(0, max)
-      .map((post) => fixPost(post))
-      .map((post) => {
-        return Object.assign(post, post.metadata);
+  const get: () => postResult[] = (() => {
+    const fetchAll = () => {
+      return getAllPosts(opt)
+        .removeEmpties()
+        .splice(0, max)
+        .map((post) => fixPost(post))
+        .map((post) => {
+          return Object.assign(post, post.metadata);
+        });
+    };
+    if (config.generator.cache) {
+      return new memoizer().fn(() => {
+        return fetchAll();
       });
-    randoms[id] = result;
-    return result;
-  });
-  randoms[identifier] = get(identifier);
+    } else {
+      return fetchAll;
+    }
+  })();
+  randoms[identifier] = get();
   return randoms[identifier];
 }
 

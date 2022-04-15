@@ -63,7 +63,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     next();
   },
   async function (req, res, next) {
-    res.setHeader('X-Powered-By', 'SBG'); // send X-Powered-By
+    res.setHeader('X-Powered-By', 'Static Blog Generator'); // send X-Powered-By
     if (!config.server.cache) {
       res.setHeader('Expires', 'on, 01 Jan 1970 00:00:00 GMT');
       res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
@@ -73,19 +73,19 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
     const isHomepage = req.url === '/';
     if (isHomepage) return next();
-    // skip api, admin
-    if (req.url.isMatch(/^\/(api|admin)/)) return next();
-    // skip assets
-    if (req.url.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname
     // skip labels (tag and category)
     if (labelSrc.includes(pathname)) return next();
     if (pathname.isMatch(new RegExp('^/' + config.category_dir + '/'))) return next();
     if (pathname.isMatch(new RegExp('^/' + config.tag_dir + '/'))) return next();
+    // skip api, admin
+    if (pathname.isMatch(/^\/(api|admin)/)) return next();
+    // skip assets
+    if (pathname.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
     //write(tmp('middleware.log'), inspect(req));
-    console.log(req['_parsedUrl'].search);
+    console.log(req['_parsedUrl'].pathname, req['_parsedUrl'].search);
 
     const isPage = pathname.isMatch(/(.html|\/)$/);
 

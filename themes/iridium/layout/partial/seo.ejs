@@ -11,7 +11,7 @@
 <!--article metadata-->
 <meta property="article:published_time" content="<%- page.date %>" />
 <meta property="article:modified_time" content="<%- page.updated %>" />
-<meta property="article:author" content="<%- author_name(page) %>" />
+<meta property="article:author" content="<%- author_name(page)||author_name(config) %>" />
 <% tags(page).forEach(tag => { %>
 <meta property="article:tag" content="<%- tag.name %>" />
 <% }) %>
@@ -24,3 +24,4 @@
 <!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
 <meta name="page-type" content="<%- page.type %>">
+<meta name="author" content="<%- author_name(page)||author_name(config) %>" />

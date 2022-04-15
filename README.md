@@ -57,7 +57,7 @@ gulp generate --nocache # generate all without reading cache instead write new c
 gulp server --nocache # development without reading cache, instead write fresh cache
 ```
 or you can put global generator in `_config.yml`
-```
+```yaml
 generator:
   cache: false # this will ignore any caching functions
 ```

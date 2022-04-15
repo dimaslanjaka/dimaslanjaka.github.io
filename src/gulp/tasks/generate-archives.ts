@@ -2,19 +2,16 @@ import Bluebird from 'bluebird';
 import moment from 'moment';
 import { thumbnail } from '../../ejs/helper/thumbnail';
 import { parsePostReturn } from '../../markdown/transformPosts';
-import CachePost, { getAllPosts } from '../../node/cache-post';
+import { getAllPosts } from '../../node/cache-post';
 import { cwd, join, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
 import 'js-prototypes';
 import { renderer } from './generate-posts';
-import { TaskCallback } from 'undertaker';
 import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';
 import color from '../../node/color';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
-import memoize from 'memoizee';
 
-const postCache = new CachePost();
 const generated_tag_dir = join(cwd(), config.public_dir, config.tag_dir);
 const generated_cat_dir = join(cwd(), config.public_dir, config.category_dir);
 const homepage = new URL(config.url);
@@ -90,8 +87,8 @@ export async function generateLabel(done?: Callback, labelname?: string) {
   iterate();
 
   const tag_keys = Object.keys(tag_posts);
-  console.log(logname + '[tags]', 'total', tag_keys.length);
-  const tag_runner = memoize(async (tagname: string) => {
+  if (!labelname) console.log(logname + '[tags]', 'total', tag_keys.length);
+  const tag_runner = async (tagname: string) => {
     if (!tag_posts[tagname]) return;
     const posts = tag_posts[tagname];
     const tagPermalink = join(generated_tag_dir, tagname, 'index.html');
@@ -121,7 +118,7 @@ export async function generateLabel(done?: Callback, labelname?: string) {
     const rendered = await renderer(mod);
     write(tagPermalink, rendered).then((f) => console.log(logname, 'tag', f));
     return rendered;
-  });
+  };
   if (labelname) {
     // return here if requested labelname found
     if (tag_posts[labelname]) return tag_runner(labelname).then(done);
@@ -130,8 +127,8 @@ export async function generateLabel(done?: Callback, labelname?: string) {
   }
 
   const cat_keys = Object.keys(cat_posts);
-  console.log(logname + '[categories]', 'total', cat_keys.length);
-  const cat_runner = memoize(async (catname: string) => {
+  if (!labelname) console.log(logname + '[categories]', 'total', cat_keys.length);
+  const cat_runner = async (catname: string) => {
     const posts_1 = cat_posts[catname];
     const catPermalink = join(generated_cat_dir, catname, 'index.html');
     homepage.pathname = join(config.category_dir, 'index.html');
@@ -161,7 +158,7 @@ export async function generateLabel(done?: Callback, labelname?: string) {
     const rendered_1 = await renderer(mod_1);
     write(catPermalink, rendered_1).then((f_1) => console.log(logname, 'category', f_1));
     return rendered_1;
-  });
+  };
   if (labelname) {
     // return here if requested labelname found
     if (cat_posts[labelname]) return cat_runner(labelname).then(done);

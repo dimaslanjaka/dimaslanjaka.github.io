@@ -119,8 +119,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               // render markdown post
               return renderer(modify).then((rendered) => {
                 rendered = fixHtmlPost(rendered);
-                const preview = showPreview(rendered);
                 write(dest, rendered);
+                const preview = showPreview(rendered);
 
                 console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
                 res.end(preview);

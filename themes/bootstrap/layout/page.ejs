@@ -5,16 +5,15 @@
       <!-- Post content-->
       <article>
         <%- include('common/page/header')  %>
-        <% if (page.type == 'post') { %>
-        <!-- Preview image figure-->
-        <figure class="mb-4">
-          <img class="img-fluid rounded" width="900px" height="400px" src="<%- thumbnail(page) %>"
-            alt="<%- page.title %>" />
-        </figure>
-        <% } %>
         <!-- Post content-->
         <section class="mb-5">
           <%- page.body %>
+
+          <!-- Preview image figure-->
+          <figure class="mb-4">
+            <img class="img-fluid rounded" width="900px" height="400px" src="<%- thumbnail(page) %>"
+              alt="<%- page.title %>" />
+          </figure>
         </section>
       </article>
       <!-- Comments section-->

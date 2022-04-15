@@ -30,10 +30,11 @@ function showPreview(str: string | Buffer) {
   doc.body.innerHTML += preview;
   Array.from(doc.querySelectorAll('a')).forEach((a) => {
     let href = a.getAttribute('href');
-    if (typeof href == 'string') {
-      href = href.replace(new RegExp(config.url + '/', 'gm'), '/');
-      a.setAttribute('href', href);
+    if (typeof href == 'string' && href.isMatch(new RegExp('^https?://' + homepage.host))) {
+      href = href.replace(new RegExp('^https?://' + homepage.host + '/'), '/');
+      return a.setAttribute('href', href);
     }
+    a.setAttribute('href', href);
   });
   const body = dom.serialize();
   //body = body.replace(new RegExp(config.url + '/', 'gm'), '/').replace(new RegExp(config.url, 'gm'), '');
@@ -58,7 +59,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   function (req, res, next) {
-    copyAssets();
+    copyAssets(); // dont await to keep performance
     next();
   },
   async function (req, res, next) {

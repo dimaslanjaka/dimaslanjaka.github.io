@@ -147,7 +147,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: iridium
+theme: bootstrap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -206,6 +206,10 @@ adsense:
   enable: true
   # ca-pub-xxxx
   pub: ca-pub-1165447249910969
+
+  # ads paths
+  # auto read the paths to array of html contents
+
   # in-article ads source
   article_ads:
     - "source/ads/in_article.html"

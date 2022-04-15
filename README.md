@@ -63,6 +63,8 @@ Standalone: is useful for low device to run one by one the tasks. more informati
 gulp clean # clean all caches
 gulp copy:assets # copy post assets
 gulp copy:posts # copy and process posts
+gulp copy:remove-inline-style # remove inline style from html source/_posts (useful for migrated from blogger)
+gulp copy:blogger # <series>(copy:assets, copy:posts, copy:remove-inline-style)
 gulp generate:assets # copy all assets
 gulp generate:template # copy and process template
 gulp generate:posts # generate posts

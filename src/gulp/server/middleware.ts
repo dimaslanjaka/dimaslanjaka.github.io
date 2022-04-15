@@ -78,6 +78,9 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     homepage.pathname = req.url; // let URL instance parse the url
     const pathname = homepage.pathname; // just get pathname
 
+    console.log('pathname', pathname);
+    console.log('req.url', req.url);
+
     const isPage = pathname.isMatch(/(.html|\/)$/);
 
     if (isPage) {

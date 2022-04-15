@@ -18,7 +18,7 @@
           var adsbygoogle = window.adsbygoogle || [];
           Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
             (ins) => {
-              var adsid = ins.getAttribute('data-ad-slot');
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
               if (adsid) {
                 adsbygoogle.push({ google_ad_client: "<%- config.adsense.pub %>" });
                 console.log('[adsense][ins]', adsid);

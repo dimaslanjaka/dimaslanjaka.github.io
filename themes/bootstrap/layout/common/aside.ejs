@@ -4,39 +4,87 @@
   <div class="card mb-4">
     <div class="card-header">Search</div>
     <div class="card-body">
-      <div class="input-group">
-        <input class="form-control" type="text" placeholder="Enter search term..."
-          aria-label="Enter search term..." aria-describedby="button-search" />
-        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-      </div>
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..."
+            name="q" aria-describedby="button-search" />
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
     </div>
   </div>
   <!-- Categories widget-->
   <div class="card mb-4">
     <div class="card-header">Categories</div>
     <div class="card-body">
-      <div class="row">
-        <div class="col-sm-6">
-          <ul class="list-unstyled mb-0">
-            <li><a href="#!">Web Design</a></li>
-            <li><a href="#!">HTML</a></li>
-            <li><a href="#!">Freebies</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6">
-          <ul class="list-unstyled mb-0">
-            <li><a href="#!">JavaScript</a></li>
-            <li><a href="#!">CSS</a></li>
-            <li><a href="#!">Tutorials</a></li>
-          </ul>
-        </div>
-      </div>
+      <ul class="list-group list-group-horizontal">
+        <% [...tags(page), ...categories(page)].forEach(obj => { %>
+        <li class="list-group-item"><a href="<%- obj.url %>"><%- obj.name %></a></li>
+        <% }) %>
+      </ul>
     </div>
   </div>
-  <!-- Side widget-->
-  <div class="card mb-4">
-    <div class="card-header">Side Widget</div>
-    <div class="card-body">You can put anything you want inside of these side widgets. They are easy to
-      use, and feature the Bootstrap 5 card component!</div>
-  </div>
+  <div id="recent-sidebar">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn"
+              src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/16555399183_33b1b1bc26_o-90x75.jpg"
+              alt="" />
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="#">The Complete Guide to Medium for Marketers</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
+            <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn"
+              src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/8S64npOgTu2eWTZIXEfy_DSC_0955-90x75.jpg"
+              alt="" />
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="#">Watch Now: How to Manipulate the Media</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
+            <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn"
+              src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/17153174816_a808becb66_o-90x75.jpg"
+              alt="" />
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="#">OnePlus Inks First Carrier Partnership with Malaysia</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
+            <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn"
+              src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/16986542958_6a9303388c_o-90x75.jpg"
+              alt="" />
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="#">Heaps Wants to Enhance How Groups of Friends</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
+            <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div><!-- .Col ends here -->
 </div>

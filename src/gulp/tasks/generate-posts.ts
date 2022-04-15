@@ -17,6 +17,8 @@ import Sitemap from '../../node/cache-sitemap';
 import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import color from '../../node/color';
+import through2 from 'through2';
+import sass from 'node-sass';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -68,7 +70,28 @@ gulp.task('generate:assets', renderAssets);
 const renderTemplate = () => {
   const src = join(theme_dir, 'source/**/**');
   logger.log(logname + chalk.magentaBright('[template]'), 'copy', src, '->', generated_dir);
-  return gulp.src(src, { cwd: root }).pipe(gulp.dest(generated_dir));
+  return gulp
+    .src(src, { cwd: root })
+    .pipe(
+      through2.obj((file, enc, next) => {
+        if (file.isNull()) {
+          return next(null, file);
+        }
+        const path = file.path;
+        const ext = file.extname;
+
+        if (ext == '.scss') {
+          file.extname = '.css';
+          const result = sass.renderSync({
+            data: String(file.contents),
+          });
+          file.contents = result.css;
+          console.log('[sass]', 'compiled', path);
+        }
+        next(null, file);
+      })
+    )
+    .pipe(gulp.dest(generated_dir));
   //.on('end', () => logger.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
 };
 

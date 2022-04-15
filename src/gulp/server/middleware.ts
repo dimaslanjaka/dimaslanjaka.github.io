@@ -1,5 +1,5 @@
 import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
-import config, { post_generated_dir, tmp } from '../../types/_config';
+import config, { post_generated_dir } from '../../types/_config';
 import ejs_object from '../../ejs';
 import gulp, { TaskFunction } from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
@@ -9,7 +9,6 @@ import fixHtmlPost from '../tasks/generate-after';
 import compress from 'compression';
 import '../tasks/generate';
 import 'js-prototypes';
-import { JSDOM } from 'jsdom';
 import chalk from 'chalk';
 import Bluebird from 'bluebird';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
@@ -17,7 +16,6 @@ import { generateIndex, generateLabel } from '../tasks/generate-archives';
 import './gen-middleware';
 import routedata from './routes.json';
 import jdom from '../../node/jsdom';
-import { inspect } from 'util';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -79,52 +77,60 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     // skip assets
     if (req.url.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
-    homepage.pathname = req.url; // let URL instance parse the url
-    const pathname = homepage.pathname; // just get pathname
+    const pathname: string = req['_parsedUrl'].pathname; // just get pathname
 
     //console.log('pathname', pathname);
-    write(tmp('middleware.log'), inspect(req));
+    //write(tmp('middleware.log'), inspect(req));
+    //console.log(req['_parsedUrl'].search);
 
     const isPage = pathname.isMatch(/(.html|\/)$/);
 
     if (isPage) {
       res.setHeader('Content-Type', 'text/html');
       // find post and pages
-      const sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
+      let sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
         s.replace(/.html$/, '.md')
       );
       sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
-      for (let index = 0; index < sourceMD.length; index++) {
-        let file = sourceMD[index];
-        const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
-        if (file.endsWith('/')) file += 'index.html';
+      sourceMD = sourceMD
+        .map((path) => {
+          if (path.endsWith('/')) return path + 'index.md';
+          return path;
+        })
+        .filter(existsSync)
+        .unique();
+      //console.log(sourceMD);
+      if (sourceMD.length > 0)
+        for (let index = 0; index < sourceMD.length; index++) {
+          const file = sourceMD[index];
+          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
 
-        // start generating
-        if (existsSync(file)) {
-          try {
-            // pre-process markdown
-            // parse markdown metadata
-            const parsed = parsePost(file);
-            if (!parsed) {
-              console.log(chalk.redBright('cannot parse'), file);
-              return next();
+          // start generating
+          if (existsSync(file)) {
+            try {
+              // pre-process markdown
+              // parse markdown metadata
+              const parsed = parsePost(file);
+              if (!parsed) {
+                console.log(chalk.redBright('cannot parse'), file);
+                return next();
+              }
+              const modify = modifyPost(parsed);
+              //console.log(modify.metadata.type);
+              // render markdown post
+              return renderer(modify).then((rendered) => {
+                rendered = showPreview(fixHtmlPost(rendered));
+                write(dest, rendered);
+
+                console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname);
+                res.end(rendered);
+              });
+            } catch (error) {
+              console.error(error);
+              return res.end(readFileSync(file));
             }
-            const modify = modifyPost(parsed);
-            //console.log(parsed);
-            // render markdown post
-            return renderer(modify).then((rendered) => {
-              rendered = showPreview(fixHtmlPost(rendered));
-              write(dest, rendered);
-
-              console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname);
-              res.end(rendered);
-            });
-          } catch (error) {
-            console.error(error);
-            return res.end(readFileSync(file));
           }
         }
-      }
     }
     // show previous generated
     if (!pathname) console.log('last processed', pathname);

@@ -164,8 +164,9 @@ export function originalParsePost(text: string, ..._: any[]): parsePostReturn | 
       meta.url = homepage.toString();
 
       // determine post type
-      meta.type = toUnix(originalArg).match(/(_posts|src-posts)\//) ? 'post' : 'page';
+      meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
     }
+
     const result: parsePostReturn = {
       metadata: meta,
       body: body,

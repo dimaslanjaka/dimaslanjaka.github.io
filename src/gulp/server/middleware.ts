@@ -118,11 +118,12 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               //console.log(modify.metadata.type);
               // render markdown post
               return renderer(modify).then((rendered) => {
-                rendered = showPreview(fixHtmlPost(rendered));
+                rendered = fixHtmlPost(rendered);
+                const preview = showPreview(rendered);
                 write(dest, rendered);
 
                 console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
-                res.end(rendered);
+                res.end(preview);
               });
             } catch (error) {
               console.error(error);

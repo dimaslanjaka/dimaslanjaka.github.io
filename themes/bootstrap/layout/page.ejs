@@ -9,11 +9,13 @@
         <section class="mb-5">
           <%- page.body %>
 
+          <% if (page.type == 'post') { %>
           <!-- Preview image figure-->
           <figure class="mb-4">
             <img class="img-fluid rounded" width="900px" height="400px" src="<%- thumbnail(page) %>"
               alt="<%- page.title %>" />
           </figure>
+          <% } %>
         </section>
       </article>
 
@@ -25,6 +27,7 @@
       </section>
       <% } %>
 
+      <% if (page.comments && page.type == 'post') { %>
       <!-- Comments section-->
       <section class="mb-5">
         <div class="card bg-light">
@@ -33,6 +36,7 @@
           </div>
         </div>
       </section>
+      <% } %>
     </div>
 
     <%- include('common/aside') %>

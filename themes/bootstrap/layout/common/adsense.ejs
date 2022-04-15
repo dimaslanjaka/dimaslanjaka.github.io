@@ -16,6 +16,7 @@
         script.setAttribute('crossorigin', 'anonymous');
         script.onload = function () {
           var adsbygoogle = window.adsbygoogle || [];
+          adsbygoogle.push({ google_ad_client: "<%- config.adsense.pub %>", enable_page_level_ads: true });
           Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
             (ins) => {
               var adsid = ins.getAttribute('data-ad-slot');

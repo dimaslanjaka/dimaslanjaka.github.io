@@ -105,7 +105,7 @@ const filemanager = {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (typeof content != 'string') {
       if (typeof content == 'object' || Array.isArray(content)) {
-        content = JSON.stringify(content, null, 4);
+        content = JSON.stringifyWithCircularRefs(content, 4);
       } else {
         content = String(content);
       }

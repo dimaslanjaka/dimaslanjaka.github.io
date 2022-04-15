@@ -1,5 +1,5 @@
 import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
-import config, { post_generated_dir } from '../../types/_config';
+import config, { post_generated_dir, tmp } from '../../types/_config';
 import ejs_object from '../../ejs';
 import gulp, { TaskFunction } from 'gulp';
 import { parsePost } from '../../markdown/transformPosts';
@@ -17,6 +17,7 @@ import { generateIndex, generateLabel } from '../tasks/generate-archives';
 import './gen-middleware';
 import routedata from './routes.json';
 import jdom from '../../node/jsdom';
+import { inspect } from 'util';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -73,13 +74,16 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
     const isHomepage = req.url === '/';
     if (isHomepage) return next();
-    if (req.url.isMatch(/^\/api/)) return next();
+    // skip api, admin
+    if (req.url.isMatch(/^\/(api|admin)/)) return next();
+    // skip assets
+    if (req.url.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
     homepage.pathname = req.url; // let URL instance parse the url
     const pathname = homepage.pathname; // just get pathname
 
-    console.log('pathname', pathname);
-    console.log('req.url', req.url);
+    //console.log('pathname', pathname);
+    write(tmp('middleware.log'), inspect(req));
 
     const isPage = pathname.isMatch(/(.html|\/)$/);
 

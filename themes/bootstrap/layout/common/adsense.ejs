@@ -1,0 +1,10 @@
+<% if (config.adsense.enable) { %>
+  <script type="text/javascript">//<![CDATA[
+    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%- config.adsense.pub %>";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+    //]]></script>
+<% } %>
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->

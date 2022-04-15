@@ -61,6 +61,15 @@
       },
     },
     {
+      "command": "gulp server --nocache",
+      "name": "[dev] server",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+    },
+    {
       "command": "gulp --nocache",
       "name": "[dev] gulp:no-cache",
       "request": "launch",

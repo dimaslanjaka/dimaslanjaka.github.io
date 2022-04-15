@@ -5,16 +5,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title><%- page.title %> - <%- page.webtitle||config.title %></title>
-  <%- import('common/seo') %>
+  <%- include('common/seo') %>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="<%- config.favicon||'/assets/favicon.ico' %>" />
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="/css/styles.css" rel="stylesheet" />
   <link href="/css/custom.css" rel="stylesheet" />
+  <%- include('common/adsense') %>
 </head>
 
 <body>
-  <%- include('common/navbar.ejs') %>
+  <%- include('common/navbar') %>
   <% if (page.type == 'post'||page.type == 'page') { %>
   <%- include('page') %>
   <% } else { %>

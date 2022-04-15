@@ -1,9 +1,8 @@
-import { existsSync, join, mkdirSync, readFileSync, resolve, write } from '../node/filemanager';
+import { cwd, existsSync, join, mkdirSync, read, readFileSync, resolve, write } from '../node/filemanager';
 import yaml from 'yaml';
 import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
 import { toUnix } from 'upath';
-import { hostname } from 'os';
 
 export const root = join(__dirname, '../../');
 const file = join(root, '_config.yml');
@@ -14,19 +13,27 @@ const def_config = {
   include: [],
   skip_render: [],
   ignore: [],
+  adsense: {
+    article_ads: [],
+  },
 };
 
 const project_config_merge = Object.assign(def_config, yaml.parse(str) as typeof project_config_data);
+if (project_config_merge.adsense.enable) {
+  if (project_config_merge.adsense.article_ads.length) {
+    project_config_merge.adsense.article_ads.map((path) => {
+      let findpath = join(cwd(), path);
+      if (!existsSync(findpath)) {
+        findpath = join(root, path);
+      }
+      if (existsSync(findpath)) return read(findpath);
+    });
+  }
+}
 export type ProjectConfig = typeof project_config_merge & {
   [keys: string]: any;
 };
 const config: ProjectConfig = project_config_merge;
-
-if (process.env.NODE_ENV == 'development') {
-  // just change proxy localhost name to my localhost
-  // just run on my computer
-  if (hostname() == 'HP-14-bs0xx') config.url = 'http://adsense.webmanajemen.com:' + config.server.port;
-}
 
 config.url = config.url.replace(/\/+$/, '');
 

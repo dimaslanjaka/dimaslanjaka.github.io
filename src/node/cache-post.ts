@@ -70,6 +70,7 @@ export function getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): pos
  * @returns array of posts {@link CacheFile.getValues}
  */
 export function getAllPosts(opt = defaultResovableValue) {
+  if (postCache.getTotal() < 1) return [];
   return order_by(postCache.getValues(opt), config.index_generator.order_by)
     .filter((post: parsePostReturn) => post && post.metadata.type == 'post')
     .map((post) => modifyPost(post))

@@ -20,6 +20,7 @@ import jdom from '../../node/jsdom';
 let gulpIndicator = false;
 const homepage = new URL(config.url);
 let preview: string;
+const labelSrc: string[] = routedata.category.addAll(routedata.tag);
 
 const dom = new jdom();
 function showPreview(str: string | Buffer) {
@@ -78,10 +79,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     if (req.url.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname
+    // skip labels (tag and category)
+    if (labelSrc.includes(pathname)) return next();
+    if (pathname.isMatch(new RegExp('^/' + config.category_dir + '/'))) return next();
+    if (pathname.isMatch(new RegExp('^/' + config.tag_dir + '/'))) return next();
 
-    //console.log('pathname', pathname);
     //write(tmp('middleware.log'), inspect(req));
-    //console.log(req['_parsedUrl'].search);
+    console.log(req['_parsedUrl'].search);
 
     const isPage = pathname.isMatch(/(.html|\/)$/);
 
@@ -120,10 +124,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               return renderer(modify).then((rendered) => {
                 rendered = fixHtmlPost(rendered);
                 write(dest, rendered);
-                const preview = showPreview(rendered);
+                const previewed = showPreview(rendered);
 
                 console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
-                res.end(preview);
+                res.end(previewed);
               });
             } catch (error) {
               console.error(error);
@@ -179,12 +183,13 @@ if (config.server.compress) {
   ServerMiddleWare.unshift.apply(compress());
 }
 
-routedata.category.addAll(routedata.tag).forEach((path) => {
+labelSrc.forEach((path) => {
   ServerMiddleWare.push({
     route: path,
     handle: async function (req, res, next) {
       const pathname = req.url.replace(/\/+/, '/').replace(/^\//, '');
       const labelname = req.url.split('/').last(1)[0];
+      console.log('[generate][label]', labelname);
       const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
       let result: string;
       await generateLabel((str) => {

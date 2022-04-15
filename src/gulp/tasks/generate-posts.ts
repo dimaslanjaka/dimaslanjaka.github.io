@@ -226,7 +226,13 @@ const helpers: DynamicObject = {
   /**
    * get all posts (cached)
    */
-  getAllCachedPosts: getAllPosts().map((parsed) => Object.assign(parsed, parsed.metadata)),
+  getAllCachedPosts: (() => {
+    try {
+      return getAllPosts().map((parsed) => Object.assign(parsed, parsed.metadata));
+    } catch (error) {
+      return [];
+    }
+  })(),
   css: (path: string, attributes: DynamicObject = {}) => {
     const find = {
       cwdFile: join(cwd(), path),

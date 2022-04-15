@@ -19,6 +19,7 @@ import through2 from 'through2';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import CachePost from '../../node/cache-post';
 import './remove-inline-style';
+import { isValidHttpUrl } from '../utils';
 
 /**
  * Crossplatform path replacer
@@ -115,6 +116,10 @@ const copyPosts = () => {
         .map((e) => e.text)
         .join('\n');
       parse.metadata.wordcount = countWords(words);
+      if (parse.metadata.canonical) {
+        const canonical: string = parse.metadata.canonical;
+        if (!isValidHttpUrl(canonical)) parse.metadata.canonical = config.url + parse.metadata.canonical;
+      }
       // insert parsed to cache post
       cachePost.set(path, parse);
 

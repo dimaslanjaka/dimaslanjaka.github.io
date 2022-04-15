@@ -6,10 +6,14 @@ import { join, write } from '../../node/filemanager';
 // middleware generator
 const cats: string[] = [],
   tags: string[] = [];
-getAllPosts().forEach((post) => {
-  cats.addAll(post.metadata.category);
-  tags.addAll(post.metadata.tags);
-});
+try {
+  getAllPosts().forEach((post) => {
+    cats.addAll(post.metadata.category);
+    tags.addAll(post.metadata.tags);
+  });
+} catch (error) {
+  //
+}
 const map_tags = tags
   .removeEmpties()
   .unique()

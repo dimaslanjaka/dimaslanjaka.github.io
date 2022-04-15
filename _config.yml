@@ -87,14 +87,16 @@ external_link:
 # Render Draft Posts
 render_drafts: false
 
-# Home page setting
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-# example order_by:
-# -updated : order by updated descending
-# updated : order by updated ascending
+# Archive Settings
 index_generator:
-  order_by: -updated #updated | date
+  # order_by: Posts order. (Order by date descending by default)
+  # value: updated | date
+  # example order_by:
+  # -updated : order by updated descending
+  # updated : order by updated ascending
+  order_by: -updated
+  # Posts displayed per page. (0 = disable pagination)
+  per_page: 4
 
 # Category & Tag
 default_category: Uncategorized

@@ -23,49 +23,57 @@ const listTags: { [key: string]: parsePostReturn[] } = {};
 /**
  * all mapped posts
  */
-const allPosts = Bluebird.all(getAllPosts())
-  .map((post) => {
-    if (!post) return;
-    if (!post.metadata.type || !post.metadata.type.length)
-      if (post.fileTree) if (typeof post.fileTree.public == 'string') if (!post.metadata.type) post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
-    const cats = post.metadata.category;
-    const tags = post.metadata.tags;
-    if (cats) {
-      if (Array.isArray(cats)) {
-        cats.forEach((cat) => {
-          if (!listCats[cat]) listCats[cat] = [];
-          listCats[cat].push(post);
-        });
-      }
-    }
-    if (tags) {
-      if (Array.isArray(tags)) {
-        tags.forEach((tag) => {
-          if (!listTags[tag]) listTags[tag] = [];
-          listTags[tag].push(post);
-        });
-      }
-    }
-    return post;
-  })
-  // filter unecessary files
-  .filter((post) => {
-    if (!post) return false;
-    if (!post.metadata) return false;
-    if (!post.metadata.url) return false;
-    const u = post.metadata.url;
-    const ex = {
-      /**
-       * standard non-sitemap files
-       */
-      major: !u.match(/\/.(guid|git|eslint|tslint|prettierc)|(404).html$/),
-      /**
-       * project test development files
-       */
-      dev: !u.match(/(Test|guide)\//),
-    };
-    return Object.values(ex).every(Boolean);
-  });
+const allPosts = (() => {
+  try {
+    return (
+      Bluebird.all(getAllPosts())
+        .map((post) => {
+          if (!post) return;
+          if (!post.metadata.type || !post.metadata.type.length)
+            if (post.fileTree) if (typeof post.fileTree.public == 'string') if (!post.metadata.type) post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
+          const cats = post.metadata.category;
+          const tags = post.metadata.tags;
+          if (cats) {
+            if (Array.isArray(cats)) {
+              cats.forEach((cat) => {
+                if (!listCats[cat]) listCats[cat] = [];
+                listCats[cat].push(post);
+              });
+            }
+          }
+          if (tags) {
+            if (Array.isArray(tags)) {
+              tags.forEach((tag) => {
+                if (!listTags[tag]) listTags[tag] = [];
+                listTags[tag].push(post);
+              });
+            }
+          }
+          return post;
+        })
+        // filter unecessary files
+        .filter((post) => {
+          if (!post) return false;
+          if (!post.metadata) return false;
+          if (!post.metadata.url) return false;
+          const u = post.metadata.url;
+          const ex = {
+            /**
+             * standard non-sitemap files
+             */
+            major: !u.match(/\/.(guid|git|eslint|tslint|prettierc)|(404).html$/),
+            /**
+             * project test development files
+             */
+            dev: !u.match(/(Test|guide)\//),
+          };
+          return Object.values(ex).every(Boolean);
+        })
+    );
+  } catch (error) {
+    return Bluebird.resolve([]);
+  }
+})();
 
 /**
  * copy asset sitemaps

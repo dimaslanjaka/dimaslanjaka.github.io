@@ -16,6 +16,15 @@
           </figure>
         </section>
       </article>
+
+      <% if (config.adsense.enable && config.adsense.multiplex_ads.length) { %>
+      <section class="mb-5">
+        <div class="card bg-light">
+          <%- config.adsense.multiplex_ads[0] %>
+        </div>
+      </section>
+      <% } %>
+
       <!-- Comments section-->
       <section class="mb-5">
         <div class="card bg-light">

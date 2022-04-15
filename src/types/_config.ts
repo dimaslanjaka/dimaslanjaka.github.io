@@ -21,14 +21,18 @@ const def_config = {
 
 const project_config_merge = Object.assign(def_config, yaml.parse(str) as typeof project_config_data);
 if (project_config_merge.adsense.enable) {
+  const findads = (path: string) => {
+    let findpath = join(cwd(), path);
+    if (!existsSync(findpath)) {
+      findpath = join(root, path);
+    }
+    if (existsSync(findpath)) return String(read(findpath));
+  };
   if (project_config_merge.adsense.article_ads.length) {
-    project_config_merge.adsense.article_ads = project_config_merge.adsense.article_ads.map((path) => {
-      let findpath = join(cwd(), path);
-      if (!existsSync(findpath)) {
-        findpath = join(root, path);
-      }
-      if (existsSync(findpath)) return String(read(findpath));
-    });
+    project_config_merge.adsense.article_ads = project_config_merge.adsense.article_ads.map(findads);
+  }
+  if (project_config_merge.adsense.multiplex_ads.length) {
+    project_config_merge.adsense.multiplex_ads = project_config_merge.adsense.multiplex_ads.map(findads);
   }
 }
 export type ProjectConfig = typeof project_config_merge & {

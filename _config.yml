@@ -104,7 +104,8 @@ default_category: Uncategorized
 # gulp generator task options
 generator:
   # enable cache method globally
-  cache: true
+  # sligthly reduce memory usages
+  cache: false
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

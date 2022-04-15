@@ -187,10 +187,10 @@ labelSrc.forEach((path) => {
   ServerMiddleWare.push({
     route: path,
     handle: async function (req, res, next) {
-      const pathname = req.url.replace(/\/+/, '/').replace(/^\//, '');
-      const labelname = req.url.split('/').last(1)[0];
-      console.log('[generate][label]', labelname);
+      const pathname = req['_parsedUrl'].pathname.replace(/\/+/, '/').replace(/^\//, '');
+      const labelname = req['_parsedUrl'].pathname.split('/').removeEmpties().last(1)[0];
       const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
+      //console.log('[generate][label]', pathname, labelname);
       let result: string;
       await generateLabel((str) => {
         result = str;

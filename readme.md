@@ -51,10 +51,17 @@ gulp deploy # deploy to github pages
 gulp server # development, render on-fly
 ```
 ### no cache
+you can pass argument `--nocache`
 ```bash
 gulp generate --nocache # generate all without reading cache instead write new cache (fresh generate)
 gulp server --nocache # development without reading cache, instead write fresh cache
 ```
+or you can put global generator in `_config.yml`
+```yaml
+generator:
+  cache: false # this will ignore any caching functions
+```
+
 ### standalone
 Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
 - `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)

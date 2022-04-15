@@ -23,8 +23,9 @@
       <!-- Nested row for non-featured blog posts-->
       <% var allposts = getAllCachedPosts %>
       <div class="row">
-        <% for( let index = 1; index < 5; index++ ) { %>
+        <% for( let index = 0; index < 4; index++ ) { %>
         <% var post = allposts[index] %>
+        <% if (post == latestPost) {continue;} %>
         <div class="col-md-6">
           <div class="card mb-4" style="height: 35em;">
             <a href="<%- post.url %>"><img class="card-img-top" src="<%- thumbnail(post) %>" alt="<%- post.title %>"

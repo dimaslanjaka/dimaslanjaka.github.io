@@ -189,17 +189,14 @@ labelSrc.forEach((path) => {
     handle: async function (req, res, next) {
       const pathname = req['_parsedUrl'].pathname.replace(/\/+/, '/').replace(/^\//, '');
       const labelname = req['_parsedUrl'].pathname.split('/').removeEmpties().last(1)[0];
-      const sourceArchive = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
-      //console.log('[generate][label]', pathname, labelname);
+      const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
+      console.log('[generate][label]', pathname, labelname, generatedTo);
       let result: string;
       await generateLabel((str) => {
         result = str;
       }, labelname);
-      if (existsSync(sourceArchive)) {
-        result = readFileSync(sourceArchive, 'utf-8');
-      }
       if (result) {
-        res.end(showPreview(readFileSync(result)));
+        return res.end(showPreview(result));
       }
       next();
     },

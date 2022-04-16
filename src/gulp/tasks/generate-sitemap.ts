@@ -8,10 +8,10 @@ import { TaskCallback } from 'undertaker';
 import chalk from 'chalk';
 import 'js-prototypes';
 import moment from 'moment';
-import { parsePostReturn } from '../../markdown/transformPosts';
 import { renderer } from './generate-posts';
 import './sitemap';
-import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import modifyPost from '../../markdown/transformPosts/modifyPost';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();
@@ -30,7 +30,7 @@ function generateGoogleNewsSitemap(done: TaskCallback) {
       const val: ClassItemType = {
         publication_name: item.author,
         publication_language: item.lang || 'en',
-        publication_date: item.date,
+        publication_date: item.date.toString(),
         title: item.title,
         location: fixURLSitemap(item.url).toString(),
       };
@@ -64,7 +64,7 @@ function fixURLSitemap(url: string) {
  */
 function generateSitemapHtml(done?: TaskCallback) {
   const log = logname + chalk.blue('[html]');
-  const exclude = config.sitemap.exclude.map((s) => '!' + s.replace(/^!+/, ''));
+  //const exclude = config.sitemap.exclude.map((s) => '!' + s.replace(/^!+/, ''));
   Bluebird.all(pages.getValues())
     .map((item) => {
       return `<a href="${fixURLSitemap(item.url).pathname}">${item.title}</a>`;
@@ -77,7 +77,7 @@ function generateSitemapHtml(done?: TaskCallback) {
       const content = items.join('<br/>');
       const url = new URL(config.url);
       url.pathname = '/sitemap.html';
-      const opt: parsePostReturn = {
+      const opt: postMap = {
         metadata: {
           title: 'Sitemap',
           subtitle: 'Sitemap ' + new URL(config.url).host,

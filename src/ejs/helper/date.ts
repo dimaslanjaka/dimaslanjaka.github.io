@@ -1,7 +1,43 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import moment, { isMoment } from 'moment-timezone';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 import { postResult } from '../../node/cache-post';
 import config from '../../types/_config';
+
+export function getLatestDateArray(arr: moment.MomentInput[]) {
+  arr = arr.removeEmpties();
+  if (arr.length) {
+    const reduce = arr.reduce((a, b) => (a > b ? a : b));
+    return moment(reduce).format('YYYY-MM-DDTHH:mm:ssZ');
+  }
+}
+
+/**
+ * Sort post by date descending
+ * @param a
+ * @param b
+ * @returns
+ */
+export function sortByDate(a: postMap, b: postMap, order: 'desc' | 'asc' = 'desc') {
+  const dA = a.metadata.updated || a.metadata.date;
+  const dB = b.metadata.updated || b.metadata.date;
+  if (order == 'desc') {
+    if (dA < dB) {
+      return 1;
+    }
+    if (dA > dB) {
+      return -1;
+    }
+  } else {
+    if (dA > dB) {
+      return 1;
+    }
+    if (dA < dB) {
+      return -1;
+    }
+  }
+  return 0;
+}
 
 /**
  * get date local

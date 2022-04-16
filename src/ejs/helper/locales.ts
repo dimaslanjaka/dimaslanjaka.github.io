@@ -1,4 +1,4 @@
-import { parsePostReturn } from '../../markdown/transformPosts';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 
 const localeMap = {
   en: 'en_US',
@@ -17,7 +17,7 @@ const localeMap = {
   vi: 'vi_VN',
 };
 
-export function get_locale(page: string | parsePostReturn['metadata']): string {
+export function get_locale(page: string | postMap['metadata']): string {
   let str = '';
   if (typeof page == 'string') {
     str = page;

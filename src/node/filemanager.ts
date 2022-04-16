@@ -182,7 +182,16 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
 export function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]): ReturnType<typeof fs.readFileSync> | null {
   if (existsSync(path)) return readFileSync(path, opt);
 }
-export const join = (...str: string[]) => removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
+/**
+ * smart join to unix path
+ * * removes empty/null/undefined
+ * @param str
+ * @returns
+ */
+export const join = (...str: any[]) => {
+  str = str.map((s) => String(s)).removeEmpties();
+  return removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
+};
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;

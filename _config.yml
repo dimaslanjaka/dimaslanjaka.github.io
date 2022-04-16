@@ -37,7 +37,7 @@ source_dir: source
 public_dir: docs
 # slug tag config.url/tag_dir/tagname
 tag_dir: tags
-# slug archive config.url/archive_dir/
+# slug archive config.url/archive_dir/ (homepage pagination)
 archive_dir: archives
 # slug category config.url/category_dir/categoryName
 category_dir: categories
@@ -96,7 +96,7 @@ index_generator:
   # updated : order by updated ascending
   order_by: -updated
   # Posts displayed per page. (0 = disable pagination)
-  per_page: 4
+  per_page: 8
 
 # Category & Tag
 default_category: Uncategorized
@@ -150,7 +150,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: iridium
+theme: bootstrap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

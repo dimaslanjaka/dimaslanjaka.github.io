@@ -9,9 +9,9 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import slugify from '../node/slugify/index';
-import { parsePostReturn } from './transformPosts';
 import { write } from '../node/filemanager';
 import { tmp } from '../types/_config';
+import { postMap } from './transformPosts/parsePost';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 
@@ -70,12 +70,12 @@ const verbose = false;
 
 /**
  * Fixable render markdown mixed with html
- * * render {@link parsePostReturn.body}
+ * * render {@link postMap.body}
  * @todo render markdown to html
  * @param parse
  * @returns
  */
-export function renderBodyMarkdown(parse: parsePostReturn) {
+export function renderBodyMarkdown(parse: postMap) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
   let body = parse.body || parse.content;

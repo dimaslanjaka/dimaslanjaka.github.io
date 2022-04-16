@@ -21,6 +21,6 @@ export default class MeasureTime {
     console.log(this.toString());
   }
   toString() {
-    return `time taken=> ${(this.endTime - this.startTime) / 1000} seconds`;
+    return `time taken => ${(this.endTime - this.startTime) / 1000} seconds`;
   }
 }

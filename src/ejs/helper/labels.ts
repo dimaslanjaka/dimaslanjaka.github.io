@@ -1,4 +1,4 @@
-import { parsePostReturn } from '../../markdown/transformPosts';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 import { join } from '../../node/filemanager';
 import config from '../../types/_config';
 const tag_dir = config.tag_dir;
@@ -32,7 +32,7 @@ const homepage = new URL(config.url);
  * <% }) %>
  * ```
  */
-export function tags(page: parsePostReturn) {
+export function tags(page: postMap) {
   const result: Label[] = [];
   const target = page.tags || page.metadata.tags || [];
   target.forEach((tag: string) => {
@@ -48,7 +48,7 @@ export function tags(page: parsePostReturn) {
  * @returns array of object same as {@link tags}
  * @see {@link tags}
  */
-export function categories(page: parsePostReturn) {
+export function categories(page: postMap) {
   const result: Label[] = [];
   const target = page.category || page.metadata.category || [];
   target.forEach((tag: string) => {

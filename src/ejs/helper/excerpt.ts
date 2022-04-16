@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import { parsePostReturn } from '../../markdown/transformPosts';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 import { ProjectConfig } from '../../types/_config';
 
 /**
@@ -13,7 +13,7 @@ import { ProjectConfig } from '../../types/_config';
  * // escaped html
  * <%= excerpt(page) %>
  */
-export function excerpt(page: parsePostReturn['metadata'] | ProjectConfig, length = 200) {
+export function excerpt(page: postMap['metadata'] | ProjectConfig, length = 200) {
   let str: string;
   if (page.subtitle) {
     str = page.subtitle;
@@ -32,7 +32,7 @@ export function excerpt(page: parsePostReturn['metadata'] | ProjectConfig, lengt
  * @param page
  * @returns
  */
-export function nExcerpt(page: parsePostReturn['metadata'] | ProjectConfig) {
+export function nExcerpt(page: postMap['metadata'] | ProjectConfig) {
   const try1 = excerpt(page);
   if (try1 == page.title) return null;
   return try1;

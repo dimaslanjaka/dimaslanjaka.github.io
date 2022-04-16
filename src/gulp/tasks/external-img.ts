@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { curly } from 'node-libcurl';
-import { parsePostReturn, saveParsedPost } from '../../markdown/transformPosts';
+import { saveParsedPost } from '../../markdown/transformPosts';
 import { basename, dirname, join } from 'path';
 import { appendFileSync, existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 import 'js-prototypes';
@@ -8,6 +8,7 @@ import chalk from 'chalk';
 import bluebird from 'bluebird';
 import { md5 } from '../../node/md5-file';
 import { cwd } from '../../node/filemanager';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 
 export interface ImgLib {
   /**
@@ -46,9 +47,9 @@ export interface ImgLibData {
    */
   err?: boolean | string | Error;
   /**
-   * @see {@link parsePostReturn.fileTree}
+   * @see {@link postMap.fileTree}
    */
-  fileTree?: parsePostReturn['fileTree'];
+  fileTree?: postMap['fileTree'];
 }
 
 /**
@@ -81,7 +82,7 @@ let HexoURL: URL;
  * * Store database on `${workspaceFolder}/source/_data/external-images.json`
  * @param parse parsed
  */
-export default async function downloadImg(parse: parsePostReturn) {
+export default async function downloadImg(parse: postMap) {
   if (!parse) return;
 
   if (!HexoURL) HexoURL = new URL(parse.config.url);

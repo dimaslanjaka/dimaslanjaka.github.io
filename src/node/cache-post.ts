@@ -1,10 +1,11 @@
-import { modifyPost } from '../markdown/transformPosts/modifyPost';
-import { parsePostReturn } from '../markdown/transformPosts';
+import modifyPost from '../markdown/transformPosts/modifyPost';
+import { postMap } from '../markdown/transformPosts/parsePost';
 import CacheFile, { defaultResovableValue } from './cache';
 import config from '../types/_config';
-import memoizer, { memoizeFs } from './memoize-fs';
+import memoizer from './memoize-fs';
+import { mergedPostMap } from '../markdown/transformPosts/postMapper';
 
-export type postResult = parsePostReturn & parsePostReturn['metadata'];
+export type postResult = mergedPostMap;
 const postCache = new CacheFile('posts');
 
 /**
@@ -12,7 +13,7 @@ const postCache = new CacheFile('posts');
  * @param post
  * @returns
  */
-function fixPost(post: parsePostReturn) {
+function fixPost(post: postMap) {
   if (typeof post.metadata.url == 'string') {
     const url = new URL(post.metadata.url);
     if (url.pathname.isMatch(/.md$/)) {
@@ -54,7 +55,7 @@ function order_by(array: any[], by: 'updated' | 'date' | '-updated' | '-date' | 
  * @returns array of {@link postResult}
  */
 export function getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
-  const posts: parsePostReturn[] = getAllPosts({ max: max, resolveValue: true });
+  const posts: postMap[] = getAllPosts({ max: max, resolveValue: true });
   return order_by(posts, by)
     .removeEmpties()
     .splice(0, max)
@@ -72,7 +73,7 @@ export function getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): pos
 export function getAllPosts(opt = defaultResovableValue) {
   if (postCache.getTotal() < 1) return [];
   return order_by(postCache.getValues(opt), config.index_generator.order_by)
-    .filter((post: parsePostReturn) => post && post.metadata.type == 'post')
+    .filter((post: postMap) => post && post.metadata.type == 'post')
     .map((post) => modifyPost(post))
     .map((post) => fixPost(post));
 }

@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import { parsePostReturn } from '../transformPosts';
 import { cwd, existsSync, removeMultiSlashes, statSync } from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
 import config from '../../types/_config';
@@ -14,6 +13,8 @@ import yargs from 'yargs';
 import CacheFile from '../../node/cache';
 import ErrorMarkdown from '../error-markdown';
 import moment from 'moment';
+import { postMap } from './parsePost';
+import { archiveMap, mergedPostMap } from './postMapper';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');
@@ -22,12 +23,14 @@ const homepage = new URL(config.url);
 
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
+type modifyPostType = postMap & mergedPostMap & archiveMap;
+
 /**
  * Modify Post With Defined Conditions
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function originalModifyPost(parse: parsePostReturn) {
+export function originalModifyPost<T extends modifyPostType>(parse: T): T {
   const sourceFile = parse.fileTree.source;
   const publicFile = parse.fileTree.public;
   if (parse.metadata) {
@@ -48,18 +51,20 @@ export function originalModifyPost(parse: parsePostReturn) {
       }
     }
 
-    if (parse.metadata.date && !parse.metadata.date.includes('+')) {
+    if (parse.metadata.date && !parse.metadata.date.toString().includes('+')) {
       try {
-        parse.metadata.date = moment(parse.metadata.date).format('YYYY-MM-DDTHH:mm:ssZ');
+        parse.metadata.date = moment(parse.metadata.date.toString()).format('YYYY-MM-DDTHH:mm:ssZ');
       } catch (e) {
         console.log(parse.metadata.date, 'invalid moment date format');
       }
     }
 
     // override permalink
-    homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
-    if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://'))) parse.metadata.url = homepage.toString();
-    if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
+    if (publicFile) {
+      homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
+      if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://'))) parse.metadata.url = homepage.toString();
+      if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
+    }
 
     // fix lang
     if (!parse.metadata.lang) parse.metadata.lang = 'en';
@@ -168,8 +173,8 @@ export function originalModifyPost(parse: parsePostReturn) {
  * @param cache read cache? default true
  * @returns modified parsed post object
  */
-export function cacheableModifyPost(parse: parsePostReturn, sourceFile: string = null, cache = true) {
-  let result: parsePostReturn;
+export function cacheableModifyPost(parse: Parameters<typeof originalModifyPost>[0], sourceFile: string = null, cache = true): ReturnType<typeof originalModifyPost> {
+  let result: postMap;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
@@ -185,7 +190,7 @@ export function cacheableModifyPost(parse: parsePostReturn, sourceFile: string =
   } else {
     // cache hit
     result = modCache.get(source);
-    //<parsePostReturn>
+    //<postMap>
     if (typeof result === 'string') {
       try {
         result = JSON.parse(result);
@@ -207,5 +212,4 @@ if (config.generator.cache) {
   modifyPost = originalModifyPost;
 }
 export default modifyPost;
-export { modifyPost };
 _g.modifyPost = modifyPost;

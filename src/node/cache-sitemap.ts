@@ -1,17 +1,17 @@
-import { parsePostReturn } from '../markdown/transformPosts';
-import CacheFile, { defaultResovableValue, ResovableValue } from './cache';
+import { postMap } from '../markdown/transformPosts/parsePost';
+import CacheFile, { defaultResovableValue } from './cache';
 
 /**
  * all sitemaps
  */
 interface SitemapInfo {
   [key: string]: any;
-  title?: string;
-  date?: string;
-  updated?: string;
-  excerpt?: string;
-  thumbnail?: string;
-  url?: string;
+  title?: postMap['metadata']['title'];
+  date?: postMap['metadata']['date'];
+  updated?: postMap['metadata']['updated'];
+  excerpt?: postMap['metadata']['excerpt'];
+  thumbnail?: postMap['metadata']['thumbnail'];
+  url?: postMap['metadata']['url'];
   views?: number;
 }
 

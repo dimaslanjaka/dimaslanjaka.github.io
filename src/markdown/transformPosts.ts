@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { dirname, existsSync, mkdirSync, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
-import { parsePostReturn } from './transformPosts/parsePost';
+import { postMap as postMap } from './transformPosts/parsePost';
 import color from '../node/color';
-export { parsePostReturn } from './transformPosts/parsePost';
 export { parsePost } from './transformPosts/parsePost';
 
 /**
@@ -11,7 +10,7 @@ export { parsePost } from './transformPosts/parsePost';
  * @param parsed return {@link parsePost}
  * @param file file path to save
  */
-export function saveParsedPost(parsed: parsePostReturn, file: string) {
+export function saveParsedPost(parsed: postMap, file: string) {
   if (!existsSync(dirname(file))) mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, buildPost(parsed));
 }
@@ -21,7 +20,7 @@ export function saveParsedPost(parsed: parsePostReturn, file: string) {
  * @param parsed parsed post return {@link parsePost}
  * @returns
  */
-export function buildPost(parsed: parsePostReturn) {
+export function buildPost(parsed: postMap) {
   return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
 }
 
@@ -30,7 +29,7 @@ export function buildPost(parsed: parsePostReturn) {
  * @param parse
  * @returns
  */
-export const validateParsed = (parse: parsePostReturn) => {
+export const validateParsed = (parse: postMap) => {
   if (parse === null) return false;
   if (typeof parse === 'undefined') return false;
   if (parse && !parse.body) {

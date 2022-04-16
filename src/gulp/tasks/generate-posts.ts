@@ -3,7 +3,7 @@ import { toUnix } from 'upath';
 import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
 import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
 import ejs_object from '../../ejs';
-import { buildPost, parsePost, parsePostReturn, validateParsed } from '../../markdown/transformPosts';
+import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
 import chalk from 'chalk';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import CacheFile from '../../node/cache';
@@ -15,10 +15,11 @@ import yargs from 'yargs';
 import Bluebird from 'bluebird';
 import Sitemap from '../../node/cache-sitemap';
 import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
-import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import modifyPost from '../../markdown/transformPosts/modifyPost';
 import color from '../../node/color';
 import through2 from 'through2';
 import sass from 'node-sass';
+import { postMap } from '../../markdown/transformPosts/parsePost';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -269,7 +270,7 @@ interface Override extends ejs.Options {
 /**
  * EJS Renderer Engine
  * @param parsed
- * @param override override {@link Override} object ejs options {@link ejs.Options}, page data {@link parsePostReturn} default empty object
+ * @param override override {@link Override} object ejs options {@link ejs.Options}, page data {@link postMap} default empty object
  * @returns rendered promise (Promise\<string\>)
  * renderer injection
  * ```js
@@ -285,7 +286,7 @@ interface Override extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export function renderer(parsed: parsePostReturn, override: Override = {}) {
+export function renderer(parsed: postMap, override: Override = {}) {
   return new Promise((resolve: (arg: string) => any) => {
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
@@ -298,20 +299,24 @@ export function renderer(parsed: parsePostReturn, override: Override = {}) {
     const pagedata = Object.assign(defaultOpt, parsed.metadata, parsed, override);
 
     page_url.pathname = parsed.permalink;
-    const ejs_data = Object.assign(parsed, helpers, {
-      // page metadata
-      page: pagedata,
-      // site config
-      config: config,
-      // layout theme
-      root: theme_dir,
-      // theme config
-      theme: theme_config,
-      // permalink
-      url: page_url.toString(),
-      // content
-      content: null,
-    });
+    const ejs_data = Object.assign(
+      parsed,
+      {
+        // page metadata
+        page: pagedata,
+        // site config
+        config: config,
+        // layout theme
+        root: theme_dir,
+        // theme config
+        theme: theme_config,
+        // permalink
+        url: page_url.toString(),
+        // content
+        content: null,
+      },
+      helpers
+    );
 
     // render body html to ejs compiled
     ejs_data.page.content = ejs_object.render(body, ejs_data);

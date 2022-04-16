@@ -16,10 +16,13 @@ import { renderBodyMarkdown } from '../../markdown/toHtml';
 import { parse as parseHTML } from 'node-html-parser';
 import chalk from 'chalk';
 import through2 from 'through2';
-import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import modifyPost from '../../markdown/transformPosts/modifyPost';
 import CachePost from '../../node/cache-post';
 import './remove-inline-style';
 import { isValidHttpUrl } from '../utils';
+import CacheFile from '../../node/cache';
+import scheduler from '../../node/scheduler';
+import Bluebird from 'bluebird';
 
 /**
  * Crossplatform path replacer
@@ -70,6 +73,14 @@ gulp.task('copy:assets', copyAssets);
 const logname = chalk.cyan('[copy][md]');
 
 const cachePost = new CachePost();
+const cacheTags = new CacheFile('postTags');
+const cacheCats = new CacheFile('postCats');
+interface GroupLabel {
+  [key: string]: ReturnType<typeof parsePost>[];
+}
+const postCats: GroupLabel = {};
+const postTags: GroupLabel = {};
+
 const copyPosts = () => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
   const run = gulp.src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir }).pipe(
@@ -120,8 +131,22 @@ const copyPosts = () => {
         const canonical: string = parse.metadata.canonical;
         if (!isValidHttpUrl(canonical)) parse.metadata.canonical = config.url + parse.metadata.canonical;
       }
-      // insert parsed to cache post
+      // insert parsed to caches
       cachePost.set(path, parse);
+      parse.metadata.category.forEach((name) => {
+        if (!name) return;
+        // init
+        if (!postCats[name]) postCats[name] = [];
+        // prevent duplicate push
+        if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(parse);
+      });
+      parse.metadata.tags.forEach((name) => {
+        if (!name) return;
+        // init
+        if (!postTags[name]) postTags[name] = [];
+        // prevent duplicate push
+        if (!postTags[name].find(({ title }) => title === parse.metadata.title)) postTags[name].push(parse);
+      });
 
       //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
       const build = buildPost(parse);
@@ -132,7 +157,22 @@ const copyPosts = () => {
       next(null, file);
     })
   );
-  return determineDirname(run).pipe(gulp.dest(post_public_dir));
+  return determineDirname(run)
+    .pipe(gulp.dest(post_public_dir))
+    .on('end', () => {
+      Bluebird.all([postCats, postTags]).each((group, index) => {
+        for (const name in group) {
+          if (Object.prototype.hasOwnProperty.call(group, name)) {
+            const posts = group[name];
+            if (index === 1) {
+              cacheTags.set(name, posts);
+            } else {
+              cacheCats.set(name, posts);
+            }
+          }
+        }
+      });
+    });
 };
 
 gulp.task('copy:posts', copyPosts);

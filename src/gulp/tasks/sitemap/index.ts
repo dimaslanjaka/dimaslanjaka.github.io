@@ -1,13 +1,14 @@
 import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
-import CachePost, { getAllPosts } from '../../../node/cache-post';
+import { getAllPosts } from '../../../node/cache-post';
 import { join, readFileSync, write } from '../../../node/filemanager';
 import config, { post_generated_dir } from '../../../types/_config';
 import 'js-prototypes';
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
-import { parsePostReturn } from '../../../markdown/transformPosts';
+import { getLatestDateArray, sortByDate } from '../../../ejs/helper/date';
+import { postMap } from '../../../markdown/transformPosts/parsePost';
 
 /// define global variable without refetch them
 const logname = chalk.magentaBright('[sitemap-xml]');
@@ -15,11 +16,11 @@ const homepage = new URL(config.url);
 /**
  * list posts of each categories
  */
-const listCats: { [key: string]: parsePostReturn[] } = {};
+const listCats: { [key: string]: postMap[] } = {};
 /**
  * list posts of each tags
  */
-const listTags: { [key: string]: parsePostReturn[] } = {};
+const listTags: { [key: string]: postMap[] } = {};
 /**
  * all mapped posts
  */
@@ -84,41 +85,6 @@ function copy() {
   return gulp.src('**/*.{xsd,xsl}', { cwd: srcdir }).pipe(gulp.dest(post_generated_dir));
 }
 
-function getLatestDateArray(arr: any[]) {
-  arr = arr.removeEmpties();
-  if (arr.length) {
-    const reduce = arr.reduce((a, b) => (a > b ? a : b));
-    return moment(reduce).format('YYYY-MM-DDTHH:mm:ssZ');
-  }
-}
-
-/**
- * Sort post by date descending
- * @param a
- * @param b
- * @returns
- */
-function sortByDate(a: parsePostReturn, b: parsePostReturn, order: 'desc' | 'asc' = 'desc') {
-  const dA = a.metadata.updated || a.metadata.date;
-  const dB = b.metadata.updated || b.metadata.date;
-  if (order == 'desc') {
-    if (dA < dB) {
-      return 1;
-    }
-    if (dA > dB) {
-      return -1;
-    }
-  } else {
-    if (dA > dB) {
-      return 1;
-    }
-    if (dA < dB) {
-      return -1;
-    }
-  }
-  return 0;
-}
-
 function generateLabels(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/tag-sitemap.xml');
   const readXML = readFileSync(sourceIndexXML, 'utf-8');
@@ -127,8 +93,8 @@ function generateLabels(done?: TaskCallback) {
   for (const tagname in listCats) {
     if (Object.prototype.hasOwnProperty.call(listCats, tagname)) {
       const tags = listCats[tagname].sort(sortByDate).map((item) => {
-        if (item.metadata.updated) return moment(item.metadata.updated);
-        if (item.metadata.date) return moment(item.metadata.date);
+        if (item.metadata.updated) return moment(item.metadata.updated.toString());
+        if (item.metadata.date) return moment(item.metadata.date.toString());
       });
       const lastmod = moment(getLatestDateArray(tags)).format('YYYY-MM-DDTHH:mm:ssZ');
       homepage.pathname = join(config.tag_dir, tagname);

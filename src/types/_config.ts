@@ -4,12 +4,15 @@ import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
 import { toUnix } from 'upath';
 import gulp from 'gulp';
+import yargs from 'yargs';
+
+const argv = yargs(process.argv.slice(2)).argv;
 
 export const root = join(__dirname, '../../');
 const file = join(root, '_config.yml');
 const str = readFileSync(file, 'utf-8');
 const def_config = {
-  verbose: false,
+  verbose: argv['verbose'],
   exclude: [],
   include: [],
   skip_render: [],

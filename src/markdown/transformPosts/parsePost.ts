@@ -8,13 +8,49 @@ import uuidv4 from '../../node/uuid';
 import { toUnix } from 'upath';
 import ErrorMarkdown from '../error-markdown';
 import moment from 'moment';
+import { dateMapper, DeepPartial } from './postMapper';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const homepage = new URL(config.url);
 const parseCache = new CacheFile('parsePost');
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
-export type parsePostReturn = DynamicObject & {
+/**
+ * post metadata information (title, etc)
+ */
+export type postMeta = DynamicObject & {
+  /**
+   * Article language code
+   */
+  lang?: string;
+  /**
+   * Article title
+   */
+  title: string;
+  subtitle: string;
+  uuid?: string;
+  updated?: string | dateMapper;
+  date: string | dateMapper;
+  description?: string;
+  tags: string[];
+  category: string[];
+  photos?: string[];
+  cover?: string;
+  thumbnail?: string;
+  /**
+   * full url
+   */
+  url?: string;
+  /**
+   * just pathname
+   */
+  permalink?: string;
+  /**
+   * archive (index, tags, categories)
+   */
+  type?: 'post' | 'page' | 'archive';
+};
+export type postMap = DynamicObject & {
   /**
    * Article metadata
    */
@@ -36,38 +72,7 @@ export type parsePostReturn = DynamicObject & {
   /**
    * Article metadata
    */
-  metadata?: DynamicObject & {
-    /**
-     * Article language code
-     */
-    lang?: string;
-    /**
-     * Article title
-     */
-    title: string;
-    subtitle: string;
-    uuid?: string;
-    updated?: string;
-    date: string;
-    description?: string;
-    tags: string[];
-    category: string[];
-    photos?: string[];
-    cover?: string;
-    thumbnail?: string;
-    /**
-     * full url
-     */
-    url?: string;
-    /**
-     * just pathname
-     */
-    permalink?: string;
-    /**
-     * archive (index, tags, categories)
-     */
-    type?: 'post' | 'page' | 'archive';
-  };
+  metadata?: DeepPartial<postMeta>;
   /**
    * Article body
    */
@@ -81,7 +86,7 @@ export type parsePostReturn = DynamicObject & {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function originalParsePost(text: string, ..._: any[]): parsePostReturn | null {
+export function originalParsePost(text: string, ..._: any[]): postMap | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -95,7 +100,7 @@ export function originalParsePost(text: string, ..._: any[]): parsePostReturn | 
   }
 
   const mapper = (m: RegExpMatchArray) => {
-    let meta: parsePostReturn['metadata'] = yaml.parse(m[1]);
+    let meta: postMap['metadata'] = yaml.parse(m[1]);
     let body = m[2];
     if (!body) body = 'no content ' + (meta.title || '');
     //write(tmp('parsePost', 'original.log'), body).then(console.log);
@@ -120,7 +125,7 @@ export function originalParsePost(text: string, ..._: any[]): parsePostReturn | 
             [key]: meta[key],
           }),
           {}
-        ) as parsePostReturn['metadata'];
+        ) as postMap['metadata'];
     }
     // default category and tags
     if (!meta.category) meta.category = ['Uncategorized'];
@@ -167,7 +172,7 @@ export function originalParsePost(text: string, ..._: any[]): parsePostReturn | 
       meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
     }
 
-    const result: parsePostReturn = {
+    const result: postMap = {
       metadata: meta,
       body: body,
       content: body,
@@ -193,12 +198,12 @@ export function originalParsePost(text: string, ..._: any[]): parsePostReturn | 
 }
 
 /**
- * generate {@link parsePostReturn.fileTree}
+ * generate {@link postMap.fileTree}
  * @param source
  * @param parsed
  * @returns
  */
-function generateFileTree(source: string, parsed: parsePostReturn) {
+function generateFileTree(source: string, parsed: postMap) {
   if (existsSync(source)) {
     if (parsed)
       parsed.fileTree = {
@@ -220,7 +225,7 @@ function generateFileTree(source: string, parsed: parsePostReturn) {
  * @returns
  */
 export function cacheableParsePost(text: string, sourceFile: string = null, cache = true) {
-  let result: parsePostReturn;
+  let result: postMap;
   const key = sourceFile || text;
   // if file changed, --nocache, or cache parameter is false
   // do write new cache

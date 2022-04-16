@@ -8,9 +8,9 @@ import * as keywords from './helper/keywords';
 import * as excerpt from './helper/excerpt';
 import * as tag from './helper/labels';
 import { join } from '../node/filemanager';
-import { parsePostReturn } from '../markdown/transformPosts';
 import config, { ThemeOpt, theme_dir } from '../types/_config';
 import { DynamicObject } from '../types';
+import { postMap } from '../markdown/transformPosts/parsePost';
 
 const homepage = new URL(config.url);
 const internal_helpers = {
@@ -35,7 +35,7 @@ const helpers: helper_types = Object.assign(author, date, locale, thumbnail, key
 
 interface EJSOption extends ejs.Options, DynamicObject {
   _?: typeof helpers;
-  page?: parsePostReturn;
+  page?: postMap;
   config?: typeof config;
   theme?: ThemeOpt;
 }

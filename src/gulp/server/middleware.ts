@@ -11,8 +11,7 @@ import '../tasks/generate';
 import 'js-prototypes';
 import chalk from 'chalk';
 import Bluebird from 'bluebird';
-import { modifyPost } from '../../markdown/transformPosts/modifyPost';
-import { generateIndex, generateLabel } from '../tasks/generate-archives';
+import modifyPost from '../../markdown/transformPosts/modifyPost';
 import './gen-middleware';
 import routedata from './routes.json';
 import jdom from '../../node/jsdom';
@@ -140,16 +139,17 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     if (!pathname) console.log('last processed', pathname);
     next();
   },
+  // homepage route
   {
     route: '/',
     handle: async function (req, res, next) {
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
-      const str = await generateIndex();
+      /*const str = await generateIndex();
       if (str) return res.end(showPreview(str));
       if (existsSync(sourceIndex)) {
         console.log('[archive] pre-processed', req.url, '->', sourceIndex);
         return res.end(showPreview(readFileSync(sourceIndex)));
-      }
+      }*/
       next();
     },
   },
@@ -192,12 +192,12 @@ labelSrc.forEach((path) => {
       const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
       console.log('[generate][label]', pathname, labelname, generatedTo);
       let result: string;
-      await generateLabel((str) => {
+      /*await generateLabel((str) => {
         result = str;
       }, labelname);
       if (result) {
         return res.end(showPreview(result));
-      }
+      }*/
       next();
     },
   });

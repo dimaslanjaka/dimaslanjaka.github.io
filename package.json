@@ -22,7 +22,8 @@
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.specs.ts'",
-    "preinstall": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes"
+    "preinstall": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes",
+    "php": "php -S localhost:4000 -t docs"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,6 @@
   },
   "homepage": "https://github.com/dimaslanjaka/dimaslanjaka.github.io#readme",
   "peerDependencies": {
-    "js-prototypes": "github:dimaslanjaka/js-prototypes",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2"
   },
   "dependencies": {

@@ -49,7 +49,7 @@ function generateFeeds() {
           link: new URL(post.metadata.url).toString(),
           description: excerpt(post.metadata),
           author: [author_object(post.metadata)],
-          date: moment(post.metadata.date).toDate(),
+          date: moment(post.metadata.date.toString()).toDate(),
           image: thumbnail(post.metadata),
           content: excerpt(post.metadata),
         };

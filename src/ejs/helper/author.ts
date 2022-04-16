@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { postMap } from '../../markdown/transformPosts/parsePost';
 import config from '../../types/_config';
-import { parsePostReturn } from '../../markdown/transformPosts';
 
 /**
  * get author name
  * @param page
  * @returns
  */
-export function author_name(page: parsePostReturn['metadata'] | typeof config) {
+export function author_name(page: postMap['metadata'] | typeof config) {
   const author = page['author'];
   if (typeof author == 'string') return author;
   if (typeof author == 'object') {
@@ -21,7 +21,7 @@ export function author_name(page: parsePostReturn['metadata'] | typeof config) {
  * @param page post metadata or config from _config.yml
  * @returns
  */
-export function author_email(page: parsePostReturn['metadata'] | typeof config) {
+export function author_email(page: postMap['metadata'] | typeof config) {
   const author = page['author'];
 
   if (typeof author == 'object') {
@@ -37,7 +37,7 @@ export function author_email(page: parsePostReturn['metadata'] | typeof config) 
  * @param page
  * @returns
  */
-export function author_object(page: parsePostReturn['metadata'] | typeof config) {
+export function author_object(page: postMap['metadata'] | typeof config) {
   return {
     name: String(author_name(page)),
     email: String(author_email(page)),
@@ -50,7 +50,7 @@ export function author_object(page: parsePostReturn['metadata'] | typeof config)
  * @param page
  * @returns
  */
-export function author_link(page: parsePostReturn['metadata'] | typeof config) {
+export function author_link(page: postMap['metadata'] | typeof config) {
   const author = page['author'];
   if (typeof author == 'object') {
     if (author['link']) return author['link'];

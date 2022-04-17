@@ -1,7 +1,7 @@
 import chalk from 'chalk';
-import { cwd, existsSync, removeMultiSlashes, statSync } from '../../node/filemanager';
+import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
-import config from '../../types/_config';
+import config, { post_generated_dir } from '../../types/_config';
 import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
 import { shortcodeCss } from '../../gulp/shortcode/css';
 import extractText from '../../gulp/shortcode/extract-text';
@@ -15,6 +15,7 @@ import ErrorMarkdown from '../error-markdown';
 import moment from 'moment';
 import { postMap } from './parsePost';
 import { archiveMap, mergedPostMap } from './postMapper';
+import { isValidHttpUrl } from '../../gulp/utils';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');
@@ -104,11 +105,54 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
       parse.metadata.photos = photos.unique();
     }
 
+    // fix post_asset_folder
+    const post_assets_fixer = (str: string) => {
+      if (!publicFile) return str;
+      // return base64 image
+      if (str.startsWith('data:image')) return str;
+      if (str.startsWith('//')) str = 'http:' + str;
+      if (str.includes('%20')) str = decodeURIComponent(str);
+      if (!isValidHttpUrl(str) && !str.startsWith('/')) {
+        let result: string;
+        /** search from same directory */
+        const f1 = join(dirname(publicFile), str);
+        /** search from parent directory */
+        const f2 = join(dirname(dirname(publicFile)), str);
+        /** search from root directory */
+        const f3 = join(cwd(), str);
+        const f4 = join(post_generated_dir, str);
+        [f1, f2, f3, f4].forEach((src) => {
+          if (existsSync(src) && !result) result = src;
+        });
+        if (!result) {
+          console.log('[PAF][fail]', str);
+        } else {
+          result = result.replaceArr([cwd(), 'source/', '_posts'], '/').replace(/\/+/, '/');
+          result = encodeURI(result);
+          console.log('[PAF][success]', result);
+          return result;
+        }
+      }
+      return str;
+    };
+    if (parse.metadata.cover) {
+      parse.metadata.cover = post_assets_fixer(parse.metadata.cover);
+    }
+    if (parse.metadata.thumbnail) {
+      parse.metadata.thumbnail = post_assets_fixer(parse.metadata.thumbnail);
+    }
+    if (parse.metadata.photos) {
+      parse.metadata.photos = parse.metadata.photos.map(post_assets_fixer);
+    }
+
     // merge php js css to programming
     if (Array.isArray(parse.metadata.tags)) {
       const programTags = ['php', 'css', 'js', 'kotlin', 'java', 'ts', 'typescript', 'javascript', 'html', 'mysql', 'database'];
       const containsTag = programTags.some((r) => {
-        const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
+        const matchTag = parse.metadata.tags
+          .removeEmpties()
+          .map((str) => str.trim().toLowerCase())
+          .includes(r);
         if (matchTag) {
           parse.metadata.category.push(r.toUpperCase());
         }
@@ -133,8 +177,8 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
           return item;
         });
       };
-      parse.metadata.category = parse.metadata.category.uniqueStringArray();
-      parse.metadata.tags = filterTagCat(parse.metadata.tags.uniqueStringArray());
+      parse.metadata.category = parse.metadata.category.removeEmpties().uniqueStringArray();
+      parse.metadata.tags = filterTagCat(parse.metadata.tags.removeEmpties().uniqueStringArray());
       // move 'programming' to first index
       if (parse.metadata.category.includes('Programming'))
         parse.metadata.category.forEach((str, i) => {

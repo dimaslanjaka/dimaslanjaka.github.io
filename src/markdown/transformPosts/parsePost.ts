@@ -255,7 +255,7 @@ export function cacheableParsePost(text: string, sourceFile: string = null, cach
   return generateFileTree(text, result);
 }
 
-let parsePost: typeof cacheableParsePost | typeof originalParsePost;
+let parsePost: typeof originalParsePost | typeof cacheableParsePost;
 if (config.generator.cache) {
   parsePost = cacheableParsePost;
 } else {

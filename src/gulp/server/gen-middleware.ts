@@ -19,12 +19,18 @@ const map_tags = tags
   .unique()
   .map((tag) => {
     return '/' + config.tag_dir + '/' + tag;
+  })
+  .sort(function (a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
   });
 const map_cats = cats
   .removeEmpties()
   .unique()
   .map((tag) => {
     return '/' + config.category_dir + '/' + tag;
+  })
+  .sort(function (a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
   });
 
 write(join(__dirname, 'routes.json'), {

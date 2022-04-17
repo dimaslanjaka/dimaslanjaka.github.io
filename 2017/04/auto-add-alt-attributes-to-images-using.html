@@ -78,6 +78,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -129,12 +142,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <div dir="ltr" trbidi="on"><h2>    Using jQuery to adding alt attributes to all images &lt;img&gt; tags. </h2>Alt attributes of images are one of SEO Score. <br><div class="separator"><a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZlbmNyeXB0ZWQtdGJuMS5nc3RhdGljLmNvbSUyRmltYWdlcyUzRnElM0R0Ym4lM0FBTmQ5R2NUMTV0eTBRY2tVUkJ0aTVaajNBZGRJN3NPZXcxOXloOHpqS3NmSkMzV2x1MGRGWGQyclZR" imageanchor="1" rel="nofollow noopener noreferer" target="_blank"><img alt="alt tags screenshoot" border="0" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5Zj3AddI7sOew19yh8zjKsfJC3Wlu0dFXd2rVQ" title="alt tags screenshoot"></a></div><br><div><span>Alt Tag SEO is technically a name.</span><br><span>Really, there's no such issue as AN angular position tag of a picture. it's the angular position ATTRIBUTE. however that's another discussion altogether.</span><br><span><br></span><span>The main reason for this post is to fret simply however necessary correct use of the angular position attribute is to your SEO efforts and to people who use the help of screen readers to inform them what's on a page.</span><br><span>In the past, marketers have just about followed 2 (2) extremes once it came to SEO-ing AN image:</span><br><span><br></span><span>1) Ignoring the angular position attribute altogether, OR</span><br><span>2) Stuffing the angular position attribute with a bunch of keywords.</span><br><span><br></span><span>Needless to mention, neither methodology is effective.</span><br><span><br></span><span>The angular position attribute could be a excellent spot to relinquish back to the online and an excellent place to extend the SEO-value of your content. repay by taking the time to inform the unsighted what your image represents.</span><br><span><br></span><span>And the excellent news is… you'll commonly increase guests to your web site by doing this, too.</span><br><span><br></span><span>For example: If you sell blue widgets and have a page concerning blue widgets, then possibilities are… there's a picture on the page of a blue device. Use the angular position attribute to inform the visually impaired that this what the image represents.</span><br><span><br></span><span>If it's an image of a picture on the shelf of your (say) Chicago store… then ‘tell’ your guests that within the angular position attribute. (Picture of a blue device on a shelf in our Chicago, Illinois location.) That statement clearly explains to the visually impaired (AND to go looking engines) what your image was concerning.</span><br><span>Now in some cases, a picture represents a decision to action — and therefore the angular position attribute ought to properly mirror that.</span><br><span>For instance, if you have got at the highest of a page a large, red stop sign indicating that they ought to browse some necessary content before taking action, then the angular position attribute ought to most likely say one thing like “Stop!” versus “A image of a giant, red stop sign”.</span><br><span><br></span><span>A case are often created that a picture of one thing (with a properly labelled angular position attribute) has even as a lot of or additional SEO-value than actual text (with no image).</span></div><h4>How to add alt attributes to images dramatically ?</h4><div><img alt="jquery" height="320" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSb0MQpApk1AnCcliWTM687M3_IfAgAtydYlF6wyWUXWLg-czIn" title="jquery" width="320"></div><div><br></div>In this article I've made code for adding alt attributes to img tags. But     iam not sure is search engine get scoped alt attributes. <br><h4>    Here the codes: </h4><div></div><div>#Codes 1:     <br><br></div><pre>&lt;script&gt;<br>$(document).ready(function(){<br>$("img").each(function(){<br>    var c=$(this);</pre><pre>    var b=c.attr("src");<br>    var a=$(this).attr("alt");<br>        if(typeof a==typeof undefined||a==false){<br>c.attr("alt",b.substring(0,b.lastIndexOf(".")))}<br>})});<br>&lt;/script&gt;</pre><br>Code above using jquery and javascript functions with asking / prompted if     alt attributes are found or not. If already had an ALT attributes this code     will be leave it. <br><br><div></div><div>#Codes 2:     <br><br></div><div></div><div>To set alternative text to all the images:     <br><br><pre><code>$('#map_canvas &gt; img').attr('alt', 'Alternative text');</code></pre><pre><code><br></code></pre>To set alternative text to images that does not have <code>alt</code>        attribute:     <br><br><pre><code>$('#map_canvas &gt; img:not([alt])').attr('alt', 'Alternative text');</code></pre></div></div>
 
           
-
           
-          <!-- Preview image figure-->
-          <figure class="mb-4 mt-4">
-            <img class="img-fluid rounded" width="900px" height="400px" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5Zj3AddI7sOew19yh8zjKsfJC3Wlu0dFXd2rVQ" alt="Auto Add Alt Attributes To Images Using jQuery">
-          </figure>
           
         </section>
       </article>

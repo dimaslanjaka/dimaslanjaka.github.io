@@ -82,6 +82,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -137,12 +150,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <blockquote>First post : <a href="http://web-manajemen.blogspot.com/2017/09/cara-simple-membuat-blogger-safelink.html" title="Cara Simple Membuat Blogger Safelink Converter 2017 100% Work" alt="Cara Simple Membuat Blogger Safelink Converter 2017 100% Work">Cara Simple Membuat Blogger Safelink Converter 2017 100% Work</a></blockquote><img src="https://cdn1.imggmi.com/uploads/2018/8/5/4f4281f038eb505c8f145d2c7f0b4f04-full.png" title="Cara Simple Membuat Blogger Safelink Converter 2017 100% Work" alt="Cara Simple Membuat Blogger Safelink Converter 2017 100% Work"><pre><br><br>function safelink(){<br>var safelinkpage = ['https://web-manajemen.blogspot.com/p/redirect.html?u=','https://web-manajemen.blogspot.com/p/a.html?u='];<br>var safelink = safelinkpage[Math.floor(Math.random() * safelinkpage.length)] + encodeURIComponent( 'http://linkshrink.net/zslz=' );<br>var protectedLinks = '/(web-manajemen.blogspot.com|facebook.com|fb.me|bing.com|www.google.com|plus.google.com)/';<br>var anchors = document.getElementsByTagName("a");<br>for (var i = 0; i &lt; anchors.length; i++) {<br>  var intl = anchors[i];<br> if ( !intl.href.match( protectedLinks ) ) {<br>    intl.href = safelink + encodeURIComponent( intl.href );<br>   if (intl.hasAttribute("target")){<br>    intl.removeAttribute("target");<br>    }<br>   intl.setAttribute("target", "_blank");<br> }<br>}<br>  }<br>document.onreadystatechange = () =&gt; {<br>  if (document.readyState === 'interactive') {<br>  safelink(); <br>    }<br>  };<br><br></pre><!-- https://codepen.io/dimaslanjaka/pen/OvvzVR.js -->
 
           
-
           
-          <!-- Preview image figure-->
-          <figure class="mb-4 mt-4">
-            <img class="img-fluid rounded" width="900px" height="400px" src="https://cdn1.imggmi.com/uploads/2018/8/5/4f4281f038eb505c8f145d2c7f0b4f04-full.png" alt="Update code Simple SafeLink v3">
-          </figure>
           
         </section>
       </article>

@@ -76,6 +76,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -125,7 +138,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <div dir="ltr" trbidi="on"><b>Instalasi</b><br><br><pre>pkg update -y<br>pkg upgrade -y<br>pkg install php curl wget git -y<br></pre><b>Contoh Penggunaan PHP (CLI) pada termux</b><br><br><i>buat file php</i><pre><code><span class="html"><span class="default">&lt;?php<br><br>parse_str</span><span class="keyword">(</span><span class="default">implode</span><span class="keyword">(</span><span class="string">'&amp;'</span><span class="keyword">, </span><span class="default">array_slice</span><span class="keyword">(</span><span class="default">$argv</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">)), </span><span class="default">$_GET</span><span class="keyword">);<br></span><span class="default">?&gt;</span></span></code><br></pre><i>Usage/penggunaan</i><pre><br>php -f namafile.php a=1 b[]=2 b[]=3<br><br>//output<br>//$_GET['a'] to '1' and $_GET['b'] to array('2', '3').<br></pre></div>
 
           
-
+          
           
           <!-- Preview image figure-->
           <figure class="mb-4 mt-4">

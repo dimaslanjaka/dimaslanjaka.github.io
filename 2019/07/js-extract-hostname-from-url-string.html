@@ -76,6 +76,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -125,7 +138,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <div dir="ltr" trbidi="on"><b>Extract <u>Hostname</u>/<u>Domain</u>&nbsp;from URL (string)</b><br><b><br></b><pre class="snippet-code-js lang-js prettyprint prettyprinted"><br><br>function extractHostname(url) {<br>    var hostname;<br>    //find &amp; remove protocol (http, ftp, etc.) and get hostname<br><br>    if (url.indexOf("//") &gt; -1) {<br>        hostname = url.split('/')[2];<br>    }<br>    else {<br>        hostname = url.split('/')[0];<br>    }<br><br>    //find &amp; remove port number<br>    hostname = hostname.split(':')[0];<br>    //find &amp; remove "?"<br>    hostname = hostname.split('?')[0];<br><br>    return hostname;<br>}<br><br>//test the code Press F12<br>console.log("== Testing extractHostname: ==");<br>console.log(extractHostname("http://www.blog.classroom.me.uk/index.php"));<br>console.log(extractHostname("http://www.youtube.com/watch?v=ClkQA2Lb_iE"));<br>console.log(extractHostname("https://www.youtube.com/watch?v=ClkQA2Lb_iE"));<br>console.log(extractHostname("www.youtube.com/watch?v=ClkQA2Lb_iE"));<br>console.log(extractHostname("ftps://ftp.websitename.com/dir/file.txt"));<br>console.log(extractHostname("websitename.com:1234/dir/file.txt"));<br>console.log(extractHostname("ftps://websitename.com:1234/dir/file.txt"));<br>console.log(extractHostname("example.com?param=value"));<br>console.log(extractHostname("https://facebook.github.io/jest/"));<br>console.log(extractHostname("//youtube.com/watch?v=ClkQA2Lb_iE"));<br>console.log(extractHostname("http://localhost:4200/watch?v=ClkQA2Lb_iE"));<br><br></pre></div>
 
           
-
+          
           
           <!-- Preview image figure-->
           <figure class="mb-4 mt-4">

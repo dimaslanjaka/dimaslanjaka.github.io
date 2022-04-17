@@ -78,6 +78,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -129,12 +142,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png"></div> <h3>HTML</h3><pre><br>&lt;div id="debug"&gt;&lt;/div&gt;<br></pre><h3>Pure Javascript</h3><pre><br>(function () {<br>    var old = console.log;<br>    var logger = document.getElementById('log');<br>    console.log = function (message) {<br>        if (typeof message == 'object') {<br>            logger.innerHTML += (JSON &amp;&amp; JSON.stringify ? JSON.stringify(message) : message) + '&lt;br /&gt;';<br>        } else {<br>            logger.innerHTML += message + '&lt;br /&gt;';<br>        }<br>    }<br>})();<br></pre><h3>Using jQuery</h3><pre><br>// Using jQuery<br>if (typeof console  != "undefined") <br>    if (typeof console.log != 'undefined')<br>        console.olog = console.log;<br>    else<br>        console.olog = function() {};<br><br>console.log = function(message) {<br>    console.olog(message);<br>    $('#debug').append('&lt;p&gt;' + message + '&lt;/p&gt;');<br>};<br>console.error = console.debug = console.info =  console.log<br></pre>
 
           
-
           
-          <!-- Preview image figure-->
-          <figure class="mb-4 mt-4">
-            <img class="img-fluid rounded" width="900px" height="400px" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png" alt="[JS] Print console log into div">
-          </figure>
           
         </section>
       </article>

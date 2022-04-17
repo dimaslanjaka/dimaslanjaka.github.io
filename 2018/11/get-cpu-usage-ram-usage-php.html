@@ -78,6 +78,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -129,7 +142,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <p>    if you mean how much ram/cpu php is using then you can do the following     using plain php without using any package: this returns the ram usage: </p><pre><code>function get_server_memory_usage(){<br><br>$free = shell_exec('free');<br>$free = (string)trim($free);<br>$free_arr = explode("\n", $free);<br>$mem = explode(" ", $free_arr[1]);<br>$mem = array_filter($mem);<br>$mem = array_merge($mem);<br>$memory_usage = $mem[2]/$mem[1]*100;<br>return $memory_usage;<br>}</code></pre><p>    cpu usage: </p><pre><code>function get_server_cpu_usage(){<br>$load = sys_getloadavg();<br>return $load[0];<br>}</code></pre><p>Native Conditions:</p><pre><code>$load = sys_getloadavg();<br>$limit =15; //percent cpu<br>if ($load[0] &gt;= $limit) {<br>  die("Oops Server Busy, this message was automate from Dimas Lanjaka For telling users, there too many processed.");<br>}</code></pre>
 
           
-
+          
           
           <!-- Preview image figure-->
           <figure class="mb-4 mt-4">

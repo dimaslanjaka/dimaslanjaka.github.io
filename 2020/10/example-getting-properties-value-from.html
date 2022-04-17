@@ -76,6 +76,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -125,7 +138,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <pre><br>pluginManagement {<br>    resolutionStrategy {<br>        eachPlugin {<br>            // Work around https://github.com/gradle/gradle/issues/1697.<br>            if (requested.version == null) {<br>                def pluginName = requested.id.name.split('-').collect { it.capitalize() }.join().uncapitalize()<br>                def versionPropertyName = (requested.id.id == 'org.jetbrains.kotlin.jvm') ?<br>                        "kotlinPluginVersion" : "${pluginName}PluginVersion"<br>                logger.info("Checking for plugin version property '$versionPropertyName'.")<br>                if (gradle.rootProject.hasProperty(versionPropertyName)) {<br>                    def version = gradle.rootProject.properties[versionPropertyName]<br>                    logger.info("Setting '${requested.id.id}' plugin version to $version.")<br>                    useVersion version<br>                } else {<br>                    logger.warn("No version specified for plugin '${requested.id.id}' and property " +<br>                            "'$versionPropertyName' does not exist.")<br>                }<br>            }<br>        }<br>    }<br>}<br></pre>
 
           
-
+          
           
           <!-- Preview image figure-->
           <figure class="mb-4 mt-4">

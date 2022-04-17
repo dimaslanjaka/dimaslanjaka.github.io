@@ -76,6 +76,19 @@
 var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
 //]]></script>
 -->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
 </head>
 
 <body>
@@ -125,7 +138,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
           <div dir="ltr" trbidi="on"><b>PHP CLI</b><pre><code><span class="html"><span class="default">&lt;?php<br></span><span class="keyword">if (</span><span class="default">$argv</span><span class="keyword">) {<br><br>&nbsp; &nbsp; foreach (</span><span class="default">$argv </span><span class="keyword">as </span><span class="default">$k</span><span class="keyword">=&gt;</span><span class="default">$v</span><span class="keyword">)<br><br>&nbsp; &nbsp; {<br><br>&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$k</span><span class="keyword">==</span><span class="default">0</span><span class="keyword">) continue;<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$it </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">(</span><span class="string">"="</span><span class="keyword">,</span><span class="default">$argv</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">]);<br><br>&nbsp; &nbsp; &nbsp; &nbsp; if (isset(</span><span class="default">$it</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">])) </span><span class="default">$_GET</span><span class="keyword">[</span><span class="default">$it</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]] = </span><span class="default">$it</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">];<br><br>&nbsp; &nbsp; }<br><br>}<br></span><span class="default">?&gt;</span></span></code><br></pre></div>
 
           
-
+          
           
           <!-- Preview image figure-->
           <figure class="mb-4 mt-4">

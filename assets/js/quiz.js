@@ -86,6 +86,10 @@ function jQueryMethod() {
 
   // searcher
   let searchLi = function (filter) {
+    if (!filter) {
+      console.log('input empty');
+      return;
+    }
     let listQuiz = jQuery("ul[id*='questions'] li");
     listQuiz.each(function (index) {
       // search from first characters

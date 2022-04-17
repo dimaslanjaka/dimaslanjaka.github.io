@@ -21,12 +21,12 @@ const pages = new Sitemap();
  * * save to `config.public_dir/sitemap-news.xml`
  * @param done
  */
-function generateGoogleNewsSitemap(done: TaskCallback) {
+async function generateGoogleNewsSitemap(done: TaskCallback) {
   const map = new GoogleNewsSitemap();
   const log = logname + chalk.blue('[google-news]');
 
-  Bluebird.all(pages.getValues())
-    .map((item) => {
+  try {
+    const i = await Bluebird.all(pages.getValues().removeEmpties()).map((item) => {
       const val: ClassItemType = {
         publication_name: item.author,
         publication_language: item.lang || 'en',
@@ -35,14 +35,14 @@ function generateGoogleNewsSitemap(done: TaskCallback) {
         location: fixURLSitemap(item.url).toString(),
       };
       return map.add(val);
-    })
-    .then((i) => {
-      console.log(log, 'total pages', i.length);
-      write(join(root, config.public_dir, 'sitemap-news.xml'), map.toString()).then((f) => {
-        console.log(log, 'saved', f);
-      });
-    })
-    .finally(() => done());
+    });
+    console.log(log, 'total pages', i.length);
+    write(join(root, config.public_dir, 'sitemap-news.xml'), map.toString()).then((f) => {
+      console.log(log, 'saved', f);
+    });
+  } finally {
+    done();
+  }
 }
 
 /**

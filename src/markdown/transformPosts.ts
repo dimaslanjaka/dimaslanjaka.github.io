@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { dirname, existsSync, mkdirSync, writeFileSync } from '../node/filemanager';
 import yaml from 'yaml';
-import { postMap as postMap } from './transformPosts/parsePost';
+import { postMap } from './transformPosts/parsePost';
 import color from '../node/color';
 export { parsePost } from './transformPosts/parsePost';
 

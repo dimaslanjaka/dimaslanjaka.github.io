@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-echo $RANDOM | md5sum | head -c 20 > .guid
+./update-guid
 #git add -A
 git commit -m "$@"

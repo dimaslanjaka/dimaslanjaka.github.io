@@ -10,9 +10,10 @@
           <%- page.body %>
 
           <% if (page.keywords) { %>
+          <h5>Incoming Terms</h5>
           <ul class="list-group">
             <% page.keywords.forEach(kw => { %>
-              <li class="list-group-item"><%= kw %></li>
+            <li class="list-group-item"><%= kw %></li>
             <% }) %>
           </ul>
           <% } %>

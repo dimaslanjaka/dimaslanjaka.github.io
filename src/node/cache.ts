@@ -180,9 +180,14 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     this.emit('update');
     return this;
   }
+  /**
+   * check cache key exist
+   * @param key key cache
+   * @returns boolean
+   */
   has(key: string): boolean {
     key = this.resolveKey(key);
-    return typeof this.md5Cache[key] !== undefined;
+    return Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key];
   }
   /**
    * Get cache by key

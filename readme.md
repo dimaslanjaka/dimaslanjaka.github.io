@@ -76,10 +76,13 @@ gulp generate:assets # copy all assets
 gulp generate:template # copy and process template
 gulp generate:posts # generate posts
 gulp generate:sitemap # generate sitemaps
+gulp generate:tags # generate tags
+gulp generate:categories # generate categories
 gulp generate:label # generate tags and categories
 gulp generate:index # generate homepage index
 gulp generate:archive # generate homepage, tags, and categories
 gulp generate:feeds # generate atom, rss
+gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 ```
 
 ## Github Action

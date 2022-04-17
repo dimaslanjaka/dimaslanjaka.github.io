@@ -80,11 +80,20 @@ interface GroupLabel {
 const postCats: GroupLabel = {};
 const postTags: GroupLabel = {};
 
-const copyPosts = () => {
+/**
+ * copy posts from `src-posts` to config.source_dir {@link config.source_dir}
+ * @param cpath custom path
+ * @returns
+ */
+export const copyPosts = (_: any, cpath?: string) => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
   const run = gulp.src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir }).pipe(
     through2.obj(function (file, _encoding, next) {
       const path = file.path;
+      if (cpath) {
+        // copy specific post path
+        if (!path.includes(cpath)) return next(null, file);
+      }
       const log = [logname, String(path)];
       let parse = parsePost(String(file.contents), String(path));
 

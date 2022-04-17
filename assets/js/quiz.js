@@ -44,7 +44,7 @@ function loadJScript(src, callback) {
     //console.log( this.readyState ); //uncomment this line to see which ready states are called.
     if (!r && (!this.readyState || this.readyState == 'complete')) {
       r = true;
-      callback();
+      if (typeof callback == 'function') callback();
     }
   };
   t = document.getElementsByTagName('script')[0];
@@ -88,6 +88,7 @@ function jQueryMethod() {
   let searchLi = function (filter) {
     let listQuiz = jQuery("ul[id*='questions'] li");
     listQuiz.each(function (index) {
+      // search from first characters
       let searchFirst =
         jQuery(this)
           .text()
@@ -100,6 +101,7 @@ function jQueryMethod() {
         jQuery(this).prependTo(jQuery("ul[id*='questions']"));
       }
 
+      // search wildcards
       let searchWild =
         jQuery(this)
           .text()
@@ -113,7 +115,7 @@ function jQueryMethod() {
   };
 
   let processLi = function () {
-    jQuery('#search-questions').keyup(function () {
+    jQuery('#search-questions').on('keyup', function () {
       searchLi(jQuery(this).val());
     });
   };
@@ -167,6 +169,7 @@ function jQueryMethod() {
         // transform
         transformArray2Li();
       }
+      // attach event listener
       processLi();
     });
   });
@@ -203,7 +206,11 @@ function jQueryMethod() {
   */
 }
 
-loadJScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', jQueryMethod);
+if (typeof jQuery === 'undefined') {
+  loadJScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', jQueryMethod);
+} else {
+  jQueryMethod();
+}
 
 /**
  * How URL native work {@link https://dmitripavlutin.com/parse-url-javascript/}

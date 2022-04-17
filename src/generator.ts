@@ -12,13 +12,13 @@ import { TaskCallback } from 'undertaker';
 new scheduler();
 
 /** clean generated folder */
-const clean_public = (done?: TaskCallback) => rm(join(root, config.public_dir), done);
+const clean_public = (done?: TaskCallback) => rm(join(root, config.public_dir), { recursive: true }, done);
 /** clean posts from config.source_dir */
-const clean_posts = (done?: TaskCallback) => rm(join(root, config.source_dir, '_posts'), done);
+const clean_posts = (done?: TaskCallback) => rm(join(root, config.source_dir, '_posts'), { recursive: true }, done);
 /** clean temp folder */
-const clean_tmp = (done?: TaskCallback) => rm(tmp(), done);
+const clean_tmp = (done?: TaskCallback) => rm(tmp(), { recursive: true }, done);
 /** clean database folder */
-const clean_db = (done?: TaskCallback) => rm(dbFolder, done);
+const clean_db = (done?: TaskCallback) => rm(dbFolder, { recursive: true }, done);
 
 gulp.task('clean:public', clean_public);
 gulp.task('clean:posts', clean_posts);

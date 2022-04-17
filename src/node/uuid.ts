@@ -1,7 +1,7 @@
 import { md5 } from './md5-file';
 
 /**
- * Fixed UUID V4 Generator based on inputted string
+ * Persistent UUID V4 Generator based on inputted string
  * @param fromString `null`: based on caller function name, line, and path
  * @param fromString generate based on string (unique based on this string)
  * @returns ex: a2d6fee8-369b-bebc-3d8e-b8ff2faf40d3

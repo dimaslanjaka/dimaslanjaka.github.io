@@ -128,9 +128,10 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
         ) as postMap['metadata'];
     }
     // default category and tags
-    if (!meta.category) meta.category = ['Uncategorized'];
-    if (!meta.category.length) meta.category.push('Uncategorized');
-    if (!meta.tags) meta.tags = [];
+    if (!meta.category) meta.category = [config.default_category];
+    if (!meta.category.length) meta.category.push(config.default_category);
+    if (!meta.tags) meta.tags = [config.default_tag];
+    if (!meta.tags.length) meta.tags.push(config.default_tag);
 
     // default date post
     if (!meta.date) meta.date = moment().format();

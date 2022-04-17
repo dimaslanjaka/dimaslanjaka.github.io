@@ -41,6 +41,10 @@ tag_dir: tags
 archive_dir: archives
 # slug category config.url/category_dir/categoryName
 category_dir: categories
+# Default Category (empty = null)
+default_category: Uncategorized
+# Default Tag (empty = null)
+default_tag:
 
 # https://hexo.io/docs/configuration.html
 # skip render template, direct copy
@@ -97,9 +101,6 @@ index_generator:
   order_by: -updated
   # Posts displayed per page. (0 = disable pagination)
   per_page: 8
-
-# Category & Tag
-default_category: Uncategorized
 
 # gulp generator task options
 generator:

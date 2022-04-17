@@ -139,8 +139,9 @@ export const copyPosts = (_: any, cpath?: string) => {
         const canonical: string = parse.metadata.canonical;
         if (!isValidHttpUrl(canonical)) parse.metadata.canonical = config.url + parse.metadata.canonical;
       }
-      // insert parsed to caches
-      cachePost.set(path, parse);
+      // insert parsed to caches (only non-redirected post)
+      if (!parse.metadata.redirect) cachePost.set(path, parse);
+
       parse.metadata.category.forEach((name) => {
         if (!name) return;
         // init

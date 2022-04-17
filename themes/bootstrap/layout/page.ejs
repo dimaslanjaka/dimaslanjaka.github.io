@@ -17,8 +17,8 @@
             <% }) %>
           </ul>
           <% } %>
-
-          <% if (page.type == 'post') { %>
+          <% var img = thumbnail(page) %>
+          <% if (page.type == 'post' && !page.body.includes(img)) { %>
           <!-- Preview image figure-->
           <figure class="mb-4 mt-4">
             <img class="img-fluid rounded" width="900px" height="400px" src="<%- thumbnail(page) %>"

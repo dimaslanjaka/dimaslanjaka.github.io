@@ -15,6 +15,7 @@ import modifyPost from '../../markdown/transformPosts/modifyPost';
 import './gen-middleware';
 import routedata from './routes.json';
 import jdom from '../../node/jsdom';
+import { generateIndex } from '../tasks/generate-archives';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -59,9 +60,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   function (req, res, next) {
     copyAssets(); // dont await to keep performance
-    next();
-  },
-  async function (req, res, next) {
+    // custom headers
     res.setHeader('X-Powered-By', 'Static Blog Generator'); // send X-Powered-By
     if (!config.server.cache) {
       res.setHeader('Expires', 'on, 01 Jan 1970 00:00:00 GMT');
@@ -69,8 +68,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       res.setHeader('Cache-Control', 'post-check=0, pre-check=0');
       res.setHeader('Pragma', 'no-cache');
     }
-
+    next();
+  },
+  async function (req, res, next) {
     const isHomepage = req.url === '/';
+    // skip homepage
     if (isHomepage) return next();
 
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname
@@ -91,9 +93,9 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     if (isPage) {
       res.setHeader('Content-Type', 'text/html');
       // find post and pages
-      let sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) =>
-        s.replace(/.html$/, '.md')
-      );
+      let sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) => {
+        return s.replace(/.html$/, '.md');
+      });
       sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
       sourceMD = sourceMD
         .map((path) => {
@@ -103,7 +105,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         .filter(existsSync)
         .unique();
       //console.log(sourceMD);
-      if (sourceMD.length > 0)
+      if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];
           const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
@@ -134,6 +136,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
             }
           }
         }
+      }
     }
     // show previous generated
     if (!pathname) console.log('last processed', pathname);
@@ -144,12 +147,12 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     route: '/',
     handle: async function (req, res, next) {
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
-      /*const str = await generateIndex();
+      const str = await generateIndex('homepage');
       if (str) return res.end(showPreview(str));
       if (existsSync(sourceIndex)) {
         console.log('[archive] pre-processed', req.url, '->', sourceIndex);
         return res.end(showPreview(readFileSync(sourceIndex)));
-      }*/
+      }
       next();
     },
   },

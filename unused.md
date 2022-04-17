@@ -6,9 +6,11 @@ Unused devDependencies
 * @types/chai
 * @types/gulp-imagemin
 * @types/jquery
+* @types/less
 * @types/lru-cache
 * @types/memoizee
 * chai
+* codehawk-cli
 * crypto-js
 * gulp-cache
 * gulp-imagemin

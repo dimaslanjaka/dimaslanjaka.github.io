@@ -27,8 +27,11 @@ const homepage = new URL(config.url);
  * @example
  * ```html
  * <% tags(page).forEach(tag => { %>
+ * <!-- full url -->
  * tag url: <%- tag.url %>
+ * <!-- label name -->
  * tag name: <%- tag.name %>
+ * <!-- just pathname without base url -->
  * tag pathname: <%- tag.pathname %>
  * <% }) %>
  * ```

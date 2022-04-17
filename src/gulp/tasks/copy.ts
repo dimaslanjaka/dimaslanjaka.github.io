@@ -21,7 +21,6 @@ import CachePost from '../../node/cache-post';
 import './remove-inline-style';
 import { isValidHttpUrl } from '../utils';
 import CacheFile from '../../node/cache';
-import scheduler from '../../node/scheduler';
 import Bluebird from 'bluebird';
 
 /**
@@ -109,7 +108,7 @@ const copyPosts = () => {
       }
       parse = modify;
       // set type post
-      parse.metadata.type = 'post';
+      if (!parse.metadata.type) parse.metadata.type = 'post';
       let html: ReturnType<typeof parseHTML>;
       try {
         const renderbody = renderBodyMarkdown(parse);

@@ -4,7 +4,7 @@ import config from '../../types/_config';
 const tag_dir = config.tag_dir;
 const cat_dir = config.category_dir;
 
-interface Label {
+export interface Label {
   /**
    * Tag name
    */

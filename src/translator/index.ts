@@ -48,7 +48,7 @@ class Translator {
       )}&usg=ALkJrhgP3S6k0r9M1L0I0usu2YoSrco1KQ`
     );
 
-    const parse = require('url').parse(url);
+    const parse = new URL(url);
     this.request(`https://${parse.host.replace(/\./, '-')}.translate.goog${parseUrl.pathname}?_x_tr_sl=${this.sl}&_x_tr_tl=${this.tl}&_x_tr_hl=en&_x_tr_pto=ajax`);
 
     this.request(`https://translate.google.com/translate_un?sl=${this.sl}&tl=${this.tl}&u=${decodeURIComponent(url)}&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA`);

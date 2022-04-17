@@ -2,6 +2,7 @@ import { postMap } from '../../markdown/transformPosts/parsePost';
 import { join } from '../../node/filemanager';
 import config from '../../types/_config';
 const tag_dir = config.tag_dir;
+const cat_dir = config.category_dir;
 
 interface Label {
   /**
@@ -52,7 +53,7 @@ export function categories(page: postMap) {
   const result: Label[] = [];
   const target = page.category || page.metadata.category || [];
   target.forEach((tag: string) => {
-    homepage.pathname = join(tag_dir, tag);
+    homepage.pathname = join(cat_dir, tag);
     result.push({ name: tag, path: homepage.pathname, url: homepage.toString() });
   });
   return result;

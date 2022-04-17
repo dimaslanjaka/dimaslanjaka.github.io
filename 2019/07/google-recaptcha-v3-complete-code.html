@@ -1,46 +1,7 @@
-<!DOCTYPE html><!--
-	Iridium by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><html lang="en"><head>
-  <title>[JS] Google Recaptcha V3 Complete Code | WMI Gitlab</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="description" content="Requirements jQuery if not it will automated added into pages if typeof jQuery == undefined window.jQuery ">
-  <meta name="keywords" content="">
-  </head><body class="no-sidebar"><include expiration="7d" path="*.css"></include>
-<include expiration="7d" path="*.js"></include>
-<include expiration="3d" path="*.gif"></include>
-<include expiration="3d" path="*.jpeg"></include>
-<include expiration="3d" path="*.jpg"></include>
-<include expiration="3d" path="*.png"></include>
-<link crossorigin="" href="https://static.xx.fbcdn.net" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.blogger.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://resources.blogblog.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.google-analytics.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.gstatic.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.googletagservices.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://rawcdn.githack.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://tpc.googlesyndication.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://1.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://2.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://3.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://4.bp.blogspot.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://cdn.statically.io" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://adservice.google.co.id/" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://adservice.google.com/" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://www.youtube.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://lh3.googleusercontent.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://img.youtube.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://raw.githubusercontent.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://raw.githack.com" rel="preconnect dns-prefetch">
-<link crossorigin="" href="https://i.ytimg.com" rel="preconnect dns-prefetch">
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>[JS] Google Recaptcha V3 Complete Code - WMI Gitlab</title>
   <!--important canonical-->
 <link rel="canonical" href="https://www.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code.html">
 <!--facebook metadata-->
@@ -73,135 +34,133 @@
 <!--additional metadata-->
 <meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
 <meta name="page-type" content="post">
-  <link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
-  <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><![endif]-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="/js/lazyload.js?c=1"></script>
-  <script src="/js/skel.min.js?c=1"></script>
-  <!--<script src="/js/skel-panels.min.js"></script>-->
-  <script src="/js/init.js?c=1"></script>
-  <noscript>
-    <link rel="stylesheet" href="/css/skel-noscript.css?c=1">
-    <link rel="stylesheet" href="/css/style.css?c=1">
-    <link rel="stylesheet" href="/css/style-desktop.css?c=1">
-  </noscript>
-  <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-  <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
-  <style>
-    div#header {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg'), no-repeat;
-      color: white;
-      background-size: cover;
-    }
-  </style>
-  <script>const lazy = new lazyload();</script>
+<meta name="author" content="Dimas Lanjaka Kumala Indra">
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
 
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+</head>
 
-
-
-
-	<!-- Header -->
-	<div id="header">
-		<div class="container">
-
-			<!-- Logo -->
-			<div id="logo">
-				<h1><a href="https://www.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code.html">WMI</a></h1>
-				<span>[JS] Google Recaptcha V3 Complete Code WMI Gitlab by Dimas Lanjaka Kumala Indra</span>
-			</div>
-
-			<!-- Nav -->
-<nav id="nav">
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    
-    
-    <li><a href="/tags/JS">JS</a></li>
-    
-    
-    
-    <li><a href="/tags/HTML">HTML</a></li>
-    
-    
-    
-    <li><a href="/tags/Marketing%20Strategies">Marketing Strategies</a></li>
-    
-    
-    
-    <li class="active"><a href="/tags/Tips%20&amp;%20Tricks">Tips &amp; Tricks</a></li>
-    
-    
-    <!--iterate navigation config-->
-    
-      <li><a href="/page/about-me.html">About Me</a></li>
-    
-      <li><a href="/p/search.html">Search Engine</a></li>
-    
-  </ul>
-</nav>
-		</div>
-	</div>
-
-	<!-- Main -->
-	<div id="main">
-		<div class="container">
-			<div class="row">
-
-				<!-- Content -->
-				<div id="content" class="12u skel-cell-important">
-					<section>
-						<header>
-							<h2>[JS] Google Recaptcha V3 Complete Code</h2>
-							<span class="byline">Requirements jQuery if not it will automated added into pages if typeof jQuery == undefined window.jQuery </span>
-						</header>
-						<!--
-							<a href="#" class="image full"><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg" alt="[JS] Google Recaptcha V3 Complete Code" /></a>
-							-->
-
-						<div dir="ltr" style="text-align: left;" trbidi="on"><div>  <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg" alt="grecaptcha"></div>  <b>Requirements:</b>  <ol style="text-align: left;">    <li>jQuery (if not it will automated added into pages)&nbsp;</li>    <pre><br>      if (typeof jQuery == 'undefined' || !window.jQuery) {<br>        var hs = document.createElement('script');<br>        hs.type = 'text/javascript';<br>        hs.async = true;<br>        hs.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';<br>        document.getElementsByTagName('head')[0].appendChild(hs);<br>        document.getElementsByTagName('body')[0].appendChild(hs);<br>        document.head.appendChild(hs);<br>        document.body.appendChild(hs);<br>      }<br>    </pre>     <li>Recaptcha Site Key And Secret (backend): <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvbSUyRnJlY2FwdGNoYSUyRmFkbWluJTJG" rel="nofollow noopener noreferer" target="_blank">Get Here</a></li>    <pre><br>    //Set site key as global variable<br>    const g_site_key = 'YOUR_SITE_KEY';<br>    </pre>     <li>Main Code:</li>    <pre><br>        //loader<br>        (function () {<br>          submitDisable();<br>          download_script('https://www.google.com/recaptcha/api.js?render='+g_site_key+'&amp;render=explicit', function () {<br>            grecaptcha.ready(function () {<br>              gexec();<br>            });<br>          });<br>        })();<br>      //function callback<br>      function gexec(){ //also refresh function<br>        grecaptcha.execute(g_site_key, { action: 'homepage' }).then(function (token) {<br>          recaptcha_insert_token(token); //insert element token into form<br>        });<br>      }<br>      //function add recaptcha elements<br>      function recaptcha_insert_token(token) {<br>        if (typeof jQuery == 'undefined'){<br>          console.log('JQuery Not Loaded');<br>        } else {<br>          var f = $('form'), fg = f.find('[name="g-recaptcha-response"]');<br>        if (fg.length === 0){<br>          $('&lt;input type="hidden" readonly value="' + token + '" name="g-recaptcha-response"&gt;').appendTo(f);<br>        } else {<br>          fg.val(token);<br>        }<br>        }<br>      }<br>    </pre>  </ol>   <h2>Complete Code</h2>  <b>HTML</b>  <pre><br>      &lt;!--button refresh token (example)--&gt;<br>      &lt;button class="btn-block btn" onclick="gexec()"&gt;Refresh&lt;/button&gt;<br>  </pre>  <b>Javascript</b>  <pre><br>    //load jQuery if not exists (automated)<br>    if (typeof jQuery == 'undefined' || !window.jQuery) {<br>      var hs = document.createElement('script');<br>      hs.type = 'text/javascript';<br>      hs.async = true;<br>      hs.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';<br>      document.getElementsByTagName('head')[0].appendChild(hs);<br>      document.getElementsByTagName('body')[0].appendChild(hs);<br>      document.head.appendChild(hs);<br>      document.body.appendChild(hs);<br>    }<br>    //set site key<br>    const g_site_key = 'YOUR_SITE_KEY';<br>    //loader<br>    (function () {<br>      submitDisable();<br>      download_script('https://www.google.com/recaptcha/api.js?render='+g_site_key+'&amp;render=explicit', function () {<br>        grecaptcha.ready(function () {<br>          gexec();<br>        });<br>      });<br>    })();<br>    //function callback<br>    function gexec(){ //also refresh function<br>      grecaptcha.execute(g_site_key, { action: 'homepage' }).then(function (token) {<br>        recaptcha_insert_token(token); //insert element token into form<br>      });<br>    }<br>    //function add recaptcha elements<br>    function recaptcha_insert_token(token) {<br>      if (typeof jQuery == 'undefined'){<br>        console.log('JQuery Not Loaded');<br>      } else {<br>        var f = $('form'), fg = f.find('[name="g-recaptcha-response"]');<br>      if (fg.length === 0){<br>        $('&lt;input type="hidden" readonly value="' + token + '" name="g-recaptcha-response"&gt;').appendTo(f);<br>      } else {<br>        fg.val(token);<br>      }<br>      }<br>    }<br>  </pre>  <b>PHP (backend)</b>  <pre><br>      &lt;?php<br>      function recaptcha_verify($secret)<br>      {<br>      	if (isset($_POST['g-recaptcha-response'])) {<br>      		$response = $_POST['g-recaptcha-response'];<br>      		$remoteip = $this-&gt;getUIP();<br>      		$secret = $this-&gt;recaptcha_s;<br>      		$g_response = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&amp;response=' . $response . '&amp;remoteip=' . $remoteip), true);<br>      		if (isset($g_response['success']) &amp;&amp; true === $g_response['success']) {<br>      			return true;<br>      		} else {<br>      			return false;<br>      		}<br>      	}<br>      }<br><br>      if (isset($_POST['login'])){ //example if you have post named login<br>      	if (recaptcha_verify('YOUR_SECRET_KEY_HERE') !== false){<br>      		/* Recaptcha Success */<br>      	} else {<br>      		/* Recaptcha Failed */<br>      	}<br>      }<br>  </pre>  <h2>Full Example at Codepen</h2>  <div class="codepen" data-default-tab="js,result" data-height="265" data-pen-title="Complete Google recaptcha v3" data-slug-hash="qzgYmp" data-theme-id="0" data-user="dimaslanjaka" style="border: 2px solid; box-sizing: border-box; display: flex; height: 265px; margin: 1em 0; padding: 1em;">    See the Pen <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJGZGltYXNsYW5qYWthJTJGcGVuJTJGcXpnWW1wJTJG" rel="nofollow noopener noreferer" target="_blank">      Complete Google recaptcha v3</a> by dimas lanjaka (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJGZGltYXNsYW5qYWth" rel="nofollow noopener noreferer" target="_blank">@dimaslanjaka</a>)     on <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJG" rel="nofollow noopener noreferer" target="_blank">CodePen</a>.   </div>  <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script> </div>
-					</section>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- Footer -->
-<div id="featured">
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <div class="row">
-      
-      <div class="4u">
-        <h2>Quiz The Legend Of Neverland</h2>
-        <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="image full"><img src="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz/SCENIC-QUIZ.jpg" alt="Quiz The Legend Of Neverland"></a>
-        <p>Quiz The Legend Of Neverland. Scenic Quiz Answer The Legend Of Neverland</p>
-        <p><a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="button">More Details</a></p>
-      </div>
-      
-      <div class="4u">
-        <h2>Install PHP CLI for android</h2>
-        <a href="http://www.webmanajemen.com/2017/04/instal-php-cli-pada-android-instalasi.html" class="image full"><img src="https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg" alt="Install PHP CLI for android"></a>
-        <p>Install PHP CLI for android. How to install php cli on android rooted</p>
-        <p><a href="http://www.webmanajemen.com/2017/04/instal-php-cli-pada-android-instalasi.html" class="button">More Details</a></p>
-      </div>
-      
-      <div class="4u">
-        <h2>Chimeraland Pets Information</h2>
-        <a href="https://www.webmanajemen.com/Chimeraland/Pets.html" class="image full"><img src="https://www.webmanajemen.com/Chimeraland/Pets/cover.jpg" alt="Chimeraland Pets Information"></a>
-        <p>Chimeraland Pets Information. Chimeraland Pets Information</p>
-        <p><a href="https://www.webmanajemen.com/Chimeraland/Pets.html" class="button">More Details</a></p>
-      </div>
-      
+    <a class="navbar-brand" href="/">WMI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code.html">Current</a></li>
+      </ul>
     </div>
   </div>
-</div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">[JS] Google Recaptcha V3 Complete Code</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on July 12, 2019 7:36 PM by Dimas Lanjaka Kumala Indra
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/JS">JS</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/HTML">HTML</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Marketing%20Strategies">Marketing Strategies</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Tips%20&amp;%20Tricks">Tips &amp; Tricks</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Programming">Programming</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/JS">JS</a>
+  
+  
+</header>
+        <!-- Post content-->
+        <section class="mb-5">
+          <div dir="ltr" trbidi="on"><div>  <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg" alt="grecaptcha"></div>  <b>Requirements:</b>  <ol>    <li>jQuery (if not it will automated added into pages)&nbsp;</li>    <pre><br>      if (typeof jQuery == 'undefined' || !window.jQuery) {<br>        var hs = document.createElement('script');<br>        hs.type = 'text/javascript';<br>        hs.async = true;<br>        hs.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';<br>        document.getElementsByTagName('head')[0].appendChild(hs);<br>        document.getElementsByTagName('body')[0].appendChild(hs);<br>        document.head.appendChild(hs);<br>        document.body.appendChild(hs);<br>      }<br>    </pre>     <li>Recaptcha Site Key And Secret (backend): <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvbSUyRnJlY2FwdGNoYSUyRmFkbWluJTJG" rel="nofollow noopener noreferer" target="_blank">Get Here</a></li>    <pre><br>    //Set site key as global variable<br>    const g_site_key = 'YOUR_SITE_KEY';<br>    </pre>     <li>Main Code:</li>    <pre><br>        //loader<br>        (function () {<br>          submitDisable();<br>          download_script('https://www.google.com/recaptcha/api.js?render='+g_site_key+'&amp;render=explicit', function () {<br>            grecaptcha.ready(function () {<br>              gexec();<br>            });<br>          });<br>        })();<br>      //function callback<br>      function gexec(){ //also refresh function<br>        grecaptcha.execute(g_site_key, { action: 'homepage' }).then(function (token) {<br>          recaptcha_insert_token(token); //insert element token into form<br>        });<br>      }<br>      //function add recaptcha elements<br>      function recaptcha_insert_token(token) {<br>        if (typeof jQuery == 'undefined'){<br>          console.log('JQuery Not Loaded');<br>        } else {<br>          var f = $('form'), fg = f.find('[name="g-recaptcha-response"]');<br>        if (fg.length === 0){<br>          $('&lt;input type="hidden" readonly value="' + token + '" name="g-recaptcha-response"&gt;').appendTo(f);<br>        } else {<br>          fg.val(token);<br>        }<br>        }<br>      }<br>    </pre>  </ol>   <h2>Complete Code</h2>  <b>HTML</b>  <pre><br>      &lt;!--button refresh token (example)--&gt;<br>      &lt;button class="btn-block btn" onclick="gexec()"&gt;Refresh&lt;/button&gt;<br>  </pre>  <b>Javascript</b>  <pre><br>    //load jQuery if not exists (automated)<br>    if (typeof jQuery == 'undefined' || !window.jQuery) {<br>      var hs = document.createElement('script');<br>      hs.type = 'text/javascript';<br>      hs.async = true;<br>      hs.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';<br>      document.getElementsByTagName('head')[0].appendChild(hs);<br>      document.getElementsByTagName('body')[0].appendChild(hs);<br>      document.head.appendChild(hs);<br>      document.body.appendChild(hs);<br>    }<br>    //set site key<br>    const g_site_key = 'YOUR_SITE_KEY';<br>    //loader<br>    (function () {<br>      submitDisable();<br>      download_script('https://www.google.com/recaptcha/api.js?render='+g_site_key+'&amp;render=explicit', function () {<br>        grecaptcha.ready(function () {<br>          gexec();<br>        });<br>      });<br>    })();<br>    //function callback<br>    function gexec(){ //also refresh function<br>      grecaptcha.execute(g_site_key, { action: 'homepage' }).then(function (token) {<br>        recaptcha_insert_token(token); //insert element token into form<br>      });<br>    }<br>    //function add recaptcha elements<br>    function recaptcha_insert_token(token) {<br>      if (typeof jQuery == 'undefined'){<br>        console.log('JQuery Not Loaded');<br>      } else {<br>        var f = $('form'), fg = f.find('[name="g-recaptcha-response"]');<br>      if (fg.length === 0){<br>        $('&lt;input type="hidden" readonly value="' + token + '" name="g-recaptcha-response"&gt;').appendTo(f);<br>      } else {<br>        fg.val(token);<br>      }<br>      }<br>    }<br>  </pre>  <b>PHP (backend)</b>  <pre><br>      &lt;?php<br>      function recaptcha_verify($secret)<br>      {<br>      	if (isset($_POST['g-recaptcha-response'])) {<br>      		$response = $_POST['g-recaptcha-response'];<br>      		$remoteip = $this-&gt;getUIP();<br>      		$secret = $this-&gt;recaptcha_s;<br>      		$g_response = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&amp;response=' . $response . '&amp;remoteip=' . $remoteip), true);<br>      		if (isset($g_response['success']) &amp;&amp; true === $g_response['success']) {<br>      			return true;<br>      		} else {<br>      			return false;<br>      		}<br>      	}<br>      }<br><br>      if (isset($_POST['login'])){ //example if you have post named login<br>      	if (recaptcha_verify('YOUR_SECRET_KEY_HERE') !== false){<br>      		/* Recaptcha Success */<br>      	} else {<br>      		/* Recaptcha Failed */<br>      	}<br>      }<br>  </pre>  <h2>Full Example at Codepen</h2>  <div class="codepen" data-default-tab="js,result" data-height="265" data-pen-title="Complete Google recaptcha v3" data-slug-hash="qzgYmp" data-theme-id="0" data-user="dimaslanjaka">    See the Pen <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJGZGltYXNsYW5qYWthJTJGcGVuJTJGcXpnWW1wJTJG" rel="nofollow noopener noreferer" target="_blank">      Complete Google recaptcha v3</a> by dimas lanjaka (<a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJGZGltYXNsYW5qYWth" rel="nofollow noopener noreferer" target="_blank">@dimaslanjaka</a>)     on <a href="/page/safelink.html?url=aHR0cHMlM0ElMkYlMkZjb2RlcGVuLmlvJTJG" rel="nofollow noopener noreferer" target="_blank">CodePen</a>.   </div>  <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script> </div>
 
+          
+          <!-- Preview image figure-->
+          <figure class="mb-4">
+            <img class="img-fluid rounded" width="900px" height="400px" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg" alt="[JS] Google Recaptcha V3 Complete Code">
+          </figure>
+          
+        </section>
+      </article>
 
-<!-- Comment -->
-<div id="comment">
-  <div class="container">
-    <div id="disqus_thread" class="disqus"></div>
-    <script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
 <script>
   var options =
   {
@@ -254,112 +213,122 @@
     comments powered by Disqus.
   </a>
 </noscript>
-  </div>
-</div>
 
+          </div>
+        </div>
+      </section>
+      
+    </div>
 
-<!-- Footer -->
-<div id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="4u">
-        <section>
-          <h2 title="latest post by updated">Latest Posts</h2>
-          <ul class="default">
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/how-to-add-caption-to-images-or-videos_9.html" title="How to add caption to images or videos in wordpress and Blogger">How to add caption to images or videos in wordpress and Blogger</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post.html" title="Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post">Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/mighty-url-shortener-v201-download.html" title="Mighty URL Shortener v2.0.1 Download">Mighty URL Shortener v2.0.1 Download</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/cara-menjadwalkan-post-pada-blogger.html" title="Cara Jadwalkan Post pada Blogger">Cara Jadwalkan Post pada Blogger</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/this-is-impact-seo-for-your-site.html" title="This is the Impact SEO For Your Site">This is the Impact SEO For Your Site</a></li>
-            
-          </ul>
-        </section>
-      </div>
-      <div class="4u">
-        <section>
-          <h2>Random Posts</h2>
-          <ul class="default">
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/how-to-determine-size-special-ad.html" title="How to Determine Size Special Ad Adsense Most True">How to Determine Size Special Ad Adsense Most True</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/08/parsing-html-untuk-menemukan-links.html" title="Parsing HTML untuk menemukan Links">Parsing HTML untuk menemukan Links</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/create-notifications-for-adblocker.html" title="Create Notifications For Adblocker Adsense Users">Create Notifications For Adblocker Adsense Users</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/10-strategi-terbukti-untuk-meningkatkan.html" title="10 Strategi Terbukti untuk Meningkatkan Pendapatan AdSense Anda">10 Strategi Terbukti untuk Meningkatkan Pendapatan AdSense Anda</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/causes-blog-website-or-site-google-adsense-ban.html" title="Causes Blog / Website Or Site Google Adsense banned">Causes Blog / Website Or Site Google Adsense banned</a></li>
-            
-          </ul>
-        </section>
-      </div>
-      <div class="4u">
-        <section>
-          <h2>Random Posts</h2>
-          <ul class="default">
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/how-to-determine-size-special-ad.html" title="How to Determine Size Special Ad Adsense Most True">How to Determine Size Special Ad Adsense Most True</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/08/parsing-html-untuk-menemukan-links.html" title="Parsing HTML untuk menemukan Links">Parsing HTML untuk menemukan Links</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/create-notifications-for-adblocker.html" title="Create Notifications For Adblocker Adsense Users">Create Notifications For Adblocker Adsense Users</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/causes-blog-website-or-site-google-adsense-ban.html" title="Causes Blog / Website Or Site Google Adsense banned">Causes Blog / Website Or Site Google Adsense banned</a></li>
-            
-            <li><a href="https://www.webmanajemen.com/2017/04/cara-membuat-responsive-recent-slider.html" title="Cara membuat Responsive Recent Slider Widget keren di Blogger">Cara membuat Responsive Recent Slider Widget keren di Blogger</a></li>
-            
-          </ul>
-        </section>
-      </div>
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
     </div>
   </div>
-</div>
 
-<!-- Copyright -->
-<div id="copyright">
-  <div class="container">
-    WMI © 2022 Dimas Lanjaka Kumala Indra
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg" alt="Index Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/index.html">Index Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
   </div>
 </div>
-
-	
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script>
-  lazy.add('https://www.googletagmanager.com/gtag/js?id=UA-106238155-1', function () {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    console.log('google analystic loaded');
-    gtag('config', 'UA-106238155-1');
-  });
-</script>
-
-
-
-  <script type="text/javascript">//<![CDATA[
-    var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
-    //]]></script>
-
-<!-- backup
-<script type="text/javascript">//<![CDATA[
-var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209467777280582";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
-//]]></script>
--->
-<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/vs.min.css">
-<script>
-  lazy.add('https://yandex.st/highlightjs/8.0/highlight.min.js', function () {
-    hljs.initHighlightingOnLoad();
-  });
-  lazy.add('/js/iridium.js');
-  lazy.exec();
-</script>
-
+  
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright © WMI 2022
+      </p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
 
 
 </body></html>

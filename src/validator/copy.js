@@ -1,6 +1,6 @@
 // copy static files into docs
-const { promises: fs } = require("fs");
-const path = require("path");
+const { promises: fs } = require('fs');
+const path = require('path');
 
 async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
@@ -14,4 +14,4 @@ async function copyDir(src, dest) {
   }
 }
 
-copyDir(path.join(__dirname, "static"), path.join(__dirname, "/../docs"));
+copyDir(path.join(__dirname, 'static'), path.join(__dirname, '/../docs'));

@@ -1,5 +1,5 @@
-import * as fs from "fs";
-import { dirname } from "path";
+import * as fs from 'fs';
+import { dirname } from 'path';
 
 /**
  * Write file recursive
@@ -7,7 +7,7 @@ import { dirname } from "path";
  * @param content
  * @param append
  */
-export default function (file, content, append = false) {
+export default function writeFile(file, content, append = false) {
   if (!fs.existsSync(dirname(file))) {
     fs.mkdirSync(dirname(file), { recursive: true });
   }

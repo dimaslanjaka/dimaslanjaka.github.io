@@ -1,21 +1,24 @@
-.DS_Store
-Thumbs.db
-db.json
-twitter-db.json
 *.log
-node_modules
-vendor
 public/
 .deploy*/
-tmp/
-exclude/
-docs/
 #package-lock.json
 yarn.lock
 firebase.js
+*.backup.*
+
+# downloaded library
+.DS_Store
+Thumbs.db
+
+# generated static files
+docs/
 
 # git filter-branch
 .git-rewrite
+
+# dependencies folders
+node_modules
+vendor
 
 # remove dynamic idea objects
 .idea/vcs.xml
@@ -23,14 +26,17 @@ firebase.js
 **/.idea/vcs.xml
 **/.idea/workspace.xml
 
-# custom build for cache hexo-seo
+# typescript outdir
 build/*
-#!build/hexo-seo/
 
+# temporarily folders
 tmp
-temo
+temp
+
+# archives
 *.tar.xz
 *.zip
 *.7z
 *.rar
 *.tgz
+*.gz

@@ -62,4 +62,4 @@ export default async function generateCategories(labelname?: string, pagenum?: n
   }
 }
 
-gulp.task('generate:categories', () => generateCategories('Programming'));
+gulp.task('generate:categories', () => generateCategories());

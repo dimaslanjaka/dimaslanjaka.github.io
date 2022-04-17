@@ -8,8 +8,8 @@ import color from '../../node/color';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { archiveMap, array_wrap, post_chunks } from '../../markdown/transformPosts/postMapper';
 import { getLatestDateArray } from '../../ejs/helper/date';
-import generateTags from './generate-tags';
-import generateCategories from './generate-categories';
+import './generate-tags';
+import './generate-categories';
 
 /**
  * generate index
@@ -117,11 +117,6 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
   }
 }
 
-export async function generateLabel(name?: string) {
-  generateTags(name);
-  generateCategories(name);
-}
-
 gulp.task('generate:index', () => generateIndex());
-gulp.task('generate:label', () => generateLabel());
+gulp.task('generate:label', gulp.series('generate:tags', 'generate:categories'));
 gulp.task('generate:archive', gulp.series('generate:index', 'generate:label'));

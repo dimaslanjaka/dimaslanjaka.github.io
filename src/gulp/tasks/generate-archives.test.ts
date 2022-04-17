@@ -2,14 +2,12 @@ import { post_chunks } from '../../markdown/transformPosts/postMapper';
 import { write } from '../../node/filemanager';
 import MeasureTime from '../../node/measure-timing';
 import { tmp } from '../../types/_config';
-import { generateLabel } from './generate-archives';
+import { generateIndex } from './generate-archives';
 
 const measure = new MeasureTime();
 measure.start();
 
-generateLabel('Adsense');
-
-//generateIndex('homepage');
+generateIndex('homepage');
 console.log(measure.end());
 
 function debugChunks() {

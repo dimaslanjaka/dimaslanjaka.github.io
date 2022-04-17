@@ -23,7 +23,9 @@
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.specs.ts'",
     "preinstall": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes",
-    "php": "php -S localhost:4000 -t docs"
+    "php": "php -S localhost:4000 -t docs",
+    "eslint": "npx eslint --fix src > dump-eslint.log",
+    "depcheck": "npx depcheck > dump-unused.log"
   },
   "repository": {
     "type": "git",

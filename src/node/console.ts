@@ -1,10 +1,10 @@
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 let firstTime = true;
 const trueLog = console.log;
 // write logs to file
 console.log = function (...msg: any[]) {
-  const logfile = path.join(process.cwd(), "/tmp/log.log");
+  const logfile = path.join(process.cwd(), '/tmp/log.log');
   if (!fs.existsSync(path.dirname(logfile))) fs.mkdirSync(path.dirname(logfile), { recursive: true });
   if (firstTime) {
     if (fs.existsSync(logfile)) fs.unlinkSync(logfile);
@@ -15,11 +15,11 @@ console.log = function (...msg: any[]) {
     if (msg.length === 1) {
       text = msg[0];
     } else {
-      text = msg.join("\n");
+      text = msg.join('\n');
     }
   }
   if (text)
-    fs.appendFile(logfile, text + "\n\n", function (err) {
+    fs.appendFile(logfile, text + '\n\n', function (err) {
       if (err) {
         return trueLog(err);
       }

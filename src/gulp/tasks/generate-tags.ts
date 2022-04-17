@@ -61,7 +61,8 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
         const merge_data = Object.assign(pagemeta, data);
         const pagedata = modifyPost(merge_data);
         const rendered = await renderer(pagedata);
-        write(saveTo, rendered).then((f) => console.log(logname, f));
+        const f = await write(saveTo, rendered);
+        console.log(logname, f);
         if (config.verbose) {
           write(tmp('generateTags', data.perm_current + '.log'), simplifyDump(pagedata));
         }

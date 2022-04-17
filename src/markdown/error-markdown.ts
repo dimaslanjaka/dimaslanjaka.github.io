@@ -17,7 +17,7 @@ export default class ErrorMarkdown {
   stack?: string;
   filelog: string;
 
-  constructor(obj?: object | string, hash?: string) {
+  constructor(obj?: Record<string, unknown> | string, hash?: string) {
     // assign the error class name in your custom error (as a shortcut)
     this.name = this.constructor.name;
 

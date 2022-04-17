@@ -3,6 +3,7 @@ const { resolve } = require('path');
 const fs = require('fs');
 const readdir = promisify(fs.readdir);
 const stat = promisify(fs.stat);
+const bluebird = require('bluebird');
 
 /**
  * iterate dir
@@ -15,7 +16,7 @@ async function getFiles(dir) {
    *
    * @type {string[]}
    */
-  const files = await Promise.all(
+  const files = await bluebird.all(
     sibDirs.map(async (subDir) => {
       const res = resolve(dir, subDir);
       return (await stat(res)).isDirectory() ? getFiles(res) : res;

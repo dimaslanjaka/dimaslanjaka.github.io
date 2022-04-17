@@ -9,9 +9,17 @@
         <section class="mb-5">
           <%- page.body %>
 
+          <% if (page.keywords) { %>
+          <ul class="list-group">
+            <% page.keywords.forEach(kw => { %>
+              <li class="list-group-item"><%= kw %></li>
+            <% }) %>
+          </ul>
+          <% } %>
+
           <% if (page.type == 'post') { %>
           <!-- Preview image figure-->
-          <figure class="mb-4">
+          <figure class="mb-4 mt-4">
             <img class="img-fluid rounded" width="900px" height="400px" src="<%- thumbnail(page) %>"
               alt="<%- page.title %>" />
           </figure>

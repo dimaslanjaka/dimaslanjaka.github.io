@@ -13,7 +13,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 </details>
 
 ## compiler information
-[![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com) [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
+[![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com) [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml) [![Join the chat at https://gitter.im/static-blog-generator/static-blog-generator](https://badges.gitter.im/static-blog-generator/static-blog-generator.svg)](https://gitter.im/static-blog-generator/static-blog-generator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## features
 - nodejs (12.x - 17.x supported)

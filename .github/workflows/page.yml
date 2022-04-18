@@ -22,14 +22,16 @@ jobs:
       GITFLOW: true
     steps:
       - name: Checkout repository and submodules
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
+          repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: "16.x"
+          cache: "npm"
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
@@ -43,6 +45,10 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get UUID
+        id: uuid
+        run: echo "::set-output name=uid::$(cat .guid)"
+      #- run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")"
       - name: Get Caches
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: actions/cache@v2
@@ -57,10 +63,15 @@ jobs:
             ./packages
             ./databases
             ./docs
-          key: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
-          restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
-      - run: git submodule update --recursive --remote --init
-        name: update submodules
+          key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+          restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+      - run: |
+          git checkout compiler
+          rm -rf src-posts
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch posts --single-branch src-posts
+          rm -rf source
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
+        name: Pull & Update Submodules Recursively
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not written
         # if: steps.npm-cache.outputs.cache-hit != 'true'

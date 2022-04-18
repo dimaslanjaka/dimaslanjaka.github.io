@@ -1,12 +1,12 @@
 import { JSDOM } from 'jsdom';
 
 class jdom {
-  close() {
-    this.instance.window.close();
-  }
   instances: { [key: string]: JSDOM } = {};
   instance: JSDOM;
   current: string;
+  close() {
+    this.instance.window.close();
+  }
   parse = (str: string) => {
     this.instance = new JSDOM(str);
     const document: Document = this.instance.window.document;

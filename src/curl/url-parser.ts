@@ -13,6 +13,8 @@ export interface URLParsed extends DeepPartial<ReturnType<typeof urlParse>> {
   searchObject: Record<string, any>;
   /** protocol://host */
   protohost: string;
+  /** filename from url */
+  filename: string;
 }
 
 /**
@@ -27,8 +29,10 @@ export default function urlParser(src: string): URLParsed | null {
   const queries: string[] = parser.query.replace(/^\?/, '').split('&');
   let split: Array<Record<any, any> | any> = [];
   for (let i = 0; i < queries.length; i++) {
-    split = queries[i].split('=');
-    if (split.length) searchObject[split[0]] = split[1];
+    split = queries[i].split('=').removeEmpties();
+    if (0 in split) {
+      searchObject[split[0]] = split[1];
+    }
   }
   const parsed: URLParsed = {
     protocol: parser.protocol,
@@ -40,11 +44,12 @@ export default function urlParser(src: string): URLParsed | null {
     protohost: parser.protocol + '//' + parser.host,
     search: parser.query,
     searchObject: searchObject,
+    filename: parser.href.split('/').removeEmpties().unique().last(1)[0],
   };
-  for (const key in parser) {
+  /*for (const key in parser) {
     if (Object.prototype.hasOwnProperty.call(parser, key)) {
       parsed[key] = parser[key];
     }
-  }
+  }*/
   return parsed;
 }

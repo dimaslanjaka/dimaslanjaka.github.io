@@ -51,5 +51,5 @@ export default function urlParser(src: string): URLParsed | null {
       parsed[key] = parser[key];
     }
   }*/
-  return parsed;
+  return Object.assign(parsed, parser);
 }

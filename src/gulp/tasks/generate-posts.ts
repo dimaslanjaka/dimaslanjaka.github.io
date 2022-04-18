@@ -69,7 +69,7 @@ const renderAssets = async () => {
 gulp.task('generate:assets', renderAssets);
 
 const renderTemplate = () => {
-  const src = join(theme_dir, 'source/**/**');
+  const src = join(theme_dir, 'source/**/**', '!**/.git*');
   logger.log(logname + chalk.magentaBright('[template]'), 'copy', src, '->', generated_dir);
   return gulp
     .src(src, { cwd: root })

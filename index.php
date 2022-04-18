@@ -7,7 +7,7 @@ $file = join_path(__DIR__, 'docs', $url['path']);
 if (is_dir($file)) $file = join_path($file, 'index.html');
 //var_dump($file, is_file($file), is_dir($file));
 if (is_file($file)) {
-  $mimetypes = json_decode(file_get_contents(join_path(__DIR__, 'src', 'data', 'mimes.json')), true);
+  $mimetypes = json_decode(file_get_contents(join_path(__DIR__, 'src', 'curl', 'mimes.json')), true);
   $ext = strtolower(substr($file, strrpos($file, '.') + 1, strlen($file)));
   if (array_key_exists($ext, $mimetypes)) {
     $mime_type = $mimetypes[$ext];

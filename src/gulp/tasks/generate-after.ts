@@ -8,6 +8,7 @@ import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import { JSDOM } from 'jsdom';
 import 'js-prototypes';
 import { TaskCallback } from 'undertaker';
+import jdom from '../../node/jsdom';
 
 /**
  * get domain name without subdomain
@@ -149,12 +150,13 @@ export const parseAfterGen = (sources?: string[], callback?: CallableFunction) =
  * @returns
  */
 export default function fixHtmlPost(content: string, debug = false) {
-  const dom = new JSDOM(content);
+  const jd = new jdom();
+  const dom = jd.parse(content);
   // fix lang attr
-  const html = dom.window.document.querySelector('html');
+  const html = dom.querySelector('html');
   if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
   // external link filter
-  const hrefs = dom.window.document.querySelectorAll('a');
+  const hrefs = dom.querySelectorAll('a');
   if (hrefs && hrefs.length > 0) {
     for (let i = 0; i < hrefs.length; i++) {
       const element = hrefs[i];
@@ -174,8 +176,6 @@ export default function fixHtmlPost(content: string, debug = false) {
     }
   }
 
-  const result = dom.serialize();
-  // close prevent memory leaks
-  dom.window.close();
+  const result = jd.serialize();
   return removeWordpressCDN(result);
 }

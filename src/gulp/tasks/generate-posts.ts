@@ -60,7 +60,7 @@ const renderAssets = async () => {
     const stat = statSync(src);
     const dest = join(generated_dir, file.replace('_posts/', '/'));
     if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
-    if (!stat.isDirectory()) {
+    if (!stat.isDirectory() && existsSync(src)) {
       copyFileSync(src, dest);
       if (config.verbose) logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
     }

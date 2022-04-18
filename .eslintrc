@@ -38,7 +38,16 @@
         "varsIgnorePattern": "[iI]gnored|^_"
       }
     ],
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": false
+      }
+    ],
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-implicit-any-catch": "off",
     "@typescript-eslint/no-this-alias": [
       "error",
       {

@@ -80,7 +80,7 @@ class scheduler {
   /**
    * Register scheduler
    */
-  static register() {
+  static register(): void {
     if (scheduler.registered) return;
     scheduler.registered = true;
     bindProcessExit('scheduler_on_exit', function () {
@@ -92,7 +92,7 @@ class scheduler {
    * @param key existing key (duplicate) will be overwritten
    * @param value
    */
-  static add(key: string, value: () => any) {
+  static add(key: string, value: () => any): void {
     functions[key] = value;
     const self = this;
     new Promise((resolve) => {

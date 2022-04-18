@@ -62,10 +62,10 @@ jobs:
             ./docs
           key: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
-      - name: Pull & update submodules recursively
-        run: |
-          git submodule update --init --recursive
-          git submodule update --recursive --remote
+      - run: cd source && git pull --force
+        name: get latest commit of source
+      - run: cd src-posts && git pull --force
+        name: get latest commit of posts
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not written
         # if: steps.npm-cache.outputs.cache-hit != 'true'

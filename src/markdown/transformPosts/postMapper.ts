@@ -17,7 +17,7 @@ export type Partial<T> = {
  * @see {@link https://stackoverflow.com/a/40076355/6404439}
  */
 export type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
+  [P in keyof T]?: T[P] extends Record<string, unknown> ? DeepPartial<T[P]> : T[P];
 };
 
 /**

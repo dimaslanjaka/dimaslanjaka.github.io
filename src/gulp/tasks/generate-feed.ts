@@ -2,12 +2,11 @@ import Bluebird from 'bluebird';
 import { Feed, Item } from 'feed';
 import gulp from 'gulp';
 import moment from 'moment';
-import { TaskCallback } from 'undertaker';
 import { helpers } from '../../ejs';
 import { author_email, author_link, author_name, author_object } from '../../ejs/helper/author';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
-import CachePost, { getAllPosts } from '../../node/cache-post';
+import { getAllPosts } from '../../node/cache-post';
 import color from '../../node/color';
 import { join, write } from '../../node/filemanager';
 import config, { post_generated_dir } from '../../types/_config';
@@ -41,7 +40,7 @@ function generateFeeds() {
       },
     });
 
-    getAllPosts({ max: 5 }).forEach((post) => {
+    getAllPosts().forEach((post) => {
       try {
         const obj: Item = {
           title: post.metadata.title,
@@ -94,6 +93,7 @@ function generateFeeds() {
             }
           }
           if (typeof result == 'string' && typeof ext == 'string') {
+            if (feedtype == 'rss2') feedtype = 'rss';
             const dest = join(post_generated_dir, feedtype + ext);
             write(dest, result).then((path) => {
               console.log(logname, 'generated', path);

@@ -93,9 +93,9 @@ jobs:
       - run: "gulp generate:after"
       - run: "gulp generate:feeds"
       - run: "gulp generate:minify"
-      - run: cd docs && npm install
+      - run: cd docs && npm install && rm -rf .git .gitignore
         name: install public root libraries
-      - run: cd docs/page && npm install
+      - run: cd docs/page && npm install && rm -rf .git .gitignore
         name: install public page libraries
       - run: cp -rf source/robots.txt docs/robots.txt
       - run: cp -rf README.md docs/readme.md

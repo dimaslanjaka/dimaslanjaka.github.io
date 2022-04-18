@@ -1,0 +1,1 @@
+!function(){function n(n){const{message:o,filename:i,lineno:t,colno:s}=n;if(e.test(i)){const n={topic:HUB_EVENTS.PEN_ERROR_RUNTIME,data:{message:o,filename:i,line:t,lineno:t,colno:s}};window.parent.postMessage(n,"*")}}window.addEventListener("error",n);const e=/(boomboom\/(index|pen)\.js|index.html)/;window.__handleRuntimeErrors=n}();

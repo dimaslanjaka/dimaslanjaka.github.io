@@ -4,6 +4,19 @@
 img {
   max-width: 100%; }
 
+/* pretext wrap */
+pre {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */ }
+
 /* youtube embed */
 .video-container {
   position: relative;
@@ -32,6 +45,7 @@ h6 a {
   color: #252020;
   text-decoration: none; }
 
+/* recent sidebar */
 #recent-sidebar ul,
 #recent-sidebar li {
   list-style: none; }

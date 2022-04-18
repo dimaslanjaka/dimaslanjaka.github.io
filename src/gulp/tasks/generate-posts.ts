@@ -69,10 +69,10 @@ const renderAssets = async () => {
 gulp.task('generate:assets', renderAssets);
 
 const renderTemplate = () => {
-  const src = join(theme_dir, 'source/**/**', '!**/.git*');
+  const src = join(theme_dir, 'source/**/**');
   logger.log(logname + chalk.magentaBright('[template]'), 'copy', src, '->', generated_dir);
   return gulp
-    .src(src, { cwd: root })
+    .src([src, '!**/.git*'], { cwd: root })
     .pipe(
       through2.obj((file, enc, next) => {
         if (file.isNull()) {

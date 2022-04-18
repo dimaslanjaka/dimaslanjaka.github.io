@@ -117,7 +117,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               const parsed = parsePost(file);
               if (!parsed) {
                 console.log(chalk.redBright('cannot parse'), file);
-                return next();
+                //return next();
+                continue;
               }
               const modify = modifyPost(parsed);
               //console.log(modify.metadata.type);
@@ -139,7 +140,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       }
     }
     // show previous generated
-    if (!pathname) console.log('last processed', pathname);
+    //if (!pathname) console.log('last processed', pathname);
     next();
   },
   // homepage route

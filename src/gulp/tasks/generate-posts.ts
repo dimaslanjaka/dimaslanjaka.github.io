@@ -42,28 +42,28 @@ const logname = chalk.hex('#fcba03')('[render]');
 const page_url = new URL(config.url);
 const global_exclude = ['**/_drafts/**', '**/_data/**'];
 
-const renderAssets = () => {
+const renderAssets = async () => {
   logger.log(logname + chalk.magentaBright('[assets]'), 'copy ->', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
-  const ignore = ['**/*.md', ...exclude, ...global_exclude];
-  return globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true })
-    .then((s) => {
-      if (config.verbose) {
-        logger.log(logname + '[total]', s.length);
-        logger.log(ignore);
-      }
-      return s;
-    })
-    .each((file, i) => {
-      const src = join(source_dir, file);
-      const stat = statSync(src);
-      const dest = join(generated_dir, file.replace('_posts/', '/'));
-      if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
-      if (!stat.isDirectory()) {
-        copyFileSync(src, dest);
-        if (config.verbose) logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
-      }
-    });
+  const ignore = ['**/*.md', '**/.git*', ...exclude, ...global_exclude];
+  const glob = globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true }).then((s) => {
+    if (config.verbose) {
+      logger.log(logname + '[total]', s.length);
+      logger.log(ignore);
+    }
+    return s;
+  });
+  for (let i = 0; i < glob.length; i++) {
+    const file = glob[i];
+    const src = join(source_dir, file);
+    const stat = statSync(src);
+    const dest = join(generated_dir, file.replace('_posts/', '/'));
+    if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
+    if (!stat.isDirectory()) {
+      copyFileSync(src, dest);
+      if (config.verbose) logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
+    }
+  }
 };
 
 gulp.task('generate:assets', renderAssets);

@@ -5,7 +5,6 @@ import config, { root } from '../../types/_config';
 import chalk from 'chalk';
 import gulp from 'gulp';
 import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
-import { JSDOM } from 'jsdom';
 import 'js-prototypes';
 import { TaskCallback } from 'undertaker';
 import jdom from '../../node/jsdom';

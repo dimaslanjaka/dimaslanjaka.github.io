@@ -55,7 +55,6 @@ const renderAssets = async () => {
   });
   for (let i = 0; i < glob.length; i++) {
     const file = glob[i];
-    console.log(file);
     const src = join(source_dir, file);
     const stat = statSync(src);
     const dest = join(generated_dir, file.replace('_posts/', '/'));

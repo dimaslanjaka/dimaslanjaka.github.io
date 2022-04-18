@@ -45,6 +45,9 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get UUID
+        id: uuid
+        run: echo "::set-output name=uid::$(cat .guid)"
       #- run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")"
       - name: Get Caches
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
@@ -60,8 +63,8 @@ jobs:
             ./packages
             ./databases
             ./docs
-          key: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
+          key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+          restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
       - run: |
           git checkout compiler
           rm -rf src-posts

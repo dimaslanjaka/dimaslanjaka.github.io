@@ -78,6 +78,14 @@ export function getAllPosts(opt = defaultResovableValue) {
     .map((post) => fixPost(post));
 }
 
+/**
+ * get total posts (no page)
+ * @returns
+ */
+export function getTotalPosts() {
+  return getAllPosts().length;
+}
+
 const randoms: { [key: string]: postResult[] } = {};
 /**
  * get random posts

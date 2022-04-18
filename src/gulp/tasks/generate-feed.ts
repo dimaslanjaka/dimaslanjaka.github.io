@@ -6,7 +6,7 @@ import { helpers } from '../../ejs';
 import { author_email, author_link, author_name, author_object } from '../../ejs/helper/author';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
-import { getAllPosts } from '../../node/cache-post';
+import { getAllPosts, getLatestPosts } from '../../node/cache-post';
 import color from '../../node/color';
 import { join, write } from '../../node/filemanager';
 import config, { post_generated_dir } from '../../types/_config';
@@ -40,7 +40,7 @@ function generateFeeds() {
       },
     });
 
-    getAllPosts().forEach((post) => {
+    getLatestPosts('date', getAllPosts().length).forEach((post) => {
       try {
         const obj: Item = {
           title: post.metadata.title,

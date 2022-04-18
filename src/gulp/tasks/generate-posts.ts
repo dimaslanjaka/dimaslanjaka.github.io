@@ -46,7 +46,7 @@ const renderAssets = async () => {
   logger.log(logname + chalk.magentaBright('[assets]'), 'copy ->', generated_dir);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
   const ignore = ['**/*.md', '**/.git*', ...exclude, ...global_exclude];
-  const glob = globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true }).then((s) => {
+  const glob = await globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true }).then((s) => {
     if (config.verbose) {
       logger.log(logname + '[total]', s.length);
       logger.log(ignore);
@@ -55,6 +55,7 @@ const renderAssets = async () => {
   });
   for (let i = 0; i < glob.length; i++) {
     const file = glob[i];
+    console.log(file);
     const src = join(source_dir, file);
     const stat = statSync(src);
     const dest = join(generated_dir, file.replace('_posts/', '/'));

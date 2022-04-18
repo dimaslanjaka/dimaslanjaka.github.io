@@ -3,7 +3,9 @@ name: Build
 on:
   push:
     branches:
-      - compiler # run when this branch pushed
+      - compiler
+      - posts
+      - source
 
 # cancel previous workflows, run only one workflow
 concurrency:
@@ -57,6 +59,8 @@ jobs:
             ./docs
           key: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
           restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
+      - run: git submodule update --recursive --remote --init
+        name: update submodules
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not written
         # if: steps.npm-cache.outputs.cache-hit != 'true'

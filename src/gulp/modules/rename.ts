@@ -60,7 +60,7 @@ export default function gulpRename(obj: string | Options | ((path: ParsedPath, f
       }
 
       path = join(parsedPath.dirname, parsedPath.basename + parsedPath.extname);
-    } else if (typeof obj === 'object' && obj !== undefined && obj !== null) {
+    } else if (typeof obj === 'object') {
       const dirname = 'dirname' in obj ? obj.dirname : parsedPath.dirname,
         prefix = obj.prefix || '',
         suffix = obj.suffix || '',

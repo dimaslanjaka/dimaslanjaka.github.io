@@ -24,6 +24,7 @@ jobs:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
         with:
+          repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Node.js 16.x

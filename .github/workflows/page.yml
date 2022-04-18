@@ -22,15 +22,16 @@ jobs:
       GITFLOW: true
     steps:
       - name: Checkout repository and submodules
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: "16.x"
+          cache: "npm"
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
@@ -58,8 +59,8 @@ jobs:
             ./packages
             ./databases
             ./docs
-          key: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
-          restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
       - name: Pull & update submodules recursively
         run: |
           git pull --recurse-submodules

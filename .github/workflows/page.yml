@@ -64,9 +64,7 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ hashFiles('**/.guid') }}
       - run: |
           git checkout compiler
-          git submodule foreach git checkout -b stagging
-          git submodule foreach git add -A
-          git submodule foreach git pull --rebase
+          git submodule foreach git pull
         name: Pull & Update Submodules Recursively
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not written

@@ -61,6 +61,7 @@ jobs:
           restore-keys: ${{ runner.os }}-node-${{ hashFiles('**/.guid') }}
       - name: Pull & update submodules recursively
         run: |
+          git pull --recurse-submodules
           git submodule update --init --recursive
           git submodule update --recursive --remote
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node

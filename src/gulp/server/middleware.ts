@@ -112,7 +112,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
           // start generating
           if (existsSync(file)) {
-            try {
+            if (file.endsWith('.md')) {
               // parse markdown metadata
               const parsed = parsePost(file);
               if (!parsed) {
@@ -131,9 +131,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
                 res.end(previewed);
               });
-            } catch (error) {
-              console.error(error);
-              return res.end(readFileSync(file));
+            } else {
+              return res.end(showPreview(readFileSync(file)));
             }
           }
         }

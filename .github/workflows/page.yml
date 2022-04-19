@@ -6,9 +6,6 @@ on:
       - compiler
       - posts
       - source
-    paths:
-      - 'src-posts/**'
-      - 'source/**'
 
 # cancel previous workflows, run only one workflow
 concurrency:

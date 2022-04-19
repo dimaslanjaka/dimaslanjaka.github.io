@@ -16,6 +16,7 @@ import './gen-middleware';
 import routedata from './routes.json';
 import jdom from '../../node/jsdom';
 import { generateIndex } from '../tasks/generate-archives';
+import { spawn } from 'child_process';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -51,6 +52,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
 
       gulp.series(...tasks)(() => {
         gulpIndicator = false;
+        spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir) });
         resolve();
       });
     }

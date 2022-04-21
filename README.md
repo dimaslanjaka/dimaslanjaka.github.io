@@ -15,16 +15,6 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 ## compiler information
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com) [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml) [![Join the chat at https://gitter.im/static-blog-generator/static-blog-generator](https://badges.gitter.im/static-blog-generator/static-blog-generator.svg)](https://gitter.im/static-blog-generator/static-blog-generator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/20813/branches/578444/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=20813&bid=578444)
 
-## Project Installation
-```bash
-# clone
-git clone --branch compiler --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
-# fetch all submodules
-git submodule update --recursive --remote
-# delete posts (donot copy my articles)
-rm -rf src-posts/*
-```
-
 ### temporarily disabled
 - gulp server : because of major changes, were disabled gulp local server, use php local server instead
 
@@ -39,12 +29,21 @@ rm -rf src-posts/*
 - 1000+ posts supported
 - cross-platform supported (linux recommended) (android termux need c++ for packages including: jsdom, node-libcurl, imagemin, etc)
 
-## Installation
+## Project Installation
 ```bash
-git clone --single-branch --branch compiler https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
+# clone
+git clone --branch compiler --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
+# cd
 cd foldername
+# fetch all submodules
+git submodule update --recursive --remote
+# delete posts (donot copy my articles)
+rm -rf src-posts/*
+# checkout local branch
 git checkout compiler
+# create tmp folder
 mkdir tmp
+# install dependencies
 npm install
 ```
 

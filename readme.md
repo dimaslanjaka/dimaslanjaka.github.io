@@ -29,12 +29,21 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - 1000+ posts supported
 - cross-platform supported (linux recommended) (android termux need c++ for packages including: jsdom, node-libcurl, imagemin, etc)
 
-## Installation
+## Project Installation
 ```bash
-git clone --single-branch --branch compiler https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
+# clone
+git clone --branch compiler --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
+# cd
 cd foldername
+# fetch all submodules
+git submodule update --recursive --remote
+# delete posts (donot copy my articles)
+rm -rf src-posts/*
+# checkout local branch
 git checkout compiler
+# create tmp folder
 mkdir tmp
+# install dependencies
 npm install
 ```
 
@@ -98,8 +107,8 @@ https://stackoverflow.com/questions/10878284/virtual-hosts-xampp-linux-ubuntu-no
 
 ## todo
 - [ ] admin panel
-- [ ] template
-- [ ] archives generator
+- [x] template
+- [x] archives generator
 - [x] multiple type of sitemap (google news, sitemap text, sitemap html, sitemap xml)
 
 ## contacts

@@ -59,7 +59,7 @@ skip_render:
   - "**/__test__/**"
   - "_posts/Chimeraland/**/*.html"
 
-# Writing
+# external links
 external_link:
   # true: Open ext in new tab, rel nofollow
   enable: true
@@ -98,7 +98,7 @@ index_generator:
 # gulp generator task options
 generator:
   # enable cache method globally
-  # sligthly reduce memory usages
+  ## sligthly reduce memory usages
   cache: false
 
 # Date / Time format

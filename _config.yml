@@ -212,18 +212,16 @@ adsense:
   enable: true
   # ca-pub-xxxx
   pub: ca-pub-1165447249910969
-
   # ads paths
   # auto read the paths to array of html contents
-
-  # in-article ads source
+  ## in-article ads source
   article_ads:
     - "source/ads/in_article.html"
     - "source/ads/in_article2.html"
-  # multplex/autorelaxed ads source
+  ## multplex/autorelaxed ads source
   multiplex_ads:
     - "source/ads/multiplex.html"
-  # display ads source
+  ## display ads source
   display_ads:
     - "source/ads/display.html"
   # ads field

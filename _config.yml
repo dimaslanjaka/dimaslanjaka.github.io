@@ -17,33 +17,24 @@ favicon: "/favicon.ico"
 # site logo from source_dir
 logo: "/image/logo.svg"
 
-# https://github.com/wzpan/hexo-generator-search
-# https://github.com/next-theme/hexo-generator-searchdb
-search:
-  path: search.xml
-  field: post
-  content: true
-  format: html
-  #template: ./template/search.xml
-
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.webmanajemen.com
 
 # Directory
-# source directory (this directory should be on public website)
+## source directory (this directory should be on public website)
 source_dir: source
-# generated directory
+## generated directory
 public_dir: docs
-# slug tag config.url/tag_dir/tagname
+## slug tag config.url/tag_dir/tagname
 tag_dir: tags
-# slug archive config.url/archive_dir/ (homepage pagination)
+## slug archive config.url/archive_dir/ (homepage pagination)
 archive_dir: archives
-# slug category config.url/category_dir/categoryName
+## slug category config.url/category_dir/categoryName
 category_dir: categories
-# Default Category (empty = null)
+## Default Category (empty = null)
 default_category: Uncategorized
-# Default Tag (empty = null)
+## Default Tag (empty = null)
 default_tag:
 
 # https://hexo.io/docs/configuration.html
@@ -72,14 +63,16 @@ skip_render:
 external_link:
   # true: Open ext in new tab, rel nofollow
   enable: true
-  # site: apply to the whole site
-  # post: apply only to post
+  # apply resolution
+  ## site: apply to the whole site
+  ## post: apply only to post
   field: site
   safelink:
     # enable salink redirector
     enable: true
-    # all external links should be redirected from this page
-    # below path located in source/page/safelink.html
+    # safelink, to encode all external links with outbound page (good for seo and ads)
+    ## all external links should be redirected from this page
+    ## below path located in source/page/safelink.html
     path: /page/safelink.html
     # safelink query. below query should be /page/safelink.html?url=
     query: url
@@ -94,10 +87,10 @@ render_drafts: false
 # Archive Settings
 index_generator:
   # order_by: Posts order. (Order by date descending by default)
-  # value: updated | date
-  # example order_by:
-  # -updated : order by updated descending
-  # updated : order by updated ascending
+  ## value: updated | date
+  ## example order_by:
+  ## -updated : order by updated descending
+  ## updated : order by updated ascending
   order_by: -updated
   # Posts displayed per page. (0 = disable pagination)
   per_page: 8
@@ -134,7 +127,7 @@ exclude:
 ignore:
 
 # https://www.npmjs.com/package/hexo-server
-# gulp server
+## gulp server
 server:
   port: 4000
   log: false
@@ -206,27 +199,27 @@ sitemap:
     - "**/*.min.html"
 
 # https://github.com/dimaslanjaka/hexo-adsense
-# to disable each ads, give `adsense: false` in metadata post/pages
+## to disable each ads, give `adsense: false` in metadata post/pages
 adsense:
   # enable?
   enable: true
   # ca-pub-xxxx
   pub: ca-pub-1165447249910969
   # ads paths
-  # auto read the paths to array of html contents
-  ## in-article ads source
+  ## auto read the paths to array of html contents
+  ### in-article ads source
   article_ads:
     - "source/ads/in_article.html"
     - "source/ads/in_article2.html"
-  ## multplex/autorelaxed ads source
+  ### multplex/autorelaxed ads source
   multiplex_ads:
     - "source/ads/multiplex.html"
-  ## display ads source
+  ### display ads source
   display_ads:
     - "source/ads/display.html"
   # ads field
-  # post=only post
-  # site=all pages and posts
+  ## post=only post
+  ## site=all pages and posts
   field: "site"
   # block user with adblock enabled
   adblock: false
@@ -244,7 +237,7 @@ analytics:
   # google tag manager
   tagmanager: GTM-NJNNXSR
   # google analytics v4
-  # https://support.google.com/analytics/answer/9744165?hl=en
+  ## https://support.google.com/analytics/answer/9744165?hl=en
   GA4: G-BG75CLNJZ1
   # google analytics v1-v3
   GA3: UA-106238155-1

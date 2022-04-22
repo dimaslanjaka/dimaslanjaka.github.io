@@ -98,7 +98,7 @@ jobs:
       - run: cp -rfi source/robots.txt docs/robots.txt
       - run: cp -rfi README.md docs/readme.md
       - run: echo www.webmanajemen.com > docs/CNAME
-      - run: mkdir .deploy_git && cd .deploy_git && git init
+      - run: mkdir -p .deploy_git && cd .deploy_git && git init
       - run: cd .deploy_git && git remote add origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
       - run: cd .deploy_git && git remote set-url origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
       - run: cd .deploy_git && git pull origin master

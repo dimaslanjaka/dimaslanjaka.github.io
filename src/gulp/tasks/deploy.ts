@@ -9,6 +9,7 @@ import { TaskCallback } from 'undertaker';
 import CacheFile from '../../node/cache';
 
 const deployDir = resolve(join(root, '.deploy_git'));
+if (!existsSync(deployDir)) mkdirSync(deployDir);
 const generatedDir = post_generated_dir;
 function git(...args: string[]) {
   return new Promise((resolve: (args: { code: number; stdout: string; stderr: string }) => any, reject: (args: { args: string[]; err: Error }) => any) => {

@@ -59,10 +59,7 @@ jobs:
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ./node_modules
             ~/.npm
-            ./tmp
-            ./build
-            ./packages
-            ./databases
+            ./deploy_git
             ./docs
           key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
           restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}

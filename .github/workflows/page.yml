@@ -26,7 +26,7 @@ jobs:
         with:
           repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
-          token: "${{ secrets.GITHUB_TOKEN }}"
+          token: "${{ secrets.TOKEN }}"
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v3
         with:
@@ -98,8 +98,15 @@ jobs:
         name: install public root libraries
       - run: cd docs/page && npm install && rm -rf .git .gitignore
         name: install public page libraries
-      - run: cp -rf source/robots.txt docs/robots.txt
-      - run: cp -rf README.md docs/readme.md
+      - run: cp -rfi source/robots.txt docs/robots.txt
+      - run: cp -rfi README.md docs/readme.md
       - run: echo www.webmanajemen.com > docs/CNAME
-      - name: Deploy 🚀
-        run: gulp deploy
+      - run: mkdir .deploy_git && cd .deploy_git && git init
+      - run: cd .deploy_git && git remote add origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
+      - run: cd .deploy_git && git set-url origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
+      - run: cd .deploy_git && git pull origin master
+      - run: cd .deploy_git && git checkout master
+      - run: cp -rfi docs/* .deploy_git/
+      - run: cd .deploy_git && git add -A
+      - run: cd .deploy_git && git commit -m "Update Site ${{ steps.dateoutputs.date }}"
+      - run: cd .deploy_git && git push --set-upstream origin master

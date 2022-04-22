@@ -6,7 +6,6 @@ import { existsSync, join, mkdirSync, resolve } from '../../node/filemanager';
 import config, { post_generated_dir, root } from '../../types/_config';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
-import CacheFile from '../../node/cache';
 
 const deployDir = resolve(join(root, '.deploy_git'));
 if (!existsSync(deployDir)) mkdirSync(deployDir);
@@ -36,8 +35,10 @@ const copyGenerated = () => {
 };
 
 gulp.task('deploy', async (done?: TaskCallback) => {
+  let init = false;
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   if (!existsSync(join(deployDir, '.git'))) {
+    init = true;
     console.log(logname, 'init new git with current configuration', configDeploy);
     await git('init');
     if (configDeploy.name) await git('config', 'user.name', configDeploy.name);
@@ -60,7 +61,7 @@ gulp.task('deploy', async (done?: TaskCallback) => {
   }
   */
 
-  await git('gc'); // compress git databases
+  if (!init) await git('gc'); // compress git databases
   await git('remote', 'set-url', 'origin', configDeploy.repo);
   await git('fetch', '--all');
   await git('pull', 'origin', configDeploy.branch);

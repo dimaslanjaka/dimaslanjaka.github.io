@@ -29,7 +29,7 @@ function git(...args: string[]) {
 }
 const logname = chalk.magentaBright('[deploy][git]');
 const configDeploy = config.deploy;
-
+configDeploy['base'] = deployDir;
 const copyGenerated = () => {
   return gulp.src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };

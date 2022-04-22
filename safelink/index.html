@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Browser Test</title><link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"><link rel="shortcut icon" href="https://www.google.com/s2/favicons?domain=github.com" type="image/x-icon"><style>pre{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}</style></head><body><nav class="navbar navbar-light bg-light"><div class="container-fluid"><a class="navbar-brand" href="/safelink">Safelinkify</a></div></nav><main class="container"><div class="mb-4"><h1 id="safelinkify" tabindex="-1"><a class="header-anchor" href="#safelinkify">Safelinkify</a></h1><p><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/safelink.yml"><img src="https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/safelink.yml/badge.svg" alt="Safelink"></a></p><p>transform all hyperlinks to outbound pages. Useful for SEO.</p><p>customized safelink url redirector.</p><p>useful for seo external links and ads.</p><h2 id="build" tabindex="-1"><a class="header-anchor" href="#build">Build</a></h2><h3 id="dev" tabindex="-1"><a class="header-anchor" href="#dev">dev</a></h3><p><code>nodemon</code>: watch src and compile tsc webpack</p><p><code>yarn start</code>: watch tests and start server</p><h3 id="prod" tabindex="-1"><a class="header-anchor" href="#prod">prod</a></h3><pre><code class="language-bash">tsc
+webpack
+</code></pre><h2 id="usages" tabindex="-1"><a class="header-anchor" href="#usages">Usages</a></h2><pre><code class="language-html">&lt;script src=&quot;dist/bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  const sf = new safelink({
+    exclude: ['domain.com', /domain.com/],
+    redirect: 'http://domain.com/page/redirect.html?url=',
+    verbose: false,
+    type: 'base64',
+    password: 'root'
+  });
+  // automated safelinkify all hyperlinks in body
+  sf.parse(document.querySelector('body'));
+&lt;/script&gt;
+</code></pre></div><hr><div class="mb-4"><h2>Example</h2><div class="mb-2"><b>Query URL Resolver Samples</b><ul><li><a href="/?url=https://webmanajemen.com"></a></li><li><a href="/?url=https://webmanajemen.com#o=https://webmanajemen.com"></a></li><li><a href="/?url=aHR0cHM6Ly93ZWJtYW5hamVtZW4uY29t"></a></li><li><a href="/#o=uUKdmiew649Fcfcxtj1S3EUsuFkcUOMSVGoi5/VC2mo="></a></li></ul></div><div class="mb-2" id="external"><b>External Link Samples</b><div><a href="http://example.net"></a> <a href="http://google.com"></a> <a href="https://facebook.com"></a></div></div><div class="mb-2" id="internal"><b>Internal Link Samples</b><div><a href="http://webmanajemen.com"></a> <a href="https://webmanajemen.com/p/search.html"></a></div></div></div><div class="mb-4"><table class="table" id="table"><tr><td>global parseQuery</td><td><kbd id="parseQuery"></kbd></td></tr><tr><td>global resolveQueryUrl</td><td><kbd id="resolveQueryUrl"></kbd></td></tr></table></div><div class="mb-4"><b>Current Page Script</b><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script><!-- Responsive Horizontal --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1165447249910969" data-ad-slot="6376402862" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><!-- prettier-ignore-start --><pre>
+    <code class="language-js">
+&lt;script src=&quot;/dist/bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;const table = document.querySelector(&#39;table#table&#39;);
+table.querySelector(&#39;#resolveQueryUrl&#39;).innerHTML = typeof resolveQueryUrl;
+table.querySelector(&#39;#parseQuery&#39;).innerHTML = typeof parseQuery;
+
+const currentQuery = JSON.stringify(resolveQueryUrl(location.search), null, 2);
+table.innerHTML += `&lt;tr&gt;&lt;td&gt;Current Query&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;${currentQuery}&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;`;
+
+function isClass(f) {
+  return (
+    typeof f === &#39;function&#39; &amp;&amp;
+    (() =&gt; {
+      try {
+        f();
+        return false;
+      } catch {
+        return true;
+      }
+    })()
+  );
+}
+
+const isSafelinkClass = isClass(safelink);
+table.innerHTML += `&lt;tr&gt;&lt;td&gt;global safelink&lt;/td&gt;&lt;td&gt;is ES5 Class: ${isSafelinkClass}&lt;/td&gt;&lt;/tr&gt;`;
+
+if (isSafelinkClass) {
+  const instance = new safelink({
+    exclude: [&#39;webmanajemen.com&#39;],
+    password: &#39;root&#39;,
+  });
+  instance.parse(document.querySelector(&#39;div#external&#39;));
+  instance.parse(document.querySelector(&#39;div#internal&#39;));
+}
+
+Array.from(document.links).forEach((el) =&gt; {
+  if (!el.innerHTML.length) el.textContent = el.getAttribute(&#39;href&#39;);
+  el.addEventListener(&#39;click&#39;, (e) =&gt; {
+    e.preventDefault();
+    location.assign(el.href);
+    if (el.href.includes(&#39;#&#39;)) location.reload();
+  });
+});
+&lt;/script&gt;
+    </code>
+  </pre><!-- prettier-ignore-end --> <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><script src="/dist/bundle.js"></script><script>const table=document.querySelector("table#table");table.querySelector("#resolveQueryUrl").innerHTML=typeof resolveQueryUrl,table.querySelector("#parseQuery").innerHTML=typeof parseQuery;const currentQuery=JSON.stringify(resolveQueryUrl(location.search),null,2);function isClass(e){return"function"==typeof e&&(()=>{try{return e(),!1}catch{return!0}})()}table.innerHTML+=`<tr><td>Current Query</td><td><pre><code class="language-json">${currentQuery}</code></pre></td></tr>`;const isSafelinkClass=isClass(safelink);if(table.innerHTML+=`<tr><td>global safelink</td><td>is ES5 Class: ${isSafelinkClass}</td></tr>`,isSafelinkClass){const e=new safelink({exclude:["webmanajemen.com"],password:"root"});e.parse(document.querySelector("div#external")),e.parse(document.querySelector("div#internal"))}Array.from(document.links).forEach((e=>{e.innerHTML.length||(e.textContent=e.getAttribute("href")),e.addEventListener("click",(r=>{r.preventDefault(),location.assign(e.href),e.href.includes("#")&&location.reload()}))}))</script></main></body></html>

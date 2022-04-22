@@ -6,5 +6,5 @@ import { Nullable } from './resolveQueryUrl';
  */
 export declare function parseQuery(query: Nullable<string>, url: Nullable<string>): string | {
     [k: string]: string;
-} | undefined;
+};
 export default parseQuery;

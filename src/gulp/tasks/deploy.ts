@@ -34,8 +34,6 @@ const copyGenerated = () => {
   return gulp.src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };
 
-const cache = new CacheFile('deploy');
-
 gulp.task('deploy', async (done?: TaskCallback) => {
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   if (!existsSync(join(deployDir, '.git'))) {
@@ -45,9 +43,9 @@ gulp.task('deploy', async (done?: TaskCallback) => {
     if (configDeploy.email) await git('config', 'user.email', configDeploy.email);
   }
 
-  /**
-   * Do compress git object databases?
-   */
+  /*
+  // Do compress git object databases?
+  const cache = new CacheFile('deploy');
   let compress = false;
   if (cache.has('compress')) {
     const lastCompress = moment(cache.get('compress'));
@@ -56,18 +54,24 @@ gulp.task('deploy', async (done?: TaskCallback) => {
     if (now.diff(lastCompress, 'days') >= 1) compress = true;
   }
   if (compress) {
-    await git('gc'); // compress git databases
+    
     cache.set('compress', new Date().toString());
   }
+  */
 
+  await git('gc'); // compress git databases
   await git('remote', 'set-url', 'origin', configDeploy.repo);
+  await git('fetch', '--all');
   await git('pull', 'origin', configDeploy.branch);
 
   return copyGenerated().on('end', async () => {
     await git('add', '-A');
     await git('commit', '-m', 'Update site: ' + moment().format());
-    //await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');
-    await git('push', '--set-upstream', 'origin', configDeploy.branch);
+    if (Object.hasOwnProperty.call(configDeploy, 'force') && configDeploy['force'] === true){
+      await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');
+    } else {
+      await git('push', '--set-upstream', 'origin', configDeploy.branch);
+    }
     console.log(logname, 'deploy merged with origin successful');
     done();
   });

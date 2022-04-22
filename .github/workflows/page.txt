@@ -102,4 +102,10 @@ jobs:
       - run: cp -rf README.md docs/readme.md
       - run: echo www.webmanajemen.com > docs/CNAME
       - name: Deploy 🚀
-        run: gulp deploy
+        #if: ${{ false }}
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: master # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+          force: false # merge instead push --force, (keep old / non modified) files?

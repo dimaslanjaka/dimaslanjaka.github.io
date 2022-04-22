@@ -54,7 +54,7 @@ gulp.task('deploy', async (done?: TaskCallback) => {
     if (now.diff(lastCompress, 'days') >= 1) compress = true;
   }
   if (compress) {
-    
+
     cache.set('compress', new Date().toString());
   }
   */
@@ -67,7 +67,7 @@ gulp.task('deploy', async (done?: TaskCallback) => {
   return copyGenerated().on('end', async () => {
     await git('add', '-A');
     await git('commit', '-m', 'Update site: ' + moment().format());
-    if (Object.hasOwnProperty.call(configDeploy, 'force') && configDeploy['force'] === true){
+    if (Object.hasOwnProperty.call(configDeploy, 'force') && configDeploy['force'] === true) {
       await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');
     } else {
       await git('push', '--set-upstream', 'origin', configDeploy.branch);

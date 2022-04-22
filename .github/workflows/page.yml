@@ -103,7 +103,7 @@ jobs:
       - run: echo www.webmanajemen.com > docs/CNAME
       - run: mkdir .deploy_git && cd .deploy_git && git init
       - run: cd .deploy_git && git remote add origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
-      - run: cd .deploy_git && git set-url origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
+      - run: cd .deploy_git && git remote set-url origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
       - run: cd .deploy_git && git pull origin master
       - run: cd .deploy_git && git checkout master
       - run: cp -rfi docs/* .deploy_git/

@@ -83,7 +83,19 @@ export function filter_external_links(href: string, debug = false) {
           console.log(!matchHost, !matchHref, href);
         }
         if (!matchHost && !matchHref) {
-          result.href = '/page/safelink.html?url=' + Buffer.from(encodeURIComponent(href)).toString('base64');
+          const safelink = config.external_link.safelink;
+          if (safelink.enable) {
+            let safelinkPath: string;
+            const b64 = Buffer.from(encodeURIComponent(href)).toString('base64');
+            if (safelink.path) {
+              safelinkPath = safelink.path + '?' + safelink.query;
+            }
+            if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
+              result.href = safelinkPath + b64;
+            } else {
+              result.href = '/page/safelink.html?url=' + Buffer.from(encodeURIComponent(href)).toString('base64');
+            }
+          }
         }
       }
     }

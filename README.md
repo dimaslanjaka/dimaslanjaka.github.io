@@ -39,7 +39,7 @@ cd foldername
 git submodule update --recursive --remote
 # checkout local branch
 git checkout compiler
-# delete posts (donot copy my articles)
+# delete posts (don't copy my articles)
 rm -rf src-posts/*
 # create tmp folder
 mkdir tmp

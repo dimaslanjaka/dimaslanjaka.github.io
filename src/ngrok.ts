@@ -4,11 +4,6 @@ import { existsSync, readFileSync, write } from './node/filemanager';
 import scheduler from './node/scheduler';
 import { tmp } from './types/_config';
 
-/*
-"token": "1Szs4cJp7MoUlFPT3nyRjD5P05v_3BREWhqf8z2NdcNHMneUm",
-    "port": "4000"
- */
-
 const fileNgrok = toUnix(tmp('ngrok.txt'));
 
 /**

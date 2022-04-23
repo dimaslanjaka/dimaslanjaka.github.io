@@ -67,6 +67,10 @@ function generateSitemapHtml(done?: TaskCallback) {
   //const exclude = config.sitemap.exclude.map((s) => '!' + s.replace(/^!+/, ''));
   Bluebird.all(pages.getValues())
     .map((item) => {
+      if (!item.url) {
+        console.log(log, 'invalid url', item.title || item);
+        return;
+      }
       return `<a href="${fixURLSitemap(item.url).pathname}">${item.title}</a>`;
     })
     .then((items) => {

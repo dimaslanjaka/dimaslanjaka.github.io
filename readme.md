@@ -37,10 +37,10 @@ git clone --branch compiler --single-branch https://github.com/dimaslanjaka/dima
 cd foldername
 # fetch all submodules
 git submodule update --recursive --remote
-# delete posts (donot copy my articles)
-rm -rf src-posts/*
 # checkout local branch
 git checkout compiler
+# delete posts (don't copy my articles)
+rm -rf src-posts/*
 # create tmp folder
 mkdir tmp
 # install dependencies

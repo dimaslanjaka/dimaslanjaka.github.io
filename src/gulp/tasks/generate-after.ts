@@ -88,7 +88,7 @@ export function filter_external_links(href: string, debug = false) {
             let safelinkPath: string;
             const b64 = Buffer.from(encodeURIComponent(href)).toString('base64');
             if (safelink.path) {
-              safelinkPath = safelink.path + '?' + safelink.query;
+              safelinkPath = safelink.path + '?' + safelink.query + '=';
             }
             if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
               result.href = safelinkPath + b64;

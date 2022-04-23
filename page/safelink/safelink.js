@@ -38,7 +38,7 @@ function start_safelink(e) {
  * Get safelink URL
  */
 function sfUrl() {
-  return 'https://dimaslanjaka.github.io/page/safelink.html?ID=' + Math.random().toString(36).substring(7) + '&url=';
+  return 'https://www.webmanajemen.com/page/safelink.html?ID=' + Math.random().toString(36).substring(7) + '&url=';
 }
 
 /**

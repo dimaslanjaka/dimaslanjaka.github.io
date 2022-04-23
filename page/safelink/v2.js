@@ -6,10 +6,10 @@ var ficon = window.ficon = ' <i class="fa fa-external-link" style="font-size: 10
 var protectedLinks = "(www\.bing\.com|search\.google\.com|webmaster\.gogle\.com|www\.google\..*|linkedin\.com|facebook\.com|fb\.me|fb\.com|web\-manajemen\.blogspot|pinterest\.com|digg\.com|twitter\.com|www\.blogger\.com|ask\.com|dimaslanjaka|\#|javascript\:|" + location.host + ")";
 var protectedLinks = window.protectedLinks = new RegExp(protectedLinks, "gs");
 ///Safelink Base64 Hash
-var SFLx = ['https://web-manajemen.blogspot.co.id/p/redirect.html?url=', 'http://web-manajemen.blogspot.co.id/p/a.html?url=', "https://dimaslanjaka.github.io/page/safelink.html?url="];
+var SFLx = ['https://web-manajemen.blogspot.co.id/p/redirect.html?url=', 'http://web-manajemen.blogspot.co.id/p/a.html?url=', "https://www.webmanajemen.com/page/safelink.html?url="];
 var safelink = window.safelink = SFLx[Math.floor(Math.random() * SFLx.length)];
 ///Safelink AES Hash
-var AESfx = ["https://dimaslanjaka.github.io/page/safelink-aes.html?o="];
+var AESfx = ["https://www.webmanajemen.com/page/safelink-aes.html?o="];
 var AESf = window.AESf = AESfx[Math.floor(Math.random() * AESfx.length)];
 ///*** Configuration End ***///
 

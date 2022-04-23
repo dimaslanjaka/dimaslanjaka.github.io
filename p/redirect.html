@@ -220,7 +220,7 @@ function getParameterByName(name, url) {
 }
 var redirectURL = getCookie('redirect') ? getCookie('redirect') : (getParameterByName('url') ? getParameterByName('url') : false);
 if (redirectURL){
-location.replace('https://dimaslanjaka.github.io/page/safelink.html?url='+redirectURL);
+location.replace('https://www.webmanajemen.com/page/safelink.html?url='+redirectURL);
 }
 $('#continue').html('<div class="text-center d-inline-block"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <a href="https://nullrefer.com/?'+decodeURIComponent(redirectURL)+'" target="_blank" class="btn w3-button button bg-default"><i class="fa fa-link" aria-hidden="true"></i> <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://denalidestroyers.org/wp-content/uploads/continue-button-1024x282.png" style="display:inline-block !important;height:15px;width:120px" align="top" title="Continue!" /> <i class="fa fa-external-link"></i></a> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i></div>');
 </script>

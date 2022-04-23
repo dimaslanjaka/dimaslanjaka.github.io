@@ -60,9 +60,9 @@ interface PrivateProjectConfig {
   ngrok: Ngrok.Options;
 }
 
-export type ProjectConfig = typeof project_config_data & PrivateProjectConfig;
+export type ProjectConfig = typeof project_config_data | PrivateProjectConfig;
 
-const config: Partial<ProjectConfig> = project_config_merge;
+const config: ProjectConfig = project_config_merge;
 
 config.url = config.url.replace(/\/+$/, '');
 

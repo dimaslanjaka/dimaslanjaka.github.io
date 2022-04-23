@@ -7,6 +7,7 @@ import gulp from 'gulp';
 import yargs from 'yargs';
 import { initializeApp } from 'firebase/app';
 import { Ngrok } from 'ngrok';
+import { DynamicObject } from '.';
 
 const argv = yargs(process.argv.slice(2)).argv;
 
@@ -60,7 +61,7 @@ interface PrivateProjectConfig {
   ngrok: Ngrok.Options;
 }
 
-export type ProjectConfig = typeof project_config_data | PrivateProjectConfig;
+export type ProjectConfig = (typeof project_config_data | PrivateProjectConfig) & DynamicObject;
 
 const config: ProjectConfig = project_config_merge;
 

@@ -101,6 +101,7 @@ jobs:
       - run: cp -rf source/robots.txt docs/robots.txt
       - run: cp -rf README.md docs/readme.md
       - run: echo www.webmanajemen.com > docs/CNAME
+      - run: echo "" > docs/.nojekyll
       - name: Deploy 🚀
         #if: ${{ false }}
         #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'

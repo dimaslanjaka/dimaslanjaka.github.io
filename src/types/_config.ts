@@ -5,12 +5,15 @@ import theme_config_data from './_config_theme.json';
 import { toUnix } from 'upath';
 import gulp from 'gulp';
 import yargs from 'yargs';
+import { initializeApp } from 'firebase/app';
+import { Ngrok } from 'ngrok';
 
 const argv = yargs(process.argv.slice(2)).argv;
 
 export const root = join(__dirname, '../../');
 const file = join(root, '_config.yml');
-const str = readFileSync(file, 'utf-8');
+const readConfig = readFileSync(file, 'utf-8');
+/** default project config */
 const def_config = {
   verbose: argv['verbose'],
   exclude: [],
@@ -20,9 +23,21 @@ const def_config = {
   adsense: {
     article_ads: [],
   },
+  firebase: {
+    apiKey: null,
+    authDomain: null,
+    projectId: null,
+    storageBucket: null,
+    messagingSenderId: null,
+    appId: null,
+    measurementId: null,
+  },
+  ngrok: {
+    token: null,
+  },
 };
 
-const project_config_merge = Object.assign(def_config, yaml.parse(str) as typeof project_config_data);
+const project_config_merge = Object.assign(def_config, yaml.parse(readConfig));
 if (project_config_merge.adsense.enable) {
   const findads = (path: string) => {
     let findpath = join(cwd(), path);
@@ -38,10 +53,16 @@ if (project_config_merge.adsense.enable) {
     project_config_merge.adsense.multiplex_ads = project_config_merge.adsense.multiplex_ads.map(findads);
   }
 }
-export type ProjectConfig = typeof project_config_merge & {
+
+interface PrivateProjectConfig {
   [keys: string]: any;
-};
-const config: ProjectConfig = project_config_merge;
+  firebase: Parameters<typeof initializeApp>[0];
+  ngrok: Ngrok.Options;
+}
+
+export type ProjectConfig = typeof project_config_data & PrivateProjectConfig;
+
+const config: Partial<ProjectConfig> = project_config_merge;
 
 config.url = config.url.replace(/\/+$/, '');
 
@@ -65,9 +86,12 @@ export const post_source_dir = resolve(join(root, 'src-posts'));
 export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
 if (!existsSync(tmp())) mkdirSync(tmp());
 
-//// THEME
+/** THEME CONFIGS */
+/** theme directory */
 export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
+/** _config.yml object from theme directory */
 export const theme_yml = join(theme_dir, '_config.yml');
+/** merged theme config object */
 export const theme_config = Object.assign(theme_config_data, existsSync(theme_yml) ? yaml.parse(readFileSync(theme_yml, 'utf-8')) : {});
 export type ThemeOpt = typeof theme_config & {
   [key: string]: any;
@@ -81,7 +105,20 @@ gulp.task('log:config', async () => {
   return console.log('[log]', 'config', f);
 });
 
-export default config;
+/** WRITE AUTO GENERATED CONFIGS */
 
 write(join(__dirname, '_config_project.json'), JSON.stringify(config));
 write(join(__dirname, '_config_theme.json'), JSON.stringify(theme_config));
+
+/** SETUP PRIVATE CONFIGS */
+const file_private_config = join(root, '_config.private.yml');
+if (existsSync(file_private_config)) {
+  const privateConfig: PrivateProjectConfig = yaml.parse(readFileSync(file_private_config, 'utf-8'));
+  if (Object.hasOwnProperty.call(privateConfig, 'firebase')) {
+    config.firebase = privateConfig.firebase;
+  }
+}
+
+/** EXPORT PRIVATE AND PUBLIC CONFIGS */
+
+export default config;

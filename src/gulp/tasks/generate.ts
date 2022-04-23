@@ -11,7 +11,7 @@ import { existsSync, write } from '../../node/filemanager';
 
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
 // .nojekyll
-const nojekyll = join(generated_dir, '.nojeklyy');
+const nojekyll = join(generated_dir, '.nojekyll');
 if (!existsSync(nojekyll)) write(nojekyll, '');
 
 gulp.task('generate', gulp.series('generate:assets', 'generate:template', 'generate:posts', 'generate:archive', 'generate:sitemap', 'generate:after'));

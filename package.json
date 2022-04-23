@@ -31,7 +31,13 @@
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/dimaslanjaka.github.io.git"
   },
-  "keywords": ["static","blog","generator","hexo","static-blog-generator"],
+  "keywords": [
+    "static",
+    "blog",
+    "generator",
+    "hexo",
+    "static-blog-generator"
+  ],
   "author": {
     "email": "dimaslanjaka@gmail.com",
     "name": "Dimas Lanjaka",
@@ -49,6 +55,7 @@
     "axios": "^0.26.1",
     "chalk": "^4.1.2",
     "compression": "^1.7.4",
+    "cross-spawn": "^7.0.3",
     "ejs": "^3.1.6",
     "fast-xml-parser": "^4.0.7",
     "feed": "github:jpmonette/feed",
@@ -58,6 +65,7 @@
     "glob": "^7.2.0",
     "iridium": "file:themes/iridium",
     "js-prototypes": "github:dimaslanjaka/js-prototypes",
+    "lodash": "^4.17.21",
     "memoizee": "^0.4.15",
     "moment-timezone": "^0.5.34",
     "node-sass": "^7.0.1",

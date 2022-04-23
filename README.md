@@ -105,6 +105,11 @@ https://askubuntu.com/questions/64095/change-xampps-htdocs-web-root-folder-to-an
 https://stackoverflow.com/questions/7337724/how-to-check-whether-mod-rewrite-is-enable-on-server
 https://stackoverflow.com/questions/10878284/virtual-hosts-xampp-linux-ubuntu-not-working
 
+## Troubleshoot
+- css and js files not found
+> bypass using `.nojekyll`
+> It is now possible to completely bypass Jekyll processing on GitHub Pages by creating a file named `.nojekyll` in the root of your pages repo and pushing it to GitHub. This should only be necessary if your site uses files or directories that start with underscores since Jekyll considers these to be special resources and does not copy them to the final site.
+
 ## todo
 - [ ] admin panel
 - [x] template

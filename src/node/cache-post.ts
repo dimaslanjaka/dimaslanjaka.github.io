@@ -30,19 +30,23 @@ function fixPost(post: postMap) {
  * @param by
  * @returns
  */
-function order_by(array: any[], by: 'updated' | 'date' | '-updated' | '-date' | string) {
+function order_by(array: postMap[], by: 'updated' | 'date' | '-updated' | '-date' | string) {
   if (Array.isArray(array))
     return array.sort((a, b) => {
       const modby = by.replace('-', '');
-      const c = new Date(a.metadata[modby]);
-      const d = new Date(b.metadata[modby]);
-      if (by.startsWith('-')) {
-        // descending
-        if (c < d) return 1;
-        if (c > d) return -1;
-      } else {
-        if (c > d) return 1;
-        if (c < d) return -1;
+      try {
+        const c = new Date(a.metadata[modby]);
+        const d = new Date(b.metadata[modby]);
+        if (by.startsWith('-')) {
+          // descending
+          if (c < d) return 1;
+          if (c > d) return -1;
+        } else {
+          if (c > d) return 1;
+          if (c < d) return -1;
+        }
+      } catch (error) {
+        if (error instanceof Error) console.log('cache-post.ts#order_by', error.message);
       }
       return 0;
     });

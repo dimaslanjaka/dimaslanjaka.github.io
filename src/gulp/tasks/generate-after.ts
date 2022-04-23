@@ -93,7 +93,7 @@ export function filter_external_links(href: string, debug = false) {
             if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
               result.href = safelinkPath + b64;
             } else {
-              result.href = '/page/safelink.html?url=' + Buffer.from(encodeURIComponent(href)).toString('base64');
+              result.href = '/page/safelink.html?url=' + b64;
             }
           }
         }

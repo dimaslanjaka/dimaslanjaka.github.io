@@ -31,10 +31,16 @@ function fixPost(post: postMap) {
  * @returns
  */
 function order_by(array: postMap[], by: 'updated' | 'date' | '-updated' | '-date' | string) {
-  if (Array.isArray(array))
-    return array.sort((a, b) => {
-      const modby = by.replace('-', '');
-      try {
+  if (Array.isArray(array)) {
+    return array
+      .filter((post) => post && typeof post.metadata == 'object')
+      .sort((a, b) => {
+        const modby = by.replace('-', '');
+        /*try {
+
+      } catch (error) {
+        if (error instanceof Error) console.log('cache-post.ts#order_by', error.message);
+      }*/
         const c = new Date(a.metadata[modby]);
         const d = new Date(b.metadata[modby]);
         if (by.startsWith('-')) {
@@ -45,11 +51,10 @@ function order_by(array: postMap[], by: 'updated' | 'date' | '-updated' | '-date
           if (c > d) return 1;
           if (c < d) return -1;
         }
-      } catch (error) {
-        if (error instanceof Error) console.log('cache-post.ts#order_by', error.message);
-      }
-      return 0;
-    });
+        return 0;
+      });
+  }
+  return array;
 }
 
 /**
@@ -91,6 +96,7 @@ export function getTotalPosts() {
 }
 
 const randoms: { [key: string]: postResult[] } = {};
+
 /**
  * get random posts
  * @param max max results

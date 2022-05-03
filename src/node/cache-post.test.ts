@@ -1,4 +1,7 @@
-import { getRandomPosts } from './cache-post';
+import { getAllPosts, getRandomPosts } from './cache-post';
 
-const result = getRandomPosts(5, 'center');
-console.log(result.length);
+const all = getAllPosts();
+console.log('all posts',all.length);
+
+const random = getRandomPosts(5, 'center');
+console.log(random.length);

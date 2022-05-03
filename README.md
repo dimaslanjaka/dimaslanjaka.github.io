@@ -98,7 +98,7 @@ gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 ```
 
 ## Github Action
-important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**
+~important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**~
 
 ## PHP Local Server
 https://askubuntu.com/questions/64095/change-xampps-htdocs-web-root-folder-to-another-one

@@ -20,7 +20,6 @@
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'tests/*.specs.ts'",
-    "prototypes": "npm un js-prototypes && npm i git+https://github.com/dimaslanjaka/js-prototypes.git",
     "php": "php -S localhost:4000 -t docs",
     "eslint": "npx eslint --fix src > dump-eslint.log",
     "depcheck": "npx depcheck > dump-unused.log",
@@ -47,15 +46,12 @@
     "url": "https://github.com/dimaslanjaka/dimaslanjaka.github.io/issues"
   },
   "homepage": "https://github.com/dimaslanjaka/dimaslanjaka.github.io#readme",
-  "peerDependencies": {
-    "@types/through2": "git+https://github.com/dimaslanjaka/nodejs-package-types#through2"
-  },
   "dependencies": {
     "axios": "^0.26.1",
     "chalk": "^4.1.2",
     "compression": "^1.7.4",
     "cross-spawn": "^7.0.3",
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.7",
     "fast-xml-parser": "^4.0.7",
     "feed": "git+https://github.com/jpmonette/feed.git",
     "find-cache-dir": "^3.3.2",
@@ -65,6 +61,7 @@
     "glob": "^7.2.0",
     "iridium": "file:themes/iridium",
     "lodash": "^4.17.21",
+    "js-prototypes": "git+https://github.com/dimaslanjaka/safelink.git",
     "memoizee": "^0.4.15",
     "moment-timezone": "^0.5.34",
     "node-sass": "^7.0.1",

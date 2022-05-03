@@ -23,7 +23,8 @@
     "preinstall": "npm un js-prototypes && npm i https://github.com/dimaslanjaka/js-prototypes",
     "php": "php -S localhost:4000 -t docs",
     "eslint": "npx eslint --fix src > dump-eslint.log",
-    "depcheck": "npx depcheck > dump-unused.log"
+    "depcheck": "npx depcheck > dump-unused.log",
+    "format": "prettier -w src"
   },
   "repository": {
     "type": "git",

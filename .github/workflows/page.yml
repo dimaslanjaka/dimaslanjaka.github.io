@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-          cache: "npm"
+          #cache: "npm"
       #- run: echo "${{ secrets.GITHUB_TEST ]}"
       - name: Get current date
         id: date
@@ -73,10 +73,10 @@ jobs:
           rm -rf source
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
         name: Pull & Update Submodules Recursively
-      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node yarn
         # run global install when cache not written
         # if: steps.npm-cache.outputs.cache-hit != 'true'
-      - run: npm install
+      - run: yarn install
       - run: "gulp clean"
         if: "contains(github.event.head_commit.message, 'clean')"
       - run: "gulp copy:assets"

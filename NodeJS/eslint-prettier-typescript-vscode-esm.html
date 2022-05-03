@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png">
 <!--article metadata-->
 <meta property="article:published_time" content="2022-04-17T10:01:31+0000">
-<meta property="article:modified_time" content="2022-04-17T10:01:31+0000">
+<meta property="article:modified_time" content="2022-05-03T18:14:00+0700">
 <meta property="article:author" content="Dimas Lanjaka">
 
 <meta property="article:tag" content="JS">
@@ -214,7 +214,9 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "argsIgnorePattern": "^_"
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",

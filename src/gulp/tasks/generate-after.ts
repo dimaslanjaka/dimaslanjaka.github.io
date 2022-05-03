@@ -8,7 +8,8 @@ import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import 'js-prototypes';
 import { TaskCallback } from 'undertaker';
 import jdom from '../../node/jsdom';
-import safelinkify from '../../../packages/safelink/src/index';
+//import safelinkify from '../../../packages/safelink/src/index';
+import safelinkify from 'safelinkify/src/index';
 
 const safelink = new safelinkify.safelink({
   redirect: [config.external_link.safelink.redirect],
@@ -90,18 +91,17 @@ export function filter_external_links(href: string, debug = false) {
           console.log(!matchHost, !matchHref, href);
         }
         if (!matchHost && !matchHref) {
-          const safelink = config.external_link.safelink;
-          if (safelink.enable) {
-            const safelinkUrl = safelink.redirect;
+          const safelinkConfig = config.external_link.safelink;
+          if (safelinkConfig.enable) {
             let safelinkPath: string;
-            let encoded: string;
-            if (safelink.type === 'base64') {
+            let encoded = safelink.encodeURL(href);
+            if (safelinkConfig.type === 'base64') {
               encoded = Buffer.from(encodeURIComponent(href)).toString('base64');
             } else {
-              //
+              encoded = safelink.encodeURL(href);
             }
             if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
-              result.href = safelinkPath;
+              result.href = encoded;
             } else {
               //result.href = safelinkUrl + b64;
             }

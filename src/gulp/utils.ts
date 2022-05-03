@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import * as fse from 'fs-extra';
+import { DynamicObject } from '../types';
 
 //console.log(loopDir(path.join(process.cwd(), "source")));
 /**
@@ -87,18 +88,28 @@ export const isEmpty = (data: any) => {
 };
 
 /**
- * validate url is valid and http or https protocol
- * @param string
+ * Cached validated urls
+ */
+const validatedHttpUrl: DynamicObject = {};
+
+/**
+ * Cacheable validate url is valid and http or https protocol
+ * @param str
  * @returns
  */
-export function isValidHttpUrl(string: string) {
+export function isValidHttpUrl(str: string) {
+  if (typeof validatedHttpUrl[str] === 'boolean') return validatedHttpUrl[str];
   let url: URL;
 
   try {
-    url = new URL(string);
+    url = new URL(str);
   } catch (_) {
     return false;
   }
 
-  return url.protocol === 'http:' || url.protocol === 'https:';
+  const validate = url.protocol === 'http:' || url.protocol === 'https:';
+  if (validate) {
+    validatedHttpUrl[str] = validate;
+  }
+  return validate;
 }

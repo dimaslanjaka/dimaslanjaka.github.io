@@ -60,7 +60,10 @@ function generateFeeds() {
           if (String(obj.image).startsWith('/')) obj.image = urlfor(String(obj.image));
         }
         isImgValid = isValidHttpUrl(String(obj.image));
-        if (isImgValid) {
+        if (isImgValid && typeof obj.image == 'string') {
+          obj.image = obj.image.replace(/[\u00A0-\u9999<>&]/g, function (i) {
+            return '&#' + i.charCodeAt(0) + ';';
+          });
           feed.addItem(obj);
         } else {
           console.log(logname, 'invalid image url', post.metadata.title, obj.image);

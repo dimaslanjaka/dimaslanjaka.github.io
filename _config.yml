@@ -73,8 +73,10 @@ external_link:
     # enable salink redirector
     enable: true
     # safelink url
-    url: https://www.webmanajemen.com/page/safelink.html?url=
+    exclude: domain.com
+    redirect: https://www.webmanajemen.com/page/safelink.html?url=
     type: base64
+    password: unique-password
   # exclude host from external link filter
   exclude:
     - webmanajemen.com

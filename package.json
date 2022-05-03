@@ -24,7 +24,7 @@
     "php": "php -S localhost:4000 -t docs",
     "eslint": "npx eslint --fix src > dump-eslint.log",
     "depcheck": "npx depcheck > dump-unused.log",
-    "format": "prettier -w src"
+    "format": "prettier -w src/**/*.{ts,js,html}"
   },
   "repository": {
     "type": "git",

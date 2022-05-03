@@ -8,7 +8,13 @@ import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import 'js-prototypes';
 import { TaskCallback } from 'undertaker';
 import jdom from '../../node/jsdom';
-import safelinkify from 'safelinkify';
+import safelinkify from '../../../packages/safelink/src/index';
+
+const safelink = new safelinkify.safelink({
+  redirect: [config.external_link.safelink.redirect],
+  password: config.external_link.safelink.password,
+  type: config.external_link.safelink.type,
+});
 
 /**
  * get domain name without subdomain

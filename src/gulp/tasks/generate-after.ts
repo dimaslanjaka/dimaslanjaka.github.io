@@ -92,6 +92,7 @@ export function filter_external_links(href: string, debug = false) {
         }
         if (!matchHost && !matchHref) {
           const safelinkConfig = config.external_link.safelink;
+          // apply safelink
           if (safelinkConfig.enable) {
             const safelinkPath = safelink.encodeURL(href);
             if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {

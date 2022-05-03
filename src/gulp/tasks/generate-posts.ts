@@ -150,14 +150,17 @@ export const renderArticle = function () {
       .filter((parsed) => typeof parsed == 'object')
       .then(function (result) {
         logger.log(log, 'markdown sources total', result.length);
+        let counter = 0;
         /**
          * Queue for process first item
          * @returns
          */
         const runner = () => {
+          counter++;
           if (!result.length) return resolve(result.length);
           // get first item
           const parsed = result[0];
+          console.log(`${counter} generate post ${parsed.metadata.title}`);
 
           /**
            * remove first item, skip

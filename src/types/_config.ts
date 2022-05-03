@@ -8,6 +8,7 @@ import yargs from 'yargs';
 import { initializeApp } from 'firebase/app';
 import { Ngrok } from 'ngrok';
 import { DynamicObject } from '.';
+import { DeepPartial } from '../markdown/transformPosts/postMapper';
 
 const argv = yargs(process.argv.slice(2)).argv;
 
@@ -54,14 +55,14 @@ if (project_config_merge.adsense.enable) {
     project_config_merge.adsense.multiplex_ads = project_config_merge.adsense.multiplex_ads.map(findads);
   }
 }
-
+type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
   [keys: string]: any;
   firebase: Parameters<typeof initializeApp>[0];
   ngrok: Ngrok.Options;
 }
 
-export type ProjectConfig = (typeof project_config_data | PrivateProjectConfig) & DynamicObject;
+export type ProjectConfig = projectImportData & PrivateProjectConfig;
 
 const config: ProjectConfig = project_config_merge;
 
@@ -116,7 +117,7 @@ const file_private_config = join(root, '_config.private.yml');
 if (existsSync(file_private_config)) {
   const privateConfig: PrivateProjectConfig = yaml.parse(readFileSync(file_private_config, 'utf-8'));
   if (Object.hasOwnProperty.call(privateConfig, 'firebase')) {
-    config.firebase = privateConfig.firebase;
+    config.firebase = <any>privateConfig.firebase;
   }
 }
 

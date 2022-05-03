@@ -8,6 +8,7 @@ import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import 'js-prototypes';
 import { TaskCallback } from 'undertaker';
 import jdom from '../../node/jsdom';
+import safelinkify from 'safelinkify';
 
 /**
  * get domain name without subdomain
@@ -184,7 +185,7 @@ export default function fixHtmlPost(content: string, debug = false) {
         element.setAttribute('target', '_blank');
       }
 
-      if (config.external_link.safelink) {
+      if (config.external_link.safelink && config.external_link.safelink.enable) {
         element.setAttribute('href', filter.href);
       }
     }

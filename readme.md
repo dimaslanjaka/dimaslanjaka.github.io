@@ -65,8 +65,8 @@ gulp server # development, render on-fly
 ### no cache
 you can pass argument `--nocache`
 ```bash
-gulp generate --nocache # generate all without reading cache instead write new cache (fresh generate)
-gulp server --nocache # development without reading cache, instead write fresh cache
+gulp generate --nocache # generate all without reading cache, write new cache (fresh generate) instead
+gulp server --nocache # development without reading cache, write fresh cache instead
 ```
 or you can put global generator in `_config.yml`
 ```yaml
@@ -98,7 +98,7 @@ gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 ```
 
 ## Github Action
-important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**
+~important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**~
 
 ## PHP Local Server
 https://askubuntu.com/questions/64095/change-xampps-htdocs-web-root-folder-to-another-one

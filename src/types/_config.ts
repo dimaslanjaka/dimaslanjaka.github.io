@@ -7,8 +7,6 @@ import gulp from 'gulp';
 import yargs from 'yargs';
 import { initializeApp } from 'firebase/app';
 import { Ngrok } from 'ngrok';
-import { DynamicObject } from '.';
-import { DeepPartial } from '../markdown/transformPosts/postMapper';
 
 const argv = yargs(process.argv.slice(2)).argv;
 

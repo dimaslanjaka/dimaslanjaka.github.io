@@ -65,8 +65,8 @@ gulp server # development, render on-fly
 ### no cache
 you can pass argument `--nocache`
 ```bash
-gulp generate --nocache # generate all without reading cache instead write new cache (fresh generate)
-gulp server --nocache # development without reading cache, instead write fresh cache
+gulp generate --nocache # generate all without reading cache, write new cache (fresh generate) instead
+gulp server --nocache # development without reading cache, write fresh cache instead
 ```
 or you can put global generator in `_config.yml`
 ```yaml

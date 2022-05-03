@@ -93,17 +93,9 @@ export function filter_external_links(href: string, debug = false) {
         if (!matchHost && !matchHref) {
           const safelinkConfig = config.external_link.safelink;
           if (safelinkConfig.enable) {
-            let safelinkPath: string;
-            let encoded = safelink.encodeURL(href);
-            if (safelinkConfig.type === 'base64') {
-              encoded = Buffer.from(encodeURIComponent(href)).toString('base64');
-            } else {
-              encoded = safelink.encodeURL(href);
-            }
+            const safelinkPath = safelink.encodeURL(href);
             if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
-              result.href = encoded;
-            } else {
-              //result.href = safelinkUrl + b64;
+              result.href = safelinkPath;
             }
           }
         }

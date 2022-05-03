@@ -30,7 +30,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - cross-platform supported (linux recommended) (android termux need c++ for packages including: jsdom, node-libcurl, imagemin, etc)
 
 ## Project Installation
-Always use `npm` to install. Yarn and pnpm isn't always compatible.
+Always use `npm` to install. Yarn and pnpm not always compatible.
 ```bash
 # clone
 git clone --branch compiler --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername

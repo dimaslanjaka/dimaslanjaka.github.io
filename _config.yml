@@ -72,8 +72,11 @@ external_link:
   safelink:
     # enable salink redirector
     enable: true
+    # exclude url to safelinkify
+    exclude:
+      - webmanajemen.com
+      - git.webmanajemen.com
     # safelink url
-    exclude: domain.com
     redirect: https://www.webmanajemen.com/page/safelink.html?url=
     type: base64
     password: unique-password

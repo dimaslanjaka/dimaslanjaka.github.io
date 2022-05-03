@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+find . -name "node_modules" -exec rm -rf '{}' +;
+find . -name "tmp" -exec rm -rf '{}' +;
+find . -name "package-lock.json" -exec rm -rf '{}' +;

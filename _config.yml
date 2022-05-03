@@ -67,15 +67,14 @@ external_link:
   ## site: apply to the whole site
   ## post: apply only to post
   field: site
+  # safelink, to encode all external links with outbound page (good for seo and ads)
+  ## see: https://github.com/dimaslanjaka/safelink
   safelink:
     # enable salink redirector
     enable: true
-    # safelink, to encode all external links with outbound page (good for seo and ads)
-    ## all external links should be redirected from this page
-    ## below path located in source/page/safelink.html
-    path: /page/safelink.html
-    # safelink query. below query should be /page/safelink.html?url=
-    query: url
+    # safelink url
+    url: https://www.webmanajemen.com/page/safelink.html?url=
+    type: base64
   # exclude host from external link filter
   exclude:
     - webmanajemen.com

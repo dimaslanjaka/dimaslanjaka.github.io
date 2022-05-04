@@ -114,6 +114,8 @@ https://stackoverflow.com/questions/10878284/virtual-hosts-xampp-linux-ubuntu-no
 
 ## todo
 - [ ] admin panel
+- [ ] download external images to local
+- [ ] GUI
 - [x] template
 - [x] archives generator
 - [x] multiple type of sitemap (google news, sitemap text, sitemap html, sitemap xml)

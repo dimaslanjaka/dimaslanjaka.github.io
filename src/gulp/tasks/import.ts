@@ -3,7 +3,7 @@ import { XMLParser } from 'fast-xml-parser';
 import gulp from 'gulp';
 import { existsSync, join, readFileSync, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 gulp.task('import', async () => {
   const platforms = config.import.platform;
@@ -33,9 +33,11 @@ gulp.task('import', async () => {
                 const url = new URL(channel.image.url);
                 const saveTo = join(config.root, config.source_dir, url.pathname);
                 console.log('Saving site image to ', saveTo);
-                const res = await axios.get(url.toString());
+                const res = await axios.get<any, AxiosResponse<ArrayBuffer>>(url.toString(), {
+                  responseType: 'arraybuffer',
+                });
                 if (res.status === 200) {
-                  console.log(res.data);
+                  await write(saveTo, Buffer.from(res.data));
                 }
               }
             }

@@ -58,6 +58,7 @@ interface PrivateProjectConfig {
   [keys: string]: any;
   firebase: Parameters<typeof initializeApp>[0];
   ngrok: Ngrok.Options;
+  root: string;
 }
 
 export type ProjectConfig = projectImportData & PrivateProjectConfig;
@@ -118,6 +119,8 @@ if (existsSync(file_private_config)) {
     config.firebase = <any>privateConfig.firebase;
   }
 }
+
+config.root = root;
 
 /** EXPORT PRIVATE AND PUBLIC CONFIGS */
 

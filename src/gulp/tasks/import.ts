@@ -3,7 +3,7 @@ import { XMLParser } from 'fast-xml-parser';
 import gulp from 'gulp';
 import { existsSync, join, readFileSync, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
-import axios, { AxiosResponse } from 'axios';
+import downloadImage from '../../curl/download-image';
 
 gulp.task('import', async () => {
   const platforms = config.import.platform;
@@ -31,14 +31,20 @@ gulp.task('import', async () => {
             if (channel.image) {
               if (channel.image.url) {
                 const url = new URL(channel.image.url);
+                icon = url.pathname;
                 const saveTo = join(config.root, config.source_dir, url.pathname);
                 console.log('Saving site image to ', saveTo);
-                const res = await axios.get<any, AxiosResponse<ArrayBuffer>>(url.toString(), {
-                  responseType: 'arraybuffer',
+                const _download = await downloadImage(url.toString(), saveTo);
+                //console.log('image saved', download.path);
+                /*const response = await axios.get<any, AxiosResponse<Stream>>(url.toString(), {
+                  responseType: 'stream',
                 });
-                if (res.status === 200) {
-                  await write(saveTo, Buffer.from(res.data));
-                }
+                if (response.status === 200) {
+                  const w = response.data.pipe(createWriteStream(saveTo));
+                  w.on('finish', () => {
+                    console.log('Successfully downloaded image!');
+                  });
+                }*/
               }
             }
           }

@@ -30,14 +30,14 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - cross-platform supported
 - > Support required packages including: node-gyp, jsdom, node-libcurl, imagemin, etc:
 - - linux recommended
-- - windows need msvs [read gist](https://gist.github.com/jtrefry/fd0ea70a89e2c3b7779c)
+- - windows need msvs [[read gist](https://gist.github.com/jtrefry/fd0ea70a89e2c3b7779c)]
 - - android termux need c++
 
 ## Project Installation
 Always use `npm` to install. Yarn and pnpm not always compatible.
 ```bash
 # install global packages
-npm i -g npm hexo-cli gulp-cli typescript ts-node
+npm i -g npm gulp-cli typescript ts-node
 # clone
 git clone --branch compiler --single-branch https://github.com/dimaslanjaka/dimaslanjaka.github.io foldername
 # cd

@@ -35,7 +35,7 @@ export default function fix2() {
 
 export async function fixExternalImages() {
   /** save directory location */
-  const dest = join(cwd(), config.source_dir, 'images/external');
+  const _dest = join(cwd(), config.source_dir, 'images/external');
   const src = join(cwd(), config.source_dir);
   const iterate = globSrc('**/*.{md,html}', { cwd: src }).map((s) => join(src, s));
   iterate.each(async (file) => {

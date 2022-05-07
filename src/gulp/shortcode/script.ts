@@ -19,7 +19,7 @@ export function shortcodeScript(file: string, str: string) {
   const log = [logname];
   const regex = /<!--\s+?script\s+?(.+?)\s+?-->/gim;
   const execs = Array.from(str.matchAll(regex));
-  execs.forEach((m, i) => {
+  execs.forEach((m) => {
     const htmlTag = m[0];
     const includefile = m[1];
     const dirs = {

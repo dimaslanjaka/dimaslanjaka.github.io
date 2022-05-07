@@ -9,8 +9,16 @@
     "tmp",
     "/themes",
     "dist",
+    "/bin",
     "/build",
     "docs"
+  ],
+  "excludeFilenames": [
+    ".d.ts",
+    ".min.js",
+    ".bundle.js",
+    ".test.ts",
+    ".test.js"
   ],
   "extension": [
     ".js",

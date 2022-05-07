@@ -165,7 +165,7 @@ deploy:
   # not implemented yet
   #message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
-# Global Author
+# Global Author Informations
 author:
   name: "Dimas Lanjaka"
   link: "https://www.webmanajemen.com/"
@@ -174,10 +174,9 @@ author:
     url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
     width: 1944 # <= 600
     height: 2592 # >= 60
-
-social_links:
-  github: https://github.com/dimaslanjaka
-  youtube: https://youtube.com/p/L3n4r0x
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 
 # Feed Atom
 feed:
@@ -189,6 +188,14 @@ feed:
     - rss2
     - json
 
+# Import Platforms
+## Import from other platforms
+import:
+  platform:
+    # import from wordpress
+    wordpress:
+      # ./import/wp-all.xml
+      - wp-all.xml
 
 # Sitemap
 sitemap:

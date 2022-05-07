@@ -5,9 +5,9 @@
 <meta name="title" content="<%- page.title %>" />
 <!--facebook metadata-->
 <meta property="og:type" content="article" />
-<meta property="og:title" content="<%- page.title %>" />
+<meta property="og:title" content="<%- page.title||'No Title' %>" />
 <meta property="og:url" content="<%- page.url %>" />
-<meta property="og:site_name" content="<%- config.title %>" />
+<meta property="og:site_name" content="<%- config.webtitle||config.title %>" />
 <meta property="og:description" content="<%- excerpt(page) %>" />
 <meta property="og:locale" content="<%- get_locale(page) %>" />
 <meta property="og:image" content="<%- thumbnail(page) %>" />

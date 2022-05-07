@@ -4,6 +4,7 @@ import './generate-archives';
 import './generate-feed';
 import './generate-posts';
 import './minify';
+import './import';
 import gulp from 'gulp';
 import { join, resolve, toUnix } from 'upath';
 import config, { root } from '../../types/_config';

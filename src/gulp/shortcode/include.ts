@@ -78,7 +78,5 @@ export function parseShortCodeInclude(file: string, str: string) {
   // match shortcode and found otherwise repeat
   if (found && str.match(regex)) return parseShortCodeInclude(file, str);
   */
-
-  return str;
 }
 export default parseShortCodeInclude;

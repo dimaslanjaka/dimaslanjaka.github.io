@@ -83,7 +83,7 @@ generator:
 Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
 - `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
 - `generate:` from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml)
-- read more example: [page.yml#L82](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/04b32ef07f8841a6de61619df40bb803f549bc85/.github/workflows/page.yml#L82)
+- read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80)
 ```bash
 gulp clean # clean all caches
 gulp copy:assets # copy post assets

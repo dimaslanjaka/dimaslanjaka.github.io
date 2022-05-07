@@ -5,6 +5,8 @@ import { existsSync, join, readFileSync, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
 import downloadImage from '../../curl/download-image';
 
+const homepage = new URL(config.url);
+
 gulp.task('import', async () => {
   const platforms = config.import.platform;
   if (Object.hasOwnProperty.call(platforms, 'wordpress')) {
@@ -31,20 +33,27 @@ gulp.task('import', async () => {
             if (channel.image) {
               if (channel.image.url) {
                 const url = new URL(channel.image.url);
-                icon = url.pathname;
+                homepage.pathname = url.pathname;
+                icon = homepage.toString();
                 const saveTo = join(config.root, config.source_dir, url.pathname);
-                console.log('Saving site image to ', saveTo);
-                const _download = await downloadImage(url.toString(), saveTo);
-                //console.log('image saved', download.path);
-                /*const response = await axios.get<any, AxiosResponse<Stream>>(url.toString(), {
-                  responseType: 'stream',
-                });
-                if (response.status === 200) {
-                  const w = response.data.pipe(createWriteStream(saveTo));
-                  w.on('finish', () => {
-                    console.log('Successfully downloaded image!');
-                  });
-                }*/
+                //console.log('[import][wordpress] saving site image');
+                await downloadImage(url.toString(), saveTo);
+                //console.log('[import][wordpress] image saved', download.path);
+                //console.log('[import][wordpress] image url', icon);
+              }
+            }
+
+            let posts: WPPost[];
+            if (channel.item) {
+              posts = channel.item;
+              for (let i = 0; i < posts.length; i++) {
+                const post = posts[i];
+
+                if (post['wp:post_type'] === 'page') {
+                  console.log(post.title, post.link);
+                }
+
+                delete post['content:encoded'];
               }
             }
           }
@@ -54,3 +63,34 @@ gulp.task('import', async () => {
     }
   }
 });
+
+export interface WPPost {
+  title: string;
+  link: string;
+  pubDate: string;
+  'dc:creator': string;
+  guid: string;
+  description: string;
+  'content:encoded': string;
+  'excerpt:encoded': string;
+  'wp:post_id': number;
+  'wp:post_date': string;
+  'wp:post_date_gmt': string;
+  'wp:post_modified': string;
+  'wp:post_modified_gmt': string;
+  'wp:comment_status': string;
+  'wp:ping_status': string;
+  'wp:post_name': string;
+  'wp:status': string;
+  'wp:post_parent': number;
+  'wp:menu_order': number;
+  'wp:post_type': string | 'page' | 'post';
+  'wp:post_password': string;
+  'wp:is_sticky': number;
+  'wp:postmeta': WPPostmeta;
+}
+
+export interface WPPostmeta {
+  'wp:meta_key': string;
+  'wp:meta_value': number;
+}

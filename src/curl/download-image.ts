@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createWriteStream, writeFile, writeFileSync } from 'fs-extra';
-import { basename, cacheDir, existsSync, join, readFileSync, statSync, write } from '../node/filemanager';
+import { cacheDir, existsSync, join, readFileSync, statSync, write } from '../node/filemanager';
 import 'js-prototypes';
 import { md5 } from '../node/md5-file';
 import config from '../types/_config';
@@ -14,6 +14,7 @@ interface cacheDownloadImageData {
    * base64 image data
    */
   content: string;
+  pipe?: NodeJS.WritableStream;
 }
 
 /**
@@ -22,7 +23,7 @@ interface cacheDownloadImageData {
  * @param saveTo save directory path or file path
  * * If the Save target is a directory, then the file name will be searched by the 'Content-Disposition' header or based on MD5 Hash Source URL
  */
-export default async function downloadImage(src: string, saveTo: string, cache = true) {
+export default async function downloadImage(src: string, saveTo: string, cache = true): Promise<Partial<cacheDownloadImageData>> {
   const e = new Error();
   if (!e.stack) {
     try {
@@ -51,8 +52,11 @@ export default async function downloadImage(src: string, saveTo: string, cache =
       const parse = JSON.parse(readFileSync(cacheLocation).toString()) as cacheDownloadImageData;
       const parseB64 = parse_base64_image(parse.content);
       const convert = base64_to_image(parseB64.base64, parse.path, null, null);
-      console.log(convert);
-      return;
+
+      if (typeof convert == 'string') {
+        parse.path = convert;
+        return parse;
+      }
     }
   }
   const response = await axios({

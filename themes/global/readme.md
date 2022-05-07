@@ -3,3 +3,4 @@
 |---|---|
 | adsense.ejs | lazy load adsense |
 | seo.ejs | site metadata |
+| disqus.ejs | lazy load disqus comment |

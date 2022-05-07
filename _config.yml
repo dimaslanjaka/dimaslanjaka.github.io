@@ -151,14 +151,19 @@ server:
 theme: bootstrap
 
 # Deployment
-## Docs: _config/
 deploy:
+  # deploy type git
   type: git
+  # repo url
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
+  # repo branch
   branch: master
-  #message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+  # repo user name
   name: dimaslanjaka
+  # repo user email
   email: dimaslanjaka@gmail.com
+  # not implemented yet
+  #message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 # Global Author
 author:

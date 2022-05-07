@@ -11,12 +11,10 @@ console.log = function (...msg: any[]) {
     firstTime = false;
   }
   let text: string;
-  if (Array.isArray(msg)) {
-    if (msg.length === 1) {
-      text = msg[0];
-    } else {
-      text = msg.join('\n');
-    }
+  if (msg.length === 1) {
+    text = msg[0];
+  } else {
+    text = msg.join('\n');
   }
   if (text)
     fs.appendFile(logfile, text + '\n\n', function (err) {

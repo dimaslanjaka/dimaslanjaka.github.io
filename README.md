@@ -28,9 +28,10 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)
 - 1000+ posts supported
 - cross-platform supported
+- > Support required packages including: node-gyp, jsdom, node-libcurl, imagemin, etc:
 - - linux recommended
 - - windows need msvs [read gist](https://gist.github.com/jtrefry/fd0ea70a89e2c3b7779c)
-- - android termux need c++ for packages including: node-gyp, jsdom, node-libcurl, imagemin, etc
+- - android termux need c++
 
 ## Project Installation
 Always use `npm` to install. Yarn and pnpm not always compatible.

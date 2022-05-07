@@ -55,7 +55,7 @@ class Translator {
 
     this.request(
       `http://translate.google.com/translate?depth=1&nv=1&rurl=translate.google.com&sl=${this.sl}&sp=nmt4&tl=${this.tl}&u=${encodeURI(url)}`,
-      function (statusCode, data, headers, curlInstance) {
+      function (_statusCode, data, _headers, _curlInstance) {
         self.result = data;
         if (typeof callback == 'function') {
           callback(String(data));
@@ -72,11 +72,11 @@ class Translator {
     const iframe = contentFrame.getElementsByTagName('iframe');
     if (iframe.length > 0) {
       const frm: HTMLIFrameElement = iframe.item(0);
-      this.request(frm.src, function (status, data, headers, curlInstance) {
+      this.request(frm.src, function (_status, data, _headers, _curlInstance) {
         dom = new JSDOM(data);
         const hyperlinks = dom.window.document.getElementsByTagName('a');
         if (hyperlinks.length > 0) {
-          self.request(hyperlinks.item(0).href, function (status, data, headers, curlInstance) {
+          self.request(hyperlinks.item(0).href, function (_status, data, _headers, _curlInstance) {
             self.result = data;
             if (typeof callback == 'function') {
               callback(String(data));
@@ -90,7 +90,6 @@ class Translator {
   }
 
   extractTranslated(html: string) {
-    const self = this;
     const dom = new JSDOM(html);
     // fix hyperlinks
     const hyperlinks: HTMLCollectionOf<HTMLAnchorElement> = dom.window.document.getElementsByTagName('a');
@@ -160,7 +159,7 @@ class Translator {
 
     // Error will be a JS error, errorCode will be the raw error code (as int) returned from libcurl
     // eslint-disable-next-line no-unused-vars
-    curl.on('error', (error, errorCode) => {
+    curl.on('error', (_error, _errorCode) => {
       curl.close();
     });
 

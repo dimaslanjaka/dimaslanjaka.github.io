@@ -48,12 +48,12 @@ gulp.task('import', async () => {
               posts = channel.item;
               for (let i = 0; i < posts.length; i++) {
                 const post = posts[i];
-
-                if (post['wp:post_type'] === 'page') {
-                  console.log(post.title, post.link);
-                }
-
                 delete post['content:encoded'];
+                if (['page', 'post'].includes(post['wp:post_type']) && post['wp:status'] === 'publish') {
+                  console.log(post.title, post.link);
+                } else {
+                  delete posts[i];
+                }
               }
             }
           }

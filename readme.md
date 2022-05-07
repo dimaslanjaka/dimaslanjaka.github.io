@@ -34,7 +34,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - - android termux need c++
 
 ## Project Installation
-Always use `npm` to install. Yarn and pnpm not always compatible.
+Always use `npm` to install. `yarn` and `pnpm` not always compatible.
 ```bash
 # install global packages
 npm i -g npm gulp-cli typescript ts-node
@@ -55,7 +55,7 @@ npm install
 ```
 
 ## project structure
-- `src-posts/` contains all original posts with markdown formats
+- `src-posts/` contains all original posts with markdown formats (ejs shortcodes supported)
 - `source/` (`config.source_dir` in [_config.yml](./_config.yml)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](./_config.yml))
 - database caches on `node_modules/.cache/dimaslanjaka`
 
@@ -84,7 +84,7 @@ generator:
 ### standalone
 Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
 - `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
-- `generate:` from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml)
+- `generate:` render all files from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml) then ready to publish
 - read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80)
 ```bash
 gulp clean # clean all caches

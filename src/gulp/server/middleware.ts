@@ -60,7 +60,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
 };
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
-  function (req, res, next) {
+  function (_, res, next) {
     copyAssets(); // dont await to keep performance
     // custom headers
     res.setHeader('X-Powered-By', 'Static Blog Generator'); // send X-Powered-By

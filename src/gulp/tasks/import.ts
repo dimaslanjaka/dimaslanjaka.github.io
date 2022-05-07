@@ -26,6 +26,9 @@ gulp.task('import', async () => {
             /** global author */
             const author: Partial<typeof config.author> = {};
             const wpAuthor = channel['wp:author'];
+            delete channel['wp:term'];
+            delete channel['wp:tag'];
+            delete channel['wp:category'];
             if (wpAuthor['wp:author_email']) author.email = wpAuthor['wp:author_email'];
             if (wpAuthor['wp:author_display_name']) author.name = wpAuthor['wp:author_display_name'];
 
@@ -49,6 +52,7 @@ gulp.task('import', async () => {
               for (let i = 0; i < posts.length; i++) {
                 const post = posts[i];
                 delete post['content:encoded'];
+                delete post['wp:postmeta'];
                 if (['page', 'post'].includes(post['wp:post_type']) && post['wp:status'] === 'publish') {
                   console.log(post.title, post.link);
                 } else {

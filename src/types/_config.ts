@@ -15,7 +15,7 @@ const file = join(root, '_config.yml');
 const readConfig = readFileSync(file, 'utf-8');
 /** default project config */
 const def_config = {
-  verbose: argv['verbose'],
+  verbose: argv['verbose'], // if set = true, otherwise undefined
   exclude: [],
   include: [],
   skip_render: [],
@@ -35,6 +35,9 @@ const def_config = {
   ngrok: {
     token: null,
   },
+  generator: {
+    cache: argv['nocache'], // if set = true, otherwise undefined
+  },
 };
 
 const project_config_merge = Object.assign(def_config, yaml.parse(readConfig));
@@ -53,6 +56,9 @@ if (project_config_merge.adsense.enable) {
     project_config_merge.adsense.multiplex_ads = project_config_merge.adsense.multiplex_ads.map(findads);
   }
 }
+// @todo [config] bypass nocache if --nocache argument is set by cli
+if (def_config.generator.cache) project_config_merge.generator.cache = def_config.generator.cache;
+
 type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
   [keys: string]: any;
@@ -76,6 +82,7 @@ export const post_public_dir = resolve(join(root, config.source_dir, '_posts'));
  * Generated directory (`config.public_dir`)
  */
 export const post_generated_dir = resolve(join(root, config.public_dir));
+
 /**
  * `src-posts/` directory
  */

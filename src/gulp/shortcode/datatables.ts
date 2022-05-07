@@ -5,7 +5,7 @@ import chalk from 'chalk';
 const logname = chalk.bgMagenta.whiteBright('[extract-text]');
 
 export function datatables(file: string, str: string) {
-  const regex = /\<\!\-\-\s+?datatables\s+?(.+?)\s+?\-\-\>/gim;
+  const regex = /<!--\s+?datatables\s+?(.+?)\s+?-->/gim;
   let m: RegExpExecArray;
   while ((m = regex.exec(str)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches

@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import path from 'path';
 import * as fs from 'fs';
@@ -7,7 +6,7 @@ import chalk from 'chalk';
 const logname = chalk.bgMagenta.whiteBright('[extract-text]');
 
 export function extractText(file: string, str: string) {
-  const regex = /\<\!\-\-\s+?extract-text\s+?(.+?)\s+?\-\-\>/gim;
+  const regex = /<!--\s+?extract-text\s+?(.+?)\s+?-->/gim;
   let m: RegExpExecArray;
   while ((m = regex.exec(str)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches

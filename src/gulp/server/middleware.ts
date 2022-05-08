@@ -54,7 +54,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
       Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
         // @todo [server] prevent call copy without any modifications
         const chashes = `${src_posts}:${source}`;
-        if (chashes != hashes) {
+        if (chashes !== hashes) {
           hashes = `${src_posts}:${source}`;
           gulp.series(...tasks)(() => {
             gulpIndicator = false;

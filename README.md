@@ -102,6 +102,7 @@ gulp generate:label # generate tags and categories
 gulp generate:index # generate homepage index
 gulp generate:archive # generate homepage, tags, and categories
 gulp generate:feeds # generate atom, rss
+gulp generate:after # process generated posts html including anonymize external links (safelinkify), add rel nofollow external link, etc
 gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 ```
 

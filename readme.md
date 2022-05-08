@@ -15,9 +15,9 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 ## compiler information
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com) [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml) [![Join the chat at https://gitter.im/static-blog-generator/static-blog-generator](https://badges.gitter.im/static-blog-generator/static-blog-generator.svg)](https://gitter.im/static-blog-generator/static-blog-generator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/20813/branches/578444/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=20813&bid=578444)
 
-### temporarily disabled
+<!--### temporarily disabled
 - gulp server : because of major changes, were disabled gulp local server, use php local server instead
-
+-->
 ## features
 - nodejs (12.x - 17.x supported)
 - typescript (pure typescript commonjs with esmodule interop project)
@@ -85,7 +85,7 @@ generator:
 Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
 - `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
 - `generate:` render all files from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml) then ready to publish
-- read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80)
+- read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80-L112)
 ```bash
 gulp clean # clean all caches
 gulp copy:assets # copy post assets
@@ -102,6 +102,7 @@ gulp generate:label # generate tags and categories
 gulp generate:index # generate homepage index
 gulp generate:archive # generate homepage, tags, and categories
 gulp generate:feeds # generate atom, rss
+gulp generate:after # process generated posts html including anonymize external links (safelinkify), add rel nofollow external link, etc
 gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 ```
 

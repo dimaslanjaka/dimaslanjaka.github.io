@@ -5,7 +5,11 @@
 import { makeid } from '../node/uuid';
 
 class TranslateUrl {
-  base = new URL(`https://translate.google.com/translate?depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=${makeid(21)}-${makeid(22)}`);
+  base = new URL(
+    `https://translate.google.com/translate?depth=1&rurl=translate.google.com&nv=1&sp=nmt4&pto=aue,ajax,boq&usg=${makeid(
+      21
+    )}-${makeid(22)}`
+  );
 
   static main(args?: string[]) {
     console.log(args);

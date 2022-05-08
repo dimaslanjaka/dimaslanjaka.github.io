@@ -1,14 +1,14 @@
+import Bluebird from 'bluebird';
+import chalk from 'chalk';
 import gulp from 'gulp';
+import 'js-prototypes';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
+import { getLatestDateArray, sortByDate } from '../../../ejs/helper/date';
+import { postMap } from '../../../markdown/transformPosts/parsePost';
 import { getAllPosts } from '../../../node/cache-post';
 import { join, readFileSync, write } from '../../../node/filemanager';
 import config, { post_generated_dir } from '../../../types/_config';
-import 'js-prototypes';
-import Bluebird from 'bluebird';
-import chalk from 'chalk';
-import { getLatestDateArray, sortByDate } from '../../../ejs/helper/date';
-import { postMap } from '../../../markdown/transformPosts/parsePost';
 
 /// define global variable without refetch them
 const logname = chalk.magentaBright('[sitemap-xml]');

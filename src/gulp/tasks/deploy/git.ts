@@ -1,10 +1,10 @@
 import chalk from 'chalk';
 import { spawn } from 'child_process';
-import { existsSync, join, mkdirSync, resolve } from '../../../node/filemanager';
-import config, { post_generated_dir, root } from '../../../types/_config';
+import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
-import gulp from 'gulp';
+import { existsSync, join, mkdirSync, resolve } from '../../../node/filemanager';
+import config, { post_generated_dir, root } from '../../../types/_config';
 
 const deployDir = resolve(join(root, '.deploy_git'));
 if (!existsSync(deployDir)) mkdirSync(deployDir);

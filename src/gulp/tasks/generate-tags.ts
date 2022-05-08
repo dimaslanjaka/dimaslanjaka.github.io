@@ -35,7 +35,12 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
         // specific page number otherwise skip
         if (typeof pagenum == 'number' && current_page !== pagenum) continue;
         const innerChunks = array_wrap(parentChunks[current_page]);
-        const data = postChunksIterator(innerChunks, { current_page: current_page, base: join(config.tag_dir, tagname), parentChunks, treeChunks });
+        const data = postChunksIterator(innerChunks, {
+          current_page: current_page,
+          base: join(config.tag_dir, tagname),
+          parentChunks,
+          treeChunks,
+        });
         const saveTo = join(cwd(), config.public_dir, data.perm_current, 'index.html');
         const pagemeta: postMap = {
           metadata: {

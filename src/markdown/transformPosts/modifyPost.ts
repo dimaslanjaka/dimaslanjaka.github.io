@@ -62,8 +62,11 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
 
     // override permalink
     if (publicFile) {
-      homepage.pathname = removeMultiSlashes(publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')).replace(/.md$/, '.html');
-      if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://'))) parse.metadata.url = homepage.toString();
+      homepage.pathname = removeMultiSlashes(
+        publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')
+      ).replace(/.md$/, '.html');
+      if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://')))
+        parse.metadata.url = homepage.toString();
       if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
     }
 
@@ -147,7 +150,19 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
 
     // merge php js css to programming
     if (Array.isArray(parse.metadata.tags)) {
-      const programTags = ['php', 'css', 'js', 'kotlin', 'java', 'ts', 'typescript', 'javascript', 'html', 'mysql', 'database'];
+      const programTags = [
+        'php',
+        'css',
+        'js',
+        'kotlin',
+        'java',
+        'ts',
+        'typescript',
+        'javascript',
+        'html',
+        'mysql',
+        'database',
+      ];
       const containsTag = programTags.some((r) => {
         const matchTag = parse.metadata.tags
           .removeEmpties()
@@ -217,7 +232,11 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
  * @param cache read cache? default true
  * @returns modified parsed post object
  */
-export function cacheableModifyPost(parse: Parameters<typeof originalModifyPost>[0], sourceFile: string = null, cache = true): ReturnType<typeof originalModifyPost> {
+export function cacheableModifyPost(
+  parse: Parameters<typeof originalModifyPost>[0],
+  sourceFile: string = null,
+  cache = true
+): ReturnType<typeof originalModifyPost> {
   let result: postMap;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -31,7 +31,10 @@ interface PluginOptions {
  * @returns NodeJS.ReadWriteStream
  * @see {@link https://www.npmjs.com/package/gulp-rename}
  */
-export default function gulpRename(obj: string | Options | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void), options?: PluginOptions) {
+export default function gulpRename(
+  obj: string | Options | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void),
+  options?: PluginOptions
+) {
   options = options || {};
 
   const stream = new Stream.Transform({ objectMode: true });

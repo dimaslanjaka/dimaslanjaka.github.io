@@ -101,7 +101,10 @@ export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
 /** _config.yml object from theme directory */
 export const theme_yml = join(theme_dir, '_config.yml');
 /** merged theme config object */
-export const theme_config = Object.assign(theme_config_data, existsSync(theme_yml) ? yaml.parse(readFileSync(theme_yml, 'utf-8')) : {});
+export const theme_config = Object.assign(
+  theme_config_data,
+  existsSync(theme_yml) ? yaml.parse(readFileSync(theme_yml, 'utf-8')) : {}
+);
 export type ThemeOpt = typeof theme_config & {
   [key: string]: any;
 };

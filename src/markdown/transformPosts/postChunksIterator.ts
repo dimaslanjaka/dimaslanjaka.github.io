@@ -31,7 +31,10 @@ export interface GeneratorOpt {
  * @param opt
  * @returns
  */
-export default function postChunksIterator(innerChunks: ReturnType<typeof post_chunks>['chunk'][0], opt: DeepPartial<GeneratorOpt>) {
+export default function postChunksIterator(
+  innerChunks: ReturnType<typeof post_chunks>['chunk'][0],
+  opt: DeepPartial<GeneratorOpt>
+) {
   const current_page = opt.current_page;
   const base = opt.base;
   const parentChunks = opt.parentChunks;

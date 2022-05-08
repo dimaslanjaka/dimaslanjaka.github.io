@@ -155,7 +155,12 @@ export function post_chunks<T extends any[]>(arr?: T) {
   const chunk = postChunksMapper(array_split_chunks(posts, config.index_generator.per_page));
 
   const sitedata = posts.map((post) => {
-    const data = { title: post.metadata.title, thumbnail: thumbnail(post.metadata), url: post.metadata.url, excerpt: excerpt(post.metadata) };
+    const data = {
+      title: post.metadata.title,
+      thumbnail: thumbnail(post.metadata),
+      url: post.metadata.url,
+      excerpt: excerpt(post.metadata),
+    };
     return data;
   });
   return {

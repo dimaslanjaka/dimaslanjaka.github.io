@@ -130,4 +130,7 @@ gulp.task('generate:sitemap-news', generateGoogleNewsSitemap);
 gulp.task('generate:sitemap-html', generateSitemapHtml);
 gulp.task('generate:sitemap-txt', generateSitemapText);
 // combine all sitemap tasks
-gulp.task('generate:sitemap', gulp.series('generate:sitemap-news', 'generate:sitemap-html', 'generate:sitemap-txt', 'generate:sitemap-xml'));
+gulp.task(
+  'generate:sitemap',
+  gulp.series('generate:sitemap-news', 'generate:sitemap-html', 'generate:sitemap-txt', 'generate:sitemap-xml')
+);

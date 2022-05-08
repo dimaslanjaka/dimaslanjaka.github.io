@@ -32,9 +32,15 @@ class Translator {
   try1(url: string, callback?: (html: string) => any) {
     const parseUrl = new URL(url);
     const self = this;
-    this.request(`https://translate.google.com/gen204?proxye=website&client=webapp&sl=${this.sl}&tl=${this.tl}&hl=en&u=${encodeURIComponent(url)}`);
+    this.request(
+      `https://translate.google.com/gen204?proxye=website&client=webapp&sl=${this.sl}&tl=${
+        this.tl
+      }&hl=en&u=${encodeURIComponent(url)}`
+    );
 
-    this.request(`https://translate.google.com/translate?hl=en&sl=${this.sl}&tl=${this.tl}&u=${encodeURIComponent(url)}&sandbox=1`);
+    this.request(
+      `https://translate.google.com/translate?hl=en&sl=${this.sl}&tl=${this.tl}&u=${encodeURIComponent(url)}&sandbox=1`
+    );
 
     this.request(
       `https://translate.googleusercontent.com/translate_p?hl=en&sl=${this.sl}&tl=${this.tl}&u=${decodeURIComponent(
@@ -43,18 +49,28 @@ class Translator {
     );
 
     this.request(
-      `https://translate.google.com/website?depth=1&hl=en&pto=aue,ajax,boq&rurl=translate.google.com&sl=${this.sl}&sp=nmt4&tl=${this.tl}&u=${decodeURIComponent(
-        url
-      )}&usg=ALkJrhgP3S6k0r9M1L0I0usu2YoSrco1KQ`
+      `https://translate.google.com/website?depth=1&hl=en&pto=aue,ajax,boq&rurl=translate.google.com&sl=${
+        this.sl
+      }&sp=nmt4&tl=${this.tl}&u=${decodeURIComponent(url)}&usg=ALkJrhgP3S6k0r9M1L0I0usu2YoSrco1KQ`
     );
 
     const parse = new URL(url);
-    this.request(`https://${parse.host.replace(/\./, '-')}.translate.goog${parseUrl.pathname}?_x_tr_sl=${this.sl}&_x_tr_tl=${this.tl}&_x_tr_hl=en&_x_tr_pto=ajax`);
-
-    this.request(`https://translate.google.com/translate_un?sl=${this.sl}&tl=${this.tl}&u=${decodeURIComponent(url)}&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA`);
+    this.request(
+      `https://${parse.host.replace(/\./, '-')}.translate.goog${parseUrl.pathname}?_x_tr_sl=${this.sl}&_x_tr_tl=${
+        this.tl
+      }&_x_tr_hl=en&_x_tr_pto=ajax`
+    );
 
     this.request(
-      `http://translate.google.com/translate?depth=1&nv=1&rurl=translate.google.com&sl=${this.sl}&sp=nmt4&tl=${this.tl}&u=${encodeURI(url)}`,
+      `https://translate.google.com/translate_un?sl=${this.sl}&tl=${this.tl}&u=${decodeURIComponent(
+        url
+      )}&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA`
+    );
+
+    this.request(
+      `http://translate.google.com/translate?depth=1&nv=1&rurl=translate.google.com&sl=${this.sl}&sp=nmt4&tl=${
+        this.tl
+      }&u=${encodeURI(url)}`,
       function (_statusCode, data, _headers, _curlInstance) {
         self.result = data;
         if (typeof callback == 'function') {
@@ -138,7 +154,10 @@ class Translator {
     curl.setOpt(Curl.option.SSL_VERIFYPEER, false);
     curl.setOpt(Curl.option.CUSTOMREQUEST, 'GET');
     //curl.setOpt(Curl.option.VERBOSE, true);
-    curl.setOpt(Curl.option.USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36');
+    curl.setOpt(
+      Curl.option.USERAGENT,
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36'
+    );
 
     // eslint-disable-next-line no-unused-vars
     curl.on('end', (statusCode, data, headers, curlInstance) => {

@@ -1,6 +1,18 @@
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { cwd, dirname, existsSync, globSrc, join, mkdirSync, readFileSync, removeMultiSlashes, resolve, statSync, write } from '../../node/filemanager';
+import {
+  cwd,
+  dirname,
+  existsSync,
+  globSrc,
+  join,
+  mkdirSync,
+  readFileSync,
+  removeMultiSlashes,
+  resolve,
+  statSync,
+  write,
+} from '../../node/filemanager';
 import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
 import ejs_object from '../../ejs';
 import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
@@ -123,7 +135,9 @@ export const renderArticle = function () {
           /** Full path (also cache key) */
           path: join(source_dir, file),
           /** Permalink path */
-          permalink: removeMultiSlashes(file.replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')).replace(/.md$/, '.html'),
+          permalink: removeMultiSlashes(
+            file.replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+          ).replace(/.md$/, '.html'),
           /** Is Cached */
           cached: false,
         };

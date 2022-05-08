@@ -27,7 +27,12 @@ export default async function generateCategories(labelname?: string, pagenum?: n
         // specific page number otherwise skip
         if (typeof pagenum == 'number' && current_page !== pagenum) continue;
         const innerChunks = array_wrap(parentChunks[current_page]);
-        const data = postChunksIterator(innerChunks, { current_page: current_page, base: join(config.category_dir, catname), parentChunks, treeChunks });
+        const data = postChunksIterator(innerChunks, {
+          current_page: current_page,
+          base: join(config.category_dir, catname),
+          parentChunks,
+          treeChunks,
+        });
         const saveTo = join(cwd(), config.public_dir, data.perm_current, 'index.html');
         const pagemeta: postMap = {
           metadata: {

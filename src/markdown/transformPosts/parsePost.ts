@@ -164,7 +164,10 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
 
     if (isFile) {
       // setup permalink
-      homepage.pathname = toUnix(originalArg).replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/').replace(/\/+/, '/').replace(/.md$/, '.html');
+      homepage.pathname = toUnix(originalArg)
+        .replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+        .replace(/\/+/, '/')
+        .replace(/.md$/, '.html');
       meta.permalink = homepage.pathname;
       homepage.pathname = meta.permalink;
       meta.url = homepage.toString();

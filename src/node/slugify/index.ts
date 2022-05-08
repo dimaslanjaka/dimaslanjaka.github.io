@@ -19,7 +19,9 @@ const decamelize = (string) => {
 const removeMootSeparators = (string, separator) => {
   const escapedSeparator = escapeStringRegexp(separator);
 
-  return string.replace(new RegExp(`${escapedSeparator}{2,}`, 'g'), separator).replace(new RegExp(`^${escapedSeparator}|${escapedSeparator}$`, 'g'), '');
+  return string
+    .replace(new RegExp(`${escapedSeparator}{2,}`, 'g'), separator)
+    .replace(new RegExp(`^${escapedSeparator}|${escapedSeparator}$`, 'g'), '');
 };
 
 const defOpt = {

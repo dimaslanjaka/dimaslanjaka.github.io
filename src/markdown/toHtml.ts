@@ -47,7 +47,8 @@ md.use(MarkdownItSup)
     permalink: MarkdownItAnchor.permalink.headerLink(),
     slugify: (s) => slugify(s),
   });
-md.renderer.rules.footnote_block_open = () => '<h4 class="mt-3">Footnotes</h4>\n' + '<section class="footnotes">\n' + '<ol class="footnotes-list">\n';
+md.renderer.rules.footnote_block_open = () =>
+  '<h4 class="mt-3">Footnotes</h4>\n' + '<section class="footnotes">\n' + '<ol class="footnotes-list">\n';
 
 /**
  * Render markdown to html using `markdown-it`, `markdown-it-attrs`, `markdown-it-anchors`, `markdown-it-sup`, `markdown-it-sub`, `markdown-it-mark`, `markdown-it-footnote`, `markdown-it-abbr`

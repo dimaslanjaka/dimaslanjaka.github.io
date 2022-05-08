@@ -15,13 +15,20 @@
   "emmet.includeLanguages": {
     "ejs": "html",
   },
+  "eslint.format.enable": true,
+  "eslint.trace.server": "messages",
   "editor.wordWrap": "on",
   "editor.bracketPairColorization.enabled": true,
   "javascript.suggestionActions.enabled": false,
   "typescript.suggestionActions.enabled": true,
   "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
     "source.fixAll.eslint": true // let ESLint take formating and linting
   },
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   "[ejs]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -54,7 +61,7 @@
   },
   "[javascript]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "editor.formatOnSave": false,
   "editor.tabSize": 2,

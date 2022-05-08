@@ -21,9 +21,11 @@
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.specs.ts'",
     "php": "php -S localhost:4000 -t docs",
-    "eslint": "npx eslint --fix src > dump-eslint.log",
+    "eslint": "run-s eslint:**",
+    "eslint:problem": "npx eslint -o ./tests/eslint/problem.html --fix --fix-type suggestion --fix-type problem .",
+    "eslint:layout": "npx eslint -o ./tests/layout/layout.html --fix --fix-type suggestion,layout .",
+    "eslint:fix": "npx eslint -o ./tests/eslint/fix.html --fix .",
     "depcheck": "npx depcheck > dump-unused.log",
-    "format": "prettier -w src/**/*.{ts,js,html}",
     "page": "echo 'install custom page libraries' && run-s page:**",
     "page:install": "cd docs && npm install --production && rm -rf .git .gitignore",
     "page:install2": "cd docs/page && npm install --production && rm -rf .git .gitignore"

@@ -12,7 +12,9 @@ export default function uuidv4(fromString?: string) {
   let original = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'; // length 8-4-4-4-12
   if (typeof fromString === 'string') {
     const hash = md5(fromString);
-    original = original.replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13)).replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
+    original = original
+      .replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13))
+      .replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
   } else {
     const err = new Error();
     const caller_line = err.stack.split('\n')[2];

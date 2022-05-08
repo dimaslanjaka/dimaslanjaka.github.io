@@ -1,23 +1,43 @@
+import Bluebird from 'bluebird';
 import { hashElement } from 'folder-hash';
-import { cwd, join, write } from '../node/filemanager';
+import { join, write } from '../node/filemanager';
 import { md5 } from '../node/md5-file';
+import config, { root } from './_config';
 
-let src_posts: string;
 const options = {
-  folders: { exclude: ['.*', 'node_modules', 'test_coverage', 'tmp'] },
-  files: { include: ['*.js', '*.ts', '*.md', '*.css'] },
+  folders: { exclude: ['.*', 'node_modules', 'test_coverage', 'tmp', 'test', 'tests', '*.log', '*.test.ts', '*.test.js'] },
+  files: { include: ['*.js', '*.ts', '*.md', '*.css', '*.scss', '*.less', '*.ejs'] },
 };
 
-export async function get_src_posts_hash() {
+/**
+ * Get src-posts hashes
+ * @returns
+ */
+export async function get_src_posts_hash(): Promise<string | null> {
   try {
-    const hash = await hashElement(join(cwd(), 'src-posts'), options);
-    src_posts = md5(hash.toString());
-    return src_posts;
+    const hash = await hashElement(join(root, 'src-posts'), options);
+    return md5(hash.toString());
   } catch (error) {
     console.error('hashing failed:', error);
   }
+  return null;
 }
 
-get_src_posts_hash().then(() => {
-  write(join(__dirname, '_config_hashes.json'), JSON.stringify({ src_posts }));
+/**
+ * get folder hash of {@link config.source_dir}
+ * @returns
+ */
+export async function get_source_hash() {
+  try {
+    const hash = await hashElement(join(root, config.source_dir), options);
+    return md5(hash.toString());
+  } catch (error) {
+    console.error('hashing failed:', error);
+  }
+  return null;
+}
+
+// @todo generate folder hashes every called once
+Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
+  write(join(__dirname, '_config_hashes.json'), JSON.stringify({ 'src-posts': src_posts, source }));
 });

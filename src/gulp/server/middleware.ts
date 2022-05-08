@@ -16,7 +16,8 @@ import './gen-middleware';
 import routedata from './routes.json';
 import jdom from '../../node/jsdom';
 import { generateIndex } from '../tasks/generate-archives';
-import { spawn } from 'child_process';
+import minimatch from 'minimatch';
+import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 
 let gulpIndicator = false;
 const homepage = new URL(config.url);
@@ -43,17 +44,24 @@ function showPreview(str: string | Buffer) {
   dom.close();
   return body;
 }
-
+/** source and src-posts hashes modified indicator */
+let hashes = '';
 const copyAssets = (...fn: TaskFunction[] | string[]) => {
   return new Bluebird((resolve) => {
     if (!gulpIndicator) {
       gulpIndicator = true;
       const tasks = ['generate:assets', 'generate:template', ...fn].removeEmpties();
-
-      gulp.series(...tasks)(() => {
-        gulpIndicator = false;
-        spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir) });
-        resolve();
+      Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
+        // @todo [server] prevent call copy without any modifications
+        const chashes = `${src_posts}:${source}`;
+        if (chashes != hashes) {
+          hashes = `${src_posts}:${source}`;
+          gulp.series(...tasks)(() => {
+            gulpIndicator = false;
+            //spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir) });
+            resolve();
+          });
+        }
       });
     }
   });
@@ -88,7 +96,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     if (pathname.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
     //write(tmp('middleware.log'), inspect(req));
-    console.log(req['_parsedUrl'].pathname, req['_parsedUrl'].search);
+    //console.log(req['_parsedUrl'].pathname, req['_parsedUrl'].search);
 
     const isPage = pathname.isMatch(/(.html|\/)$/);
 
@@ -106,7 +114,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         })
         .filter(existsSync)
         .unique();
-      console.log(sourceMD);
+      //console.log(sourceMD);
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];
@@ -133,7 +141,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
                 res.end(previewed);
               });
-            } else {
+            } else if (minimatch(file, '*.{html,txt,json}')) {
               return res.end(showPreview(readFileSync(file)));
             }
           }

@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-          #cache: "npm"
+          cache: "npm"
       #- run: echo "${{ secrets.GITHUB_TEST ]}"
       - name: Get current date
         id: date
@@ -52,11 +52,11 @@ jobs:
       #- run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")"
       - name: Get Caches
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ${{ steps.npm-cache-dir.outputs.dir }}
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            !${{ steps.yarn-cache-dir-path.outputs.dir }}
             ./node_modules
             ~/.npm
             ./tmp

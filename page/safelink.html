@@ -112,7 +112,26 @@
 			opacity: 0.4;
 		}
 	</style>
-	<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script>
+	<script>
+		var script = document.createElement('script');
+		script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+		script.crossOrigin = 'anonymous';
+		script.async = true;
+		script.onload = function () {
+			var adsbygoogle = window.adsbygoogle || [];
+			Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+				(ins) => {
+					var adsid = ins.getAttribute('data-ad-slot'); //nullable
+					if (adsid) {
+						adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+						console.log('[adsense][ins]', adsid);
+					}
+				}
+			);
+		};
+		var target = document.getElementsByTagName('script')[0];
+		target.parentNode.insertBefore(script, target);
+	</script>
 	<script>
 		(function () {
 			function id(v) {
@@ -150,6 +169,7 @@
 			document.addEventListener('DOMContentLoaded', loadbar, false);
 		})();
 	</script>
+
 
 
 	<div id="Overlay">

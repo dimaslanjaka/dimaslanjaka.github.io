@@ -152,7 +152,41 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
         <!-- Post content-->
         <section class="mb-5">
           <p>change <code>ca-pub-1165447249910969</code> with your own adsense pub</p>
-<pre><code class="language-html">&lt;!--script0--&gt;
+<pre><code class="language-html">&lt;script type="text/javascript"&gt;//&lt;![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload &amp;&amp; (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) =&gt; {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="minified-version" tabindex="-1"><a class="header-anchor" href="#minified-version">Minified Version</a></h2>
 <pre><code class="language-js">var lazyloadads=!1;window.addEventListener("scroll",function(){var o=0!=document.documentElement.scrollTop,e=0!=document.body.scrollTop;!1===lazyloadads&amp;&amp;(o||e)&amp;&amp;((o=document.createElement("script")).type="text/javascript",o.async=!0,o.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969",o.setAttribute("crossorigin","anonymous"),o.onload=function(){var e=window.adsbygoogle||[];Array.from(document.querySelectorAll("ins.adsbygoogle")).forEach(o=&gt;{o=o.getAttribute("data-ad-slot");o&amp;&amp;(e.push({google_ad_client:"ca-pub-1165447249910969"}),console.log("[adsense][ins]",o))})},(e=document.getElementsByTagName("script")[0]).parentNode.insertBefore(o,e),lazyloadads=!0)},!0);

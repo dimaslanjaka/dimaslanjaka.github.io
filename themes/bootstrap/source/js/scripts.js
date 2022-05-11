@@ -6,10 +6,18 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-// https://github.com/zenorocha/clipboard.js/blob/master/dist/clipboard.min.js
-// https://raw.githack.com/zenorocha/clipboard.js/master/dist/clipboard.min.js
-// https://rawcdn.githack.com/zenorocha/clipboard.js/2b2f9eef6fd1cf951612740e16e422db2848c00a/dist/clipboard.min.js
-(function () {
+document.onreadystatechange = function () {
+  if (document.readyState == 'complete') {
+    initClipboard();
+  }
+};
+
+/**
+ * * source {@link https://github.com/zenorocha/clipboard.js/blob/master/dist/clipboard.min.js}
+ * * development {@link https://raw.githack.com/zenorocha/clipboard.js/master/dist/clipboard.min.js}
+ * * production {@link https://rawcdn.githack.com/zenorocha/clipboard.js/2b2f9eef6fd1cf951612740e16e422db2848c00a/dist/clipboard.min.js}
+ */
+function initClipboard() {
   var clipboardLoaded = false;
   window.addEventListener(
     'scroll',
@@ -37,4 +45,4 @@
     },
     true
   );
-})();
+}

@@ -182,7 +182,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 <pre><code class="language-xml">&lt;b:if cond='data:view.isHomepage'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="post" tabindex="-1"><a class="header-anchor" href="#post">Post</a></h2>
-<p>Blogger Conditional Tag for determine current page is post ex: <a href="http://web-manajemen.blogspot.com/p/privacy.html">http://web-manajemen.blogspot.com/p/privacy.html</a> (<strong>Is Post</strong>)</p>
+<p>Blogger Conditional Tag for determine current page is post ex: http://web-manajemen.blogspot.com/p/privacy.html (<strong>Is Post</strong>)</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.pageType == &amp;quot;item&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <p>or</p>
@@ -199,7 +199,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 <p><code>data:blog.url</code> is the code to display the original opened url. In the latest version can use <code>data:view.url</code>. When the url is the same as the filled url, then the result will be true so that . If you move to a custom domain, the Page Url from blogspot must also be replaced with a custom domain.</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.url == &amp;quot;Url Post Or Page&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
-<p>Example: Determine current page is <a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html">https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html</a></p>
+<p>Example: Determine current page is https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.url == &amp;quot;https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="index" tabindex="-1"><a class="header-anchor" href="#index">Index</a></h2>
@@ -210,7 +210,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 <pre><code class="language-xml">&lt;b:if cond='data:view.isMultipleItems'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="label" tabindex="-1"><a class="header-anchor" href="#label">Label</a></h2>
-<p>Blogger Conditional Tag to display element while on label page (current page is label) ex: <a href="http://web-manajemen.blogspot.com/search/label/Blogger">http://web-manajemen.blogspot.com/search/label/Blogger</a> (<strong>Is label (Tags/Categories)</strong>)</p>
+<p>Blogger Conditional Tag to display element while on label page (current page is label) ex: http://web-manajemen.blogspot.com/search/label/Blogger (<strong>Is label (Tags/Categories)</strong>)</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.searchLabel'&gt;&lt;/b:if&gt;
 </code></pre>
 <p>or</p>
@@ -224,7 +224,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 <pre><code class="language-xml">&lt;b:if cond='data:view.search.label == &amp;quot;Label Name&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="search-page" tabindex="-1"><a class="header-anchor" href="#search-page">Search Page</a></h2>
-<p>Blogger conditional tag to display an element when it is on a search page or query data in a blog. ex: <a href="https://web-manajemen.blogspot.com/search?q=Install+php+cli">https://web-manajemen.blogspot.com/search?q=Install+php+cli</a></p>
+<p>Blogger conditional tag to display an element when it is on a search page or query data in a blog. ex: https://web-manajemen.blogspot.com/search?q=Install+php+cli</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.searchQuery'&gt;&lt;/b:if&gt;
 </code></pre>
 <p>or</p>
@@ -238,7 +238,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 <pre><code class="language-xml">&lt;b:if cond='data:view.search.query == &amp;quot;Keywords&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="archives" tabindex="-1"><a class="header-anchor" href="#archives">Archives</a></h2>
-<p>Blogger conditional tag to determine current page is Archive Blog. ex: <a href="http://web-manajemen.blogspot.com/2017/05/">http://web-manajemen.blogspot.com/2017/05/</a></p>
+<p>Blogger conditional tag to determine current page is Archive Blog. ex: http://web-manajemen.blogspot.com/2017/05/</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.pageType == &amp;quot;archive&amp;quot;'&gt;&lt;/b:if&gt;
 </code></pre>
 <p>or</p>
@@ -256,7 +256,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 <pre><code class="language-xml">&lt;b:if cond='data:view.isLayoutMode and data:view.isPreview'&gt;&lt;/b:if&gt;
 </code></pre>
 <h2 id="mobile-requests" tabindex="-1"><a class="header-anchor" href="#mobile-requests">Mobile Requests</a></h2>
-<p>This blogger conditional tag code will only read for HTML code that is displayed specifically on mobile devices aka HandPhones and Tablets. ex: <a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1">https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1</a></p>
+<p>This blogger conditional tag code will only read for HTML code that is displayed specifically on mobile devices aka HandPhones and Tablets. ex: https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1</p>
 <pre><code class="language-xml">&lt;b:if cond='data:blog.isMobileRequest'&gt;&lt;/b:if&gt;
 </code></pre>
 <h1 id="not-and-or-declaration-function-in-blogger-conditional-tags" tabindex="-1"><a class="header-anchor" href="#not-and-or-declaration-function-in-blogger-conditional-tags">NOT, AND, OR Declaration Function in Blogger Conditional Tags</a></h1>

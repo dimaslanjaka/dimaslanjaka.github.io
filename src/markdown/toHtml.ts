@@ -118,6 +118,13 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
     write(join(__dirname, 'tmp/extracted-body.md'), body);
     write(join(__dirname, 'tmp/extracted-object.json'), extracted);
   }
+  // restore extracted code blocks
+  codeBlocks.forEach((s, i) => {
+    const regex = new RegExp(`<codeblock${i}/>`, 'gm');
+    Array.from(body.matchAll(regex)).forEach((codeblock) => {
+      body = body.replace(codeblock[0], s);
+    });
+  });
   let rendered = renderMarkdownIt(body);
   if (verbose) write(join(__dirname, 'tmp/rendered.md'), rendered);
   // restore extracted script, style
@@ -133,13 +140,7 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
       });
     }
   }
-  // restore extracted code blocks
-  codeBlocks.forEach((s, i) => {
-    const regex = new RegExp(`<codeblock${i}/>`, 'gm');
-    Array.from(rendered.matchAll(regex)).forEach((codeblock) => {
-      rendered = rendered.replace(codeblock[0], s);
-    });
-  });
+
   if (verbose) write(join(__dirname, 'tmp/restored.md'), rendered);
   return rendered;
 }

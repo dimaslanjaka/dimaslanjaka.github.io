@@ -77,8 +77,20 @@ export function renderMarkdownIt(str: string) {
 export function renderBodyMarkdown(parse: postMap, verbose = false) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
-  let body = parse.body || parse.content;
+  let body: string = parse.body || parse.content;
   if (typeof body != 'string') throw new Error('cannot render undefined markdown body');
+
+  // extract code block first
+  const re_code_block = /```[\s\S]*?```/gm;
+  const codeBlocks: string[] = [];
+  Array.from(body.matchAll(re_code_block)).forEach((m, i) => {
+    const str = m[0];
+    codeBlocks[i] = str;
+    body = body.replace(str, `<codeblock${i}/>`);
+  });
+  if (verbose) {
+    write(join(__dirname, 'tmp/extracted-codeblock.json'), codeBlocks);
+  }
 
   // extract style, script
   const re = {
@@ -86,8 +98,8 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
     style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gm,
   };
   const extracted: {
-    script: any[];
-    style: any[];
+    script: string[];
+    style: string[];
   } = {
     script: [],
     style: [],
@@ -100,18 +112,11 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
         extracted[key][i] = str;
         body = body.replace(str, `<!--${key}${i}-->`);
       });
-      /*const matchedScript = body.match(regex);
-      if (matchedScript) {
-        matchedScript.forEach((str, i) => {
-          extracted[key][i] = str;
-          body = body.replace(str, `<!--${key}${i}-->`);
-        });
-      }*/
     }
   }
   if (verbose) {
-    write(join(__dirname, 'tmp/extracted.md'), body);
-    write(join(__dirname, 'tmp/extracted.json'), extracted);
+    write(join(__dirname, 'tmp/extracted-body.md'), body);
+    write(join(__dirname, 'tmp/extracted-object.json'), extracted);
   }
   let rendered = renderMarkdownIt(body);
   if (verbose) write(join(__dirname, 'tmp/rendered.md'), rendered);
@@ -119,9 +124,7 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {
       const regex = new RegExp(`<!--(${key})(\\d{1,2})-->`, 'gm');
-      //const rematch = md.match(regex);
-      const match = rendered.matchAll(regex);
-      Array.from(match).forEach((m) => {
+      Array.from(rendered.matchAll(regex)).forEach((m) => {
         //console.log(match.length, regex, m[0], m[1], m[2]);
         const keyname = m[1];
         const index = m[2];
@@ -130,6 +133,13 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
       });
     }
   }
+  // restore extracted code blocks
+  codeBlocks.forEach((s, i) => {
+    const regex = new RegExp(`<codeblock${i}/>`, 'gm');
+    Array.from(rendered.matchAll(regex)).forEach((codeblock) => {
+      rendered = rendered.replace(codeblock[0], s);
+    });
+  });
   if (verbose) write(join(__dirname, 'tmp/restored.md'), rendered);
   return rendered;
 }

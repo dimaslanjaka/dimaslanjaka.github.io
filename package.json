@@ -28,7 +28,6 @@
     "page:install": "cd docs && npm install --production && rm -rf .git .gitignore",
     "page:install2": "cd docs/page && npm install --production && rm -rf .git .gitignore",
     "format": "run-p format:**",
-    "format:src": "prettier --write ./src/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --parser html -w ./themes/**/*.ejs"
   },

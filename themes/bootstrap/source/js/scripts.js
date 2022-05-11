@@ -10,33 +10,29 @@
 // https://raw.githack.com/zenorocha/clipboard.js/master/dist/clipboard.min.js
 // https://rawcdn.githack.com/zenorocha/clipboard.js/2b2f9eef6fd1cf951612740e16e422db2848c00a/dist/clipboard.min.js
 (function () {
-  const clipboard = new ClipboardJS('[copy-to-clipboard]');
-  var lazyloadads = false;
+  var clipboardLoaded = false;
   window.addEventListener(
     'scroll',
     function () {
       var notop = 0 != document.documentElement.scrollTop;
       var notopbody = 0 != document.body.scrollTop;
-      var noload = false === lazyloadads;
+      var noload = false === clipboardLoaded;
       if (noload && (notop || notopbody)) {
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.async = true;
-        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%- config.adsense.pub %>';
+        script.src =
+          'https://rawcdn.githack.com/zenorocha/clipboard.js/2b2f9eef6fd1cf951612740e16e422db2848c00a/dist/clipboard.min.js';
         script.setAttribute('crossorigin', 'anonymous');
         script.onload = function () {
-          var adsbygoogle = window.adsbygoogle || [];
-          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach((ins) => {
-            var adsid = ins.getAttribute('data-ad-slot'); //nullable
-            if (adsid) {
-              adsbygoogle.push({ google_ad_client: '<%- config.adsense.pub %>' });
-              console.log('[adsense][ins]', adsid);
-            }
+          const clip = new ClipboardJS('[copy-to-clipboard]');
+          clip.on('success', function (e) {
+            console.log('codes copied');
           });
         };
         var target = document.getElementsByTagName('script')[0];
         target.parentNode.insertBefore(script, target);
-        lazyloadads = true;
+        clipboardLoaded = true;
       }
     },
     true

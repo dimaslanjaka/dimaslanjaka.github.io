@@ -75,7 +75,11 @@ export function date_local(page: postResult) {
  * @example
  * <%- date_format(page.date, 'LLLL') %>
  */
-export function date_format(str: string | Date | moment.MomentInput, pattern: 'MMMM Do YYYY, h:mm:ss a', page: postResult = null) {
+export function date_format(
+  str: string | Date | moment.MomentInput,
+  pattern: 'MMMM Do YYYY, h:mm:ss a',
+  page: postResult = null
+) {
   if (!str) {
     console.log('invalid date variable');
     return null;
@@ -89,7 +93,8 @@ export function date_format(str: string | Date | moment.MomentInput, pattern: 'M
  * @param value
  * @returns
  */
-export const isDate = (value: moment.MomentInput) => typeof value === 'object' && value instanceof Date && !isNaN(value.getTime());
+export const isDate = (value: moment.MomentInput) =>
+  typeof value === 'object' && value instanceof Date && !isNaN(value.getTime());
 
 /**
  * get moment instance of date

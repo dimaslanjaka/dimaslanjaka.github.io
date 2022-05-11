@@ -8,192 +8,163 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-	body
-	{
-	}
+body {
+}
 
-	body,input,textarea,select
-	{
-		font-size: 11pt;
-	}
+body,
+input,
+textarea,
+select {
+  font-size: 11pt;
+}
 
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
 
-	#header
-	{
-		position: relative;
-		padding: 5em 0em;
-		text-align: center;
-	}
-	
-		.homepage #header
-		{
-			padding: 15em 0em;
-		}
+#header {
+  position: relative;
+  padding: 5em 0em;
+  text-align: center;
+}
 
-		#header .container
-		{
-		}
+.homepage #header {
+  padding: 15em 0em;
+}
+
+#header .container {
+}
 
 /*********************************************************************************/
 /* Logo                                                                          */
 /*********************************************************************************/
 
-	#logo
-	{
-		margin-bottom: 3em;
-	}
-	
-		#logo h1
-		{
-			color: #FFF;
-		}
-	
-		#logo h1 a
-		{
-			display: block;
-			letter-spacing: 1px;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: 5em;
-			font-weight: 900;
-			color: #FFF;
-		}
+#logo {
+  margin-bottom: 3em;
+}
 
-		#logo span
-		{
-			display: block;
-			padding-top: 1em;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			font-size: 1.2em;
-			color: rgba(255,255,255,.5);
-		}			
-			
+#logo h1 {
+  color: #fff;
+}
+
+#logo h1 a {
+  display: block;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 5em;
+  font-weight: 900;
+  color: #fff;
+}
+
+#logo span {
+  display: block;
+  padding-top: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
 
 /*********************************************************************************/
 /* Nav                                                                           */
 /*********************************************************************************/
 
-	#nav
-	{
-	}
+#nav {
+}
 
-		#nav > ul > li
-		{
-			display: inline-block;
-		}
-		
-			#nav > ul > li:last-child
-			{
-				padding-right: 0;
-			}
+#nav > ul > li {
+  display: inline-block;
+}
 
-			#nav > ul > li > a,
-			#nav > ul > li > span
-			{
-				display: block;
-				padding: 1em 1.5em;
-				letter-spacing: 1px;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-weight: 200;
-				font-size: 1em;
-				outline: 0;
-				color: rgba(255,255,255,.7);
-			}
+#nav > ul > li:last-child {
+  padding-right: 0;
+}
 
+#nav > ul > li > a,
+#nav > ul > li > span {
+  display: block;
+  padding: 1em 1.5em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1em;
+  outline: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
 
-			#nav > ul > li > a:hover
-			{
-				color: #FFF;
-			}
+#nav > ul > li > a:hover {
+  color: #fff;
+}
 
-			#nav li.active a
-			{
-				background: none;
-				border-radius: 40px;
-				border: 2px solid;
-				border-color: rgba(255,255,255,.8);
-				color: #FFF;
-			}
+#nav li.active a {
+  background: none;
+  border-radius: 40px;
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #fff;
+}
 
-			#nav > ul > li > ul
-			{
-				display: none;
-			}
-
+#nav > ul > li > ul {
+  display: none;
+}
 
 /*********************************************************************************/
 /* Main                                                                          */
 /*********************************************************************************/
 
-	#main
-	{
-		padding: 6em 0em 4em 0em;
-	}
-	
-	#content
-	{
-	}
-	
-	#content header
-	{
-		margin-bottom: 2em;
-	}
-	
-	#content header h2
-	{
-		font-size: 3em;
-	}
-	
-	#content header .byline
-	{
-		font-size: 1.40em;
-	}
-	
-	#sidebar h2
-	{
-		display: block;
-		padding-bottom: 2em;
-		font-size: 1.4em;
-	}
+#main {
+  padding: 6em 0em 4em 0em;
+}
+
+#content {
+}
+
+#content header {
+  margin-bottom: 2em;
+}
+
+#content header h2 {
+  font-size: 3em;
+}
+
+#content header .byline {
+  font-size: 1.4em;
+}
+
+#sidebar h2 {
+  display: block;
+  padding-bottom: 2em;
+  font-size: 1.4em;
+}
 
 /*********************************************************************************/
 /* Featured                                                                      */
 /*********************************************************************************/
-	
-	#featured
-	{
-		padding: 6em 0em;
-	}
+
+#featured {
+  padding: 6em 0em;
+}
 
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
-	
-	#footer
-	{
-		position: relative;
-		padding: 6em 0em;
-	}
-	
-	#footer h2
-	{
-		padding-bottom: 2em;
-		font-size: 1.4em;
-	}
-	
+
+#footer {
+  position: relative;
+  padding: 6em 0em;
+}
+
+#footer h2 {
+  padding-bottom: 2em;
+  font-size: 1.4em;
+}
+
 /*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/
-	
-	#copyright
-	{
-		padding: 3em 0em;
-	}		
 
-
-
+#copyright {
+  padding: 3em 0em;
+}

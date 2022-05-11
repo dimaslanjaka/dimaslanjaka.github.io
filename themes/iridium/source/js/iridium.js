@@ -17,7 +17,8 @@
       function (e) {
         const tn = e.target.tagName.toLowerCase();
         if (tn == 'li') cleanNavs().then(() => e.target.classList.add('active'));
-        if (tn == 'a' && e.target.parentElement.tagName.toLowerCase() == 'li') cleanNavs().then(() => e.target.parentElement.classList.add('active'));
+        if (tn == 'a' && e.target.parentElement.tagName.toLowerCase() == 'li')
+          cleanNavs().then(() => e.target.parentElement.classList.add('active'));
       },
       false
     );

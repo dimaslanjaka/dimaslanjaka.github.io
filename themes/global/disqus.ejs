@@ -2,8 +2,7 @@
 <div id="disqus_thread" class="disqus"></div>
 <script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
 <script>
-  var options =
-  {
+  var options = {
     scriptUrl: '//<%- theme.disqus_shortname %>.disqus.com/embed.js',
     /*
       @type: string (url)
@@ -23,7 +22,6 @@
       2 - 2x viewports, etc.
     */
 
-
     /**
      * @type: int (milliseconds)
      * @default: 250
@@ -41,7 +39,7 @@
       this.page.title = '<%- page.title %>';
       this.page.url = '<%- page.url %>';
       this.page.identifier = new URL('<%- page.url %>').pathname;
-    }
+    },
   };
 
   // vanilla
@@ -49,8 +47,6 @@
 </script>
 <noscript>
   Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-    comments powered by Disqus.
-  </a>
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow"> comments powered by Disqus. </a>
 </noscript>
 <% } %>

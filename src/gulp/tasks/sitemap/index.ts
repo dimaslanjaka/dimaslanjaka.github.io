@@ -31,7 +31,9 @@ const allPosts = (() => {
         .map((post) => {
           if (!post) return;
           if (!post.metadata.type || !post.metadata.type.length)
-            if (post.fileTree) if (typeof post.fileTree.public == 'string') if (!post.metadata.type) post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
+            if (post.fileTree)
+              if (typeof post.fileTree.public == 'string')
+                if (!post.metadata.type) post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
           const cats = post.metadata.category;
           const tags = post.metadata.tags;
           if (cats) {
@@ -168,7 +170,10 @@ async function generateIndex(done?: TaskCallback) {
     })
     .then(getLatestDateArray)
     .then((date) => {
-      return `<sitemap><loc>${config.url.replace(/\/+$/, '')}/tag-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
+      return `<sitemap><loc>${config.url.replace(
+        /\/+$/,
+        ''
+      )}/tag-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
     });
   /**
    * get latest date of categories
@@ -182,7 +187,10 @@ async function generateIndex(done?: TaskCallback) {
     })
     .then(getLatestDateArray)
     .then((date) => {
-      return `<sitemap><loc>${config.url.replace(/\/+$/, '')}/category-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
+      return `<sitemap><loc>${config.url.replace(
+        /\/+$/,
+        ''
+      )}/category-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
     });
 
   const latestPost = await allPosts
@@ -194,7 +202,10 @@ async function generateIndex(done?: TaskCallback) {
     })
     .then(getLatestDateArray)
     .then((date) => {
-      return `<sitemap><loc>${config.url.replace(/\/+$/, '')}/post-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
+      return `<sitemap><loc>${config.url.replace(
+        /\/+$/,
+        ''
+      )}/post-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
     });
 
   const latestPage = await allPosts
@@ -208,7 +219,10 @@ async function generateIndex(done?: TaskCallback) {
     .then((date) => {
       // if no page exist, return latest post date
       if (!date) return latestPost.replace('post-sitemap.xml', 'page-sitemap.xml');
-      return `<sitemap><loc>${config.url.replace(/\/+$/, '')}/page-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
+      return `<sitemap><loc>${config.url.replace(
+        /\/+$/,
+        ''
+      )}/page-sitemap.xml</loc><lastmod>${date}</lastmod></sitemap>`;
     });
 
   const buildStr = [latestTag, latestCat, latestPost, latestPage];

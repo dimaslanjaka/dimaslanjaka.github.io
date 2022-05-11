@@ -26,14 +26,14 @@ export default function renderShowdown(str: string) {
 const md = new MarkdownIt({
   html: true,
   // Autoconvert URL-like text to links
-  linkify: true,
+  linkify: false,
   // Enable some language-neutral replacement + quotes beautification
   // For the full list of replacements, see https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js
   typographer: true,
   breaks: false,
   langPrefix: 'language-', // CSS language prefix for fenced blocks. Can be useful for external highlighters.
 });
-md.linkify.set({ fuzzyEmail: false }); // disables converting email to link
+//md.linkify.set({ fuzzyEmail: false }); // disables converting email to link
 md.use(MarkdownItSup)
   .use(MarkdownItSub)
   .use(MarkdownItMark)

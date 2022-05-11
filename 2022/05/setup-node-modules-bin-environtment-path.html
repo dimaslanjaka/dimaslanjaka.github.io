@@ -14,15 +14,15 @@
 <meta property="og:site_name" content="Website Manajemen Indonesia">
 <meta property="og:description" content="How to setup node_modules/.bin on global environtment path">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://user-images.githubusercontent.com/12471057/167625972-59c6297f-a4ac-41ad-a7dc-2e4bb819f71c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png">
 <!--article metadata-->
 <meta property="article:published_time" content="2022-05-10T12:13:21+0000">
-<meta property="article:modified_time" content="2022-05-10T12:13:21+0000">
+<meta property="article:modified_time" content="2022-05-10T23:45:40+0000">
 <meta property="article:author" content="Dimas Lanjaka">
 
 <!--twitter metadata-->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/12471057/167625972-59c6297f-a4ac-41ad-a7dc-2e4bb819f71c.png">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png">
 <!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -153,7 +153,18 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
         <section class="mb-5">
           <h2 id="setup-windows" tabindex="-1"><a class="header-anchor" href="#setup-windows">Setup Windows</a></h2>
 <p><img src="https://user-images.githubusercontent.com/12471057/167625486-8ba5d865-b3e5-4cec-bdb5-6c335ff5b2d6.png" alt="Environtment Path Windows"></p>
-<p><img src="https://user-images.githubusercontent.com/12471057/167625972-59c6297f-a4ac-41ad-a7dc-2e4bb819f71c.png" alt="cover"></p>
+<h2 id="setup-linux" tabindex="-1"><a class="header-anchor" href="#setup-linux">Setup Linux</a></h2>
+<pre><code class="language-bash">sudo gedit ~/.bashrc
+</code></pre>
+<p>add following codes to end of file</p>
+<pre><code class="language-bash">if [ -d "./bin" ] ; then
+    export PATH="$PATH:./bin"
+fi
+if [ -d "./node_modules/.bin" ] ; then
+    export PATH="$PATH:./node_modules/.bin"
+fi
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png" alt="cover"></p>
 
 
           

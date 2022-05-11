@@ -1,6 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 import * as fse from 'fs-extra';
+import path from 'path';
 import { DynamicObject } from '../types';
 
 //console.log(loopDir(path.join(process.cwd(), "source")));

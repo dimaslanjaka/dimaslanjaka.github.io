@@ -1,14 +1,14 @@
-import './generate-sitemap';
+import gulp from 'gulp';
+import { join, resolve, toUnix } from 'upath';
+import { existsSync, write } from '../../node/filemanager';
+import config, { root } from '../../types/_config';
 import './generate-after';
 import './generate-archives';
 import './generate-feed';
 import './generate-posts';
-import './minify';
+import './generate-sitemap';
 import './import';
-import gulp from 'gulp';
-import { join, resolve, toUnix } from 'upath';
-import config, { root } from '../../types/_config';
-import { existsSync, write } from '../../node/filemanager';
+import './minify';
 
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
 // .nojekyll

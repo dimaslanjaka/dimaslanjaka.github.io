@@ -1,9 +1,9 @@
-import htmlmin from 'html-minifier-terser';
-import { cwd, globSrc, join, read, write } from '../../node/filemanager';
-import config from '../../types/_config';
 import gulp from 'gulp';
+import htmlmin from 'html-minifier-terser';
 import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
+import { cwd, globSrc, join, read, write } from '../../node/filemanager';
+import config from '../../types/_config';
 
 const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
 /**

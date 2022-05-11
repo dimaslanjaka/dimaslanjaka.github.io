@@ -103,7 +103,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     if (isPage) {
       res.setHeader('Content-Type', 'text/html');
       // find post and pages
-      let sourceMD = [join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)), join(cwd(), config.source_dir, decodeURIComponent(pathname))].map((s) => {
+      let sourceMD = [
+        join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)),
+        join(cwd(), config.source_dir, decodeURIComponent(pathname)),
+      ].map((s) => {
         return s.replace(/.html$/, '.md');
       });
       sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
@@ -118,7 +121,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];
-          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(/.md$/, '.html');
+          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(
+            /.md$/,
+            '.html'
+          );
 
           // start generating
           if (existsSync(file)) {
@@ -170,13 +176,20 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     route: '/api',
     handle: function (req, res, next) {
       // write source/.guid
-      if (req.url.includes('generate')) write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() => console.log('gulp generate start'));
+      if (req.url.includes('generate'))
+        write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() => console.log('gulp generate start'));
       // write public_dir/.guid
-      if (req.url.includes('copy')) write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
+      if (req.url.includes('copy'))
+        write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
       res.writeHead(200, {
         'Content-Type': 'text/plain',
       });
-      res.end(JSON.stringifyWithCircularRefs(new Error('Something went wrong. And we are reporting a custom error message.'), 2));
+      res.end(
+        JSON.stringifyWithCircularRefs(
+          new Error('Something went wrong. And we are reporting a custom error message.'),
+          2
+        )
+      );
       next();
     },
   },

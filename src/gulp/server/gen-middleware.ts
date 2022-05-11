@@ -1,7 +1,7 @@
-import { getAllPosts } from '../../node/cache-post';
 import 'js-prototypes';
-import config from '../../types/_config';
+import { getAllPosts } from '../../node/cache-post';
 import { join, write } from '../../node/filemanager';
+import config from '../../types/_config';
 
 // middleware generator
 const cats: string[] = [],

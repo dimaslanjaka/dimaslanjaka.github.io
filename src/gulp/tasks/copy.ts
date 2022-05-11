@@ -5,23 +5,23 @@
  * @summary copy from src-posts to source/_posts
  */
 
-import 'js-prototypes';
-import { cwd, dirname } from '../../node/filemanager';
-import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
-import config, { post_public_dir, post_source_dir } from '../../types/_config';
+import Bluebird from 'bluebird';
+import chalk from 'chalk';
 import gulp from 'gulp';
-import gulpRename from '../modules/rename';
+import 'js-prototypes';
+import { parse as parseHTML } from 'node-html-parser';
+import through2 from 'through2';
 import { toUnix } from 'upath';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
-import { parse as parseHTML } from 'node-html-parser';
-import chalk from 'chalk';
-import through2 from 'through2';
+import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
-import CachePost from '../../node/cache-post';
-import './remove-inline-style';
-import { isValidHttpUrl } from '../utils';
 import CacheFile from '../../node/cache';
-import Bluebird from 'bluebird';
+import CachePost from '../../node/cache-post';
+import { cwd, dirname } from '../../node/filemanager';
+import config, { post_public_dir, post_source_dir } from '../../types/_config';
+import gulpRename from '../modules/rename';
+import { isValidHttpUrl } from '../utils';
+import './remove-inline-style';
 
 /**
  * Crossplatform path replacer

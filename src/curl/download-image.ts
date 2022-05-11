@@ -23,7 +23,11 @@ interface cacheDownloadImageData {
  * @param saveTo save directory path or file path
  * * If the Save target is a directory, then the file name will be searched by the 'Content-Disposition' header or based on MD5 Hash Source URL
  */
-export default async function downloadImage(src: string, saveTo: string, cache = true): Promise<Partial<cacheDownloadImageData>> {
+export default async function downloadImage(
+  src: string,
+  saveTo: string,
+  cache = true
+): Promise<Partial<cacheDownloadImageData>> {
   const e = new Error();
   if (!e.stack) {
     try {
@@ -158,7 +162,12 @@ function parse_base64_image(data: string) {
  * // save to file directly without callback, return string
  * base64_to_image('base64_encoded_string', '/folder/filename.jpg', null, null);
  */
-function base64_to_image(data: string, destpath: string, name: string | null = null, callback: null | ((arg0: NodeJS.ErrnoException, arg1: string) => any) = null) {
+function base64_to_image(
+  data: string,
+  destpath: string,
+  name: string | null = null,
+  callback: null | ((arg0: NodeJS.ErrnoException, arg1: string) => any) = null
+) {
   if (typeof data === 'string' && typeof name === 'string') {
     let filepath: string;
     if (data.startsWith('data:image')) {

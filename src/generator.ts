@@ -1,12 +1,12 @@
-import scheduler from './node/scheduler';
 import gulp from 'gulp';
-import { join, rm } from './node/filemanager';
-import config, { root, tmp } from './types/_config';
-import { dbFolder } from './node/cache';
-import './gulp/tasks/copy';
-import './gulp/tasks/generate';
-import './gulp/tasks/deploy';
 import { TaskCallback } from 'undertaker';
+import './gulp/tasks/copy';
+import './gulp/tasks/deploy';
+import './gulp/tasks/generate';
+import { dbFolder } from './node/cache';
+import { join, rm } from './node/filemanager';
+import scheduler from './node/scheduler';
+import config, { root, tmp } from './types/_config';
 
 // register scheduler
 new scheduler();

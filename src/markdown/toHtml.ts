@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import showdown from 'showdown';
 import MarkdownIt from 'markdown-it';
+import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItAttrs from 'markdown-it-attrs';
-import MarkdownItSup from 'markdown-it-sup';
-import MarkdownItSub from 'markdown-it-sub';
-import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItFootnote from 'markdown-it-footnote';
-import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItMark from 'markdown-it-mark';
+import MarkdownItSub from 'markdown-it-sub';
+import MarkdownItSup from 'markdown-it-sup';
+import showdown from 'showdown';
+import { join, write } from '../node/filemanager';
 import slugify from '../node/slugify/index';
-import { write } from '../node/filemanager';
-import { tmp } from '../types/_config';
 import { postMap } from './transformPosts/parsePost';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
@@ -67,16 +66,15 @@ export function renderMarkdownIt(str: string) {
   return md.render(str);
 }
 
-const verbose = false;
-
 /**
  * Fixable render markdown mixed with html
  * * render {@link postMap.body}
  * @todo render markdown to html
  * @param parse
+ * @param verbose dump
  * @returns
  */
-export function renderBodyMarkdown(parse: postMap) {
+export function renderBodyMarkdown(parse: postMap, verbose = false) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
   let body = parse.body || parse.content;
@@ -112,11 +110,11 @@ export function renderBodyMarkdown(parse: postMap) {
     }
   }
   if (verbose) {
-    write(tmp('renderBodyMarkdown', 'extracted.md'), body);
-    write(tmp('renderBodyMarkdown', 'extracted.json'), extracted);
+    write(join(__dirname, 'tmp/extracted.md'), body);
+    write(join(__dirname, 'tmp/extracted.json'), extracted);
   }
   let rendered = renderMarkdownIt(body);
-  if (verbose) write(tmp('renderBodyMarkdown', 'rendered.md'), rendered);
+  if (verbose) write(join(__dirname, 'tmp/rendered.md'), rendered);
   // restore extracted script, style
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {
@@ -132,6 +130,6 @@ export function renderBodyMarkdown(parse: postMap) {
       });
     }
   }
-  if (verbose) write(tmp('renderBodyMarkdown', 'restored.md'), rendered);
+  if (verbose) write(join(__dirname, 'tmp/restored.md'), rendered);
   return rendered;
 }

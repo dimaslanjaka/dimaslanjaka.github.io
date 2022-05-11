@@ -29,7 +29,15 @@ const internal_helpers = {
   },
 };
 
-type helper_types = typeof tag & typeof keywords & typeof excerpt & typeof thumbnail & typeof locale & typeof author & typeof date & typeof internal_helpers & DynamicObject;
+type helper_types = typeof tag &
+  typeof keywords &
+  typeof excerpt &
+  typeof thumbnail &
+  typeof locale &
+  typeof author &
+  typeof date &
+  typeof internal_helpers &
+  DynamicObject;
 
 const helpers: helper_types = Object.assign(author, date, locale, thumbnail, keywords, excerpt, tag, internal_helpers);
 

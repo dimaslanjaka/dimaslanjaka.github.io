@@ -34,8 +34,13 @@ function initClipboard() {
         script.setAttribute('crossorigin', 'anonymous');
         script.onload = function () {
           const clip = new ClipboardJS('[copy-to-clipboard]');
-          clip.on('success', function (_) {
+          clip.on('success', function (e) {
             console.log('codes copied');
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
           });
         };
         var target = document.getElementsByTagName('script')[0];

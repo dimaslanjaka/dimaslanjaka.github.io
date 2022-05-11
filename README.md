@@ -70,7 +70,7 @@ gulp deploy # deploy to github pages
 gulp server # development, render on-fly
 ```
 ### no cache
-you can pass argument `--nocache`
+you can pass argument `--nocache` (this will automatically overriden global generator cache in [_config.yml](_config.yml))
 ```bash
 gulp generate --nocache # generate all without reading cache, write new cache (fresh generate) instead
 gulp server --nocache # development without reading cache, write fresh cache instead

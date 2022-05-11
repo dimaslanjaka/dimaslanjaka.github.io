@@ -117,7 +117,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         })
         .filter(existsSync)
         .unique();
-      console.log(sourceMD);
+      //console.log(sourceMD);
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];

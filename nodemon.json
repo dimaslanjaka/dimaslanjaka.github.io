@@ -10,12 +10,12 @@
     "**/node_modules/**",
     "docs",
     "**/_config_data.json",
-    "tmp/"
+    "tmp/",
+    "build"
   ],
   "verbose": false,
   "delay": 3000,
-  "execX": "ts-node src/generator.ts",
-  "exec": "gulp",
+  "exec": "gulp server --nocache",
   "execMap": {
     "js": "node --harmony",
     "ts": "node -r ts-node/register"

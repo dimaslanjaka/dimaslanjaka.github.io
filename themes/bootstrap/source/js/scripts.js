@@ -34,7 +34,7 @@ function initClipboard() {
         script.setAttribute('crossorigin', 'anonymous');
         script.onload = function () {
           const clip = new ClipboardJS('[copy-to-clipboard]');
-          clip.on('success', function (e) {
+          clip.on('success', function (_) {
             console.log('codes copied');
           });
         };

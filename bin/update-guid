@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 echo $RANDOM | md5sum | head -c 20 > .guid
 git add .guid
+cdate=$(date +'%(%Y-%m-%d %H:%M:%S)T\n')
+git commit -m "update cache id ${cdate}"

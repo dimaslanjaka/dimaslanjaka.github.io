@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://www.automationdojos.com/wp-content/uploads/2021/11/post-xampp-virtualhost-fimg.png">
 <!--article metadata-->
 <meta property="article:published_time" content="2022-05-15T02:40:27+0000">
-<meta property="article:modified_time" content="2022-05-15T02:40:27+0000">
+<meta property="article:modified_time" content="2022-05-16T05:20:27+0000">
 <meta property="article:author" content="Dimas Lanjaka">
 
 <!--twitter metadata-->
@@ -192,6 +192,9 @@ Include etc/extra/httpd-vhosts.conf
 <ul>
 <li>open and edit <code>etc/extra/httpd-vhosts.conf</code></li>
 </ul>
+<blockquote>
+<p>specify your own local domains and paths</p>
+</blockquote>
 <pre><code class="language-apache">&lt;VirtualHost *:80&gt;
     ServerAdmin dimaslanjaka@gmail.com
     ServerName wp.webmanajemen.com
@@ -230,6 +233,24 @@ Include etc/extra/httpd-vhosts.conf
     &lt;/IfModule&gt;
 &lt;/VirtualHost&gt;
 </code></pre>
+<ul>
+<li>Edit <code>hosts</code> file</li>
+</ul>
+<blockquote>
+<p>specify your own local domain</p>
+<ul>
+<li>Windows 10 – <code>C:\Windows\System32\drivers\etc\hosts</code></li>
+<li>Linux – <code>/etc/hosts</code></li>
+<li>Mac OS X – <code>/private/etc/hosts</code></li>
+</ul>
+</blockquote>
+<pre><code class="language-hosts">127.0.0.1 wp.webmanajemen.com
+127.0.0.1 adsense.webmanajemen.com
+</code></pre>
+<ul>
+<li>Restart XAMPP</li>
+<li>Access Browser URL http://wp.webmanajemen.com and http://adsense.webmanajemen.com now each domain has their own public directory to serve</li>
+</ul>
 
 
           

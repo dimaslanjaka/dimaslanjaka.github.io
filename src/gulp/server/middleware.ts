@@ -3,7 +3,6 @@ import chalk from 'chalk';
 import compress from 'compression';
 import gulp, { TaskFunction } from 'gulp';
 import { parsePost } from 'hexo-post-parser/src';
-import 'js-prototypes';
 import minimatch from 'minimatch';
 import { toUnix } from 'upath';
 import ejs_object from '../../ejs';

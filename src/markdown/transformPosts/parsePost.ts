@@ -2,6 +2,7 @@ import moment from 'moment';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
+import { parsePost as moduleParsePost } from '../../../packages/hexo-post-parser/src';
 import CacheFile from '../../node/cache';
 import { cwd, existsSync, read, statSync, write } from '../../node/filemanager';
 import uuidv4 from '../../node/uuid';
@@ -14,6 +15,28 @@ const nocache = argv['nocache'];
 const homepage = new URL(config.url);
 const parseCache = new CacheFile('parsePost');
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
+
+/**
+ * Parse Markdown Post
+ * @see {@link moduleParsePost}
+ * @param path
+ * @returns
+ */
+const parsePost = (path: string) =>
+  moduleParsePost(String(path), {
+    shortcodes: {
+      youtube: true,
+      css: true,
+      include: true,
+      link: true,
+      now: true,
+      script: true,
+      text: true
+    },
+    cache: config.generator.cache,
+    config,
+    formatDate: true
+  });
 
 /**
  * post metadata information (title, etc)
@@ -86,7 +109,7 @@ export type postMap = DynamicObject & {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function originalParsePost(text: string, ..._: any[]): postMap | null {
+function originalParsePost(text: string, ..._: any[]): postMap | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -228,7 +251,7 @@ function generateFileTree(source: string, parsed: postMap) {
  * @see {@link parsePostOri }
  * @returns
  */
-export function cacheableParsePost(text: string, sourceFile: string = null, cache = true) {
+function _cacheableParsePost(text: string, sourceFile: string = null, cache = true) {
   let result: postMap;
   const key = sourceFile || text;
   // if file changed, --nocache, or cache parameter is false
@@ -258,12 +281,12 @@ export function cacheableParsePost(text: string, sourceFile: string = null, cach
   return generateFileTree(text, result);
 }
 
-let parsePost: typeof originalParsePost | typeof cacheableParsePost;
+/*let parsePost: typeof originalParsePost | typeof cacheableParsePost;
 if (config.generator.cache) {
   parsePost = cacheableParsePost;
 } else {
   parsePost = originalParsePost;
-}
+}*/
 
 export default parsePost;
 export { parsePost };

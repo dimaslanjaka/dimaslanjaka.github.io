@@ -1,0 +1,22 @@
+<script>
+  (function () {
+    $('button#copy').on('click', () => {
+      $.ajax({
+        type: 'GET',
+        url: '/api?copy',
+        success: function (response) {
+          console.log('copy start')
+        }
+      });
+    });
+    $('button#gen').on('click', () => {
+      $.ajax({
+        type: 'GET',
+        url: '/api?generate',
+        success: function (response) {
+          console.log('generate start')
+        }
+      });
+    });
+  })();
+</script>

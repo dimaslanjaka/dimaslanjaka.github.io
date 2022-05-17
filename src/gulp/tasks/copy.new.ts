@@ -53,7 +53,20 @@ export const copyPosts = (_any: any, cpath?: string) => {
         if (!path.includes(cpath)) return next(null, file);
       }
       const log = [logname, String(path)];
-      const parse = parsePost(String(path)); //parsePost(String(file.contents), String(path));
+      const parse = parsePost(String(path), {
+        shortcodes: {
+          youtube: true,
+          css: true,
+          include: true,
+          link: true,
+          now: true,
+          script: true,
+          text: true
+        },
+        cache: config.generator.cache,
+        config,
+        formatDate: true
+      }); //parsePost(String(file.contents), String(path));
 
       if (!validateParsed(parse)) {
         console.log(...log, chalk.red('[fail]'), 'at 1st parse');

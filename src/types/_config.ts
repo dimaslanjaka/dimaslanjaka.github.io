@@ -1,12 +1,12 @@
-import { cwd, existsSync, join, mkdirSync, read, readFileSync, resolve, write } from '../node/filemanager';
+import { initializeApp } from 'firebase/app';
+import gulp from 'gulp';
+import { Ngrok } from 'ngrok';
+import { toUnix } from 'upath';
 import yaml from 'yaml';
+import yargs from 'yargs';
+import { cwd, existsSync, join, mkdirSync, read, readFileSync, resolve, write } from '../node/filemanager';
 import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
-import { toUnix } from 'upath';
-import gulp from 'gulp';
-import yargs from 'yargs';
-import { initializeApp } from 'firebase/app';
-import { Ngrok } from 'ngrok';
 
 const argv = yargs(process.argv.slice(2)).argv;
 
@@ -21,7 +21,7 @@ const def_config = {
   skip_render: [],
   ignore: [],
   adsense: {
-    article_ads: [],
+    article_ads: []
   },
   firebase: {
     apiKey: null,
@@ -30,14 +30,14 @@ const def_config = {
     storageBucket: null,
     messagingSenderId: null,
     appId: null,
-    measurementId: null,
+    measurementId: null
   },
   ngrok: {
-    token: null,
+    token: null
   },
   generator: {
-    cache: argv['nocache'], // if set = true, otherwise undefined
-  },
+    cache: argv['nocache'] // if set = true, otherwise undefined
+  }
 };
 
 const project_config_merge = Object.assign(def_config, yaml.parse(readConfig));
@@ -112,7 +112,7 @@ export type ThemeOpt = typeof theme_config & {
 gulp.task('log:config', async () => {
   const f = await write(tmp('config.json'), {
     project: config,
-    theme: theme_config,
+    theme: theme_config
   });
   return console.log('[log]', 'config', f);
 });

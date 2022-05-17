@@ -16,11 +16,11 @@ const homepage = new URL(config.url);
 /**
  * list posts of each categories
  */
-const listCats: { [key: string]: postMap[] } = {};
+const listCats: { [key: string]: Partial<postMap>[] } = {};
 /**
  * list posts of each tags
  */
-const listTags: { [key: string]: postMap[] } = {};
+const listTags: { [key: string]: Partial<postMap>[] } = {};
 /**
  * all mapped posts
  */
@@ -68,7 +68,7 @@ const allPosts = (() => {
             /**
              * project test development files
              */
-            dev: !u.match(/(Test|guide)\//),
+            dev: !u.match(/(Test|guide)\//)
           };
           return Object.values(ex).every(Boolean);
         })

@@ -1,7 +1,6 @@
 import chalk from 'chalk';
-import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
-import { cleanString, cleanWhiteSpace } from '../../node/utils';
-import config, { post_generated_dir } from '../../types/_config';
+import moment from 'moment';
+import yargs from 'yargs';
 import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
 import { shortcodeCss } from '../../gulp/shortcode/css';
 import extractText from '../../gulp/shortcode/extract-text';
@@ -9,13 +8,14 @@ import parseShortCodeInclude from '../../gulp/shortcode/include';
 import { shortcodeScript } from '../../gulp/shortcode/script';
 import { shortcodeNow } from '../../gulp/shortcode/time';
 import { shortcodeYoutube } from '../../gulp/shortcode/youtube';
-import yargs from 'yargs';
+import { isValidHttpUrl } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
+import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
+import { cleanString, cleanWhiteSpace } from '../../node/utils';
+import config, { post_generated_dir } from '../../types/_config';
 import ErrorMarkdown from '../error-markdown';
-import moment from 'moment';
 import { postMap } from './parsePost';
 import { archiveMap, mergedPostMap } from './postMapper';
-import { isValidHttpUrl } from '../../gulp/utils';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');
@@ -24,14 +24,14 @@ const homepage = new URL(config.url);
 
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
-type modifyPostType = postMap & mergedPostMap & archiveMap;
+type modifyPostType = Partial<postMap> & Partial<mergedPostMap> & Partial<archiveMap>;
 
 /**
  * Modify Post With Defined Conditions
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function originalModifyPost<T extends modifyPostType>(parse: T): T {
+export function originalModifyPost<T extends Partial<modifyPostType>>(parse: T): T {
   const sourceFile = parse.fileTree.source;
   const publicFile = parse.fileTree.public;
   if (parse.metadata) {
@@ -161,7 +161,7 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
         'javascript',
         'html',
         'mysql',
-        'database',
+        'database'
       ];
       const containsTag = programTags.some((r) => {
         const matchTag = parse.metadata.tags
@@ -237,7 +237,7 @@ export function cacheableModifyPost(
   sourceFile: string = null,
   cache = true
 ): ReturnType<typeof originalModifyPost> {
-  let result: postMap;
+  let result: Partial<postMap>;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');
@@ -274,5 +274,6 @@ if (config.generator.cache) {
 } else {
   modifyPost = originalModifyPost;
 }
+export { modifyPost };
 export default modifyPost;
 _g.modifyPost = modifyPost;

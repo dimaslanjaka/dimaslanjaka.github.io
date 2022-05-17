@@ -11,49 +11,16 @@ import gulp from 'gulp';
 import { parsePost } from 'hexo-post-parser';
 import { parse as parseHTML } from 'node-html-parser';
 import through2 from 'through2';
-import { dirname, toUnix } from 'upath';
+import { toUnix } from 'upath';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import { buildPost, validateParsed } from '../../markdown/transformPosts';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
 import CacheFile from '../../node/cache';
 import CachePost from '../../node/cache-post';
-import { cwd } from '../../node/filemanager';
 import config, { post_public_dir, post_source_dir } from '../../types/_config';
-import gulpRename from '../modules/rename';
-import { isValidHttpUrl } from '../utils';
+import { determineDirname, isValidHttpUrl, replacePath } from '../utils';
+import './copy/assets';
 import './copy/remove-inline-style';
-
-/**
- * Crossplatform path replacer
- * @param str
- * @param from
- * @param to
- * @returns
- */
-export function replacePath(str: string, from: string, to: string) {
-  const normalize = (x: string) => x.replace(/\\/gim, '/');
-  str = normalize(str);
-  from = normalize(from);
-  to = normalize(to);
-  return str.replace(from, to);
-}
-
-/**
- * Determine gulp.dest location
- * @param pipe
- * @returns
- */
-export function determineDirname(pipe: NodeJS.ReadWriteStream) {
-  return pipe.pipe(
-    gulpRename((file) => {
-      const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ''))
-        .replace(cwd(), '')
-        .replace('/src-posts/', '');
-      file.dirname = dname;
-      //if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir, file);
-    })
-  );
-}
 
 function countWords(str: string) {
   str = str.replace(/(^\s*)|(\s*$)/gi, '');
@@ -61,13 +28,6 @@ function countWords(str: string) {
   str = str.replace(/\n /, '\n');
   return str.split(' ').length;
 }
-
-const copyAssets = () => {
-  const run = gulp.src(['**/*.*', `!**/*.md`], { cwd: post_source_dir });
-  return determineDirname(run).pipe(gulp.dest(post_public_dir));
-};
-
-gulp.task('copy:assets', copyAssets);
 
 const logname = chalk.cyan('[copy][md]');
 
@@ -104,7 +64,7 @@ export const copyPosts = (_: any, cpath?: string) => {
 
       parse.fileTree = {
         source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
-        public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
+        public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/')
       };
 
       //// modify post
@@ -143,14 +103,16 @@ export const copyPosts = (_: any, cpath?: string) => {
       // insert parsed to caches (only non-redirected post)
       if (!parse.metadata.redirect) cachePost.set(path, parse);
 
-      parse.metadata.category.forEach((name) => {
+      if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [];
+      parse.metadata.category.forEach((name: string) => {
         if (!name) return;
         // init
         if (!postCats[name]) postCats[name] = [];
         // prevent duplicate push
         if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(parse);
       });
-      parse.metadata.tags.forEach((name) => {
+      if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [];
+      parse.metadata.tags.forEach((name: string) => {
         if (!name) return;
         // init
         if (!postTags[name]) postTags[name] = [];

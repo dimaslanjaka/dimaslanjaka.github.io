@@ -1,13 +1,13 @@
+import moment from 'moment';
+import { toUnix } from 'upath';
+import yaml from 'yaml';
 import yargs from 'yargs';
 import CacheFile from '../../node/cache';
 import { cwd, existsSync, read, statSync, write } from '../../node/filemanager';
+import uuidv4 from '../../node/uuid';
 import { DynamicObject } from '../../types';
 import config, { tmp } from '../../types/_config';
-import yaml from 'yaml';
-import uuidv4 from '../../node/uuid';
-import { toUnix } from 'upath';
 import ErrorMarkdown from '../error-markdown';
-import moment from 'moment';
 import { dateMapper, DeepPartial } from './postMapper';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -122,7 +122,7 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
         .reduce(
           (acc, key) => ({
             ...acc,
-            [key]: meta[key],
+            [key]: meta[key]
           }),
           {}
         ) as postMap['metadata'];
@@ -180,13 +180,13 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
       metadata: meta,
       body: body,
       content: body,
-      config: config,
+      config: config
     };
     // put fileTree
     if (isFile) {
       result.fileTree = {
         source: toUnix(originalArg).replaceArr(['source/_posts/', '_posts/'], 'src-posts/'),
-        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/'),
+        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/')
       };
     }
     return result;
@@ -212,7 +212,7 @@ function generateFileTree(source: string, parsed: postMap) {
     if (parsed)
       parsed.fileTree = {
         source: toUnix(source).replaceArr(['source/_posts/', '_posts/'], 'src-posts/'),
-        public: toUnix(source).replaceArr(['src-posts/'], 'source/_posts/'),
+        public: toUnix(source).replaceArr(['src-posts/'], 'source/_posts/')
       };
   } else {
     //console.log('cannot generate file tree', parsed.metadata.title);

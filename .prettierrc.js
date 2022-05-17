@@ -8,7 +8,7 @@ const config = {
     bracketSpacing: true,
     semi: true,
     singleQuote: true,
-    trailingComma: 'es5',
+    trailingComma: 'none',
     endOfLine: 'lf',
     quoteProps: 'as-needed',
     overrides: [

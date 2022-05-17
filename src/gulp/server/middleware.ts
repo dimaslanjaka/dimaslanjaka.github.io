@@ -2,12 +2,12 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import compress from 'compression';
 import gulp, { TaskFunction } from 'gulp';
+import { parsePost } from 'hexo-post-parser/src';
 import 'js-prototypes';
 import minimatch from 'minimatch';
 import { toUnix } from 'upath';
 import ejs_object from '../../ejs';
-import { parsePost } from '../../markdown/transformPosts';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
@@ -105,7 +105,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       // find post and pages
       let sourceMD = [
         join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)),
-        join(cwd(), config.source_dir, decodeURIComponent(pathname)),
+        join(cwd(), config.source_dir, decodeURIComponent(pathname))
       ].map((s) => {
         return s.replace(/.html$/, '.md');
       });
@@ -136,7 +136,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 //return next();
                 continue;
               }
-              const modify = modifyPost(parsed);
+              const modify = modifyPost(<any>parsed);
               //console.log(modify.metadata.type);
               // render markdown post
               return renderer(modify).then((rendered) => {
@@ -170,7 +170,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         return res.end(showPreview(readFileSync(sourceIndex)));
       }
       next();
-    },
+    }
   },
   {
     route: '/api',
@@ -182,7 +182,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (req.url.includes('copy'))
         write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
       res.writeHead(200, {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain'
       });
       res.end(
         JSON.stringifyWithCircularRefs(
@@ -191,7 +191,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         )
       );
       next();
-    },
+    }
   },
   {
     route: '/admin',
@@ -200,8 +200,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         .renderFile(join(__dirname, 'public/admin.ejs'))
         .then((rendered) => res.end(rendered))
         .catch(next);
-    },
-  },
+    }
+  }
 ];
 
 if (config.server.compress) {
@@ -225,7 +225,7 @@ labelSrc.forEach((path) => {
         return res.end(showPreview(result));
       }*/
       next();
-    },
+    }
   });
 });
 

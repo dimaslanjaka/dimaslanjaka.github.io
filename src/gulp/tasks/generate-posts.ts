@@ -1,5 +1,22 @@
+import Bluebird from 'bluebird';
+import chalk from 'chalk';
+import { copyFileSync } from 'fs';
 import gulp from 'gulp';
+import 'js-prototypes';
+import sass from 'node-sass';
+import through2 from 'through2';
 import { toUnix } from 'upath';
+import yargs from 'yargs';
+import { buildPost, parsePost } from '../../../packages/hexo-post-parser/src';
+import { postMap } from '../../../packages/hexo-post-parser/src/parsePost';
+import ejs_object from '../../ejs';
+import { renderBodyMarkdown } from '../../markdown/toHtml';
+import { validateParsed } from '../../markdown/transformPosts';
+import { modifyPost } from '../../markdown/transformPosts/modifyPost';
+import CacheFile from '../../node/cache';
+import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
+import Sitemap from '../../node/cache-sitemap';
+import color from '../../node/color';
 import {
   cwd,
   dirname,
@@ -11,27 +28,11 @@ import {
   removeMultiSlashes,
   resolve,
   statSync,
-  write,
+  write
 } from '../../node/filemanager';
-import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
-import ejs_object from '../../ejs';
-import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
-import chalk from 'chalk';
-import { renderBodyMarkdown } from '../../markdown/toHtml';
-import CacheFile from '../../node/cache';
 import logger from '../../node/logger';
-import { copyFileSync } from 'fs';
 import { DynamicObject } from '../../types';
-import 'js-prototypes';
-import yargs from 'yargs';
-import Bluebird from 'bluebird';
-import Sitemap from '../../node/cache-sitemap';
-import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
-import color from '../../node/color';
-import through2 from 'through2';
-import sass from 'node-sass';
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -96,7 +97,7 @@ const renderTemplate = () => {
         if (ext == '.scss') {
           file.extname = '.css';
           const result = sass.renderSync({
-            data: String(file.contents),
+            data: String(file.contents)
           });
           file.contents = result.css;
           console.log('[sass]', 'compiled', path);
@@ -139,18 +140,18 @@ export const renderArticle = function () {
             file.replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
           ).replace(/.md$/, '.html'),
           /** Is Cached */
-          cached: false,
+          cached: false
         };
         // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && !nocache;
         let parsed = parsePost(result.path);
         // try non-cache method
-        if (!validateParsed(parsed)) parsed = parsePost(result.path, null, false);
+        if (!validateParsed(parsed)) parsed = parsePost(result.path);
         if (!validateParsed(parsed)) {
           console.log(log, color.redBright('[fail]'), 'cannot parse', result.path);
           return;
         }
-        const modify = modifyPost(parsed);
+        const modify = modifyPost(<any>parsed);
         if (result.path.includes('Grid')) write(tmp('modify.md'), buildPost(modify)).then(console.log);
         const merge = Object.assign(result, modify, result.path);
         if (typeof merge.metadata == 'object' && typeof merge.metadata.url == 'string') {
@@ -255,7 +256,7 @@ const helpers: DynamicObject = {
     const find = {
       cwdFile: join(cwd(), path),
       themeFile: join(theme_dir, path),
-      layoutFile: join(dirname(layout), path),
+      layoutFile: join(dirname(layout), path)
     };
     let cssStr: string;
     for (const key in find) {
@@ -277,7 +278,7 @@ const helpers: DynamicObject = {
     if (!cssStr) return `<!-- ${path} not found -->`;
     if (!build.length) return `<style>${cssStr}</style>`;
     return `<style ${build.join(' ')}>${cssStr}</style>`;
-  },
+  }
 };
 
 interface Override extends ejs.Options {
@@ -303,7 +304,7 @@ interface Override extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export function renderer(parsed: postMap, override: Override = {}) {
+export function renderer(parsed: Partial<postMap>, override: Override = {}) {
   return new Promise((resolve: (arg: string) => any) => {
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
@@ -330,7 +331,7 @@ export function renderer(parsed: postMap, override: Override = {}) {
         // permalink
         url: page_url.toString(),
         // content
-        content: null,
+        content: null
       },
       helpers
     );

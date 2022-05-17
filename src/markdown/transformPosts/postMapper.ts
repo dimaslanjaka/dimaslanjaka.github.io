@@ -23,7 +23,7 @@ export type DeepPartial<T> = {
 /**
  * mapped type
  */
-export type mergedPostMap = postMap & DeepPartial<postMap['metadata']>;
+export type mergedPostMap = Partial<postMap> & DeepPartial<postMap['metadata']>;
 export interface archiveMap extends mergedPostMap {
   [key: string]: any;
   /**
@@ -81,7 +81,7 @@ export function postChunksMapper<T extends any[][]>(chunks: T): T {
     page_now: null,
     page_next_url: null,
     page_prev: null,
-    page_prev_url: null,
+    page_prev_url: null
   };
   chunks.map((arr_chunk, i) => {
     if (Array.isArray(arr_chunk)) {
@@ -159,7 +159,7 @@ export function post_chunks<T extends any[]>(arr?: T) {
       title: post.metadata.title,
       thumbnail: thumbnail(post.metadata),
       url: post.metadata.url,
-      excerpt: excerpt(post.metadata),
+      excerpt: excerpt(post.metadata)
     };
     return data;
   });
@@ -169,7 +169,7 @@ export function post_chunks<T extends any[]>(arr?: T) {
     /** all posts chunks */
     chunk,
     /** all posts infinite scroll sitedata */
-    sitedata,
+    sitedata
   };
 }
 

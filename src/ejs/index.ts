@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import * as ejs from 'ejs';
-import { postMap } from '../markdown/transformPosts/parsePost';
+import { postMap } from 'hexo-post-parser/src/parsePost';
 import { join } from '../node/filemanager';
 import { DynamicObject } from '../types';
 import config, { ThemeOpt, theme_dir } from '../types/_config';
@@ -26,7 +26,7 @@ const internal_helpers = {
   url_for: (str: string) => {
     homepage.pathname = str.replace(/\/+/, '/');
     return homepage.toString();
-  },
+  }
 };
 
 type helper_types = typeof tag &
@@ -43,7 +43,7 @@ const helpers: helper_types = Object.assign(author, date, locale, thumbnail, key
 
 interface EJSOption extends ejs.Options, DynamicObject {
   _?: typeof helpers;
-  page?: postMap;
+  page?: Partial<postMap>;
   config?: typeof config;
   theme?: ThemeOpt;
 }
@@ -81,7 +81,7 @@ const ejs_object = {
   closeDelimiter: ejs.closeDelimiter,
   delimiter: ejs.delimiter,
   promiseImpl: ejs.promiseImpl,
-  Template: ejs.Template,
+  Template: ejs.Template
 };
 
 export default ejs_object;

@@ -9,7 +9,7 @@ import { cwd } from '../../node/filemanager';
  * @example
  * gulp.src('src/**', { cwd: project_cwd }).pipe(gulpDebugSrc());
  */
-export default function gulpDebugSrc() {
+export function gulpDebugSrc() {
   return through.obj(function (file, enc, next) {
     if (file.isNull() || file.isStream()) {
       return next();
@@ -18,3 +18,4 @@ export default function gulpDebugSrc() {
     next(null, file);
   });
 }
+export default gulpDebugSrc;

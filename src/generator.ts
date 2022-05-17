@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
-import './gulp/tasks/copy.new';
+import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import { dbFolder } from './node/cache';

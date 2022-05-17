@@ -1,3 +1,3 @@
-import { copyPosts } from './copy';
+import { copyPosts } from './copy.new';
 
 copyPosts(null, 'Quiz.');

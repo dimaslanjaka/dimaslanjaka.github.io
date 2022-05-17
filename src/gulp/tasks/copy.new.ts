@@ -14,7 +14,6 @@ import through2 from 'through2';
 import { dirname, toUnix } from 'upath';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import { buildPost, validateParsed } from '../../markdown/transformPosts';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
 import CacheFile from '../../node/cache';
 import CachePost from '../../node/cache-post';
 import { cwd } from '../../node/filemanager';
@@ -95,7 +94,7 @@ export const copyPosts = (_: any, cpath?: string) => {
         if (!path.includes(cpath)) return next(null, file);
       }
       const log = [logname, String(path)];
-      let parse = parsePost(String(path)); //parsePost(String(file.contents), String(path));
+      const parse = parsePost(String(path)); //parsePost(String(file.contents), String(path));
 
       if (!validateParsed(parse)) {
         console.log(...log, chalk.red('[fail]'), 'at 1st parse');
@@ -107,18 +106,24 @@ export const copyPosts = (_: any, cpath?: string) => {
         public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/'),
       };
 
-      //// modify post
-      let modify = modifyPost(parse);
-      // if null, get fresh cache
-      if (modify === null || typeof modify === 'undefined') modify = modifyPost(parse, null, false);
-      if (!validateParsed(modify)) {
-        console.log(...log, chalk.red('[fail]'), 'at 2nd parse');
-        //console.log('result', modify);
-        return next();
-      }
-      parse = modify;
+      parse.metadata.category.forEach((name: string) => {
+        if (!name) return;
+        // init
+        if (!postCats[name]) postCats[name] = [];
+        // prevent duplicate push
+        if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(parse);
+      });
+      parse.metadata.tags.forEach((name: string) => {
+        if (!name) return;
+        // init
+        if (!postTags[name]) postTags[name] = [];
+        // prevent duplicate push
+        if (!postTags[name].find(({ title }) => title === parse.metadata.title)) postTags[name].push(parse);
+      });
+
       // set type post
       if (!parse.metadata.type) parse.metadata.type = 'post';
+      // render post for some properties
       let html: ReturnType<typeof parseHTML>;
       try {
         const renderbody = renderBodyMarkdown(parse);
@@ -130,8 +135,7 @@ export const copyPosts = (_: any, cpath?: string) => {
         return next();
       }
       // +article wordcount
-      const extractTextHtml = html;
-      const words = extractTextHtml
+      const words = html
         .querySelectorAll('*:not(script,style,meta,link)')
         .map((e) => e.text)
         .join('\n');
@@ -142,21 +146,6 @@ export const copyPosts = (_: any, cpath?: string) => {
       }
       // insert parsed to caches (only non-redirected post)
       if (!parse.metadata.redirect) cachePost.set(path, parse);
-
-      parse.metadata.category.forEach((name) => {
-        if (!name) return;
-        // init
-        if (!postCats[name]) postCats[name] = [];
-        // prevent duplicate push
-        if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(parse);
-      });
-      parse.metadata.tags.forEach((name) => {
-        if (!name) return;
-        // init
-        if (!postTags[name]) postTags[name] = [];
-        // prevent duplicate push
-        if (!postTags[name].find(({ title }) => title === parse.metadata.title)) postTags[name].push(parse);
-      });
 
       //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
       const build = buildPost(parse);

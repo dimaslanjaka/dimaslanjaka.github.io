@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import yaml from 'yaml';
+import { postMap } from '../../packages/hexo-post-parser/src/parsePost';
 import color from '../node/color';
 import { dirname, existsSync, mkdirSync, writeFileSync } from '../node/filemanager';
-import { postMap } from './transformPosts/parsePost';
-export { parsePost } from './transformPosts/parsePost';
+export { parsePost } from '../../packages/hexo-post-parser/src';
 
 /**
  * Save Parsed Hexo markdown post
@@ -20,7 +20,7 @@ export function saveParsedPost(parsed: postMap, file: string) {
  * @param parsed parsed post return {@link parsePost}
  * @returns
  */
-export function buildPost(parsed: postMap) {
+export function buildPost(parsed: Partial<postMap>) {
   return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
 }
 
@@ -29,7 +29,7 @@ export function buildPost(parsed: postMap) {
  * @param parse
  * @returns
  */
-export const validateParsed = (parse: postMap) => {
+export const validateParsed = (parse: Partial<postMap>) => {
   if (parse === null) return false;
   if (typeof parse === 'undefined') return false;
   if (parse && !parse.body) {

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { postMap } from 'hexo-post-parser/src/parsePost';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
@@ -10,7 +11,6 @@ import MarkdownItSup from 'markdown-it-sup';
 import showdown from 'showdown';
 import { join, write } from '../node/filemanager';
 import slugify from '../node/slugify/index';
-import { postMap } from './transformPosts/parsePost';
 
 export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
 
@@ -74,7 +74,7 @@ export function renderMarkdownIt(str: string) {
  * @param verbose dump
  * @returns
  */
-export function renderBodyMarkdown(parse: postMap, verbose = false) {
+export function renderBodyMarkdown(parse: Partial<postMap>, verbose = false) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
   let body: string = parse.body || parse.content;

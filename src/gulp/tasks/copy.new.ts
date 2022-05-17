@@ -8,10 +8,10 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import gulp from 'gulp';
-import { parsePost } from 'hexo-post-parser';
 import { parse as parseHTML } from 'node-html-parser';
 import through2 from 'through2';
 import { dirname, toUnix } from 'upath';
+import { parsePost } from '../../../packages/hexo-post-parser/src';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import { buildPost, validateParsed } from '../../markdown/transformPosts';
 import CacheFile from '../../node/cache';
@@ -84,7 +84,7 @@ const postTags: GroupLabel = {};
  * @param cpath custom path
  * @returns
  */
-export const copyPosts = (_: any, cpath?: string) => {
+export const copyPosts = (_any: any, cpath?: string) => {
   const exclude = config.exclude.map((ePattern) => '!' + ePattern.replace(/^!+/, ''));
   const run = gulp.src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir }).pipe(
     through2.obj(function (file, _encoding, next) {

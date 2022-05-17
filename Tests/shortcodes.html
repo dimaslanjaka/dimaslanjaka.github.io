@@ -158,16 +158,27 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
         <section class="mb-5">
           <h2 id="shortcode-css" tabindex="-1"><a class="header-anchor" href="#shortcode-css">Shortcode CSS</a></h2>
 <p>From Local Directory</p>
-<pre><code class="language-css">&lt;style&gt;/*STYLE CSS SHORTCODES*/
+<pre><code class="language-html">&lt;style&gt;/*STYLE CSS SHORTCODES*/
 .just-test {
   display: block;
 }&lt;/style&gt;
 </code></pre>
 <p>From Root/cwd Directory</p>
-<pre><code class="language-css">&lt;style&gt;/*STYLE CSS SHORTCODES*/
+<pre><code class="language-html">&lt;style&gt;/*STYLE CSS SHORTCODES*/
 .just-test {
   display: block;
 }&lt;/style&gt;
+</code></pre>
+<h2 id="shortcode-js" tabindex="-1"><a class="header-anchor" href="#shortcode-js">Shortcode JS</a></h2>
+<p>From Local Directory</p>
+<pre><code class="language-html">&lt;script&gt;/* script js shortcode */
+console.log('hello world');
+&lt;/script&gt;
+</code></pre>
+<p>From Root/cwd Directory</p>
+<pre><code class="language-html">&lt;script&gt;/* script js shortcode */
+console.log('hello world');
+&lt;/script&gt;
 </code></pre>
 <h2 id="shortcode-include" tabindex="-1"><a class="header-anchor" href="#shortcode-include">Shortcode Include</a></h2>
 <p>From Local Directory</p>
@@ -175,6 +186,22 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 </code></pre>
 <p>From Root/cwd Directory</p>
 <pre><code class="language-html">&lt;p&gt;included html&lt;/p&gt;
+</code></pre>
+<h2 id="shortcode-youtube" tabindex="-1"><a class="header-anchor" href="#shortcode-youtube">Shortcode Youtube</a></h2>
+<p>By default youtube tag will output video</p>
+<pre><code class="language-html">&lt;div class="video-container"&gt;
+      &lt;iframe src="https://www.youtube.com/embed/4_oXjfgQ2G4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+</code></pre>
+<p>Manually set type <code>video</code></p>
+<pre><code class="language-html">&lt;div class="video-container"&gt;
+      &lt;iframe src="https://www.youtube.com/embed/4_oXjfgQ2G4 'video'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+</code></pre>
+<p>Manually set type <code>playlist</code></p>
+<pre><code class="language-html">&lt;div class="video-container"&gt;
+      &lt;iframe src="https://www.youtube.com/embed/RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA 'playlist'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 </code></pre>
 
 

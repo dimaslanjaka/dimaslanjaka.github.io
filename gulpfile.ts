@@ -3,11 +3,10 @@ import { create as createServer } from 'browser-sync';
 import { ChildProcess } from 'child_process';
 import spawn from 'cross-spawn';
 import gulp from 'gulp';
-import { cwd, join } from './src/node/filemanager';
-import ServerMiddleWare from './src/gulp/server/middleware';
-import config from './src/types/_config';
-import 'js-prototypes';
 import './src/generator';
+import ServerMiddleWare from './src/gulp/server/middleware';
+import { cwd, join } from './src/node/filemanager';
+import config from './src/types/_config';
 
 const browserSync = createServer();
 gulp.task('server', function () {

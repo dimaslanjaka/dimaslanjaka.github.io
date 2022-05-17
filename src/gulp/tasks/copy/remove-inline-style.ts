@@ -1,9 +1,9 @@
 import gulp from 'gulp';
-import { buildPost } from '../../markdown/transformPosts';
-import parsePost from '../../markdown/transformPosts/parsePost';
-import { existsSync, globSrc, join, write } from '../../node/filemanager';
-import jdom from '../../node/jsdom';
-import { post_public_dir } from '../../types/_config';
+import { buildPost } from '../../../markdown/transformPosts';
+import parsePost from '../../../markdown/transformPosts/parsePost';
+import { existsSync, globSrc, join, write } from '../../../node/filemanager';
+import jdom from '../../../node/jsdom';
+import { post_public_dir } from '../../../types/_config';
 
 /**
  * remove inline style html string

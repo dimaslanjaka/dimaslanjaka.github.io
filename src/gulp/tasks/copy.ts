@@ -21,7 +21,7 @@ import { cwd, dirname } from '../../node/filemanager';
 import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import gulpRename from '../modules/rename';
 import { isValidHttpUrl } from '../utils';
-import './remove-inline-style';
+import './copy/remove-inline-style';
 
 /**
  * Crossplatform path replacer

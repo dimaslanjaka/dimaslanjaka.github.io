@@ -31,7 +31,7 @@ const md = new MarkdownIt({
   // For the full list of replacements, see https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js
   typographer: true,
   breaks: false,
-  langPrefix: 'language-', // CSS language prefix for fenced blocks. Can be useful for external highlighters.
+  langPrefix: 'language-' // CSS language prefix for fenced blocks. Can be useful for external highlighters.
 });
 //md.linkify.set({ fuzzyEmail: false }); // disables converting email to link
 md.use(MarkdownItSup)
@@ -40,11 +40,11 @@ md.use(MarkdownItSup)
   .use(MarkdownItAbbr)
   .use(MarkdownItFootnote)
   .use(MarkdownItAttrs, {
-    allowedAttributes: ['id', 'class', /^regex.*$/],
+    allowedAttributes: ['id', 'class', /^regex.*$/]
   })
   .use(MarkdownItAnchor, {
     permalink: MarkdownItAnchor.permalink.headerLink(),
-    slugify: (s) => slugify(s),
+    slugify: (s) => slugify(s)
   });
 md.renderer.rules.footnote_block_open = () =>
   '<h4 class="mt-3">Footnotes</h4>\n' + '<section class="footnotes">\n' + '<ol class="footnotes-list">\n';
@@ -95,14 +95,14 @@ export function renderBodyMarkdown(parse: Partial<postMap>, verbose = false) {
   // extract style, script
   const re = {
     script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gm,
-    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gm,
+    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gm
   };
   const extracted: {
     script: string[];
     style: string[];
   } = {
     script: [],
-    style: [],
+    style: []
   };
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {

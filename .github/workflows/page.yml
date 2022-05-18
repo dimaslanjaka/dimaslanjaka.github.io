@@ -20,7 +20,7 @@ jobs:
       max-parallel: 3
       matrix:
         os: [ubuntu-latest, windows-latest]
-        version: [12, 14, 16, 17]
+        #version: [12, 14, 16, 17]
     timeout-minutes: 120
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout repository and submodules
         uses: actions/checkout@v3
         with:
-          repository: dimaslanjaka/dimaslanjaka.github.io
+          #repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Node.js 16.x
@@ -71,10 +71,10 @@ jobs:
             ./docs
           key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
           restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+      #- run: git checkout compiler
       - run: |
-          git checkout compiler
           rm -rf src-posts
-          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch posts --single-branch src-posts
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
           rm -rf source
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
         name: Pull & Update Submodules Recursively

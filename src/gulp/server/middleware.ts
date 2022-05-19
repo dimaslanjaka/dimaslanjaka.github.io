@@ -10,6 +10,7 @@ import minimatch from 'minimatch';
 import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
 import parsePost from '../../markdown/transformPosts/parsePost';
+import { getLastItem, removeEmpties } from '../../node/array-utils';
 import { write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
@@ -18,6 +19,7 @@ import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate-archives';
 import { renderer } from '../tasks/generate-posts';
+import generateTags from '../tasks/generate-tags';
 import './gen-middleware';
 
 let gulpIndicator = false;
@@ -71,9 +73,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
             ) {
               spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir), shell: true, stdio: 'inherit' });
             }
-            // @todo generate route tag and category
-            const routeFile = join(__dirname, 'routes.json');
-            routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
+
             // resolve
             resolve();
           });
@@ -97,7 +97,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     next();
   },
   // category and tag route
-  function (req, res, next) {
+  async function (req, res, next) {
+    // @todo generate route tag and category
+    const routeFile = join(__dirname, 'routes.json');
+    routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
+    // process tag and category
     const pathname = req['_parsedUrl'].pathname;
     for (let i = 0; i < routedata.tag.length; i++) {
       const path = routedata.tag[i];
@@ -105,21 +109,14 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (pathname.includes(path)) {
         console.log(path, pathname);
         const replace_pathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
-        const labelname = pathname.split('/').removeEmpties().last(1)[0];
+        const labelname = getLastItem(removeEmpties(pathname.split('/')), 1)[0];
         const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(replace_pathname), 'index.html');
         console.log('[generate][label]', replace_pathname, labelname, generatedTo);
-      }
-      /*ServerMiddleWare.push({
-        route: path,
-        handle: async function (req, res, next) {
-
-          const result = await generateTags(labelname, pagenum);
-          if (result) {
-            return res.end(showPreview(result));
-          }
-          next();
+        const result = await generateTags(labelname);
+        if (result) {
+          return res.end(showPreview(result));
         }
-      });*/
+      }
     }
     return next();
   },

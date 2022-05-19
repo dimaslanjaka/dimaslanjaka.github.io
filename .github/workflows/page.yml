@@ -66,8 +66,8 @@ jobs:
             ./packages
             ./databases
             ./docs
-          key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
-          restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+          key: ${{ runner.os }}-${{ matrix.node }}-${{ steps.uuid.outputs.uid }}
+          restore-keys: ${{ runner.os }}-${{ matrix.node }}-${{ steps.uuid.outputs.uid }}
       #- run: git checkout compiler
       - name: Remove Source And Posts
         run: |

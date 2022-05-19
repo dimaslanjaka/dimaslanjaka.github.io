@@ -1,14 +1,14 @@
 import chalk from 'chalk';
+import { rm } from 'fs';
+import { TypedEmitter } from 'tiny-typed-emitter';
+import { toUnix } from 'upath';
+import { DynamicObject } from '../types';
+import './cache-serialize';
 import { cacheDir, existsSync, join, mkdirSync, read, resolve, write } from './filemanager';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
-import scheduler from './scheduler';
-import { rm } from 'fs';
-import { TypedEmitter } from 'tiny-typed-emitter';
-import { DynamicObject } from '../types';
-import './cache-serialize';
-import { toUnix } from 'upath';
 import memoizer from './memoize-fs';
+import scheduler from './scheduler';
 
 /**
  * default folder to save databases
@@ -48,7 +48,7 @@ export type ResovableValue = {
 export const defaultResovableValue: ResovableValue = {
   resolveValue: true,
   max: null,
-  randomize: false,
+  randomize: false
 };
 
 interface CacheFileEvent {
@@ -78,7 +78,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
   dbFile: string;
   static options: CacheOpt = {
     sync: false,
-    folder: dbFolder,
+    folder: dbFolder
   };
   private currentHash: string;
   constructor(hash = null, opt?: CacheOpt) {
@@ -158,11 +158,12 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       return {
         resolveKey: this.resolveKey(key),
         locateKey: this.locateKey(key),
-        db: this.dbFile,
+        db: this.dbFile
       };
     }
   }
   set(key: string, value: any): CacheFile {
+    if (!key) return;
     const self = this;
     // resolve key hash
     key = this.resolveKey(key);

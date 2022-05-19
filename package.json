@@ -18,6 +18,8 @@
   ],
   "scripts": {
     "dev": "nodemon",
+    "build": "run-s build:**",
+    "build:hexo-post-parser": "cd packages/hexo-post-parser && npm run build",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",

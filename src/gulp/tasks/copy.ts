@@ -67,21 +67,45 @@ export const copyPosts = (_any: any, cpath?: string) => {
       };
 
       // @todo setup empty tags and categories when not set
-      if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [];
-      if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [];
+      if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [config.default_category];
+      if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [config.default_tag];
 
       // @todo add tags from title
-      //const regexBoundary = /\b(xampp|php|css|javascript|typescript|guide|how to)\b/gim;
       if (config.title_map) {
         const title = parse.metadata.title.toLowerCase();
         for (const key in config.title_map) {
           if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
             const tag = config.title_map[key];
-            if (title.match(new RegExp(`\b${key}\b`))) {
-              console.log('found', key, tag);
+            const regexBoundary = new RegExp(`\\b${key}\\b`, 'gmi');
+
+            if (title.match(regexBoundary)) {
+              //console.log('found', regexBoundary, tag);
+              parse.metadata.tags.push(tag);
             }
           }
         }
+      }
+
+      // @todo process config.tag_map
+      if (config.tag_map) {
+        const postLowerTags = parse.metadata.tags.map((tag) => tag && tag.toLowerCase());
+        for (const key in config.tag_map) {
+          if (Object.prototype.hasOwnProperty.call(config.tag_map, key)) {
+            const renameTagTo = config.tag_map[key];
+            const lowerkey = key.toLowerCase();
+            const hasTag = postLowerTags.includes(lowerkey);
+            if (hasTag) {
+              const indexTag = postLowerTags.indexOf(lowerkey);
+              parse.metadata.tags[indexTag] = renameTagTo;
+              //console.log(hasTag, postLowerTags.indexOf(lowerkey), category);
+            }
+          }
+        }
+      }
+
+      // @todo remove default tag when tags have more than 1 item
+      if (config.default_tag && parse.metadata.tags.length > 1 && parse.metadata.tags.includes(config.default_tag)) {
+        delete parse.metadata.tags[config.default_tag];
       }
 
       // @todo add post category to cache
@@ -116,6 +140,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
         //console.log(typeof parse.body);
         return next();
       }
+
       // +article wordcount
       const words = html
         .querySelectorAll('*:not(script,style,meta,link)')
@@ -126,6 +151,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
         const canonical: string = parse.metadata.canonical;
         if (!isValidHttpUrl(canonical)) parse.metadata.canonical = config.url + parse.metadata.canonical;
       }
+
       // insert parsed to caches (only non-redirected post)
       if (!parse.metadata.redirect) cachePost.set(path, parse);
 

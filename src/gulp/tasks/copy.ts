@@ -96,7 +96,6 @@ export const copyPosts = (_any: any, cpath?: string) => {
           'typescript',
           'javascript',
           'html',
-          'mysql',
           'database'
         ];
         const containsTag = programTags.some((r) => {
@@ -118,17 +117,26 @@ export const copyPosts = (_any: any, cpath?: string) => {
         }
         // remove duplicated tags and categories
         const filterTagCat = function (arr: string[]) {
-          return arr.map((item) => {
-            if (item.toLowerCase() === 'programming') return 'Programming';
-            if (item.toLowerCase() === 'github') return 'GitHub';
-            if (item.toLowerCase() === 'mysql') return 'MySQL';
-            if (item.toLowerCase() === 'sql') return 'SQL';
-            if (item.toLowerCase() === 'postgresql') return 'PostgreSQL';
+          arr = arr.map((item) => {
+            const matcher = {
+              programming: 'Proggramming',
+              github: 'GitHub',
+              mysql: 'MySQL',
+              sql: 'SQL',
+              xampp: 'XAMPP'
+            };
+            if (matcher[item.toLowerCase()]) return matcher[item.toLowerCase()];
             // make child of programming tags uppercase
             if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
             // fallback
             return item;
           });
+          // @todo remove default tag and categorie when more than 1 items
+          if (arr.length > 1) {
+            if (arr.includes(config.default_category)) arr = arr.filter((x) => x !== config.default_category);
+            if (arr.includes(config.default_tag)) arr = arr.filter((x) => x !== config.default_tag);
+          }
+          return arr;
         };
         parse.metadata.category = parse.metadata.category.removeEmpties().uniqueStringArray();
         parse.metadata.tags = filterTagCat(parse.metadata.tags.removeEmpties().uniqueStringArray());

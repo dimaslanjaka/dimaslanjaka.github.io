@@ -163,7 +163,9 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     }
   }
   set(key: string, value: any): CacheFile {
-    if (!key) return;
+    if (!key) {
+      return;
+    }
     const self = this;
     // resolve key hash
     key = this.resolveKey(key);

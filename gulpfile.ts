@@ -14,13 +14,13 @@ gulp.task('server', function () {
     server: './' + config.public_dir,
     port: config.server.port,
     open: false,
-    middleware: ServerMiddleWare,
+    middleware: ServerMiddleWare
   });
 
   // handling spawner to reduce memory usages
   const childs: { [key: string]: ChildProcess[] } = {
     generate: [],
-    copy: [],
+    copy: []
   };
   // watch changes on source dir
   gulp.watch(join(config.source_dir, '.guid'), function (cb) {
@@ -50,3 +50,4 @@ gulp.task('server', function () {
   //gulp.watch(join(config.public_dir, '.guid')).on('change', browserSync.reload);
   return Promise.resolve(bsi);
 });
+gulp.task('serve', gulp.series('server'));

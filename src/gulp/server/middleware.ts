@@ -10,7 +10,7 @@ import minimatch from 'minimatch';
 import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
 import parsePost from '../../markdown/transformPosts/parsePost';
-import { getLastItem, removeEmpties } from '../../node/array-utils';
+import { removeEmpties } from '../../node/array-utils';
 import { write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
@@ -102,19 +102,21 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     const routeFile = join(__dirname, 'routes.json');
     routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
     // process tag and category
-    const pathname = req['_parsedUrl'].pathname;
+    const pathname: string = req['_parsedUrl'].pathname;
     for (let i = 0; i < routedata.tag.length; i++) {
       const path = routedata.tag[i];
 
       if (pathname.includes(path)) {
         console.log(path, pathname);
         const replace_pathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
-        const labelname = getLastItem(removeEmpties(pathname.split('/')), 1)[0];
+        const labelname = removeEmpties(pathname.split('/'));
         const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(replace_pathname), 'index.html');
         console.log('[generate][label]', replace_pathname, labelname, generatedTo);
-        const result = await generateTags(labelname);
-        if (result) {
-          return res.end(showPreview(result));
+        if (labelname && typeof labelname == 'string') {
+          const result = await generateTags(labelname);
+          if (result) {
+            return res.end(showPreview(result));
+          }
         }
       }
     }

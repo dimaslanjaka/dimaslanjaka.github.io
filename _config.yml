@@ -21,21 +21,40 @@ logo: "/image/logo.svg"
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.webmanajemen.com
 
-# Directory
+# Directory And Slug
 ## source directory (this directory should be on public website)
 source_dir: source
 ## generated directory
 public_dir: docs
-## slug tag config.url/tag_dir/tagname
-tag_dir: tags
 ## slug archive config.url/archive_dir/ (homepage pagination)
 archive_dir: archives
 ## slug category config.url/category_dir/categoryName
 category_dir: categories
+## slug tag config.url/tag_dir/tagname
+tag_dir: tags
+
+# mapper
+## category mapper
+### rename category with these maps
+category_map:
+  ## category $0 should be renamed to $1
+  php: PHP
+  js: JAVASCRIPT
+  css: CSS
+  ts: TYPESCRIPT
+  typescript: TYPESCRIPT
+  javascript: JAVASCRIPT
 ## Default Category (empty = null)
 default_category: Uncategorized
 ## Default Tag (empty = null)
 default_tag:
+## tag mapper
+### group tags with category
+tag_map:
+  ## tag $0 should be grouped by $1
+  js: Programming
+  ts: Programming
+  css: Programming
 
 # https://hexo.io/docs/configuration.html
 # skip render template, direct copy

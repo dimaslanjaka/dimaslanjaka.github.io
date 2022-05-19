@@ -66,7 +66,12 @@ export const copyPosts = (_any: any, cpath?: string) => {
         public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/')
       };
 
+      const regexBoundary = /\b(xampp|php|css|javascript|typescript|guide|how to)\b/gim;
+
       if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [];
+      if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [];
+
+      // @todo add post category to cache
       parse.metadata.category.forEach((name: string) => {
         if (!name) return;
         // init
@@ -75,7 +80,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
         if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(parse);
       });
 
-      if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [];
+      // @todo add post tag to cache
       parse.metadata.tags.forEach((name: string) => {
         if (!name) return;
         // init
@@ -138,7 +143,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
           }
           return arr;
         };
-        parse.metadata.category = parse.metadata.category.removeEmpties().uniqueStringArray();
+        parse.metadata.category = filterTagCat(parse.metadata.category.removeEmpties().uniqueStringArray());
         parse.metadata.tags = filterTagCat(parse.metadata.tags.removeEmpties().uniqueStringArray());
         // move 'programming' to first index
         if (parse.metadata.category.includes('Programming'))

@@ -66,10 +66,12 @@ export const copyPosts = (_any: any, cpath?: string) => {
         public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/')
       };
 
-      const regexBoundary = /\b(xampp|php|css|javascript|typescript|guide|how to)\b/gim;
-
+      // @todo setup empty tags and categories when not set
       if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [];
       if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [];
+
+      // @todo add tags from title
+      const regexBoundary = /\b(xampp|php|css|javascript|typescript|guide|how to)\b/gim;
 
       // @todo add post category to cache
       parse.metadata.category.forEach((name: string) => {

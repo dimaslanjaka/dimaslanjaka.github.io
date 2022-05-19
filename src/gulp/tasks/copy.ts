@@ -89,74 +89,9 @@ export const copyPosts = (_any: any, cpath?: string) => {
         if (!postTags[name].find(({ title }) => title === parse.metadata.title)) postTags[name].push(parse);
       });
 
-      // merge php js css to programming
-      if (Array.isArray(parse.metadata.tags)) {
-        const programTags = [
-          'php',
-          'css',
-          'js',
-          'kotlin',
-          'java',
-          'ts',
-          'typescript',
-          'javascript',
-          'html',
-          'database'
-        ];
-        const containsTag = programTags.some((r) => {
-          const matchTag = parse.metadata.tags
-            .removeEmpties()
-            .map((str) => str.trim().toLowerCase())
-            .includes(r);
-          if (matchTag) {
-            parse.metadata.category.push(r.toUpperCase());
-          }
-          return matchTag;
-        });
-        if (containsTag) {
-          parse.metadata.category.push('Programming');
-          // remove uncategorized if programming category pushed
-          if (parse.metadata.category.includes('Uncategorized')) {
-            parse.metadata.category = parse.metadata.category.filter((e) => e !== 'Uncategorized');
-          }
-        }
-        // remove duplicated tags and categories
-        const filterTagCat = function (arr: string[]) {
-          arr = arr.map((item) => {
-            const matcher = {
-              programming: 'Programming',
-              github: 'GitHub',
-              mysql: 'MySQL',
-              sql: 'SQL',
-              xampp: 'XAMPP'
-            };
-            if (matcher[item.toLowerCase()]) return matcher[item.toLowerCase()];
-            // make child of programming tags uppercase
-            if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
-            // fallback
-            return item;
-          });
-          // @todo remove default tag and categorie when more than 1 items
-          if (arr.length > 1) {
-            if (arr.includes(config.default_category)) arr = arr.filter((x) => x !== config.default_category);
-            if (arr.includes(config.default_tag)) arr = arr.filter((x) => x !== config.default_tag);
-          }
-          return arr;
-        };
-        parse.metadata.category = filterTagCat(parse.metadata.category.removeEmpties().uniqueStringArray());
-        parse.metadata.tags = filterTagCat(parse.metadata.tags.removeEmpties().uniqueStringArray());
-        // move 'programming' to first index
-        if (parse.metadata.category.includes('Programming'))
-          parse.metadata.category.forEach((str, i) => {
-            if (str.toLowerCase().trim() === 'programming') {
-              parse.metadata.category = parse.metadata.category.move(i, 0);
-            }
-          });
-        //if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
-      }
-
-      // set type post
+      // @todo set type post when not set
       if (!parse.metadata.type) parse.metadata.type = 'post';
+
       // render post for some properties
       let html: ReturnType<typeof parseHTML>;
       try {

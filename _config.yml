@@ -3,6 +3,7 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 ## All the variables listed here will be used in theme/layout/layout.ejs and some will be used in `internal functions` for program reference
+## Empty value = null
 
 # Site title
 title: "Website Manajemen Indonesia"
@@ -41,9 +42,9 @@ default_category: Uncategorized
 default_tag:
 
 ## category mapper
-### rename/map category with defined value
+### rename category with these map
+### category $0 should be renamed to $1
 category_map:
-  ## category $0 should be renamed to $1
   php: PHP
   js: JAVASCRIPT
   css: CSS
@@ -56,15 +57,35 @@ category_map:
   xampp: XAMPP
 
 ## tag mapper
+### rename tag with these map
+### tag $0 should be renamed by $1
+tag_map:
+  js: JAVASCRIPT
+  ts: TYPESCRIPT
+  javascript: JAVASCRIPT
+  typescript: TYPESCRIPT
+  php: PHP
 ### group tags with category
+### tag $0 should be grouped by $1
 tag_group:
-  ## tag $0 should be grouped by $1
   js: Programming
   ts: Programming
   css: Programming
   sql: Programming
   mysql: Programming
   postgresql: Programming
+  eslint: Programming
+
+## title map
+## automate add tags from matched title word boundary
+title_map:
+  xampp: XAMPP
+  guide: Tips & Tricks
+  "how to": Tips & Tricks
+  game: Games
+  javascript: JAVASCRIPT
+  typescript: TYPESCRIPT
+  eslint: ESLint
 
 # https://hexo.io/docs/configuration.html
 # skip render template, direct copy

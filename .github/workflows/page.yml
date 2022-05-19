@@ -69,17 +69,17 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node }}-${{ steps.uuid.outputs.uid }}
           restore-keys: ${{ runner.os }}-${{ matrix.node }}-${{ steps.uuid.outputs.uid }}
       #- run: git checkout compiler
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node rimraf
+        # run global install when cache not written
+        # if: steps.npm-cache.outputs.cache-hit != 'true'
       - name: Remove Source And Posts
         run: |
-          rm -rf src-posts
-          rm -rf source
+          rimraf src-posts
+          rimraf source
       - name: Clone Source And Posts
         run: |
           git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
-      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
-        # run global install when cache not written
-        # if: steps.npm-cache.outputs.cache-hit != 'true'
       - run: npm install
       - run: "gulp clean"
         if: "contains(github.event.head_commit.message, 'clean')"

@@ -11,8 +11,8 @@ export function author_name(page: postMap['metadata'] | typeof config) {
   const author = page['author'];
   if (typeof author == 'string') return author;
   if (typeof author == 'object') {
-    if (author.nick) return author.nick;
-    if (author.name) return author.name;
+    if (author['nick']) return author['nick'];
+    if (author['name']) return author['name'];
   }
 }
 
@@ -25,8 +25,8 @@ export function author_email(page: postMap['metadata'] | typeof config) {
   const author = page['author'];
 
   if (typeof author == 'object') {
-    if (author.mail) return author.mail;
-    if (author.email) return author.email;
+    if (author['mail']) return author['mail'];
+    if (author['email']) return author['email'];
   }
   // default email
   return 'noreply@blogger.com';
@@ -41,7 +41,7 @@ export function author_object(page: postMap['metadata'] | typeof config) {
   return {
     name: String(author_name(page)),
     email: String(author_email(page)),
-    link: String(author_link(page)),
+    link: String(author_link(page))
   };
 }
 

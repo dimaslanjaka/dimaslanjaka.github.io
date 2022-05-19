@@ -212,7 +212,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * @param fallback
    * @returns
    */
-  get(key: string, fallback = null) {
+  get<T>(key: string, fallback: T = null): T {
     // resolve key hash
     key = this.resolveKey(key);
     // locate key location file

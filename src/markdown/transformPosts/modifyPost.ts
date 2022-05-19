@@ -24,7 +24,7 @@ const homepage = new URL(config.url);
 
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
-type modifyPostType = postMap & mergedPostMap & archiveMap;
+type modifyPostType = postMap | mergedPostMap | archiveMap;
 // type modifyPostType = Partial<postMap> | Partial<mergedPostMap> | Partial<archiveMap>;
 
 /**
@@ -238,7 +238,7 @@ export function cacheableModifyPost(
   sourceFile: string = null,
   cache = true
 ): ReturnType<typeof originalModifyPost> {
-  let result: postMap;
+  let result: ReturnType<typeof originalModifyPost>;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');

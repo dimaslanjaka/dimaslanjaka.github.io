@@ -1,15 +1,15 @@
-import { cwd, join, write } from '../../node/filemanager';
-import config, { tmp } from '../../types/_config';
-import 'js-prototypes';
-import { renderer } from './generate-posts';
 import gulp from 'gulp';
+import 'js-prototypes';
+import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
-import color from '../../node/color';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { archiveMap, array_wrap, post_chunks } from '../../markdown/transformPosts/postMapper';
-import { getLatestDateArray } from '../../ejs/helper/date';
-import './generate-tags';
+import color from '../../node/color';
+import { cwd, join, write } from '../../node/filemanager';
+import config, { tmp } from '../../types/_config';
 import './generate-categories';
+import { renderer } from './generate-posts';
+import './generate-tags';
 
 /**
  * generate index
@@ -57,7 +57,7 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
         category: [],
         tags: [],
         type: 'archive',
-        url: config.url,
+        url: config.url
       },
       /** setup sitedata array as json */
       sitedata: JSON.stringify(sitedata),
@@ -65,7 +65,7 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
       content: '',
       fileTree: {
         source: saveTo,
-        public: join(tmp(), 'index.html'),
+        public: join(tmp(), 'index.html')
       },
       posts: mapped,
       total: chunks.length,
@@ -90,7 +90,7 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
         const next = current_page + 1;
         // returns null if the next array is not an array type
         if (Array.isArray(chunks[next])) return next;
-      })(),
+      })()
     };
     const mod = modifyPost(opt);
     const rendered = await renderer(mod);

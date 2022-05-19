@@ -107,13 +107,15 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       const path = routedata.tag[i];
 
       if (pathname.includes(path)) {
-        console.log(path, pathname);
+        //console.log(path, pathname);
         const replace_pathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
-        const labelname = removeEmpties(pathname.split('/'));
+        const split = removeEmpties(pathname.split('/'));
+        const labelname = split[1];
+        const pagenum = split.length > 2 ? parseInt(split[2]) : null;
         const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(replace_pathname), 'index.html');
         console.log('[generate][label]', replace_pathname, labelname, generatedTo);
         if (labelname && typeof labelname == 'string') {
-          const result = await generateTags(labelname);
+          const result = await generateTags(labelname, pagenum);
           if (result) {
             return res.end(showPreview(result));
           }

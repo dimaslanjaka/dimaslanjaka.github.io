@@ -125,7 +125,16 @@ export const copyPosts = (_any: any, cpath?: string) => {
 
       // @todo remove default tag when tags have more than 1 item
       if (config.default_tag && parse.metadata.tags.length > 1 && parse.metadata.tags.includes(config.default_tag)) {
-        delete parse.metadata.tags[config.default_tag];
+        parse.metadata.tags = parse.metadata.tags.filter((tag) => tag !== config.default_tag);
+      }
+
+      // @todo remove default category when categories have more than 1 item
+      if (
+        config.default_category &&
+        parse.metadata.category.length > 1 &&
+        parse.metadata.category.includes(config.default_category)
+      ) {
+        parse.metadata.category = parse.metadata.category.filter((category) => category !== config.default_category);
       }
 
       // @todo add post category to cache

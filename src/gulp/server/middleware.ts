@@ -1,13 +1,15 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import compress from 'compression';
+import { existsSync, readFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
-import { parsePost } from 'hexo-post-parser/src';
+import memoizee from 'memoizee';
 import minimatch from 'minimatch';
-import { toUnix } from 'upath';
+import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
 import { modifyPost } from '../../markdown/transformPosts/modifyPost';
-import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
+import parsePost from '../../markdown/transformPosts/parsePost';
+import { write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 import config, { post_generated_dir } from '../../types/_config';
@@ -19,6 +21,7 @@ import './gen-middleware';
 import routedata from './routes.json';
 
 let gulpIndicator = false;
+const cwd = memoizee(() => toUnix(process.cwd()));
 const homepage = new URL(config.url);
 let preview: string;
 const labelSrc: string[] = routedata.category.addAll(routedata.tag);

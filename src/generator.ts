@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import './gulp/tasks/clean';
 import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
+import './gulp/tasks/dump';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
 

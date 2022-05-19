@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { postMap } from 'hexo-post-parser/src/parsePost';
 import yaml from 'yaml';
-import { postMap } from '../../packages/hexo-post-parser/src/parsePost';
 import color from '../node/color';
 import { dirname, existsSync, mkdirSync, writeFileSync } from '../node/filemanager';
-export { parsePost } from '../../packages/hexo-post-parser/src';
+export { parsePost } from 'hexo-post-parser/src';
 
 /**
  * Save Parsed Hexo markdown post

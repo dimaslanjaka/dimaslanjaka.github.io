@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { buildPost } from '../../../../packages/hexo-post-parser/src';
+import { buildPost } from 'hexo-post-parser/src';
 import parsePost from '../../../markdown/transformPosts/parsePost';
 import { existsSync, globSrc, join, write } from '../../../node/filemanager';
 import jdom from '../../../node/jsdom';

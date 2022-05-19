@@ -1,8 +1,8 @@
+import { parsePost as moduleParsePost } from 'hexo-post-parser/src';
 import moment from 'moment';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
-import { parsePost as moduleParsePost } from '../../../packages/hexo-post-parser/src';
 import CacheFile from '../../node/cache';
 import { cwd, existsSync, read, statSync, write } from '../../node/filemanager';
 import uuidv4 from '../../node/uuid';

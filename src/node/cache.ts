@@ -164,6 +164,20 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
   }
   set(key: string, value: any): CacheFile {
     if (!key) {
+      const e = new Error();
+      if (!e.stack) {
+        try {
+          // IE requires the Error to actually be thrown or else the
+          // Error's 'stack' property is undefined.
+          throw e;
+        } catch (e) {
+          if (!e.stack) {
+            //return 0; // IE < 10, likely
+          }
+        }
+      }
+      const stack = e.stack.toString().split(/\r\n|\n/);
+      console.log('cache key empty', stack[1]);
       return;
     }
     const self = this;

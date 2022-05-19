@@ -35,7 +35,9 @@ const parsePost = (path: string) =>
     },
     cache: config.generator.cache,
     config,
-    formatDate: true
+    formatDate: true,
+    fix: true,
+    sourceFile: path
   });
 
 /**

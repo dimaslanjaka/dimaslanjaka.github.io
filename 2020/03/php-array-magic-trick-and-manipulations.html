@@ -16,8 +16,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
 <!--article metadata-->
-<meta property="article:published_time" content="2020-03-23T23:21:00.003+07:00">
-<meta property="article:modified_time" content="2020-03-23T23:24:56+07:00">
+<meta property="article:published_time" content="2020-03-23T16:21:00+00:00">
+<meta property="article:modified_time" content="2020-03-23T16:24:56+00:00">
 <meta property="article:author" content="Kuswati">
 
 <meta property="article:tag" content="PHP">
@@ -166,7 +166,7 @@ var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.d
 
         <!-- Post content-->
         <section class="mb-5">
-          <div dir="ltr" trbidi="on"><ol><li>manipulating multidimensional array using array_map</li><pre><br>/**<br>* Ilterate multidimensional array simplicity<br>* @desc modify and manipulate or populate multidimensional array with simple tricks<br>* @param array $arr<br>* @param function $callback<br>* @return Array<br>**/<br>function Map($arr, $callback)<br>{<br>  if (!is_callable($callback)) {<br>    throw new Exception("Callback must be function", 1);<br>  }<br><br>  return array_map(function ($key, $val) use ($callback) {<br>    return call_user_func($callback, $key, $val);<br>  }, array_keys($arr), $arr);<br>}<br></pre></ol> </div>
+          <div dir="ltr" style="text-align: left;" trbidi="on"><ol><li>manipulating multidimensional array using array_map</li><pre><br>/**<br>* Ilterate multidimensional array simplicity<br>* @desc modify and manipulate or populate multidimensional array with simple tricks<br>* @param array $arr<br>* @param function $callback<br>* @return Array<br>**/<br>function Map($arr, $callback)<br>{<br>  if (!is_callable($callback)) {<br>    throw new Exception("Callback must be function", 1);<br>  }<br><br>  return array_map(function ($key, $val) use ($callback) {<br>    return call_user_func($callback, $key, $val);<br>  }, array_keys($arr), $arr);<br>}<br></pre></ol> </div>
 
           
           

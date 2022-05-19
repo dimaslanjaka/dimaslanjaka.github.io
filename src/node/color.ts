@@ -138,7 +138,7 @@ const colors = {
   'Yellow Green': chalk.hex('#C5E384'),
   'Yellow Orange': chalk.hex('#FFAE42'),
   pink: chalk.hex('#FFC0CB'),
-  lightpink: chalk.hex('#FFB6C1'),
+  lightpink: chalk.hex('#FFB6C1')
 };
 
 const chalkcolor = {
@@ -146,7 +146,7 @@ const chalkcolor = {
   magentaBright: chalk.magentaBright,
   redBright: chalk.redBright,
   green: chalk.green,
-  greenBright: chalk.greenBright,
+  greenBright: chalk.greenBright
 };
 
 const color = Object.assign(colors, chalkcolor);

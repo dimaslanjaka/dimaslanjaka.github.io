@@ -47,7 +47,7 @@ export default async function downloadImage(
       const split = path.split(':').map((s) => s.replace(/at\s/, '').trim());
       return {
         path: split[0],
-        line: `${split[1]}:${split[2]}`,
+        line: `${split[1]}:${split[2]}`
       };
     });
   const cacheLocation = join(cacheDir, md5(stack[1].path), md5(stack[1].line), md5(saveTo));
@@ -66,7 +66,7 @@ export default async function downloadImage(
   const response = await axios({
     method: 'get',
     url: src,
-    responseType: 'stream',
+    responseType: 'stream'
   });
   if (response.status === 200) {
     const mime = response.headers['content-type'];
@@ -97,7 +97,7 @@ export default async function downloadImage(
           /** save location */
           path: null,
           /** writable stream */
-          pipe,
+          pipe
         };
 
         if (Object.hasOwnProperty.call(pipe, 'path')) {
@@ -108,7 +108,7 @@ export default async function downloadImage(
           const b64 = `data:${mime};base64,` + readFileSync(result.path).toString('base64');
           write(cacheLocation, {
             path: result.path,
-            content: b64,
+            content: b64
           });
         }
         return result;
@@ -126,7 +126,7 @@ function parse_base64_image(data: string) {
   const reg = /^data:image\/([\w+]+);base64,([\s\S]+)/;
   const match = data.match(reg);
   const baseType = {
-    jpeg: 'jpg',
+    jpeg: 'jpg'
   };
 
   baseType['svg+xml'] = 'svg';
@@ -141,7 +141,7 @@ function parse_base64_image(data: string) {
     /** extension name */
     extname: '.' + extname,
     /** base64 encoded */
-    base64: match[2],
+    base64: match[2]
   };
 }
 

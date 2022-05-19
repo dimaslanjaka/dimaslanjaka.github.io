@@ -2,6 +2,7 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import compress from 'compression';
 import spawn from 'cross-spawn';
+import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
@@ -18,14 +19,16 @@ import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate-archives';
 import { renderer } from '../tasks/generate-posts';
 import './gen-middleware';
-import routedata from './routes.json';
 
 let gulpIndicator = false;
 const cwd = memoizee(() => toUnix(process.cwd()));
 const homepage = new URL(config.url);
 let preview: string;
-const labelSrc: string[] = routedata.category.addAll(routedata.tag);
-
+// @todo setup route data tag and category
+let routedata = {
+  category: [] as string[],
+  tag: [] as string[]
+};
 const dom = new jdom();
 function showPreview(str: string | Buffer) {
   const previewfile = join(__dirname, 'public/preview.html');
@@ -68,6 +71,10 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
             ) {
               spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir), shell: true, stdio: 'inherit' });
             }
+            // @todo generate route tag and category
+            const routeFile = join(__dirname, 'routes.json');
+            routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
+            // resolve
             resolve();
           });
         }
@@ -89,14 +96,44 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     }
     next();
   },
+  // category and tag route
+  function (req, res, next) {
+    const pathname = req['_parsedUrl'].pathname;
+    for (let i = 0; i < routedata.tag.length; i++) {
+      const path = routedata.tag[i];
+
+      if (pathname.includes(path)) {
+        console.log(path, pathname);
+        const replace_pathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
+        const labelname = pathname.split('/').removeEmpties().last(1)[0];
+        const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(replace_pathname), 'index.html');
+        console.log('[generate][label]', replace_pathname, labelname, generatedTo);
+      }
+      /*ServerMiddleWare.push({
+        route: path,
+        handle: async function (req, res, next) {
+
+          const result = await generateTags(labelname, pagenum);
+          if (result) {
+            return res.end(showPreview(result));
+          }
+          next();
+        }
+      });*/
+    }
+    return next();
+  },
   async function (req, res, next) {
     const isHomepage = req.url === '/';
-    // skip homepage
+    const pathname: string = req['_parsedUrl'].pathname; // just get pathname
+
+    // @todo skip homepage
     if (isHomepage) return next();
 
-    const pathname: string = req['_parsedUrl'].pathname; // just get pathname
-    // skip labels (tag and category)
+    // @todo skip labels (tag and category)
+    const labelSrc: string[] = routedata.category.concat(routedata.tag);
     if (labelSrc.includes(pathname)) return next();
+
     if (pathname.isMatch(new RegExp('^/' + config.category_dir + '/'))) return next();
     if (pathname.isMatch(new RegExp('^/' + config.tag_dir + '/'))) return next();
     // skip api, admin
@@ -217,26 +254,6 @@ if (config.server.compress) {
   // push compression to first index
   ServerMiddleWare.unshift.apply(compress());
 }
-
-labelSrc.forEach((path) => {
-  ServerMiddleWare.push({
-    route: path,
-    handle: async function (req, res, next) {
-      const pathname = req['_parsedUrl'].pathname.replace(/\/+/, '/').replace(/^\//, '');
-      const labelname = req['_parsedUrl'].pathname.split('/').removeEmpties().last(1)[0];
-      const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
-      console.log('[generate][label]', pathname, labelname, generatedTo);
-      let result: string;
-      /*await generateLabel((str) => {
-        result = str;
-      }, labelname);
-      if (result) {
-        return res.end(showPreview(result));
-      }*/
-      next();
-    }
-  });
-});
 
 export default ServerMiddleWare;
 export { ServerMiddleWare };

@@ -125,7 +125,7 @@ const logger = {
   },
   profileEnd: function (label?: string): void {
     return console.profileEnd(label);
-  },
+  }
 };
 type newConsole = typeof logger &
   Console & {

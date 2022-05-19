@@ -1,16 +1,16 @@
 import gulp from 'gulp';
+import 'js-prototypes';
+import { excerpt } from '../../ejs/helper/excerpt';
+import { thumbnail } from '../../ejs/helper/thumbnail';
+import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { postMap } from '../../markdown/transformPosts/parsePost';
+import postChunksIterator from '../../markdown/transformPosts/postChunksIterator';
 import { array_wrap, post_chunks, simplifyDump } from '../../markdown/transformPosts/postMapper';
 import CacheFile from '../../node/cache';
 import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
-import 'js-prototypes';
-import { excerpt } from '../../ejs/helper/excerpt';
-import { thumbnail } from '../../ejs/helper/thumbnail';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { renderer } from './generate-posts';
-import postChunksIterator from '../../markdown/transformPosts/postChunksIterator';
 
 const cacheTags = new CacheFile('postTags');
 
@@ -39,7 +39,7 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
           current_page: current_page,
           base: join(config.tag_dir, tagname),
           parentChunks,
-          treeChunks,
+          treeChunks
         });
         const saveTo = join(cwd(), config.public_dir, data.perm_current, 'index.html');
         const pagemeta: postMap = {
@@ -51,14 +51,14 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
             cover: thumbnail(data.posts[0]),
             category: [],
             tags: [],
-            type: 'archive',
+            type: 'archive'
           },
           body: '',
           content: '',
           fileTree: {
             source: null,
-            public: null,
-          },
+            public: null
+          }
         };
         if (current_page > 0) {
           pagemeta.metadata.title = 'Tag: ' + tagname + ' Page ' + current_page;
@@ -68,9 +68,11 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
         const rendered = await renderer(pagedata);
         const f = await write(saveTo, rendered);
         console.log(logname, f);
+
         if (config.verbose) {
           write(tmp('generateTags', data.perm_current + '.log'), simplifyDump(pagedata));
         }
+        if (labelname) return rendered;
       }
     }
   }

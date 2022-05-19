@@ -6,9 +6,9 @@ import config, { post_source_dir, root } from './_config';
 
 const options = {
   folders: {
-    exclude: ['.*', 'node_modules', 'test_coverage', 'tmp', 'test', 'tests', '*.log', '*.test.ts', '*.test.js'],
+    exclude: ['.*', 'node_modules', 'test_coverage', 'tmp', 'test', 'tests', '*.log', '*.test.ts', '*.test.js']
   },
-  files: { include: ['*.js', '*.ts', '*.md', '*.css', '*.scss', '*.less', '*.ejs', '*.html'] },
+  files: { include: ['*.js', '*.ts', '*.md', '*.css', '*.scss', '*.less', '*.ejs', '*.html'] }
 };
 
 /**

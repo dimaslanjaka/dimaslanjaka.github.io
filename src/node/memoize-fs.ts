@@ -25,7 +25,7 @@ class memoizer {
         const result = fn(...args);
         const content: ObjectCached = {
           type: self.determineType(result),
-          content: result,
+          content: result
         };
         write(find, content);
         return result;

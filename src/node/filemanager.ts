@@ -122,7 +122,7 @@ const filemanager = {
    */
   mkdirSync: (path: fs.PathLike, options: fs.MakeDirectoryOptions = {}) => {
     if (!existsSync(path)) return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
-  },
+  }
 };
 
 export function removeMultiSlashes(str: string) {
@@ -163,7 +163,7 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
   const res = removeMultiSlashes(upath.toUnix(upath.resolve(str)));
   opt = Object.assign(
     {
-      validate: false,
+      validate: false
     },
     opt
   );

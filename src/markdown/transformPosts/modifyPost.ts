@@ -1,27 +1,27 @@
+import Bluebird from 'bluebird';
 import chalk from 'chalk';
-import moment from 'moment';
+import { parse as parseHTML } from 'node-html-parser';
 import yargs from 'yargs';
-import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
-import { shortcodeCss } from '../../gulp/shortcode/css';
-import extractText from '../../gulp/shortcode/extract-text';
-import parseShortCodeInclude from '../../gulp/shortcode/include';
-import { shortcodeScript } from '../../gulp/shortcode/script';
-import { shortcodeNow } from '../../gulp/shortcode/time';
-import { shortcodeYoutube } from '../../gulp/shortcode/youtube';
 import { isValidHttpUrl } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
-import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
-import { cleanString, cleanWhiteSpace } from '../../node/utils';
-import config, { post_generated_dir } from '../../types/_config';
+import scheduler from '../../node/scheduler';
+import { countWords } from '../../node/utils';
+import config from '../../types/_config';
 import ErrorMarkdown from '../error-markdown';
-import { postMap } from './parsePost';
+import { renderBodyMarkdown } from '../toHtml';
+import parsePost, { postMap } from './parsePost';
 import { archiveMap, mergedPostMap } from './postMapper';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');
 const postCache = new CacheFile('posts');
-const homepage = new URL(config.url);
-
+interface GroupLabel {
+  [key: string]: ReturnType<typeof parsePost>[];
+}
+const postCats: GroupLabel = {};
+const postTags: GroupLabel = {};
+const cacheTags = new CacheFile('postTags');
+const cacheCats = new CacheFile('postCats');
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 type modifyPostType = postMap | mergedPostMap | archiveMap;
@@ -33,186 +33,150 @@ type modifyPostType = postMap | mergedPostMap | archiveMap;
  * @returns
  */
 export function originalModifyPost<T extends modifyPostType>(parse: T) {
-  const sourceFile = parse.fileTree.source;
-  const publicFile = parse.fileTree.public;
-  if (parse.metadata) {
-    if (existsSync(sourceFile)) {
-      const stats = statSync(sourceFile);
-      if (!parse.metadata.updated) {
-        const mtime = stats.mtime;
-        parse.metadata.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
-      }
-    }
+  // @todo setup empty tags and categories when not set
+  if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [config.default_category];
+  if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [config.default_tag];
 
-    if (parse.metadata.date && !parse.metadata.date.toString().includes('+')) {
-      try {
-        parse.metadata.date = moment(parse.metadata.date.toString()).format('YYYY-MM-DDTHH:mm:ssZ');
-      } catch (e) {
-        console.log(parse.metadata.date, 'invalid moment date format');
-      }
-    }
+  // @todo add tags from title
+  if (config.title_map) {
+    const title = parse.metadata.title.toLowerCase();
+    for (const key in config.title_map) {
+      if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
+        const tag = config.title_map[key];
+        const regexBoundary = new RegExp(`\\b${key}\\b`, 'gmi');
 
-    // override permalink
-    if (publicFile) {
-      homepage.pathname = removeMultiSlashes(
-        publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')
-      ).replace(/.md$/, '.html');
-      if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://')))
-        parse.metadata.url = homepage.toString();
-      if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
-    }
-
-    // fix lang
-    if (!parse.metadata.lang) parse.metadata.lang = 'en';
-
-    // fix post description
-    if (parse.metadata.subtitle) {
-      if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
-      if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
-    } else if (parse.metadata.excerpt) {
-      if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
-      if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
-    } else if (parse.metadata.description) {
-      if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
-      if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
-    } else {
-      parse.metadata.description = parse.metadata.title;
-      parse.metadata.subtitle = parse.metadata.title;
-      parse.metadata.excerpt = parse.metadata.title;
-    }
-
-    // fix special char in metadata
-    parse.metadata.title = cleanString(parse.metadata.title);
-    parse.metadata.subtitle = cleanWhiteSpace(cleanString(parse.metadata.subtitle));
-    parse.metadata.excerpt = cleanWhiteSpace(cleanString(parse.metadata.excerpt));
-    parse.metadata.description = cleanWhiteSpace(cleanString(parse.metadata.description));
-
-    // fix thumbnail
-    if (parse.metadata.cover) {
-      if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
-      if (!parse.metadata.photos) {
-        parse.metadata.photos = [];
-      }
-      parse.metadata.photos.push(parse.metadata.cover);
-    }
-    if (parse.metadata.photos) {
-      const photos: string[] = parse.metadata.photos;
-      parse.metadata.photos = photos.unique();
-    }
-
-    // fix post_asset_folder
-    const post_assets_fixer = (str: string) => {
-      if (!publicFile) return str;
-      // return base64 image
-      if (str.startsWith('data:image')) return str;
-      if (str.startsWith('//')) str = 'http:' + str;
-      if (str.includes('%20')) str = decodeURIComponent(str);
-      if (!isValidHttpUrl(str) && !str.startsWith('/')) {
-        let result: string;
-        /** search from same directory */
-        const f1 = join(dirname(publicFile), str);
-        /** search from parent directory */
-        const f2 = join(dirname(dirname(publicFile)), str);
-        /** search from root directory */
-        const f3 = join(cwd(), str);
-        const f4 = join(post_generated_dir, str);
-        [f1, f2, f3, f4].forEach((src) => {
-          if (existsSync(src) && !result) result = src;
-        });
-        if (!result) {
-          console.log('[PAF][fail]', str);
-        } else {
-          result = result.replaceArr([cwd(), 'source/', '_posts'], '/').replace(/\/+/, '/');
-          result = encodeURI(result);
-          console.log('[PAF][success]', result);
-          return result;
+        if (title.match(regexBoundary)) {
+          //console.log('found', regexBoundary, tag);
+          parse.metadata.tags.push(tag);
         }
       }
-      return str;
-    };
-    if (parse.metadata.cover) {
-      parse.metadata.cover = post_assets_fixer(parse.metadata.cover);
     }
-    if (parse.metadata.thumbnail) {
-      parse.metadata.thumbnail = post_assets_fixer(parse.metadata.thumbnail);
-    }
-    if (parse.metadata.photos) {
-      parse.metadata.photos = parse.metadata.photos.map(post_assets_fixer);
-    }
+  }
 
-    // merge php js css to programming
-    if (Array.isArray(parse.metadata.tags)) {
-      const programTags = [
-        'php',
-        'css',
-        'js',
-        'kotlin',
-        'java',
-        'ts',
-        'typescript',
-        'javascript',
-        'html',
-        'mysql',
-        'database'
-      ];
-      const containsTag = programTags.some((r) => {
-        const matchTag = parse.metadata.tags
-          .removeEmpties()
-          .map((str) => str.trim().toLowerCase())
-          .includes(r);
-        if (matchTag) {
-          parse.metadata.category.push(r.toUpperCase());
-        }
-        return matchTag;
-      });
-      if (containsTag) {
-        parse.metadata.category.push('Programming');
-        // remove uncategorized if programming category pushed
-        if (parse.metadata.category.includes('Uncategorized')) {
-          parse.metadata.category = parse.metadata.category.filter((e) => e !== 'Uncategorized');
+  // tag mapper
+  const postLowerTags = parse.metadata.tags.map((tag) => tag && tag.toLowerCase());
+
+  // @todo process config.tag_map (rename tag)
+  if (typeof config.tag_map === 'object') {
+    for (const key in config.tag_map) {
+      if (Object.prototype.hasOwnProperty.call(config.tag_map, key)) {
+        const renameTagTo = config.tag_map[key];
+        const lowerkey = key.toLowerCase();
+        const hasTag = postLowerTags.includes(lowerkey);
+        if (hasTag) {
+          const indexTag = postLowerTags.indexOf(lowerkey);
+          //console.log('original tag', parse.metadata.tags[indexTag]);
+          parse.metadata.tags[indexTag] = renameTagTo;
+          //console.log('renamed tag', renameTagTo);
         }
       }
-      // remove duplicated tags and categories
-      const filterTagCat = function (arr: string[]) {
-        return arr.map((item) => {
-          if (item.toLowerCase() === 'programming') return 'Programming';
-          if (item.toLowerCase() === 'github') return 'GitHub';
-          if (item.toLowerCase() === 'mysql') return 'MySQL';
-          // make child of programming tags uppercase
-          if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
-          // fallback
-          return item;
-        });
-      };
-      parse.metadata.category = parse.metadata.category.removeEmpties().uniqueStringArray();
-      parse.metadata.tags = filterTagCat(parse.metadata.tags.removeEmpties().uniqueStringArray());
-      // move 'programming' to first index
-      if (parse.metadata.category.includes('Programming'))
-        parse.metadata.category.forEach((str, i) => {
-          if (str.toLowerCase().trim() === 'programming') {
-            parse.metadata.category = parse.metadata.category.move(i, 0);
+    }
+  }
+
+  // @todo grouping tag to category
+  if (typeof config.tag_group === 'object') {
+    for (const key in config.tag_group) {
+      if (Object.prototype.hasOwnProperty.call(config.tag_group, key)) {
+        const group = config.tag_group[key];
+        const lowerkey = key.toLowerCase();
+        const hasTag = postLowerTags.includes(lowerkey);
+        if (hasTag) {
+          //const indexTag = postLowerTags.indexOf(lowerkey);
+          //console.log('original tag', parse.metadata.tags[indexTag]);
+          //console.log('grouped to', group);
+          parse.metadata.category.push(group);
+        }
+      }
+    }
+  }
+
+  // @todo remove default tag when tags have more than 1 item
+  if (config.default_tag && parse.metadata.tags.length > 1 && parse.metadata.tags.includes(config.default_tag)) {
+    parse.metadata.tags = parse.metadata.tags.filter((tag) => tag !== config.default_tag);
+  }
+
+  // @todo remove default category when categories have more than 1 item
+  if (
+    config.default_category &&
+    parse.metadata.category.length > 1 &&
+    parse.metadata.category.includes(config.default_category)
+  ) {
+    parse.metadata.category = parse.metadata.category.filter((category) => category !== config.default_category);
+  }
+
+  // @todo remove duplicate categories
+  parse.metadata.category = [...new Set(parse.metadata.category)];
+  // @todo remove duplicate tags
+  parse.metadata.tags = [...new Set(parse.metadata.tags)];
+
+  // @todo prepare to add post category to cache
+  parse.metadata.category.forEach((name: string) => {
+    if (!name) return;
+    // init
+    if (!postCats[name]) postCats[name] = [];
+    // prevent duplicate push
+    if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(<any>parse);
+  });
+
+  // @todo prepare to add post tag to cache
+  parse.metadata.tags.forEach((name: string) => {
+    if (!name) return;
+    // init
+    if (!postTags[name]) postTags[name] = [];
+    // prevent duplicate push
+    if (!postTags[name].find(({ title }) => title === parse.metadata.title)) postTags[name].push(<any>parse);
+  });
+
+  // @todo set type post when not set
+  if (!parse.metadata.type) parse.metadata.type = 'post';
+
+  // render post for some properties
+  let html: ReturnType<typeof parseHTML>;
+  try {
+    const renderbody = renderBodyMarkdown(parse);
+    html = parseHTML(renderbody);
+  } catch (error) {
+    console.log('[fail]', 'renderBodyMarkdown', error);
+    //console.log(...log);
+    //console.log(typeof parse.body);
+    return null;
+  }
+
+  // +article wordcount
+  const words = html
+    .querySelectorAll('*:not(script,style,meta,link)')
+    .map((e) => e.text)
+    .join('\n');
+  parse.metadata.wordcount = countWords(words);
+  if (parse.metadata.canonical) {
+    const canonical: string = parse.metadata.canonical;
+    if (!isValidHttpUrl(canonical)) parse.metadata.canonical = config.url + parse.metadata.canonical;
+  }
+
+  // move 'programming' to first index
+  if (parse.metadata.category.includes('Programming')) {
+    parse.metadata.category.forEach((str, i) => {
+      if (str.toLowerCase().trim() === 'programming') {
+        parse.metadata.category = parse.metadata.category.move(i, 0);
+      }
+    });
+  }
+
+  scheduler.add('add-labels', () => {
+    Bluebird.all([postCats, postTags]).each((group, index) => {
+      for (const name in group) {
+        if (Object.prototype.hasOwnProperty.call(group, name)) {
+          const posts = group[name];
+          if (index === 1) {
+            cacheTags.set(name, posts);
+          } else {
+            cacheCats.set(name, posts);
           }
-        });
-      //if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
-    }
-  }
+        }
+      }
+    });
+  });
 
-  if (parse.body) {
-    parse.body = parseShortCodeInclude(publicFile, parse.body);
-    parse.body = shortcodeNow(publicFile, parse.body);
-    parse.body = shortcodeScript(publicFile, parse.body);
-    parse.body = replaceMD2HTML(parse.body);
-    parse.body = shortcodeCss(publicFile, parse.body);
-    parse.body = extractText(publicFile, parse.body);
-    parse.body = shortcodeYoutube(parse.body);
-  }
-
-  if (parse.metadata && parse.body) {
-    // remove duplicated metadata photos
-    if (parse.metadata.photos && parse.metadata.photos.length) {
-      parse.metadata.photos = parse.metadata.photos.uniqueStringArray();
-    }
-  }
   return parse;
 }
 

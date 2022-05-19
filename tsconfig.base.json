@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "rootDirs": [
+      "./src",
+      "./packages"
+    ],
+    "sourceRoot": "./src/",
+    "outDir": "./build",
+    "module": "CommonJS",
+    "target": "ES5",
+    "moduleResolution": "Node",
+    "experimentalDecorators": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "strict": false,
+    "inlineSourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": true,
+    "noImplicitReturns": false,
+    "noImplicitAny": false,
+    "downlevelIteration": true,
+    "removeComments": false,
+    "allowUnusedLabels": true,
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true,
+    "inlineSources": false,
+    "allowJs": true,
+    "checkJs": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "noLib": false,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "ES6"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "./node_modules/nodejs-package-types/typings"
+    ],
+    "types": [
+      "node",
+      "nodejs-package-types"
+    ]
+  }
+}

@@ -8,7 +8,6 @@ import memoizee from 'memoizee';
 import minimatch from 'minimatch';
 import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
-import { modifyPost } from '../../markdown/transformPosts/modifyPost';
 import parsePost from '../../markdown/transformPosts/parsePost';
 import { write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
@@ -146,10 +145,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 //return next();
                 continue;
               }
-              const modify = modifyPost(<any>parsed);
+              //const modify = modifyPost(<any>parsed);
               //console.log(modify.metadata.type);
               // render markdown post
-              return renderer(modify).then((rendered) => {
+              return renderer(parsed).then((rendered) => {
                 rendered = fixHtmlPost(rendered);
                 write(dest, rendered);
                 const previewed = showPreview(rendered);
@@ -240,3 +239,4 @@ labelSrc.forEach((path) => {
 });
 
 export default ServerMiddleWare;
+export { ServerMiddleWare };

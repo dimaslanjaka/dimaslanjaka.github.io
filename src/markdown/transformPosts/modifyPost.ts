@@ -36,15 +36,6 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   const sourceFile = parse.fileTree.source;
   const publicFile = parse.fileTree.public;
   if (parse.metadata) {
-    // fix date
-    if (!parse.metadata.date) {
-      parse.metadata.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
-    }
-
-    if (parse.metadata.modified && !parse.metadata.updated) {
-      parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
-    }
-
     if (existsSync(sourceFile)) {
       const stats = statSync(sourceFile);
       if (!parse.metadata.updated) {

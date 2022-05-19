@@ -19,6 +19,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "run-s build:**",
+    "build:src": "rimraf build/* && tsc -p tsconfig.build.json",
     "build:hexo-post-parser": "cd packages/hexo-post-parser && npm run build",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
@@ -157,6 +158,7 @@
     "object-assign": "^4.1.1",
     "plugin-error": "^1.0.1",
     "prettier": "^2.6.1",
+    "rimraf": "^3.0.2",
     "showdown": "^2.0.3",
     "through2": "^4.0.2",
     "ts-node": "^10.7.0",

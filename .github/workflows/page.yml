@@ -72,10 +72,13 @@ jobs:
           key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
           restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
       #- run: git checkout compiler
-      - run: |
+      - name: Remove Source And Posts
+        run: |
           rm -rf src-posts
-          git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
           rm -rf source
+      - name: Clone Source And Posts
+        run: |
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
         name: Pull & Update Submodules Recursively
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node

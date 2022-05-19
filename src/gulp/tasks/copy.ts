@@ -90,7 +90,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
       const postLowerTags = parse.metadata.tags.map((tag) => tag && tag.toLowerCase());
 
       // @todo process config.tag_map (rename tag)
-      if (config.tag_map) {
+      if (typeof config.tag_map === 'object') {
         for (const key in config.tag_map) {
           if (Object.prototype.hasOwnProperty.call(config.tag_map, key)) {
             const renameTagTo = config.tag_map[key];
@@ -107,7 +107,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
       }
 
       // @todo grouping tag to category
-      if (Array.isArray(config.tag_group)) {
+      if (typeof config.tag_group === 'object') {
         for (const key in config.tag_group) {
           if (Object.prototype.hasOwnProperty.call(config.tag_group, key)) {
             const group = config.tag_group[key];

@@ -36,7 +36,7 @@ const def_config = {
     token: null
   },
   generator: {
-    cache: argv['nocache'] // if set = true, otherwise undefined
+    cache: true
   }
 };
 
@@ -56,8 +56,6 @@ if (project_config_merge.adsense.enable) {
     project_config_merge.adsense.multiplex_ads = project_config_merge.adsense.multiplex_ads.map(findads);
   }
 }
-// @todo [config] bypass nocache if --nocache argument is set by cli
-if (def_config.generator.cache) project_config_merge.generator.cache = def_config.generator.cache;
 
 type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
@@ -71,6 +69,9 @@ interface PrivateProjectConfig {
 export type ProjectConfig = projectImportData & PrivateProjectConfig;
 
 const config: ProjectConfig = project_config_merge;
+
+// @todo [config] bypass nocache if --nocache argument is set by cli
+if (argv['nocache']) config.generator.cache = false;
 
 config.url = config.url.replace(/\/+$/, '');
 

@@ -11,7 +11,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @returns
  */
 const parsePost = (path: string) => {
-  const result = moduleParsePost(String(path), {
+  const parse = moduleParsePost(String(path), {
     shortcodes: {
       youtube: true,
       css: true,
@@ -27,8 +27,8 @@ const parsePost = (path: string) => {
     fix: true,
     sourceFile: path
   });
-  parseCache.set(path, result);
-  return result;
+  parseCache.set(path, parse);
+  return parse;
 };
 
 export { DeepPartial, ParseOptions, postMap, postMeta } from 'hexo-post-parser/src';

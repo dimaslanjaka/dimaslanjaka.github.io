@@ -24,14 +24,15 @@ const homepage = new URL(config.url);
 
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
-type modifyPostType = Partial<postMap> & Partial<mergedPostMap> & Partial<archiveMap>;
+type modifyPostType = postMap & mergedPostMap & archiveMap;
+// type modifyPostType = Partial<postMap> | Partial<mergedPostMap> | Partial<archiveMap>;
 
 /**
  * Modify Post With Defined Conditions
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function originalModifyPost<T extends Partial<modifyPostType>>(parse: T): T {
+export function originalModifyPost<T extends modifyPostType>(parse: T) {
   const sourceFile = parse.fileTree.source;
   const publicFile = parse.fileTree.public;
   if (parse.metadata) {
@@ -237,7 +238,7 @@ export function cacheableModifyPost(
   sourceFile: string = null,
   cache = true
 ): ReturnType<typeof originalModifyPost> {
-  let result: Partial<postMap>;
+  let result: postMap;
   const source = sourceFile || parse.fileTree.source;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logname = chalk.cyanBright('[copy][modify][md]');

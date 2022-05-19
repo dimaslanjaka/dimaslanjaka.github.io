@@ -203,9 +203,14 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * @returns boolean
    */
   has(key: string): boolean {
-    key = this.resolveKey(key);
-    return Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key];
+    try {
+      key = this.resolveKey(key);
+      return Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key];
+    } catch (_) {
+      return false;
+    }
   }
+
   /**
    * Get cache by key
    * @param key
@@ -241,7 +246,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       const self = this;
       const result: DynamicObject = {};
       Object.keys(this.md5Cache).forEach((key) => {
-        result[key] = self.get(key);
+        if (self.has(key)) result[key] = self.get(key);
       });
       return result;
     }

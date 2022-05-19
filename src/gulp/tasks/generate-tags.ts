@@ -24,7 +24,7 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
   for (const tagname in tag_posts) {
     if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
       // specific tag label otherwise skip
-      if (labelname && tagname !== labelname) continue;
+      if (labelname && tagname.toLowerCase() !== labelname.toLowerCase()) continue;
       // skip non array
       if (!tag_posts[tagname] || !Array.isArray(tag_posts[tagname])) continue;
       const logname = color['Desert Sand']('[generate][tag]') + color['Wild Blue Yonder'](`[${tagname}]`);

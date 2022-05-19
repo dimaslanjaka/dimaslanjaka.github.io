@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import compress from 'compression';
 import spawn from 'cross-spawn';
 import { deepmerge } from 'deepmerge-ts';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
 import minimatch from 'minimatch';
@@ -11,6 +11,7 @@ import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
 import parsePost from '../../markdown/transformPosts/parsePost';
 import { removeEmpties } from '../../node/array-utils';
+import color from '../../node/color';
 import { write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
@@ -108,14 +109,16 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
       if (pathname.includes(path)) {
         //console.log(path, pathname);
-        const replace_pathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
-        const split = removeEmpties(pathname.split('/'));
+        const filterPathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
+        const split = removeEmpties(filterPathname.split('/'));
         const labelname = split[1];
         const pagenum = split.length > 2 ? parseInt(split[2]) : null;
-        const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(replace_pathname), 'index.html');
-        console.log('[generate][label]', replace_pathname, labelname, generatedTo);
+        const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(filterPathname), 'index.html');
+        //console.log('[generate][label]', replace_pathname, labelname, generatedTo);
+        console.log(`${color['Violet Red']('[generate][label]')} ${labelname}`);
         if (labelname && typeof labelname == 'string') {
           const result = await generateTags(labelname, pagenum);
+          writeFileSync(generatedTo, result);
           if (result) {
             return res.end(showPreview(result));
           }

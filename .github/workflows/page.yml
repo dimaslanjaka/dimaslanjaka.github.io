@@ -13,12 +13,8 @@ concurrency:
 jobs:
   build:
     #if: {{ $false }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest #windows-latest
     timeout-minutes: 120
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
-        node: [12, 14, 16, 17]
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
       GITFLOW: true
@@ -29,10 +25,10 @@ jobs:
           repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Setup Node.js ${{ matrix.node }}
+      - name: Setup Node.js 16.x
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16.x
           cache: "npm"
       #- run: echo "${{ secrets.GITHUB_TEST ]}"
       - name: Get current date
@@ -66,8 +62,8 @@ jobs:
             ./packages
             ./databases
             ./docs
-          key: ${{ runner.os }}-${{ matrix.node }}-${{ steps.uuid.outputs.uid }}
-          restore-keys: ${{ runner.os }}-${{ matrix.node }}-${{ steps.uuid.outputs.uid }}
+          key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+          restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
       #- run: git checkout compiler
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node rimraf
         # run global install when cache not written
@@ -121,7 +117,7 @@ jobs:
       - run: echo www.webmanajemen.com > docs/CNAME
       - run: echo "" > docs/.nojekyll
       - name: Deploy 🚀
-        if: matrix.os == 'ubuntu-latest' && matrix.node == 16
+        #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         #if: ${{ false }}
         #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         uses: JamesIves/github-pages-deploy-action@v4.3.0

@@ -96,8 +96,9 @@ export const copyPosts = (_any: any, cpath?: string) => {
             const hasTag = postLowerTags.includes(lowerkey);
             if (hasTag) {
               const indexTag = postLowerTags.indexOf(lowerkey);
+              //console.log('original tag', parse.metadata.tags[indexTag]);
               parse.metadata.tags[indexTag] = renameTagTo;
-              //console.log(hasTag, postLowerTags.indexOf(lowerkey), category);
+              //console.log('renamed tag', renameTagTo);
             }
           }
         }

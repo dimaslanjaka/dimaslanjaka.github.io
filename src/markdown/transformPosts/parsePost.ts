@@ -126,7 +126,12 @@ const parsePost = (path: string) => {
     parse.metadata.category = parse.metadata.category.filter((category) => category !== config.default_category);
   }
 
-  // @todo add post category to cache
+  // @todo remove duplicate categories
+  parse.metadata.category = [...new Set(parse.metadata.category)];
+  // @todo remove duplicate tags
+  parse.metadata.tags = [...new Set(parse.metadata.tags)];
+
+  // @todo prepare to add post category to cache
   parse.metadata.category.forEach((name: string) => {
     if (!name) return;
     // init
@@ -135,7 +140,7 @@ const parsePost = (path: string) => {
     if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(parse);
   });
 
-  // @todo add post tag to cache
+  // @todo prepare to add post tag to cache
   parse.metadata.tags.forEach((name: string) => {
     if (!name) return;
     // init

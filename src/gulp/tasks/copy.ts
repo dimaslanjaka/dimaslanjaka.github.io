@@ -124,7 +124,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
         const filterTagCat = function (arr: string[]) {
           arr = arr.map((item) => {
             const matcher = {
-              programming: 'Proggramming',
+              programming: 'Programming',
               github: 'GitHub',
               mysql: 'MySQL',
               sql: 'SQL',

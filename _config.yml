@@ -33,9 +33,15 @@ category_dir: categories
 ## slug tag config.url/tag_dir/tagname
 tag_dir: tags
 
-# mapper
+# Mapper
+
+## Default Category (empty = null)
+default_category: Uncategorized
+## Default Tag (empty = null)
+default_tag:
+
 ## category mapper
-### rename category with these maps
+### rename/map category with defined value
 category_map:
   ## category $0 should be renamed to $1
   php: PHP
@@ -44,17 +50,21 @@ category_map:
   ts: TYPESCRIPT
   typescript: TYPESCRIPT
   javascript: JAVASCRIPT
-## Default Category (empty = null)
-default_category: Uncategorized
-## Default Tag (empty = null)
-default_tag:
+  postgresql: PostgreSQL
+  mysql: MySQL
+  github: GitHub
+  xampp: XAMPP
+
 ## tag mapper
 ### group tags with category
-tag_map:
+tag_group:
   ## tag $0 should be grouped by $1
   js: Programming
   ts: Programming
   css: Programming
+  sql: Programming
+  mysql: Programming
+  postgresql: Programming
 
 # https://hexo.io/docs/configuration.html
 # skip render template, direct copy

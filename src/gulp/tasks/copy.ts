@@ -71,7 +71,18 @@ export const copyPosts = (_any: any, cpath?: string) => {
       if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [];
 
       // @todo add tags from title
-      const regexBoundary = /\b(xampp|php|css|javascript|typescript|guide|how to)\b/gim;
+      //const regexBoundary = /\b(xampp|php|css|javascript|typescript|guide|how to)\b/gim;
+      if (config.title_map) {
+        const title = parse.metadata.title.toLowerCase();
+        for (const key in config.title_map) {
+          if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
+            const tag = config.title_map[key];
+            if (title.match(new RegExp(`\b${key}\b`))) {
+              console.log('found', key, tag);
+            }
+          }
+        }
+      }
 
       // @todo add post category to cache
       parse.metadata.category.forEach((name: string) => {

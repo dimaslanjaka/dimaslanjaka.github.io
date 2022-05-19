@@ -1,6 +1,7 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import compress from 'compression';
+import spawn from 'cross-spawn';
 import { existsSync, readFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
@@ -52,7 +53,9 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
   return new Bluebird((resolve) => {
     if (!gulpIndicator) {
       gulpIndicator = true;
-      const tasks = ['generate:assets', 'generate:template', ...fn].removeEmpties();
+      const tasks = ['generate:assets', 'generate:template', ...fn].filter(
+        (s) => s && (typeof s === 'string' || typeof s === 'function')
+      );
       Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
         // @todo [server] prevent call copy without any modifications
         const chashes = `${src_posts}:${source}`;
@@ -60,7 +63,12 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
           hashes = `${src_posts}:${source}`;
           gulp.series(...tasks)(() => {
             gulpIndicator = false;
-            //spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir) });
+            if (
+              !existsSync(join(cwd(), config.public_dir, 'node_modules')) &&
+              existsSync(join(cwd(), config.public_dir, 'package.json'))
+            ) {
+              spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir), shell: true, stdio: 'inherit' });
+            }
             resolve();
           });
         }

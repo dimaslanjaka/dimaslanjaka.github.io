@@ -15,6 +15,10 @@ jobs:
     #if: {{ $false }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        node: [12, 14, 16, 17]
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
       GITFLOW: true

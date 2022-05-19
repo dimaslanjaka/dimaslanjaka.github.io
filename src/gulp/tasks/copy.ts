@@ -86,9 +86,11 @@ export const copyPosts = (_any: any, cpath?: string) => {
         }
       }
 
-      // @todo process config.tag_map
+      // tag mapper
+      const postLowerTags = parse.metadata.tags.map((tag) => tag && tag.toLowerCase());
+
+      // @todo process config.tag_map (rename tag)
       if (config.tag_map) {
-        const postLowerTags = parse.metadata.tags.map((tag) => tag && tag.toLowerCase());
         for (const key in config.tag_map) {
           if (Object.prototype.hasOwnProperty.call(config.tag_map, key)) {
             const renameTagTo = config.tag_map[key];
@@ -99,6 +101,23 @@ export const copyPosts = (_any: any, cpath?: string) => {
               //console.log('original tag', parse.metadata.tags[indexTag]);
               parse.metadata.tags[indexTag] = renameTagTo;
               //console.log('renamed tag', renameTagTo);
+            }
+          }
+        }
+      }
+
+      // @todo grouping tag to category
+      if (Array.isArray(config.tag_group)) {
+        for (const key in config.tag_group) {
+          if (Object.prototype.hasOwnProperty.call(config.tag_group, key)) {
+            const group = config.tag_group[key];
+            const lowerkey = key.toLowerCase();
+            const hasTag = postLowerTags.includes(lowerkey);
+            if (hasTag) {
+              //const indexTag = postLowerTags.indexOf(lowerkey);
+              //console.log('original tag', parse.metadata.tags[indexTag]);
+              //console.log('grouped to', group);
+              parse.metadata.category.push(group);
             }
           }
         }

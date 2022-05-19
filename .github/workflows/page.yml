@@ -20,7 +20,7 @@ jobs:
       max-parallel: 3
       matrix:
         os: [ubuntu-latest, windows-latest]
-        #version: [12, 14, 16, 17]
+        node: [12, 14, 16, 17]
     timeout-minutes: 120
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc

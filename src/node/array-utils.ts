@@ -137,9 +137,9 @@ export const array_shuffle = shuffle;
  * @returns
  */
 export const array_move = function <T extends any[]>(arr: T, from: number, to: number) {
-  const itemRemoved = this.splice(from, 1); // splice() returns the remove element as an array
-  this.splice(to, 0, itemRemoved[0]); // Insert itemRemoved into the target index
-  return this;
+  const itemRemoved = arr.splice(from, 1); // splice() returns the remove element as an array
+  arr.splice(to, 0, itemRemoved[0]); // Insert itemRemoved into the target index
+  return arr;
 };
 
 /**

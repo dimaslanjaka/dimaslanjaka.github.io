@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
 /**
  * @description copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @summary copy from src-posts to source/_posts

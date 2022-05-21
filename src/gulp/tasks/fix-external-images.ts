@@ -1,7 +1,9 @@
+import { join } from 'upath';
 import urlParser from '../../curl/url-parser';
 import { parsePost } from '../../markdown/transformPosts';
+import { arrayAddAll } from '../../node/array-utils';
 import CacheFile from '../../node/cache';
-import { cwd, globSrc, join } from '../../node/filemanager';
+import { cwd, globSrc } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import config from '../../types/_config';
 import { renderer } from './generate-posts';
@@ -47,7 +49,7 @@ export async function fixExternalImages() {
         const meta = parsed.metadata;
         if (meta.thumbnail && !imageSrc.includes(meta.thumbnail)) imageSrc.push(meta.thumbnail);
         if (meta.cover && !imageSrc.includes(meta.cover)) imageSrc.push(meta.cover);
-        if (meta.photos) imageSrc.addAll(meta.photos);
+        if (meta.photos) arrayAddAll(imageSrc, meta.photos);
         /*const body = renderBodyMarkdown(parsed);
         const renderBody = ejs_object.render(body, Object.assign(parsed, parsed.metadata));
         console.log(renderBody.includes('<img'));*/

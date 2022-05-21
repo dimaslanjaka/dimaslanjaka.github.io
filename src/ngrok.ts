@@ -1,6 +1,7 @@
+import { existsSync, readFileSync } from 'fs';
 import ngrokc from 'ngrok';
 import { toUnix } from 'upath';
-import { existsSync, readFileSync, write } from './node/filemanager';
+import { write } from './node/filemanager';
 import scheduler from './node/scheduler';
 import { tmp } from './types/_config';
 
@@ -23,7 +24,7 @@ export function getNgrokUrl() {
  */
 export default async function ngrokStart(port = 4000, token = '', override: ngrokc.Ngrok.Options = {}) {
   let options: ngrokc.Ngrok.Options = {
-    addr: port,
+    addr: port
   };
   if (token.length > 0) {
     options.authtoken = token;

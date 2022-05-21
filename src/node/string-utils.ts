@@ -69,7 +69,7 @@ export function replaceArr(str: string, array: string[], replacement: string) {
   return ori;
 }
 
-interface String {
+export interface String {
   /**
    * Replace all instances of a substring in a string, using a regular expression or search string.
    * @param searchValue A string to search for.
@@ -85,7 +85,7 @@ interface String {
   replaceAll(searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string;
 }
 if (typeof ''.replaceAll != 'function') {
-  String.prototype.replaceAll = function (search, replacement) {
+  String.prototype.replaceAll = function (search: string | RegExp, replacement: any) {
     const find = typeof search == 'string' ? new RegExp(search, 'g') : search;
     return this.replace(find, replacement);
   };

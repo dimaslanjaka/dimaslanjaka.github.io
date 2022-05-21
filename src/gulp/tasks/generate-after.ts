@@ -1,12 +1,13 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
+import { readFileSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'path';
 import safelinkify from 'safelinkify';
 import { TaskCallback } from 'undertaker';
 import { arrayAddAll, uniqueStringArray } from '../../node/array-utils';
-import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
+import { globSrc } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { isMatch } from '../../node/string-utils';
 import config, { root } from '../../types/_config';
@@ -107,7 +108,7 @@ export function filter_external_links(href: string, debug = false) {
 }
 
 const generated_dir = join(root, config.public_dir);
-function staticAfter(done: TaskCallback) {
+export function staticAfter(done: TaskCallback) {
   // iterate public_dir of _config.yml (hexo generate)
   globSrc('**/*.html', { cwd: generated_dir })
     .map((file) => join(generated_dir, file))

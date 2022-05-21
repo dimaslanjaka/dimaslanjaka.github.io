@@ -4,14 +4,15 @@ import GoogleNewsSitemap, { ClassItemType } from 'google-news-sitemap';
 import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
+import { join } from 'upath';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { postMap } from '../../markdown/transformPosts/parsePost';
+import { removeEmpties } from '../../node/array-utils';
 import Sitemap from '../../node/cache-sitemap';
-import { cwd, join, write } from '../../node/filemanager';
-import config, { root } from '../../types/_config';
+import { write } from '../../node/filemanager';
+import config, { cwd, root } from '../../types/_config';
 import { renderer } from './generate-posts';
 import './sitemap';
-
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();
@@ -26,7 +27,7 @@ async function generateGoogleNewsSitemap(done: TaskCallback) {
   const log = logname + chalk.blue('[google-news]');
 
   try {
-    const i = await Bluebird.all(pages.getValues().removeEmpties()).map((item) => {
+    const i = await Bluebird.all(removeEmpties(pages.getValues())).map((item) => {
       const val: ClassItemType = {
         publication_name: item.author,
         publication_language: item.lang || 'en',

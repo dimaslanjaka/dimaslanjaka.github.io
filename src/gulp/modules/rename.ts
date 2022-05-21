@@ -1,9 +1,8 @@
 'use strict';
 // https://www.npmjs.com/package/gulp-rename
 import Stream from 'stream';
-import { toUnix } from 'upath';
+import { basename, dirname, extname as ExtName, join, toUnix } from 'upath';
 import vinyl from 'vinyl';
-import { basename, dirname, extname as ExtName, join } from '../../node/filemanager';
 
 interface ParsedPath {
   dirname: string;

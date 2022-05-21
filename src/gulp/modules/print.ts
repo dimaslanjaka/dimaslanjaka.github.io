@@ -2,7 +2,7 @@
 'use strict';
 import through from 'through2';
 import { toUnix } from 'upath';
-import { cwd } from '../../node/filemanager';
+import { cwd } from '../../types/_config';
 
 /**
  * gulp debug to print result of `gulp.src`

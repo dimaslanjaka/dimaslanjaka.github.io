@@ -177,7 +177,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           })
           .filter(existsSync)
       );
-      //console.log(sourceMD);
+      // find from src-posts
+      if (!sourceMD.length) {
+        let find = join(cwd(), 'src-posts', decodeURIComponent(pathname));
+        if (find.endsWith('/')) find += 'index.md';
+        find = find.replace(/.html$/, '.md');
+        console.log(find);
+      }
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];

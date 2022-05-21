@@ -18,7 +18,7 @@
     <div class="sidebar widget">
       <h3>Recent Post</h3>
       <ul>
-        <% getLatestPosts('date', 5).forEach(post => { %>
+        <% getLatestPosts('-date', 5).forEach(post => { %>
         <li>
           <div class="sidebar-thumb">
             <img class="animated rollIn" src="<%- thumbnail(post) %>" alt="<%- post.title %>" />

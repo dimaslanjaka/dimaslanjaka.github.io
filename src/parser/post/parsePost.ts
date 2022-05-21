@@ -1,4 +1,4 @@
-import { parsePost as moduleParsePost } from 'hexo-post-parser';
+import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
 import { toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
@@ -33,7 +33,8 @@ const parsePost = (path: string, content?: string) => {
     formatDate: true,
     fix: true,
     sourceFile: path
-  });
+  }) as postMap;
+
   if (!validateParsed(parse)) {
     console.log(color.redBright('[fail]'), 'at 1st parse');
     return null;
@@ -52,13 +53,15 @@ const parsePost = (path: string, content?: string) => {
     )
   };
 
-  parse = modifyPost<any>(parse);
+  parse = modifyPost(parse);
 
-  // insert parsed to caches (only non-redirected post)
-  if (!parse.metadata.redirect) {
-    cachePost.set(path, parse);
+  if (parse.metadata.type === 'post') {
+    // insert parsed to caches (only non-redirected post)
+    if (!parse.metadata.redirect) {
+      cachePost.set(path, parse);
+    }
+    parseCache.set(path, parse);
   }
-  parseCache.set(path, parse);
 
   return parse;
 };

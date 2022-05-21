@@ -1,5 +1,8 @@
 <!--important meta-->
 <link rel="canonical" href="<%- page.canonical||page.url %>" />
+<% if (page.redirect) { %>
+  <meta http-equiv="refresh" content="1; URL=<%- page.redirect %>">
+<% } %>
 <meta name="author" content="<%- author_name(page)||author_name(config) %>" />
 <meta name="description" content="<%- excerpt(page) %>" />
 <meta name="title" content="<%- page.title %>" />
@@ -45,7 +48,7 @@
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="theme-color" content="#ffffff" />
-<!-- noindex -->
-<% if (page.noindex || !page.index) { %>
+<!-- page.noindex <%- page.noindex ? 'true' : 'false' %> -->
+<% if (page.noindex) { %>
 <meta name="robots" content="noindex" />
 <% } %>

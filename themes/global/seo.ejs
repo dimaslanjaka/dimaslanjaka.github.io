@@ -1,5 +1,8 @@
 <!--important meta-->
 <link rel="canonical" href="<%- page.canonical||page.url %>" />
+<% if (page.redirect) { %>
+  <meta http-equiv="refresh" content="1; URL=<%- page.redirect %>">
+<% } %>
 <meta name="author" content="<%- author_name(page)||author_name(config) %>" />
 <meta name="description" content="<%- excerpt(page) %>" />
 <meta name="title" content="<%- page.title %>" />
@@ -14,9 +17,7 @@
 <!--article metadata-->
 <meta property="article:published_time" content="<%- page.date %>" />
 <meta property="article:modified_time" content="<%- page.updated %>" />
-<meta
-  property="article:author"
-  content="<%- author_name(page)||author_name(config) %>" />
+<meta property="article:author" content="<%- author_name(page)||author_name(config) %>" />
 <% tags(page).forEach(tag => { %>
 <meta property="article:tag" content="<%- tag.name %>" />
 <% }) %>
@@ -25,15 +26,9 @@
 <meta name="twitter:image" content="<%- thumbnail(page) %>" />
 <!--sitemap rss-->
 <link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml" />
-<link
-  rel="sitemap"
-  type="application/xml"
-  title="Sitemap"
-  href="/sitemap.xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 <!--additional metadata-->
-<meta
-  name="generator"
-  content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]" />
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]" />
 <meta name="page-type" content="<%- page.type %>" />
 <!-- icons -->
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
@@ -45,11 +40,7 @@
 <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
 <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
-<link
-  rel="icon"
-  type="image/png"
-  sizes="192x192"
-  href="/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

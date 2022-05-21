@@ -1,5 +1,6 @@
 import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
 import { toUnix } from 'upath';
+import { Database } from '../../db';
 import { replacePath } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
 import CachePost from '../../node/cache-post';
@@ -10,6 +11,32 @@ import modifyPost from './modifyPost';
 const parseCache = new CacheFile('parsePost');
 const cachePost = new CachePost();
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
+
+Database.schema.hasTable('posts').then((exist) => {
+  if (!exist) {
+    Database.schema
+      .createTable('posts', (table) => {
+        table.increments('id').primary();
+        table.string('uuid').unique();
+        table.string('title');
+        table.string('date');
+      })
+      .catch((error) => {
+        console.error(`There was an error creating table: ${error}`);
+      });
+  } else {
+    // migration start
+    Database.schema.hasColumn('posts', 'date').then((exist) => {
+      if (!exist) {
+        Database.schema
+          .alterTable('posts', (table) => {
+            table.string('date');
+          })
+          .catch((e) => console.log(`migration errors ${e}`));
+      }
+    });
+  }
+});
 
 /**
  * Parse Markdown Post

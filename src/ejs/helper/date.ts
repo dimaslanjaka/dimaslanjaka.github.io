@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import moment, { isMoment } from 'moment-timezone';
 import { postMap } from '../../markdown/transformPosts/parsePost';
+import { removeEmpties } from '../../node/array-utils';
 import { postResult } from '../../node/cache-post';
 import config from '../../types/_config';
 
 export function getLatestDateArray(arr: moment.MomentInput[]) {
-  arr = arr.removeEmpties();
+  arr = removeEmpties(arr);
   if (arr.length) {
     const reduce = arr.reduce((a, b) => (a > b ? a : b));
     return moment(reduce).format('YYYY-MM-DDTHH:mm:ssZ');

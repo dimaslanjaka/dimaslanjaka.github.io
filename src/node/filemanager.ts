@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import { default as nodePath } from 'path';
 import { cwd as nodeCwd } from 'process';
 import upath from 'upath';
+import { removeEmpties } from './array-utils';
 import ErrnoException = NodeJS.ErrnoException;
 
 import glob = require('glob');
@@ -105,7 +106,7 @@ const filemanager = {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (typeof content != 'string') {
       if (typeof content == 'object') {
-        content = JSON.stringifyWithCircularRefs(content, 4);
+        content = JSON.stringify(content, null, 4);
       } else {
         content = String(content);
       }
@@ -192,7 +193,7 @@ export function read(
  * @returns
  */
 export const join = (...str: any[]) => {
-  str = str.map((s) => String(s)).removeEmpties();
+  str = removeEmpties(str.map((s) => String(s)));
   return removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
 };
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;

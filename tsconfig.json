@@ -11,7 +11,8 @@
     "**/tests/**"
   ],
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "packages/hexo-post-parser/src/import-post.ts"
   ],
   "ts-node": {
     "compilerOptions": {

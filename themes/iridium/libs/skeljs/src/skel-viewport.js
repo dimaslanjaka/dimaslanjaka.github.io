@@ -25,7 +25,7 @@
       scalable: true,
 
       // Breakpoints.
-      breakpoints: {},
+      breakpoints: {}
     },
 
     /******************************/
@@ -44,12 +44,21 @@
       _.addStateHandler('viewport', __.stateHandler);
 
       // Add initial <meta> element.
-      _.attach(_.newAttachment('mv', __.newViewportMeta('initial-scale=1'), 1, true));
+      _.attach(
+        _.newAttachment('mv', __.newViewportMeta('initial-scale=1'), 1, true)
+      );
 
       // Hack: IE viewport fix.
       if (_.vars.browser == 'ie' && _.vars.IEVersion >= 10) {
         // Add <style> element for -ms-viewport.
-        _.attach(_.newAttachment('mVie', _.newStyle('@-ms-viewport{width:device-width}'), 1, true));
+        _.attach(
+          _.newAttachment(
+            'mVie',
+            _.newStyle('@-ms-viewport{width:device-width}'),
+            1,
+            true
+          )
+        );
 
         // Force browser to accept new viewport.
         window.setTimeout(function () {
@@ -92,7 +101,7 @@
         {
           width: __.config.width,
           height: __.config.height,
-          scalable: __.config.scalable,
+          scalable: __.config.scalable
         },
         __.config.breakpoints
       );
@@ -115,10 +124,14 @@
       if (config.width == 'device-width') a.push('initial-scale=1');
 
       // Attachment.
-      attachment = _.newAttachment('mv-' + _.stateId, __.newViewportMeta(a.join(',')), 1);
+      attachment = _.newAttachment(
+        'mv-' + _.stateId,
+        __.newViewportMeta(a.join(',')),
+        1
+      );
 
       return [attachment];
-    },
+    }
   };
   _.viewport = __.init;
 })(skel);

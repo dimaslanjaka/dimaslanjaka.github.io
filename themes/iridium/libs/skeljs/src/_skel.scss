@@ -55,7 +55,13 @@ $vendor-properties: (
 
 /// Values that should be vendorized.
 /// @var {list}
-$vendor-values: ('filter', 'flex', 'linear-gradient', 'radial-gradient', 'transform');
+$vendor-values: (
+  'filter',
+  'flex',
+  'linear-gradient',
+  'radial-gradient',
+  'transform'
+);
 
 // Functions.
 
@@ -98,7 +104,11 @@ $vendor-values: ('filter', 'flex', 'linear-gradient', 'radial-gradient', 'transf
 
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -111,7 +121,11 @@ $vendor-values: ('filter', 'flex', 'linear-gradient', 'radial-gradient', 'transf
 /// @return {list} Updated list of strings.
 @function str-replace-all($strings, $search, $replace: '') {
   @each $string in $strings {
-    $strings: set-nth($strings, index($strings, $string), str-replace($string, $search, $replace));
+    $strings: set-nth(
+      $strings,
+      index($strings, $string),
+      str-replace($string, $search, $replace)
+    );
   }
 
   @return $strings;

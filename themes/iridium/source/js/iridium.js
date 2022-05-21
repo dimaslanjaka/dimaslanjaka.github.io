@@ -10,15 +10,22 @@
   if (navs) {
     const cleanNavs = () => {
       // clean active class
-      return Promise.resolve(navs.querySelectorAll('li').forEach((el) => el.classList.remove('active')));
+      return Promise.resolve(
+        navs
+          .querySelectorAll('li')
+          .forEach((el) => el.classList.remove('active'))
+      );
     };
     navs.addEventListener(
       'mouseover',
       function (e) {
         const tn = e.target.tagName.toLowerCase();
-        if (tn == 'li') cleanNavs().then(() => e.target.classList.add('active'));
+        if (tn == 'li')
+          cleanNavs().then(() => e.target.classList.add('active'));
         if (tn == 'a' && e.target.parentElement.tagName.toLowerCase() == 'li')
-          cleanNavs().then(() => e.target.parentElement.classList.add('active'));
+          cleanNavs().then(() =>
+            e.target.parentElement.classList.add('active')
+          );
       },
       false
     );

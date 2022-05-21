@@ -41,7 +41,7 @@ var skel = (function () {
       head: null,
 
       // States.
-      states: {},
+      states: {}
     },
 
     /**
@@ -168,7 +168,13 @@ var skel = (function () {
       var e = _._canUse.style,
         up = p.charAt(0).toUpperCase() + p.slice(1);
 
-      return p in e || 'Moz' + up in e || 'Webkit' + up in e || 'O' + up in e || 'ms' + up in e;
+      return (
+        p in e ||
+        'Moz' + up in e ||
+        'Webkit' + up in e ||
+        'O' + up in e ||
+        'ms' + up in e
+      );
     },
 
     /******************************/
@@ -352,7 +358,8 @@ var skel = (function () {
 
       // Change state ID.
       _.stateId = newStateId;
-      _.breakpointIds = _.stateId === _.sd ? [] : _.stateId.substring(1).split(_.sd);
+      _.breakpointIds =
+        _.stateId === _.sd ? [] : _.stateId.substring(1).split(_.sd);
 
       console.log('[skel] changing states (id: "' + _.stateId + '")');
 
@@ -362,7 +369,7 @@ var skel = (function () {
 
         // Build state.
         _.obj.states[_.stateId] = {
-          attachments: [],
+          attachments: []
         };
 
         _.state = _.obj.states[_.stateId];
@@ -490,7 +497,9 @@ var skel = (function () {
       // Permanent attachment? Make its element the new attach point.
       if (attachment.permanent) _._attach = e;
 
-      console.log('[skel] ' + attachment.id + ': attached (' + attachment.priority + ')');
+      console.log(
+        '[skel] ' + attachment.id + ': attached (' + attachment.priority + ')'
+      );
 
       return true;
     },
@@ -529,7 +538,12 @@ var skel = (function () {
       var e = attachment.element;
 
       // Permanent or already detached? Bail.
-      if (attachment.permanent || !e.parentNode || (e.parentNode && !e.parentNode.tagName)) return false;
+      if (
+        attachment.permanent ||
+        !e.parentNode ||
+        (e.parentNode && !e.parentNode.tagName)
+      )
+        return false;
 
       // Detach.
       e.parentNode.removeChild(e);
@@ -572,7 +586,7 @@ var skel = (function () {
         id: id,
         element: element,
         priority: priority,
-        permanent: permanent,
+        permanent: permanent
       });
     },
 
@@ -638,7 +652,8 @@ var skel = (function () {
       };
 
       // Orientation change.
-      if (window.onorientationchange) _.on('orientationChange', window.onorientationchange);
+      if (window.onorientationchange)
+        _.on('orientationChange', window.onorientationchange);
 
       window.onorientationchange = function () {
         _.trigger('orientationChange');
@@ -839,9 +854,13 @@ var skel = (function () {
           style.type = 'text/css';
           style.id = 'matchmediajs-test';
           script.parentNode.insertBefore(style, script);
-          info = ('getComputedStyle' in window && window.getComputedStyle(style, null)) || style.currentStyle;
+          info =
+            ('getComputedStyle' in window &&
+              window.getComputedStyle(style, null)) ||
+            style.currentStyle;
 
-          var text = '@media ' + query + '{ #matchmediajs-test { width: 1px; } }';
+          var text =
+            '@media ' + query + '{ #matchmediajs-test { width: 1px; } }';
 
           if (style.styleSheet) style.styleSheet.cssText = text;
           else style.textContent = text;
@@ -931,7 +950,7 @@ var skel = (function () {
         ['safari', /Version\/([0-9\.]+).+Safari/],
         ['chrome', /Chrome\/([0-9\.]+)/],
         ['ie', /MSIE ([0-9]+)/],
-        ['ie', /Trident\/.+rv:([0-9]+)/],
+        ['ie', /Trident\/.+rv:([0-9]+)/]
       ];
 
       _.iterate(a, function (k, v) {
@@ -955,14 +974,14 @@ var skel = (function () {
           /([0-9_]+) like Mac OS X/,
           function (v) {
             return v.replace('_', '.').replace('_', '');
-          },
+          }
         ],
         [
           'ios',
           /CPU like Mac OS X/,
           function (v) {
             return 0;
-          },
+          }
         ],
         ['wp', /Windows Phone ([0-9\.]+)/, null],
         ['android', /Android ([0-9\.]+)/, null],
@@ -971,11 +990,11 @@ var skel = (function () {
           /Macintosh.+Mac OS X ([0-9_]+)/,
           function (v) {
             return v.replace('_', '.').replace('_', '');
-          },
+          }
         ],
         ['windows', /Windows NT ([0-9\.]+)/, null],
         ['bb', /BlackBerry.+Version\/([0-9\.]+)/, null],
-        ['bb', /BB[0-9]+.+Version\/([0-9\.]+)/, null],
+        ['bb', /BB[0-9]+.+Version\/([0-9\.]+)/, null]
       ];
 
       _.iterate(a, function (k, v) {
@@ -994,11 +1013,18 @@ var skel = (function () {
       _.vars.IEVersion = _.vars.browser == 'ie' ? _.vars.browserVersion : 99;
 
       // touch.
-      _.vars.touch = _.vars.os == 'wp' ? navigator.msMaxTouchPoints > 0 : !!('ontouchstart' in window);
+      _.vars.touch =
+        _.vars.os == 'wp'
+          ? navigator.msMaxTouchPoints > 0
+          : !!('ontouchstart' in window);
 
       // mobile.
-      _.vars.mobile = _.vars.os == 'wp' || _.vars.os == 'android' || _.vars.os == 'ios' || _.vars.os == 'bb';
-    },
+      _.vars.mobile =
+        _.vars.os == 'wp' ||
+        _.vars.os == 'android' ||
+        _.vars.os == 'ios' ||
+        _.vars.os == 'bb';
+    }
   };
   _.init();
   return _;

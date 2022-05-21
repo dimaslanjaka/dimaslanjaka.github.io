@@ -25,12 +25,16 @@ class lazyload {
             var isNotLoaded = false === lazy[src];
             var isNotTopDocument = 0 != document.documentElement.scrollTop;
             var isNotTopBody = 0 != document.body.scrollTop;
-            if ((isNotTopDocument && isNotLoaded) || (isNotTopBody && isNotLoaded)) {
+            if (
+              (isNotTopDocument && isNotLoaded) ||
+              (isNotTopBody && isNotLoaded)
+            ) {
               var script = document.createElement('script');
               script.type = 'text/javascript';
               script.async = true;
               script.src = src;
-              if (typeof self.lazycallbacks[src] == 'function') script.onload = self.lazycallbacks[src];
+              if (typeof self.lazycallbacks[src] == 'function')
+                script.onload = self.lazycallbacks[src];
               var firstScript = document.getElementsByTagName('script')[0];
               // insert after first script
               firstScript.parentNode.insertBefore(script, firstScript);

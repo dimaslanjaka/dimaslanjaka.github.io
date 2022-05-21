@@ -31,7 +31,7 @@
       href: false,
 
       // Reset mode (false = don't reset, 'normalize' = normalize.css, 'full' = Eric Meyer's resets).
-      reset: false,
+      reset: false
     },
 
     /**
@@ -185,7 +185,7 @@
           x +
           '{margin-left:8.3333333333%}'
         );
-      },
+      }
     },
 
     /**
@@ -226,7 +226,9 @@
 
       // Via responsive level.
       for (i = 1; i <= __.gridLevelMax; i++) {
-        a = document.querySelectorAll('.important\\28 ' + __.gridLevelMap.k[i] + '\\29');
+        a = document.querySelectorAll(
+          '.important\\28 ' + __.gridLevelMap.k[i] + '\\29'
+        );
 
         _.iterate(a, function (k) {
           cells.push(a[k]);
@@ -249,7 +251,10 @@
         if (!parent) return;
 
         // Not moved? Move it.
-        if (!Object.prototype.hasOwnProperty.call(cell, key) || cell[key] === false) {
+        if (
+          !Object.prototype.hasOwnProperty.call(cell, key) ||
+          cell[key] === false
+        ) {
           // Determine mode.
 
           // Responsive level?
@@ -267,13 +272,16 @@
 
           placeholder = cell[k];
 
-          while (placeholder && placeholder.nodeName == '#text') placeholder = placeholder[k];
+          while (placeholder && placeholder.nodeName == '#text')
+            placeholder = placeholder[k];
 
           // Couldn't find anything? Means this cell's already at the front, so bail.
           if (!placeholder) return;
 
           // Move cell to front.
-          console.log('[skel-layout] important: moving to front of row (' + i + ')');
+          console.log(
+            '[skel-layout] important: moving to front of row (' + i + ')'
+          );
 
           parent.insertBefore(cell, parent.firstChild);
 
@@ -281,7 +289,7 @@
           cell[key] = {
             placeholder: placeholder,
             mode: mode,
-            level: l,
+            level: l
           };
         }
 
@@ -321,7 +329,8 @@
       _.iterate(_.obj.breakpoints, function (id) {
         c[id] = {};
 
-        if (id in __.config.breakpoints) _.extend(c[id], __.config.breakpoints[id]);
+        if (id in __.config.breakpoints)
+          _.extend(c[id], __.config.breakpoints[id]);
       });
 
       __.config.breakpoints = c;
@@ -342,7 +351,7 @@
 
             // Size of column gutters (N, 'Npx', 'Nem', etc).
             // Use [column, row] to set both column and row gutters.
-            gutters: 40,
+            gutters: 40
           };
 
         // Assign responsive levels.
@@ -382,7 +391,8 @@
       }
 
       // Box model.
-      if (__.config.boxModel) s += __.css.bm.split('&').join(__.config.boxModel);
+      if (__.config.boxModel)
+        s += __.css.bm.split('&').join(__.config.boxModel);
 
       // Grid.
       if (__.config.grid)
@@ -398,7 +408,10 @@
       if (s != '') _.attach(_.newAttachment('sB', _.newStyle(s), 2, true));
 
       // STYLESHEET: Base.
-      if (__.config.href) _.attach(_.newAttachment('ss', __.newStyleSheet(__.config.href), 3, true));
+      if (__.config.href)
+        _.attach(
+          _.newAttachment('ss', __.newStyleSheet(__.config.href), 3, true)
+        );
 
       return _;
     },
@@ -467,13 +480,17 @@
       config = _.generateStateConfig(
         {
           containers: __.config.containers,
-          grid: __.config.grid,
+          grid: __.config.grid
         },
         __.config.breakpoints
       );
 
       // Expand gutters if it's not already an array.
-      if (__.config.grid && 'gutters' in config.grid && !_.isArray(config.grid.gutters))
+      if (
+        __.config.grid &&
+        'gutters' in config.grid &&
+        !_.isArray(config.grid.gutters)
+      )
         config.grid.gutters = [config.grid.gutters, 0];
 
       // STYLE: Containers.
@@ -502,7 +519,10 @@
                 C * 1 +
                 Cu +
                 (CLocked
-                  ? '!important;' + 'max-width:none!important;' + 'min-width:0!important' + '}'
+                  ? '!important;' +
+                    'max-width:none!important;' +
+                    'min-width:0!important' +
+                    '}'
                   : '}' +
                     '.container.\\31 25\\25{width:100%;max-width:' +
                     C * 1.25 +
@@ -718,7 +738,8 @@
             // Generate CSS.
             s1 = '';
 
-            for (i = 2; i <= config.grid.level; i++) s1 += __.css.gc('\\28 ' + __.gridLevelMap.k[i] + '\\29');
+            for (i = 2; i <= config.grid.level; i++)
+              s1 += __.css.gc('\\28 ' + __.gridLevelMap.k[i] + '\\29');
 
             // Build attachment.
             x = _.newAttachment(id, _.newStyle(s1), 4);
@@ -745,7 +766,11 @@
             (s1.length > 0 ? s1.join(',') + '{display:none!important}' : '') +
             (s2.length > 0 ? s2.join(',') + '{display:none!important}' : '');
 
-          x = _.newAttachment(id, _.newStyle(s.replace(/\.([0-9])/, '.\\3$1 ')), 5);
+          x = _.newAttachment(
+            id,
+            _.newStyle(s.replace(/\.([0-9])/, '.\\3$1 ')),
+            5
+          );
         }
 
         attachments.push(x);
@@ -759,7 +784,12 @@
         if (a[k] in __.config.breakpoints && __.config.breakpoints[a[k]].href) {
           id = 'ss-' + a[k] + '-' + _.stateId;
 
-          if (!(x = _.attachment(id))) x = _.newAttachment(id, __.newStyleSheet(__.config.breakpoints[a[k]].href), i++);
+          if (!(x = _.attachment(id)))
+            x = _.newAttachment(
+              id,
+              __.newStyleSheet(__.config.breakpoints[a[k]].href),
+              i++
+            );
 
           attachments.push(x);
         }
@@ -769,7 +799,7 @@
       __.stateConfigs[_.stateId] = config;
 
       return attachments;
-    },
+    }
   };
   _.layout = __.init;
 })(skel);

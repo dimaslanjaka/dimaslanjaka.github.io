@@ -12,17 +12,22 @@
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.async = true;
-        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%- config.adsense.pub %>';
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%- config.adsense.pub %>';
         script.setAttribute('crossorigin', 'anonymous');
         script.onload = function () {
           var adsbygoogle = window.adsbygoogle || [];
-          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach((ins) => {
-            var adsid = ins.getAttribute('data-ad-slot'); //nullable
-            if (adsid) {
-              adsbygoogle.push({ google_ad_client: '<%- config.adsense.pub %>' });
-              console.log('[adsense][ins]', adsid);
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({
+                  google_ad_client: '<%- config.adsense.pub %>'
+                });
+                console.log('[adsense][ins]', adsid);
+              }
             }
-          });
+          );
         };
         var target = document.getElementsByTagName('script')[0];
         target.parentNode.insertBefore(script, target);

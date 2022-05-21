@@ -30,7 +30,7 @@ function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (()
 }
 
 gulp.task('generate:minify-html', (done?: TaskCallback) => {
-  MinifyHTML(
+  return MinifyHTML(
     {
       minifyCSS: true,
       minifyJS: true,
@@ -38,7 +38,7 @@ gulp.task('generate:minify-html', (done?: TaskCallback) => {
       removeComments: true,
       removeEmptyAttributes: true,
       ignoreCustomComments: [/^!/, /^\s*#/],
-      caseSensitive: true,
+      caseSensitive: true
     },
     done
   );

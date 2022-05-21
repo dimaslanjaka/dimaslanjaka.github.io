@@ -32,7 +32,7 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
       const parentChunks = treeChunks.chunk;
 
       for (let current_page = 0; current_page < parentChunks.length; current_page++) {
-        // specific page number otherwise skip
+        // @todo check specific page number is set, otherwise skip
         if (typeof pagenum == 'number' && current_page !== pagenum) continue;
         const innerChunks = array_wrap(parentChunks[current_page]);
         const data = postChunksIterator(innerChunks, {

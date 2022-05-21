@@ -24,14 +24,14 @@ export default async function generateCategories(labelname?: string, pagenum?: n
       const treeChunks = post_chunks(cat_posts[catname]);
       const parentChunks = treeChunks.chunk;
       for (let current_page = 0; current_page < parentChunks.length; current_page++) {
-        // specific page number otherwise skip
+        // @todo check specific page number is set, otherwise skip
         if (typeof pagenum == 'number' && current_page !== pagenum) continue;
         const innerChunks = array_wrap(parentChunks[current_page]);
         const data = postChunksIterator(innerChunks, {
           current_page: current_page,
           base: join(config.category_dir, catname),
           parentChunks,
-          treeChunks,
+          treeChunks
         });
         const saveTo = join(cwd(), config.public_dir, data.perm_current, 'index.html');
         const pagemeta: postMap = {
@@ -43,14 +43,14 @@ export default async function generateCategories(labelname?: string, pagenum?: n
             cover: thumbnail(data.posts[0]),
             category: [],
             tags: [],
-            type: 'archive',
+            type: 'archive'
           },
           body: '',
           content: '',
           fileTree: {
             source: null,
-            public: null,
-          },
+            public: null
+          }
         };
         if (current_page > 0) {
           pagemeta.metadata.title = 'Category: ' + catname + ' Page ' + current_page;
@@ -63,6 +63,7 @@ export default async function generateCategories(labelname?: string, pagenum?: n
         if (config.verbose) {
           write(tmp('generateCategories', data.perm_current + '.log'), simplifyDump(pagedata));
         }
+        if (labelname) return rendered;
       }
     }
   }

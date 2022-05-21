@@ -20,6 +20,7 @@ import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate-archives';
+import generateCategories from '../tasks/generate-categories';
 import { renderer } from '../tasks/generate-posts';
 import generateTags from '../tasks/generate-tags';
 import './gen-middleware';
@@ -120,7 +121,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         console.log(`${color['Violet Red']('[generate][label]')} ${labelname} ${pagenum || 'null'}`);
 
         if (labelname && typeof labelname == 'string') {
-          const result = await generateTags(labelname, pagenum);
+          const result = (await generateTags(labelname, pagenum)) || (await generateCategories(labelname, pagenum));
           writeFileSync(generatedTo, result);
           if (result) {
             return res.end(showPreview(result));
@@ -130,6 +131,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     }
     return next();
   },
+  // post route
   async function (req, res, next) {
     const isHomepage = req.url === '/';
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname

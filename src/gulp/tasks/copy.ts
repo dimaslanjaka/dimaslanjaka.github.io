@@ -31,7 +31,7 @@ export const copyPosts = (_any: any, cpath?: string) => {
         if (!path.includes(cpath)) return next(null, file);
       }
       const log = [logname, String(path)];
-      const parse = parsePost(String(path)); //parsePost(String(file.contents), String(path));
+      const parse = parsePost(String(path), String(file.contents));
 
       //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
       const build = buildPost(parse);

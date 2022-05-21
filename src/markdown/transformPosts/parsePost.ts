@@ -17,8 +17,8 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @param path
  * @returns
  */
-const parsePost = (path: string) => {
-  let parse = moduleParsePost(String(path), {
+const parsePost = (path: string, content?: string) => {
+  let parse = moduleParsePost(content || path, {
     shortcodes: {
       youtube: true,
       css: true,

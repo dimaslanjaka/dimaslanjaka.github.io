@@ -94,3 +94,36 @@ export function array_rand(arrays: any[], unique: any) {
     value: arrays[index]
   };
 }
+
+/**
+ * PHP shuffle array equivalent
+ * @param array
+ * @example
+ * var arr = [2, 11, 37, 42];
+ * shuffle(arr);
+ * console.log(arr); //return random
+ */
+export function shuffle(array: Array<any>) {
+  let currentIndex = array.length,
+    temporaryValue: any,
+    randomIndex: number;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+/**
+ * @see {@link shuffle}
+ */
+export const array_shuffle = shuffle;

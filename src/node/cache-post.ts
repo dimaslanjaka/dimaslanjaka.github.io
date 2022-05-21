@@ -2,8 +2,10 @@ import modifyPost from '../markdown/transformPosts/modifyPost';
 import { postMap } from '../markdown/transformPosts/parsePost';
 import { mergedPostMap } from '../markdown/transformPosts/postMapper';
 import config from '../types/_config';
+import { removeEmpties } from './array-utils';
 import CacheFile, { defaultResovableValue } from './cache';
 import memoizer from './memoize-fs';
+import { isMatch } from './string-utils';
 
 export type postResult = Partial<mergedPostMap>;
 const postCache = new CacheFile('posts');
@@ -16,7 +18,7 @@ const postCache = new CacheFile('posts');
 function fixPost(post: Partial<postMap>) {
   if (typeof post.metadata.url == 'string') {
     const url = new URL(post.metadata.url);
-    if (url.pathname.isMatch(/.md$/)) {
+    if (isMatch(url.pathname, /.md$/)) {
       url.pathname = url.pathname.replace(/.md$/, '.html');
     }
     post.metadata.url = String(url);
@@ -65,8 +67,7 @@ function order_by<T extends Partial<postMap>>(array: T[], by: 'updated' | 'date'
  */
 export function getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
   const posts: Partial<postMap>[] = getAllPosts({ max: max, resolveValue: true });
-  return order_by(posts, by)
-    .removeEmpties()
+  return removeEmpties(order_by(posts, by))
     .splice(0, max)
     .map((post) => fixPost(post))
     .map((post) => {
@@ -111,8 +112,7 @@ export function getRandomPosts(max = 5, identifier = 'default') {
   defaultResovableValue.max = max;
   const get: () => postResult[] = (() => {
     const fetchAll = () => {
-      return getAllPosts(opt)
-        .removeEmpties()
+      return removeEmpties(getAllPosts(opt))
         .splice(0, max)
         .map((post) => fixPost(post))
         .map((post) => {

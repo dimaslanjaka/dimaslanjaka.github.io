@@ -3,6 +3,7 @@ import { rm } from 'fs';
 import { TypedEmitter } from 'tiny-typed-emitter';
 import { toUnix } from 'upath';
 import { DynamicObject } from '../types';
+import { array_shuffle } from './array-utils';
 import './cache-serialize';
 import { cacheDir, existsSync, join, mkdirSync, read, resolve, write } from './filemanager';
 import logger from './logger';
@@ -191,9 +192,9 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
       logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
-      write(self.dbFile, JSON.stringifyWithCircularRefs(self.md5Cache));
+      write(self.dbFile, JSON.stringify(self.md5Cache));
     });
-    if (value) write(locationCache, JSON.stringifyWithCircularRefs(value));
+    if (value) write(locationCache, JSON.stringify(value));
     this.emit('update');
     return this;
   }
@@ -267,7 +268,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
         result.push(self.get(key));
       });
 
-      if (opt.randomize) return result.shuffle();
+      if (opt.randomize) return array_shuffle(result);
       if (opt.max) {
         result.length = opt.max;
         return result.splice(0, opt.max);

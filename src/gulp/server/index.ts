@@ -10,7 +10,7 @@ import { ServerMiddleWare } from './middleware';
 
 const cwd = memoizee(() => toUnix(process.cwd()));
 const browserSync = createServer();
-gulp.task('server', function () {
+export function localServer() {
   const bsi = browserSync.init({
     server: './' + config.public_dir,
     port: config.server.port,
@@ -50,5 +50,4 @@ gulp.task('server', function () {
   // watch public dir/.guid to reload browsersync
   //gulp.watch(join(config.public_dir, '.guid')).on('change', browserSync.reload);
   return Promise.resolve(bsi);
-});
-gulp.task('serve', gulp.series('server'));
+}

@@ -1,16 +1,24 @@
 import { initializeApp } from 'firebase/app';
-import gulp from 'gulp';
+import { existsSync, mkdirSync, readFileSync } from 'fs';
+import memoizee from 'memoizee';
 import { Ngrok } from 'ngrok';
-import { toUnix } from 'upath';
+import { join, resolve, toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
-import { cwd, existsSync, join, mkdirSync, read, readFileSync, resolve, write } from '../node/filemanager';
+import { read, write } from '../node/filemanager';
 import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
 
+/**
+ * Argument CLI reader
+ */
 const argv = yargs(process.argv.slice(2)).argv;
 
-export const root = join(__dirname, '../../');
+/**
+ * process cwd unix style
+ */
+export const root = toUnix(process.cwd());
+export const cwd = memoizee(() => root);
 const file = join(root, '_config.yml');
 const readConfig = readFileSync(file, 'utf-8');
 /** default project config */
@@ -109,14 +117,6 @@ export const theme_config = Object.assign(
 export type ThemeOpt = typeof theme_config & {
   [key: string]: any;
 };
-
-gulp.task('log:config', async () => {
-  const f = await write(tmp('config.json'), {
-    project: config,
-    theme: theme_config
-  });
-  return console.log('[log]', 'config', f);
-});
 
 /** WRITE AUTO GENERATED CONFIGS */
 

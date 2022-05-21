@@ -9,6 +9,11 @@ import config, { post_generated_dir, root } from '../../../types/_config';
 const deployDir = resolve(join(root, '.deploy_git'));
 if (!existsSync(deployDir)) mkdirSync(deployDir);
 const generatedDir = post_generated_dir;
+/**
+ * git command
+ * @param args
+ * @returns
+ */
 function git(...args: string[]) {
   return new Promise(
     (
@@ -17,7 +22,7 @@ function git(...args: string[]) {
     ) => {
       const summon = spawn('git', args, {
         cwd: deployDir,
-        stdio: 'inherit',
+        stdio: 'inherit'
       });
       summon.on('close', function (code) {
         // Should probably be 'exit', not 'close'
@@ -38,7 +43,12 @@ const copyGenerated = () => {
   return gulp.src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };
 
-gulp.task('deploy-git', async (done?: TaskCallback) => {
+/**
+ * GitHub Deployer
+ * @param done
+ * @returns
+ */
+export const deployerGit = async (done?: TaskCallback) => {
   let init = false;
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   if (!existsSync(join(deployDir, '.git'))) {
@@ -82,4 +92,4 @@ gulp.task('deploy-git', async (done?: TaskCallback) => {
     console.log(logname, 'deploy merged with origin successful');
     done();
   });
-});
+};

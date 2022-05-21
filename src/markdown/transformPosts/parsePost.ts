@@ -1,4 +1,4 @@
-import { parsePost as moduleParsePost } from 'hexo-post-parser/src';
+import { parsePost as moduleParsePost } from 'hexo-post-parser';
 import { toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import CacheFile from '../../node/cache';

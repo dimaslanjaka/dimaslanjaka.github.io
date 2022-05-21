@@ -1,5 +1,4 @@
-import gulp from 'gulp';
-import { buildPost } from 'hexo-post-parser/src';
+import { buildPost } from 'hexo-post-parser';
 import parsePost from '../../../markdown/transformPosts/parsePost';
 import { existsSync, globSrc, join, write } from '../../../node/filemanager';
 import jdom from '../../../node/jsdom';
@@ -47,5 +46,3 @@ export function gulpInlineStyle() {
     })
     .thenReturn();
 }
-
-gulp.task('copy:remove-inline-style', gulpInlineStyle);

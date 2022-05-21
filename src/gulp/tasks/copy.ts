@@ -13,9 +13,8 @@ import { parsePost } from '../../markdown/transformPosts/parsePost';
 import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import { determineDirname } from '../utils';
 import './copy/assets';
-import './copy/remove-inline-style';
 
-const logname = chalk.cyan('[copy][md]');
+const logname = chalk.cyan('[copy][post]');
 
 /**
  * copy posts from `src-posts` to config.source_dir {@link config.source_dir}
@@ -45,8 +44,3 @@ export const copyPosts = (_any: any, cpath?: string) => {
   );
   return determineDirname(run).pipe(gulp.dest(post_public_dir));
 };
-
-gulp.task('copy:posts', copyPosts);
-
-gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));
-gulp.task('copy:blogger', gulp.series('copy', 'copy:remove-inline-style'));

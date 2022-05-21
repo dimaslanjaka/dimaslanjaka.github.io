@@ -20,7 +20,8 @@
     "dev": "nodemon",
     "build": "run-s build:**",
     "build:src": "rimraf build/* && tsc -p tsconfig.build.json",
-    "build:hexo-post-parser": "cd packages/hexo-post-parser && npm run build",
+    "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn build",
+    "build:safelinkify": "cd packages/safelink && yarn build",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
@@ -33,7 +34,8 @@
     "page:install2": "cd docs/page && npm install --production && rm -rf .git .gitignore",
     "format": "run-p format:**",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
-    "format:themes-layouts": "prettier --parser html -w ./themes/**/*.ejs"
+    "format:themes-layouts": "prettier --parser html -w ./themes/**/*.ejs",
+    "ci": "yarn install --immutable --immutable-cache --check-cache --frozen-lockfile --check-files"
   },
   "repository": {
     "type": "git",
@@ -64,7 +66,7 @@
     "deepmerge-ts": "^4.0.3",
     "ejs": "^3.1.7",
     "fast-xml-parser": "^4.0.7",
-    "feed": "git+https://github.com/jpmonette/feed.git",
+    "feed": "^4.2.2",
     "find-cache-dir": "^3.3.2",
     "firebase": "^9.6.11",
     "folder-hash": "^4.0.2",

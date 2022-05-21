@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import * as ejs from 'ejs';
-import { postMap } from 'hexo-post-parser/src/parsePost';
+import { postMap } from 'hexo-post-parser';
 import { join } from '../node/filemanager';
 import { DynamicObject } from '../types';
 import config, { ThemeOpt, theme_dir } from '../types/_config';

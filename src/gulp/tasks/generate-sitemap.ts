@@ -1,17 +1,17 @@
-import Sitemap from '../../node/cache-sitemap';
-import GoogleNewsSitemap, { ClassItemType } from 'google-news-sitemap/src';
 import Bluebird from 'bluebird';
-import { cwd, join, write } from '../../node/filemanager';
-import config, { root } from '../../types/_config';
-import gulp from 'gulp';
-import { TaskCallback } from 'undertaker';
 import chalk from 'chalk';
+import GoogleNewsSitemap, { ClassItemType } from 'google-news-sitemap';
+import gulp from 'gulp';
 import 'js-prototypes';
 import moment from 'moment';
-import { renderer } from './generate-posts';
-import './sitemap';
+import { TaskCallback } from 'undertaker';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { postMap } from '../../markdown/transformPosts/parsePost';
+import Sitemap from '../../node/cache-sitemap';
+import { cwd, join, write } from '../../node/filemanager';
+import config, { root } from '../../types/_config';
+import { renderer } from './generate-posts';
+import './sitemap';
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();
@@ -32,7 +32,7 @@ async function generateGoogleNewsSitemap(done: TaskCallback) {
         publication_language: item.lang || 'en',
         publication_date: item.date.toString(),
         title: item.title,
-        location: fixURLSitemap(item.url).toString(),
+        location: fixURLSitemap(item.url).toString()
       };
       return map.add(val);
     });
@@ -90,14 +90,14 @@ function generateSitemapHtml(done?: TaskCallback) {
           category: [],
           tags: [],
           url: url.toString(),
-          type: 'page',
+          type: 'page'
         },
         body: content,
         content: content,
         fileTree: {
           source: join(cwd(), '.guid'),
-          public: join(cwd(), '.guid'),
-        },
+          public: join(cwd(), '.guid')
+        }
       };
       const modify = modifyPost(opt);
       if (modify.sitedata) delete modify.sitedata;

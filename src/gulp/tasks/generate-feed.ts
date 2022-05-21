@@ -31,13 +31,13 @@ function generateFeeds() {
       generator: 'static blog generator', // optional, default = 'Feed for Node.js'
       feedLinks: {
         json: urlfor('/feed.json'),
-        atom: urlfor('/atom.xml'),
+        atom: urlfor('/atom.xml')
       },
       author: {
         name: author_name(config),
         email: author_email(config),
-        link: author_link(config),
-      },
+        link: author_link(config)
+      }
     });
 
     getLatestPosts('date', getAllPosts().length).forEach((post) => {
@@ -50,7 +50,7 @@ function generateFeeds() {
           author: [author_object(post.metadata)],
           date: moment(post.metadata.date.toString()).toDate(),
           image: thumbnail(post.metadata),
-          content: excerpt(post.metadata),
+          content: excerpt(post.metadata)
         };
         if (config.feed.content) {
           obj.content = post.content;
@@ -80,7 +80,7 @@ function generateFeeds() {
         const is = {
           atom: feedtype == 'atom',
           rss: feedtype == 'rss2' || feedtype == 'rss',
-          json: feedtype == 'json',
+          json: feedtype == 'json'
         };
         try {
           if (is.json) {

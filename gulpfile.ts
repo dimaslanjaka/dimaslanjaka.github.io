@@ -1,1 +1,1 @@
-import './src/generator';
+import './src';

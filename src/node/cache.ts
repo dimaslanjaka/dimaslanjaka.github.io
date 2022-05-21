@@ -176,8 +176,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
           }
         }
       }
-      const stack = e.stack.toString().split(/\r\n|\n/);
-      console.log('cache key empty', stack[1]);
+      const stack = String(e.stack).split(/\r\n|\n/);
+      console.log('cache key empty', stack);
       return;
     }
     const self = this;

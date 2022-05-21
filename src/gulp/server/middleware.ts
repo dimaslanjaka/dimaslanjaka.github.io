@@ -104,18 +104,20 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
     // process tag and category
     const pathname: string = req['_parsedUrl'].pathname;
+    const filterPathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
+    const split = removeEmpties(filterPathname.split('/')).map((str) => str.trim());
+    const labelname = split[1];
+    const pagenum = split.length > 3 ? parseInt(split[3]) : null;
+
     for (let i = 0; i < routedata.tag.length; i++) {
-      const path = routedata.tag[i];
+      const path = routedata.tag[i] || routedata.category[i];
 
       if (pathname.includes(path)) {
         //console.log(path, pathname);
-        const filterPathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
-        const split = removeEmpties(filterPathname.split('/'));
-        const labelname = split[1];
-        const pagenum = split.length > 2 ? parseInt(split[2]) : null;
         const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(filterPathname), 'index.html');
         //console.log('[generate][label]', replace_pathname, labelname, generatedTo);
-        console.log(`${color['Violet Red']('[generate][label]')} ${labelname}`);
+        console.log(`${color['Violet Red']('[generate][label]')} ${labelname} ${pagenum || 'null'}`);
+
         if (labelname && typeof labelname == 'string') {
           const result = await generateTags(labelname, pagenum);
           writeFileSync(generatedTo, result);

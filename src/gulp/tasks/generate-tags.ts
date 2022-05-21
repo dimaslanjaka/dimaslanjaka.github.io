@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import 'js-prototypes';
+import { Nullable } from 'safelinkify/dist/resolveQueryUrl';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
@@ -19,7 +20,7 @@ const cacheTags = new CacheFile('postTags');
  * @param labelname specific tag name
  * @param pagenum specific page number
  */
-export default async function generateTags(labelname?: string | null, pagenum?: number) {
+export default async function generateTags(labelname?: string | null, pagenum?: number): Promise<Nullable<string>> {
   const tag_posts: { [key: string]: postMap[] } = cacheTags.getAll();
   for (const tagname in tag_posts) {
     if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
@@ -76,6 +77,7 @@ export default async function generateTags(labelname?: string | null, pagenum?: 
       }
     }
   }
+  return null;
 }
 
 gulp.task('generate:tags', () => generateTags());

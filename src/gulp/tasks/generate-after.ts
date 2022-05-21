@@ -1,20 +1,19 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { join } from 'path';
-import config, { root } from '../../types/_config';
 import chalk from 'chalk';
 import gulp from 'gulp';
-import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import 'js-prototypes';
+import { join } from 'path';
+import safelinkify from 'safelinkify';
 import { TaskCallback } from 'undertaker';
+import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
-//import safelinkify from '../../../packages/safelink/src/index';
-import safelinkify from 'safelinkify/src/index';
+import config, { root } from '../../types/_config';
 
 const safelink = new safelinkify.safelink({
   redirect: [config.external_link.safelink.redirect],
   password: config.external_link.safelink.password,
-  type: config.external_link.safelink.type,
+  type: config.external_link.safelink.type
 });
 
 /**
@@ -39,7 +38,7 @@ const internal_links = [
   'www.webmanajemen.com',
   'https://github.com/dimaslanjaka',
   '/dimaslanjaka1',
-  'dimaslanjaka.github.io',
+  'dimaslanjaka.github.io'
 ].uniqueStringArray();
 
 /**
@@ -56,7 +55,7 @@ export function filter_external_links(href: string, debug = false) {
     /**
      * original link or safelink
      */
-    href: href,
+    href: href
   };
   if (href && href.length > 2) {
     // fix dynamic protocol urls

@@ -3,6 +3,7 @@ import chalk from 'chalk';
 import { parse as parseHTML } from 'node-html-parser';
 import yargs from 'yargs';
 import { isValidHttpUrl } from '../../gulp/utils';
+import { array_move } from '../../node/array-utils';
 import CacheFile from '../../node/cache';
 import scheduler from '../../node/scheduler';
 import { countWords } from '../../node/string-utils';
@@ -157,7 +158,7 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   if (parse.metadata.category.includes('Programming')) {
     parse.metadata.category.forEach((str, i) => {
       if (str.toLowerCase().trim() === 'programming') {
-        parse.metadata.category = parse.metadata.category.move(i, 0);
+        parse.metadata.category = array_move(parse.metadata.category, i, 0);
       }
     });
   }

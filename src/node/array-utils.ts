@@ -127,3 +127,17 @@ export function shuffle(array: Array<any>) {
  * @see {@link shuffle}
  */
 export const array_shuffle = shuffle;
+
+/**
+ * Move item to another index
+ * @see {@link https://stackoverflow.com/a/70618791/6404439}
+ * @param arr
+ * @param from
+ * @param to
+ * @returns
+ */
+export const array_move = function <T extends any[]>(arr: T, from: number, to: number) {
+  const itemRemoved = this.splice(from, 1); // splice() returns the remove element as an array
+  this.splice(to, 0, itemRemoved[0]); // Insert itemRemoved into the target index
+  return this;
+};

@@ -34,6 +34,7 @@ let routedata = {
   category: [] as string[],
   tag: [] as string[]
 };
+let labelSrc: string[] = [];
 const dom = new jdom();
 function showPreview(str: string | Buffer) {
   const previewfile = join(__dirname, 'public/preview.html');
@@ -102,33 +103,37 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   // category and tag route
   async function (req, res, next) {
     // @todo generate route tag and category
+    // setup variable tag and category
     const routeFile = join(__dirname, 'routes.json');
     routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
-    // process tag and category
+    labelSrc = array_unique(routedata.category.concat(routedata.tag));
     const pathname: string = req['_parsedUrl'].pathname;
     const filterPathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
     const split = removeEmpties(filterPathname.split('/')).map((str) => str.trim());
     const labelname = split[1];
     const pagenum = split.length > 3 ? parseInt(split[3]) : null;
 
-    for (let i = 0; i < routedata.tag.length; i++) {
-      const path = routedata.tag[i] || routedata.category[i];
+    // process tag and category
+    if (split.includes(config.tag_dir) || split.includes(config.category_dir))
+      for (let i = 0; i < labelSrc.length; i++) {
+        const path = labelSrc[i];
+        //console.log(pathname.includes(path), pathname, path);
 
-      if (pathname.includes(path)) {
-        //console.log(path, pathname);
-        const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(filterPathname), 'index.html');
-        //console.log('[generate][label]', replace_pathname, labelname, generatedTo);
-        console.log(`${color['Violet Red']('[generate][label]')} ${labelname} ${pagenum || 'null'}`);
+        if (pathname.includes(path)) {
+          //console.log(path, pathname);
+          const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(filterPathname), 'index.html');
+          //console.log('[generate][label]', replace_pathname, labelname, generatedTo);
+          console.log(`${color['Violet Red']('[generate][label]')} ${labelname} ${pagenum || 'null'}`);
 
-        if (labelname && typeof labelname == 'string') {
-          const result = (await generateTags(labelname, pagenum)) || (await generateCategories(labelname, pagenum));
-          writeFileSync(generatedTo, result);
-          if (result) {
-            return res.end(showPreview(result));
+          if (labelname && typeof labelname == 'string') {
+            const result = (await generateTags(labelname, pagenum)) || (await generateCategories(labelname, pagenum));
+            writeFileSync(generatedTo, result);
+            if (result) {
+              return res.end(showPreview(result));
+            }
           }
         }
       }
-    }
     return next();
   },
   // post route
@@ -140,7 +145,6 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     if (isHomepage) return next();
 
     // @todo skip labels (tag and category)
-    const labelSrc: string[] = routedata.category.concat(routedata.tag);
     if (labelSrc.includes(pathname)) return next();
 
     if (isMatch(pathname, new RegExp('^/' + config.category_dir + '/'))) return next();

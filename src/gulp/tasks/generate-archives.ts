@@ -10,7 +10,6 @@ import './generate-categories';
 import { renderer } from './generate-posts';
 import './generate-tags';
 
-
 /**
  * generate index
  * * customized generation by param {@link labelname}
@@ -119,4 +118,5 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
 
 gulp.task('generate:index', () => generateIndex());
 gulp.task('generate:label', gulp.series('generate:tags', 'generate:categories'));
+gulp.task('generate:labels', gulp.series('generate:label'));
 gulp.task('generate:archive', gulp.series('generate:index', 'generate:label'));

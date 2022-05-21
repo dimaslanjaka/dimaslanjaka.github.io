@@ -6,10 +6,14 @@
  * @see {@link https://www.typescriptlang.org/play?downlevelIteration=true&target=3&jsx=0&module=1#code/MYewdgzgLgBAhgJwXAnjAvDA2gRgDQwBMBAzAQK5gAmApgGYCWYNVBADAWOQDbcEBE-AVSr8AugG4AsAChQkENxoA6YEsQAKAJTS54CIpXcQAcw38A1jRoAHeLwBc-HbPkGly42YQ0AtiAA3GgBRXxsoBhoIDURkFAIsLl52AXEtFz0FDy9zK1sYAC8aBBAYDTYtJwy3Q09TDR9-INDwyOjY1AS2MXTdGuz6y2s7JO4qvv1anMbAkLCIqJikTuxRnurJgbMh-L9wtGgEJhNx102jepnm+baluITBdYmsi+2qcFg8uzgwFCgAC2Op0y7leDT8sxaC3ayxQvVksgA9AAqZGyGDImBXGgwPbQmB0Eq+eCw9GYgACNkQcGJHRQZJglOpxK+MFZDCgfhgEHIwH+8Agqx4fBgHBgAHJxWIGeSfFByAhIDKaAAPGk2JRksmI2R0SjACLgLEQ66tKIAHgAKriVZzqIKfigsGIAHwadEkuIOGCWvAer7ejSjGAAHxgXF8ACNiqHuVAjmATFpnRhsNKZFoYABvD1KWDMADuAEFYam6cpGNxOQgNBoOX5M+gXTAoCgbDQQHQYPXiQBCdCYfiUWiMZiiDIwGBuT7DQWYL7KXxwGy1nuN5sAZXjxzrnN88Jkk4YXY0va+EGUTDU5Fo0X4o2cWg9k8LJbiqdfsIrDCrxVXe-Xbs9xgftMFGCcYERRF+jBcUoBwcVOBoYtYQg48yjPWdLzAa9b3MNhH2zZ9w2Qt9UA-Uiv0rat-wbDBmxzQ9J2Y9CNFbdtOyArkBxge9yCjYpnGNeVFS4vseLYXRmOYuUFTAFsEHIGgpOYgBfCDVI9KCYLqMw4MIRCSJQuI0JPTDbAvK9uBvRZBHSIimJfSj3zA5zUG-X8a13Oimwc6SjxPdiOy7HsMEHQ5jiE2TRJ7ZRt18bRPBoRMARgZtJOIydovk+MlJUyd1JUzSmOyoyyLQOBBUtXRiqAA}
  * @example
  */
-export function removeEmpties<T extends any[]>(array: T, keep: (null | number | string)[] = []) {
+export function removeEmpties<T extends any[]>(
+  array: T,
+  keep: (null | number | string)[] = []
+) {
   let newArray = array.filter((item) => typeof item !== 'undefined');
   const keeps = keep.map((item) => String(item));
-  if (!keeps.includes('null')) newArray = newArray.filter((item) => item !== null);
+  if (!keeps.includes('null'))
+    newArray = newArray.filter((item) => item !== null);
   //console.log('t1', newArray);
   if (!keeps.includes('0')) {
     newArray = newArray.filter((item) => {
@@ -60,7 +64,10 @@ export const uniqueStringArray = function (arr: Array<string>) {
  * arrayAddAll(b, a); // concat a to b
  * console.log(b); // ['a','b',0,1]
  */
-export const arrayAddAll = function <T extends any[]>(self: T, ...otherArrays: T[]) {
+export const arrayAddAll = function <T extends any[]>(
+  self: T,
+  ...otherArrays: T[]
+) {
   otherArrays.forEach(function (array) {
     array.forEach((item) => {
       self.push(item);
@@ -136,7 +143,11 @@ export const array_shuffle = shuffle;
  * @param to
  * @returns
  */
-export const array_move = function <T extends any[]>(arr: T, from: number, to: number) {
+export const array_move = function <T extends any[]>(
+  arr: T,
+  from: number,
+  to: number
+) {
   const itemRemoved = arr.splice(from, 1); // splice() returns the remove element as an array
   arr.splice(to, 0, itemRemoved[0]); // Insert itemRemoved into the target index
   return arr;
@@ -155,7 +166,10 @@ let ar1 = [
 // split array by 4
 console.log("Split in chunks with 4 size", splitChunks(ar1, 4)); // [[1,2,3,4], [5,6,7,8]...]
  */
-export function array_split_chunks<T extends any[]>(sourceArray: T, chunkSize: number): T[] {
+export function array_split_chunks<T extends any[]>(
+  sourceArray: T,
+  chunkSize: number
+): T[] {
   if (chunkSize <= 0) throw 'chunkSize must be greater than 0';
   const result = [];
   for (let i = 0; i < sourceArray.length; i += chunkSize) {

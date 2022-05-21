@@ -5,7 +5,8 @@ const trueLog = console.log;
 // write logs to file
 console.log = function (...msg: any[]) {
   const logfile = path.join(process.cwd(), '/tmp/log.log');
-  if (!fs.existsSync(path.dirname(logfile))) fs.mkdirSync(path.dirname(logfile), { recursive: true });
+  if (!fs.existsSync(path.dirname(logfile)))
+    fs.mkdirSync(path.dirname(logfile), { recursive: true });
   if (firstTime) {
     if (fs.existsSync(logfile)) fs.unlinkSync(logfile);
     firstTime = false;

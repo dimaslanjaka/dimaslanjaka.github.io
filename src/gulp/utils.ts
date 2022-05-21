@@ -29,7 +29,9 @@ export function replacePath(str: string, from: string, to: string) {
 export function determineDirname(pipe: NodeJS.ReadWriteStream) {
   return pipe.pipe(
     gulpRename((file) => {
-      const dname = dirname(replacePath(toUnix(file.fullpath), toUnix(post_source_dir), ''))
+      const dname = dirname(
+        replacePath(toUnix(file.fullpath), toUnix(post_source_dir), '')
+      )
         .replace(toUnix(process.cwd()), '')
         .replace('/src-posts/', '');
       file.dirname = dname;
@@ -116,7 +118,8 @@ export const isEmpty = (data: any) => {
   }
   if (typeof data === 'object') {
     if (Array.isArray(data) && data.length === 0) return true;
-    if (data.constructor === Object && Object.keys(data).length === 0) return true;
+    if (data.constructor === Object && Object.keys(data).length === 0)
+      return true;
   }
   return false;
 };

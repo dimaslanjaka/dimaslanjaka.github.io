@@ -12,7 +12,11 @@ import showdown from 'showdown';
 import { join, write } from '../node/filemanager';
 import slugify from '../node/slugify/index';
 
-export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
+export const converterOpt = {
+  strikethrough: true,
+  tables: true,
+  tablesHeaderId: true
+};
 
 /**
  * Transform markdown string to html string
@@ -47,7 +51,9 @@ md.use(MarkdownItSup)
     slugify: (s) => slugify(s)
   });
 md.renderer.rules.footnote_block_open = () =>
-  '<h4 class="mt-3">Footnotes</h4>\n' + '<section class="footnotes">\n' + '<ol class="footnotes-list">\n';
+  '<h4 class="mt-3">Footnotes</h4>\n' +
+  '<section class="footnotes">\n' +
+  '<ol class="footnotes-list">\n';
 
 /**
  * Render markdown to html using `markdown-it`, `markdown-it-attrs`, `markdown-it-anchors`, `markdown-it-sup`, `markdown-it-sub`, `markdown-it-mark`, `markdown-it-footnote`, `markdown-it-abbr`
@@ -78,7 +84,8 @@ export function renderBodyMarkdown(parse: Partial<postMap>, verbose = false) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
   let body: string = parse.body || parse.content;
-  if (typeof body != 'string') throw new Error('cannot render undefined markdown body');
+  if (typeof body != 'string')
+    throw new Error('cannot render undefined markdown body');
 
   // extract code block first
   const re_code_block = /```[\s\S]*?```/gm;

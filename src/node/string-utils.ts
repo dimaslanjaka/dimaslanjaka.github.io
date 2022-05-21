@@ -39,7 +39,8 @@ export const isMatch = strMatch;
  * @returns
  */
 export function cleanString(text: string, exception = '.,-_ ') {
-  if (typeof text == 'string') return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']', 'gm'), '');
+  if (typeof text == 'string')
+    return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']', 'gm'), '');
   return text;
 }
 
@@ -82,10 +83,16 @@ export interface String {
    * @param searchValue A string to search for.
    * @param replacer A function that returns the replacement text.
    */
-  replaceAll(searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string;
+  replaceAll(
+    searchValue: string | RegExp,
+    replacer: (substring: string, ...args: any[]) => string
+  ): string;
 }
 if (typeof ''.replaceAll != 'function') {
-  String.prototype.replaceAll = function (search: string | RegExp, replacement: any) {
+  String.prototype.replaceAll = function (
+    search: string | RegExp,
+    replacement: any
+  ) {
     const find = typeof search == 'string' ? new RegExp(search, 'g') : search;
     return this.replace(find, replacement);
   };

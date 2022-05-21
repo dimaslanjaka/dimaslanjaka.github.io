@@ -5,7 +5,15 @@ import { toUnix } from 'upath';
 import { DynamicObject } from '../types';
 import { array_shuffle } from './array-utils';
 import './cache-serialize';
-import { cacheDir, existsSync, join, mkdirSync, read, resolve, write } from './filemanager';
+import {
+  cacheDir,
+  existsSync,
+  join,
+  mkdirSync,
+  read,
+  resolve,
+  write
+} from './filemanager';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import memoizer from './memoize-fs';
@@ -90,7 +98,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       const stack = new Error().stack.split('at')[2];
       hash = md5(stack);
     }
-    if (!existsSync(CacheFile.options.folder)) mkdirSync(CacheFile.options.folder);
+    if (!existsSync(CacheFile.options.folder))
+      mkdirSync(CacheFile.options.folder);
     this.dbFile = join(CacheFile.options.folder, 'db-' + hash);
     if (!existsSync(this.dbFile)) write(this.dbFile, {});
     let db = read(this.dbFile, 'utf-8');
@@ -140,7 +149,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     // if key is long text
     if (key.length > 32) {
       // search uuid
-      const regex = /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
+      const regex =
+        /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
       const m = regex.exec(key);
       if (m && typeof m[1] == 'string') return m[1];
       // return first 32 byte text
@@ -153,7 +163,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * @param key
    * @returns
    */
-  locateKey = (key: string) => join(CacheFile.options.folder, this.currentHash, md5(this.resolveKey(key)));
+  locateKey = (key: string) =>
+    join(CacheFile.options.folder, this.currentHash, md5(this.resolveKey(key)));
   dump(key?: string) {
     if (key) {
       return {
@@ -191,7 +202,11 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
 
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
-      logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
+      logger.log(
+        chalk.magentaBright(self.currentHash),
+        'saved cache',
+        self.dbFile
+      );
       write(self.dbFile, JSON.stringify(self.md5Cache));
     });
     if (value) write(locationCache, JSON.stringify(value));
@@ -206,7 +221,9 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
   has(key: string): boolean {
     try {
       key = this.resolveKey(key);
-      return Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key];
+      return (
+        Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key]
+      );
     } catch (_) {
       return false;
     }

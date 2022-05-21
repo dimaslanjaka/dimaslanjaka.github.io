@@ -14,7 +14,10 @@ export default function uuidv4(fromString?: string) {
     const hash = md5(fromString);
     original = original
       .replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13))
-      .replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
+      .replace(
+        /xxx-xxxxxxxxxxxx$/,
+        hash.slice(14, 17) + '-' + hash.slice(18, 30)
+      );
   } else {
     const err = new Error();
     const caller_line = err.stack.split('\n')[2];
@@ -48,6 +51,7 @@ export const makeid = (n = 36, prefix = '') => {
   if (n > 1) return prefix + Math.random().toString(n).slice(2);
   let text = '';
   const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < n; i++) text += charset.charAt(Math.floor(Math.random() * charset.length));
+  for (let i = 0; i < n; i++)
+    text += charset.charAt(Math.floor(Math.random() * charset.length));
   return text;
 };

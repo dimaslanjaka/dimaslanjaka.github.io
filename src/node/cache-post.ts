@@ -32,7 +32,10 @@ function fixPost(post: Partial<postMap>) {
  * @param by
  * @returns
  */
-function order_by<T extends Partial<postMap>>(array: T[], by: 'updated' | 'date' | '-updated' | '-date' | string) {
+function order_by<T extends Partial<postMap>>(
+  array: T[],
+  by: 'updated' | 'date' | '-updated' | '-date' | string
+) {
   if (Array.isArray(array)) {
     return array
       .filter((post) => post && typeof post.metadata == 'object')
@@ -65,8 +68,14 @@ function order_by<T extends Partial<postMap>>(array: T[], by: 'updated' | 'date'
  * @param max max result
  * @returns array of {@link postResult}
  */
-export function getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
-  const posts: Partial<postMap>[] = getAllPosts({ max: max, resolveValue: true });
+export function getLatestPosts(
+  by: 'date' | 'updated' = 'updated',
+  max = 5
+): postResult[] {
+  const posts: Partial<postMap>[] = getAllPosts({
+    max: max,
+    resolveValue: true
+  });
   return removeEmpties(order_by(posts, by))
     .splice(0, max)
     .map((post) => fixPost(post))

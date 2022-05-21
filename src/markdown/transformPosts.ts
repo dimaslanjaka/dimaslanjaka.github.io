@@ -1,7 +1,12 @@
 import { postMap } from 'hexo-post-parser';
 import yaml from 'yaml';
 import color from '../node/color';
-import { dirname, existsSync, mkdirSync, writeFileSync } from '../node/filemanager';
+import {
+  dirname,
+  existsSync,
+  mkdirSync,
+  writeFileSync
+} from '../node/filemanager';
 export { parsePost } from 'hexo-post-parser';
 
 /**

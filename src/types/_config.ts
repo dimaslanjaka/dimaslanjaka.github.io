@@ -58,10 +58,12 @@ if (project_config_merge.adsense.enable) {
     if (existsSync(findpath)) return String(read(findpath));
   };
   if (project_config_merge.adsense.article_ads.length) {
-    project_config_merge.adsense.article_ads = project_config_merge.adsense.article_ads.map(findads);
+    project_config_merge.adsense.article_ads =
+      project_config_merge.adsense.article_ads.map(findads);
   }
   if (project_config_merge.adsense.multiplex_ads.length) {
-    project_config_merge.adsense.multiplex_ads = project_config_merge.adsense.multiplex_ads.map(findads);
+    project_config_merge.adsense.multiplex_ads =
+      project_config_merge.adsense.multiplex_ads.map(findads);
   }
 }
 
@@ -126,7 +128,9 @@ write(join(__dirname, '_config_theme.json'), JSON.stringify(theme_config));
 /** SETUP PRIVATE CONFIGS */
 const file_private_config = join(root, '_config.private.yml');
 if (existsSync(file_private_config)) {
-  const privateConfig: PrivateProjectConfig = yaml.parse(readFileSync(file_private_config, 'utf-8'));
+  const privateConfig: PrivateProjectConfig = yaml.parse(
+    readFileSync(file_private_config, 'utf-8')
+  );
   if (Object.hasOwnProperty.call(privateConfig, 'firebase')) {
     config.firebase = <any>privateConfig.firebase;
   }

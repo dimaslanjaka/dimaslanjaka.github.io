@@ -39,7 +39,16 @@ type helper_types = typeof tag &
   typeof internal_helpers &
   DynamicObject;
 
-const helpers: helper_types = Object.assign(author, date, locale, thumbnail, keywords, excerpt, tag, internal_helpers);
+const helpers: helper_types = Object.assign(
+  author,
+  date,
+  locale,
+  thumbnail,
+  keywords,
+  excerpt,
+  tag,
+  internal_helpers
+);
 
 interface EJSOption extends ejs.Options, DynamicObject {
   _?: typeof helpers;

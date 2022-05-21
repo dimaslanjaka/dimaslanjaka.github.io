@@ -15,7 +15,12 @@ const cookieJarFile = path.join(__dirname, '/../../build/cookiejar.txt');
 
 interface CurlOpt {
   method: 'GET' | 'POST' | 'HEAD' | 'PATCH' | 'OPTION';
-  callback: (status: number, data: string | Buffer, headers: Buffer | HeaderInfo[], curlInstance: Curl) => void;
+  callback: (
+    status: number,
+    data: string | Buffer,
+    headers: Buffer | HeaderInfo[],
+    curlInstance: Curl
+  ) => void;
 }
 
 class Translator {
@@ -33,17 +38,21 @@ class Translator {
     const parseUrl = new URL(url);
     const self = this;
     this.request(
-      `https://translate.google.com/gen204?proxye=website&client=webapp&sl=${this.sl}&tl=${
+      `https://translate.google.com/gen204?proxye=website&client=webapp&sl=${
+        this.sl
+      }&tl=${this.tl}&hl=en&u=${encodeURIComponent(url)}`
+    );
+
+    this.request(
+      `https://translate.google.com/translate?hl=en&sl=${this.sl}&tl=${
         this.tl
-      }&hl=en&u=${encodeURIComponent(url)}`
+      }&u=${encodeURIComponent(url)}&sandbox=1`
     );
 
     this.request(
-      `https://translate.google.com/translate?hl=en&sl=${this.sl}&tl=${this.tl}&u=${encodeURIComponent(url)}&sandbox=1`
-    );
-
-    this.request(
-      `https://translate.googleusercontent.com/translate_p?hl=en&sl=${this.sl}&tl=${this.tl}&u=${decodeURIComponent(
+      `https://translate.googleusercontent.com/translate_p?hl=en&sl=${
+        this.sl
+      }&tl=${this.tl}&u=${decodeURIComponent(
         url
       )}&depth=1&rurl=translate.google.com&sp=nmt4&pto=aue,ajax,boq&usg=ALkJrhgAAAAAYMQSbrcRl2o4a3kZsbz6V0Mz1jPOGzly`
     );
@@ -51,26 +60,28 @@ class Translator {
     this.request(
       `https://translate.google.com/website?depth=1&hl=en&pto=aue,ajax,boq&rurl=translate.google.com&sl=${
         this.sl
-      }&sp=nmt4&tl=${this.tl}&u=${decodeURIComponent(url)}&usg=ALkJrhgP3S6k0r9M1L0I0usu2YoSrco1KQ`
+      }&sp=nmt4&tl=${this.tl}&u=${decodeURIComponent(
+        url
+      )}&usg=ALkJrhgP3S6k0r9M1L0I0usu2YoSrco1KQ`
     );
 
     const parse = new URL(url);
     this.request(
-      `https://${parse.host.replace(/\./, '-')}.translate.goog${parseUrl.pathname}?_x_tr_sl=${this.sl}&_x_tr_tl=${
-        this.tl
-      }&_x_tr_hl=en&_x_tr_pto=ajax`
+      `https://${parse.host.replace(/\./, '-')}.translate.goog${
+        parseUrl.pathname
+      }?_x_tr_sl=${this.sl}&_x_tr_tl=${this.tl}&_x_tr_hl=en&_x_tr_pto=ajax`
     );
 
     this.request(
-      `https://translate.google.com/translate_un?sl=${this.sl}&tl=${this.tl}&u=${decodeURIComponent(
-        url
-      )}&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA`
+      `https://translate.google.com/translate_un?sl=${this.sl}&tl=${
+        this.tl
+      }&u=${decodeURIComponent(url)}&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA`
     );
 
     this.request(
-      `http://translate.google.com/translate?depth=1&nv=1&rurl=translate.google.com&sl=${this.sl}&sp=nmt4&tl=${
-        this.tl
-      }&u=${encodeURI(url)}`,
+      `http://translate.google.com/translate?depth=1&nv=1&rurl=translate.google.com&sl=${
+        this.sl
+      }&sp=nmt4&tl=${this.tl}&u=${encodeURI(url)}`,
       function (_statusCode, data, _headers, _curlInstance) {
         self.result = data;
         if (typeof callback == 'function') {
@@ -92,12 +103,15 @@ class Translator {
         dom = new JSDOM(data);
         const hyperlinks = dom.window.document.getElementsByTagName('a');
         if (hyperlinks.length > 0) {
-          self.request(hyperlinks.item(0).href, function (_status, data, _headers, _curlInstance) {
-            self.result = data;
-            if (typeof callback == 'function') {
-              callback(String(data));
+          self.request(
+            hyperlinks.item(0).href,
+            function (_status, data, _headers, _curlInstance) {
+              self.result = data;
+              if (typeof callback == 'function') {
+                callback(String(data));
+              }
             }
-          });
+          );
         }
       });
     }
@@ -108,7 +122,8 @@ class Translator {
   extractTranslated(html: string) {
     const dom = new JSDOM(html);
     // fix hyperlinks
-    const hyperlinks: HTMLCollectionOf<HTMLAnchorElement> = dom.window.document.getElementsByTagName('a');
+    const hyperlinks: HTMLCollectionOf<HTMLAnchorElement> =
+      dom.window.document.getElementsByTagName('a');
     for (let i = 0; i < hyperlinks.length; i++) {
       const hyperlink = hyperlinks.item(i);
       const href = new URL(hyperlink.href);
@@ -129,7 +144,9 @@ class Translator {
   private capture(parentHtml: string) {
     const dom = new JSDOM(parentHtml);
     const script = dom.window.document.createElement('script');
-    script.innerHTML = String(fs.readFileSync(path.join(__dirname, 'translate-capture.js')));
+    script.innerHTML = String(
+      fs.readFileSync(path.join(__dirname, 'translate-capture.js'))
+    );
     dom.window.document.body.appendChild(script);
     return dom.serialize();
   }

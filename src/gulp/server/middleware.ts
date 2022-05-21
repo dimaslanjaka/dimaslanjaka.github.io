@@ -38,12 +38,18 @@ let labelSrc: string[] = [];
 const dom = new jdom();
 function showPreview(str: string | Buffer) {
   const previewfile = join(__dirname, 'public/preview.html');
-  if (!preview) preview = existsSync(previewfile) ? readFileSync(previewfile, 'utf-8') : 'NO PREVIEW AVAILABLE';
+  if (!preview)
+    preview = existsSync(previewfile)
+      ? readFileSync(previewfile, 'utf-8')
+      : 'NO PREVIEW AVAILABLE';
   const doc = dom.parse(String(str));
   doc.body.innerHTML += preview;
   Array.from(doc.querySelectorAll('a')).forEach((a) => {
     let href = a.getAttribute('href');
-    if (typeof href == 'string' && isMatch(href, new RegExp('^https?://' + homepage.host))) {
+    if (
+      typeof href == 'string' &&
+      isMatch(href, new RegExp('^https?://' + homepage.host))
+    ) {
       href = href.replace(new RegExp('^https?://' + homepage.host + '/'), '/');
       return a.setAttribute('href', href);
     }
@@ -64,25 +70,31 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
       const tasks = ['generate:assets', 'generate:template', ...fn].filter(
         (s) => s && (typeof s === 'string' || typeof s === 'function')
       );
-      Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
-        // @todo [server] prevent call copy without any modifications
-        const chashes = `${src_posts}:${source}`;
-        if (chashes !== hashes) {
-          hashes = `${src_posts}:${source}`;
-          gulp.series(...tasks)(() => {
-            gulpIndicator = false;
-            if (
-              !existsSync(join(cwd(), config.public_dir, 'node_modules')) &&
-              existsSync(join(cwd(), config.public_dir, 'package.json'))
-            ) {
-              spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir), shell: true, stdio: 'inherit' });
-            }
+      Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread(
+        (src_posts, source) => {
+          // @todo [server] prevent call copy without any modifications
+          const chashes = `${src_posts}:${source}`;
+          if (chashes !== hashes) {
+            hashes = `${src_posts}:${source}`;
+            gulp.series(...tasks)(() => {
+              gulpIndicator = false;
+              if (
+                !existsSync(join(cwd(), config.public_dir, 'node_modules')) &&
+                existsSync(join(cwd(), config.public_dir, 'package.json'))
+              ) {
+                spawn('npm', ['install'], {
+                  cwd: join(cwd(), config.public_dir),
+                  shell: true,
+                  stdio: 'inherit'
+                });
+              }
 
-            // resolve
-            resolve();
-          });
+              // resolve
+              resolve();
+            });
+          }
         }
-      });
+      );
     }
   });
 };
@@ -105,11 +117,16 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     // @todo generate route tag and category
     // setup variable tag and category
     const routeFile = join(__dirname, 'routes.json');
-    routedata = deepmerge(routedata, JSON.parse(readFileSync(routeFile).toString()));
+    routedata = deepmerge(
+      routedata,
+      JSON.parse(readFileSync(routeFile).toString())
+    );
     labelSrc = array_unique(routedata.category.concat(routedata.tag));
     const pathname: string = req['_parsedUrl'].pathname;
     const filterPathname = pathname.replace(/\/+/, '/').replace(/^\//, '');
-    const split = removeEmpties(filterPathname.split('/')).map((str) => str.trim());
+    const split = removeEmpties(filterPathname.split('/')).map((str) =>
+      str.trim()
+    );
     const labelname = split[1];
     const pagenum = split.length > 3 ? parseInt(split[3]) : null;
 
@@ -121,12 +138,23 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
         if (pathname.includes(path)) {
           //console.log(path, pathname);
-          const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(filterPathname), 'index.html');
+          const generatedTo = join(
+            cwd(),
+            config.public_dir,
+            decodeURIComponent(filterPathname),
+            'index.html'
+          );
           //console.log('[generate][label]', replace_pathname, labelname, generatedTo);
-          console.log(`${color['Violet Red']('[generate][label]')} ${labelname} ${pagenum || 'null'}`);
+          console.log(
+            `${color['Violet Red']('[generate][label]')} ${labelname} ${
+              pagenum || 'null'
+            }`
+          );
 
           if (labelname && typeof labelname == 'string') {
-            const result = (await generateTags(labelname, pagenum)) || (await generateCategories(labelname, pagenum));
+            const result =
+              (await generateTags(labelname, pagenum)) ||
+              (await generateCategories(labelname, pagenum));
             writeFileSync(generatedTo, result);
             if (result) {
               return res.end(showPreview(result));
@@ -147,12 +175,15 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     // @todo skip labels (tag and category)
     if (labelSrc.includes(pathname)) return next();
 
-    if (isMatch(pathname, new RegExp('^/' + config.category_dir + '/'))) return next();
-    if (isMatch(pathname, new RegExp('^/' + config.tag_dir + '/'))) return next();
+    if (isMatch(pathname, new RegExp('^/' + config.category_dir + '/')))
+      return next();
+    if (isMatch(pathname, new RegExp('^/' + config.tag_dir + '/')))
+      return next();
     // skip api, admin
     if (isMatch(pathname, /^\/(api|admin)/)) return next();
     // skip assets
-    if (isMatch(pathname, /.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
+    if (isMatch(pathname, /.(css|js|png|svg|jpeg|webp|jpg|ico)$/))
+      return next();
 
     //write(tmp('middleware.log'), inspect(req));
     //console.log(req['_parsedUrl'].pathname, req['_parsedUrl'].search);
@@ -169,7 +200,9 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         return s.replace(/.html$/, '.md');
       });
       // push non-markdown source
-      sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname)));
+      sourceMD.push(
+        join(cwd(), config.source_dir, decodeURIComponent(pathname))
+      );
       // find from src-posts
       let findSrcPost = join(cwd(), 'src-posts', decodeURIComponent(pathname));
       if (findSrcPost.endsWith('/')) findSrcPost += 'index.md';
@@ -189,7 +222,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           const file = sourceMD[index];
           const dest = join(
             post_generated_dir,
-            replaceArr(toUnix(file), [cwd(), 'source/', '_posts/', 'src-posts/'], '')
+            replaceArr(
+              toUnix(file),
+              [cwd(), 'source/', '_posts/', 'src-posts/'],
+              ''
+            )
           ).replace(/.md$/, '.html');
 
           // start generating
@@ -210,7 +247,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 write(dest, rendered);
                 const previewed = showPreview(rendered);
 
-                console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
+                console.log(
+                  chalk.greenBright(`[${parsed.metadata.type}]`),
+                  'pre-processed',
+                  pathname,
+                  '->',
+                  file
+                );
                 res.end(previewed);
               });
             } else if (minimatch(file, '*.{html,txt,json}')) {
@@ -243,14 +286,26 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     handle: function (req, res, next) {
       // write source/.guid
       if (req.url.includes('generate'))
-        write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() => console.log('gulp generate start'));
+        write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() =>
+          console.log('gulp generate start')
+        );
       // write public_dir/.guid
       if (req.url.includes('copy'))
-        write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
+        write(join(cwd(), 'src-posts/.guid'), new Date()).then(() =>
+          console.log('gulp copy start')
+        );
       res.writeHead(200, {
         'Content-Type': 'text/plain'
       });
-      res.end(JSON.stringify(new Error('Something went wrong. And we are reporting a custom error message.'), null, 2));
+      res.end(
+        JSON.stringify(
+          new Error(
+            'Something went wrong. And we are reporting a custom error message.'
+          ),
+          null,
+          2
+        )
+      );
       next();
     }
   },

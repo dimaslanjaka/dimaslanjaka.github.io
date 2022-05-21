@@ -168,7 +168,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       ].map((s) => {
         return s.replace(/.html$/, '.md');
       });
-      sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
+      // push non-markdown source
+      sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname)));
+      // find from src-posts
+      let findSrcPost = join(cwd(), 'src-posts', decodeURIComponent(pathname));
+      if (findSrcPost.endsWith('/')) findSrcPost += 'index.md';
+      findSrcPost = findSrcPost.replace(/.html$/, '.md');
+      sourceMD.push(findSrcPost);
       sourceMD = array_unique(
         sourceMD
           .map((path) => {
@@ -177,20 +183,14 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           })
           .filter(existsSync)
       );
-      // find from src-posts
-      if (!sourceMD.length) {
-        let find = join(cwd(), 'src-posts', decodeURIComponent(pathname));
-        if (find.endsWith('/')) find += 'index.md';
-        find = find.replace(/.html$/, '.md');
-        console.log(find);
-      }
+
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];
-          const dest = join(post_generated_dir, replaceArr(toUnix(file), [cwd(), 'source/', '_posts/'], '')).replace(
-            /.md$/,
-            '.html'
-          );
+          const dest = join(
+            post_generated_dir,
+            replaceArr(toUnix(file), [cwd(), 'source/', '_posts/', 'src-posts/'], '')
+          ).replace(/.md$/, '.html');
 
           // start generating
           if (existsSync(file)) {

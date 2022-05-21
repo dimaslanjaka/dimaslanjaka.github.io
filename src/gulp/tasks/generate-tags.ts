@@ -9,9 +9,9 @@ import modifyPost from '../../parser/post/modifyPost';
 import { postMap } from '../../parser/post/parsePost';
 import postChunksIterator from '../../parser/post/postChunksIterator';
 import {
-    array_wrap,
-    post_chunks,
-    simplifyDump
+  array_wrap,
+  post_chunks,
+  simplifyDump
 } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import { renderer } from './generate-posts';

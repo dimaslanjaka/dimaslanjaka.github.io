@@ -6,8 +6,8 @@
 import chalk from 'chalk';
 import gulp from 'gulp';
 import through2 from 'through2';
-import { buildPost } from '../../parser/post';
 import { parsePost } from '../../parser/post/parsePost';
+import { buildPost } from '../../parser/transformPosts';
 import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import { determineDirname } from '../utils';
 import './copy/assets';

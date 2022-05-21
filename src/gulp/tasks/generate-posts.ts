@@ -30,9 +30,9 @@ import {
   write
 } from '../../node/filemanager';
 import logger from '../../node/logger';
+import { replaceArr } from '../../node/string-utils';
 import { DynamicObject } from '../../types';
 import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
-
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -137,7 +137,7 @@ export const renderArticle = function () {
           path: join(source_dir, file),
           /** Permalink path */
           permalink: removeMultiSlashes(
-            file.replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+            replaceArr(file, [cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
           ).replace(/.md$/, '.html'),
           /** Is Cached */
           cached: false

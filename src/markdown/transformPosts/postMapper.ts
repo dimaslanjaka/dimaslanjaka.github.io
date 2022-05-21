@@ -1,6 +1,7 @@
 import moment from 'moment';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
+import { array_split_chunks } from '../../node/array-utils';
 import { getAllPosts } from '../../node/cache-post';
 import config from '../../types/_config';
 import { postMap } from './parsePost';

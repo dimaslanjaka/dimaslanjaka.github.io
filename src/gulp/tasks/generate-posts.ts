@@ -10,37 +10,37 @@ import yargs from 'yargs';
 import ejs_object from '../../ejs';
 import CacheFile from '../../node/cache';
 import {
-    getAllPosts,
-    getLatestPosts,
-    getRandomPosts
+  getAllPosts,
+  getLatestPosts,
+  getRandomPosts
 } from '../../node/cache-post';
 import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
 import {
-    cwd,
-    dirname,
-    existsSync,
-    globSrc,
-    join,
-    mkdirSync,
-    readFileSync,
-    removeMultiSlashes,
-    resolve,
-    statSync,
-    write
+  cwd,
+  dirname,
+  existsSync,
+  globSrc,
+  join,
+  mkdirSync,
+  readFileSync,
+  removeMultiSlashes,
+  resolve,
+  statSync,
+  write
 } from '../../node/filemanager';
 import logger from '../../node/logger';
 import { replaceArr } from '../../node/string-utils';
-import { validateParsed } from '../../parser/post';
 import { modifyPost } from '../../parser/post/modifyPost';
 import parsePost from '../../parser/post/parsePost';
 import { renderBodyMarkdown } from '../../parser/toHtml';
+import { validateParsed } from '../../parser/transformPosts';
 import { DynamicObject } from '../../types';
 import config, {
-    root,
-    theme_config,
-    theme_dir,
-    tmp
+  root,
+  theme_config,
+  theme_dir,
+  tmp
 } from '../../types/_config';
 
 const argv = yargs(process.argv.slice(2)).argv;

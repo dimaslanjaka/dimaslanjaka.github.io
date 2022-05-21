@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import 'js-prototypes';
 import { Nullable } from 'safelinkify/dist/resolveQueryUrl';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';

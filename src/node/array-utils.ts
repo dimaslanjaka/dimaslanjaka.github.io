@@ -37,3 +37,60 @@ export function removeEmpties<T extends any[]>(array: T, keep: (null | number | 
 export function getLastItem<T extends any[]>(arr: T, lastIndex = 1) {
   return arr[arr.length - lastIndex];
 }
+
+/**
+ * Unique string array case insensitive but keep one case sensitive result
+ * @see {@link https://stackoverflow.com/a/48731445/6404439}
+ * @example
+ * console.log(uniqueStringArray(['James', 'james', 'bob', 'JaMeS', 'Bob'])); // ["JaMeS", "Bob"]
+ */
+export const uniqueStringArray = function (arr: Array<string>) {
+  const filter = new Map(arr.map((s) => [s.toLowerCase(), s]));
+  return [...filter.values()];
+};
+
+/**
+ * @summary Add another array
+ * @description Add another array to current array
+ * @param self
+ * @param otherArrays
+ * @example
+ * var a = [0,1];
+ * var b = ['a','b'];
+ * arrayAddAll(b, a); // concat a to b
+ * console.log(b); // ['a','b',0,1]
+ */
+export const arrayAddAll = function <T extends any[]>(self: T, ...otherArrays: T[]) {
+  otherArrays.forEach(function (array) {
+    array.forEach((item) => {
+      self.push(item);
+    });
+  });
+  return self;
+};
+
+/**
+ * Array unique
+ * @param {Array<any>} arrays
+ */
+export function array_unique(arrays: any[]) {
+  return arrays.filter(function (item: any, pos: any, self: string | any[]) {
+    return self.indexOf(item) == pos;
+  });
+}
+
+/**
+ * pick random from array
+ * @param {Array<any>} arrays
+ * @param {boolean} unique Unique the arrays
+ */
+export function array_rand(arrays: any[], unique: any) {
+  if (unique) {
+    arrays = array_unique(arrays);
+  }
+  const index = Math.floor(Math.random() * arrays.length);
+  return {
+    index: index,
+    value: arrays[index]
+  };
+}

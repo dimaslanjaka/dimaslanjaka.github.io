@@ -10,10 +10,11 @@ import minimatch from 'minimatch';
 import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
 import parsePost from '../../markdown/transformPosts/parsePost';
-import { removeEmpties } from '../../node/array-utils';
+import { array_unique, removeEmpties } from '../../node/array-utils';
 import color from '../../node/color';
 import { write } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
+import { isMatch, replaceArr } from '../../node/string-utils';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
@@ -40,7 +41,7 @@ function showPreview(str: string | Buffer) {
   doc.body.innerHTML += preview;
   Array.from(doc.querySelectorAll('a')).forEach((a) => {
     let href = a.getAttribute('href');
-    if (typeof href == 'string' && href.isMatch(new RegExp('^https?://' + homepage.host))) {
+    if (typeof href == 'string' && isMatch(href, new RegExp('^https?://' + homepage.host))) {
       href = href.replace(new RegExp('^https?://' + homepage.host + '/'), '/');
       return a.setAttribute('href', href);
     }
@@ -140,17 +141,17 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     const labelSrc: string[] = routedata.category.concat(routedata.tag);
     if (labelSrc.includes(pathname)) return next();
 
-    if (pathname.isMatch(new RegExp('^/' + config.category_dir + '/'))) return next();
-    if (pathname.isMatch(new RegExp('^/' + config.tag_dir + '/'))) return next();
+    if (isMatch(pathname, new RegExp('^/' + config.category_dir + '/'))) return next();
+    if (isMatch(pathname, new RegExp('^/' + config.tag_dir + '/'))) return next();
     // skip api, admin
-    if (pathname.isMatch(/^\/(api|admin)/)) return next();
+    if (isMatch(pathname, /^\/(api|admin)/)) return next();
     // skip assets
-    if (pathname.isMatch(/.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
+    if (isMatch(pathname, /.(css|js|png|svg|jpeg|webp|jpg|ico)$/)) return next();
 
     //write(tmp('middleware.log'), inspect(req));
     //console.log(req['_parsedUrl'].pathname, req['_parsedUrl'].search);
 
-    const isPage = pathname.isMatch(/(.html|\/)$/);
+    const isPage = isMatch(pathname, /(.html|\/)$/);
 
     if (isPage) {
       res.setHeader('Content-Type', 'text/html');
@@ -162,18 +163,19 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         return s.replace(/.html$/, '.md');
       });
       sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
-      sourceMD = sourceMD
-        .map((path) => {
-          if (path.endsWith('/')) return path + 'index.md';
-          return path;
-        })
-        .filter(existsSync)
-        .unique();
+      sourceMD = array_unique(
+        sourceMD
+          .map((path) => {
+            if (path.endsWith('/')) return path + 'index.md';
+            return path;
+          })
+          .filter(existsSync)
+      );
       //console.log(sourceMD);
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];
-          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(
+          const dest = join(post_generated_dir, replaceArr(toUnix(file), [cwd(), 'source/', '_posts/'], '')).replace(
             /.md$/,
             '.html'
           );
@@ -236,12 +238,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       res.writeHead(200, {
         'Content-Type': 'text/plain'
       });
-      res.end(
-        JSON.stringifyWithCircularRefs(
-          new Error('Something went wrong. And we are reporting a custom error message.'),
-          2
-        )
-      );
+      res.end(JSON.stringify(new Error('Something went wrong. And we are reporting a custom error message.'), null, 2));
       next();
     }
   },

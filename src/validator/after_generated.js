@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-require('js-prototypes');
 const root = path.join(__dirname, '/../');
 const docs = path.join(root, 'docs');
 

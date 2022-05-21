@@ -1,4 +1,4 @@
-import 'js-prototypes';
+
 import { getAllPosts } from '../../node/cache-post';
 import { join, write } from '../../node/filemanager';
 import config from '../../types/_config';

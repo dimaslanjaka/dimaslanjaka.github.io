@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { createWriteStream, writeFile, writeFileSync } from 'fs-extra';
-import 'js-prototypes';
 import { cacheDir, existsSync, join, readFileSync, statSync, write } from '../node/filemanager';
 import { md5 } from '../node/md5-file';
 import config from '../types/_config';
+
 
 interface cacheDownloadImageData {
   /**

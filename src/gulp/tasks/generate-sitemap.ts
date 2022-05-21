@@ -2,7 +2,6 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import GoogleNewsSitemap, { ClassItemType } from 'google-news-sitemap';
 import gulp from 'gulp';
-import 'js-prototypes';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
@@ -12,6 +11,7 @@ import { cwd, join, write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import { renderer } from './generate-posts';
 import './sitemap';
+
 
 const logname = chalk.cyanBright('[generate][sitemap]');
 const pages = new Sitemap();

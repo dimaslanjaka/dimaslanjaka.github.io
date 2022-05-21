@@ -2,9 +2,7 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import { copyFileSync } from 'fs';
 import gulp from 'gulp';
-import { buildPost } from 'hexo-post-parser';
-import { postMap } from 'hexo-post-parser';
-import 'js-prototypes';
+import { buildPost, postMap } from 'hexo-post-parser';
 import sass from 'node-sass';
 import through2 from 'through2';
 import { toUnix } from 'upath';
@@ -34,6 +32,7 @@ import {
 import logger from '../../node/logger';
 import { DynamicObject } from '../../types';
 import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
+
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];

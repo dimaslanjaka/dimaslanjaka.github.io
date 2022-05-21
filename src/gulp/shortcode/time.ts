@@ -1,5 +1,4 @@
 import fs from 'fs';
-import 'js-prototypes';
 
 /**
  * Current date time
@@ -10,7 +9,7 @@ export function now() {
     new Date()
       //.toISOString()
       .toLocaleString('en-US', {
-        timeZone: 'Asia/Jakarta',
+        timeZone: 'Asia/Jakarta'
       })
       .replace(/T/, ' ') // replace T with a space
       .replace(/\..+/, '')

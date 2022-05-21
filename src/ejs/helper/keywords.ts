@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import 'js-prototypes';
+
 import { postMap } from '../../markdown/transformPosts/parsePost';
 
 export function keywords(page: postMap['metadata']) {

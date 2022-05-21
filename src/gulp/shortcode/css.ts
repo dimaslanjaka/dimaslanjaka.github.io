@@ -1,4 +1,3 @@
-import 'js-prototypes';
 import chalk from 'chalk';
 import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
 import { root } from '../../types/_config';
@@ -23,7 +22,7 @@ export function shortcodeCss(file: string, str: string) {
     const dirs = {
       directFile: join(dirname(file.toString()), includefile),
       cwdFile: join(cwd(), includefile),
-      rootFile: join(root, includefile),
+      rootFile: join(root, includefile)
     };
     for (const key in dirs) {
       if (Object.prototype.hasOwnProperty.call(dirs, key)) {

@@ -1,4 +1,4 @@
-import 'js-prototypes';
+
 import color from '../../node/color';
 // fix all hyperlinks endsWith .md
 // [test](test.md) -> [test](test.html)

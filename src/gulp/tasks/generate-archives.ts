@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import 'js-prototypes';
 import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
@@ -10,6 +9,7 @@ import config, { tmp } from '../../types/_config';
 import './generate-categories';
 import { renderer } from './generate-posts';
 import './generate-tags';
+
 
 /**
  * generate index

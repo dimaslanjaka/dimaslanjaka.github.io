@@ -5,7 +5,7 @@ import yargs from 'yargs';
 import { isValidHttpUrl } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
 import scheduler from '../../node/scheduler';
-import { countWords } from '../../node/utils';
+import { countWords } from '../../node/string-utils';
 import config from '../../types/_config';
 import ErrorMarkdown from '../error-markdown';
 import { renderBodyMarkdown } from '../toHtml';

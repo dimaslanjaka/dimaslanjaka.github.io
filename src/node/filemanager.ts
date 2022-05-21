@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import Bluebird from 'bluebird';
+import findCacheDir from 'find-cache-dir';
 import * as fs from 'fs';
 import { default as nodePath } from 'path';
+import { cwd as nodeCwd } from 'process';
 import upath from 'upath';
 import ErrnoException = NodeJS.ErrnoException;
-import { cwd as nodeCwd } from 'process';
-import 'js-prototypes';
-import Bluebird from 'bluebird';
+
 import glob = require('glob');
-import findCacheDir from 'find-cache-dir';
 /**
  * node_modules/.cache/${name}
  */

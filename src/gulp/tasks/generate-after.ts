@@ -2,12 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
 import gulp from 'gulp';
-import 'js-prototypes';
 import { join } from 'path';
 import safelinkify from 'safelinkify';
 import { TaskCallback } from 'undertaker';
+import { arrayAddAll, uniqueStringArray } from '../../node/array-utils';
 import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
+import { isMatch } from '../../node/string-utils';
 import config, { root } from '../../types/_config';
 
 const safelink = new safelinkify.safelink({
@@ -32,14 +33,14 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
 
 const logname = chalk.magenta('[generate]') + chalk.blue('[after]');
 const hexoURL = new URL(config.url);
-const internal_links = [
+const internal_links = uniqueStringArray([
   ...config.external_link.exclude,
   hexoURL.host,
   'www.webmanajemen.com',
   'https://github.com/dimaslanjaka',
   '/dimaslanjaka1',
   'dimaslanjaka.github.io'
-].uniqueStringArray();
+]);
 
 /**
  * filter external links
@@ -65,8 +66,8 @@ export function filter_external_links(href: string, debug = false) {
     /**
      *  javascript anchors, dot anchors, hash header
      */
-    const isExternal = href.trim().isMatch(new RegExp('^(https?)://'));
-    const isInternal = href.trim().isMatch(/^(\.+|#|(javascript|mailto|mail):)/i) && !isExternal;
+    const isExternal = href.trim().match(new RegExp('^(https?)://'));
+    const isInternal = isMatch(href.trim(), /^(\.+|#|(javascript|mailto|mail):)/i) && !isExternal;
     const isLength = href.trim().length > 0;
     const isAllowed = isExternal && isLength;
     if (debug) {
@@ -136,7 +137,7 @@ const files: string[] = [];
  * @returns
  */
 export const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
-  if (sources && sources.length) files.addAll(sources);
+  if (sources && sources.length) arrayAddAll(files, sources);
   const skip = () => {
     // if files has members, shift first file, restart function
     if (files.length) {

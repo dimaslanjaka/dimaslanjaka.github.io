@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-escape */
 import chalk from 'chalk';
-import 'js-prototypes';
 import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
 import { root } from '../../types/_config';
+
 
 const logname = chalk.blue('[script]');
 
@@ -25,7 +25,7 @@ export function shortcodeScript(file: string, str: string) {
     const dirs = {
       directFile: join(dirname(file.toString()), includefile),
       cwdFile: join(cwd(), includefile),
-      rootFile: join(root, includefile),
+      rootFile: join(root, includefile)
     };
     for (const key in dirs) {
       if (Object.prototype.hasOwnProperty.call(dirs, key)) {

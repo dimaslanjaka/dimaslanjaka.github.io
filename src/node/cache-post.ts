@@ -1,6 +1,6 @@
-import modifyPost from '../markdown/transformPosts/modifyPost';
-import { postMap } from '../markdown/transformPosts/parsePost';
-import { mergedPostMap } from '../markdown/transformPosts/postMapper';
+import modifyPost from '../parser/post/modifyPost';
+import { postMap } from '../parser/post/parsePost';
+import { mergedPostMap } from '../parser/post/postMapper';
 import config from '../types/_config';
 import { removeEmpties } from './array-utils';
 import CacheFile, { defaultResovableValue } from './cache';
@@ -69,7 +69,7 @@ function order_by<T extends Partial<postMap>>(
  * @returns array of {@link postResult}
  */
 export function getLatestPosts(
-  by: 'date' | 'updated' = 'updated',
+  by: 'date' | 'updated' | '-date' | '-updated' = '-updated',
   max = 5
 ): postResult[] {
   const posts: Partial<postMap>[] = getAllPosts({

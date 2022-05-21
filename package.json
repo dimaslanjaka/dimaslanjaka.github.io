@@ -25,7 +25,7 @@
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "reinstall": "npm install --ignore-engines --ignore-platform",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
-    "php": "php -S localhost:4000 -t docs",
+    "php": "php -S localhost:4002 -t docs",
     "eslint": "run-s eslint:**",
     "eslint:fix": "npx eslint --fix . > dump-eslint.log",
     "depcheck": "npx depcheck > dump-unused.log",

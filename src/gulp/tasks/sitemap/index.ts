@@ -4,11 +4,10 @@ import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import { getLatestDateArray, sortByDate } from '../../../ejs/helper/date';
-import { postMap } from '../../../markdown/transformPosts/parsePost';
 import { getAllPosts } from '../../../node/cache-post';
 import { join, readFileSync, write } from '../../../node/filemanager';
+import { postMap } from '../../../parser/post/parsePost';
 import config, { post_generated_dir } from '../../../types/_config';
-
 
 /// define global variable without refetch them
 const logname = chalk.magentaBright('[sitemap-xml]');
@@ -33,7 +32,10 @@ const allPosts = (() => {
           if (!post.metadata.type || !post.metadata.type.length)
             if (post.fileTree)
               if (typeof post.fileTree.public == 'string')
-                if (!post.metadata.type) post.metadata.type = post.fileTree.public.includes('_posts') ? 'post' : 'page';
+                if (!post.metadata.type)
+                  post.metadata.type = post.fileTree.public.includes('_posts')
+                    ? 'post'
+                    : 'page';
           const cats = post.metadata.category;
           const tags = post.metadata.tags;
           if (cats) {
@@ -64,7 +66,9 @@ const allPosts = (() => {
             /**
              * standard non-sitemap files
              */
-            major: !u.match(/\/.(guid|git|eslint|tslint|prettierc)|(404).html$/),
+            major: !u.match(
+              /\/.(guid|git|eslint|tslint|prettierc)|(404).html$/
+            ),
             /**
              * project test development files
              */
@@ -84,7 +88,9 @@ const allPosts = (() => {
 function copy() {
   const srcdir = join(__dirname, 'views');
   console.log(logname, 'copy', srcdir, '->', post_generated_dir);
-  return gulp.src('**/*.{xsd,xsl}', { cwd: srcdir }).pipe(gulp.dest(post_generated_dir));
+  return gulp
+    .src('**/*.{xsd,xsl}', { cwd: srcdir })
+    .pipe(gulp.dest(post_generated_dir));
 }
 
 function generateLabels(done?: TaskCallback) {
@@ -95,17 +101,23 @@ function generateLabels(done?: TaskCallback) {
   for (const tagname in listCats) {
     if (Object.prototype.hasOwnProperty.call(listCats, tagname)) {
       const tags = listCats[tagname].sort(sortByDate).map((item) => {
-        if (item.metadata.updated) return moment(item.metadata.updated.toString());
+        if (item.metadata.updated)
+          return moment(item.metadata.updated.toString());
         if (item.metadata.date) return moment(item.metadata.date.toString());
       });
-      const lastmod = moment(getLatestDateArray(tags)).format('YYYY-MM-DDTHH:mm:ssZ');
+      const lastmod = moment(getLatestDateArray(tags)).format(
+        'YYYY-MM-DDTHH:mm:ssZ'
+      );
       homepage.pathname = join(config.tag_dir, tagname);
       const url = homepage.toString();
       const str = `<url><loc>${url}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`;
       mapTags.push(str);
     }
   }
-  const buildXML = readXML.replace(/<url>+[\s\S\n]*<\/url>/gm, mapTags.join('\n'));
+  const buildXML = readXML.replace(
+    /<url>+[\s\S\n]*<\/url>/gm,
+    mapTags.join('\n')
+  );
   write(join(post_generated_dir, 'tag-sitemap.xml'), buildXML).then((f) => {
     console.log(f);
     if (typeof done == 'function') done();
@@ -126,7 +138,9 @@ function generatePages(done?: TaskCallback) {
       return posts.sort(sortByDate);
     })
     .each((post) => {
-      const lastmod = moment(post.metadata.updated).format('YYYY-MM-DDTHH:mm:ssZ');
+      const lastmod = moment(post.metadata.updated).format(
+        'YYYY-MM-DDTHH:mm:ssZ'
+      );
       let str: string;
       if (post.metadata.type == 'post') {
         str = `<url><loc>${post.metadata.url}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>`;
@@ -137,15 +151,25 @@ function generatePages(done?: TaskCallback) {
       }
     })
     .finally(() => {
-      let buildXML = readXML.replace(/<url>+[\s\S\n]*<\/url>/gm, posts.join('\n'));
-      write(join(post_generated_dir, 'post-sitemap.xml'), buildXML).then((f) => {
-        console.log(logname, f);
-        buildXML = readXML.replace(/<url>+[\s\S\n]*<\/url>/gm, pages.join('\n'));
-        write(join(post_generated_dir, 'page-sitemap.xml'), buildXML).then((f) => {
+      let buildXML = readXML.replace(
+        /<url>+[\s\S\n]*<\/url>/gm,
+        posts.join('\n')
+      );
+      write(join(post_generated_dir, 'post-sitemap.xml'), buildXML).then(
+        (f) => {
           console.log(logname, f);
-          if (typeof done == 'function') done();
-        });
-      });
+          buildXML = readXML.replace(
+            /<url>+[\s\S\n]*<\/url>/gm,
+            pages.join('\n')
+          );
+          write(join(post_generated_dir, 'page-sitemap.xml'), buildXML).then(
+            (f) => {
+              console.log(logname, f);
+              if (typeof done == 'function') done();
+            }
+          );
+        }
+      );
     });
 }
 
@@ -218,7 +242,8 @@ async function generateIndex(done?: TaskCallback) {
     .then(getLatestDateArray)
     .then((date) => {
       // if no page exist, return latest post date
-      if (!date) return latestPost.replace('post-sitemap.xml', 'page-sitemap.xml');
+      if (!date)
+        return latestPost.replace('post-sitemap.xml', 'page-sitemap.xml');
       return `<sitemap><loc>${config.url.replace(
         /\/+$/,
         ''
@@ -226,11 +251,17 @@ async function generateIndex(done?: TaskCallback) {
     });
 
   const buildStr = [latestTag, latestCat, latestPost, latestPage];
-  const buildXML = readXML.replace(/<sitemap>+[\s\S\n]*<\/sitemap>/gm, buildStr.join('\n'));
+  const buildXML = readXML.replace(
+    /<sitemap>+[\s\S\n]*<\/sitemap>/gm,
+    buildStr.join('\n')
+  );
   write(join(post_generated_dir, 'sitemap.xml'), buildXML).then((f) => {
     console.log(logname, f);
     if (typeof done == 'function') done();
   });
 }
 
-gulp.task('generate:sitemap-xml', gulp.series(copy, generateIndex, generatePages));
+gulp.task(
+  'generate:sitemap-xml',
+  gulp.series(copy, generateIndex, generatePages)
+);

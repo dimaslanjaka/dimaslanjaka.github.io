@@ -6,10 +6,9 @@ import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
-import minimatch from 'minimatch';
 import { join, toUnix } from 'upath';
 import ejs_object from '../../ejs';
-import parsePost from '../../markdown/transformPosts/parsePost';
+import parsePost from '../../parser/post/parsePost'; 
 import { array_unique, removeEmpties } from '../../node/array-utils';
 import color from '../../node/color';
 import { write } from '../../node/filemanager';
@@ -256,8 +255,9 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 );
                 res.end(previewed);
               });
-            } else if (minimatch(file, '*.{html,txt,json}')) {
-              return res.end(showPreview(readFileSync(file)));
+            } /*if (minimatch(file, '*.{html,txt,json}'))*/ else {
+              if (file.endsWith('.html'))
+                return res.end(showPreview(readFileSync(file)));
             }
           }
         }

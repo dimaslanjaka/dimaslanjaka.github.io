@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import { postMap } from '../../parser/post/parsePost';
 import config from '../../types/_config';
 
 /**

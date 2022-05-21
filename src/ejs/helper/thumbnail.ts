@@ -1,9 +1,10 @@
 /* eslint-disable no-useless-escape */
 
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import { postMap } from '../../parser/post/parsePost';
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-const noimage = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
+const noimage =
+  'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
 
 /**
  * Thumbnail Helper

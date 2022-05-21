@@ -62,7 +62,9 @@ export default function postChunksIterator(
   const page_next_url = page_next ? homepage.pathname : null;
 
   /** get latest modified time of posts */
-  const latestUpdated = getLatestDateArray(innerChunks.map((post) => post.updated.toString()));
+  const latestUpdated = getLatestDateArray(
+    innerChunks.map((post) => post.updated.toString())
+  );
 
   const result = {
     /** setup sitedata array as json */
@@ -77,7 +79,7 @@ export default function postChunksIterator(
     page_next_url: page_next_url,
     page_next: page_next,
     perm_base: opt.base,
-    perm_current: page_current_url,
+    perm_current: page_current_url
   };
 
   if (config.verbose) {
@@ -88,7 +90,7 @@ export default function postChunksIterator(
       page_current_url,
       page_next,
       page_next_url,
-      total: parentChunks.length,
+      total: parentChunks.length
     });
   }
   return result;

@@ -1,5 +1,5 @@
 import urlParse from 'url-parse';
-import { DeepPartial } from '../markdown/transformPosts/postMapper';
+import { DeepPartial } from '../parser/post/postMapper';
 
 /** URL Parsed Result */
 export interface URLParsed extends DeepPartial<ReturnType<typeof urlParse>> {

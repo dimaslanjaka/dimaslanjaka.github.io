@@ -1,4 +1,4 @@
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import { postMap } from '../../parser/post/parsePost';
 
 const localeMap = {
   en: 'en_US',
@@ -14,7 +14,7 @@ const localeMap = {
   ru: 'ru_RU',
   th: 'th_TH',
   tr: 'tr_TR',
-  vi: 'vi_VN',
+  vi: 'vi_VN'
 };
 
 export function get_locale(page: string | postMap['metadata']): string {
@@ -33,7 +33,8 @@ export function get_locale(page: string | postMap['metadata']): string {
       territory = str.split('_');
     }
 
-    if (territory.length === 2) return territory[0].toLowerCase() + '_' + territory[1].toUpperCase();
+    if (territory.length === 2)
+      return territory[0].toLowerCase() + '_' + territory[1].toUpperCase();
   }
   return 'en';
 }

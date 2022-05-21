@@ -1,7 +1,7 @@
 import { join } from '../node/filemanager';
 import { root } from '../types/_config';
+import { parsePost } from './post';
 import { renderBodyMarkdown } from './toHtml';
-import { parsePost } from './transformPosts';
 
 const postPath = join(
   root,

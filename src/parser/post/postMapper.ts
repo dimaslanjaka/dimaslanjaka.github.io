@@ -18,7 +18,9 @@ export type Partial<T> = {
  * @see {@link https://stackoverflow.com/a/40076355/6404439}
  */
 export type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends Record<string, unknown> ? DeepPartial<T[P]> : T[P];
+  [P in keyof T]?: T[P] extends Record<string, unknown>
+    ? DeepPartial<T[P]>
+    : T[P];
 };
 
 /**
@@ -153,7 +155,9 @@ export function post_chunks<T extends any[]>(arr?: T) {
   /**
    * split posts to chunks divided by {@link config.index_generator.per_page}
    */
-  const chunk = postChunksMapper(array_split_chunks(posts, config.index_generator.per_page));
+  const chunk = postChunksMapper(
+    array_split_chunks(posts, config.index_generator.per_page)
+  );
 
   const sitedata = posts.map((post) => {
     const data = {

@@ -1,6 +1,6 @@
-import { post_chunks } from '../../markdown/transformPosts/postMapper';
 import { write } from '../../node/filemanager';
 import MeasureTime from '../../node/measure-timing';
+import { post_chunks } from '../../parser/post/postMapper';
 import { tmp } from '../../types/_config';
 import { generateIndex } from './generate-archives';
 

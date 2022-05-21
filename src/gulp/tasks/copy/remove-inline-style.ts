@@ -1,7 +1,7 @@
 import { buildPost } from 'hexo-post-parser';
-import parsePost from '../../../markdown/transformPosts/parsePost';
 import { existsSync, globSrc, join, write } from '../../../node/filemanager';
 import jdom from '../../../node/jsdom';
+import parsePost from '../../../parser/post/parsePost';
 import { post_public_dir } from '../../../types/_config';
 
 /**
@@ -35,10 +35,19 @@ export function gulpInlineStyle() {
     .map((item) => {
       return { path: item, parsed: parsePost(item) };
     })
-    .filter((obj) => typeof obj.parsed == 'object' && typeof obj.parsed.body == 'string' && obj.parsed.body.length > 0)
+    .filter(
+      (obj) =>
+        typeof obj.parsed == 'object' &&
+        typeof obj.parsed.body == 'string' &&
+        obj.parsed.body.length > 0
+    )
     .each((obj) => {
       const parsed = obj.parsed;
-      if (parsed.body.includes('<div dir="ltr" style="text-align: left;" trbidi="on">')) {
+      if (
+        parsed.body.includes(
+          '<div dir="ltr" style="text-align: left;" trbidi="on">'
+        )
+      ) {
         parsed.body = removeInlineStyle(parsed.body, true);
         //console.log(obj.path);
         write(obj.path, buildPost(parsed));

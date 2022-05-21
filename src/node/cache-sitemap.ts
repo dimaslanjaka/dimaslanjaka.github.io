@@ -1,4 +1,4 @@
-import { postMap } from '../markdown/transformPosts/parsePost';
+import { postMap } from '../parser/post/parsePost';
 import CacheFile, { defaultResovableValue } from './cache';
 
 /**

@@ -8,31 +8,40 @@ import through2 from 'through2';
 import { toUnix } from 'upath';
 import yargs from 'yargs';
 import ejs_object from '../../ejs';
-import { renderBodyMarkdown } from '../../markdown/toHtml';
-import { validateParsed } from '../../markdown/transformPosts';
-import { modifyPost } from '../../markdown/transformPosts/modifyPost';
-import parsePost from '../../markdown/transformPosts/parsePost';
 import CacheFile from '../../node/cache';
-import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
+import {
+    getAllPosts,
+    getLatestPosts,
+    getRandomPosts
+} from '../../node/cache-post';
 import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
 import {
-  cwd,
-  dirname,
-  existsSync,
-  globSrc,
-  join,
-  mkdirSync,
-  readFileSync,
-  removeMultiSlashes,
-  resolve,
-  statSync,
-  write
+    cwd,
+    dirname,
+    existsSync,
+    globSrc,
+    join,
+    mkdirSync,
+    readFileSync,
+    removeMultiSlashes,
+    resolve,
+    statSync,
+    write
 } from '../../node/filemanager';
 import logger from '../../node/logger';
 import { replaceArr } from '../../node/string-utils';
+import { validateParsed } from '../../parser/post';
+import { modifyPost } from '../../parser/post/modifyPost';
+import parsePost from '../../parser/post/parsePost';
+import { renderBodyMarkdown } from '../../parser/toHtml';
 import { DynamicObject } from '../../types';
-import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
+import config, {
+    root,
+    theme_config,
+    theme_dir,
+    tmp
+} from '../../types/_config';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -56,10 +65,19 @@ const page_url = new URL(config.url);
 const global_exclude = ['**/_drafts/**', '**/_data/**'];
 
 const renderAssets = async () => {
-  logger.log(logname + chalk.magentaBright('[assets]'), 'copy ->', generated_dir);
+  logger.log(
+    logname + chalk.magentaBright('[assets]'),
+    'copy ->',
+    generated_dir
+  );
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
   const ignore = ['**/*.md', '**/.git*', ...exclude, ...global_exclude];
-  const glob = await globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true }).then((s) => {
+  const glob = await globSrc('**/*.*', {
+    cwd: source_dir,
+    ignore: ignore,
+    dot: true,
+    stat: true
+  }).then((s) => {
     if (config.verbose) {
       logger.log(logname + '[total]', s.length);
       logger.log(ignore);
@@ -74,7 +92,8 @@ const renderAssets = async () => {
     if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
     if (!stat.isDirectory() && existsSync(src)) {
       copyFileSync(src, dest);
-      if (config.verbose) logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
+      if (config.verbose)
+        logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
     }
   }
 };
@@ -83,7 +102,13 @@ gulp.task('generate:assets', renderAssets);
 
 const renderTemplate = () => {
   const src = join(theme_dir, 'source/**/**');
-  logger.log(logname + chalk.magentaBright('[template]'), 'copy', src, '->', generated_dir);
+  logger.log(
+    logname + chalk.magentaBright('[template]'),
+    'copy',
+    src,
+    '->',
+    generated_dir
+  );
   return gulp
     .src([src, '!**/.git*'], { cwd: root })
     .pipe(
@@ -118,7 +143,9 @@ export const renderArticle = function () {
   const log = logname + chalk.blue('[posts]');
   return new Bluebird((resolve) => {
     logger.log(log, 'generating to', generated_dir);
-    const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
+    const exclude = config.exclude.map((ePattern) =>
+      ePattern.replace(/^!+/, '')
+    );
     const ignore = ['_drafts/', '_data/', ...exclude];
     globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
       // validate excluded
@@ -137,7 +164,11 @@ export const renderArticle = function () {
           path: join(source_dir, file),
           /** Permalink path */
           permalink: removeMultiSlashes(
-            replaceArr(file, [cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+            replaceArr(
+              file,
+              [cwd(), 'source/_posts/', 'src-posts/', '_posts/'],
+              '/'
+            )
           ).replace(/.md$/, '.html'),
           /** Is Cached */
           cached: false
@@ -148,13 +179,22 @@ export const renderArticle = function () {
         // try non-cache method
         if (!validateParsed(parsed)) parsed = parsePost(result.path);
         if (!validateParsed(parsed)) {
-          console.log(log, color.redBright('[fail]'), 'cannot parse', result.path);
+          console.log(
+            log,
+            color.redBright('[fail]'),
+            'cannot parse',
+            result.path
+          );
           return;
         }
         const modify = modifyPost(<any>parsed);
-        if (result.path.includes('Grid')) write(tmp('modify.md'), buildPost(modify)).then(console.log);
+        if (result.path.includes('Grid'))
+          write(tmp('modify.md'), buildPost(modify)).then(console.log);
         const merge = Object.assign(result, modify, result.path);
-        if (typeof merge.metadata == 'object' && typeof merge.metadata.url == 'string') {
+        if (
+          typeof merge.metadata == 'object' &&
+          typeof merge.metadata.url == 'string'
+        ) {
           const url = new URL(merge.metadata.url);
           url.pathname = url.pathname.replace(/\/+/, '/');
           merge.metadata.url = url.toString();
@@ -207,7 +247,11 @@ export const renderArticle = function () {
 
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
-              logger.log(log + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
+              logger.log(
+                log + chalk.blueBright('[cache]'),
+                parsed.path,
+                chalk.redBright('changed')
+              );
             } else {
               // if cache hit, skip process
               return skip();
@@ -247,7 +291,9 @@ const helpers: DynamicObject = {
    */
   getAllCachedPosts: (() => {
     try {
-      return getAllPosts().map((parsed) => Object.assign(parsed, parsed.metadata));
+      return getAllPosts().map((parsed) =>
+        Object.assign(parsed, parsed.metadata)
+      );
     } catch (error) {
       return [];
     }
@@ -314,7 +360,12 @@ export function renderer(parsed: Partial<postMap>, override: Override = {}) {
     };
 
     // assign body
-    const pagedata = Object.assign(defaultOpt, parsed.metadata, parsed, override);
+    const pagedata = Object.assign(
+      defaultOpt,
+      parsed.metadata,
+      parsed,
+      override
+    );
 
     page_url.pathname = parsed.permalink;
     const ejs_data = Object.assign(

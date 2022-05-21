@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import moment, { isMoment } from 'moment-timezone';
-import { postMap } from '../../markdown/transformPosts/parsePost';
 import { removeEmpties } from '../../node/array-utils';
 import { postResult } from '../../node/cache-post';
+import { postMap } from '../../parser/post/parsePost';
 import config from '../../types/_config';
 
 export function getLatestDateArray(arr: moment.MomentInput[]) {
@@ -19,7 +19,11 @@ export function getLatestDateArray(arr: moment.MomentInput[]) {
  * @param b
  * @returns
  */
-export function sortByDate(a: postMap, b: postMap, order: 'desc' | 'asc' = 'desc') {
+export function sortByDate(
+  a: postMap,
+  b: postMap,
+  order: 'desc' | 'asc' = 'desc'
+) {
   const dA = a.metadata.updated || a.metadata.date;
   const dB = b.metadata.updated || b.metadata.date;
   if (order == 'desc') {
@@ -153,7 +157,12 @@ export function relativeDateHelper(date) {
 }
 
 export function timeTagHelper(date, format) {
-  return `<time datetime="${toISOString(date)}">${this.date(date, format, getLanguage(this), config.timezone)}</time>`;
+  return `<time datetime="${toISOString(date)}">${this.date(
+    date,
+    format,
+    getLanguage(this),
+    config.timezone
+  )}</time>`;
 }
 
 export function getLanguage(ctx) {

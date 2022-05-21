@@ -35,8 +35,10 @@ type modifyPostType = postMap | mergedPostMap | archiveMap;
  */
 export function originalModifyPost<T extends modifyPostType>(parse: T) {
   // @todo setup empty tags and categories when not set
-  if (!Array.isArray(parse.metadata.category)) parse.metadata.category = [config.default_category];
-  if (!Array.isArray(parse.metadata.tags)) parse.metadata.tags = [config.default_tag];
+  if (!Array.isArray(parse.metadata.category))
+    parse.metadata.category = [config.default_category];
+  if (!Array.isArray(parse.metadata.tags))
+    parse.metadata.tags = [config.default_tag];
 
   // @todo add tags from title
   if (config.title_map) {
@@ -55,7 +57,9 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   }
 
   // tag mapper
-  const postLowerTags = parse.metadata.tags.map((tag) => tag && tag.toLowerCase());
+  const postLowerTags = parse.metadata.tags.map(
+    (tag) => tag && tag.toLowerCase()
+  );
 
   // @todo process config.tag_map (rename tag)
   if (typeof config.tag_map === 'object') {
@@ -92,8 +96,14 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   }
 
   // @todo remove default tag when tags have more than 1 item
-  if (config.default_tag && parse.metadata.tags.length > 1 && parse.metadata.tags.includes(config.default_tag)) {
-    parse.metadata.tags = parse.metadata.tags.filter((tag) => tag !== config.default_tag);
+  if (
+    config.default_tag &&
+    parse.metadata.tags.length > 1 &&
+    parse.metadata.tags.includes(config.default_tag)
+  ) {
+    parse.metadata.tags = parse.metadata.tags.filter(
+      (tag) => tag !== config.default_tag
+    );
   }
 
   // @todo remove default category when categories have more than 1 item
@@ -102,7 +112,9 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
     parse.metadata.category.length > 1 &&
     parse.metadata.category.includes(config.default_category)
   ) {
-    parse.metadata.category = parse.metadata.category.filter((category) => category !== config.default_category);
+    parse.metadata.category = parse.metadata.category.filter(
+      (category) => category !== config.default_category
+    );
   }
 
   // @todo remove duplicate categories
@@ -116,7 +128,8 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
     // init
     if (!postCats[name]) postCats[name] = [];
     // prevent duplicate push
-    if (!postCats[name].find(({ title }) => title === parse.metadata.title)) postCats[name].push(<any>parse);
+    if (!postCats[name].find(({ title }) => title === parse.metadata.title))
+      postCats[name].push(<any>parse);
   });
 
   // @todo prepare to add post tag to cache
@@ -125,7 +138,8 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
     // init
     if (!postTags[name]) postTags[name] = [];
     // prevent duplicate push
-    if (!postTags[name].find(({ title }) => title === parse.metadata.title)) postTags[name].push(<any>parse);
+    if (!postTags[name].find(({ title }) => title === parse.metadata.title))
+      postTags[name].push(<any>parse);
   });
 
   // @todo set type post when not set
@@ -151,7 +165,8 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   parse.metadata.wordcount = countWords(words);
   if (parse.metadata.canonical) {
     const canonical: string = parse.metadata.canonical;
-    if (!isValidHttpUrl(canonical)) parse.metadata.canonical = config.url + parse.metadata.canonical;
+    if (!isValidHttpUrl(canonical))
+      parse.metadata.canonical = config.url + parse.metadata.canonical;
   }
 
   // move 'programming' to first index

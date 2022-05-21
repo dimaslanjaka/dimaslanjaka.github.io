@@ -1,11 +1,11 @@
 import { parsePost as moduleParsePost } from 'hexo-post-parser';
 import { toUnix } from 'upath';
+import { validateParsed } from '.';
 import { replacePath } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
 import CachePost from '../../node/cache-post';
 import color from '../../node/color';
 import config from '../../types/_config';
-import { validateParsed } from '../transformPosts';
 import modifyPost from './modifyPost';
 const parseCache = new CacheFile('parsePost');
 const cachePost = new CachePost();
@@ -40,8 +40,16 @@ const parsePost = (path: string, content?: string) => {
   }
 
   parse.fileTree = {
-    source: replacePath(toUnix(path.toString()), '/source/_posts/', '/src-posts/'),
-    public: replacePath(toUnix(path.toString()), '/src-posts/', '/source/_posts/')
+    source: replacePath(
+      toUnix(path.toString()),
+      '/source/_posts/',
+      '/src-posts/'
+    ),
+    public: replacePath(
+      toUnix(path.toString()),
+      '/src-posts/',
+      '/source/_posts/'
+    )
   };
 
   parse = modifyPost<any>(parse);
@@ -55,7 +63,12 @@ const parsePost = (path: string, content?: string) => {
   return parse;
 };
 
-export { DeepPartial, ParseOptions, postMap, postMeta } from 'hexo-post-parser/src';
+export {
+    DeepPartial,
+    ParseOptions,
+    postMap,
+    postMeta
+} from 'hexo-post-parser/src';
 export { parsePost };
 export default parsePost;
 __g.parsePost = parsePost;

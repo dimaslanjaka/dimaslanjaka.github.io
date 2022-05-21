@@ -1,11 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "lib": [
-      "ES2021",
-      "ES2021.String"
-    ]
-  },
   "exclude": [
     "**/node_modules/**",
     "**/tests/**"

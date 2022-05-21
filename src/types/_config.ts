@@ -17,9 +17,14 @@ const argv = yargs(process.argv.slice(2)).argv;
 /**
  * process cwd unix style
  */
-export const root = toUnix(process.cwd());
-export const cwd = memoizee(() => root);
-const file = join(root, '_config.yml');
+let root = toUnix(process.cwd());
+export const cwd = memoizee(() => toUnix(process.cwd()));
+let file = join(root, '_config.yml');
+if (!existsSync(file)) {
+  root = join(__dirname, '../..');
+  file = join(root, '_config.yml');
+}
+export { root };
 const readConfig = readFileSync(file, 'utf-8');
 /** default project config */
 const def_config = {

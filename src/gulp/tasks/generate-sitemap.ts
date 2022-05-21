@@ -5,11 +5,11 @@ import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
-import { postMap } from '../../markdown/transformPosts/parsePost';
 import { removeEmpties } from '../../node/array-utils';
 import Sitemap from '../../node/cache-sitemap';
 import { write } from '../../node/filemanager';
+import modifyPost from '../../parser/post/modifyPost';
+import { postMap } from '../../parser/post/parsePost';
 import config, { cwd, root } from '../../types/_config';
 import { renderer } from './generate-posts';
 import './sitemap';
@@ -27,18 +27,23 @@ async function generateGoogleNewsSitemap(done: TaskCallback) {
   const log = logname + chalk.blue('[google-news]');
 
   try {
-    const i = await Bluebird.all(removeEmpties(pages.getValues())).map((item) => {
-      const val: ClassItemType = {
-        publication_name: item.author,
-        publication_language: item.lang || 'en',
-        publication_date: item.date.toString(),
-        title: item.title,
-        location: fixURLSitemap(item.url).toString()
-      };
-      return map.add(val);
-    });
+    const i = await Bluebird.all(removeEmpties(pages.getValues())).map(
+      (item) => {
+        const val: ClassItemType = {
+          publication_name: item.author,
+          publication_language: item.lang || 'en',
+          publication_date: item.date.toString(),
+          title: item.title,
+          location: fixURLSitemap(item.url).toString()
+        };
+        return map.add(val);
+      }
+    );
     console.log(log, 'total pages', i.length);
-    write(join(root, config.public_dir, 'sitemap-news.xml'), map.toString()).then((f) => {
+    write(
+      join(root, config.public_dir, 'sitemap-news.xml'),
+      map.toString()
+    ).then((f) => {
       console.log(log, 'saved', f);
     });
   } finally {
@@ -54,7 +59,9 @@ async function generateGoogleNewsSitemap(done: TaskCallback) {
  */
 function fixURLSitemap(url: string) {
   const parseURL = new URL(url);
-  parseURL.pathname = parseURL.pathname.replace(/\/+/, '/').replace(/.md$/, '.html');
+  parseURL.pathname = parseURL.pathname
+    .replace(/\/+/, '/')
+    .replace(/.md$/, '.html');
   return parseURL;
 }
 
@@ -104,10 +111,12 @@ function generateSitemapHtml(done?: TaskCallback) {
       if (modify.sitedata) delete modify.sitedata;
       //console.log(modify);
       renderer(modify).then((rendered) => {
-        write(join(root, config.public_dir, 'sitemap.html'), rendered).then((f) => {
-          console.log(log, 'saved', f);
-          done();
-        });
+        write(join(root, config.public_dir, 'sitemap.html'), rendered).then(
+          (f) => {
+            console.log(log, 'saved', f);
+            done();
+          }
+        );
       });
     });
 }
@@ -119,7 +128,10 @@ function generateSitemapText(done?: TaskCallback) {
       return fixURLSitemap(item.url).toString();
     })
     .then((items) => {
-      write(join(root, config.public_dir, 'sitemap.txt'), items.join('\n')).then((f) => {
+      write(
+        join(root, config.public_dir, 'sitemap.txt'),
+        items.join('\n')
+      ).then((f) => {
         console.log(log, 'saved', f);
         done();
       });
@@ -133,5 +145,10 @@ gulp.task('generate:sitemap-txt', generateSitemapText);
 // combine all sitemap tasks
 gulp.task(
   'generate:sitemap',
-  gulp.series('generate:sitemap-news', 'generate:sitemap-html', 'generate:sitemap-txt', 'generate:sitemap-xml')
+  gulp.series(
+    'generate:sitemap-news',
+    'generate:sitemap-html',
+    'generate:sitemap-txt',
+    'generate:sitemap-xml'
+  )
 );

@@ -1,7 +1,8 @@
+import persistentCache from 'persistent-cache';
 import modifyPost from '../parser/post/modifyPost';
 import { postMap } from '../parser/post/parsePost';
 import { mergedPostMap } from '../parser/post/postMapper';
-import config from '../types/_config';
+import config, { tmp } from '../types/_config';
 import { removeEmpties } from './array-utils';
 import CacheFile, { defaultResovableValue } from './cache';
 import memoizer from './memoize-fs';
@@ -140,10 +141,22 @@ export function getRandomPosts(max = 5, identifier = 'default') {
   return randoms[identifier];
 }
 
-export default class CachePost extends CacheFile {
+export const pcache = persistentCache({
+  base: tmp('persistent-cache'),
+  name: 'post',
+  duration: 1000 * 3600 * 24 //one day
+});
+
+export class CachePost extends CacheFile {
   constructor() {
     super('posts');
+  }
+  set(key: string, value: any) {
+    super.set(key, value);
+    pcache.putSync(key, value);
+    return this;
   }
 }
 
 export const Post = CachePost;
+export default CachePost;

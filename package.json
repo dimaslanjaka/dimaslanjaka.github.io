@@ -19,9 +19,9 @@
   "scripts": {
     "dev": "nodemon",
     "build": "run-s build:**",
-    "build:src": "fse remove build/* && tsc -p tsconfig.build.json",
-    "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn build",
-    "build:safelinkify": "cd packages/safelink && yarn build",
+    "build:src": "fse remove build && tsc -p tsconfig.build.json",
+    "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn --check-files && yarn build",
+    "build:safelinkify": "cd packages/safelink && yarn --check-files && yarn build",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
     "php": "php -S localhost:4002 -t docs",
     "eslint": "run-s eslint:**",

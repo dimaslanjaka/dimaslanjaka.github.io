@@ -5,16 +5,38 @@ const cache =
 const config = require('../build/src/types/_config');
 config.cache = cache;
 
-const { copyAssets } = require('../build/src/gulp/tasks/copy/assets');
+const { copy_assets } = require('../build/src/gulp/tasks/copy/assets');
+const {
+  clean_public,
+  clean_posts,
+  clean_db,
+  clean_tmp
+} = require('../build/src/gulp/tasks/clean');
 /**
  * @type {string[]}
  */
 const args = argv._;
 const task = {
   copy: {
-    assets: copyAssets
+    assets: copy_assets
+  },
+  clean: {
+    public: clean_public,
+    db: clean_db,
+    tmp: clean_tmp,
+    posts: clean_posts
   }
 };
-args.forEach((arg) => {
-  console.log(arg);
-});
+args
+  .map((s) => {
+    const split = s.split(':');
+    if (split.length === 1) return split[0];
+    return split[1];
+  })
+  .forEach((arg) => {
+    if (arg === 'copy' || arg === 'copy:blogger') {
+      task.copy.assets();
+    } else {
+      console.log(arg);
+    }
+  });

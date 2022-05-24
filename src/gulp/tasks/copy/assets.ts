@@ -10,3 +10,4 @@ export const copyAssets = () => {
   const run = gulp.src(['**/*.*', `!**/*.md`], { cwd: post_source_dir });
   return determineDirname(run).pipe(gulp.dest(post_public_dir));
 };
+export const copy_assets = copyAssets;

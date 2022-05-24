@@ -6,6 +6,10 @@ const config = require('../build/src/types/_config');
 config.cache = cache;
 
 const { copy_assets } = require('../build/src/gulp/tasks/copy/assets');
+const { copy_posts } = require('../build/src/gulp/tasks/copy');
+const {
+  gulpInlineStyle
+} = require('../build/src/gulp/tasks/copy/remove-inline-style');
 const {
   clean_public,
   clean_posts,
@@ -18,7 +22,9 @@ const {
 const args = argv._;
 const task = {
   copy: {
-    assets: copy_assets
+    assets: copy_assets,
+    remove_inline_style: gulpInlineStyle,
+    post: copy_posts
   },
   clean: {
     public: clean_public,
@@ -34,9 +40,9 @@ args
     return split[1];
   })
   .forEach((arg) => {
-    if (arg === 'copy' || arg === 'copy:blogger') {
+    if (arg === 'blogger') {
       task.copy.assets();
-    } else {
-      console.log(arg);
+      task.copy.post();
+      task.copy.remove_inline_style();
     }
   });

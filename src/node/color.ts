@@ -146,7 +146,9 @@ const chalkcolor = {
   magentaBright: chalk.magentaBright,
   redBright: chalk.redBright,
   green: chalk.green,
-  greenBright: chalk.greenBright
+  greenBright: chalk.greenBright,
+  cyan: chalk.cyan,
+  cyanBright: chalk.cyanBright
 };
 
 const color = Object.assign(colors, chalkcolor);

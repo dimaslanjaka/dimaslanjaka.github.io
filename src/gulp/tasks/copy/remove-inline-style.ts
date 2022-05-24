@@ -1,4 +1,5 @@
 import { buildPost } from 'hexo-post-parser';
+import color from '../../../node/color';
 import { existsSync, globSrc, join, write } from '../../../node/filemanager';
 import jdom from '../../../node/jsdom';
 import parsePost from '../../../parser/post/parsePost';
@@ -27,10 +28,15 @@ export function removeInlineStyle(str: string, single_element = true) {
  * remove all blogger inline style html from posts
  * @returns
  */
-export function gulpInlineStyle() {
-  const src = globSrc('**/*.md', { cwd: post_public_dir })
+export async function gulpInlineStyle() {
+  const src = await globSrc('**/*.md', { cwd: post_public_dir })
     .map((item) => join(post_public_dir, item))
     .filter(existsSync);
+  console.log(
+    `${color.Beaver('[copy][remove-inline-style]')} cwd=${color.Mahogany(
+      post_public_dir
+    )} found=${color.Magenta(src.length)} post(s)`
+  );
   return src
     .map((item) => {
       return { path: item, parsed: parsePost(item) };
@@ -41,7 +47,7 @@ export function gulpInlineStyle() {
         typeof obj.parsed.body == 'string' &&
         obj.parsed.body.length > 0
     )
-    .each((obj) => {
+    .forEach((obj) => {
       const parsed = obj.parsed;
       if (
         parsed.body.includes(
@@ -52,6 +58,5 @@ export function gulpInlineStyle() {
         //console.log(obj.path);
         write(obj.path, buildPost(parsed));
       }
-    })
-    .thenReturn();
+    });
 }

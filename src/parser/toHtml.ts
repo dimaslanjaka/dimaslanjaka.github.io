@@ -83,7 +83,7 @@ export function renderMarkdownIt(str: string) {
 export function renderBodyMarkdown(parse: Partial<postMap>, verbose = false) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
-  let body: string = parse.body || parse.content;
+  let body: string = parse.body; // || parse.content;
   if (typeof body != 'string')
     throw new Error('cannot render undefined markdown body');
 

@@ -84,7 +84,7 @@ export default async function generateTags(
         }
         const merge_data = Object.assign(pagemeta, data);
         const pagedata = modifyPost(merge_data);
-        const rendered = await renderer(pagedata);
+        const rendered = await renderer(<any>pagedata);
         const f = await write(saveTo, rendered);
         console.log(logname, f);
 

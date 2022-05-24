@@ -367,7 +367,7 @@ export function renderer(parsed: Partial<postMap>, override: Override = {}) {
       override
     );
 
-    page_url.pathname = parsed.permalink;
+    page_url.pathname = parsed['permalink'];
     const ejs_data = Object.assign(
       parsed,
       {

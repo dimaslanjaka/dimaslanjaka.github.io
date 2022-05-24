@@ -108,7 +108,9 @@ export const post_source_dir = resolve(join(root, 'src-posts'));
  * @param path file path inside temp folder
  * @returns
  */
-export const tmp = (...path: string[]) => join(root, 'tmp', path.join('/'));
+export const tmp = memoizee((...path: string[]) =>
+  join(root, 'tmp', path.join('/'))
+);
 if (!existsSync(tmp())) mkdirSync(tmp());
 
 /** THEME CONFIGS */

@@ -1,5 +1,7 @@
 import chalk from 'chalk';
 import { rm } from 'fs';
+import memoizee from 'memoizee';
+import persistentCache from 'persistent-cache';
 import { TypedEmitter } from 'tiny-typed-emitter';
 import { toUnix } from 'upath';
 import { DynamicObject } from '../types';
@@ -320,3 +322,16 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     }
   }
 }
+
+/**
+ * persistent cache
+ * @param name cache name
+ * @returns
+ */
+export const pcache = memoizee((name: string) =>
+  persistentCache({
+    base: join(process.cwd(), 'tmp/persistent-cache'),
+    name: name,
+    duration: 1000 * 3600 * 24 //one day
+  })
+);

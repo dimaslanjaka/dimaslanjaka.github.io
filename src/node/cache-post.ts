@@ -1,10 +1,9 @@
-import persistentCache from 'persistent-cache';
 import modifyPost from '../parser/post/modifyPost';
 import { postMap } from '../parser/post/parsePost';
 import { mergedPostMap } from '../parser/post/postMapper';
-import config, { tmp } from '../types/_config';
+import config from '../types/_config';
 import { removeEmpties } from './array-utils';
-import CacheFile, { defaultResovableValue } from './cache';
+import CacheFile, { defaultResovableValue, pcache } from './cache';
 import { md5 } from './md5-file';
 import memoizer from './memoize-fs';
 import { isMatch } from './string-utils';
@@ -142,28 +141,27 @@ export function getRandomPosts(max = 5, identifier = 'default') {
   return randoms[identifier];
 }
 
-export const pcache = persistentCache({
-  base: tmp('persistent-cache'),
-  name: 'post',
-  duration: 1000 * 3600 * 24 //one day
-});
-
 export class CachePost {
   set(key: string, value: any) {
-    pcache.putSync(md5(key), value);
+    pcache('post').putSync(md5(key), value);
     return this;
   }
 
   get<T>(key: string) {
-    return pcache.getSync(md5(key)) as T;
+    return pcache('post').getSync(md5(key)) as T;
   }
 
-  getAll<T extends any[]>(type: 'key' | 'value' = 'value') {
-    const keys: string[] = pcache.keysSync();
-    if (type == 'key') return keys;
+  getKeys() {
+    return pcache('post').keysSync();
+  }
+
+  //getAll<T extends any[]>(type: 'value'): T;
+  //getAll(type: 'key'): string[];
+  getAll<T>(): T[] {
+    const keys: string[] = pcache('post').keysSync();
     return keys.map((key) => {
-      return pcache.getSync(key);
-    }) as T;
+      return pcache('post').getSync(key);
+    });
   }
 }
 

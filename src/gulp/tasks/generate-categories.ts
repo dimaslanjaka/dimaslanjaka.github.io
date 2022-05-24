@@ -8,9 +8,9 @@ import modifyPost from '../../parser/post/modifyPost';
 import { postMap } from '../../parser/post/parsePost';
 import postChunksIterator from '../../parser/post/postChunksIterator';
 import {
-    array_wrap,
-    post_chunks,
-    simplifyDump
+  array_wrap,
+  post_chunks,
+  simplifyDump
 } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import { renderer } from './generate-posts';
@@ -75,7 +75,7 @@ export default async function generateCategories(
         }
         const merge_data = Object.assign(pagemeta, data);
         const pagedata = modifyPost(merge_data);
-        const rendered = await renderer(pagedata);
+        const rendered = await renderer(<any>pagedata);
         const f = await write(saveTo, rendered);
         console.log(logname, f);
         if (config.verbose) {

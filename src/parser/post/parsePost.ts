@@ -1,10 +1,9 @@
 import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
+import { Nullable } from 'safelinkify';
 import { toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import CachePost from '../../node/cache-post';
-import color from '../../node/color';
 import config from '../../types/_config';
-import { validateParsed } from '../transformPosts';
 import modifyPost from './modifyPost';
 //const parseCache = new CacheFile('parsePost');
 const cachePost = new CachePost();
@@ -16,7 +15,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @param path
  * @returns
  */
-const parsePost = (path: string, content?: string) => {
+const parsePost = (path: string, content?: string): Nullable<postMap> => {
   let parse = moduleParsePost(content || path, {
     shortcodes: {
       youtube: true,
@@ -32,12 +31,12 @@ const parsePost = (path: string, content?: string) => {
     formatDate: true,
     fix: true,
     sourceFile: path
-  }) as postMap;
+  });
 
-  if (!validateParsed(parse)) {
+  /*if (!validateParsed(parse)) {
     console.log(color.redBright('[fail]'), 'at 1st parse');
     return null;
-  }
+  }*/
 
   parse.fileTree = {
     source: replacePath(
@@ -52,7 +51,7 @@ const parsePost = (path: string, content?: string) => {
     )
   };
 
-  parse = modifyPost(parse);
+  parse = modifyPost(<any>parse);
 
   if (parse.metadata.type === 'post') {
     // insert parsed to caches (only non-redirected post)

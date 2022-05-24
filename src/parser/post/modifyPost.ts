@@ -1,28 +1,24 @@
-import Bluebird from 'bluebird';
-import chalk from 'chalk';
 import { parse as parseHTML } from 'node-html-parser';
-import yargs from 'yargs';
 import { isValidHttpUrl } from '../../gulp/utils';
 import { array_move } from '../../node/array-utils';
-import CacheFile from '../../node/cache';
-import scheduler from '../../node/scheduler';
+import { pcache } from '../../node/cache';
+import { md5 } from '../../node/md5-file';
 import { countWords } from '../../node/string-utils';
 import config from '../../types/_config';
-import ErrorMarkdown from '../error-markdown';
 import { renderBodyMarkdown } from '../toHtml';
-import parsePost, { postMap } from './parsePost';
+import { postMap } from './parsePost';
 import { archiveMap, mergedPostMap } from './postMapper';
-const argv = yargs(process.argv.slice(2)).argv;
-const nocache = argv['nocache'];
-const modCache = new CacheFile('modifyPost');
-const postCache = new CacheFile('posts');
-interface GroupLabel {
+
+const useCache = config.generator.cache;
+const modCache = pcache('modify');
+
+/*interface GroupLabel {
   [key: string]: ReturnType<typeof parsePost>[];
 }
 const postCats: GroupLabel = {};
 const postTags: GroupLabel = {};
 const cacheTags = new CacheFile('postTags');
-const cacheCats = new CacheFile('postCats');
+const cacheCats = new CacheFile('postCats');*/
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 type modifyPostType = postMap | mergedPostMap | archiveMap;
@@ -33,7 +29,23 @@ type modifyPostType = postMap | mergedPostMap | archiveMap;
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function originalModifyPost<T extends modifyPostType>(parse: T) {
+export function modifyPost<T extends modifyPostType>(parse: T) {
+  if (!parse) return null;
+  const cacheKey = md5(
+    parse.metadata.title +
+      parse.metadata.date +
+      parse.metadata.updated +
+      parse.metadata.type
+  );
+  /*if (parse.fileTree) {
+    if (parse.fileTree.source) {
+      cacheKey = md5(parse.fileTree.source);
+    }
+  }*/
+  if (useCache) {
+    const get = modCache.getSync<typeof parse>(cacheKey);
+    if (get) return get;
+  }
   // @todo setup empty tags and categories when not set
   if (!Array.isArray(parse.metadata.category))
     parse.metadata.category = [config.default_category];
@@ -122,7 +134,7 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   // @todo remove duplicate tags
   parse.metadata.tags = [...new Set(parse.metadata.tags)];
 
-  // @todo prepare to add post category to cache
+  /*// @todo prepare to add post category to cache
   parse.metadata.category.forEach((name: string) => {
     if (!name) return;
     // init
@@ -135,12 +147,13 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
   // @todo prepare to add post tag to cache
   parse.metadata.tags.forEach((name: string) => {
     if (!name) return;
+    let post = postTags[name];
     // init
-    if (!postTags[name]) postTags[name] = [];
+    if (!post) post = [];
     // prevent duplicate push
     if (!postTags[name].find(({ title }) => title === parse.metadata.title))
       postTags[name].push(<any>parse);
-  });
+  });*/
 
   // @todo set type post when not set
   if (!parse.metadata.type) parse.metadata.type = 'post';
@@ -178,7 +191,7 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
     });
   }
 
-  scheduler.add('add-labels', () => {
+  /*scheduler.add('add-labels', () => {
     Bluebird.all([postCats, postTags]).each((group, index) => {
       for (const name in group) {
         if (Object.prototype.hasOwnProperty.call(group, name)) {
@@ -191,61 +204,12 @@ export function originalModifyPost<T extends modifyPostType>(parse: T) {
         }
       }
     });
-  });
+  });*/
+
+  modCache.putSync(cacheKey, parse);
 
   return parse;
 }
 
-/**
- * Cacheable {@link modifyPostOri}
- * @see {@link modifyPostOri}
- * @param parse parsed post object
- * @param sourceFile source file path as cache key
- * @param cache read cache? default true
- * @returns modified parsed post object
- */
-export function cacheableModifyPost(
-  parse: Parameters<typeof originalModifyPost>[0],
-  sourceFile: string = null,
-  cache = true
-): ReturnType<typeof originalModifyPost> {
-  let result: ReturnType<typeof originalModifyPost>;
-  const source = sourceFile || parse.fileTree.source;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const logname = chalk.cyanBright('[copy][modify][md]');
-
-  // if file changed, --nocache, or cache parameter is false
-  // do write new cache
-  if (modCache.isFileChanged(source) || nocache || !cache) {
-    // file changed or no cache
-    result = originalModifyPost(parse);
-    postCache.set(source, result);
-    modCache.set(source, result);
-    //console.log(logname, 'no cache');
-  } else {
-    // cache hit
-    result = modCache.get(source);
-    //<postMap>
-    if (typeof result === 'string') {
-      try {
-        result = JSON.parse(result);
-      } catch (error) {
-        const md = new ErrorMarkdown({ argument: parse });
-        md.add('get', result);
-        throw md;
-      }
-    }
-  }
-
-  return result;
-}
-
-let modifyPost: typeof cacheableModifyPost | typeof originalModifyPost;
-if (config.generator.cache) {
-  modifyPost = cacheableModifyPost;
-} else {
-  modifyPost = originalModifyPost;
-}
-export { modifyPost };
 export default modifyPost;
 _g.modifyPost = modifyPost;

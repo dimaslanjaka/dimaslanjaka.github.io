@@ -17,6 +17,17 @@ export function md5FileSync(path: string) {
  * @returns
  */
 export function md5(data: string) {
+  if (typeof data !== 'string' || !data) {
+    if (typeof data !== 'string') {
+      throw new Error(
+        'The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received type ' +
+          typeof data
+      );
+    } else {
+      throw new Error("the 'data' argument is empty");
+    }
+  }
+
   return crypto.createHash('md5').update(data).digest('hex');
 }
 

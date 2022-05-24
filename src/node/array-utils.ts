@@ -154,6 +154,11 @@ export const array_move = function <T extends any[]>(
 };
 
 /**
+ * @see {@link array_move}
+ */
+export const array_move_index = array_move;
+
+/**
  * split array to chunks
  * @param sourceArray
  * @param chunkSize

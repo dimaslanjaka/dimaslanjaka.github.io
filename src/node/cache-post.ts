@@ -5,6 +5,7 @@ import { mergedPostMap } from '../parser/post/postMapper';
 import config, { tmp } from '../types/_config';
 import { removeEmpties } from './array-utils';
 import CacheFile, { defaultResovableValue } from './cache';
+import { md5 } from './md5-file';
 import memoizer from './memoize-fs';
 import { isMatch } from './string-utils';
 
@@ -153,7 +154,7 @@ export class CachePost extends CacheFile {
   }
   set(key: string, value: any) {
     super.set(key, value);
-    pcache.putSync(key, value);
+    pcache.putSync(md5(key), value);
     return this;
   }
 }

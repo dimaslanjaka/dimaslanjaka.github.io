@@ -4,7 +4,8 @@ const cache =
   typeof argv['nocache'] !== 'undefined' && argv['nocache'] ? false : true;
 const config = require('../build/src/types/_config');
 config.cache = cache;
-
+const gulp = require('../build/gulpfile'); //require('gulp');
+/*
 const { copy_assets } = require('../build/src/gulp/tasks/copy/assets');
 const { copy_posts } = require('../build/src/gulp/tasks/copy');
 const {
@@ -16,11 +17,13 @@ const {
   clean_db,
   clean_tmp
 } = require('../build/src/gulp/tasks/clean');
+*/
+
 /**
  * @type {string[]}
  */
 const args = argv._;
-const task = {
+/*const task = {
   copy: {
     assets: copy_assets,
     remove_inline_style: gulpInlineStyle,
@@ -33,16 +36,25 @@ const task = {
     posts: clean_posts
   }
 };
-args
-  .map((s) => {
-    const split = s.split(':');
-    if (split.length === 1) return split[0];
-    return split[1];
-  })
-  .forEach((arg) => {
-    if (arg === 'blogger') {
-      task.copy.assets();
-      task.copy.post();
-      task.copy.remove_inline_style();
-    }
+args.forEach((arg) => {
+  const split = arg.split(':');
+  const main = split[0];
+  const sub = split.length > 1 ? split[1] : null;
+  console.log(main, sub);
+  gulp.series(arg)(null);
+  if (sub === 'blogger') {
+    task.copy.assets().once('end', () => {
+      task.copy.post().once('end', () => {
+        task.copy.remove_inline_style();
+      });
+    });
+  }
+});
+*/
+
+const run = () =>
+  gulp.series(args[0])(() => {
+    args.shift();
+    run();
   });
+run();

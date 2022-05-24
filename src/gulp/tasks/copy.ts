@@ -20,7 +20,7 @@ const logname = color.cyan('[copy][post]');
  * @param cpath custom post path
  * @returns
  */
-export const copyPosts = async (_done: TaskCallback = null, cpath?: string) => {
+export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
   const exclude = config.exclude.map(
     (ePattern) => '!' + ePattern.replace(/^!+/, '')
   );
@@ -29,30 +29,28 @@ export const copyPosts = async (_done: TaskCallback = null, cpath?: string) => {
       'Granny Smith Apple'
     ](post_public_dir)}`
   );
-  function _run() {
-    const run = gulp
-      .src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir })
-      .pipe(
-        through2.obj(function (file, _encoding, next) {
-          const path = file.path;
-          if (typeof cpath == 'string' && cpath.length > 2) {
-            // copy specific post path
-            if (!path.includes(cpath)) return next(null, file);
-          }
-          const log = [logname, String(path)];
-          const parse = parsePost(String(path), String(file.contents));
+  const run = gulp
+    .src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir })
+    .pipe(
+      through2.obj(function (file, _encoding, next) {
+        const path = file.path;
+        if (typeof cpath == 'string' && cpath.length > 2) {
+          // copy specific post path
+          if (!path.includes(cpath)) return next(null, file);
+        }
+        const log = [logname, String(path)];
+        const parse = parsePost(String(path), String(file.contents));
 
-          //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
-          const build = buildPost(parse);
-          //write(tmp(parse.metadata.uuid, 'article.md'), build);
-          log.push(color.green('success'));
-          file.contents = Buffer.from(build);
-          //if (this) this.push(file);
-          return next(null, file);
-        })
-      );
-    return determineDirname(run).pipe(gulp.dest(post_public_dir));
-  }
+        //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
+        const build = buildPost(parse);
+        //write(tmp(parse.metadata.uuid, 'article.md'), build);
+        log.push(color.green('success'));
+        file.contents = Buffer.from(build);
+        //if (this) this.push(file);
+        return next(null, file);
+      })
+    );
+  return determineDirname(run).pipe(gulp.dest(post_public_dir));
 };
 /**
  * @see {@link copyPosts}

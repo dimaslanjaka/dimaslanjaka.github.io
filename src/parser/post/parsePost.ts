@@ -62,10 +62,7 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
   parse = modifyPost(<any>parse);
 
   if (parse.metadata.type === 'post') {
-    // insert parsed to caches (only non-redirected post)
-    if (!parse.metadata.redirect) {
-      cachePost.set(path, parse);
-    }
+    cachePost.set(path, parse);
     //parseCache.set(path, parse);
   }
 

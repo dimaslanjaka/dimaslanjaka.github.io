@@ -17,6 +17,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @returns
  */
 const parsePost = (path: string, content?: string): Nullable<postMap> => {
+  // @todo return from cache
   if (useCache) {
     const get = cachePost.get<ReturnType<typeof moduleParsePost>>(path);
     if (get) return get;

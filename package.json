@@ -35,7 +35,9 @@
     "format": "run-p format:**",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --parser html -w ./themes/**/*.ejs",
-    "ci": "yarn remove hexo-post-parser safelinkify google-news-sitemap && yarn add file:./packages/hexo-post-parser file:./packages/google-news-sitemap file:./packages/hexo-post-parser/packages/persistent-cache file:./packages/safelink && yarn install --check-cache --check-files"
+    "ci": "run-s ci:**",
+    "ci:self": "yarn remove hexo-post-parser safelinkify google-news-sitemap && yarn add file:./packages/hexo-post-parser file:./packages/google-news-sitemap file:./packages/hexo-post-parser/packages/persistent-cache file:./packages/safelink file:./source && yarn install --check-cache --check-files",
+    "ci:submodule": "git submodule foreach yarn ci"
   },
   "repository": {
     "type": "git",
@@ -83,7 +85,7 @@
     "node-sass": "^7.0.1",
     "persistent-cache": "file:./packages/hexo-post-parser/packages/persistent-cache",
     "safelinkify": "file:./packages/safelink",
-    "source": "file:./source",
+    "sbg-source": "file:./source",
     "sqlite3": "^5.0.8",
     "static-blog-generator-themes": "file:./themes",
     "tiny-typed-emitter": "^2.1.0",

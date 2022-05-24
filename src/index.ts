@@ -1,6 +1,11 @@
 import gulp from 'gulp';
 import { localServer } from './gulp/server';
-import { clean_db, clean_posts, clean_public, clean_tmp } from './gulp/tasks/clean';
+import {
+  clean_db,
+  clean_posts,
+  clean_public,
+  clean_tmp
+} from './gulp/tasks/clean';
 import { copyPosts } from './gulp/tasks/copy';
 import { copyAssets } from './gulp/tasks/copy/assets';
 import { gulpInlineStyle } from './gulp/tasks/copy/remove-inline-style';
@@ -35,7 +40,10 @@ gulp.task('clean:public', clean_public);
 gulp.task('clean:posts', clean_posts);
 gulp.task('clean:db', clean_db);
 gulp.task('clean:tmp', clean_tmp);
-gulp.task('clean', gulp.parallel('clean:db', 'clean:tmp', 'clean:posts', 'clean:public'));
+gulp.task(
+  'clean',
+  gulp.parallel('clean:db', 'clean:tmp', 'clean:posts', 'clean:public')
+);
 
 // DEFAULT TASK
 gulp.task('default', gulp.series('copy', 'generate'));

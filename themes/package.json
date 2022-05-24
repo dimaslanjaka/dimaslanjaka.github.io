@@ -1,0 +1,15 @@
+{
+  "name": "static-blog-generator-themes",
+  "version": "1.0.0",
+  "description": "All themes of static blog generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimas Lanjaka",
+  "license": "ISC",
+  "dependencies": {
+    "sbg-theme-bootstrap": "file:./bootstrap",
+    "sbg-theme-iridium": "file:./iridium"
+  }
+}

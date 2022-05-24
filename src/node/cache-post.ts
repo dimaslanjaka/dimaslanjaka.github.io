@@ -155,12 +155,10 @@ export class CachePost {
     return pcache('post').keysSync();
   }
 
-  //getAll<T extends any[]>(type: 'value'): T;
-  //getAll(type: 'key'): string[];
-  getAll<T>(): T[] {
+  getAll() {
     const keys: string[] = pcache('post').keysSync();
     return keys.map((key) => {
-      return pcache('post').getSync(key);
+      return pcache('post').getSync<postMap>(key);
     });
   }
 }

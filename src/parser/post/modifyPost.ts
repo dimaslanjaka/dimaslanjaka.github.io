@@ -29,7 +29,7 @@ type modifyPostType = postMap | mergedPostMap | archiveMap;
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function modifyPost<T extends modifyPostType>(parse: T) {
+export function modifyPost<T extends modifyPostType>(parse: T): T {
   if (!parse) return null;
   const cacheKey = md5(
     parse.metadata.title +

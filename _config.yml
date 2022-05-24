@@ -96,6 +96,17 @@ title_map:
   wordpress: Blogging
   nodejs: NodeJS
 
+## Minify generated files
+compress:
+  ## Compress size image
+  image: true
+  ## Minify CSS
+  css: true
+  ## Minify JS
+  js: true
+  ## Minify HTML
+  html: true
+
 # https://hexo.io/docs/configuration.html
 # skip render template, direct copy
 skip_render:

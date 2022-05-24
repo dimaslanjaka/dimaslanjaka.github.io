@@ -37,7 +37,10 @@ please using stable version from https://github.com/dimaslanjaka/dimaslanjaka.gi
 - - android termux need c++
 
 ## Project Installation
-Always use `npm` to install. `yarn` and `pnpm` not always compatible.
+~Always use `npm` to install. `yarn` and `pnpm` not always compatible.~
+
+were keeping the `package-lock.json` to easily `yarn` and `pnpm` to fetch the cache, you can install this project with `yarn` or `pnpm` (not recommended).
+
 ```bash
 # install global packages
 npm i -g npm gulp-cli typescript ts-node

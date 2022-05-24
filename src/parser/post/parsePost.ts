@@ -6,6 +6,7 @@ import CachePost from '../../node/cache-post';
 import config from '../../types/_config';
 import modifyPost from './modifyPost';
 //const parseCache = new CacheFile('parsePost');
+const useCache = config.generator.cache;
 const cachePost = new CachePost();
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
@@ -16,6 +17,10 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @returns
  */
 const parsePost = (path: string, content?: string): Nullable<postMap> => {
+  if (useCache) {
+    const get = cachePost.get<ReturnType<typeof moduleParsePost>>(path);
+    if (get) return get;
+  }
   let parse = moduleParsePost(content || path, {
     shortcodes: {
       youtube: true,
@@ -32,6 +37,8 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
     fix: true,
     sourceFile: path
   });
+
+  if (!parse) return null;
 
   /*if (!validateParsed(parse)) {
     console.log(color.redBright('[fail]'), 'at 1st parse');

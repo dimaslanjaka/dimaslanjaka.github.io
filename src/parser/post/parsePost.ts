@@ -28,7 +28,7 @@ const parsePost = (path: string, content?: string) => {
       text: true
     },
     cache: config.generator.cache,
-    config,
+    config: <any>config,
     formatDate: true,
     fix: true,
     sourceFile: path

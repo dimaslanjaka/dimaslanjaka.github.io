@@ -4,9 +4,11 @@ import { existsSync, write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import './generate-after';
 import './generate-archives';
+import './generate-assets';
 import './generate-feed';
 import './generate-posts';
 import './generate-sitemap';
+import './generate-template';
 import './import';
 import './minify';
 

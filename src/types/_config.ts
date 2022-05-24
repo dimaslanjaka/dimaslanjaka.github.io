@@ -91,11 +91,11 @@ if (argv['nocache']) config.generator.cache = false;
 config.url = config.url.replace(/\/+$/, '');
 
 /**
- * Public Source Post Dir (`source/_posts`)
+ * Public Source Post Dir ({@link config.source_dir})
  */
 export const post_public_dir = resolve(join(root, config.source_dir, '_posts'));
 /**
- * Generated directory (`config.public_dir`)
+ * Generated directory ({@link config.public_dir})
  */
 export const post_generated_dir = resolve(join(root, config.public_dir));
 

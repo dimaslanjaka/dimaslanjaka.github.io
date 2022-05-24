@@ -148,7 +148,8 @@ const chalkcolor = {
   green: chalk.green,
   greenBright: chalk.greenBright,
   cyan: chalk.cyan,
-  cyanBright: chalk.cyanBright
+  cyanBright: chalk.cyanBright,
+  hex: chalk.hex
 };
 
 const color = Object.assign(colors, chalkcolor);

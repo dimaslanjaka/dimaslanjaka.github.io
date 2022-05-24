@@ -1,10 +1,7 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
-import { copyFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, postMap } from 'hexo-post-parser';
-import sass from 'node-sass';
-import through2 from 'through2';
 import { toUnix } from 'upath';
 import yargs from 'yargs';
 import ejs_object from '../../ejs';
@@ -26,10 +23,8 @@ import {
   readFileSync,
   removeMultiSlashes,
   resolve,
-  statSync,
   write
 } from '../../node/filemanager';
-import logger from '../../node/logger';
 import { replaceArr } from '../../node/string-utils';
 import { modifyPost } from '../../parser/post/modifyPost';
 import parsePost from '../../parser/post/parsePost';
@@ -62,87 +57,14 @@ if (!existsSync(generated_dir)) mkdirSync(generated_dir);
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 const logname = chalk.hex('#fcba03')('[render]');
 const page_url = new URL(config.url);
-const global_exclude = ['**/_drafts/**', '**/_data/**'];
-
-const renderAssets = async () => {
-  logger.log(
-    logname + chalk.magentaBright('[assets]'),
-    'copy ->',
-    generated_dir
-  );
-  const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
-  const ignore = ['**/*.md', '**/.git*', ...exclude, ...global_exclude];
-  const glob = await globSrc('**/*.*', {
-    cwd: source_dir,
-    ignore: ignore,
-    dot: true,
-    stat: true
-  }).then((s) => {
-    if (config.verbose) {
-      logger.log(logname + '[total]', s.length);
-      logger.log(ignore);
-    }
-    return s;
-  });
-  for (let i = 0; i < glob.length; i++) {
-    const file = glob[i];
-    const src = join(source_dir, file);
-    const stat = statSync(src);
-    const dest = join(generated_dir, file.replace('_posts/', '/'));
-    if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
-    if (!stat.isDirectory() && existsSync(src)) {
-      copyFileSync(src, dest);
-      if (config.verbose)
-        logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
-    }
-  }
-};
-
-gulp.task('generate:assets', renderAssets);
-
-const renderTemplate = () => {
-  const src = join(theme_dir, 'source/**/**');
-  logger.log(
-    logname + chalk.magentaBright('[template]'),
-    'copy',
-    src,
-    '->',
-    generated_dir
-  );
-  return gulp
-    .src([src, '!**/.git*'], { cwd: root })
-    .pipe(
-      through2.obj((file, enc, next) => {
-        if (file.isNull()) {
-          return next(null, file);
-        }
-        const path = file.path;
-        const ext = file.extname;
-
-        if (ext == '.scss') {
-          file.extname = '.css';
-          const result = sass.renderSync({
-            data: String(file.contents)
-          });
-          file.contents = result.css;
-          console.log('[sass]', 'compiled', path);
-        }
-        next(null, file);
-      })
-    )
-    .pipe(gulp.dest(generated_dir));
-  //.on('end', () => logger.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
-};
-
-gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
 const sitemap = new Sitemap();
 
-export const renderArticle = function () {
+export const renderPost = function () {
   const log = logname + chalk.blue('[posts]');
   return new Bluebird((resolve) => {
-    logger.log(log, 'generating to', generated_dir);
+    console.log(log, 'generating to', generated_dir);
     const exclude = config.exclude.map((ePattern) =>
       ePattern.replace(/^!+/, '')
     );
@@ -204,7 +126,7 @@ export const renderArticle = function () {
       // filter only non-empty object
       .filter((parsed) => typeof parsed == 'object')
       .then(function (result) {
-        logger.log(log, 'markdown sources total', result.length);
+        console.log(log, 'markdown sources total', result.length);
         let counter = 0;
         /**
          * Queue for process first item
@@ -234,20 +156,20 @@ export const renderArticle = function () {
            */
           const save = (rendered: string) => {
             const saveto = join(generated_dir, parsed.permalink);
-            //logger.log(logname, chalk.greenBright('generated'), saveto);
+            //console.log(logname, chalk.greenBright('generated'), saveto);
             write(saveto, rendered);
             parsed.generated = rendered;
             parsed.generated_path = saveto;
             renderCache.set(parsed.path, rendered);
             //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
-            //logger.log(logname + chalk.cyanBright('[remaining]', result.length));
+            //console.log(logname + chalk.cyanBright('[remaining]', result.length));
             sitemap.add(parsed.metadata);
             return parsed;
           };
 
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
-              logger.log(
+              console.log(
                 log + chalk.blueBright('[cache]'),
                 parsed.path,
                 chalk.redBright('changed')
@@ -262,8 +184,8 @@ export const renderArticle = function () {
             .then(save)
             .then(skip)
             .catch((e) => {
-              logger.log(logname, chalk.red('[error]'), parsed.path);
-              logger.error(e);
+              console.log(logname, chalk.red('[error]'), parsed.path);
+              console.error(e);
             });
         };
         return runner();
@@ -271,7 +193,7 @@ export const renderArticle = function () {
   });
 };
 
-gulp.task('generate:posts', renderArticle);
+gulp.task('generate:posts', renderPost);
 
 const helpers: DynamicObject = {
   /**

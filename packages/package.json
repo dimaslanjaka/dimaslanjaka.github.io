@@ -1,0 +1,23 @@
+{
+  "name": "sbg-packages",
+  "version": "1.0.0",
+  "description": "static-blog-generator packages wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimas Lanjaka",
+  "license": "ISC",
+  "private": true,
+  "files": [
+    "./hexo-post-parser",
+    "./google-news-sitemap",
+    "./safelink"
+  ],
+  "dependencies": {
+    "hexo-post-parser": "file:./hexo-post-parser",
+    "google-news-sitemap": "file:./google-news-sitemap",
+    "safelinkify": "file:./safelink",
+    "persistent": "file:./hexo-post-parser/packages/persistent-cache"
+  }
+}

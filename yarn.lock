@@ -9620,13 +9620,25 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
+"sbg-source@file:./source":
+  version "1.0.0"
+  dependencies:
+    axios "^0.26.1"
+    bootstrap "^5.1.3"
+    bootstrap-icons "^1.8.1"
+    clipboard "^2.0.11"
+    crypto-js "^4.1.1"
+    highlight.js "^11.5.1"
+    jquery "^3.6.0"
+    toastr "^2.1.4"
+
 "sbg-theme-bootstrap@file:./themes/bootstrap":
   version "1.0.0"
 
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-8f668b75-d309-40b5-baef-50e1904792e2-1653410310488/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-588050d6-1172-43d4-b242-f9a13ea189e3-1653413704888/node_modules/sbg-theme-iridium/libs/skeljs"
 
 scss-tokenizer@^0.3.0:
   version "0.3.0"
@@ -9857,7 +9869,7 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-"skeljs@file:themes/iridium/libs/skeljs":
+"skeljs@file:./themes/iridium/libs/skeljs":
   version "3.0.2"
 
 slash@^3.0.0:
@@ -10033,18 +10045,6 @@ source-map@~0.8.0-beta.0:
   dependencies:
     whatwg-url "^7.0.0"
 
-"source@file:./source":
-  version "1.0.0"
-  dependencies:
-    axios "^0.26.1"
-    bootstrap "^5.1.3"
-    bootstrap-icons "^1.8.1"
-    clipboard "^2.0.11"
-    crypto-js "^4.1.1"
-    highlight.js "^11.5.1"
-    jquery "^3.6.0"
-    toastr "^2.1.4"
-
 sparkles@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sparkles/-/sparkles-1.0.1.tgz#008db65edce6c50eec0c5e228e1945061dd0437c"
@@ -10143,8 +10143,8 @@ stat-mode@^0.2.0:
 "static-blog-generator-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-themes-1.0.0-facf07db-73a4-4730-890b-671f9c28fb1e-1653410310485/node_modules/static-blog-generator-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-themes-1.0.0-facf07db-73a4-4730-890b-671f9c28fb1e-1653410310485/node_modules/static-blog-generator-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-themes-1.0.0-acc6811f-e0e7-4914-9c4c-60d64aef29ad-1653413704883/node_modules/static-blog-generator-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-themes-1.0.0-acc6811f-e0e7-4914-9c4c-60d64aef29ad-1653413704883/node_modules/static-blog-generator-themes/iridium"
 
 static-extend@^0.1.1:
   version "0.1.2"

@@ -148,14 +148,22 @@ export const pcache = persistentCache({
   duration: 1000 * 3600 * 24 //one day
 });
 
-export class CachePost extends CacheFile {
-  constructor() {
-    super('posts');
-  }
+export class CachePost {
   set(key: string, value: any) {
-    super.set(key, value);
     pcache.putSync(md5(key), value);
     return this;
+  }
+
+  get<T>(key: string) {
+    return pcache.getSync(md5(key)) as T;
+  }
+
+  getAll<T extends any[]>(type: 'key' | 'value' = 'value') {
+    const keys: string[] = pcache.keysSync();
+    if (type == 'key') return keys;
+    return keys.map((key) => {
+      return pcache.getSync(key);
+    }) as T;
   }
 }
 

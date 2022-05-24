@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const yargs = require('yargs');
+const argv = yargs(process.argv.slice(2)).argv;
+const cache =
+  typeof argv['nocache'] !== 'undefined' && argv['nocache'] ? false : true;
+const config = require('../build/src/types/_config');
+config.cache = cache;
+/**
+ * @type {string[]}
+ */
+const args = argv._;
+
+args.forEach((arg) => {
+  console.log(arg);
+});

@@ -1,8 +1,11 @@
 # SBG (Static Blog Generator) Project
 Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
 
-## Moving Repo
-https://github.com/dimaslanjaka/static-blog-generator
+## Project Repository Moved
+| Name | Repo |
+| --- | --- |
+| Stable release | https://github.com/dimaslanjaka/static-blog-generator/tree/stable |
+| Dev | https://github.com/dimaslanjaka/static-blog-generator/tree/master |
 
 <details>
   <summary>Walkthrough</summary>

@@ -27,7 +27,7 @@ jobs:
       with:
         submodules: recursive
         token: "${{ secrets.GITHUB_TOKEN }}"
-        ref: "dev"
+        ref: "hexo-compiler"
     - uses: actions/setup-node@v3
       with:
         node-version: '16'

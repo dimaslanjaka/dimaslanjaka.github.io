@@ -2,7 +2,11 @@ name: DEV TEST
 
 on:
   push:
-    branches: [ hexo-compiler ]
+    branches:
+      - hexo-compiler
+  pull_request:
+    branches:
+      - hexo-compiler
 
 # cancel previous workflows, run only one workflow
 #concurrency:

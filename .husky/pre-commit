@@ -1,8 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npx gulp update-hash
-if `git status | grep -q ".guid"`; then
-  git add .guid
-  #git commit -m "update hash"
-fi

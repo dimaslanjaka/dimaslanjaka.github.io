@@ -1,39 +1,8 @@
 .DS_Store
 Thumbs.db
 db.json
-twitter-db.json
 *.log
-node_modules
-vendor
+node_modules/
 public/
 .deploy*/
-tmp/
-exclude/
-docs/
-firebase.js
-
-# node cache
-package-lock.json
-.yarn
-
-# git filter-branch
-.git-rewrite
-
-# remove dynamic idea objects
-.idea/vcs.xml
-.idea/workspace.xml
-**/.idea/vcs.xml
-**/.idea/workspace.xml
-
-# custom build for cache hexo-seo
-build/*
-#!build/hexo-seo/
-
-tmp
-temo
-*.tar.xz
-*.zip
-*.7z
-*.rar
-build
-tmp
+_multiconfig.yml

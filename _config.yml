@@ -6,13 +6,11 @@
 title: "WMI"
 subtitle: "Website Management Indonesia"
 description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.
-subtitle_desc: "External source WMI Github Laboratory"
 keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
 language:
   - en
   - id
 timezone: "Asia/Jakarta"
-introduction: "introduction"
 
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb
@@ -136,6 +134,7 @@ exclude:
   - "**/Test/**"
   - "**/guzzle/**"
   - "**/exclude/**"
+  - "**/hexo-post-parser/**"
 ignore:
 
 # https://www.npmjs.com/package/hexo-server

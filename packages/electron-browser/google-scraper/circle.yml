@@ -1,7 +1,0 @@
-machine:
-  node:
-    version: 6.2.0
-dependencies:
-  pre:
-    # Circle uses npm v2 by default
-    - npm install -g npm@3.x.x

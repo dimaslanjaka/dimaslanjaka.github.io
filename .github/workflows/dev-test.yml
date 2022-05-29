@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - hexo-compiler
+      - compiler
   pull_request:
     branches:
       - hexo-compiler

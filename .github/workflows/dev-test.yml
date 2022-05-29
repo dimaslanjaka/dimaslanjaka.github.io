@@ -36,7 +36,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm i -g gulp-cli typescript npm ts-node
+        npm i -g gulp-cli typescript npm ts-node hexo-cli yarn
         yarn install --check-files
         yarn add git+https://github.com/dimaslanjaka/persistent-cache.git#improve2 --dev
         yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main --dev

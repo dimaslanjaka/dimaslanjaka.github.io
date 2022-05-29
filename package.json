@@ -17,13 +17,17 @@
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
+    "hexo-github-card": "^1.0.5",
+    "hexo-pdf": "^1.1.1",
     "hexo-renderer-marked": "^5.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "file:./themes/butterfly"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
     "hexo-post-parser": "git+https://github.com/dimaslanjaka/hexo-post-parser.git",
+    "prettier": "2.6.2",
     "safelinkify": "git+https://github.com/dimaslanjaka/safelink.git"
   }
 }

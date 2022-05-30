@@ -3001,7 +3001,7 @@ hexo-pdf@^1.1.1:
 
 "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git", "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#83cbeed33f64c01aa1d14a8a2a149b9103c23aaa"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#5b706ce68bf050e641bab087d513bf00f3ea569f"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -5494,19 +5494,8 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-"sbg-theme-bootstrap@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes/bootstrap":
-  version "1.0.0"
-
-"sbg-theme-iridium@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes/iridium":
-  version "1.0.0"
-  dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-59b658a9-32e9-4e3a-b78e-a5599b89e661-1653951402201/node_modules/sbg-theme-iridium/libs/skeljs"
-
-"sbg-themes@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes":
-  version "1.0.0"
-  dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-3fdd7186-e6c0-4a27-91fd-b001943a20b5-1653951402198/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-3fdd7186-e6c0-4a27-91fd-b001943a20b5-1653951402198/node_modules/sbg-themes/iridium"
+"sbg-themes@file:./themes":
+  version "0.0.0"
 
 scss-tokenizer@^0.3.0:
   version "0.3.0"
@@ -5627,9 +5616,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
-
-"skeljs@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes/iridium/libs/skeljs":
-  version "3.0.2"
 
 smart-buffer@^4.2.0:
   version "4.2.0"
@@ -5804,8 +5790,8 @@ stack-trace@0.0.10:
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
-  version "2.0.51-beta-7dc6038a93"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#17bfb2d74ef049540bdff7dedc3c072bc583cc09"
+  version "2.0.6"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#576aa3d256002712fb9f510cebf611aadb0b7cf1"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.2"
@@ -5833,7 +5819,7 @@ stack-trace@0.0.10:
     nunjucks "^3.2.3"
     persistent-cache "git+https://github.com/dimaslanjaka/persistent-cache.git#improve2"
     safelinkify "git+https://github.com/dimaslanjaka/safelink.git#main"
-    sbg-themes "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes"
+    sbg-themes "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.6-576aa3d256002712fb9f510cebf611aadb0b7cf1/node_modules/static-blog-generator/themes"
     sqlite3 "^5.0.8"
     tiny-typed-emitter "^2.1.0"
     url-parse "^1.5.10"

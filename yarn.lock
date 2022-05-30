@@ -2999,25 +2999,9 @@ hexo-pdf@^1.1.1:
   dependencies:
     ejs "^1.0.0"
 
-"hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git":
+"hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git", "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#d4e25b740e1f63db3fe575a1e2a2bdcee2053fff"
-  dependencies:
-    axios "^0.27.2"
-    chalk "^4.1.0"
-    deepmerge-ts "^4.0.3"
-    fs-extra "^10.1.0"
-    jsdom "^19.0.0"
-    lodash "^4.17.21"
-    moment-timezone "^0.5.34"
-    persistent-cache "git+https://github.com/dimaslanjaka/persistent-cache#improve2"
-    upath "^2.0.1"
-    yaml "^2.1.0"
-    yargs "^17.5.1"
-
-"hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
-  version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#7e1ebedf38e93123867544f7f20c01ca437bf317"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#83cbeed33f64c01aa1d14a8a2a149b9103c23aaa"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -3128,7 +3112,7 @@ highlight.js@^11.0.1, highlight.js@^11.5.1:
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
-  integrity sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
+  integrity sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==
   dependencies:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
@@ -3268,7 +3252,7 @@ infer-owner@^1.0.4:
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
-  integrity sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=
+  integrity sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==
   dependencies:
     once "^1.3.0"
     wrappy "1"
@@ -3328,7 +3312,7 @@ is-accessor-descriptor@^1.0.0:
 is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
-  integrity sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
+  integrity sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==
 
 is-binary-path@^1.0.0:
   version "1.0.1"
@@ -3591,7 +3575,7 @@ is-wsl@^2.2.0:
 is@~0.2.6:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/is/-/is-0.2.7.tgz#3b34a2c48f359972f35042849193ae7264b63562"
-  integrity sha1-OzSixI81mXLzUEKEkZOucmS2NWI=
+  integrity sha512-ajQCouIvkcSnl2iRdK70Jug9mohIHVX9uKpoWnl115ov0R5mzBvRrXxrnHbsA+8AdwCwc/sfw7HXmd4I5EJBdQ==
 
 isarray@1.0.0, isarray@~1.0.0:
   version "1.0.0"
@@ -3601,7 +3585,7 @@ isarray@1.0.0, isarray@~1.0.0:
 isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
-  integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
+  integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
 isobject@^2.0.0:
   version "2.1.0"
@@ -3854,7 +3838,7 @@ lead@^1.0.0:
 levn@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
-  integrity sha1-OwmSTt+fCDwEkP3UwLxEIeBHZO4=
+  integrity sha512-0OO4y2iOHix2W6ujICbKIaEQXvFQHue65vUG3pb5EUomzPI90z9hsA1VsO/dbIIpC53J8gxM9Q4Oho0jrCM/yA==
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
@@ -3906,7 +3890,7 @@ locate-path@^5.0.0:
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-  integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
+  integrity sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==
 
 lodash@^4.17.11, lodash@^4.17.15, lodash@^4.17.21, lodash@~4.17.10:
   version "4.17.21"
@@ -3935,7 +3919,7 @@ lru-cache@^6.0.0:
 lru-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/lru-queue/-/lru-queue-0.1.0.tgz#2738bd9f0d3cf4f84490c5736c48699ac632cda3"
-  integrity sha1-Jzi9nw089PhEkMVzbEhpmsYyzaM=
+  integrity sha512-BpdYkt9EvGl8OfWHDQPISVpcl5xZthb+XPsbELj5AQXxIC8IriDZIQYjBJPEm5rS420sjZ0TLEzRcq5KdBhYrQ==
   dependencies:
     es5-ext "~0.10.2"
 
@@ -3983,7 +3967,7 @@ map-cache@^0.2.0, map-cache@^0.2.2:
 map-obj@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
-  integrity sha1-2TPOuSBdgr3PSIb2dCvcK03qFG0=
+  integrity sha512-7N/q3lyZ+LVCp7PzuxrJr4KMbBE2hW7BT7YNia330OFxIf4d3r5zVpicP2650l7CPN6RM9zOJRl3NGpqSiw3Eg==
 
 map-obj@^4.0.0:
   version "4.3.0"
@@ -4152,7 +4136,7 @@ minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
 minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
-  integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
+  integrity sha512-JIYlbt6g8i5jKfJ3xz7rF0LXmv2TkDxBLUkiBeZ7bAx4GnnNMr8xFpGnOxn6GhTEHx3SjRrZEoU+j04prX1ktg==
 
 minimatch@^3.0.4, minimatch@^3.1.1:
   version "3.1.2"
@@ -4261,7 +4245,7 @@ mixin-deep@^1.2.0:
 mkdirp-no-bin@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp-no-bin/-/mkdirp-no-bin-0.5.1.tgz#34c623196d36fb2ee2e561ab607305632e00619f"
-  integrity sha1-NMYjGW02+y7i5WGrYHMFYy4AYZ8=
+  integrity sha512-TXYKTFeoFPAhZZydgbBFE8iFnpDuS41hxwjG+XaQlz1YkzOjK/OfrxEsab8c3J0MLn3eZ/GPlYya1kdYex8Ing==
 
 mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
@@ -5510,8 +5494,19 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-"sbg-themes@file:./themes":
-  version "0.0.0"
+"sbg-theme-bootstrap@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes/bootstrap":
+  version "1.0.0"
+
+"sbg-theme-iridium@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes/iridium":
+  version "1.0.0"
+  dependencies:
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-59b658a9-32e9-4e3a-b78e-a5599b89e661-1653951402201/node_modules/sbg-theme-iridium/libs/skeljs"
+
+"sbg-themes@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes":
+  version "1.0.0"
+  dependencies:
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-3fdd7186-e6c0-4a27-91fd-b001943a20b5-1653951402198/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-3fdd7186-e6c0-4a27-91fd-b001943a20b5-1653951402198/node_modules/sbg-themes/iridium"
 
 scss-tokenizer@^0.3.0:
   version "0.3.0"
@@ -5632,6 +5627,9 @@ signal-exit@^3.0.0, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
+
+"skeljs@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes/iridium/libs/skeljs":
+  version "3.0.2"
 
 smart-buffer@^4.2.0:
   version "4.2.0"
@@ -5806,8 +5804,8 @@ stack-trace@0.0.10:
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
-  version "2.0.51-beta-4bd05d2d-e2fd-4d5f-8f31-5f1906ee9f09"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#b89a95a9e947e55bc4e070a24ef9f8eba8e95239"
+  version "2.0.51-beta-7dc6038a93"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#17bfb2d74ef049540bdff7dedc3c072bc583cc09"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.2"
@@ -5835,7 +5833,7 @@ stack-trace@0.0.10:
     nunjucks "^3.2.3"
     persistent-cache "git+https://github.com/dimaslanjaka/persistent-cache.git#improve2"
     safelinkify "git+https://github.com/dimaslanjaka/safelink.git#main"
-    sbg-themes "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-4bd05d2d-e2fd-4d5f-8f31-5f1906ee9f09-b89a95a9e947e55bc4e070a24ef9f8eba8e95239/node_modules/static-blog-generator/themes"
+    sbg-themes "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.51-beta-7dc6038a93-17bfb2d74ef049540bdff7dedc3c072bc583cc09/node_modules/static-blog-generator/themes"
     sqlite3 "^5.0.8"
     tiny-typed-emitter "^2.1.0"
     url-parse "^1.5.10"
@@ -6658,9 +6656,9 @@ yallist@^4.0.0:
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
 yaml@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.1.0.tgz#96ba62ff4dd990c0eb16bd96c6254a085d288b80"
-  integrity sha512-OuAINfTsoJrY5H7CBWnKZhX6nZciXBydrMtTHr1dC4nP40X5jyTIVlogZHxSlVZM8zSgXRfgZGsaHF4+pV+JRw==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.1.1.tgz#1e06fb4ca46e60d9da07e4f786ea370ed3c3cfec"
+  integrity sha512-o96x3OPo8GjWeSLF+wOAbrPfhFOGY0W00GNaxCDv+9hkcDJEnev1yh8S7pgHF0ik6zc8sQLuL8hjHjJULZp8bw==
 
 yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.9"

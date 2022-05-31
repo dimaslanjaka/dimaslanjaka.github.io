@@ -1,9 +1,11 @@
 {
   "terminal.integrated.env.linux": {
-    "PATH": "node_modules/.bin:bin:${env:PATH}"
+    "PATH": "${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin:${env:PATH}",
+    "YARN_CACHE_FOLDER": "${workspaceFolder}/tmp/yarn"
   },
   "terminal.integrated.env.windows": {
-    "PATH": "node_modules\\.bin;bin;${env:PATH}"
+    "PATH": "${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${env:PATH}",
+    "YARN_CACHE_FOLDER": "${workspaceFolder}/tmp/yarn"
   },
   "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
@@ -64,6 +66,6 @@
   "prettier.enableDebugLogs": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.printWidth": 180,
-  "npm.packageManager": "npm",
-  "eslint.packageManager": "npm"
+  "npm.packageManager": "yarn",
+  "eslint.packageManager": "yarn"
 }

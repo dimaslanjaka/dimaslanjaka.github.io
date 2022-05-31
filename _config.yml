@@ -98,10 +98,12 @@ prismjs:
 index_generator:
   path: ""
   per_page: 10
-  order_by: -date #updated | date
+  order_by: -updated #updated | date
 
 # Category & Tag
+
 default_category: uncategorized
+default_tag:
 category_map:
 tag_map:
 

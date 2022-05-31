@@ -55,6 +55,7 @@
   "files.exclude": {
     "**/node_modules": true,
     "**/vendor": true,
+    "**/*-backup": true,
     "**/tmp/yarn": true
   },
   "typescript.tsdk": "./node_modules/typescript/lib",

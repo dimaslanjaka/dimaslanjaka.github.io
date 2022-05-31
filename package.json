@@ -1,13 +1,18 @@
 {
-  "name": "hexo-site",
+  "name": "hexo-wmi",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "packages/safelinkify",
+    "packages/static-blog-generator",
+    "packages/hexo-post-parser"
+  ],
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files"
+    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files --latest"
   },
   "hexo": {
     "version": "6.2.0"
@@ -27,14 +32,9 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "hexo-post-parser": "dimaslanjaka/hexo-post-parser",
+    "hexo-post-parser": "file:./packages/hexo-post-parser",
     "prettier": "2.6.2",
-    "safelinkify": "dimaslanjaka/safelink",
-    "static-blog-generator": "dimaslanjaka/static-blog-generator#dev"
-  },
-  "peerDependencies": {
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser",
-    "safelinkify": "https://github.com/dimaslanjaka/safelink",
-    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator#dev"
+    "safelinkify": "file:./packages/safelinkify",
+    "static-blog-generator": "file:./packages/static-blog-generator"
   }
 }

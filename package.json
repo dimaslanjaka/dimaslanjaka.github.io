@@ -12,7 +12,8 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files --latest"
+    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files --latest",
+    "push": "sh push.sh"
   },
   "hexo": {
     "version": "6.2.0"

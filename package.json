@@ -32,9 +32,9 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "hexo-post-parser": "file:./packages/hexo-post-parser",
+    "hexo-post-parser": "file:./packages/static-blog-generator/packages/hexo-post-parser",
     "prettier": "2.6.2",
-    "safelinkify": "file:./packages/safelinkify",
+    "safelinkify": "file:./packages/static-blog-generator/packages/safelink",
     "static-blog-generator": "file:./packages/static-blog-generator"
   }
 }

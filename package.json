@@ -31,5 +31,10 @@
     "prettier": "2.6.2",
     "safelinkify": "dimaslanjaka/safelink",
     "static-blog-generator": "dimaslanjaka/static-blog-generator#dev"
+  },
+  "peerDependencies": {
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser",
+    "safelinkify": "https://github.com/dimaslanjaka/safelink",
+    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator#dev"
   }
 }

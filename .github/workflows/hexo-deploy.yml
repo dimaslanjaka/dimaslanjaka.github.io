@@ -19,53 +19,53 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: szenius/set-timezone@v1.0
-      with:
-        timezoneLinux: "Asia/Jakarta"
-        timezoneMacos: "Asia/Jakarta"
-        timezoneWindows: "Western Indonesia Time"
-    - uses: actions/checkout@v3
-      with:
-        submodules: recursive
-        token: "${{ secrets.GITHUB_TOKEN }}"
-        ref: "hexo-compiler"
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '16'
+      - uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Jakarta"
+          timezoneMacos: "Asia/Jakarta"
+          timezoneWindows: "Western Indonesia Time"
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          ref: "hexo-compiler"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-    - name: Declare some variables
-      id: vars
-      shell: bash
-      run: |
-        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
-        echo "::set-output name=yarn::$(yarn cache dir)"
-        echo "::set-output name=npm::$(npm config get cache)"
+      - name: Declare some variables
+        id: vars
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+          echo "::set-output name=yarn::$(yarn cache dir)"
+          echo "::set-output name=npm::$(npm config get cache)"
 
-    - uses: actions/cache@v3
-      with:
-        path: |
-          ${{ steps.vars.outputs.yarn }}
-          ${{ steps.vars.outputs.npm }}
-          ./tmp
-          ./dist
-          ./node_modules
-          ./tests
-        key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ${{ steps.vars.outputs.yarn }}
+            ${{ steps.vars.outputs.npm }}
+            ./tmp
+            ./dist
+            ./node_modules
+            ./tests
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
-    - name: Install dependencies
-      run: |
-        npm i -g gulp-cli typescript npm ts-node hexo-cli yarn
-        yarn run refresh --immutable
-    - run: gulp hexo:clean
-    - run: gulp hexo:copy
-    - run: hexo generate
-    - name: Deploy 🚀
-      #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
-      if: ${{ false }}
-      #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
-      uses: JamesIves/github-pages-deploy-action@v4.3.0
-      with:
-        branch: master # The branch the action should deploy to.
-        folder: docs # The folder the action should deploy.
-        force: false # merge instead push --force, (keep old / non modified) files?
+      - name: Install dependencies
+        run: |
+          npm i -g gulp-cli typescript npm ts-node hexo-cli yarn
+          yarn run refresh --immutable
+      - run: gulp hexo:clean
+      - run: gulp hexo:copy
+      - run: hexo generate
+      - name: Deploy 🚀
+        #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
+        if: ${{ false }}
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: master # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+          force: false # merge instead push --force, (keep old / non modified) files?

@@ -1,0 +1,58 @@
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - hexo-compiler
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Asia/Jakarta"
+        timezoneMacos: "Asia/Jakarta"
+        timezoneWindows: "Western Indonesia Time"
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        token: "${{ secrets.GITHUB_TOKEN }}"
+        ref: "hexo-compiler"
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Declare some variables
+      id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+        echo "::set-output name=yarn::$(yarn cache dir)"
+        echo "::set-output name=npm::$(npm config get cache)"
+
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ${{ steps.vars.outputs.yarn }}
+          ${{ steps.vars.outputs.npm }}
+          ./tmp
+          ./dist
+          ./node_modules
+          ./tests
+        key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+
+    - name: Install dependencies
+      run: |
+        npm i -g gulp-cli typescript npm ts-node hexo-cli yarn
+        yarn install --immutable
+    - run: gulp hexo:copy
+    - run: hexo generate

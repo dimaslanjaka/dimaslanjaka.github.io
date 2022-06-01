@@ -54,5 +54,6 @@ jobs:
       run: |
         npm i -g gulp-cli typescript npm ts-node hexo-cli yarn
         yarn run refresh --immutable
+    - run: gulp hexo:clean
     - run: gulp hexo:copy
     - run: hexo generate

@@ -7,7 +7,7 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files --latest --force",
+    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files",
     "refresh:sbg": "yarn add https://github.com/dimaslanjaka/static-blog-generator.git#dev -D",
     "refresh:safelink": "yarn add https://github.com/dimaslanjaka/safelink.git -D",
     "list": "npx syncpack list-mismatches",

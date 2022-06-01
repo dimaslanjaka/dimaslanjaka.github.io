@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - hexo-compiler
+  pull_request:
+    branches:
+      - hexo-compiler
 
 jobs:
   build:

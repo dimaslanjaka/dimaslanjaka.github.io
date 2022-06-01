@@ -1,5 +1,10 @@
 const gulp = require('gulp');
-const { copyPosts, clean_posts, copyAssets } = require('./packages/static-blog-generator/dist/src');
+const {
+  copyPosts,
+  clean_tmp,clean_db,
+  clean_posts,
+  copyAssets
+} = require('./packages/static-blog-generator/dist/src');
 
 gulp.task('hexo:copy', async function (done) {
   const assets = copyAssets();
@@ -9,5 +14,7 @@ gulp.task('hexo:copy', async function (done) {
 });
 
 gulp.task('hexo:clean', async function (done) {
-  clean_posts(done);
+  clean_posts();
+  clean_tmp();
+  clean_db()
 });

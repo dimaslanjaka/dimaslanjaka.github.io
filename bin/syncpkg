@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-cdir="$PWD"
+CWD="$PWD"
+DIR="$(dirname "$(realpath "$0")")"
 
-git submodule update -i -r
-echo "update submodule static-blog-generator"
-cd $cdir/packages/static-blog-generator
-git submodule update -i -r
-echo "update submodule hexo-post-parser"
-cd $cdir/packages/static-blog-generator/packages/hexo-post-parser
-git submodule update -i -r
+node "$DIR/../postinstall.js"

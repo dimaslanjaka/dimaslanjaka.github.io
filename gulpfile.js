@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const { copyPosts, clean_posts, copyAssets } = require('static-blog-generator');
+const { copyPosts, clean_posts, copyAssets } = require('./packages/static-blog-generator/dist/src');
 
 gulp.task('hexo:copy', async function (done) {
   const assets = copyAssets();

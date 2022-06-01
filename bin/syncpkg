@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cdir="$PWD"
+
+git submodule update -i -r
+echo "update submodule static-blog-generator"
+cd $cdir/packages/static-blog-generator
+git submodule update -i -r
+echo "update submodule hexo-post-parser"
+cd $cdir/packages/static-blog-generator/packages/hexo-post-parser
+git submodule update -i -r

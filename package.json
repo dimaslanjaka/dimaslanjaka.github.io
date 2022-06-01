@@ -1,17 +1,17 @@
 {
   "name": "hexo-wmi",
   "version": "0.0.0",
-  "private": true,
-  "workspaces": [
-    "packages/hexo-post-parser"
-  ],
+  "license": "MIT",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "refresh": "yarn upgrade hexo-post-parser safelinkify static-blog-generator --check-files --latest",
-    "link-it": "git submodule foreach yarn link"
+    "refresh": "yarn refresh:sbg && yarn refresh:safelink",
+    "refresh:sbg": "yarn add https://github.com/dimaslanjaka/static-blog-generator.git#dev -D",
+    "refresh:safelink": "yarn add https://github.com/dimaslanjaka/safelink.git -D",
+    "list": "npx syncpack list-mismatches",
+    "compile": "cd packages/static-blog-generator && yarn install --check-files && yarn build"
   },
   "hexo": {
     "version": "6.2.0"

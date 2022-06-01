@@ -26,7 +26,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-
+      - name: Resolve git user
+        run: |
+          git config user.email "dimaslanjaka@gmail.com"
+          git config user.name "dimaslanjaka"
+          git fetch --all
+          git submodule update -i -r
+          git submodule foreach git submodule update -i -r
       - name: Declare some variables
         id: vars
         shell: bash

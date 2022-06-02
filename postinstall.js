@@ -16,46 +16,7 @@ summon(
     })
   ).then(() => {
     // begin installing
-    summon(
-      'yarn',
-      ['install', '--check-files'],
-      spawnOpt({
-        cwd: path.join(
-          sbgPath,
-          'packages/hexo-post-parser/packages/persistent-cache'
-        )
-      })
-    ).then(() => {
-      summon(
-        'yarn',
-        ['install', '--check-files'],
-        spawnOpt({
-          cwd: path.join(sbgPath, 'packages/google-news-sitemap')
-        })
-      ).then(() => {
-        summon(
-          'yarn',
-          ['install', '--check-files'],
-          spawnOpt({
-            cwd: path.join(sbgPath, 'packages/hexo-post-parser')
-          })
-        ).then(() => {
-          summon(
-            'yarn',
-            ['install', '--check-files'],
-            spawnOpt({
-              cwd: path.join(sbgPath, 'packages/safelink')
-            })
-          ).then(() => {
-            summon(
-              'yarn',
-              ['install', '--check-files'],
-              spawnOpt({ cwd: sbgPath })
-            );
-          });
-        });
-      });
-    });
+    // summon('yarn', ['refresh'], spawnOpt({ cwd: __dirname }));
   });
 });
 
@@ -95,4 +56,40 @@ git submodule update -i -r
 echo "update submodule hexo-post-parser"
 cd $cdir/packages/static-blog-generator/packages/hexo-post-parser
 git submodule update -i -r
+    summon(
+      'yarn',
+      ['install', '--check-files'],
+      spawnOpt({
+        cwd: path.join(
+          sbgPath,
+          'packages/hexo-post-parser/packages/persistent-cache'
+        )
+      })
+    ).then(() => {
+      summon(
+        'yarn',
+        ['install', '--check-files'],
+        spawnOpt({
+          cwd: path.join(sbgPath, 'packages/google-news-sitemap')
+        })
+      ).then(() => {
+        summon(
+          'yarn',
+          ['install', '--check-files'],
+          spawnOpt({
+            cwd: path.join(sbgPath, 'packages/hexo-post-parser')
+          })
+        ).then(() => {
+          summon(
+            'yarn',
+            ['install', '--check-files'],
+            spawnOpt({
+              cwd: path.join(sbgPath, 'packages/safelink')
+            })
+          ).then(() => {
+
+          });
+        });
+      });
+    });
 */

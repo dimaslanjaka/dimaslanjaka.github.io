@@ -58,7 +58,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm i -g gulp-cli typescript npm ts-node hexo-cli yarn
+          npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
           yarn install --immutable
 
       - run: gulp hexo:clean

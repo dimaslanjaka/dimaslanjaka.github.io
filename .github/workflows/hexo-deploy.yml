@@ -26,6 +26,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
+
       - name: Resolve git user
         run: |
           git config user.email "dimaslanjaka@gmail.com"
@@ -33,6 +34,7 @@ jobs:
           git fetch --all
           git submodule update -i -r
           git submodule foreach git submodule update -i -r
+
       - name: Declare some variables
         id: vars
         shell: bash
@@ -51,6 +53,7 @@ jobs:
             ./dist
             ./node_modules
             ./tests
+            ./packages
           key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies

@@ -8,7 +8,8 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "list": "npx syncpack list-mismatches",
-    "preinstall": "node preinstall.js",
+    "preinstall": "npm-run-all -s preinstall:**",
+    "preinstall:project": "node preinstall.js",
     "preinstall:hpp": "yarn add https://github.com/dimaslanjaka/hexo-post-parser.git -D",
     "preinstall:sbg": "yarn add https://github.com/dimaslanjaka/static-blog-generator.git#dev -D",
     "preinstall:sf": "yarn add https://github.com/dimaslanjaka/safelink.git -D"

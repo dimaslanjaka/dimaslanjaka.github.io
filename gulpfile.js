@@ -11,14 +11,15 @@ const {
   clean_tmp,
   clean_db,
   clean_posts,
-  copyAssets
+  copyAssets,
+  parsePost
 } = require('static-blog-generator');
 initGulp({
   copyPosts,
   clean_tmp,
   clean_db,
   clean_posts,
-  copyAssets
+  copyAssets, parsePost
 });
 
 /**

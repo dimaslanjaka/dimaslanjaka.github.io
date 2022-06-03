@@ -44,7 +44,6 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: |
-            ${{ steps.vars.outputs.yarn }}
             ${{ steps.vars.outputs.npm }}
             ./tmp
             ./dist

@@ -3,4 +3,8 @@
 CWD="$PWD"
 DIR="$(dirname "$(realpath "$0")")"
 
-node "$DIR/../postinstall.js"
+#node "$DIR/../postinstall.js"
+rm -rf node_modules
+npm cache clean --force
+npm install git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
+npm version $(git describe)

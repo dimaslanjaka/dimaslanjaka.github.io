@@ -10,9 +10,9 @@
     "list": "npx syncpack list-mismatches",
     "preinstall": "npm-run-all -s preinstall:**",
     "preinstall:project": "node preinstall.js",
-    "preinstall:hpp": "yarn add https://github.com/dimaslanjaka/hexo-post-parser.git -D --ignore-scripts",
-    "preinstall:sbg": "yarn add https://github.com/dimaslanjaka/static-blog-generator.git#dev -D --ignore-scripts",
-    "preinstall:sf": "yarn add https://github.com/dimaslanjaka/safelink.git -D --ignore-scripts"
+    "preinstall:hpp": "npm install https://github.com/dimaslanjaka/hexo-post-parser.git -D --ignore-scripts",
+    "preinstall:sbg": "npm install https://github.com/dimaslanjaka/static-blog-generator.git#dev -D --ignore-scripts",
+    "preinstall:sf": "npm install https://github.com/dimaslanjaka/safelink.git -D --ignore-scripts"
   },
   "hexo": {
     "version": "6.2.0"
@@ -33,6 +33,7 @@
   "devDependencies": {
     "eslint": "^8.16.0",
     "gulp": "^4.0.2",
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser.git",
     "npm-run-all": "^4.1.5",
     "prettier": "2.6.2",
     "safelinkify": "https://github.com/dimaslanjaka/safelink.git",

@@ -31,9 +31,6 @@ jobs:
         run: |
           git config user.email "dimaslanjaka@gmail.com"
           git config user.name "dimaslanjaka"
-          #git fetch --all
-          #git submodule update -i -r
-          #git submodule foreach git submodule update -i -r
 
       - name: Declare some variables
         id: vars
@@ -59,7 +56,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
-          yarn install --immutable
+          npm install
 
       - run: gulp hexo:clean
       - run: gulp hexo:copy

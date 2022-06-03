@@ -3,8 +3,10 @@
 CWD="$PWD"
 DIR="$(dirname "$(realpath "$0")")"
 
-#node "$DIR/../postinstall.js"
+node "$DIR/../preinstall.js"
 rm -rf node_modules
 npm cache clean --force
-npm install git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
+npm un static-blog-generator
+# npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
+npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz
 npm version $(git describe)

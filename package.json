@@ -8,10 +8,10 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "list": "npx syncpack list-mismatches",
-    "postinstall": "node postinstall.js",
-    "postinstall:hpp": "yarn add https://github.com/dimaslanjaka/hexo-post-parser.git -D",
-    "postinstall:sbg": "yarn add https://github.com/dimaslanjaka/static-blog-generator.git#dev -D",
-    "postinstall:sf": "yarn add https://github.com/dimaslanjaka/safelink.git -D"
+    "preinstall": "node preinstall.js",
+    "preinstall:hpp": "yarn add https://github.com/dimaslanjaka/hexo-post-parser.git -D",
+    "preinstall:sbg": "yarn add https://github.com/dimaslanjaka/static-blog-generator.git#dev -D",
+    "preinstall:sf": "yarn add https://github.com/dimaslanjaka/safelink.git -D"
   },
   "hexo": {
     "version": "6.2.0"

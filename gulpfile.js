@@ -6,47 +6,35 @@ const dev = false;
 if (dev) {
   process.cwd = () => __dirname;
 }
+const {
+  copyPosts,
+  clean_tmp,
+  clean_db,
+  clean_posts,
+  copyAssets
+} = require('static-blog-generator');
+initGulp({
+  copyPosts,
+  clean_tmp,
+  clean_db,
+  clean_posts,
+  copyAssets
+});
 
-if (!dev) {
-  const {
-    copyPosts,
-    clean_tmp,
-    clean_db,
-    clean_posts,
-    copyAssets
-  } = require('./packages/static-blog-generator/dist/src');
-  // require('static-blog-generator');
-  // require('./packages/static-blog-generator/dist/src');
-  initGulp({
-    copyPosts,
-    clean_tmp,
-    clean_db,
-    clean_posts,
-    copyAssets
-  });
-} else {
-  const {
-    copyPosts,
-    clean_tmp,
-    clean_db,
-    clean_posts,
-    copyAssets
-  } = require('./packages/static-blog-generator/src');
-  initGulp({
-    copyPosts,
-    clean_tmp,
-    clean_db,
-    clean_posts,
-    copyAssets
-  });
-}
-
+/**
+ * initialize gulp
+ * @param {import('static-blog-generator')} ins
+ */
 function initGulp(ins = {}) {
   gulp.task('hexo:copy', async () => task_copy(ins));
 
   gulp.task('hexo:clean', async () => task_clean(ins));
 }
 
+/**
+ * copy task
+ * @param {import('static-blog-generator')} ins
+ */
 function task_copy(ins = {}) {
   const assets = ins.copyAssets();
   if (!('then' in assets)) {
@@ -55,6 +43,10 @@ function task_copy(ins = {}) {
   }
 }
 
+/**
+ * clean task
+ * @param {import('static-blog-generator')} ins
+ */
 function task_clean(ins = {}) {
   ins.clean_posts();
   ins.clean_tmp();

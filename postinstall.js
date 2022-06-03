@@ -1,29 +1,15 @@
 const { spawn } = require('child_process');
-const path = require('path');
-
-const sbgPath = path.join(__dirname, 'packages/static-blog-generator');
 
 summon(
   'git',
   ['submodule', 'sync', '--recursive'],
-  spawnOpt({ cwd: sbgPath })
-).then(() => {
-  summon(
-    'git',
-    ['submodule', 'sync', '--recursive'],
-    spawnOpt({
-      cwd: path.join(sbgPath, 'packages/hexo-post-parser')
-    })
-  ).then(() => {
-    // begin installing
-    // summon('yarn', ['refresh'], spawnOpt({ cwd: __dirname }));
-  });
-});
+  spawnOpt({ cwd: __dirname })
+);
 
 function summon(cmd, args = [], opt = {}) {
   // *** Return the promise
   return new Promise(function (resolve, reject) {
-    if (typeof cmd !== 'string' || cmd.length === 0) return reject('cmd empty');
+    if (typeof cmd !== 'string' || cmd.trim().length === 0) return reject('cmd empty');
     const process = spawn(cmd, args, opt);
     process.on('close', function (code) {
       // Should probably be 'exit', not 'close'

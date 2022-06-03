@@ -1,11 +1,8 @@
+process.cwd = () => __dirname;
 require('ts-node').register({
   /* options */
 });
 const gulp = require('gulp');
-const dev = false;
-if (dev) {
-  process.cwd = () => __dirname;
-}
 const {
   copyPosts,
   clean_tmp,
@@ -19,7 +16,12 @@ initGulp({
   clean_tmp,
   clean_db,
   clean_posts,
-  copyAssets, parsePost
+  copyAssets,
+  parsePost
+});
+
+gulp.task('hexo:copy', async () => {
+  const source = joi;
 });
 
 /**
@@ -27,8 +29,6 @@ initGulp({
  * @param {import('static-blog-generator')} ins
  */
 function initGulp(ins = {}) {
-  gulp.task('hexo:copy', async () => task_copy(ins));
-
   gulp.task('hexo:clean', async () => task_clean(ins));
 }
 

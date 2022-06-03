@@ -9,20 +9,27 @@ const {
   clean_db,
   clean_posts,
   copyAssets,
-  parsePost
+  parsePost,
+  getConfig
 } = require('static-blog-generator');
+const { join } = require('path');
 initGulp({
   copyPosts,
   clean_tmp,
   clean_db,
   clean_posts,
   copyAssets,
-  parsePost
+  parsePost,
+  getConfig
 });
 
-gulp.task('hexo:copy', async () => {
-  const source = joi;
-});
+async function copy() {
+  const config = getConfig();
+  const source = join(__dirname, '');
+  console.log(config);
+}
+
+gulp.task('copy', copy);
 
 /**
  * initialize gulp

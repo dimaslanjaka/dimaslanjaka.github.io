@@ -50,7 +50,7 @@ jobs:
             ./node_modules
             ./tests
             ./packages
-          key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         run: |

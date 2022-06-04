@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+version=$(git describe)
+hash=$(git rev-parse --short HEAD)
+echo "$hash" > .guid

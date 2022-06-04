@@ -51,7 +51,7 @@ jobs:
             ./node_modules
             ./tests
             ./packages
-          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
       - name: Install dependencies
         run: |

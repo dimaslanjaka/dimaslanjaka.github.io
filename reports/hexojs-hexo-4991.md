@@ -27,7 +27,9 @@ just clone from [hexojs/site](https://github.com/hexojs/site), modify config, co
 
 ## How to reproduce?
 
-* https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/06cc377573b0f7203a740b45dfd09f829644f31e
+* clone https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/06cc377573b0f7203a740b45dfd09f829644f31e
+* npm install
+* hexo list post
 
 
 ## Is the problem still there under "Safe mode"?

@@ -9,4 +9,5 @@ npm cache clean --force
 npm un static-blog-generator
 # npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
 npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz
-npm version $(git describe)
+hash=$(git rev-parse --short HEAD)
+npm version "0.0.1-$hash"

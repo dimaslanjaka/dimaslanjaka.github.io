@@ -27,5 +27,5 @@ async function task_clean() {
   clean_db();
 }
 
-gulp.task('copy', copy);
+gulp.task('hexo:copy', copy);
 gulp.task('clean', task_clean);

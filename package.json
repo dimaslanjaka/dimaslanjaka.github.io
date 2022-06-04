@@ -9,13 +9,9 @@
     "server": "hexo server",
     "list": "npx syncpack list-mismatches",
     "preinstall": "node preinstall.js",
-    "reinstall": "npm-run-all -s reinstall:**",
-    "reinstall:hpp": "npm install git+https://github.com/dimaslanjaka/hexo-post-parser.git -D --ignore-scripts --ignore-platforms",
-    "reinstall:sbg": "npm install git+https://github.com/dimaslanjaka/static-blog-generator.git#dev -D --ignore-scripts --ignore-platforms",
-    "reinstall:ps": "npm install git+https://github.com/dimaslanjaka/persistent-cache.git#improve2 -D --ignore-scripts --ignore-platforms",
-    "reinstall:sf": "npm install git+https://github.com/dimaslanjaka/safelink.git -D --ignore-scripts --ignore-platforms",
-    "reinstall:rebuild": "npm rebuild",
-    "reinstall:audit": "npm audit fix"
+    "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
+    "i-local": "npm install -D file:./packages/static-blog-generator",
+    "i-tgz": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz"
   },
   "hexo": {
     "version": "6.2.0"

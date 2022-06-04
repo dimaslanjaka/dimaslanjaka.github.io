@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+hash=$(git rev-parse --short HEAD)
+npm version "0.0.1-$hash"

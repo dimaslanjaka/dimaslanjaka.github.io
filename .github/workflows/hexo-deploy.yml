@@ -58,8 +58,8 @@ jobs:
           npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
           npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
 
-      - run: sbg clean
-      - run: sbg copy
+      - run: npx sbg clean
+      - run: npx sbg copy
       #- run: hexo generate
       - run: hexo list post
       - name: Deploy 🚀

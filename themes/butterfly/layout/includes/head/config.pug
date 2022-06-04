@@ -43,7 +43,7 @@
     copyright = JSON.stringify({
       limitCount: theme.copy.copyright.limit_count,
       languages: {
-        author: _p("copy_copyright.author") + ': ' + config.author,
+        author: _p("copy_copyright.author") + ': ' + author_name(config),
         link: _p("copy_copyright.link") + ': ',
         source: _p("copy_copyright.source") + ': ' + config.title,
         info: _p("copy_copyright.info")
@@ -85,7 +85,7 @@
   }
 
 script.
-  const GLOBAL_CONFIG = { 
+  const GLOBAL_CONFIG = {
     root: '!{config.root}',
     algolia: !{algolia},
     localSearch: !{localSearch},

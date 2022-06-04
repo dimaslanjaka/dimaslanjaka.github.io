@@ -70,16 +70,13 @@ mixin postUI(posts)
           if theme.comments.card_post_count
             case theme.comments.use[0]
               when 'Disqus'
-                +countBlockInIndex
-                  a(href=full_url_for(link) + '#disqus_thread')
               when 'Disqusjs'
                 +countBlockInIndex
-                  a(href=full_url_for(link) + '#disqusjs')
-                    span.disqus-comment-count(data-disqus-url=full_url_for(link))
+                  a(href=full_url_for(link) + '#disqus_thread')
               when 'Valine'
                 +countBlockInIndex
-                  a(href=url_for(link) + '#post-comment')
-                    span.valine-comment-count(data-xid=url_for(link))
+                  a(href=url_for(link) + '#post-comment' itemprop="discussionUrl")
+                    span.valine-comment-count(data-xid=url_for(link) itemprop="commentCount")
               when 'Waline'
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
@@ -91,10 +88,6 @@ mixin postUI(posts)
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
                     span.fb-comments-count(data-href=urlNoIndex(article.permalink))
-              when 'Remark42'
-                +countBlockInIndex
-                  a(href=url_for(link) + '#post-comment')
-                    span.remark42__counter(data-url=urlNoIndex(article.permalink))
 
         //- Display the article introduction on homepage
         case theme.index_post_content.method

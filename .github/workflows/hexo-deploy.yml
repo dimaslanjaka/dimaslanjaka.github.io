@@ -58,8 +58,8 @@ jobs:
           npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
           npm install
 
-      #- run: gulp hexo:clean
-      #- run: gulp hexo:copy
+      - run: gulp hexo:clean
+      - run: gulp hexo:copy
       #- run: hexo generate
       - run: hexo list post
       - name: Deploy 🚀

@@ -59,8 +59,8 @@ jobs:
 
       - run: npx sbg clean
       - run: npx sbg copy
-      #- run: hexo generate
       - run: hexo list post
+      - run: hexo generate
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         if: ${{ false }}

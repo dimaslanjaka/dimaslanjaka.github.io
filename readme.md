@@ -6,6 +6,8 @@
 ## static-blog-generator
 ![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square&label=last+commit+stable)
 ![sbg:dev](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator/dev?style=flat-square&label=last+commit+dev)
+![types](https://badgen.net/npm/types/static-blog-generator?style=flat-square)
+![version](https://badgen.net/npm/v/static-blog-generator?style=flat-square)
 
 ## hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)

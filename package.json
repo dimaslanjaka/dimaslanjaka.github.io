@@ -9,7 +9,8 @@
     "server": "hexo server",
     "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
     "i-local": "npm install -D file:./packages/static-blog-generator",
-    "i-tgz": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz"
+    "i-tgz": "npm install -D https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz",
+    "i-tgz2": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz"
   },
   "hexo": {
     "version": "6.2.0"
@@ -31,6 +32,6 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "static-blog-generator": "file:../static-blog-generator"
+    "static-blog-generator": "https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz"
   }
 }

@@ -4,6 +4,7 @@ hash=$(git rev-parse --short HEAD)
 sha=$(sha1sum package-lock.json | head -c 40)
 md5=`md5sum package-lock.json | head -c 32`
 # echo "$hash:$sha:$md5" > .guid
-echo "latest commit : $hash" > .guid
-echo "sha1 sum      : $sha" >> .guid
-echo "md5 sum       : $md5" >> .guid
+#echo "latest commit : $hash" > .guid
+#echo "sha1 sum      : $sha" >> .guid
+#echo "md5 sum       : $md5" >> .guid
+echo $md5 > .guid

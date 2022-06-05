@@ -1,6 +1,6 @@
 {
   "name": "wmi",
-  "version": "1.0.0",
+  "version": "1.0.0-2-g2c73a8b",
   "private": true,
   "scripts": {
     "build": "hexo generate",
@@ -31,7 +31,10 @@
     "warehouse": "^4.0.1"
   },
   "devDependencies": {
+    "eslint": "^8.17.0",
+    "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
+    "prettier": "^2.6.2",
     "static-blog-generator": "https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz"
   }
 }

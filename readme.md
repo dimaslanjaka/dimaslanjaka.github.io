@@ -3,6 +3,10 @@
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label=master&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/master)
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com)
 
+## static-blog-generator
+![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square)
+![sbg:dev](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator/dev?style=flat-square&label=last+commit+dev)
+
 ## hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)

@@ -1,12 +1,12 @@
-name: Hexo Deploy
+name: Test
 
 on:
   push:
     branches:
-      - hexo-compiler
+      - master
   pull_request:
     branches:
-      - hexo-compiler
+      - master
 
 jobs:
   build:

@@ -4,7 +4,7 @@
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com)
 
 ## static-blog-generator
-![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square)
+![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square&label=last+commit+stable)
 ![sbg:dev](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator/dev?style=flat-square&label=last+commit+dev)
 
 ## hexo-adsense

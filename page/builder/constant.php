@@ -1,9 +1,9 @@
 <?php
 $head = [
-  'base' => 'https://dimaslanjaka.github.io/Web-Manajemen/',
-  'canonical' => 'https://dimaslanjaka.github.io/Web-Manajemen/',
+  'base' => 'https://www.webmanajemen.com/Web-Manajemen/',
+  'canonical' => 'https://www.webmanajemen.com/Web-Manajemen/',
   'site' => 'WMI',
-  'search' => 'https://dimaslanjaka.github.io/Web-Manajemen/search.html',
+  'search' => 'https://www.webmanajemen.com/Web-Manajemen/search.html',
   'title' => 'Website Management Indonesia',
   'desc' => 'Website Management Indonesia',
   'favicon' => 'https://z9t4u9f6.stackpathcdn.com/wp-content/themes/mdbootstrap4/favicon.ico',
@@ -13,6 +13,6 @@ $head = [
   'updated' => date('c'),
   'breadcrumb' => [
     ['name' => 'Home', 'url' => 'https://dimaslanjaka.github.io'],
-    ['name' => 'Web-Manajemen', 'url' => 'https://dimaslanjaka.github.io/Web-Manajemen']
+    ['name' => 'Web-Manajemen', 'url' => 'https://www.webmanajemen.com/Web-Manajemen']
   ]
 ];

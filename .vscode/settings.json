@@ -119,13 +119,13 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.integrated.env.linux": {
-      "PATH": "./node_modules/.bin;${env:PATH}"
+        "PATH": "./node_modules/.bin;${env:PATH}"
     },
     "terminal.integrated.env.osx": {
-      "PATH": "./node_modules/.bin;${env:PATH}"
+        "PATH": "./node_modules/.bin;${env:PATH}"
     },
     "terminal.integrated.env.windows": {
-      "PATH": "./node_modules/.bin;${env:PATH}"
+        "PATH": "./node_modules/.bin;${env:PATH}"
     },
     "terminal.integrated.environmentChangesIndicator": "on",
     "typescript.check.npmIsInstalled": true,
@@ -161,5 +161,6 @@
     "php-cs-fixer.allowRisky": true,
     "php-cs-fixer.showOutput": false,
     "php-cs-fixer.executablePath": "D:/Workspaces/PHP/universal-framework/libs/bin/php-cs-fixer/php-cs-fixer.phar",
-    "phpcs.standard": "./phpcs.xml.dist"
+    "phpcs.standard": "./phpcs.xml.dist",
+    "cmake.configureOnOpen": false
 }

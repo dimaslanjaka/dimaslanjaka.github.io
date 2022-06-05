@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cara membuat Rollover Images Dengan CSS - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css.html">
+<meta name="author" content="Unknown">
+<meta name="description" content="CSS Rollover Efek Gambar Ganti Gambar pada gambarHoverRollover adalah fitur desain di mana gambar berubah ketika mouse melayang di">
+<meta name="title" content="Cara membuat Rollover Images Dengan CSS">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cara membuat Rollover Images Dengan CSS">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="CSS Rollover Efek Gambar Ganti Gambar pada gambarHoverRollover adalah fitur desain di mana gambar berubah ketika mouse melayang di">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png">
+<!--article metadata-->
+<meta property="article:published_time" content="2017-04-12T01:34:00.000+07:00">
+<meta property="article:modified_time" content="2017-04-12T01:34:02+07:00">
+<meta property="article:author" content="Unknown">
+
+<meta property="article:tag" content="CSS">
+
+<meta property="article:tag" content="HTML">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">Cara membuat Rollover Images Dengan CSS</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on April 12, 2017 1:34 AM by Unknown
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/CSS">CSS</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/HTML">HTML</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Programming">Programming</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/CSS">CSS</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <div dir="ltr" trbidi="on"><div class="post"><h1><span>CSS Rollover Efek Gambar - Ganti Gambar pada gambar&nbsp;</span></h1><h1><span>HoverRollover adalah fitur desain di mana gambar berubah ketika mouse melayang di atasnya. Pikirkan sebuah bola lampu yang menyala dan mati ketika Anda memindahkan kursor mouse Anda ke dalam area halaman. Ketika halaman sedang loading, gambar rollover dimuat ke dalamnya untuk Pastikan bahwa efek rollover ditampilkan dengan cepat intervening.This digunakan untuk diimplementasikan menggunakan JavaScript, yang cukup mudah dengan hanya sejumlah kecil script Terlibat. Untuk membuat gambar rollover fungsional, onmouseover dan onmouseout atribut yang digunakan untuk tag link. Kode ini kemudian ditambahkan ke blog gadget atau ke dalam posting baru. Hal ini terbukti memiliki sejumlah kelemahan, namun, yang mengapa banyak pengembang web menggunakan metode CSS-satunya.</span></h1><div class="post-body"><div id="adsense-target"><br><div class="separator"><img alt="css rollover image" border="0" height="200" src="https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png" title="CSS Rollover Image Effect" width="200"></div><br><h2>Cara membuat Gambar Rollover Menggunakan CSS.</h2><span>Berikut adalah cara untuk menerapkan </span><span><i>gambar</i> <i>rollover</i> </span><span>menggunakan CSS.</span><br><br><h4>The Image</h4><span>Tempatkan kedua </span><span><i>gambar</i></span><span> <i>statis</i> dan </span><span><i>rollover </i></span><span>dalam satu file dan memastikan bahwa gambar rollover ditempatkan di atas satu statis. </span><span>Untuk mencapai efek rollover, kami akan menulis kode untuk menampilkan gambar statis dan memotong gambar hover, sehingga negara hanya satu gambar yang ditampilkan pada suatu waktu.</span><br><br><span>Untuk tutorial ini, kita akan menggunakan berikut sebagai gambar CSS rollover.</span><br><br><div class="separator"><img alt="html rollover image" border="0" src="https://1.bp.blogspot.com/-NtrjKUd-0fs/V_ewyJEdB_I/AAAAAAAAL28/D3OfCvvRv4oADehdckX0d919xFeggWZOwCLcB/s180/rollover-image-light-bulb-on-off.png" title="CSS Rollover Image "></div><br><h3><span>Membuat HTML jangkar Elemen untuk Gambar</span></h3><span>Alih-alih menambahkan file gambar dalam tag &lt;img, kami akan menampilkannya sebagai gambar latar belakang dari sebuah tag (anchor):</span><br><br><blockquote class="tr_bq">&lt;a class="rolloverimage" href="<span>#URL</span>"&gt;Rollover Image&lt;/a&gt;</blockquote><br>Note: if you want to make the image clickable, replace <span>#URL</span> with the url of the webpage where you want the link to point to.<br><br><h3>Menggunakan CSS untuk menentukan background image.</h3><br><span>Untuk menciptakan efek mouseover gambar, kami akan menggunakan: hover CSS pseudo-kelas. </span><span>Kemudian, kita akan menggunakan properti background-posisi dan menetapkan nilai-nilai ke 0 0 untuk memindahkan gambar latar belakang ke sudut kiri atas yang akan menciptakan efek rollover.</span><br><blockquote class="tr_bq">&lt;style type="text/css"&gt;<br>.rolloverimage{<br>display: block;<br>width: <span>56px</span>;<br>height: <span>90px</span>;<br>background: url('<span>https://1.bp.blogspot.com/-NtrjKUd-0fs/V_ewyJEdB_I/AAAAAAAAL28/D3OfCvvRv4oADehdckX0d919xFeggWZOwCLcB/s180/rollover-image-light-bulb-on-off.png</span>') bottom;<br>text-indent: -99999px;<br>}<br>.rolloverimage:hover{<br>background-position: 0 0;<br>}<br>&lt;/style&gt;</blockquote><span>Catatan: Ganti teks warna biru dengan url dari file gambar Anda.</span><span> Silahkan membayar perhatian pada lebar dan tinggi nilai-nilai ditandai dengan warna merah, ini harus berbeda tergantung pada file Anda, di mana nilai tinggi adalah untuk hanya satu gambar dan tidak seluruh file gambar!</span><br><br><h4>Hasilnya</h4><span>Arahkan kursor mouse bola lampu untuk melihat efek rollover image dalam tindakan:</span><br><br>&nbsp; &nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9qc2ZpZGRsZS5uZXQvZGltYXNsYW5qYWthL3NqaDNibno4LzEv" rel="nofollow noopener noreferer" target="_blank">The Demo Results</a>&nbsp;(Click To View The Result)<br><br>Menambahkan Rollover Image untuk Blogger.<br><br></div></div></div></div>
+
+          
+          
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'Cara membuat Rollover Images Dengan CSS';
+      this.page.url = 'https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

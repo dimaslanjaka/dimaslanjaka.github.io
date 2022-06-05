@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>How to Make Colored Recent Post Widget Blogger - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">
+<meta name="author" content="Unknown">
+<meta name="description" content="How to Make Colored Recent Post Widget Blogger">
+<meta name="title" content="How to Make Colored Recent Post Widget Blogger">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make Colored Recent Post Widget Blogger">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="How to Make Colored Recent Post Widget Blogger">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/webp;base64,UklGRr4CAABXRUJQVlA4ILICAABwHwCdASpsAbsAPu12uFQprT+kJBHYw/AdiWVu4XKRCBlf6XYA/PUTXZ/89i/1W8KdQB5/N8pCTBT2zAJJkgp7ZgEkyQU9swCSZIKe2YBJMkFPbMAkmSCntWm+23fbbvtkmGQhE/b+XIcygXdDtDFLVliPFLbllcZLNcz/RrZeclxmBShzXzWo2gFwVuL0oQpIASFC08qI3Hu6iKeNdvF9/6CcJB5ecetaE96ppf1JgN8aA5TkcWYNfBwOk/thIuLblKKy/D6LQU45AeUUGe5CeuSSYYsqAM1SZIKe2YBJMkFPbMAkmSCntmASTJBT2zAJJkgp7ZgEkyQU9swCSZIKe2XgAAD+/cUzgH0AAACC5zAwYpAmrQuknl/VFZgkQUMYcnqroF2uZBf5/L2eXHxhFXw4ClGJ9nTLPtfbnedyy1O2BCO5bl17mEwoIullp2iHwuR+qrXf5bjf35g1WT+/MGy49Pxv7NTdY6dgftM/o3fDqrhpXFg8r+19sZAa3KOh3cDEcEKHE6RgVZe+1Fww5Z2R1cHBkswXMRqyYl5j7FQQWLx/2KOF0qa3InBtfB7l1mUsJDtPxvn3EMWJcZveO53YtqW6JCWAtz0BolHgm4UE0SuyTbR4VjlRz88MwbwAMBP08jkJs5LnS08M1nH8paoVLYm3TledhjNuflug0JFYa0ClBjVvKMUseeX/tV9yc8i+1/pCh9tTV+d7D0UuWC5KFtvZgMftAgfPhSssoSEW6qtMFa48rSnx0ShCoMVguAk2PAYUVBsrqail5TRdrxttynmuByqopR0KZmm0uDpRw+0YyuuChZ6rM0C3FCwKq5EDdXOz1Fog+xpGBvjT2NStQB2d880f3+cv93HhCc7IU8E8Y5RmqWg3FuL/GKtzM8EuJTuLZamV+AAAAAAAAAA=">
+<!--article metadata-->
+<meta property="article:published_time" content="2017-08-02T21:51:00.000+07:00">
+<meta property="article:modified_time" content="2019-07-22T03:23:17+07:00">
+<meta property="article:author" content="Unknown">
+
+<meta property="article:tag" content="CSS">
+
+<meta property="article:tag" content="JS">
+
+<meta property="article:tag" content="Blogger">
+
+<meta property="article:tag" content="HTML">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/webp;base64,UklGRr4CAABXRUJQVlA4ILICAABwHwCdASpsAbsAPu12uFQprT+kJBHYw/AdiWVu4XKRCBlf6XYA/PUTXZ/89i/1W8KdQB5/N8pCTBT2zAJJkgp7ZgEkyQU9swCSZIKe2YBJMkFPbMAkmSCntWm+23fbbvtkmGQhE/b+XIcygXdDtDFLVliPFLbllcZLNcz/RrZeclxmBShzXzWo2gFwVuL0oQpIASFC08qI3Hu6iKeNdvF9/6CcJB5ecetaE96ppf1JgN8aA5TkcWYNfBwOk/thIuLblKKy/D6LQU45AeUUGe5CeuSSYYsqAM1SZIKe2YBJMkFPbMAkmSCntmASTJBT2zAJJkgp7ZgEkyQU9swCSZIKe2XgAAD+/cUzgH0AAACC5zAwYpAmrQuknl/VFZgkQUMYcnqroF2uZBf5/L2eXHxhFXw4ClGJ9nTLPtfbnedyy1O2BCO5bl17mEwoIullp2iHwuR+qrXf5bjf35g1WT+/MGy49Pxv7NTdY6dgftM/o3fDqrhpXFg8r+19sZAa3KOh3cDEcEKHE6RgVZe+1Fww5Z2R1cHBkswXMRqyYl5j7FQQWLx/2KOF0qa3InBtfB7l1mUsJDtPxvn3EMWJcZveO53YtqW6JCWAtz0BolHgm4UE0SuyTbR4VjlRz88MwbwAMBP08jkJs5LnS08M1nH8paoVLYm3TledhjNuflug0JFYa0ClBjVvKMUseeX/tV9yc8i+1/pCh9tTV+d7D0UuWC5KFtvZgMftAgfPhSssoSEW6qtMFa48rSnx0ShCoMVguAk2PAYUVBsrqail5TRdrxttynmuByqopR0KZmm0uDpRw+0YyuuChZ6rM0C3FCwKq5EDdXOz1Fog+xpGBvjT2NStQB2d880f3+cv93HhCc7IU8E8Y5RmqWg3FuL/GKtzM8EuJTuLZamV+AAAAAAAAAA=">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">How to Make Colored Recent Post Widget Blogger</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on August 2, 2017 9:51 PM by Unknown
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/CSS">CSS</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/JS">JS</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Blogger">Blogger</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/HTML">HTML</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Programming">Programming</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/CSS">CSS</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <p>This widget supports responsive which will follow the screen size used.<br><br><br></p><div><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9nb29nbGV3ZWJsaWdodC5jb20vP2xpdGVfdXJsPWh0dHBzOi8vMy5icC5ibG9nc3BvdC5jb20vLWhidGc5YWxTM0RvL1dMOFJXTlJnZnNJL0FBQUFBQUFBRTZRL201VTZqejdaN1ZFc2JMS2RMTnB6RGtjOEZnbkJQWW1rUUNMY0IvczE2MDAvQ2FyYSUyNTJCTWVtYnVhdCUyNTJCUmVjZW50JTI1MkJQb3N0JTI1MkJXaWRnZXQlMjUyQkJlcndhcm5hLnBuZyZ0cz0xNDkzMzAxMzg5JnNpZz1BSnNRUTFBUVU4U01NSGVycElfSTBOLXFxd0dVQVBnVmxR" rel="nofollow noopener noreferer" target="_blank"> <img alt="Cara Membuat Recent Post Widget Berwarna" id="-wl-ii0" src="data:image/webp;base64,UklGRr4CAABXRUJQVlA4ILICAABwHwCdASpsAbsAPu12uFQprT+kJBHYw/AdiWVu4XKRCBlf6XYA/PUTXZ/89i/1W8KdQB5/N8pCTBT2zAJJkgp7ZgEkyQU9swCSZIKe2YBJMkFPbMAkmSCntWm+23fbbvtkmGQhE/b+XIcygXdDtDFLVliPFLbllcZLNcz/RrZeclxmBShzXzWo2gFwVuL0oQpIASFC08qI3Hu6iKeNdvF9/6CcJB5ecetaE96ppf1JgN8aA5TkcWYNfBwOk/thIuLblKKy/D6LQU45AeUUGe5CeuSSYYsqAM1SZIKe2YBJMkFPbMAkmSCntmASTJBT2zAJJkgp7ZgEkyQU9swCSZIKe2XgAAD+/cUzgH0AAACC5zAwYpAmrQuknl/VFZgkQUMYcnqroF2uZBf5/L2eXHxhFXw4ClGJ9nTLPtfbnedyy1O2BCO5bl17mEwoIullp2iHwuR+qrXf5bjf35g1WT+/MGy49Pxv7NTdY6dgftM/o3fDqrhpXFg8r+19sZAa3KOh3cDEcEKHE6RgVZe+1Fww5Z2R1cHBkswXMRqyYl5j7FQQWLx/2KOF0qa3InBtfB7l1mUsJDtPxvn3EMWJcZveO53YtqW6JCWAtz0BolHgm4UE0SuyTbR4VjlRz88MwbwAMBP08jkJs5LnS08M1nH8paoVLYm3TledhjNuflug0JFYa0ClBjVvKMUseeX/tV9yc8i+1/pCh9tTV+d7D0UuWC5KFtvZgMftAgfPhSssoSEW6qtMFa48rSnx0ShCoMVguAk2PAYUVBsrqail5TRdrxttynmuByqopR0KZmm0uDpRw+0YyuuChZ6rM0C3FCwKq5EDdXOz1Fog+xpGBvjT2NStQB2d880f3+cv93HhCc7IU8E8Y5RmqWg3FuL/GKtzM8EuJTuLZamV+AAAAAAAAAA="> </a></div><br>For live view of this widget can visit my friend pen below:<br><br><iframe align="center" frameborder="no" height="500px" name="results" scrolling="auto" src="https://source.l3n4r0x.cf/php/codepen.php?user=dimaslanjaka&amp;id=LyxJKd&amp;tab=result&amp;h=500" width="100%"><br /></iframe><br><br>How, interested to install it on the blog? For my friend who want to<br>install it, I will give the tutorial below<br><h4><b>How to Make Recent Post Widget Color</b></h4>Go to Blogger &gt; Themes &gt; Click the Edit HTML button<br>Include material icon before &lt;/head&gt; like this:<br><pre>&lt;link href=‘https://fonts.googleapis.com/icon?family=Material+Icons’ rel=‘stylesheet’ type=‘text/css’/&gt;</pre>Then add the CSS code<br>below before the code ]]&gt; &lt;/b:skin&gt; or &lt;/ style&gt;<br><br><pre>.gravityfeatured{display:flex;margin:0 auto 20px auto;width:100%;overflow:hidden;max-width:970px}<br>.gravfeatureditem{background:rgba(0,0,0,0.02);display:block;position:relative;float:left;overflow:hidden;height:220px;width:25%}<br>.gravfeatureditem .gracontent{background:#3498db;display:block;position:absolute;z-index:6;bottom:0;left:0;right:0;transform:translate(0,0);opacity:1;visibility:visible;transition:all .3s}<br>.gravfeatureditem:hover .gracontent{opacity:0;visibility:hidden;transform:translate(0,60px)}<br>.gravfeatureditem .gracontent h3{font-size:14px;color:#fff;padding:15px;margin:0;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}<br>.gravfeatureditem .feat-img{width:100%;height:100%;background-size:cover;background-position:50%}<br>.gravfeatureditem a{display:block;color:rgba(255,255,255,1);position:relative;vertical-align:bottom;z-index:5;height:100%;transition:all .3s}<br>.gravfeatureditem a:before{content:‘’;background:#3498db;width:100%;height:100%;position:absolute;z-index:3;top:0;opacity:0;transition:background 0.3s linear,opacity 0.3s linear}<br>.gravfeatureditem.first a:before,.gravfeatureditem.first .gracontent{background:#56a8df}<br>.gravfeatureditem.second a:before,.gravfeatureditem.second .gracontent{background:#e49148}<br>.gravfeatureditem.third a:before,.gravfeatureditem.third .gracontent{background:#5bccb6}<br>.gravfeatureditem.fourth a:before,.gravfeatureditem.fourth .gracontent{background:#f5b44c}<br>.gravfeatureditem a:hover:before{opacity:0.9;}<br>.gravfeatureditem a:after{content:‘textsms’;font-family:Material Icons;position:absolute;z-index:3;font-size:3rem;top:32%;left:0;right:0;bottom:0;color:#fff;text-align:center;transform:translate(0,-60px);animation:jellygrav .6s linear;opacity:0;visibility:hidden;transition:all .3s}<br>.gravfeatureditem:hover a:after{opacity:1;visibility:visible;transform:translate(0,0)}<br>@media screen and (max-width:826px){<br>.gravfeatureditem{width:50%}<br>.gravfeatureditem.third,.gravfeatureditem.fourth{display:none}}<br>@media screen and (max-width:641px){<br>.gravfeatureditem{width:100%}<br>.gravfeatureditem.second,.gravfeatureditem.third,.gravfeatureditem.fourth{display:none}}</pre><br><blockquote><i>NOTE:</i> Widget uses CSS library icon from Material Icons, if my friend uses Fontawesome. Replace the CSS code below.</blockquote><pre>.gravfeatureditem a:after{content:<mark style="background-color: rgb(52, 152, 219) !important; border-radius: 2px; border: 0px; box-sizing: border-box; color: rgb(255, 255, 255) !important; font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace; font-size: 13.2799997329712px; font-stretch: inherit; line-height: 25.5px; margin: 0px 2px; padding: 2px; vertical-align: baseline; white-space: pre;">‘textsms’</mark>;font-family:<mark style="background-color: rgb(52, 152, 219) !important; border-radius: 2px; border: 0px; box-sizing: border-box; color: rgb(255, 255, 255) !important; font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace; font-size: 13.2799997329712px; font-stretch: inherit; line-height: 25.5px; margin: 0px 2px; padding: 2px; vertical-align: baseline; white-space: pre;">Material Icons</mark>;position:absolute;z-index:3;font-size:3rem;top:32%;left:0;right:0;bottom:0;color:#fff;text-align:center;transform:translate(0,0);animation:jellygrav .6s linear;opacity:1;visibility:visible;transition:all .3s}</pre><span class="notranslate">The next step, add the code below just before the code&nbsp;<kbd style="border: 0px none rgb(40, 161, 240); color: #28a1f0;">&lt;/body&gt;</kbd>&nbsp;</span><br><pre>&lt;script type=‘text/javascript’&gt;<br>//&lt;![CDATA[<br>// Recent Post<br>function getPostUrl(a){for(var b=0;b&lt;a.link.length;b++)if(“alternate"<mark>a.link[b].rel){var c=a.link[b].href;return c}}function getPostPublishDate(a){var b=a.published.$t,c=b.split(“-”)[2].substring(0,2),d=b.split(“-”)[1],e=b.split(“-”)[0],f=[“January”,“February”,“March”,“April”,“May”,“June”,“July”,“August”,“September”,“Octobor”,“November”,“December”],g=f[d-1],h=g+" “+c+”, “+e;return b?h:”“}function getPostCategory(a){var b=a.category;b&amp;&amp;(b=a.category[0].term);var c='&lt;div class=“category-wrapper”&gt;&lt;a class=“category” href=”/search/label/‘+b+’?max-results=10"&gt;'+b+“&lt;/a&gt;&lt;/div&gt;”;return b?c:“”}function Slider(a){for(var c=(new Array,“”),d=a.feed.entry.length,e=0;e&lt;d;e++){var f=a.feed.entry[e],g=f.title.$t,h=getPostUrl(f),l=(f.author[0].name.$t,getPostPublishDate(f),getPostCategory(f),f.category[0].term),m=a.feed.entry[e].content.$t,n=$(“&lt;div&gt;”).html(m);if(m.indexOf(“//www.youtube.com/embed/”)&gt;-1)var o=a.feed.entry[e].media$thumbnail.url,p=o;else if(m.indexOf(“&lt;img”)&gt;-1)var q=n.find(“img:first”).attr(“src”),p=q;else var p=no_image;0</mark>e&amp;&amp;(c=c+‘&lt;div class=“gravfeatureditem first”&gt;&lt;div class=“gracontent”&gt;&lt;h3&gt;’+g+'&lt;/h3&gt;&lt;/div&gt;&lt;a href=”‘+h+’“&gt;&lt;div class=“feat-img” style=“background-image:url(‘+p+’);”&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;‘),1<mark>e&amp;&amp;(c=c+‘&lt;div class=“gravfeatureditem second”&gt;&lt;div class=“gracontent”&gt;&lt;h3&gt;’+g+‘&lt;/h3&gt;&lt;/div&gt;&lt;a href="’+h+‘"&gt;&lt;div class=“feat-img” style="background-image:url(’+p+‘);"&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;’),2</mark>e&amp;&amp;(c=c+’&lt;div class=“gravfeatureditem third”&gt;&lt;div class=“gracontent”&gt;&lt;h3&gt;‘+g+’&lt;/h3&gt;&lt;/div&gt;&lt;a href=”‘+h+’“&gt;&lt;div class=“feat-img” style=“background-image:url(‘+p+’);”&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;‘),3==e&amp;&amp;(c=c+’&lt;div class=“gravfeatureditem fourth”&gt;&lt;div class=“gracontent”&gt;&lt;h3&gt;‘+g+’&lt;/h3&gt;&lt;/div&gt;&lt;a href=”‘+h+’“&gt;&lt;div class=“feat-img” style=“background-image:url(‘+p+’);”&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;‘)}slider.html(’&lt;div class=“gravityfeatured”&gt;'+c+”&lt;/div&gt;“),$(”.gravityfeatured").find(“.feat-img”).each(function(){$(this).attr(“style”,function(a,b){return b.replace(“/default.jpg”,“/mqdefault.jpg”)}).attr(“style”,function(a,b){return b.replace(“s72-c”,“s1600”)}).attr(“style”,function(a,b){return b.replace(“s320”,“s1600”)}).attr(“style”,function(a,b){return b.replace(“s400”,“s1600”)}).attr(“style”,function(a,b){return b.replace(“s640”,“s1600”)})})}var slider=$(“#gravityfeatured .widget-content”),sliderContent=slider.text().trim();“no”!==sliderContent.toLowerCase().trim()&amp;&amp;‘“no”’!==sliderContent.toLowerCase()&amp;&amp;“”!==sliderContent?“[recent]”!==sliderContent?$.ajax({url:“/feeds/posts/default/-/”+sliderContent+“?alt=json-in-script&amp;max-results=4”,type:“get”,dataType:“jsonp”,success:function(a){Slider(a)}}):$.ajax({url:“/feeds/posts/default?alt=json-in-script&amp;max-results=4”,type:“get”,dataType:“jsonp”,success:function(a){Slider(a)}}):$(“#slider”).remove();<br>//]]&gt;<br>&lt;/script&gt;</pre>After that next step, add the HTML widget below freely between <kbd>&lt;body&gt;</kbd> and <mark>&lt;/ body&gt;</mark> code<br><pre>&lt;b:section class=‘gravityfeaturedz’ id=‘gravityfeatured’ showaddelement=‘yes’&gt;<br>  &lt;b:widget id=‘HTML94’ locked=‘false’ title=‘’ type=‘HTML’ version=‘1’&gt;<br>    &lt;b:includable id=‘main’&gt;<br>  &lt;div class=‘widget-content’&gt;<br>    &lt;data:content/&gt;<br>  &lt;/div&gt;<br>&lt;div class=‘clear’/&gt;<br>&lt;/b:includable&gt;<br>  &lt;/b:widget&gt;<br>&lt;/b:section&gt;</pre>Save template&gt; Click Layout&gt; Refresh Blogger page (click OK)&gt; Add d code below within the widget you added&gt; Click Save Widget <br><br><code>[recent]</code> <br><br>See the results on your blog. <br><br>Easy enough is not it? Such is the tutorial for this opportunity, thank you for visiting.<p></p>
+
+
+          
+          
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'How to Make Colored Recent Post Widget Blogger';
+      this.page.url = 'https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

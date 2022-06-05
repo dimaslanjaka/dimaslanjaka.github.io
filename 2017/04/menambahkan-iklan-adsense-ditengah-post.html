@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post.html">
+<meta name="author" content="Unknown">
+<meta name="description" content="Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan ditampilkan dengan menambahkan script dalam template dan menggunakan tag">
+<meta name="title" content="Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan ditampilkan dengan menambahkan script dalam template dan menggunakan tag">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://res.cloudinary.com/practicaldev/image/fetch/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&amp;ssl=1">
+<!--article metadata-->
+<meta property="article:published_time" content="2017-04-09T10:38:00.000+07:00">
+<meta property="article:modified_time" content="2017-04-10T07:42:38+07:00">
+<meta property="article:author" content="Unknown">
+
+<meta property="article:tag" content="Adsense">
+
+<meta property="article:tag" content="Blogger">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://res.cloudinary.com/practicaldev/image/fetch/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&amp;ssl=1">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on April 9, 2017 10:38 AM by Unknown
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Adsense">Adsense</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Blogger">Blogger</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Uncategorized">Uncategorized</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <div dir="ltr" trbidi="on"><div class="separator"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vcHJhY3RpY2FsZGV2L2ltYWdlL2ZldGNoLzQuYnAuYmxvZ3Nwb3QuY29tLy1aNFRkRWJwY3huMC9VdGhCWlhpeVBZSS9BQUFBQUFBQUY0MC9ud3RobmF4UFF1dy9zMTYwMC9pbnNlcnQtYWRzZW5zZS1pbnRvLWJsb2dnZXItcG9zdC5wbmc/em9vbT0xLjUmc3NsPTE=" imageanchor="1" rel="nofollow noopener noreferer" target="_blank"><img alt="position of banner" border="0" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://res.cloudinary.com/practicaldev/image/fetch/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&amp;ssl=1" title="adsense positions"></a></div>Dalam tutorial ini&nbsp;<span class="notranslate">Kita dapat memanipulasi lokasi iklan yang akan ditampilkan dengan menambahkan script dalam template dan menggunakan tag di dalam posting kami di mana kami ingin iklan AdSense muncul.</span><span>&nbsp;</span><span class="notranslate">Setelah ditambahkan, kita dapat menempatkan iklan di mana saja, baik itu antara paragraf atau di tengah-tengah konten dll.</span><br><span class="notranslate"><br></span><br><div><span class="notranslate">Manual memasukkan iklan AdSense di tengah posting di Blogger cukup mudah, cukup ikuti langkah-langkah di bawah ini:</span></div><h3><span class="notranslate">Menambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post</span></h3><div><span class="notranslate">Sebelum melanjutkan, dianjurkan untuk cadangan template Anda: pergi ke "Template" dan klik pada "/ restore Backup" tombol untuk menyimpan salinan di hard drive Anda.</span></div><h4><span class="notranslate">Menambahkan script</span></h4><span class="notranslate"></span><br><div><span class="notranslate">Langkah 1. Hal pertama yang perlu kita lakukan adalah untuk mengurai kode Adsense</span><noindex>&nbsp;</noindex><span class="notranslate">dan mengubahnya menjadi teks biasa.</span>&nbsp;<span class="notranslate">Lalu pergi ke "Template", klik pada tombol "Edit HTML" dan klik di mana saja di dalam area kode untuk mencari menggunakan tombol CTRL + F untuk tag ini:</span></div><div><blockquote class="tr_bq"><span class="notranslate"><span><span>&lt;Data: post.body /&gt;</span></span></span></blockquote></div><div><span class="notranslate">Catatan: Anda mungkin menemukan beberapa kali, tetapi kita perlu berhenti di satu detik.</span>&nbsp;<span class="notranslate">Atau, jika Anda tidak dapat melihat perubahan apapun, menguji sepertiga.</span></div><div><img alt="how-to-add-adsense-ads-inside-blogger-post How to Add Adsense Ads In the Middle or Anywhere inside Blogger Posts" border="0" data-recalc-dims="1" scale="1.5" src-orig="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://res.cloudinary.com/practicaldev/image/fetch/3.bp.blogspot.com/-txi86RJaWYk/Utg3xTPV_8I/AAAAAAAAF4Y/LTah2B86lYE/s1600/how-to-add-adsense-ads-inside-blogger-post.png?resize=500%2C307&amp;ssl=1" src="https://res.cloudinary.com/practicaldev/image/fetch/3.bp.blogspot.com/-txi86RJaWYk/Utg3xTPV_8I/AAAAAAAAF4Y/LTah2B86lYE/s1600/how-to-add-adsense-ads-inside-blogger-post.png?zoom=1.5&amp;resize=330%2C197&amp;ssl=1" srcset="https://res.cloudinary.com/practicaldev/image/fetch/3.bp.blogspot.com/-txi86RJaWYk/Utg3xTPV_8I/AAAAAAAAF4Y/LTah2B86lYE/s1600/how-to-add-adsense-ads-inside-blogger-post.png?zoom=1.5&amp;resize=330%2C197&amp;ssl=1" title="Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post"></div><div><span class="notranslate"></span></div><div><span class="notranslate">Langkah 2. Ganti dengan kode ini:</span></div><div><blockquote class="tr_bq"><span class="notranslate"><span class="notranslate">&lt;Div expr: id = ' "adsmiddle1" + Data: post.id'&gt; &lt;/ div&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;B: if 'data: blog.pageType == "item"' = cond&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;B: if 'Data: blog.pageType = &amp; quot; static_page &amp; quot;' = cond&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;Div style = "clear: both; margin: 10px 0"&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate"><span>&lt;! - Tambahkan sini kode iklan Anda -&gt;</span></span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;/ Div&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;/ B: if&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;/ B: if&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;Div expr: id = ' "adsmiddle2" + Data: post.id'&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;Data: post.body /&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;/ Div&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;Script type = "text / javascript"&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">var obj0 = document.getElementById ( "adsmiddle1 &lt;data: post.id/&gt;");</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">var obj1 = document.getElementById ( "adsmiddle2 &lt;data: post.id/&gt;");</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">var s = obj1.innerHTML;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">var r = s.search (! / \ x3C - adsense - \ x3e / IgM);</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">if (r&gt; 0) {obj0.innerHTML = s.substr (0, r); obj1.innerHTML = s.substr (r + 16);}</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;/ Script&gt;</span></span></blockquote><blockquote class="tr_bq"></blockquote>&nbsp;<span>Langkah 3. Tambahkan kode Adsense dikonversi pada di mana Anda melihat</span><span>&nbsp;</span><span>&lt;! - Tambahkan sini kode iklan -&gt;</span><span>&nbsp;</span><span>penjelasan, kemudian simpan perubahan dengan mengklik tombol "Simpan template".</span><br><div><span class="notranslate">Catatan: Untuk berpusat iklan, tambahkan &lt;center&gt; &lt;/ center&gt; tag sebelum dan setelah kode AdSense, seperti ini:</span></div><blockquote class="tr_bq"><span class="notranslate"><span class="notranslate">&lt;Div style = "clear: both; margin: 10px 0"&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate"><span>&lt;center&gt;</span></span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate"><span>&lt;! - Tambahkan sini kode iklan Anda -&gt;</span></span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate"><span>&lt;/ center&gt;</span></span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate">&lt;/ Div&gt;</span></span></blockquote><br><br><h4><span class="notranslate">Menambahkan penjelasan AdSense untuk menampilkan iklan</span></h4><div><span class="notranslate">Langkah 4. Ketika Anda membuat New Post, menambahkan penjelasan ini dalam "HTML" untuk mana Anda ingin iklan Google AdSense muncul:</span></div><blockquote class="tr_bq"><span class="notranslate"><span>&lt;! - adsense -&gt;</span></span></blockquote><div><span class="notranslate">Sebagai contoh:</span></div><blockquote class="tr_bq"><span class="notranslate"><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span class="notranslate">Ini adalah demo teks. &lt;br /&gt; &lt;br /&gt;</span><span>&nbsp;</span></span><span class="notranslate"><span class="notranslate"><span>&lt;! - adsense -&gt;</span>&nbsp;Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span><span class="notranslate">Ini adalah teks demo.</span><span>&nbsp;</span><span class="notranslate">Ini adalah teks demo.</span></span></blockquote><div><br></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container"><tbody><tr><td><img alt="adding-adsense-inside-posts How to Add Adsense Ads In the Middle or Anywhere inside Blogger Posts" border="0" data-recalc-dims="1" scale="1.5" src-orig="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://res.cloudinary.com/practicaldev/image/fetch/1.bp.blogspot.com/-hcAdKZfjRyg/Utg5FISx95I/AAAAAAAAF4k/ZbE-Dip3wkk/s1600/adding-adsense-inside-posts.png?resize=420%2C250&amp;ssl=1" src="https://res.cloudinary.com/practicaldev/image/fetch/1.bp.blogspot.com/-hcAdKZfjRyg/Utg5FISx95I/AAAAAAAAF4k/ZbE-Dip3wkk/s1600/adding-adsense-inside-posts.png?zoom=1.5&amp;resize=330%2C193&amp;ssl=1" srcset="https://res.cloudinary.com/practicaldev/image/fetch/1.bp.blogspot.com/-hcAdKZfjRyg/Utg5FISx95I/AAAAAAAAF4k/ZbE-Dip3wkk/s1600/adding-adsense-inside-posts.png?zoom=1.5&amp;resize=330%2C193&amp;ssl=1" title="Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post"></td></tr><tr><td class="tr-caption"><span class="notranslate">penjelasan AdSense di tengah-tengah isi posting</span></td></tr></tbody></table><div><span class="notranslate">Perlu diketahui bahwa jika Anda tidak menambahkan penjelasan ini untuk menentukan di mana untuk menampilkan iklan, maka akan muncul di bawah judul secara default.</span></div><div><span class="notranslate">Jadi ini adalah bagaimana kita dapat menambahkan iklan AdSense di tengah atau di mana saja di dalam posting Blogger kami.</span>&nbsp;<span class="notranslate">Jangan khawatir tentang melanggar</span>&nbsp;<noindex><span class="notranslate"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL2wzbjRyMHhibG9nLmNmL291dC9hSFIwY0hNNkx5OWhaR1l1Ykhrdk1URXdNalExTmpFdmFIUjBjSE02THk5emRYQndiM0owTG1kdmIyZHNaUzVqYjIwdllXUnpaVzV6WlM5aGJuTjNaWEl2TVRNMU5EY3pOajlvYkQxbGJpWmhiWEE3Y21WbVgzUnZjR2xqUFRFeU56RTFNRGclM0QmdXNnPUFMa0pyaGg1b3N4SHBFMkRnZjM5Q0hraWptODNaVlZBZXc=" rel="nofollow noopener noreferer" target="_blank">Syarat Layanan Google</a></span>&nbsp;</noindex><span class="notranslate">karena menerapkan metode ini tidak akan mengubah struktur iklan.</span></div></div></div>
+
+          
+          
+          
+          <!-- Preview image figure-->
+          <figure class="mb-4 mt-4">
+            <img class="img-fluid rounded" width="900px" height="400px" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://res.cloudinary.com/practicaldev/image/fetch/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&amp;ssl=1" alt="Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post">
+          </figure>
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam Blogger Post';
+      this.page.url = 'https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

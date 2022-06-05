@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>How to create facebook comments on AMP Blogger - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp.html">
+<meta name="author" content="Unknown">
+<meta name="description" content="Finally Google choseFacebook comments pluginfirst supported by AMP HTML.">
+<meta name="title" content="How to create facebook comments on AMP Blogger">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to create facebook comments on AMP Blogger">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="Finally Google choseFacebook comments pluginfirst supported by AMP HTML.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png">
+<!--article metadata-->
+<meta property="article:published_time" content="2017-05-04T21:01:00.001+07:00">
+<meta property="article:modified_time" content="2017-05-05T09:41:54+07:00">
+<meta property="article:author" content="Unknown">
+
+<meta property="article:tag" content="Blogger">
+
+<meta property="article:tag" content="HTML">
+
+<meta property="article:tag" content="AMP">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">How to create facebook comments on AMP Blogger</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on May 4, 2017 9:01 PM by Unknown
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Blogger">Blogger</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/HTML">HTML</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/AMP">AMP</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Programming">Programming</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/HTML">HTML</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <p><span class="notranslate" id="span_1879_0">Finally Google chose&nbsp;<a rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYW1wcHJvamVjdC5vcmcvZG9jcy9yZWZlcmVuY2UvY29tcG9uZW50cy9hbXAtZmFjZWJvb2stY29tbWVudHMmdXNnPUFMa0pyaGlkNU9SZlA5Tm9Xb0JiVk16Y2ZjOXh1cU5NSVE=" id="a_1879_0" target="_blank" title="Facebook comments plugin">Facebook comments plugin</a>&nbsp;first supported by AMP HTML.</span><span id="span_1879_1"></span><span class="notranslate" id="span_1879_2">&nbsp;For that then I tried it on one of my AMP blog and Facebook comments appear perfect on the blog, how to install it is quite easy.</span><span id="span_1879_3">&nbsp;</span><br><br id="br_1879_0"><span class="notranslate" id="span_1879_4">In addition, incoming comments can be synced with the fans page, meaning incoming comments can appear on the blog and on the fan page by using the Facebook application.</span><span id="span_1879_5">&nbsp;</span><br><br id="br_1879_1"><span class="notranslate" id="span_1879_6">To try Facebook comments on the AMP blog, please try on the button below.</span><span id="span_1879_7">&nbsp;</span><br><br></p><div class="center" id="div_1879_0"><span class="notranslate"><a rel="nofollow noopener noreferer" class="btn btn-primary btn-lg" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5teWluZm8ud2ViLmlkLyZ1c2c9QUxrSnJoZ0ZnTFNjZ1ZRMGZuQ1pZSW5Iakg0aWpZVzk2Zw==" id="a_1879_1" target="_blank" title="Demo">DEMO</a></span></div><br id="br_1879_2"><span class="notranslate" id="span_1879_8">If you want to try posting a Facebook comment on the AMP blog, please follow the steps below.</span><span id="span_1879_9">&nbsp;</span><br><br id="br_1879_3"><span class="notranslate" id="span_1879_10">Please copy this HTML code.</span><span id="span_1879_11">&nbsp;</span><br><br><pre id="pre_1879_0"><code id="code_1879_0">&lt;b:includable id=‘fb-comment’ var=‘post’&gt;&nbsp;<br>&lt;div class=‘fb-comments’ id=‘fb_comments’&gt;&nbsp;<br>&lt;amp-facebook-comments data-colorscheme=‘dark’ data-numposts=‘5’ expr:data-href=‘data:post.url’ height=‘180’ layout=‘responsive’ width=‘600’&gt;&nbsp;<br>&lt;/amp-facebook-comments&gt;&nbsp;<br>&lt;/div&gt;&nbsp;<br>&lt;/b:includable&gt;&nbsp;</code></pre><br id="br_1879_4"><span class="notranslate" id="span_1879_12">If your blog background is light or bright, please delete the code&nbsp;<code id="code_1879_1">data-colorscheme=‘dark’</code></span><span id="span_1879_13">&nbsp;</span><br><br id="br_1879_5"><span class="notranslate" id="span_1879_14">Then please save the HTML code below under the following code:</span><span id="span_1879_15">&nbsp;</span><br><br><pre id="pre_1879_1"><code id="code_1879_2">&lt;b:includable id=‘comments’ var=‘post’&gt;&nbsp;<br>…&nbsp;<br>…&nbsp;<br>…&nbsp;<br>&lt;/b:includable&gt;&nbsp;</code></pre><br id="br_1879_6"><span class="notranslate" id="span_1879_16">So it looks like the following:</span><span id="span_1879_17">&nbsp;</span><br><br><pre id="pre_1879_2"><code id="code_1879_3">&lt;b:includable id=‘comments’ var=‘post’&gt;&nbsp;<br>…&nbsp;<br>…&nbsp;<br>…&nbsp;<br>&lt;/b:includable&gt;&nbsp;<br>&lt;b:includable id=‘fb-comment’ var=‘post’&gt;&nbsp;<br>&lt;div class=‘fb-comments’ id=‘fb_comments’&gt;&nbsp;<br>&lt;amp-facebook-comments data-colorscheme=‘dark’ data-numposts=‘5’ expr:data-href=‘data:post.url’ height=‘180’ layout=‘responsive’ width=‘600’&gt;&nbsp;<br>&lt;/amp-facebook-comments&gt;&nbsp;<br>&lt;/div&gt;&nbsp;<br>&lt;/b:includable&gt;&nbsp;</code></pre><br id="br_1879_7"><span class="notranslate" id="span_1879_18">Please copy the following code:</span><span id="span_1879_19">&nbsp;</span><br><br><pre id="pre_1879_3"><code id="code_1879_4">&lt;b:include cond=‘data:blog.pageType == &amp;quot;item&amp;quot;’ data=‘post’ name=‘fb-comment’/&gt;&nbsp;</code></pre><br id="br_1879_8"><span class="notranslate" id="span_1879_20">And save it right under the following code:</span><span id="span_1879_21">&nbsp;</span><br><br><pre id="pre_1879_4"><code id="code_1879_5">&lt;b:include data=‘post’ name=‘post’/&gt;&nbsp;</code></pre><br id="br_1879_9"><span class="notranslate" id="span_1879_22">Then please save the below meta code above&nbsp;<code id="code_1879_6">&lt;/head&gt;</code>&nbsp;code</span><span id="span_1879_23">&nbsp;</span><br><br><pre id="pre_1879_5"><code id="code_1879_7">&lt;meta content=‘xxxxxxxxxxxxxxx’ property=‘fb:admins’/&gt;&nbsp;<br>&lt;meta content=‘xxxxxxxxxxxxxxx’ property=‘fb:profile_id’/&gt;&nbsp;</code></pre><br id="br_1879_10"><span class="notranslate" id="span_1879_24">Please replace&nbsp;<code id="code_1879_8">xxxxxxxxxxxxxxx</code>&nbsp;for&nbsp;<code id="code_1879_9">fb:admins</code>&nbsp;with&nbsp;<a rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5rb21waWFqYWliLmNvbS8yMDE1LzA2L2NhcmEtbWVuZ2V0YWh1aS1mYi11c2VyLWlkLXVudHVrLmh0bWwmdXNnPUFMa0pyaGoyRnotTWRIT0dmMUpDSWdQX1hxd21DWi1rZnc=" id="a_1879_2" target="_blank" title="Facebook profile ID">your Facebook profile ID</a>&nbsp;and&nbsp;<code id="code_1879_10">xxxxxxxxxxxxxxx</code>&nbsp;for&nbsp;<code id="code_1879_11">fb:profile_id</code>&nbsp;with your fan page fan page.</span><span id="span_1879_25">&nbsp;</span><br><br id="br_1879_11"><span class="notranslate" id="span_1879_26">Then please save the following code above the code&nbsp;<code id="code_1879_12">&lt;/head&gt;</code></span><span id="span_1879_27">&nbsp;</span><br><br><pre id="pre_1879_6"><code id="code_1879_13">&lt;b:if cond=‘data:blog.pageType == &amp;quot;item&amp;quot;’&gt;&nbsp;<br>&lt;script async=‘async’ custom-element=‘amp-facebook-comments’ src=‘https://cdn.ampproject.org/v0/amp-facebook-comments-0.1.js’/&gt;&nbsp;<br>&lt;/b:if&gt;&nbsp;</code></pre><br id="br_1879_12"><span class="notranslate" id="span_1879_28">Then please check Facebook comments on one of your blog posts.</span><span id="span_1879_29">&nbsp;</span><br><br id="br_1879_13"><span class="notranslate" id="span_1879_30">Well to display incoming comments appear on blogs and fans page Facebook, please follow the steps below.</span><span id="span_1879_31">&nbsp;</span><br><br id="br_1879_14"><span class="notranslate" id="span_1879_32">Please create a new Facebook&nbsp;<i class="klik-url" id="i_1879_0">Application</i>&nbsp;at&nbsp;<i class="klik-url" id="i_1879_1">https://developers.facebook.com/</i>&nbsp;.</span><span id="span_1879_33">&nbsp;</span><br><br id="br_1879_15"><span class="notranslate" id="span_1879_34">Please give&nbsp;FB_Comments a&nbsp;name for the&nbsp;application&nbsp;you created.</span><span id="span_1879_35">&nbsp;</span><span class="notranslate" id="span_1879_36">After the application page appears please click the&nbsp;App Review&nbsp;tab in the left sidebar.</span><span id="span_1879_37">&nbsp;</span><span class="notranslate" id="span_1879_38">And change your&nbsp;application&nbsp;to&nbsp;Public&nbsp;and select the app for fans page.</span><span id="span_1879_39">&nbsp;</span><br><br id="br_1879_16"><span class="notranslate" id="span_1879_40">Then please save the following meta code above&nbsp;<code id="code_1879_14">&lt;/head&gt;</code>&nbsp;code</span><span id="span_1879_41">&nbsp;</span><br><br><pre id="pre_1879_7"><code id="code_1879_15">&lt;meta content=‘xxxxxxxxxxxxxxxx’ property=‘fb:app_id’/&gt;&nbsp;</code></pre><br id="br_1879_17"><span class="notranslate" id="span_1879_42">Replace&nbsp;<code id="code_1879_16">xxxxxxxxxxxxxxxx</code>&nbsp;with the&nbsp;<code id="code_1879_17">xxxxxxxxxxxxxxxx</code>&nbsp;ID you created earlier.</span><span id="span_1879_43">&nbsp;</span><br><br id="br_1879_18"><span class="notranslate" id="span_1879_44">Now please go to one of your blog post and then click on&nbsp;Moderation Tool&nbsp;on Facebook comments like the&nbsp;following&nbsp;picture:</span><span id="span_1879_45">&nbsp;</span><br><br id="br_1879_19"><img alt="Moderation Tool" class="i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" height="203" layout="responsive" src="https://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png" style="background-color: white; color: #444444; display: block; font-family: Roboto, Arial, sans-serif; font-size: 18px; overflow: hidden !important; position: relative;" title="Moderation Tool" width="631"><i-amphtml-sizer style="display: block; padding-top: 109.375px;"></i-amphtml-sizer><img alt="Moderation Tool" class="i-amphtml-fill-content i-amphtml-replaced-content" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png" id="img_1879_0" title="Moderation Tool"><br><span class="notranslate" id="span_1879_46">On the next page please click your Application name as shown below:</span><span id="span_1879_47">&nbsp;</span><br><br id="br_1879_20"><img alt="nama Aplikasi" class="i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" height="266" layout="responsive" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://3.bp.blogspot.com/-DAq0z_rxj3Y/WQFHxf4EZTI/AAAAAAAAq20/jlmd5EPXbxkOV22optO2R4Li_8g832mIwCLcB/s1600/Screenshot_9.png" style="background-color: white; color: #444444; display: block; font-family: Roboto, Arial, sans-serif; font-size: 18px; overflow: hidden !important; position: relative;" title="App name" width="1020"><i-amphtml-sizer style="display: block; padding-top: 88.6562px;"></i-amphtml-sizer><img alt="nama Aplikasi" class="i-amphtml-fill-content i-amphtml-replaced-content" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://3.bp.blogspot.com/-DAq0z_rxj3Y/WQFHxf4EZTI/AAAAAAAAq20/jlmd5EPXbxkOV22optO2R4Li_8g832mIwCLcB/s1600/Screenshot_9.png" id="img_1879_1" title="App name"><br><span class="notranslate" id="span_1879_48">On the next page please click&nbsp;Settings&nbsp;like the following picture:</span><span id="span_1879_49">&nbsp;</span><br><br id="br_1879_21"><img alt="Setting" class="i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" height="305" layout="responsive" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://3.bp.blogspot.com/-AyeofrFYDIo/WQFIcHR8krI/AAAAAAAAq28/T0HShCDxwY0cxMZLamOAA_xIglqa6HFSgCLcB/s1600/Screenshot_10.png" style="background-color: white; color: #444444; display: block; font-family: Roboto, Arial, sans-serif; font-size: 18px; overflow: hidden !important; position: relative;" title="Settings" width="1036"><i-amphtml-sizer style="display: block; padding-top: 100.094px;"></i-amphtml-sizer><img alt="Setting" class="i-amphtml-fill-content i-amphtml-replaced-content" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://3.bp.blogspot.com/-AyeofrFYDIo/WQFIcHR8krI/AAAAAAAAq28/T0HShCDxwY0cxMZLamOAA_xIglqa6HFSgCLcB/s1600/Screenshot_10.png" id="img_1879_2" title="Settings"><br><span class="notranslate" id="span_1879_50">Then in the popup that appears please check on&nbsp;yes, mirror to&nbsp;and select your blog fan page.</span><span id="span_1879_51">&nbsp;</span><br><br id="br_1879_22"><img alt="popup" class="i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" height="646" layout="responsive" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://3.bp.blogspot.com/-lwJY2xmakLo/WQFJC6UqH7I/AAAAAAAAq3E/8FLyluUHoT8I_ibfjDT5-6VqLZmyk_ZfwCLcB/s1600/Screenshot_11.png" style="background-color: white; color: #444444; display: block; font-family: Roboto, Arial, sans-serif; font-size: 18px; overflow: hidden !important; position: relative;" title="Popups" width="1046"><i-amphtml-sizer style="display: block; padding-top: 209.969px;"></i-amphtml-sizer><img alt="popup" class="i-amphtml-fill-content i-amphtml-replaced-content" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-lwJY2xmakLo/WQFJC6UqH7I/AAAAAAAAq3E/8FLyluUHoT8I_ibfjDT5-6VqLZmyk_ZfwCLcB/s1600/Screenshot_11.png" id="img_1879_3" title="Popups"><br><span class="notranslate" id="span_1879_52">Done.</span><span id="span_1879_53">&nbsp;</span><br><br id="br_1879_23"><span class="notranslate" id="span_1879_54">Well this mirroring will appear in the new post after this is created, any comments made on the blog will appear on the fan page, and vice versa comments made on the post fans page will appear in blog comments.</span><br><span id="span_1879_55"><br></span> <b>Keyword:</b> <span class="notranslate">Put Facebook Comments On AMP Blog HTML And Fans Page Sync</span><p></p>
+
+
+          
+          
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'How to create facebook comments on AMP Blogger';
+      this.page.url = 'https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

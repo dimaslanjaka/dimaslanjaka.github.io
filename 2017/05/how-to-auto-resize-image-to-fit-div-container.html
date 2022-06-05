@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>How To Auto Resize an Image to fit a div Container - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container.html">
+<meta name="author" content="Unknown">
+<meta name="description" content="How do I autoresize an image to fit a div container">
+<meta name="title" content="How To Auto Resize an Image to fit a div Container">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To Auto Resize an Image to fit a div Container">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="How do I autoresize an image to fit a div container">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&amp;w=320&amp;h=180&amp;stc=true&amp;jpg444=true&amp;jpgq=90&amp;sp=68&amp;sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c">
+<!--article metadata-->
+<meta property="article:published_time" content="2017-05-09T05:58:00.000+07:00">
+<meta property="article:modified_time" content="2017-05-09T05:58:05+07:00">
+<meta property="article:author" content="Unknown">
+
+<meta property="article:tag" content="CSS">
+
+<meta property="article:tag" content="HTML">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&amp;w=320&amp;h=180&amp;stc=true&amp;jpg444=true&amp;jpgq=90&amp;sp=68&amp;sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">How To Auto Resize an Image to fit a div Container</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on May 9, 2017 5:58 AM by Unknown
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/CSS">CSS</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/HTML">HTML</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Programming">Programming</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/CSS">CSS</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <h2 style="background-color: white; border: 0px; box-sizing: border-box; font-stretch: inherit; margin-bottom: 0.8em; padding: 0px; vertical-align: baseline;"><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;">How do I auto-resize an image to fit a div container</span></span></h2><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;"><img height="225" src="https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&amp;w=320&amp;h=180&amp;stc=true&amp;jpg444=true&amp;jpgq=90&amp;sp=68&amp;sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c" width="400"></span></span></div><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;"><br></span></span></div><div> <span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;">Someone give me an Question.</span></span></div><div><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYmxvZ2dlci5jb20vYmxvZ2dlci5nP2Jsb2dJRD0yNzcxMDU2NTk5MjI5Mjk1MDI3" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" rel="nofollow noopener noreferer" target="_blank"></a><br></div><div><div style="background-color: white; border: 0px; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-stretch: inherit; line-height: 18px; margin-bottom: 0.8em; padding: 0px; vertical-align: baseline;"><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;">How do you auto-resize a large image so that it will fit into a smaller width div container whilst maintaining it's width:height ratio?</span></span></div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;"> </span></span><br><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;"><br></span></span></div><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;">Answer:</span></span></div><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;"><br></span></span></div></div><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;">How to solve it ?, Here We Go..</span></span></div><div><span style="color: #0c0d0e; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><span style="font-size: 29.1355895996094px; line-height: 32.0779647827148px;"><br></span></span></div><div style="background-color: white; border: 0px; box-sizing: border-box; color: #0c0d0e; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-stretch: inherit; line-height: 18px; margin-bottom: 0.8em; padding: 0px; vertical-align: baseline;">Do not apply an explicit width or height to the image tag. Instead, give it:</div><pre class="default prettyprint prettyprinted" style="background-color: #f0f0f0; border: 0px; box-sizing: border-box; color: #393318; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace; font-size: 13px; font-stretch: inherit; line-height: inherit; margin-bottom: 0.8em; max-height: 300px; overflow: auto; padding: 10px; vertical-align: baseline; word-wrap: normal;"><code style="border: 0px; box-sizing: border-box; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; max-height: 300px; overflow: auto; padding: 0px; vertical-align: baseline;"><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">max</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">-</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">width</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">100</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">%;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>max</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">-</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">height</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">100</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">%;</span></code></pre><div style="background-color: white; border: 0px; box-sizing: border-box; color: #0c0d0e; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-stretch: inherit; line-height: 18px; margin-bottom: 0.8em; padding: 0px; vertical-align: baseline;">Example:&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2pzZmlkZGxlLm5ldC94d3J2eHNlci8xLw==" rel="nofollow noopener noreferer" style="box-sizing: border-box; color: #0077cc; margin-bottom: 0px; text-decoration: none;" target="_blank">jsfiddle</a></div><div style="background-color: white; border: 0px; box-sizing: border-box; color: #0c0d0e; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-stretch: inherit; line-height: 18px; margin-bottom: 0.8em; padding: 0px; vertical-align: baseline;"></div><div class="snippet" data-babel="false" data-console="true" data-hide="false" data-lang="js" style="background-color: white; border: 0px; box-sizing: border-box; color: #0c0d0e; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-stretch: inherit; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;"><div class="snippet-code" style="border: 1px solid rgb(228, 230, 232); box-sizing: border-box; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><pre class="snippet-code-css lang-css prettyprint prettyprinted" style="background-color: #f0f0f0; border: 0px; box-sizing: border-box; color: #393318; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace; font-size: 13px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin-bottom: 0.8em; max-height: 300px; overflow: auto; padding: 10px; vertical-align: baseline; word-wrap: normal;"><code style="border: 0px; box-sizing: border-box; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; max-height: 300px; overflow: auto; padding: 0px; vertical-align: baseline;"><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">img </span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">max-width</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">100%</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">max-height</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">100%</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">.</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">portrait </span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">height</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">80px</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">width</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">30px</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">.</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">landscape </span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">height</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">30px</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">width</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">80px</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">.</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">square </span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">height</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">75px</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="kwd" style="border: 0px; box-sizing: border-box; color: #101094; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">width</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">75px</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">}</span></code></pre><pre class="snippet-code-html lang-html prettyprint prettyprinted" style="background-color: #f0f0f0; border: 0px; box-sizing: border-box; color: #393318; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace; font-size: 13px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; max-height: 300px; overflow: auto; padding: 10px; vertical-align: baseline; word-wrap: normal;"><code style="border: 0px; box-sizing: border-box; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; max-height: 300px; overflow: auto; padding: 0px; vertical-align: baseline;"><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">Portrait Div<br></span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;div</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="atn" style="border: 0px; box-sizing: border-box; color: #e64320; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">class</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="atv" style="border: 0px; box-sizing: border-box; color: #0f74bd; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">"portrait"</span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;img</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="atn" style="border: 0px; box-sizing: border-box; color: #e64320; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">src</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="atv" style="border: 0px; box-sizing: border-box; color: #0f74bd; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">"http://i.stack.imgur.com/xkF9Q.jpg"</span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;/div&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br><br>Landscape Div<br></span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;div</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="atn" style="border: 0px; box-sizing: border-box; color: #e64320; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">class</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="atv" style="border: 0px; box-sizing: border-box; color: #0f74bd; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">"landscape"</span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;img</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="atn" style="border: 0px; box-sizing: border-box; color: #e64320; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">src</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="atv" style="border: 0px; box-sizing: border-box; color: #0f74bd; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">"http://i.stack.imgur.com/xkF9Q.jpg"</span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;/div&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br><br>Square Div<br></span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;div</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="atn" style="border: 0px; box-sizing: border-box; color: #e64320; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">class</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="atv" style="border: 0px; box-sizing: border-box; color: #0f74bd; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">"square"</span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br>    </span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;img</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="atn" style="border: 0px; box-sizing: border-box; color: #e64320; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">src</span><span class="pun" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="atv" style="border: 0px; box-sizing: border-box; color: #0f74bd; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">"http://i.stack.imgur.com/xkF9Q.jpg"</span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="border: 0px; box-sizing: border-box; color: #303336; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><br></span><span class="tag" style="border: 0px; box-sizing: border-box; color: #7d2727; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;/div&gt;</span></code></pre></div></div><style amp-custom="">.thumb-post{text-align:center;margin:0;padding:0;width:100%} .thumb-post amp-img{width:100%;max-width:100%;height:auto;min-height:450px;max-height:600px;margin:0} </style>  <br><div class="thumb-post"><noscript><img src="https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/17796846_1773189839677671_6977008867135609966_n.png.jpg?efg=eyJpIjoidCJ9&amp;oh=292c21d1c58e8e185a8d6c63dec60c5a&amp;oe=5957C4B8" width="650" height="350" alt="NoScript Default Fallback" title="default fallback"></noscript> </div>I Hope This Article Be helped
+
+          
+          
+          
+          <!-- Preview image figure-->
+          <figure class="mb-4 mt-4">
+            <img class="img-fluid rounded" width="900px" height="400px" src="https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&amp;w=320&amp;h=180&amp;stc=true&amp;jpg444=true&amp;jpgq=90&amp;sp=68&amp;sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c" alt="How To Auto Resize an Image to fit a div Container">
+          </figure>
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'How To Auto Resize an Image to fit a div Container';
+      this.page.url = 'https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

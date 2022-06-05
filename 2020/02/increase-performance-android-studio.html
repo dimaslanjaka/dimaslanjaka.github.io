@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Increase Performance Android Studio - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html">
+<meta name="author" content="Kus Wati">
+<meta name="description" content="You can speed up your Eclipse or Android Studio work, you just follow these">
+<meta name="title" content="Increase Performance Android Studio">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Increase Performance Android Studio">
+<meta property="og:url" content="https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="You can speed up your Eclipse or Android Studio work, you just follow these">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1">
+<!--article metadata-->
+<meta property="article:published_time" content="2020-02-25T05:25:00.001+07:00">
+<meta property="article:modified_time" content="2020-03-29T20:45:31+07:00">
+<meta property="article:author" content="Kus Wati">
+
+<meta property="article:tag" content="Android">
+
+<meta property="article:tag" content="Tips &amp; Tricks">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">Increase Performance Android Studio</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on February 25, 2020 5:25 AM by Kus Wati
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Android">Android</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/Tips%20&amp;%20Tricks">Tips &amp; Tricks</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Uncategorized">Uncategorized</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1" width="100%"></p><h3>Solver 1</h3> <p>  You can speed up your Eclipse or Android Studio work, you just follow   these: </p><ul>  <li>    Open your single project   </li>  <li>    clean your project after running your app in emulator every time   </li>  <li>    use mobile/external device instead of emulator   </li>  <li>    don’t close emulator after using once, use same emulator for running     app each time   </li>  <li>    <strong>      Disable VCS by using File-&gt;Settings-&gt;Plugins and disable the       following things :       <ol>        <li>CVS Integration</li>        <li>Git Integration (Git &amp; Github)</li>        <li>Google Cloud Tools for Android Studio</li>        <li>Subversion Integration</li>        <li>Firebase (Optional)</li>      </ol>    </strong>  </li></ul><p>  I am also using Android Studio with 4-GB installed main memory but   following these statements really boost my Android Studio performance. </p> <h3>Solver 2</h3> <div>  <h3>    Android Studio (up to 1.5GB)   </h3>  <p>    The IDE’s JVM is configured to have a max heap size. You can see this     in the lower-right corner of the main interface:   </p>  <p>    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9pLnN0YWNrLmltZ3VyLmNvbS9ESXRBTC5wbmc=" rel="nofollow noopener noreferer" target="_blank">      <img src="https://i.stack.imgur.com/DItAL.png" alt="Android Studio showing 725M max heap size">    </a>  </p>  <p>    You can reduce this by editing the     <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3Rvb2xzLmFuZHJvaWQuY29tL3RlY2gtZG9jcy9jb25maWd1cmF0aW9uI1RPQy1JbmNyZWFzaW5nLUlERS1NZW1vcnk=" rel="nofollow noopener noreferer" target="_blank">      memory-related settings     </a>    in     <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3Rvb2xzLmFuZHJvaWQuY29tL3RlY2gtZG9jcy9jb25maWd1cmF0aW9uI3NpdGVzLXBhZ2UtdGl0bGUtaGVhZGVy" rel="nofollow noopener noreferer" target="_blank">      the <code>.vmoptions</code> file     </a>    . For example, I changed my max heap size to 512MB:   </p>  <pre><code>-Xmx512m<br></code></pre>  <p>    Unfortunately, I found that lowering this value increases the frequency     of Android Studio temporarily freezing, perhaps to do its garbage     collection.   </p>  <h3>    Gradle (up to 1.5GB)   </h3>  <p>    Gradle can also use a lot of RAM after developing for a while. Windows     just shows it as <code>Java™ Platform SE Binary</code>:   </p>  <p>    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9pLnN0YWNrLmltZ3VyLmNvbS9GVE44Zi5wbmc=" rel="nofollow noopener noreferer" target="_blank">      <img src="https://i.stack.imgur.com/FTN8f.png" alt="Windows 8.1 Task Manager showing &quot;Java(TM Platform SE binary&quot; using 1,460.5 MB of memory">    </a>  </p>  <p>    You can fix this by changing the Gradle JVM options. You can do this on     a per-user basis by editing     <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLmdyYWRsZS5vcmcvY3VycmVudC91c2VyZ3VpZGUvYnVpbGRfZW52aXJvbm1lbnQuaHRtbCNzZWM6Z3JhZGxlX3Byb3BlcnRpZXNfYW5kX3N5c3RlbV9wcm9wZXJ0aWVz" rel="nofollow noopener noreferer" target="_blank">      <code>gradle.properties</code>    </a>    :   </p>  <ol>    <li>      Open the <code>gradle.properties</code> file, creating it if it       doesn’t exist:       <ul>        <li>          Windows: <code>%USERPROFILE%.gradle\gradle.properties</code>        </li>        <li>          Linux/Mac: <code>~/.gradle/gradle.properties</code>        </li>      </ul>    </li>    <li>      <p>        Update the <code>org.gradle.jvmargs</code> property, creating         it if necessary. I set mine to this:       </p>      <pre><code>org.gradle.jvmargs=-Xmx256m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8<br></code></pre>    </li>  </ol>  <p>    I haven’t noticed any difference in build performance for my small     project with the max heap size set to 256MB (<code>-Xmx256m</code>).   </p>  <p>    Note that you might need to restart Android Studio so the <em>old</em>    Gradle process is killed; otherwise you might end up with both running     at the same time.   </p>  <h3>    Emulator   </h3>  <p>    Regarding the emulator taking up a lot of your RAM, your screenshot     shows it taking about 800MB. You can choose how much RAM to allocate to     the emulator:   </p>  <ol>    <li>      Edit the AVD     </li>    <li>      Press <em>Show Advanced Settings</em>    </li>    <li>      Reduce the value of <em>RAM</em>    </li>  </ol>  <p>    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9pLnN0YWNrLmltZ3VyLmNvbS9qRXNrbi5wbmc=" rel="nofollow noopener noreferer" target="_blank">      <img src="https://i.stack.imgur.com/jEskn.png" alt="Android Virtual Device RAM configuration">    </a>  </p></div><div>  <time datetime="2015-05-26T05:17:28">  </time>  <div>  </div></div> <h3>Definition</h3> <div>  <br></div><div>  <p>    <strong>      Android Studio has recently published an official guide for       low-memory machines:       <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2ludHJvL3N0dWRpby1jb25maWcuaHRtbCNsb3dfbWVtb3J5" rel="nofollow noopener noreferer" target="_blank">        Guide       </a>    </strong>  </p>  <p>    If you are running Android Studio on a machine with less than the     recommended specifications (see System Requirements), you can customize     the IDE to improve performance on your machine, as follows:   </p>  <ul>    <li>      <p>        <strong>          Reduce the maximum heap size available to Android Studio         </strong>        : Reduce the maximum heap size for Android Studio to 512Mb.       </p>    </li>    <li>      <p>        <strong>          Update Gradle and the Android plugin for Gradle         </strong>        : Update to the latest versions of Gradle and the Android         plugin for Gradle to ensure you are taking advantage of the         latest improvements for performance.       </p>    </li>    <li>      <p>        <strong>Enable Power Save Mode</strong>        : Enabling Power Save Mode turns off a number of memory- and         battery-intensive background operations, including error         highlighting and on-the-fly inspections, autopopup code         completion, and automatic incremental background compilation.         To turn on Power Save Mode, click File &gt; Power Save Mode.       </p>    </li>    <li>      <p>        <strong>Disable unnecessary lint checks</strong>        : To change which lint checks Android Studio runs on your code,         proceed as follows: Click File &gt; Settings (on a Mac, Android         Studio &gt; Preferences) to open the Settings dialog.In the         left pane, expand the Editor section and click Inspections.         Click the checkboxes to select or deselect lint checks as         appropriate for your project. Click Apply or OK to save your         changes.       </p>    </li>    <li>      <p>        <strong>Debug on a physical device</strong>        : Debugging on an emulator uses more memory than debugging on a         physical device, so you can improve overall performance for         Android Studio by debugging on a physical device.       </p>    </li>    <li>      <p>        <strong>          Include only necessary Google Play Services as dependencies         </strong>        : Including Google Play Services as dependencies in your         project increases the amount of memory necessary. Only include         necessary dependencies to improve memory usage and performance.         For more information, see Add Google Play Services to Your         Project.       </p>    </li>    <li>      <p>        <strong>          Reduce the maximum heap size available for DEX file           compilation         </strong>        : Set the javaMaxHeapSize for DEX file compilation to 200m. For         more information, see         <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL3J1bi9pbmRleC5odG1sI2NvbmZpZ3VyZS1kZXhvcHRpb25z" rel="nofollow noopener noreferer" target="_blank">          Improve build times by configuring DEX resources         </a>        .       </p>    </li>    <li>      <p>        <strong>Do not enable parallel compilation</strong>        : Android Studio can compile independent modules in parallel,         but if you have a low-memory system you should not turn on this         feature. To check this setting, proceed as follows: Click File         &gt; Settings (on a Mac, Android Studio &gt; Preferences) to         open the Settings dialog. In the left pane, expand Build,         Execution, Deployment and then click Compiler. Ensure that the         Compile independent modules in parallel option is unchecked.If         you have made a change, click Apply or OK for your change to         take effect.       </p>    </li>    <li>      <p>        <strong>Turn on Offline Mode for Gradle</strong>        : If you have limited bandwitch, turn on Offline Mode to         prevent Gradle from attempting to download missing dependencies         during your build. When Offline Mode is on, Gradle will issue a         build failure if you are missing any dependencies, instead of         attempting to download them. To turn on Offline Mode, proceed         as follows:       </p>      <ul>        <li>          <p>            Click File &gt; Settings (on a Mac, Android Studio &gt;             Preferences) to open the Settings dialog.           </p>        </li>        <li>          <p>            In the left pane, expand Build, Execution, Deployment             and then click Gradle.           </p>        </li>        <li>          <p>            Under Global Gradle settings, check the Offline work             checkbox.           </p>        </li>        <li>          <p>            Click Apply or OK for your changes to take effect.           </p>        </li>      </ul>    </li>  </ul></div> <h4>Another tweak</h4><ol>  <li>in Android Studio <mark>settings &gt; compile</mark> <u>enable checkbox</u> <mark>Compile independent modules in       parallel</mark>.</li>  <li>Under <mark>Help &gt; Edit</mark> Custom VM Options</li>  <pre><br>-Xms1024m<br>-Xmx4096m # &lt;------ increase this to most of your RAM<br>-XX:MaxPermSize=1024m<br>-XX:ReservedCodeCacheSize=440m<br>-XX:+UseCompressedOops<br>-XX:-HeapDumpOnOutOfMemoryError<br>-Dfile.encoding=UTF-8<br></pre>  <li>Android studio 3.5 makes easier to change same of those values.</li>  <pre><br>Preferences &gt; Appearance &amp; Behavior &gt; System Settings &gt; Memory Settings<br></pre></ol><p></p>
+
+
+          
+          
+          
+          <!-- Preview image figure-->
+          <figure class="mb-4 mt-4">
+            <img class="img-fluid rounded" width="900px" height="400px" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1" alt="Increase Performance Android Studio">
+          </figure>
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'Increase Performance Android Studio';
+      this.page.url = 'https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

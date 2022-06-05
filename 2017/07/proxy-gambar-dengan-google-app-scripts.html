@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Proxy Gambar dengan Google App Scripts - WMI Gitlab</title>
+  <!--important meta-->
+<link rel="canonical" href="https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html">
+<meta name="author" content="Unknown">
+<meta name="description" content="Proxy Gambar dengan Google App Scripts">
+<meta name="title" content="Proxy Gambar dengan Google App Scripts">
+<!--facebook metadata-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Proxy Gambar dengan Google App Scripts">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html">
+<meta property="og:site_name" content="Website Manajemen Indonesia">
+<meta property="og:description" content="Proxy Gambar dengan Google App Scripts">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1">
+<!--article metadata-->
+<meta property="article:published_time" content="2017-07-11T23:51:00.001+07:00">
+<meta property="article:modified_time" content="2019-07-22T03:23:17+07:00">
+<meta property="article:author" content="Unknown">
+
+<meta property="article:tag" content="JS">
+
+<!--twitter metadata-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1">
+<!--sitemap rss-->
+<link rel="alternate" href="/rss.xml" title="RSS" type="application/atom+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<!--additional metadata-->
+<meta name="generator" content="SBG [github:dimaslanjaka/dimaslanjaka.github.io#compiler]">
+<meta name="page-type" content="post">
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- noindex -->
+
+<!--<meta name="robots" content="noindex" />-->
+
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+
+<!-- backup
+<script type="text/javascript">//<![CDATA[
+var lazyloadads=false;window.addEventListener("scroll",function(){(0!=document.documentElement.scrollTop&&false===lazyloadads||0!=document.body.scrollTop&&false===lazyloadads)&&(!function(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}(),lazyloadads=true)},true);
+//]]></script>
+-->
+
+
+  <script>
+    var lazyanalisis = !1; window.addEventListener("scroll", function () { (0 != document.documentElement.scrollTop && !1 === lazyanalisis || 0 != document.body.scrollTop && !1 === lazyanalisis) && (!function () { var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(e, a) }(), lazyanalisis = !0) }, !0)
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+    gtag("js", new Date());
+    gtag("config", "UA-106238155-1");
+  </script>
+
+
+
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Website Manajemen Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+        
+        <li class="nav-item"><a class="nav-link" href="/p/about.html">about</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html">Current</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+<header class="mb-4">
+  <!-- Post title-->
+  <h1 class="fw-bolder mb-1">Proxy Gambar dengan Google App Scripts</h1>
+  <!-- Post meta content-->
+  <div class="text-muted fst-italic mb-2">Posted on July 11, 2017 11:51 PM by Unknown
+  </div>
+  
+  <!-- Post categories-->
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/tags/JS">JS</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/Programming">Programming</a>
+  
+  <a class="badge bg-secondary text-decoration-none link-light" href="/categories/JS">JS</a>
+  
+  
+</header>
+
+        <!-- Post content-->
+        <section class="mb-5">
+          <div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><img alt="Contoh script aplikasi google" height="179" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1" style="border: 0px; height: auto; max-width: 100%; vertical-align: middle;" width="320"></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Saya telah menjadi penggemar berat&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTImbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL2FwcHMtc2NyaXB0LyZ1c2c9QUxrSnJoajlsQTR0aUxzWFJybFlreV9WQ0p2TXFtWGRCQQ==" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">Google App Scripts</a>&nbsp;.</span>&nbsp;<span class="notranslate">Layanan ini memungkinkan Anda membuat skrip canggih yang dapat dijadwalkan dan terintegrasi dengan Google (email, Google Documents, Excel) dan API eksternal.</span>&nbsp;<span class="notranslate">Anda menulis dalam JavaScript, dalam editor kode berbasis browser tepat di Google Drive dan skripnya bahkan dapat dipublikasikan sebagai aplikasi web.</span>&nbsp;<span class="notranslate">Kuota atau batasannya&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTImbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL2FwcHMtc2NyaXB0L2d1aWRlcy9zZXJ2aWNlcy9xdW90YXMmdXNnPUFMa0pyaGdSWGxjUEZHQUtpcUJQUTFNZllXMkxXenVBOGcjY3VycmVudF9xdW90YXM=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">cukup bagus</a>&nbsp;sehingga Anda bisa dengan cepat&nbsp;<strong>membangun sesuatu yang kuat secara gratis</strong>&nbsp;.</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Hari ini, saya akan menunjukkan cara membuat Proxy Gambar dengan Google App Scripts yang memungkinkan Anda mengambil gambar dari domain lain atau membahas&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9TYW1lLW9yaWdpbl9wb2xpY3kmdXNnPUFMa0pyaGctQkV3Z05jV0lQTWNCbHBFM0lRaTE5NDVxTmc=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">kebijakan asal-usul</a>browser yang&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9TYW1lLW9yaWdpbl9wb2xpY3kmdXNnPUFMa0pyaGctQkV3Z05jV0lQTWNCbHBFM0lRaTE5NDVxTmc=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">sama</a>&nbsp;.</span>&nbsp;<span class="notranslate">Pada dasarnya, Google App Script adalah proxy sisi server untuk permintaan sisi klien Anda.</span>&nbsp;<span class="notranslate">Jadi, jika Anda&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL3RlY2hzbGlkZXMuY29tL3NhdmUtc3ZnLWFzLWFuLWltYWdlJnVzZz1BTGtKcmhocnIza2wxNnlpMl9kelVaWTdPeHhvMTNVM0FR" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">mengekspor SVG sebagai gambar</a>&nbsp;dengan gambar yang dihosting di domain lain atau menyimpan kanvas HTML5 dengan toDataURL (), ini dapat membantu Anda menghindari kesalahan kanvas dan browser yang tercemar.</span>&nbsp;<span class="notranslate">Tapi, sungguh, ini hanyalah&nbsp;<strong>contoh sederhana dari Google App Script yang diterbitkan sebagai aplikasi web</strong>&nbsp;.</span><br><span id="more-5872"></span><br><span class="notranslate">Konsepnya sederhana.</span>&nbsp;<span class="notranslate">Saya menjalankan skrip dan meneruskannya ke url gambar yang naskahnya akan diambil dan dikonversi ke data dalam&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9CYXNlNjQmdXNnPUFMa0pyaGpocUlDUkxQVUNwT2FTRkRsS2lhdzI1WmpRMEE=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">pengkodean base64</a>&nbsp;.</span>&nbsp;<span class="notranslate">Akan lebih mudah untuk hanya proxy atau mengembalikan gambar biner</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">tapi kelas&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTImbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL2FwcHMtc2NyaXB0L3JlZmVyZW5jZS9jb250ZW50L2NvbnRlbnQtc2VydmljZSZ1c2c9QUxrSnJoaTFCUzhfUjRYX2JadVlLVkJhQk1mdUdWMGY3dw==" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">App Script Content Service</a>&nbsp;tidak mengizinkan&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTImbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHBzOi8vY29kZS5nb29nbGUuY29tL3AvZ29vZ2xlLWFwcHMtc2NyaXB0LWlzc3Vlcy9pc3N1ZXMvZGV0YWlsJTNGaWQlM0QyNTgyJnVzZz1BTGtKcmhqMlRONGZPLVpoOU5BM283ZXV5Si1Jbm9UVXJB" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">output konten biner</a>&nbsp;.</span>&nbsp;<span class="notranslate">Jadi, script harus mengubah gambar biner menjadi teks dan meneruskannya kembali ke respon.</span>&nbsp;<span class="notranslate">Mari kita lihat kodenya.</span><br><span class="notranslate"><br></span></div><pre>function doGet(e) {<br>  var url = decodeURIComponent(e.parameter.url);<br>  try {<br>    var response = UrlFetchApp.fetch(url);<br>  } catch (e) {<br>    return e.toString();<br>  }<br>  var type = response.getHeaders()['Content-Type'];<br>  var b64 = Utilities.base64Encode(response.getContent());<br>  var data = 'data:'+type+';base64,'+b64;<br>  return ContentService.createTextOutput(data);<br>}</pre><br><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Kami memiliki satu fungsi yang mengambil parameter kueri URL, membuat permintaan ke url tersebut dengan panggilan UrlFetchApp, menggunakan layanan Utilities.base64Encode untuk mengubah gambar biner menjadi teks, dan kemudian mengembalikannya ke metode ContentService.createTextOutput.</span><span class="notranslate">Berikut adalah contoh untuk&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RlY2hzbGlkZXMuY29tL2RlbW9zL3NhbXBsZXMvc2FtcGxlLnBuZw==" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">gambar</a>ini:</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTImbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHBzOi8vc2NyaXB0Lmdvb2dsZS5jb20vbWFjcm9zL3MvQUtmeWNieV9XY21YLV9ycmRxUDh0S1B3bHoxR3czYW1JSjNsWlFVVllSYUlrQUtXUVpiYXVOby9leGVjJTNGdXJsJTNEaHR0cDovL3RlY2hzbGlkZXMuY29tL2RlbW9zL3NhbXBsZXMvc2FtcGxlLnBuZyZ1c2c9QUxrSnJoZ1BuNjRLWDdYUW9jRXdTaDZ1S1RmUGMwVVRiUQ==" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">Https://script.google.com/macros/s/AKfycby_WcmX-_rrdqP8tKPwlz1Gw3amIJ3lZQUVYRaIkAKWQZbauNo/exec?url=http://techslides.com/demos/samples/sample.png</a></span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Ini adalah Url Gambar ke DataURL Converter:</span><br><span class="notranslate"><strong>Https://script.google.com/macros/s/AKfycby_WcmX-_rrdqP8tKPwlz1Gw3amIJ3lZQUVYRaIkAKWQZbauNo/exec?url=INSERT-IMAGE-URL-HERE</strong></span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Tentu saja, jika server hosting gambar memang memiliki&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL2VuYWJsZS1jb3JzLm9yZy8mdXNnPUFMa0pyaGdsbW9TUUpZNWhVbmVhT2oyT3NuTFdjR0RCRXc=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">CORS</a>&nbsp;, maka Anda bisa menarik dan mengubah atau&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9YXV0byZzcD1ubXQ0JnRsPWlkJnU9aHR0cDovL2pzZmlkZGxlLm5ldC9oYW5kdHJpeC9ZdlE1eS8mdXNnPUFMa0pyaGo4SFljLTQyVDM1ekJNOU1DdnN2WjVaVGd5VGc=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">mengakses data gambar tanpa memerlukan proxy sisi server</a>&nbsp;.</span>&nbsp;<span class="notranslate">Tapi tanpa header CORS,&nbsp;permintaan semacam&nbsp;itu akan gagal dengan "diblokir dari pemuatan oleh Kebijakan Bagi Hasil Lintas Sumber Asal: Tidak ada header 'Access-Control-Allow-Origin' ada pada kesalahan" sumber daya yang diminta.</span></div><div style="background-color: #fefefe; color: #333333; font-family: &quot;Droid Serif&quot;, serif; font-size: 1.1em; line-height: 1.65em; margin-bottom: 30px;"><span class="notranslate">Berikut adalah&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTImbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHBzOi8vc2l0ZXMuZ29vZ2xlLmNvbS9zaXRlL3NjcmlwdHNleGFtcGxlcy8mdXNnPUFMa0pyaGpaT0xpNWJMdXdlOVJEYmRwV3pxenVDdHVVLWc=" style="color: #0645ad; text-decoration: none;" rel="nofollow noopener noreferer" target="_blank">contoh Google App Script lainnya</a>&nbsp;.</span></div>
+
+          
+          
+          
+        </section>
+      </article>
+
+      
+      <section class="mb-5">
+        <div class="card bg-light">
+          <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+        </div>
+      </section>
+      
+
+      
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            
+<div id="disqus_thread" class="disqus"></div>
+<script src="https://raw.githack.com/osvaldasvalutis/disqusLoader.js/master/disqusloader.js"></script>
+<script>
+  var options =
+  {
+    scriptUrl: '//dimaslanjaka.disqus.com/embed.js',
+    /*
+      @type: string (url)
+      @default: none
+      @required
+      URL of Disqus' executive JS file. The value is memorized on the first function call
+      and ignored otherwise because Disqus allows only one instance per page at the time.
+    */
+
+    laziness: 1,
+    /*
+      @type: int (>=0)
+      @default: 1
+      Sets the laziness of loading the widget: (viewport height) * laziness . For example:
+      0 - widget load starts when at the least a tiny part of it gets in the viewport;
+      1 - widget load starts when the distance between the widget zone and the viewport is no more than the height of the viewport;
+      2 - 2x viewports, etc.
+    */
+
+
+    /**
+     * @type: int (milliseconds)
+     * @default: 250
+     * Defines how often the plugin should make calculations during the processes such as resize of a browser's window or viewport scroll.
+     * * 250 = 4 times in a second.
+     */
+    throttle: 250,
+
+    /**
+     * @type: function
+     * @default: none
+     * Disqus-native options. Check Disqus' manual for more information.
+     */
+    disqusConfig: function () {
+      this.page.title = 'Proxy Gambar dengan Google App Scripts';
+      this.page.url = 'https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html';
+      this.page.identifier = new URL('https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html').pathname;
+    }
+  };
+
+  // vanilla
+  disqusLoader('.disqus', options);
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noreferer" target="_blank">
+    comments powered by Disqus.
+  </a>
+</noscript>
+
+          </div>
+        </div>
+      </section>
+      
+    </div>
+
+    <!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." name="q" aria-describedby="button-search">
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" alt="Cooking Recipes Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Recipes.html">Cooking Recipes Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> January 11, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="/Chimeraland/Pets/cover.jpg" alt="Pets">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Pets.html">Pets</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> February 18, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Taming Pets Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/Taming.html">Taming Pets Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 16, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Lokasi Spawn Bunga Di Chimeraland">
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">Lokasi Spawn Bunga Di Chimeraland</a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> March 21, 2022</span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  
+  <div class="card mb-4">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+  </div>
+  
+</div>
+  </div>
+</div>
+  
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Website Manajemen Indonesia 2022
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Website Manajemen Indonesia, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+
+
+
+</body></html>

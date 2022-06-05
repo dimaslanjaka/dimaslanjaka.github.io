@@ -61,8 +61,8 @@
         "**/node_modules/**": true,
         "**/tmp/**": true
     },
-    "git.allowForcePush": true,
-    "git.autofetch": false,
+    //"git.allowForcePush": true,
+    "git.autofetch": "all",
     "git.autofetchPeriod": 18000,
     "git.autorefresh": false,
     "git.countBadge": "all",
@@ -72,6 +72,7 @@
     "git.smartCommitChanges": "all",
     "git.supportCancellation": false,
     "github.gitAuthentication": true,
+    "git.autoStash": true,
     "grunt.autoDetect": "off",
     "gulp.autoDetect": "on",
     "intelephense.format.braces": "psr12",

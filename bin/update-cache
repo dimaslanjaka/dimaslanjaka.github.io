@@ -8,3 +8,6 @@ md5=`md5sum package-lock.json | head -c 32`
 #echo "sha1 sum      : $sha" >> .guid
 #echo "md5 sum       : $md5" >> .guid
 echo $md5 > .guid
+git add .guid
+git commit -m "update cache $md5"
+git push

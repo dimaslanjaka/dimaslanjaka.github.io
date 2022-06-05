@@ -1,0 +1,26 @@
+{
+   "background": {
+      "scripts": [
+         "background.js"
+      ]
+   },
+   "browser_action": {
+      "default_icon": "icon16.png"
+   },
+   "content_security_policy": "script-src 'self' https://stats.g.doubleclick.net; object-src 'self'",
+   "description": "Cycles between proxies randomly every 60 seconds.",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk6rxBmpsp4D4NLpnWMtE8DgQ0Coln3nN5kHghhKOjXqubgHDkFhQg+M0TM7x1cBX1goLV8IMvsavyGTfupNBXKOaKzvj9O3/9v59+tfjt9jKbytGZa+iMQ7tkExCvpH9csWO3E7oK3gofu8vHu782uLEPO9SyGJVZwVpIakxFOu+IW7iH7eweSTMUbKwYjdIX3PzcnHe0pKpyPMzIbBV4BYm6qEd8cbnKCV4JUjM1BBv1Ozp246d6sB2XAUMErASodi+dJUgSq3c9xy+Yd8QR76bPv9iXfVODvo/7e1k+Y2ycgX26ERa3B0mnRUd2ZWf5ss01Q9IZmdIYctMFjbBzQIDAQAB",
+   "manifest_version": 2,
+   "name": "Universal proxy switcher",
+   "permissions": [
+      "proxy"
+   ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.2",
+   "author": "Dimas Lanjaka"
+}

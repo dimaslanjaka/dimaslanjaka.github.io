@@ -1,0 +1,26 @@
+{
+   "browser_action": {
+      "default_icon": {
+         "128": "images/icon128.png",
+         "16": "images/icon16.png",
+         "32": "images/icon32.png",
+         "48": "images/icon48.png"
+      },
+      "default_popup": "proxy.html",
+      "default_title": "GeoProxy"
+   },
+   "description": "Proxy based on location",
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDP4rVcU3P7jkcvB4ap5gm855+NfPad4ZQ98Bl0jaSGpyBBY8oAlUL15Oq7zkxRJx+GjThJzONFWO+jFFCWu/PIS+6+FFb1Q30yFhrnp4yScCtn/c7E6NSeGvM7T6p1UCD7WUoMbFNZQ14us/kvqetsgxhU/E0zE8SO4cJiYMk8zwIDAQAB",
+   "manifest_version": 2,
+   "name": "GeoProxy",
+   "permissions": [ "storage", "proxy", "https://www.socks-proxy.net/" ],
+   "short_name": "GeoProxy",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.8"
+}

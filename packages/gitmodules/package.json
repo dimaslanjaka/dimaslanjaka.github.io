@@ -1,0 +1,30 @@
+{
+  "name": "gitmodules",
+  "version": "1.0.0",
+  "description": "gitmodules doctor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
+  "keywords": [
+    "git",
+    "gitmodules",
+    "doctor"
+  ],
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
+  "dependencies": {
+    "ini": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/ini": "^1.3.31"
+  }
+}

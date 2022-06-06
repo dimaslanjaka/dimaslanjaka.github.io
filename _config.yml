@@ -251,6 +251,11 @@ browsersync:
   browser: "firefox"
   open: false
 
+# static-blog-generator
+generator:
+  cache: true
+  type: hexo
+
 # https://github.com/dimaslanjaka/hexo-adsense
 adsense:
   enable: true

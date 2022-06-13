@@ -8,7 +8,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
-    "i-local": "npm install -D file:../static-blog-generator",
+    "i-local": "npm install -D file:/media/dimaslanjaka/DATA/Repositories/static-blog-generator",
     "i-tgz": "npm install -D https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz",
     "i-tgz2": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz"
   },
@@ -34,13 +34,21 @@
     "hexo-pagination": "^2.0.0",
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-renderer-swig": "^1.1.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "file:themes/butterfly",
     "hexo-util": "^2.5.0",
+    "markdown-it": "^12.3.2",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-attrs": "dimaslanjaka/dimaslanjaka.github.io#4ce522eb6f95ccf4efa84d1ec4f23702f9eff9f6/packages/markdown-it-attrs",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
     "warehouse": "^4.0.1"
   },
   "devDependencies": {
@@ -48,6 +56,6 @@
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
     "prettier": "^2.6.2",
-    "static-blog-generator": "file:../static-blog-generator"
+    "static-blog-generator": "https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz"
   }
 }

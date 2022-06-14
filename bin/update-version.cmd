@@ -7,6 +7,5 @@ IF NOT EXIST "%NODE_EXE%" (
   SET "NODE_EXE=node"
 )
 
-rem %NODE_EXE% "%~dp0update-version.js" %*
+%NODE_EXE% "%~dp0update-version.js" %*
 
-node "%~dp0update-version.js" %*

@@ -49,10 +49,7 @@ jobs:
           path: |
             ${{ steps.vars.outputs.npm }}
             ./tmp
-            ./dist
             ./node_modules
-            ./tests
-            ./packages
           key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
       - name: Install dependencies
@@ -60,11 +57,12 @@ jobs:
           npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
           npm i -D https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/development.tgz
           npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
+          npm i -D https://github.com/dimaslanjaka/safelink.git
 
       - run: npx sbg clean
       - run: npx sbg copy --nocache
       - run: hexo generate
-      - run: npx sbg after safelink --nocache
+      - run: gulp safelink
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         if: ${{ false }}

@@ -45,12 +45,16 @@
     "warehouse": "^4.0.1"
   },
   "devDependencies": {
+    "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "eslint": "^8.17.0",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-dom": "^1.0.0",
     "hexo-post-parser": "file:../hexo-post-parser",
     "md5-file": "^5.0.0",
     "prettier": "^2.6.2",
-    "static-blog-generator": "file:../static-blog-generator"
+    "safelinkify": "file:../safelink",
+    "static-blog-generator": "file:../static-blog-generator",
+    "through2": "^4.0.2"
   }
 }

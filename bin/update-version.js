@@ -4,7 +4,7 @@
 const { gitDescribe } = require('git-describe');
 const { spawn } = require('hexo-util');
 const { write } = require('static-blog-generator/dist/src/node/filemanager');
-const { join } = require('upath');
+const { join } = require('path');
 const pkg = require('../package.json');
 
 gitDescribe(process.cwd())

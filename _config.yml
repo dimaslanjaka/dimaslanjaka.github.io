@@ -41,7 +41,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 # https://hexo.io/docs/configuration.html
 skip_render:
-  - "**/node_modules"
+  - "**/hexo-theme-unit-test/**"
+  - "**/node_modules/**"
   - "yandex_*"
   - "ahrefs_*"
   - "glx_*"
@@ -162,7 +163,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
+  repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io.git
   branch: master
   message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 

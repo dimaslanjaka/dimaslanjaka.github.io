@@ -59,9 +59,9 @@ jobs:
           npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
 
       - run: npx sbg clean
-      - run: npx sbg copy
-      - run: hexo list post
+      - run: npx sbg copy --nocache
       - run: hexo generate
+      - run: npx sbg after safelink --nocache
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         if: ${{ false }}

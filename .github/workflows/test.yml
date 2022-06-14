@@ -55,7 +55,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
-          npm run i-tgz
+          npm i -D https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/development.tgz
+          npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
 
       - run: npx sbg clean
       - run: npx sbg copy

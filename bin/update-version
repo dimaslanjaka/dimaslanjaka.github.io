@@ -1,22 +1,20 @@
-#!/usr/bin/env node
+#!/usr/bin/env bash
 
-//hash=$(git rev-parse --short HEAD)
-//npm version "0.0.1-$hash"
+# sample https://github.com/npm/cli/blob/latest/bin/npm
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
-const { gitDescribe, gitDescribeSync } = require('git-describe');
-const { write } = require('static-blog-generator/dist/src/node/filemanager');
-const { join } = require('upath');
-const pkg = require('../package.json');
+basedir=`dirname "$0"`
 
-gitDescribe(process.cwd())
-  .then((info) => {
-    //console.dir(info)
-    //console.log(info.hash);
-    const version = `${info.semver.version}-${info.distance}-${info.hash}`;
-    pkg.version = version;
-    write(
-      join(__dirname, '../package.json'),
-      JSON.stringify(pkg, null, 2) + '\n'
-    );
-  })
-  .catch((err) => console.error(err));
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+NODE_EXE="$basedir/node.exe"
+if ! [ -x "$NODE_EXE" ]; then
+  NODE_EXE="$basedir/node"
+fi
+if ! [ -x "$NODE_EXE" ]; then
+  NODE_EXE=node
+fi
+
+"$NODE_EXE" "$basedir/update-version.js" "$@"

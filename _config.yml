@@ -213,9 +213,18 @@ feed:
     - atom.xml
     - rss.xml
 
-# Sitemap
+# https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
-  path: sitemap.xml
+  path:
+    - sitemap.xml
+    - sitemap.txt
+  # https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml
+  # template: ./sitemap_template.xml
+  # https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.txt
+  # template_txt: ./sitemap_template.txt
+  rel: true
+  tags: true
+  categories: true
 
 # https://github.com/sergeyzwezdin/hexo-related-posts#Configuration
 related_posts:

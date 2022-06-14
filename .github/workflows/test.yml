@@ -11,6 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
 
     steps:
       - uses: szenius/set-timezone@v1.0

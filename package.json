@@ -1,61 +1,30 @@
 {
-  "name": "static-blog-generator-hexo",
-  "version": "1.0.0-77-gb1c8e24",
-  "private": true,
+  "name": "sbg-source",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server",
-    "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
-    "i-local": "npm install -D file:../static-blog-generator",
-    "i-tgz": "npm install -D https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz",
-    "i-tgz2": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz"
+    "ci": "yarn install --production=true --immutable --immutable-cache --check-cache --frozen-lockfile --check-files"
   },
-  "hexo": {
-    "version": "6.0.0"
-  },
+  "keywords": [],
+  "private": true,
+  "workspaces": [
+    "page"
+  ],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "hexo": "^6.0.0",
-    "hexo-asset-link": "^2.1.0",
-    "hexo-browsersync": "github:hexojs/hexo-browsersync",
-    "hexo-deployer-git": "^3.0.0",
-    "hexo-front-matter": "github:hexojs/hexo-front-matter",
-    "hexo-fs": "^3.1.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-feed": "^3.0.0",
-    "hexo-generator-index": "^2.0.0",
-    "hexo-generator-json-content": "^4.2.3",
-    "hexo-generator-search": "^2.4.3",
-    "hexo-generator-sitemap": "^3.0.1",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-github-card": "^1.0.5",
-    "hexo-i18n": "^1.0.0",
-    "hexo-log": "^3.0.0",
-    "hexo-pagination": "^2.0.0",
-    "hexo-pdf": "^1.1.1",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^5.0.0",
-    "hexo-renderer-pug": "^3.0.0",
-    "hexo-renderer-stylus": "^2.0.1",
-    "hexo-renderer-swig": "^1.1.0",
-    "hexo-server": "^3.0.0",
-    "hexo-theme-butterfly": "file:themes/butterfly",
-    "hexo-util": "^2.5.0",
-    "warehouse": "^4.0.1"
+    "axios": "^0.26.1",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1",
+    "clipboard": "^2.0.11",
+    "crypto-js": "^4.1.1",
+    "highlight.js": "^11.5.1",
+    "jquery": "^3.6.0",
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
-    "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
-    "eslint": "^8.17.0",
-    "git-describe": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-dom": "^1.0.0",
-    "hexo-post-parser": "file:../hexo-post-parser",
-    "md5-file": "^5.0.0",
-    "prettier": "^2.6.2",
-    "safelinkify": "file:../safelink",
-    "static-blog-generator": "file:../static-blog-generator",
-    "through2": "^4.0.2"
+    "@types/jquery": "^3.5.14",
+    "@types/toastr": "^2.1.39"
   }
 }

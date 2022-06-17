@@ -23,14 +23,6 @@ highlight_shrink: false # true: shrink the code blocks / false: expand the code 
 highlight_height_limit: false # unit: px
 code_word_wrap: false
 
-# copy settings
-# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
-copy:
-  enable:
-  copyright:
-    enable:
-    limit_count: 50
-
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
@@ -183,7 +175,7 @@ toc:
   style_simple: false # for post
 
 post_copyright:
-  enable: true
+  enable: false
   decode: false
   author_href:
   license: CC BY-NC-SA 4.0
@@ -403,6 +395,14 @@ footer:
   custom_text:
   copyright: true # Copyright of theme and framework
 
+# copy settings
+# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
+copy:
+  enable:
+  copyright:
+    enable:
+    limit_count: 50
+
 # Analysis
 # --------------------------------------
 
@@ -412,7 +412,7 @@ baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics:
+google_analytics: UA-106238155-1
 
 # CNZZ Analytics
 # https://www.umeng.com/
@@ -431,10 +431,10 @@ microsoft_clarity:
 
 # Google Adsense (谷歌廣告)
 google_adsense:
-  enable: false
+  enable: true
   auto_ads: true
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client:
+  client: pub-1165447249910969
   enable_page_level_ads: true
 
 # Insert ads manually (手動插入廣告)

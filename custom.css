@@ -1,31 +1,36 @@
- .blue-color {
-        color:blue;
-    }
-     
+.blue-color {
+  color: blue;
+}
+
 .green-color {
-color:green;
+  color: green;
 }
 
 .teal-color {
-color:teal;
+  color: teal;
 }
 
 .yellow-color {
-color:yellow;
+  color: yellow;
 }
 
 .red-color {
-color:red;
+  color: red;
 }
 
 /* responsive youtube iframe */
 .video-container {
-position: relative;
-padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-padding-top: 25px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 25px;
 }
 .video-container iframe {
-position: absolute;
-width: 100%!important;
-height: 100%!important;
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* datatables */
+.table-wrap {
+  clear: both;
 }

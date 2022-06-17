@@ -26,11 +26,15 @@ gulp.task('safelink', async () => {
     'dimaslanjaka.github.io'
   ];
   gulp
-    .src(join(__dirname, config.public_dir, '**/*.html'))
+    .src(
+      ['*/*.html', '**/*.html', '**/**/*.html'].map((path) =>
+        join(__dirname, config.public_dir, path)
+      )
+    )
     .pipe(
       dom(function () {
         //https://github.com/trygve-lie/gulp-dom
-        this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+        //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
         const elements = Array.from(this.querySelectorAll('a'));
         if (configSafelink.enable) {
           for (let i = 0; i < elements.length; i++) {

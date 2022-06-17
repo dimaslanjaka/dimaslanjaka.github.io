@@ -10,7 +10,9 @@
     "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
     "i-local": "npm install -D file:../static-blog-generator",
     "i-tgz": "npm install -D https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz",
-    "i-tgz2": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz"
+    "i-tgz2": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "hexo": {
     "version": "6.0.0"
@@ -35,7 +37,7 @@
     "hexo-log": "^3.0.0",
     "hexo-pagination": "^2.0.0",
     "hexo-pdf": "^1.1.1",
-    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^5.0.0",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.1",
@@ -43,7 +45,8 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "file:themes/butterfly",
     "hexo-util": "^2.5.0",
-    "warehouse": "^4.0.1"
+    "warehouse": "^4.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
@@ -57,5 +60,6 @@
     "safelinkify": "file:../safelink",
     "static-blog-generator": "file:../static-blog-generator",
     "through2": "^4.0.2"
-  }
+  },
+  "snyk": true
 }

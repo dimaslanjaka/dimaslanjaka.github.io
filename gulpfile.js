@@ -8,7 +8,10 @@ var hexo = new Hexo(process.cwd(), {});
 
 gulp.task('safelink', async () => {
   const config = getConfig();
-  const configSafelink = config.external_link.safelink;
+  const configSafelink = Object.assign(
+    { enable: false },
+    config.external_link.safelink
+  );
   const safelink = new sf.safelink({
     redirect: [config.external_link.safelink.redirect],
     password: config.external_link.safelink.password,

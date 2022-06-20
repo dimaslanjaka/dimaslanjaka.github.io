@@ -73,8 +73,9 @@ function escapeRegExp(string) {
 }
 
 let quizUrls = [
-  'https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/source/assets/tlon/Quiz/quiz.txt',
+  'https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/public-source/master/assets/tlon/Quiz/quiz.txt',
   'https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt',
+  'https://www.webmanajemen.com/assets/tlon/Quiz/quiz.txt'
 ];
 let quizSrc = [];
 

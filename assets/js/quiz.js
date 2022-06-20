@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-inner-declarations */
-console.clear();
+//console.clear();
 
 if (location.host == 'cdpn.io') {
   function rangeAlphabetic(start, stop) {

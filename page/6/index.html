@@ -1,237 +1,1192 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>WMI</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WMI">
 <meta property="og:url" content="https://www.webmanajemen.com/page/6/index.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="Dimas Lanjaka">
 <meta property="article:tag" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.webmanajemen.com/page/6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/custom.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
-  google_ad_client: 'ca-pub-2188063137129806',
-  enable_page_level_ads: 'true'
-});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-106238155-1');
-</script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'WMI',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2022-06-20 14:53:14'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
+<link rel="canonical" href="https://www.webmanajemen.com/page/6/">
 
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/6/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>WMI</title>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":null,"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WMI</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WMI</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html" title="disable vscode alert File is a CommonJS module; it may be converted to an ES module"><img class="post_bg" src="https://i.stack.imgur.com/Xo2sA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="disable vscode alert File is a CommonJS module; it may be converted to an ES module"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html" title="disable vscode alert File is a CommonJS module; it may be converted to an ES module">disable vscode alert File is a CommonJS module; it may be converted to an ES module</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-03-25T21:27:16.000Z" title="Created 2022-03-26 04:27:16">2022-03-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">File is a CommonJS module; it may be converted to an ES moduleThis is a new feature added in Visual Studio Code called “Suggestion Code Actions”. “Suggestion Code Actions” are enabled by default in JavaScript and TypeScript.
-You can disable them by setting: &quot;typescript.suggestionActions.enabled&quot;: false or &quot;javascript.suggestionActions.enabled&quot;: false in your user&#x2F;workspace settings. The documentation can be found here.
-open settings.json fileinsert below option
-&#123;
-   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/03/mysql-create-new-user.html" title="MySQL Command to create new database user"><img class="post_bg" src="/2022/03/mysql-create-new-user/phpmyadmin-changepw.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL Command to create new database user"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/mysql-create-new-user.html" title="MySQL Command to create new database user">MySQL Command to create new database user</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-10T10:00:00.000Z" title="Created 2022-04-10 17:00:00">2022-04-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Programming/">Programming</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Programming/MySQL/">MySQL</a></span></div><div class="content">First, you  need to open the database manager such as phpMyAdmin application to querying MySQL commands.
-Create New UserCREATE USER &#x27;dimaslanjaka&#x27;@&#x27;%&#x27; IDENTIFIED VIA mysql_native_password USING &#x27;***&#x27;; GRANT ALL PRIVILEGES
-ON
-    *.* TO &#x27;dimaslanjaka&#x27;@&#x27;%&#x27; REQUIRE NONE WITH
-GRANT OPTION MAX_QUERIES_PER_HOUR
-    0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-GRANT ALL PRIVILEGES
-ON
-    `dimaslanjaka\_%`.* TO &#x27;dimasl ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/03/list-of-latest-dofollow-blogs.html" title="List of latest dofollow backlinks"><img class="post_bg" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="List of latest dofollow backlinks"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/list-of-latest-dofollow-blogs.html" title="List of latest dofollow backlinks">List of latest dofollow backlinks</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-03-25T08:05:28.000Z" title="Created 2022-03-25 15:05:28">2022-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">In this post I want to share a list of dofollow blogs. Maybe it can help other beginner blogger friends, who happen to be still looking for backlinks from several blogs that follow the dofollow system. The number is about 200 blogs. Maybe from all the lists below some have been changed to nofollow. However, there is nothing wrong if you keep commenting there.
-Because as we know now, the algorithm in Google search has also made many changes. Where exactly for now and in the future nofollow backli ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html" title="How to Overcome Automatic Scroll Up in Blogger XML Editor"><img class="post_bg" src="https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to Overcome Automatic Scroll Up in Blogger XML Editor"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html" title="How to Overcome Automatic Scroll Up in Blogger XML Editor">How to Overcome Automatic Scroll Up in Blogger XML Editor</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-03-23T06:27:20.000Z" title="Created 2022-03-23 13:27:20">2022-03-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Blogger update informationSome time ago, blogger made an update about the XML editor system. The most striking thing about this update is the change in the behavior of the XML Editor in storing and validating XML code. In the current system, all code processing activities are carried out directly. Such as sorting attributes alphabetically, parsing special characters, and so on.
+</head>
 
-On the current system, when the save process is complete, the code that we see in the XML editor is already the final  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/04/fix-uncaught-error-call-to-undefined.html" title="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with"><img class="post_bg" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/fix-uncaught-error-call-to-undefined.html" title="Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with">Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-27T05:26:00.000Z" title="Created 2021-04-27 12:26:00">2021-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Uncaught Error: Call to undefined function str_starts_with() Fix Solutionsif (!function_exists(&#x27;str_starts_with&#x27;)) &#123;
-  function str_starts_with($haystack, $needle, $case = true)
-  &#123;
-    if ($case) &#123;
-      return strpos($haystack, $needle, 0) === 0;
-    &#125;
-    return stripos($haystack, $needle, 0) === 0;
-  &#125;
-&#125;
-Example with the empty string ‘’&lt;?php
-if (str_starts_with(&#x27;abc&#x27;, &#x27;&#x27;)) &#123;
-    echo &quot;All strings start with the empty st ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Chimeraland/flower-locations.html" title="Lokasi Spawn Bunga Di Chimeraland"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Lokasi Spawn Bunga Di Chimeraland"></a></div><div class="recent-post-info"><a class="article-title" href="/Chimeraland/flower-locations.html" title="Lokasi Spawn Bunga Di Chimeraland">Lokasi Spawn Bunga Di Chimeraland</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-03-20T10:00:00.000Z" title="Created 2022-03-20 17:00:00">2022-03-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Chimeraland/">Chimeraland</a></span></div><div class="content">Lokasi Spawn Equinox FlowerLycoris radiata (Hanzi: 彼岸花, Jepang: ヒガンバナ, bahasa Inggris: Red spider lily) adalah bunga dari keluarga amaryllis, Amaryllidaceae, subfamili dari Amaryllidoideae.^2^ Bunga ini berasal dari Tiongkok, Korea dan Nepal, lalu ke Jepang kemudian ke Amerika hingga akhirnya ke seluruh dunia. Bunga ini diperkirakan dinaturalisi di Seychelles dan di Kepulauan Ryukyu.^3^ Bunga ini mekar pada akhir musim panas sampai awal musim gugur dan sering dikaitkan dengan hujan lebat.^4^ ^5^ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Minecraft/install-shaders.html" title="Bagaimana cara install shaders minecraft"><img class="post_bg" src="/Minecraft/install-shaders/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bagaimana cara install shaders minecraft"></a></div><div class="recent-post-info"><a class="article-title" href="/Minecraft/install-shaders.html" title="Bagaimana cara install shaders minecraft">Bagaimana cara install shaders minecraft</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-12-16T08:57:00.000Z" title="Created 2021-12-16 15:57:00">2021-12-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Minecraft/">Minecraft</a></span></div><div class="content">ShadersFungsi Shaders tidak di rilis secara resmi di Minecraft Java Edition, yang memerlukan proses penginstalan dan pengunduhan eksternal, tetapi keseluruhan prosesnya cukup sederhana. Anda sebagian besar akan membutuhkan :
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-OptiFine, melakukan semua keajaiban di balik kode java.
-Syarat kedua adalah Shader Packs itu sendiri.
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
 
-Bagaimana cara Install Shaders di MinecraftBerikut cara install shaders untuk minecraft 1.18.1 dan lainnya.
-Install Minecraft Atau Update Ke Versi Minecraft Yang Di ingink ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Minecraft/magical-book.html" title="Magical Books"><img class="post_bg" src="/Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Magical Books"></a></div><div class="recent-post-info"><a class="article-title" href="/Minecraft/magical-book.html" title="Magical Books">Magical Books</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-12-11T23:01:00.000Z" title="Created 2021-12-12 06:01:00">2021-12-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Minecraft/">Minecraft</a></span></div><div class="content">List of all Magical Book Minecraft EnchantmentsIf you’re curious about all of the possible enchantments you can get in vanilla Minecraft then the list below has the lot, plus their max ranks.
-Aqua AffinityIncreases mining rate while under water. Max rank 1.
-Bane of ArthropodsIncreases damage to arthropods, can’t be combined with Smite and Sharpness. Max rank 5.
-Blast ProtectionReduce explosions damage (Creeper or TNT). Max rank 4.
-ChannelingMinecraft trident enchantment only. Channels a bolt of  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Minecraft/magical-bow.html" title="Magical Book For Bow"><img class="post_bg" src="https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Magical Book For Bow"></a></div><div class="recent-post-info"><a class="article-title" href="/Minecraft/magical-bow.html" title="Magical Book For Bow">Magical Book For Bow</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-12-11T23:01:00.000Z" title="Created 2021-12-12 06:01:00">2021-12-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Minecraft/">Minecraft</a></span></div><div class="content">Super Magical Bow RecipesRecipe bow magical equipment power strength + auto repairAuto repair + increase durability + more damage + fire damage at once
+  <div class="site-meta">
 
-Bow
-Magical Book Power I II III IV V
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WMI</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
 
-Deal more damage with arrows. Max rank 5.
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
 
 
-Magical Book Punch I II
 
-Your arrows have more knockback. Max rank 2.
-
-
-Magical Book Unbreaking I II II
-
-Increases the durability of the enchanted item. Max rank 3.
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
 
 
-Magical Book Flame I
-
-Arrows set the target on fire. Max rank 1.
 
 
-Magical book Mending I
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-Repair  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/09/remove-all-objects-in-arraylist-that.html" title="Remove all objects in an arraylist that exist in another arraylist Java"><img class="post_bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Remove all objects in an arraylist that exist in another arraylist Java"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/remove-all-objects-in-arraylist-that.html" title="Remove all objects in an arraylist that exist in another arraylist Java">Remove all objects in an arraylist that exist in another arraylist Java</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-09-21T20:36:00.000Z" title="Created 2020-09-22 03:36:00">2020-09-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Programming/">Programming</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Programming/Java/">Java</a></span></div><div class="content">ArrayList&lt;String&gt; firstArr = new ArrayList&lt;&gt;();
-firstArr.add(&quot;1&quot;);
-firstArr.add(&quot;2&quot;);
-firstArr.add(&quot;3&quot;);
+  <aside class="sidebar">
 
-// array/list to be removed from firstArr
-ArrayList&lt;String&gt; filterArr = new ArrayList&lt;&gt;();
-filterArr.add(&quot;1&quot;);
-filterArr.add(&quot;3&quot;);
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-// filter now
-filterArr.removeAll(blockedArr);
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
 
-// Dump
-System.out.println(filterArr.toString); // output 1 and 3
-</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/#content-inner">77</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dimaslanjaka"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/senjo.html" title="Senjo craft lists"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Senjo craft lists"/></a><div class="content"><a class="title" href="/Chimeraland/senjo.html" title="Senjo craft lists">Senjo craft lists</a><time datetime="2022-06-16T10:00:00.000Z" title="Created 2022-06-16 17:00:00">2022-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift"><img src="https://user-images.githubusercontent.com/12471057/172972505-68674e18-9ef3-411b-b6ea-9149e32c6456.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cara reclaim draka gift"/></a><div class="content"><a class="title" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift">cara reclaim draka gift</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pet and attendant delicacies tasty informations"/></a><div class="content"><a class="title" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations">Pet and attendant delicacies tasty informations</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"/></a><div class="content"><a class="title" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?">How to handle git gc fatal bad object refs/remotes/origin/HEAD error?</a><time datetime="2022-06-06T10:00:00.000Z" title="Created 2022-06-06 17:00:00">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Force github follow symlinked folders"/></a><div class="content"><a class="title" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders">Force github follow symlinked folders</a><time datetime="2022-05-30T10:00:00.000Z" title="Created 2022-05-30 17:00:00">2022-05-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>Categories</span>
-            <a class="card-more-btn" href="/categories/" title="More">
-    <i class="fas fa-angle-right"></i></a>
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">761</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/https://www.wissenschaft.com.ng/wp-content/uploads/2021/02/clear_ram_buffer_linux.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2020/05/linux-clear-cache.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/linux-clear-cache.html" class="post-title-link" itemprop="url">Linux Clear Cache</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-05-29 17:03:00" itemprop="dateCreated datePublished" datetime="2020-05-29T17:03:00+07:00">2020-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-26 05:37:59" itemprop="dateModified" datetime="2022-03-26T05:37:59+07:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/Bash/" itemprop="url" rel="index"><span itemprop="name">Bash</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Script To Clear Cache Linux</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/linux-clear-cache.html">
+                Read more &raquo;
+              </a>
             </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/"><span class="card-category-list-name">Games</span><span class="card-category-list-count">34</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Chimeraland/"><span class="card-category-list-name">Chimeraland</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Genshin-Impact/"><span class="card-category-list-name">Genshin Impact</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Minecraft/"><span class="card-category-list-name">Minecraft</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Playbook88/"><span class="card-category-list-name">Playbook88</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Seven-Knight/"><span class="card-category-list-name">Seven Knight</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/The-Legend-Of-Neverland/"><span class="card-category-list-name">The Legend Of Neverland</span><span class="card-category-list-count">13</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/"><span class="card-category-list-name">Bluestacks</span><span class="card-category-list-count">3</span></a></li></ul></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/AMP/" style="font-size: 1.32em; color: #99a2ae">AMP</a> <a href="/tags/Adsense/" style="font-size: 1.34em; color: #99a3b0">Adsense</a> <a href="/tags/Android/" style="font-size: 1.42em; color: #99a6b7">Android</a> <a href="/tags/Apache/" style="font-size: 1.12em; color: #999a9b">Apache</a> <a href="/tags/Auto-Click/" style="font-size: 1.1em; color: #999">Auto Click</a> <a href="/tags/Bash/" style="font-size: 1.12em; color: #999a9b">Bash</a> <a href="/tags/Blogger/" style="font-size: 1.48em; color: #99a8bd">Blogger</a> <a href="/tags/Blogging/" style="font-size: 1.38em; color: #99a4b4">Blogging</a> <a href="/tags/CMD/" style="font-size: 1.1em; color: #999">CMD</a> <a href="/tags/CSS/" style="font-size: 1.4em; color: #99a5b6">CSS</a> <a href="/tags/Chest-Location/" style="font-size: 1.12em; color: #999a9b">Chest Location</a> <a href="/tags/Chimeraland/" style="font-size: 1.16em; color: #999b9f">Chimeraland</a> <a href="/tags/CodeIgniter/" style="font-size: 1.14em; color: #999b9d">CodeIgniter</a> <a href="/tags/CommonJS/" style="font-size: 1.1em; color: #999">CommonJS</a> <a href="/tags/Durango/" style="font-size: 1.3em; color: #99a1ac">Durango</a> <a href="/tags/ESLint/" style="font-size: 1.14em; color: #999b9d">ESLint</a> <a href="/tags/ESM/" style="font-size: 1.1em; color: #999">ESM</a> <a href="/tags/Event/" style="font-size: 1.12em; color: #999a9b">Event</a> <a href="/tags/Facebook/" style="font-size: 1.24em; color: #999fa6">Facebook</a> <a href="/tags/Fonts/" style="font-size: 1.1em; color: #999">Fonts</a> <a href="/tags/Game-Control/" style="font-size: 1.1em; color: #999">Game Control</a> <a href="/tags/Games/" style="font-size: 1.38em; color: #99a4b4">Games</a> <a href="/tags/Genshin-Impact/" style="font-size: 1.26em; color: #999fa8">Genshin Impact</a> <a href="/tags/GitHub/" style="font-size: 1.22em; color: #999ea4">GitHub</a> <a href="/tags/Gradle/" style="font-size: 1.12em; color: #999a9b">Gradle</a> <a href="/tags/HTML/" style="font-size: 1.44em; color: #99a7b9">HTML</a> <a href="/tags/Hosting/" style="font-size: 1.14em; color: #999b9d">Hosting</a> <a href="/tags/IDE/" style="font-size: 1.12em; color: #999a9b">IDE</a> <a href="/tags/JS/" style="font-size: 1.46em; color: #99a7bb">JS</a> <a href="/tags/Java/" style="font-size: 1.12em; color: #999a9b">Java</a> <a href="/tags/Kotlin/" style="font-size: 1.12em; color: #999a9b">Kotlin</a> <a href="/tags/Life-Skill/" style="font-size: 1.14em; color: #999b9d">Life Skill</a> <a href="/tags/Linux-Unix/" style="font-size: 1.24em; color: #999fa6">Linux/Unix</a> <a href="/tags/Macros/" style="font-size: 1.12em; color: #999a9b">Macros</a> <a href="/tags/Marketing-Strategies/" style="font-size: 1.26em; color: #999fa8">Marketing Strategies</a> <a href="/tags/Miscellaneous/" style="font-size: 1.28em; color: #99a0aa">Miscellaneous</a> <a href="/tags/Movies/" style="font-size: 1.36em; color: #99a3b2">Movies</a> <a href="/tags/Musics/" style="font-size: 1.5em; color: #99a9bf">Musics</a> <a href="/tags/MySQL/" style="font-size: 1.2em; color: #999da3">MySQL</a> <a href="/tags/NodeJS/" style="font-size: 1.18em; color: #999ca1">NodeJS</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">June 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">May 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">April 2022</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">March 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">February 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">761</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-06-20T07:53:09.218Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" href="https://hexo.io" rel="nofollow noopener noreferrer noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" href="https://github.com/jerryc127/hexo-theme-butterfly" rel="nofollow noopener noreferrer noopener">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://i.stack.imgur.com/Xo2sA.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html" class="post-title-link" itemprop="url">disable vscode alert File is a CommonJS module; it may be converted to an ES module</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-26 04:27:16" itemprop="dateCreated datePublished" datetime="2022-03-26T04:27:16+07:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>disable vscode alert File is a CommonJS module; it may be converted to an ES module</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="/2022/03/mysql-create-new-user/phpmyadmin-changepw.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/03/mysql-create-new-user.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/mysql-create-new-user.html" class="post-title-link" itemprop="url">MySQL Command to create new database user</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-10 17:00:00" itemprop="dateCreated datePublished" datetime="2022-04-10T17:00:00+07:00">2022-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-25 17:00:00" itemprop="dateModified" datetime="2022-03-25T17:00:00+07:00">2022-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>MySQL Command to create new database user - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/mysql-create-new-user.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/03/list-of-latest-dofollow-blogs.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/list-of-latest-dofollow-blogs.html" class="post-title-link" itemprop="url">List of latest dofollow backlinks</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-25 15:05:28" itemprop="dateCreated datePublished" datetime="2022-03-25T15:05:28+07:00">2022-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>500 List Of Latest Dofollow Backlinks</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/list-of-latest-dofollow-blogs.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html" class="post-title-link" itemprop="url">How to Overcome Automatic Scroll Up in Blogger XML Editor</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-03-23 13:27:20 / Modified: 20:27:20" itemprop="dateCreated datePublished" datetime="2022-03-23T13:27:20+07:00">2022-03-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>How to Overcome Automatic Scroll Up in Blogger XML Editor - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/fix-uncaught-error-call-to-undefined.html" class="post-title-link" itemprop="url">Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-27 12:26:00" itemprop="dateCreated datePublished" datetime="2021-04-27T12:26:00+07:00">2021-04-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-23 13:42:23" itemprop="dateModified" datetime="2022-03-23T13:42:23+07:00">2022-03-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Uncaught Error: Call to undefined function str_starts_with Fix Solutions</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/fix-uncaught-error-call-to-undefined.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="id">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Chimeraland/flower-locations.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Chimeraland/flower-locations.html" class="post-title-link" itemprop="url">Lokasi Spawn Bunga Di Chimeraland</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-20 17:00:00" itemprop="dateCreated datePublished" datetime="2022-03-20T17:00:00+07:00">2022-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-21 08:42:35" itemprop="dateModified" datetime="2022-03-21T08:42:35+07:00">2022-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Chimeraland/" itemprop="url" rel="index"><span itemprop="name">Chimeraland</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Spawn locations of flowers</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Chimeraland/flower-locations.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="/Minecraft/install-shaders/cover.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="id">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Minecraft/install-shaders.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Minecraft/install-shaders.html" class="post-title-link" itemprop="url">Bagaimana cara install shaders minecraft</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-12-16 15:57:00" itemprop="dateCreated datePublished" datetime="2021-12-16T15:57:00+07:00">2021-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-20 13:57:28" itemprop="dateModified" datetime="2022-03-20T13:57:28+07:00">2022-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Minecraft/" itemprop="url" rel="index"><span itemprop="name">Minecraft</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci ini dengan screenshot</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Minecraft/install-shaders.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="/Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Minecraft/magical-book.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Minecraft/magical-book.html" class="post-title-link" itemprop="url">Magical Books</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-12-12 06:01:00" itemprop="dateCreated datePublished" datetime="2021-12-12T06:01:00+07:00">2021-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-20 13:57:28" itemprop="dateModified" datetime="2022-03-20T13:57:28+07:00">2022-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Minecraft/" itemprop="url" rel="index"><span itemprop="name">Minecraft</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>All Description And Usages Of Magical Books Minecraft</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Minecraft/magical-book.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Minecraft/magical-bow.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Minecraft/magical-bow.html" class="post-title-link" itemprop="url">Magical Book For Bow</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-12-12 06:01:00" itemprop="dateCreated datePublished" datetime="2021-12-12T06:01:00+07:00">2021-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-03-20 13:57:28" itemprop="dateModified" datetime="2022-03-20T13:57:28+07:00">2022-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Minecraft/" itemprop="url" rel="index"><span itemprop="name">Minecraft</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>How to use magical books for bow</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Minecraft/magical-bow.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/">77</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

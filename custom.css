@@ -31,6 +31,7 @@
 }
 
 /* datatables */
-.table-wrap {
+.table-wrap,
+.table-container, [class*='dataTables_wrapper'] {
   clear: both;
 }

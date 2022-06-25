@@ -1,4 +1,26 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android | WMI Gitlab</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android">
 <meta property="og:url" content="https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html">
@@ -9,182 +31,303 @@
 <meta property="article:published_time" content="2017-09-02T23:33:00.000Z">
 <meta property="article:modified_time" content="2017-09-02T23:33:02.000Z">
 <meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="PHP">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="Tips &amp; Tricks">
-<meta property="article:tag" content="PHP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.webmanajemen.com/2017/09/cara-menggunakan-termux"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/custom.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
-  google_ad_client: 'ca-pub-2188063137129806',
-  enable_page_level_ads: 'true'
-});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-106238155-1');
-</script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2017-09-03 06:33:02'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+<meta name="twitter:image" content="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png">
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
+<link rel="canonical" href="https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html">
 
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html","path":"/2017/09/cara-menggunakan-termux.html","title":"Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android | WMI</title>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":null,"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WMI</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2017-09-02T23:33:00.000Z" title="Created 2017-09-03 06:33:00">2017-09-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2017-09-02T23:33:02.000Z" title="Updated 2017-09-03 06:33:02">2017-09-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><b>Menjalankan PHP di Android Menggunakan Termux</b><br>Aplikasi Termux memungkinkan menjalankan banyak aplikasi Linux yang     terkenal di ponsel Android, tablet, atau jenis perangkat lainnya. Hal ini     memungkinkan menjalankan PHP baik dari shell Termux sebagai script konsol     atau sebagai server Web. Baca artikel ini untuk mempelajari cara     menjalankan skrip PHP dari dalam perangkat Android dan membuka beberapa     fungsi Android dengan menggunakan aplikasi Termux. <br><img alt="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" height="280" src="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" title="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" width="600">  <br><h2> Apa itu Android Termux !!!  </h2><a target="_blank" href="https://play.google.com/store/apps/details?id=com.termux" rel="noopener noreferer nofollow noopener"> Aplikasi Termux    </a> Adalah aplikasi Android yang berguna yang memungkinkan kita menggunakan semacam konsol Linux di dalam perangkat Android kita, seperti ponsel, tablet, dan sebagainya.  <br>Ini membutuhkan    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.termux.api" rel="noopener noreferer nofollow noopener"> Termux:API    </a> Aplikasi Add-on untuk dipasang, sehingga bisa menggunakan program command line yang mengekspos fungsi Android ke sistem Termux. Di dalam Termux kita bisa mengakses networking (wi-fi dan mobile internet). <br><h2> Apa itu PHP Termux API ? Tutorial Termux tentang Cara Menggunakan PHP </h2>Termux mendukung manajemen paket menggunakan file .deb dan tool apt. Di repositori paketnya sendiri ada banyak tool seperti imagemagick, compiler bahasa c, interpreter PHP 7.1, lighttpd, dan sebagainya. Membangun sebenarnya hanya mendukung platform ARM dan x86, sehingga tidak dapat dipasang di MIPS. <br>Jadi sekarang kita punya PHP 7.1 di smartphone juga … siap untuk memulai pengembangan aplikasi baru? Kita perlu mengakses beberapa fitur Android untuk menghidupkan proyek kita. Termux: API menambahkan beberapa alat baris perintah untuk ditangani; Kelas pembungkus adalah satu-satunya yang kita butuhkan untuk memanfaatkannya. <br><img alt="aplikasi termux di Google Play Store" height="716" src="https://files.phpclasses.org/files/blog/package/10192/file/01termux01.png" title="termux app di Google Play Store" width="480">  <br><h2> Tutorial Android Termux: Mengakses Fitur Perangkat Android menggunakan API Termux </h2>Paket PHP Termux API menyediakan metode untuk mengakses fungsi berikut yang terpapar pada aplikasi API Termux. <br><ul><li> Battery Status    </li><li> Camera Info    </li><li> Camera Photo    </li><li> Clipboard Get    </li><li> Clipboard Set    </li><li> Contact List    </li><li> Download file dengan Android Download Manager   </li><li> Lokasi via GPS, Mobile Network atau Wi-Fi   </li><li> Notification    </li><li> Open Url with default web browser    </li><li> Share file with Android actions    </li><li> SMS Inbox read    </li><li> SMS Send    </li><li> Info Perangkat Telepon   </li><li> Toast show over the screen    </li><li> TTS Engines in Android    </li><li> TTS Speak    </li><li> Vibrate the Phone    </li><li> Wi-Fi Connection Info    </li><li> Wi-Fi Scan info    </li></ul><h2> Tutorial PHP Termux: Langkah-langkah Memiliki Setup Lengkap untuk Menggunakan Termux PHP </h2><ul><li> Instal dan konfigurasi keyboard yang lebih umum yang Anda kenal dan gunakan (seperti <a alt="Hacker Keyboard" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dorg.pocketworkstation.pckeyboard%26hl%3Did%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dhacker%2Bkeyboard%26pcampaignid%3DAPPU_1_XyWfWa2XMsrWvATsja7oDg&amp;ved=0ahUKEwjtwqWAyvDVAhVKK48KHeyGC-0Q8oQBCB8wAA&amp;usg=AFQjCNEp5JgvcONtjNTZrs_uWu_tQ9r9Kg" title="Hacker Keyboard" rel="noopener noreferer nofollow noopener">Hacker’s Keyboard</a>)   </li><li> Install dan konfigurasikan FTP Server anda sekarang dan gunakan (seperti <a alt="FTP SERVER DEMO" demo="" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fhl%3Did%26id%3Dbe.ppareit.swiftp_free%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dftp%2Bserver%2Bdemo%2Bapk%26pcampaignid%3DAPPU_1_yiWfWffzOIzUvASTm6iYDQ&amp;ved=0ahUKEwj3gK-zyvDVAhUMKo8KHZMNCtMQ5YQBCB4wAA&amp;usg=AFQjCNGR-ye_0dfDPqqlIux3zSIfhsm3vw" servrr="" title="FTP" rel="noopener noreferer nofollow noopener">FTP Server (demo)</a>)   </li><li> Install <a alt="termux" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dcom.termux%26hl%3Din%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dtermux%26pcampaignid%3DAPPU_1_GSafWfHDK4jkvgS98ZbADQ&amp;ved=0ahUKEwixtPfYyvDVAhUIso8KHb24BdgQ8oQBCBwwAA&amp;usg=AFQjCNFOmGCjxKFka5lzduGsiBnXDmwjoQ" title="termux" rel="noopener noreferer nofollow noopener">Termux</a> and <a alt="Termux:API" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dcom.termux.api%26hl%3Din%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dtermux%26pcampaignid%3DAPPU_1_GSafWfHDK4jkvgS98ZbADQ&amp;ved=0ahUKEwixtPfYyvDVAhUIso8KHb24BdgQ8oQBCB4wAQ&amp;usg=AFQjCNHwHJ3hpoK9nf_dg2KkUGSIkvdIAA" title="Termux: API" rel="noopener noreferer nofollow noopener">Termux:API</a> add-on dari beberapa repository (<a alt="F-Droid Apk" target="_blank" href="https://f-droid.org/FDroid.apk" rel="noopener noreferer nofollow noopener" title="Download F-Droid Apk">F-Droid</a> or <a alt="play store" target="_blank" href="http://play.google.com/" title="play store" rel="noopener noreferer nofollow noopener">Play Store</a>)    </li><li> Di dalam konsol Termux, ketik:    </li></ul><pre>apt update<br>apt upgrade<br>apt install termux-api php<br>mkdir /sdcard/php<br></pre><h2>  Mengakses perangkat menggunakan keyboard </h2><h2>  </h2>Kita perlu mengetikkan emulator terminal yang mampu dan membutuhkan   <em> ctrl-c   </em>, jadi saya sarankan untuk memasang keyboard dengannya (seperti yang dilakukan keyboard Hacker). <br><h2> Termux FTP Files Access  </h2>Untuk mentransfer skrip PHP dan file lainnya dengan mudah di antara workstation dan perangkat Android, server FTP adalah suatu keharusan. <br>Sangat mudah untuk mengatur lingkungan desktop Anda untuk menggunakan server FTP LAN. Anda bisa memasang FTP client di sistem, atau bahkan menggunakan Mozilla Firefox (ekstensi FireFTP). Di Windows, ketik Explorer Address Bar, URL server, seperti: <br><a href="ftp://user@ipaddress:port/">ftp://user@ipaddress:port/</a>  <br>Hal yang sama bisa dilakukan untuk lingkungan desktop sistem operasi lain, seperti Nautilus for Linux, dll.  <br><h2> Menjalankan PHP dari Termux dalam endless loop  </h2>Untuk polling endlessly beberapa kondisi. Di dalam naskah, loop harus memiliki sebuah    <em>sleep(detik)   </em> call, untuk menghindari memonopoli prosesor.  <br>Pada konsol Termux, ketik:  <br><pre>php endlessloop.php<br></pre><h2> Kontrol Tablet Android dengan Telepon via Web Server </h2>Salah satu cara untuk mengendalikan tablet atau jenis perangkat seluler lainnya dari ponsel adalah dengan menjalankan server Web pada perangkat tablet dan mengaksesnya melalui browser yang berjalan di telepon. <br>Jika Anda menjalankan PHP di perangkat tablet sebagai server Web dengan Termux, akan sangat mudah memprogram aplikasi sederhana yang bisa melakukan apapun yang Anda inginkan untuk mengendalikan tablet. <br><h2> Berjalan sebagai Android Server untuk Aplikasi Web Lokal PHP </h2><div>Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda yang tersimpan dalam sistem file memori perangkat Anda. </div>Di Termux, ketik Untuk memulai the development <b>Web server embedded</b> in PHP.  <br><code> php -S address:port -t /sdcard/php/rootdirectory/    <br>  </code>  <br>Jika Anda menggunakan alamat yang ada   <em>0.0.0.0   </em>, dan Server akan mendengarkan salah satu alamat IP jaringan perangkat. Jika alamatnya    <em>127.0.0.1   </em>, Server hanya mendengarkan koneksi lokal (di dalam perangkat atau telepon).  <br>Dan port nya harus ada nomor lebih dari 1024.    <em>rootdirectory   </em> Adalah jalur dasar yang berfungsi sebagai direktori web root, dengan semua sumber termasuk JavaScript, gambar, stylesheet CSS, file HTML, dan skrip PHP. <br><h2> Haruskah saya menggunakan termux lighttpd, Apache, NGINX atau PHP built-in Web Server? </h2>Biasanya PHP digunakan di lingkungan produksi bersama dengan server Web lainnya seperti lighttpd, Apache atau NGINX karena server Web tersebut telah dioptimalkan untuk menangani muatan tinggi. <br>Namun pada ponsel Anda hanya akan memiliki pengguna Anda sendiri mengakses server Web. Oleh karena itu, server Web PHP built-in cukup baik untuk tujuan ini, kecuali Anda memerlukan beberapa fitur server Web tertentu yang disediakan oleh server Web berkinerja tinggi. <br><h2> Menggunakan class PHP Termux API </h2><pre>    $termux = new termuxapi();<br>echo $termux-&gt;location();<br></pre><h2> Masalah Termux:API  </h2>Beberapa Fungsi Termux:API tahan lama dan padat sumber daya seperti misalnya cek kotak masuk SMS, daftar kontak, dan lokasi. <br>Karena program Termux disebut dengan   <em>shell_exec()   </em>, Perilaku sinkronnya dapat menunda dengan serius pendekatan Web Server. Pertimbangkan untuk membuat panggilan AJAX ke metode untuk menyembunyikan masalah ini. <br><h2> Solusi Masalah  </h2>Termux adalah aplikasi Android yang bagus yang memudahkan menjalankan PHP atau program lain yang biasanya tersedia di distro Linux. <br>Kemungkinan untuk menjalankan PHP baik sebagai script baris perintah atau sebagai server Web membuka segudang kemungkinan untuk menjalankan aplikasi yang bagus dengan menggunakan kode PHP seperti aplikasi Android asli lainnya. <br>Jika Anda menyukai artikel ini, bagikan dengan teman pengembang Anda. Jika ada pertanyaan atau saran, kirimkan komentar di sini.</p>
-</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android</a><a class="post-meta__tags" href="/tags/Tips-Tricks/">Tips &amp; Tricks</a><a class="post-meta__tags" href="/tags/PHP/">PHP</a></div><div class="post_share"><div class="social-share" data-image="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2017/09/install-perl-on-android-2017.html"><img class="prev-cover" src="https://imgdb.net/images/3178.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Install perl on android 2017</div></div></a></div><div class="next-post pull-right"><a href="/2017/09/install-linux-on-android-part-2-how-to.html"><img class="next-cover" src="https://image.ibb.co/fFtDUF/unnamed_5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Install Linux on the Android part 2-How to Install Apache2, PHP and MYSQL on Android</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2017/10/access-xampp-apache-mysql-via-android.html" title="Access XAMPP Apache  MySQL via Android Smartphone"><img class="cover" src="https://imgdb.net/images/3200.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-10-05</div><div class="title">Access XAMPP Apache  MySQL via Android Smartphone</div></div></a></div><div><a href="/2018/11/cara-install-heroku-cli-di-termux.html" title="Cara install heroku CLI di Termux"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://camo.githubusercontent.com/30c7758f9ac63488d3c2814ed2dcd9dbb7e967f3/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-17</div><div class="title">Cara install heroku CLI di Termux</div></div></a></div><div><a href="/2018/11/install-php-web-server-on-termux.html" title="Install PHP Web Server on Termux"><img class="cover" src="https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-13</div><div class="title">Install PHP Web Server on Termux</div></div></a></div><div><a href="/2018/11/installation-ubuntu-on-android-tutorial.html" title="Installation Ubuntu On Android Tutorial"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/-toLz3YUOMz8/T4N7B_ofSMI/AAAAAAAADa8/YIwsAh5MVtI/s800/shot_000003.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-12</div><div class="title">Installation Ubuntu On Android Tutorial</div></div></a></div><div><a href="/2018/07/cara-menginstal-fedora-di-android.html" title="Cara Install Fedora Di Android"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-07-27</div><div class="title">Cara Install Fedora Di Android</div></div></a></div><div><a href="/2021/06/install-xampp-lampp-on-android-non-root.html" title="Install XAMPP&#x2F;LAMPP On Android Non-Root"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-02</div><div class="title">Install XAMPP&#x2F;LAMPP On Android Non-Root</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dimaslanjaka"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"> Apa itu Android Termux !!!  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text"> Apa itu PHP Termux API ? Tutorial Termux tentang Cara Menggunakan PHP </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text"> Tutorial Android Termux: Mengakses Fitur Perangkat Android menggunakan API Termux </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text"> Tutorial PHP Termux: Langkah-langkah Memiliki Setup Lengkap untuk Menggunakan Termux PHP </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">  Mengakses perangkat menggunakan keyboard </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text"> Termux FTP Files Access  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text"> Menjalankan PHP dari Termux dalam endless loop  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text"> Kontrol Tablet Android dengan Telepon via Web Server </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text"> Berjalan sebagai Android Server untuk Aplikasi Web Lokal PHP </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text"> Haruskah saya menggunakan termux lighttpd, Apache, NGINX atau PHP built-in Web Server? </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text"> Menggunakan class PHP Termux API </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text"> Masalah Termux:API  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text"> Solusi Masalah  </span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/senjo.html" title="Senjo craft lists"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Senjo craft lists"/></a><div class="content"><a class="title" href="/Chimeraland/senjo.html" title="Senjo craft lists">Senjo craft lists</a><time datetime="2022-06-16T10:00:00.000Z" title="Created 2022-06-16 17:00:00">2022-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift"><img src="https://user-images.githubusercontent.com/12471057/172972505-68674e18-9ef3-411b-b6ea-9149e32c6456.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cara reclaim draka gift"/></a><div class="content"><a class="title" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift">cara reclaim draka gift</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pet and attendant delicacies tasty informations"/></a><div class="content"><a class="title" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations">Pet and attendant delicacies tasty informations</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"/></a><div class="content"><a class="title" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?">How to handle git gc fatal bad object refs/remotes/origin/HEAD error?</a><time datetime="2022-06-06T10:00:00.000Z" title="Created 2022-06-06 17:00:00">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Force github follow symlinked folders"/></a><div class="content"><a class="title" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders">Force github follow symlinked folders</a><time datetime="2022-05-30T10:00:00.000Z" title="Created 2022-05-30 17:00:00">2022-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" href="https://hexo.io" rel="nofollow noopener noreferrer noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" href="https://github.com/jerryc127/hexo-theme-butterfly" rel="nofollow noopener noreferrer noopener">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function loadDisqus () {
-  var disqus_config = function () {
-    this.page.url = 'https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html'
-    this.page.identifier = '/2017/09/cara-menggunakan-termux.html'
-    this.page.title = 'Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android'
-  };
+</head>
 
-  window.disqusReset = () => {
-    DISQUS.reset({
-      reload: true,
-      config: disqus_config
-    })
-  }
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  if (window.DISQUS) disqusReset()
-  else {
-    (function() { 
-      var d = document, s = d.createElement('script');
-      s.src = 'https://dimaslanjaka.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  }
-}
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
 
-if ('Disqus' === 'Disqus' || !false) {
-  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
-  else loadDisqus()
-} else {
-  function loadOtherComment () {
-    loadDisqus()
-  }
-}
-</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"> Apa itu Android Termux !!!  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"> Apa itu PHP Termux API ? Tutorial Termux tentang Cara Menggunakan PHP </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text"> Tutorial Android Termux: Mengakses Fitur Perangkat Android menggunakan API Termux </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text"> Tutorial PHP Termux: Langkah-langkah Memiliki Setup Lengkap untuk Menggunakan Termux PHP </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">  Mengakses perangkat menggunakan keyboard </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text"> Termux FTP Files Access  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text"> Menjalankan PHP dari Termux dalam endless loop  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">9.</span> <span class="nav-text"> Kontrol Tablet Android dengan Telepon via Web Server </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">10.</span> <span class="nav-text"> Berjalan sebagai Android Server untuk Aplikasi Web Lokal PHP </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">11.</span> <span class="nav-text"> Haruskah saya menggunakan termux lighttpd, Apache, NGINX atau PHP built-in Web Server? </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">12.</span> <span class="nav-text"> Menggunakan class PHP Termux API </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">13.</span> <span class="nav-text"> Masalah Termux:API  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">14.</span> <span class="nav-text"> Solusi Masalah  </span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">761</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/09/cara-menggunakan-termux.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android | WMI">
+      <meta itemprop="description" content="Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Cara Menggunakan Termux Untuk Menjalankan PHP Web Server atau CLI dengan Aplikasi PHP Termux untuk Mengontrol Ponsel atau Tablet Android
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-09-03 06:33:00 / Modified: 06:33:02" itemprop="dateCreated datePublished" datetime="2017-09-03T06:33:00+07:00">2017-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><b>Menjalankan PHP di Android Menggunakan Termux</b><br>Aplikasi Termux memungkinkan menjalankan banyak aplikasi Linux yang     terkenal di ponsel Android, tablet, atau jenis perangkat lainnya. Hal ini     memungkinkan menjalankan PHP baik dari shell Termux sebagai script konsol     atau sebagai server Web. Baca artikel ini untuk mempelajari cara     menjalankan skrip PHP dari dalam perangkat Android dan membuka beberapa     fungsi Android dengan menggunakan aplikasi Termux. <br><img alt="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" height="280" src="https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png" title="Tutorial Cara Mengontrol Ponsel atau Tablet Android menggunakan PHP dengan Aplikasi Termux" width="600">  <br><h2> Apa itu Android Termux !!!  </h2><a target="_blank" href="https://play.google.com/store/apps/details?id=com.termux" rel="noopener noreferer nofollow noopener"> Aplikasi Termux    </a> Adalah aplikasi Android yang berguna yang memungkinkan kita menggunakan semacam konsol Linux di dalam perangkat Android kita, seperti ponsel, tablet, dan sebagainya.  <br>Ini membutuhkan    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.termux.api" rel="noopener noreferer nofollow noopener"> Termux:API    </a> Aplikasi Add-on untuk dipasang, sehingga bisa menggunakan program command line yang mengekspos fungsi Android ke sistem Termux. Di dalam Termux kita bisa mengakses networking (wi-fi dan mobile internet). <br><h2> Apa itu PHP Termux API ? Tutorial Termux tentang Cara Menggunakan PHP </h2>Termux mendukung manajemen paket menggunakan file .deb dan tool apt. Di repositori paketnya sendiri ada banyak tool seperti imagemagick, compiler bahasa c, interpreter PHP 7.1, lighttpd, dan sebagainya. Membangun sebenarnya hanya mendukung platform ARM dan x86, sehingga tidak dapat dipasang di MIPS. <br>Jadi sekarang kita punya PHP 7.1 di smartphone juga … siap untuk memulai pengembangan aplikasi baru? Kita perlu mengakses beberapa fitur Android untuk menghidupkan proyek kita. Termux: API menambahkan beberapa alat baris perintah untuk ditangani; Kelas pembungkus adalah satu-satunya yang kita butuhkan untuk memanfaatkannya. <br><img alt="aplikasi termux di Google Play Store" height="716" src="https://files.phpclasses.org/files/blog/package/10192/file/01termux01.png" title="termux app di Google Play Store" width="480">  <br><h2> Tutorial Android Termux: Mengakses Fitur Perangkat Android menggunakan API Termux </h2>Paket PHP Termux API menyediakan metode untuk mengakses fungsi berikut yang terpapar pada aplikasi API Termux. <br><ul><li> Battery Status    </li><li> Camera Info    </li><li> Camera Photo    </li><li> Clipboard Get    </li><li> Clipboard Set    </li><li> Contact List    </li><li> Download file dengan Android Download Manager   </li><li> Lokasi via GPS, Mobile Network atau Wi-Fi   </li><li> Notification    </li><li> Open Url with default web browser    </li><li> Share file with Android actions    </li><li> SMS Inbox read    </li><li> SMS Send    </li><li> Info Perangkat Telepon   </li><li> Toast show over the screen    </li><li> TTS Engines in Android    </li><li> TTS Speak    </li><li> Vibrate the Phone    </li><li> Wi-Fi Connection Info    </li><li> Wi-Fi Scan info    </li></ul><h2> Tutorial PHP Termux: Langkah-langkah Memiliki Setup Lengkap untuk Menggunakan Termux PHP </h2><ul><li> Instal dan konfigurasi keyboard yang lebih umum yang Anda kenal dan gunakan (seperti <a alt="Hacker Keyboard" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dorg.pocketworkstation.pckeyboard%26hl%3Did%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dhacker%2Bkeyboard%26pcampaignid%3DAPPU_1_XyWfWa2XMsrWvATsja7oDg&amp;ved=0ahUKEwjtwqWAyvDVAhVKK48KHeyGC-0Q8oQBCB8wAA&amp;usg=AFQjCNEp5JgvcONtjNTZrs_uWu_tQ9r9Kg" title="Hacker Keyboard" rel="noopener noreferer nofollow noopener">Hacker’s Keyboard</a>)   </li><li> Install dan konfigurasikan FTP Server anda sekarang dan gunakan (seperti <a alt="FTP SERVER DEMO" demo="" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fhl%3Did%26id%3Dbe.ppareit.swiftp_free%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dftp%2Bserver%2Bdemo%2Bapk%26pcampaignid%3DAPPU_1_yiWfWffzOIzUvASTm6iYDQ&amp;ved=0ahUKEwj3gK-zyvDVAhUMKo8KHZMNCtMQ5YQBCB4wAA&amp;usg=AFQjCNGR-ye_0dfDPqqlIux3zSIfhsm3vw" servrr="" title="FTP" rel="noopener noreferer nofollow noopener">FTP Server (demo)</a>)   </li><li> Install <a alt="termux" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dcom.termux%26hl%3Din%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dtermux%26pcampaignid%3DAPPU_1_GSafWfHDK4jkvgS98ZbADQ&amp;ved=0ahUKEwixtPfYyvDVAhUIso8KHb24BdgQ8oQBCBwwAA&amp;usg=AFQjCNFOmGCjxKFka5lzduGsiBnXDmwjoQ" title="termux" rel="noopener noreferer nofollow noopener">Termux</a> and <a alt="Termux:API" target="_blank" href="https://www.google.co.id/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://play.google.com/store/apps/details%3Fid%3Dcom.termux.api%26hl%3Din%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dtermux%26pcampaignid%3DAPPU_1_GSafWfHDK4jkvgS98ZbADQ&amp;ved=0ahUKEwixtPfYyvDVAhUIso8KHb24BdgQ8oQBCB4wAQ&amp;usg=AFQjCNHwHJ3hpoK9nf_dg2KkUGSIkvdIAA" title="Termux: API" rel="noopener noreferer nofollow noopener">Termux:API</a> add-on dari beberapa repository (<a alt="F-Droid Apk" target="_blank" href="https://f-droid.org/FDroid.apk" rel="noopener noreferer nofollow noopener" title="Download F-Droid Apk">F-Droid</a> or <a alt="play store" target="_blank" href="http://play.google.com/" title="play store" rel="noopener noreferer nofollow noopener">Play Store</a>)    </li><li> Di dalam konsol Termux, ketik:    </li></ul><pre>apt update<br>apt upgrade<br>apt install termux-api php<br>mkdir /sdcard/php<br></pre><h2>  Mengakses perangkat menggunakan keyboard </h2><h2>  </h2>Kita perlu mengetikkan emulator terminal yang mampu dan membutuhkan   <em> ctrl-c   </em>, jadi saya sarankan untuk memasang keyboard dengannya (seperti yang dilakukan keyboard Hacker). <br><h2> Termux FTP Files Access  </h2>Untuk mentransfer skrip PHP dan file lainnya dengan mudah di antara workstation dan perangkat Android, server FTP adalah suatu keharusan. <br>Sangat mudah untuk mengatur lingkungan desktop Anda untuk menggunakan server FTP LAN. Anda bisa memasang FTP client di sistem, atau bahkan menggunakan Mozilla Firefox (ekstensi FireFTP). Di Windows, ketik Explorer Address Bar, URL server, seperti: <br><a href="ftp://user@ipaddress:port/">ftp://user@ipaddress:port/</a>  <br>Hal yang sama bisa dilakukan untuk lingkungan desktop sistem operasi lain, seperti Nautilus for Linux, dll.  <br><h2> Menjalankan PHP dari Termux dalam endless loop  </h2>Untuk polling endlessly beberapa kondisi. Di dalam naskah, loop harus memiliki sebuah    <em>sleep(detik)   </em> call, untuk menghindari memonopoli prosesor.  <br>Pada konsol Termux, ketik:  <br><pre>php endlessloop.php<br></pre><h2> Kontrol Tablet Android dengan Telepon via Web Server </h2>Salah satu cara untuk mengendalikan tablet atau jenis perangkat seluler lainnya dari ponsel adalah dengan menjalankan server Web pada perangkat tablet dan mengaksesnya melalui browser yang berjalan di telepon. <br>Jika Anda menjalankan PHP di perangkat tablet sebagai server Web dengan Termux, akan sangat mudah memprogram aplikasi sederhana yang bisa melakukan apapun yang Anda inginkan untuk mengendalikan tablet. <br><h2> Berjalan sebagai Android Server untuk Aplikasi Web Lokal PHP </h2><div>Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda yang tersimpan dalam sistem file memori perangkat Anda. </div>Di Termux, ketik Untuk memulai the development <b>Web server embedded</b> in PHP.  <br><code> php -S address:port -t /sdcard/php/rootdirectory/    <br>  </code>  <br>Jika Anda menggunakan alamat yang ada   <em>0.0.0.0   </em>, dan Server akan mendengarkan salah satu alamat IP jaringan perangkat. Jika alamatnya    <em>127.0.0.1   </em>, Server hanya mendengarkan koneksi lokal (di dalam perangkat atau telepon).  <br>Dan port nya harus ada nomor lebih dari 1024.    <em>rootdirectory   </em> Adalah jalur dasar yang berfungsi sebagai direktori web root, dengan semua sumber termasuk JavaScript, gambar, stylesheet CSS, file HTML, dan skrip PHP. <br><h2> Haruskah saya menggunakan termux lighttpd, Apache, NGINX atau PHP built-in Web Server? </h2>Biasanya PHP digunakan di lingkungan produksi bersama dengan server Web lainnya seperti lighttpd, Apache atau NGINX karena server Web tersebut telah dioptimalkan untuk menangani muatan tinggi. <br>Namun pada ponsel Anda hanya akan memiliki pengguna Anda sendiri mengakses server Web. Oleh karena itu, server Web PHP built-in cukup baik untuk tujuan ini, kecuali Anda memerlukan beberapa fitur server Web tertentu yang disediakan oleh server Web berkinerja tinggi. <br><h2> Menggunakan class PHP Termux API </h2><pre>    $termux = new termuxapi();<br>echo $termux-&gt;location();<br></pre><h2> Masalah Termux:API  </h2>Beberapa Fungsi Termux:API tahan lama dan padat sumber daya seperti misalnya cek kotak masuk SMS, daftar kontak, dan lokasi. <br>Karena program Termux disebut dengan   <em>shell_exec()   </em>, Perilaku sinkronnya dapat menunda dengan serius pendekatan Web Server. Pertimbangkan untuk membuat panggilan AJAX ke metode untuk menyembunyikan masalah ini. <br><h2> Solusi Masalah  </h2>Termux adalah aplikasi Android yang bagus yang memudahkan menjalankan PHP atau program lain yang biasanya tersedia di distro Linux. <br>Kemungkinan untuk menjalankan PHP baik sebagai script baris perintah atau sebagai server Web membuka segudang kemungkinan untuk menjalankan aplikasi yang bagus dengan menggunakan kode PHP seperti aplikasi Android asli lainnya. <br>Jika Anda menyukai artikel ini, bagikan dengan teman pengembang Anda. Jika ada pertanyaan atau saran, kirimkan komentar di sini.</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PHP/" rel="tag"># PHP</a>
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/Tips-Tricks/" rel="tag"># Tips & Tricks</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/09/install-linux-on-android-part-2-how-to.html" rel="prev" title="Install Linux on the Android part 2-How to Install Apache2, PHP and MYSQL on Android">
+                  <i class="fa fa-chevron-left"></i> Install Linux on the Android part 2-How to Install Apache2, PHP and MYSQL on Android
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/09/install-perl-on-android-2017.html" rel="next" title="Install perl on android 2017">
+                  Install perl on android 2017 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

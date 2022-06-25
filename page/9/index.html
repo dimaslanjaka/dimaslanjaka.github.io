@@ -1,254 +1,1229 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>WMI</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WMI">
 <meta property="og:url" content="https://www.webmanajemen.com/page/9/index.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="Dimas Lanjaka">
 <meta property="article:tag" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.webmanajemen.com/page/9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/custom.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
-  google_ad_client: 'ca-pub-2188063137129806',
-  enable_page_level_ads: 'true'
-});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-106238155-1');
-</script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'WMI',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2022-06-20 14:53:14'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
+<link rel="canonical" href="https://www.webmanajemen.com/page/9/">
 
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/9/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>WMI</title>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":null,"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WMI</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WMI</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/The%20Legend%20Of%20Neverland/Fishing.html" title="Auto Fishing"><img class="post_bg" src="/The%20Legend%20Of%20Neverland/Fishing/Studio_Project.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Auto Fishing"></a></div><div class="recent-post-info"><a class="article-title" href="/The%20Legend%20Of%20Neverland/Fishing.html" title="Auto Fishing">Auto Fishing</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-09-18T10:00:00.000Z" title="Created 2021-09-18 17:00:00">2021-09-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a></span></div><div class="content">Fishing in the legend of neverland is an important activity to collect fish and then sell them and get ‘water essences’. Water Essences are used to buy ingredients in the cooking shop. You can see the recipe at Cooking Recipes.You can cook buffs for your character or make dishes to increase the level of Fairies you have.This time you can auto-fish using bluestacks and macros.
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WMI</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
   
-Calculating the fishing actions
-  1 bottle = 300 staminas &divide; 5/action &rarr; 
-      
-        document.write(300  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/The%20Legend%20Of%20Neverland/Macros.html" title="Macros Auto Click Bluestacks"><img class="post_bg" src="https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Macros Auto Click Bluestacks"></a></div><div class="recent-post-info"><a class="article-title" href="/The%20Legend%20Of%20Neverland/Macros.html" title="Macros Auto Click Bluestacks">Macros Auto Click Bluestacks</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-09-06T10:00:00.000Z" title="Created 2021-09-06 17:00:00">2021-09-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/The-Legend-Of-Neverland/">The Legend Of Neverland</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/">Bluestacks</a></span></div><div class="content">Indeed, in case you’re on BlueStacks construct 4.130 or higher, you’ll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs&#x2F;monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">761</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
   
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="/The%20Legend%20Of%20Neverland/Fishing/Studio_Project.jpeg" itemprop="contentUrl">
+    </div>
+    </div>
 
-Introduction: Macros barely used for Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangeme ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/RegExp/badword.html" title="Badword"><img class="post_bg" src="/RegExp/RegExp/badwords.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Badword"></a></div><div class="recent-post-info"><a class="article-title" href="/RegExp/badword.html" title="Badword">Badword</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-09-21T10:00:00.000Z" title="Created 2021-09-21 17:00:00">2021-09-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Programming/">Programming</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Programming/Regular-Expression/">Regular Expression</a></span></div><div class="content">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Fishing.html">
 
-Main Expression&#123;#regexp-main&#125;^((?!badword).)*$
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
 
-Try ItClick Here
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
 
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html" title="Update Genshin Impact 2.0.0 Manual"><img class="post_bg" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Update Genshin Impact 2.0.0 Manual"></a></div><div class="recent-post-info"><a class="article-title" href="/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html" title="Update Genshin Impact 2.0.0 Manual">Update Genshin Impact 2.0.0 Manual</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-15T10:00:00.000Z" title="Created 2021-08-15 17:00:00">2021-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></span></div><div class="content">Update genshin impact 2.0.0 manual via download manager (IDM).
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/The%20Legend%20Of%20Neverland/Fishing.html" class="post-title-link" itemprop="url">Auto Fishing</a>
+        </h2>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-Patch 1.6.1 - 2.0.0
-en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip
-game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip
-ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip
-ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip
-zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip
+      <time title="Created: 2021-09-18 17:00:00" itemprop="dateCreated datePublished" datetime="2021-09-18T17:00:00+07:00">2021-09-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:34:22" itemprop="dateModified" datetime="2021-12-18T23:34:22+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/The-Legend-Of-Neverland/" itemprop="url" rel="index"><span itemprop="name">The Legend Of Neverland</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/" itemprop="url" rel="index"><span itemprop="name">Bluestacks</span></a>
+        </span>
+    </span>
 
-Patch 1.6.0 - 1.6.1
-en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip
-game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip
-ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip
-ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip
- ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html" title="Update Genshin Impact 2.1.0 Manual"><img class="post_bg" src="/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Update Genshin Impact 2.1.0 Manual"></a></div><div class="recent-post-info"><a class="article-title" href="/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html" title="Update Genshin Impact 2.1.0 Manual">Update Genshin Impact 2.1.0 Manual</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-09-03T10:00:00.000Z" title="Created 2021-09-03 17:00:00">2021-09-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></span></div><div class="content">Update genshin impact 2.1.0 manual via download manager (IDM).
+  
+</div>
 
+        </div>
+      </header>
 
-Patch 2.0.0 - 2.1.0
-en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip
-game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip
-ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip
-
-Patch 1.6.1 - 2.0.0
-en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip
-game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip
-ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip
-ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip
-zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip
-
-Patch 1.6.0 - 1.6.1
-en-us_1.6.0_1.6.1_diff_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html" title="Update Genshin Impact 1.6.1 Manual"><img class="post_bg" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Update Genshin Impact 1.6.1 Manual"></a></div><div class="recent-post-info"><a class="article-title" href="/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html" title="Update Genshin Impact 1.6.1 Manual">Update Genshin Impact 1.6.1 Manual</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-06-09T10:00:00.000Z" title="Created 2021-06-09 17:00:00">2021-06-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></span></div><div class="content">Update genshin impact 1.6.1 manual via download manager (IDM).
-
-
-Patch 1.6.0 - 1.6.1
-en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip
-game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip
-ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip
-ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip
-zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip
-
-How to update
-Download Update Version Or Full Game Version
-Copy all to your Genshin Impact\Genshin Impact Game\ folder
-
-.. Preview Example::
-.
-|-- C:
-    |-- Program Files
-        |-- Genshin Imp ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Genshin%20Impact/Location/Starconch.html" title="Starconch Location"><img class="post_bg" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/4/46/Item_Starconch.png/revision/latest" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Starconch Location"></a></div><div class="recent-post-info"><a class="article-title" href="/Genshin%20Impact/Location/Starconch.html" title="Starconch Location">Starconch Location</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-06-11T10:00:00.000Z" title="Created 2020-06-11 17:00:00">2020-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Games/">Games</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Games/Genshin-Impact/">Genshin Impact</a></span></div><div class="content">Starconch merupakan salah satu bahan atau material yang bisa kalian dapatkan di game Genshin Impact. Pada awalnya saat kita menemukan Starconch ini pasti kita kebingungan, karena sama sekali belum diperlukan untuk Ascension karakter manapun dan bahkan tidak dipakai untuk menu masakan. Namun semenjak ada update 1.1 dari Genshin Impact pada 11 November 2020, maka kita dapat mengakses karakter Childe melalui Wishing, dan kita membutuhkan Staconch untuk ascension yang berguna untuk menaikkan level C ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/NodeJS/ts-detect-nodelist-or-htmlcollections.html" title="HTMLCollection/NodeList in JavaScript/Typescript?"><img class="post_bg" src="https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTMLCollection/NodeList in JavaScript/Typescript?"></a></div><div class="recent-post-info"><a class="article-title" href="/NodeJS/ts-detect-nodelist-or-htmlcollections.html" title="HTMLCollection/NodeList in JavaScript/Typescript?">HTMLCollection/NodeList in JavaScript/Typescript?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-27T17:00:00.000Z" title="Created 2021-11-28 00:00:00">2021-11-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Programming/">Programming</a></span></div><div class="content">How to detect HTMLCollection&#x2F;NodeList in JavaScript&#x2F;Typescript?Detecting HTML Collection or NodeList in typescript.
-HTMLCollection Detect// check if variable is instance of HTMLCollection
-HTMLCollection.prototype.isPrototypeOf(variable)
-
-NodeList Detect// check if variable is instance of NodeList
-NodeList.prototype.isPrototypeOf(variable)
-
-Typescript Comparator Examplelet loaders: NodeListOf&lt;Element&gt; | HTMLCollectionOf&lt;Element&gt;;
-loaders = document.getElementsByClassName(&qu ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Linux/Shortcut/XAMPP.html" title="XAMPP"><img class="post_bg" src="https://i.stack.imgur.com/4TYxW.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XAMPP"></a></div><div class="recent-post-info"><a class="article-title" href="/Linux/Shortcut/XAMPP.html" title="XAMPP">XAMPP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-12-06T09:25:00.000Z" title="Created 2021-12-06 16:25:00">2021-12-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Programming/">Programming</a></span></div><div class="content">Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
-are you took below errors ?
-
-sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel
-Traceback (most recent call last):
-  File "xampp-control-panel.py", line 18, in &lt;module&gt;
-    import gtk
-ImportError: No module named gtk
-
-Here how to fix show XAMPP Panel on Linux
-Open Terminal, Type below codes
-XAMPP=/usr/share/applications/xampp-control-panel.desktop
-sudo touch $XAMPP
-sudo gedit $XAMPP
-
-content /usr/share/applications/xampp-contr ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/NodeJS/node-options.html" title="Node Options For NodeJS"><img class="post_bg" src="https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Node Options For NodeJS"></a></div><div class="recent-post-info"><a class="article-title" href="/NodeJS/node-options.html" title="Node Options For NodeJS">Node Options For NodeJS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-17T02:00:00.000Z" title="Created 2021-11-17 09:00:00">2021-11-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Programming/">Programming</a></span></div><div class="content">NODEJS OPTIONS [ NODE_OPTIONS ]Node.js accompanies an assortment of CLI choices. These choices uncover worked in investigating, different ways of executing scripts, and other accommodating runtime choices.
-To see this documentation as a manual page in a terminal, run ‘man hub’. Read more
-How to setup multiple options on GitHub Workflowjobs:
-  build:
-    name: Build www.webmanajemen.com
-    runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: &quot;--experimental-vm-modules --max_old_space_size=81 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/8/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/#content-inner">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/#content-inner">77</a><a class="extend next" rel="next" href="/page/10/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dimaslanjaka"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/senjo.html" title="Senjo craft lists"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Senjo craft lists"/></a><div class="content"><a class="title" href="/Chimeraland/senjo.html" title="Senjo craft lists">Senjo craft lists</a><time datetime="2022-06-16T10:00:00.000Z" title="Created 2022-06-16 17:00:00">2022-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift"><img src="https://user-images.githubusercontent.com/12471057/172972505-68674e18-9ef3-411b-b6ea-9149e32c6456.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cara reclaim draka gift"/></a><div class="content"><a class="title" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift">cara reclaim draka gift</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pet and attendant delicacies tasty informations"/></a><div class="content"><a class="title" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations">Pet and attendant delicacies tasty informations</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"/></a><div class="content"><a class="title" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?">How to handle git gc fatal bad object refs/remotes/origin/HEAD error?</a><time datetime="2022-06-06T10:00:00.000Z" title="Created 2022-06-06 17:00:00">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Force github follow symlinked folders"/></a><div class="content"><a class="title" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders">Force github follow symlinked folders</a><time datetime="2022-05-30T10:00:00.000Z" title="Created 2022-05-30 17:00:00">2022-05-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>Categories</span>
-            <a class="card-more-btn" href="/categories/" title="More">
-    <i class="fas fa-angle-right"></i></a>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Macros Auto Fishing Bluestacks for the legend of neverland download</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/The%20Legend%20Of%20Neverland/Fishing.html">
+                Read more &raquo;
+              </a>
             </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/"><span class="card-category-list-name">Games</span><span class="card-category-list-count">34</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Chimeraland/"><span class="card-category-list-name">Chimeraland</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Genshin-Impact/"><span class="card-category-list-name">Genshin Impact</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Minecraft/"><span class="card-category-list-name">Minecraft</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Playbook88/"><span class="card-category-list-name">Playbook88</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Seven-Knight/"><span class="card-category-list-name">Seven Knight</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/The-Legend-Of-Neverland/"><span class="card-category-list-name">The Legend Of Neverland</span><span class="card-category-list-count">13</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/"><span class="card-category-list-name">Bluestacks</span><span class="card-category-list-count">3</span></a></li></ul></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/AMP/" style="font-size: 1.32em; color: #99a2ae">AMP</a> <a href="/tags/Adsense/" style="font-size: 1.34em; color: #99a3b0">Adsense</a> <a href="/tags/Android/" style="font-size: 1.42em; color: #99a6b7">Android</a> <a href="/tags/Apache/" style="font-size: 1.12em; color: #999a9b">Apache</a> <a href="/tags/Auto-Click/" style="font-size: 1.1em; color: #999">Auto Click</a> <a href="/tags/Bash/" style="font-size: 1.12em; color: #999a9b">Bash</a> <a href="/tags/Blogger/" style="font-size: 1.48em; color: #99a8bd">Blogger</a> <a href="/tags/Blogging/" style="font-size: 1.38em; color: #99a4b4">Blogging</a> <a href="/tags/CMD/" style="font-size: 1.1em; color: #999">CMD</a> <a href="/tags/CSS/" style="font-size: 1.4em; color: #99a5b6">CSS</a> <a href="/tags/Chest-Location/" style="font-size: 1.12em; color: #999a9b">Chest Location</a> <a href="/tags/Chimeraland/" style="font-size: 1.16em; color: #999b9f">Chimeraland</a> <a href="/tags/CodeIgniter/" style="font-size: 1.14em; color: #999b9d">CodeIgniter</a> <a href="/tags/CommonJS/" style="font-size: 1.1em; color: #999">CommonJS</a> <a href="/tags/Durango/" style="font-size: 1.3em; color: #99a1ac">Durango</a> <a href="/tags/ESLint/" style="font-size: 1.14em; color: #999b9d">ESLint</a> <a href="/tags/ESM/" style="font-size: 1.1em; color: #999">ESM</a> <a href="/tags/Event/" style="font-size: 1.12em; color: #999a9b">Event</a> <a href="/tags/Facebook/" style="font-size: 1.24em; color: #999fa6">Facebook</a> <a href="/tags/Fonts/" style="font-size: 1.1em; color: #999">Fonts</a> <a href="/tags/Game-Control/" style="font-size: 1.1em; color: #999">Game Control</a> <a href="/tags/Games/" style="font-size: 1.38em; color: #99a4b4">Games</a> <a href="/tags/Genshin-Impact/" style="font-size: 1.26em; color: #999fa8">Genshin Impact</a> <a href="/tags/GitHub/" style="font-size: 1.22em; color: #999ea4">GitHub</a> <a href="/tags/Gradle/" style="font-size: 1.12em; color: #999a9b">Gradle</a> <a href="/tags/HTML/" style="font-size: 1.44em; color: #99a7b9">HTML</a> <a href="/tags/Hosting/" style="font-size: 1.14em; color: #999b9d">Hosting</a> <a href="/tags/IDE/" style="font-size: 1.12em; color: #999a9b">IDE</a> <a href="/tags/JS/" style="font-size: 1.46em; color: #99a7bb">JS</a> <a href="/tags/Java/" style="font-size: 1.12em; color: #999a9b">Java</a> <a href="/tags/Kotlin/" style="font-size: 1.12em; color: #999a9b">Kotlin</a> <a href="/tags/Life-Skill/" style="font-size: 1.14em; color: #999b9d">Life Skill</a> <a href="/tags/Linux-Unix/" style="font-size: 1.24em; color: #999fa6">Linux/Unix</a> <a href="/tags/Macros/" style="font-size: 1.12em; color: #999a9b">Macros</a> <a href="/tags/Marketing-Strategies/" style="font-size: 1.26em; color: #999fa8">Marketing Strategies</a> <a href="/tags/Miscellaneous/" style="font-size: 1.28em; color: #99a0aa">Miscellaneous</a> <a href="/tags/Movies/" style="font-size: 1.36em; color: #99a3b2">Movies</a> <a href="/tags/Musics/" style="font-size: 1.5em; color: #99a9bf">Musics</a> <a href="/tags/MySQL/" style="font-size: 1.2em; color: #999da3">MySQL</a> <a href="/tags/NodeJS/" style="font-size: 1.18em; color: #999ca1">NodeJS</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">June 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">May 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">April 2022</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">March 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">February 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">761</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-06-20T07:53:09.218Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" href="https://hexo.io" rel="nofollow noopener noreferrer noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" href="https://github.com/jerryc127/hexo-theme-butterfly" rel="nofollow noopener noreferrer noopener">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/The%20Legend%20Of%20Neverland/Macros.html" class="post-title-link" itemprop="url">Macros Auto Click Bluestacks</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-06 17:00:00" itemprop="dateCreated datePublished" datetime="2021-09-06T17:00:00+07:00">2021-09-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:34:14" itemprop="dateModified" datetime="2021-12-18T23:34:14+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/The-Legend-Of-Neverland/" itemprop="url" rel="index"><span itemprop="name">The Legend Of Neverland</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/" itemprop="url" rel="index"><span itemprop="name">Bluestacks</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Macros Auto Click Bluestacks for the legend of neverland download</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/The%20Legend%20Of%20Neverland/Macros.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="/RegExp/RegExp/badwords.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/RegExp/badword.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/RegExp/badword.html" class="post-title-link" itemprop="url">Badword</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-21 17:00:00" itemprop="dateCreated datePublished" datetime="2021-09-21T17:00:00+07:00">2021-09-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:33:56" itemprop="dateModified" datetime="2021-12-18T23:33:56+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/Regular-Expression/" itemprop="url" rel="index"><span itemprop="name">Regular Expression</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Match string not containing string, exclude badwords</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/RegExp/badword.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html" class="post-title-link" itemprop="url">Update Genshin Impact 2.0.0 Manual</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-15 17:00:00" itemprop="dateCreated datePublished" datetime="2021-08-15T17:00:00+07:00">2021-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:33:51" itemprop="dateModified" datetime="2021-12-18T23:33:51+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Genshin-Impact/" itemprop="url" rel="index"><span itemprop="name">Genshin Impact</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Update Genshin Impact 1.6.1 - 2.0.0 Manual</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html" class="post-title-link" itemprop="url">Update Genshin Impact 2.1.0 Manual</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-03 17:00:00" itemprop="dateCreated datePublished" datetime="2021-09-03T17:00:00+07:00">2021-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:33:31" itemprop="dateModified" datetime="2021-12-18T23:33:31+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Genshin-Impact/" itemprop="url" rel="index"><span itemprop="name">Genshin Impact</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Update Genshin Impact 2.0.0 - 2.1.0 Manual</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Genshin%20Impact/Update/update-genshin-impact-2.0.0-2.1.0.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html" class="post-title-link" itemprop="url">Update Genshin Impact 1.6.1 Manual</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-06-09 17:00:00" itemprop="dateCreated datePublished" datetime="2021-06-09T17:00:00+07:00">2021-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:32:44" itemprop="dateModified" datetime="2021-12-18T23:32:44+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Genshin-Impact/" itemprop="url" rel="index"><span itemprop="name">Genshin Impact</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Update Genshin Impact 1.6.0 - 1.6.1 Manual</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/4/46/Item_Starconch.png/revision/latest" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="id">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Genshin%20Impact/Location/Starconch.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Genshin%20Impact/Location/Starconch.html" class="post-title-link" itemprop="url">Starconch Location</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-06-11 17:00:00" itemprop="dateCreated datePublished" datetime="2020-06-11T17:00:00+07:00">2020-06-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 23:32:29" itemprop="dateModified" datetime="2021-12-18T23:32:29+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Games/Genshin-Impact/" itemprop="url" rel="index"><span itemprop="name">Genshin Impact</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Where to find starconch in genshin impact</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Genshin%20Impact/Location/Starconch.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/NodeJS/ts-detect-nodelist-or-htmlcollections.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/NodeJS/ts-detect-nodelist-or-htmlcollections.html" class="post-title-link" itemprop="url">HTMLCollection/NodeList in JavaScript/Typescript?</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-28 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-28T00:00:00+07:00">2021-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-18 14:07:09" itemprop="dateModified" datetime="2021-12-18T14:07:09+07:00">2021-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>How to detect HTMLCollection/NodeList in JavaScript/Typescript?</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/NodeJS/ts-detect-nodelist-or-htmlcollections.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://i.stack.imgur.com/4TYxW.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/Linux/Shortcut/XAMPP.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Linux/Shortcut/XAMPP.html" class="post-title-link" itemprop="url">XAMPP</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-12-06 16:25:00" itemprop="dateCreated datePublished" datetime="2021-12-06T16:25:00+07:00">2021-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-12 06:38:42" itemprop="dateModified" datetime="2021-12-12T06:38:42+07:00">2021-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>How to configure shortcut desktop for xampp linux</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Linux/Shortcut/XAMPP.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/NodeJS/node-options.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/NodeJS/node-options.html" class="post-title-link" itemprop="url">Node Options For NodeJS</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-17 09:00:00" itemprop="dateCreated datePublished" datetime="2021-11-17T09:00:00+07:00">2021-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-12-10 12:53:25" itemprop="dateModified" datetime="2021-12-10T12:53:25+07:00">2021-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Usage, explanations of node options for nodejs</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/NodeJS/node-options.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/">77</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

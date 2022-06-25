@@ -1,161 +1,1132 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>WMI</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WMI">
 <meta property="og:url" content="https://www.webmanajemen.com/page/69/index.html">
 <meta property="og:site_name" content="WMI">
 <meta property="og:description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="Dimas Lanjaka">
 <meta property="article:tag" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.webmanajemen.com/page/69/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/custom.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
-  google_ad_client: 'ca-pub-2188063137129806',
-  enable_page_level_ads: 'true'
-});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-106238155-1');
-</script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'WMI',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2022-06-20 14:53:15'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
+<link rel="canonical" href="https://www.webmanajemen.com/page/69/">
 
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/69/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>WMI</title>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":null,"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WMI</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WMI</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2017/07/simple-way-to-install-and-enable-https.html" title="Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain"><img class="post_bg" src="https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/simple-way-to-install-and-enable-https.html" title="Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain">Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-20T12:32:00.000Z" title="Created 2017-07-20 19:32:00">2017-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">            Activate HTTPS On Custom Domain BloggerBlogs that have the HTTPS                                                 protocol will look more trusted                                                 and safe for visitors. Of                                                 course this can be a plus for                                                 your blog.                                                 By default, Google provides                                                 free HTT ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2017/07/what-is-bitly.html" title="What is bitly?"><img class="post_bg" src="https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&amp;h=232" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="What is bitly?"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/what-is-bitly.html" title="What is bitly?">What is bitly?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-19T20:47:00.000Z" title="Created 2017-07-20 03:47:00">2017-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">What is Bitly - bitly is an online service that provides short URLs for your posts so you can be easier to share with friends, family, and on the web &#x2F; blog.This service is quite popular on the twitter microblogging site as it is the default service of url shortener since May 2009.  3 benefits of using bit.ly: Easy and Short. Long web URLs can be shortened by bit.ly. Many use this service URL shorten than Adf.ly because it is more secure even if it can not generate dollars like Adf.ly. Exam ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html" title="Cara membuat pola kunci hp yang rumit"><img class="post_bg" src="https://image.ibb.co/eyVsN5/13438874_1966615786928595_9194443384423239792_n.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cara membuat pola kunci hp yang rumit"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html" title="Cara membuat pola kunci hp yang rumit">Cara membuat pola kunci hp yang rumit</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-19T05:38:00.000Z" title="Created 2017-07-19 12:38:00">2017-07-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Fitur1.Kunci Layar Anda2.Kunci Aplikasi Anda3.Pengendali Jarak Jauh4.Anti Jahil [ Temen Anda ]5.Titik Bisa Diperbanyak !!!6.Salah Pola 5 Kali Otomatis Memfoto7.Bisa Mengunci GANDA8.Bisa Mengunci Wifi,Data,Hotspot Anda9.Tema Titik Bisa Dipilih [ kitkat Mode,Ice Cream Mode,Jelly Bean Mode ]10.Bisa MemBACKUP data Aplikasi/Data Ponsel AndaCara Aktifkan Kuncinya• Instal Aplikasi• Buka Aplikasi• Setelan• Aksebilitas &gt;&gt; Aplikasi Kunci Layar ON• Beranda &gt;&gt; Aplikaski Kunci Layar [ Pilih Selal ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2017/07/create-awesome-shadow-effect-using-haml.html" title="Create Awesome Shadow Effect Using HAML and LESS CSS"><img class="post_bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Create Awesome Shadow Effect Using HAML and LESS CSS"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/create-awesome-shadow-effect-using-haml.html" title="Create Awesome Shadow Effect Using HAML and LESS CSS">Create Awesome Shadow Effect Using HAML and LESS CSS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-18T12:52:00.000Z" title="Created 2017-07-18 19:52:00">2017-07-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">How to Create Awesome Shadow Effects Using HAML (HTML Processor) and LESS CSS (Preprocessor)HAML Code%h1.elegantshadow Elegant Shadow%h1.deepshadow Deep Shadow%h1.insetshadow Inset Shadow%h1.retroshadow Retro ShadowLESS CSS Code/*CSS RESET 2.0  */html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tb ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2017/07/adsense-ads-size-modification-be-big-on.html" title="Adsense Ads Size Modification Be Big On The Screen And Responsive"><img class="post_bg" src="https://cdnpower.klikmania.net/wp-content/uploads/2015/12/1-min-3-1024x499.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Adsense Ads Size Modification Be Big On The Screen And Responsive"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/adsense-ads-size-modification-be-big-on.html" title="Adsense Ads Size Modification Be Big On The Screen And Responsive">Adsense Ads Size Modification Be Big On The Screen And Responsive</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-17T22:23:00.000Z" title="Created 2017-07-18 05:23:00">2017-07-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Before continuing, whether we can modify ads from google adsense? We see briefly the description below, in order to avoid mistakes in resizing adsense ads.Particularly in accordance with  the AdSense Ads code modification  guidelines  . These are some Adsense ad code modifications that can be accepted or allowed by the Google Adsense: Responsive Design  A &#x2F; B Testing  Setting Custom Channels Dynamically  Ads Tag Minimization And it’s about responsive ad units and minimizing ad tags with mod ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2017/07/10-template-gratis-untuk-dokumentasi-api.html" title="10 Template Gratis untuk Dokumentasi API"><img class="post_bg" src="https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuOg_gfMhS2VUZUWkzeWq3UGOyKjkwCLcBGAs/s320/images.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="10 Template Gratis untuk Dokumentasi API"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/10-template-gratis-untuk-dokumentasi-api.html" title="10 Template Gratis untuk Dokumentasi API">10 Template Gratis untuk Dokumentasi API</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-13T19:00:00.000Z" title="Created 2017-07-14 02:00:00">2017-07-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Apakah Anda perlu membuat dokumentasi API untuk API Anda yang tenang?&nbsp;Ingin membuat dokumentasi API secara otomatis?&nbsp;Hari ini, saya akan membagikan beberapa template gratis yang dirancang untuk menampilkan API Anda.&nbsp;Dokumentasi yang baik&nbsp;sangat&nbsp;penting&nbsp;jadi mulailah dengan dasar yang baik.&nbsp;Sumber daya API ini sederhana, bersih, leverage praktik terbaik, dan akan membuat pengguna API Anda senang.1.&nbsp;Slate&nbsp;- membantu Anda membuat dokumentasi API yang ind ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2017/07/cara-mengkonversi-bookmarklet-ke.html" title="Cara Mengkonversi Bookmarklet ke Ekstensi Chrome"><img class="post_bg" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cara Mengkonversi Bookmarklet ke Ekstensi Chrome"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/cara-mengkonversi-bookmarklet-ke.html" title="Cara Mengkonversi Bookmarklet ke Ekstensi Chrome">Cara Mengkonversi Bookmarklet ke Ekstensi Chrome</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-12T17:34:00.000Z" title="Created 2017-07-13 00:34:00">2017-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Bookmarklets, atau kemampuan untuk mengeksekusi kode JavaScript Anda sendiri pada halaman manapun, memungkinkan Anda menyesuaikan pengalaman penjelajahan Anda dengan berbagai cara.&nbsp;Beberapa waktu yang lalu saya menulis beberapa kode JS yang akan menghapus semua konten dari halaman manapun dan hanya menampilkan gambar dengan fungsi zoom on click.&nbsp;Ini bekerja dengan baik sebagai bookmarklet tapi saya ingin melihat betapa mudahnya mengemasnya ke Ekstensi Chrome.Saya melakukan ini untuk be ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2017/07/kerangka-dan-platform-mobile-terbaik.html" title="Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid"><img class="post_bg" src="http://i.imgur.com/4kHlYlw.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/kerangka-dan-platform-mobile-terbaik.html" title="Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid">Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-12T10:50:00.000Z" title="Created 2017-07-12 17:50:00">2017-07-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Beberapa waktu yang lalu, saya masuk ke pengembangan aplikasi seluler menggunakan HTML5 dan PhoneGap.Ini adalah solusi bagus untuk membuat aplikasi untuk iOS dan Android saat mengkodekan dalam HTML, CSS, dan JavaScript.&nbsp;Hari ini, kita memiliki lebih banyak pilihan di ruang ini.&nbsp;Ada banyak kerangka kerja untuk membangun aplikasi seluler dan ada juga beberapa platform yang mengemas kode tersebut ke aplikasi yang dapat digunakan dan bahkan menyediakan hal-hal seperti monetisasi, analisis, ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html" title="Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8,  10"><img class="post_bg" src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8,  10"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html" title="Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8,  10">Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8,  10</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-10T02:26:00.000Z" title="Created 2017-07-10 09:26:00">2017-07-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian belakang router yang ISP Anda berikan?&nbsp;Jika demikian, mungkin beberapa kombinasi huruf, angka, dan simbol yang sangat lama yang tidak dapat Anda ingat.Kebanyakan orang mencoba menulis kata sandi di suatu tempat atau hanya mengecek router setiap kali mereka harus memberikannya kepada orang lain.&nbsp;Untungnya, jika Anda sudah memiliki komputer yang terhubung ke jaringan WiFi Anda, Anda dapat dengan mudah melihat kata sand ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2017/07/ringo-step-shotter-tutorial-cp-wp.html" title="Ringo Step Shotter Tutorial CP WP"><img class="post_bg" src="https://www.vaingloryfire.com/images/heroes/potrait/ringo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ringo Step Shotter Tutorial CP WP"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/07/ringo-step-shotter-tutorial-cp-wp.html" title="Ringo Step Shotter Tutorial CP WP">Ringo Step Shotter Tutorial CP WP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2017-07-07T02:55:00.000Z" title="Created 2017-07-07 09:55:00">2017-07-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">Deskripsi Ringo:RingoRingoJenis Serangan:&amp;nbsp;BerkisarPosisi:&amp;nbsp;LanePeran:&amp;nbsp;SniperHit Points (HP)646 (+&amp;nbsp;69&amp;nbsp;)HP Regen2.15 (+&amp;nbsp;0.23&amp;nbsp;)Poin Energi (EP)163 (+&amp;nbsp;21.45&amp;nbsp;)EP Regen1,20 (+&amp;nbsp;0,15&amp;nbsp;)Kerusakan Senjata66 (+&amp;nbsp;5.9&amp;nbsp;)Kecepatan serangan1 (+&amp;nbsp;0,033&amp;nbsp;)Baja20 (+&amp;nbsp;6&amp;nbsp;)Melindungi20 (+&amp;nbsp;6&amp;nbsp;)Rentang serangan6.0Pindahkan Kecepatan3.1PendahuluanATASHalo sem ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/68/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/#content-inner">68</a><span class="page-number current">69</span><a class="page-number" href="/page/70/#content-inner">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/#content-inner">77</a><a class="extend next" rel="next" href="/page/70/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">761</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dimaslanjaka"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dimaslanjaka" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/senjo.html" title="Senjo craft lists"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Senjo craft lists"/></a><div class="content"><a class="title" href="/Chimeraland/senjo.html" title="Senjo craft lists">Senjo craft lists</a><time datetime="2022-06-16T10:00:00.000Z" title="Created 2022-06-16 17:00:00">2022-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift"><img src="https://user-images.githubusercontent.com/12471057/172972505-68674e18-9ef3-411b-b6ea-9149e32c6456.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cara reclaim draka gift"/></a><div class="content"><a class="title" href="/Chimeraland/cara-reclaim-draka-gift.html" title="cara reclaim draka gift">cara reclaim draka gift</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pet and attendant delicacies tasty informations"/></a><div class="content"><a class="title" href="/Chimeraland/pet-attendant-delicacies-tasty-information.html" title="Pet and attendant delicacies tasty informations">Pet and attendant delicacies tasty informations</a><time datetime="2022-06-09T10:00:00.000Z" title="Created 2022-06-09 17:00:00">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?"/></a><div class="content"><a class="title" href="/GitHub/handle-git-gc-fatal-bad-object-refs.html" title="How to handle git gc fatal bad object refs/remotes/origin/HEAD error?">How to handle git gc fatal bad object refs/remotes/origin/HEAD error?</a><time datetime="2022-06-06T10:00:00.000Z" title="Created 2022-06-06 17:00:00">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Force github follow symlinked folders"/></a><div class="content"><a class="title" href="/GitHub/git-follow-symlink.html" title="Force github follow symlinked folders">Force github follow symlinked folders</a><time datetime="2022-05-30T10:00:00.000Z" title="Created 2022-05-30 17:00:00">2022-05-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>Categories</span>
-            <a class="card-more-btn" href="/categories/" title="More">
-    <i class="fas fa-angle-right"></i></a>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WMI</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">761</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/simple-way-to-install-and-enable-https.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/simple-way-to-install-and-enable-https.html" class="post-title-link" itemprop="url">Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-20 19:32:00 / Modified: 19:32:38" itemprop="dateCreated datePublished" datetime="2017-07-20T19:32:00+07:00">2017-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/simple-way-to-install-and-enable-https.html">
+                Read more &raquo;
+              </a>
             </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/"><span class="card-category-list-name">Games</span><span class="card-category-list-count">34</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Chimeraland/"><span class="card-category-list-name">Chimeraland</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Genshin-Impact/"><span class="card-category-list-name">Genshin Impact</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Minecraft/"><span class="card-category-list-name">Minecraft</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Playbook88/"><span class="card-category-list-name">Playbook88</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/Seven-Knight/"><span class="card-category-list-name">Seven Knight</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/The-Legend-Of-Neverland/"><span class="card-category-list-name">The Legend Of Neverland</span><span class="card-category-list-count">13</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Games/The-Legend-Of-Neverland/Bluestacks/"><span class="card-category-list-name">Bluestacks</span><span class="card-category-list-count">3</span></a></li></ul></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/AMP/" style="font-size: 1.32em; color: #99a2ae">AMP</a> <a href="/tags/Adsense/" style="font-size: 1.34em; color: #99a3b0">Adsense</a> <a href="/tags/Android/" style="font-size: 1.42em; color: #99a6b7">Android</a> <a href="/tags/Apache/" style="font-size: 1.12em; color: #999a9b">Apache</a> <a href="/tags/Auto-Click/" style="font-size: 1.1em; color: #999">Auto Click</a> <a href="/tags/Bash/" style="font-size: 1.12em; color: #999a9b">Bash</a> <a href="/tags/Blogger/" style="font-size: 1.48em; color: #99a8bd">Blogger</a> <a href="/tags/Blogging/" style="font-size: 1.38em; color: #99a4b4">Blogging</a> <a href="/tags/CMD/" style="font-size: 1.1em; color: #999">CMD</a> <a href="/tags/CSS/" style="font-size: 1.4em; color: #99a5b6">CSS</a> <a href="/tags/Chest-Location/" style="font-size: 1.12em; color: #999a9b">Chest Location</a> <a href="/tags/Chimeraland/" style="font-size: 1.16em; color: #999b9f">Chimeraland</a> <a href="/tags/CodeIgniter/" style="font-size: 1.14em; color: #999b9d">CodeIgniter</a> <a href="/tags/CommonJS/" style="font-size: 1.1em; color: #999">CommonJS</a> <a href="/tags/Durango/" style="font-size: 1.3em; color: #99a1ac">Durango</a> <a href="/tags/ESLint/" style="font-size: 1.14em; color: #999b9d">ESLint</a> <a href="/tags/ESM/" style="font-size: 1.1em; color: #999">ESM</a> <a href="/tags/Event/" style="font-size: 1.12em; color: #999a9b">Event</a> <a href="/tags/Facebook/" style="font-size: 1.24em; color: #999fa6">Facebook</a> <a href="/tags/Fonts/" style="font-size: 1.1em; color: #999">Fonts</a> <a href="/tags/Game-Control/" style="font-size: 1.1em; color: #999">Game Control</a> <a href="/tags/Games/" style="font-size: 1.38em; color: #99a4b4">Games</a> <a href="/tags/Genshin-Impact/" style="font-size: 1.26em; color: #999fa8">Genshin Impact</a> <a href="/tags/GitHub/" style="font-size: 1.22em; color: #999ea4">GitHub</a> <a href="/tags/Gradle/" style="font-size: 1.12em; color: #999a9b">Gradle</a> <a href="/tags/HTML/" style="font-size: 1.44em; color: #99a7b9">HTML</a> <a href="/tags/Hosting/" style="font-size: 1.14em; color: #999b9d">Hosting</a> <a href="/tags/IDE/" style="font-size: 1.12em; color: #999a9b">IDE</a> <a href="/tags/JS/" style="font-size: 1.46em; color: #99a7bb">JS</a> <a href="/tags/Java/" style="font-size: 1.12em; color: #999a9b">Java</a> <a href="/tags/Kotlin/" style="font-size: 1.12em; color: #999a9b">Kotlin</a> <a href="/tags/Life-Skill/" style="font-size: 1.14em; color: #999b9d">Life Skill</a> <a href="/tags/Linux-Unix/" style="font-size: 1.24em; color: #999fa6">Linux/Unix</a> <a href="/tags/Macros/" style="font-size: 1.12em; color: #999a9b">Macros</a> <a href="/tags/Marketing-Strategies/" style="font-size: 1.26em; color: #999fa8">Marketing Strategies</a> <a href="/tags/Miscellaneous/" style="font-size: 1.28em; color: #99a0aa">Miscellaneous</a> <a href="/tags/Movies/" style="font-size: 1.36em; color: #99a3b2">Movies</a> <a href="/tags/Musics/" style="font-size: 1.5em; color: #99a9bf">Musics</a> <a href="/tags/MySQL/" style="font-size: 1.2em; color: #999da3">MySQL</a> <a href="/tags/NodeJS/" style="font-size: 1.18em; color: #999ca1">NodeJS</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">June 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">May 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">April 2022</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">March 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">February 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">761</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-06-20T07:53:09.218Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" href="https://hexo.io" rel="nofollow noopener noreferrer noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" href="https://github.com/jerryc127/hexo-theme-butterfly" rel="nofollow noopener noreferrer noopener">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&h=232" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/what-is-bitly.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/what-is-bitly.html" class="post-title-link" itemprop="url">What is bitly?</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-20 03:47:00 / Modified: 03:47:01" itemprop="dateCreated datePublished" datetime="2017-07-20T03:47:00+07:00">2017-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>What is Bitly bitly is an online service that provides short URLs for your posts so you can be easier to share with friends, family, and</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/what-is-bitly.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://image.ibb.co/eyVsN5/13438874_1966615786928595_9194443384423239792_n.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html" class="post-title-link" itemprop="url">Cara membuat pola kunci hp yang rumit</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-19 12:38:00 / Modified: 12:39:25" itemprop="dateCreated datePublished" datetime="2017-07-19T12:38:00+07:00">2017-07-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Cara membuat pola kunci hp yang rumit - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/create-awesome-shadow-effect-using-haml.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/create-awesome-shadow-effect-using-haml.html" class="post-title-link" itemprop="url">Create Awesome Shadow Effect Using HAML and LESS CSS</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-18 19:52:00 / Modified: 19:52:09" itemprop="dateCreated datePublished" datetime="2017-07-18T19:52:00+07:00">2017-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>h2>How to Create <mark>Awesome Shadow Effects</mark> Using HAML HTML Processor and LESS CSS Preprocessor</h2><h3>HAML</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/create-awesome-shadow-effect-using-haml.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://cdnpower.klikmania.net/wp-content/uploads/2015/12/1-min-3-1024x499.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/adsense-ads-size-modification-be-big-on.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/adsense-ads-size-modification-be-big-on.html" class="post-title-link" itemprop="url">Adsense Ads Size Modification Be Big On The Screen And Responsive</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-18 05:23:00 / Modified: 05:23:13" itemprop="dateCreated datePublished" datetime="2017-07-18T05:23:00+07:00">2017-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>The ads appear in full on the screen</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/adsense-ads-size-modification-be-big-on.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuOg_gfMhS2VUZUWkzeWq3UGOyKjkwCLcBGAs/s320/images.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/10-template-gratis-untuk-dokumentasi-api.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/10-template-gratis-untuk-dokumentasi-api.html" class="post-title-link" itemprop="url">10 Template Gratis untuk Dokumentasi API</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-07-14 02:00:00" itemprop="dateCreated datePublished" datetime="2017-07-14T02:00:00+07:00">2017-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>10 Template Gratis untuk Dokumentasi API - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/10-template-gratis-untuk-dokumentasi-api.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/cara-mengkonversi-bookmarklet-ke.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/cara-mengkonversi-bookmarklet-ke.html" class="post-title-link" itemprop="url">Cara Mengkonversi Bookmarklet ke Ekstensi Chrome</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-13 00:34:00 / Modified: 00:34:15" itemprop="dateCreated datePublished" datetime="2017-07-13T00:34:00+07:00">2017-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Cara Mengkonversi Bookmarklet ke Ekstensi Chrome - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/cara-mengkonversi-bookmarklet-ke.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="http://i.imgur.com/4kHlYlw.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/kerangka-dan-platform-mobile-terbaik.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/kerangka-dan-platform-mobile-terbaik.html" class="post-title-link" itemprop="url">Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-12 17:50:00 / Modified: 17:50:05" itemprop="dateCreated datePublished" datetime="2017-07-12T17:50:00+07:00">2017-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/kerangka-dan-platform-mobile-terbaik.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html" class="post-title-link" itemprop="url">Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8,  10</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-10 09:26:00 / Modified: 09:26:39" itemprop="dateCreated datePublished" datetime="2017-07-10T09:26:00+07:00">2017-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian belakang router yang ISP Anda berikanJika demikian, mungkin</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/cara-melihat-sandi-wifi-tersimpan-di.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://www.vaingloryfire.com/images/heroes/potrait/ringo.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/07/ringo-step-shotter-tutorial-cp-wp.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WMI">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/07/ringo-step-shotter-tutorial-cp-wp.html" class="post-title-link" itemprop="url">Ringo Step Shotter Tutorial CP WP</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-07-07 09:55:00 / Modified: 10:10:01" itemprop="dateCreated datePublished" datetime="2017-07-07T09:55:00+07:00">2017-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Ringo Step Shotter Tutorial CP WP - WMI</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/ringo-step-shotter-tutorial-cp-wp.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/68/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><span class="page-number current">69</span><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/">77</a><a class="extend next" rel="next" href="/page/70/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

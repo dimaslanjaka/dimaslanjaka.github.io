@@ -7,7 +7,11 @@ if (location.host == 'cdpn.io') {
 
   function rangeAlphabetic(start, stop) {
     var result = [];
-    for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
+    for (
+      var idx = start.charCodeAt(0), end = stop.charCodeAt(0);
+      idx <= end;
+      ++idx
+    ) {
       result.push(String.fromCharCode(idx));
     }
     return result;
@@ -74,7 +78,10 @@ function escapeRegExp(string) {
 }
 
 let quizUrls = [
-  'https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/public-source/master/assets/tlon/Quiz/quiz.txt',
+  location.protocol +
+    '//' +
+    location.host.trim() +
+    '/The Legend Of Neverland/Quiz/quiz.txt',
   'https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt',
   'https://www.webmanajemen.com/assets/tlon/Quiz/quiz.txt'
 ];
@@ -189,7 +196,11 @@ function jQueryMethod() {
       transformArray2Li();
     }
 
-    if (inputSearch && inputSearch.value && inputSearch.value.trim().length > 0) {
+    if (
+      inputSearch &&
+      inputSearch.value &&
+      inputSearch.value.trim().length > 0
+    ) {
       searchLi(inputSearch.value);
     }
   });
@@ -213,7 +224,10 @@ function jQueryMethod() {
 }
 
 if (typeof jQuery === 'undefined') {
-  loadJScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', jQueryMethod);
+  loadJScript(
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+    jQueryMethod
+  );
 } else {
   jQueryMethod();
 }

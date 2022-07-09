@@ -1,3 +1,5 @@
+// source https://codepen.io/dimaslanjaka/pen/dymMwxL?editors=0010#shaman-regni
+// source https://www.webmanajemen.com/Chimeraland/pet-attendant-delicacies.html#rosary-twinkel
 const attendantWrapper = document.querySelector('#a-tbl');
 const petWrapper = document.querySelector('#p-tbl');
 
@@ -12,11 +14,11 @@ window.onload = function () {
       //console.log(data);
       return data;
     })
-    .then((data) => {
+    .then((attendant_data) => {
       /**
        * @type {string[]}
        */
-      const attendants = data.data;
+      const attendants = attendant_data.data;
       const tbh =
         "<table class='table'><thead><tr><th>Name</th><th>Value</th></thead><tbody>";
       const tbf = '</tbody></table>';
@@ -26,8 +28,14 @@ window.onload = function () {
         let build = [];
         Object.keys(item).forEach((key) => {
           let val = item[key];
-          if (Array.isArray(val)) val = val.join(', ');
           if (key === 'qty') key = 'Quality';
+          if (key === 'delicacies') {
+            val = val.map((str) => {
+              return `<a href='/Chimeraland/Recipes.html?query=${str}'>${str}</a><span class='mr-2'>,</span>`;
+            });
+            val = val.join('');
+          }
+          if (Array.isArray(val)) val = val.join(', ');
           key = key.toUpperCase();
           //console.log(key, val);
           build.push(`<tr><td>${key}</td><td>${val}</td></tr>`);
@@ -40,6 +48,7 @@ window.onload = function () {
         const header = `<div class="d-flex justify-content-between"><div id='${header_id}'><h3>${item['name']}</h3></div><div><a href="#${header_id}">${header_id}</a></div></div>`;
         results.push({ header, items: build.join('') });
       });
+      // merge table
       results = results.map((o) => {
         return o.header + tbh + o.items + tbf;
       });
@@ -47,7 +56,15 @@ window.onload = function () {
       attendantWrapper.innerHTML = results.join('');
       console.log('attendant updated successfully');
     })
-    .then(() => scrollTo());
+    .then(() => {
+      scrollTo().then((o) => {
+        setTimeout(() => {
+          scrollTo().then((o1) => {
+            console.log(o, o1);
+          });
+        }, 3000);
+      });
+    });
 };
 
 function getAttendant() {
@@ -76,17 +93,35 @@ function uniq(arr, field) {
   );
 }
 
+// scroll to div
 function scrollTo(id) {
-  // scroll to div
-  const end_id = id || window.location.hash.split('#')[1] || null;
-  if (!end_id) return console.log('[scroll] empty id');
-  const target = document.querySelector("[id*='" + end_id + "'");
-  if (!target)
-    return console.log('[scroll] empty target element with id=' + id);
-  console.log('[scroll] to #' + end_id);
-  window.scroll({
-    top: target.offsetTop,
-    left: 0,
-    behavior: 'smooth'
+  return new Promise((resolve) => {
+    const end_id = id || window.location.hash.split('#')[1] || null;
+    if (!end_id) return console.log('[scroll] empty id');
+    const selector = "[id*='" + end_id + "']";
+    const target = document.querySelector(selector);
+    target.scrollIntoView(true);
+    if (!target)
+      return console.log('[scroll] empty target element with id=' + end_id);
+    console.log('[scroll] to #' + end_id);
+    const isFirefox = 'netscape' in window && / rv:/.test(navigator.userAgent);
+
+    if (isFirefox) {
+      // scroll to center element
+      target.scrollIntoView({ block: 'center' });
+    } else {
+      // scroll to top element
+      window.scroll({
+        top: target.offsetTop,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    resolve({
+      offset: target.offsetTop,
+      id: end_id,
+      selector
+    });
   });
 }

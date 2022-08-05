@@ -1,5 +1,7 @@
 // source https://codepen.io/dimaslanjaka/pen/dymMwxL?editors=0010#shaman-regni
 // source https://www.webmanajemen.com/Chimeraland/pet-attendant-delicacies.html#rosary-twinkel
+// backend https://hexo-backend.herokuapp.com/chimeraland/attendant
+// backend https://hexo-backend.herokuapp.com/chimeraland/pet
 const attendantWrapper = document.querySelector('#a-tbl');
 const petWrapper = document.querySelector('#p-tbl');
 
@@ -31,7 +33,8 @@ window.onload = function () {
           if (key === 'qty') key = 'Quality';
           if (key === 'delicacies') {
             val = val.map((str) => {
-              return `<a href='/Chimeraland/Recipes.html?query=${str}'>${str}</a><span class='mr-2'>,</span>`;
+              const query = str.replace('-', '').toLowerCase();
+              return `<a href='/Chimeraland/Recipes.html?query=${query}'>${query}</a><span class='mr-2'>,</span>`;
             });
             val = val.join('');
           }

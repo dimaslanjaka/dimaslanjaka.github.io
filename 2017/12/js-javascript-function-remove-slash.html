@@ -127,7 +127,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Forward-Slashes-x2F-Using-JavaScript-Function"><span class="nav-number">1.</span> <span class="nav-text">Remove Forward Slashes (&#x2F;) Using JavaScript Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Backward-Slashes-Using-JavaScript-Function"><span class="nav-number">2.</span> <span class="nav-text">Remove Backward Slashes (\) Using JavaScript Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-All-Slashes-Using-Combined-Javascript-Function"><span class="nav-number">3.</span> <span class="nav-text">Remove All Slashes Using Combined Javascript Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Full-Demo-Removing-Slashes"><span class="nav-number">4.</span> <span class="nav-text">Full Demo Removing Slashes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -267,10 +267,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg" alt="JavaScript Function" title="JavaScript function"></p>
-<p>All I needed was to expel every single forward slice in a string utilizing Javascript.</p>
-<p><strong>Remove <em>Forward Slashes</em> (&#x2F;) Using JavaScript Function</strong></p>
-<pre><code class="highlight js"><span class="keyword">function</span> <span class="title function_">FSlash</span>(<span class="params">str</span>) &#123;
+        <p>All I needed was to expel every single forward and backward slashes slice in a string utilizing Javascript.</p>
+<h2 id="Remove-Forward-Slashes-x2F-Using-JavaScript-Function"><a href="#Remove-Forward-Slashes-x2F-Using-JavaScript-Function" class="headerlink" title="Remove Forward Slashes (&#x2F;) Using JavaScript Function"></a>Remove <em>Forward Slashes</em> (&#x2F;) Using JavaScript Function</h2><pre><code class="highlight js"><span class="keyword">function</span> <span class="title function_">FSlash</span>(<span class="params">str</span>) &#123;
   <span class="keyword">const</span> r = <span class="regexp">/\/+/gm</span>;
   <span class="keyword">while</span> (r.<span class="title function_">test</span>(str)) str = str.<span class="title function_">replace</span>(r, <span class="string">&quot;&quot;</span>);
   <span class="keyword">return</span> str;
@@ -280,10 +278,9 @@
 <span class="comment">//Call Variable Into Function Name</span>
 <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="title class_">FSlash</span>(nx));</code></pre>
 
-<p>Demo : <a target="_blank" rel="noopener" href="https://codepen.io/dimaslanjaka/pen/dJNZzb">CodePen</a></p>
+<p>Demo : <a target="_blank" rel="noopener" href="https://codepen.io/dimaslanjaka/pen/dJNZzb?forward-slashes">CodePen</a></p>
 <p>The vital part of <code>removing forward slashes from string</code> to note here is the consistent articulation <code>/\\//gm</code>.</p>
-<p><strong>Remove <em>Backward Slashes</em> (\) Using JavaScript Function</strong></p>
-<pre><code class="highlight js"><span class="keyword">function</span> <span class="title function_">BSlash</span>(<span class="params">str</span>) &#123;
+<h2 id="Remove-Backward-Slashes-Using-JavaScript-Function"><a href="#Remove-Backward-Slashes-Using-JavaScript-Function" class="headerlink" title="Remove Backward Slashes (\) Using JavaScript Function"></a>Remove <em>Backward Slashes</em> (\) Using JavaScript Function</h2><pre><code class="highlight js"><span class="keyword">function</span> <span class="title function_">BSlash</span>(<span class="params">str</span>) &#123;
   <span class="keyword">const</span> r = <span class="regexp">/\\|\\+/gm</span>;
   <span class="keyword">while</span> (r.<span class="title function_">test</span>(str)) str = str.<span class="title function_">replace</span>(r, <span class="string">&quot;&quot;</span>);
   <span class="keyword">return</span> str;
@@ -293,11 +290,28 @@
 <span class="comment">//Call Variable Into Function Name</span>
 <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="title class_">BSlash</span>(nx));</code></pre>
 
-<p>Demo : <a target="_blank" rel="noopener" href="https://codepen.io/dimaslanjaka/pen/dJNZzb">Codepen</a></p>
+<p>Demo : <a target="_blank" rel="noopener" href="https://codepen.io/dimaslanjaka/pen/dJNZzb?backward-slashes">Codepen</a></p>
 <p>The vital part of <code>removing backward slashes from string</code> to note here is the consistent articulation <code>/\\|\\+/gm</code>.</p>
+<h2 id="Remove-All-Slashes-Using-Combined-Javascript-Function"><a href="#Remove-All-Slashes-Using-Combined-Javascript-Function" class="headerlink" title="Remove All Slashes Using Combined Javascript Function"></a>Remove All Slashes Using Combined Javascript Function</h2><pre><code class="highlight js"><span class="keyword">function</span> <span class="title function_">RSlash</span>(<span class="params">str</span>) &#123;
+  <span class="keyword">return</span> <span class="title class_">BSlash</span>(<span class="title class_">FSlash</span>(str));
+&#125;
+<span class="comment">// usage</span>
+<span class="keyword">const</span> strex = <span class="string">&quot;4x/4/4/5/6/7//532///45/ Dev: d\\i\\m\\a\\s www.webmanajemen.com&quot;</span>;
+<span class="comment">// call variable into function name</span>
+<span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="title class_">RSlash</span>(strex));</code></pre>
+
+<p>Demo : <a target="_blank" rel="noopener" href="https://codepen.io/dimaslanjaka/pen/dJNZzb?all-slashes">Codepen</a></p>
+<h2 id="Full-Demo-Removing-Slashes"><a href="#Full-Demo-Removing-Slashes" class="headerlink" title="Full Demo Removing Slashes"></a>Full Demo Removing Slashes</h2><p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="dJNZzb" data-preview="true" data-editable="true" data-user="dimaslanjaka" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/dJNZzb" rel="nofollow noopener noopener">
+  Remove slashes from string JS</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="nofollow noopener noopener">@dimaslanjaka</a>)
+  on <a target="_blank" href="https://codepen.io" rel="nofollow noopener noopener">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>The bit of the string you need supplanting is composed between the first and last forward cuts – so on the off chance that you needed the word ‘work area’ supplanted you would compose&#x2F;work area&#x2F;g.</p>
 <p>As the character we need to expel is an uncommon case you need to escape it utilizing an oblique punctuation line, generally the code will read the twofold forward cut as a remark thus quit preparing the line.</p>
 <p>At last, the g implies apply the substitution internationally to the string with the goal that all occasions of the substring are supplanted.</p>
+<p><img src="/2017/12/js-javascript-function-remove-slash/cover.jpg" alt="JavaScript Function" title="JavaScript function"></p>
 <p>so an article about “JS Function Remove Slash From String” today. I hope this helps.</p>
 
     </div>

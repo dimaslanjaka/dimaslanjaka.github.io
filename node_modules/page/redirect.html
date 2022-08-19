@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML5 Redirect</title>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-106238155-1");
+    </script>
+
+    <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
+    <!-- Horizontal Text -->
+    <ins
+      class="adsbygoogle"
+      style="display: block"
+      data-ad-client="ca-pub-1165447249910969"
+      data-ad-slot="4891646750"
+      data-ad-format="link"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <script>
+      console.clear();
+
+      var hash = window.location.hash.substr(1);
+      var result = hash.split("&").reduce(function (result, item) {
+        var parts = item.split("=");
+        result[parts[0]] = parts[1];
+        return result;
+      }, {});
+
+      if (result.url || gup("url")) {
+        var t = result.url || gup("url");
+        if (isURL(t)) {
+          window.location.url = t;
+          //document.body.innerHTML += `<iframe src="${t}" width="100%" height="100%"></iframe>`;
+          try {
+            window.location.replace(t);
+          } catch (e) {
+            if (e) {
+              window.location.href = t;
+            }
+          }
+        }
+      }
+
+      function isURL(str) {
+        var a = document.createElement("a");
+        a.href = str;
+        return a.host;
+      }
+
+      function gup(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+      }
+    </script>
+  </body>
+</html>

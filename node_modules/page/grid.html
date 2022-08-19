@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta charset="UTF-8">
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+    color="#111">
+  <link rel="canonical" href="https://codepen.io/dimaslanjaka/pen/mdpaGgy">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="grid_files/iframeConsoleRunner-7549a40147ccd0ba0a6b5373d87e770e49bb4689f.js"></script>
+  <script src="grid_files/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c5.js"></script>
+  <script src="grid_files/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d503.js"></script>
+  <style type="text/css" class="INLINE_PEN_STYLESHEET_ID">
+    #content-left,
+    #content-right {
+      background-image: url("https://via.placeholder.com/400x500");
+      background-repeat: no-repeat;
+    }
+
+    #content-left,
+    #content-center,
+    #content-right {
+      /*border: solid 1px;*/
+      height: 500px;
+    }
+
+    #content-left *,
+    #content-center *,
+    #content-right * {
+      max-width: 100%;
+    }
+
+    /* force responsive */
+    img {
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="m-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-2" id="content-left">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1165447249910969"
+            data-ad-slot="7848608468" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+        <div class="col-md-4 text-center" id="content-center">
+          <img src="grid_files/400x250.png" alt="">
+          <a href="https://webmanajemen.com/" class="btn btn-primary btn-sm">content center</a>
+          <img src="grid_files/400x250.png" alt="">
+        </div>
+        <div class="col-md-4 mb-2" id="content-right">
+          <ins class="adsbygoogle" style="display:block;height: 500px;" data-ad-client="ca-pub-1165447249910969"
+            data-ad-slot="6261028776" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="grid_files/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e6459972.js"></script>
+  <script>
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src =
+      'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+    script.setAttribute('crossorigin', 'anonymous');
+    script.onload = function () {
+      var adsbygoogle = window.adsbygoogle || [];
+      Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+        (ins) => {
+          var adsid = ins.getAttribute('data-ad-slot'); //nullable
+          if (adsid) {
+            adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+            console.log('[adsense][ins]', adsid);
+          }
+        }
+      );
+    };
+    var target = document.getElementsByTagName('script')[0];
+    target.parentNode.insertBefore(script, target);
+  </script>
+</body>
+
+</html>

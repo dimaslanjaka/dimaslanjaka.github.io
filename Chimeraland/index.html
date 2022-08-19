@@ -105,7 +105,7 @@
           <a class="nav-link" href="https://webmanajemen.com/Chimeraland/Materials">Materials</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLWJhY2tlbmQuaGVyb2t1YXBwLmNvbS9jaGltZXJhbGFuZC9hdHRlbmRhbnQ=" rel="nofollow"><span class="material-icons"> add_circle </span> Attendant</a>
+          <a class="nav-link" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLWJhY2tlbmQuaGVyb2t1YXBwLmNvbS9jaGltZXJhbGFuZC9hdHRlbmRhbnQ=" rel="nofollow noopener"><span class="material-icons"> add_circle </span> Attendant</a>
         </li>
       </ul>
     </div>
@@ -151,7 +151,7 @@
         <a href="https://webmanajemen.com/Chimeraland/Pets" class="nav-link px-2 text-muted">Pets</a>
       </li>
       <li class="nav-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" class="nav-link px-2 text-muted">Fanpage</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" class="nav-link px-2 text-muted" rel="nofollow noopener">Fanpage</a>
       </li>
       <li class="nav-item">
         <a href="https://webmanajemen.com/Chimeraland/About.html" class="nav-link px-2 text-muted">About</a>
@@ -183,6 +183,7 @@
   <script>window.onload = function () {
   /* eslint-disable no-undef */
   console.clear();
+  const isLocalHost = /adsense\./.test(location.host);
   // codepen
   if (location.host.includes('cdpn')) {
     $('html, body').animate({
@@ -192,7 +193,9 @@
   }
   // search box
   const attendants = fetch(
-    'https://hexo-backend.herokuapp.com/chimeraland/attendant?show'
+    !isLocalHost
+      ? 'https://hexo-backend.herokuapp.com/Chimeraland/Attendants?show'
+      : '/Chimeraland/Attendants?show'
   )
     .then((res) => res.json())
     .then((data) => {
@@ -202,7 +205,11 @@
       });
       return data;
     });
-  const pets = fetch('https://hexo-backend.herokuapp.com/chimeraland/pets?show')
+  const pets = fetch(
+    !isLocalHost
+      ? 'https://hexo-backend.herokuapp.com/Chimeraland/Pets?show'
+      : '/Chimeraland/Pets?show'
+  )
     .then((res) => res.json())
     .then((data) => {
       data.data = data.data.map((item) => {

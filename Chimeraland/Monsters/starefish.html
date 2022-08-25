@@ -263,33 +263,33 @@ td {
       </tr>
       <tr>
         <th>Default Quality</th>
-        <td>Need admin to write (auto build)</td>
+        <td>GRADE B ATK 63 HP 66 DEF 54</td>
       </tr>
       <tr>
         <th rowspan="3">Tasty/Delicacies</th>
         <td>
-          undefined
+          Bear Meatball
           </td>
       </tr>
       <tr>
         <td>
-          undefined
+          Moddly Wings Topped Rice
           </td>
       </tr>
       <tr>
         <td>
-          undefined
+          Hot Stone Icefox Meat
           </td>
       </tr>
       <tr>
         <th rowspan="4">Buff</th>
         <td>
-          undefined
+          Attributes Conversion Rate 4.0%
           </td>
       </tr>
       <tr>
         <td>
-          undefined
+          HP 339
           </td>
       </tr>
       <tr>
@@ -467,10 +467,10 @@ td {
 
 <div class="d-flex justify-content-between" style="padding: 40px">
   <div>
-    <a href="lotus-horsedeer.html"><i class="material-icons">navigate_before</i></a>
+    <a href="horned-fortuphant.html"><i class="material-icons">navigate_before</i></a>
   </div>
   <div>
-    <a href="mallestial.html"><i class="material-icons">navigate_next</i></a>
+    <a href="blushpuff.html"><i class="material-icons">navigate_next</i></a>
   </div>
 </div>
   
@@ -549,7 +549,7 @@ window.onload = function () {
   ).appendChild(bsa);
 
   bsa.onload = () => {
-    const fancybox = Fancybox.bind('#gallery a', {
+    Fancybox.bind('#gallery a', {
       groupAll: true, // Group all items
       on: {
         ready: (fancybox) => {
@@ -558,11 +558,8 @@ window.onload = function () {
       }
     });
     $('.img-box').on('click', function () {
-      //fancybox.show();
-      //Fancybox.getInstance().jumpTo(indexInClass(this));
       const innerImg = this.querySelector('a');
       if (innerImg) innerImg.click();
-      //if (innerImg) eventFire(innerImg, 'click');
     });
   };
 };

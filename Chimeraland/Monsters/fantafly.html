@@ -313,10 +313,10 @@ td {
 
 <div class="d-flex justify-content-between" style="padding: 40px">
   <div>
-    <a href="caeloptera.html"><i class="material-icons">navigate_before</i></a>
+    <a href="azure-light.html"><i class="material-icons">navigate_before</i></a>
   </div>
   <div>
-    <a href="camel.html"><i class="material-icons">navigate_next</i></a>
+    <a href="coracrab.html"><i class="material-icons">navigate_next</i></a>
   </div>
 </div>
   
@@ -395,7 +395,7 @@ window.onload = function () {
   ).appendChild(bsa);
 
   bsa.onload = () => {
-    const fancybox = Fancybox.bind('#gallery a', {
+    Fancybox.bind('#gallery a', {
       groupAll: true, // Group all items
       on: {
         ready: (fancybox) => {
@@ -404,11 +404,8 @@ window.onload = function () {
       }
     });
     $('.img-box').on('click', function () {
-      //fancybox.show();
-      //Fancybox.getInstance().jumpTo(indexInClass(this));
       const innerImg = this.querySelector('a');
       if (innerImg) innerImg.click();
-      //if (innerImg) eventFire(innerImg, 'click');
     });
   };
 };

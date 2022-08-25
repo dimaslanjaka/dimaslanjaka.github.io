@@ -21,7 +21,7 @@
   Chimeraland In-Game Informations - WMI
 ">
 <meta name="author" content="Dimas Lanjaka">
-<link rel="canonical" href="https://webmanajemen.com/Chimeraland">
+<link rel="canonical" href="https://webmanajemen.com/chimeraland">
 
 <!--stylesheets-->
 <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap">
@@ -109,13 +109,13 @@
           <a class="nav-link active" aria-current="page" href="https://www.webmanajemen.com">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://webmanajemen.com/Chimeraland/Attendants">Attendant</a>
+          <a class="nav-link" href="https://webmanajemen.com/chimeraland/attendants">Attendant</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://webmanajemen.com/Chimeraland/Pets">Pets</a>
+          <a class="nav-link" href="https://webmanajemen.com/chimeraland/Pets">Pets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://webmanajemen.com/Chimeraland/Materials">Materials</a>
+          <a class="nav-link" href="https://webmanajemen.com/chimeraland/Materials">Materials</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLWJhY2tlbmQuaGVyb2t1YXBwLmNvbS9jaGltZXJhbGFuZC9hdHRlbmRhbnRz" rel="nofollow noopener"><span class="material-icons"> add_circle </span> Attendant</a>
@@ -158,16 +158,16 @@
         <a href="https://webmanajemen.com" class="nav-link px-2 text-muted">Home</a>
       </li>
       <li class="nav-item">
-        <a href="https://webmanajemen.com/Chimeraland/Attendants" class="nav-link px-2 text-muted">Attendants</a>
+        <a href="https://webmanajemen.com/chimeraland/attendants" class="nav-link px-2 text-muted">Attendants</a>
       </li>
       <li class="nav-item">
-        <a href="https://webmanajemen.com/Chimeraland/Pets" class="nav-link px-2 text-muted">Pets</a>
+        <a href="https://webmanajemen.com/chimeraland/Pets" class="nav-link px-2 text-muted">Pets</a>
       </li>
       <li class="nav-item">
         <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" class="nav-link px-2 text-muted" rel="nofollow noopener">Fanpage</a>
       </li>
       <li class="nav-item">
-        <a href="https://webmanajemen.com/Chimeraland/About.html" class="nav-link px-2 text-muted">About</a>
+        <a href="https://webmanajemen.com/chimeraland/About.html" class="nav-link px-2 text-muted">About</a>
       </li>
     </ul>
   </footer>
@@ -207,8 +207,8 @@
   // search box
   const attendants = fetch(
     !isLocalHost
-      ? 'https://hexo-backend.herokuapp.com/Chimeraland/Attendants?show'
-      : '/Chimeraland/Attendants?show'
+      ? 'https://hexo-backend.herokuapp.com/chimeraland/attendants?show'
+      : '/chimeraland/attendants?show'
   )
     .then((res) => res.json())
     .then((data) => {
@@ -220,8 +220,8 @@
     });
   const pets = fetch(
     !isLocalHost
-      ? 'https://hexo-backend.herokuapp.com/Chimeraland/Pets?show'
-      : '/Chimeraland/Pets?show'
+      ? 'https://hexo-backend.herokuapp.com/chimeraland/Pets?show'
+      : '/chimeraland/Pets?show'
   )
     .then((res) => res.json())
     .then((data) => {
@@ -243,7 +243,7 @@
       const PetData = o.pet;
       const MixData = PetData.concat(AttendantData);
       const result_template = (name, type) => {
-        return `<a href="/Chimeraland/${capitalizeFirstLetter(type)}/${name
+        return `<a href="/chimeraland/${capitalizeFirstLetter(type)}/${name
           .toLowerCase()
           .replace(
             /\s+/,

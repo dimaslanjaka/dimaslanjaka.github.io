@@ -243,8 +243,9 @@
       const PetData = o.pet;
       const MixData = PetData.concat(AttendantData);
       const result_template = (name, type) => {
-        return `<a href="/chimeraland/${capitalizeFirstLetter(type)}/${name
+        return `<a href="/chimeraland/${type}/${name
           .toLowerCase()
+          .trim()
           .replace(
             /\s+/,
             '-'

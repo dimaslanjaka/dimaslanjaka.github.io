@@ -166,26 +166,6 @@ td {
   display: inline-flex;
   vertical-align: text-bottom; }
 
-/*full screen*/
-#Fullscreen {
-  height: 100%;
-  display: none;
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  /* I made a 50% opacity black tile background for this
-                 div so it would seem more... modal-y*/
-  background: transparent url("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png") repeat; }
-
-#Fullscreen img {
-  height: 100%;
-  display: block;
-  margin: 0 auto;
-  overflow: auto; }
-
 /*light box*/
 *,
 *::before,
@@ -321,20 +301,24 @@ td {
   </table>
 </div>
 
-<div class="gallery-image">
+<div class="gallery-image" id="gallery">
     
 </div>
 
+<!--main class="main">
+  <div class="container">
+      
+  </div>
+</main-->
+
 <div class="d-flex justify-content-between" style="padding: 40px">
   <div>
-    <a href="camel.html"><i class="material-icons">navigate_before</i></a>
+    <a href="vuldo.html"><i class="material-icons">navigate_before</i></a>
   </div>
   <div>
-    <a href="crocupine.html"><i class="material-icons">navigate_next</i></a>
+    <a href="diceramandra.html"><i class="material-icons">navigate_next</i></a>
   </div>
 </div>
-
-
   
   <div style="padding: 40px">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -392,26 +376,11 @@ td {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
   <script>/* eslint-disable no-undef */
-//$("#Fullscreen").css("height", $(document).outerWidth() + "px");
-//for when you click on an image
-/*$('.img-box').on('click', function () {
-  var src = $(this).find('img').attr('src'); //get the source attribute of the clicked image
-  if (typeof src !== 'string') {
-    return console.log(src);
-  }
-  $('#Fullscreen img').attr('src', src); //assign it to the tag for your fullscreen div
-  $('#Fullscreen').fadeIn();
-});
-$('#Fullscreen').on('click', function () {
-  $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image.
-});*/
-
-(function () {
+window.onload = function () {
   const link = document.createElement('link');
-  link.href =
-    '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css';
+  link.href = '//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css';
   link.rel = 'stylesheet';
-  link.media = 'only x';
+  //link.media = 'only x';
   (
     document.getElementsByTagName('head')[0] ||
     document.getElementsByTagName('body')[0]
@@ -419,27 +388,52 @@ $('#Fullscreen').on('click', function () {
   const bsa = document.createElement('script');
   bsa.type = 'text/javascript';
   bsa.async = true;
-  bsa.src =
-    '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js';
+  bsa.src = '//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js';
   (
     document.getElementsByTagName('head')[0] ||
     document.getElementsByTagName('body')[0]
   ).appendChild(bsa);
-  bsa.onload = onload;
-})();
 
-function onload() {
-  $('[data-fancybox="gallery"]').fancybox({
-    buttons: ['slideShow', 'thumbs', 'zoom', 'fullScreen', 'share', 'close'],
-    loop: false,
-    protect: true
-  });
-  $('.img-box').on('click', function () {
-    const innerImg = $(this).find('img');
-    if (innerImg) {
-      innerImg.trigger('click');
+  bsa.onload = () => {
+    const fancybox = Fancybox.bind('#gallery a', {
+      groupAll: true, // Group all items
+      on: {
+        ready: (fancybox) => {
+          console.log(`fancybox #${fancybox.id} is ready!`);
+        }
+      }
+    });
+    $('.img-box').on('click', function () {
+      //fancybox.show();
+      //Fancybox.getInstance().jumpTo(indexInClass(this));
+      const innerImg = this.querySelector('a');
+      if (innerImg) innerImg.click();
+      //if (innerImg) eventFire(innerImg, 'click');
+    });
+  };
+};
+
+function eventFire(el, etype) {
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    evObj.isTrusted = true;
+    el.dispatchEvent(evObj);
+  }
+}
+
+function indexInClass(node) {
+  var className = node.className;
+  var num = 0;
+  for (var i = 0; i < myClass.length; i++) {
+    if (myClass[i] === node) {
+      return num;
     }
-  });
+    num++;
+  }
+  return -1;
 }
 </script>
   

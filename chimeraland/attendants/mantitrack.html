@@ -20,6 +20,8 @@
 <link rel="preconnect" href="//fonts.googleapis.com" />
 <link rel="preconnect" href="//cdnjs.cloudflare.com" />
 <link rel="preconnect" href="//fonts.gstatic.com" />
+<link rel="preconnect" href="//cdn.jsdelivr.net" />
+<link rel="preconnect" href="//raw.githack.com" />
 
 <!--seo-->
 <title>Mantitrack Chimeraland Attendant Information - WMI</title>
@@ -33,7 +35,8 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap" />
 <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons" />
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:600,900" />
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <style>
   ::-webkit-scrollbar {
@@ -64,6 +67,7 @@
     font-family: Raleway;
     background-color: #202125;
     height: 100%;
+    color: whitesmoke;
   }
 
   td,
@@ -86,6 +90,47 @@
   .material-icons {
     display: inline-flex;
     vertical-align: text-bottom;
+  }
+
+  .blue-color {
+    color: blue;
+  }
+
+  .green-color {
+    color: green;
+  }
+
+  .teal-color {
+    color: teal;
+  }
+
+  .yellow-color {
+    color: yellow;
+  }
+
+  .red-color {
+    color: red;
+  }
+
+  /* responsive youtube iframe */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    padding-top: 25px;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* datatables */
+  .table-wrap,
+  .table-container,
+  [class*='dataTables_wrapper'] {
+    clear: both;
   }
 </style>
 
@@ -435,7 +480,13 @@ td {
 </svg>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src='//raw.githack.com/dimaslanjaka/smartform/master/dist/release/bundle.js'></script>
+  <script src="//cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
+  
   
   <script>/* eslint-disable no-undef */
 window.onload = function () {
@@ -451,10 +502,7 @@ window.onload = function () {
   bsa.type = 'text/javascript';
   bsa.async = true;
   bsa.src = '//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js';
-  (
-    document.getElementsByTagName('head')[0] ||
-    document.getElementsByTagName('body')[0]
-  ).appendChild(bsa);
+  document.getElementsByTagName('body')[0].appendChild(bsa);
 
   bsa.onload = () => {
     Fancybox.bind('#gallery a', {

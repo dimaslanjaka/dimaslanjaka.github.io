@@ -1,0 +1,575 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+    <meta name="description" content="WMI                                   Home (current)                       Privacy                       Terms                       Disclaimer                       About">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Simple Websocket">
+<meta property="og:url" content="https://www.webmanajemen.com/p/simple-websocket.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="WMI                                   Home (current)                       Privacy                       Terms                       Disclaimer                       About">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png">
+<meta property="article:published_time" content="2020-01-20T07:15:01.000Z">
+<meta property="article:modified_time" content="2022-06-14T01:34:28.392Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="websocket">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/p/simple-websocket.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/p/simple-websocket.html","path":"p/simple-websocket.html","title":"Simple Websocket"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Simple Websocket | WMI
+</title>
+  
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article_kiki.html","source/ads/in_article_kiki2.html"],"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet">
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Simple Websocket Writen in PHP and Javascript</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">JavascriptDownload</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">1.0.0.0.1.1.</span> <span class="nav-text">JS Usage Example</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#usage"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">By Variable OR Const</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#usage"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">By Element Exists</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#usage"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.0.0.0.5.</span> <span class="nav-text">PHPDownload</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">1.0.0.0.5.1.</span> <span class="nav-text">PHP Usage Example</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#usage"><span class="nav-number">1.0.0.0.6.</span> <span class="nav-text">PHP Normal Usage</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#usage"><span class="nav-number">1.0.0.0.7.</span> <span class="nav-text">PHP Object Oriented Usage</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#usage"><span class="nav-number">1.0.0.0.8.</span> <span class="nav-text">PHP Static Object Oriented Usage</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">766</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Simple Websocket
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+            <noscript>
+  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/style.css">
+</noscript>
+<link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/toastr.css">
+
+<div id="separator-o">
+  <!--Delete this if the header is too far down (margin-top)-->
+  <div style="height: 100px;"></div>
+</div>
+<!--Navbar-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">WMI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/p/privacy.html">Privacy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/p/tos.html">Terms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/p/disclaimer.html">Disclaimer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/p/about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/p/dmca.html">DMCA</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0" action="https://web-manajemen.blogspot.com/search" target="_blank">
+      <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<!--/Navbar-->
+<style>
+  [id=usage] .card {
+    min-height: 300px;
+  }
+
+<p>  a.btn {<br>    color: white;<br>  }<br></style><p></p>
+<!--Content Here-->
+<div>
+  <h1 itemprop="name">Simple Websocket Writen in PHP and Javascript</h1>
+  <img itemprop="image" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png" alt="Websocket How to" class="d-none">
+  <h5 class="ml-3"><i class="fab fa-js mr-1"></i><span class="badge badge-info">Javascript</span><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9XZWItTWFuYWplbWVuL2Jsb2IvbWFzdGVyL2pzL3dlYnNvY2tldC5qcw==" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="JS">Download<i class="fas fa-download ml-1"></i></a></h5>
+        <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js"></script>
+  <h6 class="text-center">JS Usage Example</h6>
+  <div class="row" id="usage">
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">By Variable OR Const</h5>
+          <pre class="card-text">const start_socket = false;
+if (start_socket){
+  socket_start();
+}
+      </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">By Element Exists</h5>
+          <pre class="card-text">var websocketElement = document.getElementById('websocket'); //find any elements with id websocket
+if (websocketElement){
+  socket_start();
+}
+      </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Others</h5>
+          <p class="card-text">
+            You can use it as your wish. OR using basic example bellow :
+            </p><pre>if (conditional) {
+  socket_start();
+}
+            </pre>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5 class="ml-3"><i class="fab fa-php mr-1"></i><span class="badge badge-info">PHP</span><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9XZWItTWFuYWplbWVuL2Jsb2IvbWFzdGVyL1BIUC93ZWJzb2NrZXQucGhw" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="PHP">Download<i class="fas fa-download ml-1"></i></a></h5>
+        <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php"></script>
+  <h6 class="text-center">PHP Usage Example</h6>
+  <div class="row" id="usage">
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PHP Normal Usage</h5>
+          <pre class="card-text">$websocket = new WMI_websocket(false, false);
+/* Data Example */
+$websocket-&gt;createData([
+  'pendapatan_max_invoice' =&gt; 45,
+  'piutang_max_invoice' =&gt; 55,
+  'hutang_max_invoice' =&gt; 65,
+  'pengeluaran_max_invoice' =&gt; 67,
+]);
+$websocket-&gt;SEND();
+        </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PHP Object Oriented Usage</h5>
+          <pre class="card-text">$websocket = new WMI_websocket(false, false);
+$websocket-&gt;createData([
+  'pendapatan_max_invoice' =&gt; 45,
+  'piutang_max_invoice' =&gt; 55,
+  'hutang_max_invoice' =&gt; 65,
+  'pengeluaran_max_invoice' =&gt; 67,
+])-&gt;SEND();
+        </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PHP <b>Static</b> Object Oriented Usage</h5>
+          <pre class="card-text">WMI_websocket::i(false, false)-&gt;createData([
+  'pendapatan_max_invoice' =&gt; 45,
+  'piutang_max_invoice' =&gt; 55,
+  'hutang_max_invoice' =&gt; 65,
+  'pengeluaran_max_invoice' =&gt; 67,
+])-&gt;SEND();
+        </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--Footer-->
+<footer class="page-footer font-small unique-color-dark">
+
+  <!-- Social buttons -->
+  <div class="primary-color">
+    <div class="container">
+      <!--Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+<pre><code>    &lt;!--Grid column--&gt;
+    &lt;div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0"&gt;
+      &lt;h6 class="mb-0 white-text"&gt;Get connected with us on social networks!&lt;/h6&gt;
+    &lt;/div&gt;
+    &lt;!--Grid column--&gt;
+
+    &lt;!--Grid column--&gt;
+    &lt;div class="col-md-6 col-lg-7 text-center text-md-right"&gt;
+      &lt;!--Facebook--&gt;
+      &lt;a class="fb-ic ml-0" href="//fb.me/secretnetworkforces"&gt;
+        &lt;i class="fab fa-facebook white-text mr-4"&gt; &lt;/i&gt;
+      &lt;/a&gt;
+      &lt;!--Twitter--&gt;
+      &lt;a class="tw-ic"&gt;
+        &lt;i class="fab fa-twitter white-text mr-4"&gt; &lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;!--Grid column--&gt;
+
+  &lt;/div&gt;
+  &lt;!--Grid row--&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  <!-- Social buttons -->
+
+  <!--Footer Links-->
+  <div class="container mt-5 mb-4 text-center text-md-left">
+    <div class="row mt-3">
+
+<pre><code>  &lt;!--First column--&gt;
+  &lt;div class="col-md-3 col-lg-4 col-xl-3 mb-4"&gt;
+    &lt;h6 class="text-uppercase font-weight-bold"&gt;
+      &lt;strong&gt;WMI&lt;/strong&gt;
+    &lt;/h6&gt;
+    &lt;hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"&gt;
+    &lt;p&gt;Website Manajemen Indonesia, is a site that I developed myself to provide the best experience for clients.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!--/.First column--&gt;
+
+  &lt;!--Second column--&gt;
+  &lt;div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"&gt;
+    &lt;h6 class="text-uppercase font-weight-bold"&gt;
+      &lt;strong&gt;Products&lt;/strong&gt;
+    &lt;/h6&gt;
+    &lt;hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"&gt;
+    &lt;p&gt;
+      We currently have no products to sell
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!--/.Second column--&gt;
+
+  &lt;!--Third column--&gt;
+  &lt;div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"&gt;
+    &lt;h6 class="text-uppercase font-weight-bold"&gt;
+      &lt;strong&gt;Useful links&lt;/strong&gt;
+    &lt;/h6&gt;
+    &lt;hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"&gt;
+    &lt;p&gt;
+      &lt;a href="https://www.blogger.com/profile/17555754514989936273" rel="nofollow noopener" title="Blogger Account"
+        target="_blank"&gt;Blogger Profile&lt;/a&gt;&lt;br&gt;
+      &lt;a href="https://web-manajemen.blogspot.com/2018/11/install-php-web-server-on-termux.html" target="_blank"&gt;PHP
+        Termux&lt;/a&gt;&lt;br&gt;
+      &lt;a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html"
+        target="_blank" rel="bookmark" title="PHP Android Installation"&gt;PHP CLI/Webserver Android&lt;/a&gt;&lt;br&gt;
+      &lt;a href="https://web-manajemen.blogspot.com/2017/09/tutorial-membuat-blogspot-safelink.html" target="_blank"
+        rel="bookmark" title="Safelink Blogger V1"&gt;Safelink V1&lt;/a&gt;&lt;br&gt;
+      &lt;a href="https://web-manajemen.blogspot.com/2017/09/cara-simple-membuat-blogger-safelink.html" target="_blank"
+        rel="bookmark" title="Safelink Blogger V3"&gt;Safelink V3&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!--/.Third column--&gt;
+
+  &lt;!--Fourth column--&gt;
+  &lt;div class="col-md-4 col-lg-3 col-xl-3"&gt;
+    &lt;h6 class="text-uppercase font-weight-bold"&gt;
+      &lt;strong&gt;Contact&lt;/strong&gt;
+    &lt;/h6&gt;
+    &lt;hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"&gt;
+    &lt;p&gt;
+      &lt;i class="fa fa-home mr-3"&gt;&lt;/i&gt; Jl. Peneleh Gg. III No.22RT.003/RW.03, Peneleh, Kec. Genteng, Kota SBY, Jawa
+      Timur 60274
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;i class="fa fa-envelope mr-3"&gt;&lt;/i&gt; &lt;a href="mailto:webmanajemen@gmail.com"&gt;webmanajemen@gmail.com&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;i class="fa fa-phone mr-3"&gt;&lt;/i&gt; &lt;i class="fab fa-whatsapp"&gt;&lt;/i&gt; + 62 856 5566 7573&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!--/.Fourth column--&gt;
+
+&lt;/div&gt;
+</code></pre>
+  </div>
+  <!--/.Footer Links-->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-left py-3">
+    <div class="d-flex justify-content-between">
+      <div class="p-2">© 2019 Copyright: <a href="https://web-manajemen.blogspot.com"> Website Manajemen
+          Indonesia</a></div>
+      <div class="p-2"><small>This site is protected by reCAPTCHA and the Google
+          <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wb2xpY2llcy5nb29nbGUuY29tL3ByaXZhY3k=">Privacy Policy</a> and
+          <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wb2xpY2llcy5nb29nbGUuY29tL3Rlcm1z">Terms of Service</a> apply.</small></div>
+    </div>
+  </div>
+  <!-- Copyright -->
+
+</div></div></div></footer>
+<!--/Footer-->
+
+<!-- JQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/bootstrap.utility.js"></script>
+
+<script>
+  function loadCSS(e,t,a){var n=window.document.createElement("link"),o=t||window.document.getElementsByTagName("script")[0];n.rel="stylesheet",n.href=e,n.media="only x",o.parentNode.insertBefore(n,o),setTimeout(function(){n.media=a||"all"})}
+  loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/style.css");
+</script>
+
+      </div>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  © 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+<script src="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.js"></script>
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.css">
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/themes/cookiesconsent.theme-dark.css">
+<script>
+ CookiesConsentJS({
+      content : {
+        // title
+        title: "Cookies compliance",
+        // message
+        message: "We use cookies",
+        // custom button text
+        btnAccept: "Accept all",
+        btnReject: "Reject all",
+        btnDismiss: "Cookies policy",
+        btnSettings: "Settings",
+        btnSettingsSelectAll: "Select all",
+        btnSettingsUnselectAll: "Unselect all",
+        btnSettingsAccept: "Accept selection",
+        btnInfo: "More info",
+        policy: "Privacy Policy",
+        // left, right, center
+        align: "left",
+        // policy link
+        policyLink : "https://gdpr-info.eu/",
+        // Text that will be shown in the information popup
+        info: "<h2>This is the info title</h2>",
+    },
+});
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2188063137129806" data-ad-slot="5634823028"></ins>
+</div><div hexo-adsense="ads-content"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2188063137129806" data-ad-slot="8481296455"></ins>
+</div></div><style>[hexo-adsense=ads-content]{display:block;background:#fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;color:#303030;min-width:250px;text-align:center;margin-left:auto;margin-right:auto}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUtYWRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyQkFDRSxRQUFBLE1BQ0EsV0FBQSxLQUFBLCtCQUFBLFVBQUEsSUFBQSxNQUNBLE1BQUEsUUFHQSxVQUFBLE1BQ0EsV0FBQSxPQUNBLFlBQUEsS0FDQSxhQUFBIiwiZmlsZSI6ImFydGljbGUtYWRzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipbaGV4by1hZHNlbnNlPVwiYWRzLWNvbnRlbnRcIl0ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZDogI2ZmZiB1cmwoLy9pLmltZ3VyLmNvbS9tQmJ2OTBwLnBuZykgbm8tcmVwZWF0IHRvcCByaWdodDtcbiAgY29sb3I6ICMzMDMwMzA7XG4gIC8qbWluLWhlaWdodDogMThweDtcbiAgbWluLXdpZHRoOiA4MXB4OyovXG4gIG1pbi13aWR0aDogMjUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cbiJdfQ== */
+</style><script>const isBrowser=new Function("try {return this===window;}catch(e){ return false;}"),hexoAdsenseConfig=JSON.parse(document.getElementById("hexo-adsense-config").textContent);function insertAfter(e,t){if(t&&e){let n=t.parentNode;n.lastChild==t?n.appendChild(e):n.insertBefore(e,t.nextSibling)}else console.error("cannot insert element")}function replaceWith(e,t){if(t.parentNode)t.parentNode.replaceChild(e,t);else{console.log(t,"parent null"),document.createElement("div").appendChild(t)}}let createElementFromHTML=function(e){if(e instanceof HTMLElement)return e;var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild};function ranumb(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function newMethod(){const e=document.getElementById("hexo-adsense-hidden");let t=e.querySelectorAll('[hexo-adsense="ads-content"]'),n=document.querySelectorAll("article");if(n.length>0&&t.length>0){let o;if(1==n.length){console.log("webpage is post");let l=n.item(0);const r=l.querySelectorAll("*[hexo-adsense-fill]");if(r.length>0)for(let e=0;e<r.length;e++){const n=r[e];void 0!==t[e]&&n.appendChild(t[e])}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");if(e.length>0){let n=Array.apply(null,{length:e.length}).map(Number.call,Number);for(let l=0;l<t.length;l++){o=t[l];const r=shuffleArr2(n).next().value;if("number"==typeof r){const t=e.item(r);insertAfter(createElementFromHTML(o),t)}}}}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("br,hr");if(e.length>0){const n=shuffleArr2(Array.apply(null,{length:e.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=n.next().value;if("number"==typeof r){const t=e.item(r);if(["blockquote","img","a","pre","code","em","strong","i","u"].includes(t.parentNode.tagName.toLowerCase())){l--;continue}replaceWith(createElementFromHTML(o),t)}}}}}else{console.log("webpage is not post"),n.length||(n=document.querySelectorAll('[class*="recent-post-item"]'));const e=shuffleArr2(Array.apply(null,{length:n.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=e.next().value;if("number"==typeof r){n.item(r).appendChild(createElementFromHTML(o))}}}adsensePush()}}function shuffleArr(e){for(var t,n=e.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),t=e[n],e[n]=e[o],e[o]=t;return e}function*shuffleArr2(e){for(var t=e.length;t--;)yield e.splice(Math.floor(Math.random()*(t+1)),1)[0]}function adsensePush(){for(let e=0;e<document.querySelectorAll('[hexo-adsense="ads-content"]').length;e++)(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:hexoAdsenseConfig.pub})}isBrowser()?(window.__tcfapi=(e,t,n)=>{"checkConsent"===e&&n(!0),"addEventListener"===e&&n({eventStatus:"tcloaded",gdprApplies:!1},!0)},"function"==typeof document.addEventListener?document.addEventListener("DOMContentLoaded",newMethod):"function"==typeof window.attachEvent?window.attachEvent("onload",newMethod):window.onload=newMethod):module.exports={replaceWith:replaceWith,insertAfter:insertAfter};</script>
+
+</body></html>

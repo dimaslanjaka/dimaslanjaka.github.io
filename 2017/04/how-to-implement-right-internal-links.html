@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+    <meta name="description" content="Lately I see a lot of blog friends adsense publishers banned for violating Google AdSense program policies.Actually I have long seen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Implement  A Right Internal links To Blog Adsense">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/04/how-to-implement-right-internal-links.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="Lately I see a lot of blog friends adsense publishers banned for violating Google AdSense program policies.Actually I have long seen">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg">
+<meta property="article:published_time" content="2017-04-17T17:40:00.000Z">
+<meta property="article:modified_time" content="2017-04-18T05:03:40.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="Adsense">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2017/04/how-to-implement-right-internal-links.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2017/04/how-to-implement-right-internal-links.html","path":"/2017/04/how-to-implement-right-internal-links.html","title":"How to Implement  A Right Internal links To Blog Adsense"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How to Implement  A Right Internal links To Blog Adsense | WMI</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article_kiki.html","source/ads/in_article_kiki2.html"],"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">766</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/04/how-to-implement-right-internal-links.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How to Implement  A Right Internal links To Blog Adsense | WMI">
+      <meta itemprop="description" content="Lately I see a lot of blog friends adsense publishers banned for violating Google AdSense program policies.Actually I have long seen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to Implement  A Right Internal links To Blog Adsense
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-18 00:40:00 / Modified: 12:03:40" itemprop="dateCreated datePublished" datetime="2017-04-18T00:40:00+07:00">2017-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Lately I see a lot of blog friends adsense publishers banned for violating Google AdSense program policies.Actually I have long seen</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s1600/Internal-linking-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" height="234" src="https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg" width="320"></a></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">Lately I see a lot of blog friends adsense publishers banned for violating Google AdSense program policies.</span>&nbsp;<span class="notranslate">Actually I have long seen indications of infringement on their site that could potentially be banned, therefore I immediately shared post titled&nbsp;<b><a href="http://www.webmanajemen.com/2017/04/causes-blog-website-or-site-google-adsense-ban.html" target="_blank" rel="noopener noreferer nofollow">Causes Blog Google Adsense banned</a></b>&nbsp;.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">But apparently my advice about the cause of the adsense banned blog overlooked that eventually some sites banned real friends.</span>&nbsp;<span class="notranslate">And I can predict how long a site google is able to escape detection if not promptly correct the violations bears.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate"><span class="amp-wp-inline-e83b3001d8045eddbc5ff9e9b885e24e" style="font-size: medium;">(?)</span>&nbsp;<b>Why do I know?</b></span><br><span class="notranslate">Because I've got banned sites.</span>&nbsp;<span class="notranslate">The reason is in violation of the webmaster quality guidelines.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">* Webmaster quality guidelines as to what the most frequently violated?</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">The most frequently violated is OnPage SEO implementation is wrong or incorrect.</span>&nbsp;<span class="notranslate">That is about how internal linking or link placement is wrong.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate"><b>What kind of internal link wrong example?</b></span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">As shown below.</span><br><img alt="" class="aligncenter amp-wp-enforced-sizes i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" height="292" sizes="(min-width: 400px) 400px, 100vw" src="http://juragancipir.com/wp-content/uploads/2014/02/Internal-linking-1.jpg" style="display: block; margin: 0px auto; max-width: 100%; overflow: hidden !important; position: relative; width: 100vw;" width="400"><i-amphtml-sizer style="display: block; padding-top: 239.4375px;"></i-amphtml-sizer><img alt="" class="i-amphtml-fill-content i-amphtml-replaced-content" src="http://juragancipir.com/wp-content/uploads/2014/02/Internal-linking-1.jpg" style="border: none !important; bottom: 0px; display: block; height: 1px; left: 0px; margin: auto; min-height: 100%; min-width: 100%; padding: 0px !important; position: absolute; right: 0px; top: 0px; width: 1px;"></div><div class="quads-location quads-ad4" id="quads-ad4" style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px;"></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate"><b>What kind of example the correct internal links?</b></span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">As shown below.</span><br><img alt="" class="aligncenter amp-wp-enforced-sizes i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" height="291" sizes="(min-width: 400px) 400px, 100vw" src="http://juragancipir.com/wp-content/uploads/2014/02/Internal-linking-2.jpg" style="display: block; margin: 0px auto; max-width: 100%; overflow: hidden !important; position: relative; width: 100vw;" width="400"><i-amphtml-sizer style="display: block; padding-top: 238.609375px;"></i-amphtml-sizer><img alt="" class="i-amphtml-fill-content i-amphtml-replaced-content" src="http://juragancipir.com/wp-content/uploads/2014/02/Internal-linking-2.jpg" style="border: none !important; bottom: 0px; display: block; height: 1px; left: 0px; margin: auto; min-height: 100%; min-width: 100%; padding: 0px !important; position: absolute; right: 0px; top: 0px; width: 1px;"></div><div class="quads-location quads-ad2" id="quads-ad2" style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px;"></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate"><span class="amp-wp-inline-e83b3001d8045eddbc5ff9e9b885e24e" style="font-size: medium;">Do you know?</span></span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">Incorrect application of internal links will keep our blog of the first page of google for confusing the search engines and also confuse the user.</span>&nbsp;<span class="notranslate">Google will remove content which is bad for the user experience of the first page.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">* If you have any Adsense ads, then the site will be banned by google adsense.</span><span class="notranslate">And if the site is no Adsense ads, the blog traffic will be jammed.</span>&nbsp;<span class="notranslate">Do not go up and down although you daily updates.</span><span class="notranslate">Because in each post there is always an internal link puzzling and confusing search engine users as it continuously.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">* So we should not assume that the internal links on the blog put it is always good.</span>&nbsp;<span class="notranslate">And, if we want a lasting work in adsense publisher, do not try to underestimate the slightest adsense program policies.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate"><b><u>Note:</u></b></span><br><span class="notranslate">Do not have too many internal link link on each post.</span>&nbsp;<span class="notranslate">Try to only 1 or 2 links course, and a maximum of 3 links course for each post.</span>&nbsp;<span class="notranslate">And we also have to know which posts are needed are linked and which posts that do are linked.</span>&nbsp;<span class="notranslate">The aim is to avoid the action of ejecting among our own blog posts in Google SERP.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">If we can apply the internal links in an appropriate manner and not excessive, then it will make your blog become a champion in the Google SERP.</span></div><div style="background-color: white; color: #353535; font-family: Merriweather, 'Times New Roman', Times, serif; line-height: 28px; margin-bottom: 1em; padding: 0px;"><span class="notranslate">Hopefully useful and successful greeting.</span>&nbsp;<span class="notranslate">Do not forget to read also&nbsp;<b>How to determine the specific ad sizes adsense most correct</b>&nbsp;.</span></div></div>
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Adsense/" rel="tag"># Adsense</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/04/cara-menambah-social-media-box-di.html" rel="prev" title="Cara menambah social media box di blogger AMP">
+                  <i class="fa fa-chevron-left"></i> Cara menambah social media box di blogger AMP
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/04/how-to-blog-visitor-traffic-up-despite.html" rel="next" title="How To Blog Visitor Traffic Up Despite stable or even Rarely Post">
+                  How To Blog Visitor Traffic Up Despite stable or even Rarely Post <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+<script src="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.js"></script>
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.css" />
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/themes/cookiesconsent.theme-dark.css" />
+<script>
+ CookiesConsentJS({
+      content : {
+        // title
+        title: "Cookies compliance",
+        // message
+        message: "We use cookies",
+        // custom button text
+        btnAccept: "Accept all",
+        btnReject: "Reject all",
+        btnDismiss: "Cookies policy",
+        btnSettings: "Settings",
+        btnSettingsSelectAll: "Select all",
+        btnSettingsUnselectAll: "Unselect all",
+        btnSettingsAccept: "Accept selection",
+        btnInfo: "More info",
+        policy: "Privacy Policy",
+        // left, right, center
+        align: "left",
+        // policy link
+        policyLink : "https://gdpr-info.eu/",
+        // Text that will be shown in the information popup
+        info: "<h2>This is the info title</h2>",
+    },
+});
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="5634823028"></ins>
+</div><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="8481296455"></ins>
+</div></div><style>[hexo-adsense=ads-content]{display:block;background:#fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;color:#303030;min-width:250px;text-align:center;margin-left:auto;margin-right:auto}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUtYWRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyQkFDRSxRQUFBLE1BQ0EsV0FBQSxLQUFBLCtCQUFBLFVBQUEsSUFBQSxNQUNBLE1BQUEsUUFHQSxVQUFBLE1BQ0EsV0FBQSxPQUNBLFlBQUEsS0FDQSxhQUFBIiwiZmlsZSI6ImFydGljbGUtYWRzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipbaGV4by1hZHNlbnNlPVwiYWRzLWNvbnRlbnRcIl0ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZDogI2ZmZiB1cmwoLy9pLmltZ3VyLmNvbS9tQmJ2OTBwLnBuZykgbm8tcmVwZWF0IHRvcCByaWdodDtcbiAgY29sb3I6ICMzMDMwMzA7XG4gIC8qbWluLWhlaWdodDogMThweDtcbiAgbWluLXdpZHRoOiA4MXB4OyovXG4gIG1pbi13aWR0aDogMjUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cbiJdfQ== */
+</style><script>const isBrowser=new Function("try {return this===window;}catch(e){ return false;}"),hexoAdsenseConfig=JSON.parse(document.getElementById("hexo-adsense-config").textContent);function insertAfter(e,t){if(t&&e){let n=t.parentNode;n.lastChild==t?n.appendChild(e):n.insertBefore(e,t.nextSibling)}else console.error("cannot insert element")}function replaceWith(e,t){if(t.parentNode)t.parentNode.replaceChild(e,t);else{console.log(t,"parent null"),document.createElement("div").appendChild(t)}}let createElementFromHTML=function(e){if(e instanceof HTMLElement)return e;var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild};function ranumb(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function newMethod(){const e=document.getElementById("hexo-adsense-hidden");let t=e.querySelectorAll('[hexo-adsense="ads-content"]'),n=document.querySelectorAll("article");if(n.length>0&&t.length>0){let o;if(1==n.length){console.log("webpage is post");let l=n.item(0);const r=l.querySelectorAll("*[hexo-adsense-fill]");if(r.length>0)for(let e=0;e<r.length;e++){const n=r[e];void 0!==t[e]&&n.appendChild(t[e])}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");if(e.length>0){let n=Array.apply(null,{length:e.length}).map(Number.call,Number);for(let l=0;l<t.length;l++){o=t[l];const r=shuffleArr2(n).next().value;if("number"==typeof r){const t=e.item(r);insertAfter(createElementFromHTML(o),t)}}}}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("br,hr");if(e.length>0){const n=shuffleArr2(Array.apply(null,{length:e.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=n.next().value;if("number"==typeof r){const t=e.item(r);if(["blockquote","img","a","pre","code","em","strong","i","u"].includes(t.parentNode.tagName.toLowerCase())){l--;continue}replaceWith(createElementFromHTML(o),t)}}}}}else{console.log("webpage is not post"),n.length||(n=document.querySelectorAll('[class*="recent-post-item"]'));const e=shuffleArr2(Array.apply(null,{length:n.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=e.next().value;if("number"==typeof r){n.item(r).appendChild(createElementFromHTML(o))}}}adsensePush()}}function shuffleArr(e){for(var t,n=e.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),t=e[n],e[n]=e[o],e[o]=t;return e}function*shuffleArr2(e){for(var t=e.length;t--;)yield e.splice(Math.floor(Math.random()*(t+1)),1)[0]}function adsensePush(){for(let e=0;e<document.querySelectorAll('[hexo-adsense="ads-content"]').length;e++)(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:hexoAdsenseConfig.pub})}isBrowser()?(window.__tcfapi=(e,t,n)=>{"checkConsent"===e&&n(!0),"addEventListener"===e&&n({eventStatus:"tcloaded",gdprApplies:!1},!0)},"function"==typeof document.addEventListener?document.addEventListener("DOMContentLoaded",newMethod):"function"==typeof window.attachEvent?window.attachEvent("onload",newMethod):window.onload=newMethod):module.exports={replaceWith:replaceWith,insertAfter:insertAfter};</script></body>
+</html>

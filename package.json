@@ -1,0 +1,33 @@
+{
+  "name": "sbg-source",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "update": "npx npm-check-updates -u -x chalk",
+    "ci": "yarn install --production=true --immutable --immutable-cache --check-cache --frozen-lockfile --check-files"
+  },
+  "keywords": [],
+  "private": true,
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "Dimas Lanjaka"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/bluebird": "^3.5.36",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
+    "clipboard": "^2.0.11",
+    "crypto-js": "^4.1.1",
+    "highlight.js": "^11.6.0",
+    "jquery": "^3.6.1",
+    "js-cookie": "^3.0.1",
+    "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.14",
+    "@types/toastr": "^2.1.40"
+  }
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+    <meta name="description" content="You can speed up your Eclipse or Android Studio work, you just follow these">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Increase Performance Android Studio">
+<meta property="og:url" content="https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="You can speed up your Eclipse or Android Studio work, you just follow these">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1">
+<meta property="article:published_time" content="2020-02-24T15:25:00.000Z">
+<meta property="article:modified_time" content="2020-03-29T06:45:31.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Tips &amp; Tricks">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html","path":"/2020/02/increase-performance-android-studio.html","title":"Increase Performance Android Studio"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Increase Performance Android Studio | WMI</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article_kiki.html","source/ads/in_article_kiki2.html"],"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Solver 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Solver 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">    Android Studio (up to 1.5GB)   </span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">    Gradle (up to 1.5GB)   </span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">    Emulator   </span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">Definition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.1.</span> <span class="nav-text">Another tweak</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">766</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2020/02/increase-performance-android-studio.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Increase Performance Android Studio | WMI">
+      <meta itemprop="description" content="You can speed up your Eclipse or Android Studio work, you just follow these">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Increase Performance Android Studio
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-02-24 22:25:00" itemprop="dateCreated datePublished" datetime="2020-02-24T22:25:00+07:00">2020-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-03-29 13:45:31" itemprop="dateModified" datetime="2020-03-29T13:45:31+07:00">2020-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">You can speed up your Eclipse or Android Studio work, you just follow these</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1" width="100%"><h3>Solver 1</h3> <p>  You can speed up your Eclipse or Android Studio work, you just follow   these: </p><ul>  <li>    Open your single project   </li>  <li>    clean your project after running your app in emulator every time   </li>  <li>    use mobile&#x2F;external device instead of emulator   </li>  <li>    don’t close emulator after using once, use same emulator for running     app each time   </li>  <li>    <strong>      Disable VCS by using File-&gt;Settings-&gt;Plugins and disable the       following things :       <ol>        <li>CVS Integration</li>        <li>Git Integration (Git &amp; Github)</li>        <li>Google Cloud Tools for Android Studio</li>        <li>Subversion Integration</li>        <li>Firebase (Optional)</li>      </ol>    </strong>  </li></ul><p>  I am also using Android Studio with 4-GB installed main memory but   following these statements really boost my Android Studio performance. </p> <h3>Solver 2</h3> <div>  <h3>    Android Studio (up to 1.5GB)   </h3>  <p>    The IDE’s JVM is configured to have a max heap size. You can see this     in the lower-right corner of the main interface:   </p>  <p>    <a target="_blank" href="https://i.stack.imgur.com/DItAL.png" rel="noopener noreferer nofollow noopener">      <img src="https://i.stack.imgur.com/DItAL.png" alt="Android Studio showing 725M max heap size">    </a>  </p>  <p>    You can reduce this by editing the     <a target="_blank" href="http://tools.android.com/tech-docs/configuration#TOC-Increasing-IDE-Memory" rel="noopener noreferer nofollow noopener">      memory-related settings     </a>    in     <a target="_blank" href="http://tools.android.com/tech-docs/configuration#sites-page-title-header" rel="noopener noreferer nofollow noopener">      the <code>.vmoptions</code> file     </a>    . For example, I changed my max heap size to 512MB:   </p>  <pre><code>-Xmx512m<br></code></pre>  <p>    Unfortunately, I found that lowering this value increases the frequency     of Android Studio temporarily freezing, perhaps to do its garbage     collection.   </p>  <h3>    Gradle (up to 1.5GB)   </h3>  <p>    Gradle can also use a lot of RAM after developing for a while. Windows     just shows it as <code>Java(TM) Platform SE Binary</code>:   </p>  <p>    <a target="_blank" href="https://i.stack.imgur.com/FTN8f.png" rel="noopener noreferer nofollow noopener">      <img src="https://i.stack.imgur.com/FTN8f.png" alt="Windows 8.1 Task Manager showing &quot;Java(TM Platform SE binary&quot; using 1,460.5 MB of memory">    </a>  </p>  <p>    You can fix this by changing the Gradle JVM options. You can do this on     a per-user basis by editing     <a target="_blank" href="https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_properties_and_system_properties" rel="noopener noreferer nofollow noopener">      <code>gradle.properties</code>    </a>    :   </p>  <ol>    <li>      Open the <code>gradle.properties</code> file, creating it if it       doesn’t exist:       <ul>        <li>          Windows: <code>%USERPROFILE%.gradle\gradle.properties</code>        </li>        <li>          Linux&#x2F;Mac: <code>~/.gradle/gradle.properties</code>        </li>      </ul>    </li>    <li>      <p>        Update the <code>org.gradle.jvmargs</code> property, creating         it if necessary. I set mine to this:       </p>      <pre><code>org.gradle.jvmargs=-Xmx256m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8<br></code></pre>    </li>  </ol>  <p>    I haven’t noticed any difference in build performance for my small     project with the max heap size set to 256MB (<code>-Xmx256m</code>).   </p>  <p>    Note that you might need to restart Android Studio so the <em>old</em>    Gradle process is killed; otherwise you might end up with both running     at the same time.   </p>  <h3>    Emulator   </h3>  <p>    Regarding the emulator taking up a lot of your RAM, your screenshot     shows it taking about 800MB. You can choose how much RAM to allocate to     the emulator:   </p>  <ol>    <li>      Edit the AVD     </li>    <li>      Press <em>Show Advanced Settings</em>    </li>    <li>      Reduce the value of <em>RAM</em>    </li>  </ol>  <p>    <a target="_blank" href="https://i.stack.imgur.com/jEskn.png" rel="noopener noreferer nofollow noopener">      <img src="https://i.stack.imgur.com/jEskn.png" alt="Android Virtual Device RAM configuration">    </a>  </p></div><div>  <time datetime="2015-05-26T05:17:28">  </time>  <div>  </div></div> <h3>Definition</h3> <div>  <br></div><div>  <p>    <strong>      Android Studio has recently published an official guide for       low-memory machines:       <a target="_blank" href="https://developer.android.com/studio/intro/studio-config.html#low_memory" rel="noopener noreferer nofollow noopener">        Guide       </a>    </strong>  </p>  <p>    If you are running Android Studio on a machine with less than the     recommended specifications (see System Requirements), you can customize     the IDE to improve performance on your machine, as follows:   </p>  <ul>    <li>      <p>        <strong>          Reduce the maximum heap size available to Android Studio         </strong>        : Reduce the maximum heap size for Android Studio to 512Mb.       </p>    </li>    <li>      <p>        <strong>          Update Gradle and the Android plugin for Gradle         </strong>        : Update to the latest versions of Gradle and the Android         plugin for Gradle to ensure you are taking advantage of the         latest improvements for performance.       </p>    </li>    <li>      <p>        <strong>Enable Power Save Mode</strong>        : Enabling Power Save Mode turns off a number of memory- and         battery-intensive background operations, including error         highlighting and on-the-fly inspections, autopopup code         completion, and automatic incremental background compilation.         To turn on Power Save Mode, click File &gt; Power Save Mode.       </p>    </li>    <li>      <p>        <strong>Disable unnecessary lint checks</strong>        : To change which lint checks Android Studio runs on your code,         proceed as follows: Click File &gt; Settings (on a Mac, Android         Studio &gt; Preferences) to open the Settings dialog.In the         left pane, expand the Editor section and click Inspections.         Click the checkboxes to select or deselect lint checks as         appropriate for your project. Click Apply or OK to save your         changes.       </p>    </li>    <li>      <p>        <strong>Debug on a physical device</strong>        : Debugging on an emulator uses more memory than debugging on a         physical device, so you can improve overall performance for         Android Studio by debugging on a physical device.       </p>    </li>    <li>      <p>        <strong>          Include only necessary Google Play Services as dependencies         </strong>        : Including Google Play Services as dependencies in your         project increases the amount of memory necessary. Only include         necessary dependencies to improve memory usage and performance.         For more information, see Add Google Play Services to Your         Project.       </p>    </li>    <li>      <p>        <strong>          Reduce the maximum heap size available for DEX file           compilation         </strong>        : Set the javaMaxHeapSize for DEX file compilation to 200m. For         more information, see         <a target="_blank" href="https://developer.android.com/studio/run/index.html#configure-dexoptions" rel="noopener noreferer nofollow noopener">          Improve build times by configuring DEX resources         </a>        .       </p>    </li>    <li>      <p>        <strong>Do not enable parallel compilation</strong>        : Android Studio can compile independent modules in parallel,         but if you have a low-memory system you should not turn on this         feature. To check this setting, proceed as follows: Click File         &gt; Settings (on a Mac, Android Studio &gt; Preferences) to         open the Settings dialog. In the left pane, expand Build,         Execution, Deployment and then click Compiler. Ensure that the         Compile independent modules in parallel option is unchecked.If         you have made a change, click Apply or OK for your change to         take effect.       </p>    </li>    <li>      <p>        <strong>Turn on Offline Mode for Gradle</strong>        : If you have limited bandwitch, turn on Offline Mode to         prevent Gradle from attempting to download missing dependencies         during your build. When Offline Mode is on, Gradle will issue a         build failure if you are missing any dependencies, instead of         attempting to download them. To turn on Offline Mode, proceed         as follows:       </p>      <ul>        <li>          <p>            Click File &gt; Settings (on a Mac, Android Studio &gt;             Preferences) to open the Settings dialog.           </p>        </li>        <li>          <p>            In the left pane, expand Build, Execution, Deployment             and then click Gradle.           </p>        </li>        <li>          <p>            Under Global Gradle settings, check the Offline work             checkbox.           </p>        </li>        <li>          <p>            Click Apply or OK for your changes to take effect.           </p>        </li>      </ul>    </li>  </ul></div> <h4>Another tweak</h4><ol>  <li>in Android Studio <mark>settings &gt; compile</mark> <u>enable checkbox</u> <mark>Compile independent modules in       parallel</mark>.</li>  <li>Under <mark>Help &gt; Edit</mark> Custom VM Options</li>  <pre><br>-Xms1024m<br>-Xmx4096m # &lt;------ increase this to most of your RAM<br>-XX:MaxPermSize=1024m<br>-XX:ReservedCodeCacheSize=440m<br>-XX:+UseCompressedOops<br>-XX:-HeapDumpOnOutOfMemoryError<br>-Dfile.encoding=UTF-8<br></pre>  <li>Android studio 3.5 makes easier to change same of those values.</li>  <pre><br>Preferences &gt; Appearance &amp; Behavior &gt; System Settings &gt; Memory Settings<br></pre></ol></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/Tips-Tricks/" rel="tag"># Tips & Tricks</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/02/dynamic-load-admob-ads.html" rel="prev" title="Dynamic load admob ads">
+                  <i class="fa fa-chevron-left"></i> Dynamic load admob ads
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/03/build-gradle-component-definitions.html" rel="next" title="Build Gradle Component Definitions">
+                  Build Gradle Component Definitions <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+<script src="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.js"></script>
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.css" />
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/themes/cookiesconsent.theme-dark.css" />
+<script>
+ CookiesConsentJS({
+      content : {
+        // title
+        title: "Cookies compliance",
+        // message
+        message: "We use cookies",
+        // custom button text
+        btnAccept: "Accept all",
+        btnReject: "Reject all",
+        btnDismiss: "Cookies policy",
+        btnSettings: "Settings",
+        btnSettingsSelectAll: "Select all",
+        btnSettingsUnselectAll: "Unselect all",
+        btnSettingsAccept: "Accept selection",
+        btnInfo: "More info",
+        policy: "Privacy Policy",
+        // left, right, center
+        align: "left",
+        // policy link
+        policyLink : "https://gdpr-info.eu/",
+        // Text that will be shown in the information popup
+        info: "<h2>This is the info title</h2>",
+    },
+});
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="5634823028"></ins>
+</div><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="8481296455"></ins>
+</div></div><style>[hexo-adsense=ads-content]{display:block;background:#fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;color:#303030;min-width:250px;text-align:center;margin-left:auto;margin-right:auto}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUtYWRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyQkFDRSxRQUFBLE1BQ0EsV0FBQSxLQUFBLCtCQUFBLFVBQUEsSUFBQSxNQUNBLE1BQUEsUUFHQSxVQUFBLE1BQ0EsV0FBQSxPQUNBLFlBQUEsS0FDQSxhQUFBIiwiZmlsZSI6ImFydGljbGUtYWRzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipbaGV4by1hZHNlbnNlPVwiYWRzLWNvbnRlbnRcIl0ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZDogI2ZmZiB1cmwoLy9pLmltZ3VyLmNvbS9tQmJ2OTBwLnBuZykgbm8tcmVwZWF0IHRvcCByaWdodDtcbiAgY29sb3I6ICMzMDMwMzA7XG4gIC8qbWluLWhlaWdodDogMThweDtcbiAgbWluLXdpZHRoOiA4MXB4OyovXG4gIG1pbi13aWR0aDogMjUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cbiJdfQ== */
+</style><script>const isBrowser=new Function("try {return this===window;}catch(e){ return false;}"),hexoAdsenseConfig=JSON.parse(document.getElementById("hexo-adsense-config").textContent);function insertAfter(e,t){if(t&&e){let n=t.parentNode;n.lastChild==t?n.appendChild(e):n.insertBefore(e,t.nextSibling)}else console.error("cannot insert element")}function replaceWith(e,t){if(t.parentNode)t.parentNode.replaceChild(e,t);else{console.log(t,"parent null"),document.createElement("div").appendChild(t)}}let createElementFromHTML=function(e){if(e instanceof HTMLElement)return e;var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild};function ranumb(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function newMethod(){const e=document.getElementById("hexo-adsense-hidden");let t=e.querySelectorAll('[hexo-adsense="ads-content"]'),n=document.querySelectorAll("article");if(n.length>0&&t.length>0){let o;if(1==n.length){console.log("webpage is post");let l=n.item(0);const r=l.querySelectorAll("*[hexo-adsense-fill]");if(r.length>0)for(let e=0;e<r.length;e++){const n=r[e];void 0!==t[e]&&n.appendChild(t[e])}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");if(e.length>0){let n=Array.apply(null,{length:e.length}).map(Number.call,Number);for(let l=0;l<t.length;l++){o=t[l];const r=shuffleArr2(n).next().value;if("number"==typeof r){const t=e.item(r);insertAfter(createElementFromHTML(o),t)}}}}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("br,hr");if(e.length>0){const n=shuffleArr2(Array.apply(null,{length:e.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=n.next().value;if("number"==typeof r){const t=e.item(r);if(["blockquote","img","a","pre","code","em","strong","i","u"].includes(t.parentNode.tagName.toLowerCase())){l--;continue}replaceWith(createElementFromHTML(o),t)}}}}}else{console.log("webpage is not post"),n.length||(n=document.querySelectorAll('[class*="recent-post-item"]'));const e=shuffleArr2(Array.apply(null,{length:n.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=e.next().value;if("number"==typeof r){n.item(r).appendChild(createElementFromHTML(o))}}}adsensePush()}}function shuffleArr(e){for(var t,n=e.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),t=e[n],e[n]=e[o],e[o]=t;return e}function*shuffleArr2(e){for(var t=e.length;t--;)yield e.splice(Math.floor(Math.random()*(t+1)),1)[0]}function adsensePush(){for(let e=0;e<document.querySelectorAll('[hexo-adsense="ads-content"]').length;e++)(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:hexoAdsenseConfig.pub})}isBrowser()?(window.__tcfapi=(e,t,n)=>{"checkConsent"===e&&n(!0),"addEventListener"===e&&n({eventStatus:"tcloaded",gdprApplies:!1},!0)},"function"==typeof document.addEventListener?document.addEventListener("DOMContentLoaded",newMethod):"function"==typeof window.attachEvent?window.attachEvent("onload",newMethod):window.onload=newMethod):module.exports={replaceWith:replaceWith,insertAfter:insertAfter};</script></body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+    <meta name="description" content="Simple PrismJS Syntax Highlighter pre&gt;  Not Single Usage: code block Welcome to the real-time">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simple PrismJS">
+<meta property="og:url" content="https://www.webmanajemen.com/2020/01/simple-prismjs.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="Simple PrismJS Syntax Highlighter pre&gt;  Not Single Usage: code block Welcome to the real-time">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+<meta property="article:published_time" content="2020-01-19T20:49:00.000Z">
+<meta property="article:modified_time" content="2020-01-19T21:22:00.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2020/01/simple-prismjs.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2020/01/simple-prismjs.html","path":"/2020/01/simple-prismjs.html","title":"Simple PrismJS"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Simple PrismJS | WMI</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article_kiki.html","source/ads/in_article_kiki2.html"],"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Simple PrismJS Syntax Highlighter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">&lt;pre&gt; &lt;code&gt; (Not Single)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Only &lt;code&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Pre (Single Pretext)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Pre (Single Pretext) + lang&#x3D;&quot;js&quot;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Disabled Syntax Highlighter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">More Themes</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#supported-languages"><span class="nav-number">2.</span> <span class="nav-text"> Supported Languages</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">766</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2020/01/simple-prismjs.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Simple PrismJS | WMI">
+      <meta itemprop="description" content="Simple PrismJS Syntax Highlighter pre> <code> Not Single Usage: <pre><code>code block</code></pre> <h3>Welcome to the real-time">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Simple PrismJS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-01-20 03:49:00 / Modified: 04:22:00" itemprop="dateCreated datePublished" datetime="2020-01-20T03:49:00+07:00">2020-01-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Simple PrismJS Syntax Highlighter pre> <code> Not Single Usage: <pre><code>code block</code></pre> <h3>Welcome to the real-time</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="container">  <h1 itemprop="headline name" class="text-center">Simple PrismJS Syntax Highlighter</h1>  <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fdimaslanjaka%2FWeb-Manajemen%2Fblob%2Fmaster%2Fjs%2Fprismjs.js&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>  <h4>&lt;pre&gt; &lt;code&gt; (Not Single)</h4>  <blockquote class="alert alert-info">Usage: &lt;pre&gt;&lt;code&gt;code block&lt;/code&gt;&lt;/pre&gt;</blockquote>  <pre><code>&lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;<br>&lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;<br></code></pre>  <h4>Only &lt;code&gt;</h4>  <blockquote class="alert alert-info">Usage: &lt;code&gt;code block&lt;/code&gt;</blockquote>  <code>&lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;     &lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;</code>  <h4>Pre (Single Pretext)</h4>  <pre><br>&lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;<br>&lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;</pre>  <h4>Pre (Single Pretext) + lang="js"</h4>  <blockquote class="alert alert-info">Usage: &lt;pre lang="js"&gt;code block&lt;/pre&gt;</blockquote>  <pre lang="js"><br>if (window.addEventListener) {<br>  window.addEventListener("load", downloadJSAtOnload, false);<br>} else if (window.attachEvent) {<br>  window.attachEvent("onload", downloadJSAtOnload);<br>} else {<br>  window.onload = downloadJSAtOnload<br>};<br></pre>   <h4>Disabled Syntax Highlighter</h4>  <blockquote class="alert alert-info">Usage: &lt;pre lang="disabled"&gt;code block&lt;/pre&gt;</blockquote>  <pre lang="disable"><br>if (window.addEventListener) {<br>  window.addEventListener("load", downloadJSAtOnload, false);<br>} else if (window.attachEvent) {<br>  window.attachEvent("onload", downloadJSAtOnload);<br>} else {<br>  window.onload = downloadJSAtOnload<br>};<br></pre>   <hr>  <h4><a target="_blank" href="https://github.com/PrismJS/prism-themes" title="prismJS themes" rel="noopener noreferer nofollow noopener">More Themes</a></h4>  <hr>   <section class="language-markup" id="supported-languages">    <h1><i class="fas fa-code"></i> <a href="https://prismjs.com/#supported-languages" target="_blank" rel="noopener noreferer nofollow">Supported Languages</a></h1>    <p>This is the list of all <span id="languages-list-count">202</span> languages currently supported by Prism, with       their corresponding alias, to use in place of <code class=" language-markup">xxxx</code> in the <code class=" language-markup">language-xxxx</code> (or <code class=" language-markup">lang-xxxx</code>) class:</p>    <div id="languages-list">      <ul>        <li data-id="markup">Markup - <code class=" language-markup">markup</code>, <code class=" language-markup">html</code>, <code class=" language-markup">xml</code>, <code class=" language-markup">svg</code>, <code class=" language-markup">mathml</code></li>        <li data-id="css">CSS - <code class=" language-markup">css</code></li>        <li data-id="clike">C-like - <code class=" language-markup">clike</code></li>        <li data-id="javascript">JavaScript - <code class=" language-markup">javascript</code>, <code class=" language-markup">js</code></li>        <li data-id="abap">ABAP - <code class=" language-markup">abap</code></li>        <li data-id="abnf">Augmented Backus–Naur form - <code class=" language-markup">abnf</code></li>        <li data-id="actionscript">ActionScript - <code class=" language-markup">actionscript</code></li>        <li data-id="ada">Ada - <code class=" language-markup">ada</code></li>        <li data-id="antlr4">ANTLR4 - <code class=" language-markup">antlr4</code>, <code class=" language-markup">g4</code></li>        <li data-id="apacheconf">Apache Configuration - <code class=" language-markup">apacheconf</code></li>        <li data-id="apl">APL - <code class=" language-markup">apl</code></li>        <li data-id="applescript">AppleScript - <code class=" language-markup">applescript</code></li>        <li data-id="aql">AQL - <code class=" language-markup">aql</code></li>        <li data-id="arduino">Arduino - <code class=" language-markup">arduino</code></li>        <li data-id="arff">ARFF - <code class=" language-markup">arff</code></li>        <li data-id="asciidoc">AsciiDoc - <code class=" language-markup">asciidoc</code>, <code class=" language-markup">adoc</code></li>        <li data-id="asm6502">6502 Assembly - <code class=" language-markup">asm6502</code></li>        <li data-id="aspnet">ASP.NET (C#) - <code class=" language-markup">aspnet</code></li>        <li data-id="autohotkey">AutoHotkey - <code class=" language-markup">autohotkey</code></li>        <li data-id="autoit">AutoIt - <code class=" language-markup">autoit</code></li>        <li data-id="bash">Bash - <code class=" language-markup">bash</code>, <code class=" language-markup">shell</code></li>        <li data-id="basic">BASIC - <code class=" language-markup">basic</code></li>        <li data-id="batch">Batch - <code class=" language-markup">batch</code></li>        <li data-id="bbcode">BBcode - <code class=" language-markup">bbcode</code></li>        <li data-id="bison">Bison - <code class=" language-markup">bison</code></li>        <li data-id="bnf">Backus–Naur form - <code class=" language-markup">bnf</code>, <code class=" language-markup">rbnf</code></li>        <li data-id="brainfuck">Brainfuck - <code class=" language-markup">brainfuck</code></li>        <li data-id="brightscript">BrightScript - <code class=" language-markup">brightscript</code></li>        <li data-id="bro">Bro - <code class=" language-markup">bro</code></li>        <li data-id="c">C - <code class=" language-markup">c</code></li>        <li data-id="csharp">C# - <code class=" language-markup">csharp</code>, <code class=" language-markup">cs</code>, <code class=" language-markup">dotnet</code></li>        <li data-id="cpp">C++ - <code class=" language-markup">cpp</code></li>        <li data-id="cil">CIL - <code class=" language-markup">cil</code></li>        <li data-id="coffeescript">CoffeeScript - <code class=" language-markup">coffeescript</code>, <code class=" language-markup">coffee</code></li>        <li data-id="cmake">CMake - <code class=" language-markup">cmake</code></li>        <li data-id="clojure">Clojure - <code class=" language-markup">clojure</code></li>        <li data-id="crystal">Crystal - <code class=" language-markup">crystal</code></li>        <li data-id="csp">Content-Security-Policy - <code class=" language-markup">csp</code></li>        <li data-id="css-extras">CSS Extras - <code class=" language-markup">css-extras</code></li>        <li data-id="d">D - <code class=" language-markup">d</code></li>        <li data-id="dart">Dart - <code class=" language-markup">dart</code></li>        <li data-id="diff">Diff - <code class=" language-markup">diff</code></li>        <li data-id="django">Django/Jinja2 - <code class=" language-markup">django</code>, <code class=" language-markup">jinja2</code></li>        <li data-id="dns-zone-file">DNS zone file - <code class=" language-markup">dns-zone-file</code>, <code class=" language-markup">dns-zone</code></li>        <li data-id="docker">Docker - <code class=" language-markup">docker</code>, <code class=" language-markup">dockerfile</code></li>        <li data-id="ebnf">Extended Backus–Naur form - <code class=" language-markup">ebnf</code></li>        <li data-id="eiffel">Eiffel - <code class=" language-markup">eiffel</code></li>        <li data-id="ejs">EJS - <code class=" language-markup">ejs</code></li>        <li data-id="elixir">Elixir - <code class=" language-markup">elixir</code></li>        <li data-id="elm">Elm - <code class=" language-markup">elm</code></li>        <li data-id="etlua">Embedded Lua templating - <code class=" language-markup">etlua</code></li>        <li data-id="erb">ERB - <code class=" language-markup">erb</code></li>        <li data-id="erlang">Erlang - <code class=" language-markup">erlang</code></li>        <li data-id="fsharp">F# - <code class=" language-markup">fsharp</code></li>        <li data-id="firestore-security-rules">Firestore security rules - <code class=" language-markup">firestore-security-rules</code></li>        <li data-id="flow">Flow - <code class=" language-markup">flow</code></li>        <li data-id="fortran">Fortran - <code class=" language-markup">fortran</code></li>        <li data-id="ftl">FreeMarker Template Language - <code class=" language-markup">ftl</code></li>        <li data-id="gcode">G-code - <code class=" language-markup">gcode</code></li>        <li data-id="gdscript">GDScript - <code class=" language-markup">gdscript</code></li>        <li data-id="gedcom">GEDCOM - <code class=" language-markup">gedcom</code></li>        <li data-id="gherkin">Gherkin - <code class=" language-markup">gherkin</code></li>        <li data-id="git">Git - <code class=" language-markup">git</code></li>        <li data-id="glsl">GLSL - <code class=" language-markup">glsl</code></li>        <li data-id="gml">GameMaker Language - <code class=" language-markup">gml</code>, <code class=" language-markup">gamemakerlanguage</code></li>        <li data-id="go">Go - <code class=" language-markup">go</code></li>        <li data-id="graphql">GraphQL - <code class=" language-markup">graphql</code></li>        <li data-id="groovy">Groovy - <code class=" language-markup">groovy</code></li>        <li data-id="haml">Haml - <code class=" language-markup">haml</code></li>        <li data-id="handlebars">Handlebars - <code class=" language-markup">handlebars</code></li>        <li data-id="haskell">Haskell - <code class=" language-markup">haskell</code>, <code class=" language-markup">hs</code></li>        <li data-id="haxe">Haxe - <code class=" language-markup">haxe</code></li>        <li data-id="hcl">HCL - <code class=" language-markup">hcl</code></li>        <li data-id="http">HTTP - <code class=" language-markup">http</code></li>        <li data-id="hpkp">HTTP Public-Key-Pins - <code class=" language-markup">hpkp</code></li>        <li data-id="hsts">HTTP Strict-Transport-Security - <code class=" language-markup">hsts</code></li>        <li data-id="ichigojam">IchigoJam - <code class=" language-markup">ichigojam</code></li>        <li data-id="icon">Icon - <code class=" language-markup">icon</code></li>        <li data-id="inform7">Inform 7 - <code class=" language-markup">inform7</code></li>        <li data-id="ini">Ini - <code class=" language-markup">ini</code></li>        <li data-id="io">Io - <code class=" language-markup">io</code></li>        <li data-id="j">J - <code class=" language-markup">j</code></li>        <li data-id="java">Java - <code class=" language-markup">java</code></li>        <li data-id="javadoc">JavaDoc - <code class=" language-markup">javadoc</code></li>        <li data-id="javadoclike">JavaDoc-like - <code class=" language-markup">javadoclike</code></li>        <li data-id="javastacktrace">Java stack trace - <code class=" language-markup">javastacktrace</code></li>        <li data-id="jolie">Jolie - <code class=" language-markup">jolie</code></li>        <li data-id="jq">JQ - <code class=" language-markup">jq</code></li>        <li data-id="jsdoc">JSDoc - <code class=" language-markup">jsdoc</code></li>        <li data-id="js-extras">JS Extras - <code class=" language-markup">js-extras</code></li>        <li data-id="js-templates">JS Templates - <code class=" language-markup">js-templates</code></li>        <li data-id="json">JSON - <code class=" language-markup">json</code></li>        <li data-id="jsonp">JSONP - <code class=" language-markup">jsonp</code></li>        <li data-id="json5">JSON5 - <code class=" language-markup">json5</code></li>        <li data-id="julia">Julia - <code class=" language-markup">julia</code></li>        <li data-id="keyman">Keyman - <code class=" language-markup">keyman</code></li>        <li data-id="kotlin">Kotlin - <code class=" language-markup">kotlin</code></li>        <li data-id="latex">LaTeX - <code class=" language-markup">latex</code>, <code class=" language-markup">tex</code>, <code class=" language-markup">context</code></li>        <li data-id="latte">Latte - <code class=" language-markup">latte</code></li>        <li data-id="less">Less - <code class=" language-markup">less</code></li>        <li data-id="lilypond">LilyPond - <code class=" language-markup">lilypond</code>, <code class=" language-markup">ly</code></li>        <li data-id="liquid">Liquid - <code class=" language-markup">liquid</code></li>        <li data-id="lisp">Lisp - <code class=" language-markup">lisp</code>, <code class=" language-markup">emacs</code>, <code class=" language-markup">elisp</code>, <code class=" language-markup">emacs-lisp</code></li>        <li data-id="livescript">LiveScript - <code class=" language-markup">livescript</code></li>        <li data-id="lolcode">LOLCODE - <code class=" language-markup">lolcode</code></li>        <li data-id="lua">Lua - <code class=" language-markup">lua</code></li>        <li data-id="makefile">Makefile - <code class=" language-markup">makefile</code></li>        <li data-id="markdown">Markdown - <code class=" language-markup">markdown</code>, <code class=" language-markup">md</code></li>        <li data-id="markup-templating">Markup templating - <code class=" language-markup">markup-templating</code></li>        <li data-id="matlab">MATLAB - <code class=" language-markup">matlab</code></li>        <li data-id="mel">MEL - <code class=" language-markup">mel</code></li>        <li data-id="mizar">Mizar - <code class=" language-markup">mizar</code></li>        <li data-id="monkey">Monkey - <code class=" language-markup">monkey</code></li>        <li data-id="moonscript">MoonScript - <code class=" language-markup">moonscript</code>, <code class=" language-markup">moon</code></li>        <li data-id="n1ql">N1QL - <code class=" language-markup">n1ql</code></li>        <li data-id="n4js">N4JS - <code class=" language-markup">n4js</code>, <code class=" language-markup">n4jsd</code></li>        <li data-id="nand2tetris-hdl">Nand To Tetris HDL - <code class=" language-markup">nand2tetris-hdl</code></li>        <li data-id="nasm">NASM - <code class=" language-markup">nasm</code></li>        <li data-id="neon">NEON - <code class=" language-markup">neon</code></li>        <li data-id="nginx">nginx - <code class=" language-markup">nginx</code></li>        <li data-id="nim">Nim - <code class=" language-markup">nim</code></li>        <li data-id="nix">Nix - <code class=" language-markup">nix</code></li>        <li data-id="nsis">NSIS - <code class=" language-markup">nsis</code></li>        <li data-id="objectivec">Objective-C - <code class=" language-markup">objectivec</code></li>        <li data-id="ocaml">OCaml - <code class=" language-markup">ocaml</code></li>        <li data-id="opencl">OpenCL - <code class=" language-markup">opencl</code></li>        <li data-id="oz">Oz - <code class=" language-markup">oz</code></li>        <li data-id="parigp">PARI/GP - <code class=" language-markup">parigp</code></li>        <li data-id="parser">Parser - <code class=" language-markup">parser</code></li>        <li data-id="pascal">Pascal - <code class=" language-markup">pascal</code>, <code class=" language-markup">objectpascal</code></li>        <li data-id="pascaligo">Pascaligo - <code class=" language-markup">pascaligo</code></li>        <li data-id="pcaxis">PC-Axis - <code class=" language-markup">pcaxis</code>, <code class=" language-markup">px</code></li>        <li data-id="perl">Perl - <code class=" language-markup">perl</code></li>        <li data-id="php">PHP - <code class=" language-markup">php</code></li>        <li data-id="phpdoc">PHPDoc - <code class=" language-markup">phpdoc</code></li>        <li data-id="php-extras">PHP Extras - <code class=" language-markup">php-extras</code></li>        <li data-id="plsql">PL/SQL - <code class=" language-markup">plsql</code></li>        <li data-id="powershell">PowerShell - <code class=" language-markup">powershell</code></li>        <li data-id="processing">Processing - <code class=" language-markup">processing</code></li>        <li data-id="prolog">Prolog - <code class=" language-markup">prolog</code></li>        <li data-id="properties">.properties - <code class=" language-markup">properties</code></li>        <li data-id="protobuf">Protocol Buffers - <code class=" language-markup">protobuf</code></li>        <li data-id="pug">Pug - <code class=" language-markup">pug</code></li>        <li data-id="puppet">Puppet - <code class=" language-markup">puppet</code></li>        <li data-id="pure">Pure - <code class=" language-markup">pure</code></li>        <li data-id="python">Python - <code class=" language-markup">python</code>, <code class=" language-markup">py</code></li>        <li data-id="q">Q (kdb+ database) - <code class=" language-markup">q</code></li>        <li data-id="qml">QML - <code class=" language-markup">qml</code></li>        <li data-id="qore">Qore - <code class=" language-markup">qore</code></li>        <li data-id="r">R - <code class=" language-markup">r</code></li>        <li data-id="jsx">React JSX - <code class=" language-markup">jsx</code></li>        <li data-id="tsx">React TSX - <code class=" language-markup">tsx</code></li>        <li data-id="renpy">Ren'py - <code class=" language-markup">renpy</code></li>        <li data-id="reason">Reason - <code class=" language-markup">reason</code></li>        <li data-id="regex">Regex - <code class=" language-markup">regex</code></li>        <li data-id="rest">reST (reStructuredText) - <code class=" language-markup">rest</code></li>        <li data-id="rip">Rip - <code class=" language-markup">rip</code></li>        <li data-id="roboconf">Roboconf - <code class=" language-markup">roboconf</code></li>        <li data-id="robotframework">Robot Framework - <code class=" language-markup">robotframework</code>, <code class=" language-markup">robot</code></li>        <li data-id="ruby">Ruby - <code class=" language-markup">ruby</code>, <code class=" language-markup">rb</code></li>        <li data-id="rust">Rust - <code class=" language-markup">rust</code></li>        <li data-id="sas">SAS - <code class=" language-markup">sas</code></li>        <li data-id="sass">Sass (Sass) - <code class=" language-markup">sass</code></li>        <li data-id="scss">Sass (Scss) - <code class=" language-markup">scss</code></li>        <li data-id="scala">Scala - <code class=" language-markup">scala</code></li>        <li data-id="scheme">Scheme - <code class=" language-markup">scheme</code></li>        <li data-id="shell-session">Shell session - <code class=" language-markup">shell-session</code></li>        <li data-id="smalltalk">Smalltalk - <code class=" language-markup">smalltalk</code></li>        <li data-id="smarty">Smarty - <code class=" language-markup">smarty</code></li>        <li data-id="solidity">Solidity (Ethereum) - <code class=" language-markup">solidity</code></li>        <li data-id="soy">Soy (Closure Template) - <code class=" language-markup">soy</code></li>        <li data-id="sparql">SPARQL - <code class=" language-markup">sparql</code>, <code class=" language-markup">rq</code></li>        <li data-id="splunk-spl">Splunk SPL - <code class=" language-markup">splunk-spl</code></li>        <li data-id="sqf">SQF: Status Quo Function (Arma 3) - <code class=" language-markup">sqf</code></li>        <li data-id="sql">SQL - <code class=" language-markup">sql</code></li>        <li data-id="stylus">Stylus - <code class=" language-markup">stylus</code></li>        <li data-id="swift">Swift - <code class=" language-markup">swift</code></li>        <li data-id="tap">TAP - <code class=" language-markup">tap</code></li>        <li data-id="tcl">Tcl - <code class=" language-markup">tcl</code></li>        <li data-id="textile">Textile - <code class=" language-markup">textile</code></li>        <li data-id="toml">TOML - <code class=" language-markup">toml</code></li>        <li data-id="tt2">Template Toolkit 2 - <code class=" language-markup">tt2</code></li>        <li data-id="turtle">Turtle - <code class=" language-markup">turtle</code>, <code class=" language-markup">trig</code></li>        <li data-id="twig">Twig - <code class=" language-markup">twig</code></li>        <li data-id="typescript">TypeScript - <code class=" language-markup">typescript</code>, <code class=" language-markup">ts</code></li>        <li data-id="t4-cs">T4 Text Templates (C#) - <code class=" language-markup">t4-cs</code>, <code class=" language-markup">t4</code></li>        <li data-id="t4-vb">T4 Text Templates (VB) - <code class=" language-markup">t4-vb</code></li>        <li data-id="t4-templating">T4 templating - <code class=" language-markup">t4-templating</code></li>        <li data-id="vala">Vala - <code class=" language-markup">vala</code></li>        <li data-id="vbnet">VB.Net - <code class=" language-markup">vbnet</code></li>        <li data-id="velocity">Velocity - <code class=" language-markup">velocity</code></li>        <li data-id="verilog">Verilog - <code class=" language-markup">verilog</code></li>        <li data-id="vhdl">VHDL - <code class=" language-markup">vhdl</code></li>        <li data-id="vim">vim - <code class=" language-markup">vim</code></li>        <li data-id="visual-basic">Visual Basic - <code class=" language-markup">visual-basic</code>, <code class=" language-markup">vb</code></li>        <li data-id="wasm">WebAssembly - <code class=" language-markup">wasm</code></li>        <li data-id="wiki">Wiki markup - <code class=" language-markup">wiki</code></li>        <li data-id="xeora">Xeora - <code class=" language-markup">xeora</code>, <code class=" language-markup">xeoracube</code></li>        <li data-id="xojo">Xojo (REALbasic) - <code class=" language-markup">xojo</code></li>        <li data-id="xquery">XQuery - <code class=" language-markup">xquery</code></li>        <li data-id="yaml">YAML - <code class=" language-markup">yaml</code>, <code class=" language-markup">yml</code></li>        <li data-id="zig">Zig - <code class=" language-markup">zig</code></li>      </ul>    </div>    <p>Couldn't find the language you were looking for? <a href="https://github.com/PrismJS/prism/issues" target="_blank" rel="noopener noreferer nofollow">Request it</a>!</p>  </section></div>
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JS/" rel="tag"># JS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/01/google-passed-proxies-updated-at-2020_14.html" rel="prev" title="Google passed proxies, updated at 2020-01-13">
+                  <i class="fa fa-chevron-left"></i> Google passed proxies, updated at 2020-01-13
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/load-css-asynchronously.html" rel="next" title="Load CSS Asynchronously">
+                  Load CSS Asynchronously <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+<script src="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.js"></script>
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.css" />
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/themes/cookiesconsent.theme-dark.css" />
+<script>
+ CookiesConsentJS({
+      content : {
+        // title
+        title: "Cookies compliance",
+        // message
+        message: "We use cookies",
+        // custom button text
+        btnAccept: "Accept all",
+        btnReject: "Reject all",
+        btnDismiss: "Cookies policy",
+        btnSettings: "Settings",
+        btnSettingsSelectAll: "Select all",
+        btnSettingsUnselectAll: "Unselect all",
+        btnSettingsAccept: "Accept selection",
+        btnInfo: "More info",
+        policy: "Privacy Policy",
+        // left, right, center
+        align: "left",
+        // policy link
+        policyLink : "https://gdpr-info.eu/",
+        // Text that will be shown in the information popup
+        info: "<h2>This is the info title</h2>",
+    },
+});
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="5634823028"></ins>
+</div><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="8481296455"></ins>
+</div></div><style>[hexo-adsense=ads-content]{display:block;background:#fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;color:#303030;min-width:250px;text-align:center;margin-left:auto;margin-right:auto}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUtYWRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyQkFDRSxRQUFBLE1BQ0EsV0FBQSxLQUFBLCtCQUFBLFVBQUEsSUFBQSxNQUNBLE1BQUEsUUFHQSxVQUFBLE1BQ0EsV0FBQSxPQUNBLFlBQUEsS0FDQSxhQUFBIiwiZmlsZSI6ImFydGljbGUtYWRzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipbaGV4by1hZHNlbnNlPVwiYWRzLWNvbnRlbnRcIl0ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZDogI2ZmZiB1cmwoLy9pLmltZ3VyLmNvbS9tQmJ2OTBwLnBuZykgbm8tcmVwZWF0IHRvcCByaWdodDtcbiAgY29sb3I6ICMzMDMwMzA7XG4gIC8qbWluLWhlaWdodDogMThweDtcbiAgbWluLXdpZHRoOiA4MXB4OyovXG4gIG1pbi13aWR0aDogMjUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cbiJdfQ== */
+</style><script>const isBrowser=new Function("try {return this===window;}catch(e){ return false;}"),hexoAdsenseConfig=JSON.parse(document.getElementById("hexo-adsense-config").textContent);function insertAfter(e,t){if(t&&e){let n=t.parentNode;n.lastChild==t?n.appendChild(e):n.insertBefore(e,t.nextSibling)}else console.error("cannot insert element")}function replaceWith(e,t){if(t.parentNode)t.parentNode.replaceChild(e,t);else{console.log(t,"parent null"),document.createElement("div").appendChild(t)}}let createElementFromHTML=function(e){if(e instanceof HTMLElement)return e;var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild};function ranumb(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function newMethod(){const e=document.getElementById("hexo-adsense-hidden");let t=e.querySelectorAll('[hexo-adsense="ads-content"]'),n=document.querySelectorAll("article");if(n.length>0&&t.length>0){let o;if(1==n.length){console.log("webpage is post");let l=n.item(0);const r=l.querySelectorAll("*[hexo-adsense-fill]");if(r.length>0)for(let e=0;e<r.length;e++){const n=r[e];void 0!==t[e]&&n.appendChild(t[e])}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");if(e.length>0){let n=Array.apply(null,{length:e.length}).map(Number.call,Number);for(let l=0;l<t.length;l++){o=t[l];const r=shuffleArr2(n).next().value;if("number"==typeof r){const t=e.item(r);insertAfter(createElementFromHTML(o),t)}}}}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("br,hr");if(e.length>0){const n=shuffleArr2(Array.apply(null,{length:e.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=n.next().value;if("number"==typeof r){const t=e.item(r);if(["blockquote","img","a","pre","code","em","strong","i","u"].includes(t.parentNode.tagName.toLowerCase())){l--;continue}replaceWith(createElementFromHTML(o),t)}}}}}else{console.log("webpage is not post"),n.length||(n=document.querySelectorAll('[class*="recent-post-item"]'));const e=shuffleArr2(Array.apply(null,{length:n.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=e.next().value;if("number"==typeof r){n.item(r).appendChild(createElementFromHTML(o))}}}adsensePush()}}function shuffleArr(e){for(var t,n=e.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),t=e[n],e[n]=e[o],e[o]=t;return e}function*shuffleArr2(e){for(var t=e.length;t--;)yield e.splice(Math.floor(Math.random()*(t+1)),1)[0]}function adsensePush(){for(let e=0;e<document.querySelectorAll('[hexo-adsense="ads-content"]').length;e++)(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:hexoAdsenseConfig.pub})}isBrowser()?(window.__tcfapi=(e,t,n)=>{"checkConsent"===e&&n(!0),"addEventListener"===e&&n({eventStatus:"tcloaded",gdprApplies:!1},!0)},"function"==typeof document.addEventListener?document.addEventListener("DOMContentLoaded",newMethod):"function"==typeof window.attachEvent?window.attachEvent("onload",newMethod):window.onload=newMethod):module.exports={replaceWith:replaceWith,insertAfter:insertAfter};</script></body>
+</html>

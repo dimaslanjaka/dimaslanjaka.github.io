@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+    <meta name="description" content="CURLEUNSUPPORTED_PROTOCOL 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Curl Error Codes">
+<meta property="og:url" content="https://www.webmanajemen.com/2019/12/curl-error-codes.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="CURLEUNSUPPORTED_PROTOCOL 1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+<meta property="article:published_time" content="2019-12-27T22:41:00.000Z">
+<meta property="article:modified_time" content="2019-12-27T22:41:44.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="Tools">
+<meta property="article:tag" content="Tips &amp; Tricks">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2019/12/curl-error-codes.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2019/12/curl-error-codes.html","path":"/2019/12/curl-error-codes.html","title":"Curl Error Codes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Curl Error Codes | WMI</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article_kiki.html","source/ads/in_article_kiki2.html"],"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <link href="/custom.css" rel="stylesheet" />
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">766</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2019/12/curl-error-codes.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Curl Error Codes | WMI">
+      <meta itemprop="description" content="CURLEUNSUPPORTED_PROTOCOL 1">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Curl Error Codes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2019-12-28 05:41:00 / Modified: 05:41:44" itemprop="dateCreated datePublished" datetime="2019-12-28T05:41:00+07:00">2019-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">CURLEUNSUPPORTED_PROTOCOL 1</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>    CURLE_UNSUPPORTED_PROTOCOL (1) </p><p>    The URL you passed to libcurl used a protocol that this libcurl does not     support. The support might be a compile-time option that you didn't use, it     can be a misspelled protocol string or just a protocol libcurl has no code     for. </p><p>    <a name="CURLEFAILEDINIT"></a>    CURLE_FAILED_INIT (2) </p><p>    Very early initialization code failed. This is likely to be an internal     error or problem, or a resource problem where something fundamental     couldn't get done at init time. </p><p>    <a name="CURLEURLMALFORMAT"></a>    CURLE_URL_MALFORMAT (3) </p><p>    The URL was not properly formatted. </p><p>    <a name="CURLENOTBUILTIN"></a>    CURLE_NOT_BUILT_IN (4) </p><p>    A requested feature, protocol or option was not found built-in in this     libcurl due to a build-time decision. This means that a feature or option     was not enabled or explicitly disabled when libcurl was built and in order     to get it to function you have to get a rebuilt libcurl. </p><p>    <a name="CURLECOULDNTRESOLVEPROXY"></a>    CURLE_COULDNT_RESOLVE_PROXY (5) </p><p>    Couldn't resolve proxy. The given proxy host could not be resolved. </p><p>    <a name="CURLECOULDNTRESOLVEHOST"></a>    CURLE_COULDNT_RESOLVE_HOST (6) </p><p>    Couldn't resolve host. The given remote host was not resolved. </p><p>    <a name="CURLECOULDNTCONNECT"></a>    CURLE_COULDNT_CONNECT (7) </p><p>    Failed to connect() to host or proxy. </p><p>    <a name="CURLEWEIRDSERVERREPLY"></a>    CURLE_WEIRD_SERVER_REPLY (8) </p><p>    The server sent data libcurl couldn't parse. This error code was known as     as CURLE_FTP_WEIRD_SERVER_REPLY before 7.51.0. </p><p>    <a name="CURLEREMOTEACCESSDENIED"></a>    CURLE_REMOTE_ACCESS_DENIED (9) </p><p>    We were denied access to the resource given in the URL. For FTP, this     occurs while trying to change to the remote directory. </p><p>    <a name="CURLEFTPACCEPTFAILED"></a>    CURLE_FTP_ACCEPT_FAILED (10) </p><p>    While waiting for the server to connect back when an active FTP session is     used, an error code was sent over the control connection or similar. </p><p>    <a name="CURLEFTPWEIRDPASSREPLY"></a>    CURLE_FTP_WEIRD_PASS_REPLY (11) </p><p>    After having sent the FTP password to the server, libcurl expects a proper     reply. This error code indicates that an unexpected code was returned. </p><p>    <a name="CURLEFTPACCEPTTIMEOUT"></a>    CURLE_FTP_ACCEPT_TIMEOUT (12) </p><p>    During an active FTP session while waiting for the server to connect, the     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_ACCEPTTIMEOUT_MS.html" rel="noopener noreferer nofollow noopener">        CURLOPT_ACCEPTTIMEOUT_MS     </a>    (or the internal default) timeout expired. </p><p>    <a name="CURLEFTPWEIRDPASVREPLY"></a>    CURLE_FTP_WEIRD_PASV_REPLY (13) </p><p>    libcurl failed to get a sensible result back from the server as a response     to either a PASV or a EPSV command. The server is flawed. </p><p>    <a name="CURLEFTPWEIRD227FORMAT"></a>    CURLE_FTP_WEIRD_227_FORMAT (14) </p><p>    FTP servers return a 227-line as a response to a PASV command. If libcurl     fails to parse that line, this return code is passed back. </p><p>    <a name="CURLEFTPCANTGETHOST"></a>    CURLE_FTP_CANT_GET_HOST (15) </p><p>    An internal failure to lookup the host used for the new connection. </p><p>    <a name="CURLEHTTP2"></a>    CURLE_HTTP2 (16) </p><p>    A problem was detected in the HTTP2 framing layer. This is somewhat generic     and can be one out of several problems, see the error buffer for details. </p><p>    <a name="CURLEFTPCOULDNTSETTYPE"></a>    CURLE_FTP_COULDNT_SET_TYPE (17) </p><p>    Received an error when trying to set the transfer mode to binary or ASCII. </p><p>    <a name="CURLEPARTIALFILE"></a>    CURLE_PARTIAL_FILE (18) </p><p>    A file transfer was shorter or larger than expected. This happens when the     server first reports an expected transfer size, and then delivers data that     doesn't match the previously given size. </p><p>    <a name="CURLEFTPCOULDNTRETRFILE"></a>    CURLE_FTP_COULDNT_RETR_FILE (19) </p><p>    This was either a weird reply to a 'RETR' command or a zero byte transfer     complete. </p><p>    <a name="CURLEQUOTEERROR"></a>    CURLE_QUOTE_ERROR (21) </p><p>    When sending custom "QUOTE" commands to the remote server, one of the     commands returned an error code that was 400 or higher (for FTP) or     otherwise indicated unsuccessful completion of the command. </p><p>    <a name="CURLEHTTPRETURNEDERROR"></a>    CURLE_HTTP_RETURNED_ERROR (22) </p><p>    This is returned if     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_FAILONERROR.html" rel="noopener noreferer nofollow noopener">        CURLOPT_FAILONERROR     </a>    is set TRUE and the HTTP server returns an error code that is &gt;= 400. </p><p>    <a name="CURLEWRITEERROR"></a>    CURLE_WRITE_ERROR (23) </p><p>    An error occurred when writing received data to a local file, or an error     was returned to libcurl from a write callback. </p><p>    <a name="CURLEUPLOADFAILED"></a>    CURLE_UPLOAD_FAILED (25) </p><p>    Failed starting the upload. For FTP, the server typically denied the STOR     command. The error buffer usually contains the server's explanation for     this. </p><p>    <a name="CURLEREADERROR"></a>    CURLE_READ_ERROR (26) </p><p>    There was a problem reading a local file or an error returned by the read     callback. </p><p>    <a name="CURLEOUTOFMEMORY"></a>    CURLE_OUT_OF_MEMORY (27) </p><p>    A memory allocation request failed. This is serious badness and things are     severely screwed up if this ever occurs. </p><p>    <a name="CURLEOPERATIONTIMEDOUT"></a>    CURLE_OPERATION_TIMEDOUT (28) </p><p>    Operation timeout. The specified time-out period was reached according to     the conditions. </p><p>    <a name="CURLEFTPPORTFAILED"></a>    CURLE_FTP_PORT_FAILED (30) </p><p>    The FTP PORT command returned error. This mostly happens when you haven't     specified a good enough address for libcurl to use. See     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_FTPPORT.html" rel="noopener noreferer nofollow noopener">        CURLOPT_FTPPORT     </a>    . </p><p>    <a name="CURLEFTPCOULDNTUSEREST"></a>    CURLE_FTP_COULDNT_USE_REST (31) </p><p>    The FTP REST command returned error. This should never happen if the server     is sane. </p><p>    <a name="CURLERANGEERROR"></a>    CURLE_RANGE_ERROR (33) </p><p>    The server does not support or accept range requests. </p><p>    <a name="CURLEHTTPPOSTERROR"></a>    CURLE_HTTP_POST_ERROR (34) </p><p>    This is an odd error that mainly occurs due to internal confusion. </p><p>    <a name="CURLESSLCONNECTERROR"></a>    CURLE_SSL_CONNECT_ERROR (35) </p><p>    A problem occurred somewhere in the SSL/TLS handshake. You really want the     error buffer and read the message there as it pinpoints the problem     slightly more. Could be certificates (file formats, paths, permissions),     passwords, and others. </p><p>    <a name="CURLEBADDOWNLOADRESUME"></a>    CURLE_BAD_DOWNLOAD_RESUME (36) </p><p>    The download could not be resumed because the specified offset was out of     the file boundary. </p><p>    <a name="CURLEFILECOULDNTREADFILE"></a>    CURLE_FILE_COULDNT_READ_FILE (37) </p><p>    A file given with FILE:// couldn't be opened. Most likely because the file     path doesn't identify an existing file. Did you check file permissions? </p><p>    <a name="CURLELDAPCANNOTBIND"></a>    CURLE_LDAP_CANNOT_BIND (38) </p><p>    LDAP cannot bind. LDAP bind operation failed. </p><p>    <a name="CURLELDAPSEARCHFAILED"></a>    CURLE_LDAP_SEARCH_FAILED (39) </p><p>    LDAP search failed. </p><p>    <a name="CURLEFUNCTIONNOTFOUND"></a>    CURLE_FUNCTION_NOT_FOUND (41) </p><p>    Function not found. A required zlib function was not found. </p><p>    <a name="CURLEABORTEDBYCALLBACK"></a>    CURLE_ABORTED_BY_CALLBACK (42) </p><p>    Aborted by callback. A callback returned "abort" to libcurl. </p><p>    <a name="CURLEBADFUNCTIONARGUMENT"></a>    CURLE_BAD_FUNCTION_ARGUMENT (43) </p><p>    Internal error. A function was called with a bad parameter. </p><p>    <a name="CURLEINTERFACEFAILED"></a>    CURLE_INTERFACE_FAILED (45) </p><p>    Interface error. A specified outgoing interface could not be used. Set     which interface to use for outgoing connections' source IP address with     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_INTERFACE.html" rel="noopener noreferer nofollow noopener">        CURLOPT_INTERFACE     </a>    . </p><p>    <a name="CURLETOOMANYREDIRECTS"></a>    CURLE_TOO_MANY_REDIRECTS (47) </p><p>    Too many redirects. When following redirects, libcurl hit the maximum     amount. Set your limit with     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_MAXREDIRS.html" rel="noopener noreferer nofollow noopener">        CURLOPT_MAXREDIRS     </a>    . </p><p>    <a name="CURLEUNKNOWNOPTION"></a>    CURLE_UNKNOWN_OPTION (48) </p><p>    An option passed to libcurl is not recognized/known. Refer to the     appropriate documentation. This is most likely a problem in the program     that uses libcurl. The error buffer might contain more specific information     about which exact option it concerns. </p><p>    <a name="CURLETELNETOPTIONSYNTAX"></a>    CURLE_TELNET_OPTION_SYNTAX (49) </p><p>    A telnet option string was Illegally formatted. </p><p>    <a name="CURLEGOTNOTHING"></a>    CURLE_GOT_NOTHING (52) </p><p>    Nothing was returned from the server, and under the circumstances, getting     nothing is considered an error. </p><p>    <a name="CURLESSLENGINENOTFOUND"></a>    CURLE_SSL_ENGINE_NOTFOUND (53) </p><p>    The specified crypto engine wasn't found. </p><p>    <a name="CURLESSLENGINESETFAILED"></a>    CURLE_SSL_ENGINE_SETFAILED (54) </p><p>    Failed setting the selected SSL crypto engine as default! </p><p>    <a name="CURLESENDERROR"></a>    CURLE_SEND_ERROR (55) </p><p>    Failed sending network data. </p><p>    <a name="CURLERECVERROR"></a>    CURLE_RECV_ERROR (56) </p><p>    Failure with receiving network data. </p><p>    <a name="CURLESSLCERTPROBLEM"></a>    CURLE_SSL_CERTPROBLEM (58) </p><p>    problem with the local client certificate. </p><p>    <a name="CURLESSLCIPHER"></a>    CURLE_SSL_CIPHER (59) </p><p>    Couldn't use specified cipher. </p><p>    <a name="CURLEPEERFAILEDVERIFICATION"></a>    CURLE_PEER_FAILED_VERIFICATION (60) </p><p>    The remote server's SSL certificate or SSH md5 fingerprint was deemed not     OK. This error code has been unified with CURLE_SSL_CACERT since 7.62.0.     Its previous value was 51. </p><p>    <a name="CURLEBADCONTENTENCODING"></a>    CURLE_BAD_CONTENT_ENCODING (61) </p><p>    Unrecognized transfer encoding. </p><p>    <a name="CURLELDAPINVALIDURL"></a>    CURLE_LDAP_INVALID_URL (62) </p><p>    Invalid LDAP URL. </p><p>    <a name="CURLEFILESIZEEXCEEDED"></a>    CURLE_FILESIZE_EXCEEDED (63) </p><p>    Maximum file size exceeded. </p><p>    <a name="CURLEUSESSLFAILED"></a>    CURLE_USE_SSL_FAILED (64) </p><p>    Requested FTP SSL level failed. </p><p>    <a name="CURLESENDFAILREWIND"></a>    CURLE_SEND_FAIL_REWIND (65) </p><p>    When doing a send operation curl had to rewind the data to retransmit, but     the rewinding operation failed. </p><p>    <a name="CURLESSLENGINEINITFAILED"></a>    CURLE_SSL_ENGINE_INITFAILED (66) </p><p>    Initiating the SSL Engine failed. </p><p>    <a name="CURLELOGINDENIED"></a>    CURLE_LOGIN_DENIED (67) </p><p>    The remote server denied curl to login (Added in 7.13.1) </p><p>    <a name="CURLETFTPNOTFOUND"></a>    CURLE_TFTP_NOTFOUND (68) </p><p>    File not found on TFTP server. </p><p>    <a name="CURLETFTPPERM"></a>    CURLE_TFTP_PERM (69) </p><p>    Permission problem on TFTP server. </p><p>    <a name="CURLEREMOTEDISKFULL"></a>    CURLE_REMOTE_DISK_FULL (70) </p><p>    Out of disk space on the server. </p><p>    <a name="CURLETFTPILLEGAL"></a>    CURLE_TFTP_ILLEGAL (71) </p><p>    Illegal TFTP operation. </p><p>    <a name="CURLETFTPUNKNOWNID"></a>    CURLE_TFTP_UNKNOWNID (72) </p><p>    Unknown TFTP transfer ID. </p><p>    <a name="CURLEREMOTEFILEEXISTS"></a>    CURLE_REMOTE_FILE_EXISTS (73) </p><p>    File already exists and will not be overwritten. </p><p>    <a name="CURLETFTPNOSUCHUSER"></a>    CURLE_TFTP_NOSUCHUSER (74) </p><p>    This error should never be returned by a properly functioning TFTP server. </p><p>    <a name="CURLECONVFAILED"></a>    CURLE_CONV_FAILED (75) </p><p>    Character conversion failed. </p><p>    <a name="CURLECONVREQD"></a>    CURLE_CONV_REQD (76) </p><p>    Caller must register conversion callbacks. </p><p>    <a name="CURLESSLCACERTBADFILE"></a>    CURLE_SSL_CACERT_BADFILE (77) </p><p>    Problem with reading the SSL CA cert (path? access rights?) </p><p>    <a name="CURLEREMOTEFILENOTFOUND"></a>    CURLE_REMOTE_FILE_NOT_FOUND (78) </p><p>    The resource referenced in the URL does not exist. </p><p>    <a name="CURLESSH"></a>    CURLE_SSH (79) </p><p>    An unspecified error occurred during the SSH session. </p><p>    <a name="CURLESSLSHUTDOWNFAILED"></a>    CURLE_SSL_SHUTDOWN_FAILED (80) </p><p>    Failed to shut down the SSL connection. </p><p>    <a name="CURLEAGAIN"></a>    CURLE_AGAIN (81) </p><p>    Socket is not ready for send/recv wait till it's ready and try again. This     return code is only returned from     <a target="_blank" href="https://curl.haxx.se/libcurl/c/curl_easy_recv.html" rel="noopener noreferer nofollow noopener">        curl_easy_recv     </a>    and     <a target="_blank" href="https://curl.haxx.se/libcurl/c/curl_easy_send.html" rel="noopener noreferer nofollow noopener">        curl_easy_send     </a>    (Added in 7.18.2) </p><p>    <a name="CURLESSLCRLBADFILE"></a>    CURLE_SSL_CRL_BADFILE (82) </p><p>    Failed to load CRL file (Added in 7.19.0) </p><p>    <a name="CURLESSLISSUERERROR"></a>    CURLE_SSL_ISSUER_ERROR (83) </p><p>    Issuer check failed (Added in 7.19.0) </p><p>    <a name="CURLEFTPPRETFAILED"></a>    CURLE_FTP_PRET_FAILED (84) </p><p>    The FTP server does not understand the PRET command at all or does not     support the given argument. Be careful when using     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_CUSTOMREQUEST.html" rel="noopener noreferer nofollow noopener">        CURLOPT_CUSTOMREQUEST     </a>    , a custom LIST command will be sent with PRET CMD before PASV as well.     (Added in 7.20.0) </p><p>    <a name="CURLERTSPCSEQERROR"></a>    CURLE_RTSP_CSEQ_ERROR (85) </p><p>    Mismatch of RTSP CSeq numbers. </p><p>    <a name="CURLERTSPSESSIONERROR"></a>    CURLE_RTSP_SESSION_ERROR (86) </p><p>    Mismatch of RTSP Session Identifiers. </p><p>    <a name="CURLEFTPBADFILELIST"></a>    CURLE_FTP_BAD_FILE_LIST (87) </p><p>    Unable to parse FTP file list (during FTP wildcard downloading). </p><p>    <a name="CURLECHUNKFAILED"></a>    CURLE_CHUNK_FAILED (88) </p><p>    Chunk callback reported error. </p><p>    <a name="CURLENOCONNECTIONAVAILABLE"></a>    CURLE_NO_CONNECTION_AVAILABLE (89) </p><p>    (For internal use only, will never be returned by libcurl) No connection     available, the session will be queued. (added in 7.30.0) </p><p>    <a name="CURLESSLPINNEDPUBKEYNOTMATCH"></a>    CURLE_SSL_PINNEDPUBKEYNOTMATCH (90) </p><p>    Failed to match the pinned key specified with     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_PINNEDPUBLICKEY.html" rel="noopener noreferer nofollow noopener">        CURLOPT_PINNEDPUBLICKEY     </a>    . </p><p>    <a name="CURLESSLINVALIDCERTSTATUS"></a>    CURLE_SSL_INVALIDCERTSTATUS (91) </p><p>    Status returned failure when asked with     <a target="_blank" href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYSTATUS.html" rel="noopener noreferer nofollow noopener">        CURLOPT_SSL_VERIFYSTATUS     </a>    . </p><p>    <a name="CURLEHTTP2STREAM"></a>    CURLE_HTTP2_STREAM (92) </p><p>    Stream error in the HTTP/2 framing layer. </p><p>    <a name="CURLERECURSIVEAPICALL"></a>    CURLE_RECURSIVE_API_CALL (93) </p><p>    An API function was called from inside a callback. </p><p>    <a name="CURLEAUTHERROR"></a>    CURLE_AUTH_ERROR (94) </p><p>    An authentication function returned an error. </p><p>    <a name="CURLEHTTP3"></a>    CURLE_HTTP3 (95) </p><p>    A problem was detected in the HTTP/3 layer. This is somewhat generic and     can be one out of several problems, see the error buffer for details. </p>
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tools/" rel="tag"># Tools</a>
+              <a href="/tags/Tips-Tricks/" rel="tag"># Tips & Tricks</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/12/konversi-dom-element-ke-html-string.html" rel="prev" title="Konversi DOM element ke HTML string">
+                  <i class="fa fa-chevron-left"></i> Konversi DOM element ke HTML string
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/12/javascript-debug-protector.html" rel="next" title="Javascript Debug Protector">
+                  Javascript Debug Protector <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+<script src="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.js"></script>
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.css" />
+<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/themes/cookiesconsent.theme-dark.css" />
+<script>
+ CookiesConsentJS({
+      content : {
+        // title
+        title: "Cookies compliance",
+        // message
+        message: "We use cookies",
+        // custom button text
+        btnAccept: "Accept all",
+        btnReject: "Reject all",
+        btnDismiss: "Cookies policy",
+        btnSettings: "Settings",
+        btnSettingsSelectAll: "Select all",
+        btnSettingsUnselectAll: "Unselect all",
+        btnSettingsAccept: "Accept selection",
+        btnInfo: "More info",
+        policy: "Privacy Policy",
+        // left, right, center
+        align: "left",
+        // policy link
+        policyLink : "https://gdpr-info.eu/",
+        // Text that will be shown in the information popup
+        info: "<h2>This is the info title</h2>",
+    },
+});
+</script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="5634823028"></ins>
+</div><div hexo-adsense="ads-content"><ins
+  class="adsbygoogle"
+  style="display: block; text-align: center"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-2188063137129806"
+  data-ad-slot="8481296455"></ins>
+</div></div><style>[hexo-adsense=ads-content]{display:block;background:#fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;color:#303030;min-width:250px;text-align:center;margin-left:auto;margin-right:auto}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUtYWRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyQkFDRSxRQUFBLE1BQ0EsV0FBQSxLQUFBLCtCQUFBLFVBQUEsSUFBQSxNQUNBLE1BQUEsUUFHQSxVQUFBLE1BQ0EsV0FBQSxPQUNBLFlBQUEsS0FDQSxhQUFBIiwiZmlsZSI6ImFydGljbGUtYWRzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipbaGV4by1hZHNlbnNlPVwiYWRzLWNvbnRlbnRcIl0ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZDogI2ZmZiB1cmwoLy9pLmltZ3VyLmNvbS9tQmJ2OTBwLnBuZykgbm8tcmVwZWF0IHRvcCByaWdodDtcbiAgY29sb3I6ICMzMDMwMzA7XG4gIC8qbWluLWhlaWdodDogMThweDtcbiAgbWluLXdpZHRoOiA4MXB4OyovXG4gIG1pbi13aWR0aDogMjUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cbiJdfQ== */
+</style><script>const isBrowser=new Function("try {return this===window;}catch(e){ return false;}"),hexoAdsenseConfig=JSON.parse(document.getElementById("hexo-adsense-config").textContent);function insertAfter(e,t){if(t&&e){let n=t.parentNode;n.lastChild==t?n.appendChild(e):n.insertBefore(e,t.nextSibling)}else console.error("cannot insert element")}function replaceWith(e,t){if(t.parentNode)t.parentNode.replaceChild(e,t);else{console.log(t,"parent null"),document.createElement("div").appendChild(t)}}let createElementFromHTML=function(e){if(e instanceof HTMLElement)return e;var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild};function ranumb(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function newMethod(){const e=document.getElementById("hexo-adsense-hidden");let t=e.querySelectorAll('[hexo-adsense="ads-content"]'),n=document.querySelectorAll("article");if(n.length>0&&t.length>0){let o;if(1==n.length){console.log("webpage is post");let l=n.item(0);const r=l.querySelectorAll("*[hexo-adsense-fill]");if(r.length>0)for(let e=0;e<r.length;e++){const n=r[e];void 0!==t[e]&&n.appendChild(t[e])}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");if(e.length>0){let n=Array.apply(null,{length:e.length}).map(Number.call,Number);for(let l=0;l<t.length;l++){o=t[l];const r=shuffleArr2(n).next().value;if("number"==typeof r){const t=e.item(r);insertAfter(createElementFromHTML(o),t)}}}}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("br,hr");if(e.length>0){const n=shuffleArr2(Array.apply(null,{length:e.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=n.next().value;if("number"==typeof r){const t=e.item(r);if(["blockquote","img","a","pre","code","em","strong","i","u"].includes(t.parentNode.tagName.toLowerCase())){l--;continue}replaceWith(createElementFromHTML(o),t)}}}}}else{console.log("webpage is not post"),n.length||(n=document.querySelectorAll('[class*="recent-post-item"]'));const e=shuffleArr2(Array.apply(null,{length:n.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=e.next().value;if("number"==typeof r){n.item(r).appendChild(createElementFromHTML(o))}}}adsensePush()}}function shuffleArr(e){for(var t,n=e.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),t=e[n],e[n]=e[o],e[o]=t;return e}function*shuffleArr2(e){for(var t=e.length;t--;)yield e.splice(Math.floor(Math.random()*(t+1)),1)[0]}function adsensePush(){for(let e=0;e<document.querySelectorAll('[hexo-adsense="ads-content"]').length;e++)(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:hexoAdsenseConfig.pub})}isBrowser()?(window.__tcfapi=(e,t,n)=>{"checkConsent"===e&&n(!0),"addEventListener"===e&&n({eventStatus:"tcloaded",gdprApplies:!1},!0)},"function"==typeof document.addEventListener?document.addEventListener("DOMContentLoaded",newMethod):"function"==typeof window.attachEvent?window.attachEvent("onload",newMethod):window.onload=newMethod):module.exports={replaceWith:replaceWith,insertAfter:insertAfter};</script></body>
+</html>

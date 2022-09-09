@@ -1,7 +1,12 @@
-* text=auto
-
-# 2010
-*.txt -crlf
-
-# 2020
-*.txt text eol=lf
+*           text=auto
+*.txt       text eol=lf
+*.json      text eol=lf
+*.txt       text
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
+*.ts        text eol=lf
+*.js        text eol=lf
+*.png       binary diff
+*.jpg       binary diff
+*.ico       binary diff
+*.pdf       binary diff

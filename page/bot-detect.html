@@ -1,0 +1,294 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link
+      rel="mask-icon"
+      type=""
+      href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111" />
+
+    <title>Javascript Bot Detector Tools</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script data-ad-client="ca-pub-1165447249910969" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <style>
+      * {
+        word-wrap: break-word;
+      }
+
+      ol.breadcrumb li {
+        display: inline;
+        margin-right: 0.2rem;
+        margin-left: 0.2rem;
+      }
+    </style>
+
+    <script>
+      window.console = window.console || function (t) {};
+    </script>
+
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+  </head>
+
+  <body translate="no">
+    <main class="container-fluid">
+      <div>
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" id="BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="https://webmanajemen.com"> <span itemprop="name">Homepage</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          ›
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="https://webmanajemen.com/page"> <span itemprop="name">Page</span></a>
+            <meta itemprop="position" content="2" />
+          </li>
+          ›
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect"> <span itemprop="name">Selenium Checker</span></a>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+        <h1>is iam bot ?</h1>
+        <table class="table">
+          <tr>
+            <td>Selenium</td>
+            <td><span id="selenium">Message Result</span></td>
+          </tr>
+          <tr>
+            <td>IP</td>
+            <td id="ip"></td>
+          </tr>
+          <tr>
+            <td>UA</td>
+            <td id="ua"></td>
+          </tr>
+          <tr>
+            <td>Using Proxy</td>
+            <td><span id="isProxy">false</span> <span id="proxy">-</span></td>
+          </tr>
+          <tr>
+            <table id="cookies" class="table">
+              <thead>
+                <tr>
+                  <th>Cookie Key</th>
+                  <th>Cookie Value</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </tr>
+        </table>
+      </div>
+
+      <div class="mt-3">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Git-Page Square -->
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-1165447249910969"
+          data-ad-slot="2485594086"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </main>
+
+    <script id="rendered-js">
+      console.clear();
+      let logdiv = document.getElementById("selenium");
+      let test = runBotDetection();
+      logdiv.innerHTML = test;
+      if (typeof fetch != "undefined") {
+        fetch("https://www.cloudflare.com/cdn-cgi/trace").then((response) => {
+          response.text().then(function (data) {
+            data = data
+              .trim()
+              .split("\n")
+              .reduce(function (obj, pair) {
+                pair = pair.split("=");
+                return (obj[pair[0]] = pair[1]), obj;
+              }, {});
+            //console.log(data);
+            document.getElementById("ip").innerText = data.ip;
+            document.getElementById("ua").innerText = data.uag;
+          });
+        });
+        fetch("https://httpbin.org/headers")
+          .then((response) => response.json())
+          .then((data) => {
+            //console.log(data.headers);
+            const headers = [
+              "HTTP_VIA",
+              "HTTP_X_FORWARDED_FOR",
+              "HTTP_FORWARDED_FOR",
+              "HTTP_X_FORWARDED",
+              "HTTP_FORWARDED",
+              "HTTP_CLIENT_IP",
+              "HTTP_FORWARDED_FOR_IP",
+              "VIA",
+              "X_FORWARDED_FOR",
+              "FORWARDED_FOR",
+              "X_FORWARDED",
+              "FORWARDED",
+              "CLIENT_IP",
+              "FORWARDED_FOR_IP",
+              "HTTP_PROXY_CONNECTION",
+            ];
+            headers.forEach(function (header) {
+              const isProxy = data.headers.hasOwnProperty(header);
+              document.getElementById("isProxy").innerText = isProxy;
+              document.getElementById("proxy").innerText = data.headers[header] || "";
+            });
+          });
+      }
+
+      function runBotDetection() {
+        const documentDetectionKeys = [
+          "__webdriver_evaluate",
+          "__selenium_evaluate",
+          "__webdriver_script_function",
+          "__webdriver_script_func",
+          "__webdriver_script_fn",
+          "__fxdriver_evaluate",
+          "__driver_unwrapped",
+          "__webdriver_unwrapped",
+          "__driver_evaluate",
+          "__selenium_unwrapped",
+          "__fxdriver_unwrapped",
+        ];
+        const windowDetectionKeys = ["_phantom", "__nightmare", "_selenium", "callPhantom", "callSelenium", "_Selenium_IDE_Recorder"];
+        for (const windowDetectionKey in windowDetectionKeys) {
+          const windowDetectionKeyValue = windowDetectionKeys[windowDetectionKey];
+          if (window[windowDetectionKeyValue] || windowDetectionKeyValue in window) {
+            return true;
+          }
+        }
+        for (const documentDetectionKey in documentDetectionKeys) {
+          const documentDetectionKeyValue = documentDetectionKeys[documentDetectionKey];
+          if (window["document"][documentDetectionKeyValue] || documentDetectionKeyValue in document) {
+            return true;
+          }
+        }
+        for (const documentKey in window["document"]) {
+          if (documentKey.match(/\$[a-z]dc_/) && window["document"][documentKey]["cache_"]) {
+            return true;
+          }
+        }
+        if (window["external"] && window["external"].toString() && window["external"].toString()["indexOf"]("Sequentum") !== -1)
+          return true;
+        if (window["document"]["documentElement"]["getAttribute"]("selenium")) return true;
+        if (window["document"]["documentElement"]["getAttribute"]("webdriver")) return true;
+        if (window["document"]["documentElement"]["getAttribute"]("driver")) return true;
+        if (window.document.documentElement.getAttribute("webdriver")) {
+          return true;
+        }
+        if (window.hasOwnProperty("callPhantom") || window.hasOwnProperty("_phantom")) {
+          if (window.callPhantom || window._phantom) {
+            return true;
+          }
+        }
+        if (navigator.hasOwnProperty("webdriver")) {
+          if (navigator.webdriver == true) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function getCookies() {
+        var cookies = document.cookie.split(";").reduce((ac, cv, i) => Object.assign(ac, { [cv.split("=")[0]]: cv.split("=")[1] }), {});
+        return cookies;
+      }
+
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(";");
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == " ") c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+      function eraseCookie(name) {
+        document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+      }
+      setCookie("random math", Math.random(), 1);
+      console.clear();
+      const tbl = document.querySelector("table#cookies");
+      const tbody = tbl.querySelector("tbody");
+      const gck = getCookies();
+      for (let key in gck) {
+        console.log(key, gck[key]);
+        var row = document.createElement("tr");
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode(key);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        cell = document.createElement("td");
+        cellText = document.createTextNode(gck[key]);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+        tbody.appendChild(row);
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("send", "pageview");
+    </script>
+
+    <script>
+      gtag("config", "UA-106238155-1", {
+        page_title: document.title,
+        page_path: location.pathname,
+        page_location: location.href,
+      });
+    </script>
+
+    <script>
+      gtag("config", "G-BG75CLNJZ1", {
+        page_title: document.title,
+        page_path: location.pathname,
+        page_location: location.href,
+      });
+    </script>
+  </body>
+</html>

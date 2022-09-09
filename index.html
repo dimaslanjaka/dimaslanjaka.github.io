@@ -1,1256 +1,1292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+  <!--responsive-->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--icons-->
+<link
+  rel="shortcut icon"
+  type="image/x-icon"
+  href="//cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link
+  rel="mask-icon"
+  href="//cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+  color="#111" />
+
+<!--seo-->
+<title>Chimeraland In-Game Informations - WMI</title>
+<meta
+  name="description"
+  content="
+  Chimeraland In-Game Informations - WMI
+" />
+<meta
+  name="author"
+  content="
+   Dimas Lanjaka
+ " />
+<link rel="canonical" href="https://webmanajemen.com/chimeraland" />
+
+  <!--loading speed-->
+<link rel="preconnect" href="//fonts.googleapis.com" />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//fonts.gstatic.com" />
+<link rel="preconnect" href="//cdn.jsdelivr.net" />
+<link rel="preconnect" href="//raw.githack.com" />
+
+<!--stylesheets-->
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap" />
+<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:600,900" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+<style>
+  ::-webkit-scrollbar {
+    width: 2em;
+    height: 2em;
+  }
+
+  ::-webkit-scrollbar-button {
+    background: #ccc;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #eee;
+  }
+
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    color: whitesmoke;
+  }
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  body {
+    background-color: #202125;
+    height: 100%;
+    color: whitesmoke;
+  }
 
-<link rel="stylesheet" href="/css/main.css">
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
 
+  /* image responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
+  /* Browser specific (not valid) styles to make preformatted text wrap */
+  pre {
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+  }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  b,
+  strong {
+    font-family: Raleway;
+  }
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+  td,
+  p,
+  .text {
+    font-family: 'Roboto', sans-serif;
+  }
 
+  .heading {
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 1px;
+    padding: 40px;
+    color: white;
+  }
 
-    <meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WMI">
-<meta property="og:url" content="https://www.webmanajemen.com/index.html">
-<meta property="og:site_name" content="WMI">
-<meta property="og:description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Dimas Lanjaka">
-<meta property="article:tag" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce">
-<meta name="twitter:card" content="summary">
+  #info {
+    padding: 40px;
+  }
 
+  .material-icons {
+    display: inline-flex;
+    vertical-align: text-bottom;
+  }
 
-<link rel="canonical" href="https://www.webmanajemen.com/">
+  .blue-color {
+    color: blue;
+  }
 
+  .green-color {
+    color: green;
+  }
 
+  .teal-color {
+    color: teal;
+  }
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+  .yellow-color {
+    color: yellow;
+  }
 
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>WMI</title>
+  .red-color {
+    color: red;
+  }
+
+  /* responsive youtube iframe */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    padding-top: 25px;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* datatables */
+  .table-wrap,
+  .table-container,
+  [class*='dataTables_wrapper'] {
+    clear: both;
+  }
+</style>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806"
+  crossorigin="anonymous"></script>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
+  <style>
+#result-group {
+  max-height: 500px;
+  overflow: auto;
+  scrollbar-width: thin; }
+  #result-group * {
+    color: black;
+    background-color: whitesmoke; }
 
+#search .material-icons {
+  color: black; }
 
+#about a {
+  text-decoration: none;
+  color: #1e98e9; }
 
-
-<script id="hexo-adsense-config" type="application/json">{"enable":true,"article_ads":["source/ads/in_article_kiki.html","source/ads/in_article_kiki2.html"],"pub":"ca-pub-2188063137129806","adblock":false,"https":false,"field":"site","type":"javascript","exclude":["*.min.html","**/exclude/**/*"],"development":false,"args":{"_":[]},"debug":false,"safe":false,"silent":false,"env":"development","version":"6.2.0","cmd":"generate","init":true}</script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806" crossorigin="anonymous"></script>
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-  <link href="/custom.css" rel="stylesheet" />
-<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
-<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</style>
+  
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">WMI</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          Table of Contents
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <li class="sidebar-nav-overview">
-          Overview
+        <li class="nav-item">
+          <a class="nav-link" href="/chimeraland">Back To Index</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chimeraland/attendants">Attendant</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chimeraland/monsters">Monsters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chimeraland/materials">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chimeraland/recipes.html">Recipes</a>
+        </li>
+        <li class="nav-item d-none">
+          <a class="nav-link" href="https://hexo-backend.herokuapp.com/chimeraland/attendants" rel="nofollow noopener"><span class="material-icons"> add_circle </span> Attendant</a>
         </li>
       </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
-  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">766</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">categories</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">74</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
-      </span>
+    </div>
   </div>
+</nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 mb-2" id="mainbar">
+        
+        <h1 class="heading">Unofficial Chimeraland Wikipedia</h1>
 
 
-
+<div class="container-fluid">
+  <form class="row row-cols-lg-auto g-3 align-items-center mb-2" id="search">
+    <div class="col-12">
+      <label class="visually-hidden" for="SearchBox">Type Keywords</label>
+      <div class="input-group">
+        <div class="input-group-text">
+          <span class="material-icons">search</span>
         </div>
+        <input type="text" class="form-control" id="SearchBox" placeholder="Type an keywords" />
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
+  </form>
 
+  <div class="list-group mb-4" id="result-group"></div>
 
-    </header>
+  <div class="post-wrapper group" id="about">
+    <h2>About This Website</h2>
+    <div>
+      <p>
+        This website builded with NodeJS with Typescript.
+        This website has data of chimeraland including:
+      </p>
+      <ul>
+        <li>Chimeraland Monsters And Attendants Information</li>
+        <li><a href="/chimeraland/recipes.html">Chimeraland Cooking Recipes List</a></li>
+        <li><a href="/chimeraland/recipes.html">Attendant Delicacies/Tasty Recipes List</a></li>
+        <li><a href="/chimeraland/recipes.html">Monster Delicacies/Tasty Recipes List</a></li>
+      </ul>
+    </div>
+    <h2 class="entry-title">About Chimeraland</h2>
+    <div class="entry-content">
+      <div class="entry">
+        <p class="mb-2">
+          <a href="/">Chimeraland</a> is an open world sandbox RPG, in the game
+          you will experience the following:
+        </p>
 
-    
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+        <div class="mb-2">
+          <img data-attachment-id="60"
+            data-orig-file="https://chimera-land.info/wp-content/uploads/2022/02/1f244db13b1733d85bd218c42148ae4e-3.jpg"
+            data-medium-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/1f244db13b1733d85bd218c42148ae4e-3.jpg?fit=300%2C169&amp;ssl=1"
+            data-large-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/1f244db13b1733d85bd218c42148ae4e-3.jpg?fit=740%2C416&amp;ssl=1"
+            src="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/1f244db13b1733d85bd218c42148ae4e-3.jpg?w=736&amp;h=414&amp;ssl=1"
+            title="magical" alt="magical" width="736" height="414" />
+        </div>
+
+        <p class="mb-2">
+          Great world exploration, a total of 4 continents over 9 billion square
+          feet of maps for you to gather, hunt, treasure hunt and build homes
+        </p>
+
+        <div class="mb-2">
+          <img data-attachment-id="61"
+            data-orig-file="https://chimera-land.info/wp-content/uploads/2022/02/3434767a8ede09b00d6426bba28cf631-1.jpg"
+            data-orig-size="1920,1080" data-comments-opened="1"
+            data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}'
+            data-image-title="mystical beast" data-image-description=""
+            data-medium-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/3434767a8ede09b00d6426bba28cf631-1.jpg?fit=300%2C169&amp;ssl=1"
+            data-large-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/3434767a8ede09b00d6426bba28cf631-1.jpg?fit=740%2C416&amp;ssl=1"
+            src="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/3434767a8ede09b00d6426bba28cf631-1.jpg?w=736&amp;h=414&amp;ssl=1"
+            data-original-width="736" data-original-height="414" itemprop="http://schema.org/image"
+            title="mystical beast" alt="Mystical Beast" width="736" height="414" />
+          <div class="tiled-gallery-caption">Mystical Beast</div>
+        </div>
+
+        <p class="mb-2">
+          Hunting ancient strange animals, the big world will open up hundreds
+          and thousands of years of strange animals for you to hunt materials
+          for making artifacts and equipment, you can also capture them as pets
+          and customize their appearance by devouring them in pairs.
+        </p>
+
+        <div class="mb-2">
+          <img data-attachment-id="62"
+            data-orig-file="https://chimera-land.info/wp-content/uploads/2022/02/a0c832bae97b1e8859a1305fbeba5112.jpg"
+            data-medium-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/a0c832bae97b1e8859a1305fbeba5112.jpg?fit=300%2C169&amp;ssl=1"
+            data-large-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/a0c832bae97b1e8859a1305fbeba5112.jpg?fit=740%2C416&amp;ssl=1"
+            src="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/a0c832bae97b1e8859a1305fbeba5112.jpg?w=736&amp;h=414&amp;ssl=1"
+            data-original-width="736" data-original-height="414" itemprop="http://schema.org/image" title="cuztomizable"
+            alt="cuztomizable" width="736" height="414" />
+        </div>
+
+        <p class="mb-2">
+          A unique copy, you can enter more than ten kinds of single-player and
+          team copies carefully prepared for you by interacting with special
+          furniture and large map scene elements to carry out various themed
+          challenges.
+        </p>
+
+        <div class="mb-2">
+          <img data-attachment-id="63"
+            data-orig-file="https://chimera-land.info/wp-content/uploads/2022/02/2189039ac8f756e6d4a8a95b63da9778.jpg"
+            data-medium-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/2189039ac8f756e6d4a8a95b63da9778.jpg?fit=300%2C169&amp;ssl=1"
+            data-large-file="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/2189039ac8f756e6d4a8a95b63da9778.jpg?fit=740%2C416&amp;ssl=1"
+            src="https://i0.wp.com/chimera-land.info/wp-content/uploads/2022/02/2189039ac8f756e6d4a8a95b63da9778.jpg?w=736&amp;h=414&amp;ssl=1"
+            data-original-width="736" data-original-height="414" title="beasty" alt="beasty" width="736" height="414" />
+        </div>
+
+        <p class="mb-2">
+          Unlimited PVP, Zhongshan Mainland will be open 24/7 for you to compete
+          for PVP and resources in the wild.
+        </p>
+      </div>
+      <!--/.entry-->
+    </div>
   </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="https://i.ytimg.com/vi/XNoP-KAxXyE/maxresdefault.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/chimeraland/redeem-code.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/chimeraland/redeem-code.html" class="post-title-link" itemprop="url">Redeem Code Chimeraland September 2022 Updated</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-06 17:00:00" itemprop="dateCreated datePublished" datetime="2022-05-06T17:00:00+07:00">2022-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-09-03 04:01:00" itemprop="dateModified" datetime="2022-09-03T04:01:00+07:00">2022-09-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/Chimeraland/" itemprop="url" rel="index"><span itemprop="name">Chimeraland</span></a>
-        </span>
-    </span>
-
-  
 </div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Redeem Code Chimeraland September 2022 Updated - WMI</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/chimeraland/redeem-code.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/08/bootstrap-4-multi-card-carousel.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/bootstrap-4-multi-card-carousel.html" class="post-title-link" itemprop="url">Bootstrap 4 Multi Card Carousel Without Any Plugin</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-08-28 15:11:00" itemprop="dateCreated datePublished" datetime="2022-08-28T15:11:00+07:00">2022-08-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/JS/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>How to create bootstrap 4 multiple cards carousel without any plugin</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/08/bootstrap-4-multi-card-carousel.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="/The%20Legend%20Of%20Neverland/Quiz/SCENIC-QUIZ.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/The%20Legend%20Of%20Neverland/Quiz.html" class="post-title-link" itemprop="url">Quiz The Legend Of Neverland</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-08-15 17:00:00" itemprop="dateCreated datePublished" datetime="2021-08-15T17:00:00+07:00">2021-08-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-28 04:45:00" itemprop="dateModified" datetime="2022-08-28T04:45:00+07:00">2022-08-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/The-Legend-Of-Neverland/" itemprop="url" rel="index"><span itemprop="name">The Legend Of Neverland</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Quiz questions and the answers. The Legend Of Neverland Event.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/The%20Legend%20Of%20Neverland/Quiz.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="/2022/08/js-capitalize-first-letter-each-words/cover.png" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/08/js-capitalize-first-letter-each-words.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/js-capitalize-first-letter-each-words.html" class="post-title-link" itemprop="url">JS Capitalize First Letter of Each Words Which Mixed With Symbols</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-08-26 01:44:00" itemprop="dateCreated datePublished" datetime="2022-08-26T01:44:00+07:00">2022-08-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>how to capitalize the first letter of any word mixed with symbols or non-alphabetic chars in JavaScript</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/08/js-capitalize-first-letter-each-words.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="/chimeraland/Pets/cover.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="id">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/chimeraland/Pets.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/chimeraland/Pets.html" class="post-title-link" itemprop="url">Chimeraland Pets Attribute Stats Information</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-02-18 03:37:00" itemprop="dateCreated datePublished" datetime="2022-02-18T03:37:00+07:00">2022-02-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-25 22:30:00" itemprop="dateModified" datetime="2022-08-25T22:30:00+07:00">2022-08-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/Chimeraland/" itemprop="url" rel="index"><span itemprop="name">Chimeraland</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Information about pets attributes chimeraland</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/chimeraland/Pets.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="id">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/chimeraland/Recipes-list.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/chimeraland/Recipes-list.html" class="post-title-link" itemprop="url">Cooking Recipes Chimeraland</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-11T00:00:00+07:00">2022-01-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-25 22:30:00" itemprop="dateModified" datetime="2022-08-25T22:30:00+07:00">2022-08-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/Chimeraland/" itemprop="url" rel="index"><span itemprop="name">Chimeraland</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Chimeraland cooking recipes and food functions such as buffs and attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan seperti buff dan kesukaan attendant</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/chimeraland/Recipes-list.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="https://i.ytimg.com/vi/cTViqpwvxqU/maxresdefault.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/chimeraland/pet-attendant-delicacies.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/chimeraland/pet-attendant-delicacies.html" class="post-title-link" itemprop="url">Pet and attendant delicacies tasty informations Chimeraland</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-06-09 17:00:00" itemprop="dateCreated datePublished" datetime="2022-06-09T17:00:00+07:00">2022-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-25 22:30:00" itemprop="dateModified" datetime="2022-08-25T22:30:00+07:00">2022-08-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/Chimeraland/" itemprop="url" rel="index"><span itemprop="name">Chimeraland</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Pet and attendant delicacies tasty informations in game chimeraland</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/chimeraland/pet-attendant-delicacies.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/12/js-javascript-function-remove-slash.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/12/js-javascript-function-remove-slash.html" class="post-title-link" itemprop="url">JS Javascript Function Remove Slash From String</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-12-26 22:39:00" itemprop="dateCreated datePublished" datetime="2017-12-26T22:39:00+07:00">2017-12-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-17 17:31:00" itemprop="dateModified" datetime="2022-08-17T17:31:00+07:00">2022-08-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Programming/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>All I needed was to expel every single forward slice in a string utilizing Javascript.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/12/js-javascript-function-remove-slash.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="https://i.ytimg.com/vi/IhliPngCEbw/maxresdefault.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/chimeraland/Taming.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/chimeraland/Taming.html" class="post-title-link" itemprop="url">Taming Pets Chimeraland</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-03-16 07:41:00" itemprop="dateCreated datePublished" datetime="2022-03-16T07:41:00+07:00">2022-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-14 20:12:00" itemprop="dateModified" datetime="2022-08-14T20:12:00+07:00">2022-08-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/" itemprop="url" rel="index"><span itemprop="name">Games</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Games/Chimeraland/" itemprop="url" rel="index"><span itemprop="name">Chimeraland</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Taming pity in chimeraland</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/chimeraland/Taming.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    
-    <div class="post-gallery-image">
-      <img src="/2022/07/mengatasi-flash-qfil-error/cover.jpg" itemprop="contentUrl">
-    </div>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/07/mengatasi-flash-qfil-error.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Dimas Lanjaka">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WMI">
-      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WMI">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/mengatasi-flash-qfil-error.html" class="post-title-link" itemprop="url">Cara Mengatasi Flash QFIL Error</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-27 17:00:00" itemprop="dateCreated datePublished" datetime="2022-07-27T17:00:00+07:00">2022-07-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Solusi Flash QFIL Error</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/mengatasi-flash-qfil-error.html">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/77/">77</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
-</div>
-
-<script src="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.js"></script>
-<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/cookiesconsent.min.css" />
-<link rel="stylesheet" href="https://raw.githack.com/oxterisk/cookiesconsentjs/main/src/themes/cookiesconsent.theme-dark.css" />
-<script>
- CookiesConsentJS({
-      content : {
-        // title
-        title: "Cookies compliance",
-        // message
-        message: "We use cookies",
-        // custom button text
-        btnAccept: "Accept all",
-        btnReject: "Reject all",
-        btnDismiss: "Cookies policy",
-        btnSettings: "Settings",
-        btnSettingsSelectAll: "Select all",
-        btnSettingsUnselectAll: "Unselect all",
-        btnSettingsAccept: "Accept selection",
-        btnInfo: "More info",
-        policy: "Privacy Policy",
-        // left, right, center
-        align: "left",
-        // policy link
-        policyLink : "https://gdpr-info.eu/",
-        // Text that will be shown in the information popup
-        info: "<h2>This is the info title</h2>",
-    },
-});
+      </div>
+      <div class="col-lg-4 mb-2 d-none d-lg-block" id="sidebar">
+        <div class="card bg-dark text-white mb-2 border border-light">
+          <div class="card-body text-center">
+            <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script>
+<script type='text/javascript'>
+  (function () { var trbtnId = trbtn.init('Support Me at Trakteer', '#030303', 'https://trakteer.id/dimaslanjaka', 'https://cdn.trakteer.id/images/embed/trbtn-icon.png', '40'); trbtn.draw(trbtnId); })();
 </script>
+<noscript><a href="https://trakteer.id/dimaslanjaka" target="_blank" rel="nofollow noopener"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-black-5.png" style="border:0px;height:40px;" alt="Trakteer Saya" height="40"></a></noscript>
+          </div>
+        </div>
+        
+
+<div class="card bg-dark text-white mb-2 border border-light" id="rData0">
+  <div class="card-body">
+    
+    
+    <div class="card-title"><a href="/chimeraland/monsters/halcyonet.html" style="text-decoration: none;" class="text-light">Halcyonet</a>
     </div>
+    <p class="card-text">
+    <div class="accordion bg-dark text-light" id="accordionSnippet0">
+      <div class="accordion-item bg-dark text-light">
+        <h2 class="accordion-header" id="flush-heading0">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse0" aria-expanded="false"
+            aria-controls="flush-collapse0">
+            View Details
+          </button>
+        </h2>
+        <div id="flush-collapse0" class="accordion-collapse collapse"
+          aria-labelledby="flush-heading0" data-bs-parent="#accordionSnippet0">
+          <div class="accordion-body">
+            Monster Halcyonet
+            
+            with default quality <span style="color: rgb(74, 248, 118)">GRADE C ATK 48 HP 45 DEF 20</span>
+            
+            
+            
+            
+            and have buffs like <span style="color: rgb(237, 248, 74)">Attributes Conversion Rate 4.0%</span>, <span style="color: rgb(237, 248, 74)">Crit 328</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </p>
+    <a href="/chimeraland/monsters/halcyonet.html" class="btn btn-primary">Go View</a>
+  </div>
+</div>
+
+<div class="card bg-dark text-white mb-2 border border-light" id="rData1">
+  <div class="card-body">
+    
+    
+    <div class="card-title"><a href="/chimeraland/recipes.html?q=Red Cabbage Soup" style="text-decoration: none;" class="text-light">Red Cabbage Soup</a>
+    </div>
+    <p class="card-text">
+    <div class="accordion bg-dark text-light" id="accordionSnippet1">
+      <div class="accordion-item bg-dark text-light">
+        <h2 class="accordion-header" id="flush-heading1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse1" aria-expanded="false"
+            aria-controls="flush-collapse1">
+            View Details
+          </button>
+        </h2>
+        <div id="flush-collapse1" class="accordion-collapse collapse"
+          aria-labelledby="flush-heading1" data-bs-parent="#accordionSnippet1">
+          <div class="accordion-body">
+            Recipe Red Cabbage Soup
+            
+            
+            can be cooked with ingredients such as <span style="color: rgb(248, 74, 205)">Tomato + Dew/Ice Piece + Any Lv.6 Crop + Any Mixed Sauce + Dew/Ice Piece</span>
+            
+            
+            
+            and have buffs like <span style="color: rgb(237, 248, 74)">660 Fullness</span>, <span style="color: rgb(237, 248, 74)">+250 <a href="/chimeraland/recipes.html?q=atk">ATK</a></span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </p>
+    <a href="/chimeraland/recipes.html?q=Red Cabbage Soup" class="btn btn-primary">Go View</a>
+  </div>
+</div>
+
+<div class="card bg-dark text-white mb-2 border border-light" id="rData2">
+  <div class="card-body">
+    
+    
+    <div class="card-title"><a href="/chimeraland/monsters/stampdragon.html" style="text-decoration: none;" class="text-light">Stampdragon</a>
+    </div>
+    <p class="card-text">
+    <div class="accordion bg-dark text-light" id="accordionSnippet2">
+      <div class="accordion-item bg-dark text-light">
+        <h2 class="accordion-header" id="flush-heading2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse2" aria-expanded="false"
+            aria-controls="flush-collapse2">
+            View Details
+          </button>
+        </h2>
+        <div id="flush-collapse2" class="accordion-collapse collapse"
+          aria-labelledby="flush-heading2" data-bs-parent="#accordionSnippet2">
+          <div class="accordion-body">
+            Monster Stampdragon
+            
+            with default quality <span style="color: rgb(74, 248, 118)">GRADE B ATK 60 HP 60 DEF 60</span>
+            
+            
+            
+            
+            and have buffs like <span style="color: rgb(237, 248, 74)">Attributes Conversion Rate 4.0%</span>, <span style="color: rgb(237, 248, 74)">Melee DMG Increase 4.8%</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </p>
+    <a href="/chimeraland/monsters/stampdragon.html" class="btn btn-primary">Go View</a>
+  </div>
+</div>
+
+<div class="card bg-dark text-white mb-2 border border-light" id="rData3">
+  <div class="card-body">
+    
+    
+    <div class="card-title"><a href="/chimeraland/monsters/lime-lobcray.html" style="text-decoration: none;" class="text-light">Lime Lobcray</a>
+    </div>
+    <p class="card-text">
+    <div class="accordion bg-dark text-light" id="accordionSnippet3">
+      <div class="accordion-item bg-dark text-light">
+        <h2 class="accordion-header" id="flush-heading3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse3" aria-expanded="false"
+            aria-controls="flush-collapse3">
+            View Details
+          </button>
+        </h2>
+        <div id="flush-collapse3" class="accordion-collapse collapse"
+          aria-labelledby="flush-heading3" data-bs-parent="#accordionSnippet3">
+          <div class="accordion-body">
+            Monster Lime Lobcray
+            
+            with default quality <span style="color: rgb(74, 248, 118)">GRADE B ATK 60 HP 60 DEF 60</span>
+            
+            
+            
+            
+            and have buffs like <span style="color: rgb(237, 248, 74)">Attributes Conversion Rate 4.0%</span>, <span style="color: rgb(237, 248, 74)">Defense 44</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </p>
+    <a href="/chimeraland/monsters/lime-lobcray.html" class="btn btn-primary">Go View</a>
+  </div>
+</div>
+
+<div class="card bg-dark text-white mb-2 border border-light" id="rData4">
+  <div class="card-body">
+    
+    
+    <div class="card-title"><a href="/chimeraland/recipes.html?q=Grilled Kidneys" style="text-decoration: none;" class="text-light">Grilled Kidneys</a>
+    </div>
+    <p class="card-text">
+    <div class="accordion bg-dark text-light" id="accordionSnippet4">
+      <div class="accordion-item bg-dark text-light">
+        <h2 class="accordion-header" id="flush-heading4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse4" aria-expanded="false"
+            aria-controls="flush-collapse4">
+            View Details
+          </button>
+        </h2>
+        <div id="flush-collapse4" class="accordion-collapse collapse"
+          aria-labelledby="flush-heading4" data-bs-parent="#accordionSnippet4">
+          <div class="accordion-body">
+            Recipe Grilled Kidneys
+            
+            
+            can be cooked with ingredients such as <span style="color: rgb(248, 74, 205)">Kidney + Kidney</span>
+            
+            
+            
+            and have buffs like <span style="color: rgb(237, 248, 74)">300 Fullness</span>, <span style="color: rgb(237, 248, 74)">15 RES</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </p>
+    <a href="/chimeraland/recipes.html?q=Grilled Kidneys" class="btn btn-primary">Go View</a>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div id="disqus_thread">
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="//disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+</div>
+<script>
+  (() => {
+    var disqus_shortname = 'dimaslanjaka';
+    var disqus_identifier = location.pathname;
+    const canonical =
+      typeof jQuery !== 'undefined'
+        ? $('[rel="canonical"]').attr('href')
+        : document.querySelector('[rel="canonical"]')
+        ? document.querySelector('[rel="canonical"]').getAttribute('href')
+        : null;
+    //console.log(canonical, 'https://www.webmanajemen.com' + location.pathname);
+    var disqus_url =
+      canonical || 'https://www.webmanajemen.com' + location.pathname;
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      //https://help.disqus.com/en/articles/1717274-adding-comment-count-links-to-your-home-page
+      dsq.id = 'dsq-count-scr';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; // count.js or embed.js
+      document.getElementsByTagName('body')[0].appendChild(dsq);
+    })();
+  })();
+</script>
+
+  </div>
+
+  <div class="container-fluid">
+
+  <div class="mb-2">
+    <table class="table">
+      <thead>
+        <h5>
+          Overview – Full Details Of Chimeraland Game (Wiki and Game Info)
+        </h5>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Game Title</th>
+          <td>Chimeraland</td>
+        </tr>
+        <tr>
+          <th>Release date</th>
+          <td>January 2022</td>
+        </tr>
+        <tr>
+          <th>Publisher</th>
+          <td>Level Infinite</td>
+        </tr>
+        <tr>
+          <th rowspan="3">Device to play</th>
+          <td>Andriod 6.0 and up</td>
+        </tr>
+        <tr>
+          <td>IOS</td>
+        </tr>
+        <tr>
+          <td>PC Windows</td>
+        </tr>
+        <tr>
+          <th rowspan="4">Download Links</th>
+          <td>
+            <a href="https://play.google.com/store/apps/details?id=com.proximabeta.fancyworld&amp;hl=en_IN&amp;gl=PH"
+              target="_blank" rel="noreferrer noopener">
+              Playstore
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://apps.apple.com/us/app/chimeraland/id1610490305" target="_blank" rel="noreferrer noopener">
+              Apple Store
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.chimeraland.com/faqs.html" target="_blank" rel="noopener noreferrer">Download For PC</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://store.steampowered.com/app/1913730/Chimeraland/" target="_blank" rel="noopener noreferrer">Chimeraland Global on Steam</a>
+          </td>
+        </tr>
+        <tr>
+          <th>Official Social Media</th>
+          <td><a href="http://www.facebook.com/chimeraland" target="_blank" rel="noreferrer noopener">
+              Facebook
+            </a>
+            ,
+            <a href="https://twitter.com/Chimeraland" target="_blank" rel="noreferrer noopener">
+              Twitter
+            </a>
+            ,
+            <a href="https://discord.com/invite/5SCQx6R3Ds" target="_blank" rel="noreferrer noopener">
+              Discord
+            </a>
+            ,
+            <a href="https://www.youtube.com/c/Chimeraland" target="_blank" rel="noreferrer noopener">
+              Youtube
+            </a>
+            ,
+            <a href="https://www.instagram.com/chimeralandgame/" target="_blank" rel="noreferrer noopener">
+              Instagram
+            </a>
+            ,
+            <a href="https://www.tiktok.com/@chimeraland" target="_blank" rel="noreferrer noopener">
+              TikTok
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <th>chimeraland in-game informations last build date</th>
+          <td><abbr title="2022-09-09 GMT+07:00 WIB">2022-09-09 GMT+07:00 WIB</abbr></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="container-fluid">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">© 2022 WMI, Inc</p>
+
+    <a href="/"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item">
+        <a href="https://webmanajemen.com" class="nav-link px-2 text-muted">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://webmanajemen.com/chimeraland/attendants" class="nav-link px-2 text-muted">Attendants</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://webmanajemen.com/chimeraland/Pets" class="nav-link px-2 text-muted">Pets</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://www.facebook.com/secretnetworkforces" class="nav-link px-2 text-muted"
+          rel="nofollow noopener">Fanpage</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://webmanajemen.com/chimeraland/About.html" class="nav-link px-2 text-muted">About</a>
+      </li>
+    </ul>
   </footer>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>Bootstrap</title>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+    </path>
+  </symbol>
+  <symbol id="facebook" viewBox="0 0 16 16">
+    <path
+      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+  </symbol>
+  <symbol id="instagram" viewBox="0 0 16 16">
+    <path
+      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+  </symbol>
+  <symbol id="twitter" viewBox="0 0 16 16">
+    <path
+      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+  </symbol>
+</svg>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="//raw.githack.com/dimaslanjaka/smartform/master/dist/release/bundle.js"></script>
+<script src="/node_modules/js-cookie/dist/js.cookie.min.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
+<script>
+  $.ajaxPrefilter(function (options) {
+    if (options.crossDomain) {
+      options.url = '//dimaslanjaka-cors.herokuapp.com/' + options.url;
+      options.crossDomain = false;
+    }
+  });
+
+  (() => {
+    // nav active auto
+    const navWrap = Array.from(document.querySelectorAll('.navbar-nav'));
+    const pathnames = location.pathname
+      .split('/')
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0 && !s.includes('.html'));
+    //console.log(pathnames, pathnames[1], pathnames.length);
+    if (pathnames.length >= 1) {
+      navWrap.forEach((wrapper) => {
+        const items = Array.from(wrapper.querySelectorAll('.nav-link'));
+        const detectCurrentPage = items.find(
+          (el) => el.textContent.trim().toLowerCase() === pathnames[1]
+        );
+        if (detectCurrentPage) {
+          wrapper
+            .querySelectorAll('.active')
+            .forEach((el) => el.classList.remove('active'));
+          detectCurrentPage.classList.add('active');
+        }
+      });
+    }
+
+    // click on hash link
+
+    $(document).on('click', 'a[href^="#"]', function (e) {
+      //e.preventDefault();
+
+      /**
+       * @type {string}
+       */
+      const href = ($.attr(this, 'href') || $(this).attr('href'))
+        .replace('#', '')
+        .trim();
+      // skip empty href
+      if (href.length === 0) return;
+      let el = $('#' + href);
+      let offset = el.offset();
+      // fix if destination element id is capitalized
+      if (!offset) {
+        el = $('#' + capitalize(href));
+        offset = el.offset();
+      }
+      // scroll start
+      if (offset) {
+        $('html, body').animate(
+          {
+            scrollTop: offset.top
+          },
+          500
+        );
+      } else {
+        console.log({ href, capitalized: capitalize(href), el, offset });
+      }
+    });
+    /**
+     * capitalize string
+     * @param {string} str
+     * @param {string[]} moreSymbols add more symbols
+     * @returns
+     */
+    function capitalize(str, moreSymbols) {
+      let symbols = ['-', ' '];
+      if (Array.isArray(moreSymbols)) {
+        // concatenate more symbols
+        symbols = [...new Set(symbols.concat(moreSymbols))];
+      }
+      symbols.forEach((symbol) => {
+        str = str
+          .split(symbol)
+          .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
+          .join(symbol);
+      });
+      return str;
+    }
+  })();
+</script>
+  <select id="lang-select" class="form-control" no-save="true">
+  <option value="" selected>Select Language</option>
+  <option value="aa">Afar (Afar)</option>
+  <option value="ab">Abkhazian (Аҧсуа)</option>
+  <option value="af">Afrikaans (Afrikaans)</option>
+  <option value="ak">Akan (Akana)</option>
+  <option value="am">Amharic (አማርኛ)</option>
+  <option value="an">Aragonese (Aragonés)</option>
+  <option value="ar">Arabic (العربية)</option>
+  <option value="as">Assamese (অসমীয়া)</option>
+  <option value="av">Avar (Авар)</option>
+  <option value="ay">Aymara (Aymar)</option>
+  <option value="az">Azerbaijani (Azərbaycanca / آذربايجان)</option>
+  <option value="ba">Bashkir (Башҡорт)</option>
+  <option value="be">Belarusian (Беларуская)</option>
+  <option value="bg">Bulgarian (Български)</option>
+  <option value="bh">Bihari (भोजपुरी)</option>
+  <option value="bi">Bislama (Bislama)</option>
+  <option value="bm">Bambara (Bamanankan)</option>
+  <option value="bn">Bengali (বাংলা)</option>
+  <option value="bo">Tibetan (བོད་ཡིག / Bod skad)</option>
+  <option value="br">Breton (Brezhoneg)</option>
+  <option value="bs">Bosnian (Bosanski)</option>
+  <option value="ca">Catalan (Català)</option>
+  <option value="ce">Chechen (Нохчийн)</option>
+  <option value="ch">Chamorro (Chamoru)</option>
+  <option value="co">Corsican (Corsu)</option>
+  <option value="cr">Cree (Nehiyaw)</option>
+  <option value="cs">Czech (Čeština)</option>
+  <option value="cu">
+    Old Church Slavonic / Old Bulgarian (словѣньскъ / slověnĭskŭ)
+  </option>
+  <option value="cv">Chuvash (Чăваш)</option>
+  <option value="cy">Welsh (Cymraeg)</option>
+  <option value="da">Danish (Dansk)</option>
+  <option value="de">German (Deutsch)</option>
+  <option value="dv">Divehi (ދިވެހިބަސް)</option>
+  <option value="dz">Dzongkha (ཇོང་ཁ)</option>
+  <option value="ee">Ewe (Ɛʋɛ)</option>
+  <option value="el">Greek (Ελληνικά)</option>
+  <option value="en">English (English)</option>
+  <option value="eo">Esperanto (Esperanto)</option>
+  <option value="es">Spanish (Español)</option>
+  <option value="et">Estonian (Eesti)</option>
+  <option value="eu">Basque (Euskara)</option>
+  <option value="fa">Persian (فارسی)</option>
+  <option value="ff">Peul (Fulfulde)</option>
+  <option value="fi">Finnish (Suomi)</option>
+  <option value="fj">Fijian (Na Vosa Vakaviti)</option>
+  <option value="fo">Faroese (Føroyskt)</option>
+  <option value="fr">French (Français)</option>
+  <option value="fy">West Frisian (Frysk)</option>
+  <option value="ga">Irish (Gaeilge)</option>
+  <option value="gd">Scottish Gaelic (Gàidhlig)</option>
+  <option value="gl">Galician (Galego)</option>
+  <option value="gn">Guarani (Avañe'ẽ)</option>
+  <option value="gu">Gujarati (ગુજરાતી)</option>
+  <option value="gv">Manx (Gaelg)</option>
+  <option value="ha">Hausa (هَوُسَ)</option>
+  <option value="he">Hebrew (עברית)</option>
+  <option value="hi">Hindi (हिन्दी)</option>
+  <option value="ho">Hiri Motu (Hiri Motu)</option>
+  <option value="hr">Croatian (Hrvatski)</option>
+  <option value="ht">Haitian (Krèyol ayisyen)</option>
+  <option value="hu">Hungarian (Magyar)</option>
+  <option value="hy">Armenian (Հայերեն)</option>
+  <option value="hz">Herero (Otsiherero)</option>
+  <option value="ia">Interlingua (Interlingua)</option>
+  <option value="id">Indonesian (Bahasa Indonesia)</option>
+  <option value="ie">Interlingue (Interlingue)</option>
+  <option value="ig">Igbo (Igbo)</option>
+  <option value="ii">Sichuan Yi (ꆇꉙ / 四川彝语)</option>
+  <option value="ik">Inupiak (Iñupiak)</option>
+  <option value="io">Ido (Ido)</option>
+  <option value="is">Icelandic (Íslenska)</option>
+  <option value="it">Italian (Italiano)</option>
+  <option value="iu">Inuktitut (ᐃᓄᒃᑎᑐᑦ)</option>
+  <option value="ja">Japanese (日本語)</option>
+  <option value="jv">Javanese (Basa Jawa)</option>
+  <option value="ka">Georgian (ქართული)</option>
+  <option value="kg">Kongo (KiKongo)</option>
+  <option value="ki">Kikuyu (Gĩkũyũ)</option>
+  <option value="kj">Kuanyama (Kuanyama)</option>
+  <option value="kk">Kazakh (Қазақша)</option>
+  <option value="kl">Greenlandic (Kalaallisut)</option>
+  <option value="km">Cambodian (ភាសាខ្មែរ)</option>
+  <option value="kn">Kannada (ಕನ್ನಡ)</option>
+  <option value="ko">Korean (한국어)</option>
+  <option value="kr">Kanuri (Kanuri)</option>
+  <option value="ks">Kashmiri (कश्मीरी / كشميري)</option>
+  <option value="ku">Kurdish (Kurdî / كوردی)</option>
+  <option value="kv">Komi (Коми)</option>
+  <option value="kw">Cornish (Kernewek)</option>
+  <option value="ky">Kyrgyz (Кыргызча)</option>
+  <option value="la">Latin (Latina)</option>
+  <option value="lb">Luxembourgish (Lëtzebuergesch)</option>
+  <option value="lg">Ganda (Luganda)</option>
+  <option value="li">Limburgian (Limburgs)</option>
+  <option value="ln">Lingala (Lingála)</option>
+  <option value="lo">Laotian (ລາວ / Pha xa lao)</option>
+  <option value="lt">Lithuanian (Lietuvių)</option>
+  <option value="lu">Luba-Katanga (Tshiluba)</option>
+  <option value="lv">Latvian (Latviešu)</option>
+  <option value="mg">Malagasy (Malagasy)</option>
+  <option value="mh">Marshallese (Kajin Majel / Ebon)</option>
+  <option value="mi">Maori (Māori)</option>
+  <option value="mk">Macedonian (Македонски)</option>
+  <option value="ml">Malayalam (മലയാളം)</option>
+  <option value="mn">Mongolian (Монгол)</option>
+  <option value="mo">Moldovan (Moldovenească)</option>
+  <option value="mr">Marathi (मराठी)</option>
+  <option value="ms">Malay (Bahasa Melayu)</option>
+  <option value="mt">Maltese (bil-Malti)</option>
+  <option value="my">Burmese (မြန်မာစာ)</option>
+  <option value="na">Nauruan (Dorerin Naoero)</option>
+  <option value="nb">Norwegian Bokmål (Norsk bokmål)</option>
+  <option value="nd">North Ndebele (Sindebele)</option>
+  <option value="ne">Nepali (नेपाली)</option>
+  <option value="ng">Ndonga (Oshiwambo)</option>
+  <option value="nl">Dutch (Nederlands)</option>
+  <option value="nn">Norwegian Nynorsk (Norsk nynorsk)</option>
+  <option value="no">Norwegian (Norsk)</option>
+  <option value="nr">South Ndebele (isiNdebele)</option>
+  <option value="nv">Navajo (Diné bizaad)</option>
+  <option value="ny">Chichewa (Chi-Chewa)</option>
+  <option value="oc">Occitan (Occitan)</option>
+  <option value="oj">Ojibwa (ᐊᓂᔑᓈᐯᒧᐎᓐ / Anishinaabemowin)</option>
+  <option value="om">Oromo (Oromoo)</option>
+  <option value="or">Oriya (ଓଡ଼ିଆ)</option>
+  <option value="os">Ossetian / Ossetic (Иронау)</option>
+  <option value="pa">Panjabi / Punjabi (ਪੰਜਾਬੀ / पंजाबी / پنجابي)</option>
+  <option value="pi">Pali (Pāli / पाऴि)</option>
+  <option value="pl">Polish (Polski)</option>
+  <option value="ps">Pashto (پښتو)</option>
+  <option value="pt">Portuguese (Português)</option>
+  <option value="qu">Quechua (Runa Simi)</option>
+  <option value="rm">Raeto Romance (Rumantsch)</option>
+  <option value="rn">Kirundi (Kirundi)</option>
+  <option value="ro">Romanian (Română)</option>
+  <option value="ru">Russian (Русский)</option>
+  <option value="rw">Rwandi (Kinyarwandi)</option>
+  <option value="sa">Sanskrit (संस्कृतम्)</option>
+  <option value="sc">Sardinian (Sardu)</option>
+  <option value="sd">Sindhi (सिनधि)</option>
+  <option value="se">Northern Sami (Sámegiella)</option>
+  <option value="sg">Sango (Sängö)</option>
+  <option value="sh">Serbo-Croatian (Srpskohrvatski / Српскохрватски)</option>
+  <option value="si">Sinhalese (සිංහල)</option>
+  <option value="sk">Slovak (Slovenčina)</option>
+  <option value="sl">Slovenian (Slovenščina)</option>
+  <option value="sm">Samoan (Gagana Samoa)</option>
+  <option value="sn">Shona (chiShona)</option>
+  <option value="so">Somalia (Soomaaliga)</option>
+  <option value="sq">Albanian (Shqip)</option>
+  <option value="sr">Serbian (Српски)</option>
+  <option value="ss">Swati (SiSwati)</option>
+  <option value="st">Southern Sotho (Sesotho)</option>
+  <option value="su">Sundanese (Basa Sunda)</option>
+  <option value="sv">Swedish (Svenska)</option>
+  <option value="sw">Swahili (Kiswahili)</option>
+  <option value="ta">Tamil (தமிழ்)</option>
+  <option value="te">Telugu (తెలుగు)</option>
+  <option value="tg">Tajik (Тоҷикӣ)</option>
+  <option value="th">Thai (ไทย / Phasa Thai)</option>
+  <option value="ti">Tigrinya (ትግርኛ)</option>
+  <option value="tk">Turkmen (Туркмен / تركمن)</option>
+  <option value="tl">Tagalog / Filipino (Tagalog)</option>
+  <option value="tn">Tswana (Setswana)</option>
+  <option value="to">Tonga (Lea Faka-Tonga)</option>
+  <option value="tr">Turkish (Türkçe)</option>
+  <option value="ts">Tsonga (Xitsonga)</option>
+  <option value="tt">Tatar (Tatarça)</option>
+  <option value="tw">Twi (Twi)</option>
+  <option value="ty">Tahitian (Reo Mā`ohi)</option>
+  <option value="ug">Uyghur (Uyƣurqə / ئۇيغۇرچە)</option>
+  <option value="uk">Ukrainian (Українська)</option>
+  <option value="ur">Urdu (اردو)</option>
+  <option value="uz">Uzbek (Ўзбек)</option>
+  <option value="ve">Venda (Tshivenḓa)</option>
+  <option value="vi">Vietnamese (Tiếng Việt)</option>
+  <option value="vo">Volapük (Volapük)</option>
+  <option value="wa">Walloon (Walon)</option>
+  <option value="wo">Wolof (Wollof)</option>
+  <option value="xh">Xhosa (isiXhosa)</option>
+  <option value="yi">Yiddish (ייִדיש)</option>
+  <option value="yo">Yoruba (Yorùbá)</option>
+  <option value="za">Zhuang (Cuengh / Tôô / 壮语)</option>
+  <option value="zh">Chinese (中文)</option>
+  <option value="zu">Zulu (isiZulu)</option>
+</select>
+
+<style>
+  #lang-select {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 1000;
+  }
+</style>
+<script>
+  (() => {
+    const sel = $('#lang-select');
+    if (/translate.goog/.test(location.host)) {
+      sel.remove();
+    } else {
+      if (jQuery.fn.select2) {
+        jQuery.fn.select2.defaults.set('theme', 'bootstrap');
+        sel.select2();
+      }
+
+      sel.on('change', (e) => {
+        e.preventDefault();
+        const code = sel.val() || sel.find(':selected').val() || '';
+        const canonical = $('[rel="canonical"]').attr('href');
+        if (
+          typeof canonical === 'string' &&
+          canonical.length > 0 &&
+          code.length > 0
+        ) {
+          const url = location.host.includes(':') ? canonical : location.href;
+          const translateUrl = `http://translate.google.com/translate?hl=${code}&sl=id&u=${url}`;
+          const win = window.open(translateUrl, 'translate');
+          win.focus();
+        }
+      });
+    }
+  })();
+</script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106238155-1');
+</script>
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
-
   
+  <script type="text/javascript">
+/* eslint-disable no-undef */
 
+document.addEventListener('DOMContentLoaded', function () {
+  const baseApi = location.host.match(/:|hexo-backend/)
+    ? location.protocol + '//' + location.host
+    : '//hexo-backend.herokuapp.com';
+  // codepen
+  if (location.host.includes('cdpn')) {
+    $('html, body').animate({
+      scrollTop: $('#info').offset().top
+    });
+    //$('body').scrollTo('#info');
+  }
+  // search box
+  fetch(baseApi + '/authenticate', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ commit: '8569113246' })
+  }).finally(() => {
+    /**
+     * @type {Promise<import("../typings/data").AttendantData>}
+     */
+    const attendants = fetch(baseApi + '/chimeraland/attendants?show')
+      .then((res) => res.json())
+      .then((data) => {
+        data.data = data.data.map((item) => {
+          item['type'] = 'attendants';
+          return item;
+        });
+        return data;
+      });
 
+    /**
+     * @type {Promise<import("../typings/data").PetData>}
+     */
+    const pets = fetch(baseApi + '/chimeraland/Pets?show')
+      .then((res) => res.json())
+      .then((data) => {
+        data.data = data.data.map((item) => {
+          item['type'] = 'monsters';
+          return item;
+        });
+        return data;
+      });
+    Promise.all([attendants, pets])
+      .then((mix) => {
+        return {
+          att: mix[0].data,
+          pet: mix[1].data
+        };
+      })
+      .then((o) => {
+        console.log(o);
+        const AttendantData = o.att;
+        const PetData = o.pet;
+        const MixData = PetData.concat(AttendantData);
+        const result_template = (name, type) => {
+          return `<a href="/chimeraland/${type}/${name
+            .toLowerCase()
+            .trim()
+            .replace(
+              /\s+/,
+              '-'
+            )}.html" target="_blank" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">${name}</h5>
+              <small>${type}</small>
+            </div>
+            <p class="mb-1">${name} ${type} information</p>
+        <small class="text-muted">Click to view ${name} ${type} information</small>
+          </a>`;
+        };
+        const resultWrapper = $('#result-group');
+        const searchBox = $('#SearchBox');
 
+        // build first view
+        const result_all = () =>
+          resultWrapper.html(
+            MixData.map((o) => result_template(o.name, o.type))
+          );
+        result_all();
+        // setup finder
+        const result_reset = (reset_value = false) => {
+          resultWrapper.html('');
+          if (reset_value) searchBox.val('');
+        };
+        //searchBox.focus(() => result_reset(true));
+        //searchBox.focusout(result_reset);
+        searchBox.on('keyup', (e) => {
+          const val = e.target.value;
+          // if search box empty string, show all
+          if (val.trim().length == 0) return result_all();
+          const findFromStart = MixData.filter((o) => {
+            const name = o.name;
+            const delicacies = o.delicacies;
+            //const buff = "buff" in o ? o.buff : o.attr;
+            return (
+              name.toLowerCase().startsWith(val.toLowerCase()) ||
+              typeof delicacies.find((item) =>
+                item.toLowerCase().startsWith(val.toLowerCase())
+              ) !== 'undefined'
+            );
+          });
+          //console.log(findFromStart);
+          if (findFromStart.length > 0) {
+            const htmls = findFromStart.map((o) =>
+              result_template(o.name, o.type)
+            );
+            resultWrapper.html(htmls);
+          } else {
+            // find includes words
+            const findIncludes = MixData.filter((o) => {
+              const name = o.name;
+              const delicacies = o.delicacies;
+              return (
+                name.toLowerCase().includes(val.toLowerCase()) ||
+                typeof delicacies.find((item) =>
+                  item.toLowerCase().includes(val.toLowerCase())
+                ) !== 'undefined'
+              );
+            });
+            if (findIncludes.length > 0) {
+              const htmls = findIncludes.map((o) =>
+                result_template(o.name, o.type)
+              );
+              resultWrapper.html(htmls);
+            } else {
+              result_reset();
+            }
+          }
+        });
+      });
+  });
 
+  // bring on search result list active
+  $(document).on('mouseover', '.list-group', (e) => {
+    //console.log(e.target.tagName, e.target.className)
+    if (
+      e.target.className.match(
+        new RegExp('justify-content-between|list-group-item')
+      )
+    ) {
+      $('.list-group-item').removeClass('active');
+      if (e.target.className.match(new RegExp('justify-content-between'))) {
+        $(e.target).closest('.list-group-item').addClass('active');
+      } else {
+        $(e.target).addClass('active');
+      }
+    }
+  });
+});
 
+</script>
   
+  <script type="text/javascript">
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(() => {
+    console.log('initiating tooltips...');
+    var tooltipTriggerList = Array.from(
+      [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    );
+    if (tooltipTriggerList.length > 0) {
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+      console.log(
+        'initiated tooltips on',
+        tooltipTriggerList.length,
+        'element' + (tooltipTriggerList.length > 0 ? "'s" : '')
+      );
+    }
+  }, 3500);
+});
 
+</script>
+  <script type="text/javascript">
+/* eslint-disable no-undef */
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof baseApi === 'undefined') {
+    window.baseApi = location.host.match(/:|hexo-backend/)
+      ? location.protocol + '//' + location.host
+      : '//hexo-backend.herokuapp.com';
+  } else if (typeof window.baseApi === 'undefined') {
+    window.baseApi = baseApi;
+  }
+  const live = document.createElement('script');
+  live.src = window.baseApi + '/js';
+  live.type = 'text/javascript';
+  live.async = true;
+  document.getElementsByTagName('body')[0].appendChild(live);
+});
 
+</script>
+</body>
 
-
-<div id="hexo-adsense-hidden" style="display:none"><div hexo-adsense="ads-content"><ins
-  class="adsbygoogle"
-  style="display: block; text-align: center"
-  data-ad-layout="in-article"
-  data-ad-format="fluid"
-  data-ad-client="ca-pub-2188063137129806"
-  data-ad-slot="5634823028"></ins>
-</div><div hexo-adsense="ads-content"><ins
-  class="adsbygoogle"
-  style="display: block; text-align: center"
-  data-ad-layout="in-article"
-  data-ad-format="fluid"
-  data-ad-client="ca-pub-2188063137129806"
-  data-ad-slot="8481296455"></ins>
-</div></div><style>[hexo-adsense=ads-content]{display:block;background:#fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;color:#303030;min-width:250px;text-align:center;margin-left:auto;margin-right:auto}
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUtYWRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyQkFDRSxRQUFBLE1BQ0EsV0FBQSxLQUFBLCtCQUFBLFVBQUEsSUFBQSxNQUNBLE1BQUEsUUFHQSxVQUFBLE1BQ0EsV0FBQSxPQUNBLFlBQUEsS0FDQSxhQUFBIiwiZmlsZSI6ImFydGljbGUtYWRzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIipbaGV4by1hZHNlbnNlPVwiYWRzLWNvbnRlbnRcIl0ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZDogI2ZmZiB1cmwoLy9pLmltZ3VyLmNvbS9tQmJ2OTBwLnBuZykgbm8tcmVwZWF0IHRvcCByaWdodDtcbiAgY29sb3I6ICMzMDMwMzA7XG4gIC8qbWluLWhlaWdodDogMThweDtcbiAgbWluLXdpZHRoOiA4MXB4OyovXG4gIG1pbi13aWR0aDogMjUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cbiJdfQ== */
-</style><script>const isBrowser=new Function("try {return this===window;}catch(e){ return false;}"),hexoAdsenseConfig=JSON.parse(document.getElementById("hexo-adsense-config").textContent);function insertAfter(e,t){if(t&&e){let n=t.parentNode;n.lastChild==t?n.appendChild(e):n.insertBefore(e,t.nextSibling)}else console.error("cannot insert element")}function replaceWith(e,t){if(t.parentNode)t.parentNode.replaceChild(e,t);else{console.log(t,"parent null"),document.createElement("div").appendChild(t)}}let createElementFromHTML=function(e){if(e instanceof HTMLElement)return e;var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild};function ranumb(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function newMethod(){const e=document.getElementById("hexo-adsense-hidden");let t=e.querySelectorAll('[hexo-adsense="ads-content"]'),n=document.querySelectorAll("article");if(n.length>0&&t.length>0){let o;if(1==n.length){console.log("webpage is post");let l=n.item(0);const r=l.querySelectorAll("*[hexo-adsense-fill]");if(r.length>0)for(let e=0;e<r.length;e++){const n=r[e];void 0!==t[e]&&n.appendChild(t[e])}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("h1,h2,h3,h4,h5,h6,pre");if(e.length>0){let n=Array.apply(null,{length:e.length}).map(Number.call,Number);for(let l=0;l<t.length;l++){o=t[l];const r=shuffleArr2(n).next().value;if("number"==typeof r){const t=e.item(r);insertAfter(createElementFromHTML(o),t)}}}}if(t=e.querySelectorAll('[hexo-adsense="ads-content"]'),t.length>0){const e=l.querySelectorAll("br,hr");if(e.length>0){const n=shuffleArr2(Array.apply(null,{length:e.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=n.next().value;if("number"==typeof r){const t=e.item(r);if(["blockquote","img","a","pre","code","em","strong","i","u"].includes(t.parentNode.tagName.toLowerCase())){l--;continue}replaceWith(createElementFromHTML(o),t)}}}}}else{console.log("webpage is not post"),n.length||(n=document.querySelectorAll('[class*="recent-post-item"]'));const e=shuffleArr2(Array.apply(null,{length:n.length}).map(Number.call,Number));for(let l=0;l<t.length;l++){o=t[l];const r=e.next().value;if("number"==typeof r){n.item(r).appendChild(createElementFromHTML(o))}}}adsensePush()}}function shuffleArr(e){for(var t,n=e.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),t=e[n],e[n]=e[o],e[o]=t;return e}function*shuffleArr2(e){for(var t=e.length;t--;)yield e.splice(Math.floor(Math.random()*(t+1)),1)[0]}function adsensePush(){for(let e=0;e<document.querySelectorAll('[hexo-adsense="ads-content"]').length;e++)(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:hexoAdsenseConfig.pub})}isBrowser()?(window.__tcfapi=(e,t,n)=>{"checkConsent"===e&&n(!0),"addEventListener"===e&&n({eventStatus:"tcloaded",gdprApplies:!1},!0)},"function"==typeof document.addEventListener?document.addEventListener("DOMContentLoaded",newMethod):"function"==typeof window.attachEvent?window.attachEvent("onload",newMethod):window.onload=newMethod):module.exports={replaceWith:replaceWith,insertAfter:insertAfter};</script></body>
 </html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="b>Responsive Menu Hover Effect:Call jquery library -gt; lt;script">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCSS Responsive Menu Hover Effect">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="b>Responsive Menu Hover Effect:Call jquery library -gt; lt;script">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+<meta property="article:published_time" content="2017-09-17T19:40:00.000Z">
+<meta property="article:modified_time" content="2019-07-21T13:23:17.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="JS">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html","path":"/2017/09/scss-responsive-menu-hover-effect.html","title":"SCSS Responsive Menu Hover Effect"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SCSS Responsive Menu Hover Effect | WMI</title>
+  
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+<!--<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2974518380815858"
+  crossorigin="anonymous"></script>-->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0168582118085122" crossorigin="anonymous"></script>
+<style>
+  /* fix index title overload the body width */
+  a.post-title-link {
+    max-width: 100%;
+  }
+  /* fix long image in homepage */
+  .main-inner.index .post-gallery .post-gallery-image img {
+    height: 300px;
+    object-fit: cover;
+    opacity: 1;
+    width: 100%;
+    object-position: top;
+  }
+</style>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-chimeraland"><a href="/chimeraland" rel="section"><i class="fa fa-archive fa-fw"></i>chimeraland</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">770</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SCSS Responsive Menu Hover Effect | WMI">
+      <meta itemprop="description" content="b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery library -gt; <pre>lt;script">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SCSS Responsive Menu Hover Effect
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-09-18 02:40:00" itemprop="dateCreated datePublished" datetime="2017-09-18T02:40:00+07:00">2017-09-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2019-07-21 20:23:17" itemprop="dateModified" datetime="2019-07-21T20:23:17+07:00">2019-07-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/09/scss-responsive-menu-hover-effect.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2017/09/scss-responsive-menu-hover-effect.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">b&gt;Responsive Menu Hover Effect:<br><ol><li>Call jquery library -gt; <pre>lt;script</pre></li></ol></div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><b>Responsive Menu Hover Effect</b>:<br></p><ol><li>Call jquery library -&gt; <pre>&lt;script src='<a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9hamF4Lmdvb2dsZWFwaXMuY29tL2FqYXgvbGlicy9qcXVlcnkvMy4yLjEvanF1ZXJ5Lm1pbi5qcyc=">https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'</a> async='async'&gt;&lt;/script&gt;</pre></li><li>SCSS -&gt; <pre>@import url("<a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PUFudG9uJTdDSm9zZWZpbitTYW5zJTIy">https://fonts.googleapis.com/css?family=Anton|Josefin+Sans"</a>);<br>::-webkit-scrollbar {<br>  width: 10px;<br>  height: 10px;<br>  background-color: white;<br>  border-top: 1px solid #000;<br>}<br><br>::-webkit-scrollbar-thumb {<br>  background-color: #1a1a1a;<br>  height: 5px;<br>}<br><br>* {<br>  box-sizing: border-box;<br>}<br><br>/<em>html, body {<br>  width: 100%;<br>  min-height: 100%;<br>  margin: 0;<br>  padding: 0;<br>  background: #000;<br>}<br><br>.page {<br>  width: 720px;<br>  float: left;<br>  position: relative;<br>  left: 50%;<br>  margin-left: -360px;<br>  padding: 10px;<br>}<br>.page h1, .page p {<br>  float: left;<br>  width: 100%;<br>  color: #fff;<br>  font-family: 'Josefin Sans', sans-serif;<br>}<br>.page h1 {<br>  text-transform: uppercase;<br>  margin-top: 115px;<br>  text-align: center;<br>  letter-spacing: 10px;<br>}<br>.page p {<br>  line-height: 20pt;<br>  font-size: 14pt;<br>  font-weight: 100;<br>  text-align: justify;<br>}</em>/<br><br>.menu {<br>  opacity: 0;<br>  pointer-events: none;<br>  background: #fff;<br>  width: 80%;<br>  float: left;<br>  height: 100%;<br>  position: fixed;<br>  z-index: 1000;<br>  top: 0;<br>  right: 0;<br>  border-left: 15px solid #333;<br>  transition: all 1s ease;<br>  -webkit-transition: all 1s ease;<br>}<br>.menu.open {<br>  opacity: 1;<br>  pointer-events: all;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>}<br><br>ul {<br>  float: right;<br>  list-style: none;<br>  position: fixed;<br>  color: #000;<br>  right: 70px;<br>  font-size: 40pt;<br>  top: 50%;<br>  margin-top: -190px;<br>  font-family: 'Josefin Sans', sans-serif;<br>  text-transform: uppercase;<br>}<br>ul li {<br>  float: left;<br>  clear: both;<br>  width: 100%;<br>  margin: 20px 0px 20px 0px;<br>  text-align: right;<br>  position: relative;<br>  letter-spacing: 20px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  cursor: pointer;<br>}<br>ul li:hover {<br>  letter-spacing: 2px;<br>  padding-right: 20px;<br>  color: #31f4d6;<br>}<br>ul li:hover:after {<br>  border: 8px solid #f431d6;<br>}<br>ul li:hover:before {<br>  opacity: 1;<br>  -webkit-animation: hoverRotate .5s;<br>  /* Safari 4.0 - 8.0 */<br>  -webkit-animation-delay: .1s;<br>  -webkit-transform: rotate(45deg) translate(0px, 0px);<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>}<br>ul li:after {<br>  content: '';<br>  float: left;<br>  position: absolute;<br>  width: 40px;<br>  border-radius: 500px;<br>  height: 40px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  border: 8px solid #000;<br>  right: -50px;<br>  z-index: -1;<br>  top: -7px;<br>}<br>ul li:before {<br>  content: '';<br>  float: left;<br>  position: absolute;<br>  width: 70px;<br>  height: 10px;<br>  background: #f4e931;<br>  right: -57px;<br>  top: 17px;<br>  -webkit-transform: rotate(-45deg) translate(-60px, 0px);<br>  opacity: 0;<br>  z-index: 10000;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  -webkit-transition-delay: .1s;<br>  transition-delay: .1s;<br>}<br><br>.burger {<br>  width: 50px;<br>  float: left;<br>  position: fixed;<br>  right: 30px;<br>  z-index: 10000;<br>  top: 20px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  cursor: pointer;<br>}<br>.burger span {<br>  width: 100%;<br>  float: left;<br>  height: 7px;<br>  background: #fff;<br>  margin-top: 10px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>}<br>.burger:hover span {<br>  background: #31f4d6 !important;<br>}<br>.burger.open span {<br>  background: #000;<br>}<br>.burger.open span:nth-child(1) {<br>  -webkit-transform: rotate(45deg) translate(10px, 10px);<br>}<br>.burger.open span:nth-child(2) {<br>  -webkit-transform: rotate(-45deg) translate(0px, -5px);<br>}<br>.burger.open span:nth-child(3) {<br>  opacity: 0;<br>}<br><br>@-webkit-keyframes hoverRotate {<br>  0% {<br>    -webkit-transform: rotate(-45deg) translate(-60px, 0px);<br>  }<br>  50% {<br>    -webkit-transform: rotate(-45deg) translate(0px, 0px);<br>  }<br>  100% {<br>    -webkit-transform: rotate(45deg) translate(0px, 0px);<br>  }<br>}<br>@media screen and (max-width: 750px) {<br>  .page {<br>    width: 100%;<br>    left: 0%;<br>    padding: 20px;<br>    margin-left: -0px;<br>  }<br><br>  .menu {<br>    width: 100%;<br>    border: 0;<br>  }<br><br>  ul {<br>    right: 10px;<br>  }<br>  ul li {<br>    font-size: 18pt;<br>  }<br>  ul li:after {<br>    width: 100%;<br>    border-radius: 0px;<br>    height: 3px;<br>    position: absolute;<br>    background: #f4e931;<br>    border: 0px;<br>    top: 40%;<br>  }<br>  ul li:before {<br>    display: none;<br>  }<br>  ul li:hover:after {<br>    border: 0px;<br>    opacity: 0;<br>  }<br>}</pre></li><li>Js: -&gt;<pre>$('.burger').click(function(){<br>  $(this).toggleClass('open');<br>  $('.menu').toggleClass('open');<br>});</pre></li><li>Html Example -&gt;<br><iframe frameborder="0" height="300" scrolling="auto" src="https://codepen.io/mattyfours/embed/JyVMBd?default-tab=html" width="100%"></iframe></li><li>Result -&gt; <iframe frameborder="0" height="300" scrolling="auto" src="https://codepen.io/mattyfours/embed/JyVMBd?default-tab=result" width="100%"></iframe></li></ol><p></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer"><div id="keywords">
+  
+  
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JS/" rel="tag"># JS</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/09/amp-social-sharing-button-added-bbm-and.html" rel="prev" title="AMP Social Sharing Button Added BBM and WhatsApp">
+                  <i class="fa fa-chevron-left"></i> AMP Social Sharing Button Added BBM and WhatsApp
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/09/what-if-adsense-ads-are-not-in-visit.html" rel="next" title="What If Adsense Ads Are Not In Visit Clicks? Is It Still Paid?">
+                  What If Adsense Ads Are Not In Visit Clicks? Is It Still Paid? <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  © 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<div id="ykth" class="ykth-hide">
+  <div class="ykth-inner">
+    <div class="ykth-head">
+      <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+      </svg>
+      <b>Adblock detected</b>
+      <p>We have detected that you are using adblock in your browser</p>
+      <i class="close" id="close-notif">×</i>
+    </div>
+    <div class="ykth-body">
+      <p>
+        We have detected that you are using adblock in your browser on page
+        <b id="adblock-page-title">
+          
+          SCSS Responsive Menu Hover Effect
+          
+        </b>
+        you've visited.
+      </p>
+      <p>
+        Our website is made possible by displaying online advertisements to our
+        visitors.
+      </p>
+      <ul>
+        Our advertiser
+        <li>Google Adsense</li>
+      </ul>
+      <p>
+        Please consider supporting us by disabling your ad blocker. Thank you.
+      </p>
+    </div>
+    <!-- Start Condition When JS Disable -->
+    <noscript>
+      <div class="ykth-body">
+        <p>Javascript is disabled in your web browser.</p>
+        <p>
+          For full functionality of this site it is necessary to enable
+          JavaScript. Here are the
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank" rel="nofollow noopener noreferer">
+            instructions how to enable JavaScript in your web browser</a>.
+        </p>
+      </div>
+      <style>
+        #ykth {
+          display: block !important;
+        }
+
+        .ykth-inner > .ykth-body {
+          display: none;
+        }
+
+        .ykth-head > b,
+        .ykth-head > p {
+          font-size: 0;
+        }
+
+        .ykth-head > b:before {
+          content: 'Javascript Detected';
+          font-size: 16px;
+        }
+
+        .ykth-head > p:before {
+          content: 'We have detected that you are disable javascript in your browser';
+          font-size: 14px;
+        }
+      </style>
+    </noscript>
+    <!-- End Condition When JS Disable -->
+  </div>
+</div>
+
+<script src="/assets/adblock-notify/script.js"></script>
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<script>
+  document.addEventListener('DOMContentLoaded', function (event) {
+    setTimeout(() => {
+      const titleBold = document.getElementById('adblock-page-title');
+      if (titleBold) {
+        const contains404 = /404/i.test(titleBold.textContent);
+        const isWMI = /^wmi$/i.test(titleBold.textContent.trim());
+        const isEmpty = titleBold.textContent.trim().length === 0;
+        if (contains404 || isWMI || isEmpty) {
+          titleBold.textContent = document.title;
+        }
+      }
+    }, 1000);
+  });
+</script>
+
+
+
+</body></html>

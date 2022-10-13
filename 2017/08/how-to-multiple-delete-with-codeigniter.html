@@ -1,0 +1,498 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="How to multiple delete with codeigniter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Multiple Delete With CodeIgniter">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/08/how-to-multiple-delete-with-codeigniter.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="How to multiple delete with codeigniter">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png">
+<meta property="article:published_time" content="2017-08-29T06:38:00.000Z">
+<meta property="article:modified_time" content="2017-08-29T06:38:03.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="Wordpress">
+<meta property="article:tag" content="CodeIgniter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2017/08/how-to-multiple-delete-with-codeigniter.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2017/08/how-to-multiple-delete-with-codeigniter.html","path":"/2017/08/how-to-multiple-delete-with-codeigniter.html","title":"How to Multiple Delete With CodeIgniter"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How to Multiple Delete With CodeIgniter | WMI</title>
+  
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+<!--<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2974518380815858"
+  crossorigin="anonymous"></script>-->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0168582118085122" crossorigin="anonymous"></script>
+<style>
+  /* fix index title overload the body width */
+  a.post-title-link {
+    max-width: 100%;
+  }
+  /* fix long image in homepage */
+  .main-inner.index .post-gallery .post-gallery-image img {
+    height: 300px;
+    object-fit: cover;
+    opacity: 1;
+    width: 100%;
+    object-position: top;
+  }
+</style>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-chimeraland"><a href="/chimeraland" rel="section"><i class="fa fa-archive fa-fw"></i>chimeraland</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">770</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/08/how-to-multiple-delete-with-codeigniter.html">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How to Multiple Delete With CodeIgniter | WMI">
+      <meta itemprop="description" content="How to multiple delete with codeigniter">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to Multiple Delete With CodeIgniter
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-08-29 13:38:00 / Modified: 13:38:03" itemprop="dateCreated datePublished" datetime="2017-08-29T13:38:00+07:00">2017-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/08/how-to-multiple-delete-with-codeigniter.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2017/08/how-to-multiple-delete-with-codeigniter.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">How to multiple delete with codeigniter</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>In this tutorial I will discuss about how to create    <strong>Multiple Delete With CodeIgniter</strong> , If you guys often use     wordpress definitely friends will know, because wordpress apply this in     their system. <br>First prepare your codeigniter folder named    <strong>delete_multiple,</strong> Here I assume friends already know how to     setup     <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9aWQmc3A9bm10NCZ0bD1lbiZ1PWh0dHA6Ly93d3cudHV0b3JpYWwtd2ViZGVzaWduLmNvbS9tZW5naGlsYW5na2FuLWluZGV4LXBocC1kaS1jb2RlaWduaXRlci8mdXNnPUFMa0pyaGlwLWNDVzk2bnFYRHNNODk3YnQyVFI4NXpPTHc=" title="Initial Setting of Codeigniter" rel="nofollow noopener noreferer">        initial CodeIgniter     </a>    like config.php, autoload.php dll, database.php. We will use the Controller     welcome.php default is Codeigniter or at least have followed     <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9aWQmc3A9bm10NCZ0bD1lbiZ1PWh0dHA6Ly93d3cudHV0b3JpYWwtd2ViZGVzaWduLmNvbS90dXRvcmlhbC1kYXNhci1wZW5nZ3VuYWFuLWNvZGVpZ25pdGVyLyZ1c2c9QUxrSnJoaWtyd3dWenc4OFZmYUdfZV9NemVMcE82VjA5UQ==" title="Basic Code Usage Tutorial" rel="nofollow noopener noreferer">        the basic tutorial of the use of Codeigniter     </a>    . <br><em><strong>Read Also:</strong></em>    <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9aWQmc3A9bm10NCZ0bD1lbiZ1PWh0dHA6Ly93d3cudHV0b3JpYWwtd2ViZGVzaWduLmNvbS90dXRvcmlhbC1jcnVkLWNyZWF0ZS1yZWFkLXVwZGF0ZS1kYW4tZGVsZXRlLW1lbmdndW5ha2FuLWNvZGVpZ25pdGVyLTEvJnVzZz1BTGtKcmhpWlZlMV96UnB6Tnp2aFB3MlVrX082aVdscER3" title="Crud Part 1" rel="nofollow noopener noreferer">        CRUD Tutorial (Create, Read, Update and Delete) With CodeIgniter - Part         1     </a>    &amp;     <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9aWQmc3A9bm10NCZ0bD1lbiZ1PWh0dHA6Ly93d3cudHV0b3JpYWwtd2ViZGVzaWduLmNvbS90dXRvcmlhbC1jcnVkLWNyZWF0ZS1yZWFkLXVwZGF0ZS1kYW4tZGVsZXRlLWRlbmdhbi1jb2RlaWduaXRlci1wYXJ0LTIvJnVzZz1BTGtKcmhqRndVaW5fSkJ4YmFsekVoeF9BdVRVSVEtNDFB" title="CRUD Part 2" rel="nofollow noopener noreferer">        Part 2     </a><br>Next create a database <strong>codeigniter_crud</strong> , create a    <strong>student</strong> table like the following conditions below sqlnya: <br></p><div><pre><code>-- -- Database: <code>codeigniter_crud</code> -- -- -------------------------------------------------------- -- -- Table structure for table <code>siswa</code> -- CREATE TABLE IF NOT EXISTS <code>siswa</code> ( <code>nis</code> bigint(11) NOT NULL, <code>nama</code> varchar(30) NOT NULL, <code>jurusan</code> varchar(10) NOT NULL, <code>alamat</code> text NOT NULL ) ENGINE=InnoDB AUTO_INCREMENT=998765336 DEFAULT CHARSET=latin1; -- -- Dumping data for table <code>siswa</code> -- INSERT INTO <code>siswa</code> (<code>nis</code>, <code>nama</code>, <code>jurusan</code>, <code>alamat</code>) VALUES (998765122, 'Yusuf Hamdani', 'RPL', 'Jln. Cipaku Haji Rt.02/07 No.15 Kel.Cipaku Kec.Bogor Selatan'), (998765335, 'Rahmayanti', 'Multimedia', 'Jln. Muarasari, Kel.Gunung Batu Kec.Bogor Barat'); -- -- Indexes for dumped tables -- </code></pre><div>Codeigniter_crud.sql     </div></div>Open <strong>Controller welcome.php</strong> then edit as below: <br><div><pre><code>&lt;?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); class Welcome extends CI_Controller { /** * Index Page for this controller. * * Maps to the following URL * <a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2V4YW1wbGUuY29tL2luZGV4LnBocC93ZWxjb21l">http://example.com/index.php/welcome</a> * - or - * <a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2V4YW1wbGUuY29tL2luZGV4LnBocC93ZWxjb21lL2luZGV4">http://example.com/index.php/welcome/index</a> * - or - * Since this controller is set as the default controller in * config/routes.php, it's displayed at <a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2V4YW1wbGUuY29tLw==">http://example.com/</a> * * So any other public methods not prefixed with an underscore will * map to /index.php/welcome/&lt;method_name&gt; * @see <a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2NvZGVpZ25pdGVyLmNvbS91c2VyX2d1aWRlL2dlbmVyYWwvdXJscy5odG1s">http://codeigniter.com/user_guide/general/urls.html</a> <em>/ public function index() { $this-&gt;load-&gt;model('msiswa'); $data['hasilsiswa'] = $this-&gt;msiswa-&gt;ambildata(); $this-&gt;load-&gt;view('index', $data); } function delete_multiple() { $this-&gt;load-&gt;model('msiswa'); $this-&gt;msiswa-&gt;remove_checked_siswa(); redirect('welcome/index'); } } /</em> End of file welcome.php <em>/ /</em> Location: ./application/controllers/welcome.php */ </code></pre><div>Welcome.php     </div></div>Create a new file in the <strong>Models</strong> folder where    <strong>msiswa.php</strong> : <br><div><pre><code>&lt;?php class Msiswa extends CI_Model { function ambildata() { $ambildata = $this-&gt;db-&gt;get('siswa'); if ($ambildata-&gt;num_rows() &gt; 0) { foreach ($ambildata-&gt;result() as $data) { $hasilsiswa[] = $data; } return $hasilsiswa; } } function remove_checked_siswa() { $action = $this-&gt;input-&gt;post('action'); if ($action == "delete") { $delete = $this-&gt;input-&gt;post('msg'); for ($i=0; $i &lt; count($delete) ; $i++) { $this-&gt;db-&gt;where('nis', $delete[$i]); $this-&gt;db-&gt;delete('siswa'); } } } } ?&gt; </code></pre><div>Msiswa.php     </div></div>The snippet of this image describes the coding to display the existing data     in the database<strong>codeigniter_crud</strong> <strong>student</strong>    table <strong>:</strong><br><div><div><ins id="aswift_0_expand"><ins id="aswift_0_anchor"></ins></ins></div></div><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzEyLnBuZw==" rel="nofollow noopener noreferer">        <img alt="1" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png" height="153" width="444">    </a><br>This is for the process when the data will be deleted: <br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzIxLnBuZw==" rel="nofollow noopener noreferer">        <img alt="2" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/21.png" height="161" width="430">    </a><br>Then create a new file in the <strong>Views</strong> folder named    <strong>index.php</strong> : <br><div><pre><code>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;AZZURA Media | Membuat Multiple Delete Dengan CodeIgniter&lt;/title&gt; &lt;script type="text/javascript" src="&lt;?php echo base_url(''); ?&gt;assets/js/jquery-1.5.2.min.js"&gt;&lt;/script&gt; &lt;script type="text/javascript"&gt; $(document).ready(function() { $("input[name='checkAll']").click(function() { var checked = $(this).attr("checked"); $("#myTable tr td input:checkbox").attr("checked", checked); }); }); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Multiple Delete Dengan CodeIgniter&lt;/h1&gt; &lt;form action="&lt;?php echo site_url('welcome/delete_multiple'); ?&gt;" method="post"&gt; &lt;select name="action"&gt; &lt;option value="null"&gt;Bulk Action&lt;/option&gt; &lt;option value="delete"&gt;Delete&lt;/option&gt; &lt;/select&gt; &lt;input type="submit" name="submit" value="Action"&gt; &lt;p&gt;&lt;/p&gt; &lt;table border="1" id="myTable"&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;&lt;input type="checkbox" id="checkAll" name="checkAll"&gt;&lt;/th&gt; &lt;th&gt;NIS&lt;/th&gt; &lt;th&gt;Nama&lt;/th&gt; &lt;th&gt;Jurusan&lt;/th&gt; &lt;th&gt;Alamat&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;?php if (count($hasilsiswa)&gt;0) { foreach ($hasilsiswa as $data): ?&gt; &lt;tr&gt; &lt;td&gt;&lt;input type="checkbox" name="msg[]" value="&lt;?php echo $data-&gt;nis; ?&gt;"&gt;&lt;/td&gt; &lt;td&gt;&lt;?php echo $data-&gt;nis; ?&gt;&lt;/td&gt; &lt;td&gt;&lt;?php echo $data-&gt;nama; ?&gt;&lt;/td&gt; &lt;td&gt;&lt;?php echo $data-&gt;jurusan; ?&gt;&lt;/td&gt; &lt;td&gt;&lt;?php echo $data-&gt;alamat; ?&gt;&lt;/td&gt; &lt;/tr&gt; &lt;?php endforeach; } else { echo "&lt;tr&gt;&lt;td colspan=5&gt;DATA KOSONG!!&lt;/td&gt;&lt;/tr&gt;"; } ?&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/form&gt; &lt;/body&gt; &lt;/html&gt; </code></pre><div>Index.php     </div></div>Description in the <strong>index.php</strong> file <strong>, you</strong>    must first download     <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9aWQmc3A9bm10NCZ0bD1lbiZ1PWh0dHA6Ly9kb2NzLmpxdWVyeS5jb20vU2VsZWN0b3JzL2NoZWNrZWQmdXNnPUFMa0pyaGo4Y1ZBNE0yOERRQTItMWVpMXBwU0Z1dFdGZnc=" target="_blank" rel="nofollow noopener noreferer">        JQuery Docs: Selectors / checked     </a>    then input jquery script to checkAll below: <br><div><pre><code>&lt;script type="text/javascript"&gt; $(document).ready(function() { $("input[name='checkAll']").click(function() { var checked = $(this).attr("checked"); $("#myTable tr td input:checkbox").attr("checked", checked); }); }); &lt;/script&gt; </code></pre><div></div></div><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzMzLnBuZw==" rel="nofollow noopener noreferer">        <img alt="3" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/33-450x132.png" height="132" width="450">    </a><br><em><strong>Read Also:</strong></em>    <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZudj0xJnJ1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mc2w9aWQmc3A9bm10NCZ0bD1lbiZ1PWh0dHA6Ly93d3cudHV0b3JpYWwtd2ViZGVzaWduLmNvbS9jaGVjay11bmNoZWNrLWFsbC1qcXVlcnkvJnVzZz1BTGtKcmhqYTJCdW9GWUR5bTR1UXB2QVUyTTVSbm5QMVpB" title="Tutorial Check &amp; Uncheck all checkbox" rel="nofollow noopener noreferer">        Tutorial Making Check &amp; Uncheck All Checkboxs with Jquery     </a><br>In the table script snippet you enter the id to call the javascript     function that we apply: <br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzQucG5n" rel="nofollow noopener noreferer">        <img alt="4" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/4-450x40.png" height="40" width="450">    </a><br>Named the checkbox id like this, intended to call the javascript function     we created, when the checkbox is clicked fed automate all checkAll: <br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzUxLnBuZw==" rel="nofollow noopener noreferer">        <img alt="5" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/51-450x60.png" height="60" width="450">    </a><br>For the post method submitted by the input checkbox we created, we named     the checkbox mgs [], to create the array when the data is deleted,     following the script snippet: <br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzYxLnBuZw==" rel="nofollow noopener noreferer">        <img alt="6" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/61-450x76.png" height="76" width="450">    </a><br>After completing all the above discussion, you can directly try the program     that friend made earlier, if it is correct it will appear as below, so when     checkbox next door clicked to eat data will check all, and to delete data     Sahabat must choose Select Bulk Action Changed to Delete option then press     Action button: <br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzgucG5n" rel="nofollow noopener noreferer">        <img alt="8" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/8-450x281.png" height="281" width="450">    </a><br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzkucG5n" rel="nofollow noopener noreferer">        <img alt="9" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/9-450x281.png" height="281" width="450">    </a><br><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAxLzEwLnBuZw==" rel="nofollow noopener noreferer">        <img alt="10" data-src="https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/10-450x281.png" height="281" width="450">    </a><br>Okay, so my tutorial this time about Multiple Delete With Codeigniter.     <br>Hope can increase knowledge of Friends: D: D <br><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vcy9veGxlZ2VhMHNoc29xbmIvZGVsZXRlX211bHRpcGxlLnppcD9kbD0w" target="_blank" rel="nofollow noopener noreferer">Download Tutorial      </a><p></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer"><div id="keywords">
+  
+  
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Wordpress/" rel="tag"># Wordpress</a>
+              <a href="/tags/CodeIgniter/" rel="tag"># CodeIgniter</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/08/create-social-share-buttons-without-javascript.html" rel="prev" title="How to Create Social Share Buttons Without Javascript">
+                  <i class="fa fa-chevron-left"></i> How to Create Social Share Buttons Without Javascript
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/08/amp-accordion-modification-being-amp.html" rel="next" title="AMP-Accordion Modification Being an AMP HTML Blog Spoiler">
+                  AMP-Accordion Modification Being an AMP HTML Blog Spoiler <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  © 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<div id="ykth" class="ykth-hide">
+  <div class="ykth-inner">
+    <div class="ykth-head">
+      <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+      </svg>
+      <b>Adblock detected</b>
+      <p>We have detected that you are using adblock in your browser</p>
+      <i class="close" id="close-notif">×</i>
+    </div>
+    <div class="ykth-body">
+      <p>
+        We have detected that you are using adblock in your browser on page
+        <b id="adblock-page-title">
+          
+          How to Multiple Delete With CodeIgniter
+          
+        </b>
+        you've visited.
+      </p>
+      <p>
+        Our website is made possible by displaying online advertisements to our
+        visitors.
+      </p>
+      <ul>
+        Our advertiser
+        <li>Google Adsense</li>
+      </ul>
+      <p>
+        Please consider supporting us by disabling your ad blocker. Thank you.
+      </p>
+    </div>
+    <!-- Start Condition When JS Disable -->
+    <noscript>
+      <div class="ykth-body">
+        <p>Javascript is disabled in your web browser.</p>
+        <p>
+          For full functionality of this site it is necessary to enable
+          JavaScript. Here are the
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank" rel="nofollow noopener noreferer">
+            instructions how to enable JavaScript in your web browser</a>.
+        </p>
+      </div>
+      <style>
+        #ykth {
+          display: block !important;
+        }
+
+        .ykth-inner > .ykth-body {
+          display: none;
+        }
+
+        .ykth-head > b,
+        .ykth-head > p {
+          font-size: 0;
+        }
+
+        .ykth-head > b:before {
+          content: 'Javascript Detected';
+          font-size: 16px;
+        }
+
+        .ykth-head > p:before {
+          content: 'We have detected that you are disable javascript in your browser';
+          font-size: 14px;
+        }
+      </style>
+    </noscript>
+    <!-- End Condition When JS Disable -->
+  </div>
+</div>
+
+<script src="/assets/adblock-notify/script.js"></script>
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<script>
+  document.addEventListener('DOMContentLoaded', function (event) {
+    setTimeout(() => {
+      const titleBold = document.getElementById('adblock-page-title');
+      if (titleBold) {
+        const contains404 = /404/i.test(titleBold.textContent);
+        const isWMI = /^wmi$/i.test(titleBold.textContent.trim());
+        const isEmpty = titleBold.textContent.trim().length === 0;
+        if (contains404 || isWMI || isEmpty) {
+          titleBold.textContent = document.title;
+        }
+      }
+    }, 1000);
+  });
+</script>
+
+
+
+</body></html>

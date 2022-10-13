@@ -1,0 +1,600 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="How to implement import.meta on typescript hybrid esm and commonjs compiler">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use import.meta on typescript hybrid compiler">
+<meta property="og:url" content="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="How to implement import.meta on typescript hybrid esm and commonjs compiler">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-01T23:01:50.000Z">
+<meta property="article:modified_time" content="2022-10-09T13:20:00.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="JS">
+<meta property="article:tag" content="TS">
+<meta property="article:tag" content="NodeJS">
+<meta property="article:tag" content="ESM">
+<meta property="article:tag" content="CommonJS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html","path":"/2022/05/use-import-meta-cjs.html","title":"How to use import.meta on typescript hybrid compiler"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How to use import.meta on typescript hybrid compiler | WMI</title>
+  
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+<!--<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2974518380815858"
+  crossorigin="anonymous"></script>-->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0168582118085122" crossorigin="anonymous"></script>
+<style>
+  /* fix index title overload the body width */
+  a.post-title-link {
+    max-width: 100%;
+  }
+  /* fix long image in homepage */
+  .main-inner.index .post-gallery .post-gallery-image img {
+    height: 300px;
+    object-fit: cover;
+    opacity: 1;
+    width: 100%;
+    object-position: top;
+  }
+</style>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-chimeraland"><a href="/chimeraland" rel="section"><i class="fa fa-archive fa-fw"></i>chimeraland</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#explanation"><span class="nav-number">1.</span> <span class="nav-text">explanation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dirname-and-filename-resolver-for-ESM-and-CommonJS"><span class="nav-number">2.</span> <span class="nav-text">__dirname and __filename resolver for ESM and CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage-Force-Unix-Style"><span class="nav-number">4.</span> <span class="nav-text">Usage Force Unix Style</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Hybrid-ESM-x2F-CJS-modules-in-TypeScript"><span class="nav-number"></span> <span class="nav-text">Hybrid ESM/CJS modules in TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gotchas"><span class="nav-number">2.</span> <span class="nav-text">Gotchas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">3.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detecting-CJS-vs-ESM"><span class="nav-number">4.</span> <span class="nav-text">Detecting CJS vs ESM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">5.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-config"><span class="nav-number">6.</span> <span class="nav-text">Build config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-hybrid-apps"><span class="nav-number">6.1.</span> <span class="nav-text">Building hybrid apps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-hybrid-packages"><span class="nav-number">6.2.</span> <span class="nav-text">Building hybrid packages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Minor-gotcha"><span class="nav-number">6.2.1.</span> <span class="nav-text">Minor gotcha</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-hybrid-apps"><span class="nav-number">7.</span> <span class="nav-text">Running hybrid apps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">8.</span> <span class="nav-text">License</span></a></li></ol></li></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">770</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How to use import.meta on typescript hybrid compiler | WMI">
+      <meta itemprop="description" content="How to implement import.meta on typescript hybrid esm and commonjs compiler">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to use import.meta on typescript hybrid compiler
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-02 06:01:50" itemprop="dateCreated datePublished" datetime="2022-05-02T06:01:50+07:00">2022-05-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-10-09 20:20:00" itemprop="dateModified" datetime="2022-10-09T20:20:00+07:00">2022-10-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/05/use-import-meta-cjs.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/2022/05/use-import-meta-cjs.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">How to implement import.meta on typescript hybrid esm and commonjs compiler</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="explanation"><a href="#explanation" class="headerlink" title="explanation"></a>explanation</h2><p>Using typescript hybrid compiler to compile for ESM and CommonJS is a experimental for NodeJS.<br>Some function/magic function/constructor is not supported by CommonJS. So, you must define them manually, such as: __dirname, __filename</p>
+<h2 id="dirname-and-filename-resolver-for-ESM-and-CommonJS"><a href="#dirname-and-filename-resolver-for-ESM-and-CommonJS" class="headerlink" title="__dirname and __filename resolver for ESM and CommonJS"></a>__dirname and __filename resolver for ESM and CommonJS</h2><pre><code class="highlight ts"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">getDirname</span> = (<span class="params"></span>) =&gt; {
+  <span class="comment">// get the stack</span>
+  <span class="keyword">const</span> { stack } = <span class="keyword">new</span> <span class="title class_">Error</span>();
+  <span class="comment">// get the third line (the original invoker)</span>
+  <span class="keyword">const</span> invokeFileLine = stack.<span class="title function_">split</span>(<span class="string">`\n`</span>)[<span class="number">2</span>];
+  <span class="comment">// match the file url from file://(.+.(ts|js)) and get the first capturing group</span>
+  <span class="keyword">const</span> __filename = invokeFileLine.<span class="title function_">match</span>(<span class="regexp">/file:\/\/(.+.(ts|js))/</span>)[<span class="number">1</span>];
+  <span class="comment">// match the file URL from file://(.+)/ and get the first capturing group</span>
+  <span class="comment">//     the (.+) is a greedy quantifier and will make the RegExp expand to the largest match</span>
+  <span class="keyword">const</span> __dirname = invokeFileLine.<span class="title function_">match</span>(<span class="regexp">/file:\/\/(.+)\//</span>)[<span class="number">1</span>];
+  <span class="keyword">return</span> { __dirname, __filename };
+};
+<span class="keyword">export</span> <span class="keyword">default</span> getDirname;</code></pre>
+
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><pre><code class="highlight ts"><span class="keyword">import</span> { getDirname } <span class="keyword">from</span> <span class="string">'./dirname.ts'</span>; <span class="comment">// to prevent called by ESM, we using static import</span>
+<span class="keyword">const</span> __resolve = <span class="title function_">getDirname</span>();
+<span class="keyword">const</span> __filename = __resolve.<span class="property">__filename</span>;
+<span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);
+<span class="variable language_">console</span>.<span class="title function_">log</span>(__dirname, __filename); <span class="comment">// /media/dimaslanjaka/DATA/Repositories/traffic-generator/express/src/public/routes /media/dimaslanjaka/DATA/Repositories/traffic-generator/express/src/public/routes/index.ts</span></code></pre>
+<h2 id="Usage-Force-Unix-Style"><a href="#Usage-Force-Unix-Style" class="headerlink" title="Usage Force Unix Style"></a>Usage Force Unix Style</h2><p>Install upath</p>
+<pre><code class="highlight bash">npm i upath</code></pre>
+<p>Call them</p>
+<pre><code class="highlight ts"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">'upath'</span>;
+<span class="keyword">import</span> { getDirname } <span class="keyword">from</span> <span class="string">'config'</span>;
+<span class="keyword">const</span> { dirname } = path;
+<span class="keyword">const</span> __resolve = <span class="title function_">getDirname</span>();
+<span class="keyword">const</span> __filename = __resolve.<span class="property">__filename</span>;
+<span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);</code></pre>
+
+<p>This is trick for resolving __dirname and __filename on typescript ESM hybrid compiler</p>
+<!-- /start https://github.com/gfmio/typescript-esm-cjs-hybrid-example/blob/master/README.md -->
+
+<h1 id="Hybrid-ESM-x2F-CJS-modules-in-TypeScript"><a href="#Hybrid-ESM-x2F-CJS-modules-in-TypeScript" class="headerlink" title="Hybrid ESM/CJS modules in TypeScript"></a>Hybrid ESM/CJS modules in TypeScript</h1><p>Generating and using hybrid node modules that target both CommonJS/CJS and ECMAScript modules/ESM is difficult to modify to allow these modules to be used within node as well.</p>
+<p>This repo provides a working example of how to achieve this in TypeScript (based on a <a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RlbXVyZ29zL21qdHM=">previous example by @demurgos</a>).</p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h2><!--You need to always have support for "legacy" CommonJS modules, but to make the most out of modern tooling like `rollup`, you also want to publish ES modules, so these tools can work their magic and reduce bundle sizes.-->
+
+<p>Support for ‘old’ CommonJS modules is always needed, but to get the most out of modern tools like ‘Rollup’, release ES modules as well so these tools work their magic and bundle size should be able to shrink.</p>
+<h2 id="Gotchas"><a href="#Gotchas" class="headerlink" title="Gotchas"></a>Gotchas</h2><p>First of all, in order to publicly export a CJS and ESM entrypoint, you need to supply <code>main</code> (CJS or hybrid entrypoint), <code>module</code> (ESM entry point), <code>browser</code> (CJS entry point), and <code>types</code> for correct TypeScript type export in your <code>package.json</code>.</p>
+<p>However, node does not accept standard <code>.js</code> files as ESM modules, but you need to either supply a loader script that handles module type detection (slow, potentially error prone) or change the filenames of all ES modules to <code>.mjs</code>, which node natively recognises as ESM modules.</p>
+<p>TypeScript unfortunately does not support renaming output files, so this needs to be done manually.</p>
+<p>Finally, importing the modules correctly requires different compiler arguments (see below).</p>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p>The <a href="./hybrid"><code>hybrid</code></a> directory contains a hybrid CJS/ESM module (<a href="./hybrid/package.json"><code>package.json</code></a>) that just exports a single function. The function prints a string and returns a boolean indicating whether this function was executed in CJS or ESM.</p>
+<p>It gets imported by our main repo (<a href="./package.json"><code>package.json</code></a>), and the exported function gets used. This app just prints a few strings and finally whether the imported module was an ES or CJS module.</p>
+<h2 id="Detecting-CJS-vs-ESM"><a href="#Detecting-CJS-vs-ESM" class="headerlink" title="Detecting CJS vs ESM"></a>Detecting CJS vs ESM</h2><p>In ESM, the <code>exports</code> variable does not exist, since exports are handled via the <code>export</code> keyword. Hence, whether or not this variable is undefined tells us if the executing context is ESM or CJS.</p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>Install the dependencies of the hybrid module, build it, then install the dependencies in the main repo.</p>
+<pre><code class="highlight sh"><span class="built_in">cd</span> hybrid &amp;&amp; npm install &amp;&amp; npm run build &amp;&amp; <span class="built_in">cd</span> .. &amp;&amp; npm install</code></pre>
+
+<h2 id="Build-config"><a href="#Build-config" class="headerlink" title="Build config"></a>Build config</h2><p>Any ES modules need to be renamed to <code>.mjs</code> or node.js will fail to recognise them as such and throw errors.</p>
+<h3 id="Building-hybrid-apps"><a href="#Building-hybrid-apps" class="headerlink" title="Building hybrid apps"></a>Building hybrid apps</h3><p>From the main project <a href="./package.json"><code>package.json</code></a>:</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"build:mjs"</span><span class="punctuation">:</span> <span class="string">"tsc --rootDir src --outDir build/mjs --moduleResolution node --allowSyntheticDefaultImports --module esnext src/*.ts &amp;&amp; mv build/mjs/index.js build/mjs/index.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"build:cjs"</span><span class="punctuation">:</span> <span class="string">"tsc --rootDir src --outDir build/cjs --moduleResolution node --esModuleInterop src/*.ts"</span><span class="punctuation">,</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
+
+<p>For regular applications, it’s a good idea to split CJS and ESM output into different directories, because they will be used separately anyway. In both cases, you want <code>moduleResolution</code> set to <code>node</code>.</p>
+<p>To build an ES module app (that can also work with CJS modules), you need to enable the option <code>allowSyntheticDefaultImports</code> and set the <code>module</code> compiler option to <code>esnext</code>.</p>
+<p>To build a CommonJS module app (that can also work with ES modules), you need to enable the option <code>esModuleInterop</code>.</p>
+<h3 id="Building-hybrid-packages"><a href="#Building-hybrid-packages" class="headerlink" title="Building hybrid packages"></a>Building hybrid packages</h3><p>From the hybrid package <a href="./hybrid/package.json"><code>package.json</code></a>:</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"main"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid"</span><span class="punctuation">,</span>
+  <span class="attr">"types"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.d.ts"</span><span class="punctuation">,</span>
+  <span class="attr">"browser"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.js"</span><span class="punctuation">,</span>
+  <span class="attr">"module"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.mjs"</span><span class="punctuation">,</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"build:mjs"</span><span class="punctuation">:</span> <span class="string">"tsc --allowSyntheticDefaultImports --module esnext &amp;&amp; npm run move-esm-output &amp;&amp; npm run process-source-maps"</span><span class="punctuation">,</span>
+    <span class="attr">"move-esm-output"</span><span class="punctuation">:</span> <span class="string">"mv dist/hybrid.js dist/hybrid.mjs &amp;&amp; mv dist/say-hello.js dist/say-hello.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"process-source-maps"</span><span class="punctuation">:</span> <span class="string">"sed -e \"s/hybrid.js/hybrid.mjs/g\" ./dist/hybrid.js.map &gt; ./dist/hybrid.mjs.map &amp;&amp; sed -e \"s/say-hello.js/say-hello.mjs/g\" ./dist/say-hello.js.map &gt; ./dist/say-hello.mjs.map"</span><span class="punctuation">,</span>
+    <span class="attr">"build:cjs"</span><span class="punctuation">:</span> <span class="string">"tsc --esModuleInterop"</span><span class="punctuation">,</span>
+    <span class="attr">"build"</span><span class="punctuation">:</span> <span class="string">"npm run build:mjs &amp;&amp; npm run build:cjs"</span>
+  <span class="punctuation">}</span></code></pre>
+
+<p>First of all, if no file extension is specified in the <code>main</code> field, the module loader can choose the desired from the available options at the path. If the module loader is configured to preferably load ES modules, then the <code>.mjs</code> file will be loaded if it exists, otherwise the <code>.js</code> at the spot will be loaded as a CJS module.<br>A hybrid module will have a <code>.js</code> and a <code>.mjs</code> version of each file in the module.<br>The build process for the ES module files is as follows:</p>
+<ul>
+<li>Build the ES module with typescript: This generates <code>.js</code> code files and <code>.js.map</code> source map files. Note that you need to specify <code>--allowSyntheticDefaultImports</code> and <code>--module esnext</code> as compiler options.</li>
+<li>Rename all generated <code>.js</code> files to <code>.mjs</code> (see the <code>move-esm-output</code> task above)</li>
+<li>Parse all source map files and rename the target filename inside from the <code>.js</code> version to <code>.mjs</code>. Then output the replaced code at the same path ending in <code>.mjs.map</code> (see process-source-maps task above).<br>The build process for CJS module files is simpler and <strong>it should be run after the ES module code has been generated and post-processed</strong> (i.e. <strong>not in parallel</strong>). You only need to run <code>tsc</code> with the additional compiler option <code>--esModuleInterop</code>.<br>The final result will be, the following set of files for each individual source TypeScript source file / module (using the example file <code>&lt;some_path&gt;/filename.ts</code>):</li>
+<li><code>&lt;some_path&gt;/filename.d.ts</code>: The TypeScript definition file.</li>
+<li><code>&lt;some_path&gt;/filename.js</code>: The CommonJS version of the module</li>
+<li><code>&lt;some_path&gt;/filename.js.map</code>: the source map of the CommonJS module.</li>
+<li><code>&lt;some_path&gt;/filename.mjs</code>: The ESM version of the module</li>
+<li><code>&lt;some_path&gt;/filename.mjs.map</code>: the source map of the ES module.</li>
+</ul>
+<h4 id="Minor-gotcha"><a href="#Minor-gotcha" class="headerlink" title="Minor gotcha"></a>Minor gotcha</h4><p>Technically, in ES modules, you need to specify the full file path of an import (according to the spec). Within node, this is not necessary though, if an <code>.mjs</code> file exists at that location. On the browser side, this will not work, so you should post-process your output further to rewrite the paths to fully qualified paths including extension. Alternatively, you could reconfigure the module loader to search at the appropriate locations.<br>The easiest option though is probably to just bundle up all the output using an ESM-aware bundler like <em>rollup</em>.</p>
+<h2 id="Running-hybrid-apps"><a href="#Running-hybrid-apps" class="headerlink" title="Running hybrid apps"></a>Running hybrid apps</h2><p>From the main project <a href="./package.json"><code>package.json</code></a>:</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"start:mjs"</span><span class="punctuation">:</span> <span class="string">"npm run build:mjs &amp;&amp; node --experimental-modules build/mjs/index.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"start:cjs"</span><span class="punctuation">:</span> <span class="string">"npm run build:cjs &amp;&amp; node build/cjs/index.js"</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
+<p>To start node using CommonJS, you don’t need to do anything and can just run <code>node &lt;PATH_TO_TARGET&gt;.js</code>.<br>To start node using/supporting ES modules, you need to (currently) supply the <code>--experimental-modules</code> option and then a path to the entrypoint <code>.mjs</code> file (<code>node --experimental-modules &lt;PATH_TO_TARGET&gt;.mjs</code>).</p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="./LICENSE.html">MIT License</a></p>
+<!-- /end -->
+
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer"><div id="keywords">
+  
+  
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JS/" rel="tag"># JS</a>
+              <a href="/tags/TS/" rel="tag"># TS</a>
+              <a href="/tags/NodeJS/" rel="tag"># NodeJS</a>
+              <a href="/tags/ESM/" rel="tag"># ESM</a>
+              <a href="/tags/CommonJS/" rel="tag"># CommonJS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/NodeJS/nodemon.html" rel="prev" title="nodemon">
+                  <i class="fa fa-chevron-left"></i> nodemon
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/setup-node-modules-bin-environtment-path.html" rel="next" title="Setup node_modules bin on global environtment path">
+                  Setup node_modules bin on global environtment path <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  © 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<div id="ykth" class="ykth-hide">
+  <div class="ykth-inner">
+    <div class="ykth-head">
+      <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+      </svg>
+      <b>Adblock detected</b>
+      <p>We have detected that you are using adblock in your browser</p>
+      <i class="close" id="close-notif">×</i>
+    </div>
+    <div class="ykth-body">
+      <p>
+        We have detected that you are using adblock in your browser on page
+        <b id="adblock-page-title">
+          
+          How to use import.meta on typescript hybrid compiler
+          
+        </b>
+        you've visited.
+      </p>
+      <p>
+        Our website is made possible by displaying online advertisements to our
+        visitors.
+      </p>
+      <ul>
+        Our advertiser
+        <li>Google Adsense</li>
+      </ul>
+      <p>
+        Please consider supporting us by disabling your ad blocker. Thank you.
+      </p>
+    </div>
+    <!-- Start Condition When JS Disable -->
+    <noscript>
+      <div class="ykth-body">
+        <p>Javascript is disabled in your web browser.</p>
+        <p>
+          For full functionality of this site it is necessary to enable
+          JavaScript. Here are the
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank" rel="nofollow noopener noreferer">
+            instructions how to enable JavaScript in your web browser</a>.
+        </p>
+      </div>
+      <style>
+        #ykth {
+          display: block !important;
+        }
+
+        .ykth-inner > .ykth-body {
+          display: none;
+        }
+
+        .ykth-head > b,
+        .ykth-head > p {
+          font-size: 0;
+        }
+
+        .ykth-head > b:before {
+          content: 'Javascript Detected';
+          font-size: 16px;
+        }
+
+        .ykth-head > p:before {
+          content: 'We have detected that you are disable javascript in your browser';
+          font-size: 14px;
+        }
+      </style>
+    </noscript>
+    <!-- End Condition When JS Disable -->
+  </div>
+</div>
+
+<script src="/assets/adblock-notify/script.js"></script>
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<script>
+  document.addEventListener('DOMContentLoaded', function (event) {
+    setTimeout(() => {
+      const titleBold = document.getElementById('adblock-page-title');
+      if (titleBold) {
+        const contains404 = /404/i.test(titleBold.textContent);
+        const isWMI = /^wmi$/i.test(titleBold.textContent.trim());
+        const isEmpty = titleBold.textContent.trim().length === 0;
+        if (contains404 || isWMI || isEmpty) {
+          titleBold.textContent = document.title;
+        }
+      }
+    }, 1000);
+  });
+</script>
+
+
+
+</body></html>

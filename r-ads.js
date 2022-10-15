@@ -25,18 +25,21 @@ document.addEventListener('DOMContentLoaded', function (_e) {
     Object.keys(attributes).forEach((key) => {
       ins.setAttribute(key, attributes[key]);
     });
-    if (!ins.classList.contains('adsbygoogle'))
+    if (!ins.classList.contains('adsbygoogle')) {
       ins.classList.add('adsbygoogle');
+    }
     return ins;
   }
 
   /**
    * insert next other
    * @param {HTMLElement} newNode
-   * @param {HTMLElement} referenceNode
+   * @param {HTMLElement} referenceNode insert after this element
    */
   function insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    if (referenceNode) {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
   }
 
   /**
@@ -92,6 +95,27 @@ document.addEventListener('DOMContentLoaded', function (_e) {
     return '';
   }
 
+  /**
+   * Replace elements with new
+   * @param {HTMLElement} newElement
+   * @param {HTMLElement} oldElement
+   */
+  function replaceWith(newElement, oldElement) {
+    if (!oldElement.parentNode) {
+      console.log(oldElement, 'parent null');
+      let d = document.createElement('div');
+      d.appendChild(oldElement);
+    } else {
+      //console.log(oldElement.parentNode.tagName);
+      oldElement.parentNode.replaceChild(newElement, oldElement);
+    }
+    /*
+  try {
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+  } catch (e) {}
+  */
+  }
+
   /** FUNC END */
 
   const allAds = [
@@ -138,18 +162,22 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   let ads;
   if (ca.length > 0) {
     ads = allAds.find((item) => item.pub === ca);
-    // console.log('using cached pub', ca);
+    console.log('cached pub', ca);
   } else {
     ads = allAds[0];
-    // console.log('caching pub', ads.pub);
-    setCookie(
-      ck,
-      ads.pub,
-      1,
-      location.pathname,
-      location.hostname,
-      location.protocol.includes('https')
-    );
+
+    if (location.pathname != '/') {
+      console.log('caching pub', ads.pub);
+      setCookie(
+        ck,
+        ads.pub,
+        1,
+        location.pathname,
+        location.hostname,
+        location.protocol.includes('https') &&
+          location.host === 'www.webmanajemen.com'
+      );
+    }
   }
 
   // create pagead
@@ -162,14 +190,26 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   // select random place
   const article = document.querySelector('article') || document;
   const adsPlaces = Array.from(
-    article.querySelectorAll('h1,h2,h3,h4,h5,pre')
-  ).sort(function () {
-    return 0.5 - Math.random();
-  });
+    article.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr')
+  )
+    .sort(function () {
+      return 0.5 - Math.random();
+    })
+    .filter((el) => el !== null);
 
   ads.ads.forEach((attr) => {
     const ins = createIns(attr);
-    insertAfter(ins, adsPlaces.shift());
+    let nextOf = adsPlaces.shift();
+    while (!nextOf) {
+      if (adsPlaces.length > 0) {
+        // select next place
+        nextOf = adsPlaces.shift();
+      } else {
+        // if ads places empty, put to any div
+        nextOf = document.querySelector('div');
+      }
+    }
+    insertAfter(ins, nextOf);
   });
 
   const allIns = Array.from(document.querySelectorAll('ins'));

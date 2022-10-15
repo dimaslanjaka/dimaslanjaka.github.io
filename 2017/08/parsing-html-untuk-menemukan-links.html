@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
+<!DOCTYPE html><html lang="id"><head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,7 +45,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Parsing HTML untuk menemukan Links | WMI</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
@@ -77,11 +75,11 @@
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
@@ -127,9 +125,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -168,12 +164,12 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">1. Kasus yang paling sederhana</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">2. Ruang untuk Atribut Ekstra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">3. Izinkan untuk Kehilangan Kutipan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">4. Menyempurnakan Regexp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.0.1.</span> <span class="nav-text">Ruang di sekitar &#x3D;  setelah href:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.0.2.</span> <span class="nav-text">Hanya mencocokkan link yang dimulai dengan http:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.0.3.</span> <span class="nav-text">Tanda kutip tunggal di sekitar alamat link:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">5. Menggunakan Regular Expression untuk mengurai HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">6. Pertama memeriksa robots.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">7. Terjemahan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text">8. Referensi</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">1. Kasus yang paling sederhana</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">2. Ruang untuk Atribut Ekstra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">3. Izinkan untuk Kehilangan Kutipan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">4. Menyempurnakan Regexp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.0.1.</span> <span class="nav-text">Ruang di sekitar =  setelah href:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.0.2.</span> <span class="nav-text">Hanya mencocokkan link yang dimulai dengan http:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.0.3.</span> <span class="nav-text">Tanda kutip tunggal di sekitar alamat link:</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">5. Menggunakan Regular Expression untuk mengurai HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">6. Pertama memeriksa robots.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">7. Terjemahan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text">8. Referensi</span></a></li></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
   <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
 </div>
@@ -197,13 +193,13 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -237,27 +233,27 @@
 
 <div class="post-block">
   
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
     
     <div class="post-gallery-image">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" itemprop="contentUrl">
     </div>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="id">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="id">
     <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/08/parsing-html-untuk-menemukan-links.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Dimas Lanjaka">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="WMI">
       <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
     </span>
 
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="Parsing HTML untuk menemukan Links | WMI">
       <meta itemprop="description" content="search engine optimization SEO orang mencari script yang bisa mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana lalu lintasnya berasal dari antara lain">
     </span>
@@ -288,7 +284,7 @@
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">Di</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
           <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
         </span>
     </span>
@@ -318,9 +314,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Dari blogging sampai log analysis dan search engine optimization (SEO) orang mencari script yang bisa mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana lalu lintasnya berasal dari antara lain. <br /><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.google.com/search%3Fq%3Ddefine:parsing&amp;usg=ALkJrhjHQhEQ8CQV15d6T98UCse_Xkdwqg" target="_blank" rel="noopener noreferer nofollow"> Parsing </a> HTML Anda sendiri seharusnya tidak masalah - dengan asumsi Anda menggunakan format yang konsisten - tapi begitu Anda menetapkan pandangan Anda untuk mengurai HTML orang lain, frustrasi benar-benar terjadi. Halaman ini menyajikan beberapa ekspresi reguler dan sebuah komentar yang diharapkan akan mengarahkan Anda ke sisi yang benar. arah.</p>
+        <p>Dari blogging sampai log analysis dan search engine optimization (SEO) orang mencari script yang bisa mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana lalu lintasnya berasal dari antara lain. <br><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2glM0ZxJTNEZGVmaW5lOnBhcnNpbmcmdXNnPUFMa0pyaGpIUWhFUThDUVYxNWQ2VDk4VUNzZV9Ya2R3cWc=" target="_blank" rel="nofollow noopener noreferer"> Parsing </a> HTML Anda sendiri seharusnya tidak masalah - dengan asumsi Anda menggunakan format yang konsisten - tapi begitu Anda menetapkan pandangan Anda untuk mengurai HTML orang lain, frustrasi benar-benar terjadi. Halaman ini menyajikan beberapa ekspresi reguler dan sebuah komentar yang diharapkan akan mengarahkan Anda ke sisi yang benar. arah.</p>
 <h2>1. Kasus yang paling sederhana</h2>
-<p>Mari kita mulai dengan kasus yang paling sederhana - link yang diformat dengan baik tanpa atribut tambahan: <br />/&lt;a href=\"([^\"]*)\"&gt;(.*)&lt;\/a&gt;/iU<br />Ini, percaya atau tidak, adalah ekspresi reguler yang sangat sederhana (atau "regexp" singkatnya). Hal ini dapat dipecah sebagai berikut:</p>
+<p>Mari kita mulai dengan kasus yang paling sederhana - link yang diformat dengan baik tanpa atribut tambahan: <br>/&lt;a href=\"([^\"]*)\"&gt;(.*)&lt;\/a&gt;/iU<br>Ini, percaya atau tidak, adalah ekspresi reguler yang sangat sederhana (atau "regexp" singkatnya). Hal ini dapat dipecah sebagai berikut:</p>
 <ul>
 <li>Dimulai dengan: <strong>&lt;a href=" </strong></li>
 <li>Serangkaian karakter sampai, tapi tidak termasuk, kutipan ganda berikutnya (") - tangkapan 1</li>
@@ -333,11 +329,11 @@
 <li>I - pertandingan 'tidak beralasan' (huruf besar atau kecil tidak masalah)</li>
 <li>U - pertandingan 'ungreedy'</li>
 </ul>
-<p>Pengubah pertama berarti bahwa kita cocok &lt;A&gt; dan juga &lt;a&gt;.Pengubah 'ungreedy' diperlukan karena jika tidak, string yang ditangkap kedua bisa (dengan menjadi 'serakah') meluas dari isi satu tautan sampai akhir tautan lainnya. <br />Salah satu kekurangan regexp ini adalah tidak mencocokkan tag tautan yang menyertakan jeda baris - untungnya ada modifer untuk ini juga: <br />/&lt;a\shref=\"([^\"]*)\"&gt;(.*)&lt;\/a&gt;/siU<br />Sekarang '.' Karakter akan cocok dengan karakter apapun <strong>termasuk </strong> jeda baris. Kami juga telah mengubah ruang pertama menjadi tipe karakter 'spasi' sehingga bisa cocok dengan spasi, tab atau jeda baris. Ini perlu memiliki semacam spasi pada posisi itu sehingga kami tidak cocok dengan tag lainnya seperti <tt> &lt;area&gt; </tt> . <br />Untuk informasi lebih lanjut tentang pengubah pola lihat tautan di bagian bawah halaman ini.</p>
+<p>Pengubah pertama berarti bahwa kita cocok &lt;A&gt; dan juga &lt;a&gt;.Pengubah 'ungreedy' diperlukan karena jika tidak, string yang ditangkap kedua bisa (dengan menjadi 'serakah') meluas dari isi satu tautan sampai akhir tautan lainnya. <br>Salah satu kekurangan regexp ini adalah tidak mencocokkan tag tautan yang menyertakan jeda baris - untungnya ada modifer untuk ini juga: <br>/&lt;a\shref=\"([^\"]*)\"&gt;(.*)&lt;\/a&gt;/siU<br>Sekarang '.' Karakter akan cocok dengan karakter apapun <strong>termasuk </strong> jeda baris. Kami juga telah mengubah ruang pertama menjadi tipe karakter 'spasi' sehingga bisa cocok dengan spasi, tab atau jeda baris. Ini perlu memiliki semacam spasi pada posisi itu sehingga kami tidak cocok dengan tag lainnya seperti <tt> &lt;area&gt; </tt> . <br>Untuk informasi lebih lanjut tentang pengubah pola lihat tautan di bagian bawah halaman ini.</p>
 <h2>2. Ruang untuk Atribut Ekstra</h2>
-<p>Sebagian besar tag tautan berisi lebih banyak daripada sekadar atribut <tt> href </tt> . Atribut umum lainnya meliputi: rel, target dan title. Mereka dapat muncul sebelum atau sesudah atribut href: <br />/&lt;a\s[^&gt;]*href=\"([^\"]*)\"[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU<br />Kami telah menambahkan pola tambahan sebelum dan sesudah atribut href. Mereka akan cocok dengan serangkaian karakter yang TIDAK mengandung simbol <tt> &gt; </tt> . Selalu lebih baik saat menulis kalimat biasa untuk menentukan karakter mana yang diizinkan dan tidak diijinkan - kecuali dengan menggunakan karakter wildcard ('.').</p>
+<p>Sebagian besar tag tautan berisi lebih banyak daripada sekadar atribut <tt> href </tt> . Atribut umum lainnya meliputi: rel, target dan title. Mereka dapat muncul sebelum atau sesudah atribut href: <br>/&lt;a\s[^&gt;]*href=\"([^\"]*)\"[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU<br>Kami telah menambahkan pola tambahan sebelum dan sesudah atribut href. Mereka akan cocok dengan serangkaian karakter yang TIDAK mengandung simbol <tt> &gt; </tt> . Selalu lebih baik saat menulis kalimat biasa untuk menentukan karakter mana yang diizinkan dan tidak diijinkan - kecuali dengan menggunakan karakter wildcard ('.').</p>
 <h2>3. Izinkan untuk Kehilangan Kutipan</h2>
-<p>Sampai sekarang kami telah mengasumsikan bahwa alamat link akan ditutup dengan tanda kutip ganda. Sayangnya tidak ada yang menegakkan ini sehingga banyak orang hanya meninggalkan mereka. Masalahnya adalah kami mengandalkankutipan untuk berada di sana untuk menunjukkan di mana alamat dimulai <strong>dan </strong> diakhiri. Tanpa tanda petik kita punya masalah. <br />Ini akan cukup sederhana (bahkan sepele) untuk menulis regexp kedua, tapi di mana kesenangan saat kita bisa melakukan semuanya dengan satu: <br />/&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU<br />Apa yang bisa kukatakan? Ekspresi reguler sangat menyenangkan untuk dilakukan, tapi bila butuh waktu setengah jam untuk menyelesaikan di mana harus menambahkan ekstra <tt> ? </tt> Anda benar-benar tahu Anda ada di dalam. <br />Pertama, ada apa dengan ekstra itu <tt> ? </tt> 'S? <br />Karena kita menggunakan pengubah <tt> U </tt> , semua pola dalam regexp default menjadi 'ungreedy'. Menambahkan tambahan <tt> ? </tt> Setelah <tt> ? </tt> Atau <tt> * </tt> membalikkan perilaku itu kembali ke 'serakah' tapi hanya untuk pola sebelumnya. Tanpa ini, untuk alasan yang sulit dijelaskan, ungkapannya gagal. Pada dasarnya apapun berikut <tt> href= </tt> disamakan dengan ekspresi <tt> [^&gt;] * </tt> . <br />Kami telah menambahkan tangkapan ekstra ke regexp yang sesuai dengan kutipan ganda jika ada di sana: <tt> (\ "??) </tt> Kemudian ada backreference <tt> \\ 1 </tt> yang sesuai dengan kutipan ganda penutup - jika ada yang terbuka. <br />Untuk memenuhi tautan tanpa tanda kutip, pola yang cocok dengan alamat tautan itu sendiri telah diubah dari <tt> [^ \ "] * </tt> menjadi <tt> [^ "&gt;] *? </tt> . Itu berarti bahwa link tersebut bisa diakhiri dengan tidak hanya sekedar double quote (perilaku sebelumnya) tapi juga spasi atau simbol. <br /><strong> Ini berarti bahwa tautan dengan alamat yang berisi ruang yang tidak <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/javascript/escape/&amp;usg=ALkJrhhgQlceJ0y85JxN6pEo1uihCwU9VQ" rel="noopener noreferer nofollow noopener"> terenkripsi </a> tidak lagi dapat ditangkap! </strong></p>
+<p>Sampai sekarang kami telah mengasumsikan bahwa alamat link akan ditutup dengan tanda kutip ganda. Sayangnya tidak ada yang menegakkan ini sehingga banyak orang hanya meninggalkan mereka. Masalahnya adalah kami mengandalkankutipan untuk berada di sana untuk menunjukkan di mana alamat dimulai <strong>dan </strong> diakhiri. Tanpa tanda petik kita punya masalah. <br>Ini akan cukup sederhana (bahkan sepele) untuk menulis regexp kedua, tapi di mana kesenangan saat kita bisa melakukan semuanya dengan satu: <br>/&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU<br>Apa yang bisa kukatakan? Ekspresi reguler sangat menyenangkan untuk dilakukan, tapi bila butuh waktu setengah jam untuk menyelesaikan di mana harus menambahkan ekstra <tt> ? </tt> Anda benar-benar tahu Anda ada di dalam. <br>Pertama, ada apa dengan ekstra itu <tt> ? </tt> 'S? <br>Karena kita menggunakan pengubah <tt> U </tt> , semua pola dalam regexp default menjadi 'ungreedy'. Menambahkan tambahan <tt> ? </tt> Setelah <tt> ? </tt> Atau <tt> * </tt> membalikkan perilaku itu kembali ke 'serakah' tapi hanya untuk pola sebelumnya. Tanpa ini, untuk alasan yang sulit dijelaskan, ungkapannya gagal. Pada dasarnya apapun berikut <tt> href= </tt> disamakan dengan ekspresi <tt> [^&gt;] * </tt> . <br>Kami telah menambahkan tangkapan ekstra ke regexp yang sesuai dengan kutipan ganda jika ada di sana: <tt> (\ "??) </tt> Kemudian ada backreference <tt> \\ 1 </tt> yang sesuai dengan kutipan ganda penutup - jika ada yang terbuka. <br>Untuk memenuhi tautan tanpa tanda kutip, pola yang cocok dengan alamat tautan itu sendiri telah diubah dari <tt> [^ \ "] * </tt> menjadi <tt> [^ "&gt;] *? </tt> . Itu berarti bahwa link tersebut bisa diakhiri dengan tidak hanya sekedar double quote (perilaku sebelumnya) tapi juga spasi atau simbol. <br><strong> Ini berarti bahwa tautan dengan alamat yang berisi ruang yang tidak <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL2phdmFzY3JpcHQvZXNjYXBlLyZ1c2c9QUxrSnJoaGdRbGNlSjB5ODVKeE42cEVvMXVpaEN3VTlWUQ==" rel="nofollow noopener noreferer"> terenkripsi </a> tidak lagi dapat ditangkap! </strong></p>
 <h2>4. Menyempurnakan Regexp</h2>
 <p>Mengingat sifat WWW, selalu ada kasus dimana ekspresi reguler terpecah. Perubahan kecil pada pola bisa memperbaikinya.</p>
 <h4>Ruang di sekitar <tt>= </tt> setelah href:</h4>
@@ -345,18 +341,18 @@
 <h4>Hanya mencocokkan link yang dimulai dengan http:</h4>
 <p>/&lt;a\s[^&gt;]*href=(\"??)(http[^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU</p>
 <h4>Tanda kutip tunggal di sekitar alamat link:</h4>
-<p>/&lt;a\s[^&gt;]*href=([\"\']??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU<br />Dan ya, semua modifikasi ini bisa digunakan sekaligus untuk membuat satu super regexp, tapi hasilnya terlalu menyakitkan untuk diperhatikan, jadi saya akan meninggalkannya sebagai latihan. <br /><small> <strong>Catatan: </strong> Semua ungkapan di halaman ini telah diuji sampai batas tertentu, namun kesalahan dapat terjadi dalam penulisan ulang jadi mohon laporkan kesalahan yang mungkin Anda temukan saat menerapkan contoh ini. </small></p>
+<p>/&lt;a\s[^&gt;]*href=([\"\']??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;/siU<br>Dan ya, semua modifikasi ini bisa digunakan sekaligus untuk membuat satu super regexp, tapi hasilnya terlalu menyakitkan untuk diperhatikan, jadi saya akan meninggalkannya sebagai latihan. <br><small> <strong>Catatan: </strong> Semua ungkapan di halaman ini telah diuji sampai batas tertentu, namun kesalahan dapat terjadi dalam penulisan ulang jadi mohon laporkan kesalahan yang mungkin Anda temukan saat menerapkan contoh ini. </small></p>
 <h2>5. Menggunakan Regular Expression untuk mengurai HTML</h2>
-<p>Menggunakan default untuk <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.php.net/preg_match_all&amp;usg=ALkJrhh1129dDB_R0FF8HFk3-SW43mC6HQ" target="_blank" rel="noopener noreferer nofollow"> preg_match_all </a> array yang dikembalikan berisi array dari 'capture' pertama, maka array dari capture kedua dan sebagainya. Dengan menangkap berarti pola yang ada di <tt> () </tt> : <br />&lt;?PHP // Original PHP code by Chirp Internet: www.chirp.com.au // Please acknowledge use of this code by including this header. $url = "http://www.example.net/somepage.html"; $input = @<a href="http://www.php.net/file_get_contents" target="_blank" rel="noopener noreferer nofollow">file_get_contents</a>($url) or die("Could not access file: $url"); $regexp = "<tt>&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;</tt>"; if(preg_match_all("/$regexp/siU", $input, $matches)) { // $matches[2] = array of link addresses // $matches[3] = array of link text - including HTML code } ?&gt;<br />Menggunakan <tt> PREG_SET_ORDER </tt> setiap link yang cocok memiliki array itu sendiri dalam nilai pengembalian: <br />&lt;?PHP // Original PHP code by Chirp Internet: www.chirp.com.au // Please acknowledge use of this code by including this header. $url = "http://www.example.net/somepage.html"; $input = @file_get_contents($url) or die("Could not access file: $url"); $regexp = "<tt>&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;</tt>"; if(preg_match_all("/$regexp/siU", $input, $matches, PREG_SET_ORDER)) { foreach($matches as $match) { // $match[2] = link address // $match[3] = link text } } ?&gt;<br />Jika Anda menemukan kasus di mana kode ini jatuh, beri tahu kami menggunakan tautan Masukan di bawah ini. <br />Sebelum menggunakan skrip ini atau yang serupa untuk mengambil halaman dari situs-situs lain, kami sarankan Anda membaca artikel terkait tentang <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/php/parse-robots/&amp;usg=ALkJrhjrLqmtVYLbvSKuXC4IPjyv8ZpsIg" rel="noopener noreferer nofollow noopener"> pengaturan agen pengguna dan penguraian robots.txt </a> .</p>
+<p>Menggunakan default untuk <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cucGhwLm5ldC9wcmVnX21hdGNoX2FsbCZ1c2c9QUxrSnJoaDExMjlkREJfUjBGRjhIRmszLVNXNDNtQzZIUQ==" target="_blank" rel="nofollow noopener noreferer"> preg_match_all </a> array yang dikembalikan berisi array dari 'capture' pertama, maka array dari capture kedua dan sebagainya. Dengan menangkap berarti pola yang ada di <tt> () </tt> : <br>&lt;?PHP // Original PHP code by Chirp Internet: www.chirp.com.au // Please acknowledge use of this code by including this header. $url = "http://www.example.net/somepage.html"; $input = @<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5waHAubmV0L2ZpbGVfZ2V0X2NvbnRlbnRz" target="_blank" rel="nofollow noopener noreferer">file_get_contents</a>($url) or die("Could not access file: $url"); $regexp = "<tt>&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;</tt>"; if(preg_match_all("/$regexp/siU", $input, $matches)) { // $matches[2] = array of link addresses // $matches[3] = array of link text - including HTML code } ?&gt;<br>Menggunakan <tt> PREG_SET_ORDER </tt> setiap link yang cocok memiliki array itu sendiri dalam nilai pengembalian: <br>&lt;?PHP // Original PHP code by Chirp Internet: www.chirp.com.au // Please acknowledge use of this code by including this header. $url = "http://www.example.net/somepage.html"; $input = @file_get_contents($url) or die("Could not access file: $url"); $regexp = "<tt>&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;</tt>"; if(preg_match_all("/$regexp/siU", $input, $matches, PREG_SET_ORDER)) { foreach($matches as $match) { // $match[2] = link address // $match[3] = link text } } ?&gt;<br>Jika Anda menemukan kasus di mana kode ini jatuh, beri tahu kami menggunakan tautan Masukan di bawah ini. <br>Sebelum menggunakan skrip ini atau yang serupa untuk mengambil halaman dari situs-situs lain, kami sarankan Anda membaca artikel terkait tentang <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL3BocC9wYXJzZS1yb2JvdHMvJnVzZz1BTGtKcmhqckxxbXRWWUxidlNLdVhDNElQanl2OFpwc0ln" rel="nofollow noopener noreferer"> pengaturan agen pengguna dan penguraian robots.txt </a> .</p>
 <h2>6. Pertama memeriksa robots.txt</h2>
-<p>Seperti disebutkan di atas, sebelum menggunakan script untuk mendownload file Anda harus selalu <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/php/parse-robots/&amp;usg=ALkJrhjrLqmtVYLbvSKuXC4IPjyv8ZpsIg" rel="noopener noreferer nofollow noopener"> memeriksa file robots.txt </a> .Di sini kita memanfaatkan fungsi <tt> robots_allowed </tt> dari artikel yang terhubung di atas untuk menentukan apakah kita diizinkan untuk mengakses file: <br />&lt;?PHP // Original PHP code by Chirp Internet: www.chirp.com.au // Please acknowledge use of this code by including this header. ini_set('user_agent', 'NameOfAgent (http://www.example.net)'); $url = "http://www.example.net/somepage.html"; if(robots_allowed($url, "NameOfAgent")) { $input = @file_get_contents($url) or die("Could not access file: $url"); $regexp = "<tt>&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;</tt>"; if(preg_match_all("/$regexp/siU", $input, $matches, PREG_SET_ORDER)) { foreach($matches as $match) { // $match[2] = link address // $match[3] = link text } } } else { die('Access denied by robots.txt'); }?&gt;<br />Sekarang Anda sedang dalam perjalanan untuk membangun laba-laba web profesional. Jika Anda akan menggunakan ini dalam praktik yang mungkin ingin Anda lihat: caching file robots.txt sehingga tidak didownload setiap saat (a la Slurp);Memeriksa header <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/system/logstatus/&amp;usg=ALkJrhjXtYwSrVKUjsDcXXySWoDRD1nqUA" rel="noopener noreferer nofollow noopener"> server </a> dan <a target="_blank" href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/system/logstatus/&amp;usg=ALkJrhjXtYwSrVKUjsDcXXySWoDRD1nqUA" rel="noopener noreferer nofollow noopener"> kode respon server </a> ; Dan menambahkan jeda di antara beberapa permintaan - untuk pemula.</p>
+<p>Seperti disebutkan di atas, sebelum menggunakan script untuk mendownload file Anda harus selalu <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL3BocC9wYXJzZS1yb2JvdHMvJnVzZz1BTGtKcmhqckxxbXRWWUxidlNLdVhDNElQanl2OFpwc0ln" rel="nofollow noopener noreferer"> memeriksa file robots.txt </a> .Di sini kita memanfaatkan fungsi <tt> robots_allowed </tt> dari artikel yang terhubung di atas untuk menentukan apakah kita diizinkan untuk mengakses file: <br>&lt;?PHP // Original PHP code by Chirp Internet: www.chirp.com.au // Please acknowledge use of this code by including this header. ini_set('user_agent', 'NameOfAgent (http://www.example.net)'); $url = "http://www.example.net/somepage.html"; if(robots_allowed($url, "NameOfAgent")) { $input = @file_get_contents($url) or die("Could not access file: $url"); $regexp = "<tt>&lt;a\s[^&gt;]*href=(\"??)([^\" &gt;]*?)\\1[^&gt;]*&gt;(.*)&lt;\/a&gt;</tt>"; if(preg_match_all("/$regexp/siU", $input, $matches, PREG_SET_ORDER)) { foreach($matches as $match) { // $match[2] = link address // $match[3] = link text } } } else { die('Access denied by robots.txt'); }?&gt;<br>Sekarang Anda sedang dalam perjalanan untuk membangun laba-laba web profesional. Jika Anda akan menggunakan ini dalam praktik yang mungkin ingin Anda lihat: caching file robots.txt sehingga tidak didownload setiap saat (a la Slurp);Memeriksa header <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL3N5c3RlbS9sb2dzdGF0dXMvJnVzZz1BTGtKcmhqWHRZd1NyVktVanNEY1hYeVNXb0RSRDFucVVB" rel="nofollow noopener noreferer"> server </a> dan <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL3N5c3RlbS9sb2dzdGF0dXMvJnVzZz1BTGtKcmhqWHRZd1NyVktVanNEY1hYeVNXb0RSRDFucVVB" rel="nofollow noopener noreferer"> kode respon server </a> ; Dan menambahkan jeda di antara beberapa permintaan - untuk pemula.</p>
 <h2>7. Terjemahan</h2>
 <ul>
-<li><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.siteduzero.com/forum-83-517857-p1-extraire-les-liens-d-une-page-html.html&amp;usg=ALkJrhhRE0DWMFhq0r6rX9DEt0WytBkKzQ#r4977381" target="_blank" rel="noopener noreferer nofollow"> Perancis </a></li>
+<li><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cuc2l0ZWR1emVyby5jb20vZm9ydW0tODMtNTE3ODU3LXAxLWV4dHJhaXJlLWxlcy1saWVucy1kLXVuZS1wYWdlLWh0bWwuaHRtbCZ1c2c9QUxrSnJoaFJFMERXTUZocTByNnJYOURFdDBXeXRCa0t6USNyNDk3NzM4MQ==" target="_blank" rel="nofollow noopener noreferer"> Perancis </a></li>
 </ul>
 <h2>8. Referensi</h2>
 <ul>
-<li><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.php.net/reference.pcre.pattern.modifiers&amp;usg=ALkJrhh-HkZqqyhLYKS_s7GOkpg_ctB9Zw" target="_blank" rel="noopener noreferer nofollow"> PCRE: Pattern Modifiers </a></li>
+<li><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmbnY9MSZydXJsPXRyYW5zbGF0ZS5nb29nbGUuY29tJnNsPWF1dG8mc3A9bm10NCZ0bD1pZCZ1PWh0dHA6Ly93d3cucGhwLm5ldC9yZWZlcmVuY2UucGNyZS5wYXR0ZXJuLm1vZGlmaWVycyZ1c2c9QUxrSnJoaC1Ia1pxcXloTFlLU19zN0dPa3BnX2N0Qjladw==" target="_blank" rel="nofollow noopener noreferer"> PCRE: Pattern Modifiers </a></li>
 </ul>
 
     </div>
@@ -412,7 +408,7 @@
 
 
 <div class="copyright">
-  &copy; 
+  © 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -450,13 +446,11 @@
   <div class="ykth-inner">
     <div class="ykth-head">
       <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
-        <path
-          fill="#FFFFFF"
-          d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z" />
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
       </svg>
       <b>Adblock detected</b>
       <p>We have detected that you are using adblock in your browser</p>
-      <i class="close" id="close-notif">&#215;</i>
+      <i class="close" id="close-notif">×</i>
     </div>
     <div class="ykth-body">
       <p>
@@ -487,9 +481,8 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.enable-javascript.com/" target="_blank">
-            instructions how to enable JavaScript in your web browser</a
-          >.
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank" rel="nofollow noopener noreferer">
+            instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>
       <style>
@@ -522,7 +515,7 @@
 </div>
 
 <script src="/assets/adblock-notify/script.js"></script>
-<link rel="stylesheet" href="/assets/adblock-notify/style.css" />
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
 <script>
   document.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(() => {
@@ -552,5 +545,6 @@
   }
 </style>
 
-</body>
-</html>
+
+
+</body></html>

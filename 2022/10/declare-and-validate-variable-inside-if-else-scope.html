@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -45,7 +47,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>How to declare a variable inside if else brackets | WMI</title>
   
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
@@ -53,11 +55,6 @@
 
 
 
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0168582118085122" crossorigin="anonymous"></script>
-<!--<script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2974518380815858"
-  crossorigin="anonymous"></script>-->
 <style>
   /* fix index title overload the body width */
   a.post-title-link {
@@ -80,11 +77,11 @@
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
@@ -130,7 +127,9 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -169,12 +168,12 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">How to declare a variable inside brackets?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">Basically if-else format like an below codes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">Playground with examples</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">Javascript</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">The result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-using-RegExp"><span class="nav-number">1.3.</span> <span class="nav-text">Example using RegExp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-Images"><span class="nav-number">1.4.</span> <span class="nav-text">Example Images</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">2.</span> <span class="nav-text">Conclusion</span></a></li></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">How to declare a variable inside brackets?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">Basically if-else format like an below codes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">Playground with examples</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">Javascript</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">The result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-using-RegExp"><span class="nav-number">1.3.</span> <span class="nav-text">Example using RegExp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-Images"><span class="nav-number">1.4.</span> <span class="nav-text">Example Images</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">2.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
   <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
 </div>
@@ -182,7 +181,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">770</span>
+          <span class="site-state-item-count">771</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -191,20 +190,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-count">79</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -238,27 +237,27 @@
 
 <div class="post-block">
   
-  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
     
     <div class="post-gallery-image">
       <img src="https://miro.medium.com/max/912/1*Gdlo9wVkOuzsA8iUqXoLEg.png" itemprop="contentUrl">
     </div>
     </div>
 
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/10/declare-and-validate-variable-inside-if-else-scope.html">
 
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Dimas Lanjaka">
     </span>
 
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="WMI">
       <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
     </span>
 
-    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="How to declare a variable inside if else brackets | WMI">
       <meta itemprop="description" content="js validate and assign online inside if, js assign variable inside if bracket, How to declare a variable inside brackets">
     </span>
@@ -282,7 +281,7 @@
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
         </span>
     </span>
@@ -325,10 +324,11 @@
 
 <p><i>You read the right article</i></p>
 <h3>Basically if-else format like an below codes</h3>
-<pre>  <code>
-    if (condition) {
-      var foo = { bar: 'abcd' };
-    }
+<pre>
+  <code>
+    if (condition) &#123;
+      var foo = &#123; bar: 'abcd' &#125;;
+    &#125;
   </code>
 </pre>
 
@@ -340,28 +340,28 @@
 <h3>Playground with examples</h3>
 <h5>HTML</h5>
 <pre><code>
-&lt;span id="ntrue"&gt;&lt;/span&gt;
-&lt;span id="nfalse"&gt;&lt;/span&gt;
+&lt;span id=&quot;ntrue&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;nfalse&quot;&gt;&lt;/span&gt;
 </code></pre>
 <h5>Javascript</h5>
 <pre><code>
 // declare Mutable variable
 let n = false;
 // assign variable as true
-if ((n = 2 &gt; 1)) {
+if ((n = 2 &gt; 1)) &#123;
   // print
-  document.getElementById("ntrue").textContent = String(n);
-}
+  document.getElementById(&quot;ntrue&quot;).textContent = String(n);
+&#125;
 // assign variable as false
-if (!(n = 2 &gt; 4)) {
+if (!(n = 2 &gt; 4)) &#123;
   // print
-  document.getElementById("nfalse").textContent = String(n);
-}
+  document.getElementById(&quot;nfalse&quot;).textContent = String(n);
+&#125;
 </code></pre>
 
 <h5>The result</h5>
 
-<p>N=(n = 2 &gt; 1) <span id="ntrue"></span> <br><br>N=!(n = 2 &gt; 4) <span id="nfalse"></span></p>
+<p>N&#x3D;(n &#x3D; 2 &gt; 1) <span id="ntrue"></span> <br><br>N&#x3D;!(n &#x3D; 2 &gt; 4) <span id="nfalse"></span></p>
 <script>
   // declare Mutable variable
   let n = false;
@@ -380,22 +380,22 @@ if (!(n = 2 &gt; 4)) {
 <h3 id="Example-using-RegExp"><a href="#Example-using-RegExp" class="headerlink" title="Example using RegExp"></a>Example using RegExp</h3><pre><code class="highlight javascript"><span class="keyword">const</span> regex = <span class="regexp">/(?:(?:(\d+):)?(?:(\d+):))?(\d+)(?:\.(\d+))?/gm</span>;
 
 <span class="comment">// Alternative syntax using RegExp constructor</span>
-<span class="comment">// const regex = new RegExp('(?:(?:(\\d+):)?(?:(\\d+):))?(\\d+)(?:\\.(\\d+))?', 'gm')</span>
+<span class="comment">// const regex = new RegExp(&#x27;(?:(?:(\\d+):)?(?:(\\d+):))?(\\d+)(?:\\.(\\d+))?&#x27;, &#x27;gm&#x27;)</span>
 
 <span class="keyword">const</span> str = <span class="string">`1:1.1`</span>;
 <span class="keyword">let</span> m;
 <span class="comment">// this loop running until regex.exec return null</span>
-<span class="keyword">while</span> ((m = regex.<span class="title function_">exec</span>(str)) !== <span class="literal">null</span>) {
+<span class="keyword">while</span> ((m = regex.<span class="title function_">exec</span>(str)) !== <span class="literal">null</span>) &#123;
     <span class="comment">// This is necessary to avoid infinite loops with zero-width matches</span>
-    <span class="keyword">if</span> (m.<span class="property">index</span> === regex.<span class="property">lastIndex</span>) {
+    <span class="keyword">if</span> (m.<span class="property">index</span> === regex.<span class="property">lastIndex</span>) &#123;
         regex.<span class="property">lastIndex</span>++;
-    }
+    &#125;
 
     <span class="comment">// The result can be accessed through the `m`-variable.</span>
-    m.<span class="title function_">forEach</span>(<span class="function">(<span class="params">match, groupIndex</span>) =&gt;</span> {
-        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Found match, group <span class="subst">${groupIndex}</span>: <span class="subst">${match}</span>`</span>);
-    });
-}</code></pre>
+    m.<span class="title function_">forEach</span>(<span class="function">(<span class="params">match, groupIndex</span>) =&gt;</span> &#123;
+        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Found match, group <span class="subst">$&#123;groupIndex&#125;</span>: <span class="subst">$&#123;match&#125;</span>`</span>);
+    &#125;);
+&#125;</code></pre>
 
 <h3 id="Example-Images"><a href="#Example-Images" class="headerlink" title="Example Images"></a>Example Images</h3><p><img data-src="/2022/10/declare-and-validate-variable-inside-if-else-scope/ex.png" alt="print declared variable inside if-else scope"><br><img data-src="/2022/10/declare-and-validate-variable-inside-if-else-scope/assignment.png" alt="assignment explanation"></p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Defining or assigning and validating variable inside if-else scope is allowed, the example like above codes.</p>
@@ -450,7 +450,7 @@ if (!(n = 2 &gt; 4)) {
 
 
 <div class="copyright">
-  © 
+  &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -488,11 +488,13 @@ if (!(n = 2 &gt; 4)) {
   <div class="ykth-inner">
     <div class="ykth-head">
       <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
-        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+        <path
+          fill="#FFFFFF"
+          d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z" />
       </svg>
       <b>Adblock detected</b>
       <p>We have detected that you are using adblock in your browser</p>
-      <i class="close" id="close-notif">×</i>
+      <i class="close" id="close-notif">&#215;</i>
     </div>
     <div class="ykth-body">
       <p>
@@ -523,8 +525,9 @@ if (!(n = 2 &gt; 4)) {
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank" rel="nofollow noopener noreferer">
-            instructions how to enable JavaScript in your web browser</a>.
+          <a href="https://www.enable-javascript.com/" target="_blank">
+            instructions how to enable JavaScript in your web browser</a
+          >.
         </p>
       </div>
       <style>
@@ -557,7 +560,7 @@ if (!(n = 2 &gt; 4)) {
 </div>
 
 <script src="/assets/adblock-notify/script.js"></script>
-<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<link rel="stylesheet" href="/assets/adblock-notify/style.css" />
 <script>
   document.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(() => {
@@ -573,7 +576,19 @@ if (!(n = 2 &gt; 4)) {
     }, 1000);
   });
 </script>
+<script src="/r-ads.js"></script>
+<style>
+  .adsbygoogle {
+    display: block;
+    background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+    color: #303030;
+    min-height: 180px;
+    min-width: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
 
-
-
-</body></html>
+</body>
+</html>

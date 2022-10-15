@@ -116,11 +116,6 @@ document.addEventListener('DOMContentLoaded', function (_e) {
       //log(oldElement.parentNode.tagName);
       oldElement.parentNode.replaceChild(newElement, oldElement);
     }
-    /*
-  try {
-    oldElement.parentNode.replaceChild(newElement, oldElement);
-  } catch (e) {}
-  */
   }
 
   /** FUNC END */

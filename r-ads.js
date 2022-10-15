@@ -3,6 +3,97 @@
 /* global adsbygoogle */
 
 document.addEventListener('DOMContentLoaded', function (_e) {
+  const banned = [/lagu/gi];
+  if (
+    banned
+      .map((regex) => regex.test(document.title))
+      .some((result) => result == true)
+  ) {
+    // skip showing ads from banned page
+    return;
+  }
+
+  /** FUNC START */
+
+  /**
+   * create ins
+   * @param {Record<string,any>} attributes
+   * @returns
+   */
+  function createIns(attributes) {
+    const ins = document.createElement('ins');
+    Object.keys(attributes).forEach((key) => {
+      ins.setAttribute(key, attributes[key]);
+    });
+    if (!ins.classList.contains('adsbygoogle'))
+      ins.classList.add('adsbygoogle');
+    return ins;
+  }
+
+  /**
+   * insert next other
+   * @param {HTMLElement} newNode
+   * @param {HTMLElement} referenceNode
+   */
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
+  /**
+   * Create detailed cookie
+   * @param {string} name
+   * @param {string} value
+   * @param {number} expires
+   * @param {string} path
+   * @param {string} domain
+   * @param {boolean} secure
+   */
+  function setCookie(name, value, expires, path, domain, secure) {
+    let exp = '';
+    if (expires) {
+      const d = new Date();
+      d.setTime(d.getTime() + parseInt(expires) * 24 * 60 * 60 * 1000); // days
+      exp = '; expires=' + d.toGMTString(); // toGMTString | toUTCString
+    }
+    if (!path) {
+      path = '/';
+    }
+    const cookie =
+      name +
+      '=' +
+      encodeURIComponent(value) +
+      exp +
+      '; path=' +
+      path +
+      (domain ? '; domain=' + domain : '') +
+      (secure ? '; secure' : '');
+    console.log(cookie);
+    document.cookie = cookie;
+  }
+
+  /**
+   * get cookie by name
+   * @param {string} cname
+   * @returns
+   */
+  function getCookie(cname) {
+    let name = cname + '=';
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return '';
+  }
+
+  /** FUNC END */
+
   const allAds = [
     {
       pub: '2974518380815858',
@@ -91,65 +182,3 @@ document.addEventListener('DOMContentLoaded', function (_e) {
     }
   }
 });
-
-/**
- * create ins
- * @param {Record<string,any>} attributes
- * @returns
- */
-function createIns(attributes) {
-  const ins = document.createElement('ins');
-  Object.keys(attributes).forEach((key) => {
-    ins.setAttribute(key, attributes[key]);
-  });
-  if (!ins.classList.contains('adsbygoogle')) ins.classList.add('adsbygoogle');
-  return ins;
-}
-
-/**
- * insert next other
- * @param {HTMLElement} newNode
- * @param {HTMLElement} referenceNode
- */
-function insertAfter(newNode, referenceNode) {
-  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-}
-
-function setCookie(name, value, expires, path, domain, secure) {
-  let exp = '';
-  if (expires) {
-    const d = new Date();
-    d.setTime(d.getTime() + parseInt(expires) * 24 * 60 * 60 * 1000); // days
-    exp = '; expires=' + d.toGMTString(); // toGMTString | toUTCString
-  }
-  if (!path) {
-    path = '/';
-  }
-  const cookie =
-    name +
-    '=' +
-    encodeURIComponent(value) +
-    exp +
-    '; path=' +
-    path +
-    (domain ? '; domain=' + domain : '') +
-    (secure ? '; secure' : '');
-  console.log(cookie);
-  document.cookie = cookie;
-}
-
-function getCookie(cname) {
-  let name = cname + '=';
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return '';
-}

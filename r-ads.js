@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function (_e) {
 
   /** FUNC START */
 
+  const log =
+    location.port.length > 0
+      ? console.log
+      : function (..._args) {
+          //
+        };
+
   /**
    * create ins
    * @param {Record<string,any>} attributes
@@ -70,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function (_e) {
       path +
       (domain ? '; domain=' + domain : '') +
       (secure ? '; secure' : '');
-    console.log(cookie);
+    log(cookie);
     document.cookie = cookie;
   }
 
@@ -102,11 +109,11 @@ document.addEventListener('DOMContentLoaded', function (_e) {
    */
   function replaceWith(newElement, oldElement) {
     if (!oldElement.parentNode) {
-      console.log(oldElement, 'parent null');
+      log(oldElement, 'parent null');
       let d = document.createElement('div');
       d.appendChild(oldElement);
     } else {
-      //console.log(oldElement.parentNode.tagName);
+      //log(oldElement.parentNode.tagName);
       oldElement.parentNode.replaceChild(newElement, oldElement);
     }
     /*
@@ -162,12 +169,12 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   let ads;
   if (ca.length > 0) {
     ads = allAds.find((item) => item.pub === ca);
-    console.log('cached pub', ca);
+    log('cached pub', ca);
   } else {
     ads = allAds[0];
 
     if (location.pathname != '/') {
-      console.log('caching pub', ads.pub);
+      log('caching pub', ads.pub);
       setCookie(
         ck,
         ads.pub,
@@ -188,14 +195,23 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   document.head.appendChild(script);
 
   // select random place
-  const article = document.querySelector('article') || document;
-  const adsPlaces = Array.from(
-    article.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr')
-  )
-    .sort(function () {
-      return 0.5 - Math.random();
-    })
-    .filter((el) => el !== null);
+  let adsPlaces = [];
+  const articles = Array.from(document.querySelectorAll('article'))
+    .map(getAllPlaces)
+    .flat(1);
+  adsPlaces = adsPlaces.concat(articles);
+
+  /**
+   * get all ads places
+   * @param {Element|Document} from
+   */
+  function getAllPlaces(from) {
+    return Array.from(from.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr,br'))
+      .sort(function () {
+        return 0.5 - Math.random();
+      })
+      .filter((el) => el !== null);
+  }
 
   ads.ads.forEach((attr) => {
     const ins = createIns(attr);
@@ -213,9 +229,9 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   });
 
   const allIns = Array.from(document.querySelectorAll('ins'));
-  //console.log('total ads', allIns.length);
+  //log('total ads', allIns.length);
   for (let i = 0; i < allIns.length; i++) {
-    //console.log('apply ad', i);
+    //log('apply ad', i);
     const ins = allIns[i];
     if (ins.innerHTML.trim() == '') {
       (adsbygoogle = window.adsbygoogle || []).push({});

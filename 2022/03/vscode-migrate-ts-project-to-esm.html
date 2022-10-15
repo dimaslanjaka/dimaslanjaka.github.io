@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -45,7 +47,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>VSCode Migrate Typescript CommonJS to ESM | WMI</title>
   
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
@@ -53,11 +55,6 @@
 
 
 
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0168582118085122" crossorigin="anonymous"></script>
-<!--<script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2974518380815858"
-  crossorigin="anonymous"></script>-->
 <style>
   /* fix index title overload the body width */
   a.post-title-link {
@@ -80,11 +77,11 @@
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
@@ -130,7 +127,9 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -174,7 +173,7 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
   <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
 </div>
@@ -182,7 +181,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">770</span>
+          <span class="site-state-item-count">771</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -191,20 +190,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-count">79</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -238,27 +237,27 @@
 
 <div class="post-block">
   
-  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
     
     <div class="post-gallery-image">
       <img src="https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314" itemprop="contentUrl">
     </div>
     </div>
 
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/03/vscode-migrate-ts-project-to-esm.html">
 
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Dimas Lanjaka">
     </span>
 
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="WMI">
       <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
     </span>
 
-    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="VSCode Migrate Typescript CommonJS to ESM | WMI">
       <meta itemprop="description" content="VSCode Migrate Typescript CommonJS to ESM - WMI">
     </span>
@@ -282,7 +281,7 @@
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
         </span>
     </span>
@@ -313,96 +312,96 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="How-to-migrate-typescript-commonjs-to-esm-with-vscode"><a href="#How-to-migrate-typescript-commonjs-to-esm-with-vscode" class="headerlink" title="How to migrate typescript commonjs to esm with vscode"></a>How to migrate typescript commonjs to esm with vscode</h2><h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>add following key to package.json</p>
-<pre><code class="highlight jsonc">{
-  "type": "module",
-  "main": "./dist/src/main.js",
-  "exports": {
-    ".": "./dist/src/main.js"
-  },
-  "typesVersions": {
-    "*": {
-      "main.d.ts": ["dist/src/main.d.ts"]
-    }
-  }
-}</code></pre>
+<pre><code class="highlight jsonc">&#123;
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;main&quot;: &quot;./dist/src/main.js&quot;,
+  &quot;exports&quot;: &#123;
+    &quot;.&quot;: &quot;./dist/src/main.js&quot;
+  &#125;,
+  &quot;typesVersions&quot;: &#123;
+    &quot;*&quot;: &#123;
+      &quot;main.d.ts&quot;: [&quot;dist/src/main.d.ts&quot;]
+    &#125;
+  &#125;
+&#125;</code></pre>
 <p>Nicer module specifiers for a subtree:</p>
-<pre><code class="highlight jsonc">{
-  "type": "module",
-  "main": "./dist/src/main.js",
-  "exports": {
-    "./*": "./dist/src/*"
-  },
-  "typesVersions": {
-    "*": {
-      "*": ["dist/src/*"]
-    }
-  }
-}</code></pre>
-<p>Default <a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL2RvY3MvaGFuZGJvb2svZXNtLW5vZGUuaHRtbA==">typescript documentation</a></p>
-<pre><code class="highlight jsonc">{
-    "name": "my-package",
-    "type": "module",
-    "exports": {
-        ".": {
-            // Entry-point for `import "my-package"` in ESM
-            "import": "./esm/index.js",
-            // Entry-point for `require("my-package") in CJS
-            "require": "./commonjs/index.cjs",
-        },
-    },
+<pre><code class="highlight jsonc">&#123;
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;main&quot;: &quot;./dist/src/main.js&quot;,
+  &quot;exports&quot;: &#123;
+    &quot;./*&quot;: &quot;./dist/src/*&quot;
+  &#125;,
+  &quot;typesVersions&quot;: &#123;
+    &quot;*&quot;: &#123;
+      &quot;*&quot;: [&quot;dist/src/*&quot;]
+    &#125;
+  &#125;
+&#125;</code></pre>
+<p>Default <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/esm-node.html">typescript documentation</a></p>
+<pre><code class="highlight jsonc">&#123;
+    &quot;name&quot;: &quot;my-package&quot;,
+    &quot;type&quot;: &quot;module&quot;,
+    &quot;exports&quot;: &#123;
+        &quot;.&quot;: &#123;
+            // Entry-point for `import &quot;my-package&quot;` in ESM
+            &quot;import&quot;: &quot;./esm/index.js&quot;,
+            // Entry-point for `require(&quot;my-package&quot;) in CJS
+            &quot;require&quot;: &quot;./commonjs/index.cjs&quot;,
+        &#125;,
+    &#125;,
     // CJS fall-back for older versions of Node.js
-    "main": "./commonjs/index.cjs",
-}</code></pre>
+    &quot;main&quot;: &quot;./commonjs/index.cjs&quot;,
+&#125;</code></pre>
 <ul>
-<li><a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL2RvY3MvaGFuZGJvb2svZGVjbGFyYXRpb24tZmlsZXMvcHVibGlzaGluZy5odG1sI3ZlcnNpb24tc2VsZWN0aW9uLXdpdGgtdHlwZXN2ZXJzaW9ucw=="><code>"typesVersions"</code></a> performs the same mapping as <code>"exports"</code>, but for TypeScript’s type definitions.</li>
+<li><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions"><code>&quot;typesVersions&quot;</code></a> performs the same mapping as <code>&quot;exports&quot;</code>, but for TypeScript’s type definitions.</li>
 </ul>
 <h2 id="tsconfig-json"><a href="#tsconfig-json" class="headerlink" title="tsconfig.json"></a>tsconfig.json</h2><p>match your configuration (points A, B, C)</p>
-<pre><code class="highlight jsonc">{
-  "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "./dist",
-    "target": "ES2020",
-    "lib": [
-      "ES2020", "DOM"
+<pre><code class="highlight jsonc">&#123;
+  &quot;compilerOptions&quot;: &#123;
+    &quot;rootDir&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist&quot;,
+    &quot;target&quot;: &quot;ES2020&quot;,
+    &quot;lib&quot;: [
+      &quot;ES2020&quot;, &quot;DOM&quot;
     ],
-    "module": "ES2020", // (A)
-    "moduleResolution": "Node", // (B)
-    "strict": true,
-    "sourceMap": true,
+    &quot;module&quot;: &quot;ES2020&quot;, // (A)
+    &quot;moduleResolution&quot;: &quot;Node&quot;, // (B)
+    &quot;strict&quot;: true,
+    &quot;sourceMap&quot;: true,
     // Needed for importing CommonJS modules
-    "allowSyntheticDefaultImports": true, // (C)
+    &quot;allowSyntheticDefaultImports&quot;: true, // (C)
     // Compile d.ts
-    "declaration": true,
-  }
-}</code></pre>
+    &quot;declaration&quot;: true,
+  &#125;
+&#125;</code></pre>
 <ul>
-<li>Line A (<a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3RzY29uZmlnI21vZHVsZQ=="><code>"module"</code></a>): We are telling TypeScript to generate ECMAScript modules.<ul>
-<li><code>"ES6"</code>, <code>"ES2015"</code>: support for basic ESM features</li>
-<li><code>"2020"</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
+<li>Line A (<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#module"><code>&quot;module&quot;</code></a>): We are telling TypeScript to generate ECMAScript modules.<ul>
+<li><code>&quot;ES6&quot;</code>, <code>&quot;ES2015&quot;</code>: support for basic ESM features</li>
+<li><code>&quot;2020&quot;</code>: additionally, support for dynamic imports and <code>import.meta</code>.</li>
 </ul>
 </li>
-<li>Line B (<a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3RzY29uZmlnI21vZHVsZVJlc29sdXRpb24="><code>"moduleResolution"</code></a>): This value is needed for Node.js.</li>
-<li>Line C (<a target="_blank" rel="nofollow noopener noreferer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cudHlwZXNjcmlwdGxhbmcub3JnL3RzY29uZmlnI2FsbG93U3ludGhldGljRGVmYXVsdEltcG9ydHM="><code>"allowSyntheticDefaultImports"</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
+<li>Line B (<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#moduleResolution"><code>&quot;moduleResolution&quot;</code></a>): This value is needed for Node.js.</li>
+<li>Line C (<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports"><code>&quot;allowSyntheticDefaultImports&quot;</code></a>): I needed this setting in order to import a legacy CommonJS module. The <code>module.exports</code> were the default export in that case.</li>
 </ul>
 <h2 id="VSCode-settings-json"><a href="#VSCode-settings-json" class="headerlink" title="VSCode settings.json"></a>VSCode settings.json</h2><p>open your <code>settings.json</code> or <code>.vscode/settings.json</code>, add following keys</p>
-<pre><code class="highlight jsonc">{
+<pre><code class="highlight jsonc">&#123;
   //...
-  "javascript.preferences.importModuleSpecifierEnding": "js",
-  "typescript.preferences.importModuleSpecifierEnding": "js"
+  &quot;javascript.preferences.importModuleSpecifierEnding&quot;: &quot;js&quot;,
+  &quot;typescript.preferences.importModuleSpecifierEnding&quot;: &quot;js&quot;
   //...
-}</code></pre>
+&#125;</code></pre>
 
 <h2 id="Replace-non-extension-of-imports"><a href="#Replace-non-extension-of-imports" class="headerlink" title="Replace non extension of imports"></a>Replace non extension of imports</h2><p>add filename extensions to existing local imports (within a package):</p>
 <h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><ul>
 <li>Open Search And Replace VSCode</li>
-<li>Insert below pattern to search input and check Regex Search Flag<pre><code class="highlight regexp">(^import.*\/((?!.js).)*)(['"];)$</code></pre></li>
+<li>Insert below pattern to search input and check Regex Search Flag<pre><code class="highlight regexp">(^import.*\/((?!.js).)*)([&#x27;&quot;];)$</code></pre></li>
 <li>Insert below replacement pattern to replacement input<pre><code class="highlight regexp">$1.js$3</code></pre></li>
 <li>Insert folder to <code>files to input</code> bar for example <code>src/</code></li>
 <li>Replace all<br><img data-src="https://user-images.githubusercontent.com/12471057/160769725-41b16e7d-ef33-4886-8113-d59a30a63482.png" alt="image"></li>
 </ul>
 <h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><ul>
-<li>Search: <code>^(import [^';]* from '(\./|(\.\./)+)[^';.]*)';</code></li>
-<li>Replace: <code>$1.js';</code></li>
+<li>Search: <code>^(import [^&#39;;]* from &#39;(\./|(\.\./)+)[^&#39;;.]*)&#39;;</code></li>
+<li>Replace: <code>$1.js&#39;;</code></li>
 </ul>
 
     </div>
@@ -455,7 +454,7 @@
 
 
 <div class="copyright">
-  © 
+  &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -493,11 +492,13 @@
   <div class="ykth-inner">
     <div class="ykth-head">
       <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
-        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+        <path
+          fill="#FFFFFF"
+          d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z" />
       </svg>
       <b>Adblock detected</b>
       <p>We have detected that you are using adblock in your browser</p>
-      <i class="close" id="close-notif">×</i>
+      <i class="close" id="close-notif">&#215;</i>
     </div>
     <div class="ykth-body">
       <p>
@@ -528,8 +529,9 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank" rel="nofollow noopener noreferer">
-            instructions how to enable JavaScript in your web browser</a>.
+          <a href="https://www.enable-javascript.com/" target="_blank">
+            instructions how to enable JavaScript in your web browser</a
+          >.
         </p>
       </div>
       <style>
@@ -562,7 +564,7 @@
 </div>
 
 <script src="/assets/adblock-notify/script.js"></script>
-<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<link rel="stylesheet" href="/assets/adblock-notify/style.css" />
 <script>
   document.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(() => {
@@ -578,7 +580,19 @@
     }, 1000);
   });
 </script>
+<script src="/r-ads.js"></script>
+<style>
+  .adsbygoogle {
+    display: block;
+    background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+    color: #303030;
+    min-height: 180px;
+    min-width: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
 
-
-
-</body></html>
+</body>
+</html>

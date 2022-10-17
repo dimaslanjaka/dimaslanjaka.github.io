@@ -3,7 +3,7 @@
 /* global adsbygoogle */
 
 document.addEventListener('DOMContentLoaded', function (_e) {
-  const banned = [/lagu/gi];
+  const banned = [/lagu|jackpot|montok|hack|crack|nulled/gi];
   if (
     banned
       .map((regex) => regex.test(document.title))

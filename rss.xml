@@ -9,8 +9,37 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Sat, 15 Oct 2022 17:35:42 GMT</pubDate>
+    <pubDate>Sun, 16 Oct 2022 18:51:29 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Gulp execute commands without plugin</title>
+      <link>https://www.webmanajemen.com/NodeJS/gulp-execute-commands-without-plugin.html</link>
+      <guid>https://www.webmanajemen.com/NodeJS/gulp-execute-commands-without-plugin.html</guid>
+      <pubDate>Sun, 16 Oct 2022 18:40:46 GMT</pubDate>
+      
+      <description>Gulp execute commands without plugin - WMI</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>solution for executing shell commands within gulp in NodeJS.</p><h2 id="Using-child-process-exec-in-gulp-with-gulp-watch"><a href="#Using-child-process-exec-in-gulp-with-gulp-watch" class="headerlink" title="Using child_process.exec in gulp with gulp.watch"></a>Using child_process.exec in gulp with gulp.watch</h2><p>Using <a href="https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback">exec child_process</a>. <code>exec</code> takes one string that will be parsed by the shell, and it silences output by default.</p><p>Below codes for watching files and run shell commands every file changes.</p><pre><code class="highlight js"><span class="keyword">const</span> &#123; exec &#125; = <span class="built_in">require</span>(<span class="string">&#x27;child_process&#x27;</span>);<span class="keyword">const</span> gulp = <span class="built_in">require</span>(<span class="string">&#x27;gulp&#x27;</span>);<span class="keyword">const</span> &#123; join &#125; = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);gulp.<span class="title function_">task</span>(<span class="string">&#x27;default&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;  gulp.<span class="title function_">watch</span>(<span class="title function_">join</span>(__dirname, <span class="string">&#x27;src/**/*.ts&#x27;</span>), <span class="keyword">function</span> (<span class="params">done</span>) &#123;    <span class="keyword">const</span> child = <span class="title function_">exec</span>(<span class="string">&#x27;cross-env NODE_ENV=development DEBUG=prerender-it* run-s build test&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;      <span class="title function_">done</span>();    &#125;);    child.<span class="property">stdout</span>.<span class="title function_">pipe</span>(process.<span class="property">stdout</span>);    child.<span class="property">stderr</span>.<span class="title function_">pipe</span>(process.<span class="property">stderr</span>);  &#125;);  gulp.<span class="title function_">watch</span>(<span class="title function_">join</span>(__dirname, <span class="string">&#x27;test/src/**/*.&#123;ts,tsx&#125;&#x27;</span>), <span class="keyword">function</span> (<span class="params">done</span>) &#123;    <span class="keyword">const</span> child = <span class="title function_">exec</span>(<span class="string">&#x27;cross-env NODE_ENV=development DEBUG=prerender-it* run-s test-build&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;      <span class="title function_">done</span>();    &#125;);    child.<span class="property">stdout</span>.<span class="title function_">pipe</span>(process.<span class="property">stdout</span>);    child.<span class="property">stderr</span>.<span class="title function_">pipe</span>(process.<span class="property">stderr</span>);  &#125;);&#125;);</code></pre><h2 id="Result-using-exec"><a href="#Result-using-exec" class="headerlink" title="Result using exec"></a>Result using exec</h2><p><img data-src="https://user-images.githubusercontent.com/12471057/196072185-f39e2b13-1f0f-49a6-9a98-e3741a20ae7e.png" alt="image"></p><h2 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h2><ul><li>Gulp documentation: <a href="https://gulpjs.com/docs/en/getting-started/async-completion/#returning-a-child-process">Returning a child process</a></li><li>Node documentation: <a href="https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback"><code>child_process.exec(command, options, callback)</code></a></li><li>Node documentation: <a href="https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options"><code>child_process.spawn(command, args, options)</code></a></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/JS/">JS</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/JS/">JS</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/gulp/">gulp</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/exec/">exec</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/gulp-execute-commands-without-plugin.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Kumpulan rumus satuan dalam matematika</title>
@@ -492,27 +521,6 @@
       
       
       <comments>https://www.webmanajemen.com/2022/08/js-capitalize-first-letter-each-words.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Cara Mengatasi Flash QFIL Error</title>
-      <link>https://www.webmanajemen.com/2022/07/mengatasi-flash-qfil-error.html</link>
-      <guid>https://www.webmanajemen.com/2022/07/mengatasi-flash-qfil-error.html</guid>
-      <pubDate>Wed, 27 Jul 2022 10:00:00 GMT</pubDate>
-      
-      <description>Solusi Flash QFIL Error</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Langkah-langkah-mengatasi-error-flash-QFIL"><a href="#Langkah-langkah-mengatasi-error-flash-QFIL" class="headerlink" title="Langkah-langkah mengatasi error flash QFIL"></a>Langkah-langkah mengatasi error flash QFIL</h2><ul><li>Gunakan QFIL v1.0.0.2</li><li>Gunakan QPST&#x2F;QFIL Terbaru</li><li>Mengganti File Firmware</li><li>Matikan Akses Internet</li><li>Uninstall QFIL Lalu Restart Komputer Lalu Install Ulang QFIL</li></ul><h2 id="Video-cara-megatasi-flash-QFIL-error"><a href="#Video-cara-megatasi-flash-QFIL-error" class="headerlink" title="Video cara megatasi flash QFIL error"></a>Video cara megatasi flash QFIL error</h2><p>{<div class="video-container"><br>  <iframe src="https://www.youtube.com/embed/5u0Nd1lj9GI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe></p></div>}<h2 id="Macam-macam-faktor-error-flashing-dengan-QFIL"><a href="#Macam-macam-faktor-error-flashing-dengan-QFIL" class="headerlink" title="Macam-macam faktor error flashing dengan QFIL"></a>Macam-macam faktor error flashing dengan QFIL</h2><h3 id="Masalah-kabel-USB"><a href="#Masalah-kabel-USB" class="headerlink" title="Masalah kabel USB"></a>Masalah kabel USB</h3><p>Jika kabel USB yang Anda gunakan untuk mem-flash file firmware ke Qualcomm Anda berkualitas murah atau rusak, maka itu dapat menimbulkan masalah dalam proses flashing. Dalam skenario terburuk bahkan dapat merusak atau perangkat Anda atau mungkin timbul Kesalahan Gagal Sahara di QFIL. Jadi pastikan untuk menggunakan kabel transfer USB berkualitas baik.</p><h3 id="File-programmer-tidak-kompatibel"><a href="#File-programmer-tidak-kompatibel" class="headerlink" title="File programmer tidak kompatibel"></a>File programmer tidak kompatibel</h3><p>Setiap bundel firmware dilengkapi dengan kumpulan file pemrogram berbeda yang dimaksudkan untuk digunakan dengan banyak alat. Alat seperti alat flash SP, flasher Img, dan QFIL menggunakan serangkaian instruksi yang berbeda untuk mem-flash file programmer. Jadi pastikan untuk memilih file programmer yang kompatibel.</p><blockquote><p>Catatan: File Programmer yang kompatibel dengan QFIL sering kali memiliki QFIL atau Qualcomm di namanya. Untuk misalnya prog_emmc_qfil_qualcomm_8996_ddr.elf</p></blockquote><h3 id="Masalah-dengan-jalur-File-Issues-with-File-path"><a href="#Masalah-dengan-jalur-File-Issues-with-File-path" class="headerlink" title="Masalah dengan jalur File (Issues with File path)"></a>Masalah dengan jalur File (Issues with File path)</h3><p><strong>Jangan pakai spasi pada jalur file</strong></p><p>Jalur file sangat penting dalam hal mem-flash file firmware menggunakan perangkat lunak QFIL. Jika jalur file tidak disebutkan dengan benar, proses flashing tidak akan dimulai atau akan berhenti secara otomatis memberikan kesalahan flashing Sahara Anda.</p><blockquote><p>Misalnya jalur file yang buruk: <code>C:\Users\Rah Ver\Desktop\Flash files\QFIL Qualcomm</code></p></blockquote><blockquote><p>Misalnya jalur file yang benar: <code>C:\Users\Rah_Ver\Desktop\Flash_files\QFIL Qualcomm</code></p></blockquote><h3 id="File-Firmware-Rusak-Corrupt-Firmware-Files"><a href="#File-Firmware-Rusak-Corrupt-Firmware-Files" class="headerlink" title="File Firmware Rusak (Corrupt Firmware Files)"></a>File Firmware Rusak (Corrupt Firmware Files)</h3><p>Penting untuk mengunduh file firmware yang benar untuk mem-flash file-file ini dengan sukses ke perangkat Anda. Jika file firmware yang Anda unduh dari internet memiliki masalah integritas atau rusak, maka mereka akan menampilkan berbagai kesalahan QFIL di layar log.</p><p>Pastikan untuk Mengunduh file Firmware untuk QFIL dari sumber resmi. Juga, periksa silang “checksum” mereka sebelum mem-flash-nya dengan alat QFIL.<br>masalah EDL</p><p>Menempatkan perangkat dalam mode EDL sebelum proses flashing dapat menyebabkan Sahara Fail Error di QFIL karena masalah batas waktu. Untuk pengalaman flashing yang baik dan sukses, Anda harus meletakkan perangkat dalam mode EDL tepat sebelum proses flashing akan dimulai.<br>Driver Qualcomm yang rusak</p><p>Karena alat QFIL dirancang khusus untuk bekerja dengan smartphone Qualcomm saja, Anda harus memastikan untuk mengunduh driver yang benar untuk model khusus Anda. Instal driver yang salah atau driver yang tidak kompatibel akan menyebabkan kegagalan flashing dan kesalahan.</p><p>Unduh Driver USB Qualcomm</p><h2 id="Nonaktifkan-Driver-Signature-Enforcement"><a href="#Nonaktifkan-Driver-Signature-Enforcement" class="headerlink" title="Nonaktifkan Driver Signature Enforcement"></a>Nonaktifkan Driver Signature Enforcement</h2><h3 id="Disable-Driver-Signature-Enforcement"><a href="#Disable-Driver-Signature-Enforcement" class="headerlink" title="Disable Driver Signature Enforcement"></a>Disable Driver Signature Enforcement</h3><p>Penegakan tanda tangan driver adalah fitur khusus di Windows yang melarang pengguna menginstal driver pihak ketiga yang tidak diverifikasi. Ini penting untuk melindungi orang dari serangan malware atau virus. Tetapi menginstal driver penting agar alat QFIL berfungsi dengan benar. Berikut adalah bagaimana Anda dapat menonaktifkan penegakan tanda tangan driver di Windows 10.</p><ul><li>Buka prompt perintah dalam mode Administrator.</li></ul><p>Ketik perintah ini dan tekan enter</p><pre><code class="highlight bash">bcdedit.exe -<span class="built_in">set</span> pilihan beban DDISABLE_INTEGRITY_CHECKSbcdedit.exe -<span class="built_in">set</span> TESTSIGNING ON</code></pre><ul><li>Restart PC Anda dan gunakan alat QFIL secara normal.</li></ul><p>Tags:</p><ul><li>Mengatasi sahara error QFIL</li><li>How to Fix Sahara Fail Error in QFIL</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/uncategorized/">uncategorized</category>
-      
-      
-      
-      <comments>https://www.webmanajemen.com/2022/07/mengatasi-flash-qfil-error.html#disqus_thread</comments>
       
     </item>
     

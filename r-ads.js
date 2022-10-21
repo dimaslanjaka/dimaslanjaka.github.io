@@ -121,7 +121,8 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   /** FUNC END */
 
   const allAds = [
-    {
+    /*{
+      name: 'rah bagus',
       pub: '2974518380815858',
       ads: [
         {
@@ -131,8 +132,9 @@ document.addEventListener('DOMContentLoaded', function (_e) {
           'data-ad-slot': '2192856090'
         }
       ]
-    },
+    },*/
     {
+      name: 'purwanto',
       pub: '0168582118085122',
       ads: [
         {
@@ -144,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function (_e) {
       ]
     },
     {
+      name: 'kiki',
       pub: '2188063137129806',
       ads: [
         {
@@ -155,15 +158,18 @@ document.addEventListener('DOMContentLoaded', function (_e) {
       ]
     }
   ].sort(function () {
+    // shuffle
     return 0.5 - Math.random();
   });
 
   // select ads
   const ck = 'currentAds';
   const ca = getCookie(ck);
-  let ads;
-  if (ca.length > 0) {
-    ads = allAds.find((item) => item.pub === ca);
+  /**
+   * @type {typeof allAds[number]}
+   */
+  let ads = allAds.find((item) => item.pub === ca);
+  if (ca.length > 0 && typeof ads === 'object') {
     log('cached pub', ca);
   } else {
     ads = allAds[0];

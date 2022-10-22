@@ -1,0 +1,46 @@
+.bg-grey {
+  background-color: lightgrey;
+  color: black;
+}
+table#gi {
+  border-collapse: collapse;
+  width: 100%;
+}
+table#gi tr,
+table#gi td,
+table#gi th {
+  border: 1px solid black;
+}
+table#gi td,
+table#gi th {
+  text-align: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltiptext a {
+  display: inline-block;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.m-2 {
+  margin: 2em;
+}

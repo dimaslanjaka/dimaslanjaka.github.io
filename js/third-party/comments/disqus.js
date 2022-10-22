@@ -23,23 +23,11 @@ document.addEventListener('page:loaded', () => {
     frame.id = 'disqus-frame';
     frame.setAttribute('frameborder', 0);
     frame.setAttribute('style', 'width:100%;min-height:500px;');
-    frame.onload = function() {
-      const hash = window.location.hash;
-      if (hash.length > 0) {
-        const distanceFromTop = document
-          .querySelector(hash)
-          .getBoundingClientRect().top;
-        window.scrollTo({
-          top     : distanceFromTop,
-          behavior: 'smooth'
-        });
-      }
-    };
     document.getElementById('disqus_thread').appendChild(frame);
 
     window.addEventListener(
       'message',
-      event => {
+      (event) => {
         if (/webmanajemen\.com|^localhost/i.test(event.origin)) {
           const data = event.data;
           if (typeof data === 'object') {

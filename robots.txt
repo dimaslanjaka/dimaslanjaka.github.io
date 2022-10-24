@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /backend/*
 Disallow: /source/*
-Disallow: /page/*
 Disallow: /Tests/*
 Disallow: /Test/*
 Disallow: /search/label/*
@@ -9,6 +8,7 @@ Allow: /page/safelink.html
 Allow: /page/bot-detect*
 
 Sitemap: https://www.webmanajemen.com/sitemap.xml
+Sitemap: https://www.webmanajemen.com/chimeraland/sitemap.xml
 Sitemap: https://www.webmanajemen.com/atom.xml
 Sitemap: https://www.webmanajemen.com/rss.xml
 Sitemap: https://www.webmanajemen.com/sitemap.txt

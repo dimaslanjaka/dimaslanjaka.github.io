@@ -225,10 +225,20 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   script.setAttribute('crossorigin', 'anonymous');
   document.head.appendChild(script);
 
+  // find content/article wrapper
+  let findPlaces = Array.from(document.querySelectorAll('article'));
+  if (findPlaces.length === 0) {
+    // theme-next main content
+    findPlaces = Array.from(document.querySelectorAll('.page.main-inner'));
+  }
+  if (findPlaces.length === 0) {
+    findPlaces = Array.from(document.querySelectorAll('#main-content'));
+  }
+  if (findPlaces.length === 0) {
+    findPlaces = Array.from(document.querySelectorAll('#bootstrap-wrapper'));
+  }
   // select random place
-  let adsPlaces = Array.from(
-    document.querySelectorAll('article,.page.main-inner')
-  )
+  let adsPlaces = findPlaces
     .map(getAllPlaces)
     .flat(1)
     .sort(function () {

@@ -180,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">777</span>
+          <span class="site-state-item-count">779</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -189,20 +189,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -311,7 +311,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div dir="ltr" style="text-align: left;" trbidi="on"><figure>  <img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" alt="Lazy load images blogger" style="width:100%">  <figcaption>Lazy load images blogger</figcaption></figure><br><ol style="text-align: left;">lazy loading blogger berguna untuk : <li>Mempercepat laman web</li><li>Meningkatkan rating pagespeed</li></ol><div><b>HTML (Usage)</b><pre><br>&lt;img alt='' data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg=='/&gt;<br></pre><blockquote style="overflow:auto"><ul><li>src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==' : source gambar dengan resolusi paling rendah</li><li>data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' : source gambar asli</li></ul></blockquote></div><div><b>JS (taruh diatas <i>&lt;/body&gt;</i>)</b><pre><br>&lt;script&gt;<br>//&lt;![CDATA[<br>const config = {<br>  rootMargin: '0px 0px 50px 0px',<br>  threshold: 0<br>};<br>const imgs = document.querySelectorAll('[data-src]');<br><br>if (typeof intersectionObserver != 'undefined') {<br>  // register the config object with an instance<br>  // of intersectionObserver<br>  let observer = new intersectionObserver(function (entries, self) {<br>    // iterate over each entry<br>    entries.forEach(entry =&gt; {<br>      // process just the images that are intersecting.<br>      // isIntersecting is a property exposed by the interface<br>      if (entry.isIntersecting) {<br>        // custom function that copies the path to the img<br>        // from data-src to src<br>        preloadImage(entry.target);<br>        // the image is now in place, stop watching<br>        self.unobserve(entry.target);<br>      }<br>    });<br>  }, config);<br>  <br>  imgs.forEach(img =&gt; {<br>    observer.observe(img);<br>  });<br>} else {<br>  imgs.forEach(img =&gt; {<br>    preloadImage(img)<br>  });<br>}<br><br>function preloadImage(e) {<br>  var a = e.getAttribute('src'), b = e.getAttribute('data-src');<br>  if (b.trim() != ''){<br>    e.src = b.trim();<br>  }<br>}<br>]]&gt;<br>&lt;/script&gt;<br></pre></div><b>FULL DEMO</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="pMRowj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure javascript lazy load images">  <span>See the Pen <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYS9wZW4vcE1Sb3dqLw==" rel="noopener noreferer nofollow noopener">  Pure javascript lazy load images</a> by dimas lanjaka (<a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYQ==" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlv" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+        <div dir="ltr" style="text-align: left;" trbidi="on"><figure>  <img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png" alt="Lazy load images blogger" style="width:100%">  <figcaption>Lazy load images blogger</figcaption></figure><br><ol style="text-align: left;">lazy loading blogger berguna untuk : <li>Mempercepat laman web</li><li>Meningkatkan rating pagespeed</li></ol><div><b>HTML (Usage)</b><pre><br>&lt;img alt='' data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg=='/&gt;<br></pre><blockquote style="overflow:auto"><ul><li>src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz8/SVuXQoAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==' : source gambar dengan resolusi paling rendah</li><li>data-src='https://lh3.googleusercontent.com/proxy/FCTXDOBcEj5ojJZCa5wsRX4hG0C1qod8MXxYlCcvUGT7EGMROVrUqXFf0LAuxtvvRaFKPr3mn-yUl3dMZj_ygE--d2lPheO6CSUofHexbWd1LQ6NV4NbJCReDlMs=w72-h58-p-k-no-nu' : source gambar asli</li></ul></blockquote></div><div><b>JS (taruh diatas <i>&lt;/body&gt;</i>)</b><pre><br>&lt;script&gt;<br>//&lt;![CDATA[<br>const config = {<br>  rootMargin: '0px 0px 50px 0px',<br>  threshold: 0<br>};<br>const imgs = document.querySelectorAll('[data-src]');<br><br>if (typeof intersectionObserver != 'undefined') {<br>  // register the config object with an instance<br>  // of intersectionObserver<br>  let observer = new intersectionObserver(function (entries, self) {<br>    // iterate over each entry<br>    entries.forEach(entry =&gt; {<br>      // process just the images that are intersecting.<br>      // isIntersecting is a property exposed by the interface<br>      if (entry.isIntersecting) {<br>        // custom function that copies the path to the img<br>        // from data-src to src<br>        preloadImage(entry.target);<br>        // the image is now in place, stop watching<br>        self.unobserve(entry.target);<br>      }<br>    });<br>  }, config);<br>  <br>  imgs.forEach(img =&gt; {<br>    observer.observe(img);<br>  });<br>} else {<br>  imgs.forEach(img =&gt; {<br>    preloadImage(img)<br>  });<br>}<br><br>function preloadImage(e) {<br>  var a = e.getAttribute('src'), b = e.getAttribute('data-src');<br>  if (b.trim() != ''){<br>    e.src = b.trim();<br>  }<br>}<br>]]&gt;<br>&lt;/script&gt;<br></pre></div><b>FULL DEMO</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="pMRowj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure javascript lazy load images">  <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/pMRowj/" rel="noopener noreferer nofollow noopener">  Pure javascript lazy load images</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://codepen.io" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
     </div>
 
     
@@ -440,7 +440,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a
           >.
         </p>

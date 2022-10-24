@@ -180,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">777</span>
+          <span class="site-state-item-count">779</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -189,20 +189,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -321,10 +321,10 @@
 <pre><code class="highlight bash">git config core.symlinks <span class="literal">true</span></code></pre>
 
 <p>(It may be wise to check for other non-default settings, especially if the SD-card repository was created by a different OS.)</p>
-<p>As discussed in comments, the key element here was that the repository was originally created on a non-symlink-supporting file system, and then moved (copied manually) to a symlink-supporting file system. <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cua2VybmVsLm9yZy9wdWIvc29mdHdhcmUvc2NtL2dpdC9kb2NzL2dpdC1jb25maWcuaHRtbA==">The <code>git config</code> documentation</a>, down in the section describing <code>core.symlinks</code>, says:</p>
+<p>As discussed in comments, the key element here was that the repository was originally created on a non-symlink-supporting file system, and then moved (copied manually) to a symlink-supporting file system. <a target="_blank" rel="noopener" href="https://www.kernel.org/pub/software/scm/git/docs/git-config.html">The <code>git config</code> documentation</a>, down in the section describing <code>core.symlinks</code>, says:</p>
 <blockquote>
-<p>If false, symbolic links are checked out as small plain files that contain the link text. <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cua2VybmVsLm9yZy9wdWIvc29mdHdhcmUvc2NtL2dpdC9kb2NzL2dpdC11cGRhdGUtaW5kZXguaHRtbA==">git-update-index(1)</a> and <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cua2VybmVsLm9yZy9wdWIvc29mdHdhcmUvc2NtL2dpdC9kb2NzL2dpdC1hZGQuaHRtbA==">git-add(1)</a> will not change the recorded type to regular file. Useful on filesystems like FAT that do not support symbolic links.</p>
-<p>The default is true, except <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cua2VybmVsLm9yZy9wdWIvc29mdHdhcmUvc2NtL2dpdC9kb2NzL2dpdC1jbG9uZS5odG1s">git-clone(1)</a> or <a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cua2VybmVsLm9yZy9wdWIvc29mdHdhcmUvc2NtL2dpdC9kb2NzL2dpdC1pbml0Lmh0bWw=">git-init(1)</a> will probe and set core.symlinks false if appropriate when the repository is created.</p>
+<p>If false, symbolic links are checked out as small plain files that contain the link text. <a target="_blank" rel="noopener" href="https://www.kernel.org/pub/software/scm/git/docs/git-update-index.html">git-update-index(1)</a> and <a target="_blank" rel="noopener" href="https://www.kernel.org/pub/software/scm/git/docs/git-add.html">git-add(1)</a> will not change the recorded type to regular file. Useful on filesystems like FAT that do not support symbolic links.</p>
+<p>The default is true, except <a target="_blank" rel="noopener" href="https://www.kernel.org/pub/software/scm/git/docs/git-clone.html">git-clone(1)</a> or <a target="_blank" rel="noopener" href="https://www.kernel.org/pub/software/scm/git/docs/git-init.html">git-init(1)</a> will probe and set core.symlinks false if appropriate when the repository is created.</p>
 </blockquote>
 <p>In general, it’s a little bit safer to <code>git clone</code> a repository when moving it across logical or physical drives, since the new clone will probe the new file system’s settings. Git is fairly good at autodetecting other changes (e.g., the index encodes the work-tree path) and most of these settings are OS-specific rather than file-system-specific. If you cross-boot different OSes (or run them under hypervisors) and share some media between then, though, these additional <code>core.*</code> settings may cause issues. See, e.g., <code>core.fileMode</code> and <code>core.protectNTFS</code>.</p>
 
@@ -459,7 +459,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a
           >.
         </p>

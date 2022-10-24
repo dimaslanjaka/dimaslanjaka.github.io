@@ -9,8 +9,60 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Thu, 20 Oct 2022 12:54:40 GMT</pubDate>
+    <pubDate>Mon, 24 Oct 2022 05:46:12 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Kumpulan soal cara mencari tetesan infus</title>
+      <link>https://www.webmanajemen.com/kunci-jawaban/soal-mencari-tetesan-infus.html</link>
+      <guid>https://www.webmanajemen.com/kunci-jawaban/soal-mencari-tetesan-infus.html</guid>
+      <pubDate>Mon, 24 Oct 2022 05:16:13 GMT</pubDate>
+      
+      <description>Kumpulan soal cara mencari tetesan infus - WMI</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Rumus-mencari-flow-rate-dari-infus"><a href="#Rumus-mencari-flow-rate-dari-infus" class="headerlink" title="Rumus mencari flow rate dari infus"></a>Rumus mencari flow rate dari infus</h2><p>\[ Flow\ Rate = Volume\ infus\ (mL) / Waktu\ (jam) \]</p><h2 id="Rumus-mencari-tetesan-per-menit"><a href="#Rumus-mencari-tetesan-per-menit" class="headerlink" title="Rumus mencari tetesan per menit"></a>Rumus mencari tetesan per menit</h2><p>\[ TPM = (Faktor\ tetes \times Volume\ infus) / Waktu\ (jam) \times 60 \]</p><h2 id="Rumus-menghitung-sisa-waktu-pemberian-infus"><a href="#Rumus-menghitung-sisa-waktu-pemberian-infus" class="headerlink" title="Rumus menghitung sisa waktu pemberian infus"></a>Rumus menghitung sisa waktu pemberian infus</h2><p>\[ Sisa\ Waktu = (Sisa\ volume\ infus\ (mL) \div TPM) x (faktor\ tetes \div 1) \]</p><h2 id="Soal-tetesan-infus-1"><a href="#Soal-tetesan-infus-1" class="headerlink" title="Soal tetesan infus 1"></a>Soal tetesan infus 1</h2><p>Seorang pasien membutuhkan cairan infus sebanyak 1000 mL dengan faktor tetes 15 tetes&#x2F;mL. Infus ini akan diberikan kepada pasien selama 10 jam. Kira-kira berapa TPM cairan infus yang harus diatur oleh perawat?</p><p>Diketahui :</p><ul><li>waktu &#x3D; 10 jam</li><li>faktor tetes &#x3D; 15 tetes&#x2F;mL</li><li>dibutuhkan &#x3D; 1000mL</li></ul><p>Ditanya : TPM infus</p><p>Jawab :</p><p>\[ TPM = (15\ tetes/mL x 1000 mL) / 10 jam x 60 \]</p><p>\[ TPM = 15000 \div 600 \]</p><p>\[ TPM = 25 tetes/menit \]</p><h2 id="Soal-2-sisa-waktu-pemberian-tetesan-infus"><a href="#Soal-2-sisa-waktu-pemberian-tetesan-infus" class="headerlink" title="Soal 2 sisa waktu pemberian tetesan infus"></a>Soal 2 sisa waktu pemberian tetesan infus</h2><p>Seorang pasien sudah diberikan infus dengan faktor tetes 15 tetes&#x2F;mL sejak jam 9 pagi. Sekarang, ada sekitar 100 mL cairan infus yang tersisa. Perawat mengatur TPM infus 20 tetes&#x2F;menit. Berapa lama lagi pemberian tetesan infus tersebut akan habis?</p><p>Ditanya: Sisa waktu pemberian infus</p><p>Diketahui:</p><ul><li>Faktor tetes &#x3D; 15 tetes&#x2F;mL</li><li>Sisa &#x3D; 100 mL</li><li>TPM &#x3D; 20 tetes&#x2F;menit</li></ul><p>Jawaban:</p><p>Sisa waktu &#x3D; (100 mL &#x2F; 20) x (15 &#x2F; 1)</p><p>Sisa waktu &#x3D; 5 x 15</p><p>Sisa waktu &#x3D; 75 menit</p><script src="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/mathjax/loader.js"></script>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/Math/">Math</category>
+      
+      <category domain="https://www.webmanajemen.com/categories/Math/Education/">Education</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/Drop-Rate/">Drop Rate</category>
+      
+      
+      <comments>https://www.webmanajemen.com/kunci-jawaban/soal-mencari-tetesan-infus.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>TypeError Converting circular structure to JSON</title>
+      <link>https://www.webmanajemen.com/NodeJS/typeerror-converting-circular-structure-to-json.html</link>
+      <guid>https://www.webmanajemen.com/NodeJS/typeerror-converting-circular-structure-to-json.html</guid>
+      <pubDate>Mon, 24 Oct 2022 02:02:58 GMT</pubDate>
+      
+      <description>TypeError Converting circular structure to JSON - WMI</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>TypeError: Converting circular structure to JSON produce errors like below</p><pre><code class="highlight log">TypeError: Converting circular structure to JSON    --&gt; starting at object with constructor &#x27;_Document&#x27;    |     property &#x27;tags&#x27; -&gt; object with constructor &#x27;_Query&#x27;    |     property &#x27;data&#x27; -&gt; object with constructor &#x27;Array&#x27;    |     ...    |     property &#x27;data&#x27; -&gt; object with constructor &#x27;Array&#x27;    --- index 0 closes the circle    at JSON.stringify (&lt;anonymous&gt;)    at /media/dimaslanjaka/DATA/Repositories/chimeraland/packages/hexo-generator-category/lib/generator.js:16:56    at _Query.reduce (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/warehouse/lib/query.js:240:16)    at Hexo.module.exports (/media/dimaslanjaka/DATA/Repositories/chimeraland/packages/hexo-generator-category/lib/generator.js:13:28)    at Hexo.tryCatcher (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/util.js:16:23)    at Hexo.&lt;anonymous&gt; (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/method.js:15:34)    at /media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/hexo/lib/hexo/index.js:407:22    at tryCatcher (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/util.js:16:23)    at MappingPromiseArray._promiseFulfilled (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/map.js:68:38)    at MappingPromiseArray.PromiseArray._iterate (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/promise_array.js:115:31)    at MappingPromiseArray.init (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/promise_array.js:79:10)    at MappingPromiseArray._asyncInit (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/map.js:37:10)    at _drainQueueStep (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/async.js:97:12)    at _drainQueue (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/async.js:86:9)    at Async._drainQueues (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/async.js:102:5)    at Immediate.Async.drainQueues [as _onImmediate] (/media/dimaslanjaka/DATA/Repositories/chimeraland/node_modules/bluebird/js/release/async.js:15:14)    at processImmediate (node:internal/timers:466:21)</code></pre><p>Fixed with custom JSON.stringify with circural ref.<br>write below codes to <code>json.js</code></p><pre><code class="highlight js"><span class="meta">&#x27;use strict&#x27;</span>;<span class="title class_">JSON</span>.<span class="property">stringifyWithCircularRefs</span> = (<span class="keyword">function</span>(<span class="params"></span>) &#123;  <span class="keyword">const</span> refs = <span class="keyword">new</span> <span class="title class_">Map</span>();  <span class="keyword">const</span> parents = [];  <span class="keyword">const</span> path = [<span class="string">&#x27;this&#x27;</span>];  <span class="keyword">function</span> <span class="title function_">clear</span>(<span class="params"></span>) &#123;    refs.<span class="title function_">clear</span>();    parents.<span class="property">length</span> = <span class="number">0</span>;    path.<span class="property">length</span> = <span class="number">1</span>;  &#125;  <span class="keyword">function</span> <span class="title function_">updateParents</span>(<span class="params">key, value</span>) &#123;    <span class="keyword">let</span> idx = parents.<span class="property">length</span> - <span class="number">1</span>;    <span class="keyword">let</span> prev = parents[idx];    <span class="keyword">if</span> (prev[key] === value || idx === <span class="number">0</span>) &#123;      path.<span class="title function_">push</span>(key);      parents.<span class="title function_">push</span>(value);    &#125; <span class="keyword">else</span> &#123;      <span class="keyword">while</span> (idx-- &gt;= <span class="number">0</span>) &#123;        prev = parents[idx];        <span class="keyword">if</span> (prev[key] === value) &#123;          idx += <span class="number">2</span>;          parents.<span class="property">length</span> = idx;          path.<span class="property">length</span> = idx;          --idx;          parents[idx] = value;          path[idx] = key;          <span class="keyword">break</span>;        &#125;      &#125;    &#125;  &#125;  <span class="keyword">function</span> <span class="title function_">checkCircular</span>(<span class="params">key, value</span>) &#123;    <span class="keyword">if</span> (value != <span class="literal">null</span>) &#123;      <span class="keyword">if</span> (<span class="keyword">typeof</span> value === <span class="string">&#x27;object&#x27;</span>) &#123;        <span class="keyword">if</span> (key) &#123;          <span class="title function_">updateParents</span>(key, value);        &#125;        <span class="keyword">const</span> other = refs.<span class="title function_">get</span>(value);        <span class="keyword">if</span> (other) &#123;          <span class="keyword">return</span> <span class="string">&#x27;[Circular Reference]&#x27;</span> + other;        &#125;        refs.<span class="title function_">set</span>(value, path.<span class="title function_">join</span>(<span class="string">&#x27;.&#x27;</span>));      &#125;    &#125;    <span class="keyword">return</span> value;  &#125;  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">stringifyWithCircularRefs</span>(<span class="params">obj, space = <span class="number">2</span></span>) &#123;    <span class="keyword">try</span> &#123;      parents.<span class="title function_">push</span>(obj);      <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj, checkCircular, space);    &#125; <span class="keyword">finally</span> &#123;      <span class="title function_">clear</span>();    &#125;  &#125;;&#125;());</code></pre><p>JSON.stringifyWithCircularRefs interface types</p><pre><code class="highlight typescript"><span class="keyword">interface</span> <span class="title class_">JSON</span> &#123;  <span class="comment">/**</span><span class="comment">   * <span class="doctag">@see</span> &#123;<span class="type">@link https://stackoverflow.com/a/61962964/6404439</span>&#125;</span><span class="comment">   * <span class="doctag">@example</span></span><span class="comment">   * console.log(JSON.stringify(&#123;a:&#123;a:&#123;a:&#123;a:[&#123;a:&#123;hello:&quot;world&quot;&#125;&#125;]&#125;&#125;&#125;&#125;))</span><span class="comment">   */</span>  <span class="attr">stringifyWithCircularRefs</span>: <span class="function">(<span class="params">obj: <span class="built_in">any</span>, space?: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">string</span>;&#125;</code></pre><p>usage <code>JSON.stringifyWithCircularRefs</code></p><pre><code class="highlight js"><span class="built_in">require</span>(<span class="string">&#x27;./json&#x27;</span>);<span class="keyword">const</span> &#123; writeFileSync &#125; = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);<span class="keyword">const</span> result = &#123;&#125;; <span class="comment">// this object with circular ref</span><span class="title function_">writeFileSync</span>(<span class="title function_">join</span>(__dirname, <span class="string">&#x27;result.json&#x27;</span>), <span class="title class_">JSON</span>.<span class="title function_">stringifyWithCircularRefs</span>(result));</code></pre><p>full script at <a href="https://github.com/dimaslanjaka/persistent-cache/blob/improve2/src/JSON.ts">https://github.com/dimaslanjaka/persistent-cache/blob/improve2/src/JSON.ts</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
+      
+      <category domain="https://www.webmanajemen.com/categories/Programming/JS/">JS</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/JS/">JS</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/JSON/">JSON</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/typeerror-converting-circular-structure-to-json.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Cara agar VSCode tidak otomatis membuka subfolder dari file yang kita buka</title>
@@ -469,50 +521,6 @@
       
       
       <comments>https://www.webmanajemen.com/2022/10/fix-ts-node-typeerror-unknown-file-extension-ts.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>How to declare a variable inside if else brackets</title>
-      <link>https://www.webmanajemen.com/2022/10/declare-and-validate-variable-inside-if-else-scope.html</link>
-      <guid>https://www.webmanajemen.com/2022/10/declare-and-validate-variable-inside-if-else-scope.html</guid>
-      <pubDate>Wed, 05 Oct 2022 21:40:09 GMT</pubDate>
-      
-      <description>js validate and assign online inside if, js assign variable inside if bracket, How to declare a variable inside brackets</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2>How to declare a variable inside brackets?</h2><p><b>Might you have questions like below?</b></p><ol>  <li>js validate and assign online inside if</li>  <li>js assign variable inside if bracket</li>  <li>is it wrong to declare variables within an if-block?</li>  <li>How to declare a variable inside brackets?</li>  <li>is it wrong to stick to the ES6 spec and do what I did?</li></ol><p><i>You read the right article</i></p><h3>Basically if-else format like an below codes</h3><pre>  <code>    if (condition) &#123;      var foo = &#123; bar: 'abcd' &#125;;    &#125;  </code></pre><p>  However, JavaScript doesn't have scope blocking. I understand that foo will be null if the condition is not true. Later in the code if I do something like foo.bar I see that the bar cannot be read with an undefined error.</p><p>That being said, is it wrong to stick to the ES6 spec and do what I did?</p><h3>Playground with examples</h3><h5>HTML</h5><pre><code>&lt;span id=&quot;ntrue&quot;&gt;&lt;/span&gt;&lt;span id=&quot;nfalse&quot;&gt;&lt;/span&gt;</code></pre><h5>Javascript</h5><pre><code>// declare Mutable variablelet n = false;// assign variable as trueif ((n = 2 &gt; 1)) &#123;  // print  document.getElementById(&quot;ntrue&quot;).textContent = String(n);&#125;// assign variable as falseif (!(n = 2 &gt; 4)) &#123;  // print  document.getElementById(&quot;nfalse&quot;).textContent = String(n);&#125;</code></pre><h5>The result</h5><p>N&#x3D;(n &#x3D; 2 &gt; 1) <span id="ntrue"></span> <br><br>N&#x3D;!(n &#x3D; 2 &gt; 4) <span id="nfalse"></span></p><script>  // declare Mutable variable  let n = false;  // assign variable as true  if ((n = 2 > 1)) {    // print    document.getElementById("ntrue").textContent = String(n);  }  // assign variable as false  if (!(n = 2 > 4)) {    // print    document.getElementById("nfalse").textContent = String(n);  }</script><h3 id="Example-using-RegExp"><a href="#Example-using-RegExp" class="headerlink" title="Example using RegExp"></a>Example using RegExp</h3><pre><code class="highlight javascript"><span class="keyword">const</span> regex = <span class="regexp">/(?:(?:(\d+):)?(?:(\d+):))?(\d+)(?:\.(\d+))?/gm</span>;<span class="comment">// Alternative syntax using RegExp constructor</span><span class="comment">// const regex = new RegExp(&#x27;(?:(?:(\\d+):)?(?:(\\d+):))?(\\d+)(?:\\.(\\d+))?&#x27;, &#x27;gm&#x27;)</span><span class="keyword">const</span> str = <span class="string">`1:1.1`</span>;<span class="keyword">let</span> m;<span class="comment">// this loop running until regex.exec return null</span><span class="keyword">while</span> ((m = regex.<span class="title function_">exec</span>(str)) !== <span class="literal">null</span>) &#123;    <span class="comment">// This is necessary to avoid infinite loops with zero-width matches</span>    <span class="keyword">if</span> (m.<span class="property">index</span> === regex.<span class="property">lastIndex</span>) &#123;        regex.<span class="property">lastIndex</span>++;    &#125;    <span class="comment">// The result can be accessed through the `m`-variable.</span>    m.<span class="title function_">forEach</span>(<span class="function">(<span class="params">match, groupIndex</span>) =&gt;</span> &#123;        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Found match, group <span class="subst">$&#123;groupIndex&#125;</span>: <span class="subst">$&#123;match&#125;</span>`</span>);    &#125;);&#125;</code></pre><h3 id="Example-Images"><a href="#Example-Images" class="headerlink" title="Example Images"></a>Example Images</h3><p><img data-src="/2022/10/declare-and-validate-variable-inside-if-else-scope/ex.png" alt="print declared variable inside if-else scope"><br><img data-src="/2022/10/declare-and-validate-variable-inside-if-else-scope/assignment.png" alt="assignment explanation"></p><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Defining or assigning and validating variable inside if-else scope is allowed, the example like above codes.</p>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
-      
-      
-      
-      <comments>https://www.webmanajemen.com/2022/10/declare-and-validate-variable-inside-if-else-scope.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Cara menghapus direktori path panjang di terminal</title>
-      <link>https://www.webmanajemen.com/2022/09/cara-menghapus-path-panjang-di-terminal.html</link>
-      <guid>https://www.webmanajemen.com/2022/09/cara-menghapus-path-panjang-di-terminal.html</guid>
-      <pubDate>Wed, 31 Aug 2022 10:00:00 GMT</pubDate>
-      
-      <description>Cara menghapus direktori path panjang di terminal - WMI</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>Bagaimana cara mempersingkat jalur direktori saat ini yang ditampilkan di terminal? </p><ul><li>Pergi ke <strong>Home</strong> direktori atau <strong>~</strong></li><li>Edit <strong>.bashrc</strong></li><li>change lowercase <strong>\w</strong> to uppercase <strong>\W</strong>.</li><li>See below image:</li></ul><p><img data-src="https://user-images.githubusercontent.com/12471057/197099003-41e4e0c3-8f3b-43bb-af66-466956a1d9a0.png" alt="Hasil mempersingkat direktori path pada terminal"></p><p>Selesai.</p><p>Sejak bash 4, untuk mempersingkat direktori path di baris perintah dilakukan dengan menggunakan PROMPT_DIRTRIM di file .bashrc.</p><pre><code class="highlight properties"><span class="attr">PROMPT_DIRTRIM</span>=<span class="string">1</span></code></pre><p>Hasil:</p><p>sebelum: bob@bob-ubuntu:~&#x2F;Desktop&#x2F;Drop&#x2F;box&#x2F;School&#x2F;20&#x2F;17&#x2F;C&#x2F;A3&#x2F;$</p><p>sesudah: bob@bob-ubuntu:…&#x2F;A3&#x2F;$</p><p>Baca <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-PROMPT_005fDIRTRIM">Bash Manual</a> untuk informasi lebih lanjut.</p>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/Programming/">Programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/bash/">bash</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2022/09/cara-menghapus-path-panjang-di-terminal.html#disqus_thread</comments>
       
     </item>
     

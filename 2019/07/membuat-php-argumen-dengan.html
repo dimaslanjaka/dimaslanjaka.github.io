@@ -180,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">777</span>
+          <span class="site-state-item-count">779</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -189,20 +189,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -310,7 +310,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Cara Membuat argumen PHP CLI dengan '<b>=</b>' '<b>--=</b>' </p><b>Buat file php</b><pre><br>&lt;?php<br>function arguments($argv) {<br>    $_ARG = array();<br>    foreach ($argv as $arg) {<br>      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {<br>        $_ARG[$reg[1]] = $reg[2];<br>      } elseif(ereg('-([a-zA-Z0-9])',$arg,$reg)) {<br>            $_ARG[$reg[1]] = 'true';<br>        }<br>  <br>    }<br>  return $_ARG;<br>}<br>?&gt;<br></pre><b>Contoh penggunaan</b><pre><br>php myscript.php --user=nobody --password=secret -p --access="host=127.0.0.1 port=456"<br></pre><b>Output</b><pre><br>Array<br>(<br>    [user] =&gt; nobody<br>    [password] =&gt; secret<br>    [p] =&gt; true<br>    [access] =&gt; host=127.0.0.1 port=456<br>)<br></pre> <div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGltYXNsYW5qYWthL2ltYWdlL2ZldGNoL2h0dHBzOi8vc3RhdGljLmNkbi1jZHBsLmNvbS83MDB4MzUwLzQ4MTdiNDQ3NzQ5MWI0MzZhMmEzY2I0ZGI1ZjM5NDNiL1BIUF9Mb2dvLWltYWdlNzAweDM1MC1jcm9wLWltYWdlNzAweDM1MC1jcm9wLWltYWdlKDcwMHgzNTAtY3JvcCkucG5n" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" data-original-width="700" data-original-height="350"></a></div>
+        <p>Cara Membuat argumen PHP CLI dengan '<b>=</b>' '<b>--=</b>' </p><b>Buat file php</b><pre><br>&lt;?php<br>function arguments($argv) {<br>    $_ARG = array();<br>    foreach ($argv as $arg) {<br>      if (ereg('--([^=]+)=(.*)',$arg,$reg)) {<br>        $_ARG[$reg[1]] = $reg[2];<br>      } elseif(ereg('-([a-zA-Z0-9])',$arg,$reg)) {<br>            $_ARG[$reg[1]] = 'true';<br>        }<br>  <br>    }<br>  return $_ARG;<br>}<br>?&gt;<br></pre><b>Contoh penggunaan</b><pre><br>php myscript.php --user=nobody --password=secret -p --access="host=127.0.0.1 port=456"<br></pre><b>Output</b><pre><br>Array<br>(<br>    [user] =&gt; nobody<br>    [password] =&gt; secret<br>    [p] =&gt; true<br>    [access] =&gt; host=127.0.0.1 port=456<br>)<br></pre> <div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png" data-original-width="700" data-original-height="350"></a></div>
     </div>
 
     
@@ -439,7 +439,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a
           >.
         </p>

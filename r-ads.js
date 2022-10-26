@@ -143,20 +143,23 @@ document.addEventListener('DOMContentLoaded', function (_e) {
           'data-ad-format': 'fluid',
           'data-ad-slot': '5634823028'
         },
-        {style:"display: block; text-align: center",
-        'data-ad-layout': "in-article",
-        'data-ad-format':"fluid",
-        'data-ad-slot':"8481296455"},
         {
-          style:"display:block",
-     'data-ad-slot':"2667720583",
-     'data-ad-format':"auto",
-     'data-full-width-responsive':"true"
-        },{
-          style="display:block",
-     'data-ad-format':"fluid",
-     'data-ad-layout-key':"-gw-3+1f-3d+2z",
-     'data-ad-slot':"6979059162"
+          style: 'display: block; text-align: center',
+          'data-ad-layout': 'in-article',
+          'data-ad-format': 'fluid',
+          'data-ad-slot': '8481296455'
+        },
+        {
+          style: 'display:block',
+          'data-ad-slot': '2667720583',
+          'data-ad-format': 'auto',
+          'data-full-width-responsive': 'true'
+        },
+        {
+          style: 'display:block',
+          'data-ad-format': 'fluid',
+          'data-ad-layout-key': '-gw-3+1f-3d+2z',
+          'data-ad-slot': '6979059162'
         }
       ]
     }

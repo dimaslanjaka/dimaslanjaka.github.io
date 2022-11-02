@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg">
 <meta property="article:published_time" content="2021-11-27T17:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-20T14:18:10.000Z">
+<meta property="article:modified_time" content="2022-10-30T09:41:16.000Z">
 <meta property="article:author" content="Dimas Lanjaka">
 <meta property="article:tag" content="JS">
 <meta property="article:tag" content="TS">
@@ -76,6 +76,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -182,16 +184,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">781</span>
+          <span class="site-state-item-count">1390</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">113</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -282,7 +284,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-10-20 21:18:10" itemprop="dateModified" datetime="2022-10-20T21:18:10+07:00">2022-10-20</time>
+      <time title="Modified: 2022-10-30 16:41:16" itemprop="dateModified" datetime="2022-10-30T16:41:16+07:00">2022-10-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -412,7 +414,10 @@ Sandboxed: No</code></pre>
   <span class="attr">tabWidth</span>: <span class="number">2</span>
 &#125;;</code></pre>
 
-<h3 id="Using-prettierc-json"><a href="#Using-prettierc-json" class="headerlink" title="Using .prettierc.json"></a>Using .prettierc.json</h3><pre><code class="highlight jsonc">&#123;
+<h3 id="Using-prettierc-json"><a href="#Using-prettierc-json" class="headerlink" title="Using .prettierc.json"></a>Using .prettierc.json</h3><blockquote>
+<p>if you using json, change top of <a href="#Create-eslintrc-js"><code>.eslintrc.js</code></a> to <code>const prettier = require(&#39;./.prettierrc.json&#39;);</code></p>
+</blockquote>
+<pre><code class="highlight jsonc">&#123;
   &quot;$schema&quot;: &quot;https://json.schemastore.org/prettierrc&quot;,
   &quot;semi&quot;: true,
   &quot;printWidth&quot;: 120,

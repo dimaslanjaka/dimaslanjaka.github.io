@@ -75,6 +75,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -181,29 +183,29 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">781</span>
+          <span class="site-state-item-count">1390</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">113</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -318,7 +320,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div dir="ltr" style="text-align: left;" trbidi="on">  <b>How to tethering vpn on android</b><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly80LmJwLmJsb2dzcG90LmNvbS8tNF9hT1MzRjdGZzAvWGx1dFU4LVBybkkvQUFBQUFBQUFBSzAvN0t2SFVwWDc4V1F3OGEtMk1ZUWpvLVAxT3E5TXYxelRBQ0xjQkdBc1lIUS9zMTYwMC9pbWdpbmdlc3QtMjExNzk2ODkwMDAyMTA3MTA3My5wbmc=" imageanchor="1" rel="noopener noreferer nofollow noopener"><img border="0" data-src="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png" data-original-width="300" data-original-height="300"></a>  <br>  <blockquote>    <b>ROOT</b> is required</blockquote>  <h4 style="text-align: left;">    Requirement</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWphY2twYWwuYW5kcm9pZHRlcm0mYW1wO2hsPWlu" rel="noopener noreferer nofollow" target="_blank">Terminal Emulator</a></li>  </ol>  <h4 style="text-align: left;">    Tutorial</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li>Start your VPN until connected</li>    <li>Open terminal emulator</li>   <blockquote>    Type:<br>    <pre><br>su<br>ip link show<br>id<br>iptables -t filter -F FORWARD<br>iptables -t nat -F POSTROUTING<br>iptables -t filter -l FORWARD -j ACCEPT<br>iptables -t nat -I POSTROUTING -j MASQUERADE<br>ip rule del from 192.168.43.0/24 lookup 61<br>ip route del default dev tun0 scope link table 61<br>ip route del 192.168.43.0/24 dev wlan0 scope link table 61<br>ip route broadcast 255.255.255.255 dev wlan0 scope link table 61<br>exit<br></pre>  </blockquote>  <li>Now connect your other devices to your android hotspot, try browsing any websites now :)</li></ol><h3>Alternative</h3><p>  install <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWNvbS5hcmRhZGVtLnZwbnRldGhlcmluZyZhbXA7aGw9ZW4=" target="_blank" rel="noopener noreferer nofollow">VPN tethering</a> from <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWNvbS5hcmRhZGVtLnZwbnRldGhlcmluZyZhbXA7aGw9ZW4=" target="_blank" rel="noopener noreferer nofollow">play store</a></p></div>
+        <div dir="ltr" style="text-align: left;" trbidi="on">  <b>How to tethering vpn on android</b><a target="_blank" href="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png" imageanchor="1" rel="noopener noreferer nofollow noopener"><img border="0" data-src="https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png" data-original-width="300" data-original-height="300"></a>  <br>  <blockquote>    <b>ROOT</b> is required</blockquote>  <h4 style="text-align: left;">    Requirement</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li><a href="https://play.google.com/store/apps/details?id=jackpal.androidterm&amp;hl=in" rel="noopener noreferer nofollow" target="_blank">Terminal Emulator</a></li>  </ol>  <h4 style="text-align: left;">    Tutorial</h4>  <div style="text-align: left;">  </div>  <ol style="text-align: left;">    <li>Start your VPN until connected</li>    <li>Open terminal emulator</li>   <blockquote>    Type:<br>    <pre><br>su<br>ip link show<br>id<br>iptables -t filter -F FORWARD<br>iptables -t nat -F POSTROUTING<br>iptables -t filter -l FORWARD -j ACCEPT<br>iptables -t nat -I POSTROUTING -j MASQUERADE<br>ip rule del from 192.168.43.0/24 lookup 61<br>ip route del default dev tun0 scope link table 61<br>ip route del 192.168.43.0/24 dev wlan0 scope link table 61<br>ip route broadcast 255.255.255.255 dev wlan0 scope link table 61<br>exit<br></pre>  </blockquote>  <li>Now connect your other devices to your android hotspot, try browsing any websites now :)</li></ol><h3>Alternative</h3><p>  install <a href="https://play.google.com/store/apps/details?id=com.ardadem.vpntethering&amp;hl=en" target="_blank" rel="noopener noreferer nofollow">VPN tethering</a> from <a href="https://play.google.com/store/apps/details?id=com.ardadem.vpntethering&amp;hl=en" target="_blank" rel="noopener noreferer nofollow">play store</a></p></div>
     </div>
 
     
@@ -449,7 +451,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a
           >.
         </p>

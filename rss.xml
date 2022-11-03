@@ -15,8 +15,37 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Tue, 01 Nov 2022 00:00:58 GMT</pubDate>
+    <pubDate>Wed, 02 Nov 2022 19:46:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Array JSX Join</title>
+      <link>https://www.webmanajemen.com/NodeJS/snippet/array-jsx-join.html</link>
+      <guid>https://www.webmanajemen.com/NodeJS/snippet/array-jsx-join.html</guid>
+      <pubDate>Wed, 02 Nov 2022 19:39:01 GMT</pubDate>
+      
+      <description>Array JSX Join - WMI</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Faq"><a href="#Faq" class="headerlink" title="Faq"></a>Faq</h2><ul><li>How to join array of JSX</li><li>How to array join of React Elements</li></ul><h2 id="JSX-Array-Join-Javascript-Function"><a href="#JSX-Array-Join-Javascript-Function" class="headerlink" title="JSX Array Join Javascript Function"></a>JSX Array Join Javascript Function</h2><pre><code class="highlight javascript"><span class="keyword">function</span> <span class="title function_">jsxJoin</span>(<span class="params">array, separator</span>) &#123;  <span class="keyword">return</span> array.<span class="property">length</span> &gt; <span class="number">0</span>    ? array.<span class="title function_">reduce</span>(<span class="function">(<span class="params">result, item</span>) =&gt;</span> (        <span class="language-xml"><span class="tag">&lt;&gt;</span></span><span class="language-xml">          &#123;result&#125;</span><span class="language-xml">          &#123;separator&#125;</span><span class="language-xml">          &#123;item&#125;</span><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span>      ))    : <span class="literal">null</span>&#125;</code></pre><h2 id="Array-JSX-Join-Typescript-Function"><a href="#Array-JSX-Join-Typescript-Function" class="headerlink" title="Array JSX Join Typescript Function"></a>Array JSX Join Typescript Function</h2><pre><code class="highlight typescript"><span class="keyword">function</span> <span class="title function_">jsxJoin</span>(<span class="params">array: JSX.Element[], separator: <span class="built_in">string</span> | JSX.Element</span>) &#123;  <span class="keyword">return</span> array.<span class="property">length</span> &gt; <span class="number">0</span>    ? array.<span class="title function_">reduce</span>(<span class="function">(<span class="params">result, item</span>) =&gt;</span> (        <span class="language-xml"><span class="tag">&lt;&gt;</span></span><span class="language-xml">          &#123;result&#125;</span><span class="language-xml">          &#123;separator&#125;</span><span class="language-xml">          &#123;item&#125;</span><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span>      ))    : <span class="literal">null</span>&#125;</code></pre><h2 id="Array-JSX-Join-With-Validation"><a href="#Array-JSX-Join-With-Validation" class="headerlink" title="Array JSX Join With Validation"></a>Array JSX Join With Validation</h2><pre><code class="highlight typescript"><span class="keyword">function</span> <span class="title function_">array_jsx_join</span>(<span class="params"></span><span class="params">  arr: JSX.Element[],</span><span class="params">  delimeter?: JSX.Element | <span class="built_in">string</span></span><span class="params"></span>): <span class="variable constant_">JSX</span>.<span class="property">Element</span> &#123;  <span class="keyword">if</span> (!<span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr) || arr.<span class="property">length</span> === <span class="number">0</span>)    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span>[array_jsx_join] empty array<span class="tag">&lt;/&gt;</span></span>  <span class="keyword">let</span> <span class="attr">delim</span>: <span class="variable constant_">JSX</span>.<span class="property">Element</span> = <span class="language-xml"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span>  <span class="keyword">if</span> (<span class="keyword">typeof</span> delimeter === <span class="string">&#x27;string&#x27;</span>) &#123;    delim = <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;delimeter&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> delimeter !== <span class="string">&#x27;undefined&#x27;</span>) &#123;    delim = delimeter  &#125;  <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> (    <span class="language-xml"><span class="tag">&lt;&gt;</span></span><span class="language-xml">      &#123;prev&#125;</span><span class="language-xml">      &#123;delim&#125;</span><span class="language-xml">      &#123;curr&#125;</span><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span>  ))&#125;</code></pre><h2 id="Usage-Example"><a href="#Usage-Example" class="headerlink" title="Usage Example"></a>Usage Example</h2><pre><code class="highlight javascript"><span class="title function_">jsxJoin</span>([<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>first jsx snippet<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>, <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>second jsx snippet<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>, <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>third jsx snippet<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>])</code></pre><p><a href="https://stackoverflow.com/a/51469655">Source Idea</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/JS/">JS</category>
+      
+      <category domain="https://www.webmanajemen.com/categories/JS/TS/">TS</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/TS/">TS</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/JS/">JS</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/Snippet/">Snippet</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/snippet/array-jsx-join.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Monster Frostppo</title>
@@ -530,33 +559,6 @@
       
       
       <comments>https://www.webmanajemen.com/NodeJS/human-readable-size-number.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Cara menentukan skala pada peta</title>
-      <link>https://www.webmanajemen.com/kunci-jawaban/cara-menentukan-skala-pada-peta.html</link>
-      <guid>https://www.webmanajemen.com/kunci-jawaban/cara-menentukan-skala-pada-peta.html</guid>
-      <pubDate>Tue, 11 Oct 2022 09:43:58 GMT</pubDate>
-      
-      <description>Rumus Skala, Contoh Soal Skala, Jarak Sebenarnya, Jarak Pada Peta, Penentuan Skala</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Arti-Skala-Pada-Peta"><a href="#Arti-Skala-Pada-Peta" class="headerlink" title="Arti Skala Pada Peta"></a>Arti Skala Pada Peta</h2><p><img data-src="/kunci-jawaban/cara-menentukan-skala-pada-peta/soal-skala-dan-perbandingan-no-1.jpg" alt="Contoh menentukan skala peta pada pulau bali"><br>Pada gambar di atas tertulis: skala 1 : 1.020.000. Apakah arti skala 1 : 1.020.000 tersebut?</p><p>Skala 1: 1.020.000 artinya tiap 1 cm pada peta diatas mewakili 1.020.000 cm jarak sebenarnya.</p><h2 id="Rumus-Skala"><a href="#Rumus-Skala" class="headerlink" title="Rumus Skala"></a>Rumus Skala</h2><p>Singkatan</p><blockquote><ul><li>JSB &#x3D; Jarak Sebenarnya</li><li>s   &#x3D; Skala</li><li>JPP &#x3D; Jarak Pada Peta</li></ul></blockquote><p>Menentukan jarak pada peta</p><p>\[ JPP = Skala \times JSB \]</p><p>Menentukan jarak sebenarnya</p><p>\[ JSB = { JPP \over Skala } \]</p><p>Menentukan Skala</p><p>\[ Skala = { JPP \over JSB } \]</p><h2 id="Menentukan-skala-dari-jarak-peta-dan-jarak-sebenarnya"><a href="#Menentukan-skala-dari-jarak-peta-dan-jarak-sebenarnya" class="headerlink" title="Menentukan skala dari jarak peta dan jarak sebenarnya"></a>Menentukan skala dari jarak peta dan jarak sebenarnya</h2><p>Jarak dari kota A ke B pada peta adalah <code>5cm</code>, namun jarak sebenarnya adalah <code>100km</code>. Berapakah skala pada peta ? (yang ditanyakan adalah <code>skala</code>).<br>Maka rumusnya</p><p>\[s = {JPP \over JSB} = {5 cm \over 100 km} = {5 cm \over 10.000.000 cm} = {1 \over 2,000.000} \]</p><p>Jadi skalanya adalah <strong>1 : 2.000.000</strong></p><p>Contoh soal lain untuk <strong>Menentukan skala dari jarak peta dan jarak sebenarnya</strong></p><p><strong>Diketahui :</strong></p><p>Jarak pada peta &#x3D; 12 cm</p><p>Jarak sebenarnya &#x3D; 144 km &#x3D; 14.400.000 cm (konversi <code>km</code> ke <code>cm</code>)</p><p>Ditanya : <strong>Skala ?</strong></p><p><strong>Jawab :</strong></p><p>Skala &#x3D; Jarak pada peta : Jarak sebenarnya</p><p>Skala &#x3D; 12 : 14.400.000</p><p>Skala &#x3D; 1 : 1.200.000</p><p>Sehingga, skalanya adalah 1 : 1.200.000</p><p>Penjelasan rumusnya</p><p>\[ Skala = {12 cm \over 14.400.000 cm} \]\[ Skala = {12 \over 14.000.000} = {12 \div 12 = 1 \over 14.000.000 \div 12 = 1.200.00} = 1:1.200.000 \]</p><h2 id="Menentukan-jarak-sebenarnya-berdasarkan-jarak-pada-peta-dan-skala-pada-peta"><a href="#Menentukan-jarak-sebenarnya-berdasarkan-jarak-pada-peta-dan-skala-pada-peta" class="headerlink" title="Menentukan jarak sebenarnya berdasarkan jarak pada peta dan skala pada peta"></a>Menentukan jarak sebenarnya berdasarkan jarak pada peta dan skala pada peta</h2><blockquote><ul><li>JSB &#x3D; Jarak Sebenarnya</li><li>JPP &#x3D; Jarak Pada Peta</li></ul></blockquote><p><em><strong>Diketahui :</strong></em></p><p>Jarak pada peta &#x3D; 17 cm</p><p>Skala pada peta &#x3D; 1 : 1.500.000</p><p>Ditanya : <strong>Jarak sebenarnya ?</strong></p><p><strong>Jawab :</strong></p><p>Skala &#x3D; Jarak pada peta : Jarak sebenarnya</p><p title="rumus menentukan skala">\[ Skala = { JPP \over JSB } \]</p><p>Jarak sebenarnya &#x3D; Jarak pada peta : skala</p><p title="rumus menentukan jarak sebenarnya">\[ JSB = { JPP \\ \colon Skala } \]</p><p>Jarak sebenarnya &#x3D; 17 : (1 : 1.500.000)</p><p>Jarak sebenarnya &#x3D; 17 x 1.500.000</p><p>\[ JSB = { 17 \colon (1 \colon 1500000) } = { 17 \times 1500000 } \]</p><p>Jarak sebenarnya &#x3D; 25.500.000 cm</p><p>Jarak sebenarnya &#x3D; 255 km</p><p>\[ JSB = { 25500000 cm \over 100000 cm } = 255 km \]</p><p>\[ 1 km = 100.000 cm \]</p><p>Sehingga, jarak yang sebenarnya adalah 255 km.</p><p>\[ JSB = 255 km \]</p><h2 id="Contoh-contoh-Soal-Pembahasan-Skala-Peta"><a href="#Contoh-contoh-Soal-Pembahasan-Skala-Peta" class="headerlink" title="Contoh-contoh Soal Pembahasan Skala Peta"></a>Contoh-contoh Soal Pembahasan Skala Peta</h2><h3 id="Soal-1"><a href="#Soal-1" class="headerlink" title="Soal 1"></a>Soal 1</h3><p>Jarak antara kota A dan B pada suatu peta adalah 6 cm. Jarak sebenarnya antara kota A dan B tersebut adalah 120 km. <strong>Berapakah skala peta tersebut</strong> ?</p><p>\[ Skala = { JPP \over JSB } \]\[ Skala = { 6cm \over 120 km } = { 6cm \over 12000000 cm } = 1 \colon 2000000 \]</p><p>Jadi, skala pada peta tersebut adalah <code>1 : 2.000.000</code>.</p><h3 id="Soal-2"><a href="#Soal-2" class="headerlink" title="Soal 2"></a>Soal 2</h3><p>Jarak antara kota C dan D pada peta adalah 6 cm. Jika skala pada peta yang digunakan adalah 1:500.000, bagaimana cara mencari <strong>jarak sebenarnya kedua kota tersebut</strong> ?</p><p>Jawab:</p><p>Jarak sebenarnya&#x3D; Ukuran pada peta : Skala</p><p>Jarak sebenarnya&#x3D; 6 : (1:500.000) &#x3D; 6 x 500.000 &#x3D; 3.000.000 cm</p><p>Jadi, jarak sebenarnya antara kota A dan B adalah 3.000.000 cm atau 30 km.</p><h3 id="Soal-3"><a href="#Soal-3" class="headerlink" title="Soal 3"></a>Soal 3</h3><p>Diketahui jarak sebenarnya dari kota A ke kota B adalah 120 km, jika terdapat sebuah peta dengan skala 1: 400.000, maka jarak pada peta dari kota A ke kota B adalah?</p><p>Jawab:</p><p>Jarak pada peta &#x3D; Skala x Jarak Sebenarnya</p><p>Jarak pada peta &#x3D; 1 banding 400.000 x 120 km</p><p>Jarak pada peta &#x3D; 1&#x2F;400.000 x 12.000.000 cm</p><p>Jarak pada peta &#x3D; 30 cm</p><h3 id="Soal-4"><a href="#Soal-4" class="headerlink" title="Soal 4"></a>Soal 4</h3><p><strong>Diketahui :</strong></p><p>Jarak sebenarnya &#x3D; 450 Km &#x3D; 45.000.000 cm</p><p>Skala &#x3D; 1 : 75.000.000</p><p><strong>Ditanya : Jarak di peta ?</strong></p><p><strong>Jawab :</strong></p><p>Skala &#x3D; Jarak pada peta : Jarak sebenarnya</p><p>Jarak pada peta &#x3D; Skala x Jarak sebenarnya</p><p>Jarak pada peta &#x3D; (1 : 75.000.000) x 450.000.000cm</p><p>Jarak pada peta &#x3D; 6 cm</p><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/Education/">Education</category>
-      
-      <category domain="https://www.webmanajemen.com/categories/Education/Math/">Math</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/scala/">scala</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/map/">map</category>
-      
-      
-      <comments>https://www.webmanajemen.com/kunci-jawaban/cara-menentukan-skala-pada-peta.html#disqus_thread</comments>
       
     </item>
     

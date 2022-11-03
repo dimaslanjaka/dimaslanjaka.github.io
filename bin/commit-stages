@@ -11,6 +11,8 @@ if [ -z "$(git status --porcelain)" ]; then
     echo "No changes since last run"
 else
     set -e
+    git submodule foreach "git add -A || :"
+    git submodule foreach "git commit -am \"Update site $(date)\" || :"
     git add -A
-    git commit -am "updated on - $(date)"
+    git commit -am "Update site - $(date)"
 fi

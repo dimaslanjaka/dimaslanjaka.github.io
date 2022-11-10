@@ -16,3 +16,9 @@ Result of Static Blog Generator (https://github.com/dimaslanjaka/static-blog-gen
 - repo: https://github.com/dimaslanjaka/page/tree/gh-pages
 
 ![GitHub file size in bytes on a specified ref (branch/commit/tag)](https://img.shields.io/github/size/dimaslanjaka/page/readme.md?branch=gh-pages&style=flat-square)
+
+
+## Webmasters
+- [Bing](https://www.bing.com/webmasters/home?siteUrl=https://webmanajemen.com/)
+- [Google](https://search.google.com/search-console?resource_id=sc-domain%3Awebmanajemen.com)
+- [Yandex](https://webmaster.yandex.com/site/https:www.webmanajemen.com:443/dashboard/)

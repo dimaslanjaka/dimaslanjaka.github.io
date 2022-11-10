@@ -69,7 +69,7 @@
     object-position: top;
   }
 </style>
-
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -179,29 +179,29 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1394</span>
+          <span class="site-state-item-count">1397</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">120</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -316,7 +316,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png" alt="regexp" class="img-responsive"> Regexp Pattern Untuk mencocokkan semua jenis URL, kode berikut seharusnya berfungsi: </p><pre><br>&lt;?php<br>    $regex = "((https?|ftp)://)?"; // SCHEME<br>    $regex .= "([a-z0-9+!<em>(),;?&amp;=$_.-]+(:[a-z0-9+!</em>(),;?&amp;=$<em>.-]+)?@)?"; // User and Pass<br>    $regex .= "([a-z0-9-.]*).(([a-z]{2,4})|([0-9]{1,3}.([0-9]{1,3}).([0-9]{1,3})))"; // Host or IP<br>    $regex .= "(:[0-9]{2,5})?"; // Port<br>    $regex .= "(/([a-z0-9+$</em>%-].?)+)<em>/?"; // Path<br>    $regex .= "(?[a-z+&amp;$<em>.-][a-z0-9;:@&amp;%=+/$</em>.-]</em>)?"; // GET Query<br>    $regex .= "(#[a-z_.-][a-z0-9+$%_.-]*)?"; // Anchor<br>?&gt;<br></pre> <h4>Example: correctly way for matching URL</h4><pre><br>&lt;?php<br>   if(preg_match("<del>^$regex$</del>i", '<a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5leGFtcGxlLmNvbS9ldGNldGMn">www.example.com/etcetc'</a>, $m))<br>      var_dump($m);<br><br>   if(preg_match("<del>^$regex$</del>i", '<a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5leGFtcGxlLmNvbS9ldGNldGMn">http://www.example.com/etcetc'</a>, $m))<br>      var_dump($m);<br>?&gt;<br></pre><blockquote>Pattern diatas bisa digunakan di javascript. Bedanya dengan diatas hanya dari segi variablenya saja. Bila di PHP variable dituliskan dengan awalan ($) maka di javascript cukup diganti (var) atau (let) atau (const) </blockquote><p></p>
+        <p><img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png" alt="regexp" class="img-responsive"> Regexp Pattern Untuk mencocokkan semua jenis URL, kode berikut seharusnya berfungsi: </p><pre><br>&lt;?php<br>    $regex = "((https?|ftp)://)?"; // SCHEME<br>    $regex .= "([a-z0-9+!<em>(),;?&amp;=$_.-]+(:[a-z0-9+!</em>(),;?&amp;=$<em>.-]+)?@)?"; // User and Pass<br>    $regex .= "([a-z0-9-.]*).(([a-z]{2,4})|([0-9]{1,3}.([0-9]{1,3}).([0-9]{1,3})))"; // Host or IP<br>    $regex .= "(:[0-9]{2,5})?"; // Port<br>    $regex .= "(/([a-z0-9+$</em>%-].?)+)<em>/?"; // Path<br>    $regex .= "(?[a-z+&amp;$<em>.-][a-z0-9;:@&amp;%=+/$</em>.-]</em>)?"; // GET Query<br>    $regex .= "(#[a-z_.-][a-z0-9+$%_.-]*)?"; // Anchor<br>?&gt;<br></pre> <h4>Example: correctly way for matching URL</h4><pre><br>&lt;?php<br>   if(preg_match("<del>^$regex$</del>i", '<a target="_blank" rel="noopener" href="http://www.example.com/etcetc'">www.example.com/etcetc'</a>, $m))<br>      var_dump($m);<br><br>   if(preg_match("<del>^$regex$</del>i", '<a target="_blank" rel="noopener" href="http://www.example.com/etcetc'">http://www.example.com/etcetc'</a>, $m))<br>      var_dump($m);<br>?&gt;<br></pre><blockquote>Pattern diatas bisa digunakan di javascript. Bedanya dengan diatas hanya dari segi variablenya saja. Bila di PHP variable dituliskan dengan awalan ($) maka di javascript cukup diganti (var) atau (let) atau (const) </blockquote><p></p>
 
     </div>
 
@@ -407,6 +407,7 @@
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
+<!-- adblock notify -->
 <div id="ykth" class="ykth-hide">
   <div class="ykth-inner">
     <div class="ykth-head">
@@ -446,7 +447,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>
@@ -509,6 +510,33 @@
     margin-right: auto;
   }
 </style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(91118654, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
 
 
 

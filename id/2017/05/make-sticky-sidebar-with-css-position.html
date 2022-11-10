@@ -1,0 +1,532 @@
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Make Sticky Sidebar With CSS position sticky">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Make Sticky Sidebar With CSS position: sticky">
+<meta property="og:url" content="https://www.webmanajemen.com/id/2017/05/make-sticky-sidebar-with-css-position.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="Make Sticky Sidebar With CSS position sticky">
+<meta property="og:locale" content="id_ID">
+<meta property="og:image" content="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ">
+<meta property="og:image" content="https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/17796846_1773189839677671_6977008867135609966_n.png.jpg?efg=eyJpIjoidCJ9&amp;oh=292c21d1c58e8e185a8d6c63dec60c5a&amp;oe=5957C4B8">
+<meta property="article:published_time" content="2017-05-17T13:50:00.000Z">
+<meta property="article:modified_time" content="2017-05-17T13:50:14.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="Blogger">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ">
+
+
+<link rel="canonical" href="https://www.webmanajemen.com/id/2017/05/make-sticky-sidebar-with-css-position.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"id","comments":true,"permalink":"https://www.webmanajemen.com/2017/05/make-sticky-sidebar-with-css-position.html","path":"id//2017/05/make-sticky-sidebar-with-css-position.html","title":"Make Sticky Sidebar With CSS position: sticky"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Make Sticky Sidebar With CSS position: sticky | WMI</title>
+  
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+<style>
+  /* fix index title overload the body width */
+  a.post-title-link {
+    max-width: 100%;
+  }
+  /* fix long image in homepage */
+  .main-inner.index .post-gallery .post-gallery-image img {
+    height: 300px;
+    object-fit: cover;
+    opacity: 1;
+    width: 100%;
+    object-position: top;
+  }
+</style>
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WMI</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Website Management Indonesia</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-privacy"><a href="/p/privacy.html" rel="section"><i class="fa fa-shield fa-fw"></i>privacy</a></li><li class="menu-item menu-item-tos"><a href="/p/tos.html" rel="section"><i class="fa fa-shield fa-fw"></i>tos</a></li><li class="menu-item menu-item-chimeraland"><a href="/chimeraland" rel="section"><i class="fa fa-archive fa-fw"></i>chimeraland</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Daftar Isi
+        </li>
+        <li class="sidebar-nav-overview">
+          Ikhtisar
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Make Sticky Sidebar With CSS position: sticky</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
+  <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1397</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ" itemprop="contentUrl">
+    </div>
+    <div class="post-gallery-image">
+      <img src="https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/17796846_1773189839677671_6977008867135609966_n.png.jpg?efg=eyJpIjoidCJ9&amp;oh=292c21d1c58e8e185a8d6c63dec60c5a&amp;oe=5957C4B8" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="id">
+    <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2017/05/make-sticky-sidebar-with-css-position.html">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dimas Lanjaka">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WMI">
+      <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    </span>
+
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Make Sticky Sidebar With CSS position: sticky | WMI">
+      <meta itemprop="description" content="Make Sticky Sidebar With CSS position sticky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Make Sticky Sidebar With CSS position: sticky
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Diposting di</span>
+      
+
+      <time title="Post created: 2017-05-17 20:50:00 / Updated at: 20:50:14" itemprop="dateCreated datePublished" datetime="2017-05-17T20:50:00+07:00">2017-05-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">Di</span>
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/id/2017/05/make-sticky-sidebar-with-css-position.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="id//2017/05/make-sticky-sidebar-with-css-position.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+            <div class="post-description">Make Sticky Sidebar With CSS position sticky</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 32.0779647827148px; line-height: 37.4779624938965px;">Make Sticky Sidebar With CSS position: sticky</span></h2><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 32.0779647827148px; line-height: 37.4779624938965px;"><img height="320" data-src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ" width="295"></span> <span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Initially I was not sure if the sticky sidebar can be created with CSS.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">I know sticky sidebar which can only be made with javascript.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Surely it difficult to blog with HTML AMP barred from using javascript own.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Then hope emerged when looking sticky widget on the page&nbsp;<i class="klik-url" style="-webkit-user-select: all; word-wrap: break-word;"><a href="http://ampbyexample.com/" rel="noopener noreferer nofollow" target="_blank">ampbyexample.com</a>.</i></span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;"></span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Then came the question, "How can a valid page AMP using sticky widget?"</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Once traced, it turns the page does not use javascript to create a sticky widget but only using CSS&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">position: sticky;</code></span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Out of curiosity, then I try to&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">position: sticky;</code></span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">This blog Magic Company and results please refer to the sidebar on the right, please scroll to the bottom of this page, or you can try the demo at the link below.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><div class="center" style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px; text-align: center;"><span class="notranslate"><a class="btn btn-primary btn-lg" href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=id&amp;sp=nmt4&amp;tl=en&amp;u=http://kompinew.blogspot.co.id/2015/06/mauris-ornare-pretium-orci-faucibus.html&amp;usg=ALkJrhgJWkN0yX5MGBZAuAZiWbiR82Euvg" style="-webkit-transition: all 0.4s ease-in-out; -webkit-user-select: none; background-color: #337ab7; background-image: none; border-radius: 6px; border: 1px solid rgb(46, 109, 164); color: white; cursor: pointer; display: inline-block; line-height: 1.3333333; margin-bottom: 5px; padding: 10px 16px; text-decoration: none; touch-action: manipulation; transition: all 0.4s ease-in-out; vertical-align: middle; white-space: nowrap;" target="_blank" title="demo" rel="noopener noreferer nofollow">DEMO</a></span></div><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">How, interesting is not it?</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">If you want to try it, please follow the tutorial below.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Please save the CSS code below above<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;/head&gt;</code></span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;style type='text/css'&gt;&nbsp;<br>#sidebar-sticky {&nbsp;<br>width: 300px;&nbsp;<br>float: right;&nbsp;<br>padding: 0;&nbsp;<br>margin: 0 auto;&nbsp;<br>position: -webkit-sticky;&nbsp;<br>position: sticky;&nbsp;<br>top: 10px;&nbsp;<br>}&nbsp;<br>&lt;/style&gt;&nbsp;</code></pre><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">For width (&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">width</code>&nbsp;) please adjust the width of the sidebar of each blog.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">If your blog is using a&nbsp;<i>sticky header,</i>&nbsp;please adjust the value of&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">top</code>&nbsp;suitably high sticky header let the widget is not cut off.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">But there is one thing that must be considered!</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">If using&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">position: sticky;</code></span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">then the parent&nbsp;<i>div</i>&nbsp;should not use the&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">overflow</code>&nbsp;.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;"></span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Well usually&nbsp;<i>the</i>&nbsp;parent&nbsp;<i>div</i>&nbsp;to&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">main</code>&nbsp;and<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">aside</code>&nbsp;using&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">class='outer-wrapper'</code>&nbsp;, so make sure the CSS&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">.outer-wrapper</code>&nbsp;does not use the&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">overflow</code>&nbsp;.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Then please copy the code below</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;div id='sidebar-sticky'&gt;&nbsp;<br>&lt;b:section class='sticky_sidebar' id='sticky_sidebar' preferred='yes'/&gt;<br>&lt;/div&gt;&nbsp;</code></pre><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Then save just under the code&nbsp;<code style="color: #bc587e; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;/aside&gt;</code>&nbsp;, so the appearance as below</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><pre style="-webkit-user-select: all; background: rgb(51, 51, 51); border-left-color: rgb(252, 194, 140); border-left-style: solid; border-left-width: 3px; color: #fcc28c; font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 1.3em; margin: 10px auto; max-width: 100%; overflow: auto; padding: 8px 10px; white-space: initial; word-break: normal;"><code style="font-family: Consolas, Monaco, 'Andale Mono', monospace; line-height: 1.3em; white-space: initial; word-break: normal; word-spacing: normal;">&lt;aside itemprop='mainEntity' itemscope='itemscope' itemtype='https://schema.org/WPSideBar'&gt;&nbsp;<br>&lt;div id='sidebar-right'&gt;&nbsp;<br>...........&nbsp;<br>...........&nbsp;<br>...........&nbsp;<br>&lt;/div&gt;&nbsp;<br>&lt;/aside&gt;&nbsp;<br>&lt;div id='sidebar-sticky'&gt;&nbsp;<br>&lt;b:section class='sticky_sidebar' id='sticky_sidebar' preferred='yes'/&gt;<br>&lt;/div&gt;&nbsp;</code></pre><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Then save the template.</span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><br><br style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">Please go to&nbsp;the Layout&nbsp;or&nbsp;Layout&nbsp;and then simply add the gadget you want to make<i>sticky</i></span><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">&nbsp;</span><i style="background-color: white; color: #444444; font-family: Roboto, Arial, sans-serif; font-size: 18px; line-height: 28.7999992370605px;"></i><span style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;"></span><span class="notranslate" style="background-color: white; color: #444444; font-family: &quot;roboto&quot; , &quot;arial&quot; , sans-serif; font-size: 18px; line-height: 28.7999992370605px;">at the&nbsp;sticky_sidebar.</span><style amp-custom="">.thumb-post{text-align:center;margin:0;padding:0;width:100%} .thumb-post amp-img{width:100%;max-width:100%;height:auto;min-height:450px;max-height:600px;margin:0} </style>  <br><div class="thumb-post"><noscript><img data-src="https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/17796846_1773189839677671_6977008867135609966_n.png.jpg?efg=eyJpIjoidCJ9&amp;oh=292c21d1c58e8e185a8d6c63dec60c5a&amp;oe=5957C4B8" width="650" height="350" alt="NoScript Default Fallback" title="default fallback"></noscript> </div>
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer"><div id="keywords">
+  
+  
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Blogger/" rel="tag"># Blogger</a>
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/05/conditional-tags-blogger-for-desktop.html" rel="prev" title="conditional tags blogger for desktop only">
+                  <i class="fa fa-chevron-left"></i> conditional tags blogger for desktop only
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/05/conditional-tags-for-targeting-on.html" rel="next" title="Conditional Tags For Targeting On Blogger Template Format">
+                  Conditional Tags For Targeting On Blogger Template Format <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  © 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dimas Lanjaka</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<!-- adblock notify -->
+<div id="ykth" class="ykth-hide">
+  <div class="ykth-inner">
+    <div class="ykth-head">
+      <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+      </svg>
+      <b>Adblock detected</b>
+      <p>We have detected that you are using adblock in your browser</p>
+      <i class="close" id="close-notif">×</i>
+    </div>
+    <div class="ykth-body">
+      <p>
+        We have detected that you are using adblock in your browser on page
+        <b id="adblock-page-title">
+          
+          Make Sticky Sidebar With CSS position: sticky
+          
+        </b>
+        you've visited.
+      </p>
+      <p>
+        Our website is made possible by displaying online advertisements to our
+        visitors.
+      </p>
+      <ul>
+        Our advertiser
+        <li>Google Adsense</li>
+      </ul>
+      <p>
+        Please consider supporting us by disabling your ad blocker. Thank you.
+      </p>
+    </div>
+    <!-- Start Condition When JS Disable -->
+    <noscript>
+      <div class="ykth-body">
+        <p>Javascript is disabled in your web browser.</p>
+        <p>
+          For full functionality of this site it is necessary to enable
+          JavaScript. Here are the
+          <a href="https://www.enable-javascript.com/" target="_blank">
+            instructions how to enable JavaScript in your web browser</a>.
+        </p>
+      </div>
+      <style>
+        #ykth {
+          display: block !important;
+        }
+
+        .ykth-inner > .ykth-body {
+          display: none;
+        }
+
+        .ykth-head > b,
+        .ykth-head > p {
+          font-size: 0;
+        }
+
+        .ykth-head > b:before {
+          content: 'Javascript Detected';
+          font-size: 16px;
+        }
+
+        .ykth-head > p:before {
+          content: 'We have detected that you are disable javascript in your browser';
+          font-size: 14px;
+        }
+      </style>
+    </noscript>
+    <!-- End Condition When JS Disable -->
+  </div>
+</div>
+
+<script src="/assets/adblock-notify/script.js"></script>
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<script>
+  document.addEventListener('DOMContentLoaded', function (event) {
+    setTimeout(() => {
+      const titleBold = document.getElementById('adblock-page-title');
+      if (titleBold) {
+        const contains404 = /404/i.test(titleBold.textContent);
+        const isWMI = /^wmi$/i.test(titleBold.textContent.trim());
+        const isEmpty = titleBold.textContent.trim().length === 0;
+        if (contains404 || isWMI || isEmpty) {
+          titleBold.textContent = document.title;
+        }
+      }
+    }, 1000);
+  });
+</script>
+<script src="/r-ads.js"></script>
+<style>
+  .adsbygoogle {
+    display: block;
+    background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
+    color: #303030;
+    min-height: 180px;
+    min-width: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(91118654, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    bp.src = (curProtocol === 'http

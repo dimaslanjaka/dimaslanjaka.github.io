@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function (_e) {
     if (!ins.classList.contains('adsbygoogle')) {
       ins.classList.add('adsbygoogle');
     }
+    if (!ins.classList.contains('bannerAds')) {
+      ins.classList.add('bannerAds');
+    }
     return ins;
   }
 

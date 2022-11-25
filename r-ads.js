@@ -172,7 +172,9 @@ document.addEventListener('DOMContentLoaded', function (_e) {
   });
 
   // select ads
+  // cookie key
   const ck = 'currentAds';
+  // select previous ads id from cookie
   const ca = getCookie(ck);
   /**
    * @type {typeof allAds[number]}
@@ -223,14 +225,19 @@ document.addEventListener('DOMContentLoaded', function (_e) {
     .sort(function () {
       return 0.5 - Math.random();
     })
-    .filter((el) => el !== null);
+    .filter((el) => el !== null)
+    .sort(function () {
+      return 0.5 - Math.random();
+    });
 
   /**
    * get all ads places
    * @param {Element|Document} from
    */
   function getAllPlaces(from) {
-    return Array.from(from.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr,br'))
+    return Array.from(
+      from.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr,br,table')
+    )
       .sort(function () {
         return 0.5 - Math.random();
       })
@@ -267,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function (_e) {
       .getAttribute('data-ad-client')
       .replace('ca-pub-', '')}`;
     ins.style.backgroundImage = `url('${bg}')`;
-    if (ins.innerHTML.trim() == '') {
+    if (ins.innerHTML.trim().length === 0) {
       (adsbygoogle = window.adsbygoogle || []).push({});
     }
   }

@@ -179,7 +179,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1419</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -195,18 +195,35 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
-
+<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
+    <meta itemprop="position" content="1">
+  </li>
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
+    <meta itemprop="position" content="2">
+  </li>
+</ul>
+<style>
+  #sidebar-widget * {
+    text-align: left;
+    font-size: 15px;
+  }
+</style>
         </div>
       </div>
     </div>
@@ -310,7 +327,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3>Cara mempercepat loading fonts blog (webfonts).</h3><div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9lbmNyeXB0ZWQtdGJuMi5nc3RhdGljLmNvbS9pbWFnZXM/cT10Ym46QU5kOUdjUndIWW4xcTZxS3lJTzFXSkFzZy1adFUzUkpJbEZEcGJ3bkQ5Z1pSR19ORTI5ZjRsRGM=" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" data-src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc"></a></div>Sekian banyak kode yang saya implementasikan namun belum ada yang mempercepat loading font. Nah berikut tutorialnya:<br><br><b>Metode 1.</b><br><br>Taruh atau ambil fonts (ttf,woff, dan lainnya) di cdn<br>&nbsp;Lalu pasang htaccess berikut:<br><pre class=".htaccess"><code># Apache config<br>&lt;FilesMatch ".(eot|ttf|otf|woff)"&gt;<br> Header set Access-Control-Allow-Origin "*"<br>&lt;/FilesMatch&gt;<br># nginx config<br>if ($filename ~* ^.*?\.(eot)|(ttf)|(woff)$){<br> add_header Access-Control-Allow-Origin *;<br>}</code></pre><br><b>2.  Gunakan Non-Blocking CSS Loading</b><br><br><pre><code>&lt;link rel="stylesheet" type="text/css" href="fonts.css" media="none" onload="this.media='all';"&gt;<br>&lt;link rel="stylesheet" type="text/css" href="style.css" media="none" onload="this.media='all';"&gt;<br></code></pre><br><b>3. Bedakan fonts model dengan CSS</b><br><br><br><pre><code>h1 { font-family: Arial, serif; } /* basic system font */ .fontsloaded h1 { font-family: 'MySpecialFont', serif; } /* custom system font */</code></pre><br><pre><code>&lt;link href="fonts.css" onload="document.body.className+=' fontsloaded';" rel="stylesheet" type="text/css" &gt;</code></pre><br><b>4. Letakkan fonts file di penyimpanan lokal (localstorage)</b><br><br>Selesai. Begitulah sedikit pengetahuan saya dalam merender fonts lebih cepat.<br>Namun saya rekomendasikan menggunakan <i>NON BLOCKING RENDER LOADING</i>.
+        <h3>Cara mempercepat loading fonts blog (webfonts).</h3><div class="separator" style="clear: both; text-align: center;"><a target="_blank" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" rel="noopener noreferer nofollow noopener"><img border="0" data-src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc"></a></div>Sekian banyak kode yang saya implementasikan namun belum ada yang mempercepat loading font. Nah berikut tutorialnya:<br><br><b>Metode 1.</b><br><br>Taruh atau ambil fonts (ttf,woff, dan lainnya) di cdn<br>&nbsp;Lalu pasang htaccess berikut:<br><pre class=".htaccess"><code># Apache config<br>&lt;FilesMatch ".(eot|ttf|otf|woff)"&gt;<br> Header set Access-Control-Allow-Origin "*"<br>&lt;/FilesMatch&gt;<br># nginx config<br>if ($filename ~* ^.*?\.(eot)|(ttf)|(woff)$){<br> add_header Access-Control-Allow-Origin *;<br>}</code></pre><br><b>2.  Gunakan Non-Blocking CSS Loading</b><br><br><pre><code>&lt;link rel="stylesheet" type="text/css" href="fonts.css" media="none" onload="this.media='all';"&gt;<br>&lt;link rel="stylesheet" type="text/css" href="style.css" media="none" onload="this.media='all';"&gt;<br></code></pre><br><b>3. Bedakan fonts model dengan CSS</b><br><br><br><pre><code>h1 { font-family: Arial, serif; } /* basic system font */ .fontsloaded h1 { font-family: 'MySpecialFont', serif; } /* custom system font */</code></pre><br><pre><code>&lt;link href="fonts.css" onload="document.body.className+=' fontsloaded';" rel="stylesheet" type="text/css" &gt;</code></pre><br><b>4. Letakkan fonts file di penyimpanan lokal (localstorage)</b><br><br>Selesai. Begitulah sedikit pengetahuan saya dalam merender fonts lebih cepat.<br>Namun saya rekomendasikan menggunakan <i>NON BLOCKING RENDER LOADING</i>.
     </div>
 
     
@@ -440,7 +457,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>

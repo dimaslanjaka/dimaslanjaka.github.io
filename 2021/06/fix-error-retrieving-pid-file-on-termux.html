@@ -178,7 +178,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1419</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -194,18 +194,35 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
-
+<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
+    <meta itemprop="position" content="1">
+  </li>
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
+    <meta itemprop="position" content="2">
+  </li>
+</ul>
+<style>
+  #sidebar-widget * {
+    text-align: left;
+    font-size: 15px;
+  }
+</style>
         </div>
       </div>
     </div>
@@ -308,7 +325,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div id="bootstrap-wrapper">	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>  <p>    Apache errors overview:     </p><pre><code><br>      (20014) Internal error (specific information not available):<br><br>      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid<br><br>      AH00059: Remove it before continuing if it is corrupted.<br>    </code></pre>    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.     <h5>Solution</h5>    <ul>      <li>Stop apache first         <pre><code class="lang-bash">apachectl stop</code></pre>      </li>      <li>        Change dir:         <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>      </li>      <li>Then delete the <b>httpd.pid</b> file:       <pre><code class="lang-bash">rm httpd.pid</code></pre>      </li>      <li>Or using this script:         <pre><code class="lang-bash"><br>          #<br>          # This script is part of the video,<br>          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and<br>          # it's intended to be used on Termux Android 32 bits in order to fix the issue,<br>          # https://github.com/termux/termux-packages/issues/1727<br>          # Before executing this script you must install termux-chroot see de video,<br>          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk<br>          #<br>          #!/usr/bin/env bash<br>          aps=$(pidof httpd)<br>          pidf=/var/run/apache2/httpd.pid<br>          [[ -f $pidf ]] &amp;&amp; rm -f $pidf<br>          [[ "$aps" != "" ]] &amp;&amp; kill -9 $aps<br>        </code></pre>      </li>    </ul>  <p></p>   <p>    Github issues:     </p><ul>      <li><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL3Rlcm11eC90ZXJtdXgtcGFja2FnZXMvaXNzdWVzLzE3Mjc=" target="_blank" rel="noopener noreferer nofollow">https://github.com/termux/termux-packages/issues/1727</a></li>      <li><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjc4NjI2NjQvMTNwZXJtaXNzaW9uLWRlbmllZC1lcnJvci1yZXRyaWV2aW5nLXBpZC1maWxlLXJ1bi1odHRwZC1waWQ=" target="_blank" rel="noopener noreferer nofollow">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>    </ul>  <p></p>   <p>    <img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">  </p></div><script>hljs.initHighlightingOnLoad();</script>
+        <div id="bootstrap-wrapper">	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>  <p>    Apache errors overview:     </p><pre><code><br>      (20014) Internal error (specific information not available):<br><br>      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid<br><br>      AH00059: Remove it before continuing if it is corrupted.<br>    </code></pre>    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.     <h5>Solution</h5>    <ul>      <li>Stop apache first         <pre><code class="lang-bash">apachectl stop</code></pre>      </li>      <li>        Change dir:         <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>      </li>      <li>Then delete the <b>httpd.pid</b> file:       <pre><code class="lang-bash">rm httpd.pid</code></pre>      </li>      <li>Or using this script:         <pre><code class="lang-bash"><br>          #<br>          # This script is part of the video,<br>          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and<br>          # it's intended to be used on Termux Android 32 bits in order to fix the issue,<br>          # https://github.com/termux/termux-packages/issues/1727<br>          # Before executing this script you must install termux-chroot see de video,<br>          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk<br>          #<br>          #!/usr/bin/env bash<br>          aps=$(pidof httpd)<br>          pidf=/var/run/apache2/httpd.pid<br>          [[ -f $pidf ]] &amp;&amp; rm -f $pidf<br>          [[ "$aps" != "" ]] &amp;&amp; kill -9 $aps<br>        </code></pre>      </li>    </ul>  <p></p>   <p>    Github issues:     </p><ul>      <li><a href="https://github.com/termux/termux-packages/issues/1727" target="_blank" rel="noopener noreferer nofollow">https://github.com/termux/termux-packages/issues/1727</a></li>      <li><a href="https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid" target="_blank" rel="noopener noreferer nofollow">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>    </ul>  <p></p>   <p>    <img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">  </p></div><script>hljs.initHighlightingOnLoad();</script>
     </div>
 
     
@@ -437,7 +454,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>

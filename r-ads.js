@@ -2,7 +2,19 @@
 /* eslint-disable no-global-assign */
 /* global adsbygoogle */
 
-document.addEventListener('DOMContentLoaded', function (_e) {
+document.addEventListener('DOMContentLoaded', function () {
+  window.addEventListener('scroll', triggerAdsense);
+});
+
+let called = false;
+/**
+ * Trigger adsense
+ * @param {Event} _e
+ * @returns
+ */
+function triggerAdsense(_e) {
+  if (called) return;
+  called = true;
   const banned = [/lagu|jackpot|montok|hack|crack|nulled/gi];
   if (
     banned
@@ -236,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function (_e) {
    */
   function getAllPlaces(from) {
     return Array.from(
-      from.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr,br,table')
+      from.querySelectorAll('h1,h2,h3,h4,h5,pre,header,hr,br,table,blockquote')
     )
       .sort(function () {
         return 0.5 - Math.random();
@@ -278,4 +290,4 @@ document.addEventListener('DOMContentLoaded', function (_e) {
       (adsbygoogle = window.adsbygoogle || []).push({});
     }
   }
-});
+}

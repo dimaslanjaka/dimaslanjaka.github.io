@@ -180,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1419</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -196,18 +196,35 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
-
+<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
+    <meta itemprop="position" content="1">
+  </li>
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
+    <meta itemprop="position" content="2">
+  </li>
+</ul>
+<style>
+  #sidebar-widget * {
+    text-align: left;
+    font-size: 15px;
+  }
+</style>
         </div>
       </div>
     </div>
@@ -326,8 +343,8 @@
 </blockquote>
 <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>On this new system, there is an issue related to the behavior of the XML editor when the XML save process is complete. The editor interface will automatically scroll to the top every time the save process is complete. This is certainly very disturbing because we have to go back and forth to the last editing position. Especially for XML code that already involves tens of thousands of code, this will greatly hinder editing activities.</p>
 <h3 id="Forum-Problem-Posts"><a href="#Forum-Problem-Posts" class="headerlink" title="Forum Problem Posts"></a>Forum Problem Posts</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYmxvZ2dlci90aHJlYWQvMTE3OTYwMDgzL2h0bWwtZWRpdG9yLWF1dG8tc2Nyb2xsLXVwP2hsPWVu">https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cucXVvcmEuY29tL0hvdy1kby1JLW1ha2UtbXktYmxvZy1oZWFkZXItc3RvcC1zaG93aW5nLXVwLXdoZW4tc2Nyb2xsaW5nLXVw">https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up</a></li>
+<li><a target="_blank" rel="noopener" href="https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en">https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up">https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up</a></li>
 </ul>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This problem can be solved by injecting javascript code to prevent the blogger auto scroll event effect. Simply put, when the auto scroll is running and the scroll position is at the top, this function will reset the scroll position to the last position before saving. Function injection is performed using the browser’s <em>bookmark system</em>.</p>
 <h3 id="Bookmark-Script"><a href="#Bookmark-Script" class="headerlink" title="Bookmark Script"></a>Bookmark Script</h3><pre><code class="highlight javascript"><span class="attr">javascript</span>:(<span class="function">()=&gt;</span>{<span class="comment">/*Bookmark script by webmanajemen.com: Prevent Auto Scroll Up Blogger XML Editor*/</span><span class="keyword">const</span> e=<span class="variable language_">window</span>,l=<span class="variable language_">document</span>,t=<span class="function"><span class="params">e</span>=&gt;</span>l.<span class="title function_">getElementsByClassName</span>(e),n=<span class="function">(<span class="params">e,...l</span>)=&gt;</span>{<span class="keyword">for</span>(<span class="keyword">const</span> t <span class="keyword">of</span> l)e.<span class="title function_">appendChild</span>(t)},r=<span class="function"><span class="params">e</span>=&gt;</span>l.<span class="title function_">createElement</span>(e),s=<span class="title function_">t</span>(<span class="string">"xLh0Gb"</span>),o=<span class="title function_">t</span>(<span class="string">"CodeMirror-scroll"</span>),a=s?s[s.<span class="property">length</span>-<span class="number">1</span>]:<span class="literal">null</span>,c=o?o[o.<span class="property">length</span>-<span class="number">1</span>]:<span class="literal">null</span>;<span class="keyword">if</span>(a&amp;&amp;c){<span class="keyword">let</span> t,s,o,i;{<span class="keyword">const</span> e=<span class="title function_">r</span>(<span class="string">"style"</span>),t=l.<span class="title function_">getElementsByTagName</span>(<span class="string">"head"</span>)[<span class="number">0</span>],s=[<span class="string">".{{s}}{background:#f5f5f5;color:#f57c00;font-size:12px;padding:10px 15px;border-radius: 60px;margin-right:10px;transition:all .3s;font-weight:bold}"</span>];<span class="title function_">n</span>(e,l.<span class="title function_">createTextNode</span>(s.<span class="title function_">join</span>(<span class="string">""</span>).<span class="title function_">replace</span>(<span class="regexp">/{{s}}/g</span>,<span class="string">"w-prevent-reset-scroll"</span>))),<span class="title function_">n</span>(t,e),(i=<span class="title function_">r</span>(<span class="string">"div"</span>)).<span class="property">className</span>=<span class="string">"w-prevent-reset-scroll"</span>,i.<span class="property">innerHTML</span>=<span class="string">"AUTO SCROLL DISABLED"</span>,(<span class="function">(<span class="params">e,l</span>)=&gt;</span>{<span class="keyword">const</span> t=e.<span class="property">firstElementChild</span>;t?e.<span class="title function_">insertBefore</span>(l,t):e.<span class="title function_">appendChild</span>(l)})(a,i)}<span class="keyword">const</span> <span class="title function_">d</span>=(<span class="params"></span>)=&gt;c.<span class="property">scrollTop</span>,p=<span class="function">()=&gt;</span>c.<span class="property">scrollLeft</span>,f=<span class="function">()=&gt;</span>{<span class="keyword">if</span>(!t){(<span class="function"><span class="params">e</span>=&gt;</span>{<span class="keyword">const</span> t=l.<span class="title function_">getElementsByClassName</span>(e)[<span class="number">0</span>];<span class="keyword">return</span> t||<span class="literal">null</span>})(<span class="string">"aGJE1b"</span>)&amp;&amp;(s=<span class="title function_">d</span>(),o=<span class="title function_">p</span>(),<span class="number">0</span>!==s&amp;&amp;(t=!<span class="number">0</span>,c.<span class="property">onscroll</span>=g,e.<span class="built_in">clearInterval</span>(f)))}},g=<span class="function">()=&gt;</span>{c.<span class="title function_">scrollTo</span>(o,s),c.<span class="property">onscroll</span>=m,t=!<span class="number">1</span>,e.<span class="built_in">setInterval</span>(f,<span class="number">500</span>)},m=<span class="function">()=&gt;</span>{};e.<span class="built_in">setInterval</span>(f,<span class="number">500</span>)}})();</code></pre>
@@ -467,7 +484,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>

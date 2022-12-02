@@ -178,7 +178,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1419</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -205,7 +205,24 @@
   </div>
 
 
-
+<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
+    <meta itemprop="position" content="1">
+  </li>
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
+    <meta itemprop="position" content="2">
+  </li>
+</ul>
+<style>
+  #sidebar-widget * {
+    text-align: left;
+    font-size: 15px;
+  }
+</style>
         </div>
       </div>
     </div>
@@ -326,7 +343,7 @@
 <span class="keyword">import</span> info <span class="keyword">from</span> <span class="string">`./package.json`</span> assert { <span class="attr">type</span>: <span class="string">`json`</span> };
 
 <span class="comment">// An import assertion in a dynamic import</span>
-<span class="keyword">const</span> { <span class="attr">default</span>: info } = <span class="keyword">await</span> <span class="title function_">import</span>(<span class="string">"./package.json"</span>, {
+<span class="keyword">const</span> { <span class="attr">default</span>: info } = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">"./package.json"</span>, {
   <span class="attr">assert</span>: {
     <span class="attr">type</span>: <span class="string">"json"</span>,
   },
@@ -348,7 +365,7 @@
 <h4 id="Dynamic-import-and-assign-to-interfaces"><a href="#Dynamic-import-and-assign-to-interfaces" class="headerlink" title="Dynamic import and assign to interfaces"></a>Dynamic import and assign to interfaces</h4><pre><code class="highlight typescript"><span class="keyword">interface</span> <span class="title class_">Thesaurus</span> {
   [<span class="attr">key</span>: <span class="built_in">string</span>]: <span class="built_in">string</span>[];
 }
-<span class="keyword">const</span> { <span class="attr">default</span>: thesaurus }: { <span class="attr">default</span>: <span class="title class_">Thesaurus</span> } = <span class="keyword">await</span> <span class="title function_">import</span>(<span class="string">'./thesaurus-en.json'</span>, {
+<span class="keyword">const</span> { <span class="attr">default</span>: thesaurus }: { <span class="attr">default</span>: <span class="title class_">Thesaurus</span> } = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">'./thesaurus-en.json'</span>, {
   <span class="attr">assert</span>: {
     <span class="attr">type</span>: <span class="string">'json'</span>
   }

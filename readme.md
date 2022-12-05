@@ -1,5 +1,5 @@
 # dimaslanjaka.github.io
-Result of Static Blog Generator (https://github.com/dimaslanjaka/static-blog-generator)
+~Result of Static Blog Generator (https://github.com/dimaslanjaka/static-blog-generator)~
 
 [![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
 

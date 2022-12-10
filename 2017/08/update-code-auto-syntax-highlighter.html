@@ -75,8 +75,6 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
-<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 <link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
@@ -189,20 +187,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">129</span>
+        <span class="site-state-item-count">130</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -256,7 +254,7 @@
   <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
     
     <div class="post-gallery-image">
-      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png" itemprop="contentUrl" alt="Update Code Auto Syntax Highlighter Prettyprint js | WMI - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png">
+      <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png" itemprop="contentUrl">
     </div>
     </div>
 
@@ -334,7 +332,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div class="">  <div>    <img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png" width="80%" height="250px" title="syntax Highlighter" alt="syntax Highlighter">  </div>  Jumpa lagi dengan topik JavaScript Dan jQuery. Sebelumnya saya sudah share <a alt="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93ZWItbWFuYWplbWVuLmJsb2dzcG90LnNnLzIwMTcvMDQvY2FyYS1tZW5hbWJhaC1zeW50YXgtaGlnaGxpZ2h0ZXItZGVuZ2FuLmh0bWw=" rel="follow noopener" title="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested">Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested</a>, namun kali ini saya improvisasi codenya jadi lebih ringan dan simpel. </div><blockquote>  <b>Note:</b> Taruh kode dibawah ini diatas <kbd>&lt;/body&gt;&lt;/html&gt;</kbd></blockquote><br><pre style="white-space: pre-wrap; word-wrap: break-word;">//Defer Syntax Higlighter<br>function downloadJSAtOnload() {<br> (function(scripts) {<br>   var i = 0,<br>    l = scripts.length;<br>  for (; i&lt;l; ++i ){<br>   var element = document.createElement("script");<br>   element.src = scripts[i];<br>   document.body.appendChild(element);<br>  }<br> })(['https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst']);<br>}<br>if (window.addEventListener)<br>        window.addEventListener("load", downloadJSAtOnload, false);<br>else if (window.attachEvent)<br> window.attachEvent("onload", downloadJSAtOnload);<br>else window.onload = downloadJSAtOnload;<br><br>$("pre").addClass("prettyprint");</pre>Cara penggunaannya sama dengan artikel sebelumnya »&nbsp;<a alt="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested" href="/2017/04/cara-menambah-syntax-highlighter-dengan.html" rel="follow" title="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested">Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested</a>&nbsp;« yang membedakan hanya kode pemanggil Syntax Highlighter nya lebih simple dan ringan.<br><b>Deskripsi Fungsi Kode Diatas:</b><br><kbd>['https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst']</kbd>: Berfungsi memanggil prettyprint sekaligus style sunburst.css.<br><kbd>['https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=<u><b>sunburst</b></u>']</kbd>: Kode tebal bergaris bawah (<b><u>sunburst</u></b>) bisa diganti dengan: <br><blockquote>  <center> Pilih salah satu</center>  <li>desert</li>  <li>doxy</li>  <li>sons-of-obsidian</li>  <li>sunburst</li>  <center>    <a alt="github" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jZG4ucmF3Z2l0LmNvbS9nb29nbGUvY29kZS1wcmV0dGlmeS9tYXN0ZXIvc3R5bGVzL2luZGV4Lmh0bWw=" rel="noopener noreferer nofollow noopener" title="github">Cek Disini Untuk Melihat Efek Style</a>  </center></blockquote>
+        <div class="">  <div>    <img data-src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png" width="80%" height="250px" title="syntax Highlighter" alt="syntax Highlighter">  </div>  Jumpa lagi dengan topik JavaScript Dan jQuery. Sebelumnya saya sudah share <a alt="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested" target="_blank" href="https://web-manajemen.blogspot.sg/2017/04/cara-menambah-syntax-highlighter-dengan.html" rel="follow noopener" title="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested">Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested</a>, namun kali ini saya improvisasi codenya jadi lebih ringan dan simpel. </div><blockquote>  <b>Note:</b> Taruh kode dibawah ini diatas <kbd>&lt;/body&gt;&lt;/html&gt;</kbd></blockquote><br><pre style="white-space: pre-wrap; word-wrap: break-word;">//Defer Syntax Higlighter<br>function downloadJSAtOnload() {<br> (function(scripts) {<br>   var i = 0,<br>    l = scripts.length;<br>  for (; i&lt;l; ++i ){<br>   var element = document.createElement("script");<br>   element.src = scripts[i];<br>   document.body.appendChild(element);<br>  }<br> })(['https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst']);<br>}<br>if (window.addEventListener)<br>        window.addEventListener("load", downloadJSAtOnload, false);<br>else if (window.attachEvent)<br> window.attachEvent("onload", downloadJSAtOnload);<br>else window.onload = downloadJSAtOnload;<br><br>$("pre").addClass("prettyprint");</pre>Cara penggunaannya sama dengan artikel sebelumnya »&nbsp;<a alt="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested" href="/2017/04/cara-menambah-syntax-highlighter-dengan.html" rel="follow" title="Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested">Cara menambah syntax highlighter dengan prettyprint di blog tanpa mengurangi kecepatan loading website 100% Work Tested</a>&nbsp;« yang membedakan hanya kode pemanggil Syntax Highlighter nya lebih simple dan ringan.<br><b>Deskripsi Fungsi Kode Diatas:</b><br><kbd>['https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst']</kbd>: Berfungsi memanggil prettyprint sekaligus style sunburst.css.<br><kbd>['https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=<u><b>sunburst</b></u>']</kbd>: Kode tebal bergaris bawah (<b><u>sunburst</u></b>) bisa diganti dengan: <br><blockquote>  <center> Pilih salah satu</center>  <li>desert</li>  <li>doxy</li>  <li>sons-of-obsidian</li>  <li>sunburst</li>  <center>    <a alt="github" target="_blank" href="https://cdn.rawgit.com/google/code-prettify/master/styles/index.html" rel="noopener noreferer nofollow noopener" title="github">Cek Disini Untuk Melihat Efek Style</a>  </center></blockquote>
     </div>
 
     
@@ -466,7 +464,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>
@@ -545,7 +543,7 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="Update Code Auto Syntax Highlighter Prettyprint js | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
   (function () {

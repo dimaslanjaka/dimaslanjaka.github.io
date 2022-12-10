@@ -6,7 +6,8 @@
   "scripts": {
     "update": "npx npm-check-updates -u -x chalk",
     "ci": "yarn install --production=true --immutable --immutable-cache --check-cache --frozen-lockfile --check-files",
-    "prod": "npm install --omit=dev"
+    "prod": "npm install --omit=dev",
+    "yarn:prod": "yarn install --production=true"
   },
   "keywords": [],
   "private": true,
@@ -17,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "aes-js": "^3.1.2",
-    "axios": "^1.2.0",
+    "axios": "^1.2.1",
     "bluebird": "^3.7.2",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",

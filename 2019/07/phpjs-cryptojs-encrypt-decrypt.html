@@ -72,7 +72,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"></head>
+<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -176,29 +176,29 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1419</span>
+          <span class="site-state-item-count">1420</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">130</span>
+        <span class="site-state-item-count">133</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -252,7 +252,7 @@
   <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
     
     <div class="post-gallery-image">
-      <img src="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png" itemprop="contentUrl">
+      <img src="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png" itemprop="contentUrl" alt="[PHP][JS] CryptoJS encrypt decrypt | PHP JS - https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png">
     </div>
     </div>
 
@@ -330,7 +330,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div dir="ltr" style="text-align: left;" trbidi="on">  <div>    <img data-src="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png" width="100%" itemprop="image">    &nbsp;CryptoJS encrypt decrypt support PHP 5, PHP 7.x.     <div class="m-3">      <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="result" data-user="dimaslanjaka" data-slug-hash="oKXmGr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PHP CryptoJS Encrypt Decrypt">        <span>See the Pen <a target="_blank" href="https://codepen.io/dimaslanjaka/pen/oKXmGr/" rel="noopener noreferer nofollow noopener">            PHP CryptoJS Encrypt Decrypt</a> by dimas lanjaka (<a target="_blank" href="https://codepen.io/dimaslanjaka" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)           on <a target="_blank" href="https://codepen.io" rel="noopener noreferer nofollow noopener">CodePen</a>.</span>      </p>      <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>    </div>    <br>  </div>  <h4>Code PHP and details variable</h4>  <h5>[JS]</h5>  <pre><code><br>    /**<br>    * @package https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js<br>    */<br>   var salt = 'salt'; //salt<br>   var iv = '1111111111111111'; //pass salt minimum length 12 chars<br>   var iterations = '999'; //iterations<br><br>   /**<br>    * Get key<br>    * @param string passphrase<br>    * @param string salt<br>    */<br>   function getKey(passphrase, salt) {<br>     var key = CryptoJS.PBKDF2(passphrase, salt, {<br>       hasher: CryptoJS.algo.SHA256,<br>       keySize: 64 / 8,<br>       iterations: iterations<br>     });<br>     return key;<br>   }<br>   /**<br>    * Encrypt function<br>    * @param string passphrase<br>    * @param string plainText<br>    */<br>   function userJSEncrypt(passphrase, plainText) {<br>     var key = getKey(passphrase, salt);<br>     var encrypted = CryptoJS.AES.encrypt(plainText, key, {<br>       iv: CryptoJS.enc.Utf8.parse(iv)<br>     });<br>     return encrypted.ciphertext.toString(CryptoJS.enc.Base64);<br>   }<br>   /**<br>    * Decrypt function<br>    * @param string passphrase<br>    * @param string encryptedText<br>    */<br>   function userJSDecrypt(passphrase, encryptedText) {<br>     var key = getKey(passphrase, salt);<br>     var decrypted = CryptoJS.AES.decrypt(encryptedText, key, {<br>       iv: CryptoJS.enc.Utf8.parse(iv)<br>     });<br>     return decrypted.toString(CryptoJS.enc.Utf8);<br>   }<br></code></pre>  <h5>[PHP 5.6++]</h5>  <pre><code><br>&lt;?php<br>const SALT = 'salt'; //salt<br>const IV = '1111111111111111'; //pass salt minimum length 12 chars or it'll be show warning messages<br>const ITERATIONS = 999; //iterations<br>function userPHPEncrypt($passphrase, $plainText)<br>{<br>  $key = \hash_pbkdf2("sha256", $passphrase, SALT, ITERATIONS, 64);<br>  $encryptedData = \openssl_encrypt($plainText, 'AES-256-CBC', \hex2bin($key), OPENSSL_RAW_DATA, IV);<br>  return \base64_encode($encryptedData);<br>}<br>function userPHPDecrypt($passphrase, $encryptedTextBase64)<br>{<br>  $encryptedText = \base64_decode($encryptedTextBase64);<br>  $key = \hash_pbkdf2("sha256", $passphrase, SALT, ITERATIONS, 64);<br>  $decryptedText = \openssl_decrypt($encryptedText, 'AES-256-CBC', \hex2bin($key), OPENSSL_RAW_DATA, IV);<br>  return $decryptedText;<br>}<br></code></pre>   <blockquote class="alert alert-info">    <h5>Fix Problems</h5>    <a href="/2019/07/fix-openssl-encrypt-decrypt-php.html" rel="noopener noreferer nofollow">How to fix openssl_encrypt() and       openssl_decrypt() errors</a>  </blockquote></div>
+        <div dir="ltr" style="text-align: left;" trbidi="on">  <div>    <img data-src="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png" width="100%" itemprop="image">    &nbsp;CryptoJS encrypt decrypt support PHP 5, PHP 7.x.     <div class="m-3">      <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="result" data-user="dimaslanjaka" data-slug-hash="oKXmGr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PHP CryptoJS Encrypt Decrypt">        <span>See the Pen <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYS9wZW4vb0tYbUdyLw==" rel="noopener noreferer nofollow noopener">            PHP CryptoJS Encrypt Decrypt</a> by dimas lanjaka (<a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYQ==" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)           on <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlv" rel="noopener noreferer nofollow noopener">CodePen</a>.</span>      </p>      <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>    </div>    <br>  </div>  <h4>Code PHP and details variable</h4>  <h5>[JS]</h5>  <pre><code><br>    /**<br>    * @package https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js<br>    */<br>   var salt = 'salt'; //salt<br>   var iv = '1111111111111111'; //pass salt minimum length 12 chars<br>   var iterations = '999'; //iterations<br><br>   /**<br>    * Get key<br>    * @param string passphrase<br>    * @param string salt<br>    */<br>   function getKey(passphrase, salt) {<br>     var key = CryptoJS.PBKDF2(passphrase, salt, {<br>       hasher: CryptoJS.algo.SHA256,<br>       keySize: 64 / 8,<br>       iterations: iterations<br>     });<br>     return key;<br>   }<br>   /**<br>    * Encrypt function<br>    * @param string passphrase<br>    * @param string plainText<br>    */<br>   function userJSEncrypt(passphrase, plainText) {<br>     var key = getKey(passphrase, salt);<br>     var encrypted = CryptoJS.AES.encrypt(plainText, key, {<br>       iv: CryptoJS.enc.Utf8.parse(iv)<br>     });<br>     return encrypted.ciphertext.toString(CryptoJS.enc.Base64);<br>   }<br>   /**<br>    * Decrypt function<br>    * @param string passphrase<br>    * @param string encryptedText<br>    */<br>   function userJSDecrypt(passphrase, encryptedText) {<br>     var key = getKey(passphrase, salt);<br>     var decrypted = CryptoJS.AES.decrypt(encryptedText, key, {<br>       iv: CryptoJS.enc.Utf8.parse(iv)<br>     });<br>     return decrypted.toString(CryptoJS.enc.Utf8);<br>   }<br></code></pre>  <h5>[PHP 5.6++]</h5>  <pre><code><br>&lt;?php<br>const SALT = 'salt'; //salt<br>const IV = '1111111111111111'; //pass salt minimum length 12 chars or it'll be show warning messages<br>const ITERATIONS = 999; //iterations<br>function userPHPEncrypt($passphrase, $plainText)<br>{<br>  $key = \hash_pbkdf2("sha256", $passphrase, SALT, ITERATIONS, 64);<br>  $encryptedData = \openssl_encrypt($plainText, 'AES-256-CBC', \hex2bin($key), OPENSSL_RAW_DATA, IV);<br>  return \base64_encode($encryptedData);<br>}<br>function userPHPDecrypt($passphrase, $encryptedTextBase64)<br>{<br>  $encryptedText = \base64_decode($encryptedTextBase64);<br>  $key = \hash_pbkdf2("sha256", $passphrase, SALT, ITERATIONS, 64);<br>  $decryptedText = \openssl_decrypt($encryptedText, 'AES-256-CBC', \hex2bin($key), OPENSSL_RAW_DATA, IV);<br>  return $decryptedText;<br>}<br></code></pre>   <blockquote class="alert alert-info">    <h5>Fix Problems</h5>    <a href="/2019/07/fix-openssl-encrypt-decrypt-php.html" rel="noopener noreferer nofollow">How to fix openssl_encrypt() and       openssl_decrypt() errors</a>  </blockquote></div>
 <div>Reference: <a href="/2019/07/fix-openssl-encrypt-decrypt-php.html">Fix openssl encrypt decrypt [PHP]</a></div>
 
     </div>
@@ -461,7 +461,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.enable-javascript.com/" target="_blank">
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
             instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>
@@ -540,7 +540,7 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="[PHP][JS] CryptoJS encrypt decrypt | PHP JS - https://mc.yandex.ru/watch/91118654"></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
   (function () {

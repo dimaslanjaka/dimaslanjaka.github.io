@@ -10,3 +10,12 @@
 *.jpg       binary diff
 *.ico       binary diff
 *.pdf       binary diff
+
+# turn off delta attributes for large files
+# fix large files
+# https://stackoverflow.com/a/3096675
+/large_file_dir/* -delta
+*.psd -delta
+/data/*.iso -delta
+/some/big/file -delta
+another/file/that/is/large -delta

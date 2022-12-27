@@ -71,7 +71,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -160,10 +160,10 @@
       </ul>
 
       <div class="sidebar-panel-container">
-        <!--noindex-->
+        
         <div class="post-toc-wrap sidebar-panel">
         </div>
-        <!--/noindex-->
+        
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -174,7 +174,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1422</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -190,25 +190,25 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="[JS] Youtube Video ID URL Parser"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="[JS] Youtube Video ID URL Parser"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
 <ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
   <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="[JS] Youtube Video ID URL Parser" title="[JS] Youtube Video ID URL Parser">
     <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
     <meta itemprop="position" content="1">
   </li>
   <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="[JS] Youtube Video ID URL Parser" title="[JS] Youtube Video ID URL Parser">
     <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
     <meta itemprop="position" content="2">
   </li>
@@ -328,7 +328,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div dir="ltr" style="text-align: left;" trbidi="on"><b>Extract video id from youtube URL with javascript function</b> <pre><br>function youtube_parser(url){<br>    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&amp;\?]*).*/;<br>    var match = url.match(regExp);<br>    if (match&amp;&amp;match[7].length==11) { return match[7]}<br>  <br>  var regExp2 = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&amp;v=)([^#\&amp;\?]*).*/;<br>  var match2 = url.match(regExp2);<br>  if (match2 &amp;&amp; match2[2].length == 11) {<br>    return match2[2];<br>  }<br>  <br>  var regex = /(?:[?&amp;]v=|\/embed\/|\/1\/|\/v\/|https?:\/\/(?:www\.)?youtu\.be\/)([^&amp;\n?#]+)/gm;<br>  let m = regex.exec(url);<br>  if (m[1].length){<br>    return m[1];<br>  }<br>  <br>  return url+' --failed--';<br>}<br>console.clear()<br>var n = [<br>  'http://www.youtube.com/watch?v=0zMd3nApSvMg&amp;feature=feedrec_grec_index', <br>  'http://www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/QdK8U-VIH_o', <br>  'http://www.youtube.com/v/0zM3nApSvMg?fs=1&amp;amp;hl=en_US&amp;amp;rel=0',<br>  'http://www.youtube.com/watch?v=0zMg3nApSvMg#t=0m10s',<br>  'http://www.youtube.com/embed/0zM3nApdSvMg?rel=0',<br>  'http://www.youtube.com/watch?v=0zM3nAxpSvMg',<br>  'http://youtu.be/0zM3nApgSvMg'<br>];<br>  n.forEach(function(i){<br>  document.write(youtube_parser(i)+'&lt;br&gt;')<br>});<br></pre> <b>demo</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="BggxgP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Youtube URL Parser">  <span>See the Pen <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYS9wZW4vQmdneGdQLw==" rel="noopener noreferer nofollow noopener">  Youtube URL Parser</a> by dimas lanjaka (<a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYQ==" rel="noopener noreferer nofollow noopener">@dimaslanjaka</a>)   on <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlv" rel="noopener noreferer nofollow noopener">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+        <div dir="ltr" style="text-align: left;" trbidi="on"><b>Extract video id from youtube URL with javascript function</b> <pre><br>function youtube_parser(url){<br>    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&amp;\?]*).*/;<br>    var match = url.match(regExp);<br>    if (match&amp;&amp;match[7].length==11) { return match[7]}<br>  <br>  var regExp2 = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&amp;v=)([^#\&amp;\?]*).*/;<br>  var match2 = url.match(regExp2);<br>  if (match2 &amp;&amp; match2[2].length == 11) {<br>    return match2[2];<br>  }<br>  <br>  var regex = /(?:[?&amp;]v=|\/embed\/|\/1\/|\/v\/|https?:\/\/(?:www\.)?youtu\.be\/)([^&amp;\n?#]+)/gm;<br>  let m = regex.exec(url);<br>  if (m[1].length){<br>    return m[1];<br>  }<br>  <br>  return url+' --failed--';<br>}<br>console.clear()<br>var n = [<br>  'http://www.youtube.com/watch?v=0zMd3nApSvMg&amp;feature=feedrec_grec_index', <br>  'http://www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/QdK8U-VIH_o', <br>  'http://www.youtube.com/v/0zM3nApSvMg?fs=1&amp;amp;hl=en_US&amp;amp;rel=0',<br>  'http://www.youtube.com/watch?v=0zMg3nApSvMg#t=0m10s',<br>  'http://www.youtube.com/embed/0zM3nApdSvMg?rel=0',<br>  'http://www.youtube.com/watch?v=0zM3nAxpSvMg',<br>  'http://youtu.be/0zM3nApgSvMg'<br>];<br>  n.forEach(function(i){<br>  document.write(youtube_parser(i)+'&lt;br&gt;')<br>});<br></pre> <b>demo</b><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="dimaslanjaka" data-slug-hash="BggxgP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Youtube URL Parser">  <span>See the Pen <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYS9wZW4vQmdneGdQLw==" rel="nofollow noopener noreferer noreferrer external" alt="[JS] Youtube Video ID URL Parser" title="[JS] Youtube Video ID URL Parser">  Youtube URL Parser</a> by dimas lanjaka (<a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYQ==" rel="nofollow noopener noreferer noreferrer external" alt="[JS] Youtube Video ID URL Parser" title="[JS] Youtube Video ID URL Parser">@dimaslanjaka</a>)   on <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlv" rel="nofollow noopener noreferer noreferrer external" alt="[JS] Youtube Video ID URL Parser" title="[JS] Youtube Video ID URL Parser">CodePen</a>.</span></p><script async="" src="https://static.codepen.io/assets/embed/ei.js"></script></div>
     </div>
 
     
@@ -416,7 +416,7 @@
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
-<!-- adblock notify -->
+
 <div id="ykth" class="ykth-hide">
   <div class="ykth-inner">
     <div class="ykth-head">
@@ -449,7 +449,7 @@
         Please consider supporting us by disabling your ad blocker. Thank you.
       </p>
     </div>
-    <!-- Start Condition When JS Disable -->
+    
     <noscript>
       <div class="ykth-body">
         <p>Javascript is disabled in your web browser.</p>
@@ -485,7 +485,7 @@
         }
       </style>
     </noscript>
-    <!-- End Condition When JS Disable -->
+    
   </div>
 </div>
 
@@ -520,7 +520,7 @@
   }
 </style>
 
-<!-- Yandex.Metrika counter -->
+
 <script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
@@ -536,7 +536,7 @@
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="[JS] Youtube Video ID URL Parser | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
-<!-- /Yandex.Metrika counter -->
+
 <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
   (function () {
     var bp = document.createElement('script');

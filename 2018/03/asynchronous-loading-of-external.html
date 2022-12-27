@@ -71,7 +71,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -160,11 +160,11 @@
       </ul>
 
       <div class="sidebar-panel-container">
-        <!--noindex-->
+        
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">HTML5 WAY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">PROGRAMATICALLY WAY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">YOU NEED A CALLBACK?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript2017"><span class="nav-number">5.</span> <span class="nav-text">ECMASCRIPT 2017 (ES8) WAY</span></a></li></ol></div>
         </div>
-        <!--/noindex-->
+        
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -175,7 +175,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1422</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -191,25 +191,25 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Asynchronous Loading of External Javascript"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Asynchronous Loading of External Javascript"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
 <ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
   <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="Asynchronous Loading of External Javascript" title="Asynchronous Loading of External Javascript">
     <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
     <meta itemprop="position" content="1">
   </li>
   <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="Asynchronous Loading of External Javascript" title="Asynchronous Loading of External Javascript">
     <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
     <meta itemprop="position" content="2">
   </li>
@@ -329,7 +329,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2>INTRODUCTION</h2><div>Loading of external javascript resources (libraries, plugins, widgets) should be done asynchronously, in a non-blocking manner, so the load time of your web-page will not be affected. Thus other resources like images and CSS are not blocked from loading.</div><h2>HTML5 WAY</h2><div>In the past that was possible with help of thedefer&nbsp;attribute, later HTML5 spec introduce the&nbsp;<code>async</code>&nbsp;attribute.</div><pre>&lt;script src="//code.jquery.com/jquery-1.11.0.min.js" async&gt;<br>&lt;/script&gt;</pre><h2>PROGRAMATICALLY WAY</h2><div>Dynamically you can create&nbsp;<code>script</code>&nbsp;tag and inject it into the DOM.</div><pre class="prettyprint lang-html">&lt;script type="text/javascript"&gt;<br>(function() {<br>    var script = document.createElement("script");<br>    script.type = "text/javascript";<br>    script.async = true;<br>    script.src = "//code.jquery.com/jquery-1.11.0.min.js";<br>    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);<br>})();<br>&lt;/script&gt;</pre><h2>YOU NEED A CALLBACK?</h2><div>Often we need to know when the script is loaded, and when we are ready to use it. That's why we need a callback function. Also you can think about it as a dependency manager.</div><pre class="prettyprint lang-html">&lt;script type="text/javascript"&gt;<br>function loadScript(url, callback) {<br>    var script = document.createElement("script");<br>    script.type = "text/javascript";<br>    script.async = true;<br>    if (script.readyState) {<br>        script.onreadystatechange = function () {<br>            if (script.readyState == "loaded" || script.readyState == "complete") {<br>                script.onreadystatechange = null;<br>                if (callback &amp;&amp; typeof callback === "function") {<br>                    callback();<br>                }<br>            }<br>        };<br>    } else {<br>        script.onload = function () {<br>            if (callback &amp;&amp; typeof callback === "function") {<br>                callback();<br>            }<br>        };<br>    }<br>    script.src = url;<br>    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);<br>}<br>// How to use it<br>loadScript("//code.jquery.com/jquery-1.11.0.min.js", function () {<br>    // jQuery was loaded<br>    loadScript("//code.jquery.com/ui/1.10.4/jquery-ui.min.js");<br>});<br>&lt;/script&gt;</pre><h2 id="ECMAScript2017">ECMASCRIPT 2017 (ES8) WAY</h2><div>Callback functions runs the world of JavaScript before the advent of ECMAScript 2017 that standardized the use of&nbsp;<code>async/await</code>&nbsp;in conjunction with&nbsp;<code>Promises</code>&nbsp;(part of ECMAScript 2015).</div><pre class="prettyprint">&lt;script type="text/javascript"&gt;<br>async function loadScripts (scripts) {<br>    <br>    function get (src) {<br>        return new Promise(function (resolve, reject) {<br>            var el = document.createElement("script");<br>            el.async = true;<br>            el.addEventListener("load", function () {<br>                resolve(src);<br>            }, false);<br>            el.addEventListener("error", function () {<br>                reject(src);<br>            }, false);<br>            el.src = src;<br>            (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(el);<br>        });<br>    }<br><br>    const myPromises = scripts.map(async function (script, index) {<br>        return await get(script);<br>    });<br><br>    return await Promise.all(myPromises);<br>}<br><br>// How to use it<br>loadScripts([<br>    "https://static.zinoui.com/1.5/compiled/zino.svg.min.js",<br>    "https://static.zinoui.com/libs/jquery/jquery.min.js"<br>]).then(function () {<br>    return loadScripts(["https://static.zinoui.com/1.5/compiled/zino.chart.min.js"]);<br>}).then(function () {<br>    $("#chart").zinoChart(settings);<br>});<br>&lt;/script&gt;</pre><div>Asynchronous Loading of External Javascript Written By Dimitar Ivanov On <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly96aW5vdWkuY29tL2Jsb2cvYXN5bmNocm9ub3VzLWxvYWRpbmctZXh0ZXJuYWwtamF2YXNjcmlwdA==" rel="noopener noreferer nofollow noopener">Asynchronous Loading of External Javascript</a>. Posted on: June 11, 2014 </div>
+        <h2>INTRODUCTION</h2><div>Loading of external javascript resources (libraries, plugins, widgets) should be done asynchronously, in a non-blocking manner, so the load time of your web-page will not be affected. Thus other resources like images and CSS are not blocked from loading.</div><h2>HTML5 WAY</h2><div>In the past that was possible with help of thedefer&nbsp;attribute, later HTML5 spec introduce the&nbsp;<code>async</code>&nbsp;attribute.</div><pre>&lt;script src="//code.jquery.com/jquery-1.11.0.min.js" async&gt;<br>&lt;/script&gt;</pre><h2>PROGRAMATICALLY WAY</h2><div>Dynamically you can create&nbsp;<code>script</code>&nbsp;tag and inject it into the DOM.</div><pre class="prettyprint lang-html">&lt;script type="text/javascript"&gt;<br>(function() {<br>    var script = document.createElement("script");<br>    script.type = "text/javascript";<br>    script.async = true;<br>    script.src = "//code.jquery.com/jquery-1.11.0.min.js";<br>    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);<br>})();<br>&lt;/script&gt;</pre><h2>YOU NEED A CALLBACK?</h2><div>Often we need to know when the script is loaded, and when we are ready to use it. That's why we need a callback function. Also you can think about it as a dependency manager.</div><pre class="prettyprint lang-html">&lt;script type="text/javascript"&gt;<br>function loadScript(url, callback) {<br>    var script = document.createElement("script");<br>    script.type = "text/javascript";<br>    script.async = true;<br>    if (script.readyState) {<br>        script.onreadystatechange = function () {<br>            if (script.readyState == "loaded" || script.readyState == "complete") {<br>                script.onreadystatechange = null;<br>                if (callback &amp;&amp; typeof callback === "function") {<br>                    callback();<br>                }<br>            }<br>        };<br>    } else {<br>        script.onload = function () {<br>            if (callback &amp;&amp; typeof callback === "function") {<br>                callback();<br>            }<br>        };<br>    }<br>    script.src = url;<br>    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);<br>}<br>// How to use it<br>loadScript("//code.jquery.com/jquery-1.11.0.min.js", function () {<br>    // jQuery was loaded<br>    loadScript("//code.jquery.com/ui/1.10.4/jquery-ui.min.js");<br>});<br>&lt;/script&gt;</pre><h2 id="ECMAScript2017">ECMASCRIPT 2017 (ES8) WAY</h2><div>Callback functions runs the world of JavaScript before the advent of ECMAScript 2017 that standardized the use of&nbsp;<code>async/await</code>&nbsp;in conjunction with&nbsp;<code>Promises</code>&nbsp;(part of ECMAScript 2015).</div><pre class="prettyprint">&lt;script type="text/javascript"&gt;<br>async function loadScripts (scripts) {<br>    <br>    function get (src) {<br>        return new Promise(function (resolve, reject) {<br>            var el = document.createElement("script");<br>            el.async = true;<br>            el.addEventListener("load", function () {<br>                resolve(src);<br>            }, false);<br>            el.addEventListener("error", function () {<br>                reject(src);<br>            }, false);<br>            el.src = src;<br>            (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(el);<br>        });<br>    }<br><br>    const myPromises = scripts.map(async function (script, index) {<br>        return await get(script);<br>    });<br><br>    return await Promise.all(myPromises);<br>}<br><br>// How to use it<br>loadScripts([<br>    "https://static.zinoui.com/1.5/compiled/zino.svg.min.js",<br>    "https://static.zinoui.com/libs/jquery/jquery.min.js"<br>]).then(function () {<br>    return loadScripts(["https://static.zinoui.com/1.5/compiled/zino.chart.min.js"]);<br>}).then(function () {<br>    $("#chart").zinoChart(settings);<br>});<br>&lt;/script&gt;</pre><div>Asynchronous Loading of External Javascript Written By Dimitar Ivanov On <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly96aW5vdWkuY29tL2Jsb2cvYXN5bmNocm9ub3VzLWxvYWRpbmctZXh0ZXJuYWwtamF2YXNjcmlwdA==" rel="nofollow noopener noreferer noreferrer external" alt="Asynchronous Loading of External Javascript" title="Asynchronous Loading of External Javascript">Asynchronous Loading of External Javascript</a>. Posted on: June 11, 2014 </div>
     </div>
 
     
@@ -417,7 +417,7 @@
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
-<!-- adblock notify -->
+
 <div id="ykth" class="ykth-hide">
   <div class="ykth-inner">
     <div class="ykth-head">
@@ -450,7 +450,7 @@
         Please consider supporting us by disabling your ad blocker. Thank you.
       </p>
     </div>
-    <!-- Start Condition When JS Disable -->
+    
     <noscript>
       <div class="ykth-body">
         <p>Javascript is disabled in your web browser.</p>
@@ -486,7 +486,7 @@
         }
       </style>
     </noscript>
-    <!-- End Condition When JS Disable -->
+    
   </div>
 </div>
 
@@ -521,7 +521,7 @@
   }
 </style>
 
-<!-- Yandex.Metrika counter -->
+
 <script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
@@ -537,7 +537,7 @@
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="Asynchronous Loading of External Javascript | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
-<!-- /Yandex.Metrika counter -->
+
 <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
   (function () {
     var bp = document.createElement('script');

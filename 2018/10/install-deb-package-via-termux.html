@@ -73,7 +73,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -162,11 +162,11 @@
       </ul>
 
       <div class="sidebar-panel-container">
-        <!--noindex-->
+        
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">    Install a package </span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">    Remove a package </span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">    Reconfigure an existing package </span></a></li></ol></div>
         </div>
-        <!--/noindex-->
+        
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1420</span>
+          <span class="site-state-item-count">1422</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -193,25 +193,25 @@
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Install deb package via Termux"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Install deb package via Termux"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
 <ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
   <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html">
+    <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="Install deb package via Termux" title="Install deb package via Termux">
     <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
     <meta itemprop="position" content="1">
   </li>
   <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect">
+    <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="Install deb package via Termux" title="Install deb package via Termux">
     <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
     <meta itemprop="position" content="2">
   </li>
@@ -331,7 +331,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div class="w3-center"><img data-src="https://imgdb.net/images/4271.png"></div> <p>Packages are <strong>manually</strong> installed via the    <strong><code>dpkg</code></strong> command (Debian Package Management System). <code>dpkg</code> is the backend to commands like    <code>apt-get</code> and <code>aptitude</code>, which in turn are the     backend for GUI install apps like the Software Center and Synaptic. </p><p>    Something along the lines of: </p><p>    <code>dpkg</code>    --&gt; <code>apt-get</code>, <code>aptitude</code> --&gt; Synaptic,     Software Center </p><p>    But of course the easiest ways to install a package would be, first, the     GUI apps (Synaptic, Software Center, etc..), followed by the terminal     commands <code>apt-get</code> and <code>aptitude</code> that add a very     nice user friendly approach to the backend dpkg, including but not limited     to packaged dependencies, control over what is installed, needs update, not     installed, broken packages, etc.. Lastly the <code>dpkg</code>command which     is the base for all of them. </p><p>    Since dpkg is the base, you can use it to install packaged directly from     the command line. </p><h3>    Install a package </h3><pre><code>sudo dpkg -i DEB_PACKAGE<br></code></pre><p>    For example if the package file is called <code>askubuntu_2.0.deb</code>then you should do <code>sudo dpkg -i askubuntu_2.0.deb</code>. If<code>dpkg</code> reports an error due to dependency problems, you can run    <code>sudo apt-get install -f</code> to download the missing dependencies     and configure everything. If that reports an error, you'll have to sort out     the dependencies yourself by following for example     <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9hc2t1YnVudHUuY29tL3F1ZXN0aW9ucy8xNDAyNDYvaG93LWRvLWktcmVzb2x2ZS11bm1ldC1kZXBlbmRlbmNpZXM=" rel="noopener noreferer nofollow noopener">        How do I resolve unmet dependencies after adding a PPA?     </a>    . </p><h3>    Remove a package </h3><pre><code>sudo dpkg -r PACKAGE_NAME<br></code></pre><p>    For example if the package is called <code>askubuntu</code> then you should     do <code>sudo dpkg -r askubuntu</code>. </p><h3>    Reconfigure an existing package </h3><pre><code>sudo dpkg-reconfigure PACKAGE_NAME<br></code></pre><p>    This is useful when you need to reconfigure something related to said     package. Some useful examples it the <code>keyboard-configuration</code>when you want to enable the <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+    <kbd>Backspace</kbd> in order to reset the X server, so you would the     following: </p><pre><code>sudo dpkg-reconfigure keyboard-configuration<br></code></pre><p>    Another great one is when you need to set the Timezone for a server or your     local testing computer, so you use use the <code>tzdata</code> package: </p><pre><code>sudo dpkg-reconfigure tzdata</code></pre>
+        <div class="w3-center"><img data-src="https://imgdb.net/images/4271.png"></div> <p>Packages are <strong>manually</strong> installed via the    <strong><code>dpkg</code></strong> command (Debian Package Management System). <code>dpkg</code> is the backend to commands like    <code>apt-get</code> and <code>aptitude</code>, which in turn are the     backend for GUI install apps like the Software Center and Synaptic. </p><p>    Something along the lines of: </p><p>    <code>dpkg</code>    --&gt; <code>apt-get</code>, <code>aptitude</code> --&gt; Synaptic,     Software Center </p><p>    But of course the easiest ways to install a package would be, first, the     GUI apps (Synaptic, Software Center, etc..), followed by the terminal     commands <code>apt-get</code> and <code>aptitude</code> that add a very     nice user friendly approach to the backend dpkg, including but not limited     to packaged dependencies, control over what is installed, needs update, not     installed, broken packages, etc.. Lastly the <code>dpkg</code>command which     is the base for all of them. </p><p>    Since dpkg is the base, you can use it to install packaged directly from     the command line. </p><h3>    Install a package </h3><pre><code>sudo dpkg -i DEB_PACKAGE<br></code></pre><p>    For example if the package file is called <code>askubuntu_2.0.deb</code>then you should do <code>sudo dpkg -i askubuntu_2.0.deb</code>. If<code>dpkg</code> reports an error due to dependency problems, you can run    <code>sudo apt-get install -f</code> to download the missing dependencies     and configure everything. If that reports an error, you'll have to sort out     the dependencies yourself by following for example     <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9hc2t1YnVudHUuY29tL3F1ZXN0aW9ucy8xNDAyNDYvaG93LWRvLWktcmVzb2x2ZS11bm1ldC1kZXBlbmRlbmNpZXM=" rel="nofollow noopener noreferer noreferrer external" alt="Install deb package via Termux" title="Install deb package via Termux">        How do I resolve unmet dependencies after adding a PPA?     </a>    . </p><h3>    Remove a package </h3><pre><code>sudo dpkg -r PACKAGE_NAME<br></code></pre><p>    For example if the package is called <code>askubuntu</code> then you should     do <code>sudo dpkg -r askubuntu</code>. </p><h3>    Reconfigure an existing package </h3><pre><code>sudo dpkg-reconfigure PACKAGE_NAME<br></code></pre><p>    This is useful when you need to reconfigure something related to said     package. Some useful examples it the <code>keyboard-configuration</code>when you want to enable the <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+    <kbd>Backspace</kbd> in order to reset the X server, so you would the     following: </p><pre><code>sudo dpkg-reconfigure keyboard-configuration<br></code></pre><p>    Another great one is when you need to set the Timezone for a server or your     local testing computer, so you use use the <code>tzdata</code> package: </p><pre><code>sudo dpkg-reconfigure tzdata</code></pre>
     </div>
 
     
@@ -421,7 +421,7 @@
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dimaslanjaka","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
-<!-- adblock notify -->
+
 <div id="ykth" class="ykth-hide">
   <div class="ykth-inner">
     <div class="ykth-head">
@@ -454,7 +454,7 @@
         Please consider supporting us by disabling your ad blocker. Thank you.
       </p>
     </div>
-    <!-- Start Condition When JS Disable -->
+    
     <noscript>
       <div class="ykth-body">
         <p>Javascript is disabled in your web browser.</p>
@@ -490,7 +490,7 @@
         }
       </style>
     </noscript>
-    <!-- End Condition When JS Disable -->
+    
   </div>
 </div>
 
@@ -525,7 +525,7 @@
   }
 </style>
 
-<!-- Yandex.Metrika counter -->
+
 <script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
@@ -541,7 +541,7 @@
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="Install deb package via Termux | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
-<!-- /Yandex.Metrika counter -->
+
 <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
   (function () {
     var bp = document.createElement('script');

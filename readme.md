@@ -1,8 +1,9 @@
 # dimaslanjaka.github.io
 
-post pre-processor | https://github.com/dimaslanjaka/static-blog-generator
-
-site generator | https://github.com/hexojs/hexo
+| description | repository |
+| :--- | :--- |
+| post pre-processor | https://github.com/dimaslanjaka/static-blog-generator
+| site generator | https://github.com/hexojs/hexo
 
 
 [![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)

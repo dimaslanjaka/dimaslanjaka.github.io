@@ -1,9 +1,9 @@
 # dimaslanjaka.github.io
 
-| description | repository |
-| :--- | :--- |
-| post pre-processor | https://github.com/dimaslanjaka/static-blog-generator
-| site generator | https://github.com/hexojs/hexo
+| description | repository | badges |
+| :--- | :--- | :--- |
+| post pre-processor | https://github.com/dimaslanjaka/static-blog-generator | ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator?style=flat-square)
+| site generator | https://github.com/hexojs/hexo | ![GitHub repo size](https://img.shields.io/github/repo-size/hexojs/hexo?style=flat-square)
 
 
 [![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)

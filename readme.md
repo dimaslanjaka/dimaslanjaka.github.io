@@ -1,5 +1,9 @@
 # dimaslanjaka.github.io
-~Result of Static Blog Generator (https://github.com/dimaslanjaka/static-blog-generator)~
+
+post pre-processor | https://github.com/dimaslanjaka/static-blog-generator
+
+site generator | https://github.com/hexojs/hexo
+
 
 [![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
 

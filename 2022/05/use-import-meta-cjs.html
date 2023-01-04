@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -49,7 +47,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>How to use import.meta on typescript hybrid compiler | WMI</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
@@ -71,14 +69,14 @@
     object-position: top;
   }
 </style>
-<link rel="stylesheet" type="text/css" href="/css/injector/main.css" >
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" ></head>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
 
 
-  <div class="headband"></div>
+  <body><div class="headband"></div>
 
   
     
@@ -127,9 +125,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -168,12 +164,12 @@
       </div>
         
         <div class="post-toc-wrap sidebar-panel">
-            </div><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#explanation"><span class="nav-number">1.</span> <span class="nav-text">explanation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dirname-and-filename-resolver-for-ESM-and-CommonJS"><span class="nav-number">2.</span> <span class="nav-text">__dirname and __filename resolver for ESM and CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage-Force-Unix-Style"><span class="nav-number">4.</span> <span class="nav-text">Usage Force Unix Style</span></a></li></ol><a class="nav-link" href="#Hybrid-ESM-x2F-CJS-modules-in-TypeScript"><span class="nav-number"></span> <span class="nav-text">Hybrid ESM&#x2F;CJS modules in TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gotchas"><span class="nav-number">2.</span> <span class="nav-text">Gotchas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">3.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detecting-CJS-vs-ESM"><span class="nav-number">4.</span> <span class="nav-text">Detecting CJS vs ESM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">5.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-config"><span class="nav-number">6.</span> <span class="nav-text">Build config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-hybrid-apps"><span class="nav-number">6.1.</span> <span class="nav-text">Building hybrid apps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-hybrid-packages"><span class="nav-number">6.2.</span> <span class="nav-text">Building hybrid packages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Minor-gotcha"><span class="nav-number">6.2.1.</span> <span class="nav-text">Minor gotcha</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-hybrid-apps"><span class="nav-number">7.</span> <span class="nav-text">Running hybrid apps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">8.</span> <span class="nav-text">License</span></a></li></ol>
+            </div><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#explanation"><span class="nav-number">1.</span> <span class="nav-text">explanation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dirname-and-filename-resolver-for-ESM-and-CommonJS"><span class="nav-number">2.</span> <span class="nav-text">__dirname and __filename resolver for ESM and CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage-Force-Unix-Style"><span class="nav-number">4.</span> <span class="nav-text">Usage Force Unix Style</span></a></li></ol><a class="nav-link" href="#Hybrid-ESM-x2F-CJS-modules-in-TypeScript"><span class="nav-number"></span> <span class="nav-text">Hybrid ESM/CJS modules in TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gotchas"><span class="nav-number">2.</span> <span class="nav-text">Gotchas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">3.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detecting-CJS-vs-ESM"><span class="nav-number">4.</span> <span class="nav-text">Detecting CJS vs ESM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">5.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-config"><span class="nav-number">6.</span> <span class="nav-text">Build config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-hybrid-apps"><span class="nav-number">6.1.</span> <span class="nav-text">Building hybrid apps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-hybrid-packages"><span class="nav-number">6.2.</span> <span class="nav-text">Building hybrid packages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Minor-gotcha"><span class="nav-number">6.2.1.</span> <span class="nav-text">Minor gotcha</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-hybrid-apps"><span class="nav-number">7.</span> <span class="nav-text">Running hybrid apps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">8.</span> <span class="nav-text">License</span></a></li></ol>
         
         
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
   <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
 </div>
@@ -181,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1425</span>
+          <span class="site-state-item-count">1424</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -190,36 +186,34 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">136</span>
+        <span class="site-state-item-count">133</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="How to use import.meta on typescript hybrid compiler"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="How to use import.meta on typescript hybrid compiler"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="How to use import.meta on typescript hybrid compiler"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="How to use import.meta on typescript hybrid compiler"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
-<ul itemscope itemtype="https://schema.org/ItemList" id="sidebar-widget">
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
+<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">
     <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
-    <meta itemprop="position" content="1" >
+    <meta itemprop="position" content="1">
   </li>
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">
     <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
-    <meta itemprop="position" content="2" >
+    <meta itemprop="position" content="2">
   </li>
 </ul>
 <style>
@@ -258,20 +252,20 @@
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Dimas Lanjaka">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="WMI">
       <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
     </span>
 
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="How to use import.meta on typescript hybrid compiler | WMI">
       <meta itemprop="description" content="How to implement import.meta on typescript hybrid esm and commonjs compiler">
     </span>
@@ -302,7 +296,7 @@
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
           <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
         </span>
     </span>
@@ -332,10 +326,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="explanation"><a href="#explanation" class="headerlink" title="explanation"></a>explanation</h2><p>Using typescript hybrid compiler to compile for ESM and CommonJS is a experimental for NodeJS.<br>Some function&#x2F;magic function&#x2F;constructor is not supported by CommonJS. So, you must define them manually, such as: __dirname, __filename</p>
-<h2 id="dirname-and-filename-resolver-for-ESM-and-CommonJS"><a href="#dirname-and-filename-resolver-for-ESM-and-CommonJS" class="headerlink" title="__dirname and __filename resolver for ESM and CommonJS"></a>__dirname and __filename resolver for ESM and CommonJS</h2><pre><code class="highlight ts"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">getDirname</span> = (<span class="params"></span>) =&gt; &#123;
+        <h2 id="explanation"><a href="#explanation" class="headerlink" title="explanation"></a>explanation</h2><p>Using typescript hybrid compiler to compile for ESM and CommonJS is a experimental for NodeJS.<br>Some function/magic function/constructor is not supported by CommonJS. So, you must define them manually, such as: __dirname, __filename</p>
+<h2 id="dirname-and-filename-resolver-for-ESM-and-CommonJS"><a href="#dirname-and-filename-resolver-for-ESM-and-CommonJS" class="headerlink" title="__dirname and __filename resolver for ESM and CommonJS"></a>__dirname and __filename resolver for ESM and CommonJS</h2><pre><code class="highlight ts"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">getDirname</span> = (<span class="params"></span>) =&gt; {
   <span class="comment">// get the stack</span>
-  <span class="keyword">const</span> &#123; stack &#125; = <span class="keyword">new</span> <span class="title class_">Error</span>();
+  <span class="keyword">const</span> { stack } = <span class="keyword">new</span> <span class="title class_">Error</span>();
   <span class="comment">// get the third line (the original invoker)</span>
   <span class="keyword">const</span> invokeFileLine = stack.<span class="title function_">split</span>(<span class="string">`\n`</span>)[<span class="number">2</span>];
   <span class="comment">// match the file url from file://(.+.(ts|js)) and get the first capturing group</span>
@@ -343,11 +337,11 @@
   <span class="comment">// match the file URL from file://(.+)/ and get the first capturing group</span>
   <span class="comment">//     the (.+) is a greedy quantifier and will make the RegExp expand to the largest match</span>
   <span class="keyword">const</span> __dirname = invokeFileLine.<span class="title function_">match</span>(<span class="regexp">/file:\/\/(.+)\//</span>)[<span class="number">1</span>];
-  <span class="keyword">return</span> &#123; __dirname, __filename &#125;;
-&#125;;
+  <span class="keyword">return</span> { __dirname, __filename };
+};
 <span class="keyword">export</span> <span class="keyword">default</span> getDirname;</code></pre>
 
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><pre><code class="highlight ts"><span class="keyword">import</span> &#123; getDirname &#125; <span class="keyword">from</span> <span class="string">&#x27;./dirname.ts&#x27;</span>; <span class="comment">// to prevent called by ESM, we using static import</span>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><pre><code class="highlight ts"><span class="keyword">import</span> { getDirname } <span class="keyword">from</span> <span class="string">'./dirname.ts'</span>; <span class="comment">// to prevent called by ESM, we using static import</span>
 <span class="keyword">const</span> __resolve = <span class="title function_">getDirname</span>();
 <span class="keyword">const</span> __filename = __resolve.<span class="property">__filename</span>;
 <span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);
@@ -355,9 +349,9 @@
 <h2 id="Usage-Force-Unix-Style"><a href="#Usage-Force-Unix-Style" class="headerlink" title="Usage Force Unix Style"></a>Usage Force Unix Style</h2><p>Install upath</p>
 <pre><code class="highlight bash">npm i upath</code></pre>
 <p>Call them</p>
-<pre><code class="highlight ts"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;upath&#x27;</span>;
-<span class="keyword">import</span> &#123; getDirname &#125; <span class="keyword">from</span> <span class="string">&#x27;config&#x27;</span>;
-<span class="keyword">const</span> &#123; dirname &#125; = path;
+<pre><code class="highlight ts"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">'upath'</span>;
+<span class="keyword">import</span> { getDirname } <span class="keyword">from</span> <span class="string">'config'</span>;
+<span class="keyword">const</span> { dirname } = path;
 <span class="keyword">const</span> __resolve = <span class="title function_">getDirname</span>();
 <span class="keyword">const</span> __filename = __resolve.<span class="property">__filename</span>;
 <span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);</code></pre>
@@ -365,8 +359,8 @@
 <p>This is trick for resolving __dirname and __filename on typescript ESM hybrid compiler</p>
 
 
-<h1 id="Hybrid-ESM-x2F-CJS-modules-in-TypeScript"><a href="#Hybrid-ESM-x2F-CJS-modules-in-TypeScript" class="headerlink" title="Hybrid ESM&#x2F;CJS modules in TypeScript"></a>Hybrid ESM&#x2F;CJS modules in TypeScript</h1><p>Generating and using hybrid node modules that target both CommonJS&#x2F;CJS and ECMAScript modules&#x2F;ESM is difficult to modify to allow these modules to be used within node as well.</p>
-<p>This repo provides a working example of how to achieve this in TypeScript (based on a <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://github.com/demurgos/mjts" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">previous example by @demurgos</a>).</p>
+<h1 id="Hybrid-ESM-x2F-CJS-modules-in-TypeScript"><a href="#Hybrid-ESM-x2F-CJS-modules-in-TypeScript" class="headerlink" title="Hybrid ESM/CJS modules in TypeScript"></a>Hybrid ESM/CJS modules in TypeScript</h1><p>Generating and using hybrid node modules that target both CommonJS/CJS and ECMAScript modules/ESM is difficult to modify to allow these modules to be used within node as well.</p>
+<p>This repo provides a working example of how to achieve this in TypeScript (based on a <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RlbXVyZ29zL21qdHM=" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">previous example by @demurgos</a>).</p>
 <h2 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h2>
 
 <p>Support for ‘old’ CommonJS modules is always needed, but to get the most out of modern tools like ‘Rollup’, release ES modules as well so these tools work their magic and bundle size should be able to shrink.</p>
@@ -374,7 +368,7 @@
 <p>However, node does not accept standard <code>.js</code> files as ESM modules, but you need to either supply a loader script that handles module type detection (slow, potentially error prone) or change the filenames of all ES modules to <code>.mjs</code>, which node natively recognises as ESM modules.</p>
 <p>TypeScript unfortunately does not support renaming output files, so this needs to be done manually.</p>
 <p>Finally, importing the modules correctly requires different compiler arguments (see below).</p>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p>The <a href="./hybrid"><code>hybrid</code></a> directory contains a hybrid CJS&#x2F;ESM module (<a href="./hybrid/package.json"><code>package.json</code></a>) that just exports a single function. The function prints a string and returns a boolean indicating whether this function was executed in CJS or ESM.</p>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p>The <a href="./hybrid"><code>hybrid</code></a> directory contains a hybrid CJS/ESM module (<a href="./hybrid/package.json"><code>package.json</code></a>) that just exports a single function. The function prints a string and returns a boolean indicating whether this function was executed in CJS or ESM.</p>
 <p>It gets imported by our main repo (<a href="./package.json"><code>package.json</code></a>), and the exported function gets used. This app just prints a few strings and finally whether the imported module was an ES or CJS module.</p>
 <h2 id="Detecting-CJS-vs-ESM"><a href="#Detecting-CJS-vs-ESM" class="headerlink" title="Detecting CJS vs ESM"></a>Detecting CJS vs ESM</h2><p>In ESM, the <code>exports</code> variable does not exist, since exports are handled via the <code>export</code> keyword. Hence, whether or not this variable is undefined tells us if the executing context is ESM or CJS.</p>
 <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>Install the dependencies of the hybrid module, build it, then install the dependencies in the main repo.</p>
@@ -382,35 +376,35 @@
 
 <h2 id="Build-config"><a href="#Build-config" class="headerlink" title="Build config"></a>Build config</h2><p>Any ES modules need to be renamed to <code>.mjs</code> or node.js will fail to recognise them as such and throw errors.</p>
 <h3 id="Building-hybrid-apps"><a href="#Building-hybrid-apps" class="headerlink" title="Building hybrid apps"></a>Building hybrid apps</h3><p>From the main project <a href="./package.json"><code>package.json</code></a>:</p>
-<pre><code class="highlight json"><span class="punctuation">&#123;</span>
-  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
-    <span class="attr">&quot;build:mjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tsc --rootDir src --outDir build/mjs --moduleResolution node --allowSyntheticDefaultImports --module esnext src/*.ts &amp;&amp; mv build/mjs/index.js build/mjs/index.mjs&quot;</span><span class="punctuation">,</span>
-    <span class="attr">&quot;build:cjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tsc --rootDir src --outDir build/cjs --moduleResolution node --esModuleInterop src/*.ts&quot;</span><span class="punctuation">,</span>
-  <span class="punctuation">&#125;</span>
-<span class="punctuation">&#125;</span></code></pre>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"build:mjs"</span><span class="punctuation">:</span> <span class="string">"tsc --rootDir src --outDir build/mjs --moduleResolution node --allowSyntheticDefaultImports --module esnext src/*.ts &amp;&amp; mv build/mjs/index.js build/mjs/index.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"build:cjs"</span><span class="punctuation">:</span> <span class="string">"tsc --rootDir src --outDir build/cjs --moduleResolution node --esModuleInterop src/*.ts"</span><span class="punctuation">,</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
 
 <p>For regular applications, it’s a good idea to split CJS and ESM output into different directories, because they will be used separately anyway. In both cases, you want <code>moduleResolution</code> set to <code>node</code>.</p>
 <p>To build an ES module app (that can also work with CJS modules), you need to enable the option <code>allowSyntheticDefaultImports</code> and set the <code>module</code> compiler option to <code>esnext</code>.</p>
 <p>To build a CommonJS module app (that can also work with ES modules), you need to enable the option <code>esModuleInterop</code>.</p>
 <h3 id="Building-hybrid-packages"><a href="#Building-hybrid-packages" class="headerlink" title="Building hybrid packages"></a>Building hybrid packages</h3><p>From the hybrid package <a href="./hybrid/package.json"><code>package.json</code></a>:</p>
-<pre><code class="highlight json"><span class="punctuation">&#123;</span>
-  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/hybrid&quot;</span><span class="punctuation">,</span>
-  <span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/hybrid.d.ts&quot;</span><span class="punctuation">,</span>
-  <span class="attr">&quot;browser&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/hybrid.js&quot;</span><span class="punctuation">,</span>
-  <span class="attr">&quot;module&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/hybrid.mjs&quot;</span><span class="punctuation">,</span>
-  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
-    <span class="attr">&quot;build:mjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tsc --allowSyntheticDefaultImports --module esnext &amp;&amp; npm run move-esm-output &amp;&amp; npm run process-source-maps&quot;</span><span class="punctuation">,</span>
-    <span class="attr">&quot;move-esm-output&quot;</span><span class="punctuation">:</span> <span class="string">&quot;mv dist/hybrid.js dist/hybrid.mjs &amp;&amp; mv dist/say-hello.js dist/say-hello.mjs&quot;</span><span class="punctuation">,</span>
-    <span class="attr">&quot;process-source-maps&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sed -e \&quot;s/hybrid.js/hybrid.mjs/g\&quot; ./dist/hybrid.js.map &gt; ./dist/hybrid.mjs.map &amp;&amp; sed -e \&quot;s/say-hello.js/say-hello.mjs/g\&quot; ./dist/say-hello.js.map &gt; ./dist/say-hello.mjs.map&quot;</span><span class="punctuation">,</span>
-    <span class="attr">&quot;build:cjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tsc --esModuleInterop&quot;</span><span class="punctuation">,</span>
-    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build:mjs &amp;&amp; npm run build:cjs&quot;</span>
-  <span class="punctuation">&#125;</span></code></pre>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"main"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid"</span><span class="punctuation">,</span>
+  <span class="attr">"types"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.d.ts"</span><span class="punctuation">,</span>
+  <span class="attr">"browser"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.js"</span><span class="punctuation">,</span>
+  <span class="attr">"module"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.mjs"</span><span class="punctuation">,</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"build:mjs"</span><span class="punctuation">:</span> <span class="string">"tsc --allowSyntheticDefaultImports --module esnext &amp;&amp; npm run move-esm-output &amp;&amp; npm run process-source-maps"</span><span class="punctuation">,</span>
+    <span class="attr">"move-esm-output"</span><span class="punctuation">:</span> <span class="string">"mv dist/hybrid.js dist/hybrid.mjs &amp;&amp; mv dist/say-hello.js dist/say-hello.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"process-source-maps"</span><span class="punctuation">:</span> <span class="string">"sed -e \"s/hybrid.js/hybrid.mjs/g\" ./dist/hybrid.js.map &gt; ./dist/hybrid.mjs.map &amp;&amp; sed -e \"s/say-hello.js/say-hello.mjs/g\" ./dist/say-hello.js.map &gt; ./dist/say-hello.mjs.map"</span><span class="punctuation">,</span>
+    <span class="attr">"build:cjs"</span><span class="punctuation">:</span> <span class="string">"tsc --esModuleInterop"</span><span class="punctuation">,</span>
+    <span class="attr">"build"</span><span class="punctuation">:</span> <span class="string">"npm run build:mjs &amp;&amp; npm run build:cjs"</span>
+  <span class="punctuation">}</span></code></pre>
 
 <p>First of all, if no file extension is specified in the <code>main</code> field, the module loader can choose the desired from the available options at the path. If the module loader is configured to preferably load ES modules, then the <code>.mjs</code> file will be loaded if it exists, otherwise the <code>.js</code> at the spot will be loaded as a CJS module.<br>A hybrid module will have a <code>.js</code> and a <code>.mjs</code> version of each file in the module.<br>The build process for the ES module files is as follows:</p>
 <ul>
 <li>Build the ES module with typescript: This generates <code>.js</code> code files and <code>.js.map</code> source map files. Note that you need to specify <code>--allowSyntheticDefaultImports</code> and <code>--module esnext</code> as compiler options.</li>
 <li>Rename all generated <code>.js</code> files to <code>.mjs</code> (see the <code>move-esm-output</code> task above)</li>
-<li>Parse all source map files and rename the target filename inside from the <code>.js</code> version to <code>.mjs</code>. Then output the replaced code at the same path ending in <code>.mjs.map</code> (see process-source-maps task above).<br>The build process for CJS module files is simpler and <strong>it should be run after the ES module code has been generated and post-processed</strong> (i.e. <strong>not in parallel</strong>). You only need to run <code>tsc</code> with the additional compiler option <code>--esModuleInterop</code>.<br>The final result will be, the following set of files for each individual source TypeScript source file &#x2F; module (using the example file <code>&lt;some_path&gt;/filename.ts</code>):</li>
+<li>Parse all source map files and rename the target filename inside from the <code>.js</code> version to <code>.mjs</code>. Then output the replaced code at the same path ending in <code>.mjs.map</code> (see process-source-maps task above).<br>The build process for CJS module files is simpler and <strong>it should be run after the ES module code has been generated and post-processed</strong> (i.e. <strong>not in parallel</strong>). You only need to run <code>tsc</code> with the additional compiler option <code>--esModuleInterop</code>.<br>The final result will be, the following set of files for each individual source TypeScript source file / module (using the example file <code>&lt;some_path&gt;/filename.ts</code>):</li>
 <li><code>&lt;some_path&gt;/filename.d.ts</code>: The TypeScript definition file.</li>
 <li><code>&lt;some_path&gt;/filename.js</code>: The CommonJS version of the module</li>
 <li><code>&lt;some_path&gt;/filename.js.map</code>: the source map of the CommonJS module.</li>
@@ -419,13 +413,13 @@
 </ul>
 <h4 id="Minor-gotcha"><a href="#Minor-gotcha" class="headerlink" title="Minor gotcha"></a>Minor gotcha</h4><p>Technically, in ES modules, you need to specify the full file path of an import (according to the spec). Within node, this is not necessary though, if an <code>.mjs</code> file exists at that location. On the browser side, this will not work, so you should post-process your output further to rewrite the paths to fully qualified paths including extension. Alternatively, you could reconfigure the module loader to search at the appropriate locations.<br>The easiest option though is probably to just bundle up all the output using an ESM-aware bundler like <em>rollup</em>.</p>
 <h2 id="Running-hybrid-apps"><a href="#Running-hybrid-apps" class="headerlink" title="Running hybrid apps"></a>Running hybrid apps</h2><p>From the main project <a href="./package.json"><code>package.json</code></a>:</p>
-<pre><code class="highlight json"><span class="punctuation">&#123;</span>
-  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
-    <span class="attr">&quot;start:mjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build:mjs &amp;&amp; node --experimental-modules build/mjs/index.mjs&quot;</span><span class="punctuation">,</span>
-    <span class="attr">&quot;start:cjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build:cjs &amp;&amp; node build/cjs/index.js&quot;</span>
-  <span class="punctuation">&#125;</span>
-<span class="punctuation">&#125;</span></code></pre>
-<p>To start node using CommonJS, you don’t need to do anything and can just run <code>node &lt;PATH_TO_TARGET&gt;.js</code>.<br>To start node using&#x2F;supporting ES modules, you need to (currently) supply the <code>--experimental-modules</code> option and then a path to the entrypoint <code>.mjs</code> file (<code>node --experimental-modules &lt;PATH_TO_TARGET&gt;.mjs</code>).</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"start:mjs"</span><span class="punctuation">:</span> <span class="string">"npm run build:mjs &amp;&amp; node --experimental-modules build/mjs/index.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"start:cjs"</span><span class="punctuation">:</span> <span class="string">"npm run build:cjs &amp;&amp; node build/cjs/index.js"</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
+<p>To start node using CommonJS, you don’t need to do anything and can just run <code>node &lt;PATH_TO_TARGET&gt;.js</code>.<br>To start node using/supporting ES modules, you need to (currently) supply the <code>--experimental-modules</code> option and then a path to the entrypoint <code>.mjs</code> file (<code>node --experimental-modules &lt;PATH_TO_TARGET&gt;.mjs</code>).</p>
 <h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="./LICENSE.html">MIT License</a></p>
 
 
@@ -487,7 +481,7 @@
 
 
 <div class="copyright">
-  &copy; 
+  © 
   <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -526,12 +520,11 @@
   <div class="ykth-inner">
     <div class="ykth-head">
       <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
-        <path           fill="#FFFFFF"
-          d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z" ></path>
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
       </svg>
       <b>Adblock detected</b>
       <p>We have detected that you are using adblock in your browser</p>
-      <i class="close" id="close-notif">&#215;</i>
+      <i class="close" id="close-notif">×</i>
     </div>
     <div class="ykth-body">
       <p>
@@ -562,9 +555,8 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.enable-javascript.com/" target="_blank">
-            instructions how to enable JavaScript in your web browser</a
-          >.
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+            instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>
       <style>
@@ -597,7 +589,7 @@
 </div>
 
 <script src="/assets/adblock-notify/script.js"></script>
-<link rel="stylesheet" href="/assets/adblock-notify/style.css" >
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
 <script>
   document.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(() => {
@@ -628,7 +620,7 @@
 </style>
 
 
-<script type="text/javascript" >
+<script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -642,9 +634,9 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="How to use import.meta on typescript hybrid compiler | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
 
-<script id="ribbon" size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
+<script>
   (function () {
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -653,7 +645,7 @@
     s.parentNode.insertBefore(bp, s);
   })();
 </script>
+<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
 
 
-
-</html>
+</body></html>

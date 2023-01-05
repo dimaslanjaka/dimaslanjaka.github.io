@@ -1,1 +1,0 @@
-const e=document.querySelectorAll("h3");for(const o in e)if(Object.hasOwnProperty.call(e,o)){const c=e[o].querySelector("em");console.log(c.innerText)}

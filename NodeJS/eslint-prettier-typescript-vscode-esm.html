@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -50,7 +48,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Auto format typescript with esm in vscode | WMI</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
@@ -72,17 +70,17 @@
     object-position: top;
   }
 </style>
-<link rel="stylesheet" type="text/css" href="/css/injector/main.css" >
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" ></head>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
@@ -128,9 +126,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -169,12 +165,12 @@
       <div class="sidebar-panel-container">
         
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS"><span class="nav-number">1.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter"><span class="nav-number">2.</span> <span class="nav-text">install and activate VSCode ESLint extension for auto Linter And Formatter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-dependencies"><span class="nav-number">3.</span> <span class="nav-text">Install dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-eslintrc"><span class="nav-number">4.</span> <span class="nav-text">Create .eslintrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-prettierrc"><span class="nav-number">5.</span> <span class="nav-text">Create .prettierrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-vscode-x2F-settings-json"><span class="nav-number">6.</span> <span class="nav-text">Create .vscode&#x2F;settings.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optional-create-tsconfig-json-if-not-created-yet"><span class="nav-number">7.</span> <span class="nav-text">optional: create tsconfig.json (if not created yet)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finish"><span class="nav-number">8.</span> <span class="nav-text">Finish</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS"><span class="nav-number">1.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter"><span class="nav-number">2.</span> <span class="nav-text">install and activate VSCode ESLint extension for auto Linter And Formatter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-dependencies"><span class="nav-number">3.</span> <span class="nav-text">Install dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-eslintrc"><span class="nav-number">4.</span> <span class="nav-text">Create .eslintrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-prettierrc"><span class="nav-number">5.</span> <span class="nav-text">Create .prettierrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-vscode-x2F-settings-json"><span class="nav-number">6.</span> <span class="nav-text">Create .vscode/settings.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optional-create-tsconfig-json-if-not-created-yet"><span class="nav-number">7.</span> <span class="nav-text">optional: create tsconfig.json (if not created yet)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finish"><span class="nav-number">8.</span> <span class="nav-text">Finish</span></a></li></ol></div>
         </div>
         
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
   <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
 </div>
@@ -182,7 +178,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1425</span>
+          <span class="site-state-item-count">1424</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -191,36 +187,34 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">128</span>
+        <span class="site-state-item-count">125</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Auto format typescript with esm in vscode"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Auto format typescript with esm in vscode"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Auto format typescript with esm in vscode"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Auto format typescript with esm in vscode"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
-<ul itemscope itemtype="https://schema.org/ItemList" id="sidebar-widget">
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
+<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="Auto format typescript with esm in vscode" title="Auto format typescript with esm in vscode">
     <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
-    <meta itemprop="position" content="1" >
+    <meta itemprop="position" content="1">
   </li>
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="Auto format typescript with esm in vscode" title="Auto format typescript with esm in vscode">
     <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
-    <meta itemprop="position" content="2" >
+    <meta itemprop="position" content="2">
   </li>
 </ul>
 <style>
@@ -257,27 +251,27 @@
 
 <div class="post-block">
   
-  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
     
     <div class="post-gallery-image">
-      <img src="/NodeJS/eslint-prettier-typescript-vscode-esm/thumb.png" itemprop="contentUrl">
+      <img src="/NodeJS/eslint-prettier-typescript-vscode-esm/thumb.png" itemprop="contentUrl" alt="Auto format typescript with esm in vscode | WMI - /NodeJS/eslint-prettier-typescript-vscode-esm/thumb.png">
     </div>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-esm.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Dimas Lanjaka">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="WMI">
       <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
     </span>
 
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="Auto format typescript with esm in vscode | WMI">
       <meta itemprop="description" content="Auto format typescript with esm using only eslint and prettier module">
     </span>
@@ -308,7 +302,7 @@
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
           <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
         </span>
     </span>
@@ -338,80 +332,80 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>for Non-ESM&#x2F;CommonJS you can read these article <a href="eslint-prettier-typescript-vscode.html">CommonJS Eslint Prettier Auto Format Typescript Project In VSCode</a></p>
-<h2 id="install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter"><a href="#install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter" class="headerlink" title="install and activate VSCode ESLint extension for auto Linter And Formatter"></a>install and activate VSCode ESLint extension for auto Linter And Formatter</h2><p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" alt="Auto format typescript with esm in vscode" title="Auto format typescript with esm in vscode">Download Here</a></p>
+        <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>for Non-ESM/CommonJS you can read these article <a href="eslint-prettier-typescript-vscode.html">CommonJS Eslint Prettier Auto Format Typescript Project In VSCode</a></p>
+<h2 id="install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter"><a href="#install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter" class="headerlink" title="install and activate VSCode ESLint extension for auto Linter And Formatter"></a>install and activate VSCode ESLint extension for auto Linter And Formatter</h2><p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWRiYWV1bWVyLnZzY29kZS1lc2xpbnQ=" alt="Auto format typescript with esm in vscode" title="Auto format typescript with esm in vscode">Download Here</a></p>
 <h2 id="Install-dependencies"><a href="#Install-dependencies" class="headerlink" title="Install dependencies"></a>Install dependencies</h2><p>install using npm:</p>
 <pre><code class="highlight bash">npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin</code></pre>
 <p>install using yarn:</p>
 <pre><code class="highlight bash">yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev</code></pre>
 
-<h2 id="Create-eslintrc"><a href="#Create-eslintrc" class="headerlink" title="Create .eslintrc"></a>Create .eslintrc</h2><pre><code class="highlight jsonc">&#123;
-  &quot;$schema&quot;: &quot;https://json.schemastore.org/eslintrc&quot;,
-  &quot;root&quot;: true,
-  &quot;parser&quot;: &quot;@typescript-eslint/parser&quot;,
-  &quot;env&quot;: &#123;
-    &quot;browser&quot;: true,
-    &quot;amd&quot;: true,
-    &quot;node&quot;: true
-  &#125;,
-  &quot;parserOptions&quot;: &#123;
-    &quot;ecmaVersion&quot;: 2020,
-    &quot;sourceType&quot;: &quot;module&quot;
-  &#125;,
-  &quot;extends&quot;: [
-    &quot;eslint:recommended&quot;,
-    &quot;plugin:@typescript-eslint/eslint-recommended&quot;,
-    &quot;plugin:@typescript-eslint/recommended&quot;,
-    &quot;plugin:prettier/recommended&quot;
+<h2 id="Create-eslintrc"><a href="#Create-eslintrc" class="headerlink" title="Create .eslintrc"></a>Create .eslintrc</h2><pre><code class="highlight jsonc">{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
-  &quot;overrides&quot;: [
-    &#123;
-      &quot;files&quot;: [
-        &quot;*.js&quot;
+  "overrides": [
+    {
+      "files": [
+        "*.js"
       ],
-      &quot;rules&quot;: &#123;
-        &quot;@typescript-eslint/no-var-requires&quot;: &quot;off&quot;
-      &#125;
-    &#125;
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
   ],
-  &quot;rules&quot;: &#123;
-    &quot;@typescript-eslint/explicit-function-return-type&quot;: &quot;off&quot;,
-    &quot;no-unused-vars&quot;: &quot;off&quot;,
-    &quot;@typescript-eslint/no-unused-vars&quot;: [
-      &quot;error&quot;,
-      &#123;
-        &quot;argsIgnorePattern&quot;: &quot;^_&quot;,
-        &quot;varsIgnorePattern&quot;: &quot;^_&quot;,
-        &quot;caughtErrorsIgnorePattern&quot;: &quot;^_&quot;
-      &#125;
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
     ],
-    &quot;@typescript-eslint/no-explicit-any&quot;: &quot;off&quot;,
-    &quot;@typescript-eslint/no-this-alias&quot;: [
-      &quot;error&quot;,
-      &#123;
-        &quot;allowDestructuring&quot;: false,
-        &quot;allowedNames&quot;: [
-          &quot;self&quot;
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        "allowDestructuring": false,
+        "allowedNames": [
+          "self"
         ]
-      &#125;
+      }
     ],
-    &quot;arrow-body-style&quot;: &quot;off&quot;,
-    &quot;prefer-arrow-callback&quot;: &quot;off&quot;
-  &#125;
-&#125;</code></pre>
-<h2 id="Create-prettierrc"><a href="#Create-prettierrc" class="headerlink" title="Create .prettierrc"></a>Create .prettierrc</h2><pre><code class="highlight jsonc">&#123;
-  &quot;$schema&quot;: &quot;https://json.schemastore.org/prettierrc&quot;,
-  &quot;semi&quot;: true,
-  &quot;printWidth&quot;: 120,
-  &quot;singleQuote&quot;: true,
-  &quot;trailingComma&quot;: &quot;none&quot;,
-  &quot;tabWidth&quot;: 2
-&#125;</code></pre>
-<h2 id="Create-vscode-x2F-settings-json"><a href="#Create-vscode-x2F-settings-json" class="headerlink" title="Create .vscode&#x2F;settings.json"></a>Create .vscode&#x2F;settings.json</h2><pre><code class="highlight jsonc">&#123;
-  &quot;editor.codeActionsOnSave&quot;: &#123;
-    &quot;source.fixAll.eslint&quot;: true // let ESLint take formating and linting
-  &#125;
-&#125;</code></pre>
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
+  }
+}</code></pre>
+<h2 id="Create-prettierrc"><a href="#Create-prettierrc" class="headerlink" title="Create .prettierrc"></a>Create .prettierrc</h2><pre><code class="highlight jsonc">{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2
+}</code></pre>
+<h2 id="Create-vscode-x2F-settings-json"><a href="#Create-vscode-x2F-settings-json" class="headerlink" title="Create .vscode/settings.json"></a>Create .vscode/settings.json</h2><pre><code class="highlight jsonc">{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // let ESLint take formating and linting
+  }
+}</code></pre>
 
 <h2 id="optional-create-tsconfig-json-if-not-created-yet"><a href="#optional-create-tsconfig-json-if-not-created-yet" class="headerlink" title="optional: create tsconfig.json (if not created yet)"></a>optional: create tsconfig.json (if not created yet)</h2><p>for example tsconfig.json for node 16.</p>
 <p>npm</p>
@@ -419,25 +413,25 @@
 <p>yarn</p>
 <pre><code class="highlight bash">yarn add --dev @tsconfig/node16</code></pre>
 
-<pre><code class="highlight jsonc">&#123;
-  &quot;$schema&quot;: &quot;https://json.schemastore.org/tsconfig&quot;,
-  &quot;display&quot;: &quot;Node 16&quot;,
-  &quot;extends&quot;: &quot;@tsconfig/node16/tsconfig.json&quot;,
-  &quot;compilerOptions&quot;: &#123;
-    &quot;preserveConstEnums&quot;: true,
-    &quot;allowJs&quot;: true,
-    &quot;outDir&quot;: &quot;./dist&quot;
-  &#125;,
-  &quot;include&quot;: [
-    &quot;src/**/*&quot;
+<pre><code class="highlight jsonc">{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 16",
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
   ],
-  &quot;exclude&quot;: [
-    &quot;**/node_modules/**&quot;,
-    &quot;**/*.spec.ts&quot;,
-    &quot;**/*.test.ts&quot;,
-    &quot;**/__tests__/**&quot;
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**"
   ]
-&#125;</code></pre>
+}</code></pre>
 
 <h2 id="Finish"><a href="#Finish" class="headerlink" title="Finish"></a>Finish</h2><p>now your vscode format and lint your codes automatically.</p>
 
@@ -497,7 +491,7 @@
 
 
 <div class="copyright">
-  &copy; 
+  © 
   <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -536,12 +530,11 @@
   <div class="ykth-inner">
     <div class="ykth-head">
       <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
-        <path           fill="#FFFFFF"
-          d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z" ></path>
+        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
       </svg>
       <b>Adblock detected</b>
       <p>We have detected that you are using adblock in your browser</p>
-      <i class="close" id="close-notif">&#215;</i>
+      <i class="close" id="close-notif">×</i>
     </div>
     <div class="ykth-body">
       <p>
@@ -572,9 +565,8 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.enable-javascript.com/" target="_blank">
-            instructions how to enable JavaScript in your web browser</a
-          >.
+          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+            instructions how to enable JavaScript in your web browser</a>.
         </p>
       </div>
       <style>
@@ -607,7 +599,7 @@
 </div>
 
 <script src="/assets/adblock-notify/script.js"></script>
-<link rel="stylesheet" href="/assets/adblock-notify/style.css" >
+<link rel="stylesheet" href="/assets/adblock-notify/style.css">
 <script>
   document.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(() => {
@@ -638,7 +630,7 @@
 </style>
 
 
-<script type="text/javascript" >
+<script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -652,9 +644,9 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="Auto format typescript with esm in vscode | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
 
-<script id="ribbon" size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
+<script>
   (function () {
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -663,6 +655,7 @@
     s.parentNode.insertBefore(bp, s);
   })();
 </script>
+<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
 
-</body>
-</html>
+
+</body></html>

@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -20,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Github Workflow Filter Jobs By OS Condition Syntax Based on Current Running OS if: matrix.os == ubuntu-latestif: matrix.os == windows-latestif: matrix.os == macOS-latest Condition Syntax Based on the">
+    <meta name="description" content="Github Workflow Filter Jobs By OS Condition Syntax Based on Current Running OS if: matrix.os &#x3D;&#x3D; ubuntu-latestif: matrix.os &#x3D;&#x3D; windows-latestif: matrix.os &#x3D;&#x3D; macOS-latest Condition Syntax Based on the">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github Workflow Filter Jobs By OS">
 <meta property="og:url" content="https://www.webmanajemen.com/GitHub/github-workflow-filter-jobs-by-os.html">
 <meta property="og:site_name" content="WMI">
-<meta property="og:description" content="Github Workflow Filter Jobs By OS Condition Syntax Based on Current Running OS if: matrix.os == ubuntu-latestif: matrix.os == windows-latestif: matrix.os == macOS-latest Condition Syntax Based on the">
+<meta property="og:description" content="Github Workflow Filter Jobs By OS Condition Syntax Based on Current Running OS if: matrix.os &#x3D;&#x3D; ubuntu-latestif: matrix.os &#x3D;&#x3D; windows-latestif: matrix.os &#x3D;&#x3D; macOS-latest Condition Syntax Based on the">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-09T02:49:20.000Z">
 <meta property="article:modified_time" content="2023-01-02T11:02:36.000Z">
@@ -46,7 +48,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Github Workflow Filter Jobs By OS | WMI</title>
   
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-106238155-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
@@ -68,17 +70,17 @@
     object-position: top;
   }
 </style>
-<link rel="stylesheet" type="text/css" href="/css/injector/main.css">
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" >
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" ></head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
@@ -124,7 +126,9 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -168,7 +172,7 @@
         
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Dimas Lanjaka</p>
   <div class="site-description" itemprop="description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div>
 </div>
@@ -176,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1426</span>
+          <span class="site-state-item-count">1427</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -185,34 +189,36 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">125</span>
+        <span class="site-state-item-count">128</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https://github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Github Workflow Filter Jobs By OS"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Github Workflow Filter Jobs By OS"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https://www.facebook.com/secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Github Workflow Filter Jobs By OS"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Github Workflow Filter Jobs By OS"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
 
-<ul itemscope="" itemtype="https://schema.org/ItemList" id="sidebar-widget">
-  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<ul itemscope itemtype="https://schema.org/ItemList" id="sidebar-widget">
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="https://webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="Github Workflow Filter Jobs By OS" title="Github Workflow Filter Jobs By OS">
     <span itemprop="name">Moment Timezone Playground <small>(moment-timezone)</small></span></a>
-    <meta itemprop="position" content="1">
+    <meta itemprop="position" content="1" >
   </li>
-  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="Github Workflow Filter Jobs By OS" title="Github Workflow Filter Jobs By OS">
     <span itemprop="name">Is Iam Bot? <small>(selenium checker)</small></span></a>
-    <meta itemprop="position" content="2">
+    <meta itemprop="position" content="2" >
   </li>
 </ul>
 <style>
@@ -251,20 +257,20 @@
   
   
 
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.webmanajemen.com/GitHub/github-workflow-filter-jobs-by-os.html">
 
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Dimas Lanjaka">
     </span>
 
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="WMI">
       <meta itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
     </span>
 
-    <span hidden="" itemprop="post" itemscope="" itemtype="http://schema.org/CreativeWork">
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="Github Workflow Filter Jobs By OS | WMI">
       <meta itemprop="description" content="Github Workflow Filter Jobs By OS Condition Syntax Based on Current Running OS if: matrix.os == ubuntu-latestif: matrix.os == windows-latestif: matrix.os == macOS-latest Condition Syntax Based on the Context of the Current Running OS if: runner.os == Linuxif: runner.os == Windowsif">
     </span>
@@ -295,11 +301,11 @@
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
         </span>
           , 
-        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/programming/github/" itemprop="url" rel="index"><span itemprop="name">github</span></a>
         </span>
     </span>
@@ -329,39 +335,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Condition-Syntax-Based-on-Current-Running-OS"><a href="#Condition-Syntax-Based-on-Current-Running-OS" class="headerlink" title="Condition Syntax Based on Current Running OS"></a>Condition Syntax Based on Current Running OS</h2><pre><code class="highlight yaml"><span class="attr">if:</span> <span class="string">matrix.os</span> <span class="string">==</span> <span class="string">'ubuntu-latest'</span>
+        <h2 id="Condition-Syntax-Based-on-Current-Running-OS"><a href="#Condition-Syntax-Based-on-Current-Running-OS" class="headerlink" title="Condition Syntax Based on Current Running OS"></a>Condition Syntax Based on Current Running OS</h2><pre><code class="highlight yaml"><span class="attr">if:</span> <span class="string">matrix.os</span> <span class="string">==</span> <span class="string">&#x27;ubuntu-latest&#x27;</span>
 
-<span class="attr">if:</span> <span class="string">matrix.os</span> <span class="string">==</span> <span class="string">'windows-latest'</span>
+<span class="attr">if:</span> <span class="string">matrix.os</span> <span class="string">==</span> <span class="string">&#x27;windows-latest&#x27;</span>
 
-<span class="attr">if:</span> <span class="string">matrix.os</span> <span class="string">==</span> <span class="string">'macOS-latest'</span></code></pre>
+<span class="attr">if:</span> <span class="string">matrix.os</span> <span class="string">==</span> <span class="string">&#x27;macOS-latest&#x27;</span></code></pre>
 
-<h2 id="Condition-Syntax-Based-on-the-Context-of-the-Current-Running-OS"><a href="#Condition-Syntax-Based-on-the-Context-of-the-Current-Running-OS" class="headerlink" title="Condition Syntax Based on the Context of the Current Running OS"></a>Condition Syntax Based on the Context of the Current Running OS</h2><pre><code class="highlight yaml"><span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">'Linux'</span>
+<h2 id="Condition-Syntax-Based-on-the-Context-of-the-Current-Running-OS"><a href="#Condition-Syntax-Based-on-the-Context-of-the-Current-Running-OS" class="headerlink" title="Condition Syntax Based on the Context of the Current Running OS"></a>Condition Syntax Based on the Context of the Current Running OS</h2><pre><code class="highlight yaml"><span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">&#x27;Linux&#x27;</span>
 
-<span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">'Windows'</span>
+<span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">&#x27;Windows&#x27;</span>
 
-<span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">'macOS'</span></code></pre>
+<span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">&#x27;macOS&#x27;</span></code></pre>
 
 <h2 id="Example-of-Job-Conditions-Using-the-RUNNER-OS-variable"><a href="#Example-of-Job-Conditions-Using-the-RUNNER-OS-variable" class="headerlink" title="Example of Job Conditions Using the RUNNER OS variable"></a>Example of Job Conditions Using the RUNNER OS variable</h2><pre><code class="highlight yaml"><span class="bullet">-</span> <span class="attr">name:</span>  <span class="string">Install</span>
   <span class="attr">run:</span>   <span class="string">|</span>
-<span class="string">         if [ "$RUNNER_OS" == "Linux" ]; then</span>
+<span class="string">         if [ &quot;$RUNNER_OS&quot; == &quot;Linux&quot; ]; then</span>
 <span class="string">              apt install important_linux_software</span>
-<span class="string">         elif [ "$RUNNER_OS" == "Windows" ]; then</span>
+<span class="string">         elif [ &quot;$RUNNER_OS&quot; == &quot;Windows&quot; ]; then</span>
 <span class="string">              choco install important_windows_software</span>
 <span class="string">         else</span>
-<span class="string">              echo "$RUNNER_OS not supported"</span>
+<span class="string">              echo &quot;$RUNNER_OS not supported&quot;</span>
 <span class="string">              exit 1</span>
 <span class="string">         fi</span>
 <span class="string"></span>  <span class="attr">shell:</span> <span class="string">bash</span></code></pre>
 
-<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9hLzU3OTQ4NDg4" alt="Github Workflow Filter Jobs By OS" title="Github Workflow Filter Jobs By OS">Source</a></p>
-<h2 id="Complete-Example-of-GitHub-Workflow-Job-Based-on-OS"><a href="#Complete-Example-of-GitHub-Workflow-Job-Based-on-OS" class="headerlink" title="Complete Example of GitHub Workflow Job Based on OS"></a>Complete Example of GitHub Workflow Job Based on OS</h2><pre><code class="highlight yaml"><span class="attr">runs-on:</span> <span class="string">${{</span> <span class="string">matrix.os</span> <span class="string">}}</span>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://stackoverflow.com/a/57948488" alt="Github Workflow Filter Jobs By OS" title="Github Workflow Filter Jobs By OS">Source</a></p>
+<h2 id="Complete-Example-of-GitHub-Workflow-Job-Based-on-OS"><a href="#Complete-Example-of-GitHub-Workflow-Job-Based-on-OS" class="headerlink" title="Complete Example of GitHub Workflow Job Based on OS"></a>Complete Example of GitHub Workflow Job Based on OS</h2><pre><code class="highlight yaml"><span class="attr">runs-on:</span> <span class="string">$&#123;&#123;</span> <span class="string">matrix.os</span> <span class="string">&#125;&#125;</span>
 <span class="attr">strategy:</span>
     <span class="attr">matrix:</span>
         <span class="attr">os:</span> [<span class="string">ubuntu-latest</span>, <span class="string">windows-latest</span>, <span class="string">macOS-latest</span>]
 <span class="attr">steps:</span>
     <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Ubuntu</span>
-      <span class="attr">run :</span> <span class="string">echo</span> <span class="string">"iam running on LINUX"</span>
-      <span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">'Linux'</span></code></pre>
+      <span class="attr">run :</span> <span class="string">echo</span> <span class="string">&quot;iam running on LINUX&quot;</span>
+      <span class="attr">if:</span> <span class="string">runner.os</span> <span class="string">==</span> <span class="string">&#x27;Linux&#x27;</span></code></pre>
 
     </div>
 
@@ -419,7 +425,7 @@
 
 
 <div class="copyright">
-  © 
+  &copy; 
   <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -458,11 +464,12 @@
   <div class="ykth-inner">
     <div class="ykth-head">
       <svg style="width: 30px; height: 30px" viewBox="0 0 26 26">
-        <path fill="#FFFFFF" d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"></path>
+        <path           fill="#FFFFFF"
+          d="M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z" ></path>
       </svg>
       <b>Adblock detected</b>
       <p>We have detected that you are using adblock in your browser</p>
-      <i class="close" id="close-notif">×</i>
+      <i class="close" id="close-notif">&#215;</i>
     </div>
     <div class="ykth-body">
       <p>
@@ -493,8 +500,9 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
-            instructions how to enable JavaScript in your web browser</a>.
+          <a href="https://www.enable-javascript.com/" target="_blank">
+            instructions how to enable JavaScript in your web browser</a
+          >.
         </p>
       </div>
       <style>
@@ -527,7 +535,7 @@
 </div>
 
 <script src="/assets/adblock-notify/script.js"></script>
-<link rel="stylesheet" href="/assets/adblock-notify/style.css">
+<link rel="stylesheet" href="/assets/adblock-notify/style.css" >
 <script>
   document.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(() => {
@@ -558,7 +566,7 @@
 </style>
 
 
-<script type="text/javascript">
+<script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -572,9 +580,9 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="Github Workflow Filter Jobs By OS | WMI - https://mc.yandex.ru/watch/91118654"></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-<script id="ribbon" size="300" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
+<script id="ribbon" size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
   (function () {
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -584,6 +592,5 @@
   })();
 </script>
 
-
-
-</body></html>
+</body>
+</html>

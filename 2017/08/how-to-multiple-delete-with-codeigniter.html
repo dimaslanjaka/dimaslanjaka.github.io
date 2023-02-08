@@ -179,7 +179,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1427</span>
+          <span class="site-state-item-count">1428</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">128</span>
+        <span class="site-state-item-count">130</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -497,60 +497,4 @@
 <script src="/assets/adblock-notify/script.js"></script>
 <link rel="stylesheet" href="/assets/adblock-notify/style.css" >
 <script>
-  document.addEventListener('DOMContentLoaded', function (event) {
-    setTimeout(() => {
-      const titleBold = document.getElementById('adblock-page-title');
-      if (titleBold) {
-        const contains404 = /404/i.test(titleBold.textContent);
-        const isWMI = /^wmi$/i.test(titleBold.textContent.trim());
-        const isEmpty = titleBold.textContent.trim().length === 0;
-        if (contains404 || isWMI || isEmpty) {
-          titleBold.textContent = document.title;
-        }
-      }
-    }, 1000);
-  });
-</script>
-<script src="/r-ads.js"></script>
-<style>
-  .bannerAds {
-    display: block;
-    background: #fff url(//i.imgur.com/mBbv90p.png) no-repeat top right;
-    color: #303030;
-    min-height: 180px;
-    min-width: 250px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
-
-
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(91118654, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91118654" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-<script id="ribbon" size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script>
-  (function () {
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-  })();
-</script>
-
-</body>
-</html>
+  document.addEventListener('DOMC

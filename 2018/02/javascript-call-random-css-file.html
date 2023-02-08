@@ -180,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1427</span>
+          <span class="site-state-item-count">1428</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -189,20 +189,20 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">128</span>
+        <span class="site-state-item-count">130</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="JavaScript Call Random CSS file"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/dimaslanjaka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="JavaScript Call Random CSS file"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:dimaslanjaka@gmail.com" title="E-Mail → mailto:dimaslanjaka@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NlY3JldG5ldHdvcmtmb3JjZXM=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="JavaScript Call Random CSS file"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+        <a href="https://www.facebook.com/secretnetworkforces" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;secretnetworkforces" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="JavaScript Call Random CSS file"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
 
@@ -336,7 +336,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Someone talk to stack overflow like this : </p><div class="w3-border w3-round w3-border-red"><p>    I am trying to rotate random CSS sheets via JS - I have the following     script but when I am using it - it doesnt seem to work ? </p><pre><code>function getRand()&#123;<br>    return Math.round(Math.random()<em>(css.length-1));<br>&#125;<br>var css = new Array(<br>'&lt;link rel="stylesheet" type="text/css" href="css/1.css"&gt;',<br>'&lt;link rel="stylesheet" type="text/css" href="css/2.css"&gt;',<br>'&lt;link rel="stylesheet" type="text/css" href="css/3.css"&gt;',<br>'&lt;link rel="stylesheet" type="text/css" href="css/4.css"&gt;'<br>);<br>rand = getRand();<br>document.write(css[rand]);</code></pre><p>    Appreciate any help? </p></div><br><img data-src="https://goo.gl/dzGpyo" title="Ask and Answer" alt="ask and Answer"><br><div class="w3-border w3-round w3-border-green"><blockquote>The best answer is : <b>Try to create the <kbd>link</kbd> element programmatically and appending it to the head</b></blockquote><pre>function applyRandCSS(){<br>  var css = ["css/1.css", "css/2.css", "css/3.css", "css/4.css"];<br>  var randomFile = css[Math.round(Math.random()</em>(css.length-1))];<br>  var ss = document.createElement("link");<br><br>  ss.type = "text/css";<br>  ss.rel = "stylesheet";<br>  ss.href = randomFile;<br><br>  document.getElementsByTagName("head")[0].appendChild(ss);<br>}</pre></div><br><div class="w3-green w3-panel">Source : <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTI0NDg3Ny9yYW5kb20tY3NzLXZpYS1qcw==" title="source" alt="source" rel="nofollow noopener noreferer noreferrer external">https://stackoverflow.com/questions/1244877/random-css-via-js</a></div>
+        <p>Someone talk to stack overflow like this : </p><div class="w3-border w3-round w3-border-red"><p>    I am trying to rotate random CSS sheets via JS - I have the following     script but when I am using it - it doesnt seem to work ? </p><pre><code>function getRand()&#123;<br>    return Math.round(Math.random()<em>(css.length-1));<br>&#125;<br>var css = new Array(<br>'&lt;link rel="stylesheet" type="text/css" href="css/1.css"&gt;',<br>'&lt;link rel="stylesheet" type="text/css" href="css/2.css"&gt;',<br>'&lt;link rel="stylesheet" type="text/css" href="css/3.css"&gt;',<br>'&lt;link rel="stylesheet" type="text/css" href="css/4.css"&gt;'<br>);<br>rand = getRand();<br>document.write(css[rand]);</code></pre><p>    Appreciate any help? </p></div><br><img data-src="https://goo.gl/dzGpyo" title="Ask and Answer" alt="ask and Answer"><br><div class="w3-border w3-round w3-border-green"><blockquote>The best answer is : <b>Try to create the <kbd>link</kbd> element programmatically and appending it to the head</b></blockquote><pre>function applyRandCSS(){<br>  var css = ["css/1.css", "css/2.css", "css/3.css", "css/4.css"];<br>  var randomFile = css[Math.round(Math.random()</em>(css.length-1))];<br>  var ss = document.createElement("link");<br><br>  ss.type = "text/css";<br>  ss.rel = "stylesheet";<br>  ss.href = randomFile;<br><br>  document.getElementsByTagName("head")[0].appendChild(ss);<br>}</pre></div><br><div class="w3-green w3-panel">Source : <a target="_blank" href="https://stackoverflow.com/questions/1244877/random-css-via-js" title="source" alt="source" rel="nofollow noopener noreferer noreferrer external">https://stackoverflow.com/questions/1244877/random-css-via-js</a></div>
 
     </div>
 
@@ -468,7 +468,7 @@
         <p>
           For full functionality of this site it is necessary to enable
           JavaScript. Here are the
-          <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZW5hYmxlLWphdmFzY3JpcHQuY29tLw==" target="_blank">
+          <a href="https://www.enable-javascript.com/" target="_blank">
             instructions how to enable JavaScript in your web browser</a
           >.
         </p>

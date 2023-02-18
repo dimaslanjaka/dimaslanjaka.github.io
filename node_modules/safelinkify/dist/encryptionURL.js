@@ -56,3 +56,4 @@ function encryptionURL(url, passphrase, debug) {
 }
 exports.default = encryptionURL;
 _global_encryptionURL.encryptionURL = encryptionURL;
+//# sourceMappingURL=encryptionURL.js.map

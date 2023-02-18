@@ -48,3 +48,4 @@ function resolveQueryUrl(url, passphrase, debug) {
 }
 exports.default = resolveQueryUrl;
 _global_resolveQueryUrl.resolveQueryUrl = resolveQueryUrl;
+//# sourceMappingURL=resolveQueryUrl.js.map

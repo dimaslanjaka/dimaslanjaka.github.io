@@ -57,3 +57,4 @@ function toURL(url) {
     }
 }
 exports.default = toURL;
+//# sourceMappingURL=toURL.js.map

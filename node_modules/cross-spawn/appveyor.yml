@@ -1,0 +1,32 @@
+# http://www.appveyor.com/docs/appveyor-yml
+
+# Fix line endings in Windows
+init:
+  - git config --global core.autocrlf input
+
+environment:
+  matrix:
+    - nodejs_version: 8
+    - nodejs_version: 9
+    - nodejs_version: 10
+    - nodejs_version: 12
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - ps: |
+      if ($env:npm_version)
+      {
+        npm install -g npm@$env:npm_version
+      }
+  - npm install
+
+build: off
+
+test_script:
+  - node --version
+  - npm --version
+  - cmd: npm test --no-color
+
+after_test:
+  - "npm i codecov"
+  - "node_modules/.bin/codecov"

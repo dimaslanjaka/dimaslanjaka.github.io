@@ -21,3 +21,4 @@ var safelinkify;
 _global_safelinkify.safelinkify = safelinkify;
 _global_safelinkify.safelink = safelink_1.default;
 exports.default = safelinkify;
+//# sourceMappingURL=index.js.map

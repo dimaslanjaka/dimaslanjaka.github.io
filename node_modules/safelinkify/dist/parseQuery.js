@@ -48,3 +48,4 @@ function parseQuery(query, url) {
 exports.parseQuery = parseQuery;
 _global_parseQuery.parseQuery = parseQuery;
 exports.default = parseQuery;
+//# sourceMappingURL=parseQuery.js.map

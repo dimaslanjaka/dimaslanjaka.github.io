@@ -4,7 +4,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-    paths: ["**/*.{html,js,css,json}", "package.json", "package-lock.json"]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.json"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

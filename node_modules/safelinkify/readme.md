@@ -24,18 +24,18 @@ Customized safelink url redirector. Transform and Anonymize all hyperlinks to ou
 ### Bundles
 | registry | link | commands |
 | :--- | :--- | :---
-| npm | [https://www.npmjs.com/package/safelinkify](https://www.npmjs.com/package/safelinkify) | `npm i safelinkify` |
-| github | [https://github.com/dimaslanjaka/safelink](https://github.com/dimaslanjaka/safelink) | `npm i https://github.com/dimaslanjaka/safelink` |
-| tarball | [https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz](https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz) | `npm i https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz` |
+| npm | [https://www.npmjs.com/package/safelinkify](https://www.npmjs.com/package/safelinkify) | `npm i safelinkify -D` |
+| github | [https://github.com/dimaslanjaka/safelink](https://github.com/dimaslanjaka/safelink) | `npm i https://github.com/dimaslanjaka/safelink -D` |
+| tarball | [https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz](https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz) | `npm i https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz -D` |
 
 ### npm
 ```bash
-npm install safelinkify --production
+npm install safelinkify -D
 ```
 
 ### yarn
 ```
-yarn install safelinkify --production=true
+yarn install safelinkify --dev
 ```
 
 ## Development

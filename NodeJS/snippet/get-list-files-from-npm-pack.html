@@ -10,17 +10,19 @@
   <meta name="description" content="get list of files from npm pack npm i git-command-helper //const writeFileSync = requirefs;const spawnAsync = requiregit-command-helper/dist/spawn;//const join = requirepath;spawnAsyncnpm, [pack, --json, --dry-run].thenresult => const parse = JSON.parser">
   
   
-  <script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+  </head><body>&lt;script class="next-config" data-name="main" type="application/json"&gt;{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}&lt;/script&gt;&lt;script src="/js/config.js"&gt;&lt;/script&gt;
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous"&gt;
   
   <link rel="stylesheet" href="//www.webmanajemen.com/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css">
   <link rel="stylesheet" href="/css/snippet.css">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<body>
+
   <div class="container-fluid bg-white">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -84,22 +86,22 @@
     </div>
 
     <div class="py-4">
-      <pre><code class="highlight bash">npm i git-command-helper</code></pre>
+      &lt;pre&gt;&lt;code class="highlight bash"&gt;npm i git-command-helper&lt;/code&gt;&lt;/pre&gt;
 
-<pre><code class="highlight js"><span class="comment">//const { writeFileSync } = require('fs');</span>
-<span class="keyword">const</span> { spawnAsync } = <span class="built_in">require</span>(<span class="string">'git-command-helper/dist/spawn'</span>);
-<span class="comment">//const { join } = require('path');</span>
+&lt;pre&gt;&lt;code class="highlight js"&gt;&lt;span class="comment"&gt;//const &amp;#123; writeFileSync &amp;#125; = require(&amp;#x27;fs&amp;#x27;);&lt;/span&gt;
+&lt;span class="keyword"&gt;const&lt;/span&gt; &amp;#123; spawnAsync &amp;#125; = &lt;span class="built_in"&gt;require&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;git-command-helper/dist/spawn&amp;#x27;&lt;/span&gt;);
+&lt;span class="comment"&gt;//const &amp;#123; join &amp;#125; = require(&amp;#x27;path&amp;#x27;);&lt;/span&gt;
 
-<span class="title function_">spawnAsync</span>(<span class="string">'npm'</span>, [<span class="string">'pack'</span>, <span class="string">'--json'</span>, <span class="string">'--dry-run'</span>]).<span class="title function_">then</span>(<span class="function">(<span class="params">result</span>) =&gt;</span> {
-  <span class="keyword">const</span> parse = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(result.<span class="property">stdout</span>)[<span class="number">0</span>];
-  <span class="keyword">const</span> { files } = parse;
-  <span class="comment">// uncomment for log to file</span>
-  <span class="comment">//const output = join(__dirname, 'tmp/listpack.txt');</span>
-  <span class="comment">//writeFileSync(output, files.map((o) =&gt; o &amp;&amp; o.path).join('\n'));</span>
-  <span class="comment">//console.log(output);</span>
+&lt;span class="title function_"&gt;spawnAsync&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;npm&amp;#x27;&lt;/span&gt;, [&lt;span class="string"&gt;&amp;#x27;pack&amp;#x27;&lt;/span&gt;, &lt;span class="string"&gt;&amp;#x27;--json&amp;#x27;&lt;/span&gt;, &lt;span class="string"&gt;&amp;#x27;--dry-run&amp;#x27;&lt;/span&gt;]).&lt;span class="title function_"&gt;then&lt;/span&gt;(&lt;span class="function"&gt;(&lt;span class="params"&gt;result&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;
+  &lt;span class="keyword"&gt;const&lt;/span&gt; parse = &lt;span class="title class_"&gt;JSON&lt;/span&gt;.&lt;span class="title function_"&gt;parse&lt;/span&gt;(result.&lt;span class="property"&gt;stdout&lt;/span&gt;)[&lt;span class="number"&gt;0&lt;/span&gt;];
+  &lt;span class="keyword"&gt;const&lt;/span&gt; &amp;#123; files &amp;#125; = parse;
+  &lt;span class="comment"&gt;// uncomment for log to file&lt;/span&gt;
+  &lt;span class="comment"&gt;//const output = join(__dirname, &amp;#x27;tmp/listpack.txt&amp;#x27;);&lt;/span&gt;
+  &lt;span class="comment"&gt;//writeFileSync(output, files.map((o) =&amp;gt; o &amp;amp;&amp;amp; o.path).join(&amp;#x27;\n&amp;#x27;));&lt;/span&gt;
+  &lt;span class="comment"&gt;//console.log(output);&lt;/span&gt;
 
-  <span class="variable language_">console</span>.<span class="title function_">log</span>(files);
-});</code></pre>
+  &lt;span class="variable language_"&gt;console&lt;/span&gt;.&lt;span class="title function_"&gt;log&lt;/span&gt;(files);
+&amp;#125;);&lt;/code&gt;&lt;/pre&gt;
 
     </div>
     <div class="py-4">
@@ -329,7 +331,7 @@
   <script src="//www.webmanajemen.com/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script><script src="/js/snippet.js"></script>
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"&gt;&lt;/script&gt;&lt;script src="/js/snippet.js"&gt;&lt;/script&gt;
 
 
 

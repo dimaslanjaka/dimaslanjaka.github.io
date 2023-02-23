@@ -10,17 +10,19 @@
   <meta name="description" content="get hashes checksum from file using NodeJS">
   
   
-  <script class="next-config" data-name="main" type="application/json">{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+  </head><body>&lt;script class="next-config" data-name="main" type="application/json"&gt;{"hostname":"www.webmanajemen.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}&lt;/script&gt;&lt;script src="/js/config.js"&gt;&lt;/script&gt;
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous"&gt;
   
   <link rel="stylesheet" href="//www.webmanajemen.com/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css">
   <link rel="stylesheet" href="/css/snippet.css">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<body>
+
   <div class="container-fluid bg-white">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -87,27 +89,27 @@
     </div>
 
     <div class="py-4">
-      <h2 id="get-checksum-from-file"><a href="#get-checksum-from-file" class="headerlink" title="get checksum from file"></a>get checksum from file</h2><pre><code class="highlight js"><span class="keyword">const</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);
-<span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+      &lt;h2 id="get-checksum-from-file"&gt;&lt;a href="#get-checksum-from-file" class="headerlink" title="get checksum from file"&gt;&lt;/a&gt;get checksum from file&lt;/h2&gt;&lt;pre&gt;&lt;code class="highlight js"&gt;&lt;span class="keyword"&gt;const&lt;/span&gt; crypto = &lt;span class="built_in"&gt;require&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;crypto&amp;#x27;&lt;/span&gt;);
+&lt;span class="keyword"&gt;const&lt;/span&gt; fs = &lt;span class="built_in"&gt;require&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;fs&amp;#x27;&lt;/span&gt;);
 
-<span class="comment">/**</span>
-<span class="comment"> * convert file to hash</span>
-<span class="comment"> * <span class="doctag">@param</span> {<span class="type">'sha1' | 'sha256' | 'sha384' | 'sha512', 'md5'</span>} <span class="variable">alogarithm</span></span>
-<span class="comment"> * <span class="doctag">@param</span> {<span class="type">string</span>} <span class="variable">path</span></span>
-<span class="comment"> * <span class="doctag">@param</span> {<span class="type">import('crypto').BinaryToTextEncoding</span>} <span class="variable">encoding</span></span>
-<span class="comment"> * <span class="doctag">@returns</span></span>
-<span class="comment"> */</span>
-<span class="keyword">function</span> <span class="title function_">file_to_hash</span>(<span class="params">alogarithm = <span class="string">'sha1'</span>, path, encoding = <span class="string">'hex'</span></span>) {
-  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {
-    <span class="keyword">const</span> hash = crypto.<span class="title function_">createHash</span>(alogarithm);
-    <span class="keyword">const</span> rs = fs.<span class="title function_">createReadStream</span>(path);
-    rs.<span class="title function_">on</span>(<span class="string">'error'</span>, reject);
-    rs.<span class="title function_">on</span>(<span class="string">'data'</span>, <span class="function">(<span class="params">chunk</span>) =&gt;</span> hash.<span class="title function_">update</span>(chunk));
-    rs.<span class="title function_">on</span>(<span class="string">'end'</span>, <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(hash.<span class="title function_">digest</span>(encoding)));
-  });
-}</code></pre>
+&lt;span class="comment"&gt;/**&lt;/span&gt;
+&lt;span class="comment"&gt; * convert file to hash&lt;/span&gt;
+&lt;span class="comment"&gt; * &lt;span class="doctag"&gt;@param&lt;/span&gt; &amp;#123;&lt;span class="type"&gt;&amp;#x27;sha1&amp;#x27; | &amp;#x27;sha256&amp;#x27; | &amp;#x27;sha384&amp;#x27; | &amp;#x27;sha512&amp;#x27;, &amp;#x27;md5&amp;#x27;&lt;/span&gt;&amp;#125; &lt;span class="variable"&gt;alogarithm&lt;/span&gt;&lt;/span&gt;
+&lt;span class="comment"&gt; * &lt;span class="doctag"&gt;@param&lt;/span&gt; &amp;#123;&lt;span class="type"&gt;string&lt;/span&gt;&amp;#125; &lt;span class="variable"&gt;path&lt;/span&gt;&lt;/span&gt;
+&lt;span class="comment"&gt; * &lt;span class="doctag"&gt;@param&lt;/span&gt; &amp;#123;&lt;span class="type"&gt;import(&amp;#x27;crypto&amp;#x27;).BinaryToTextEncoding&lt;/span&gt;&amp;#125; &lt;span class="variable"&gt;encoding&lt;/span&gt;&lt;/span&gt;
+&lt;span class="comment"&gt; * &lt;span class="doctag"&gt;@returns&lt;/span&gt;&lt;/span&gt;
+&lt;span class="comment"&gt; */&lt;/span&gt;
+&lt;span class="keyword"&gt;function&lt;/span&gt; &lt;span class="title function_"&gt;file_to_hash&lt;/span&gt;(&lt;span class="params"&gt;alogarithm = &lt;span class="string"&gt;&amp;#x27;sha1&amp;#x27;&lt;/span&gt;, path, encoding = &lt;span class="string"&gt;&amp;#x27;hex&amp;#x27;&lt;/span&gt;&lt;/span&gt;) &amp;#123;
+  &lt;span class="keyword"&gt;return&lt;/span&gt; &lt;span class="keyword"&gt;new&lt;/span&gt; &lt;span class="title class_"&gt;Promise&lt;/span&gt;(&lt;span class="function"&gt;(&lt;span class="params"&gt;resolve, reject&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;
+    &lt;span class="keyword"&gt;const&lt;/span&gt; hash = crypto.&lt;span class="title function_"&gt;createHash&lt;/span&gt;(alogarithm);
+    &lt;span class="keyword"&gt;const&lt;/span&gt; rs = fs.&lt;span class="title function_"&gt;createReadStream&lt;/span&gt;(path);
+    rs.&lt;span class="title function_"&gt;on&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;error&amp;#x27;&lt;/span&gt;, reject);
+    rs.&lt;span class="title function_"&gt;on&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;data&amp;#x27;&lt;/span&gt;, &lt;span class="function"&gt;(&lt;span class="params"&gt;chunk&lt;/span&gt;) =&amp;gt;&lt;/span&gt; hash.&lt;span class="title function_"&gt;update&lt;/span&gt;(chunk));
+    rs.&lt;span class="title function_"&gt;on&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;end&amp;#x27;&lt;/span&gt;, &lt;span class="function"&gt;() =&amp;gt;&lt;/span&gt; &lt;span class="title function_"&gt;resolve&lt;/span&gt;(hash.&lt;span class="title function_"&gt;digest&lt;/span&gt;(encoding)));
+  &amp;#125;);
+&amp;#125;&lt;/code&gt;&lt;/pre&gt;
 
-<h2 id="Usages"><a href="#Usages" class="headerlink" title="Usages"></a>Usages</h2><pre><code class="highlight js"><span class="title function_">file_to_hash</span>(<span class="string">'sha512'</span>, <span class="string">'D:/Repositories/release/file.tgz'</span>).<span class="title function_">then</span>(<span class="variable language_">console</span>.<span class="property">log</span>);</code></pre>
+&lt;h2 id="Usages"&gt;&lt;a href="#Usages" class="headerlink" title="Usages"&gt;&lt;/a&gt;Usages&lt;/h2&gt;&lt;pre&gt;&lt;code class="highlight js"&gt;&lt;span class="title function_"&gt;file_to_hash&lt;/span&gt;(&lt;span class="string"&gt;&amp;#x27;sha512&amp;#x27;&lt;/span&gt;, &lt;span class="string"&gt;&amp;#x27;D:/Repositories/release/file.tgz&amp;#x27;&lt;/span&gt;).&lt;span class="title function_"&gt;then&lt;/span&gt;(&lt;span class="variable language_"&gt;console&lt;/span&gt;.&lt;span class="property"&gt;log&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;
 
     </div>
     <div class="py-4">
@@ -337,7 +339,7 @@
   <script src="//www.webmanajemen.com/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script><script src="/js/snippet.js"></script>
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"&gt;&lt;/script&gt;&lt;script src="/js/snippet.js"&gt;&lt;/script&gt;
 
 
 

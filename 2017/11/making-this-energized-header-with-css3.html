@@ -1,1 +1,882 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html style="display: none;" lang="en"><head>
+    <meta charset="utf-8">
+    
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://dimaslanjaka.disqus.com">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+    
+    <title>
+        
+        Making this energized header with CSS3 properties | 
+        
+        WMI
+    </title>
+
+    
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Making this energized header with CSS3 properties Patterns come and patterns go. The ones that stick around the longest do as such since they take care of a specific issue. A pattern that is well known right presently for that very reason, is sticky components; components that act typically until we">
+    <meta name="keywords" content=",css">
+    <meta name="theme-color" content="#0097A7">
+
+    
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    
+
+    
+    <script>(function () { window.lsloader = { jsRunSequence: [], jsnamemap: {}, cssnamemap: {} }; lsloader.removeLS = function (a) { try { localStorage.removeItem(a) } catch (b) { } }; lsloader.setLS = function (a, c) { try { localStorage.setItem(a, c) } catch (b) { } }; lsloader.getLS = function (a) { var c = ""; try { c = localStorage.getItem(a) } catch (b) { c = "" } return c }; versionString = "/*" + (window.materialVersion || "unknownVersion") + "*/"; lsloader.clean = function () { try { var b = []; for (var a = 0; a < localStorage.length; a++) { b.push(localStorage.key(a)) } b.forEach(function (e) { var f = lsloader.getLS(e); if (window.oldVersion) { var d = window.oldVersion.reduce(function (g, h) { return g || f.indexOf("/*" + h + "*/") !== -1 }, false); if (d) { lsloader.removeLS(e) } } }) } catch (c) { } }; lsloader.clean(); lsloader.load = function (f, a, b, d) { if (typeof b === "boolean") { d = b; b = undefined } d = d || false; b = b || function () { }; var e; e = this.getLS(f); if (e && e.indexOf(versionString) === -1) { this.removeLS(f); this.requestResource(f, a, b, d); return } if (e) { var c = e.split(versionString)[0]; if (c != a) { console.log("reload:" + a); this.removeLS(f); this.requestResource(f, a, b, d); return } e = e.split(versionString)[1]; if (d) { this.jsRunSequence.push({ name: f, code: e }); this.runjs(a, f, e) } else { document.getElementById(f).appendChild(document.createTextNode(e)); b() } } else { this.requestResource(f, a, b, d) } }; lsloader.requestResource = function (b, e, a, c) { var d = this; if (c) { this.iojs(e, b, function (h, f, g) { d.setLS(f, h + versionString + g); d.runjs(h, f, g) }) } else { this.iocss(e, b, function (f) { document.getElementById(b).appendChild(document.createTextNode(f)); d.setLS(b, e + versionString + f) }, a) } }; lsloader.iojs = function (d, b, g) { var a = this; a.jsRunSequence.push({ name: b, code: "" }); try { var f = new XMLHttpRequest(); f.open("get", d, true); f.onreadystatechange = function () { if (f.readyState == 4) { if ((f.status >= 200 && f.status < 300) || f.status == 304) { if (f.response != "") { g(d, b, f.response); return } } a.jsfallback(d, b) } }; f.send(null) } catch (c) { a.jsfallback(d, b) } }; lsloader.iocss = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.iofonts = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.runjs = function (f, c, e) { if (!!c && !!e) { for (var b in this.jsRunSequence) { if (this.jsRunSequence[b].name == c) { this.jsRunSequence[b].code = e } } } if (!!this.jsRunSequence[0] && !!this.jsRunSequence[0].code && this.jsRunSequence[0].status != "failed") { var a = document.createElement("script"); a.appendChild(document.createTextNode(this.jsRunSequence[0].code)); a.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(a); this.jsRunSequence.shift(); if (this.jsRunSequence.length > 0) { this.runjs() } } else { if (!!this.jsRunSequence[0] && this.jsRunSequence[0].status == "failed") { var d = this; var a = document.createElement("script"); a.src = this.jsRunSequence[0].path; a.type = "text/javascript"; this.jsRunSequence[0].status = "loading"; a.onload = function () { d.jsRunSequence.shift(); if (d.jsRunSequence.length > 0) { d.runjs() } }; document.body.appendChild(a) } } }; lsloader.tagLoad = function (b, a) { this.jsRunSequence.push({ name: a, code: "", path: b, status: "failed" }); this.runjs() }; lsloader.jsfallback = function (c, b) { if (!!this.jsnamemap[b]) { return } else { this.jsnamemap[b] = b } for (var a in this.jsRunSequence) { if (this.jsRunSequence[a].name == b) { this.jsRunSequence[a].code = ""; this.jsRunSequence[a].status = "failed"; this.jsRunSequence[a].path = c } } this.runjs() }; lsloader.cssfallback = function (e, c, b) { if (!!this.cssnamemap[c]) { return } else { this.cssnamemap[c] = 1 } var d = document.createElement("link"); d.type = "text/css"; d.href = e; d.rel = "stylesheet"; d.onload = d.onerror = b; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(d, a) }; lsloader.runInlineScript = function (c, b) { var a = document.getElementById(b).innerText; this.jsRunSequence.push({ name: c, code: a }); this.runjs() } })();</script>
+
+    
+    <script>function Queue() { this.dataStore = []; this.offer = b; this.poll = d; this.execNext = a; this.debug = false; this.startDebug = c; function b(e) { if (this.debug) { console.log("Offered a Queued Function.") } if (typeof e === "function") { this.dataStore.push(e) } else { console.log("You must offer a function.") } } function d() { if (this.debug) { console.log("Polled a Queued Function.") } return this.dataStore.shift() } function a() { var e = this.poll(); if (e !== undefined) { if (this.debug) { console.log("Run a Queued Function.") } e() } } function c() { this.debug = true } } var queue = new Queue();</script>
+
+    
+    
+    <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+    <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+    
+
+    
+
+    
+
+    
+
+
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    
+    
+    <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WMI">
+    <meta name="msapplication-starturl" content="https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WMI">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    
+    
+    
+
+    
+    
+
+    
+    <meta property="og:url" content="https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Making this energized header with CSS3 properties | WMI">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="Making this energized header with CSS3 properties Patterns come and patterns go. The ones that stick around the longest do as such since they take care of a specific issue. A pattern that is well known right presently for that very reason, is sticky components; components that act typically until we">
+    
+    <meta property="og:article:tag" content="css"> 
+
+    
+    <meta property="article:published_time" content="Sun Nov 19 2017 03:00:00 GMT+0700">
+    <meta property="article:modified_time" content="Sun Nov 19 2017 03:00:12 GMT+0700">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    
+    <link rel="canonical" href="https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html">
+    
+
+    
+    
+    
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html",
+    "headline": "Making this energized header with CSS3 properties",
+    "datePublished": "Sun Nov 19 2017 03:00:00 GMT+0700",
+    "dateModified": "Sun Nov 19 2017 03:00:12 GMT+0700",
+    "author": {
+        "@type": "Person",
+        "name": "Dimas Lanjaka",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "WMI",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.svg"
+        }
+    },
+    "keywords": ",css",
+    "description": "Making this energized header with CSS3 properties Patterns come and patterns go. The ones that stick around the longest do as such since they take care of a specific issue. A pattern that is well known right presently for that very reason, is sticky components; components that act typically until we",
+}
+</script>
+
+
+    
+
+    
+    
+    
+    
+
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+
+
+
+<body id="scheme-Paradox" class="lazy">
+    <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+        
+
+        
+        <main class="material-layout__content" id="main">
+
+            
+            <div id="top"></div>
+
+            
+            
+            <button class="MD-burger-icon sidebar-toggle">
+                <span id="MD-burger-id" class="MD-burger-layer"></span>
+            </button>
+            
+
+            
+
+    
+    
+    
+
+
+    
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">1.</span> <span class="post-toc-text">  The HTML</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">2.</span> <span class="post-toc-text">  The jQuery</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">3.</span> <span class="post-toc-text">  The CSS</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">4.</span> <span class="post-toc-text">  Conclusion (Finally)</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+
+
+    
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                
+                
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.webdesignerdepot.com/uploads/2014/05/thumbnail8.jpg)">
+    
+            <p class="article-headline-p">
+                Making this energized header with CSS3 properties
+            </p>
+        </div>
+
+
+
+
+
+                
+                    
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    
+    <div>
+        <strong>Dimas Lanjaka</strong>
+        <span>Nov 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    
+    
+
+    
+    
+
+    
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/css/" rel="tag">css</a>
+    </li></ul>
+    
+
+    
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=Making this energized header with CSS3 properties&amp;url=https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html&amp;pic=https://www.webmanajemen.com/img/favicon.svg&amp;searchPic=false&amp;style=simple" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Making this energized header with CSS3 properties&amp;url=https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html&amp;via=Dimas Lanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+    
+</div>
+
+                
+
+                
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><img alt="thumbnail" src="https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.webdesignerdepot.com/uploads/2014/05/thumbnail8.jpg"><br>Patterns come and patterns go. The ones that stick around the longest do as such since they take care of a specific issue. A pattern that is well known right presently for that very reason, is sticky components; components that act typically until we parchment, and after that keep up their nearness on the page by one means or another.<br>The pattern begun with sidebars, yet where it’s truly developed in notoriety is headers. Why? Since headers have a tendency to contain route, and steady route is prevalent with clients.<br><br>In this instructional exercise we’ll make a header that adheres to the highest point of the viewport, however so it doesn’t meddle with the substance, will limit it when the client looks down the page.<br>This is what it will look like when we’re set:<br>In the event that you’d get a kick out of the chance to take after alongside the code, you can&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL25ldGRuYS53ZWJkZXNpZ25lcmRlcG90LmNvbS91cGxvYWRzNy9ob3ctdG8tY3JlYXRlLWFuLWFuaW1hdGVkLXN0aWNreS1oZWFkZXItd2l0aC1jc3MzLWFuZC1qcXVlcnkvZG93bmxvYWQuemlw" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">download it here.</a><br><br><br></p><h1>  The HTML<br></h1>The HTML for our illustration is truly straightforward, all we need is a h1 inside a header. Beneath that we have a picture to compel the page to scroll with the goal that we can test the impact.<br><br><pre><code>&lt;header&gt;&lt;h1&gt;Sticky Header&lt;/h1&gt;&lt;/header&gt; <br>&lt;img src=“large-image.jpg” width=“782” height=“2000” alt=“Big Image” /&gt;<br></code><br></pre><h1>  The jQuery<br></h1>CSS moves are the most ideal method for dealing with the activity segment of our sticky header. All we’re utilizing jQuery for is recognizing the parchment position of the window.<br><br>At the point when the parchment position of the window is more prominent than 1—implying that the client has looked over downwards—then we need to include the class “sticky” to the header; else we need to expel it (if it’s there). This implies we’ll have the capacity to style the header in view of whether the “sticky” class is connected.<br><pre><code>$(window).scroll(function() { <br>if ($(this).scrollTop() &gt; 1){   <br>$(‘header’).addClass(“sticky”); <br>} <br>else{ <br>$(‘header’).removeClass(“sticky”); <br>} <br>});<br></code><span style="font-family: Times New Roman;"><span style="white-space: normal;"><br></span></span></pre>The vital thing to note is that utilizing jQuery along these lines debases nimbly; if JavaScript is crippled, the route will in any case work, the header will basically be styled in the non-sticky default state. <br><h1>  The CSS<br></h1>Our CSS is utilized to style the two unique expresses, the default state, and the “sticky” state; and to move between the two states.<br><br>To begin with, how about we include some basic styles that enhance the look of the header:<br><pre><code>header{ <br>position: fixed; <br>width: 100%; <br>text-align: center; <br>font-size: 72px; <br>line-height: 108px; <br>height: 108px; <br>background: #335C7D; <br>color: #fff; <br>font-family: ‘PT Sans’, sans-serif; <br>}<br></code><span style="font-family: Times New Roman;"><span style="white-space: normal;"><br></span></span></pre>Presently for the fun part: when the client looks down, the “sticky” class will be connected, and we can now style the header diversely to mirror that new need on the page. We likewise set the position to settled, with the goal that we’re not changing situating mid-scroll.<br><br>There are a few things we need to do: initially, we need to change the size with the goal that it goes through less screen space; we additionally need to change the shading and adjust to one side so that outwardly it doesn’t meddle excessively:<br><pre><code>header.sticky { <br>font-size: 24px; <br>line-height: 48px; <br>height: 48px; <br>background: #efc47D; <br>text-align: left; <br>padding-left: 20px; <br>}<br></code><span style="font-family: Times New Roman;"><span style="white-space: normal;"><br></span></span></pre>Actually, what you do here will rely on upon the plan you’re attempting to accomplish. You can do pretty much anything you like.<br><br>On the off chance that you test this now, you’ll see that the header changes when we look down.<br><br>Presently, to vitalize the change, we should simply set a move on the header, similar to so:<br><pre><code>transition: all 0.4s ease;<br></code><br></pre><h1>  Conclusion (Finally)<br></h1>Making this energized header with CSS3 properties and flipping the class with jQuery is to a great degree basic and includes a huge amount of UX goodness to your site outline.<br><br>In addition, the code corrupts smoothly, so there truly is no drawback to the usage.<p></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                
+                
+                    
+    
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//dimaslanjaka.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    
+        <a href="/2017/11/less-css-animasi-ajaib-magic-sphere.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    
+    <div class="section-spacer"></div>
+
+    
+    
+        <a href="/2017/11/hiding-javascript-to-increase-blogger.html" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+            
+            
+<div class="sidebar-overlay"></div>
+
+
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    
+    <div class="top-bar"></div>
+
+    
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar">
+    </div>
+
+    
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        
+        <ul class="nav sidebar-nav">
+    
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">42</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+
+        
+        
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+
+    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" class="sidebar-footer-text-a" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+</aside>
+
+            
+
+            
+            
+            <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+            
+
+            
+<footer class="mdl-mini-footer" id="bottom">
+    
+        
+        <div class="mdl-mini-footer--left-section sns-list">
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90d2l0dGVyLmNvbS90d2l0dGVy" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2ZhY2Vib29r" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button></a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+        
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;WMI
+            
+        </div>
+
+        
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="Making this energized header with CSS3 properties" title="Making this energized header with CSS3 properties">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+            
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+<script id="dsq-count-scr" src="//dimaslanjaka.disqus.com/count.js" async=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+        </main>
+    </div>
+
+
+
+</body></html>

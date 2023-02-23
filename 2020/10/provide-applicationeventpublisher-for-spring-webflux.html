@@ -1,1 +1,1129 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html style="display: none;" lang="en"><head>
+    <meta charset="utf-8">
+    
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://dimaslanjaka.disqus.com">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+    
+    <title>
+        
+        Provide ApplicationEventPublisher for Spring WebFlux | 
+        
+        WMI
+    </title>
+
+    
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Provide ApplicationEventPublisher for Spring WebFlux ApplicationEventPublisher is provided in Spring for publishing events, which is useful in some scenarios, for example, when I create an item, and another service listens for item creation and creates inventory for it. So its very practical in S">
+    <meta name="keywords" content=",java,springboot,webflux">
+    <meta name="theme-color" content="#0097A7">
+
+    
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    
+
+    
+    <script>(function () { window.lsloader = { jsRunSequence: [], jsnamemap: {}, cssnamemap: {} }; lsloader.removeLS = function (a) { try { localStorage.removeItem(a) } catch (b) { } }; lsloader.setLS = function (a, c) { try { localStorage.setItem(a, c) } catch (b) { } }; lsloader.getLS = function (a) { var c = ""; try { c = localStorage.getItem(a) } catch (b) { c = "" } return c }; versionString = "/*" + (window.materialVersion || "unknownVersion") + "*/"; lsloader.clean = function () { try { var b = []; for (var a = 0; a < localStorage.length; a++) { b.push(localStorage.key(a)) } b.forEach(function (e) { var f = lsloader.getLS(e); if (window.oldVersion) { var d = window.oldVersion.reduce(function (g, h) { return g || f.indexOf("/*" + h + "*/") !== -1 }, false); if (d) { lsloader.removeLS(e) } } }) } catch (c) { } }; lsloader.clean(); lsloader.load = function (f, a, b, d) { if (typeof b === "boolean") { d = b; b = undefined } d = d || false; b = b || function () { }; var e; e = this.getLS(f); if (e && e.indexOf(versionString) === -1) { this.removeLS(f); this.requestResource(f, a, b, d); return } if (e) { var c = e.split(versionString)[0]; if (c != a) { console.log("reload:" + a); this.removeLS(f); this.requestResource(f, a, b, d); return } e = e.split(versionString)[1]; if (d) { this.jsRunSequence.push({ name: f, code: e }); this.runjs(a, f, e) } else { document.getElementById(f).appendChild(document.createTextNode(e)); b() } } else { this.requestResource(f, a, b, d) } }; lsloader.requestResource = function (b, e, a, c) { var d = this; if (c) { this.iojs(e, b, function (h, f, g) { d.setLS(f, h + versionString + g); d.runjs(h, f, g) }) } else { this.iocss(e, b, function (f) { document.getElementById(b).appendChild(document.createTextNode(f)); d.setLS(b, e + versionString + f) }, a) } }; lsloader.iojs = function (d, b, g) { var a = this; a.jsRunSequence.push({ name: b, code: "" }); try { var f = new XMLHttpRequest(); f.open("get", d, true); f.onreadystatechange = function () { if (f.readyState == 4) { if ((f.status >= 200 && f.status < 300) || f.status == 304) { if (f.response != "") { g(d, b, f.response); return } } a.jsfallback(d, b) } }; f.send(null) } catch (c) { a.jsfallback(d, b) } }; lsloader.iocss = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.iofonts = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.runjs = function (f, c, e) { if (!!c && !!e) { for (var b in this.jsRunSequence) { if (this.jsRunSequence[b].name == c) { this.jsRunSequence[b].code = e } } } if (!!this.jsRunSequence[0] && !!this.jsRunSequence[0].code && this.jsRunSequence[0].status != "failed") { var a = document.createElement("script"); a.appendChild(document.createTextNode(this.jsRunSequence[0].code)); a.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(a); this.jsRunSequence.shift(); if (this.jsRunSequence.length > 0) { this.runjs() } } else { if (!!this.jsRunSequence[0] && this.jsRunSequence[0].status == "failed") { var d = this; var a = document.createElement("script"); a.src = this.jsRunSequence[0].path; a.type = "text/javascript"; this.jsRunSequence[0].status = "loading"; a.onload = function () { d.jsRunSequence.shift(); if (d.jsRunSequence.length > 0) { d.runjs() } }; document.body.appendChild(a) } } }; lsloader.tagLoad = function (b, a) { this.jsRunSequence.push({ name: a, code: "", path: b, status: "failed" }); this.runjs() }; lsloader.jsfallback = function (c, b) { if (!!this.jsnamemap[b]) { return } else { this.jsnamemap[b] = b } for (var a in this.jsRunSequence) { if (this.jsRunSequence[a].name == b) { this.jsRunSequence[a].code = ""; this.jsRunSequence[a].status = "failed"; this.jsRunSequence[a].path = c } } this.runjs() }; lsloader.cssfallback = function (e, c, b) { if (!!this.cssnamemap[c]) { return } else { this.cssnamemap[c] = 1 } var d = document.createElement("link"); d.type = "text/css"; d.href = e; d.rel = "stylesheet"; d.onload = d.onerror = b; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(d, a) }; lsloader.runInlineScript = function (c, b) { var a = document.getElementById(b).innerText; this.jsRunSequence.push({ name: c, code: a }); this.runjs() } })();</script>
+
+    
+    <script>function Queue() { this.dataStore = []; this.offer = b; this.poll = d; this.execNext = a; this.debug = false; this.startDebug = c; function b(e) { if (this.debug) { console.log("Offered a Queued Function.") } if (typeof e === "function") { this.dataStore.push(e) } else { console.log("You must offer a function.") } } function d() { if (this.debug) { console.log("Polled a Queued Function.") } return this.dataStore.shift() } function a() { var e = this.poll(); if (e !== undefined) { if (this.debug) { console.log("Run a Queued Function.") } e() } } function c() { this.debug = true } } var queue = new Queue();</script>
+
+    
+    
+    <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+    <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+    
+
+    
+
+    
+
+    
+
+
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    
+    
+    <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WMI">
+    <meta name="msapplication-starturl" content="https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WMI">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    
+    
+    
+
+    
+    
+
+    
+    <meta property="og:url" content="https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Provide ApplicationEventPublisher for Spring WebFlux | WMI">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="Provide ApplicationEventPublisher for Spring WebFlux ApplicationEventPublisher is provided in Spring for publishing events, which is useful in some scenarios, for example, when I create an item, and another service listens for item creation and creates inventory for it. So its very practical in S">
+    
+    <meta property="og:article:tag" content="java"> 
+    <meta property="og:article:tag" content="springboot"> 
+    <meta property="og:article:tag" content="webflux"> 
+
+    
+    <meta property="article:published_time" content="Thu Nov 10 2022 01:35:48 GMT+0700">
+    <meta property="article:modified_time" content="Thu Nov 10 2022 02:08:23 GMT+0700">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    
+    <link rel="canonical" href="https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html">
+    
+
+    
+    
+    
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html",
+    "headline": "Provide ApplicationEventPublisher for Spring WebFlux",
+    "datePublished": "Thu Nov 10 2022 01:35:48 GMT+0700",
+    "dateModified": "Thu Nov 10 2022 02:08:23 GMT+0700",
+    "author": {
+        "@type": "Person",
+        "name": "Dimas Lanjaka",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "WMI",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.svg"
+        }
+    },
+    "keywords": ",java,springboot,webflux",
+    "description": "Provide ApplicationEventPublisher for Spring WebFlux ApplicationEventPublisher is provided in Spring for publishing events, which is useful in some scenarios, for example, when I create an item, and another service listens for item creation and creates inventory for it. So its very practical in S",
+}
+</script>
+
+
+    
+
+    
+    
+    
+    
+
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+
+
+
+<body id="scheme-Paradox" class="lazy">
+    <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+        
+
+        
+        <main class="material-layout__content" id="main">
+
+            
+            <div id="top"></div>
+
+            
+            
+            <button class="MD-burger-icon sidebar-toggle">
+                <span id="MD-burger-id" class="MD-burger-layer"></span>
+            </button>
+            
+
+            
+
+    
+    
+    
+
+
+    
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Implement-the-Event-service"><span class="post-toc-number">1.</span> <span class="post-toc-text">Implement the Event service</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ObjectEventNotifier"><span class="post-toc-number">2.</span> <span class="post-toc-text">ObjectEventNotifier</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EventListener"><span class="post-toc-number">3.</span> <span class="post-toc-text">EventListener</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EventService"><span class="post-toc-number">4.</span> <span class="post-toc-text">EventService</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Try-the-written-Event-service"><span class="post-toc-number">5.</span> <span class="post-toc-text">Try the written Event service</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#The-source-code-is-here"><span class="post-toc-number">6.</span> <span class="post-toc-text">The source code is here</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+
+
+    
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                
+                
+    
+    
+        
+            
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Provide ApplicationEventPublisher for Spring WebFlux
+            </p>
+        </div>
+
+
+
+
+
+                
+                    
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    
+    <div>
+        <strong>Dimas Lanjaka</strong>
+        <span>Nov 10, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    
+    
+
+    
+    
+
+    
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/java/" rel="tag">java</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/webflux/" rel="tag">webflux</a>
+    </li></ul>
+    
+
+    
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=Provide ApplicationEventPublisher for Spring WebFlux&amp;url=https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html&amp;pic=https://www.webmanajemen.com/img/favicon.svg&amp;searchPic=false&amp;style=simple" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Provide ApplicationEventPublisher for Spring WebFlux&amp;url=https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html&amp;via=Dimas Lanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+    
+</div>
+
+                
+
+                
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>ApplicationEventPublisher is provided in Spring for publishing events, which is useful in some scenarios, for example, when I create an item, and another service listens for item creation and creates inventory for it. So it’s very practical in Spring MVC, and I often use it for decoupling, but when I switch to WebFlux, it’s embarrassing. Because ApplicationEventPublisher is a synchronous operation, it does not support reactive, ie streaming operations.</p>
+<p>So, I implement a similar publish-subscribe pattern in WebFlux to replace ApplicationEventPublisher</p>
+<h2 id="Implement-the-Event-service">Implement the Event service</h2>
+<p>Our event service is divided into 3 parts</p>
+<ul>
+<li>Encapsulation of published objects</li>
+<li>Design a common listening interface</li>
+<li>Provide an object like ApplicationEventPublisher to publish events</li>
+</ul>
+<h2 id="ObjectEventNotifier">ObjectEventNotifier</h2>
+<p>First, encapsulate the published object. This step is unavoidable even if it is ApplicationEventPublisher. Otherwise, you listen to an object, but you don’t know whether the object is created or deleted. What should you do?</p>
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjectEventNotifier</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">ResolvableTypeProvider</span> {
+
+    <span class="keyword">private</span> <span class="keyword">final</span> T object;
+    <span class="keyword">private</span> <span class="keyword">final</span> Type type;
+
+    <span class="keyword">private</span> <span class="title function_">ObjectEventNotifier</span><span class="params">(T object, Type type)</span> {
+        <span class="built_in">this</span>.object = object;
+        <span class="built_in">this</span>.type = type;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; ObjectEventNotifier&lt;T&gt; <span class="title function_">from</span><span class="params">(T object, Type type)</span> {
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ObjectEventNotifier</span>&lt;&gt;(object, type);
+    }
+
+    <span class="meta">@Override</span>
+    <span class="keyword">public</span> ResolvableType <span class="title function_">getResolvableType</span><span class="params">()</span> {
+        <span class="keyword">return</span> ResolvableType.forClassWithGenerics(getClass(), ResolvableType.forInstance(object));
+    }
+
+    <span class="keyword">public</span> T <span class="title function_">getObject</span><span class="params">()</span> {
+        <span class="keyword">return</span> <span class="built_in">this</span>.object;
+    }
+
+    <span class="keyword">public</span> Type <span class="title function_">getType</span><span class="params">()</span> {
+        <span class="keyword">return</span> <span class="built_in">this</span>.type;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Type</span> {
+        Create, Update, Delete
+    }
+}</code></pre>
+<p>The above class, according to the enumeration Type, classifies objects so that they can be handled differently in different situations</p>
+<h2 id="EventListener">EventListener</h2>
+<p>Next, design the listening interface. Generally speaking, we choose different consumers according to the type of class. Therefore, the simple listening interface is as follows</p>
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">EventListener</span>&lt;T&gt; {
+
+    Class&lt;T&gt; <span class="title function_">target</span><span class="params">()</span>;
+
+    Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;T&gt; consumer)</span>;
+
+}</code></pre>
+<p>But in this way, there is a problem, when we create a listening service, it will be like the following</p>
+<pre><code class="highlight java"><span class="meta">@Bean</span>
+<span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener</span><span class="params">()</span> {
+    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">EventListener</span>&lt;&gt;() {
+        <span class="meta">@Override</span>
+        <span class="keyword">public</span> Class&lt;Goods&gt; <span class="title function_">target</span><span class="params">()</span> {
+            <span class="keyword">return</span> Goods.class;
+        }
+        <span class="meta">@Override</span>
+        <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; consumer)</span> {
+            <span class="comment">// ...</span>
+        }
+    };
+}</code></pre>
+<p>This code is really hard to describe, so a simplified version of the creation method must be provided for the listening interface</p>
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">EventListener</span>&lt;T&gt; {
+    <span class="comment">//...</span>
+    <span class="keyword">static</span> &lt;T&gt; EventListener&lt;T&gt; <span class="title function_">register</span><span class="params">(Class&lt;T&gt; target, Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; fn)</span> {
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">EventListener</span>&lt;&gt;() {
+            <span class="meta">@Override</span>
+            <span class="keyword">public</span> Class&lt;T&gt; <span class="title function_">target</span><span class="params">()</span> {
+                <span class="keyword">return</span> target;
+            }
+            <span class="meta">@Override</span>
+            <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;T&gt; consumer)</span> {
+                <span class="keyword">return</span> fn.apply(consumer);
+            }
+        };
+    }
+}
+
+<span class="meta">@Bean</span>
+<span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener</span><span class="params">()</span> {
+    <span class="keyword">return</span> EventListener.register(Goods.class, notifier -&gt; ...);
+}</code></pre>
+<p>so much better</p>
+<h2 id="EventService">EventService</h2>
+<p>Finally, implement our most important event service, which is divided into two parts</p>
+<ul>
+<li>Receive listening services and classify based on class type</li>
+<li>Accept the published object, encapsulate and select the corresponding monitoring service consumption according to the type</li>
+</ul>
+<p>In the first part, since we use Spring boot, we can let spring give us the listening service we want. We only need to store the EventListener in different Maps according to the type.</p>
+<pre><code class="highlight java"><span class="meta">@Service</span>
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventService</span> {
+
+    <span class="keyword">public</span> Map&lt;String, List&lt;Object&gt;&gt; store = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();
+
+    <span class="meta">@SuppressWarnings({"unchecked", "rawtypes"})</span>
+    <span class="keyword">public</span> <span class="title function_">EventService</span><span class="params">(List&lt;EventListener&gt; listeners)</span> {
+        listeners.forEach(listener -&gt; {
+            <span class="built_in">this</span>.register(listener.target(), listener::consume);
+        });
+    }
+
+    <span class="keyword">public</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">register</span><span class="params">(Class&lt;T&gt; target, Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; consumer)</span> {
+        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> target.getName();
+        List&lt;Object&gt; consumers = store.getOrDefault(name, <span class="literal">null</span>);
+        <span class="keyword">if</span> (consumers == <span class="literal">null</span>) {
+            consumers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();
+            store.put(name, consumers);
+        }
+        consumers.add(consumer);
+    }
+}</code></pre>
+<p>The second part, this is the difficulty in reactive. The reactive is non-blocking, so the consumer also needs to return a non-blocking result. The previous interface returned YES <code>Publisher&lt;Void&gt;</code> because this is an unprocessed result.</p>
+<pre><code class="highlight java"><span class="meta">@Service</span>
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventService</span> {
+
+    <span class="keyword">public</span> Map&lt;String, List&lt;Object&gt;&gt; store = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();
+
+    <span class="meta">@SuppressWarnings({"unchecked"})</span>
+    <span class="keyword">public</span> &lt;T&gt; Flux&lt;Void&gt; <span class="title function_">publish</span><span class="params">(ObjectEventNotifier.Type type, T target)</span> {
+        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> target.getClass().getName();
+        List&lt;Object&gt; consumers = store.getOrDefault(name, <span class="literal">null</span>);
+        <span class="keyword">if</span> (consumers == <span class="literal">null</span>) {
+            <span class="keyword">return</span> Flux.empty();
+        }
+        <span class="keyword">return</span> Flux
+            .fromIterable(consumers)
+            .flatMap(obj -&gt; {
+                Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; consumer = (Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt;) obj;
+                Publisher&lt;Void&gt; apply = consumer.apply(ObjectEventNotifier.from(target, type));
+                <span class="keyword">return</span> apply == <span class="literal">null</span> ? Mono.empty() : apply;
+            });
+    }
+
+    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishCreate</span><span class="params">(T target)</span> {
+        <span class="keyword">return</span> <span class="built_in">this</span>.publish(ObjectEventNotifier.Type.Create, target)
+            .then(Mono.just(target));
+    }
+
+    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishUpdate</span><span class="params">(T target)</span> {
+        <span class="keyword">return</span> <span class="built_in">this</span>.publish(ObjectEventNotifier.Type.Update, target)
+            .then(Mono.just(target));
+    }
+
+    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishDelete</span><span class="params">(T target)</span> {
+        <span class="keyword">return</span> <span class="built_in">this</span>.publish(ObjectEventNotifier.Type.Delete, target)
+            .then(Mono.just(target));
+    }
+
+}</code></pre>
+<p>Mainly the code of the publish part, the following publishCreate, etc., are for quick operation</p>
+<h2 id="Try-the-written-Event-service">Try the written Event service</h2>
+<p>Create a cargo service</p>
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GoodsService</span> {
+
+    <span class="meta">@Resource</span>
+    <span class="keyword">private</span> EventService eventService;
+
+    <span class="keyword">public</span> Mono&lt;Goods&gt; <span class="title function_">createGoods</span><span class="params">()</span> {
+        <span class="type">Goods</span> <span class="variable">apple</span> <span class="operator">=</span> Goods.of(<span class="number">1</span>, <span class="string">"苹果"</span>);
+        <span class="keyword">return</span> Mono.just(apple)
+            .flatMap(eventService::publishCreate);
+    }
+
+}</code></pre>
+<p>Create a monitoring service for Goods (create two, after all, this kind of monitoring is generally one-to-many)</p>
+<pre><code class="highlight java"><span class="meta">@Configuration</span>
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerConfiguration</span> {
+
+    <span class="meta">@Bean</span>
+    <span class="keyword">public</span> GoodsService <span class="title function_">goodsService</span><span class="params">()</span> {
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">GoodsService</span>();
+    }
+
+    <span class="meta">@Bean</span>
+    <span class="keyword">public</span> StockService <span class="title function_">stockService</span><span class="params">()</span> {
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">StockService</span>();
+    }
+
+    <span class="meta">@Bean</span>
+    <span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener1</span><span class="params">(StockService stockService)</span> {
+        <span class="keyword">return</span> EventListener.register(Goods.class, stockService::initStockWithGoods1);
+    }
+
+    <span class="meta">@Bean</span>
+    <span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener2</span><span class="params">(StockService stockService)</span> {
+        <span class="keyword">return</span> EventListener.register(Goods.class, stockService::initStockWithGoods2);
+    }
+
+}
+
+<span class="meta">@Slf4j</span>
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StockService</span> {
+
+    <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">initStockWithGoods1</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; notifier)</span> {
+        ObjectEventNotifier.<span class="type">Type</span> <span class="variable">type</span> <span class="operator">=</span> notifier.getType();
+        <span class="keyword">if</span> (type == ObjectEventNotifier.Type.Create) {
+            log.error(<span class="string">"Create stock for: "</span> + notifier.getObject().getName());
+            <span class="keyword">return</span> Mono.just(Stock.of(<span class="number">1</span>, <span class="number">0</span>)).then();
+        }
+        <span class="keyword">return</span> Mono.empty();
+    }
+
+    <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">initStockWithGoods2</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; notifier)</span> {
+        log.error(<span class="string">"Another listener for Goods: "</span> + notifier.getObject().getName());
+        <span class="keyword">return</span> Mono.empty();
+    }
+
+}</code></pre>
+<p>Create a test case that calls create apple</p>
+<pre><code class="highlight java"><span class="meta">@SpringBootTest</span>
+<span class="keyword">class</span> <span class="title class_">GoodsServiceTest</span> {
+
+    <span class="meta">@Resource</span>
+    GoodsService goodsService;
+
+    <span class="meta">@Test</span>
+    <span class="keyword">void</span> <span class="title function_">createGoods</span><span class="params">()</span> {
+        goodsService.createGoods()
+            .as(StepVerifier::create)
+            .expectNextCount(<span class="number">1</span>)
+            .verifyComplete();
+    }
+}</code></pre>
+<p>Running, we can see the following results, indicating that when the apple was created, two methods in the inventory were called</p>
+<h2 id="The-source-code-is-here">The source code is here</h2>
+<blockquote>
+<p>Source code: <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2ppYW5ndGotbGFiL2V4LWZsdXgtZXZlbnQ=" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">https://github.com/jiangtj-lab/ex-flux-event</a></p>
+</blockquote>
+<blockquote>
+<p>The progress of Spring’s support of the reactive technology stack for ApplicationEventPublisher can be seen in this Issue: <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL3NwcmluZy1wcm9qZWN0cy9zcHJpbmctZnJhbWV3b3JrL2lzc3Vlcy8yMTAyNQ==" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">https://github.com/spring-projects/spring-framework/issues/21025</a></p>
+</blockquote>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                
+                
+                    
+    
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//dimaslanjaka.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    
+        <a href="/NodeJS/npm-yarn-package-agent-for-china.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    
+    <div class="section-spacer"></div>
+
+    
+    
+        <a href="/2022/10/vscode-settings-json-for-nunjucks-ejs.html" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+            
+            
+<div class="sidebar-overlay"></div>
+
+
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    
+    <div class="top-bar"></div>
+
+    
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar">
+    </div>
+
+    
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        
+        <ul class="nav sidebar-nav">
+    
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">42</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+
+        
+        
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+
+    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" class="sidebar-footer-text-a" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+</aside>
+
+            
+
+            
+            
+            <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+            
+
+            
+<footer class="mdl-mini-footer" id="bottom">
+    
+        
+        <div class="mdl-mini-footer--left-section sns-list">
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90d2l0dGVyLmNvbS90d2l0dGVy" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2ZhY2Vib29r" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button></a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+        
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;WMI
+            
+        </div>
+
+        
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="Provide ApplicationEventPublisher for Spring WebFlux" title="Provide ApplicationEventPublisher for Spring WebFlux">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+            
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+<script id="dsq-count-scr" src="//dimaslanjaka.disqus.com/count.js" async=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+        </main>
+    </div>
+
+
+
+</body></html>

@@ -1,1 +1,40 @@
-class adblock{scriptMethod(){return new Promise(((e,o)=>{const t=document.createElement("script");t.type="text/javascript",t.id="adblock-script-test",t.async=!0,t.src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",t.onerror=function(){window.adblock=!0,console.log("adblock enabled"),document.querySelector("#adblock-script-test").remove(),o(new Error("adblock enabled"))},t.onload=function(){console.log("adblock disabled"),document.querySelector("#adblock-script-test").remove(),e(null)};var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(t,a)}))}ajaxMethod(){return new Promise(((e,o)=>{fetch("//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js").then((e=>e.text())).then((o=>{console.log("adblock disabled"),e(null)})).catch((()=>{console.log("adblock enabled"),o(new Error("adblock enabled"))}))}))}}
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+class adblock {
+  scriptMethod() {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.id = 'adblock-script-test';
+      script.async = !0;
+      script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.onerror = function () {
+        window.adblock = !0;
+        console.log('adblock enabled');
+        document.querySelector('#adblock-script-test').remove();
+        reject(new Error('adblock enabled'));
+      };
+      script.onload = function () {
+        console.log('adblock disabled');
+        document.querySelector('#adblock-script-test').remove();
+        resolve(null);
+      };
+      var firstScript = document.getElementsByTagName('script')[0];
+      firstScript.parentNode.insertBefore(script, firstScript);
+    });
+  }
+  ajaxMethod() {
+    return new Promise((resolve, reject) => {
+      fetch('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+        .then((response) => response.text())
+        .then((_response) => {
+          console.log('adblock disabled');
+          resolve(null);
+        })
+        .catch(() => {
+          console.log('adblock enabled');
+          reject(new Error('adblock enabled'));
+        });
+    });
+  }
+}

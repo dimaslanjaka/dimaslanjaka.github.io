@@ -1,1 +1,963 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html style="display: none;" lang="en"><head>
+    <meta charset="utf-8">
+    
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://dimaslanjaka.disqus.com">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+    
+    <title>
+        
+        About | 
+        
+        WMI
+    </title>
+
+    
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    
+
+    
+    <script>(function () { window.lsloader = { jsRunSequence: [], jsnamemap: {}, cssnamemap: {} }; lsloader.removeLS = function (a) { try { localStorage.removeItem(a) } catch (b) { } }; lsloader.setLS = function (a, c) { try { localStorage.setItem(a, c) } catch (b) { } }; lsloader.getLS = function (a) { var c = ""; try { c = localStorage.getItem(a) } catch (b) { c = "" } return c }; versionString = "/*" + (window.materialVersion || "unknownVersion") + "*/"; lsloader.clean = function () { try { var b = []; for (var a = 0; a < localStorage.length; a++) { b.push(localStorage.key(a)) } b.forEach(function (e) { var f = lsloader.getLS(e); if (window.oldVersion) { var d = window.oldVersion.reduce(function (g, h) { return g || f.indexOf("/*" + h + "*/") !== -1 }, false); if (d) { lsloader.removeLS(e) } } }) } catch (c) { } }; lsloader.clean(); lsloader.load = function (f, a, b, d) { if (typeof b === "boolean") { d = b; b = undefined } d = d || false; b = b || function () { }; var e; e = this.getLS(f); if (e && e.indexOf(versionString) === -1) { this.removeLS(f); this.requestResource(f, a, b, d); return } if (e) { var c = e.split(versionString)[0]; if (c != a) { console.log("reload:" + a); this.removeLS(f); this.requestResource(f, a, b, d); return } e = e.split(versionString)[1]; if (d) { this.jsRunSequence.push({ name: f, code: e }); this.runjs(a, f, e) } else { document.getElementById(f).appendChild(document.createTextNode(e)); b() } } else { this.requestResource(f, a, b, d) } }; lsloader.requestResource = function (b, e, a, c) { var d = this; if (c) { this.iojs(e, b, function (h, f, g) { d.setLS(f, h + versionString + g); d.runjs(h, f, g) }) } else { this.iocss(e, b, function (f) { document.getElementById(b).appendChild(document.createTextNode(f)); d.setLS(b, e + versionString + f) }, a) } }; lsloader.iojs = function (d, b, g) { var a = this; a.jsRunSequence.push({ name: b, code: "" }); try { var f = new XMLHttpRequest(); f.open("get", d, true); f.onreadystatechange = function () { if (f.readyState == 4) { if ((f.status >= 200 && f.status < 300) || f.status == 304) { if (f.response != "") { g(d, b, f.response); return } } a.jsfallback(d, b) } }; f.send(null) } catch (c) { a.jsfallback(d, b) } }; lsloader.iocss = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.iofonts = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.runjs = function (f, c, e) { if (!!c && !!e) { for (var b in this.jsRunSequence) { if (this.jsRunSequence[b].name == c) { this.jsRunSequence[b].code = e } } } if (!!this.jsRunSequence[0] && !!this.jsRunSequence[0].code && this.jsRunSequence[0].status != "failed") { var a = document.createElement("script"); a.appendChild(document.createTextNode(this.jsRunSequence[0].code)); a.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(a); this.jsRunSequence.shift(); if (this.jsRunSequence.length > 0) { this.runjs() } } else { if (!!this.jsRunSequence[0] && this.jsRunSequence[0].status == "failed") { var d = this; var a = document.createElement("script"); a.src = this.jsRunSequence[0].path; a.type = "text/javascript"; this.jsRunSequence[0].status = "loading"; a.onload = function () { d.jsRunSequence.shift(); if (d.jsRunSequence.length > 0) { d.runjs() } }; document.body.appendChild(a) } } }; lsloader.tagLoad = function (b, a) { this.jsRunSequence.push({ name: a, code: "", path: b, status: "failed" }); this.runjs() }; lsloader.jsfallback = function (c, b) { if (!!this.jsnamemap[b]) { return } else { this.jsnamemap[b] = b } for (var a in this.jsRunSequence) { if (this.jsRunSequence[a].name == b) { this.jsRunSequence[a].code = ""; this.jsRunSequence[a].status = "failed"; this.jsRunSequence[a].path = c } } this.runjs() }; lsloader.cssfallback = function (e, c, b) { if (!!this.cssnamemap[c]) { return } else { this.cssnamemap[c] = 1 } var d = document.createElement("link"); d.type = "text/css"; d.href = e; d.rel = "stylesheet"; d.onload = d.onerror = b; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(d, a) }; lsloader.runInlineScript = function (c, b) { var a = document.getElementById(b).innerText; this.jsRunSequence.push({ name: c, code: a }); this.runjs() } })();</script>
+
+    
+    <script>function Queue() { this.dataStore = []; this.offer = b; this.poll = d; this.execNext = a; this.debug = false; this.startDebug = c; function b(e) { if (this.debug) { console.log("Offered a Queued Function.") } if (typeof e === "function") { this.dataStore.push(e) } else { console.log("You must offer a function.") } } function d() { if (this.debug) { console.log("Polled a Queued Function.") } return this.dataStore.shift() } function a() { var e = this.poll(); if (e !== undefined) { if (this.debug) { console.log("Run a Queued Function.") } e() } } function c() { this.debug = true } } var queue = new Queue();</script>
+
+    
+    
+    <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+    <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+    
+
+    
+
+    
+
+    
+
+
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    
+    
+    <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WMI">
+    <meta name="msapplication-starturl" content="https://www.webmanajemen.com/about/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WMI">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    
+    
+    
+
+    
+    
+
+    
+    <meta property="og:url" content="https://www.webmanajemen.com/about/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="About | WMI">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    
+
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    
+    <link rel="canonical" href="https://www.webmanajemen.com/about/index.html">
+    
+
+    
+    
+    
+
+
+
+    
+
+    
+    
+    
+    
+
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+
+
+
+<body id="scheme-Paradox" class="lazy">
+    <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+        
+
+        
+        <main class="material-layout__content" id="main">
+
+            
+            <div id="top"></div>
+
+            
+            
+            <button class="MD-burger-icon sidebar-toggle">
+                <span id="MD-burger-id" class="MD-burger-layer"></span>
+            </button>
+            
+
+            
+
+
+
+
+    
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                
+                
+    
+    
+        
+            
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                About
+            </p>
+        </div>
+
+
+
+
+
+                
+                    
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    
+    <div>
+        <strong>Dimas Lanjaka</strong>
+        <span>Jul 28, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=About&amp;url=https://www.webmanajemen.com/about/index.html&amp;pic=https://www.webmanajemen.com/img/favicon.svg&amp;searchPic=false&amp;style=simple" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=About&amp;url=https://www.webmanajemen.com/about/index.html&amp;via=Dimas Lanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/about/index.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://www.webmanajemen.com/about/index.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+    
+</div>
+
+                
+
+                
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1>About this Site</h1>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2ZvcnRoZWJhZGdlLmNvbQ==" alt="About" title="About"><img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="forthebadge"></a></p>
+
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About">![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAuMzgiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAyMDAuMzggMzUiPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9IjAiIHk9IjAiIHdpZHRoPSI5Ny43MTAwMDAwMDAwMDAwMSIgaGVpZ2h0PSIzNSIgZmlsbD0iIzMxQzRGMyIvPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9Ijk1LjcxMDAwMDAwMDAwMDAxIiB5PSIwIiB3aWR0aD0iMTA0LjY2OTk5OTk5OTk5OTk5IiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzg5QUQ1Ii8+PHBhdGggY2xhc3M9InN2Z19fdGV4dCIgZD0iTTE3LjMzIDIyTDE0LjIyIDIyTDE0LjIyIDEzLjQ3TDE3LjE0IDEzLjQ3UTE4LjU5IDEzLjQ3IDE5LjM0IDE0LjA1UTIwLjEwIDE0LjYzIDIwLjEwIDE1Ljc4TDIwLjEwIDE1Ljc4UTIwLjEwIDE2LjM2IDE5Ljc4IDE2LjgzUTE5LjQ3IDE3LjMwIDE4Ljg2IDE3LjU2TDE4Ljg2IDE3LjU2UTE5LjU1IDE3Ljc1IDE5LjkzIDE4LjI2UTIwLjMxIDE4Ljc4IDIwLjMxIDE5LjUxTDIwLjMxIDE5LjUxUTIwLjMxIDIwLjcxIDE5LjUzIDIxLjM2UTE4Ljc2IDIyIDE3LjMzIDIyTDE3LjMzIDIyWk0xNS43MCAxOC4xNUwxNS43MCAyMC44MkwxNy4zNSAyMC44MlExOC4wNCAyMC44MiAxOC40NCAyMC40N1ExOC44MyAyMC4xMyAxOC44MyAxOS41MUwxOC44MyAxOS41MVExOC44MyAxOC4xOCAxNy40NyAxOC4xNUwxNy40NyAxOC4xNUwxNS43MCAxOC4xNVpNMTUuNzAgMTQuNjZMMTUuNzAgMTcuMDZMMTcuMTUgMTcuMDZRMTcuODQgMTcuMDYgMTguMjMgMTYuNzVRMTguNjIgMTYuNDMgMTguNjIgMTUuODZMMTguNjIgMTUuODZRMTguNjIgMTUuMjMgMTguMjYgMTQuOTVRMTcuOTAgMTQuNjYgMTcuMTQgMTQuNjZMMTcuMTQgMTQuNjZMMTUuNzAgMTQuNjZaTTI0LjY0IDE5LjE2TDI0LjY0IDE5LjE2TDI0LjY0IDEzLjQ3TDI2LjEyIDEzLjQ3TDI2LjEyIDE5LjE4UTI2LjEyIDIwLjAzIDI2LjU1IDIwLjQ4UTI2Ljk4IDIwLjkzIDI3LjgzIDIwLjkzTDI3LjgzIDIwLjkzUTI5LjU0IDIwLjkzIDI5LjU0IDE5LjEzTDI5LjU0IDE5LjEzTDI5LjU0IDEzLjQ3TDMxLjAyIDEzLjQ3TDMxLjAyIDE5LjE3UTMxLjAyIDIwLjUzIDMwLjE1IDIxLjMyUTI5LjI4IDIyLjEyIDI3LjgzIDIyLjEyTDI3LjgzIDIyLjEyUTI2LjM2IDIyLjEyIDI1LjUwIDIxLjMzUTI0LjY0IDIwLjU1IDI0LjY0IDE5LjE2Wk0zNy4xNSAyMkwzNS42NyAyMkwzNS42NyAxMy40N0wzNy4xNSAxMy40N0wzNy4xNSAyMlpNNDcuMzIgMjJMNDEuOTYgMjJMNDEuOTYgMTMuNDdMNDMuNDQgMTMuNDdMNDMuNDQgMjAuODJMNDcuMzIgMjAuODJMNDcuMzIgMjJaTTUzLjEyIDE0LjY2TDUwLjQ5IDE0LjY2TDUwLjQ5IDEzLjQ3TDU3LjI1IDEzLjQ3TDU3LjI1IDE0LjY2TDU0LjU5IDE0LjY2TDU0LjU5IDIyTDUzLjEyIDIyTDUzLjEyIDE0LjY2Wk03MC4xMCAyMkw2Ni45OSAyMkw2Ni45OSAxMy40N0w2OS45MSAxMy40N1E3MS4zNiAxMy40NyA3Mi4xMSAxNC4wNVE3Mi44NyAxNC42MyA3Mi44NyAxNS43OEw3Mi44NyAxNS43OFE3Mi44NyAxNi4zNiA3Mi41NSAxNi44M1E3Mi4yNCAxNy4zMCA3MS42MyAxNy41Nkw3MS42MyAxNy41NlE3Mi4zMiAxNy43NSA3Mi43MCAxOC4yNlE3My4wNyAxOC43OCA3My4wNyAxOS41MUw3My4wNyAxOS41MVE3My4wNyAyMC43MSA3Mi4zMCAyMS4zNlE3MS41MyAyMiA3MC4xMCAyMkw3MC4xMCAyMlpNNjguNDcgMTguMTVMNjguNDcgMjAuODJMNzAuMTIgMjAuODJRNzAuODEgMjAuODIgNzEuMjEgMjAuNDdRNzEuNjAgMjAuMTMgNzEuNjAgMTkuNTFMNzEuNjAgMTkuNTFRNzEuNjAgMTguMTggNzAuMjQgMTguMTVMNzAuMjQgMTguMTVMNjguNDcgMTguMTVaTTY4LjQ3IDE0LjY2TDY4LjQ3IDE3LjA2TDY5LjkyIDE3LjA2UTcwLjYxIDE3LjA2IDcxLjAwIDE2Ljc1UTcxLjM5IDE2LjQzIDcxLjM5IDE1Ljg2TDcxLjM5IDE1Ljg2UTcxLjM5IDE1LjIzIDcxLjAzIDE0Ljk1UTcwLjY3IDE0LjY2IDY5LjkxIDE0LjY2TDY5LjkxIDE0LjY2TDY4LjQ3IDE0LjY2Wk03OS41OCAxOC44Nkw3Ni43MiAxMy40N0w3OC4zNyAxMy40N0w4MC4zMyAxNy41MUw4Mi4yOSAxMy40N0w4My45MyAxMy40N0w4MS4wNyAxOC44Nkw4MS4wNyAyMkw3OS41OCAyMkw3OS41OCAxOC44NloiIGZpbGw9IiNGRkZGRkYiLz48cGF0aCBjbGFzcz0ic3ZnX190ZXh0IiBkPSJNMTE2LjI4IDIyTDEwOS45MCAyMkwxMDkuOTAgMTMuNjBMMTEyLjI4IDEzLjYwTDExMi4yOCAyMC4xMUwxMTYuMjggMjAuMTFMMTE2LjI4IDIyWk0xMTkuODIgMjEuMzRMMTE5LjgyIDIxLjM0TDEyMC42OCAxOS41NVExMjEuMTcgMTkuODggMTIxLjc5IDIwLjA3UTEyMi40MSAyMC4yNSAxMjMuMDEgMjAuMjVMMTIzLjAxIDIwLjI1UTEyMy42MiAyMC4yNSAxMjMuOTggMjAuMDJRMTI0LjM0IDE5Ljc5IDEyNC4zNCAxOS4zN0wxMjQuMzQgMTkuMzdRMTI0LjM0IDE4LjU1IDEyMy4wNiAxOC41NUwxMjMuMDYgMTguNTVMMTIyLjA2IDE4LjU1TDEyMi4wNiAxNy4wNUwxMjMuNTYgMTUuNDRMMTIwLjI1IDE1LjQ0TDEyMC4yNSAxMy42MEwxMjYuMzIgMTMuNjBMMTI2LjMyIDE1LjA5TDEyNC41OCAxNi45NlExMjUuNjIgMTcuMTggMTI2LjE4IDE3LjgyUTEyNi43NCAxOC40NiAxMjYuNzQgMTkuMzdMMTI2Ljc0IDE5LjM3UTEyNi43NCAyMC4xMSAxMjYuMzQgMjAuNzVRMTI1Ljk0IDIxLjM5IDEyNS4xMSAyMS43OFExMjQuMjkgMjIuMTcgMTIzLjA4IDIyLjE3TDEyMy4wOCAyMi4xN1ExMjIuMTkgMjIuMTcgMTIxLjMyIDIxLjk1UTEyMC40NSAyMS43NCAxMTkuODIgMjEuMzRaTTEzMy43NSAyMkwxMzEuNDIgMjJMMTMxLjQyIDEzLjYwTDEzMy4zOCAxMy42MEwxMzcuMDkgMTguMDdMMTM3LjA5IDEzLjYwTDEzOS40MSAxMy42MEwxMzkuNDEgMjJMMTM3LjQ2IDIyTDEzMy43NSAxNy41MkwxMzMuNzUgMjJaTTE0OC41MCAyMC4zOUwxNDQuMDYgMjAuMzlMMTQ0LjA2IDE4Ljg0TDE0Ny44MyAxMy42MEwxNTAuMjkgMTMuNjBMMTQ2Ljg3IDE4LjUxTDE0OC41NyAxOC41MUwxNDguNTcgMTcuMDhMMTUwLjgxIDE3LjA4TDE1MC44MSAxOC41MUwxNTIuMDYgMTguNTFMMTUyLjA2IDIwLjM5TDE1MC44MSAyMC4zOUwxNTAuODEgMjJMMTQ4LjUwIDIyTDE0OC41MCAyMC4zOVpNMTU4Ljg0IDIyTDE1Ni40NiAyMkwxNTYuNDYgMTMuNjBMMTYwLjMwIDEzLjYwUTE2MS40NCAxMy42MCAxNjIuMjggMTMuOThRMTYzLjEyIDE0LjM1IDE2My41OCAxNS4wNlExNjQuMDMgMTUuNzYgMTY0LjAzIDE2LjcxTDE2NC4wMyAxNi43MVExNjQuMDMgMTcuNjIgMTYzLjYwIDE4LjMwUTE2My4xOCAxOC45OCAxNjIuMzkgMTkuMzZMMTYyLjM5IDE5LjM2TDE2NC4yMCAyMkwxNjEuNjUgMjJMMTYwLjEzIDE5Ljc3TDE1OC44NCAxOS43N0wxNTguODQgMjJaTTE1OC44NCAxNS40N0wxNTguODQgMTcuOTNMMTYwLjE1IDE3LjkzUTE2MC44OSAxNy45MyAxNjEuMjYgMTcuNjFRMTYxLjYzIDE3LjI5IDE2MS42MyAxNi43MUwxNjEuNjMgMTYuNzFRMTYxLjYzIDE2LjEyIDE2MS4yNiAxNS43OVExNjAuODkgMTUuNDcgMTYwLjE1IDE1LjQ3TDE2MC4xNSAxNS40N0wxNTguODQgMTUuNDdaTTE2OC4zOSAxNy44MEwxNjguMzkgMTcuODBRMTY4LjM5IDE2LjQ1IDE2OC44NiAxNS40NlExNjkuMzQgMTQuNDYgMTcwLjE4IDEzLjk1UTE3MS4wMiAxMy40MyAxNzIuMTAgMTMuNDNMMTcyLjEwIDEzLjQzUTE3My4xNiAxMy40MyAxNzQuMDAgMTMuOTVRMTc0Ljg0IDE0LjQ2IDE3NS4zMiAxNS40NlExNzUuNzkgMTYuNDUgMTc1Ljc5IDE3LjgwTDE3NS43OSAxNy44MFExNzUuNzkgMTkuMTUgMTc1LjMyIDIwLjE1UTE3NC44NCAyMS4xNCAxNzQuMDEgMjEuNjVRMTczLjE3IDIyLjE3IDE3Mi4xMCAyMi4xN0wxNzIuMTAgMjIuMTdRMTcxLjAyIDIyLjE3IDE3MC4xOCAyMS42NVExNjkuMzQgMjEuMTQgMTY4Ljg2IDIwLjE1UTE2OC4zOSAxOS4xNiAxNjguMzkgMTcuODBaTTE3MC43OCAxNy44MEwxNzAuNzggMTcuODBRMTcwLjc4IDE5LjA2IDE3MS4xMyAxOS42NFExNzEuNDkgMjAuMjIgMTcyLjEwIDIwLjIyTDE3Mi4xMCAyMC4yMlExNzIuNzAgMjAuMjIgMTczLjA1IDE5LjY0UTE3My40MSAxOS4wNiAxNzMuNDEgMTcuODBMMTczLjQxIDE3LjgwUTE3My40MSAxNi41NCAxNzMuMDUgMTUuOTZRMTcyLjcwIDE1LjM4IDE3Mi4xMCAxNS4zOEwxNzIuMTAgMTUuMzhRMTcxLjQ5IDE1LjM4IDE3MS4xMyAxNS45NlExNzAuNzggMTYuNTQgMTcwLjc4IDE3LjgwWk0xODIuMzcgMjJMMTc5LjY2IDIyTDE4Mi43MiAxNy43NUwxNzkuNzkgMTMuNjBMMTgyLjQ3IDEzLjYwTDE4NC4xNSAxNi4wMkwxODUuODAgMTMuNjBMMTg4LjM3IDEzLjYwTDE4NS40NCAxNy42NkwxODguNTcgMjJMMTg1LjgzIDIyTDE4NC4wOSAxOS40MEwxODIuMzcgMjJaIiBmaWxsPSIjRkZGRkZGIiB4PSIxMDguNzEwMDAwMDAwMDAwMDEiLz48L3N2Zz4=)</a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About"><img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="forthebadge"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About"><img src="https://forthebadge.com/images/badges/made-with-typescript.svg" alt="forthebadge"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About"><img src="https://forthebadge.com/images/badges/validated-html5.svg" alt="forthebadge"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About"><img src="https://forthebadge.com/images/badges/uses-git.svg" alt="forthebadge"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About"><img src="https://forthebadge.com/images/badges/compatibility-pc-load-letter.svg" alt="forthebadge"></a></p>
+<p>This is Website is made by <strong>Dimas Lanjaka</strong> codename <strong>L3n4r0x</strong>, Blog name <strong>“WMI” (Website Management Indonesia)</strong>.</p>
+<p>Previous domains of this blog:</p>
+<ul>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3NuZnIuY2Y=" alt="About" title="About">snfr.cf</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3dlYmRldmVsb3BtZW50LmNm" alt="About" title="About">webdevelopment.cf</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3dlYi1kZXZlbG9wbWVudC5jZg==" alt="About" title="About">web-development.cf</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3NuZnIubWw=" alt="About" title="About">snfr.ml</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2RpamFhLmdh" alt="About" title="About">dijaa.ga</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3dlYm1hbmFqZW1lbi54eXo=" alt="About" title="About">webmanajemen.xyz</a></li>
+<li><a href="http://dimaslanjaka.github.io" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">dimaslanjaka.github.io</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="http://git.webmanajemen.com" alt="About" title="About">git.webmanajemen.com</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Jsb2cuYWthcm1hcy5jb20=" alt="About" title="About">blog.akarmas.com</a></li>
+<li><a href="http://web-manajemen.blogspot.com" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">web-manajemen.blogspot.com</a></li>
+</ul>
+<p><strong>Website Management Indonesia</strong> is a blog to implement a code of website code to be published.<br>
+We will publish everything we have implemented ourselves.<br>
+And everything is free of charge unless you make a donation to us.</p>
+<p><strong>Important:</strong> Everything on this <strong><a href="http://www.webmanajemen.com" rel="internal follow bookmark" alt="About" title="About">www.webmanajemen.com</a></strong> is original. But we also take resources from external to add the look of the article. And ALL resources including Images, Videos, and Audio we copy to add to the look of this blog are entirely the copyright of the web source.</p>
+<p>That is all and thank you.</p>
+<p><strong>Warning:</strong> when copying articles on this website you must provide the source url to the source of our article url. Because we have registered this blog with the DMCA and COPYSCAPE. If you use adsense, I will file a DMCA copyright infringement on your blog, and is prohibited from adsense. Learn more: <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZG1jYS5jb20vZmFxL1JlcG9ydC1jb3B5cmlnaHQtaW5mcmluZ2VtZW50" alt="About" title="About">https://www.dmca.com/faq/Report-copyright-infringement</a></p>
+<h1>Frameworks</h1>
+
+<img src="https://raw.githubusercontent.com/hexojs/logo/master/hexo-logo-avatar.png" alt="Hexo logo" width="100" height="100" align="right">
+<h2 id="Hexo">Hexo</h2>
+<blockquote>
+<p>A fast, simple &amp; powerful blog framework, powered by <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ub2RlanMub3Jn" alt="About" title="About">Node.js</a>.</p>
+</blockquote>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" alt="About" title="About">Website</a> | <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlvL2RvY3M=" alt="About" title="About">Documentation</a></p>
+<h2 id="SBG">SBG</h2>
+<blockquote>
+<p>Static blog generator just for article pre-processor (processing shortcodes, etc)</p>
+</blockquote>
+<p><a href="https://www.webmanajemen.com/static-blog-generator" rel="internal follow bookmark" alt="About" title="About">Website</a> | <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9zdGF0aWMtYmxvZy1nZW5lcmF0b3I=" alt="About" title="About">Repository</a></p>
+<h1>Hosting Platform</h1>
+<h2 id="GitHub-Pages">GitHub Pages</h2>
+<blockquote>
+<p>This Website is Hosted at GitHub Pages because of their Global CDN Networks and Website Loading Speed</p>
+</blockquote>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb3J0aGViYWRnZS5jb20=" alt="About" title="About">![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTIuNDYiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAxNTIuNDYgMzUiPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9IjAiIHk9IjAiIHdpZHRoPSI4My43NiIgaGVpZ2h0PSIzNSIgZmlsbD0iIzMxQzRGMyIvPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9IjgxLjc2IiB5PSIwIiB3aWR0aD0iNzAuNyIgaGVpZ2h0PSIzNSIgZmlsbD0iIzE3MTUxNSIvPjxwYXRoIGNsYXNzPSJzdmdfX3RleHQiIGQ9Ik0xMy45NyAxOC4xM0wxMy45NyAxOC4xM0wxMy45NyAxNy40NlExMy45NyAxNS41MyAxNC45MCAxNC40NFExNS44MiAxMy4zNSAxNy40OCAxMy4zNUwxNy40OCAxMy4zNVExOC45MCAxMy4zNSAxOS43NCAxNC4wNVEyMC41OCAxNC43NiAyMC43NSAxNi4wOEwyMC43NSAxNi4wOEwxOS4zMCAxNi4wOFExOS4wNSAxNC41NCAxNy41MSAxNC41NEwxNy41MSAxNC41NFExNi41MSAxNC41NCAxNi4wMCAxNS4yNlExNS40OCAxNS45OCAxNS40NiAxNy4zN0wxNS40NiAxNy4zN0wxNS40NiAxOC4wMlExNS40NiAxOS40MCAxNi4wNCAyMC4xN1ExNi42MyAyMC45MyAxNy42NiAyMC45M0wxNy42NiAyMC45M1ExOC44MCAyMC45MyAxOS4yOCAyMC40MkwxOS4yOCAyMC40MkwxOS4yOCAxOC43NUwxNy41MiAxOC43NUwxNy41MiAxNy42MkwyMC43NiAxNy42MkwyMC43NiAyMC44OVEyMC4yOSAyMS41MCAxOS40NyAyMS44MVExOC42NSAyMi4xMiAxNy42MSAyMi4xMkwxNy42MSAyMi4xMlExNi41NCAyMi4xMiAxNS43MSAyMS42M1ExNC44OSAyMS4xNCAxNC40NCAyMC4yNFExMy45OSAxOS4zMyAxMy45NyAxOC4xM1pNMjYuOTQgMjJMMjUuNDYgMjJMMjUuNDYgMTMuNDdMMjYuOTQgMTMuNDdMMjYuOTQgMjJaTTMzLjQzIDE0LjY2TDMwLjc5IDE0LjY2TDMwLjc5IDEzLjQ3TDM3LjU2IDEzLjQ3TDM3LjU2IDE0LjY2TDM0LjkwIDE0LjY2TDM0LjkwIDIyTDMzLjQzIDIyTDMzLjQzIDE0LjY2Wk00Mi44MCAyMkw0MS4zMiAyMkw0MS4zMiAxMy40N0w0Mi44MCAxMy40N0w0Mi44MCAxNy4wMkw0Ni42MSAxNy4wMkw0Ni42MSAxMy40N0w0OC4wOSAxMy40N0w0OC4wOSAyMkw0Ni42MSAyMkw0Ni42MSAxOC4yMUw0Mi44MCAxOC4yMUw0Mi44MCAyMlpNNTIuNzAgMTkuMTZMNTIuNzAgMTkuMTZMNTIuNzAgMTMuNDdMNTQuMTcgMTMuNDdMNTQuMTcgMTkuMThRNTQuMTcgMjAuMDMgNTQuNjEgMjAuNDhRNTUuMDQgMjAuOTMgNTUuODggMjAuOTNMNTUuODggMjAuOTNRNTcuNTkgMjAuOTMgNTcuNTkgMTkuMTNMNTcuNTkgMTkuMTNMNTcuNTkgMTMuNDdMNTkuMDcgMTMuNDdMNTkuMDcgMTkuMTdRNTkuMDcgMjAuNTMgNTguMjAgMjEuMzJRNTcuMzMgMjIuMTIgNTUuODggMjIuMTJMNTUuODggMjIuMTJRNTQuNDIgMjIuMTIgNTMuNTYgMjEuMzNRNTIuNzAgMjAuNTUgNTIuNzAgMTkuMTZaTTY2Ljc1IDIyTDYzLjY0IDIyTDYzLjY0IDEzLjQ3TDY2LjU2IDEzLjQ3UTY4LjAxIDEzLjQ3IDY4Ljc3IDE0LjA1UTY5LjUyIDE0LjYzIDY5LjUyIDE1Ljc4TDY5LjUyIDE1Ljc4UTY5LjUyIDE2LjM2IDY5LjIxIDE2LjgzUTY4Ljg5IDE3LjMwIDY4LjI4IDE3LjU2TDY4LjI4IDE3LjU2UTY4Ljk3IDE3Ljc1IDY5LjM1IDE4LjI2UTY5LjczIDE4Ljc4IDY5LjczIDE5LjUxTDY5LjczIDE5LjUxUTY5LjczIDIwLjcxIDY4Ljk2IDIxLjM2UTY4LjE5IDIyIDY2Ljc1IDIyTDY2Ljc1IDIyWk02NS4xMiAxOC4xNUw2NS4xMiAyMC44Mkw2Ni43NyAyMC44MlE2Ny40NyAyMC44MiA2Ny44NiAyMC40N1E2OC4yNSAyMC4xMyA2OC4yNSAxOS41MUw2OC4yNSAxOS41MVE2OC4yNSAxOC4xOCA2Ni44OSAxOC4xNUw2Ni44OSAxOC4xNUw2NS4xMiAxOC4xNVpNNjUuMTIgMTQuNjZMNjUuMTIgMTcuMDZMNjYuNTggMTcuMDZRNjcuMjcgMTcuMDYgNjcuNjYgMTYuNzVRNjguMDUgMTYuNDMgNjguMDUgMTUuODZMNjguMDUgMTUuODZRNjguMDUgMTUuMjMgNjcuNjkgMTQuOTVRNjcuMzMgMTQuNjYgNjYuNTYgMTQuNjZMNjYuNTYgMTQuNjZMNjUuMTIgMTQuNjZaIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggY2xhc3M9InN2Z19fdGV4dCIgZD0iTTk4LjMzIDIyTDk1Ljk1IDIyTDk1Ljk1IDEzLjYwTDk5Ljc5IDEzLjYwUTEwMC45MyAxMy42MCAxMDEuNzcgMTMuOThRMTAyLjYxIDE0LjM1IDEwMy4wNyAxNS4wNlExMDMuNTIgMTUuNzYgMTAzLjUyIDE2LjcxTDEwMy41MiAxNi43MVExMDMuNTIgMTcuNjYgMTAzLjA3IDE4LjM1UTEwMi42MSAxOS4wNSAxMDEuNzcgMTkuNDJRMTAwLjkzIDE5LjgwIDk5Ljc5IDE5LjgwTDk5Ljc5IDE5LjgwTDk4LjMzIDE5LjgwTDk4LjMzIDIyWk05OC4zMyAxNS40N0w5OC4zMyAxNy45M0w5OS42NSAxNy45M1ExMDAuMzggMTcuOTMgMTAwLjc1IDE3LjYxUTEwMS4xMiAxNy4yOSAxMDEuMTIgMTYuNzFMMTAxLjEyIDE2LjcxUTEwMS4xMiAxNi4xMiAxMDAuNzUgMTUuODBRMTAwLjM4IDE1LjQ3IDk5LjY1IDE1LjQ3TDk5LjY1IDE1LjQ3TDk4LjMzIDE1LjQ3Wk0xMDkuNjkgMjJMMTA3LjI3IDIyTDExMC45OCAxMy42MEwxMTMuMzIgMTMuNjBMMTE3LjA0IDIyTDExNC41NyAyMkwxMTMuOTEgMjAuMzdMMTEwLjM2IDIwLjM3TDEwOS42OSAyMlpNMTEyLjEzIDE1LjkzTDExMS4wNSAxOC42MUwxMTMuMjEgMTguNjFMMTEyLjEzIDE1LjkzWk0xMjAuNzYgMTcuODBMMTIwLjc2IDE3LjgwUTEyMC43NiAxNi41NCAxMjEuMzYgMTUuNTRRMTIxLjk2IDE0LjU1IDEyMy4wMyAxMy45OVExMjQuMTAgMTMuNDMgMTI1LjQ0IDEzLjQzTDEyNS40NCAxMy40M1ExMjYuNjIgMTMuNDMgMTI3LjU1IDEzLjgzUTEyOC40OSAxNC4yMiAxMjkuMTEgMTQuOTdMMTI5LjExIDE0Ljk3TDEyNy42MCAxNi4zM1ExMjYuNzYgMTUuNDAgMTI1LjU4IDE1LjQwTDEyNS41OCAxNS40MFExMjUuNTcgMTUuNDAgMTI1LjU2IDE1LjQwTDEyNS41NiAxNS40MFExMjQuNDggMTUuNDAgMTIzLjgyIDE2LjA2UTEyMy4xNiAxNi43MSAxMjMuMTYgMTcuODBMMTIzLjE2IDE3LjgwUTEyMy4xNiAxOC41MCAxMjMuNDYgMTkuMDRRMTIzLjc2IDE5LjU5IDEyNC4zMCAxOS44OVExMjQuODQgMjAuMjAgMTI1LjU0IDIwLjIwTDEyNS41NCAyMC4yMFExMjYuMjIgMjAuMjAgMTI2LjgyIDE5LjkzTDEyNi44MiAxOS45M0wxMjYuODIgMTcuNjJMMTI4LjkyIDE3LjYyTDEyOC45MiAyMS4xMFExMjguMjAgMjEuNjEgMTI3LjI2IDIxLjg5UTEyNi4zMyAyMi4xNyAxMjUuMzkgMjIuMTdMMTI1LjM5IDIyLjE3UTEyNC4wNyAyMi4xNyAxMjMuMDIgMjEuNjFRMTIxLjk2IDIxLjA1IDEyMS4zNiAyMC4wNVExMjAuNzYgMTkuMDYgMTIwLjc2IDE3LjgwWk0xNDAuNjUgMjJMMTMzLjkxIDIyTDEzMy45MSAxMy42MEwxNDAuNTAgMTMuNjBMMTQwLjUwIDE1LjQ0TDEzNi4yNyAxNS40NEwxMzYuMjcgMTYuODVMMTQwLjAwIDE2Ljg1TDE0MC4wMCAxOC42M0wxMzYuMjcgMTguNjNMMTM2LjI3IDIwLjE3TDE0MC42NSAyMC4xN0wxNDAuNjUgMjJaIiBmaWxsPSIjRkZGRkZGIiB4PSI5NC43NiIvPjwvc3ZnPg==)</a><br>
+<img src="https://res.cloudinary.com/demo/image/fetch/w_120,h_45,c_scale/http://www.webhozz.com/blog/wp-content/uploads/2015/02/github-pages.jpg" alt="About | WMI - https://res.cloudinary.com/demo/image/fetch/w_120,h_45,c_scale/http://www.webhozz.com/blog/wp-content/uploads/2015/02/github-pages.jpg"></p>
+<h1>Support</h1>
+<p>Creating a quality Website takes a lot of time. Unlike others website,<br>
+<strong>WMI</strong> is completely independently funded. We fight for our users. This does mean<br>
+however that we also have to spend time working contracts to pay the bills.<br>
+This is where you can help: by chipping in you can ensure more time is spent<br>
+improving <strong>WMI</strong> rather than dealing with distractions.</p>
+<p>To Support Us :</p>
+<ul>
+<li>You can Contribute</li>
+<li>You can donate us in our Indonesia bank</li>
+<li>Disable your AdBlock</li>
+</ul>
+<h2 id="Donate">Donate</h2>
+<blockquote>
+<p>Bank Account number : 1410018806174</p>
+<p>Bank Name           : Bank Mandiri</p>
+<p>Bank Code           : 008</p>
+<p>Bank Country        : Indonesia</p>
+<p>Card Holder Name    : Kuswati</p>
+</blockquote>
+<h2 id="Advertiser">Advertiser</h2>
+<ul>
+<li>Google Adsense</li>
+</ul>
+<h1>Website Administrators</h1>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><img src="/images/PicsArt_09-09-12.12.25.jpg" alt="Logo Website Management Indonesia"><br>
+<img src="/images/image2vector.svg" alt="Logo Website Management Indonesia Vector"></p>
+<h1>Our libraries</h1>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="static-blog-generator-hexo" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<h3 id="static-blog-generator">static-blog-generator</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="static-blog-generator" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><img src="https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square&amp;label=last+commit+dev" alt="sbg"><br>
+<img src="https://badgen.net/npm/types/static-blog-generator?style=flat-square" alt="types"><br>
+<img src="https://badgen.net/npm/v/static-blog-generator?style=flat-square" alt="version"></p>
+<h3 id="hexo-adsense">hexo-adsense</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="hexo-adsense" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9iYWRnZS5mdXJ5LmlvL2pzL2hleG8tYWRzZW5zZQ==" alt="About" title="About"><img src="https://badge.fury.io/js/hexo-adsense.svg?style=flat-square" alt="npm version"></a><br>
+<img src="https://badgen.net/npm/types/hexo-adsense?style=flat-square" alt="types"><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLWFkc2Vuc2U=" alt="About" title="About"><img src="https://badgen.net/npm/dy/hexo-adsense?style=flat-square" alt="Npm package yearly downloads"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLWFkc2Vuc2U=" alt="About" title="About"><img src="https://badgen.net/npm/node/hexo-adsense?style=flat-square" alt="Minimum node.js version"></a><br>
+<img src="https://img.shields.io/github/repo-size/dimaslanjaka/hexo-adsense?label=Repository%20Size&amp;style=flat-square" alt="GitHub repo size"><br>
+<img src="https://img.shields.io/github/last-commit/dimaslanjaka/hexo-adsense?color=blue&amp;label=Last%20Commit&amp;style=flat-square" alt="GitHub last commit"></p>
+<h3 id="hexo-seo">hexo-seo</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="hexo-seo" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9iYWRnZS5mdXJ5LmlvL2pzL2hleG8tc2Vv" alt="About" title="About"><img src="https://badge.fury.io/js/hexo-seo.svg?style=flat-square" alt="npm version"></a><br>
+<img src="https://badgen.net/npm/types/hexo-seo?style=flat-square" alt="types"><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLXNlbw==" alt="About" title="About"><img src="https://badgen.net/npm/dy/hexo-seo?style=flat-square" alt="Npm package yearly downloads"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLXNlbw==" alt="About" title="About"><img src="https://badgen.net/npm/node/hexo-seo?style=flat-square" alt="Minimum node.js version"></a><br>
+<img src="https://img.shields.io/github/repo-size/dimaslanjaka/hexo-seo?label=Repository%20Size&amp;style=flat-square" alt="GitHub repo size"><br>
+<img src="https://img.shields.io/github/last-commit/dimaslanjaka/hexo-seo?color=blue&amp;label=Last%20Commit&amp;style=flat-square" alt="GitHub last commit"></p>
+<h3 id="hexo-blogger-xml">hexo-blogger-xml</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="hexo-blogger-xml" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9iYWRnZS5mdXJ5LmlvL2pzL2hleG8tYmxvZ2dlci14bWw=" alt="About" title="About"><img src="https://badge.fury.io/js/hexo-blogger-xml.svg?style=flat-square" alt="npm version"></a><br>
+<img src="https://badgen.net/npm/types/hexo-blogger-xml?style=flat-square" alt="types"><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLWJsb2dnZXIteG1s" alt="About" title="About"><img src="https://badgen.net/npm/dy/hexo-blogger-xml?style=flat-square" alt="Npm package yearly downloads"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLWJsb2dnZXIteG1s" alt="About" title="About"><img src="https://badgen.net/npm/node/hexo-blogger-xml?style=flat-square" alt="Minimum node.js version"></a><br>
+<img src="https://img.shields.io/github/repo-size/dimaslanjaka/hexo-blogger-xml?label=Repository%20Size&amp;style=flat-square" alt="GitHub repo size"><br>
+<img src="https://img.shields.io/github/last-commit/dimaslanjaka/hexo-blogger-xml?color=blue&amp;label=Last%20Commit&amp;style=flat-square" alt="GitHub last commit"></p>
+<h3 id="hexo-post-parser">hexo-post-parser</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="hexo-post-parser" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9iYWRnZS5mdXJ5LmlvL2pzL2hleG8tcG9zdC1wYXJzZXI=" alt="About" title="About"><img src="https://badge.fury.io/js/hexo-post-parser.svg?style=flat-square" alt="npm version"></a><br>
+<img src="https://badgen.net/npm/types/hexo-post-parser?style=flat-square" alt="types"><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLXBvc3QtcGFyc2Vy" alt="About" title="About"><img src="https://badgen.net/npm/dy/hexo-post-parser?style=flat-square" alt="Npm package yearly downloads"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9oZXhvLXBvc3QtcGFyc2Vy" alt="About" title="About"><img src="https://badgen.net/npm/node/hexo-post-parser?style=flat-square" alt="Minimum node.js version"></a><br>
+<img src="https://img.shields.io/github/repo-size/dimaslanjaka/hexo-post-parser?label=Repository%20Size&amp;style=flat-square" alt="GitHub repo size"><br>
+<img src="https://img.shields.io/github/last-commit/dimaslanjaka/hexo-post-parser?color=blue&amp;label=Last%20Commit&amp;style=flat-square" alt="GitHub last commit"></p>
+<h3 id="safelinkify">safelinkify</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="safelink" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9iYWRnZS5mdXJ5LmlvL2pzL3NhZmVsaW5raWZ5" alt="About" title="About"><img src="https://badge.fury.io/js/safelinkify.svg?style=flat-square" alt="npm version"></a><br>
+<img src="https://badgen.net/npm/types/safelinkify?style=flat-square" alt="types"><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9zYWZlbGlua2lmeQ==" alt="About" title="About"><img src="https://badgen.net/npm/dy/safelinkify?style=flat-square" alt="Npm package yearly downloads"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9zYWZlbGlua2lmeQ==" alt="About" title="About"><img src="https://badgen.net/npm/node/safelinkify?style=flat-square" alt="Minimum node.js version"></a><br>
+<img src="https://img.shields.io/github/repo-size/dimaslanjaka/safelink?label=Repository%20Size&amp;style=flat-square" alt="GitHub repo size"><br>
+<img src="https://img.shields.io/github/last-commit/dimaslanjaka/safelink?color=blue&amp;label=Last%20Commit&amp;style=flat-square" alt="GitHub last commit"></p>
+<h3 id="google-news-sitemap">google-news-sitemap</h3>
+<div style="text-align: center">
+  <div class="github-card" data-user="dimaslanjaka" data-repo="google-news-sitemap" data-height="200" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9iYWRnZS5mdXJ5LmlvL2pzL2dvb2dsZS1uZXdzLXNpdGVtYXA=" alt="About" title="About"><img src="https://badge.fury.io/js/google-news-sitemap.svg?style=flat-square" alt="npm version"></a><br>
+<img src="https://badgen.net/npm/types/google-news-sitemap?style=flat-square" alt="types"><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9nb29nbGUtbmV3cy1zaXRlbWFw" alt="About" title="About"><img src="https://badgen.net/npm/dy/google-news-sitemap?style=flat-square" alt="Npm package yearly downloads"></a><br>
+<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9ucG1qcy5jb20vcGFja2FnZS9nb29nbGUtbmV3cy1zaXRlbWFw" alt="About" title="About"><img src="https://badgen.net/npm/node/google-news-sitemap?style=flat-square" alt="Minimum node.js version"></a><br>
+<img src="https://img.shields.io/github/repo-size/dimaslanjaka/google-news-sitemap?label=Repository%20Size&amp;style=flat-square" alt="GitHub repo size"><br>
+<img src="https://img.shields.io/github/last-commit/dimaslanjaka/google-news-sitemap?color=blue&amp;label=Last%20Commit&amp;style=flat-square" alt="GitHub last commit"></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                
+                
+                    
+    
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://www.webmanajemen.com/about/index.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://www.webmanajemen.com/about/index.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//dimaslanjaka.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    
+
+    
+    <div class="section-spacer"></div>
+
+    
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+            
+            
+<div class="sidebar-overlay"></div>
+
+
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    
+    <div class="top-bar"></div>
+
+    
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar">
+    </div>
+
+    
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        
+        <ul class="nav sidebar-nav">
+    
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">42</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+
+        
+        
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+
+    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" class="sidebar-footer-text-a" target="_blank" alt="About" title="About">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+</aside>
+
+            
+
+            
+
+            
+<footer class="mdl-mini-footer" id="bottom">
+    
+        
+        <div class="mdl-mini-footer--left-section sns-list">
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90d2l0dGVyLmNvbS90d2l0dGVy" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2ZhY2Vib29r" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="About" title="About">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button></a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+        
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;WMI
+            
+        </div>
+
+        
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="About" title="About">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="About" title="About">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+            
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+<script id="dsq-count-scr" src="//dimaslanjaka.disqus.com/count.js" async=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+        </main>
+    </div>
+
+
+
+</body></html>

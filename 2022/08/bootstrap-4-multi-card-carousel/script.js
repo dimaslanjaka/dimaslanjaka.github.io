@@ -1,1 +1,22 @@
-$(document).ready((function(){console.clear(),$("#myCarousel").on("slide.bs.carousel",(function(e){var o=$(e.relatedTarget).index(),n=$(".carousel-item").length;if(o>=n-3){for(var i=4-(n-o),r=0;r<i&&!window.CP.shouldStopExecution(0);r++)"left"==e.direction?$(".carousel-item").eq(r).appendTo(".carousel-inner"):$(".carousel-item").eq(0).appendTo($(this).find(".carousel-inner"));window.CP.exitedLoop(0)}}))}));
+$(document).ready(function () {
+  console.clear();
+  $("#myCarousel").on("slide.bs.carousel", function (e) {
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 4;
+    var totalItems = $(".carousel-item").length;
+    if (idx >= totalItems - (itemsPerSlide - 1)) {
+      var it = itemsPerSlide - (totalItems - idx);
+      for (var i = 0; i < it; i++) {
+        if (window.CP.shouldStopExecution(0)) break;
+        // append slides to end
+        if (e.direction == "left") {
+          $(".carousel-item").eq(i).appendTo(".carousel-inner");
+        } else {
+          $(".carousel-item").eq(0).appendTo($(this).find(".carousel-inner"));
+        }
+      }
+      window.CP.exitedLoop(0);
+    }
+  });
+});

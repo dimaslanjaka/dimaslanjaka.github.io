@@ -279,31 +279,18 @@
             </button>
             
 
-            
+            <link rel="canonical" href="<%- page.redirect_to %> ">
+&lt;% const newUrl = typeof page !== 'undefined' &amp;&amp; typeof page.target !== 'undefined' &amp;&amp; page.target.path ? full_url_for(page.target.path) : typeof page.redirect_to === 'string' ? full_url_for(page.redirect_to) : null %&gt;
 
-  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.redirect_to }}">
-    <meta http-equiv="refresh" content="0; url='{{ page.redirect_to }}'">
-  
-  {% set newUrl = typeof page !== 'undefined' &amp;&amp; typeof page.target !== 'undefined' &amp;&amp; page.target.path ? full_url_for(page.target.path) : typeof page.redirect_to === 'string' ? full_url_for(page.redirect_to) : null %}
-  
-    <h1>{{ page.title }} Page address was changed</h1>
-    <p>
-      The new page address is <a href="{{ newUrl }}" rel="follow dofollow">{{ newUrl }}</a>
-    </p>
+<h1>Page address was changed</h1>
+<p>The new page address is <a href="<%= newUrl %>">&lt;%= newUrl %&gt;</a></p>
 
-    <script type="text/javascript">
-      setTimeout(function () {
-        //document.location.href = '{{ newUrl }}';
-        location.replace('{{ newUrl }}');
-      }, 3000);
-    </script>
-  
-
+<script type="text/javascript">
+  setTimeout(function () {
+    //document.location.href = '<%= newUrl %>';
+    location.replace('<%= newUrl %>');
+  }, 5000);
+</script>
 
 
             

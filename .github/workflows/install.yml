@@ -36,7 +36,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: ee0303d303b9a90ef77dcbd08ca8ce4e565af785
+          ref: ${{ github.event.inputs.ref }}
       - uses: actions/setup-node@v3
         with:
           node-version: "18"

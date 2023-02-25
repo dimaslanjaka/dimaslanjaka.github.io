@@ -295,6 +295,106 @@
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/adsense/",
+        "name": "adsense"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/wordpress/",
+        "name": "wordpress"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/php/",
+        "name": "php"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/tags/amp/",
+        "name": "amp"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/categories/uncategorized/",
+        "name": "uncategorized"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": "https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html",
+        "name": "In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/2017/11/in-article-ads-and-single-ads-shortcode.html"
+    },
+    "headline": "In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin",
+    "description": "center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA Plugin</h2></center><img src=https://imgdb.net/images/3203.jpg /><br",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://imgdb.net/images/3203.jpg",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": {
+        "nick": "Dimas Lanjaka Kumala Indra",
+        "link": "https://www.blogger.com/profile/17555754514989936273",
+        "email": "noreply@blogger.com"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {
+        "nick": "Dimas Lanjaka Kumala Indra",
+        "link": "https://www.blogger.com/profile/17555754514989936273",
+        "email": "noreply@blogger.com"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2017-11-11T16:34:00+07:00",
+    "dateModified": "2017-11-11T16:34:02+07:00"
+  }
+]</script>
+
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
 
 
@@ -368,7 +468,7 @@
 
     
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" title="Author Avatar" itemprop="image">
     </div>
     
     <div>
@@ -461,7 +561,7 @@
                 
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA Plugin</h2></center><img src="https://imgdb.net/images/3203.jpg" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin | WMI - https://imgdb.net/images/3203.jpg"><br><h2>Call Adsense JavaScript (adsbygoogle.js)</h2><pre>function saotn_loadAdsByGoogleJs() {<br>  wp_register_script( 'google-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', '', '', true );<br>  wp_enqueue_script( 'google-adsense' );<br>}<br>add_action( 'wp_enqueue_scripts', 'saotn_loadAdsByGoogleJs' );<br></pre><h2>Create In Article Ads Shortcode</h2><b>Goto Adsense Dashboard -&gt; My Ads -&gt; Add New -&gt; Choose In Article Ads -&gt; Set with your defined settings -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;/ins&gt;.</b><br><pre>//In Article Ads<br>function IAA($atts) {<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    //echo 'Car exists.';<br>    return '&lt;amp-ad layout="fixed-height" height=100 type="adsense" data-ad-client="ca-pub-7975270895217217" data-ad-slot="7382733759"&gt;<br>&lt;/amp-ad&gt;';<br>} else {<br>  return '&lt;ins class="adsbygoogle"<br>     style="display:block; text-align:center;"<br>     data-ad-layout="in-article"<br>     data-ad-format="fluid"<br>     data-ad-client="ca-pub-XXXXXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>     (adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>       }<br>}<br>add_shortcode('ads', 'IAA');<br></pre>Add shortcode <b>[ads]</b> in every post Location.<br>Replace ad-client and ad-slot with your in article ads client and slot number. <br><h2>Add Shortcode Responsive Adsense</h2><i class="fa fa-info"></i> <b>Goto Adsense.Google.com -&gt; My Ads -&gt; Ad New -&gt; Choose Text And Image Ads -&gt; Choose Responsive Ads -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;ins&gt;.</b><br><pre>//Single Adsense<br>function adsens($atts) {<br>   extract(shortcode_atts(array(<br>      'adsid' =&gt; h50,<br>      'height' =&gt; 250,<br>   ), $atts));<br>    $google_code = '&lt;ins id="'.$adsid.'" class="adsbygoogle"<br>     style="display:block"<br>     data-ad-client="ca-pub-XXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"<br>     data-ad-format="auto"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>(adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>$ampr = '&lt;amp-ad layout="fixed-height" id="'.$adsid.'" height='.$height.' type="adsense" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXXXXXX"&gt;&lt;/amp-ad&gt;';<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    return $ampr;<br>} else {<br>return $google_code;<br>}<br>}<br>add_shortcode('adsense', 'adsens');</pre>add shortcode <b>[adsense height="50" id="YOURID"]</b><br>Change number 50 to your defined height in pixel (px).<br>YOURID change with your defined ID (if you have css to styling this ads).<br><br>Done.&nbsp;In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin hope be functionally for your adsense.
+        <center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA Plugin</h2></center><img src="https://imgdb.net/images/3203.jpg" title="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" alt="In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin" itemprop="image"><br><h2>Call Adsense JavaScript (adsbygoogle.js)</h2><pre>function saotn_loadAdsByGoogleJs() {<br>  wp_register_script( 'google-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', '', '', true );<br>  wp_enqueue_script( 'google-adsense' );<br>}<br>add_action( 'wp_enqueue_scripts', 'saotn_loadAdsByGoogleJs' );<br></pre><h2>Create In Article Ads Shortcode</h2><b>Goto Adsense Dashboard -&gt; My Ads -&gt; Add New -&gt; Choose In Article Ads -&gt; Set with your defined settings -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;/ins&gt;.</b><br><pre>//In Article Ads<br>function IAA($atts) {<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    //echo 'Car exists.';<br>    return '&lt;amp-ad layout="fixed-height" height=100 type="adsense" data-ad-client="ca-pub-7975270895217217" data-ad-slot="7382733759"&gt;<br>&lt;/amp-ad&gt;';<br>} else {<br>  return '&lt;ins class="adsbygoogle"<br>     style="display:block; text-align:center;"<br>     data-ad-layout="in-article"<br>     data-ad-format="fluid"<br>     data-ad-client="ca-pub-XXXXXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>     (adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>       }<br>}<br>add_shortcode('ads', 'IAA');<br></pre>Add shortcode <b>[ads]</b> in every post Location.<br>Replace ad-client and ad-slot with your in article ads client and slot number. <br><h2>Add Shortcode Responsive Adsense</h2><i class="fa fa-info"></i> <b>Goto Adsense.Google.com -&gt; My Ads -&gt; Ad New -&gt; Choose Text And Image Ads -&gt; Choose Responsive Ads -&gt; Get Code from &lt;ins until &lt;/script&gt; dont copy script.js above &lt;ins&gt;.</b><br><pre>//Single Adsense<br>function adsens($atts) {<br>   extract(shortcode_atts(array(<br>      'adsid' =&gt; h50,<br>      'height' =&gt; 250,<br>   ), $atts));<br>    $google_code = '&lt;ins id="'.$adsid.'" class="adsbygoogle"<br>     style="display:block"<br>     data-ad-client="ca-pub-XXXXXXX"<br>     data-ad-slot="XXXXXXXXXX"<br>     data-ad-format="auto"&gt;&lt;/ins&gt;<br>&lt;script&gt;<br>(adsbygoogle = window.adsbygoogle || []).push({});<br>&lt;/script&gt;';<br>$ampr = '&lt;amp-ad layout="fixed-height" id="'.$adsid.'" height='.$height.' type="adsense" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXXXXXX"&gt;&lt;/amp-ad&gt;';<br>$urlamp = (isset($_SERVER['HTTPS']) ? "https" : "http") . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];<br><br>if (strpos($urlamp,'wpamp') !== false) {<br>    return $ampr;<br>} else {<br>return $google_code;<br>}<br>}<br>add_shortcode('adsense', 'adsens');</pre>add shortcode <b>[adsense height="50" id="YOURID"]</b><br>Change number 50 to your defined height in pixel (px).<br>YOURID change with your defined ID (if you have css to styling this ads).<br><br>Done.&nbsp;In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin hope be functionally for your adsense.
         
     
 
@@ -562,7 +662,7 @@
 
     
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
     </div>
 
     
@@ -616,7 +716,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">42</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">73</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         

@@ -1,0 +1,1268 @@
+<!DOCTYPE html><html style="display: none;" lang="en"><head>
+    <meta charset="utf-8">
+    
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://dimaslanjaka.disqus.com">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+    
+    <title>
+        
+        Archives: 2023 | 
+        
+        WMI
+    </title>
+
+    
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    
+
+    
+    <script>(function () { window.lsloader = { jsRunSequence: [], jsnamemap: {}, cssnamemap: {} }; lsloader.removeLS = function (a) { try { localStorage.removeItem(a) } catch (b) { } }; lsloader.setLS = function (a, c) { try { localStorage.setItem(a, c) } catch (b) { } }; lsloader.getLS = function (a) { var c = ""; try { c = localStorage.getItem(a) } catch (b) { c = "" } return c }; versionString = "/*" + (window.materialVersion || "unknownVersion") + "*/"; lsloader.clean = function () { try { var b = []; for (var a = 0; a < localStorage.length; a++) { b.push(localStorage.key(a)) } b.forEach(function (e) { var f = lsloader.getLS(e); if (window.oldVersion) { var d = window.oldVersion.reduce(function (g, h) { return g || f.indexOf("/*" + h + "*/") !== -1 }, false); if (d) { lsloader.removeLS(e) } } }) } catch (c) { } }; lsloader.clean(); lsloader.load = function (f, a, b, d) { if (typeof b === "boolean") { d = b; b = undefined } d = d || false; b = b || function () { }; var e; e = this.getLS(f); if (e && e.indexOf(versionString) === -1) { this.removeLS(f); this.requestResource(f, a, b, d); return } if (e) { var c = e.split(versionString)[0]; if (c != a) { console.log("reload:" + a); this.removeLS(f); this.requestResource(f, a, b, d); return } e = e.split(versionString)[1]; if (d) { this.jsRunSequence.push({ name: f, code: e }); this.runjs(a, f, e) } else { document.getElementById(f).appendChild(document.createTextNode(e)); b() } } else { this.requestResource(f, a, b, d) } }; lsloader.requestResource = function (b, e, a, c) { var d = this; if (c) { this.iojs(e, b, function (h, f, g) { d.setLS(f, h + versionString + g); d.runjs(h, f, g) }) } else { this.iocss(e, b, function (f) { document.getElementById(b).appendChild(document.createTextNode(f)); d.setLS(b, e + versionString + f) }, a) } }; lsloader.iojs = function (d, b, g) { var a = this; a.jsRunSequence.push({ name: b, code: "" }); try { var f = new XMLHttpRequest(); f.open("get", d, true); f.onreadystatechange = function () { if (f.readyState == 4) { if ((f.status >= 200 && f.status < 300) || f.status == 304) { if (f.response != "") { g(d, b, f.response); return } } a.jsfallback(d, b) } }; f.send(null) } catch (c) { a.jsfallback(d, b) } }; lsloader.iocss = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.iofonts = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.runjs = function (f, c, e) { if (!!c && !!e) { for (var b in this.jsRunSequence) { if (this.jsRunSequence[b].name == c) { this.jsRunSequence[b].code = e } } } if (!!this.jsRunSequence[0] && !!this.jsRunSequence[0].code && this.jsRunSequence[0].status != "failed") { var a = document.createElement("script"); a.appendChild(document.createTextNode(this.jsRunSequence[0].code)); a.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(a); this.jsRunSequence.shift(); if (this.jsRunSequence.length > 0) { this.runjs() } } else { if (!!this.jsRunSequence[0] && this.jsRunSequence[0].status == "failed") { var d = this; var a = document.createElement("script"); a.src = this.jsRunSequence[0].path; a.type = "text/javascript"; this.jsRunSequence[0].status = "loading"; a.onload = function () { d.jsRunSequence.shift(); if (d.jsRunSequence.length > 0) { d.runjs() } }; document.body.appendChild(a) } } }; lsloader.tagLoad = function (b, a) { this.jsRunSequence.push({ name: a, code: "", path: b, status: "failed" }); this.runjs() }; lsloader.jsfallback = function (c, b) { if (!!this.jsnamemap[b]) { return } else { this.jsnamemap[b] = b } for (var a in this.jsRunSequence) { if (this.jsRunSequence[a].name == b) { this.jsRunSequence[a].code = ""; this.jsRunSequence[a].status = "failed"; this.jsRunSequence[a].path = c } } this.runjs() }; lsloader.cssfallback = function (e, c, b) { if (!!this.cssnamemap[c]) { return } else { this.cssnamemap[c] = 1 } var d = document.createElement("link"); d.type = "text/css"; d.href = e; d.rel = "stylesheet"; d.onload = d.onerror = b; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(d, a) }; lsloader.runInlineScript = function (c, b) { var a = document.getElementById(b).innerText; this.jsRunSequence.push({ name: c, code: a }); this.runjs() } })();</script>
+
+    
+    <script>function Queue() { this.dataStore = []; this.offer = b; this.poll = d; this.execNext = a; this.debug = false; this.startDebug = c; function b(e) { if (this.debug) { console.log("Offered a Queued Function.") } if (typeof e === "function") { this.dataStore.push(e) } else { console.log("You must offer a function.") } } function d() { if (this.debug) { console.log("Polled a Queued Function.") } return this.dataStore.shift() } function a() { var e = this.poll(); if (e !== undefined) { if (this.debug) { console.log("Run a Queued Function.") } e() } } function c() { this.debug = true } } var queue = new Queue();</script>
+
+    
+    
+    <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+    <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+    
+
+    
+
+    
+
+    
+
+
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    
+    
+    <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WMI">
+    <meta name="msapplication-starturl" content="https://www.webmanajemen.com/archives/2023/page/7/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WMI">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    
+    
+    
+
+    
+    
+
+    
+    <meta property="og:url" content="https://www.webmanajemen.com/archives/2023/page/7/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Archives: 2023 | WMI">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.">
+    
+
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    
+    <link rel="canonical" href="https://www.webmanajemen.com/archives/2023/page/7/index.html">
+    
+
+    
+    
+    
+
+
+
+    
+
+    
+    
+    
+    
+
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+
+
+
+<body id="scheme-Paradox" class="lazy">
+    <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+        
+
+        
+        <main class="material-layout__content" id="main">
+
+            
+            <div id="top"></div>
+
+            
+            
+            <button class="MD-burger-icon sidebar-toggle">
+                <span id="MD-burger-id" class="MD-burger-layer"></span>
+            </button>
+            
+
+            
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
+
+    
+    
+
+    
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/bloodhog/Screenshot_2023-02-06-11-52-16-79_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/bloodhog.html">Attendant bloodhog</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant bloodhog bloodhog Information from Chimeralandbloodhog default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for bloodhogGalleries for bloodhog bloodhog Information from Chimeraland bloodhog default attribute GRADEAttackHealth Point HPDefense bloodhog GRADEAttackHealth P
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/bloodhog.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/boakat/Screenshot_2022-11-27-08-47-32-18_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/boakat.html">Attendant boakat</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant boakat boakat Information from Chimeralandboakat default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for boakatGalleries for boakat boakat Information from Chimeraland boakat default attribute GRADEAttackHealth Point HPDefense boakat GRADEAttackHealth Point HPDefense
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/boakat.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/chandacavii/Screenshot_2023-02-06-01-28-14-15_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/chandacavii.html">Attendant chandacavii</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant chandacavii chandacavii Information from Chimeralandchandacavii default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for chandacaviiGalleries for chandacavii chandacavii Information from Chimeraland chandacavii default attribute GRADEAttackHealth Point HPDefense chandac
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/chandacavii.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/dealhog/Screenshot_2023-02-06-08-58-02-19_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/dealhog.html">Attendant dealhog</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant dealhog dealhog Information from Chimeralanddealhog default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for dealhogGalleries for dealhog dealhog Information from Chimeraland dealhog default attribute GRADEAttackHealth Point HPDefense dealhog GRADEAttackHealth Point HP
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/dealhog.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/fighthog/Screenshot_2023-01-31-19-21-11-87_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/fighthog.html">Attendant fighthog</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant fighthog fighthog Information from Chimeralandfighthog default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for fighthogGalleries for fighthog fighthog Information from Chimeraland fighthog default attribute GRADEAttackHealth Point HPDefense fighthog GRADEAttackHealth P
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/fighthog.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/hunthog/Screenshot_2023-02-05-00-40-12-06_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/hunthog.html">Attendant hunthog</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant hunthog hunthog Information from Chimeralandhunthog default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for hunthogGalleries for hunthog hunthog Information from Chimeraland hunthog default attribute GRADEAttackHealth Point HPDefense hunthog GRADEAttackHealth Point HP
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/hunthog.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/ocyalla/Screenshot_2023-01-31-22-25-59-67_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/ocyalla.html">Attendant ocyalla</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant ocyalla ocyalla Information from Chimeralandocyalla default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for ocyallaGalleries for ocyalla ocyalla Information from Chimeraland ocyalla default attribute GRADEAttackHealth Point HPDefense ocyalla GRADEAttackHealth Point HP
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/ocyalla.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/ocyaska/Screenshot_2023-02-06-02-40-23-92_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/ocyaska.html">Attendant ocyaska</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant ocyaska ocyaska Information from Chimeralandocyaska default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for ocyaskaGalleries for ocyaska ocyaska Information from Chimeraland ocyaska default attribute GRADEAttackHealth Point HPDefense ocyaska GRADEAttackHealth Point HP
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/ocyaska.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/panthakat/Screenshot_2023-02-04-02-09-04-10_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/panthakat.html">Attendant panthakat</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant panthakat panthakat Information from Chimeralandpanthakat default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for panthakatGalleries for panthakat panthakat Information from Chimeraland panthakat default attribute GRADEAttackHealth Point HPDefense panthakat GRADEAttack
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/panthakat.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/chimeraland/attendants/rhitian/Screenshot_2023-01-28-18-09-47-59_f4fc9fb10454fc3a3dacb99dff89b568.webp">
+    
+
+        
+        <p class="article-headline-p"><a href="/chimeraland/attendants/rhitian.html">Attendant rhitian</a></p>
+    </div>
+
+    
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            Attendant rhitian rhitian Information from Chimeralandrhitian default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for rhitianGalleries for rhitian rhitian Information from Chimeraland rhitian default attribute GRADEAttackHealth Point HPDefense rhitian GRADEAttackHealth Point HP
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/chimeraland/attendants/rhitian.html" target="_self">Read more</a>
+        </span>
+    </div>
+    
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+            </div>
+            <div>
+                <strong>Dimas Lanjaka</strong>
+                <span>Feb 08, 2023</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/games/">games</a>, <a class="post_category-link" href="/categories/games/chimeraland/">chimeraland</a>, <a class="post_category-link" href="/categories/games/chimeraland/attendants/">attendants</a>
+              </span>
+            
+
+            
+
+            
+
+            
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/archives/2023/page/6/">&lt;button aria-label="Last page" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"&gt;&lt;i class="material-icons" role="presentation"&gt;arrow_back&lt;/i&gt;&lt;/button&gt;</a><a class="page-number" href="/archives/2023/">1</a><a class="page-number" href="/archives/2023/page/5/">5</a><a class="page-number" href="/archives/2023/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/2023/page/8/">8</a><a class="extend next" rel="next" href="/archives/2023/page/8/">&lt;button aria-label="Next page" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"&gt;&lt;i class="material-icons" role="presentation"&gt;arrow_forward&lt;/i&gt;&lt;/button&gt;</a>
+        </nav>
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+            
+            
+<div class="sidebar-overlay"></div>
+
+
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    
+    <div class="top-bar"></div>
+
+    
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+    </div>
+
+    
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        
+        <ul class="nav sidebar-nav">
+    
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">73</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+
+        
+        
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+
+    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" class="sidebar-footer-text-a" target="_blank" alt="WMI" title="WMI">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+</aside>
+
+            
+
+            
+            
+            <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+            
+
+            
+<footer class="mdl-mini-footer" id="bottom">
+    
+        
+        <div class="mdl-mini-footer--left-section sns-list">
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90d2l0dGVyLmNvbS90d2l0dGVy" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="WMI" title="WMI">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2ZhY2Vib29r" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="WMI" title="WMI">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="WMI" title="WMI">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button></a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+        
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;WMI
+            
+        </div>
+
+        
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="WMI" title="WMI">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="WMI" title="WMI">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+            
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+<script id="dsq-count-scr" src="//dimaslanjaka.disqus.com/count.js" async=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+        </main>
+    </div>
+
+
+
+</body></html>

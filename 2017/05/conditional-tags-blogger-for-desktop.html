@@ -292,6 +292,88 @@
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/blogger/",
+        "name": "blogger"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/categories/uncategorized/",
+        "name": "uncategorized"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/2017/05/conditional-tags-blogger-for-desktop.html",
+        "name": "conditional tags blogger for desktop only"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/2017/05/conditional-tags-blogger-for-desktop.html"
+    },
+    "headline": "conditional tags blogger for desktop only",
+    "description": "h2>Is there any Blogger blogspot not portable contingent arrangement.</h2>Someone ask to stackoverflow like this.<br /><br />I would",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://i.stack.imgur.com/frOSJ.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": {
+        "nick": "Unknown",
+        "link": "",
+        "email": "noreply@blogger.com"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {
+        "nick": "Unknown",
+        "link": "",
+        "email": "noreply@blogger.com"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2017-05-17T13:02:00+07:00",
+    "dateModified": "2017-05-17T13:02:06+07:00"
+  }
+]</script>
+
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
 
 
@@ -365,7 +447,7 @@
 
     
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" title="Author Avatar" itemprop="image">
     </div>
     
     <div>
@@ -458,7 +540,7 @@
                 
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2>Is there any Blogger (blogspot) not portable contingent arrangement.</h2>Someone ask to stackoverflow like this.<br><br>I would prefer to load javascript files solely on Desktop version of my<br>Google blogspot (blogger.com) since i would like a lightweight version of<br>my web log for mobile.<br><br>I came through followings, however not operating<br><br><br><pre><code>&lt;b:if cond != 'data:blog.isMobile'&gt;;<br>&lt;b:if cond = !'data:blog.isMobile'&gt;;<br>&lt;b:if cond = '!data:blog.isMobile'&gt;;<br>&lt;b:if cond='data:blog.pageType !== "data:blog.isMobile"&gt;<br></code></pre><br>How can I write "is Not Mobile" conditional in Google blogspot? Thanks in<br>advance for all answers.<br><br>Update: I'm using following code at the moment and it's working but better<br>ideas are welcome<br><br><br><pre><code>&lt;b:if cond='data:blog.isMobile'&gt;<br><br>&lt;b:else/&gt;<br>    //I include javascript files here and they only appear on desktop version<br>&lt;/b:if&gt;</code></pre><br><h3>Here the solved for this problem:</h3>You can be use <code>true</code> or <code>false</code> statements in blogger<br>conditional tags in this case. This is the perfect way :)<br><br><br><pre><code>&lt;b:if cond='data:blog.isMobile == &amp;quot;false&amp;quot;'&gt;<br>//Contents inside this, will only appear in Desktop version.<br>&lt;/b:if&gt;<br></code></pre><strong><em><br></em></strong> <strong><em>Edit #1:</em></strong><br><br>This will work just on the off chance that you have empowered versatile format, and set it to custom.<br><br><img alt="enter image description here" src="https://i.stack.imgur.com/frOSJ.png"><br><br><img alt="enter image description here" src="https://i.stack.imgur.com/SqZkw.png"><br><br>Furthermore, it works on Chrome's portable emulator. (will be diverted to portable adaptation if going to from a cell phone or with an emulator that mirrors a versatile Program Client Operator. it will include ?m=1 toward the finish of the URL)<br><br><img alt="enter image description here" src="https://i.stack.imgur.com/9xnCv.png"><br><br>Hope this helps.
+        <h2>Is there any Blogger (blogspot) not portable contingent arrangement.</h2>Someone ask to stackoverflow like this.<br><br>I would prefer to load javascript files solely on Desktop version of my<br>Google blogspot (blogger.com) since i would like a lightweight version of<br>my web log for mobile.<br><br>I came through followings, however not operating<br><br><br><pre><code>&lt;b:if cond != 'data:blog.isMobile'&gt;;<br>&lt;b:if cond = !'data:blog.isMobile'&gt;;<br>&lt;b:if cond = '!data:blog.isMobile'&gt;;<br>&lt;b:if cond='data:blog.pageType !== "data:blog.isMobile"&gt;<br></code></pre><br>How can I write "is Not Mobile" conditional in Google blogspot? Thanks in<br>advance for all answers.<br><br>Update: I'm using following code at the moment and it's working but better<br>ideas are welcome<br><br><br><pre><code>&lt;b:if cond='data:blog.isMobile'&gt;<br><br>&lt;b:else/&gt;<br>    //I include javascript files here and they only appear on desktop version<br>&lt;/b:if&gt;</code></pre><br><h3>Here the solved for this problem:</h3>You can be use <code>true</code> or <code>false</code> statements in blogger<br>conditional tags in this case. This is the perfect way :)<br><br><br><pre><code>&lt;b:if cond='data:blog.isMobile == &amp;quot;false&amp;quot;'&gt;<br>//Contents inside this, will only appear in Desktop version.<br>&lt;/b:if&gt;<br></code></pre><strong><em><br></em></strong> <strong><em>Edit #1:</em></strong><br><br>This will work just on the off chance that you have empowered versatile format, and set it to custom.<br><br><img alt="enter image description here" src="https://i.stack.imgur.com/frOSJ.png" title="enter image description here" itemprop="image"><br><br><img alt="enter image description here" src="https://i.stack.imgur.com/SqZkw.png" title="enter image description here" itemprop="image"><br><br>Furthermore, it works on Chrome's portable emulator. (will be diverted to portable adaptation if going to from a cell phone or with an emulator that mirrors a versatile Program Client Operator. it will include ?m=1 toward the finish of the URL)<br><br><img alt="enter image description here" src="https://i.stack.imgur.com/9xnCv.png" title="enter image description here" itemprop="image"><br><br>Hope this helps.
 <h2 id="Also-Read-Blogger-Conditional-Tags">Also Read Blogger Conditional Tags</h2>
 <p><a href="/2021/12/18/blogger-conditional-tags.html">Blogger Conditional Tags</a></p>
 
@@ -562,7 +644,7 @@
 
     
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
     </div>
 
     
@@ -616,7 +698,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">42</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">February 2023<span class="sidebar_archives-count">73</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">January 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">December 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">October 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">August 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">July 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">June 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">March 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">February 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">January 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">December 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">May 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">March 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">October 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">August 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">July 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">March 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">January 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">February 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">July 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">August 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">June 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         

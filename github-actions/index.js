@@ -4,13 +4,28 @@ const args = require("minimist")(process.argv.slice(2));
 const root = process.cwd();
 const jsdom = require("jsdom");
 const path = require("path");
+const yaml = require("yaml");
+const config = yaml.parse(
+	fs.readFileSync(
+		path.join(root, "github-actions-validator.config.yml").toString()
+	)
+);
 
-validate(path.join(root, "index.html"), "homepage");
+(config["validate"] || []).forEach((obj) => {
+	Object.keys(obj).forEach((name) => {
+		validate(path.join(root, obj[name]), name);
+	});
+});
 
-spawn("npm", ["install", "--omit=dev", "--production"], {
-	cwd: path.join(root, "page"),
-}).finally(() => {
-	spawn("npm", ["install", "--omit=dev", "--production"], { cwd: root });
+(config["install"] || []).forEach(async (p) => {
+	try {
+		const cwd = path.resolve(root, p);
+		await spawn("npm", ["install", "--omit=dev", "--production"], {
+			cwd,
+		});
+	} catch (_err) {
+		console.error("cannot installing", cwd, _err.message);
+	}
 });
 
 /**

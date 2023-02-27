@@ -9,11 +9,14 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^3.7.2"
+  },
   "devDependencies": {
     "git-command-helper": "^1.1.8",
     "gulp": "^4.0.2",
     "jsdom": "^21.1.0",
-    "minimist": "^1.2.8"
+    "minimist": "^1.2.8",
+    "yaml": "^2.2.1"
   }
 }

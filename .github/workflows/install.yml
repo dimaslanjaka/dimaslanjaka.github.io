@@ -41,11 +41,18 @@ jobs:
         with:
           node-version: "18"
           architecture: "x64"
+      - run: corepack enable
       - name: install validator
-        run: |
-          corepack enable
-          yarn install
+        run: yarn install
         working-directory: github-actions
+        id: install
+        continue-on-error: true
+      - run: |
+          rm -rf yarn.lock
+          yarn cache clean
+          rm -rf node_modules
+        working-directory: github-actions
+        if: steps.install.outcome == 'failure'
       - run: node github-actions/index.js
         id: validate
       - name: Setup Pages

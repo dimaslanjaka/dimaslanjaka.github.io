@@ -29,4 +29,7 @@ function validate(file, as) {
 	const bodyEmpty = document.body.innerHTML.trim().length === 0;
 	// throw when body is empty
 	if (bodyEmpty) throw new Error(`body is empty file ${as || file}`);
+
+	document.close();
+	window.close();
 }

@@ -1582,9 +1582,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/tarball/monorepo":
+"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz":
   version: 1.1.8
-  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper.git#commit=d2228e952da68913086ed850ccdbed0d30795ec2"
+  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
   dependencies:
     "@expo/spawn-async": ^1.7.0
     bluebird: ^3.7.2
@@ -1598,7 +1598,7 @@ __metadata:
     true-case-path: ^2.2.1
     tslib: ^2.5.0
     upath: ^2.0.1
-  checksum: 9a374956695972e321ec1793e2bd8d7754ec02d3a3ab8b51f272b97964db621bf3c0b471fd0acef85047e1b0d877ad90cf77282348a252f7107ca2e4314366b7
+  checksum: c68a5f688cb45166ce19e163a8d921c4c043186bb9f6b0e4101d5de97360227cdd2c6a69178f8e835a71df5da53891dfb48aefa21f1769d54b2eadaa155cea88
   languageName: node
   linkType: hard
 
@@ -1607,7 +1607,7 @@ __metadata:
   resolution: "github-pages-validator@workspace:."
   dependencies:
     bluebird: ^3.7.2
-    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/tarball/monorepo"
+    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz"
     gulp: ^4.0.2
     jsdom: ^21.1.0
     minimist: ^1.2.8

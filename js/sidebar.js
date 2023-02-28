@@ -1,1 +1,229 @@
-$(document).ready((function(){var t=CONFIG.sidebar&&CONFIG.sidebar.tocMaxDepth||4,e="h1,h2,h3,h4,h5,h6,".slice(0,3*t).slice(0,-1);var o=null,s=null,i=!1;function a(){var t=$(".post-body, .custompage"),a=$(".sidebar-toc li"),n=t.find(e),r=n.first();if(n.each((function(){this.getBoundingClientRect().top<=5&&(o=window.encodeURIComponent(this.getAttribute("id")))})),t[0]&&r[0]&&r[0].getBoundingClientRect().top>0&&r.offset().top-$(window).scrollTop()>0)i||(a.removeClass("active current"),i=!0);else if(o!==s){var d=$('.sidebar-toc a[href="#'+o+'"]');if(!d.length){var c=window.decodeURIComponent(o);d=$('.sidebar-toc a[href="#'+c+'"]')}a.removeClass("active current"),d.parents("li").addClass("active"),d.parent().addClass("current"),s=o,i=!1}}var n=!1;function r(){var t=$(".sidebar-toc").height();if(!($(".sidebar-toc > div").height()<=t)){var e=$(".sidebar-toc"),o=$(".sidebar-toc .current a");if(o[0]&&e[0]){var s=o.offset().top-e.offset().top;n=s>t||s<0}n&&o.velocity("stop").velocity("scroll",{container:e,offset:-t/2,duration:500,easing:"easeOutQuart"})}}var d=0;function c(){var t=$("#sidebar");document.getElementById("content-wrap").getBoundingClientRect().top<d?t.addClass("sidebar--sticky"):t.removeClass("sidebar--sticky")}function l(){if(0!==$("#is-post").length){var t=$(".content"),e=t.offset().top,o=0,s=!1,i=0;CONFIG.postWidget&&CONFIG.postWidget.endText&&(s=!0),o=s?$(".post-ending").offset().top-e+$(".post-ending").outerHeight():$(".post-footer").offset().top-e;var a=$(window).height(),n=0;0!==t.length&&(n=parseInt(-1*t[0].getBoundingClientRect().top)+a);var r=Number($(".sidebar-reading-info__num").text());o=parseInt(Math.abs(o)),0===(i=(i=parseInt(n/o*100))>100?100:i<0?0:i)&&0===r||100===i&&100===r||($(".sidebar-reading-info__num").text(i),$(".sidebar-reading-line").css("transform","translateX("+(i-100)+"%)"))}}CONFIG.sidebar&&CONFIG.sidebar.offsetTop&&(d=parseInt(CONFIG.sidebar.offsetTop)),a(),c(),r(),l(),$(window).on("scroll",(function(){c()})),$(window).on("scroll",Stun.utils.throttle((function(){a(),r(),l()}),150)),Stun.utils.pjaxReloadSidebar=function(){var t=$(".sidebar-nav-toc"),o=$(".sidebar-nav-ov"),s=$(".sidebar-toc"),i=$(".sidebar-ov");t.on("click",(function(e){e.stopPropagation(),$(this).hasClass("current")||(t.addClass("current"),o.removeClass("current"),s.css("display","block"),s.velocity("stop").velocity("fadeIn"),i.css("display","none"),i.velocity("stop").velocity("fadeOut"))})),o.on("click",(function(e){e.stopPropagation(),$(this).hasClass("current")||(o.addClass("current"),t.removeClass("current"),s.css("display","none"),s.velocity("stop").velocity("fadeOut"),i.css("display","block"),i.velocity("stop").velocity("fadeIn"))})),$(".post-body, .custompage").find(e)[0]||($(".sidebar-nav").addClass("hide"),$(".sidebar-toc").addClass("hide"),$(".sidebar-ov").removeClass("hide"))},Stun.utils.pjaxReloadSidebar()}));
+$(document).ready(function () {
+  var tocDepth = (CONFIG.sidebar && CONFIG.sidebar.tocMaxDepth) || 4
+  // Optimize selector by theme config.
+  var HEADING_SELECTOR = 'h1,h2,h3,h4,h5,h6,'
+    .slice(0, tocDepth * 3)
+    .slice(0, -1)
+
+  function initTocDisplay () {
+    if ($('.post-body, .custompage').find(HEADING_SELECTOR)[0]) {
+      return
+    }
+    $('.sidebar-nav').addClass('hide')
+    $('.sidebar-toc').addClass('hide')
+    $('.sidebar-ov').removeClass('hide')
+  }
+
+  // The heading that reached the top currently.
+  var currHeading = null
+  // The heading that reached the top last time.
+  var lastHeading = null
+  var isRemovedTocClass = false
+
+  // Automatically expand items in the article directory
+  //   based on the scrolling of heading in the article.
+  function autoSpreadToc () {
+    var $postBody = $('.post-body, .custompage')
+    var $allTocItem = $('.sidebar-toc li')
+    var $headings = $postBody.find(HEADING_SELECTOR)
+    var $firsetChild = $headings.first()
+
+    $headings.each(function () {
+      var headingTop = this.getBoundingClientRect().top
+      // The minimum distance from the top of the browser
+      //   when heading is marked as active in toc.
+      var MIN_HEIGHT_TO_TOP = 5
+
+      if (headingTop <= MIN_HEIGHT_TO_TOP) {
+        currHeading = window.encodeURIComponent(this.getAttribute('id'))
+      }
+    })
+
+    // All heading are not to the top.
+    if (
+      $postBody[0] &&
+      $firsetChild[0] &&
+      $firsetChild[0].getBoundingClientRect().top > 0 &&
+      $firsetChild.offset().top - $(window).scrollTop() > 0
+    ) {
+      if (!isRemovedTocClass) {
+        $allTocItem.removeClass('active current')
+        isRemovedTocClass = true
+      }
+      return
+    }
+    if (currHeading !== lastHeading) {
+      var $targetLink = $('.sidebar-toc a[href="#' + currHeading + '"]')
+
+      // In order to be compatible with Hexo under v5.0.0
+      if (!$targetLink.length) {
+        var anchorDecode = window.decodeURIComponent(currHeading)
+        $targetLink = $('.sidebar-toc a[href="#' + anchorDecode + '"]')
+      }
+
+      $allTocItem.removeClass('active current')
+      $targetLink.parents('li').addClass('active')
+      $targetLink.parent().addClass('current')
+      lastHeading = currHeading
+      isRemovedTocClass = false
+    }
+  }
+
+  // Whether toc needs scrolling.
+  var isTocScroll = false
+  // Scroll the post toc to the middle.
+  function scrollTocToMiddle () {
+    var $tocWrapHeight = $('.sidebar-toc').height()
+    var $tocHeight = $('.sidebar-toc > div').height()
+
+    if ($tocHeight <= $tocWrapHeight) {
+      return
+    }
+
+    var $tocWrap = $('.sidebar-toc')
+    var $currTocItem = $('.sidebar-toc .current a')
+
+    if ($currTocItem[0] && $tocWrap[0]) {
+      var tocTop = $currTocItem.offset().top - $tocWrap.offset().top
+      isTocScroll = tocTop > $tocWrapHeight || tocTop < 0
+    }
+
+    if (isTocScroll) {
+      $currTocItem.velocity('stop').velocity('scroll', {
+        container: $tocWrap,
+        offset: -$tocWrapHeight / 2,
+        duration: 500,
+        easing: 'easeOutQuart'
+      })
+    }
+  }
+
+  // Distance from sidebar to top.
+  var sidebarToTop = 0
+  if (CONFIG.sidebar && CONFIG.sidebar.offsetTop) {
+    sidebarToTop = parseInt(CONFIG.sidebar.offsetTop)
+  }
+
+  // Sticky the sidebar when it arrived the top.
+  function sidebarSticky () {
+    var $sidebar = $('#sidebar')
+    var targetY = document
+      .getElementById('content-wrap')
+      .getBoundingClientRect().top
+
+    if (targetY < sidebarToTop) {
+      $sidebar.addClass('sidebar--sticky')
+    } else {
+      $sidebar.removeClass('sidebar--sticky')
+    }
+  }
+
+  // Update the reading progress lines of post.
+  function readProgress () {
+    // Not on post page.
+    if ($('#is-post').length === 0) {
+      return
+    }
+
+    var $post = $('.content')
+    var postTop = $post.offset().top
+    var postEndTop = 0
+    var postEndHeight = 0
+    var postReadingHeight = 0
+    var isEnablePostEnd = false
+    var percent = 0
+
+    if (CONFIG.postWidget && CONFIG.postWidget.endText) {
+      isEnablePostEnd = true
+    }
+    if (isEnablePostEnd) {
+      postEndTop = $('.post-ending').offset().top
+      postEndHeight = $('.post-ending').outerHeight()
+      postReadingHeight = postEndTop - postTop + postEndHeight
+    } else {
+      postEndTop = $('.post-footer').offset().top
+      postReadingHeight = postEndTop - postTop
+    }
+
+    var windowHeight = $(window).height()
+    var postScrollTop = 0
+
+    if ($post.length !== 0) {
+      postScrollTop =
+        parseInt($post[0].getBoundingClientRect().top * -1) + windowHeight
+    }
+
+    var percentNum = Number($('.sidebar-reading-info__num').text())
+    postReadingHeight = parseInt(Math.abs(postReadingHeight))
+    percent = parseInt((postScrollTop / postReadingHeight) * 100)
+    percent = percent > 100 ? 100 : percent < 0 ? 0 : percent
+
+    // Has reached the maximum or minimum
+    if (
+      (percent === 0 && percentNum === 0) ||
+      (percent === 100 && percentNum === 100)
+    ) {
+      return
+    }
+    $('.sidebar-reading-info__num').text(percent)
+    $('.sidebar-reading-line').css(
+      'transform',
+      'translateX(' + (percent - 100) + '%)'
+    )
+  }
+
+  // Initial run
+  autoSpreadToc()
+  sidebarSticky()
+  scrollTocToMiddle()
+  readProgress()
+
+  $(window).on('scroll', function () {
+    sidebarSticky()
+  })
+
+  $(window).on(
+    'scroll',
+    Stun.utils.throttle(function () {
+      autoSpreadToc()
+      scrollTocToMiddle()
+      readProgress()
+    }, 150)
+  )
+
+  Stun.utils.pjaxReloadSidebar = function () {
+    var $navToc = $('.sidebar-nav-toc')
+    var $navOv = $('.sidebar-nav-ov')
+    var $tocWrap = $('.sidebar-toc')
+    var $overview = $('.sidebar-ov')
+
+    $navToc.on('click', function (e) {
+      e.stopPropagation()
+      if ($(this).hasClass('current')) {
+        return
+      }
+      $navToc.addClass('current')
+      $navOv.removeClass('current')
+      $tocWrap.css('display', 'block')
+      $tocWrap.velocity('stop').velocity('fadeIn')
+      $overview.css('display', 'none')
+      $overview.velocity('stop').velocity('fadeOut')
+    })
+    $navOv.on('click', function (e) {
+      e.stopPropagation()
+      if ($(this).hasClass('current')) {
+        return
+      }
+      $navOv.addClass('current')
+      $navToc.removeClass('current')
+      $tocWrap.css('display', 'none')
+      $tocWrap.velocity('stop').velocity('fadeOut')
+      $overview.css('display', 'block')
+      $overview.velocity('stop').velocity('fadeIn')
+    })
+    initTocDisplay()
+  }
+
+  // Initialization
+  Stun.utils.pjaxReloadSidebar()
+})

@@ -1,1 +1,105 @@
-$(document).ready((function(){var e=CONFIG.header&&CONFIG.header.enable,s=e&&CONFIG.header.showOnPost,a=0,o=!1,l=!0;function d(){var d=!!$("#is-post").length,r=!e||d&&!s,t=$(".header-nav"),i=Math.floor($(window).scrollTop()),n=Math.floor(i-a);if(0===i)r&&setTimeout((function(){t.addClass("slider--clear"),l=!1}),200),t.removeClass("header-nav--sticky"),t.removeClass("slider--up"),t.addClass("slider--down");else{if(r&&i<t.height())return!1;Math.abs(n)>5?(r&&(l?t.removeClass("slider--clear"):l=!0),o?t.addClass("header-nav--sticky"):o=!0,n>0?(t.removeClass("slider--down"),t.addClass("slider--up")):(t.removeClass("slider--up"),t.addClass("slider--down"))):t.addClass("header-nav--sticky")}a=i}var r=CONFIG.back2top&&CONFIG.back2top.enable,t=!1;function i(){var e=$("#back2top");0!==$(window).scrollTop()?t||(e.addClass("back2top--show"),e.removeClass("back2top--hide"),t=!0):(e.addClass("back2top--hide"),e.removeClass("back2top--show"),t=!1)}r&&(i(),$("#back2top").on("click",(function(){$("body").velocity("stop").velocity("scroll")}))),d(),$(window).on("scroll",Stun.utils.throttle((function(){d(),r&&i()}),100))}));
+$(document).ready(function () {
+  var isHeaderEnable = CONFIG.header && CONFIG.header.enable
+  var isShowHeaderOnPost = isHeaderEnable && CONFIG.header.showOnPost
+  // The previous distance from the page to the top.
+  var prevScrollTop = 0
+  var isNavFix = false
+  var isAnimation = true
+
+  function headerNavScroll () {
+    var isPostPage = !!$('#is-post').length
+    var isNoHeader = !isHeaderEnable || (isPostPage && !isShowHeaderOnPost)
+    var $headerNav = $('.header-nav')
+    var scrollTop = Math.floor($(window).scrollTop())
+    var delta = Math.floor(scrollTop - prevScrollTop)
+
+    if (scrollTop === 0) {
+      if (isNoHeader) {
+        setTimeout(function () {
+          $headerNav.addClass('slider--clear')
+          isAnimation = false
+        }, 200)
+      }
+      $headerNav.removeClass('header-nav--sticky')
+      $headerNav.removeClass('slider--up')
+      $headerNav.addClass('slider--down')
+    } else {
+      if (isNoHeader && scrollTop < $headerNav.height()) {
+        return false
+      }
+
+      var MIN_SCROLL_TO_CHANGE_NAV = 5
+      // Make the state of nav bar not change due to tiny scrolling.
+      if (Math.abs(delta) > MIN_SCROLL_TO_CHANGE_NAV) {
+        if (isNoHeader) {
+          if (!isAnimation) {
+            isAnimation = true
+          } else {
+            $headerNav.removeClass('slider--clear')
+          }
+        }
+        if (!isNavFix) {
+          isNavFix = true
+        } else {
+          $headerNav.addClass('header-nav--sticky')
+        }
+        if (delta > 0) {
+          $headerNav.removeClass('slider--down')
+          $headerNav.addClass('slider--up')
+        } else {
+          $headerNav.removeClass('slider--up')
+          $headerNav.addClass('slider--down')
+        }
+      } else {
+        $headerNav.addClass('header-nav--sticky')
+      }
+    }
+    prevScrollTop = scrollTop
+  }
+
+  var isBack2topEnable = CONFIG.back2top && CONFIG.back2top.enable
+  var isBack2topShow = false
+
+  // Back the page to top.
+  function back2top () {
+    var $back2top = $('#back2top')
+    var scrollTop = $(window).scrollTop()
+
+    if (scrollTop !== 0) {
+      if (!isBack2topShow) {
+        $back2top.addClass('back2top--show')
+        $back2top.removeClass('back2top--hide')
+        isBack2topShow = true
+      }
+    } else {
+      $back2top.addClass('back2top--hide')
+      $back2top.removeClass('back2top--show')
+      isBack2topShow = false
+    }
+  }
+
+  if (isBack2topEnable) {
+    // Initializaiton
+    back2top()
+
+    $('#back2top').on('click', function () {
+      $('body')
+        .velocity('stop')
+        .velocity('scroll')
+    })
+  }
+
+  // Initializaiton
+  headerNavScroll()
+
+  $(window).on(
+    'scroll',
+    Stun.utils.throttle(function () {
+      headerNavScroll()
+
+      if (isBack2topEnable) {
+        back2top()
+      }
+    }, 100)
+  )
+})

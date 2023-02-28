@@ -1,1 +1,55 @@
-$((function(){Stun.utils.showThemeInConsole(),CONFIG.shortcuts&&CONFIG.shortcuts.switchPost&&Stun.utils.registerSwitchPost(),CONFIG.externalLink&&Stun.utils.addIconToExternalLink("#footer"),Stun.utils.pjaxReloadBoot=function(){if(CONFIG.codeblock){var t=CONFIG.codeblock.style;"default"===t?(this.addCodeHeader(),this.addCopyButton()):"carbon"===t?(this.addCodeHeader("carbon"),this.addCopyButton("carbon")):"simple"===t&&this.addCopyButton("simple"),this.registerCopyEvent()}if(CONFIG.reward&&this.registerShowReward(),CONFIG.lazyload&&this.lazyLoadImage(),CONFIG.galleryWaterfall&&this.showImageToWaterfall(),CONFIG.externalLink){this.addIconToExternalLink(".archive, .post-title")}CONFIG.fancybox?this.wrapImageWithFancyBox():CONFIG.zoomImage&&this.registerZoomImage()},Stun.utils.pjaxReloadBoot();$("#content-wrap img").each((function(){const t=$(this).attr("alt")||$(this).attr("title");$(this).after(`<div class="img-alt-msg">${t}</div>`)}))}));
+$(function () {
+  Stun.utils.showThemeInConsole()
+
+  if (CONFIG.shortcuts && CONFIG.shortcuts.switchPost) {
+    Stun.utils.registerSwitchPost()
+  }
+
+  // Not reload this, because it's changeless.
+  if (CONFIG.externalLink) {
+    Stun.utils.addIconToExternalLink('#footer')
+  }
+
+  Stun.utils.pjaxReloadBoot = function () {
+    if (CONFIG.codeblock) {
+      var codeStyle = CONFIG.codeblock.style
+      if (codeStyle === 'default') {
+        this.addCodeHeader()
+        this.addCopyButton()
+      } else if (codeStyle === 'carbon') {
+        this.addCodeHeader('carbon')
+        this.addCopyButton('carbon')
+      } else if (codeStyle === 'simple') {
+        this.addCopyButton('simple')
+      }
+      this.registerCopyEvent()
+    }
+    if (CONFIG.reward) {
+      this.registerShowReward()
+    }
+    if (CONFIG.lazyload) {
+      this.lazyLoadImage()
+    }
+    if (CONFIG.galleryWaterfall) {
+      this.showImageToWaterfall()
+    }
+    if (CONFIG.externalLink) {
+      var CONTAINER = '.archive, .post-title'
+      this.addIconToExternalLink(CONTAINER)
+    }
+    if (CONFIG.fancybox) {
+      this.wrapImageWithFancyBox()
+    } else if (CONFIG.zoomImage) {
+      this.registerZoomImage()
+    }
+  }
+
+  // Initializaiton
+  Stun.utils.pjaxReloadBoot()
+
+  const images = $('#content-wrap img')
+  images.each(function () {
+    const alt = $(this).attr('alt') || $(this).attr('title')
+    $(this).after(`<div class="img-alt-msg">${alt}</div>`)
+  })
+})

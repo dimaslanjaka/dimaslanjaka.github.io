@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+git add .
+set +e  # Grep succeeds with nonzero exit codes to show results.
+git diff --quiet; nochanges=$?
+git status | grep modified; modified=$?
+# git status | grep "publish your local"; push=$?
+# if [ $nochanges -eq 0 ]; then
+if [ -z "$(git status --porcelain)" ]; then
+    set -e
+    echo "No changes since last run"
+else
+    set -e
+    git add -A
+    git commit -am "updated on - $(date)"
+fi

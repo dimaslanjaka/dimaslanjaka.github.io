@@ -1,1 +1,1042 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html style="display: none;" lang="en"><head>
+    <meta charset="utf-8">
+    
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://dimaslanjaka.disqus.com">
+
+
+
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+    
+    <title>
+        
+        Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata | 
+        
+        WMI
+    </title>
+
+    
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.svg">
+    <link rel="icon" href="/img/favicon.svg">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Memahami rumus jarak, kecepatan, waktu, rata-rata dalam matematika">
+    <meta name="keywords" content=",distance,time,average,speed">
+    <meta name="theme-color" content="#0097A7">
+
+    
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    
+
+    
+    <script>(function () { window.lsloader = { jsRunSequence: [], jsnamemap: {}, cssnamemap: {} }; lsloader.removeLS = function (a) { try { localStorage.removeItem(a) } catch (b) { } }; lsloader.setLS = function (a, c) { try { localStorage.setItem(a, c) } catch (b) { } }; lsloader.getLS = function (a) { var c = ""; try { c = localStorage.getItem(a) } catch (b) { c = "" } return c }; versionString = "/*" + (window.materialVersion || "unknownVersion") + "*/"; lsloader.clean = function () { try { var b = []; for (var a = 0; a < localStorage.length; a++) { b.push(localStorage.key(a)) } b.forEach(function (e) { var f = lsloader.getLS(e); if (window.oldVersion) { var d = window.oldVersion.reduce(function (g, h) { return g || f.indexOf("/*" + h + "*/") !== -1 }, false); if (d) { lsloader.removeLS(e) } } }) } catch (c) { } }; lsloader.clean(); lsloader.load = function (f, a, b, d) { if (typeof b === "boolean") { d = b; b = undefined } d = d || false; b = b || function () { }; var e; e = this.getLS(f); if (e && e.indexOf(versionString) === -1) { this.removeLS(f); this.requestResource(f, a, b, d); return } if (e) { var c = e.split(versionString)[0]; if (c != a) { console.log("reload:" + a); this.removeLS(f); this.requestResource(f, a, b, d); return } e = e.split(versionString)[1]; if (d) { this.jsRunSequence.push({ name: f, code: e }); this.runjs(a, f, e) } else { document.getElementById(f).appendChild(document.createTextNode(e)); b() } } else { this.requestResource(f, a, b, d) } }; lsloader.requestResource = function (b, e, a, c) { var d = this; if (c) { this.iojs(e, b, function (h, f, g) { d.setLS(f, h + versionString + g); d.runjs(h, f, g) }) } else { this.iocss(e, b, function (f) { document.getElementById(b).appendChild(document.createTextNode(f)); d.setLS(b, e + versionString + f) }, a) } }; lsloader.iojs = function (d, b, g) { var a = this; a.jsRunSequence.push({ name: b, code: "" }); try { var f = new XMLHttpRequest(); f.open("get", d, true); f.onreadystatechange = function () { if (f.readyState == 4) { if ((f.status >= 200 && f.status < 300) || f.status == 304) { if (f.response != "") { g(d, b, f.response); return } } a.jsfallback(d, b) } }; f.send(null) } catch (c) { a.jsfallback(d, b) } }; lsloader.iocss = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.iofonts = function (f, c, h, a) { var b = this; try { var g = new XMLHttpRequest(); g.open("get", f, true); g.onreadystatechange = function () { if (g.readyState == 4) { if ((g.status >= 200 && g.status < 300) || g.status == 304) { if (g.response != "") { h(g.response); a(); return } } b.cssfallback(f, c, a) } }; g.send(null) } catch (d) { b.cssfallback(f, c, a) } }; lsloader.runjs = function (f, c, e) { if (!!c && !!e) { for (var b in this.jsRunSequence) { if (this.jsRunSequence[b].name == c) { this.jsRunSequence[b].code = e } } } if (!!this.jsRunSequence[0] && !!this.jsRunSequence[0].code && this.jsRunSequence[0].status != "failed") { var a = document.createElement("script"); a.appendChild(document.createTextNode(this.jsRunSequence[0].code)); a.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(a); this.jsRunSequence.shift(); if (this.jsRunSequence.length > 0) { this.runjs() } } else { if (!!this.jsRunSequence[0] && this.jsRunSequence[0].status == "failed") { var d = this; var a = document.createElement("script"); a.src = this.jsRunSequence[0].path; a.type = "text/javascript"; this.jsRunSequence[0].status = "loading"; a.onload = function () { d.jsRunSequence.shift(); if (d.jsRunSequence.length > 0) { d.runjs() } }; document.body.appendChild(a) } } }; lsloader.tagLoad = function (b, a) { this.jsRunSequence.push({ name: a, code: "", path: b, status: "failed" }); this.runjs() }; lsloader.jsfallback = function (c, b) { if (!!this.jsnamemap[b]) { return } else { this.jsnamemap[b] = b } for (var a in this.jsRunSequence) { if (this.jsRunSequence[a].name == b) { this.jsRunSequence[a].code = ""; this.jsRunSequence[a].status = "failed"; this.jsRunSequence[a].path = c } } this.runjs() }; lsloader.cssfallback = function (e, c, b) { if (!!this.cssnamemap[c]) { return } else { this.cssnamemap[c] = 1 } var d = document.createElement("link"); d.type = "text/css"; d.href = e; d.rel = "stylesheet"; d.onload = d.onerror = b; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(d, a) }; lsloader.runInlineScript = function (c, b) { var a = document.getElementById(b).innerText; this.jsRunSequence.push({ name: c, code: a }); this.runjs() } })();</script>
+
+    
+    <script>function Queue() { this.dataStore = []; this.offer = b; this.poll = d; this.execNext = a; this.debug = false; this.startDebug = c; function b(e) { if (this.debug) { console.log("Offered a Queued Function.") } if (typeof e === "function") { this.dataStore.push(e) } else { console.log("You must offer a function.") } } function d() { if (this.debug) { console.log("Polled a Queued Function.") } return this.dataStore.shift() } function a() { var e = this.poll(); if (e !== undefined) { if (this.debug) { console.log("Run a Queued Function.") } e() } } function c() { this.debug = true } } var queue = new Queue();</script>
+
+    
+    
+    <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+    <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+    
+
+    
+
+    
+
+    
+
+
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    
+    
+    <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WMI">
+    <meta name="msapplication-starturl" content="https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WMI">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.svg">
+
+    
+    
+    
+
+    
+    
+
+    
+    <meta property="og:url" content="https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata | WMI">
+    <meta property="og:image" content="/img/favicon.svg">
+    <meta property="og:description" content="Memahami rumus jarak, kecepatan, waktu, rata-rata dalam matematika">
+    
+    <meta property="og:article:tag" content="distance"> 
+    <meta property="og:article:tag" content="time"> 
+    <meta property="og:article:tag" content="average"> 
+    <meta property="og:article:tag" content="speed"> 
+
+    
+    <meta property="article:published_time" content="Sat Oct 15 2022 19:42:33 GMT+0700">
+    <meta property="article:modified_time" content="Sun Oct 16 2022 00:35:43 GMT+0700">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    
+    <link rel="canonical" href="https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html">
+    
+
+    
+    
+    
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html",
+    "headline": "Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata",
+    "datePublished": "Sat Oct 15 2022 19:42:33 GMT+0700",
+    "dateModified": "Sun Oct 16 2022 00:35:43 GMT+0700",
+    "author": {
+        "@type": "Person",
+        "name": "Dimas Lanjaka",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "WMI",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.svg"
+        }
+    },
+    "keywords": ",distance,time,average,speed",
+    "description": "Memahami rumus jarak, kecepatan, waktu, rata-rata dalam matematika",
+}
+</script>
+
+
+    
+
+    
+    
+    
+    
+
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/distance/",
+        "name": "distance"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/time/",
+        "name": "time"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/average/",
+        "name": "average"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/tags/speed/",
+        "name": "speed"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/categories/education/",
+        "name": "education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": "https://www.webmanajemen.com/categories/education/math/",
+        "name": "math"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": "https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html",
+        "name": "Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html"
+    },
+    "headline": "Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata",
+    "description": "Memahami rumus jarak, kecepatan, waktu, rata-rata dalam matematika",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://imgix2.ruangguru.com/assets/miscellaneous/png_yr7v2m_1615.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dimas Lanjaka"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dimas Lanjaka",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2022-10-15T19:42:33+07:00",
+    "dateModified": "2022-10-16T00:35:43+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+
+
+
+<body id="scheme-Paradox" class="lazy">
+    <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+        
+
+        
+        <main class="material-layout__content" id="main">
+
+            
+            <div id="top"></div>
+
+            
+            
+            <button class="MD-burger-icon sidebar-toggle">
+                <span id="MD-burger-id" class="MD-burger-layer"></span>
+            </button>
+            
+
+            
+
+    
+    
+    
+
+
+    
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Singkatan-jarak-kecepatan-waktu"><span class="post-toc-number">1.</span> <span class="post-toc-text">Singkatan jarak, kecepatan, waktu</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Contoh-soal-menentukan-waktu-tempuh-pada-jarak-yang-diketahui"><span class="post-toc-number">2.</span> <span class="post-toc-text">Contoh soal menentukan waktu tempuh pada jarak yang diketahui</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Contoh-soal-kecepatan-rata-rata"><span class="post-toc-number">3.</span> <span class="post-toc-text">Contoh soal kecepatan rata-rata</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Contoh-soal-mencari-kecepatan-rata-rata"><span class="post-toc-number">4.</span> <span class="post-toc-text">Contoh soal mencari kecepatan rata-rata</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Contoh-soal-menentukan-kecepatan"><span class="post-toc-number">5.</span> <span class="post-toc-text">Contoh soal menentukan kecepatan</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+
+
+    
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                
+                
+    
+    
+        
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://imgix2.ruangguru.com/assets/miscellaneous/png_yr7v2m_1615.png)">
+    
+            <p class="article-headline-p">
+                Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata
+            </p>
+        </div>
+
+
+
+
+
+                
+                    
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" title="Author Avatar" itemprop="image">
+    </div>
+    
+    <div>
+        <strong>Dimas Lanjaka</strong>
+        <span>Okt 15, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    
+    
+
+    
+    
+
+    
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/average/" rel="tag">average</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/distance/" rel="tag">distance</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/speed/" rel="tag">speed</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/time/" rel="tag">time</a>
+    </li></ul>
+    
+
+    
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata&amp;url=https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html&amp;pic=https://www.webmanajemen.com/img/favicon.svg&amp;searchPic=false&amp;style=simple" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata&amp;url=https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html&amp;via=Dimas Lanjaka" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+    
+</div>
+
+                
+
+                
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="Singkatan-jarak-kecepatan-waktu">Singkatan jarak, kecepatan, waktu</h2>
+<blockquote>
+<p><strong>v</strong> adalah lambang kecepatan (velocity)</p>
+<p><strong>S</strong> adalah jarak atau perpindahan, dan</p>
+<p><strong>t</strong> adalah waktu.</p>
+</blockquote>
+<p><b id="rumus-kecepatan">Rumus kecepatan</b> adalah jarak dibagi waktu atau ditulis \( v = S \div t \).</p>
+<p>Hubungan jarak, kecepatan, dan waktu dapat dipahami sebagai berikut.</p>
+<p><b id="rumus-jarak">Rumus jarak</b> adalah kecepatan dikali waktu atau ditulis \( S = v \times t \).</p>
+<p><b id="rumus-waktu">Rumus waktu</b> adalah jarak dibagi kecepatan atau ditulis \( t = S \div v \).</p>
+<p><b id="rumus-kecepatan-rata-rata">Rumus kecepatan rata-rata</b> adalah hasil bagi dari perpindahan dengan selang waktu, yaitu:</p>
+<p>\[ v = { \triangle x \over \triangle t } \]</p>
+<p>\( \triangle x \) adalah <b>perpindahan</b> atau <b>jarak</b>, yaitu jarak akhir dikurangi jarak awal atau ditulis \( S\ akhir - S\ awal \) dalam satuan meter.</p>
+<p>Sedangkan \( \triangle t \) adalah <b>perubahan waktu</b>, yaitu waktu akhir dikurangi waktu awal atau ditulis \( t\ akhir - t\ awal \) dalam satuan detik atau second.</p>
+<p>Maka, satuan kecepatan rata-rata adalah ( m/s ) atau dapat dikonversi menjadi ( km/jam ).</p>
+<h2 id="Contoh-soal-menentukan-waktu-tempuh-pada-jarak-yang-diketahui">Contoh soal menentukan waktu tempuh pada jarak yang diketahui</h2>
+<p>Jarak Yogyakarta-Magelang adalah 195 km. Jika ditempuh menggunakan mobil dengan kecepatan 65 km/jam. Berapa <strong>waktu yang diperlukan</strong> untuk menempuh jarak tersebut?</p>
+<p>Jawab:</p>
+<p>Diketahui:</p>
+<p>\[ \displaylines{ S = 195 km \\ v = 65 km/jam } \]</p>
+<p>Ditanya: Waktu atau <strong>t</strong>.</p>
+<p>\[ \displaylines{ t = S \div v \\ t = 195 \div 65 \\ t = 3 } \]</p>
+<p>Jadi, waktu yang dibutuhkan untuk menempuh jarak dari Yogyakarta-Magelang adalah 3 jam.</p>
+<h2 id="Contoh-soal-kecepatan-rata-rata">Contoh soal kecepatan rata-rata</h2>
+<p>Seorang pelari cepat bergerak lurus beraturan dalam waktu 5 detik. Ia dapat menempuh jarak 40 meter. <strong>Kecepatan rata-rata pelari</strong> itu adalah</p>
+<p>Jawab:</p>
+<p>Diketahui:</p>
+<p>\[ \triangle x = 40\ m \]</p>
+<p>\[ \triangle t = 5\ s \]</p>
+<p>\[ v = { \triangle s \over \triangle t } \]</p>
+<p>\[ v = { 40\ m \over 5\ s } = 8 m/s \]</p>
+<p>Mengkonversi ke kilometer per jam menggunakan <a href="/kunci-jawaban/rumus-satuan.html#Rumus-konversi-meter-per-detik-ke-kilometer-per-jam">rumus meter per detik ke kilometer per jam</a></p>
+<p>\[ km/h = { m/s \times 3,6 } = 8 \times 3,6 = 270\ km/h \]</p>
+<p>Jadi, kecepatan rata-rata pelari tersebut adalah <strong>8 m/s</strong> (meter per detik) atau <strong>270 km/h</strong> (kilometer per jam)</p>
+<h2 id="Contoh-soal-mencari-kecepatan-rata-rata">Contoh soal mencari kecepatan rata-rata</h2>
+<p>Sebuah kendaraan menempuh jarak 600 meter selama 5 menit, kemudian selama 10 menit berikutnya menempuh jarak 900 meter. Setelah itu, pada 750 meter terakhir waktu tempuhnya adalah 15 menit. <strong>Kecepatan rata-rata</strong> kendaraan itu adalah</p>
+<p><strong>Diketahui</strong></p>
+<ul>
+<li>jarak awal <strong>600 meter</strong> selama <strong>5 menit</strong></li>
+<li>jarak kedua <strong>900 meter</strong> selama <strong>10 menit</strong></li>
+<li>jarak ketiga <strong>750 meter</strong> selama <strong>15 menit</strong></li>
+</ul>
+<p>Jarak total ditulis \( S\ total = 600+900+750 = 2250\ meter \)</p>
+<p>Waktu total ditulis \( t\ total= 5+10+15 = 30\ menit \)</p>
+<p>Jawab: menggunakan rumus <b><a href="#rumus-kecepatan-rata-rata">mencari kecepatan rata-rata</a></b></p>
+<p>\[ v = { \triangle x \over \triangle t } = { 2250\ meter \over 30\ menit } = 75\ meter/menit \]</p>
+<p>Konversi ke km/s menggunakan <a href="/kunci-jawaban/rumus-satuan.html#Rumus-konversi-meter-per-menit-ke-kilometer-per-detik">Rumus konversi <b>meter per menit</b> ke <b>kilometer per detik</b></a></p>
+<p>\[ km/s = m/m \div 60000 = 75 \div 60000 = 0,00125\ km/s \]</p>
+<p>Dari perhitungan dengan menggunakan rumus di atas, maka didapat hasil kecepatan rata-rata mobil ada <strong>75 meter/menit</strong> atau <strong>0,00125 km/s</strong></p>
+<h2 id="Contoh-soal-menentukan-kecepatan">Contoh soal menentukan kecepatan</h2>
+<p>Sebuah mobil melaju dengan kecepatan tetap. Dalam waktu 3 jam, mobil tersebut menempuh jarak 210 km. Berapa kecepatan mobil tersebut?</p>
+<p><b>Diketahui:</b></p>
+<p>\[ Jarak\ (S) = 210\ km \]</p>
+<p>\[ Waktu\ (t) = 3\ jam \]</p>
+<b>Jawab: menggunakan rumus <a href="#rumus-kecepatan">mencari kecepatan</a></b>
+<p>\[ v = { S \over t } \]</p>
+<p>\[ v = { 210\ km \over 3\ jam } \]</p>
+<p>\[ v = 70 km/jam \]</p>
+<p>Dari perhitungan dengan menggunakan rumus di atas, maka didapat hasil kecepatan mobil adalah 70 km/jam</p>
+<script src="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/mathjax/loader.js"></script>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                
+                
+                    
+    
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://www.webmanajemen.com/kunci-jawaban/rumus-jarak-kecepatan-waktu.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//dimaslanjaka.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    
+        <a href="/kunci-jawaban/rumus-satuan.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    
+    <div class="section-spacer"></div>
+
+    
+    
+        <a href="/NodeJS/gulp-delete-clean-snippet.html" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+            
+            
+<div class="sidebar-overlay"></div>
+
+
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    
+    <div class="top-bar"></div>
+
+    
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Dimas Lanjaka's avatar" title="Dimas Lanjaka's avatar" itemprop="image">
+    </div>
+
+    
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        
+        <ul class="nav sidebar-nav">
+    
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2023/02/">Februari 2023<span class="sidebar_archives-count">73</span></a></li><li><a class="sidebar_archives-link" href="/archives/2023/01/">Januari 2023<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/12/">Desember 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/11/">November 2022<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/10/">Oktober 2022<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/09/">September 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">Agustus 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">Juli 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">Juni 2022<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">Mei 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/04/">April 2022<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/03/">Maret 2022<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/02/">Februari 2022<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/01/">Januari 2022<span class="sidebar_archives-count">596</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/12/">Desember 2021<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/11/">November 2021<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/09/">September 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">Agustus 2021<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">Juni 2021<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/05/">Mei 2021<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/04/">April 2021<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/03/">Maret 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">Desember 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">Oktober 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">September 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">Agustus 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">Juli 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">Juni 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">Mei 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">Maret 2020<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">Februari 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">Januari 2020<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">Desember 2019<span class="sidebar_archives-count">128</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">44</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">Oktober 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">Agustus 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">Juli 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">Juni 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">Mei 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">Maret 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">Februari 2019<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">Januari 2019<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">Desember 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">55</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">Oktober 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">Agustus 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">Juli 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">Juni 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">Maret 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">Februari 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">Januari 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">Desember 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">Oktober 2017<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">48</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">Agustus 2017<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">Juli 2017<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">Juni 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">Mei 2017<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">68</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">Januari 2017<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</ul>
+
+
+        
+        
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+
+    <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" class="sidebar-footer-text-a" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+</aside>
+
+            
+
+            
+            
+            <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+            
+
+            
+<footer class="mdl-mini-footer" id="bottom">
+    
+        
+        <div class="mdl-mini-footer--left-section sns-list">
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90d2l0dGVyLmNvbS90d2l0dGVy" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2ZhY2Vib29r" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button></a>
+    
+
+    
+    
+        <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button></a>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+        
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;WMI
+            
+        </div>
+
+        
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JvbGxuaC9oZXhvLXRoZW1lLW1hdGVyaWFs" rel="nofollow noopener noreferer noreferrer external" target="_blank" class="footer-develop-a" alt="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata" title="Rumus Jarak, Kecepatan, Waktu, Dan Rata-rata">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+            
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+<script id="dsq-count-scr" src="//dimaslanjaka.disqus.com/count.js" async=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+
+
+
+
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/bollnh/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+        </main>
+    </div>
+
+
+
+</body></html>

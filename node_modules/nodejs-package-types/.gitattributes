@@ -1,0 +1,21 @@
+*           text=auto
+*.txt       text eol=lf
+*.json      text eol=lf
+*.txt       text
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
+*.ts        text eol=lf
+*.js        text eol=lf
+*.png       binary diff
+*.jpg       binary diff
+*.ico       binary diff
+*.pdf       binary diff
+
+# turn off delta attributes for large files
+# fix large files
+# https://stackoverflow.com/a/3096675
+# /large_file_dir/* -delta
+# another/file/that/is/large -delta
+*.psd -delta
+*.iso -delta
+*.tgz -delta

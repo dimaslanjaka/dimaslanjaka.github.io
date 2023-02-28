@@ -1,1 +1,523 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="How to implement import.meta on typescript hybrid esm and commonjs compiler">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use import.meta on typescript hybrid compiler">
+<meta property="og:url" content="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="How to implement import.meta on typescript hybrid esm and commonjs compiler">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-01T23:01:50.000Z">
+<meta property="article:modified_time" content="2022-10-09T13:20:00.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="esm">
+<meta property="article:tag" content="commonjs">
+<meta name="twitter:card" content="summary"><title>How to use import.meta on typescript hybrid compiler | WMI</title><link ref="canonical" href="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: ["google","bing","baidu"],
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0">
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/nodejs/",
+        "name": "nodejs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/javascript/",
+        "name": "javascript"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/tags/esm/",
+        "name": "esm"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/tags/commonjs/",
+        "name": "commonjs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": "https://www.webmanajemen.com/categories/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": "https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html",
+        "name": "How to use import.meta on typescript hybrid compiler"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html"
+    },
+    "headline": "How to use import.meta on typescript hybrid compiler",
+    "description": "How to implement import.meta on typescript hybrid esm and commonjs compiler",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dimas Lanjaka"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dimas Lanjaka",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2022-05-02T06:01:50+07:00",
+    "dateModified": "2022-10-09T20:20:00+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">WMI</div><div class="header-banner-info__subtitle">Website Management Indonesia</div></div></div></div></header><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">How to use import.meta on typescript hybrid compiler</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-05-02</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-10-09</span></span></div></header><div class="post-body"><h2 id="explanation">explanation</h2>
+<p>Using typescript hybrid compiler to compile for ESM and CommonJS is a experimental for NodeJS.<br>
+Some function/magic function/constructor is not supported by CommonJS. So, you must define them manually, such as: __dirname, __filename</p>
+<h2 id="dirname-and-filename-resolver-for-ESM-and-CommonJS">__dirname and __filename resolver for ESM and CommonJS</h2>
+<pre><code class="highlight ts"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">getDirname</span> = (<span class="params"></span>) =&gt; {
+  <span class="comment">// get the stack</span>
+  <span class="keyword">const</span> { stack } = <span class="keyword">new</span> <span class="title class_">Error</span>();
+  <span class="comment">// get the third line (the original invoker)</span>
+  <span class="keyword">const</span> invokeFileLine = stack.<span class="title function_">split</span>(<span class="string">`\n`</span>)[<span class="number">2</span>];
+  <span class="comment">// match the file url from file://(.+.(ts|js)) and get the first capturing group</span>
+  <span class="keyword">const</span> __filename = invokeFileLine.<span class="title function_">match</span>(<span class="regexp">/file:\/\/(.+.(ts|js))/</span>)[<span class="number">1</span>];
+  <span class="comment">// match the file URL from file://(.+)/ and get the first capturing group</span>
+  <span class="comment">//     the (.+) is a greedy quantifier and will make the RegExp expand to the largest match</span>
+  <span class="keyword">const</span> __dirname = invokeFileLine.<span class="title function_">match</span>(<span class="regexp">/file:\/\/(.+)\//</span>)[<span class="number">1</span>];
+  <span class="keyword">return</span> { __dirname, __filename };
+};
+<span class="keyword">export</span> <span class="keyword">default</span> getDirname;</code></pre>
+<h2 id="Usage">Usage</h2>
+<pre><code class="highlight ts"><span class="keyword">import</span> { getDirname } <span class="keyword">from</span> <span class="string">'./dirname.ts'</span>; <span class="comment">// to prevent called by ESM, we using static import</span>
+<span class="keyword">const</span> __resolve = <span class="title function_">getDirname</span>();
+<span class="keyword">const</span> __filename = __resolve.<span class="property">__filename</span>;
+<span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);
+<span class="variable language_">console</span>.<span class="title function_">log</span>(__dirname, __filename); <span class="comment">// /media/dimaslanjaka/DATA/Repositories/traffic-generator/express/src/public/routes /media/dimaslanjaka/DATA/Repositories/traffic-generator/express/src/public/routes/index.ts</span></code></pre>
+<h2 id="Usage-Force-Unix-Style">Usage Force Unix Style</h2>
+<p>Install upath</p>
+<pre><code class="highlight bash">npm i upath</code></pre>
+<p>Call them</p>
+<pre><code class="highlight ts"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">'upath'</span>;
+<span class="keyword">import</span> { getDirname } <span class="keyword">from</span> <span class="string">'config'</span>;
+<span class="keyword">const</span> { dirname } = path;
+<span class="keyword">const</span> __resolve = <span class="title function_">getDirname</span>();
+<span class="keyword">const</span> __filename = __resolve.<span class="property">__filename</span>;
+<span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);</code></pre>
+<p>This is trick for resolving __dirname and __filename on typescript ESM hybrid compiler</p>
+
+<h1>Hybrid ESM/CJS modules in TypeScript</h1>
+<p>Generating and using hybrid node modules that target both CommonJS/CJS and ECMAScript modules/ESM is difficult to modify to allow these modules to be used within node as well.</p>
+<p>This repo provides a working example of how to achieve this in TypeScript (based on a <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RlbXVyZ29zL21qdHM=" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">previous example by @demurgos</a>).</p>
+<h2 id="Why">Why?</h2>
+
+<p>Support for ‘old’ CommonJS modules is always needed, but to get the most out of modern tools like ‘Rollup’, release ES modules as well so these tools work their magic and bundle size should be able to shrink.</p>
+<h2 id="Gotchas">Gotchas</h2>
+<p>First of all, in order to publicly export a CJS and ESM entrypoint, you need to supply <code>main</code> (CJS or hybrid entrypoint), <code>module</code> (ESM entry point), <code>browser</code> (CJS entry point), and <code>types</code> for correct TypeScript type export in your <code>package.json</code>.</p>
+<p>However, node does not accept standard <code>.js</code> files as ESM modules, but you need to either supply a loader script that handles module type detection (slow, potentially error prone) or change the filenames of all ES modules to <code>.mjs</code>, which node natively recognises as ESM modules.</p>
+<p>TypeScript unfortunately does not support renaming output files, so this needs to be done manually.</p>
+<p>Finally, importing the modules correctly requires different compiler arguments (see below).</p>
+<h2 id="Structure">Structure</h2>
+<p>The <a href="./hybrid"><code>hybrid</code></a> directory contains a hybrid CJS/ESM module (<a href="./hybrid/package.json"><code>package.json</code></a>) that just exports a single function. The function prints a string and returns a boolean indicating whether this function was executed in CJS or ESM.</p>
+<p>It gets imported by our main repo (<a href="./package.json"><code>package.json</code></a>), and the exported function gets used. This app just prints a few strings and finally whether the imported module was an ES or CJS module.</p>
+<h2 id="Detecting-CJS-vs-ESM">Detecting CJS vs ESM</h2>
+<p>In ESM, the <code>exports</code> variable does not exist, since exports are handled via the <code>export</code> keyword. Hence, whether or not this variable is undefined tells us if the executing context is ESM or CJS.</p>
+<h2 id="Install">Install</h2>
+<p>Install the dependencies of the hybrid module, build it, then install the dependencies in the main repo.</p>
+<pre><code class="highlight sh"><span class="built_in">cd</span> hybrid &amp;&amp; npm install &amp;&amp; npm run build &amp;&amp; <span class="built_in">cd</span> .. &amp;&amp; npm install</code></pre>
+<h2 id="Build-config">Build config</h2>
+<p>Any ES modules need to be renamed to <code>.mjs</code> or node.js will fail to recognise them as such and throw errors.</p>
+<h3 id="Building-hybrid-apps">Building hybrid apps</h3>
+<p>From the main project <a href="./package.json"><code>package.json</code></a>:</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"build:mjs"</span><span class="punctuation">:</span> <span class="string">"tsc --rootDir src --outDir build/mjs --moduleResolution node --allowSyntheticDefaultImports --module esnext src/*.ts &amp;&amp; mv build/mjs/index.js build/mjs/index.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"build:cjs"</span><span class="punctuation">:</span> <span class="string">"tsc --rootDir src --outDir build/cjs --moduleResolution node --esModuleInterop src/*.ts"</span><span class="punctuation">,</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
+<p>For regular applications, it’s a good idea to split CJS and ESM output into different directories, because they will be used separately anyway. In both cases, you want <code>moduleResolution</code> set to <code>node</code>.</p>
+<p>To build an ES module app (that can also work with CJS modules), you need to enable the option <code>allowSyntheticDefaultImports</code> and set the <code>module</code> compiler option to <code>esnext</code>.</p>
+<p>To build a CommonJS module app (that can also work with ES modules), you need to enable the option <code>esModuleInterop</code>.</p>
+<h3 id="Building-hybrid-packages">Building hybrid packages</h3>
+<p>From the hybrid package <a href="./hybrid/package.json"><code>package.json</code></a>:</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"main"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid"</span><span class="punctuation">,</span>
+  <span class="attr">"types"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.d.ts"</span><span class="punctuation">,</span>
+  <span class="attr">"browser"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.js"</span><span class="punctuation">,</span>
+  <span class="attr">"module"</span><span class="punctuation">:</span> <span class="string">"./dist/hybrid.mjs"</span><span class="punctuation">,</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"build:mjs"</span><span class="punctuation">:</span> <span class="string">"tsc --allowSyntheticDefaultImports --module esnext &amp;&amp; npm run move-esm-output &amp;&amp; npm run process-source-maps"</span><span class="punctuation">,</span>
+    <span class="attr">"move-esm-output"</span><span class="punctuation">:</span> <span class="string">"mv dist/hybrid.js dist/hybrid.mjs &amp;&amp; mv dist/say-hello.js dist/say-hello.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"process-source-maps"</span><span class="punctuation">:</span> <span class="string">"sed -e \"s/hybrid.js/hybrid.mjs/g\" ./dist/hybrid.js.map &gt; ./dist/hybrid.mjs.map &amp;&amp; sed -e \"s/say-hello.js/say-hello.mjs/g\" ./dist/say-hello.js.map &gt; ./dist/say-hello.mjs.map"</span><span class="punctuation">,</span>
+    <span class="attr">"build:cjs"</span><span class="punctuation">:</span> <span class="string">"tsc --esModuleInterop"</span><span class="punctuation">,</span>
+    <span class="attr">"build"</span><span class="punctuation">:</span> <span class="string">"npm run build:mjs &amp;&amp; npm run build:cjs"</span>
+  <span class="punctuation">}</span></code></pre>
+<p>First of all, if no file extension is specified in the <code>main</code> field, the module loader can choose the desired from the available options at the path. If the module loader is configured to preferably load ES modules, then the <code>.mjs</code> file will be loaded if it exists, otherwise the <code>.js</code> at the spot will be loaded as a CJS module.<br>
+A hybrid module will have a <code>.js</code> and a <code>.mjs</code> version of each file in the module.<br>
+The build process for the ES module files is as follows:</p>
+<ul>
+<li>Build the ES module with typescript: This generates <code>.js</code> code files and <code>.js.map</code> source map files. Note that you need to specify <code>--allowSyntheticDefaultImports</code> and <code>--module esnext</code> as compiler options.</li>
+<li>Rename all generated <code>.js</code> files to <code>.mjs</code> (see the <code>move-esm-output</code> task above)</li>
+<li>Parse all source map files and rename the target filename inside from the <code>.js</code> version to <code>.mjs</code>. Then output the replaced code at the same path ending in <code>.mjs.map</code> (see process-source-maps task above).<br>
+The build process for CJS module files is simpler and <strong>it should be run after the ES module code has been generated and post-processed</strong> (i.e. <strong>not in parallel</strong>). You only need to run <code>tsc</code> with the additional compiler option <code>--esModuleInterop</code>.<br>
+The final result will be, the following set of files for each individual source TypeScript source file / module (using the example file <code>&lt;some_path&gt;/filename.ts</code>):</li>
+<li><code>&lt;some_path&gt;/filename.d.ts</code>: The TypeScript definition file.</li>
+<li><code>&lt;some_path&gt;/filename.js</code>: The CommonJS version of the module</li>
+<li><code>&lt;some_path&gt;/filename.js.map</code>: the source map of the CommonJS module.</li>
+<li><code>&lt;some_path&gt;/filename.mjs</code>: The ESM version of the module</li>
+<li><code>&lt;some_path&gt;/filename.mjs.map</code>: the source map of the ES module.</li>
+</ul>
+<h4 id="Minor-gotcha">Minor gotcha</h4>
+<p>Technically, in ES modules, you need to specify the full file path of an import (according to the spec). Within node, this is not necessary though, if an <code>.mjs</code> file exists at that location. On the browser side, this will not work, so you should post-process your output further to rewrite the paths to fully qualified paths including extension. Alternatively, you could reconfigure the module loader to search at the appropriate locations.<br>
+The easiest option though is probably to just bundle up all the output using an ESM-aware bundler like <em>rollup</em>.</p>
+<h2 id="Running-hybrid-apps">Running hybrid apps</h2>
+<p>From the main project <a href="./package.json"><code>package.json</code></a>:</p>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"start:mjs"</span><span class="punctuation">:</span> <span class="string">"npm run build:mjs &amp;&amp; node --experimental-modules build/mjs/index.mjs"</span><span class="punctuation">,</span>
+    <span class="attr">"start:cjs"</span><span class="punctuation">:</span> <span class="string">"npm run build:cjs &amp;&amp; node build/cjs/index.js"</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
+<p>To start node using CommonJS, you don’t need to do anything and can just run <code>node &lt;PATH_TO_TARGET&gt;.js</code>.<br>
+To start node using/supporting ES modules, you need to (currently) supply the <code>--experimental-modules</code> option and then a path to the entrypoint <code>.mjs</code> file (<code>node --experimental-modules &lt;PATH_TO_TARGET&gt;.mjs</code>).</p>
+<h2 id="License">License</h2>
+<p><a href="./LICENSE.html">MIT License</a></p>
+
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://www.webmanajemen.com" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">Dimas Lanjaka</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/programming/" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">programming</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/nodejs/" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">nodejs</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/javascript/" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">javascript</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/esm/" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">esm</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/commonjs/" rel="internal follow bookmark" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">commonjs</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/chimeraland/redeem-code.html"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Redeem Code Chimeraland September 2022 Updated</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/NodeJS/nodemon.html"><span class="paginator-prev__text">nodemon</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div></div><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#explanation"><span class="toc-number">1.</span> <span class="toc-text">explanation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dirname-and-filename-resolver-for-ESM-and-CommonJS"><span class="toc-number">2.</span> <span class="toc-text">__dirname and __filename resolver for ESM and CommonJS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-number">3.</span> <span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-Force-Unix-Style"><span class="toc-number">4.</span> <span class="toc-text">Usage Force Unix Style</span></a></li></ol><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">Hybrid ESM/CJS modules in TypeScript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Why"><span class="toc-number">1.</span> <span class="toc-text">Why?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gotchas"><span class="toc-number">2.</span> <span class="toc-text">Gotchas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Structure"><span class="toc-number">3.</span> <span class="toc-text">Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Detecting-CJS-vs-ESM"><span class="toc-number">4.</span> <span class="toc-text">Detecting CJS vs ESM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install"><span class="toc-number">5.</span> <span class="toc-text">Install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-config"><span class="toc-number">6.</span> <span class="toc-text">Build config</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-hybrid-apps"><span class="toc-number">6.1.</span> <span class="toc-text">Building hybrid apps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-hybrid-packages"><span class="toc-number">6.2.</span> <span class="toc-text">Building hybrid packages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Minor-gotcha"><span class="toc-number">6.2.1.</span> <span class="toc-text">Minor gotcha</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Running-hybrid-apps"><span class="toc-number">7.</span> <span class="toc-text">Running hybrid apps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-number">8.</span> <span class="toc-text">License</span></a></li></ol><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar" title="avatar" itemprop="image"></div><p class="sidebar-ov-author__text">Website Manajemen Indonesia</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">1503</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu" target="_blank" rel="nofollow noopener noreferer noreferrer external" data-popover="Creative Commons" data-popover-pos="up" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler"><img src="/images/cc-by-nc-sa.svg" title="How to use import.meta on typescript hybrid compiler" alt="How to use import.meta on typescript hybrid compiler" itemprop="image"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div><div class="clearfix"></div><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Dimas Lanjaka</span></div><div>Hosted by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="How to use import.meta on typescript hybrid compiler" title="How to use import.meta on typescript hybrid compiler">Github Pages</a></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"><div class="search-btns">Search by:<span class="search-btns-item search-btns-item--google"><i class="fab fa-google"></i>Google</span><span class="search-btns-item search-btns-item--bing"><i></i>Bing</span><span class="search-btns-item search-btns-item--baidu"><i></i>Baidu</span></div></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ Untitled ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', 'Please enter characters');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.xml"></script><script type="text/javascript" src="/r-ads.js"></script></body></html>

@@ -1,1 +1,415 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="b>Responsive Menu Hover Effect:Call jquery library -gt; lt;script">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCSS Responsive Menu Hover Effect">
+<meta property="og:url" content="https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="b>Responsive Menu Hover Effect:Call jquery library -gt; lt;script">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png">
+<meta property="article:published_time" content="2017-09-17T19:40:00.000Z">
+<meta property="article:modified_time" content="2019-07-21T13:23:17.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><title>SCSS Responsive Menu Hover Effect | WMI</title><link ref="canonical" href="https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: ["google","bing","baidu"],
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0">
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/javascript/",
+        "name": "javascript"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/css/",
+        "name": "css"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/tags/html/",
+        "name": "html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/categories/uncategorized/",
+        "name": "uncategorized"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": "https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html",
+        "name": "SCSS Responsive Menu Hover Effect"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html"
+    },
+    "headline": "SCSS Responsive Menu Hover Effect",
+    "description": "b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery library -gt; <pre>lt;script",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": {
+        "nick": "Dimas Lanjaka Kumala Indra",
+        "link": "https://www.blogger.com/profile/17555754514989936273",
+        "email": "noreply@blogger.com"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {
+        "nick": "Dimas Lanjaka Kumala Indra",
+        "link": "https://www.blogger.com/profile/17555754514989936273",
+        "email": "noreply@blogger.com"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2017-09-18T02:40:00+07:00",
+    "dateModified": "2019-07-21T20:23:17+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">WMI</div><div class="header-banner-info__subtitle">Website Management Indonesia</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SCSS Responsive Menu Hover Effect</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2017-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2019-07-21</span></span></div></header><div class="post-body"><div class="gallery"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" title="SCSS Responsive Menu Hover Effect" alt="SCSS Responsive Menu Hover Effect" itemprop="image"></div><p><b>Responsive Menu Hover Effect</b>:<br></p><ol><li>Call jquery library -&gt; <pre>&lt;script src=‘<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9hamF4Lmdvb2dsZWFwaXMuY29tL2FqYXgvbGlicy9qcXVlcnkvMy4yLjEvanF1ZXJ5Lm1pbi5qcw==">https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</a>’ async=‘async’&gt;&lt;/script&gt;</pre></li><li>SCSS -&gt; <pre>@import url(“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PUFudG9uJTdDSm9zZWZpbitTYW5z">https://fonts.googleapis.com/css?family=Anton|Josefin+Sans</a>”);<br>::-webkit-scrollbar {<br>  width: 10px;<br>  height: 10px;<br>  background-color: white;<br>  border-top: 1px solid #000;<br>}<br><br>::-webkit-scrollbar-thumb {<br>  background-color: #1a1a1a;<br>  height: 5px;<br>}<br><br>* {<br>  box-sizing: border-box;<br>}<br><br>/<em>html, body {<br>  width: 100%;<br>  min-height: 100%;<br>  margin: 0;<br>  padding: 0;<br>  background: #000;<br>}<br><br>.page {<br>  width: 720px;<br>  float: left;<br>  position: relative;<br>  left: 50%;<br>  margin-left: -360px;<br>  padding: 10px;<br>}<br>.page h1, .page p {<br>  float: left;<br>  width: 100%;<br>  color: #fff;<br>  font-family: ‘Josefin Sans’, sans-serif;<br>}<br>.page h1 {<br>  text-transform: uppercase;<br>  margin-top: 115px;<br>  text-align: center;<br>  letter-spacing: 10px;<br>}<br>.page p {<br>  line-height: 20pt;<br>  font-size: 14pt;<br>  font-weight: 100;<br>  text-align: justify;<br>}</em>/<br><br>.menu {<br>  opacity: 0;<br>  pointer-events: none;<br>  background: #fff;<br>  width: 80%;<br>  float: left;<br>  height: 100%;<br>  position: fixed;<br>  z-index: 1000;<br>  top: 0;<br>  right: 0;<br>  border-left: 15px solid #333;<br>  transition: all 1s ease;<br>  -webkit-transition: all 1s ease;<br>}<br>.menu.open {<br>  opacity: 1;<br>  pointer-events: all;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>}<br><br>ul {<br>  float: right;<br>  list-style: none;<br>  position: fixed;<br>  color: #000;<br>  right: 70px;<br>  font-size: 40pt;<br>  top: 50%;<br>  margin-top: -190px;<br>  font-family: ‘Josefin Sans’, sans-serif;<br>  text-transform: uppercase;<br>}<br>ul li {<br>  float: left;<br>  clear: both;<br>  width: 100%;<br>  margin: 20px 0px 20px 0px;<br>  text-align: right;<br>  position: relative;<br>  letter-spacing: 20px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  cursor: pointer;<br>}<br>ul li:hover {<br>  letter-spacing: 2px;<br>  padding-right: 20px;<br>  color: #31f4d6;<br>}<br>ul li:hover:after {<br>  border: 8px solid #f431d6;<br>}<br>ul li:hover:before {<br>  opacity: 1;<br>  -webkit-animation: hoverRotate .5s;<br>  /* Safari 4.0 - 8.0 */<br>  -webkit-animation-delay: .1s;<br>  -webkit-transform: rotate(45deg) translate(0px, 0px);<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>}<br>ul li:after {<br>  content: ‘’;<br>  float: left;<br>  position: absolute;<br>  width: 40px;<br>  border-radius: 500px;<br>  height: 40px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  border: 8px solid #000;<br>  right: -50px;<br>  z-index: -1;<br>  top: -7px;<br>}<br>ul li:before {<br>  content: ‘’;<br>  float: left;<br>  position: absolute;<br>  width: 70px;<br>  height: 10px;<br>  background: #f4e931;<br>  right: -57px;<br>  top: 17px;<br>  -webkit-transform: rotate(-45deg) translate(-60px, 0px);<br>  opacity: 0;<br>  z-index: 10000;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  -webkit-transition-delay: .1s;<br>  transition-delay: .1s;<br>}<br><br>.burger {<br>  width: 50px;<br>  float: left;<br>  position: fixed;<br>  right: 30px;<br>  z-index: 10000;<br>  top: 20px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>  cursor: pointer;<br>}<br>.burger span {<br>  width: 100%;<br>  float: left;<br>  height: 7px;<br>  background: #fff;<br>  margin-top: 10px;<br>  transition: all 0.2s ease;<br>  -webkit-transition: all 0.2s ease;<br>}<br>.burger:hover span {<br>  background: #31f4d6 !important;<br>}<br>.burger.open span {<br>  background: #000;<br>}<br>.burger.open span:nth-child(1) {<br>  -webkit-transform: rotate(45deg) translate(10px, 10px);<br>}<br>.burger.open span:nth-child(2) {<br>  -webkit-transform: rotate(-45deg) translate(0px, -5px);<br>}<br>.burger.open span:nth-child(3) {<br>  opacity: 0;<br>}<br><br>@-webkit-keyframes hoverRotate {<br>  0% {<br>    -webkit-transform: rotate(-45deg) translate(-60px, 0px);<br>  }<br>  50% {<br>    -webkit-transform: rotate(-45deg) translate(0px, 0px);<br>  }<br>  100% {<br>    -webkit-transform: rotate(45deg) translate(0px, 0px);<br>  }<br>}<br>@media screen and (max-width: 750px) {<br>  .page {<br>    width: 100%;<br>    left: 0%;<br>    padding: 20px;<br>    margin-left: -0px;<br>  }<br><br>  .menu {<br>    width: 100%;<br>    border: 0;<br>  }<br><br>  ul {<br>    right: 10px;<br>  }<br>  ul li {<br>    font-size: 18pt;<br>  }<br>  ul li:after {<br>    width: 100%;<br>    border-radius: 0px;<br>    height: 3px;<br>    position: absolute;<br>    background: #f4e931;<br>    border: 0px;<br>    top: 40%;<br>  }<br>  ul li:before {<br>    display: none;<br>  }<br>  ul li:hover:after {<br>    border: 0px;<br>    opacity: 0;<br>  }<br>}</pre></li><li>Js: -&gt;<pre>$(‘.burger’).click(function(){<br>  $(this).toggleClass(‘open’);<br>  $(‘.menu’).toggleClass(‘open’);<br>});</pre></li><li>Html Example -&gt;<br><iframe frameborder="0" height="300" scrolling="auto" src="https://codepen.io/mattyfours/embed/JyVMBd?default-tab=html" width="100%" title="SCSS Responsive Menu Hover Effect | WMI - https://codepen.io/mattyfours/embed/JyVMBd?default-tab=html"></iframe></li><li>Result -&gt; <iframe frameborder="0" height="300" scrolling="auto" src="https://codepen.io/mattyfours/embed/JyVMBd?default-tab=result" width="100%" title="SCSS Responsive Menu Hover Effect | WMI - https://codepen.io/mattyfours/embed/JyVMBd?default-tab=result"></iframe></li></ol><p></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://www.webmanajemen.com" rel="internal follow bookmark" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">Dimas Lanjaka</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html" rel="internal follow bookmark" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/programming/" rel="internal follow bookmark" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">programming</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/javascript/" rel="internal follow bookmark" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">javascript</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/css/" rel="internal follow bookmark" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">css</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://www.webmanajemen.com/tags/html/" rel="internal follow bookmark" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">html</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2017/09/what-if-adsense-ads-are-not-in-visit.html"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">What If Adsense Ads Are Not In Visit Clicks? Is It Still Paid?</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2017/09/amp-social-sharing-button-added-bbm-and.html"><span class="paginator-prev__text">AMP Social Sharing Button Added BBM and WhatsApp</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"></section><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar" title="avatar" itemprop="image"></div><p class="sidebar-ov-author__text">Website Manajemen Indonesia</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">1503</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu" target="_blank" rel="nofollow noopener noreferer noreferrer external" data-popover="Creative Commons" data-popover-pos="up" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect"><img src="/images/cc-by-nc-sa.svg" title="SCSS Responsive Menu Hover Effect" alt="SCSS Responsive Menu Hover Effect" itemprop="image"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Dimas Lanjaka</span></div><div>Hosted by <a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="SCSS Responsive Menu Hover Effect" title="SCSS Responsive Menu Hover Effect">Github Pages</a></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"><div class="search-btns">Search by:<span class="search-btns-item search-btns-item--google"><i class="fab fa-google"></i>Google</span><span class="search-btns-item search-btns-item--bing"><i></i>Bing</span><span class="search-btns-item search-btns-item--baidu"><i></i>Baidu</span></div></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.xml';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ Untitled ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', 'Please enter characters');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.xml"></script><script type="text/javascript" src="/r-ads.js"></script></body></html>

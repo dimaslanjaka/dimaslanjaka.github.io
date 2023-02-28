@@ -5,28 +5,48 @@ const root = process.cwd();
 const jsdom = require("jsdom");
 const path = require("path");
 const yaml = require("yaml");
+/**
+ * @type {import('./tmp/schema.json')}
+ */
 const config = yaml.parse(
-	fs.readFileSync(
-		path.join(root, "github-actions-validator.config.yml").toString()
-	)
+	fs
+		.readFileSync(path.join(root, "github-actions-validator.config.yml"))
+		.toString()
 );
 
-(config["validate"] || []).forEach((obj) => {
-	Object.keys(obj).forEach((name) => {
-		validate(path.join(root, obj[name]), name);
-	});
-});
+// save schema
+if (!fs.existsSync(path.join(__dirname, "tmp"))) {
+	fs.mkdirSync(path.join(__dirname, "tmp"));
+}
+fs.writeFileSync(
+	path.join(__dirname, "tmp/schema.json"),
+	JSON.stringify(config)
+);
 
-(config["install"] || []).forEach(async (p) => {
-	try {
-		const cwd = path.resolve(root, p);
-		await spawn("npm", ["install", "--omit=dev", "--production"], {
-			cwd,
-		});
-	} catch (_err) {
-		console.error("cannot installing", cwd, _err.message);
+(async function () {
+	Object.keys(config["validate"] || {}).forEach((name) => {
+		try {
+			const full = path.resolve(root, config["validate"][name]);
+			console.log("validating", name, full.replace(root, ""));
+			validate(full, name);
+		} catch (_err) {
+			console.error("cannot validate", name, _err.message);
+		}
+	});
+
+	const array = config["install"] || [];
+	for (let i = 0; i < array.length; i++) {
+		const p = array[i];
+		try {
+			const cwd = path.resolve(root, p);
+			await spawn("npm", ["install", "--omit=dev", "--production"], {
+				cwd,
+			});
+		} catch (_err) {
+			console.error("cannot installing", p, _err.message);
+		}
 	}
-});
+})();
 
 /**
  * start validation

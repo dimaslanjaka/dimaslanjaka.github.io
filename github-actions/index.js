@@ -23,15 +23,13 @@ fs.writeFileSync(
 	JSON.stringify(config)
 );
 
+let hasErrors = false;
+
 (async function () {
 	Object.keys(config["validate"] || {}).forEach((name) => {
-		try {
-			const full = path.resolve(root, config["validate"][name]);
-			console.log("validating", name, full.replace(root, ""));
-			validate(full, name);
-		} catch (_err) {
-			console.error("cannot validate", name, _err.message);
-		}
+		const full = path.resolve(root, config["validate"][name]);
+		console.log("validating", name, full.replace(root, ""));
+		validate(full, name);
 	});
 
 	const array = config["install"] || [];

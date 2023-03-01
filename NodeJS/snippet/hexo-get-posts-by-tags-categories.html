@@ -1,1 +1,346 @@
-<html><head><link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="https://www.webmanajemen.com/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>HexoJS get posts by tags or categories - Snippet</title>
+  <meta name="author" content="Dimas Lanjaka">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="">
+  <meta name="description" content="HexoJS get posts by tags or categories @types/hexo required for typescript users @types/hexo default @types/hexo not giving complete types, so I made my custom definition file for hexo. You can install with below command npm i -D https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo Snip">
+  
+  <script class="json-config" data-name="main" type="application/json">{"theme":{"menu":{"Home":"/","About":"/about","Archive":"/archives"},"widgets":["tag","archive","recent_posts","category","profile"],"social":{"zhihu":null,"twitter":null,"facebook":"/dimaslanjaka1","linkedin":null,"instagram":null,"github":"dimaslanjaka"},"user":{"name":"dimaslanjaka","avatar":null,"location":"Surabaya, Indonesia","description":"May the Force be with you","footnotes":null},"comment_utteranc":{"enable":false,"repo":"dimaslanjaka/static-blog-generator"},"comment_valine":{"enable":false,"appId":null,"appKey":null},"comment_disqus":{"enable":true,"url":"https://www.webmanajemen.com","name":"dimaslanjaka"},"appearance":"auto","favicon":"/favicon.ico","friend_links":[{"title":"Facebook","link":"https://www.facebook.com/dimaslanjaka1"},{"title":"Github","link":"https://www.github.com/dimaslanjaka"},{"title":"Facebook Group","link":"https://www.facebook.com/groups/167869813590708"}],"ga_track_id":null,"ga_domain":null,"ba_track_id":null,"about_pic":"/images/about-us.png","image_zoom":{"enable":true},"hostname":"www.webmanajemen.com","root":"/"},"project":{"title":"WMI","subtitle":"Website Management Indonesia","description":"Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.","author":"Dimas Lanjaka","language":"id","timezone":"Asia/Jakarta","url":"https://www.webmanajemen.com","root":"/","permalink":":title.html","permalink_defaults":{"lang":"en"},"pretty_urls":{"trailing_index":true,"trailing_html":true},"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":["*.html","chimeraland/recipes.html","_posts/chimeraland/recipes.html","assets/adblock-notify/*.html","page/*.html","comment.html","source/comment.html","**/hexo-theme-unit-test/**","**/node_modules/**","yandex_*","ahrefs_*","glx_*","Midi","Midi/**/*","*.json","**/*.json","_posts/**/*.json","_posts/**/*.js","_posts/**/*.css","_posts/The Legend Of Neverland/Midi/readme.md","**/__test__/**","**/__tests__/**"],"new_post_name":":year/:month/:title.md","default_layout":"post","titlecase":false,"external_link":{"enable":true,"field":"site","exclude":["webmanajemen.com","web-manajemen.blogspot.com","dimaslanjaka.github.io"],"safelink":{"enable":true,"exclude":["webmanajemen.com","git.webmanajemen.com","**/chimeraland/recipes.html","**/embed.html","**/tools.html","**/safelink.html","**/node_modules/**","**/vendor/**"],"redirect":"https://www.webmanajemen.com/page/safelink.html?url=","type":"base64","password":"unique-password"}},"filename_case":0,"render_drafts":false,"post_asset_folder":true,"relative_link":false,"future":true,"syntax_highlighter":"highlight.js","highlight":{"auto_detect":false,"line_number":false,"tab_replace":"  ","wrap":false,"exclude_languages":[],"language_attr":false,"hljs":false,"enable":true},"prismjs":{"preprocess":true,"line_number":true,"tab_replace":"","enable":false},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","updated_option":false,"per_page":10,"pagination_dir":"page","theme":"claudia","server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":false,"cache":false,"serveStatic":{"dotfiles":"allow","extensions":["html","js","css","png","jpg","jpeg"]}},"deploy":{"type":"git","repo":"https://github.com/dimaslanjaka/dimaslanjaka.github.io.git","branch":"master","message":"Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}","hostname":"www.webmanajemen.com","username":"dimaslanjaka","email":"dimaslanjaka@gmail.com"},"ignore":["**/.git*"],"meta_generator":true,"keywords":"the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce","languages":["en","id","zh-TW","zh-CN","zh-HK","th","tl"],"multilingual":true,"i18n":{"type":["page","post"],"generator":[]},"search":{"path":"search.xml","field":"post","content":true,"format":"html"},"marked":{"prependRoot":true,"postAsset":true},"index_generator":{"per_page":10,"order_by":"-updated","path":"","pagination_dir":"page"},"default_tag":null,"include":["assets/adblock-notify/readme.md"],"exclude":["**/.git*","**/.git","**/.vscode","**/.idea","**/.env","**/License.md","**/frontmatter.json","**/.frontmatter","**/git-hooks","**/License","**/bin/**","**/backend/**","**/MIDI.js/**","**/{readme,README,changelog,CHANGELOG,license,LICENSE,License}.md","**/Test/**","**/guzzle/**","**/exclude/**","**/hexo-post-parser/**","**/node_modules/**","**/vendor/**","**/ads/**","**/tmp/**","**/hexo-theme-unit-test/**"],"author_obj":{"name":"Dimas Lanjaka","link":"https://www.webmanajemen.com/","image":{"url":"https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg","width":1944,"height":2592}},"social_links":{"github":"https://github.com/dimaslanjaka","youtube":"https://youtube.com/p/L3n4r0x"},"feed":{"icon":"/logo.png","content":true,"type":["atom","rss2"],"path":["atom.xml","rss.xml"]},"sitemap":{"path":["sitemap.xml","sitemap.txt"],"template_txt":"./_config_template_sitemap.txt","rel":true,"tags":true,"categories":true},"markdown_it_plus":{"highlight":true,"html":true,"xhtmlOut":true,"breaks":true,"langPrefix":null,"linkify":true,"typographer":null,"pre_class":"highlight","plugins":[{"plugin":{"name":"markdown-it-attrs","enable":true,"options":{"leftDelimiter":"{","rightDelimiter":"}","allowedAttributes":[]}}}]},"browsersync":{"logLevel":"warn","ghostMode":{"scroll":true},"instanceName":"customInstance","port":3001,"browser":"firefox","open":false},"excerpt":{"depth":10,"excerpt_excludes":[],"more_excludes":[],"hideWholePostExcerpts":false},"adsense":{"enable":false,"pub":"ca-pub-2974518380815858","article_ads":null,"field":"site","https":false,"adblock":false,"type":"javascript","exclude":["*.min.html","**/exclude/**/*"]},"redirect":{"enable":true,"layout":"hexo-generator-redirect"},"analytics":{"tagmanager":"GTM-NJNNXSR","GA4":"G-BG75CLNJZ1","GA3":"UA-106238155-1","cloudflare":"2157c0f3b9e74a92badffe39156166b9"},"seo":{"js":{"enable":false,"exclude":["*.min.js","**/*.min.js"],"concat":true,"options":{"compress":{"dead_code":true},"mangle":{"toplevel":true,"safari10":true}}},"css":{"enable":false,"exclude":["*.min.css","**/*.min.css"]},"html":{"enable":true,"fix":true,"exclude":["*.min.{htm,html}"],"collapseBooleanAttributes":true,"collapseWhitespace":true,"ignoreCustomComments":[{}],"removeComments":true,"removeEmptyAttributes":true,"removeScriptTypeAttributes":true,"removeStyleLinkTypeAttributes":true,"minifyJS":true,"minifyCSS":true},"img":{"enable":true,"default":"https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg","onerror":"serverside","broken":false},"host":"www.webmanajemen.com","links":{"blank":true,"enable":true,"allow":["webmanajemen.com"],"exclude":["webmanajemen.com","web-manajemen.blogspot.com"]},"schema":{"sitelink":{"enable":true,"searchUrl":"https://www.webmanajemen.com/search?q="},"article":{"enable":true},"breadcrumb":{"enable":true}},"sitemap":true},"generator":{"cache":true,"type":"hexo","verbose":false,"amp":false},"tags":{"lowercase":true,"mapper":{"JS":"javascript","TS":"javascript"},"assign":{"JS":"programming","TS":"programming","GitHub":"Programming"}},"categories":{"lowercase":true,"mapper":{"JS":"javascript","TS":"typescript"},"assign":{"GitHub":"Programming","JS":"programming","TS":"programming"}},"flowchart":{"flowchart":"https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js","raphael":"https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js","options":{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}},"nofollow":{"enable":true,"field":"site","exclude":[]},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"markdown":{"preset":"default","render":{"html":true,"xhtmlOut":false,"breaks":true,"linkify":true,"typographer":true,"quotes":"“”‘’"},"anchors":{"level":2,"collisionSuffix":"","permalink":false,"permalinkClass":"header-anchor","permalinkSide":"left","permalinkSymbol":"¶","case":0,"separator":"-"}},"homepage":"/"}}</script>
+  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/cb8d4c9a99c2950886ab182ddbf69149bce3ce02/fontawesome-pro/web/css/all.min.css">
+  
+  <link rel="stylesheet" href="//www.webmanajemen.com/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css">
+  <link rel="stylesheet" href="/css/snippet.css">
+<meta name="generator" content="Hexo 6.3.0">
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q=",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/snippet/",
+        "name": "snippet"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/hexo/",
+        "name": "hexo"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/categories/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/categories/programming/javascript/",
+        "name": "javascript"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/NodeJS/snippet/hexo-get-posts-by-tags-categories.html",
+        "name": "HexoJS get posts by tags or categories"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/NodeJS/snippet/hexo-get-posts-by-tags-categories.html"
+    },
+    "headline": "HexoJS get posts by tags or categories",
+    "description": "HexoJS get posts by tags or categories @types/hexo required for typescript users @types/hexo default @types/hexo not giving complete types, so I made my custom definition file for hexo. You can install with below command npm i -D https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo Snip",
+    "image": {
+      "@type": "ImageObject",
+      "url": "/NodeJS/assets/pngwing.com.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dimas Lanjaka"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dimas Lanjaka",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2023-01-01T16:05:15+07:00",
+    "dateModified": "2023-01-02T17:52:22+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+<body>
+  <div class="container-fluid bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" id="search-form">
+            <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+            <button class="btn btn-outline-danger" type="reset"><i class="fa fa-refresh"></i></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="search-result-container"></div>
+
+    <div class="container-fluid mt-4">
+      <div class="bg-dark rounded-3 text-white p-5">
+        <h1 class="display-5 fw-bold">HexoJS get posts by tags or categories</h1>
+
+        <p class="d-block">
+          <span class="me-2">post label</span>
+          <a class="tag tag-snippet" href="/tags/snippet/" rel="tag"><i class="fa fa-tag"></i>
+            snippet</a>
+          <a class="tag tag-hexo" href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i>
+            hexo</a>
+          
+          <a class="tag tag-programming" href="/categories/programming/" rel="tag"><i class="fa fa-tag"></i>
+            programming</a>
+          <a class="tag tag-javascript" href="/categories/programming/javascript/" rel="tag"><i class="fa fa-tag"></i>
+            javascript</a>
+          
+        </p>
+        <p class="col-md-8 fs-4">HexoJS get posts by tags or categories @types/hexo required for typescript users @types/hexo default @types/hexo not giving complete types, so I made my custom definition file for hexo. You can install with below command npm i -D https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo Snip</p>
+        <a class="btn btn-outline-light" type="button" href="../">BACK</a>
+      </div>
+    </div>
+
+    <div class="py-4"><h2 id="types-hexo-required-for-typescript-users"><code>@types/hexo</code> required for typescript users</h2>
+<p>default <code>@types/hexo</code> not giving complete types, so I made my custom definition file for hexo. You can install with below command</p>
+<pre><code class="highlight bash">npm i -D https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo</code></pre>
+<h2 id="Snippet-get-posts-by-tags-or-categories-for-HexoJS">Snippet get posts by tags or categories for HexoJS</h2>
+<p>you can put this snippet to <code>theme/your-theme-name/scripts/get-post-by-tags-categories.js</code> or inside your plugin libs.</p>
+<pre><code class="highlight js"><span class="comment">/* global hexo */</span>
+hexo.<span class="property">extend</span>.<span class="property">helper</span>.<span class="title function_">register</span>(
+  <span class="string">'getPost'</span>,
+  <span class="comment">/**</span>
+<span class="comment">   * hexo get post by key with name</span>
+<span class="comment">   * <span class="doctag">@param</span> {<span class="type">'tags'|'categories'</span>} <span class="variable">by</span></span>
+<span class="comment">   * <span class="doctag">@param</span> {<span class="type">string[]</span>} <span class="variable">filternames</span></span>
+<span class="comment">   * <span class="doctag">@returns</span> {<span class="type">Record&lt;string, string&gt;[]</span>}</span>
+<span class="comment">   */</span>
+  <span class="keyword">function</span> (<span class="params">by, filternames</span>) {
+    <span class="keyword">const</span> hexo = <span class="variable language_">this</span>;
+    <span class="comment">/**</span>
+<span class="comment">     * <span class="doctag">@type</span> {<span class="type">any[]</span>}</span>
+<span class="comment">     */</span>
+    <span class="keyword">const</span> data = hexo.<span class="property">site</span>[by].<span class="property">data</span>;
+    <span class="keyword">const</span> map = filternames
+      .<span class="title function_">map</span>(<span class="function">(<span class="params">filtername</span>) =&gt;</span> {
+        <span class="keyword">const</span> filter = data.<span class="title function_">filter</span>(<span class="function">(<span class="params">{ name }</span>) =&gt;</span> <span class="title class_">String</span>(name).<span class="title function_">toLowerCase</span>() == filtername.<span class="title function_">toLowerCase</span>());
+        <span class="keyword">return</span> filter.<span class="title function_">map</span>(<span class="function">(<span class="params">group</span>) =&gt;</span> {
+          <span class="keyword">return</span> group.<span class="property">posts</span>.<span class="title function_">map</span>(
+            <span class="comment">/**</span>
+<span class="comment">             * <span class="doctag">@param</span> {<span class="type">import('hexo').Post.Data</span>} <span class="variable">post</span></span>
+<span class="comment">             */</span>
+            <span class="keyword">function</span> (<span class="params">{ title, permalink }</span>) {
+              <span class="comment">// get title and permalink</span>
+              <span class="comment">// for more keys, you can look at https://github.com/dimaslanjaka/nodejs-package-types/blob/ec9b509d81eefdfada79f1658ac02118936a1e5a/index.d.ts#L757-L762</span>
+              <span class="keyword">return</span> { title, permalink };
+            }
+          );
+        });
+      })
+      <span class="comment">// flattern all multidimensional arrays</span>
+      <span class="comment">// to get array of hexo post object</span>
+      .<span class="title function_">flat</span>(<span class="number">2</span>);
+    <span class="comment">// dump</span>
+    <span class="comment">// console.log(map);</span>
+    <span class="comment">// return an JSON string</span>
+    <span class="comment">// return JSON.stringify(map, null, 2);</span>
+    <span class="comment">// return an Array</span>
+    <span class="keyword">return</span> map;
+  }
+);</code></pre>
+<h2 id="Usages">Usages</h2>
+<p>example <em>get posts by tags or categories</em> using <em>nunjuck</em> template</p>
+<pre><code class="highlight njk">&lt;div class="py-4"&gt;
+  &lt;h2&gt;Another Snippets&lt;/h2&gt;
+  &lt;ul&gt;
+    {% for item in getPost('tags', ['snippet', 'script']) %}
+      &lt;li&gt;&lt;a href="{{ item.permalink }}"&gt;{{ item.title }}&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+    </div>
+
+    
+    <div class="py-4">
+      <h2>Another Snippets</h2>
+      <ul class="list-group">
+        
+      </ul>
+    </div>
+  </div>
+
+  <script src="/r-ads.js"></script>
+  <script src="//www.webmanajemen.com/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+  <script>
+    /* global CONFIG, pjax, LocalSearch */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!CONFIG.path) {
+        // Search DB path
+        console.warn('`hexo-generator-searchdb` plugin is not installed!');
+        return;
+      }
+      const localSearch = new LocalSearch({
+        path: CONFIG.path,
+        top_n_per_article: CONFIG.localsearch.top_n_per_article,
+        unescape: CONFIG.localsearch.unescape
+      });
+
+      const input = document.querySelector('.search-input');
+
+      const inputEventFunction = () => {
+        if (!localSearch.isfetched) return;
+        const searchText = input.value.trim().toLowerCase();
+        const keywords = searchText.split(/[-\s]+/);
+        const container = document.querySelector('.search-result-container');
+        let resultItems = [];
+        if (searchText.length > 0) {
+          // Perform local searching
+          resultItems = localSearch.getResultItems(keywords);
+        }
+        if (keywords.length === 1 && keywords[0] === '') {
+          container.classList.add('no-result');
+          container.innerHTML = '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
+        } else if (resultItems.length === 0) {
+          container.classList.add('no-result');
+          container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+        } else {
+          resultItems.sort((left, right) => {
+            if (left.includedCount !== right.includedCount) {
+              return right.includedCount - left.includedCount;
+            } else if (left.hitCount !== right.hitCount) {
+              return right.hitCount - left.hitCount;
+            }
+            return right.id - left.id;
+          });
+          const stats = CONFIG.i18n.hits.replace('${hits}', resultItems.length);
+
+          container.classList.remove('no-result');
+          container.innerHTML = `<div class="search-stats">${stats}</div>
+        <hr>
+        <ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+          if (typeof pjax === 'object') pjax.refresh(container);
+        }
+      };
+
+      localSearch.highlightSearchWords(document.querySelector('.post-body'));
+      if (CONFIG.localsearch.preload) {
+        localSearch.fetchData();
+      }
+
+      if (CONFIG.localsearch.trigger === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+        input.addEventListener('keypress', event => {
+          if (event.key === 'Enter') {
+            inputEventFunction();
+          }
+        });
+      }
+      window.addEventListener('search:loaded', inputEventFunction);
+
+      // Handle and trigger popup window
+      document.querySelectorAll('.popup-trigger').forEach(element => {
+        element.addEventListener('click', () => {
+          document.body.classList.add('search-active');
+          // Wait for search-popup animation to complete
+          setTimeout(() => input.focus(), 500);
+          if (!localSearch.isfetched) localSearch.fetchData();
+        });
+      });
+
+      // Monitor main search box
+      const onPopupClose = () => {
+        document.body.classList.remove('search-active');
+      };
+
+      document.querySelector('.search-pop-overlay').addEventListener('click', event => {
+        if (event.target === document.querySelector('.search-pop-overlay')) {
+          onPopupClose();
+        }
+      });
+      document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+      document.addEventListener('pjax:success', () => {
+        localSearch.highlightSearchWords(document.querySelector('.post-body'));
+        onPopupClose();
+      });
+      window.addEventListener('keyup', event => {
+        if (event.key === 'Escape') {
+          onPopupClose();
+        }
+      });
+    });
+  </script>
+
+</body></html>

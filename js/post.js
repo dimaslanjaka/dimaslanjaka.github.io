@@ -1,1 +1,190 @@
-var s={scroller:function(){function s(){return this.callbacks=[],this}return s.prototype.bindScrollEvent=function(){var s=this;window.addEventListener("scroll",(function(t){var o=!1,e=window.pageYOffset;o||(o=!0,setTimeout((function(){var i={event:t,beforeOffsetY:e};s.callbacks.forEach((function(s){s(i)})),o=!1}),150))}))},s},showTopic:function(s){var t=document.getElementById("postTopic"),o=document.getElementById("postTitle"),e=o.getBoundingClientRect(),i=o.offsetTop+e.height;if(window.pageYOffset>i){var l=s&&s.beforeOffsetY,c=l-window.pageYOffset>0;t.classList.remove("is-hidden-topic-bar"),l-window.pageYOffset==0?(t.classList.remove("is-switch-post-title"),t.classList.remove("is-show-post-title"),t.classList.remove("immediately-show"),t.classList.contains("is-show-scrollToTop-tips")?(t.classList.remove("is-show-scrollToTop-tips"),t.classList.add("is-flash-scrollToTop-tips")):t.classList.add("immediately-show")):c?window.pageYOffset>2*window.innerHeight?(t.classList.remove("immediately-show"),t.classList.remove("is-show-post-title"),t.classList.remove("is-switch-post-title"),t.classList.remove("is-flash-scrollToTop-tips"),t.classList.add("is-show-scrollToTop-tips")):(t.classList.remove("immediately-show"),t.classList.remove("is-show-post-title"),t.classList.remove("is-show-scrollToTop-tips"),t.classList.remove("is-flash-scrollToTop-tips"),t.classList.add("is-switch-post-title")):l-window.pageYOffset!=0&&(t.classList.remove("immediately-show"),t.classList.remove("is-switch-post-title"),t.classList.remove("is-show-scrollToTop-tips"),t.classList.remove("is-flash-scrollToTop-tips"),t.classList.add("is-show-post-title"))}else t.classList.remove("is-flash-scrollToTop-tips"),t.classList.remove("is-show-scrollToTop-tips"),t.classList.remove("is-switch-post-title"),t.classList.remove("is-show-post-title"),t.classList.remove("immediately-show"),t.classList.add("is-hidden-topic-bar")},catalogueHighlight:function(){var s=document.querySelectorAll(".toc a");if(0===s.length)return!1;var t=document.querySelector(".toc");return function(){var o=[],e="is-active";s.forEach((function(s){if(s.href){var t=decodeURI(s.href).split("#")[1];o.push(document.getElementById(t))}}));for(var i=null,l=window.pageYOffset,c=0;c<o.length;c++){var a=o[c];if(!(a.offsetTop>l+30)){i?a.offsetTop+60>=i.offsetTop-60&&(i=a):i=a;var n=document.querySelector(".toc ."+e);n&&n.classList.remove(e);var r='.toc a[href="#'+encodeURI(i.id)+'"]',d=document.querySelector(r);d.classList.add(e);var m=t.getBoundingClientRect().height;d.offsetTop>=m-60?t.scrollTo({top:d.offsetTop+100-m}):t.scrollTo({top:0})}}}},smoothScrollToTop:function(){var t=window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop;t>1?(window.requestAnimationFrame(s.smoothScrollToTop),scrollTo(0,Math.floor(.85*t))):scrollTo(0,0)},addValineComment(){var s=document.getElementById("vcomments");new Valine({el:"#vcomments",appId:s.dataset.comment_valine_id,appKey:s.dataset.comment_valine_key})},mounted:function(){hljs&&hljs.initHighlighting();var s=new(this.scroller()),t=this.catalogueHighlight();t&&s.callbacks.push(t),s.callbacks.push(this.showTopic),s.bindScrollEvent(),$claudia.fadeInImage(document.querySelectorAll(".post-content img")),document.getElementById("postTopic").addEventListener("click",this.smoothScrollToTop),window.Valine&&this.addValineComment()}};s.mounted();
+var $posts = {
+    scroller: function () {
+        function Scroller() {
+            this.callbacks = []
+            return this
+        }
+        Scroller.prototype.bindScrollEvent = function () {
+            var _that = this
+
+            window.addEventListener('scroll', function (event) {
+                var wait = false
+                var beforeOffsetY = window.pageYOffset
+
+                if (wait) return
+                wait = true
+
+                setTimeout(function () {
+                    var params = {
+                        event: event,
+                        beforeOffsetY: beforeOffsetY,
+                    }
+                    _that.callbacks.forEach(function (func) { func(params) })
+
+                    wait = false
+                }, 150)
+            })
+        }
+
+        return Scroller
+    },
+    showTopic: function (evt) {
+        var topicEl = document.getElementById('postTopic')
+        var postTitle = document.getElementById('postTitle')
+
+        var postTitleCoordinate = postTitle.getBoundingClientRect()
+        var threshold = postTitle.offsetTop + postTitleCoordinate.height
+
+        // show title
+        if (window.pageYOffset > threshold) {
+            var beforeOffsetY = evt && evt.beforeOffsetY
+            var isScrollToTop = beforeOffsetY - window.pageYOffset > 0
+
+            topicEl.classList.remove('is-hidden-topic-bar')
+
+            if (beforeOffsetY - window.pageYOffset === 0) {
+                topicEl.classList.remove('is-switch-post-title')
+                topicEl.classList.remove('is-show-post-title')
+                topicEl.classList.remove('immediately-show')
+
+                if (topicEl.classList.contains('is-show-scrollToTop-tips')) {
+                    topicEl.classList.remove('is-show-scrollToTop-tips')
+                    topicEl.classList.add('is-flash-scrollToTop-tips')
+                }
+                else {
+                    topicEl.classList.add('immediately-show')
+                }
+            }
+            // scroll to up👆
+            else if (isScrollToTop) {
+                // show scroll to top tips
+                if (window.pageYOffset > window.innerHeight * 2) {
+                    topicEl.classList.remove('immediately-show')
+                    topicEl.classList.remove('is-show-post-title')
+                    topicEl.classList.remove('is-switch-post-title')
+                    topicEl.classList.remove('is-flash-scrollToTop-tips')
+
+                    topicEl.classList.add('is-show-scrollToTop-tips')
+                }
+                // show post title
+                else {
+                    topicEl.classList.remove('immediately-show')
+                    topicEl.classList.remove('is-show-post-title')
+                    topicEl.classList.remove('is-show-scrollToTop-tips')
+                    topicEl.classList.remove('is-flash-scrollToTop-tips')
+
+                    topicEl.classList.add('is-switch-post-title')
+                }
+            }
+            // scroll to down👇
+            else if (beforeOffsetY - window.pageYOffset !== 0) {
+                topicEl.classList.remove('immediately-show')
+                topicEl.classList.remove('is-switch-post-title')
+                topicEl.classList.remove('is-show-scrollToTop-tips')
+                topicEl.classList.remove('is-flash-scrollToTop-tips')
+                topicEl.classList.add('is-show-post-title')
+            }
+        }
+        else{
+            // hidden all
+            topicEl.classList.remove('is-flash-scrollToTop-tips')
+            topicEl.classList.remove('is-show-scrollToTop-tips')
+            topicEl.classList.remove('is-switch-post-title')
+            topicEl.classList.remove('is-show-post-title')
+            topicEl.classList.remove('immediately-show')
+
+            topicEl.classList.add('is-hidden-topic-bar')
+        }
+    },
+    catalogueHighlight: function () {
+        var directory = document.querySelectorAll('.toc a')
+        if (directory.length === 0) {
+            return false
+        }
+
+        var tocContainer = document.querySelector('.toc')
+        return function () {
+            var contentTocList = []
+            var activeClassName = 'is-active'
+
+            directory.forEach(function (link) {
+                if (!link.href) return
+                var id = decodeURI(link.href).split('#')[1]
+                contentTocList.push(document.getElementById(id))
+            })
+            var spacing = 60
+            var activeTopicEl = null
+            var scrollTop = window.pageYOffset
+            for (var i = 0; i < contentTocList.length; i++) {
+                var currentTopic = contentTocList[i]
+
+                if (currentTopic.offsetTop > scrollTop + spacing / 2) {
+                    // jump to next loop
+                    continue
+                }
+
+                if (!activeTopicEl) {
+                    activeTopicEl = currentTopic
+                } else if (currentTopic.offsetTop + spacing >= activeTopicEl.offsetTop - spacing) {
+                    activeTopicEl = currentTopic
+                }
+
+                var beforeActiveEl = document.querySelector('.toc' + ' .' + activeClassName)
+                beforeActiveEl && beforeActiveEl.classList.remove(activeClassName)
+
+                var selectTarget = '.toc a[href="#' + encodeURI(activeTopicEl.id) + '"]'
+                var direc = document.querySelector(selectTarget)
+                direc.classList.add(activeClassName)
+
+                var tocContainerHeight = tocContainer.getBoundingClientRect().height
+                if (direc.offsetTop >= tocContainerHeight - spacing) {
+                    tocContainer.scrollTo({
+                        // top: direc.offsetTop - spacing,
+                        top: direc.offsetTop + 100 - tocContainerHeight,
+                    })
+                }
+                else {
+                    tocContainer.scrollTo({ top: 0 })
+                }
+            }
+        }
+    },
+    smoothScrollToTop: function() {
+        var Y_TopValve = (window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop);
+        if (Y_TopValve > 1) {
+            window.requestAnimationFrame($posts.smoothScrollToTop);
+            scrollTo(0, Math.floor(Y_TopValve * 0.85));
+        } else {
+            scrollTo(0, 0);
+        }
+    },
+    addValineComment() {
+        var el = document.getElementById('vcomments')
+        new Valine({
+            el: '#vcomments',
+            appId: el.dataset.comment_valine_id,
+            appKey: el.dataset.comment_valine_key
+        })
+    },
+    mounted: function () {
+        hljs && hljs.initHighlighting()
+
+        var Scroller = this.scroller()
+        var scrollerInstance = new Scroller()
+
+        var catalogueHighlight = this.catalogueHighlight()
+        catalogueHighlight && scrollerInstance.callbacks.push(catalogueHighlight)
+
+        scrollerInstance.callbacks.push(this.showTopic)
+
+        scrollerInstance.bindScrollEvent()
+
+        $claudia.fadeInImage(document.querySelectorAll('.post-content img'))
+
+        document.getElementById('postTopic').addEventListener('click', this.smoothScrollToTop)
+
+        window.Valine && this.addValineComment()
+    }
+}
+
+$posts.mounted()

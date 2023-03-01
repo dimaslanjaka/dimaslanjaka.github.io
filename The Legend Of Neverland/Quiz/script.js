@@ -1,1 +1,307 @@
-if("cdpn.io"==location.host){function e(e,t){for(var n=[],o=e.charCodeAt(0),i=t.charCodeAt(0);o<=i;++o)n.push(String.fromCharCode(o));return n}console.clear();let s=e("a","z").concat(e("A","Z")).filter((function(e){return null!=e}));setTimeout((function(){let e=document.getElementById("search-questions");var t=s[Math.floor(Math.random()*s.length)];e.value=t,e.dispatchEvent(new Event("keyup"))}),3e3)}function t(e,t){var n,o,i;o=!1,(n=document.createElement("script")).type="text/javascript",n.src=e,n.onload=n.onreadystatechange=function(){o||this.readyState&&"complete"!=this.readyState||(o=!0,"function"==typeof t&&t())},(i=document.getElementsByTagName("script")[0]).parentNode.insertBefore(n,i)}function n(e){var t={};return e.filter((function(e){return!t.hasOwnProperty(e)&&(t[e]=!0)}))}function o(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}let i=[location.protocol+"//"+location.host.trim()+"/The Legend Of Neverland/Quiz/quiz.txt","https://backend.webmanajemen.com/tlon/quiz.php?show"],r=[];function u(){let e=document.getElementById("search-questions"),t=function(e){if(!e)return void console.log("input empty");jQuery("ul[id*='questions'] li").each((function(t){jQuery(this).text().search(new RegExp("^"+o(e),"gmi"))<0?jQuery(this).hide():(jQuery(this).show(),jQuery(this).prependTo(jQuery("ul[id*='questions']"))),jQuery(this).text().search(new RegExp(o(e),"gmi"))<0?jQuery(this).hide():jQuery(this).show()}))},u=function(){jQuery("#search-questions").on("keyup",(function(){t(jQuery(this).val())}))},s=function(){$("#questions").text(""),$("#questions li").remove();for(let e=0;e<r.length;e++){let t=r[e],n=/\(O\)$/i,o=document.createElement("li");o.innerHTML=t,n.test(t)?o.setAttribute("class","isTrue"):o.setAttribute("class","isFalse"),document.getElementById("questions").appendChild(o)}};function a(e){if("string"==typeof e){let t=e.split("\n");r=r.map((function(e){return e.trim()})),r=n(r.concat(t).map((function(e){return e.trim()}))),s()}u()}i.forEach((function(e){let t=new URL(e);console.log("parse_query_url",c(t.toString())),fetch(t.toString()).then((function(e){return e.text()})).then(a).catch((function(){const e="cannot fetch "+t.toString(),n=document.getElementById("quiz-debug");n?n.innerHTML+=e+"<hr/>":console.log(e)}))})),$("#O_only").on("change",(function(n){n.preventDefault(),this.checked?$(".isFalse").remove():s(),e&&e.value&&e.value.trim().length>0&&t(e.value)}))}function c(e){if(e instanceof URL&&(e=e.toString()),"string"!=typeof e)return;var t,n,o,i,r,u;return(t=decodeURIComponent,n=/\+/g,function(e){for(o={},e=e.substring(e.indexOf("?")+1).replace(n," ").split("&"),r=e.length;r>0;)i=e[--r],-1===(u=i.indexOf("="))?o[t(i)]=void 0:o[t(i.substring(0,u))]=t(i.substring(u+1));return o})(e)}void 0===window.jQuery?t("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",u):u(),"undefined"!=typeof jQuery&&$(document).on("click","#clear-cache",(function(){$.ajax({url:"",context:document.body,success:function(e,t){$("html[manifest=saveappoffline.appcache]").attr("content",""),$(this).html(e)}})}));
+/* eslint-disable no-undef */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-inner-declarations */
+
+if (location.host == 'cdpn.io') {
+  console.clear();
+
+  function rangeAlphabetic(start, stop) {
+    var result = [];
+    for (
+      var idx = start.charCodeAt(0), end = stop.charCodeAt(0);
+      idx <= end;
+      ++idx
+    ) {
+      result.push(String.fromCharCode(idx));
+    }
+    return result;
+  }
+
+  let aZ = rangeAlphabetic('a', 'z')
+    .concat(rangeAlphabetic('A', 'Z'))
+    .filter(function (el) {
+      return el != null;
+    }); // a-zA-Z array
+
+  // automated test
+  setTimeout(function () {
+    let inputSearch = document.getElementById('search-questions');
+    var keyword = aZ[Math.floor(Math.random() * aZ.length)];
+    inputSearch.value = keyword;
+    inputSearch.dispatchEvent(new Event('keyup'));
+  }, 3000);
+}
+
+/*** MAIN SCRIPT START ***/
+
+/**
+ * this function will work cross-browser for loading scripts asynchronously
+ * @param {string} src
+ * @param {function} callback
+ */
+function loadJScript(src, callback) {
+  var s, r, t;
+  r = false;
+  s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.src = src;
+  s.onload = s.onreadystatechange = function () {
+    //console.log( this.readyState ); //uncomment this line to see which ready states are called.
+    if (!r && (!this.readyState || this.readyState == 'complete')) {
+      r = true;
+      if (typeof callback == 'function') callback();
+    }
+  };
+  t = document.getElementsByTagName('script')[0];
+  t.parentNode.insertBefore(s, t);
+}
+
+/**
+ * Unique Array
+ * @param {Array} a
+ * @returns
+ */
+function uniqArr(a) {
+  var seen = {};
+  return a.filter(function (item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
+}
+
+/**
+ * Escape regexp
+ * @param {string} string
+ * @returns
+ */
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
+let quizUrls = [
+  location.protocol +
+    '//' +
+    location.host.trim() +
+    '/The Legend Of Neverland/Quiz/quiz.txt',
+  //'https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.php?show',
+  'https://backend.webmanajemen.com/tlon/quiz.php?show'
+];
+let quizSrc = [];
+
+function jQueryMethod() {
+  // ul questions
+  //let questions = document.getElementById('questions');
+  let inputSearch = document.getElementById('search-questions');
+  //let O_only = document.getElementById('O_only');
+
+  // searcher
+  let searchLi = function (filter) {
+    if (!filter) {
+      console.log('input empty');
+      return;
+    }
+    let listQuiz = jQuery("ul[id*='questions'] li");
+    listQuiz.each(function (_index) {
+      // search from first characters
+      let searchFirst =
+        jQuery(this)
+          .text()
+          .search(new RegExp('^' + escapeRegExp(filter), 'gmi')) < 0;
+      if (searchFirst) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+        // move to first position
+        jQuery(this).prependTo(jQuery("ul[id*='questions']"));
+      }
+
+      // search wildcards
+      let searchWild =
+        jQuery(this)
+          .text()
+          .search(new RegExp(escapeRegExp(filter), 'gmi')) < 0;
+      if (searchWild) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+      }
+    });
+  };
+
+  let processLi = function () {
+    jQuery('#search-questions').on('keyup', function () {
+      searchLi(jQuery(this).val());
+    });
+  };
+
+  // transform array to li
+  let transformArray2Li = function () {
+    // clean orphan text
+    $('#questions').text('');
+    // remove existing li's
+    $('#questions li').remove();
+
+    for (let i = 0; i < quizSrc.length; i++) {
+      let str = quizSrc[i];
+      let isTrue = /\(O\)$/i;
+      let li = document.createElement('li');
+      li.innerHTML = str;
+      if (isTrue.test(str)) {
+        li.setAttribute('class', 'isTrue');
+      } else {
+        li.setAttribute('class', 'isFalse');
+      }
+      document.getElementById('questions').appendChild(li);
+    }
+  };
+
+  // step 1: get new question sources
+  quizUrls.forEach(function (quizUrl) {
+    let url_parse = new URL(quizUrl);
+    //url_parse.search = '?uid=' + new Date();
+    console.log('parse_query_url', parse_query_url(url_parse.toString()));
+    //console.log(url_parse.toString());
+
+    //console.log(quizUrl);
+    fetch(url_parse.toString())
+      .then(function (response) {
+        // The API call was successful!
+        return response.text();
+      })
+      .then(processResponse)
+      .catch(function () {
+        const log = 'cannot fetch ' + url_parse.toString();
+        const debugEl = document.getElementById('quiz-debug');
+        if (debugEl) {
+          debugEl.innerHTML += log + '<hr/>';
+        } else {
+          console.log(log);
+        }
+      });
+  });
+
+  function processResponse(data) {
+    if (typeof data === 'string') {
+      // split newLine from retrieved text into array
+      let split = data.split('\n');
+      // trim
+      quizSrc = quizSrc.map(function (str) {
+        return str.trim();
+      });
+      // merge and remove duplicates
+      quizSrc = uniqArr(
+        // merge
+        quizSrc
+          .concat(split)
+          // trim
+          .map(function (str) {
+            return str.trim();
+          })
+      );
+      // transform
+      transformArray2Li();
+    }
+    // attach event listener
+    processLi();
+  }
+
+  // filter only (O)
+  $('#O_only').on('change', function (e) {
+    e.preventDefault();
+    if (this.checked) {
+      $('.isFalse').remove();
+    } else {
+      transformArray2Li();
+    }
+
+    if (
+      inputSearch &&
+      inputSearch.value &&
+      inputSearch.value.trim().length > 0
+    ) {
+      searchLi(inputSearch.value);
+    }
+  });
+
+  // form add quiz
+  /*
+  $("form#addQuiz").on("submit", function (e) {
+    e.preventDefault();
+    let t = $(this);
+    $.ajax({
+      url: t.attr("action"),
+      type: "post",
+      //dataType: "json",
+      data: t.serialize(),
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  });
+  */
+}
+
+if (typeof window.jQuery === 'undefined') {
+  loadJScript(
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+    jQueryMethod
+  );
+} else {
+  jQueryMethod();
+}
+
+/**
+ * How URL native work {@link https://dmitripavlutin.com/parse-url-javascript/}
+ * @see {@link https://stackoverflow.com/questions/8486099/how-do-i-parse-a-url-query-parameters-in-javascript}
+ * @see {@link http://jsfiddle.net/drzaus/8EE8k/}
+ * @param {string|URL} url
+ * @returns {Record<string, any>|undefined}
+ */
+function parse_query_url(url) {
+  if (url instanceof URL) url = url.toString();
+  if (typeof url !== 'string') return; //throw new Error('Please provide url');
+  // http://jsfiddle.net/drzaus/8EE8k/
+  const deparam = (function (d, x, params, p, i, j) {
+    return function (qs) {
+      // start bucket; can't cheat by setting it in scope declaration or it overwrites
+      params = {};
+      // remove preceding non-querystring, correct spaces, and split
+      qs = qs
+        .substring(qs.indexOf('?') + 1)
+        .replace(x, ' ')
+        .split('&');
+      // march and parse
+      for (i = qs.length; i > 0; ) {
+        p = qs[--i];
+        // allow equals in value
+        j = p.indexOf('=');
+        // what if no val?
+        if (j === -1) params[d(p)] = undefined;
+        else params[d(p.substring(0, j))] = d(p.substring(j + 1));
+      }
+
+      return params;
+    }; //--  fn  deparam
+  })(decodeURIComponent, /\+/g);
+  return deparam(url);
+}
+
+/*
+
+function parse_url(url) {
+  let parse = new URL(url);
+  parse.search = parse_query_url(parse.search);
+  return parse;
+}*/
+
+if (typeof jQuery !== 'undefined') {
+  $(document).on('click', '#clear-cache', function () {
+    $.ajax({
+      url: '',
+      context: document.body,
+      success: function (s, _x) {
+        $('html[manifest=saveappoffline.appcache]').attr('content', '');
+        $(this).html(s);
+      }
+    });
+  });
+}

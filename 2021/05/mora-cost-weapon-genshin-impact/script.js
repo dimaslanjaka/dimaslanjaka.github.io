@@ -1,1 +1,7 @@
-const e=document.querySelectorAll("h3");for(const o in e)if(Object.hasOwnProperty.call(e,o)){const c=e[o].querySelector("em");console.log(c.innerText)}
+const h3 = document.querySelectorAll('h3');
+for (const key in h3) {
+  if (Object.hasOwnProperty.call(h3, key)) {
+    const el = h3[key].querySelector('em');
+    console.log(el.innerText)
+  }
+}

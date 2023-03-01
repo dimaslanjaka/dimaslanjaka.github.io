@@ -1,1 +1,37 @@
-.blue-color{color:#00f}.green-color{color:green}.teal-color{color:teal}.yellow-color{color:#ff0}.red-color{color:red}.video-container{position:relative;padding-bottom:56.25%;padding-top:25px}.video-container iframe{position:absolute;width:100%!important;height:100%!important}.table-container,.table-wrap,[class*=dataTables_wrapper]{clear:both}
+.blue-color {
+  color: blue;
+}
+
+.green-color {
+  color: green;
+}
+
+.teal-color {
+  color: teal;
+}
+
+.yellow-color {
+  color: yellow;
+}
+
+.red-color {
+  color: red;
+}
+
+/* responsive youtube iframe */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 25px;
+}
+.video-container iframe {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* datatables */
+.table-wrap,
+.table-container, [class*='dataTables_wrapper'] {
+  clear: both;
+}

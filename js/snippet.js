@@ -1,1 +1,135 @@
-function e(e){var t=document.createElement("textarea");t.value=e,t.style.top="0",t.style.left="0",t.style.position="fixed",document.body.appendChild(t),t.focus(),t.select();try{var n=document.execCommand("copy")?"successful":"unsuccessful";console.log("Fallback: Copying text command was "+n)}catch(o){console.error("Fallback: Oops, unable to copy",o)}document.body.removeChild(t)}function t(t){navigator.clipboard?navigator.clipboard.writeText(t).then((function(){console.log("Async: Copying to clipboard was successful!")}),(function(e){console.error("Async: Could not copy text: ",e)})):e(t)}document.addEventListener("DOMContentLoaded",(()=>{const e=Array.from(document.querySelectorAll("pre code"));for(let t=0;t<e.length;t++){const n=e[t];hljs.highlightBlock(n);const o=document.createElement("button");o.classList.add("btn","btn-sm","btn-pre","border"),o.textContent="copy",n.parentElement.append(o)}document.addEventListener("click",(function(e){const n=e.target;if(n.classList.contains("btn-pre")){t(n.parentElement.textContent)}}));const n=new LocalSearch({path:CONFIG.path,top_n_per_article:CONFIG.localsearch.top_n_per_article,unescape:CONFIG.localsearch.unescape});n.fetchData();const o=Array.from(document.querySelectorAll(".search-input")),s=function(e){if(!n.isfetched)return console.info("local search not fetched yet");let t="";if("form"==e.target.tagName.toLowerCase())t=e.target.querySelector(".search-input").value.trim().toLowerCase();else{if("input"!=e.target.tagName.toLowerCase())return console.debug(e.target);t=e.target.value.trim().toLowerCase()}const o=t.split(/[-\s]+/).filter((e=>e.trim().length>0)),s=document.querySelector(".search-result-container");let c=[];if(t.length>0&&(c=n.getResultItems(o)),1===o.length&&""===o[0])s.classList.add("no-result"),s.innerHTML='<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';else if(0===c.length)s.classList.add("no-result"),s.innerHTML='<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';else{c.sort(((e,t)=>e.includedCount!==t.includedCount?t.includedCount-e.includedCount:e.hitCount!==t.hitCount?t.hitCount-e.hitCount:t.id-e.id));const e=CONFIG.i18n.hits.replace("${hits}",c.length);s.classList.remove("no-result"),s.innerHTML=`<div class="search-stats">${e}</div>\n        <hr>\n        <ul class="search-result-list">${c.map((e=>e.item)).join("")}</ul>`,"object"==typeof pjax&&pjax.refresh(s)}};o.forEach((e=>{e.addEventListener("input",s),e.addEventListener("click",s),e.addEventListener("keypress",(e=>{"Enter"===e.key&&s()}))})),document.getElementById("search-form").addEventListener("submit",s)}));
+/* global CONFIG, pjax, LocalSearch */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const els = Array.from(document.querySelectorAll('pre code'));
+  for (let i = 0; i < els.length; i++) {
+    const el = els[i];
+    // trigger highlight.js
+    hljs.highlightBlock(el);
+    // create copy to clipboard button
+    const btn = document.createElement('button');
+    btn.classList.add('btn', 'btn-sm', 'btn-pre', 'border');
+    btn.textContent = 'copy';
+    el.parentElement.append(btn);
+  }
+
+  // copy to clipboard
+  document.addEventListener('click', function (e) {
+    /**
+     * @type {HTMLElement}
+     */
+    const el = e.target;
+    if (el.classList.contains('btn-pre')) {
+      const content = el.parentElement.textContent;
+      copyTextToClipboard(content);
+    }
+  });
+
+  const localSearch = new LocalSearch({
+    path: CONFIG.path,
+    top_n_per_article: CONFIG.localsearch.top_n_per_article,
+    unescape: CONFIG.localsearch.unescape
+  });
+  localSearch.fetchData();
+
+  /**
+   * @type {HTMLInputElement[]}
+   */
+  const inputs = Array.from(document.querySelectorAll('.search-input'));
+
+  /**
+   * Search input event
+   * @param {Event} e
+   * @returns
+   */
+  const inputEventFunction = function (e) {
+    if (!localSearch.isfetched) return console.info('local search not fetched yet');
+    let searchText = '';
+    if (e.target.tagName.toLowerCase() == 'form') {
+      searchText = e.target.querySelector('.search-input').value.trim().toLowerCase();
+    } else if (e.target.tagName.toLowerCase() == 'input') {
+      searchText = e.target.value.trim().toLowerCase();
+    } else {
+      return console.debug(e.target);
+    }
+    const keywords = searchText.split(/[-\s]+/).filter((str) => str.trim().length > 0);
+    const container = document.querySelector('.search-result-container');
+    let resultItems = [];
+    if (searchText.length > 0) {
+      // Perform local searching
+      resultItems = localSearch.getResultItems(keywords);
+    }
+    if (keywords.length === 1 && keywords[0] === '') {
+      container.classList.add('no-result');
+      container.innerHTML = '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
+    } else if (resultItems.length === 0) {
+      container.classList.add('no-result');
+      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+    } else {
+      resultItems.sort((left, right) => {
+        if (left.includedCount !== right.includedCount) {
+          return right.includedCount - left.includedCount;
+        } else if (left.hitCount !== right.hitCount) {
+          return right.hitCount - left.hitCount;
+        }
+        return right.id - left.id;
+      });
+      const stats = CONFIG.i18n.hits.replace('${hits}', resultItems.length);
+
+      container.classList.remove('no-result');
+      container.innerHTML = `<div class="search-stats">${stats}</div>
+        <hr>
+        <ul class="search-result-list">${resultItems.map((result) => result.item).join('')}</ul>`;
+      if (typeof pjax === 'object') pjax.refresh(container);
+    }
+  };
+
+  inputs.forEach((input) => {
+    input.addEventListener('input', inputEventFunction);
+    input.addEventListener('click', inputEventFunction);
+    input.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        inputEventFunction();
+      }
+    });
+  });
+  document.getElementById('search-form').addEventListener('submit', inputEventFunction);
+});
+
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement('textarea');
+  textArea.value = text;
+
+  // Avoid scrolling to bottom
+  textArea.style.top = '0';
+  textArea.style.left = '0';
+  textArea.style.position = 'fixed';
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Fallback: Copying text command was ' + msg);
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+  }
+
+  document.body.removeChild(textArea);
+}
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(text);
+    return;
+  }
+  navigator.clipboard.writeText(text).then(
+    function () {
+      console.log('Async: Copying to clipboard was successful!');
+    },
+    function (err) {
+      console.error('Async: Could not copy text: ', err);
+    }
+  );
+}

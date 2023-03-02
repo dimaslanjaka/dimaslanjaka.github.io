@@ -31,7 +31,7 @@
     "potentialAction": {
       "@type": "SearchAction",
       "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
-      "target": "https://www.webmanajemen.com/search?q=",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -1687,6 +1687,30 @@
         </div>
       </div>
       
+      <div class="card mb-2" title="Attendant ocyalla" permalink="https://www.webmanajemen.com/chimeraland/attendants/ocyalla.html" onclick="cardClickHandler(this);">
+        <div class="row g-0">
+          <div class="col-sm-4 position-relative">
+            <a class="link-dark text-decoration-none" href="https://www.webmanajemen.com/chimeraland/attendants/ocyalla.html" target="_blank" rel="internal follow bookmark" alt="Search" title="Search"> <img src="https://via.placeholder.com/600" source="/chimeraland/attendants/ocyalla/Screenshot_2023-01-31-22-25-59-67_f4fc9fb10454fc3a3dacb99dff89b568.webp" class="card-img fit-cover w-100 h-100" alt="Thumbnail Attendant ocyalla" title="Thumbnail Attendant ocyalla" itemprop="image"></a>
+          </div>
+
+          <div class="col-sm-8">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a class="link-dark text-decoration-none" href="https://www.webmanajemen.com/chimeraland/attendants/ocyalla.html" target="_blank" rel="internal follow bookmark" alt="Search" title="Search">Attendant ocyalla</a>
+              </h5>
+
+              <p class="card-text">Attendant ocyalla ocyalla Information from Chimeralandocyalla default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for ocyallaGalleries for ocyalla ocyalla Information from Chimeraland ocyalla default attribute GRADEAttackHealth Point HPDefense ocyalla GRADEAttackHealth Point HP</p>
+              
+            </div>
+
+            <div class="card-footer text-end text-muted">
+              
+              <button class="btn btn-sm btn-primary">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div class="card mb-2" title="Attendant ocyaska" permalink="https://www.webmanajemen.com/chimeraland/attendants/ocyaska.html" onclick="cardClickHandler(this);">
         <div class="row g-0">
           <div class="col-sm-4 position-relative">
@@ -1724,30 +1748,6 @@
               </h5>
 
               <p class="card-text">Attendant panthakat panthakat Information from Chimeralandpanthakat default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for panthakatGalleries for panthakat panthakat Information from Chimeraland panthakat default attribute GRADEAttackHealth Point HPDefense panthakat GRADEAttack</p>
-              
-            </div>
-
-            <div class="card-footer text-end text-muted">
-              
-              <button class="btn btn-sm btn-primary">View</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card mb-2" title="Attendant ocyalla" permalink="https://www.webmanajemen.com/chimeraland/attendants/ocyalla.html" onclick="cardClickHandler(this);">
-        <div class="row g-0">
-          <div class="col-sm-4 position-relative">
-            <a class="link-dark text-decoration-none" href="https://www.webmanajemen.com/chimeraland/attendants/ocyalla.html" target="_blank" rel="internal follow bookmark" alt="Search" title="Search"> <img src="https://via.placeholder.com/600" source="/chimeraland/attendants/ocyalla/Screenshot_2023-01-31-22-25-59-67_f4fc9fb10454fc3a3dacb99dff89b568.webp" class="card-img fit-cover w-100 h-100" alt="Thumbnail Attendant ocyalla" title="Thumbnail Attendant ocyalla" itemprop="image"></a>
-          </div>
-
-          <div class="col-sm-8">
-            <div class="card-body">
-              <h5 class="card-title">
-                <a class="link-dark text-decoration-none" href="https://www.webmanajemen.com/chimeraland/attendants/ocyalla.html" target="_blank" rel="internal follow bookmark" alt="Search" title="Search">Attendant ocyalla</a>
-              </h5>
-
-              <p class="card-text">Attendant ocyalla ocyalla Information from Chimeralandocyalla default attribute GRADEAttackHealth Point HPDefenseDelicacies/Tasty for ocyallaGalleries for ocyalla ocyalla Information from Chimeraland ocyalla default attribute GRADEAttackHealth Point HPDefense ocyalla GRADEAttackHealth Point HP</p>
               
             </div>
 
@@ -36130,89 +36130,14 @@
     </div>
   </div>
 
-  <script>
-    const searchURL = "https://www.webmanajemen.com/search.xml";
-    fetch(searchURL).then(response => response.text()).then(response => {
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(response, "text/xml");
-      const root = xmlDoc.getElementsByTagName("search")[0]
-      const baseURL = new URL('https://www.webmanajemen.com')
-      const results = Array.from(root.children).map(el => {
-        baseURL.pathname = el.querySelector('url').innerHTML.trim().replace(/^\/+/, '/')
-        const title = el.querySelector('title').innerHTML.trim()
-        return {
-          title,
-          content: el.querySelector('content').innerHTML.trim(),
-          url: baseURL.toString(),
-          card: document.querySelector(
-            'div.card[title="' + title + '"]'
-          )
-        }
-      })
-
-      const querySearch = getParameterByName('q')
-      if (querySearch) {
-        document.getElementById('title').innerHTML = querySearch + ' Search Result'
-      } else {
-        document.getElementById('title').innerHTML = 'WMI Site Search'
-      }
-
-      results.forEach(item => {
-        const card = item.card
-        if (card) {
-          // supress image error
-          const checkImageBroken = function () {
-            const img = card.querySelector('img[source]')
-            const source = img.getAttribute('source')
-            const imgElement = new Image();
-            imgElement.addEventListener('load', () => (img.src = source));
-            //imgElement.addEventListener('error', () => resolve(false));
-            imgElement.src = source
-          }
-
-
-          if (querySearch) {
-            const matchTitle = new RegExp(querySearch, 'igm').test(item.title)
-            const matchContent = new RegExp(querySearch, 'igm').test(item.content)
-            if (matchTitle || matchContent) {
-              // matched
-              checkImageBroken()
-            } else {
-              card.remove()
-            }
-          }
-        }
-      })
-    });
-
-    document.getElementById('form-search').addEventListener('submit', function (_e) {
-      _e.preventDefault()
-      location.href = '/search/?q=' + _e.target.elements.q.value
-      return false
-    })
-
-    function cardClickHandler(el) {
-      const perm = el.getAttribute('permalink')
-      //window.location.href = perm
-      window.open(perm, 'wmi').focus()
-    }
-
-    function getParameterByName(name, url = window.location.href) {
-      name = name.replace(/[\[\]]/g, '\\$&');
-      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-  </script>
+  
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+<script src="/hexo-seo-js/concat-d680e8a854a7cbad6d490c445cba2eba.js"></script</body>
+
+</html>
 
 
-
-
-
-</body></html>
+</script></body></html>

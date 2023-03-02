@@ -1225,21 +1225,21 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-2 --*/
+/*--- inner-3 --*/
 
 
 var dox = document.getElementById('mov'); dox.setAttribute('href', 'https://www.webmanajemen.com/Web-Manajemen/mlbb.html?ID='+Math.random().toString(36).substring(7)+'&v1.0.5-'+btoa(Math.random().toString(36).substring(7))); dox.setAttribute('target', '_blank'); 
 
 
 
-/*--- inner-3 --*/
+/*--- inner-4 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2020/01/drone-mobile-legends.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-4 --*/
+/*--- inner-5 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

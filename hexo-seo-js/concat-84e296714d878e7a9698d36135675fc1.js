@@ -1225,14 +1225,14 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-4 --*/
+/*--- inner-5 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/11/install-mariadb-on-termux.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-5 --*/
+/*--- inner-6 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

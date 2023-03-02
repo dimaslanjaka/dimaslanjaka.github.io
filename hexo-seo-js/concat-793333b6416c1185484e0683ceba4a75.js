@@ -1225,7 +1225,7 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-3 --*/
+/*--- inner-2 --*/
 
 
 
@@ -1234,7 +1234,7 @@ window.location.href = 'https://www.webmanajemen.com/chimeraland/recipes.html';
 
 
 
-/*--- inner-4 --*/
+/*--- inner-3 --*/
 
 
 
@@ -1261,7 +1261,7 @@ window.location.href = 'https://www.webmanajemen.com/chimeraland/recipes.html';
 
 
 
-/*--- inner-6 --*/
+/*--- inner-5 --*/
 
 
 
@@ -1270,7 +1270,7 @@ window.location.href = 'https://www.webmanajemen.com/chimeraland/recipes.html';
 
 
 
-/*--- inner-10 --*/
+/*--- inner-9 --*/
 
 
 
@@ -1309,14 +1309,14 @@ window.location.href = 'https://www.webmanajemen.com/chimeraland/recipes.html';
 
 
 
-/*--- inner-12 --*/
+/*--- inner-11 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/chimeraland/Recipes-list.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-13 --*/
+/*--- inner-12 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

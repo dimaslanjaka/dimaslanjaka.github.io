@@ -66,7 +66,7 @@ window.$claudia = {
 
 
 
-/*--- inner-3 --*/
+/*--- inner-2 --*/
 
 
 
@@ -105,7 +105,7 @@ setCookie(“username”, user, 365);<br>
 
 
 
-/*--- inner-4 --*/
+/*--- inner-3 --*/
 
 
 
@@ -114,7 +114,7 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 
@@ -123,7 +123,7 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 
 
 
-/*--- inner-6 --*/
+/*--- inner-5 --*/
 
 
 
@@ -136,7 +136,7 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 
 
 
-/*--- inner-7 --*/
+/*--- inner-6 --*/
 
 
 
@@ -158,7 +158,7 @@ $('#continue').html('<div class="text-center d-inline-block"><i class="fa fa-arr
 
 
 
-/*--- inner-8 --*/
+/*--- inner-7 --*/
 
 
 
@@ -170,7 +170,7 @@ $('#continue').html('<div class="text-center d-inline-block"><i class="fa fa-arr
 
 
 
-/*--- inner-10 --*/
+/*--- inner-9 --*/
 
 
 
@@ -179,18 +179,18 @@ var loadCSSFiles=function(){var e,t,a=[/*"//netdna.bootstrapcdn.com/bootstrap/3.
 
 
 
+/*--- inner-10 --*/
+
+
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
+
 /*--- inner-11 --*/
-
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-
-/*--- inner-12 --*/
 
 
 

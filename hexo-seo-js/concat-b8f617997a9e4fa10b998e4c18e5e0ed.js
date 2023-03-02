@@ -1225,7 +1225,7 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-3 --*/
+/*--- inner-2 --*/
 
 
 /* eslint-disable no-undef */
@@ -1539,14 +1539,14 @@ if (typeof jQuery !== 'undefined') {
 
 
 
-/*--- inner-4 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

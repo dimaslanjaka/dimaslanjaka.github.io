@@ -1225,21 +1225,21 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-3 --*/
+/*--- inner-2 --*/
 
 
 var gtfr = ‘<iframe src="https://www.webmanajemen.com//Web-Manajemen/master/Animasi/text-animasi.html" width="100%" height="500" frameborder="0"></iframe>’; $(‘.text-animasi’).html(gtfr); 
 
 
 
-/*--- inner-4 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/fontawesome-css3-text-animation.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

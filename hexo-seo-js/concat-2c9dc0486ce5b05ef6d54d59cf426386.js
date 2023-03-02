@@ -1225,14 +1225,14 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-2 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-2.1.0-2.3.0.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-3 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

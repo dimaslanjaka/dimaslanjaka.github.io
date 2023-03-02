@@ -1225,21 +1225,21 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-2 --*/
+/*--- inner-3 --*/
 
 
   (function() {       var mylang = “id”, // Your website language           anchor = document.getElementById(‘translate-me’);       anchor.onclick = function() {           window.open(‘<a target="_blank" rel="noopener external nofollow noreferrer" href="http://translate.google.com/translate?u=">http://translate.google.com/translate?u=</a>’ + encodeURIComponent(location.href) + ‘&langpair=’ + mylang + ‘%7C’ + document.getElementById(‘translate-language’).value + ‘&hl=en’);           return false;       };   })();   
 
 
 
-/*--- inner-3 --*/
+/*--- inner-4 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/07/alternative-widget-translator-for-blog.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-4 --*/
+/*--- inner-5 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

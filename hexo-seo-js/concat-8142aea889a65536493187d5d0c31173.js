@@ -1225,21 +1225,21 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-2 --*/
+/*--- inner-3 --*/
 
 
 // Check the main container is ready $('#feed').ready(function(){     // Get each div     $('.content').each(function(){         // Get the content         var str = $(this).html();         // Set the regex string         var regex = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/ig         // Replace plain text links by hyperlinks         var replaced_text = str.replace(regex, "<a href='$1' target='_blank'>$1</a>");         // Echo link         $(this).html(replaced_text);     }); }); 
 
 
 
-/*--- inner-3 --*/
+/*--- inner-4 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/07/jquery-tutorial-auto-hyperlinking.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-4 --*/
+/*--- inner-5 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

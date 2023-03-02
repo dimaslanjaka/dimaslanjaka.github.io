@@ -66,7 +66,7 @@ window.$claudia = {
 
 
 
-/*--- inner-2 --*/
+/*--- inner-1 --*/
 
 
 

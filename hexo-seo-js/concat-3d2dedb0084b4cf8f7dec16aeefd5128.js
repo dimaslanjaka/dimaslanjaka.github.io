@@ -1225,14 +1225,14 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-3 --*/
+/*--- inner-2 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/11/free-cloud-bitcoin-mining-100-legit-2017.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-4 --*/
+/*--- inner-3 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

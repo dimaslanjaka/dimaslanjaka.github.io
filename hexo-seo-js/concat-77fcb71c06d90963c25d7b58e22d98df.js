@@ -1225,14 +1225,14 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-8 --*/
+/*--- inner-7 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/02/albino-lovebird-font-duo.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-9 --*/
+/*--- inner-8 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

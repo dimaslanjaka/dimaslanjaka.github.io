@@ -1225,21 +1225,21 @@ end:"$",illegal:"\n"},o]}}})());
 
 
 
-/*--- inner-3 --*/
+/*--- inner-2 --*/
 
 
       var go_url = 'https://idsly.bid/';      var api = '513965b691c47db2452dd5d67d0b6bf1474f53cb';      var shorten_exclude = ['google.com', location.host, 'webmanajemen.com', 'dimaslanjaka-storage.000webhostapp.com'];   
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/11/download-pokemon-go-01271-apk-mod-fake.html';this.page.identifier = 'dimaslanjaka';};
 
 
 
-/*--- inner-6 --*/
+/*--- inner-5 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

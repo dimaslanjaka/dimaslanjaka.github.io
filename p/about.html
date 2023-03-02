@@ -1,5 +1,5 @@
 <!DOCTYPE html><html class="appearance-auto" lang="id"><head><meta charset="UTF-8"><title>dimaslanjaka's blog</title><meta name="description" content="Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
-<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><meta name="generator" content="Hexo 6.3.0">
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><meta name="generator" content="Hexo 6.3.0">
 
 <script type="application/ld+json" id="hexo-seo-schema">[
   {
@@ -9,7 +9,7 @@
     "potentialAction": {
       "@type": "SearchAction",
       "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
-      "target": "https://www.webmanajemen.com/search?q=",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -218,95 +218,5 @@ infringement on your blog, and is prohibited from adsense. Learn more:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
 <script src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9128da3f6bc1fedafb84d09179ed679c353a2d6e/WMI/bootstrap.utility.js"></script>
 
-<script>
-  /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-  (function (w) {
-    "use strict";
-    /* exported loadCSS */
-    var loadCSS = function (href, before, media, attributes) {
-      // Arguments explained:
-      // `href` [REQUIRED] is the URL for your CSS file.
-      // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
-      // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
-      // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
-      // `attributes` [OPTIONAL] is the Object of attribute name/attribute value pairs to set on the stylesheet's DOM Element.
-      var doc = w.document;
-      var ss = doc.createElement("link");
-      var ref;
-      if (before) {
-        ref = before;
-      }
-      else {
-        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-        ref = refs[refs.length - 1];
-      }
 
-      var sheets = doc.styleSheets;
-      // Set any of the provided attributes to the stylesheet DOM Element.
-      if (attributes) {
-        for (var attributeName in attributes) {
-          if (attributes.hasOwnProperty(attributeName)) {
-            ss.setAttribute(attributeName, attributes[attributeName]);
-          }
-        }
-      }
-      ss.rel = "stylesheet";
-      ss.href = href;
-      // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
-      ss.media = "only x";
-
-      // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
-      function ready(cb) {
-        if (doc.body) {
-          return cb();
-        }
-        setTimeout(function () {
-          ready(cb);
-        });
-      }
-      // Inject link
-      // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
-      // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
-      ready(function () {
-        ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-      });
-      // A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
-      var onloadcssdefined = function (cb) {
-        var resolvedHref = ss.href;
-        var i = sheets.length;
-        while (i--) {
-          if (sheets[i].href === resolvedHref) {
-            return cb();
-          }
-        }
-        setTimeout(function () {
-          onloadcssdefined(cb);
-        });
-      };
-
-      function loadCB() {
-        if (ss.addEventListener) {
-          ss.removeEventListener("load", loadCB);
-        }
-        ss.media = media || "all";
-      }
-
-      // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
-      if (ss.addEventListener) {
-        ss.addEventListener("load", loadCB);
-      }
-      ss.onloadcssdefined = onloadcssdefined;
-      onloadcssdefined(loadCB);
-      return ss;
-    };
-    // commonjs
-    if (typeof exports !== "undefined") {
-      exports.loadCSS = loadCSS;
-    }
-    else {
-      w.loadCSS = loadCSS;
-    }
-  }(typeof global !== "undefined" ? global : this));
-  loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9128da3f6bc1fedafb84d09179ed679c353a2d6e/WMI/style.css");
-</script>
-</article><div id="paginator"></div></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="github" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//github.com/dimaslanjaka" alt="WMI"><i class="iconfont icon-github"></i></a><a title="facebook" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//www.facebook.com//dimaslanjaka1" alt="WMI"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> dimaslanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noreferer noreferrer external" alt="WMI">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noreferer noreferrer external" alt="WMI"></a></div></div><div><span></span></div></footer><script src="/r-ads.js" type="text/javascript"></script></body></html>
+</article><div id="paginator"></div></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="github" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//github.com/dimaslanjaka" alt="WMI"><i class="iconfont icon-github"></i></a><a title="facebook" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//www.facebook.com//dimaslanjaka1" alt="WMI"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> dimaslanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noreferer noreferrer external" alt="WMI">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noreferer noreferrer external" alt="WMI"></a></div></div><div><span></span></div></footer><script src="/hexo-seo-js/concat-fb8a140d6f076647256a4ea161f4c280.js"></script</body></html></script></body></html>

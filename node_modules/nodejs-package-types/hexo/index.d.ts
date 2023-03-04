@@ -499,7 +499,13 @@ declare namespace Hexo {
         name: string,
         fn: (
           locals: Site
-        ) => Generator.Return | Generator.Return[] | Bluebird<Generator.Return> | Bluebird<Generator.Return[]>
+        ) =>
+          | Generator.Return
+          | Generator.Return[]
+          | Bluebird<Generator.Return>
+          | Bluebird<Generator.Return[]>
+          | Promise<Generator.Return>
+          | Promise<Generator.Return[]>
       ): void;
     }
     namespace Generator {

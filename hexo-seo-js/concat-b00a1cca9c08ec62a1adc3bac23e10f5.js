@@ -1,3 +1,16 @@
+/*--- inner-0 --*/
+
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1 * new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106238155-1', 'auto');
+ga('send', 'pageview');
+
+
+
 /*--- /js/common.js --*/
 
 
@@ -66,7 +79,7 @@ window.$claudia = {
 
 
 
-/*--- inner-2 --*/
+/*--- inner-3 --*/
 
 
 
@@ -105,7 +118,7 @@ setCookie(“username”, user, 365);<br>
 
 
 
-/*--- inner-3 --*/
+/*--- inner-4 --*/
 
 
 
@@ -114,7 +127,7 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 
 
 
-/*--- inner-4 --*/
+/*--- inner-5 --*/
 
 
 
@@ -123,7 +136,7 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 
 
 
-/*--- inner-5 --*/
+/*--- inner-6 --*/
 
 
 
@@ -136,7 +149,7 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 
 
 
-/*--- inner-6 --*/
+/*--- inner-7 --*/
 
 
 
@@ -158,7 +171,7 @@ $('#continue').html('<div class="text-center d-inline-block"><i class="fa fa-arr
 
 
 
-/*--- inner-7 --*/
+/*--- inner-8 --*/
 
 
 
@@ -170,7 +183,7 @@ $('#continue').html('<div class="text-center d-inline-block"><i class="fa fa-arr
 
 
 
-/*--- inner-9 --*/
+/*--- inner-10 --*/
 
 
 
@@ -179,18 +192,18 @@ var loadCSSFiles=function(){var e,t,a=[/*"//netdna.bootstrapcdn.com/bootstrap/3.
 
 
 
-/*--- inner-10 --*/
-
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-
 /*--- inner-11 --*/
+
+
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
+
+/*--- inner-12 --*/
 
 
 

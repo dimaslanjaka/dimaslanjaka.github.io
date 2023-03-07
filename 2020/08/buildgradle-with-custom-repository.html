@@ -1,1 +1,106 @@
-<html><head><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>build.gradle with custom repository</title><meta name="description" content="Fix missing dependencies from your gradle project android, maven, etc with this build.gradle. <br/>insert into"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce"><meta name="image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="original-source" content="https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html"><link rel="canonical" href="https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="build.gradle with custom repository"><meta property="og:description" content="Fix missing dependencies from your gradle project android, maven, etc with this build.gradle. <br/>insert into"><meta property="og:url" content="https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html"><meta property="og:site_name" content="WMI"><meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="twitter:title" content="build.gradle with custom repository"><meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="twitter:description" content="Fix missing dependencies from your gradle project android, maven, etc with this build.gradle. <br/>insert into"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@WebsiteName">
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><meta name="description" content="Fix missing dependencies from your gradle project (android, maven, etc) with this build.gradle. insert into YOUR_PROJECT_GRADLE/build.gradle // Top-level build file where you can add configuration options common to all sub-projects/modules.buildscript {    repositories {        maven { url “https://maven.google.com” }        jcenter()        maven { url “h.."><meta name="generator" content="Hexo 6.3.0">
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/android/",
+        "name": "android"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/java/",
+        "name": "java"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/gradle/",
+        "name": "gradle"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/tags/kotlin/",
+        "name": "kotlin"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/categories/uncategorized/",
+        "name": "uncategorized"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": "https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html",
+        "name": "build.gradle with custom repository"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html"
+    },
+    "headline": "build.gradle with custom repository",
+    "description": "Fix missing dependencies from your gradle project android, maven, etc with this build.gradle. <br/>insert into",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": {
+        "nick": "Kuswati",
+        "link": "https://www.blogger.com/profile/09256263851708439294",
+        "email": "noreply@blogger.com"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {
+        "nick": "Kuswati",
+        "link": "https://www.blogger.com/profile/09256263851708439294",
+        "email": "noreply@blogger.com"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2020-08-03T11:02:00+07:00",
+    "dateModified": "2020-08-10T13:47:57+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">build.gradle with custom repository</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text">Kotlin</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/android"><i class="tag post-item-tag">android</i></a><a href="/tags/java"><i class="tag post-item-tag">java</i></a><a href="/tags/gradle"><i class="tag post-item-tag">gradle</i></a><a href="/tags/kotlin"><i class="tag post-item-tag">kotlin</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">build.gradle with custom repository</h1><time class="has-text-grey" datetime="2020-08-03T04:02:00.000Z">2020-08-03</time><article class="mt-2 post-content"><p>Fix missing dependencies from your gradle project (android, maven, etc) with this build.gradle. <br>insert into <kbd>YOUR_PROJECT_GRADLE/build.gradle</kbd> </p><pre>// Top-level build file where you can add configuration options common to all sub-projects/modules.<br><br>buildscript {<br>    repositories {<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5nb29nbGUuY29t">https://maven.google.com</a>” }<br>        jcenter()<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9qaXRwYWNrLmlv">https://jitpack.io</a>” }<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kbC5iaW50cmF5LmNvbS9hbmRyb2lkL2FuZHJvaWQtdG9vbHM=">https://dl.bintray.com/android/android-tools</a>” }<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbHVnaW5zLmdyYWRsZS5vcmcvbTIv">https://plugins.gradle.org/m2/</a>” }<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5mYWJyaWMuaW8vcHVibGlj">https://maven.fabric.io/public</a>” }<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:3.2.1’<br>    }<br>}<br><br>allprojects {<br>    repositories {<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5nb29nbGUuY29t">https://maven.google.com</a>” }<br>        jcenter()<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9qaXRwYWNrLmlv">https://jitpack.io</a>” }<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kbC5iaW50cmF5LmNvbS9hbmRyb2lkL2FuZHJvaWQtdG9vbHM=">https://dl.bintray.com/android/android-tools</a>” }<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbHVnaW5zLmdyYWRsZS5vcmcvbTIv">https://plugins.gradle.org/m2/</a>” }<br>        maven { url “<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5mYWJyaWMuaW8vcHVibGlj">https://maven.fabric.io/public</a>” }<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>}<br></pre> <h5>Kotlin</h5><kbd>YOUR_PROJECT_GRADLE/build.gradle.kts</kbd><pre><br>buildscript {<br>    repositories {<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5nb29nbGUuY29t">https://maven.google.com</a>”)<br>        jcenter()<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9qaXRwYWNrLmlv">https://jitpack.io</a>”)<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kbC5iaW50cmF5LmNvbS9hbmRyb2lkL2FuZHJvaWQtdG9vbHM=">https://dl.bintray.com/android/android-tools</a>”)<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbHVnaW5zLmdyYWRsZS5vcmcvbTIv">https://plugins.gradle.org/m2/</a>”)<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5mYWJyaWMuaW8vcHVibGlj">https://maven.fabric.io/public</a>”)<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>}<br>allprojects {<br>    repositories {<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5nb29nbGUuY29t">https://maven.google.com</a>”)<br>        jcenter()<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9qaXRwYWNrLmlv">https://jitpack.io</a>”)<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kbC5iaW50cmF5LmNvbS9hbmRyb2lkL2FuZHJvaWQtdG9vbHM=">https://dl.bintray.com/android/android-tools</a>”)<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wbHVnaW5zLmdyYWRsZS5vcmcvbTIv">https://plugins.gradle.org/m2/</a>”)<br>        maven (“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXZlbi5mYWJyaWMuaW8vcHVibGlj">https://maven.fabric.io/public</a>”)<br>        mavenCentral()<br>        mavenLocal()<br>    }<br>}<br></pre><p></p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><a class="button is-default" href="/2020/09/remove-all-objects-in-arraylist-that.html" title="Remove all objects in an arraylist that exist in another arraylist Java"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Remove all objects in an arraylist that exist in another arraylist Java</span></a><a class="button is-default" href="/2020/08/fix-react-native-error-invalid-regular.html" title="Fix React Native error Invalid regular expression: /.\\__fixtures__"><span class="has-text-weight-semibold">Next: Fix React Native error Invalid regular expression: /.\\__fixtures__</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="github" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//github.com/dimaslanjaka" alt="build.gradle with custom repository"><i class="iconfont icon-github"></i></a><a title="facebook" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//www.facebook.com//dimaslanjaka1" alt="build.gradle with custom repository"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Kuswati 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noreferer noreferrer external" alt="build.gradle with custom repository">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noreferer noreferrer external" alt="build.gradle with custom repository"></a></div></div><div><span></span></div></footer><script src="/hexo-seo-js/concat-a67d608eeaa667c3243a98b409990ad8.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

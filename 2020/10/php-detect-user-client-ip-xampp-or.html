@@ -1,1 +1,117 @@
-<html><head><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body></body></html>
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>[PHP] Detect User Client IP XAMPP or Localhost Machine Supported</title><meta name="description" content="PHP Snippet get real visitor/user ip support localhost XAMPP"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce"><meta name="image" content="https://i.ytimg.com/vi/amIclgSsi7Y/maxresdefault.jpg"><meta name="original-source" content="https://www.webmanajemen.com/2020/10/php-detect-user-client-ip-xampp-or.html"><link rel="canonical" href="https://www.webmanajemen.com/2020/10/php-detect-user-client-ip-xampp-or.html"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"><meta property="og:description" content="PHP Snippet get real visitor/user ip support localhost XAMPP"><meta property="og:url" content="https://www.webmanajemen.com/2020/10/php-detect-user-client-ip-xampp-or.html"><meta property="og:site_name" content="WMI"><meta property="og:image" content="https://i.ytimg.com/vi/amIclgSsi7Y/maxresdefault.jpg"><meta name="twitter:title" content="[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"><meta name="twitter:image" content="https://i.ytimg.com/vi/amIclgSsi7Y/maxresdefault.jpg"><meta name="twitter:description" content="PHP Snippet get real visitor/user ip support localhost XAMPP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@WebsiteName">
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><meta name="description" content="Snippet get real visitor/user ip (support localhost XAMPP)
+/** * Detect is localhost * * @return boolean */function isLocalHost(){  $whitelist = [    '127.0.0.1',    '::1',  ];  return in_array($_SERVER['REMOTE_ADDR'], $whitelist);}/** * Get client ip, when getenv supported (maybe cli) * * @return string */function get_client_ip(){  $ipaddress = '';  if (i.."><meta name="generator" content="Hexo 6.3.0">
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/tips-tricks/",
+        "name": "tips & tricks"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/script/",
+        "name": "script"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/php/",
+        "name": "php"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/tags/ip/",
+        "name": "ip"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/categories/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": "https://www.webmanajemen.com/categories/programming/php/",
+        "name": "php"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": "https://www.webmanajemen.com/2020/10/php-detect-user-client-ip-xampp-or.html",
+        "name": "[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/2020/10/php-detect-user-client-ip-xampp-or.html"
+    },
+    "headline": "[PHP] Detect User Client IP XAMPP or Localhost Machine Supported",
+    "description": "PHP Snippet get real visitor/user ip support localhost XAMPP",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": {
+        "nick": "Kuswati",
+        "link": "https://www.blogger.com/profile/09256263851708439294",
+        "email": "noreply@blogger.com"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {
+        "nick": "Kuswati",
+        "link": "https://www.blogger.com/profile/09256263851708439294",
+        "email": "noreply@blogger.com"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2020-10-16T21:26:00+07:00",
+    "dateModified": "2022-12-20T01:02:56+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">[PHP] Detect User Client IP XAMPP or Localhost Machine Supported</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Snippet-get-real-visitor-user-ip-support-localhost-XAMPP"><span class="toc-text">Snippet get real visitor/user ip (support localhost XAMPP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/tips%20&amp;%20tricks"><i class="tag post-item-tag">tips &amp; tricks</i></a><a href="/tags/script"><i class="tag post-item-tag">script</i></a><a href="/tags/php"><i class="tag post-item-tag">php</i></a><a href="/tags/ip"><i class="tag post-item-tag">ip</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">[PHP] Detect User Client IP XAMPP or Localhost Machine Supported</h1><time class="has-text-grey" datetime="2020-10-16T14:26:00.000Z">2020-10-16</time><article class="mt-2 post-content"><h2 id="Snippet-get-real-visitor-user-ip-support-localhost-XAMPP">Snippet get real visitor/user ip (support localhost XAMPP)</h2>
+<pre><br>/**<br> * Detect is localhost<br> *<br> * @return boolean<br> */<br>function isLocalHost()<br>{<br>  $whitelist = [<br>    '127.0.0.1',<br>    '::1',<br>  ];<br><br>  return in_array($_SERVER['REMOTE_ADDR'], $whitelist);<br>}<br><br>/**<br> * Get client ip, when getenv supported (maybe cli)<br> *<br> * @return string<br> */<br>function get_client_ip()<br>{<br>  $ipaddress = '';<br><br>  if (isLocalHost()) {<br>    $ipaddress = getLocalIp();<br>  } else {<br>    if (getenv('HTTP_CLIENT_IP')) {<br>      $ipaddress = getenv('HTTP_CLIENT_IP');<br>    } elseif (getenv('HTTP_X_FORWARDED_FOR')) {<br>      $ipaddress = getenv('HTTP_X_FORWARDED_FOR');<br>    } elseif (getenv('HTTP_X_FORWARDED')) {<br>      $ipaddress = getenv('HTTP_X_FORWARDED');<br>    } elseif (getenv('HTTP_FORWARDED_FOR')) {<br>      $ipaddress = getenv('HTTP_FORWARDED_FOR');<br>    } elseif (getenv('HTTP_FORWARDED')) {<br>      $ipaddress = getenv('HTTP_FORWARDED');<br>    } elseif (getenv('REMOTE_ADDR')) {<br>      $ipaddress = $ipaddress = getenv('REMOTE_ADDR');<br>    } else {<br>      /**<br>       * Return to method 2<br>       */<br>      $ipaddress = get_client_ip2();<br>    }<br>  }<br><br>  return $ipaddress;<br>}<br><br>/**<br> * Get client ip, when running on webserver<br> *<br> * @return void<br> */<br>function get_client_ip2()<br>{<br>  $ipaddress = '';<br>  if (isLocalHost()) {<br>    $ipaddress = getLocalIp();<br>  } else {<br>    if (isset($_SERVER['HTTP_CLIENT_IP'])) {<br>      $ipaddress = $_SERVER['HTTP_CLIENT_IP'];<br>    } elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {<br>      $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];<br>    } elseif (isset($_SERVER['HTTP_X_FORWARDED'])) {<br>      $ipaddress = $_SERVER['HTTP_X_FORWARDED'];<br>    } elseif (isset($_SERVER['HTTP_FORWARDED_FOR'])) {<br>      $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];<br>    } elseif (isset($_SERVER['HTTP_FORWARDED'])) {<br>      $ipaddress = $_SERVER['HTTP_FORWARDED'];<br>    } elseif (isset($_SERVER['REMOTE_ADDR'])) {<br>      $ipaddress = $_SERVER['REMOTE_ADDR'];<br>    } else {<br>      $ipaddress = 'UNKNOWN';<br>    }<br>  }<br><br>  return $ipaddress;<br>}<br><br>function getLocalIp()<br>{<br>  if (defined('PHP_MAJOR_VERSION') &amp;&amp; PHP_MAJOR_VERSION &gt;= 5) {<br>    $localIP = gethostbyname(gethostname());<br>  } else {<br>    $localIP = gethostbyname(php_uname('n'));<br>  }<br><br>  return $localIP;<br>}<br></pre>
+<h2 id="Usage">Usage</h2>
+<pre><code class="highlight php"><span class="meta">&lt;?php</span>
+<span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">get_client_ip</span>());</code></pre>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><a class="button is-default" href="/2020/10/how-to-make-pull-request-or.html" title="How to make pull request or contribution on github"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: How to make pull request or contribution on github</span></a><a class="button is-default" href="/2020/09/remove-all-objects-in-arraylist-that.html" title="Remove all objects in an arraylist that exist in another arraylist Java"><span class="has-text-weight-semibold">Next: Remove all objects in an arraylist that exist in another arraylist Java</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="github" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//github.com/dimaslanjaka" alt="[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"><i class="iconfont icon-github"></i></a><a title="facebook" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//www.facebook.com//dimaslanjaka1" alt="[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Kuswati 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noreferer noreferrer external" alt="[PHP] Detect User Client IP XAMPP or Localhost Machine Supported">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noreferer noreferrer external" alt="[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"></a></div></div><div><span></span></div></footer><script src="/hexo-seo-js/concat-6f5d43d461e9c347e5ac115feee00dc3.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

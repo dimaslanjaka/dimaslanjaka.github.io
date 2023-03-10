@@ -4,7 +4,8 @@
 | :--- | :--- | :--- |
 | post pre-processor | https://github.com/dimaslanjaka/static-blog-generator | ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator?style=flat-square)
 | site generator | https://github.com/hexojs/hexo | ![GitHub repo size](https://img.shields.io/github/repo-size/hexojs/hexo?style=flat-square)
-
+| site compiler repository | https://github.com/dimaslanjaka/static-blog-generator-hexo | ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator-hexo?style=flat-square)
+| site deployment repository | https://github.com/dimaslanjaka/dimaslanjaka.github.io | ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/dimaslanjaka.github.io?style=flat-square)
 
 [![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
 

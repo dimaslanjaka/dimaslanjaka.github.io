@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/11/teamviewer-10-premium-full-crack.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2019/11/teamviewer-10-premium-full-crack.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

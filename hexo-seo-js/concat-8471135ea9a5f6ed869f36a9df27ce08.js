@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/01/download-pes-2019-pro-evolution-soccer.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2019/01/download-pes-2019-pro-evolution-soccer.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

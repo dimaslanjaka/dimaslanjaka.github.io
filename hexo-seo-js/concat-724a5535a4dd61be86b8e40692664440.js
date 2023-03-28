@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

@@ -1262,7 +1262,7 @@ document.write(“<pre>            <b:includable id='share-tool' var='post'>”)
 /*--- inner-6 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/amp-social-sharing-button-added-bbm-and.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/amp-social-sharing-button-added-bbm-and.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

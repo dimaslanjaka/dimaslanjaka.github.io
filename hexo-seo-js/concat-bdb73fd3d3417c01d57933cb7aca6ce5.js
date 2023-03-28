@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-6 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/12/ideal-frequency-for-blog-articles-update.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2019/12/ideal-frequency-for-blog-articles-update.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

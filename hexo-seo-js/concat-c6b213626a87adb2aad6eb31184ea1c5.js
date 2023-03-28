@@ -1248,7 +1248,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/regcure-317-pro-full-download.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/regcure-317-pro-full-download.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/kunci-jawaban/contoh-soal-perbandingan.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//kunci-jawaban/contoh-soal-perbandingan.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

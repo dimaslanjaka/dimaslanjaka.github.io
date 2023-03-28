@@ -1248,7 +1248,7 @@ document.write(“<iframe src=”); document.write("        "https://source.l3n4
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/06/svg-social-media-icon-with-sass-css.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/06/svg-social-media-icon-with-sass-css.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/11/download-mafia-city-13351-apk-android.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/11/download-mafia-city-13351-apk-android.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

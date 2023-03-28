@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/install-linux-on-android-part-1-running.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/install-linux-on-android-part-1-running.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

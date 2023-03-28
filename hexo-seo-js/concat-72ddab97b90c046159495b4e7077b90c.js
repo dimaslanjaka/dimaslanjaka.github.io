@@ -1255,7 +1255,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-6 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/11/download-film-nun-2018-subtitle.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/11/download-film-nun-2018-subtitle.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

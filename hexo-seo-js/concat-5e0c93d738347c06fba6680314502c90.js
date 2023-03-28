@@ -1248,7 +1248,7 @@ if(window.location.href.indexOf("264760159080518290") > -1) {        document.wr
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/08/buff-kayu-durango-wild-lands-english.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/08/buff-kayu-durango-wild-lands-english.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

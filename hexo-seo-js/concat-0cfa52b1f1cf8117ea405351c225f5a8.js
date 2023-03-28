@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/border-radius-dan-moz-border-radius.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/border-radius-dan-moz-border-radius.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

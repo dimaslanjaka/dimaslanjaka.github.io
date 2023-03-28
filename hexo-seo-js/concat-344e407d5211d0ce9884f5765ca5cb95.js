@@ -1248,7 +1248,7 @@ document.write(“Ganti url https://cdn.rawgit.com/dedi96/safelink/813ce72f/safe
 /*--- inner-6 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/tutorial-membuat-blogspot-safelink.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/tutorial-membuat-blogspot-safelink.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

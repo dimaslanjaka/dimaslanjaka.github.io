@@ -1325,7 +1325,7 @@ window.location.href = 'https://www.webmanajemen.com/chimeraland/recipes.html';
 /*--- inner-12 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/chimeraland/Recipes-list.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//chimeraland/Recipes-list.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

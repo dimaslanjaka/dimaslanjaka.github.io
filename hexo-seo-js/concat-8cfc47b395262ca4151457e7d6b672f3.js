@@ -1248,7 +1248,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-5 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/11/dilan-film-1990-2018-subtitle-indonesia.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/11/dilan-film-1990-2018-subtitle-indonesia.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

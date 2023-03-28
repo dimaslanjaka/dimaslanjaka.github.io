@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-8 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/02/eggplore-ui-style-guide-sketsa-freebie.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2019/02/eggplore-ui-style-guide-sketsa-freebie.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

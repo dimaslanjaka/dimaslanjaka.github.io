@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

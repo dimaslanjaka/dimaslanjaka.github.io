@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/11/download-cerdas-launcher-5-pro-51-build.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/11/download-cerdas-launcher-5-pro-51-build.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

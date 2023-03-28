@@ -1255,7 +1255,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-5 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/cara-memperbaiki-komputer-lelet.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/cara-memperbaiki-komputer-lelet.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

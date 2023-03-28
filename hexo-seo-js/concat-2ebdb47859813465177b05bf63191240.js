@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/NodeJS/snippet/hexo-get-posts-by-tags-categories.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//NodeJS/snippet/hexo-get-posts-by-tags-categories.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

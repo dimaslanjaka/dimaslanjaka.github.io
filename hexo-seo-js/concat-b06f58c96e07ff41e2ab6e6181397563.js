@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

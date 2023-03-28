@@ -1255,7 +1255,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-8 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/04/differences-onpage-seo-optimization-and.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/04/differences-onpage-seo-optimization-and.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

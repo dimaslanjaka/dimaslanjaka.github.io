@@ -1274,7 +1274,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/chimeraland/blacklist-player.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//chimeraland/blacklist-player.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

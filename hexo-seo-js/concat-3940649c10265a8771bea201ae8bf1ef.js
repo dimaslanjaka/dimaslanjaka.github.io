@@ -1248,7 +1248,7 @@ jQuery(window).ready(function($){  if ($('body').find('.myvideo').length > 0) { 
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/pirates-of-caribbean-salazars-revenge.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/pirates-of-caribbean-salazars-revenge.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

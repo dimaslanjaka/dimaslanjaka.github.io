@@ -1269,7 +1269,7 @@ document.write(“<div>\  Untuk mencegah yahoo search engine menampilkan deskrip
 /*--- inner-7 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/deskripsi-tentang-noodp-dan-noydir-meta.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/deskripsi-tentang-noodp-dan-noydir-meta.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

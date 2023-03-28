@@ -1255,7 +1255,7 @@ function progress(timeleft, timetotal, $element) {     var progressBarWidth = ti
 /*--- inner-5 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/02/actually-what-is-internet-marketing.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/02/actually-what-is-internet-marketing.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

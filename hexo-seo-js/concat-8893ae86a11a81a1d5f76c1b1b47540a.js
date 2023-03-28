@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2019/10/si-montok-tanpa-iklan-v34-2019-apk.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2019/10/si-montok-tanpa-iklan-v34-2019-apk.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

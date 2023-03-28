@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-3 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/06/proses-kulit-durango-guide-book.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/06/proses-kulit-durango-guide-book.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

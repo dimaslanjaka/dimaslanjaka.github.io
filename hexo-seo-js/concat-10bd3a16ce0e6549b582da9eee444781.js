@@ -1280,7 +1280,7 @@ var adfly_id = 9",
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/08/cara-membuat-link-tertentu-atau-semua.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/08/cara-membuat-link-tertentu-atau-semua.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

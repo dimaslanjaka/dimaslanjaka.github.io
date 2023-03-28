@@ -1248,7 +1248,7 @@ $(document).ready(function() { $(‘img.hello’).attr(‘src’,$(‘img.hello�
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/09/cara-menambah-query-di-html-image-source.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/09/cara-menambah-query-di-html-image-source.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

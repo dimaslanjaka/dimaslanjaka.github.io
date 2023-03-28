@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-7 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2018/12/animated-ipad-pro-2018-mockup.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2018/12/animated-ipad-pro-2018-mockup.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

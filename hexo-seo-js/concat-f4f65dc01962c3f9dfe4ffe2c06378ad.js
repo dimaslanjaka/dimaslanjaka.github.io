@@ -1241,7 +1241,7 @@ end:"$",illegal:"\n"},o]}}})());
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2022/08/bootstrap-4-multi-card-carousel.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2022/08/bootstrap-4-multi-card-carousel.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

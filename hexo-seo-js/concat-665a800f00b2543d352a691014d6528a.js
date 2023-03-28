@@ -1248,7 +1248,7 @@ document.write('<ifra'+'me width="100%" height="auto" src="https://www.youtube.c
 /*--- inner-5 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/11/make-money-with-bestchange-affiliate.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/11/make-money-with-bestchange-affiliate.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

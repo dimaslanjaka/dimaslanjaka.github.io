@@ -1248,7 +1248,7 @@ window.onload = function(){    var link = “<a target="_blank" rel="noopener ex
 /*--- inner-4 --*/
 
 
-var disqus_config = function () {this.page.url = 'https://www.webmanajemen.com/2017/08/responsive-rss-search-form-with-bootstrap-4.html';this.page.identifier = 'dimaslanjaka';};
+var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com//2017/08/responsive-rss-search-form-with-bootstrap-4.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 

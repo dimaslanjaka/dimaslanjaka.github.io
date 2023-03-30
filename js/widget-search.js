@@ -8,21 +8,23 @@ var searchInputEl = document.getElementById('searchInput');
 var searchButtonEl = document.getElementById('searchButton');
 var searchResultEl = document.getElementById('searchContent');
 
-searchInputEl.oninput = function (evt) {
-  var searchValue = evt.srcElement.value;
-  var haveSearchValue = Boolean(searchValue.trim());
-  if (!haveSearchValue) {
-    searchResultEl.style.height = 0;
-    searchResultEl.innerHTML = null;
-    return;
-  }
+if (searchInputEl) {
+  searchInputEl.oninput = function (evt) {
+    var searchValue = evt.srcElement.value;
+    var haveSearchValue = Boolean(searchValue.trim());
+    if (!haveSearchValue) {
+      searchResultEl.style.height = 0;
+      searchResultEl.innerHTML = null;
+      return;
+    }
 
-  var searchResults = searching(searchValue);
+    var searchResults = searching(searchValue);
 
-  if (searchResults.length > 0) {
-    renderSearchResults(searchResults);
-  }
-};
+    if (searchResults.length > 0) {
+      renderSearchResults(searchResults);
+    }
+  };
+}
 
 function renderSearchResults(results) {
   searchResultEl.innerHTML = null;

@@ -82,7 +82,7 @@ let quizUrls = [
     '//' +
     location.host.trim() +
     '/The Legend Of Neverland/Quiz/quiz.txt',
-  //'https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.php?show',
+  //'https://crossorigin.me/http://backend.webmanajemen.com/tlon/quiz.php?show',
   'https://backend.webmanajemen.com/tlon/quiz.php?show'
 ];
 let quizSrc = [];
@@ -157,9 +157,9 @@ function jQueryMethod() {
   // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
     let url_parse = new URL(quizUrl);
-    //url_parse.search = '?uid=' + new Date();
-    console.log('parse_query_url', parse_query_url(url_parse.toString()));
-    //console.log(url_parse.toString());
+    // url_parse.search = '?uid=' + new Date();
+    // console.log('parse_query_url', parse_query_url(url_parse.toString()));
+    // console.log(url_parse.toString());
 
     //console.log(quizUrl);
     fetch(url_parse.toString())
@@ -256,6 +256,7 @@ if (typeof window.jQuery === 'undefined') {
  * @param {string|URL} url
  * @returns {Record<string, any>|undefined}
  */
+// eslint-disable-next-line no-unused-vars
 function parse_query_url(url) {
   if (url instanceof URL) url = url.toString();
   if (typeof url !== 'string') return; //throw new Error('Please provide url');

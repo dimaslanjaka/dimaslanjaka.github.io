@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Answers - The Legend Of Neverland</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <meta name="generator" content="Hexo 6.3.0">
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">WMI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS91c2Vycy82NDA0NDM5L2RpbWFzLWxhbmpha2E=" alt="WMI" title="WMI">Stack Overflow</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.webmanajemen.com/categories/games/" rel="internal follow bookmark" alt="WMI" title="WMI">All Games</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tools
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="https://www.webmanajemen.com/page/bot-detect" rel="internal follow bookmark" alt="WMI" title="WMI">Bot Detect</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://www.webmanajemen.com/page/moment-timezone.html" rel="internal follow bookmark" alt="WMI" title="WMI">Moment Timezone Playground</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" rel="internal follow bookmark" alt="WMI" title="WMI">Chimeraland Blacklist</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <section id="quiz" class="mb-2">
+        <div class="mb-2">
+          <form class="form-floating" id="nosubmit">
+            <input type="text" class="form-control" id="quizTerm" placeholder="Liz Went Missing at 5" value="">
+            <label for="quizTerm">search question here</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="showOnly">
+              <label class="form-check-label" for="showOnly">
+                Show only
+                <b>(O)</b>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div id="qresult"></div>
+      </section>
+      <section id="add-quiz-section">
+        <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mb-4 text-center">
+          <input type="hidden" name="add" value="add">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="newQ">Add new question</label>
+              <textarea type="text" id="newQ" placeholder="add new question" name="q" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-2">
+                Answer of new question (pick one)
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-check">
+                    <input type="radio" id="customRadioInline1" name="a" class="form-check-input" value="O">
+                    <label class="form-check-label" for="customRadioInline1">(O)</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input type="radio" id="customRadioInline2" name="a" class="form-check-input" value="X">
+                    <label class="form-check-label" for="customRadioInline2">(X)</label>
+                  </div>
+                </div>
+              </div>
+              <div id="submitter" class="mt-2">
+                <button type="submit" class="btn btn-primary btn-block btn-sm">Send</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    
+  <script src="/hexo-seo-js/concat-04b6ca976d7c049411e029d9f90534c7.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      
+</body></html>

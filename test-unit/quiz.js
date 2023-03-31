@@ -26,6 +26,9 @@ Promise.all(
   const doSearch = function (e) {
     if (e instanceof Event) e.preventDefault();
 
+    /**
+     * @type {string}
+     */
     const search = searchEl.value.trim();
 
     // return empty
@@ -40,18 +43,18 @@ Promise.all(
     const result = [];
 
     // find start with
-    const startWith = split.filter((str) => new RegExp('^' + search, 'gi').test(str));
+    const startWith = split.filter((str) => new RegExp('^' + search.toLowerCase(), 'gi').test(str.toLowerCase()));
     result.push(...startWith);
     // console.log(startWith);
     // find wildcard
-    var rx = new RegExp('"([^"]*' + search + '[^"]*)"', 'gi');
-    const test1 = split.filter((str) => rx.test(str));
+    var rx = new RegExp('"([^"]*' + search.toLowerCase() + '[^"]*)"', 'gi');
+    const test1 = split.filter((str) => rx.test(str.toLowerCase()));
     result.push(...test1);
-    var reg = new RegExp('^\\s?' + search, 'gi');
-    const test2 = split.filter((str) => reg.test(str));
+    var reg = new RegExp('^\\s?' + search.toLowerCase(), 'gi');
+    const test2 = split.filter((str) => reg.test(str.toLowerCase()));
     result.push(...test2);
     // find includes
-    const includes = split.filter((str) => str.includes(search));
+    const includes = split.filter((str) => str.toLowerCase().includes(search.toLowerCase()));
     result.push(...includes);
     //console.log({ startWith, test1, test2, includes });
 

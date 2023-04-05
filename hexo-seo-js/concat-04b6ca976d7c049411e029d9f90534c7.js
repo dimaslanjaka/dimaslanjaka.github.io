@@ -3,8 +3,9 @@
 
 Promise.all(
   [
-    'https://backend.webmanajemen.com/tlon/quiz.php?show'
-    // 'https://crossorigin.me/http://backend.webmanajemen.com/tlon/quiz.php?show'
+    'https://backend.webmanajemen.com/tlon/quiz.php?show',
+    'https://crossorigin.me/http://backend.webmanajemen.com/tlon/quiz.txt',
+    'https://api.codetabs.com/v1/proxy?quest=http://backend.webmanajemen.com/tlon/quiz.txt'
   ].map(function (url) {
     return fetch(url)
       .then(function (response) {
@@ -46,7 +47,9 @@ Promise.all(
     const result = [];
 
     // find start with
-    const startWith = split.filter((str) => new RegExp('^' + search.toLowerCase(), 'gi').test(str.toLowerCase()));
+    const startWith = split.filter((str) =>
+      new RegExp('^' + search.toLowerCase(), 'gi').test(str.toLowerCase())
+    );
     result.push(...startWith);
     // console.log(startWith);
     // find wildcard
@@ -57,7 +60,9 @@ Promise.all(
     const test2 = split.filter((str) => reg.test(str.toLowerCase()));
     result.push(...test2);
     // find includes
-    const includes = split.filter((str) => str.toLowerCase().includes(search.toLowerCase()));
+    const includes = split.filter((str) =>
+      str.toLowerCase().includes(search.toLowerCase())
+    );
     result.push(...includes);
     //console.log({ startWith, test1, test2, includes });
 

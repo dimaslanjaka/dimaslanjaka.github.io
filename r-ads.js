@@ -128,7 +128,7 @@ function triggerAdsense(_e) {
 
   log('total ads banner', currentSlot.ads.length);
 
-  // find element *[adsense="fill"]
+  // find element *[adsense="fill"] for render first
   const fixedPlacement = Array.from(document.querySelectorAll('[adsense="fill"]'));
   if (fixedPlacement.length > 0) {
     for (let i = 0; i < fixedPlacement.length; i++) {

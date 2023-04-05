@@ -1,4 +1,11 @@
-/*--- /test-unit/quiz.js --*/
+/*--- inner-0 --*/
+
+
+location.href = '/The Legend Of Neverland/Quiz.html'
+
+
+
+/*--- /js/quiz.js --*/
 
 
 Promise.all(

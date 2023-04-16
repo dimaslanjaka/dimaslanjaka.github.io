@@ -149,12 +149,15 @@ function searching(inputText) {
         continue;
       }
       var title = entry.getElementsByTagName('title')[0].textContent;
-      var link = 'https://google.com/search?q=site:www.webmanajemen.com+' + inputText;
+      var link =
+        'https://google.com/search?q=site:www.webmanajemen.com+' + inputText;
       let linkElement = entry.getElementsByTagName('link');
       let urlElement = entry.getElementsByTagName('url');
-      const hyperlinkEl = urlElement || linkElement || entry.querySelector('url');
+      const hyperlinkEl =
+        urlElement || linkElement || entry.querySelector('url');
       if (isNodeList(hyperlinkEl)) {
-        link = hyperlinkEl[0].getAttribute('href') || hyperlinkEl[0].textContent;
+        link =
+          hyperlinkEl[0].getAttribute('href') || hyperlinkEl[0].textContent;
       } else {
         link = hyperlinkEl.textContent;
       }
@@ -215,11 +218,13 @@ function fetchDatabase() {
     });
 }
 
-searchButtonEl.onclick = fetchDatabase;
+if (searchInputEl) {
+  searchButtonEl.onclick = fetchDatabase;
 
-fetchDatabase().finally(() => {
-  searching('quiz');
-});
+  fetchDatabase().finally(() => {
+    searching('quiz');
+  });
+}
 
 function isNodeList(nodes) {
   var stringRepr = Object.prototype.toString.call(nodes);
@@ -228,7 +233,8 @@ function isNodeList(nodes) {
     typeof nodes === 'object' &&
     /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
     typeof nodes.length === 'number' &&
-    (nodes.length === 0 || (typeof nodes[0] === 'object' && nodes[0].nodeType > 0))
+    (nodes.length === 0 ||
+      (typeof nodes[0] === 'object' && nodes[0].nodeType > 0))
   );
 }
 

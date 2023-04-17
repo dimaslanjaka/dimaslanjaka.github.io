@@ -1275,7 +1275,7 @@ var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/
 /*--- inner-7 --*/
 
 
-(function() {var d = document, s = d.createElement('script');s.src = 'https://dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();
+(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();
 
 
 

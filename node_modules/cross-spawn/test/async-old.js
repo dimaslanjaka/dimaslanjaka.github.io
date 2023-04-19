@@ -2,7 +2,7 @@
 
 const rimraf = require('rimraf');
 const mkdirp = require('mkdirp');
-const pathKey = require('path-key')();
+const pathKey = require('../dist/lib/util/pathKey')();
 const crossSpawn = require('../index');
 
 jest.setTimeout(10000);

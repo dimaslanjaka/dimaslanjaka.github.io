@@ -29,14 +29,19 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "dist/lib",
+    "dist/lib/util"
   ],
   "scripts": {
+    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
+    "update:ncu": "npx npm-check-updates -u -x chalk",
     "lint": "eslint --fix .",
     "test": "jest --env node --coverage --no-cache --runInBand",
     "pre-release": "npm t && npm run lint",
     "release": "standard-version",
-    "post-release": "git push --follow-tags origin HEAD && npm publish"
+    "post-release": "git push --follow-tags origin HEAD && npm publish",
+    "pack": "node packer.js"
   },
   "husky": {
     "hooks": {

@@ -1,6 +1,8 @@
 {
   // Change this to match your project
-  "include": ["index.js"],
+  "include": [
+    "src/index.js"
+  ],
   "compilerOptions": {
     // Tells TypeScript to read JS files, as
     // normally they are ignored as source files
@@ -9,13 +11,15 @@
     "declaration": true,
     // This compiler run should
     // only output d.ts files
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     // Types should go into this directory.
     // Removing this would place the .d.ts files
     // next to the .js files
-    "outDir": "typings",
+    "outDir": "dist",
     // go to js file when using IDE functions like
     // "Go to Definition" in VSCode
-    "declarationMap": true
+    "declarationMap": true,
+    // enable ESModule
+    "esModuleInterop": true
   }
 }

@@ -93,4 +93,3 @@ const spawnSilent = async function (command, args, options) {
     }
 };
 exports.spawnSilent = spawnSilent;
-//# sourceMappingURL=spawn.js.map

@@ -17,4 +17,3 @@ class CacheStream extends stream_1.Transform {
     }
 }
 exports.default = CacheStream;
-//# sourceMappingURL=cache-stream.js.map

@@ -29,4 +29,3 @@ function hasInstance(key) {
     return typeof instances[key] !== 'undefined';
 }
 exports.hasInstance = hasInstance;
-//# sourceMappingURL=instances.js.map

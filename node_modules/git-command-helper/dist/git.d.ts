@@ -13,11 +13,11 @@ import { SpawnOptions } from './spawn';
 import submodule from './submodule';
 import { StatusResult } from './types';
 export interface GitOpt {
-    user?: string;
-    email?: string;
+    user?: string | null;
+    email?: string | null;
     url: string;
-    branch: string;
-    baseDir: string;
+    branch: string | null;
+    baseDir: string | null;
 }
 /**
  * Setup git with branch and remote url resolved automatically

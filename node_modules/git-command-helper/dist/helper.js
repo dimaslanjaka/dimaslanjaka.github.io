@@ -31,4 +31,3 @@ class helper {
     }
 }
 exports.default = helper;
-//# sourceMappingURL=helper.js.map

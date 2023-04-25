@@ -34,4 +34,3 @@ function extractSubmodule(path) {
     });
 }
 exports.default = extractSubmodule;
-//# sourceMappingURL=extract-submodule.js.map

@@ -34,4 +34,3 @@ const git_1 = __importDefault(require("./git"));
 __exportStar(require("./index-exports"), exports);
 exports.ext = __importStar(require("./index-exports"));
 exports.default = git_1.default;
-//# sourceMappingURL=index.js.map

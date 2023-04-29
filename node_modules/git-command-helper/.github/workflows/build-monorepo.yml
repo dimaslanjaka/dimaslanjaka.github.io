@@ -172,7 +172,7 @@ jobs:
       # https://github.com/marketplace/actions/verify-changed-files
       - name: Check if there are changes
         id: changes
-        uses: tj-actions/verify-changed-files@v13
+        uses: tj-actions/verify-changed-files@v14
         with:
           files: |
             release

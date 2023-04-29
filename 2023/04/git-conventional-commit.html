@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Conventional Commit Messages</title><meta name="description" content="Conventional Commit Messages Conventional Commit Messages See how a small change in the style of your commit message can make a difference. Examples Examples Have a look at CLI util git-conventional-commits to ensure this conventions and generate changelogs git-conventional-commits Commit Formats D"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce"><meta name="image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="original-source" content="https://www.webmanajemen.com/2023/04/git-conventional-commit.html"><link rel="canonical" href="https://www.webmanajemen.com/2023/04/git-conventional-commit.html"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="Conventional Commit Messages"><meta property="og:description" content="Conventional Commit Messages Conventional Commit Messages See how a small change in the style of your commit message can make a difference. Examples Examples Have a look at CLI util git-conventional-commits to ensure this conventions and generate changelogs git-conventional-commits Commit Formats D"><meta property="og:url" content="https://www.webmanajemen.com/2023/04/git-conventional-commit.html"><meta property="og:site_name" content="WMI"><meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="twitter:title" content="Conventional Commit Messages"><meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="twitter:description" content="Conventional Commit Messages Conventional Commit Messages See how a small change in the style of your commit message can make a difference. Examples Examples Have a look at CLI util git-conventional-commits to ensure this conventions and generate changelogs git-conventional-commits Commit Formats D"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@WebsiteName">
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Conventional Commit Messages</title><meta name="description" content="Github Conventional Commit Messages"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce"><meta name="image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="original-source" content="https://www.webmanajemen.com/2023/04/git-conventional-commit.html"><link rel="canonical" href="https://www.webmanajemen.com/2023/04/git-conventional-commit.html"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="Conventional Commit Messages"><meta property="og:description" content="Github Conventional Commit Messages"><meta property="og:url" content="https://www.webmanajemen.com/2023/04/git-conventional-commit.html"><meta property="og:site_name" content="WMI"><meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="twitter:title" content="Conventional Commit Messages"><meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"><meta name="twitter:description" content="Github Conventional Commit Messages"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@WebsiteName">
 <link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="Conventional Commit Messages
 See how a small change in the style of your commit message can make a difference. Examples
 Have a look at CLI util git-conventional-commits to ensure this conventions and generate changelogs
@@ -75,7 +75,7 @@ empty separator .."><meta name="generator" content="Hexo 7.0.0-rc1">
       "@id": "https://www.webmanajemen.com/2023/04/git-conventional-commit.html"
     },
     "headline": "Conventional Commit Messages",
-    "description": "Conventional Commit Messages Conventional Commit Messages See how a small change in the style of your commit message can make a difference. Examples Examples Have a look at CLI util git-conventional-commits to ensure this conventions and generate changelogs git-conventional-commits Commit Formats D",
+    "description": "Github Conventional Commit Messages",
     "image": {
       "@type": "ImageObject",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png",
@@ -97,7 +97,7 @@ empty separator .."><meta name="generator" content="Hexo 7.0.0-rc1">
       }
     },
     "datePublished": "2023-04-24T16:19:05+07:00",
-    "dateModified": "2023-04-24T16:19:05+07:00"
+    "dateModified": "2023-04-27T08:47:14+07:00"
   }
 ]</script>
 
@@ -176,7 +176,7 @@ empty separator .."><meta name="generator" content="Hexo 7.0.0-rc1">
 <pre><code>feat(shopping cart): add the amazing button
 <pre><code class="highlight plaintext">* ```
   feat: remove ticket list endpoint
-  
+
   refers to JIRA-1337
   BREAKING CHANGES: ticket enpoints no longer supports list all entites.</code></pre>
 
@@ -197,23 +197,24 @@ The error occurred because of &lt;reasons&gt;.
 </code></pre></li><code>
 <li>
 <pre><code>style: remove empty line
-<pre><code class="highlight plaintext">  
-  
+<pre><code class="highlight plaintext">
+
 ## Git Hook Scripts to ensure commit message header format
 
 ### commit-msg Hook (local)
 * create following file in your local repository folder`.git-hooks/commit-msg`
   ```shell
   #!/usr/bin/env sh
-  
+
   commit_message="$1"
   # exit with a non zero exit code incase of an invalid commit message
-  
+
   # use git-conventional-commits, see https://github.com/qoomon/git-conventional-commits
   git-conventional-commits commit-msg-hook "$commit_message"
-  
+
   # or verify $commit_message with your own tooling
-  # ...</code></pre>
+  # ...
+</code></pre>
 
 </code></pre></li><code>
 <li>⚠ make <code>.git-hooks/commit-msg</code> executable (unix: <code>chmod +x '.git-hooks/commit-msg'</code>)</li>

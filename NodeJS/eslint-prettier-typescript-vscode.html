@@ -1,13 +1,13 @@
 <!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Eslint Prettier In Typescript Project Using Vscode</title><meta name="description" content="How to configure eslint with prettier to automated lint and format codes in typescript project using vscode"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><meta name="keywords" content="nodejs, eslint, prettier, vscode, auto, format, lint"><meta name="image" content="https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg"><meta name="original-source" content="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html"><link rel="canonical" href="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="Eslint Prettier In Typescript Project Using Vscode"><meta property="og:description" content="How to configure eslint with prettier to automated lint and format codes in typescript project using vscode"><meta property="og:url" content="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html"><meta property="og:site_name" content="WMI"><meta property="og:image" content="https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg"><meta name="twitter:title" content="Eslint Prettier In Typescript Project Using Vscode"><meta name="twitter:image" content="https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg"><meta name="twitter:description" content="How to configure eslint with prettier to automated lint and format codes in typescript project using vscode"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@WebsiteName">
 <link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><meta name="description" content="Auto Lint And Format Typescript Using VSCode With Eslint And Prettier
 Updated january 2023, suitable with VSCode and ESLint VSCode Plugin as below informations
-Version: 1.73.1 (user setup)
-Commit: 6261075646f055b99068d3688932416f2346dd3b
-Date: 2022-11-09T04:27:29.066Z
-Electron: 19.0.17
-Chromium: 102.0.5005.167
+Version: 1.77.3 (user setup)
+Commit: 704ed70d4fd1c6bd6342c436f1ede30d1cff4710
+Date: 2023-04-12T09:16:02.548Z
+Electron: 19.1.11
+Chromium: 102.0.5005.196
 Node.js: 16.14.2
-V8: 10.2.154.15-electron.0
+V8: 10.2.154.26-electron.0
 OS.."><meta name="generator" content="Hexo 7.0.0-rc1">
 
 <script type="application/ld+json" id="hexo-seo-schema">[
@@ -104,21 +104,21 @@ OS.."><meta name="generator" content="Hexo 7.0.0-rc1">
       }
     },
     "datePublished": "2021-11-28T00:00:00+07:00",
-    "dateModified": "2023-01-03T21:34:46+07:00"
+    "dateModified": "2023-05-02T11:48:39+07:00"
   }
 ]</script>
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Eslint Prettier In Typescript Project Using Vscode</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Auto-Lint-And-Format-Typescript-Using-VSCode-With-Eslint-And-Prettier"><span class="toc-text">Auto Lint And Format Typescript Using VSCode With Eslint And Prettier</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ESM"><span class="toc-text">ESM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-dependencies"><span class="toc-text">Install dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter"><span class="toc-text">install and activate VSCode ESLint extension for auto Linter And Formatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-eslintrc-js"><span class="toc-text">Create .eslintrc.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Prettier-Config"><span class="toc-text">Create Prettier Config</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-prettierrc-js"><span class="toc-text">Using .prettierrc.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-prettierc-json"><span class="toc-text">Using .prettierc.json</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-vscode-settings-json"><span class="toc-text">Create .vscode/settings.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#optional-create-tsconfig-json-if-not-created-yet"><span class="toc-text">optional: create tsconfig.json (if not created yet)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/programming"><i class="tag post-item-tag">programming</i></a><a href="/tags/nodejs"><i class="tag post-item-tag">nodejs</i></a><a href="/tags/javascript"><i class="tag post-item-tag">javascript</i></a><a href="/tags/eslint"><i class="tag post-item-tag">eslint</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">Eslint Prettier In Typescript Project Using Vscode</h1><time class="has-text-grey" datetime="2021-11-27T17:00:00.000Z">2021-11-28</time><article class="mt-2 post-content"><h2 id="Auto-Lint-And-Format-Typescript-Using-VSCode-With-Eslint-And-Prettier">Auto Lint And Format Typescript Using VSCode With Eslint And Prettier</h2>
 <p>Updated january 2023, suitable with VSCode and ESLint VSCode Plugin as below informations</p>
-<pre><code class="highlight log">Version: 1.73.1 (user setup)
-Commit: 6261075646f055b99068d3688932416f2346dd3b
-Date: 2022-11-09T04:27:29.066Z
-Electron: 19.0.17
-Chromium: 102.0.5005.167
+<pre><code class="highlight log">Version: 1.77.3 (user setup)
+Commit: 704ed70d4fd1c6bd6342c436f1ede30d1cff4710
+Date: 2023-04-12T09:16:02.548Z
+Electron: 19.1.11
+Chromium: 102.0.5005.196
 Node.js: 16.14.2
-V8: 10.2.154.15-electron.0
+V8: 10.2.154.26-electron.0
 OS: Windows_NT x64 10.0.19045
-Sandboxed: No</code></pre>
+Sandboxed: Yes</code></pre>
 <p>Linter becomes 2 types:</p>
 <ul>
 <li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wYWxhbnRpci5naXRodWIuaW8vdHNsaW50Lw==" alt="Eslint Prettier In Typescript Project Using Vscode" title="Eslint Prettier In Typescript Project Using Vscode">TSLint</a> is a linter that must be utilized for TypeScript.</li>
@@ -135,7 +135,9 @@ Sandboxed: No</code></pre>
 <h2 id="install-and-activate-VSCode-ESLint-extension-for-auto-Linter-And-Formatter">install and activate VSCode ESLint extension for auto Linter And Formatter</h2>
 <p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWRiYWV1bWVyLnZzY29kZS1lc2xpbnQ=" alt="Eslint Prettier In Typescript Project Using Vscode" title="Eslint Prettier In Typescript Project Using Vscode">Download Here</a></p>
 <h2 id="Create-eslintrc-js">Create .eslintrc.js</h2>
-<pre><code class="highlight js"><span class="keyword">const</span> prettier = <span class="built_in">require</span>(<span class="string">'./.prettierrc'</span>);
+<pre><code class="highlight js"><span class="keyword">const</span> prettier = <span class="built_in">require</span>(<span class="string">'./.prettierrc.json'</span>);
+<span class="comment">// or using prettier config javascript</span>
+<span class="comment">// const prettier = require('./.prettierrc');</span>
 
 <span class="comment">/**</span>
 <span class="comment"> * <span class="doctag">@type</span> {<span class="type">import('eslint').ESLint.ConfigData</span>}</span>
@@ -147,6 +149,13 @@ Sandboxed: No</code></pre>
     <span class="attr">browser</span>: <span class="literal">true</span>, <span class="comment">// add support for browser js (window,document,location,etc)</span>
     <span class="attr">amd</span>: <span class="literal">true</span>, <span class="comment">// add amd support</span>
     <span class="attr">node</span>: <span class="literal">true</span> <span class="comment">// add node support (module.export,etc)</span>
+  },
+  <span class="attr">globals</span>: {
+    <span class="attr">dataLayer</span>: <span class="literal">true</span>,
+    <span class="attr">hexo</span>: <span class="literal">true</span>,
+    <span class="attr">jQuery</span>: <span class="literal">true</span>,
+    <span class="attr">$</span>: <span class="literal">true</span>,
+    <span class="attr">_</span>: <span class="literal">true</span>
   },
   <span class="attr">parserOptions</span>: {
     <span class="attr">ecmaVersion</span>: <span class="number">2020</span>, <span class="comment">// Allows for the parsing of modern ECMAScript features</span>
@@ -161,9 +170,18 @@ Sandboxed: No</code></pre>
   <span class="comment">// override rules for js files</span>
   <span class="attr">overrides</span>: [
     {
-      <span class="attr">files</span>: [<span class="string">'*.js'</span>, <span class="string">'*.cjs'</span>],
+      <span class="attr">files</span>: [<span class="string">'*.js'</span>],
       <span class="attr">rules</span>: {
-        <span class="string">'@typescript-eslint/no-var-requires'</span>: <span class="string">'off'</span> <span class="comment">// disable require warning on js files</span>
+        <span class="string">'no-unused-vars'</span>: [
+          <span class="string">'warn'</span>,
+          {
+            <span class="attr">argsIgnorePattern</span>: <span class="string">'^_'</span>,
+            <span class="attr">varsIgnorePattern</span>: <span class="string">'^_'</span>,
+            <span class="attr">caughtErrorsIgnorePattern</span>: <span class="string">'^_'</span>
+          }
+        ], <span class="comment">// warn unused vars on js files</span>
+        <span class="string">'no-var-requires'</span>: <span class="string">'off'</span>, <span class="comment">// disable require vars on js files</span>
+        <span class="string">'@typescript-eslint/no-var-requires'</span>: <span class="string">'off'</span> <span class="comment">// disable require vars warning on js files</span>
       }
     }
   ],
@@ -186,7 +204,7 @@ Sandboxed: No</code></pre>
       <span class="string">'error'</span>,
       {
         <span class="attr">allowDestructuring</span>: <span class="literal">false</span>, <span class="comment">// Disallow `const { props, state } = this`; true by default</span>
-        <span class="attr">allowedNames</span>: [<span class="string">'self'</span>] <span class="comment">// Allow `const self = this`; by default</span>
+        <span class="attr">allowedNames</span>: [<span class="string">'self'</span>, <span class="string">'hexo'</span>] <span class="comment">// Allow `const self = this`; `[]` by default</span>
       }
     ],
     <span class="comment">// "arrow-body-style" and "prefer-arrow-callback" are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.</span>

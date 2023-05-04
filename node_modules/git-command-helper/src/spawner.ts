@@ -1,4 +1,4 @@
-import { spawn as spawnSys, SpawnOptions } from 'child_process';
+import { SpawnOptions, spawn as spawnSys } from 'child_process';
 import { Readable } from 'stream';
 import promiseSpawn from './spawn';
 
@@ -14,17 +14,13 @@ export class spawner {
    * spawner.promise({}, 'git', 'log', '-n', '1').then(console.log);
    * spawner.promise({stdio:'pipe'}, 'git', 'submodule', 'status').then(console.log);
    */
-  static promise(
-    options: null | SpawnOptions = null,
-    cmd: string,
-    ...args: string[]
-  ) {
+  static promise(options: null | SpawnOptions = null, cmd: string, ...args: string[]) {
     return new Promise(
       (
         resolve: (returnargs: {
-          code: number;
-          stdout: string[] | Readable;
-          stderr: string[] | Readable;
+          code: number | null;
+          stdout: string[] | Readable | null;
+          stderr: string[] | Readable | null;
         }) => any,
         reject: (returnargs: { args: string[]; err: Error }) => any
       ) => {
@@ -55,12 +51,7 @@ export class spawner {
           return resolve({
             code: code,
             stdout: stdouts.length > 0 ? stdouts : child.stdout,
-            stderr:
-              stderrs.length > 0
-                ? stderrs
-                : stdouts.length === 0
-                ? child.stderr
-                : null
+            stderr: stderrs.length > 0 ? stderrs : stdouts.length === 0 ? child.stderr : null
           });
         });
         child.on('error', function (err) {

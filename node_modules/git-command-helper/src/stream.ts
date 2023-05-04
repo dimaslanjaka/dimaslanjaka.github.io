@@ -1,14 +1,10 @@
 import { Readable } from 'stream';
 
-export function streamToString(
-  stream: Readable
-): Promise<string | PromiseLike<string>> {
+export function streamToString(stream: Readable): Promise<string | PromiseLike<string>> {
   const chunks = [];
   return new Promise((resolve, reject) => {
-    stream.on(
-      'data',
-      (chunk: WithImplicitCoercion<ArrayBuffer | SharedArrayBuffer>) =>
-        chunks.push(Buffer.from(chunk))
+    stream.on('data', (chunk: WithImplicitCoercion<ArrayBuffer | SharedArrayBuffer>) =>
+      chunks.push(Buffer.from(chunk))
     );
     stream.on('error', (err: any) => reject(err));
     stream.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));

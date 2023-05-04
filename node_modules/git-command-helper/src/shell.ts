@@ -13,11 +13,7 @@ export type ShellOptions = SpawnOptions & {
  * @param opt
  * @returns
  */
-export async function shell(
-  cmd: string,
-  args: string[],
-  opt: ShellOptions = null
-) {
+export async function shell(cmd: string, args: string[], opt?: ShellOptions) {
   let useOpt: ShellOptions = {
     cwd: __dirname,
     verbose: false,

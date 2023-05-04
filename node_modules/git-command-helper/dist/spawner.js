@@ -46,11 +46,7 @@ class spawner {
                 return resolve({
                     code: code,
                     stdout: stdouts.length > 0 ? stdouts : child.stdout,
-                    stderr: stderrs.length > 0
-                        ? stderrs
-                        : stdouts.length === 0
-                            ? child.stderr
-                            : null
+                    stderr: stderrs.length > 0 ? stderrs : stdouts.length === 0 ? child.stderr : null
                 });
             });
             child.on('error', function (err) {

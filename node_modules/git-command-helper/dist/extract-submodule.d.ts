@@ -1,16 +1,14 @@
-/// <reference types="node" />
-import fs from "fs";
-import git from "./git";
+import git from './git';
 /**
  * extract submodule to object
- * @param path
+ * @param gitmodulesPath
  */
-declare function extractSubmodule(path: fs.PathOrFileDescriptor): Submodule[];
+declare function extractSubmodule(gitmodulesPath: string): Submodule[];
 export interface Submodule {
-    root: string;
-    path: string;
-    url: string;
-    branch?: string;
-    github?: git;
+  root: string;
+  path: string;
+  url: string;
+  branch?: string;
+  github?: git;
 }
 export default extractSubmodule;

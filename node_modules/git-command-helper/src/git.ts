@@ -6,8 +6,8 @@
 
 import Bluebird from 'bluebird';
 import { existsSync, mkdirSync } from 'fs';
-import { EOL } from 'os';
 import { join } from 'path';
+import { isCanPush } from './functions/push-checker';
 import GithubInfo from './git-info';
 import helper from './helper';
 import * as extension from './index-exports';
@@ -15,7 +15,7 @@ import { hasInstance, setInstance } from './instances';
 import { latestCommit } from './latestCommit';
 import noop from './noop';
 import { shell } from './shell';
-import { SpawnOptions, spawn, spawnAsync, spawnSilent } from './spawn';
+import { SpawnOptions, spawn, spawnSilent } from './spawn';
 import submodule from './submodule';
 import { StatusResult } from './types';
 
@@ -26,10 +26,7 @@ export interface GitOpt {
   email?: string | null;
   url: string;
   branch: string | null;
-  /**
-   * git directory otherwise process.cwd()
-   */
-  baseDir: string | null;
+  baseDir: string;
 }
 
 /**
@@ -37,15 +34,15 @@ export interface GitOpt {
  * @param param0
  * @returns
  */
-export async function setupGit({ branch, url, baseDir, email = null, user = null }: GitOpt) {
-  const github = new gitHelper(baseDir || process.cwd());
+export async function setupGit({ branch, url, baseDir = process.cwd(), email = null, user = null }: GitOpt) {
+  const github = new gitHelper(baseDir);
   github.remote = url;
   try {
     if (!(await github.isExist())) {
       await github.init();
     }
     await github.setremote(url);
-    if (typeof branch === 'string') await github.setbranch(branch);
+    if (branch) await github.setbranch(branch);
     if (email) await github.setemail(email);
     if (user) await github.setuser(user);
   } catch (e) {
@@ -165,7 +162,7 @@ export class git {
    * @returns
    */
   fetch(arg?: string[], optionSpawn: SpawnOptions = { stdio: 'inherit' }) {
-    let args: typeof arg = [];
+    let args: string[] = [];
     if (Array.isArray(arg)) args = args.concat(arg);
     if (args.length === 0) {
       args.push('origin', this.branch);
@@ -304,8 +301,12 @@ export class git {
 
   /**
    * check if can be pushed
-   * @param originName origin name
    */
+  async canPush() {
+    return isCanPush.dryRun(this.cwd);
+  }
+
+  /*
   async canPush(originName = 'origin', branchName = this.branch) {
     // git push --dry-run
     if (branchName) {
@@ -322,17 +323,18 @@ export class git {
     const staged = await this.status();
     // test git push --dry-run
     const dry = await spawnAsync('git', ['push', '--dry-run'], this.spawnOpt({ stdio: 'pipe' }));
-    // console.log({ staged, changed, dry: dry.output.join(EOL).trim() != 'Everything up-to-date' });
+    console.log({ staged, changed, dry: dry.output.join(EOL).trim() != 'Everything up-to-date' });
     // return repository is not up to date
     return changed && staged.length === 0 && dry.output.join(EOL).trim() != 'Everything up-to-date';
   }
+  */
 
   /**
    * Spawn option default stdio pipe
    * @param opt
    * @returns
    */
-  private spawnOpt<T>(opt: SpawnOptions = {}) {
+  spawnOpt<T>(opt: SpawnOptions = {}) {
     return Object.assign({ cwd: this.cwd, stdio: 'pipe' }, opt) as SpawnOptions & T;
   }
 
@@ -543,7 +545,7 @@ export class git {
             return str.trim();
           });
           if (key !== null) {
-            (<any>result)[key] = {
+            (result as any)[key] = {
               origin: nameUrl[0],
               url: nameUrl[1]
             };

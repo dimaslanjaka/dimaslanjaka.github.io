@@ -9,7 +9,7 @@ const hexo_util_1 = require("hexo-util");
  * @param opt
  * @returns
  */
-async function shell(cmd, args, opt = null) {
+async function shell(cmd, args, opt) {
     let useOpt = {
         cwd: __dirname,
         verbose: false,

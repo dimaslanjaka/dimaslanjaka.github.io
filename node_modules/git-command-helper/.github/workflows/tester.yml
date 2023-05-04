@@ -1,0 +1,88 @@
+name: Tester
+
+# automated packer.js
+# repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
+# raw     : https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml
+# update  : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/.github/workflows/build-release.yml > .github/workflows/build-release.yml
+
+on:
+  push:
+    paths-ignore:
+      - '**/*.tgz'
+      - '**/*.gz'
+      - '**/release/**'
+      - '**garbage-collector**'
+      - '**codeql**'
+  pull_request:
+    types:
+      - closed
+    paths-ignore:
+      - '**/release/**'
+      - '**/*.tgz'
+      - '**/*.gz'
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: ['14.x', '16.x', '18.x']
+      fail-fast: false
+      #max-parallel: 6
+    env:
+      NODE_OPTIONS: '--max_old_space_size=8192' #8192 4096 --expose-gc
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+    runs-on: ubuntu-latest
+
+    name: Tester
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: recursive
+
+      - name: Set EOL git configs
+        continue-on-error: true
+        run: |
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
+
+      - name: Pull & update submodules recursively
+        continue-on-error: true
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+          git pull -X theirs
+
+      - name: initialize nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            **/dist
+            **/tmp
+            **/node_modules
+            **/.yarn
+          key: ${{ matrix.os }}-${{ matrix.node-version }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.node-version }}
+            ${{ matrix.os }}-
+
+      - name: install
+        run: |
+          touch yarn.lock
+          yarn install
+
+      - name: test
+        run: npm test

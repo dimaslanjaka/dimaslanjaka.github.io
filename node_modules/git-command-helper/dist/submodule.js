@@ -53,7 +53,14 @@ class submodule {
      * @returns
      */
     hasSubmodule() {
-        return (0, fs_1.existsSync)((0, path_1.join)(this.cwd, '.gitmodules'));
+        const gitmodules = (0, path_1.join)(this.cwd, '.gitmodules');
+        const exist = (0, fs_1.existsSync)(gitmodules);
+        // check empty .gitmodules
+        if (exist) {
+            const size = (0, fs_1.statSync)(gitmodules).size;
+            return size > 0;
+        }
+        return exist;
     }
     /**
      * git submodule update
@@ -154,6 +161,8 @@ class submodule {
         const extract = (0, extract_submodule_1.default)((0, path_1.join)(this.cwd, '.gitmodules'));
         for (let i = 0; i < extract.length; i++) {
             const item = extract[i];
+            if (!item)
+                continue;
             if (!(0, instances_1.hasInstance)(item.root))
                 (0, instances_1.setInstance)(item.root, new git_1.default(item.root));
             const github = (0, instances_1.getInstance)(item.root);

@@ -7,7 +7,7 @@ name: Build Release
 
 on:
   push:
-    branches: [ "master", "main" ]
+    branches: ['master', 'main']
     paths-ignore:
       - '**/*.tgz'
       - '**/*.gz'
@@ -34,9 +34,9 @@ jobs:
     strategy:
       matrix:
         #os: [ "windows-latest", "macos-11", "ubuntu-latest" ]
-        os: [ "ubuntu-latest" ]
-        node-version: [ '14', '16', '18' ]
-        #architecture: [ 'x86', 'x64' ]
+        os: ['ubuntu-latest']
+        node-version: ['14', '16', '18']
+        architecture: ['x86', 'x64']
       fail-fast: true
       max-parallel: 6
 
@@ -66,11 +66,17 @@ jobs:
           echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
           echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
           echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_ENV
-          echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
-          echo "CACHE_YARN2=$(yarn config get cacheFolder)" >> $GITHUB_ENV
           echo "cache-npm=$(npm config get cache)" >> $GITHUB_OUTPUT
-          echo "cache-yarn=$(yarn cache dir)" >> $GITHUB_OUTPUT
-          echo "cache-yarn2=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+          YARN_CURRENT=$(yarn -v)
+          YARN_BERRY=3.2.1
+          if [[ "ok" == "$(echo | awk "(${YARN_CURRENT} > ${YARN_BERRY}) { print \"ok\"; }")" ]]; then
+            echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_ENV
+            echo "cache-yarn=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+          else
+            echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
+            echo "cache-yarn=$(yarn cache dir)" >> $GITHUB_OUTPUT
+          fi
+          echo "architecture=$(getconf LONG_BIT)" >> $GITHUB_ENV
 
       - name: Get env
         run: |
@@ -81,7 +87,6 @@ jobs:
           echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
           echo "cache npm   : ${{ env.CACHE_NPM }}"
           echo "cache yarn  : ${{ env.CACHE_YARN }}"
-          echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
 
       - name: Set EOL git configs
         continue-on-error: true
@@ -115,7 +120,6 @@ jobs:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
-            ${{ steps.set-env.outputs.cache-yarn2 }}
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
@@ -135,7 +139,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Install Legacy Peer Dependencies
-        run: npm install --legacy-peer-deps
+        run: |
+          FILE=package-lock.json
+          if [ -f "$FILE" ]; then
+              npm install --legacy-peer-deps
+          else
+              yarn install
+          fi
         id: install-legacy
         shell: bash
         continue-on-error: true
@@ -147,7 +157,12 @@ jobs:
         shell: bash
         run: |
           rm -rf node_modules
-          npm install --verbose
+          FILE=package-lock.json
+          if [ -f "$FILE" ]; then
+              npm install --verbose
+          else
+              yarn install --verbose
+          fi
 
       - name: Install Update Binary
         id: install-update
@@ -155,14 +170,26 @@ jobs:
         shell: bash
         run: |
           rm -rf node_modules
-          npm install --no-shrinkwrap --update-binary
+          FILE=package-lock.json
+          if [ -f "$FILE" ]; then
+              npm install --no-shrinkwrap --update-binary
+          else
+              yarn install
+          fi
         continue-on-error: true
 
       - name: Clean Install
         id: install-clean
         shell: bash
         if: steps.install-update.outcome == 'failure'
-        run: rm -rf node_modules package-lock.json && npm install
+        run: |
+          rm -rf node_modules package-lock.json
+          FILE=package-lock.json
+          if [ -f "$FILE" ]; then
+              npm install
+          else
+              yarn install
+          fi
 
       - name: Dump Installations
         run: |
@@ -182,7 +209,13 @@ jobs:
         run: npm list
 
       - name: Build
-        run: npm run build
+        run: |
+          FILE=package-lock.json
+          if [ -f "$FILE" ]; then
+              npm run build
+          else
+              yarn build
+          fi
 
       # https://github.com/marketplace/actions/verify-changed-files
       - name: Check if there are changes

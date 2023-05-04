@@ -42,7 +42,9 @@
   },
   "code-runner.respectShebang": true, // code runner follow executor maps
   "code-runner.executorMapByGlob": { // code runner executor map by glob
-    "*.test.ts": "yarn test -- $fileNameWithoutExt"
+    "*.test.ts": "npm test -- $fileNameWithoutExt"
   },
-  "eslint.codeActionsOnSave.mode": "all" // code runner save all files before run
+  "eslint.codeActionsOnSave.mode": "all",
+  "npm.packageManager": "npm",
+  "eslint.packageManager": "npm" // code runner save all files before run
 }

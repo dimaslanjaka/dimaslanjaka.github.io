@@ -16,11 +16,11 @@ name: 'CodeQL'
 
 on:
   push:
-    branches: [ "master", "main", "beta" ]
-    paths: [ '**/*.ts' ]
+    branches: ['master', 'main', 'beta', 'monorepo']
+    paths: ['**/*.ts']
   pull_request:
-    branches: [ "master", "main", "beta" ]
-    paths: [ '**/*.ts' ]
+    branches: ['master', 'main', 'beta', 'monorepo']
+    paths: ['**/*.ts']
   schedule:
     - cron: '43 22 * * 6'
 
@@ -85,5 +85,4 @@ jobs:
           # Optional. Specify a category to distinguish between multiple analyses
           # for the same tool and ref. If you don't use `category` in your workflow,
           # GitHub will generate a default category name for you
-          category: "${{ matrix.language }}"
-
+          category: '${{ matrix.language }}'

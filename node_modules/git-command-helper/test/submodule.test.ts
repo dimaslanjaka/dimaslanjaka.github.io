@@ -1,35 +1,27 @@
-import { beforeAll, beforeEach, describe, expect, it, jest } from '@jest/globals';
+import { beforeAll, describe, expect, it, jest } from '@jest/globals';
 import gitHelper from '../src';
-import clone from './clone';
-import { TestConfig } from './config';
+import { testcfg } from './config';
 
-describe('test pull', () => {
+describe('test submodules', () => {
   jest.setTimeout(60000);
   let github: gitHelper;
 
   beforeAll(async function () {
-    await clone();
+    github = new gitHelper(testcfg.cwd);
+    await github.reset(testcfg.branch);
   });
 
-  beforeEach(async function () {
-    github = new gitHelper(TestConfig.cwd);
-    await github.setremote(TestConfig.remote);
-    await github.setbranch(TestConfig.branch);
-    await github.setuser(TestConfig.username);
-    await github.setemail(TestConfig.email);
-  });
-
-  it('test not have submodule', async () => {
+  it('not have submodule', () => {
     expect(github.submodule.hasSubmodule()).toBe(false);
   });
 
-  it('test have submodule', async () => {
+  it('have submodule', async () => {
     await github.submodule.add({ remote: 'https://github.com/dimaslanjaka/hexo-is', dest: 'packages/hexo-is' });
     expect(github.submodule.hasSubmodule()).toBe(true);
   });
 
-  it('test remove submodule', async () => {
+  it('remove submodule', async () => {
     await github.submodule.remove('packages/hexo-is');
-    expect(github.submodule.hasSubmodule()).toBe(true);
+    expect(github.submodule.hasSubmodule()).toBe(false);
   });
 });

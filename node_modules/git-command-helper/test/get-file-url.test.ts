@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { join } from 'path';
 import { getGithubRepoUrl } from '../src/git-info';
 
-describe('test get file url', () => {
+describe('getGithubRepoUrl() - get file url', () => {
   it('should be have properties', async () => {
     const obj = await getGithubRepoUrl(join(__dirname, 'config.ts'));
     expect(obj).toHaveProperty('remoteURL');

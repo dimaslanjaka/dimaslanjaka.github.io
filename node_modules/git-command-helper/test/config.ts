@@ -12,6 +12,8 @@ export const TestConfig = {
   password: process.env.GITHUB_TOKEN
 };
 
+export const testcfg = TestConfig;
+
 /**
  * Check current instance is jest
  * @returns

@@ -1,7 +1,24 @@
 #!/bin/bash -e
 
+# make cygwin bin as priority
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+# absolute path working directory
+basecwd=${PWD}
+# base script directory
+basedir=`dirname "$0"`
+# absolute path script directory
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
 # auto clone all submodules, prevent not-matched hash
-# usages: sh scripts/install-submodules.sh
+# set ACCESS_TOKEN=github_personal_tokens
+# usages: sh folder_this_repo/submodule-install
 
 # get script path
 SCRIPT=$(realpath "$0")

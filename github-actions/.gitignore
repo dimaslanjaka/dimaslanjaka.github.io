@@ -1,6 +1,7 @@
-node_modules
-tmp
+**/node_modules
+**/tmp
 .yarn/*.gz
 .yarn/cache
 .yarn/version*
 !yarn.lock
+!.yarn/releases

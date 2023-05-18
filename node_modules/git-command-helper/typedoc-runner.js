@@ -1,16 +1,16 @@
 const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
-const { default: git } = require('git-command-helper');
 const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const pkgjson = require('./package.json');
 const { EOL } = require('os');
-const { spawnAsync } = require('git-command-helper/dist/spawn');
+const { spawnAsync } = require('cross-spawn');
 const axios = require('axios');
 const { writeFile } = require('fs/promises');
 const fs = require('fs');
 const path = require('path');
+const git = pkgjson.name === 'git-command-helper' ? require('./dist').default : require('git-command-helper').default;
 
 // required : upath semver typedoc git-command-helper gulp cross-spawn
 // update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
@@ -37,6 +37,7 @@ const compile = async function (options = {}, callback = null) {
     await spawnAsync('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
+  // create directory when not exist
   if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
 
   // disable delete dir while running twice

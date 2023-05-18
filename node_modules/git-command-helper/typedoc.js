@@ -93,9 +93,9 @@ const defaultOptions = {
   gitRevision: 'master',
   githubPages: true,
   //theme: 'hierarchy',
-  plugin: ['typedoc-plugin-missing-exports'],
-  ignoreCompilerErrors: true,
-  logger: 'none'
+  plugin: ['typedoc-plugin-missing-exports']
+  //ignoreCompilerErrors: true,
+  //logger: 'none'
   //version: true,
   //includeVersion: true
 };
@@ -103,7 +103,7 @@ const defaultOptions = {
 const generatedOptionFile = path.join(__dirname, 'tmp/typedocs/options.json');
 let typedocOptions = defaultOptions;
 if (fs.existsSync(generatedOptionFile)) {
-  typedocOptions = JSON.parse(readfile(generatedOptionFile, 'utf-8'));
+  typedocOptions = JSON.parse(_readfile(generatedOptionFile, 'utf-8'));
   typedocOptions = Object.assign(defaultOptions, typedocOptions);
 }
 
@@ -124,7 +124,7 @@ if (scriptName.endsWith('-config.js')) {
  * @param {import('fs').EncodingOption} encoding
  * @returns
  */
-function readfile(str, encoding = 'utf-8') {
+function _readfile(str, encoding = 'utf-8') {
   if (fs.existsSync(str)) {
     if (fs.statSync(str).isFile()) {
       return fs.readFileSync(str, encoding);
@@ -141,8 +141,7 @@ function readfile(str, encoding = 'utf-8') {
  * @param {string} dest
  * @param {any} data
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function writefile(dest, data) {
+function _writefile(dest, data) {
   if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
   if (fs.existsSync(dest)) {
     if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';

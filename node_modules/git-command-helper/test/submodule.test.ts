@@ -7,7 +7,7 @@ describe('test submodules', () => {
   let github: gitHelper;
 
   beforeAll(async function () {
-    github = new gitHelper(testcfg.cwd);
+    github = new gitHelper(testcfg.cwd, testcfg.branch);
     await github.reset(testcfg.branch);
   });
 

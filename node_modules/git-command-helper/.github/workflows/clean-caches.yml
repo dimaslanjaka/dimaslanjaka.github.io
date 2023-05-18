@@ -2,16 +2,18 @@ name: Clean Caches
 
 on:
   push:
-    branches: [ "master", "beta" ]
+    branches: ['master', 'beta']
     paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
+      - '**/package.json'
   pull_request:
     types:
       - closed
     paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
+      - '**/package.json'
   workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *'

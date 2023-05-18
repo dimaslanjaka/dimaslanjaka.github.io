@@ -57,13 +57,15 @@ jobs:
         id: install
         continue-on-error: true
       - run: |
-          echo "" > yarn.lock
-          yarn cache clean
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false
+          truncate -s 0 yarn.lock
+          yarn cache clean --all
           rm -rf node_modules
-          yarn install
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
         working-directory: github-actions
         if: steps.install.outcome == 'failure'
         name: clean install
+        shell: bash
       - run: node github-actions/index.js
         id: validate
       - name: Setup Pages

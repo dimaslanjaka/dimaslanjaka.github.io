@@ -1339,6 +1339,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz":
+  version: 7.0.4
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
+  dependencies:
+    shebang-command: ^2.0.0
+    which: ^3.0.1
+  checksum: cdd488304c7506dbe310e21ae5fe7a33edb484731a8d238dd49e1da4f657cc69160ea2075100836347172b4d690e650c28998f0ef327d9526f8f48603df657db
+  languageName: node
+  linkType: hard
+
 "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz":
   version: 7.0.4
   resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
@@ -2476,7 +2486,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@npm:*, git-command-helper@npm:^1.2.2, git-command-helper@npm:^1.2.3":
+"git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/2bc2009/release/git-command-helper.tgz":
+  version: 1.2.2
+  resolution: "git-command-helper@https://github.com/dimaslanjaka/git-command-helper/raw/2bc2009/release/git-command-helper.tgz"
+  dependencies:
+    "@expo/spawn-async": ^1.7.2
+    binary-collections: ^1.0.3
+    bluebird: ^3.7.2
+    core-js: ^3.30.2
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
+    deepmerge-ts: ^5.1.0
+    fs-extra: ^11.1.1
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/cdff687/releases/hexo-util.tgz"
+    ini: ^4.1.0
+    lodash: ^4.17.21
+    minimatch: ^9.0.0
+    sbg-utility: ^1.0.9
+    upath: ^2.0.1
+  checksum: 3b72277e8ab2950d1096060d882af12c3baff22f3418df3375d3db5f860d2e2b1680f8371bb26b9120d3ba734b682cd73be1b2b902c489a0f89d163a281b33de
+  languageName: node
+  linkType: hard
+
+"git-command-helper@npm:*, git-command-helper@npm:^1.2.2":
   version: 1.2.3
   resolution: "git-command-helper@npm:1.2.3"
   dependencies:
@@ -2503,10 +2534,11 @@ __metadata:
   dependencies:
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
-    git-command-helper: ^1.2.3
+    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/2bc2009/release/git-command-helper.tgz"
     gulp: ^4.0.2
     jsdom: ^21.1.0
     minimist: ^1.2.8
+    sbg-utility: "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz"
     yaml: ^2.2.2
   languageName: unknown
   linkType: soft
@@ -5534,6 +5566,44 @@ __metadata:
   dependencies:
     xmlchars: ^2.2.0
   checksum: d3fa3e2aaf6c65ed52ee993aff1891fc47d5e47d515164b5449cbf5da2cbdc396137e55590472e64c5c436c14ae64a8a03c29b9e7389fc6f14035cf4e982ef3b
+  languageName: node
+  linkType: hard
+
+"sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz":
+  version: 1.0.10
+  resolution: "sbg-utility@https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz"
+  dependencies:
+    ansi-colors: ^4.1.3
+    async: ^3.2.4
+    axios: ^1.4.0
+    bluebird: ^3.7.2
+    cheerio: ^1.0.0-rc.12
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    debug: ^4.3.4
+    fs-extra: ^11.1.1
+    git-command-helper: ^1.2.2
+    glob: ^10.2.3
+    gulp: ^4.0.2
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
+    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
+    jsdom: 21.1.2
+    jsonc-parser: ^3.2.0
+    micromatch: ^4.0.5
+    minimatch: ^9.0.0
+    node-libcurl: ^3.0.0
+    nunjucks: ^3.2.4
+    plugin-error: ^2.0.1
+    progress: ^2.0.3
+    request: ^2.88.0
+    safelinkify: ^1.1.18
+    slugify: ^1.6.6
+    through2: ^4.0.2
+    true-case-path: ^2.2.1
+    tslib: ^2.5.0
+    upath: ^2.0.1
+    yaml: ^2.2.2
+  checksum: bbe5c84c0b8f8a1e589a58d0d041875ca9519cf9c57a19add14390756fdc09dd9053c285687ad36b1145c12f5edf9f3d7e237d4d9544d9bdc4abbc4513bc33c3
   languageName: node
   linkType: hard
 

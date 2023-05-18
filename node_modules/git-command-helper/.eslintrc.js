@@ -1,4 +1,7 @@
-const prettier = require('./.prettierrc');
+const prettier = require('./.prettierrc.json');
+// or using prettier config javascript
+// const prettier = require('./.prettierrc');
+
 /**
  * @type {import('eslint').ESLint.ConfigData}
  */
@@ -9,6 +12,13 @@ const config = {
     browser: true, // add support for browser js (window,document,location,etc)
     amd: true, // add amd support
     node: true // add node support (module.export,etc)
+  },
+  globals: {
+    dataLayer: true,
+    hexo: true,
+    jQuery: true,
+    $: true,
+    _: true
   },
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
@@ -23,9 +33,18 @@ const config = {
   // override rules for js files
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '**/bin/**'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off' // disable require warning on js files
+        'no-unused-vars': [
+          'warn',
+          {
+            argsIgnorePattern: '^_',
+            varsIgnorePattern: '^_',
+            caughtErrorsIgnorePattern: '^_'
+          }
+        ], // warn unused vars on js files
+        'no-var-requires': 'off', // disable require vars on js files
+        '@typescript-eslint/no-var-requires': 'off' // disable require vars warning on js files
       }
     }
   ],
@@ -48,7 +67,7 @@ const config = {
       'error',
       {
         allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
-        allowedNames: ['self'] // Allow `const self = this`; `[]` by default
+        allowedNames: ['self', 'hexo'] // Allow `const self = this`; `[]` by default
       }
     ],
     // "arrow-body-style" and "prefer-arrow-callback" are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.

@@ -2,6 +2,11 @@
   "extends": "./tsconfig.base.json",
   "include": ["src", "test"],
   "compilerOptions": {
-    "strict": true
+    "composite": true,
+    "tsBuildInfoFile": "./tmp/tsconfig.build.tsbuildinfo",
+    "declarationMap": false,
+    "outDir": "tmp/dist",
+    "strict": true,
+    "noEmit": true
   }
 }

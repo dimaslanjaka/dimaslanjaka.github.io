@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+// refactor "header" "line2" "line3"
+// refactor -s scopename "header" "line2" "line3"
+
+const cp = require('cross-spawn');
+const minimist = require('minimist');
+const argv = minimist(process.argv.slice(2));
+const scope = argv['s'] || argv['scope'];
+
+const messages = [];
+if (scope) {
+  messages.push(`refactor(${scope}): ${argv._[0]}`, ...argv._.slice(1));
+} else {
+  messages.push(`refactor: ${argv._[0]}`, ...argv._.slice(1));
+}
+
+const args = ['commit'];
+for (let i = 0; i < messages.length; i++) {
+  const msg = messages[i];
+  args.push('-m', `"${msg}"`);
+}
+
+cp.sync('git', args, { cwd: process.cwd() });

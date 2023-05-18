@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync } from 'fs';
 import { defaults } from 'jest-config';
 import * as jsonc from 'jsonc-parser';
 import { join } from 'path';
@@ -67,5 +67,7 @@ const config: JestConfigWithTsJest = {
   //   "clover"
   // ],
 };
+
+if (!existsSync(<string>config.cacheDirectory)) mkdirSync(<string>config.cacheDirectory, { recursive: true });
 
 export default config;

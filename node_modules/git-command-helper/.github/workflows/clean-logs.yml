@@ -6,20 +6,22 @@ on:
         description: 'Number of days.'
         required: true
         default: 30
+        type: number
       minimum_runs:
         description: 'The minimum runs to keep for each workflow.'
         required: true
         default: 6
+        type: number
       delete_workflow_pattern:
         description: 'The name or filename of the workflow. if not set then it will target all workflows.'
         required: false
       delete_workflow_by_state_pattern:
         description: 'Remove workflow by state: active, deleted, disabled_fork, disabled_inactivity, disabled_manually'
         required: true
-        default: "All"
+        default: 'All'
         type: choice
         options:
-          - "All"
+          - 'All'
           - active
           - deleted
           - disabled_inactivity
@@ -27,10 +29,10 @@ on:
       delete_run_by_conclusion_pattern:
         description: 'Remove workflow by conclusion: action_required, cancelled, failure, skipped, success'
         required: true
-        default: "All"
+        default: 'All'
         type: choice
         options:
-          - "All"
+          - 'All'
           - action_required
           - cancelled
           - failure

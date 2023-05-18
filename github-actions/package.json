@@ -11,15 +11,20 @@
   "description": "",
   "dependencies": {
     "bluebird": "^3.7.2",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/2bc2009/release/git-command-helper.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz"
+    "cross-spawn": "^7.0.3",
+    "git-command-helper": "^1.2.3",
+    "sbg-utility": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
     "jsdom": "^21.1.0",
     "minimist": "^1.2.8",
     "yaml": "^2.2.2"
+  },
+  "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/2bc2009/release/git-command-helper.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz"
   },
   "packageManager": "yarn@3.5.1"
 }

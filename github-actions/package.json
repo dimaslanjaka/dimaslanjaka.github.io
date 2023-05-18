@@ -10,10 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bluebird": "^3.7.2"
+    "bluebird": "^3.7.2",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
+    "git-command-helper": "^1.2.3"
   },
   "devDependencies": {
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
     "gulp": "^4.0.2",
     "jsdom": "^21.1.0",
     "minimist": "^1.2.8",

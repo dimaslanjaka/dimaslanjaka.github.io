@@ -10,32 +10,3 @@ ga('create', 'UA-106238155-1', 'auto');
 ga('send', 'pageview');
 
 
-
-/*--- inner-2 --*/
-
-
-
-  (function() {
-    //var cx = 'partner-pub-7975270895217217:5914050470';
-    // adsense, cse
-    var cxs = {ads: '0e11f01d3a7759942',cse: 'bdcdd8d729cb6b0dd'};
-    var cx = cxs.ads;
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-
-
-
-
-/*--- inner-4 --*/
-
-
-
-     (adsbygoogle = window.adsbygoogle || []).push({});
-
-
-

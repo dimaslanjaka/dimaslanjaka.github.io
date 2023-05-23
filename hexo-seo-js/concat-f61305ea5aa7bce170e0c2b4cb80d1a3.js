@@ -14,20 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-
-  location.href = '/NodeJS/node-options.html#nodemon'
-
-
-
-
-/*--- inner-4 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/NodeJS/nodemon.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

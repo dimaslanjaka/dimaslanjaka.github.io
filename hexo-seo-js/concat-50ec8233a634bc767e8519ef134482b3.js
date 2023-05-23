@@ -14,38 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-
-        document.write(300 / 5);
-      
-
-
-
-/*--- inner-4 --*/
-
-
-
-        document.write(7 * 60)
-      
-
-
-
-/*--- inner-5 --*/
-
-
-
-        document.write(420 / 60)
-      
-
-
-
-/*--- inner-6 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/The Legend Of Neverland/Fishing.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-7 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

@@ -11,14 +11,14 @@ ga('send', 'pageview');
 
 
 
-/*--- inner-5 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/chimeraland/script-auto-fishing.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-6 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

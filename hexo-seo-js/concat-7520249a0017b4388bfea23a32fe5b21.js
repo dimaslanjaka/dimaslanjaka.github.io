@@ -14,18 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-  var ouo_token="2NDiMv2q",exclude_domains=["webmanajemen.com",location.host];       
-
-
-
-/*--- inner-5 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2018/11/download-baaghi-2016-indonesian_23.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-6 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

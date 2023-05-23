@@ -14,18 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-jQuery(window).ready(function($){  if ($('body').find('.myvideo').length > 0) { $("#main_light_switcher").fadeIn(); } else { $("#main_light_switcher").hide(); }  $("#trigger_on").click(function() { $(".myvideo").expose({ closeOnEsc: true, closeOnClick: true, closeSpeed: 'fast', color: '#000000', loadSpeed: 'slow', opacity: 0.95, zIndex: 9998, onClose: function() {$("#trigger_off").hide(); $("#trigger_on").show();} });  $("#trigger_on").hide(); $("#trigger_off").show().fadeTo('fast', 0.5);}); $("#trigger_off").click(function() {$.mask.close(); $("#trigger_off").hide(); $("#trigger_on").show();});  }); 
-
-
-
-/*--- inner-4 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2017/09/pirates-of-caribbean-salazars-revenge.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

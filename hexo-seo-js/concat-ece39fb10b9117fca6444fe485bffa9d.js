@@ -14,25 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-countDown();
-
-
-
-/*--- inner-4 --*/
-
-
-function progress(timeleft, timetotal, $element) {     var progressBarWidth = timeleft * $element.width() / timetotal;     $element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear').html(timeleft + " secs");     if(timeleft > 0) {         setTimeout(function() {             progress(timeleft - 1, timetotal, $element);         }, 1000);     } };  progress(10, 10, $('#progressBar')); 
-
-
-
-/*--- inner-5 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2018/02/actually-what-is-internet-marketing.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-6 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

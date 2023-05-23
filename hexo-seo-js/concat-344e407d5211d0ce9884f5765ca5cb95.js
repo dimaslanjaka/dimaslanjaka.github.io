@@ -11,21 +11,14 @@ ga('send', 'pageview');
 
 
 
-/*--- inner-5 --*/
-
-
-document.write(“Ganti url https://cdn.rawgit.com/dedi96/safelink/813ce72f/safelinkga.js dengan url hasil upload.an di ghitub tadi, dan begitu pun* http://www.safelink.ga/p/generate.html ganti dengan url Laman statis yang telah* kita bikin* sebelumnya (<a href="#step3" alt="step 3" title="step 3">Cek Step 3</a>). Setelah itu Perbarui template nya.”); 
-
-
-
-/*--- inner-6 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2017/09/tutorial-membuat-blogspot-safelink.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-7 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

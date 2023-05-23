@@ -11,14 +11,14 @@ ga('send', 'pageview');
 
 
 
-/*--- inner-7 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2018/12/animated-ipad-pro-2018-mockup.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-8 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

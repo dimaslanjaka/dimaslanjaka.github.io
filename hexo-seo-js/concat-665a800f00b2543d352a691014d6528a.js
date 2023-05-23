@@ -11,21 +11,14 @@ ga('send', 'pageview');
 
 
 
-/*--- inner-4 --*/
-
-
-document.write('<ifra'+'me width="100%" height="auto" src="https://www.youtube.com/embed/Jck4GeBB3-c?rel=0" frameborder="0" allowfullscreen></ifra'+'me>');
-
-
-
-/*--- inner-5 --*/
+/*--- inner-3 --*/
 
 
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2017/11/make-money-with-bestchange-affiliate.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-6 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

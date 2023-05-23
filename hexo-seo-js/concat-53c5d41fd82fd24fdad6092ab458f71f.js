@@ -14,20 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-
-  hljs.initHighlightingOnLoad();
-
-
-
-
-/*--- inner-4 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

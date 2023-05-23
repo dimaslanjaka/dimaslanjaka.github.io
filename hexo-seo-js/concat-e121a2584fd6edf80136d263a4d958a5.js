@@ -14,25 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-const h3 = document.querySelectorAll('h3');
-for (const key in h3) {
-  if (Object.hasOwnProperty.call(h3, key)) {
-    const el = h3[key].querySelector('em');
-    console.log(el.innerText)
-  }
-}
-
-
-
-
-/*--- inner-4 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2021/05/mora-cost-weapon-genshin-impact.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

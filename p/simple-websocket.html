@@ -15,162 +15,178 @@
   }
 ]</script>
 
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Beranda</a></h3><h3 class="is-inline-block"><a href="/about">Tentang</a></h3><h3 class="is-inline-block"><a href="/archives">Arsip</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Beranda</a></h3><h3 class="is-inline-block"><a href="/about">Tentang</a></h3><h3 class="is-inline-block"><a href="/archives">Arsip</a></h3></header><h1>Simple Websocket</h1>  <noscript>
-  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/style.css">
-</noscript>
-<link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/toastr.css">
-<div id="separator-o">
-  
-  <div style="height: 100px;"></div>
-</div>
-
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">WMI</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/p/privacy.html">Privacy</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/p/tos.html">Terms</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/p/disclaimer.html">Disclaimer</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/p/about.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/p/dmca.html">DMCA</a>
-      </li>
-    </ul>
-    <form class="form-inline mt-2 mt-md-0" action="https://web-manajemen.blogspot.com/search" target="_blank">
-      <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-<style>
-  [id=usage] .card {
-    min-height: 300px;
-  }
-<p>a.btn {<br>
-color: white;<br>
-}<br>
-</style>
-
-<div>
-  <h1 itemprop="name">Simple Websocket Writen in PHP and Javascript</h1>
-  <img itemprop="image" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png" alt="Websocket How to" class="d-none" title="Websocket How to">
-  <h5 class="ml-3"><i class="fab fa-js mr-1"></i><span class="badge badge-info">Javascript</span><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9XZWItTWFuYWplbWVuL2Jsb2IvbWFzdGVyL2pzL3dlYnNvY2tldC5qcw==" target="_blank" rel="nofollow noopener noreferer noreferrer external" class="btn btn-success btn-sm ml-1" title="JS" alt="Simple Websocket">Download<i class="fas fa-download ml-1"></i></a></h5>
-        <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js"></script>
-  <h6 class="text-center">JS Usage Example</h6>
-  <div class="row" id="usage">
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">By Variable OR Const</h5>
-          <pre class="card-text">const start_socket = false;
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"><link id="rss-site-url" type="application/rss+xml" rel="alternate" href="https://www.webmanajemen.com/rss.xml"><link id="atom-site-url" type="application/atom+xml" rel="alternate" href="https://www.webmanajemen.com/atom.xml"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Beranda</a></h3><h3 class="is-inline-block"><a href="/about">Tentang</a></h3><h3 class="is-inline-block"><a href="/archives">Arsip</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Beranda</a></h3><h3 class="is-inline-block"><a href="/about">Tentang</a></h3><h3 class="is-inline-block"><a href="/archives">Arsip</a></h3></header><main><article id="page"><h1>Simple Websocket</h1><p>&lt;noscript&gt;
+&lt;link rel="stylesheet"
+href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/style.css"&gt;
+&lt;/noscript&gt;
+&lt;link rel="stylesheet"
+href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/toastr.css"&gt;</p>
+<p>&lt;div id="separator-o"&gt;
+&lt;!--Delete this if the header is too far down (margin-top)--&gt;
+&lt;div style="height: 100px;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--Navbar--&gt;
+&lt;nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"&gt;
+&lt;a class="navbar-brand" href="#"&gt;WMI&lt;/a&gt;
+&lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"&gt;
+&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;div class="collapse navbar-collapse" id="navbarCollapse"&gt;
+&lt;ul class="navbar-nav mr-auto"&gt;
+&lt;li class="nav-item"&gt;
+&lt;a class="nav-link" href="#"&gt;Home &lt;span class="sr-only"&gt;(current)&lt;/span&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="nav-item"&gt;
+&lt;a class="nav-link" href="/p/privacy.html"&gt;Privacy&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="nav-item"&gt;
+&lt;a class="nav-link" href="/p/tos.html"&gt;Terms&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="nav-item"&gt;
+&lt;a class="nav-link" href="/p/disclaimer.html"&gt;Disclaimer&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="nav-item"&gt;
+&lt;a class="nav-link" href="/p/about.html"&gt;About&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="nav-item"&gt;
+&lt;a class="nav-link" href="/p/dmca.html"&gt;DMCA&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form class="form-inline mt-2 mt-md-0" action="https://web-manajemen.blogspot.com/search" target="_blank"&gt;
+&lt;input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search"&gt;
+&lt;button class="btn btn-outline-success my-2 my-sm-0" type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;/nav&gt;
+&lt;!--/Navbar--&gt;
+&lt;style&gt;
+[id=usage] .card {
+min-height: 300px;
+}</p>
+<p>a.btn {
+color: white;
+}
+&lt;/style&gt;</p>
+<p>&lt;!--Content Here--&gt;
+&lt;div&gt;
+&lt;h1 itemprop="name"&gt;Simple Websocket Writen in PHP and Javascript&lt;/h1&gt;
+&lt;img itemprop="image" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png"
+alt="Websocket How to" class="d-none" /&gt;
+&lt;h5 class="ml-3"&gt;&lt;i class="fab fa-js mr-1"&gt;&lt;/i&gt;&lt;span class="badge badge-info"&gt;Javascript&lt;/span&gt;&lt;a
+href="https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js" target="_blank"
+rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="JS"&gt;Download&lt;i
+class="fas fa-download ml-1"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js"&gt;&lt;/script&gt;
+&lt;h6 class="text-center"&gt;JS Usage Example&lt;/h6&gt;
+&lt;div class="row" id="usage"&gt;
+&lt;div class="col-md-4 mb-3"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title"&gt;By Variable OR Const&lt;/h5&gt;
+&lt;pre class="card-text"&gt;
+const start_socket = false;
 if (start_socket){
-  socket_start();
+socket_start();
 }
-      </pre>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">By Element Exists</h5>
-          <pre class="card-text">var websocketElement = document.getElementById('websocket'); //find any elements with id websocket
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4 mb-3"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title"&gt;By Element Exists&lt;/h5&gt;
+&lt;pre class="card-text"&gt;
+var websocketElement = document.getElementById('websocket'); //find any elements with id websocket
 if (websocketElement){
-  socket_start();
+socket_start();
 }
-      </pre>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Others</h5>
-          <p class="card-text">
-            You can use it as your wish. OR using basic example bellow :
-            </p><pre>if (conditional) {
-  socket_start();
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4 mb-3"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title"&gt;Others&lt;/h5&gt;
+&lt;p class="card-text"&gt;
+You can use it as your wish. OR using basic example bellow :
+&lt;pre&gt;
+if (conditional) {
+socket_start();
 }
-            </pre>
-          <p></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h5 class="ml-3"><i class="fab fa-php mr-1"></i><span class="badge badge-info">PHP</span><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9XZWItTWFuYWplbWVuL2Jsb2IvbWFzdGVyL1BIUC93ZWJzb2NrZXQucGhw" target="_blank" rel="nofollow noopener noreferer noreferrer external" class="btn btn-success btn-sm ml-1" title="PHP" alt="Simple Websocket">Download<i class="fas fa-download ml-1"></i></a></h5>
-        <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php"></script>
-  <h6 class="text-center">PHP Usage Example</h6>
-  <div class="row" id="usage">
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">PHP Normal Usage</h5>
-          <pre class="card-text">$websocket = new WMI_websocket(false, false);
+&lt;/pre&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</p>
+<p>&lt;h5 class="ml-3"&gt;&lt;i class="fab fa-php mr-1"&gt;&lt;/i&gt;&lt;span class="badge badge-info"&gt;PHP&lt;/span&gt;&lt;a
+href="https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php" target="_blank"
+rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="PHP"&gt;Download&lt;i
+class="fas fa-download ml-1"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php"&gt;&lt;/script&gt;
+&lt;h6 class="text-center"&gt;PHP Usage Example&lt;/h6&gt;
+&lt;div class="row" id="usage"&gt;
+&lt;div class="col-md-4 mb-3"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title"&gt;PHP Normal Usage&lt;/h5&gt;
+&lt;pre class="card-text"&gt;
+$websocket = new WMI_websocket(false, false);
 /* Data Example */
 $websocket-&gt;createData([
-  'pendapatan_max_invoice' =&gt; 45,
-  'piutang_max_invoice' =&gt; 55,
-  'hutang_max_invoice' =&gt; 65,
-  'pengeluaran_max_invoice' =&gt; 67,
+'pendapatan_max_invoice' =&gt; 45,
+'piutang_max_invoice' =&gt; 55,
+'hutang_max_invoice' =&gt; 65,
+'pengeluaran_max_invoice' =&gt; 67,
 ]);
 $websocket-&gt;SEND();
-        </pre>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">PHP Object Oriented Usage</h5>
-          <pre class="card-text">$websocket = new WMI_websocket(false, false);
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4 mb-3"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title"&gt;PHP Object Oriented Usage&lt;/h5&gt;
+&lt;pre class="card-text"&gt;
+$websocket = new WMI_websocket(false, false);
 $websocket-&gt;createData([
-  'pendapatan_max_invoice' =&gt; 45,
-  'piutang_max_invoice' =&gt; 55,
-  'hutang_max_invoice' =&gt; 65,
-  'pengeluaran_max_invoice' =&gt; 67,
+'pendapatan_max_invoice' =&gt; 45,
+'piutang_max_invoice' =&gt; 55,
+'hutang_max_invoice' =&gt; 65,
+'pengeluaran_max_invoice' =&gt; 67,
 ])-&gt;SEND();
-        </pre>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">PHP <b>Static</b> Object Oriented Usage</h5>
-          <pre class="card-text">WMI_websocket::i(false, false)-&gt;createData([
-  'pendapatan_max_invoice' =&gt; 45,
-  'piutang_max_invoice' =&gt; 55,
-  'hutang_max_invoice' =&gt; 65,
-  'pengeluaran_max_invoice' =&gt; 67,
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4 mb-3"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;h5 class="card-title"&gt;PHP &lt;b&gt;Static&lt;/b&gt; Object Oriented Usage&lt;/h5&gt;
+&lt;pre class="card-text"&gt;
+WMI_websocket::i(false, false)-&gt;createData([
+'pendapatan_max_invoice' =&gt; 45,
+'piutang_max_invoice' =&gt; 55,
+'hutang_max_invoice' =&gt; 65,
+'pengeluaran_max_invoice' =&gt; 67,
 ])-&gt;SEND();
-        </pre>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  
-  
-    <div class="container">
-      
-      <div class="row py-4 d-flex align-items-center">
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</p>
+<p>&lt;/div&gt;</p>
+<p>&lt;!--Footer--&gt;
+&lt;footer class="page-footer font-small unique-color-dark"&gt;</p>
+<p>&lt;!-- Social buttons --&gt;
+&lt;div class="primary-color"&gt;
+&lt;div class="container"&gt;
+&lt;!--Grid row--&gt;
+&lt;div class="row py-4 d-flex align-items-center"&gt;</p>
 <pre><code>    &lt;!--Grid column--&gt;
     &lt;div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0"&gt;
       &lt;h6 class="mb-0 white-text"&gt;Get connected with us on social networks!&lt;/h6&gt;
@@ -194,11 +210,11 @@ $websocket-&gt;createData([
   &lt;!--Grid row--&gt;
 &lt;/div&gt;
 </code></pre>
-  </div>
-  
-  
-  </div>
-    <div class="row mt-3">
+<p>&lt;/div&gt;
+&lt;!-- Social buttons --&gt;</p>
+<p>&lt;!--Footer Links--&gt;
+&lt;div class="container mt-5 mb-4 text-center text-md-left"&gt;
+&lt;div class="row mt-3"&gt;</p>
 <pre><code>  &lt;!--First column--&gt;
   &lt;div class="col-md-3 col-lg-4 col-xl-3 mb-4"&gt;
     &lt;h6 class="text-uppercase font-weight-bold"&gt;
@@ -261,30 +277,37 @@ $websocket-&gt;createData([
 
 &lt;/div&gt;
 </code></pre>
-  </div>
-  
-  
-  <div class="footer-copyright text-left py-3">
-    <div class="d-flex justify-content-between">
-      <div class="p-2">© 2019 Copyright: <a href="https://web-manajemen.blogspot.com" rel="nofollow noopener noreferer noreferrer external" target="_blank" alt="Simple Websocket" title="Simple Websocket"> Website Manajemen
-          Indonesia</a></div>
-      <div class="p-2"><small>This site is protected by reCAPTCHA and the Google
-          <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wb2xpY2llcy5nb29nbGUuY29tL3ByaXZhY3k=" alt="Simple Websocket" title="Simple Websocket">Privacy Policy</a> and
-          <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wb2xpY2llcy5nb29nbGUuY29tL3Rlcm1z" alt="Simple Websocket" title="Simple Websocket">Terms of Service</a> apply.</small></div>
-    </div>
-  </div>
-  
+<p>&lt;/div&gt;
+&lt;!--/.Footer Links--&gt;</p>
+<p>&lt;!-- Copyright --&gt;
+&lt;div class="footer-copyright text-left py-3"&gt;
+&lt;div class="d-flex justify-content-between"&gt;
+&lt;div class="p-2"&gt;© 2019 Copyright: &lt;a href="https://web-manajemen.blogspot.com"&gt; Website Manajemen
+Indonesia&lt;/a&gt;&lt;/div&gt;
+&lt;div class="p-2"&gt;&lt;small&gt;This site is protected by reCAPTCHA and the Google
+&lt;a href="https://policies.google.com/privacy"&gt;Privacy Policy&lt;/a&gt; and
+&lt;a href="https://policies.google.com/terms"&gt;Terms of Service&lt;/a&gt; apply.&lt;/small&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Copyright --&gt;</p>
+<p>&lt;/footer&gt;
+&lt;!--/Footer--&gt;</p>
+<p>&lt;!-- JQuery --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;!-- Bootstrap tooltips --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"&gt;&lt;/script&gt;
+&lt;!-- Bootstrap core JavaScript --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;!-- MDB core JavaScript --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/bootstrap.utility.js"&gt;&lt;/script&gt;</p>
+<p>&lt;script&gt;
+function loadCSS(e,t,a){var n=window.document.createElement("link"),o=t||window.document.getElementsByTagName("script")[0];n.rel="stylesheet",n.href=e,n.media="only x",o.parentNode.insertBefore(n,o),setTimeout(function(){n.media=a||"all"})}
+loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/style.css");
+&lt;/script&gt;</p>
+</article><div id="paginator"></div></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="github" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//github.com/dimaslanjaka" alt="Simple Websocket"><i class="iconfont icon-github"></i></a><a title="facebook" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//www.facebook.com//dimaslanjaka1" alt="Simple Websocket"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noreferer noreferrer external" alt="Simple Websocket">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" alt="Simple Websocket">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noreferer noreferrer external" alt="Simple Websocket"></a></div></div><div><span></span></div></footer><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/hexo-seo-js/concat-4c5d7024f1b55341fb42a05f84100c67.js"></script>
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
 
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/bootstrap.utility.js"></script>
-
-<div id="paginator"></div><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="github" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//github.com/dimaslanjaka" alt="Simple Websocket"><i class="iconfont icon-github"></i></a><a title="facebook" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="//www.facebook.com//dimaslanjaka1" alt="Simple Websocket"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noreferer noreferrer external" alt="Simple Websocket">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noreferer noreferrer external" alt="Simple Websocket">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noreferer noreferrer external" alt="Simple Websocket"></a></div></div><div><span></span></div></footer><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script></body></html>
+      </body></html>

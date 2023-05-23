@@ -10,13 +10,3 @@ ga('create', 'UA-106238155-1', 'auto');
 ga('send', 'pageview');
 
 
-
-/*--- inner-10 --*/
-
-
-
-  function loadCSS(e,t,a){var n=window.document.createElement("link"),o=t||window.document.getElementsByTagName("script")[0];n.rel="stylesheet",n.href=e,n.media="only x",o.parentNode.insertBefore(n,o),setTimeout(function(){n.media=a||"all"})}
-  loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/style.css");
-
-
-

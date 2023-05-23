@@ -14,18 +14,11 @@ ga('send', 'pageview');
 /*--- inner-3 --*/
 
 
-document.write(“<iframe src=”); document.write("        "https://source.l3n4r0x.cf/php/codepen.php?user=dimaslanjaka&id=BRRKJX&tab=html&h=500"“); document.write(”        name="SVG SASS" scrolling="yes" frameborder="no" height="500px"“); document.write(”        width="100%">“); document.write(”</iframe>“); document.write(”"); 
-
-
-
-/*--- inner-4 --*/
-
-
 var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2017/06/svg-social-media-icon-with-sass-css.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };
 
 
 
-/*--- inner-5 --*/
+/*--- inner-4 --*/
 
 
 (function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();

@@ -10,3 +10,29 @@ ga('create', 'UA-106238155-1', 'auto');
 ga('send', 'pageview');
 
 
+
+/*--- inner-2 --*/
+
+
+$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))
+
+
+
+/*--- inner-4 --*/
+
+
+$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))
+
+

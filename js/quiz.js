@@ -44,9 +44,7 @@ Promise.all(
     const result = [];
 
     // find start with
-    const startWith = split.filter((str) =>
-      new RegExp('^' + search.toLowerCase(), 'gi').test(str.toLowerCase())
-    );
+    const startWith = split.filter((str) => new RegExp('^' + search.toLowerCase(), 'gi').test(str.toLowerCase()));
     result.push(...startWith);
     // console.log(startWith);
     // find wildcard
@@ -57,9 +55,7 @@ Promise.all(
     const test2 = split.filter((str) => reg.test(str.toLowerCase()));
     result.push(...test2);
     // find includes
-    const includes = split.filter((str) =>
-      str.toLowerCase().includes(search.toLowerCase())
-    );
+    const includes = split.filter((str) => str.toLowerCase().includes(search.toLowerCase()));
     result.push(...includes);
     //console.log({ startWith, test1, test2, includes });
 

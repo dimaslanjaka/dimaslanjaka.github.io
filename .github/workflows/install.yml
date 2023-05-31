@@ -1,0 +1,101 @@
+name: Install Site
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master", "gh-pages"]
+    paths:
+      [
+        "**/*.html",
+        "**/*.css",
+        "**/*.js",
+        "**/*.json",
+        "**/workflows/install.yml",
+      ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "checkout branch or commit"
+        required: true
+        default: "master"
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          architecture: "x64"
+      - run: corepack enable
+      - name: install validator
+        run: yarn install
+        working-directory: github-actions
+        id: install
+        continue-on-error: true
+      - run: |
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false
+          truncate -s 0 yarn.lock
+          yarn cache clean --all
+          rm -rf node_modules
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
+        working-directory: github-actions
+        if: steps.install.outcome == 'failure'
+        name: clean install github validator
+        shell: bash
+      - name: fix EOL
+        run: |
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
+      - name: fix case-sensitive
+        run: |
+          git rm -r --cached .
+          git add --all .
+          git commit -a -m "fix: file name casing"
+      - name: install
+        run: |
+          rm -rf node_modules
+          if [ -f "package-lock.json" ]; then
+              npm install --omit=dev --production
+          else
+              yarn install
+          fi
+      - run: node github-actions/index.js
+        id: validate
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        if: steps.validate.outcome == 'success'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: steps.validate.outcome == 'success'
+        with:
+          # Upload entire repository
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        if: steps.validate.outcome == 'success'

@@ -1,0 +1,124 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Install XAMPP/LAMPP On Android Non-Root</title><meta name="description" content="php apache setup on android with Termux without root Download Termux allow installation from unknwon sources and"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><meta name="keywords" content="the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce"><meta name="image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg"><meta name="original-source" content="https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html"><link rel="canonical" href="https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="Install XAMPP/LAMPP On Android Non-Root"><meta property="og:description" content="php apache setup on android with Termux without root Download Termux allow installation from unknwon sources and"><meta property="og:url" content="https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html"><meta property="og:site_name" content="WMI"><meta property="og:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg"><!--meta(property='og:image:secure_url' content=thumbnail)--><meta name="twitter:title" content="Install XAMPP/LAMPP On Android Non-Root"><meta name="twitter:image" content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg"><meta name="twitter:description" content="php apache setup on android with Termux without root Download Termux allow installation from unknwon sources and"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@WebsiteName"><!-- Google Analytics --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1 * new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106238155-1', 'auto');
+ga('send', 'pageview');</script><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="
+  php apache setup on android with Termux (without root)
+  
+    
+       Download Termux  (allow
+      installation from unknwon sources and install the termux app)
+    
+ Example htdocs files
+  
+  Termux Setup Steps
+  
+    
+      update packages (If it asks you, choose yes in both cases.)
+      apt update -y &amp;amp;&amp;amp; apt upgrade -y  
+    
+    Install Apa.."><meta name="generator" content="Hexo 7.0.0-rc1"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><!--a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"--><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Install XAMPP/LAMPP On Android Non-Root</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#php-apache-setup-on-android-with-termux-without-root-"><span class="toc-text">php apache setup on android with Termux (without root)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#termux-setup-steps"><span class="toc-text">Termux Setup Steps</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/android"><i class="tag post-item-tag">android</i></a><a href="/tags/tips%20&amp;%20tricks"><i class="tag post-item-tag">tips &amp; tricks</i></a><a href="/tags/php"><i class="tag post-item-tag">php</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">Install XAMPP/LAMPP On Android Non-Root</h1><time class="has-text-grey" datetime="2021-06-02T06:52:00.000Z">2021-06-02</time><article class="mt-2 post-content"><div id="bootstrap-wrapper">
+  <h2 id="php-apache-setup-on-android-with-termux-without-root-">php apache setup on android with Termux (without root)</h2>
+  <ul>
+    <li>
+      <a target="_blank" href="https://f-droid.org/repository/browse/?fdid=com.termux" rel="noopener noreferer nofollow noopener"> Download Termux </a> (allow
+      installation from unknwon sources and install the termux app)
+    </li>
+<li> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.mediafire.com/file/v3d4nk933le6t1u/htdocs.rar/file">Example htdocs files</a>
+  </li></ul>
+  <h2 id="termux-setup-steps">Termux Setup Steps</h2>
+  <ul>
+    <li>
+      update packages (If it asks you, choose yes in both cases.)
+      <pre><code class="lang-bash">apt <span class="hljs-keyword">update</span> -y &amp;&amp; apt <span class="hljs-keyword">upgrade</span> -y<br>  </code></pre>
+    </li>
+    <li>Install Apache and PHP 7</li>
+  </ul>
+  <p>
+    There is as of now a bundle that serves to introduce these two things together. That is, through apache PHP documents are prepared. To
+    introduce our LAMPP on Android we will run:
+  </p>
+  <pre><code class="lang-bash">apt <span class="hljs-keyword">install</span> php-apache<br>  </code></pre>
+  <p>That will install apache, PHP and a few libraries that will permit us to join the two things.</p>
+  <ul>
+    <li>configure apache to process the PHP files</li>
+  </ul>
+  <p>
+    We are going to configure the httpd.conf file. Attention here, because the route is important. The apache configuration file is in
+    <code>/data/data/com.termux/files/usr/etc/apache2/httpd.conf</code>
+  </p>
+  <p>You can change to that folder with:</p>
+  <pre><code class="lang-bash">cd <span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/usr/</span>etc<span class="hljs-regexp">/apache2/</span><br>  </code></pre>
+  <p>Then open the file with nano:</p>
+  <pre><code class="lang-bash"><span class="hljs-selector-tag">nano</span> <span class="hljs-selector-tag">httpd</span><span class="hljs-selector-class">.conf</span><br>  </code></pre>
+  <ul>
+    <li>Load PHP module</li>
+  </ul>
+  <p>on httpd.conf, scroll down until you see string start with <strong>LoadModule</strong>. Then add new line and type bellow code:</p>
+  <pre><code class="lang-conf">LoadModule php7_module <span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/usr/</span>libexec<span class="hljs-regexp">/apache2/</span>libphp7.so<br>  </code></pre>
+  <ul>
+    <li>Set handler</li>
+  </ul>
+  <p>Add new line after <code>LoadModule php7_module</code> and type bellow code:</p>
+  <pre><code class="lang-conf"><span class="hljs-section">&lt;FilesMatch \.php$&gt;</span><br>    <span class="hljs-attribute"><span class="hljs-nomarkup">SetHandler</span></span> application/x-httpd-php<br>  <span class="hljs-section">&lt;/FilesMatch&gt;</span><br>  </code></pre>
+  <p>
+    We are revealing to Apache that records that conform to a standard articulation/regex (where the document is one of PHP) are prepared by
+    a controller.
+  </p>
+  <p>
+    Now above steps looks like:
+    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg" alt="Preview">
+  </p>
+  <ul>
+    <li>Change Index</li>
+  </ul>
+  <p>Scroll again, and find text contains <code>DirectoryIndex index.html</code>. Looks like bellow:</p>
+  <pre><code class="lang-conf"><span class="hljs-section">&lt;IfModule dir_module&gt;</span><br>    <span class="hljs-attribute">DirectoryIndex</span> index.html<br>  <span class="hljs-section">&lt;/IfModule&gt;</span><br>  </code></pre>
+  <p>Change extension <code>html</code> to <code>php</code>, seem looks like bellow:</p>
+  <pre><code class="lang-conf"><span class="hljs-section">&lt;IfModule dir_module&gt;</span><br>    <span class="hljs-attribute">DirectoryIndex</span> index.php<br>  <span class="hljs-section">&lt;/IfModule&gt;</span><br>  </code></pre>
+  <p>We do this to advise apache to serve index.php over index.html (this is a change and that doesn't mean we can not serve HTML).</p>
+  <p>
+    For instance, in the event that we visit <code>example.com</code> apache will default to index.html, rather this change will serve
+    index.php. Save changes and close the record. <code>CRTL+X -&gt; Save Dont Rename</code>
+  </p>
+  <ul>
+    <li>Write first index.php on public directory</li>
+  </ul>
+  <p>Our htdocs located in <code>/data/data/com.termux/files/usr/share/apache2/default-site/htdocs</code>. Just type bellow code:</p>
+  <pre><code>cd <span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/apache2/</span><span class="hljs-keyword">default</span>-site/htdocs<br>  nano index.php<br>  </code></pre>
+  <p>Write your first php code or any text. I suggest type bellow code:</p>
+  <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span><br>  phpinfo();<br>  <span class="hljs-meta">?&gt;</span></span><br>  </code></pre>
+  <p>Now save it. <code>CTRL+X -&gt; Save don't rename</code></p>
+  <ul>
+    <li>Start apache</li>
+  </ul>
+  <p>To start apache daemon, type bellow commands:</p>
+  <pre><code class="lang-bash">apachectl <span class="hljs-literal">start</span><br>  </code></pre>
+  <p>On the off chance that it doesn't show errors at that point all is well.</p>
+  <p>
+    apache is running a threaded mpm but your php module is not compiled to be threadsafe, How to fix ?
+    <a href="/2021/06/fix-apache-wont-run-on-android.html" alt="How to fix apache is running a threaded mpm but your php module is not compiled to be 		threadsafe">See here</a>
+    <br>
+    Fix error retrieving pid file apache. <a href="/2021/06/fix-error-retrieving-pid-file-on-termux.html">See here</a>
+  </p>
+  <div class="mt-3">
+    See also:
+    <ul>
+      <li><a href="/2017/04/instal-php-cli-pada-android-instalasi.html" rel="follow"> Install php cli on android root </a></li>
+    </ul>
+  </div>
+</div>
+<style></style>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2021/06/install-xampp-lampp-on-android-non-root.html" title="Install XAMPP/LAMPP On Android Non-Root"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Install XAMPP/LAMPP On Android Non-Root</span></a><a class="button is-default" href="/2021/05/compress-es6-on-intellij-idea.html" title="Compress ES6 In Intellij IDEA"><span class="has-text-weight-semibold">Next: Compress ES6 In Intellij IDEA</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://github.com/Haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

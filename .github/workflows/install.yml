@@ -5,13 +5,11 @@ on:
   push:
     branches: ["master", "gh-pages"]
     paths:
-      [
-        "**/*.html",
-        "**/*.css",
-        "**/*.js",
-        "**/*.json",
-        "**/workflows/install.yml",
-      ]
+      - "**/*.html"
+      - "**/*.css"
+      - "**/*.js"
+      - "**/*.json"
+      - "**/workflows/install.yml"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,20 +34,24 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: github-pages
+      name: "github-pages-artifact"
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN || github.token }}
+      node-version: 14.x
+      YARN_CHECKSUM_BEHAVIOR: update
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.inputs.ref }}
+          token: ${{ env.ACCESS_TOKEN }}
       - uses: actions/setup-node@v3
         with:
-          node-version: "18"
-          architecture: "x64"
+          node-version: ${{ env.node-version }}
       - run: corepack enable
       - name: install validator
         run: yarn install
@@ -78,6 +80,7 @@ jobs:
           git commit -a -m "fix: file name casing"
       - name: install
         run: |
+          yarn dlx npm i -g npm
           rm -rf node_modules
           if [ -f "package-lock.json" ]; then
               npm install --omit=dev --production
@@ -95,7 +98,11 @@ jobs:
         with:
           # Upload entire repository
           path: "."
+          name: "github-pages-artifact"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
         if: steps.validate.outcome == 'success'
+        with:
+          token: ${{ env.ACCESS_TOKEN }}
+          artifact_name: "github-pages-artifact"

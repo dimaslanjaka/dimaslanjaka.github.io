@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 import { join } from 'path';
-import extractSubmodule from '../src/extract-submodule';
+import extractSubmodule from '../src/utils/extract-submodule';
 
 describe('extract .gitmodules', () => {
   it('should be array', () => {

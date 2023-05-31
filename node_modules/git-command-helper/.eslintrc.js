@@ -35,6 +35,7 @@ const config = {
     {
       files: ['*.js', '**/bin/**'],
       rules: {
+        '@typescript-eslint/no-namespace': 'off',
         'no-unused-vars': [
           'warn',
           {

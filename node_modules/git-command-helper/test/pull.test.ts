@@ -8,7 +8,7 @@ describe('test pull', () => {
     const git = new gitHelper(TestConfig.cwd, TestConfig.branch);
     await git.setremote(TestConfig.remote);
     await git.setbranch(TestConfig.branch);
-    await git.setuser(TestConfig.username);
+    await git.setuser(TestConfig.user);
     await git.setemail(TestConfig.email);
     const result = (await git.pull(['-X', 'theirs'], { stdio: 'pipe' })) || '';
     const updated = /^Already up to date.$/.test(result.trim());

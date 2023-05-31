@@ -30,7 +30,11 @@
   },
   "[json]": {
     "editor.formatOnSave": false, // custom formating with default vscode formatter
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": false,
+      "source.organizeImports": false
+    }
   },
   "editor.formatOnSave": false, // default vscode formatter
   "git.enabled": true, // enable git
@@ -39,7 +43,7 @@
   "code-runner.saveAllFilesBeforeRun": true, // code runner save all files before run
   "code-runner.runInTerminal": true, // code runner run in terminal
   "files.exclude": {
-    "**/dist": true,
+    "**/dist": false,
     "**/node_modules": true,
     "**/vendor": true
   },

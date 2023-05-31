@@ -4,7 +4,7 @@
  * @type {{ [key: string]: import("lint-staged").Commands | import("lint-staged").ConfigFn }}
  */
 const config = {
-  '*.ts': ['npx prettier --write', 'eslint --fix', 'tsc --noEmit --skipLibCheck --esModuleInterop'],
+  '*.ts': ['npx prettier --write', 'eslint --fix', 'tsc --noEmit --skipLibCheck --esModuleInterop --resolveJsonModule'],
   '*.html': ['npx eslint --fix', 'prettier --write'],
   '*.scss': 'npx prettier --write',
   '*.json': 'npx prettier --write',

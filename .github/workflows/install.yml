@@ -80,6 +80,7 @@ jobs:
           git commit -a -m "fix: file name casing"
       - name: install
         run: |
+          corepack enable
           yarn dlx npm i -g npm
           rm -rf node_modules
           if [ -f "package-lock.json" ]; then

@@ -1339,6 +1339,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz":
+  version: 7.0.4
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
+  dependencies:
+    shebang-command: ^2.0.0
+    which: ^3.0.1
+  checksum: cdd488304c7506dbe310e21ae5fe7a33edb484731a8d238dd49e1da4f657cc69160ea2075100836347172b4d690e650c28998f0ef327d9526f8f48603df657db
+  languageName: node
+  linkType: hard
+
+"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b9c848068544a2d26726a5a9b4faa7cc80/release/cross-spawn.tgz":
+  version: 7.0.4
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b9c848068544a2d26726a5a9b4faa7cc80/release/cross-spawn.tgz"
+  dependencies:
+    shebang-command: ^2.0.0
+    which: ^3.0.1
+  checksum: cdd488304c7506dbe310e21ae5fe7a33edb484731a8d238dd49e1da4f657cc69160ea2075100836347172b4d690e650c28998f0ef327d9526f8f48603df657db
+  languageName: node
+  linkType: hard
+
 "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz":
   version: 7.0.4
   resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
@@ -1346,6 +1366,37 @@ __metadata:
     shebang-command: ^2.0.0
     which: ^3.0.1
   checksum: cdd488304c7506dbe310e21ae5fe7a33edb484731a8d238dd49e1da4f657cc69160ea2075100836347172b4d690e650c28998f0ef327d9526f8f48603df657db
+  languageName: node
+  linkType: hard
+
+"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz":
+  version: 7.0.4
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+  dependencies:
+    shebang-command: ^2.0.0
+    which: ^3.0.1
+  checksum: cdd488304c7506dbe310e21ae5fe7a33edb484731a8d238dd49e1da4f657cc69160ea2075100836347172b4d690e650c28998f0ef327d9526f8f48603df657db
+  languageName: node
+  linkType: hard
+
+"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/tarball/private":
+  version: 7.0.4
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=bf7d49917463e67d7834203e578525fdf149d787"
+  dependencies:
+    shebang-command: ^2.0.0
+    which: ^3.0.1
+  checksum: 4c3b75d1a93e19c7e547ff96e05fb18f7846a7d8a21ebaebce9fca6eed355510f61298b3e52b98f068f1e83526dec6bb31856644c4b835db17a32255ac64dc79
+  languageName: node
+  linkType: hard
+
+"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "cross-spawn@npm:7.0.3"
+  dependencies:
+    path-key: ^3.1.0
+    shebang-command: ^2.0.0
+    which: ^2.0.1
+  checksum: 671cc7c7288c3a8406f3c69a3ae2fc85555c04169e9d611def9a675635472614f1c0ed0ef80955d5b6d4e724f6ced67f0ad1bb006c2ea643488fcfef994d7f52
   languageName: node
   linkType: hard
 
@@ -2466,17 +2517,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"git-command-helper@npm:*, git-command-helper@npm:^1.2.2":
+  version: 1.2.5
+  resolution: "git-command-helper@npm:1.2.5"
+  dependencies:
+    "@expo/spawn-async": ^1.7.2
+    binary-collections: ^1.0.3
+    bluebird: ^3.7.2
+    core-js: ^3.30.2
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b9c848068544a2d26726a5a9b4faa7cc80/release/cross-spawn.tgz"
+    deepmerge-ts: ^5.1.0
+    fs-extra: ^11.1.1
+    ini: ^4.1.1
+    lodash: ^4.17.21
+    minimatch: ^9.0.1
+    sbg-utility: ^1.1.0
+    upath: ^2.0.1
+  checksum: 851eef8b2a2697a05dc2d9f536bcb1d5da96b956836b1a49b7b167f6c200fc53de542a8d8c6ee5b3714a2dff3516c8ab30782bebddca0fd2043b18e516f39abd
+  languageName: node
+  linkType: hard
+
 "github-pages-validator@workspace:.":
   version: 0.0.0-use.local
   resolution: "github-pages-validator@workspace:."
   dependencies:
     bluebird: ^3.7.2
-    cross-spawn: ^7.0.3
-    git-command-helper: ^1.2.3
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    git-command-helper: "https://github.com/dimaslanjaka/git-command-helper/raw/2bc2009/release/git-command-helper.tgz"
     gulp: ^4.0.2
     jsdom: ^21.1.0
     minimist: ^1.2.8
-    sbg-utility: ^1.1.0
+    sbg-utility: "https://github.com/dimaslanjaka/static-blog-generator/raw/8cf940f/packages/sbg-utility/release/sbg-utility.tgz"
     yaml: ^2.2.2
   languageName: unknown
   linkType: soft
@@ -3138,7 +3209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ini@npm:^4.1.0":
+"ini@npm:^4.1.0, ini@npm:^4.1.1":
   version: 4.1.1
   resolution: "ini@npm:4.1.1"
   checksum: 0e5909554074fbc31824fa5415b0f604de4a665514c96a897a77bf77353a7ad4743927321270e9d0610a9d510ccd1f3cd77422f7cc80d8f4542dbce75476fb6d
@@ -4062,6 +4133,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "minimatch@npm:9.0.1"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: 97f5f5284bb57dc65b9415dec7f17a0f6531a33572193991c60ff18450dcfad5c2dad24ffeaf60b5261dccd63aae58cc3306e2209d57e7f88c51295a532d8ec3
+  languageName: node
+  linkType: hard
+
 "minimist@npm:^1.2.5, minimist@npm:^1.2.8":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
@@ -4813,6 +4893,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path-key@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "path-key@npm:3.1.1"
+  checksum: 55cd7a9dd4b343412a8386a743f9c746ef196e57c823d90ca3ab917f90ab9f13dd0ded27252ba49dbdfcab2b091d998bc446f6220cd3cea65db407502a740020
+  languageName: node
+  linkType: hard
+
 "path-key@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-key@npm:4.0.0"
@@ -5535,6 +5622,44 @@ __metadata:
     upath: ^2.0.1
     yaml: ^2.2.2
   checksum: bbe5c84c0b8f8a1e589a58d0d041875ca9519cf9c57a19add14390756fdc09dd9053c285687ad36b1145c12f5edf9f3d7e237d4d9544d9bdc4abbc4513bc33c3
+  languageName: node
+  linkType: hard
+
+"sbg-utility@npm:^1.0.9, sbg-utility@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "sbg-utility@npm:1.1.0"
+  dependencies:
+    ansi-colors: ^4.1.3
+    async: ^3.2.4
+    axios: ^1.4.0
+    bluebird: ^3.7.2
+    cheerio: ^1.0.0-rc.12
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    debug: ^4.3.4
+    fs-extra: ^11.1.1
+    git-command-helper: ^1.2.2
+    glob: ^10.2.3
+    gulp: ^4.0.2
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
+    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
+    jsdom: 21.1.2
+    jsonc-parser: ^3.2.0
+    micromatch: ^4.0.5
+    minimatch: ^9.0.0
+    node-libcurl: ^3.0.0
+    nunjucks: ^3.2.4
+    plugin-error: ^2.0.1
+    progress: ^2.0.3
+    request: ^2.88.0
+    safelinkify: ^1.1.18
+    slugify: ^1.6.6
+    through2: ^4.0.2
+    true-case-path: ^2.2.1
+    tslib: ^2.5.0
+    upath: ^2.0.1
+    yaml: ^2.2.2
+  checksum: 6fc5ff6fa5b4defe6aacb494cc3341b28c299471f21f34f55e9b3b86bf7698aba2f234e050c04fe65eefbf37880154aac6240725ac4a7fbd7e7625ac200f79f0
   languageName: node
   linkType: hard
 
@@ -6595,7 +6720,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"which@npm:^2.0.2":
+"which@npm:^2.0.1, which@npm:^2.0.2":
   version: 2.0.2
   resolution: "which@npm:2.0.2"
   dependencies:

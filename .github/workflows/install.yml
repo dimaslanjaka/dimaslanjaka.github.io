@@ -49,6 +49,7 @@ jobs:
         with:
           ref: ${{ github.event.inputs.ref }}
           token: ${{ env.ACCESS_TOKEN }}
+          submodules: recursive
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node-version }}

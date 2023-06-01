@@ -66,15 +66,15 @@ jobs:
         if: steps.install.outcome == 'failure'
         name: clean install github validator
         shell: bash
-      - name: fix EOL
+      - name: fix github config
         run: |
+          echo "fix end of lines"
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
-      - name: fix case-sensitive
-        run: |
+          echo "fix case-sensitive"
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
           git rm -r --cached .

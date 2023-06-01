@@ -68,11 +68,15 @@ jobs:
         shell: bash
       - name: fix EOL
         run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
       - name: fix case-sensitive
         run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
           git rm -r --cached .
           git add --all .
           git commit -a -m "fix: file name casing"

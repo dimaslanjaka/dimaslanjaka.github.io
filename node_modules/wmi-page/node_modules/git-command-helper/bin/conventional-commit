@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+// refactor/feat/chore/fix "header" "line2" "line3"
+// refactor/feat/chore/fix -s scopename "header" "line2" "line3"
+// refactor/feat/chore/fix -s scopename "message \`code\` another message"
+
+const cp = require('cross-spawn');
+const minimist = require('minimist');
+const argv = minimist(process.argv.slice(2));
+
+function conventionalCommit(scope, type, messages = []) {
+  /** scoped commit */
+  scope = argv['s'] || argv['scope'] || scope;
+  /** refactor/feat/chore/fix */
+  type = argv['t'] || argv['type'] || type;
+
+  if (!Array.isArray(messages)) messages = [];
+  /** to be used in spawn */
+  const messagesParam = [];
+  const varargs = messages.length === 0 ? argv._ : messages;
+  const header = messages.length === 0 ? varargs[0] : messages[0];
+  if (scope) {
+    // type(scoped): header message
+    messagesParam.push(`${type}(${scope}): ${header}`, ...varargs.slice(1));
+  } else {
+    // type: header message
+    messagesParam.push(`${type}: ${header}`, ...varargs.slice(1));
+  }
+
+  const args = ['commit'];
+  for (let i = 0; i < messagesParam.length; i++) {
+    const msg = messagesParam[i];
+    args.push('-m', `${msg}`);
+  }
+
+  cp.sync('git', args, { cwd: process.cwd() });
+}
+
+if (require.main === module) {
+  // called by node directly
+  conventionalCommit();
+}
+
+module.exports = conventionalCommit;

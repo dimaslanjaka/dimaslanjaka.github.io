@@ -1,0 +1,11 @@
+# documentation https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-a-custom-configuration-file
+
+paths:
+  - 'src/**/*'
+paths-ignore:
+  - '**/*.test*.{ts,js}' # skip test unit
+  - '**/*.spec*.{ts,js}' # skip test unit
+  - '**/*.{html,ejs,njk}' # skip non-source files
+  - '**/dist/**' # skip dist
+  - '**/node_modules/**' # skip node_modules
+  - '**/*.runner.{ts,js}' # skip runner

@@ -1,0 +1,2 @@
+# safelink
+generate link download

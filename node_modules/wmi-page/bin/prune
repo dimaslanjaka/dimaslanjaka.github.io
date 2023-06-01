@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+branch=$(git branch --show-current)
+git checkout --orphan latest_branch # Move to new branch with new object
+git add -A # Add all files
+git commit -am "Prune at $(date)" # Commiting the changes
+git branch -D $branch # Deleting master branch
+git branch -m $branch # Renaming branch as master
+git push -f origin $branch # Pushes to master branch
+git reflog expire --all --expire=now --verbose # remove logs
+git gc --aggressive --prune=all # remove the old files
+git count-objects -v # count current objects

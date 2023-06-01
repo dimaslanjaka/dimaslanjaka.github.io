@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# make cygwin bin as priority
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+# absolute path working directory
+basecwd=${PWD}
+# base script directory
+basedir=`dirname "$0"`
+# absolute path script directory
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+# delete filename or dirname recursively
+
+if [ -z "$1" ]; then
+    echo "You need to provide a file or folder path"
+    exit
+fi
+
+## find . -name "$1" -type d -prune -print | xargs du -chs
+find . -name "$1" -type d -prune -print -exec rm -rf '{}' \;

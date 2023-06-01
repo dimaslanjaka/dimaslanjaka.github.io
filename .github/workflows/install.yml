@@ -79,7 +79,9 @@ jobs:
           git config --global user.name "dimaslanjaka"
           git rm -r --cached .
           git add --all .
-          git commit -a -m "fix: file name casing"
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -a -m "fix: file name casing"
+          fi
       - name: install
         run: |
           corepack enable

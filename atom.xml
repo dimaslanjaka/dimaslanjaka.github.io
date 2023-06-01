@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-05-31T21:05:05.000Z</updated>
+  <updated>2023-05-31T21:47:07.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to remove thousands old unneeded commits</title>
+    <link href="https://www.webmanajemen.com/GitHub/delete-thousands-old-commits-github.html"/>
+    <id>https://www.webmanajemen.com/GitHub/delete-thousands-old-commits-github.html</id>
+    <published>2023-05-31T21:47:07.000Z</published>
+    <updated>2023-05-31T21:47:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Say-my-git-repo-has-5-000-commits-how-can-I-remove-the-first-4-000-commits-that-are-quite-old-and-no-longer-needed-in-order-to-save-disk-space">Say my git repo has 5,000 commits, how can I remove the first 4,000 commits that are quite old and no longer needed, in order to save disk space?</h2><blockquote><p>by Sebass van Boxel, Solutions Engineer at GitHub (2018-present)</p></blockquote><p>First of all, I would try less destructive ways to clean up disk space in your git project. If you’re collaborating on a repository with others, it’s considered a bad practice to rewrite published history. If you’ve already decided that this is what you want to do, please skip the first part.<br>One of the great powers of Git is that it preserves all history. Often you only realize that you really needed that history when it isn’t there anymore.<br>For new people that join your project, it can be of great value to know what happened for what reason, by “removing” those old commits, they’ll lose that context. My advice, before anything else, would be to run Git’s built-in housekeeping task:</p><pre><code class="highlight bash">git -gc</code></pre><p>More info on this, as well as the options it accepts, can be found in the Git manual: Git - git-gc Documentation</p><p>If your <code>.git</code>-folder is still too big there could be another issue, and that is that someone has checked in files/folder that should’ve been ignored, and are now part of your git history. Although Git is optimized for speed and reliability, and not for efficient use of disk space, it still is, quite efficient. Unless you accidentally commit directories/files that shouldn’t be part of your git history of course. Infamous examples are the <code>node_modules</code> and <code>vendor</code> directories. If that is the case, the following commands are here to help: (source)</p><pre><code class="highlight plaintext">git filter-branch --tree-filter &#x27;rm -rf &lt;DIRECTORY_NAME&gt;&#x27; --prune-empty HEAD git for-each-ref --format=&quot;%(refname)&quot; refs/original/ | xargs -n 1 git update-ref -decho &lt;DIRECTORY_NAME&gt;/ &gt;&gt; .gitignore git add .gitignore git commit -m &#x27;Removing &lt;DIRECTORY_NAME&gt; from git history&#x27; git gc</code></pre><p>If, at this point, you’re still not content with your Git history and want to get rid of the history that is contained in your first x commits, you can squash them altogether. This will discard all the separate</p><p>First, find the commit hash of the last commit you want to keep.<br>Check out that commit as an orphan in a new branch, this commit will have no parent and therefor no history.</p><pre><code class="highlight bash">git checkout --orphan tempBranch &lt;COMMIT_HASH&gt;</code></pre><p>Commit all the files in your project:</p><pre><code class="highlight bash">git add -allgit commit -m “Squashed all old commits”Now, you can rebase all commits that came after the commit you’ve chosen <span class="keyword">in</span> step one, on top of this initial commit:git rebase --onto tempBranch &lt;COMMIT_HASH&gt; master</code></pre><p>At this stage validate your project status and Git log output. If everything is okay you can overwrite the remote with the new history, and remove the tempBranch:</p><pre><code class="highlight bash">git push -fgit branch -D tempBranch</code></pre>]]></content>
+    
+    
+    <summary type="html">Removing old unneeded commits - saving disk space and making git clones faster</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    <category term="bash" scheme="https://www.webmanajemen.com/categories/programming/bash/"/>
+    
+    <category term="github" scheme="https://www.webmanajemen.com/categories/programming/bash/github/"/>
+    
+    
+    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>git detach subfolder to their own repository</title>
@@ -1606,102 +1631,6 @@
             &lt;img src=&quot;https://www.webmanajemen.com/undefined&quot; alt=&quot;Flamegator undefined&quot;&gt;
             &lt;figcaption style=&quot;word-wrap: break-word&quot;&gt;
               &lt;i&gt;Flamegator&lt;/i&gt; .
-            &lt;/figcaption&gt;
-          &lt;/figure&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;</summary>
-    
-    
-    
-    <category term="Games" scheme="https://www.webmanajemen.com/categories/Games/"/>
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/categories/Games/chimeraland/"/>
-    
-    <category term="monsters" scheme="https://www.webmanajemen.com/categories/Games/chimeraland/monsters/"/>
-    
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
-    
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
-    <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Monster Flamehorn Rhino</title>
-    <link href="https://www.webmanajemen.com/chimeraland/monsters/flamehorn-rhino.html"/>
-    <id>https://www.webmanajemen.com/chimeraland/monsters/flamehorn-rhino.html</id>
-    <published>2023-05-24T12:21:12.000Z</published>
-    <updated>2023-05-24T23:42:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>Flamehorn Rhino Information from Chimeraland</h2>    <h2 id="attribute"><i>Flamehorn Rhino</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td><br /></td>              </tr>              <tr>                <th>Attack</th>                <td></td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td></td>              </tr>              <tr>                <th>Defense</th>                <td></td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: Flamehorn Rhino stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for Flamehorn Rhino</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for Flamehorn Rhino</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/undefined"              alt="Flamehorn Rhino undefined"            />            <figcaption style="word-wrap: break-word">              <i>Flamehorn Rhino</i> .            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content>
-    
-    
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css&quot;&gt;
-&lt;section id=&quot;bootstrap-wrapper&quot;&gt;
-  &lt;div data-bs-theme=&quot;dark&quot;&gt;
-    &lt;h2&gt;Flamehorn Rhino Information from Chimeraland&lt;/h2&gt;
-    &lt;h2 id=&quot;attribute&quot;&gt;&lt;i&gt;Flamehorn Rhino&lt;/i&gt; default maximum attribute&lt;/h2&gt;
-    &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col mb-2&quot;&gt;
-        &lt;div class=&quot;card&quot;&gt;
-          &lt;div class=&quot;card-body&quot;&gt;
-            &lt;table&gt;
-              &lt;tr&gt;
-                &lt;th&gt;GRADE&lt;/th&gt;
-                &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-              &lt;/tr&gt;
-              &lt;tr&gt;
-                &lt;th&gt;Attack&lt;/th&gt;
-                &lt;td&gt;&lt;/td&gt;
-              &lt;/tr&gt;
-              &lt;tr&gt;
-                &lt;th&gt;Health Point (HP)&lt;/th&gt;
-                &lt;td&gt;&lt;/td&gt;
-              &lt;/tr&gt;
-              &lt;tr&gt;
-                &lt;th&gt;Defense&lt;/th&gt;
-                &lt;td&gt;&lt;/td&gt;
-              &lt;/tr&gt;
-            &lt;/table&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;blockquote class=&quot;bd-callout bd-callout-warning&quot;&gt;
-      Note: Flamehorn Rhino stat will increase based on their &lt;b&gt;grade&lt;/b&gt; and
-      &lt;b&gt;delicacies/tasty&lt;/b&gt;.
-    &lt;/blockquote&gt;
-    &lt;hr&gt;
-    &lt;h2 id=&quot;delicacies&quot;&gt;Delicacies/Tasty for Flamehorn Rhino&lt;/h2&gt;
-    &lt;div class=&quot;card&quot;&gt;
-      &lt;div class=&quot;card-body&quot;&gt;
-        &lt;div class=&quot;table-responsive&quot;&gt;
-          &lt;table class=&quot;table table-striped&quot;&gt;
-            &lt;thead&gt;
-              &lt;tr&gt;
-                &lt;th&gt;Recipe Name&lt;/th&gt;
-                &lt;th&gt;Link&lt;/th&gt;
-              &lt;/tr&gt;
-            &lt;/thead&gt;
-            &lt;tbody&gt;&lt;/tbody&gt;
-          &lt;/table&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;hr&gt;
-    &lt;div id=&quot;gallery&quot;&gt;
-      &lt;h2&gt;Galleries for Flamehorn Rhino&lt;/h2&gt;
-      &lt;div class=&quot;row&quot;&gt;
-        &lt;div class=&quot;col-lg-6 col-12&quot;&gt;
-          &lt;figure&gt;
-            &lt;img src=&quot;https://www.webmanajemen.com/undefined&quot; alt=&quot;Flamehorn Rhino undefined&quot;&gt;
-            &lt;figcaption style=&quot;word-wrap: break-word&quot;&gt;
-              &lt;i&gt;Flamehorn Rhino&lt;/i&gt; .
             &lt;/figcaption&gt;
           &lt;/figure&gt;
         &lt;/div&gt;

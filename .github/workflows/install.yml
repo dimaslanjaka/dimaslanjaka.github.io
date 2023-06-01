@@ -38,7 +38,7 @@ jobs:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN || github.token }}
-      node-version: 14.x
+      node-version: 18.x
       YARN_CHECKSUM_BEHAVIOR: update
     steps:
       - name: Checkout

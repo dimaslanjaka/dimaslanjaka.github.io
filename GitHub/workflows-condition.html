@@ -11,7 +11,7 @@ Menjalankan command apabila repository di push dengan commit yang memiliki subst
 jobs:
   build:
     name: Nama Workflow
- .."><meta name="generator" content="Hexo 7.0.0-rc1"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+ .."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 </head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><!--a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"--><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Macam-macam kondisional pada github workflows</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Klik ke atas</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Beranda</a></h3><h3 class="is-inline-block"><a href="/about">Tentang</a></h3><h3 class="is-inline-block"><a href="/archives">Arsip</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Beranda</a></h3><h3 class="is-inline-block"><a href="/about">Tentang</a></h3><h3 class="is-inline-block"><a href="/archives">Arsip</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kondisional-pada-GitHub-Workflow"><span class="toc-text">Kondisional pada GitHub Workflow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Menjalankan-command-apabila-repository-di-push-dengan-commit-yang-memiliki-substring-tertentu-match-substring-from-github-commit-messages"><span class="toc-text">Menjalankan command apabila repository di push dengan commit yang memiliki substring tertentu (match substring from github commit messages)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Melanjutkan-steps-meskipun-command-gagal-continue-on-error"><span class="toc-text">Melanjutkan steps meskipun command gagal (continue on error)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mengitung-jumlah-file-yang-termodifikasi"><span class="toc-text">Mengitung jumlah file yang termodifikasi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Github-CI-Mengitung-jumlah-file-yang-termodifikasi-langsung-di-dalam-run"><span class="toc-text">Github CI - Mengitung jumlah file yang termodifikasi langsung di dalam run</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Github-CI-Mengitung-jumlah-file-yang-termodifikasi-ke-dalam-output-steps"><span class="toc-text">Github CI - Mengitung jumlah file yang termodifikasi ke dalam output steps</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Menghitung-jumlah-commits-yang-belum-dipush"><span class="toc-text">Menghitung jumlah commits yang belum dipush</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Snippet-lainnya-sebagai-berikut"><span class="toc-text">Snippet lainnya sebagai berikut</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Get-current-SHA-short-hash"><span class="toc-text">Get current SHA short hash</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tentang-artikel-ini"><span class="toc-text">Tentang artikel ini</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Contoh-FULL-Github-CI"><span class="toc-text">Contoh FULL Github CI</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/github-workflows"><i class="tag post-item-tag">github-workflows</i></a><a href="/tags/snippet"><i class="tag post-item-tag">snippet</i></a><a href="/tags/yaml"><i class="tag post-item-tag">yaml</i></a><a href="/tags/github-actions"><i class="tag post-item-tag">github-actions</i></a><a href="/tags/github"><i class="tag post-item-tag">github</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">Macam-macam kondisional pada github workflows</h1><time class="has-text-grey" datetime="2021-11-22T12:00:00.000Z">2021-11-22</time><article class="mt-2 post-content"><h2 id="Kondisional-pada-GitHub-Workflow">Kondisional pada GitHub Workflow</h2>
 <p>Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vYWN0aW9ucy9sZWFybi1naXRodWItYWN0aW9ucy9leHByZXNzaW9ucw==">source</a> Misalnya:</p>
@@ -87,173 +87,173 @@ jobs:
 <p>Artikel ini untuk mempermudah visitor untuk memahami github workflow.</p>
 <h3 id="Contoh-FULL-Github-CI">Contoh FULL Github CI</h3>
 <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9zdGF0aWMtYmxvZy1nZW5lcmF0b3IvYmxvYi9lOGVmMzUxNTUyZDU3YzVlMjhlMDE2ZTM5ZTc4ZmVmMTM5YThlN2IyLy5naXRodWIvd29ya2Zsb3dzL2J1aWxkLWJldGEueW1s">https://github.com/dimaslanjaka/static-blog-generator/blob/e8ef351552d57c5e28e016e39e78fef139a8e7b2/.github/workflows/build-beta.yml</a></p>
-<pre><div class="caption">yaml</div><code class="highlight yaml"><span class="attr">name:</span> <span class="string">Build</span> <span class="string">Beta</span>
+<pre><code>name: Build Beta
 
-<span class="attr">on:</span>
-  <span class="attr">push:</span>
-    <span class="attr">branches:</span> [<span class="string">'beta'</span>]
-    <span class="attr">paths-ignore:</span>
-      <span class="bullet">-</span> <span class="string">'**/dist/**'</span>
-      <span class="bullet">-</span> <span class="string">'**/release/**'</span>
-      <span class="bullet">-</span> <span class="string">'packages/google-news-sitemap'</span>
-      <span class="bullet">-</span> <span class="string">'packages/hexo-post-parser'</span>
-      <span class="bullet">-</span> <span class="string">'packages/git-command-helper'</span>
-      <span class="bullet">-</span> <span class="string">'packages/safelinkify'</span>
-      <span class="bullet">-</span> <span class="string">'packages/hexo-blogger-xml'</span>
-      <span class="bullet">-</span> <span class="string">'**/test/**'</span>
-  <span class="attr">pull_request:</span>
-    <span class="attr">types:</span>
-      <span class="bullet">-</span> <span class="string">closed</span>
-  <span class="attr">workflow_dispatch:</span>
+on:
+  push:
+    branches: ['beta']
+    paths-ignore:
+      - '**/dist/**'
+      - '**/release/**'
+      - 'packages/google-news-sitemap'
+      - 'packages/hexo-post-parser'
+      - 'packages/git-command-helper'
+      - 'packages/safelinkify'
+      - 'packages/hexo-blogger-xml'
+      - '**/test/**'
+  pull_request:
+    types:
+      - closed
+  workflow_dispatch:
 
-<span class="comment"># run single job</span>
-<span class="attr">concurrency:</span>
-  <span class="attr">group:</span> <span class="string">build</span>
-  <span class="attr">cancel-in-progress:</span> <span class="literal">true</span>
+# run single job
+concurrency:
+  group: build
+  cancel-in-progress: true
 
-<span class="attr">jobs:</span>
-  <span class="attr">build:</span>
-    <span class="attr">strategy:</span>
-      <span class="attr">fail-fast:</span> <span class="literal">true</span>
-    <span class="attr">env:</span>
-      <span class="attr">NODE_OPTIONS:</span> <span class="string">'--max-old-space-size=8192'</span>
-      <span class="attr">YARN_ENABLE_IMMUTABLE_INSTALLS:</span> <span class="literal">false</span>
-      <span class="attr">ACCESS_TOKEN:</span> <span class="string">${{</span> <span class="string">secrets.ACCESS_TOKEN</span> <span class="string">}}</span>
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+    env:
+      NODE_OPTIONS: '--max-old-space-size=8192'
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span>
+    runs-on: ubuntu-latest
 
-    <span class="attr">steps:</span>
-      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span>
-        <span class="attr">with:</span>
-          <span class="attr">repository:</span> <span class="string">dimaslanjaka/static-blog-generator</span>
-          <span class="attr">ref:</span> <span class="string">beta</span>
-          <span class="attr">token:</span> <span class="string">${{</span> <span class="string">secrets.ACCESS_TOKEN</span> <span class="string">}}</span>
-          <span class="attr">submodules:</span> <span class="string">'recursive'</span>
-      <span class="comment">#- run: sh scripts/install-submodules.sh</span>
-      <span class="comment">#name: clone submodules</span>
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/static-blog-generator
+          ref: beta
+          token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: 'recursive'
+      #- run: sh scripts/install-submodules.sh
+      #name: clone submodules
 
-      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">EOL</span> <span class="string">git</span> <span class="string">configs</span>
-        <span class="attr">continue-on-error:</span> <span class="literal">true</span>
-        <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          git config core.eol lf</span>
-<span class="string">          git config core.autocrlf input</span>
-<span class="string">          git checkout-index --force --all</span>
-<span class="string"></span>
-      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span>
-        <span class="attr">with:</span>
-          <span class="attr">node-version:</span> <span class="number">18.</span><span class="string">x</span>
-          <span class="attr">token:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span>
-          <span class="attr">architecture:</span> <span class="string">x64</span>
-          <span class="comment">#cache: 'yarn'</span>
-          <span class="comment">#cache-dependency-path: '**/yarn.lock'</span>
+      - name: Set EOL git configs
+        continue-on-error: true
+        run: |
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
 
-      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Enable</span> <span class="string">corepack</span>
-        <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          corepack enable</span>
-<span class="string">          corepack prepare yarn@3.2.0 --activate</span>
-<span class="string"></span>
-      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">env</span>
-        <span class="attr">id:</span> <span class="string">set-env</span>
-        <span class="attr">shell:</span> <span class="string">bash</span>
-        <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" &gt;&gt; $GITHUB_ENV</span>
-<span class="string">          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" &gt;&gt; $GITHUB_ENV</span>
-<span class="string">          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" &gt;&gt; $GITHUB_ENV</span>
-<span class="string">          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" &gt;&gt; $GITHUB_ENV</span>
-<span class="string">          echo "CACHE_NPM=$(npm config get cache)" &gt;&gt; $GITHUB_ENV</span>
-<span class="string">          echo "CACHE_YARN2=$(yarn config get cacheFolder || echo \".yarn\")" &gt;&gt; $GITHUB_ENV</span>
-<span class="string">          echo "cache-npm=$(npm config get cache)" &gt;&gt; $GITHUB_OUTPUT</span>
-<span class="string">          echo "cache-yarn2=$(yarn config get cacheFolder || echo \".yarn\")" &gt;&gt; $GITHUB_OUTPUT</span>
-<span class="string"></span>        <span class="comment">#echo "cache-yarn=$(yarn cache dir || echo \".yarn\")" &gt;&gt; $GITHUB_OUTPUT</span>
-        <span class="comment">#echo "CACHE_YARN=$(yarn cache dir || echo \".yarn\")" &gt;&gt; $GITHUB_ENV</span>
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          token: ${{ secrets.GITHUB_TOKEN }}
+          architecture: x64
+          #cache: 'yarn'
+          #cache-dependency-path: '**/yarn.lock'
 
-      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Get</span> <span class="string">env</span>
-        <span class="attr">shell:</span> <span class="string">bash</span>
-        <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          echo "branch      : ${{ env.GITHUB_BRANCH }}"</span>
-<span class="string">          echo "commit msg  : ${{ github.event.head_commit.message }}"</span>
-<span class="string">          echo "commit hash : ${{ env.GITHUB_SHA_SHORT }}"</span>
-<span class="string">          echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"</span>
-<span class="string">          echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"</span>
-<span class="string">          echo "cache npm   : ${{ env.CACHE_NPM }}"</span>
-<span class="string">          echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"</span>
-<span class="string"></span>        <span class="comment">#echo "cache yarn  : ${{ env.CACHE_YARN }}"</span>
+      - name: Enable corepack
+        run: |
+          corepack enable
+          corepack prepare yarn@3.2.0 --activate
 
-      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/cache@v3</span> <span class="comment"># pat-s/always-upload-cache@v3.0.11</span>
-        <span class="attr">id:</span> <span class="string">cache</span>
-        <span class="attr">name:</span> <span class="string">get</span> <span class="string">caches</span>
-        <span class="attr">with:</span>
-          <span class="attr">path:</span> <span class="string">|</span>
-<span class="string">            ${{ steps.set-env.outputs.cache-npm }}</span>
-<span class="string">            ${{ steps.set-env.outputs.cache-yarn2 }}</span>
-<span class="string"></span>          <span class="comment">#${{ steps.set-env.outputs.cache-yarn }}</span>
-          <span class="comment">#./packages/sbg-server/src/public</span>
-          <span class="comment">#**/tmp/**</span>
-          <span class="comment">#**/node_modules/**</span>
-          <span class="comment">#**/.yarn</span>
-          <span class="attr">key:</span> <span class="string">${{</span> <span class="string">runner.os</span> <span class="string">}}-${{</span> <span class="string">hashFiles('**/yarn.lock')</span> <span class="string">}}</span>
-          <span class="attr">restore-keys:</span> <span class="string">|</span>
-<span class="string">            ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}</span>
-<span class="string">            ${{ runner.os }}-</span>
-<span class="string"></span>
-      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Global</span> <span class="string">Packages</span>
-        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">i</span> <span class="string">-g</span> <span class="string">typescript</span> <span class="string">ts-node</span> <span class="string">gulp-cli</span> <span class="string">hexo-cli</span> <span class="string">webpack-cli</span> <span class="string">npm-run-all</span> <span class="string">depcheck</span> <span class="string">lerna</span> <span class="string">husky</span>
+      - name: Set env
+        id: set-env
+        shell: bash
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" &gt;&gt; $GITHUB_ENV
+          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" &gt;&gt; $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" &gt;&gt; $GITHUB_ENV
+          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" &gt;&gt; $GITHUB_ENV
+          echo "CACHE_NPM=$(npm config get cache)" &gt;&gt; $GITHUB_ENV
+          echo "CACHE_YARN2=$(yarn config get cacheFolder || echo \".yarn\")" &gt;&gt; $GITHUB_ENV
+          echo "cache-npm=$(npm config get cache)" &gt;&gt; $GITHUB_OUTPUT
+          echo "cache-yarn2=$(yarn config get cacheFolder || echo \".yarn\")" &gt;&gt; $GITHUB_OUTPUT
+        #echo "cache-yarn=$(yarn cache dir || echo \".yarn\")" &gt;&gt; $GITHUB_OUTPUT
+        #echo "CACHE_YARN=$(yarn cache dir || echo \".yarn\")" &gt;&gt; $GITHUB_ENV
 
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">yarn</span> <span class="string">install</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")</span>
-<span class="string">          for i in "${arr_variable[@]}"</span>
-<span class="string">          do</span>
-<span class="string">            yarn workspace $i build &amp;&amp; yarn workspace $i run pack</span>
-<span class="string">          done</span>
-<span class="string"></span>        <span class="attr">shell:</span> <span class="string">bash</span>
-        <span class="attr">name:</span> <span class="string">build</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">sbg</span> <span class="string">clean</span> <span class="string">all</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">clean</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">sbg</span> <span class="string">post</span> <span class="string">standalone</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">post</span> <span class="string">standalone</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">sbg</span> <span class="string">post</span> <span class="string">copy</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">post</span> <span class="string">copy</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">hexo</span> <span class="string">generate</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">generate</span> <span class="string">site</span> <span class="string">with</span> <span class="string">hexo</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">sbg</span> <span class="string">generate</span> <span class="string">feed</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">generate</span> <span class="string">feed</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">sbg</span> <span class="string">generate</span> <span class="string">sitemap</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">generate</span> <span class="string">sitemap</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">sbg</span> <span class="string">deploy</span> <span class="string">copy</span>
-        <span class="attr">working-directory:</span> <span class="string">test</span>
-        <span class="attr">name:</span> <span class="string">test</span> <span class="string">copy</span> <span class="string">generated</span> <span class="string">site</span> <span class="string">to</span> <span class="string">deployment</span> <span class="string">directory</span>
-      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          git status</span>
-<span class="string">          echo "cached=$(git diff --cached --numstat | wc -l)" &gt;&gt; $GITHUB_OUTPUT</span>
-<span class="string">          echo "commits=$(git diff origin/master..HEAD --numstat | wc -l)" &gt;&gt; $GITHUB_OUTPUT</span>
-<span class="string"></span>        <span class="attr">name:</span> <span class="string">what</span> <span class="string">changes</span>
-        <span class="attr">id:</span> <span class="string">changes</span>
-      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">commit</span> <span class="string">and</span> <span class="string">push</span>
-        <span class="attr">if:</span> <span class="string">steps.changes.outputs.cached</span> <span class="string">&gt;</span> <span class="number">0</span> <span class="string">||</span> <span class="string">steps.changes.outputs.commits</span> <span class="string">&gt;</span> <span class="number">0</span>
-        <span class="attr">shell:</span> <span class="string">bash</span>
-        <span class="attr">run:</span> <span class="string">|</span>
-<span class="string">          git config --global user.email "dimaslanjaka@gmail.com"</span>
-<span class="string">          git config --global user.name "dimaslanjaka"</span>
-<span class="string">          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")</span>
-<span class="string">          for i in "${arr_variable[@]}"</span>
-<span class="string">          do</span>
-<span class="string">            git add "packages/${i}/dist" &amp;&gt; /dev/null</span>
-<span class="string">            git add "packages/${i}/release" &amp;&gt; /dev/null</span>
-<span class="string">            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}" &amp;&gt; /dev/null</span>
-<span class="string">          done</span>
-<span class="string">          # git submodule foreach "git add dist release"</span>
-<span class="string">          # git push --recurse-submodules=on-demand</span>
-<span class="string">          git push &amp;&gt; /dev/null</span>
-<span class="string"></span>        
+      - name: Get env
+        shell: bash
+        run: |
+          echo "branch      : ${{ env.GITHUB_BRANCH }}"
+          echo "commit msg  : ${{ github.event.head_commit.message }}"
+          echo "commit hash : ${{ env.GITHUB_SHA_SHORT }}"
+          echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"
+          echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
+          echo "cache npm   : ${{ env.CACHE_NPM }}"
+          echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
+        #echo "cache yarn  : ${{ env.CACHE_YARN }}"
+
+      - uses: actions/cache@v3 # pat-s/always-upload-cache@v3.0.11
+        id: cache
+        name: get caches
+        with:
+          path: |
+            ${{ steps.set-env.outputs.cache-npm }}
+            ${{ steps.set-env.outputs.cache-yarn2 }}
+          #${{ steps.set-env.outputs.cache-yarn }}
+          #./packages/sbg-server/src/public
+          #**/tmp/**
+          #**/node_modules/**
+          #**/.yarn
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-
+
+      - name: Install Global Packages
+        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
+
+      - run: yarn install
+      - run: |
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
+          for i in "${arr_variable[@]}"
+          do
+            yarn workspace $i build &amp;&amp; yarn workspace $i run pack
+          done
+        shell: bash
+        name: build
+      - run: npx sbg clean all
+        working-directory: test
+        name: test clean
+      - run: npx sbg post standalone
+        working-directory: test
+        name: test post standalone
+      - run: npx sbg post copy
+        working-directory: test
+        name: test post copy
+      - run: npx hexo generate
+        working-directory: test
+        name: test generate site with hexo
+      - run: npx sbg generate feed
+        working-directory: test
+        name: test generate feed
+      - run: npx sbg generate sitemap
+        working-directory: test
+        name: test generate sitemap
+      - run: npx sbg deploy copy
+        working-directory: test
+        name: test copy generated site to deployment directory
+      - run: |
+          git status
+          echo "cached=$(git diff --cached --numstat | wc -l)" &gt;&gt; $GITHUB_OUTPUT
+          echo "commits=$(git diff origin/master..HEAD --numstat | wc -l)" &gt;&gt; $GITHUB_OUTPUT
+        name: what changes
+        id: changes
+      - name: commit and push
+        if: steps.changes.outputs.cached &gt; 0 || steps.changes.outputs.commits &gt; 0
+        shell: bash
+        run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
+          for i in "${arr_variable[@]}"
+          do
+            git add "packages/${i}/dist" &amp;&gt; /dev/null
+            git add "packages/${i}/release" &amp;&gt; /dev/null
+            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}" &amp;&gt; /dev/null
+          done
+          # git submodule foreach "git add dist release"
+          # git push --recurse-submodules=on-demand
+          git push &amp;&gt; /dev/null
+        
 </code></pre>
-</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/GitHub/workflows-condition.html" title="Macam-macam kondisional pada github workflows"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Sebelumnya: Macam-macam kondisional pada github workflows</span></a><a class="button is-default" href="/GitHub/workflows-events.html" title="GitHub Workflow Events"><span class="has-text-weight-semibold">Selanjutnya: GitHub Workflow Events</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/GitHub/workflows-condition.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/Genshin%20Impact/Update/update-genshin-impact-2.1.0-2.3.0.html" title="Update Genshin Impact 2.3.0 Manual"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Sebelumnya: Update Genshin Impact 2.3.0 Manual</span></a><a class="button is-default" href="/GitHub/workflows-events.html" title="GitHub Workflow Events"><span class="has-text-weight-semibold">Selanjutnya: GitHub Workflow Events</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/GitHub/workflows-condition.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
 <link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
 

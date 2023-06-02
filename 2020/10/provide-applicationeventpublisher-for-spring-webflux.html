@@ -18,82 +18,82 @@ ga('send', 'pageview');</script><!-- End Google Analytics -->
 </ul>
 <h2 id="ObjectEventNotifier">ObjectEventNotifier</h2>
 <p>First, encapsulate the published object. This step is unavoidable even if it is ApplicationEventPublisher. Otherwise, you listen to an object, but you don’t know whether the object is created or deleted. What should you do?</p>
-<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjectEventNotifier</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">ResolvableTypeProvider</span> {
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjectEventNotifier</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">ResolvableTypeProvider</span> &#123;
 
     <span class="keyword">private</span> <span class="keyword">final</span> T object;
     <span class="keyword">private</span> <span class="keyword">final</span> Type type;
 
-    <span class="keyword">private</span> <span class="title function_">ObjectEventNotifier</span><span class="params">(T object, Type type)</span> {
+    <span class="keyword">private</span> <span class="title function_">ObjectEventNotifier</span><span class="params">(T object, Type type)</span> &#123;
         <span class="built_in">this</span>.object = object;
         <span class="built_in">this</span>.type = type;
-    }
+    &#125;
 
-    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; ObjectEventNotifier&lt;T&gt; <span class="title function_">from</span><span class="params">(T object, Type type)</span> {
+    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; ObjectEventNotifier&lt;T&gt; <span class="title function_">from</span><span class="params">(T object, Type type)</span> &#123;
         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ObjectEventNotifier</span>&lt;&gt;(object, type);
-    }
+    &#125;
 
     <span class="meta">@Override</span>
-    <span class="keyword">public</span> ResolvableType <span class="title function_">getResolvableType</span><span class="params">()</span> {
+    <span class="keyword">public</span> ResolvableType <span class="title function_">getResolvableType</span><span class="params">()</span> &#123;
         <span class="keyword">return</span> ResolvableType.forClassWithGenerics(getClass(), ResolvableType.forInstance(object));
-    }
+    &#125;
 
-    <span class="keyword">public</span> T <span class="title function_">getObject</span><span class="params">()</span> {
+    <span class="keyword">public</span> T <span class="title function_">getObject</span><span class="params">()</span> &#123;
         <span class="keyword">return</span> <span class="built_in">this</span>.object;
-    }
+    &#125;
 
-    <span class="keyword">public</span> Type <span class="title function_">getType</span><span class="params">()</span> {
+    <span class="keyword">public</span> Type <span class="title function_">getType</span><span class="params">()</span> &#123;
         <span class="keyword">return</span> <span class="built_in">this</span>.type;
-    }
+    &#125;
 
-    <span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Type</span> {
+    <span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Type</span> &#123;
         Create, Update, Delete
-    }
-}</code></pre>
+    &#125;
+&#125;</code></pre>
 <p>The above class, according to the enumeration Type, classifies objects so that they can be handled differently in different situations</p>
 <h2 id="EventListener">EventListener</h2>
 <p>Next, design the listening interface. Generally speaking, we choose different consumers according to the type of class. Therefore, the simple listening interface is as follows</p>
-<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">EventListener</span>&lt;T&gt; {
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">EventListener</span>&lt;T&gt; &#123;
 
     Class&lt;T&gt; <span class="title function_">target</span><span class="params">()</span>;
 
     Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;T&gt; consumer)</span>;
 
-}</code></pre>
+&#125;</code></pre>
 <p>But in this way, there is a problem, when we create a listening service, it will be like the following</p>
 <pre><code class="highlight java"><span class="meta">@Bean</span>
-<span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener</span><span class="params">()</span> {
-    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">EventListener</span>&lt;&gt;() {
+<span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener</span><span class="params">()</span> &#123;
+    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">EventListener</span>&lt;&gt;() &#123;
         <span class="meta">@Override</span>
-        <span class="keyword">public</span> Class&lt;Goods&gt; <span class="title function_">target</span><span class="params">()</span> {
+        <span class="keyword">public</span> Class&lt;Goods&gt; <span class="title function_">target</span><span class="params">()</span> &#123;
             <span class="keyword">return</span> Goods.class;
-        }
+        &#125;
         <span class="meta">@Override</span>
-        <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; consumer)</span> {
+        <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; consumer)</span> &#123;
             <span class="comment">// ...</span>
-        }
-    };
-}</code></pre>
+        &#125;
+    &#125;;
+&#125;</code></pre>
 <p>This code is really hard to describe, so a simplified version of the creation method must be provided for the listening interface</p>
-<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">EventListener</span>&lt;T&gt; {
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">EventListener</span>&lt;T&gt; &#123;
     <span class="comment">//...</span>
-    <span class="keyword">static</span> &lt;T&gt; EventListener&lt;T&gt; <span class="title function_">register</span><span class="params">(Class&lt;T&gt; target, Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; fn)</span> {
-        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">EventListener</span>&lt;&gt;() {
+    <span class="keyword">static</span> &lt;T&gt; EventListener&lt;T&gt; <span class="title function_">register</span><span class="params">(Class&lt;T&gt; target, Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; fn)</span> &#123;
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">EventListener</span>&lt;&gt;() &#123;
             <span class="meta">@Override</span>
-            <span class="keyword">public</span> Class&lt;T&gt; <span class="title function_">target</span><span class="params">()</span> {
+            <span class="keyword">public</span> Class&lt;T&gt; <span class="title function_">target</span><span class="params">()</span> &#123;
                 <span class="keyword">return</span> target;
-            }
+            &#125;
             <span class="meta">@Override</span>
-            <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;T&gt; consumer)</span> {
+            <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">consume</span><span class="params">(ObjectEventNotifier&lt;T&gt; consumer)</span> &#123;
                 <span class="keyword">return</span> fn.apply(consumer);
-            }
-        };
-    }
-}
+            &#125;
+        &#125;;
+    &#125;
+&#125;
 
 <span class="meta">@Bean</span>
-<span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener</span><span class="params">()</span> {
+<span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener</span><span class="params">()</span> &#123;
     <span class="keyword">return</span> EventListener.register(Goods.class, notifier -&gt; ...);
-}</code></pre>
+&#125;</code></pre>
 <p>so much better</p>
 <h2 id="EventService">EventService</h2>
 <p>Finally, implement our most important event service, which is divided into two parts</p>
@@ -103,139 +103,139 @@ ga('send', 'pageview');</script><!-- End Google Analytics -->
 </ul>
 <p>In the first part, since we use Spring boot, we can let spring give us the listening service we want. We only need to store the EventListener in different Maps according to the type.</p>
 <pre><code class="highlight java"><span class="meta">@Service</span>
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventService</span> {
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventService</span> &#123;
 
     <span class="keyword">public</span> Map&lt;String, List&lt;Object&gt;&gt; store = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();
 
-    <span class="meta">@SuppressWarnings({"unchecked", "rawtypes"})</span>
-    <span class="keyword">public</span> <span class="title function_">EventService</span><span class="params">(List&lt;EventListener&gt; listeners)</span> {
-        listeners.forEach(listener -&gt; {
+    <span class="meta">@SuppressWarnings(&#123;&quot;unchecked&quot;, &quot;rawtypes&quot;&#125;)</span>
+    <span class="keyword">public</span> <span class="title function_">EventService</span><span class="params">(List&lt;EventListener&gt; listeners)</span> &#123;
+        listeners.forEach(listener -&gt; &#123;
             <span class="built_in">this</span>.register(listener.target(), listener::consume);
-        });
-    }
+        &#125;);
+    &#125;
 
-    <span class="keyword">public</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">register</span><span class="params">(Class&lt;T&gt; target, Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; consumer)</span> {
+    <span class="keyword">public</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">register</span><span class="params">(Class&lt;T&gt; target, Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; consumer)</span> &#123;
         <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> target.getName();
         List&lt;Object&gt; consumers = store.getOrDefault(name, <span class="literal">null</span>);
-        <span class="keyword">if</span> (consumers == <span class="literal">null</span>) {
+        <span class="keyword">if</span> (consumers == <span class="literal">null</span>) &#123;
             consumers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();
             store.put(name, consumers);
-        }
+        &#125;
         consumers.add(consumer);
-    }
-}</code></pre>
+    &#125;
+&#125;</code></pre>
 <p>The second part, this is the difficulty in reactive. The reactive is non-blocking, so the consumer also needs to return a non-blocking result. The previous interface returned YES <code>Publisher&lt;Void&gt;</code> because this is an unprocessed result.</p>
 <pre><code class="highlight java"><span class="meta">@Service</span>
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventService</span> {
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventService</span> &#123;
 
     <span class="keyword">public</span> Map&lt;String, List&lt;Object&gt;&gt; store = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();
 
-    <span class="meta">@SuppressWarnings({"unchecked"})</span>
-    <span class="keyword">public</span> &lt;T&gt; Flux&lt;Void&gt; <span class="title function_">publish</span><span class="params">(ObjectEventNotifier.Type type, T target)</span> {
+    <span class="meta">@SuppressWarnings(&#123;&quot;unchecked&quot;&#125;)</span>
+    <span class="keyword">public</span> &lt;T&gt; Flux&lt;Void&gt; <span class="title function_">publish</span><span class="params">(ObjectEventNotifier.Type type, T target)</span> &#123;
         <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> target.getClass().getName();
         List&lt;Object&gt; consumers = store.getOrDefault(name, <span class="literal">null</span>);
-        <span class="keyword">if</span> (consumers == <span class="literal">null</span>) {
+        <span class="keyword">if</span> (consumers == <span class="literal">null</span>) &#123;
             <span class="keyword">return</span> Flux.empty();
-        }
+        &#125;
         <span class="keyword">return</span> Flux
             .fromIterable(consumers)
-            .flatMap(obj -&gt; {
+            .flatMap(obj -&gt; &#123;
                 Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt; consumer = (Function&lt;ObjectEventNotifier&lt;T&gt;, Publisher&lt;Void&gt;&gt;) obj;
                 Publisher&lt;Void&gt; apply = consumer.apply(ObjectEventNotifier.from(target, type));
                 <span class="keyword">return</span> apply == <span class="literal">null</span> ? Mono.empty() : apply;
-            });
-    }
+            &#125;);
+    &#125;
 
-    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishCreate</span><span class="params">(T target)</span> {
+    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishCreate</span><span class="params">(T target)</span> &#123;
         <span class="keyword">return</span> <span class="built_in">this</span>.publish(ObjectEventNotifier.Type.Create, target)
             .then(Mono.just(target));
-    }
+    &#125;
 
-    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishUpdate</span><span class="params">(T target)</span> {
+    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishUpdate</span><span class="params">(T target)</span> &#123;
         <span class="keyword">return</span> <span class="built_in">this</span>.publish(ObjectEventNotifier.Type.Update, target)
             .then(Mono.just(target));
-    }
+    &#125;
 
-    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishDelete</span><span class="params">(T target)</span> {
+    <span class="keyword">public</span> &lt;T&gt; Mono&lt;T&gt; <span class="title function_">publishDelete</span><span class="params">(T target)</span> &#123;
         <span class="keyword">return</span> <span class="built_in">this</span>.publish(ObjectEventNotifier.Type.Delete, target)
             .then(Mono.just(target));
-    }
+    &#125;
 
-}</code></pre>
+&#125;</code></pre>
 <p>Mainly the code of the publish part, the following publishCreate, etc., are for quick operation</p>
 <h2 id="Try-the-written-Event-service">Try the written Event service</h2>
 <p>Create a cargo service</p>
-<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GoodsService</span> {
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GoodsService</span> &#123;
 
     <span class="meta">@Resource</span>
     <span class="keyword">private</span> EventService eventService;
 
-    <span class="keyword">public</span> Mono&lt;Goods&gt; <span class="title function_">createGoods</span><span class="params">()</span> {
-        <span class="type">Goods</span> <span class="variable">apple</span> <span class="operator">=</span> Goods.of(<span class="number">1</span>, <span class="string">"苹果"</span>);
+    <span class="keyword">public</span> Mono&lt;Goods&gt; <span class="title function_">createGoods</span><span class="params">()</span> &#123;
+        <span class="type">Goods</span> <span class="variable">apple</span> <span class="operator">=</span> Goods.of(<span class="number">1</span>, <span class="string">&quot;苹果&quot;</span>);
         <span class="keyword">return</span> Mono.just(apple)
             .flatMap(eventService::publishCreate);
-    }
+    &#125;
 
-}</code></pre>
+&#125;</code></pre>
 <p>Create a monitoring service for Goods (create two, after all, this kind of monitoring is generally one-to-many)</p>
 <pre><code class="highlight java"><span class="meta">@Configuration</span>
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerConfiguration</span> {
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerConfiguration</span> &#123;
 
     <span class="meta">@Bean</span>
-    <span class="keyword">public</span> GoodsService <span class="title function_">goodsService</span><span class="params">()</span> {
+    <span class="keyword">public</span> GoodsService <span class="title function_">goodsService</span><span class="params">()</span> &#123;
         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">GoodsService</span>();
-    }
+    &#125;
 
     <span class="meta">@Bean</span>
-    <span class="keyword">public</span> StockService <span class="title function_">stockService</span><span class="params">()</span> {
+    <span class="keyword">public</span> StockService <span class="title function_">stockService</span><span class="params">()</span> &#123;
         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">StockService</span>();
-    }
+    &#125;
 
     <span class="meta">@Bean</span>
-    <span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener1</span><span class="params">(StockService stockService)</span> {
+    <span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener1</span><span class="params">(StockService stockService)</span> &#123;
         <span class="keyword">return</span> EventListener.register(Goods.class, stockService::initStockWithGoods1);
-    }
+    &#125;
 
     <span class="meta">@Bean</span>
-    <span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener2</span><span class="params">(StockService stockService)</span> {
+    <span class="keyword">public</span> EventListener&lt;Goods&gt; <span class="title function_">listener2</span><span class="params">(StockService stockService)</span> &#123;
         <span class="keyword">return</span> EventListener.register(Goods.class, stockService::initStockWithGoods2);
-    }
+    &#125;
 
-}
+&#125;
 
 <span class="meta">@Slf4j</span>
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StockService</span> {
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StockService</span> &#123;
 
-    <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">initStockWithGoods1</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; notifier)</span> {
+    <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">initStockWithGoods1</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; notifier)</span> &#123;
         ObjectEventNotifier.<span class="type">Type</span> <span class="variable">type</span> <span class="operator">=</span> notifier.getType();
-        <span class="keyword">if</span> (type == ObjectEventNotifier.Type.Create) {
-            log.error(<span class="string">"Create stock for: "</span> + notifier.getObject().getName());
+        <span class="keyword">if</span> (type == ObjectEventNotifier.Type.Create) &#123;
+            log.error(<span class="string">&quot;Create stock for: &quot;</span> + notifier.getObject().getName());
             <span class="keyword">return</span> Mono.just(Stock.of(<span class="number">1</span>, <span class="number">0</span>)).then();
-        }
+        &#125;
         <span class="keyword">return</span> Mono.empty();
-    }
+    &#125;
 
-    <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">initStockWithGoods2</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; notifier)</span> {
-        log.error(<span class="string">"Another listener for Goods: "</span> + notifier.getObject().getName());
+    <span class="keyword">public</span> Publisher&lt;Void&gt; <span class="title function_">initStockWithGoods2</span><span class="params">(ObjectEventNotifier&lt;Goods&gt; notifier)</span> &#123;
+        log.error(<span class="string">&quot;Another listener for Goods: &quot;</span> + notifier.getObject().getName());
         <span class="keyword">return</span> Mono.empty();
-    }
+    &#125;
 
-}</code></pre>
+&#125;</code></pre>
 <p>Create a test case that calls create apple</p>
 <pre><code class="highlight java"><span class="meta">@SpringBootTest</span>
-<span class="keyword">class</span> <span class="title class_">GoodsServiceTest</span> {
+<span class="keyword">class</span> <span class="title class_">GoodsServiceTest</span> &#123;
 
     <span class="meta">@Resource</span>
     GoodsService goodsService;
 
     <span class="meta">@Test</span>
-    <span class="keyword">void</span> <span class="title function_">createGoods</span><span class="params">()</span> {
+    <span class="keyword">void</span> <span class="title function_">createGoods</span><span class="params">()</span> &#123;
         goodsService.createGoods()
             .as(StepVerifier::create)
             .expectNextCount(<span class="number">1</span>)
             .verifyComplete();
-    }
-}</code></pre>
+    &#125;
+&#125;</code></pre>
 <p>Running, we can see the following results, indicating that when the apple was created, two methods in the inventory were called</p>
 <h2 id="The-source-code-is-here">The source code is here</h2>
 <blockquote>
@@ -244,8 +244,8 @@ ga('send', 'pageview');</script><!-- End Google Analytics -->
 <blockquote>
 <p>The progress of Spring’s support of the reactive technology stack for ApplicationEventPublisher can be seen in this Issue: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL3NwcmluZy1wcm9qZWN0cy9zcHJpbmctZnJhbWV3b3JrL2lzc3Vlcy8yMTAyNQ==">https://github.com/spring-projects/spring-framework/issues/21025</a></p>
 </blockquote>
-</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/NodeJS/npm-yarn-package-agent-for-china.html" title="NPM Package Agent For Programmer In China"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: NPM Package Agent For Programmer In China</span></a><a class="button is-default" href="/2022/10/vscode-settings-json-for-nunjucks-ejs.html" title="VSCode settings JSON for nunjucks and EJS"><span class="has-text-weight-semibold">Next: VSCode settings JSON for nunjucks and EJS</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/NodeJS/npm-yarn-package-agent-for-china.html" title="NPM Package Agent For Programmer In China"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: NPM Package Agent For Programmer In China</span></a><a class="button is-default" href="/2022/10/vscode-settings-json-for-nunjucks-ejs.html" title="VSCode settings JSON for nunjucks and EJS"><span class="has-text-weight-semibold">Next: VSCode settings JSON for nunjucks and EJS</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2020/10/provide-applicationeventpublisher-for-spring-webflux.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
-<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
-
-      </body></html>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css" />
+</body>
+      </html>

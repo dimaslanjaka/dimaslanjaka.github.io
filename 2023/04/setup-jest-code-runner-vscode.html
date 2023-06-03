@@ -19,10 +19,10 @@ step by step how to setup jest within vscode code runner
 create file .vscode/settings.json
 c.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><!--a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"--><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">How to setup jest typescript and code runner in vscode</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-setup-jest-typescript-with-code-runner-in-vscode"><span class="toc-text">How to setup jest typescript with code runner in vscode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup"><span class="toc-text">Setup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#create-file-vscode-settings-json"><span class="toc-text">create file .vscode/settings.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install-dependencies"><span class="toc-text">install dependencies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-jest-config-ts-in-root-project"><span class="toc-text">create jest.config.ts in root project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-tsconfig-jest-json"><span class="toc-text">create tsconfig.jest.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step-to-test"><span class="toc-text">step to test</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#create-test-math-operator-test-ts"><span class="toc-text">create test/math-operator.test.ts</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/vscode"><i class="tag post-item-tag">vscode</i></a><a href="/tags/jest"><i class="tag post-item-tag">jest</i></a><a href="/tags/typescript"><i class="tag post-item-tag">typescript</i></a><a href="/tags/test"><i class="tag post-item-tag">test</i></a><a href="/tags/coverage"><i class="tag post-item-tag">coverage</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">How to setup jest typescript and code runner in vscode</h1><time class="has-text-grey" datetime="2023-04-18T23:41:48.000Z">2023-04-19</time><article class="mt-2 post-content"><p><img src="https://user-images.githubusercontent.com/12471057/236297105-21e4c9ef-ea6d-407f-8603-76990ee80977.png" alt="How to setup jest typescript and code runner in vscode - https://user-images.githubusercontent.com/12471057/236297105-21e4c9ef-ea6d-407f-8603-76990ee80977.png"></p>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><!--a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"--><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">How to setup jest typescript and code runner in vscode</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-setup-jest-typescript-with-code-runner-in-vscode"><span class="toc-text">How to setup jest typescript with code runner in vscode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup"><span class="toc-text">Setup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#create-file-vscode-settings-json"><span class="toc-text">create file .vscode&#x2F;settings.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install-dependencies"><span class="toc-text">install dependencies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-jest-config-ts-in-root-project"><span class="toc-text">create jest.config.ts in root project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-tsconfig-jest-json"><span class="toc-text">create tsconfig.jest.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step-to-test"><span class="toc-text">step to test</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#create-test-math-operator-test-ts"><span class="toc-text">create test&#x2F;math-operator.test.ts</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/vscode"><i class="tag post-item-tag">vscode</i></a><a href="/tags/jest"><i class="tag post-item-tag">jest</i></a><a href="/tags/typescript"><i class="tag post-item-tag">typescript</i></a><a href="/tags/test"><i class="tag post-item-tag">test</i></a><a href="/tags/coverage"><i class="tag post-item-tag">coverage</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">How to setup jest typescript and code runner in vscode</h1><time class="has-text-grey" datetime="2023-04-18T23:41:48.000Z">2023-04-19</time><article class="mt-2 post-content"><p><img src="https://user-images.githubusercontent.com/12471057/236297105-21e4c9ef-ea6d-407f-8603-76990ee80977.png" alt=""></p>
 <h2 id="How-to-setup-jest-typescript-with-code-runner-in-vscode">How to setup jest typescript with code runner in vscode</h2>
 <p>with this technique you can directly run test single file in vscode without typings manually in terminal, see below screenshot<br>
-<img src="https://user-images.githubusercontent.com/12471057/232989254-54d05159-4379-46e1-827f-812419e721b9.png" alt="How to setup jest typescript and code runner in vscode - https://user-images.githubusercontent.com/12471057/232989254-54d05159-4379-46e1-827f-812419e721b9.png"></p>
+<img src="https://user-images.githubusercontent.com/12471057/232989254-54d05159-4379-46e1-827f-812419e721b9.png" alt=""></p>
 <h2 id="Requirements">Requirements</h2>
 <ul>
 <li>install <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWZvcm11bGFoZW5kcnkuY29kZS1ydW5uZXI=">vscode code-runner</a></li>
@@ -32,99 +32,99 @@ c.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/at
 <p>step by step how to setup jest within vscode code runner</p>
 <h3 id="create-file-vscode-settings-json">create file <code>.vscode/settings.json</code></h3>
 <p>create settings file and fill below configs.</p>
-<pre><code class="highlight jsonc">{
-  "emmet.includeLanguages": {
-    "ejs": "html" // treat ejs as html
-  },
-  "terminal.integrated.env.linux": { // linux custom PATH environment variable
-    "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
-  },
-  "terminal.integrated.env.windows": { // windows custom PATH environment variable
-    "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true, // let ESLint take formating and linting
-    "source.organizeImports": true // auto remove unused imports
-  },
-  "[ts]": {
-    "editor.formatOnSave": false // custom formating with default vscode formatter
-  },
-  "[scss]": {
-    "editor.formatOnSave": true, // custom formating with default vscode formatter
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.formatOnSave": true, // custom formating with default vscode formatter
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[ejs]": {
-    "editor.formatOnSave": true // custom formating with default vscode formatter
-  },
-  "[json]": {
-    "editor.formatOnSave": true, // custom formating with default vscode formatter
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "editor.formatOnSave": false, // default vscode formatter
-  "git.enabled": true, // enable git
-  "code-runner.clearPreviousOutput": true, // code runner clear console when run code
-  "code-runner.saveFileBeforeRun": true, // code runner save current file before run
-  "code-runner.saveAllFilesBeforeRun": true, // code runner save all files before run
-  "code-runner.runInTerminal": true, // code runner run in terminal
-  "files.exclude": {
-    "**/node_modules": true,
-    "**/vendor": true
-  },
-  "code-runner.respectShebang": true, // code runner follow executor maps
-  "code-runner.executorMapByGlob": { // code runner executor map by glob
-    "*.test.ts": "yarn test -- $fileNameWithoutExt"
-  },
-  "eslint.codeActionsOnSave.mode": "all" // code runner save all files before run
-}</code></pre>
+<pre><code class="highlight jsonc">&#123;
+  &quot;emmet.includeLanguages&quot;: &#123;
+    &quot;ejs&quot;: &quot;html&quot; // treat ejs as html
+  &#125;,
+  &quot;terminal.integrated.env.linux&quot;: &#123; // linux custom PATH environment variable
+    &quot;PATH&quot;: &quot;$&#123;env:PATH&#125;:$&#123;workspaceFolder&#125;/node_modules/.bin:$&#123;workspaceFolder&#125;/bin&quot;
+  &#125;,
+  &quot;terminal.integrated.env.windows&quot;: &#123; // windows custom PATH environment variable
+    &quot;PATH&quot;: &quot;$&#123;env:PATH&#125;;$&#123;workspaceFolder&#125;\\node_modules\\.bin;$&#123;workspaceFolder&#125;\\bin&quot;
+  &#125;,
+  &quot;editor.codeActionsOnSave&quot;: &#123;
+    &quot;source.fixAll.eslint&quot;: true, // let ESLint take formating and linting
+    &quot;source.organizeImports&quot;: true // auto remove unused imports
+  &#125;,
+  &quot;[ts]&quot;: &#123;
+    &quot;editor.formatOnSave&quot;: false // custom formating with default vscode formatter
+  &#125;,
+  &quot;[scss]&quot;: &#123;
+    &quot;editor.formatOnSave&quot;: true, // custom formating with default vscode formatter
+    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
+  &#125;,
+  &quot;[css]&quot;: &#123;
+    &quot;editor.formatOnSave&quot;: true, // custom formating with default vscode formatter
+    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
+  &#125;,
+  &quot;[ejs]&quot;: &#123;
+    &quot;editor.formatOnSave&quot;: true // custom formating with default vscode formatter
+  &#125;,
+  &quot;[json]&quot;: &#123;
+    &quot;editor.formatOnSave&quot;: true, // custom formating with default vscode formatter
+    &quot;editor.defaultFormatter&quot;: &quot;vscode.json-language-features&quot;
+  &#125;,
+  &quot;editor.formatOnSave&quot;: false, // default vscode formatter
+  &quot;git.enabled&quot;: true, // enable git
+  &quot;code-runner.clearPreviousOutput&quot;: true, // code runner clear console when run code
+  &quot;code-runner.saveFileBeforeRun&quot;: true, // code runner save current file before run
+  &quot;code-runner.saveAllFilesBeforeRun&quot;: true, // code runner save all files before run
+  &quot;code-runner.runInTerminal&quot;: true, // code runner run in terminal
+  &quot;files.exclude&quot;: &#123;
+    &quot;**/node_modules&quot;: true,
+    &quot;**/vendor&quot;: true
+  &#125;,
+  &quot;code-runner.respectShebang&quot;: true, // code runner follow executor maps
+  &quot;code-runner.executorMapByGlob&quot;: &#123; // code runner executor map by glob
+    &quot;*.test.ts&quot;: &quot;yarn test -- $fileNameWithoutExt&quot;
+  &#125;,
+  &quot;eslint.codeActionsOnSave.mode&quot;: &quot;all&quot; // code runner save all files before run
+&#125;</code></pre>
 <h3 id="install-dependencies">install dependencies</h3>
 <pre><code class="highlight bash">npm install -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @jest/types @jest/globals
 <span class="comment"># or</span>
 yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @jest/types @jest/globals</code></pre>
 <h3 id="create-jest-config-ts-in-root-project">create <code>jest.config.ts</code> in root project</h3>
 <p>create config for jest in root of project, fill and configure below codes as you wish:</p>
-<pre><code class="highlight typescript"><span class="keyword">import</span> <span class="keyword">type</span> { <span class="title class_">Config</span> } <span class="keyword">from</span> <span class="string">'jest'</span>;
-<span class="keyword">import</span> { defaults } <span class="keyword">from</span> <span class="string">'jest-config'</span>;
-<span class="keyword">import</span> { join } <span class="keyword">from</span> <span class="string">'path'</span>;
+<pre><code class="highlight typescript"><span class="keyword">import</span> <span class="keyword">type</span> &#123; <span class="title class_">Config</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;jest&#x27;</span>;
+<span class="keyword">import</span> &#123; defaults &#125; <span class="keyword">from</span> <span class="string">&#x27;jest-config&#x27;</span>;
+<span class="keyword">import</span> &#123; join &#125; <span class="keyword">from</span> <span class="string">&#x27;path&#x27;</span>;
 
 <span class="comment">/**</span>
-<span class="comment"> * <span class="doctag">@type</span> {<span class="type">import('jest').Config</span>}</span>
-<span class="comment"> * <span class="doctag">@see</span> {<span class="type">@link https://jestjs.io/docs/configuration</span>}</span>
-<span class="comment"> * * how to run single test {<span class="doctag">@link</span> https://stackoverflow.com/questions/28725955/how-do-i-test-a-single-file-using-jest}</span>
+<span class="comment"> * <span class="doctag">@type</span> &#123;<span class="type">import(&#x27;jest&#x27;).Config</span>&#125;</span>
+<span class="comment"> * <span class="doctag">@see</span> &#123;<span class="type">@link https://jestjs.io/docs/configuration</span>&#125;</span>
+<span class="comment"> * * how to run single test &#123;<span class="doctag">@link</span> https://stackoverflow.com/questions/28725955/how-do-i-test-a-single-file-using-jest&#125;</span>
 <span class="comment"> */</span>
-<span class="keyword">const</span> <span class="attr">config</span>: <span class="title class_">Config</span> = {
+<span class="keyword">const</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;
   <span class="comment">// preset for typescript</span>
-  <span class="attr">preset</span>: <span class="string">'ts-jest'</span>,
+  <span class="attr">preset</span>: <span class="string">&#x27;ts-jest&#x27;</span>,
   <span class="comment">// test environtment</span>
-  <span class="attr">testEnvironment</span>: <span class="string">'node'</span>,
+  <span class="attr">testEnvironment</span>: <span class="string">&#x27;node&#x27;</span>,
   <span class="comment">// extension of modules</span>
-  <span class="attr">moduleFileExtensions</span>: [...defaults.<span class="property">moduleFileExtensions</span>, <span class="string">'mts'</span>],
+  <span class="attr">moduleFileExtensions</span>: [...defaults.<span class="property">moduleFileExtensions</span>, <span class="string">&#x27;mts&#x27;</span>],
   <span class="comment">// jest verbose</span>
   <span class="attr">verbose</span>: <span class="literal">false</span>,
   <span class="comment">// jest use cache</span>
   <span class="attr">cache</span>: <span class="literal">true</span>,
   <span class="comment">// jest cache directory</span>
-  <span class="attr">cacheDirectory</span>: <span class="title function_">join</span>(__dirname, <span class="string">'tmp/jest'</span>),
+  <span class="attr">cacheDirectory</span>: <span class="title function_">join</span>(__dirname, <span class="string">&#x27;tmp/jest&#x27;</span>),
   <span class="comment">// collect coverage from src folder but ignore with negate patterns</span>
-  <span class="attr">collectCoverageFrom</span>: [<span class="string">'src/*.{js,ts}'</span>, <span class="string">'!**/node_modules/**'</span>, <span class="string">'!**/vendor/**'</span>, <span class="string">'!**/test/**'</span>, <span class="string">'!**/*.test.{js,ts}'</span>],
+  <span class="attr">collectCoverageFrom</span>: [<span class="string">&#x27;src/*.&#123;js,ts&#125;&#x27;</span>, <span class="string">&#x27;!**/node_modules/**&#x27;</span>, <span class="string">&#x27;!**/vendor/**&#x27;</span>, <span class="string">&#x27;!**/test/**&#x27;</span>, <span class="string">&#x27;!**/*.test.&#123;js,ts&#125;&#x27;</span>],
   <span class="comment">// test root directory</span>
   <span class="attr">roots</span>: [<span class="string">`&lt;rootDir&gt;/test`</span>],
   <span class="comment">// ignore collect coverage from these patterns</span>
-  <span class="attr">coveragePathIgnorePatterns</span>: [<span class="string">'/node_modules/'</span>, <span class="string">'/dist/'</span>, <span class="string">'/tmp/'</span>, <span class="string">'/test/'</span>],
+  <span class="attr">coveragePathIgnorePatterns</span>: [<span class="string">&#x27;/node_modules/&#x27;</span>, <span class="string">&#x27;/dist/&#x27;</span>, <span class="string">&#x27;/tmp/&#x27;</span>, <span class="string">&#x27;/test/&#x27;</span>],
   <span class="comment">// test files with these patterns</span>
   <span class="attr">testMatch</span>: [<span class="string">`**/__tests__/**/*.+(ts|tsx|js)`</span>, <span class="string">`**/?(*.)+(spec|test).+(ts|tsx|js)`</span>, <span class="string">`**/test/*.test.ts`</span>],
   <span class="comment">// transformer typescript</span>
-  <span class="attr">transform</span>: {
-    <span class="string">'^.+\\.(ts|tsx)$'</span>: [
-      <span class="string">'ts-jest'</span>,
+  <span class="attr">transform</span>: &#123;
+    <span class="string">&#x27;^.+\\.(ts|tsx)$&#x27;</span>: [
+      <span class="string">&#x27;ts-jest&#x27;</span>,
       <span class="comment">// required due to custom location of tsconfig.json configuration file</span>
       <span class="comment">// https://kulshekhar.github.io/ts-jest/docs/getting-started/options/tsconfig</span>
-      { <span class="attr">tsconfig</span>: <span class="string">'./tsconfig.json'</span> }
+      &#123; <span class="attr">tsconfig</span>: <span class="string">&#x27;./tsconfig.json&#x27;</span> &#125;
     ]
-  },
+  &#125;,
   <span class="comment">// detect memory leaks</span>
   <span class="attr">detectLeaks</span>: <span class="literal">true</span>,
   <span class="comment">// Automatically clear mock calls, instances, contexts and results before every test</span>
@@ -137,81 +137,81 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
   <span class="comment">// collectCoverageFrom: undefined,</span>
 
   <span class="comment">// The directory where Jest should output its coverage files</span>
-  <span class="attr">coverageDirectory</span>: <span class="string">'coverage'</span>,
+  <span class="attr">coverageDirectory</span>: <span class="string">&#x27;coverage&#x27;</span>,
 
   <span class="comment">// An array of regexp pattern strings used to skip coverage collection</span>
   <span class="comment">// coveragePathIgnorePatterns: [</span>
-  <span class="comment">//   "\\\\node_modules\\\\"</span>
+  <span class="comment">//   &quot;\\\\node_modules\\\\&quot;</span>
   <span class="comment">// ],</span>
 
   <span class="comment">// Indicates which provider should be used to instrument code for coverage</span>
-  <span class="attr">coverageProvider</span>: <span class="string">'v8'</span>
+  <span class="attr">coverageProvider</span>: <span class="string">&#x27;v8&#x27;</span>
 
   <span class="comment">// A list of reporter names that Jest uses when writing coverage reports</span>
   <span class="comment">// coverageReporters: [</span>
-  <span class="comment">//   "json",</span>
-  <span class="comment">//   "text",</span>
-  <span class="comment">//   "lcov",</span>
-  <span class="comment">//   "clover"</span>
+  <span class="comment">//   &quot;json&quot;,</span>
+  <span class="comment">//   &quot;text&quot;,</span>
+  <span class="comment">//   &quot;lcov&quot;,</span>
+  <span class="comment">//   &quot;clover&quot;</span>
   <span class="comment">// ],</span>
-};
+&#125;;
 
 <span class="keyword">export</span> <span class="keyword">default</span> config;</code></pre>
 <h3 id="create-tsconfig-jest-json">create <code>tsconfig.jest.json</code></h3>
 <p>create typescript config for jest in root of project folder, change typescript config for jest below as you wish:</p>
-<pre><code class="highlight jsonc">{
+<pre><code class="highlight jsonc">&#123;
   // custom schema (non-vscode environment)
-  "$schema": "https://json.schemastore.org/tsconfig",
+  &quot;$schema&quot;: &quot;https://json.schemastore.org/tsconfig&quot;,
   // extends other typescript config file
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: &#123;
     // make dump output to temp folder
-    "outDir": "tmp/jest",
+    &quot;outDir&quot;: &quot;tmp/jest&quot;,
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Language and Environment */
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    &quot;target&quot;: &quot;es2016&quot; /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
     /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    &quot;module&quot;: &quot;commonjs&quot; /* Specify what module code is generated. */,
+    &quot;esModuleInterop&quot;: true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
+    &quot;forceConsistentCasingInFileNames&quot;: true /* Ensure that casing is correct in imports. */,
 
     /* Type Checking */
-    "strict": false /* Enable all strict type-checking */,
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
-}</code></pre>
+    &quot;strict&quot;: false /* Enable all strict type-checking */,
+    &quot;skipLibCheck&quot;: true /* Skip type checking all .d.ts files. */
+  &#125;
+&#125;</code></pre>
 <h3 id="step-to-test">step to test</h3>
 <p>create sample test inside <code>test</code> folder</p>
 <h4 id="create-test-math-operator-test-ts">create <code>test/math-operator.test.ts</code></h4>
 <p>create sample math operator test for jest, below is sample test:</p>
-<pre><code class="highlight typescript"><span class="keyword">import</span> { beforeEach, describe, expect, it, jest } <span class="keyword">from</span> <span class="string">'@jest/globals'</span>;
+<pre><code class="highlight typescript"><span class="keyword">import</span> &#123; beforeEach, describe, expect, it, jest &#125; <span class="keyword">from</span> <span class="string">&#x27;@jest/globals&#x27;</span>;
 
-<span class="keyword">const</span> mathOperations = {
-   <span class="attr">sum</span>: <span class="keyword">function</span>(<span class="params">a,b</span>) {
+<span class="keyword">const</span> mathOperations = &#123;
+   <span class="attr">sum</span>: <span class="keyword">function</span>(<span class="params">a,b</span>) &#123;
        <span class="keyword">return</span> a + b;
-   },
+   &#125;,
    
-   <span class="attr">diff</span>: <span class="keyword">function</span>(<span class="params">a,b</span>) {
+   <span class="attr">diff</span>: <span class="keyword">function</span>(<span class="params">a,b</span>) &#123;
        <span class="keyword">return</span> a - b;
-   },
-   <span class="attr">product</span>: <span class="keyword">function</span>(<span class="params">a,b</span>) {
+   &#125;,
+   <span class="attr">product</span>: <span class="keyword">function</span>(<span class="params">a,b</span>) &#123;
        <span class="keyword">return</span> a * b
-   }
-}
+   &#125;
+&#125;
 
-<span class="title function_">describe</span>(<span class="string">"Calculator tests"</span>, <span class="function">() =&gt;</span> {
+<span class="title function_">describe</span>(<span class="string">&quot;Calculator tests&quot;</span>, <span class="function">() =&gt;</span> &#123;
  jest.<span class="built_in">setTimeout</span>(<span class="number">60000</span>); <span class="comment">// sample set timeout globally</span>
- <span class="title function_">test</span>(<span class="string">'adding 1 + 2 should return 3'</span>, <span class="function">() =&gt;</span> {
+ <span class="title function_">test</span>(<span class="string">&#x27;adding 1 + 2 should return 3&#x27;</span>, <span class="function">() =&gt;</span> &#123;
    <span class="title function_">expect</span>(mathOperations.<span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">2</span>)).<span class="title function_">toBe</span>(<span class="number">3</span>);
- });
-})</code></pre>
+ &#125;);
+&#125;)</code></pre>
 <p>to run above file, just <strong>right click</strong> choose <strong>run</strong>. Sample result below:<br>
-<img src="https://user-images.githubusercontent.com/12471057/232991721-ca4f34c9-49ed-4ee7-877b-3418907fe684.png" alt="How to setup jest typescript and code runner in vscode - https://user-images.githubusercontent.com/12471057/232991721-ca4f34c9-49ed-4ee7-877b-3418907fe684.png"></p>
+<img src="https://user-images.githubusercontent.com/12471057/232991721-ca4f34c9-49ed-4ee7-877b-3418907fe684.png" alt=""></p>
 <h2 id="Conclusion">Conclusion</h2>
 <p>thats all how to setup jest typescript in vscode. above steps 100 percent tested in year 2023.</p>
-</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2023/04/setup-jest-code-runner-vscode.html" title="How to setup jest typescript and code runner in vscode"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: How to setup jest typescript and code runner in vscode</span></a><a class="button is-default" href="/chimeraland/monsters/mamba.html" title="Monster mamba"><span class="has-text-weight-semibold">Next: Monster mamba</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2023/04/setup-jest-code-runner-vscode.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/chimeraland/report/bug-report-v202117.html" title="Bug Report Chimeraland v2.0.2.117"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Bug Report Chimeraland v2.0.2.117</span></a><a class="button is-default" href="/chimeraland/monsters/mamba.html" title="Monster mamba"><span class="has-text-weight-semibold">Next: Monster mamba</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2023/04/setup-jest-code-runner-vscode.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
-<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
-
-      </body></html>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css" />
+</body>
+      </html>

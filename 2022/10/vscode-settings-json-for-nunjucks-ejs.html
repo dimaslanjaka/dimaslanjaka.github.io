@@ -76,141 +76,141 @@ https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-
 </tbody>
 </table>
 <h2 id="VSCode-Settings-JSON-for-Nunjucks-and-EJS">VSCode Settings JSON for Nunjucks and EJS</h2>
-<pre><code class="highlight jsonc">&#123;
-  &quot;terminal.integrated.env.linux&quot;: &#123;
-    &quot;PATH&quot;: &quot;$&#123;env:PATH&#125;:$&#123;workspaceFolder&#125;/node_modules/.bin:$&#123;workspaceFolder&#125;/bin&quot;
-  &#125;,
-  &quot;terminal.integrated.env.windows&quot;: &#123;
-    &quot;PATH&quot;: &quot;$&#123;env:PATH&#125;;$&#123;workspaceFolder&#125;\\node_modules\\.bin;$&#123;workspaceFolder&#125;\\bin&quot;
-  &#125;,
-  &quot;npm.enableRunFromFolder&quot;: true,
-  &quot;files.autoSave&quot;: &quot;onWindowChange&quot;,
-  &quot;files.autoSaveDelay&quot;: 30000,
-  &quot;typescript.tsc.autoDetect&quot;: &quot;on&quot;,
-  &quot;editor.fontFamily&quot;: &quot;Consolas, &#x27;Courier New&#x27;, monospace&quot;,
-  &quot;editor.fontLigatures&quot;: true,
+<pre><code class="highlight jsonc">{
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"
+  },
+  "npm.enableRunFromFolder": true,
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 30000,
+  "typescript.tsc.autoDetect": "on",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   // setup file associations for nunjucks and ejs
-  &quot;files.associations&quot;: &#123;
-    &quot;*.njk&quot;: &quot;html&quot;,
-    &quot;*.ejs&quot;: &quot;html&quot;
-  &#125;,
+  "files.associations": {
+    "*.njk": "html",
+    "*.ejs": "html"
+  },
   // setup emmet auto complete for nunjucks and ejs
-  &quot;emmet.includeLanguages&quot;: &#123;
-    &quot;ejs&quot;: &quot;html&quot;,
-    &quot;njk&quot;: &quot;html&quot;,
-    &quot;nunjucks&quot;: &quot;html&quot;
-  &#125;,
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "njk": "html",
+    "nunjucks": "html"
+  },
   // setup syntax profiles for nunjucks and ejs
-  &quot;emmet.syntaxProfiles&quot;: &#123;
-    &quot;njk&quot;: &quot;html&quot;,
-    &quot;ejs&quot;: &quot;html&quot;
-  &#125;,
+  "emmet.syntaxProfiles": {
+    "njk": "html",
+    "ejs": "html"
+  },
   // optional: for eslint plugin
-  &quot;eslint.format.enable&quot;: true,
-  &quot;eslint.trace.server&quot;: &quot;messages&quot;,
+  "eslint.format.enable": true,
+  "eslint.trace.server": "messages",
   // make editor auto word-wrap
-  &quot;editor.wordWrap&quot;: &quot;on&quot;,
+  "editor.wordWrap": "on",
   // enable bracket pair colorized
-  &quot;editor.bracketPairColorization.enabled&quot;: true,
+  "editor.bracketPairColorization.enabled": true,
   // disable javascript suggestions
-  &quot;javascript.suggestionActions.enabled&quot;: false,
-  &quot;typescript.suggestionActions.enabled&quot;: true,
-  &quot;editor.codeActionsOnSave&quot;: &#123;
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": true,
+  "editor.codeActionsOnSave": {
     // remove unused imports
-    &quot;source.organizeImports&quot;: true,
+    "source.organizeImports": true,
     // fix all errors such as eslint, etc
-    &quot;source.fixAll&quot;: true // let ESLint take formating and linting
-  &#125;,
+    "source.fixAll": true // let ESLint take formating and linting
+  },
   // optional: eslint validate files assoc
-  &quot;eslint.validate&quot;: [
-    &quot;javascript&quot;,
-    &quot;typescript&quot;
+  "eslint.validate": [
+    "javascript",
+    "typescript"
   ],
   // custom settings for nunjucks files
-  &quot;[nunjucks]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: true,
-    &quot;editor.defaultFormatter&quot;: &quot;vscode.html-language-features&quot;
-  &#125;,
-  &quot;[ejs]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: false,
-    &quot;editor.defaultFormatter&quot;: &quot;vscode.html-language-features&quot;
-  &#125;,
-  &quot;[scss]&quot;: &#123;
-    &quot;editor.suggest.insertMode&quot;: &quot;replace&quot;,
-    &quot;editor.formatOnSave&quot;: true,
-    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
-  &#125;,
-  &quot;[css]&quot;: &#123;
-    &quot;editor.suggest.insertMode&quot;: &quot;replace&quot;,
-    &quot;editor.formatOnSave&quot;: false,
-    &quot;editor.defaultFormatter&quot;: &quot;vscode.css-language-features&quot;
-  &#125;,
-  &quot;[json]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: true, // enable json formating with default vscode formatter
-    &quot;editor.defaultFormatter&quot;: &quot;vscode.json-language-features&quot;
-  &#125;,
-  &quot;[markdown]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: false,
-    &quot;editor.defaultFormatter&quot;: &quot;yzhang.markdown-all-in-one&quot;,
-    &quot;editor.codeActionsOnSave&quot;: &#123;
-      &quot;source.organizeImports&quot;: false,
-      &quot;source.fixAll.eslint&quot;: false
-    &#125;
-  &#125;,
-  &quot;[jsonc]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: true,
-    &quot;editor.defaultFormatter&quot;: &quot;vscode.json-language-features&quot;
-  &#125;,
-  &quot;[typescript]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: false,
-    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
-  &#125;,
-  &quot;[javascript]&quot;: &#123;
-    &quot;editor.formatOnSave&quot;: false,
-    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
-    &quot;editor.codeActionsOnSave&quot;: &#123;
-      &quot;source.organizeImports&quot;: false
-    &#125;
-  &#125;,
-  &quot;editor.formatOnSave&quot;: false,
-  &quot;editor.tabSize&quot;: 2,
-  &quot;files.eol&quot;: &quot;\n&quot;,
-  &quot;files.exclude&quot;: &#123;
-    &quot;**/node_modules&quot;: true,
-    &quot;**/vendor&quot;: true,
-    &quot;**/tmp/yarn&quot;: true
-  &#125;,
-  &quot;code-runner.executorMap&quot;: &#123;
-    &quot;typescriptreact&quot;: &quot;cross-env-shell DEBUG=chimera-* ts-node&quot;,
-    &quot;javascript&quot;: &quot;node&quot;,
-    &quot;typescript&quot;: &quot;cross-env-shell DEBUG=git-command-helper,chimera-* ts-node&quot;,
-    &quot;coffeescript&quot;: &quot;coffee&quot;,
-    &quot;sass&quot;: &quot;sass --style expanded&quot;,
-    &quot;scss&quot;: &quot;scss --style expanded&quot;,
-    &quot;less&quot;: &quot;cd $dir &amp;&amp; lessc $fileName $fileNameWithoutExt.css&quot;
-  &#125;,
-  &quot;code-runner.runInTerminal&quot;: true,
-  &quot;code-runner.cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;,
-  &quot;code-runner.saveAllFilesBeforeRun&quot;: true,
-  &quot;code-runner.clearPreviousOutput&quot;: true,
-  &quot;code-runner.respectShebang&quot;: true,
-  &quot;typescript.tsdk&quot;: &quot;./node_modules/typescript/lib&quot;,
-  &quot;typescript.format.enable&quot;: true,
-  &quot;typescript.tsserver.enableTracing&quot;: false,
-  &quot;typescript.tsserver.log&quot;: &quot;off&quot;,
-  &quot;typescript.tsserver.trace&quot;: &quot;off&quot;,
-  &quot;editor.autoClosingBrackets&quot;: &quot;always&quot;,
-  &quot;editor.matchBrackets&quot;: &quot;always&quot;,
-  &quot;prettier.enableDebugLogs&quot;: true,
-  &quot;prettier.prettierPath&quot;: &quot;./node_modules/prettier&quot;,
-  &quot;prettier.printWidth&quot;: 180,
-  &quot;npm.packageManager&quot;: &quot;npm&quot;,
-  &quot;git.enabled&quot;: true,
-  &quot;eslint.packageManager&quot;: &quot;npm&quot;,
-  &quot;explorer.autoReveal&quot;: false
-&#125;</code></pre>
-</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2020/10/provide-applicationeventpublisher-for-spring-webflux.html" title="Provide ApplicationEventPublisher for Spring WebFlux"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Provide ApplicationEventPublisher for Spring WebFlux</span></a><a class="button is-default" href="/GitHub/github-workflow-filter-jobs-by-os.html" title="Github Workflow Filter Jobs By OS"><span class="has-text-weight-semibold">Next: Github Workflow Filter Jobs By OS</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2022/10/vscode-settings-json-for-nunjucks-ejs.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+  "[nunjucks]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[ejs]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[json]": {
+    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false,
+      "source.fixAll.eslint": false
+    }
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true,
+    "**/tmp/yarn": true
+  },
+  "code-runner.executorMap": {
+    "typescriptreact": "cross-env-shell DEBUG=chimera-* ts-node",
+    "javascript": "node",
+    "typescript": "cross-env-shell DEBUG=git-command-helper,chimera-* ts-node",
+    "coffeescript": "coffee",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir &amp;&amp; lessc $fileName $fileNameWithoutExt.css"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.cwd": "${workspaceFolder}",
+  "code-runner.saveAllFilesBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.respectShebang": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.format.enable": true,
+  "typescript.tsserver.enableTracing": false,
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.trace": "off",
+  "editor.autoClosingBrackets": "always",
+  "editor.matchBrackets": "always",
+  "prettier.enableDebugLogs": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.printWidth": 180,
+  "npm.packageManager": "npm",
+  "git.enabled": true,
+  "eslint.packageManager": "npm",
+  "explorer.autoReveal": false
+}</code></pre>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2022/10/vscode-settings-json-for-nunjucks-ejs.html" title="VSCode settings JSON for nunjucks and EJS"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: VSCode settings JSON for nunjucks and EJS</span></a><a class="button is-default" href="/GitHub/github-workflow-filter-jobs-by-os.html" title="Github Workflow Filter Jobs By OS"><span class="has-text-weight-semibold">Next: Github Workflow Filter Jobs By OS</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2022/10/vscode-settings-json-for-nunjucks-ejs.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
-<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css" />
-</body>
-      </html>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

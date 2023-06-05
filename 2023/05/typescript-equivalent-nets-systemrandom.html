@@ -15,8 +15,8 @@ export default class Random &amp;#123;
     private inextp = 21;
     private seedArray = new.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><!--a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"--><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">TypeScript equivalent .NETs System.Random</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"><a href="/tags/snippet"><i class="tag post-item-tag">snippet</i></a><a href="/tags/script"><i class="tag post-item-tag">script</i></a><a href="/tags/random"><i class="tag post-item-tag">random</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">TypeScript equivalent .NETs System.Random</h1><time class="has-text-grey" datetime="2023-05-19T23:15:14.000Z">2023-05-20</time><article class="mt-2 post-content"><pre><code class="highlight ts"><span class="comment">// by design, this returns the same values as .NET's System.Random</span>
-<span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Random</span> {
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><!--a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"--><a href="/">WMI</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">TypeScript equivalent .NETs System.Random</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"><a href="/tags/snippet"><i class="tag post-item-tag">snippet</i></a><a href="/tags/script"><i class="tag post-item-tag">script</i></a><a href="/tags/random"><i class="tag post-item-tag">random</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">TypeScript equivalent .NETs System.Random</h1><time class="has-text-grey" datetime="2023-05-19T23:15:14.000Z">2023-05-20</time><article class="mt-2 post-content"><pre><code class="highlight ts"><span class="comment">// by design, this returns the same values as .NET&#x27;s System.Random</span>
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Random</span> &#123;
     <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="attr">INT_MAX_VALUE</span>: <span class="built_in">number</span> = <span class="number">0x7fffffff</span>;
     <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="attr">INT_MIN_VALUE</span>: <span class="built_in">number</span> = <span class="number">0x80000000</span>;
     <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="variable constant_">MSEED</span> = <span class="number">161803398</span>;
@@ -25,31 +25,31 @@ export default class Random &amp;#123;
     <span class="keyword">private</span> inextp = <span class="number">21</span>;
     <span class="keyword">private</span> seedArray = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">56</span>);
 
-    <span class="title function_">constructor</span>(<span class="params">seed: <span class="built_in">number</span></span>) {
+    <span class="title function_">constructor</span>(<span class="params">seed: <span class="built_in">number</span></span>) &#123;
         <span class="keyword">var</span> subtraction = (seed == <span class="title class_">Random</span>.<span class="property">INT_MIN_VALUE</span>) ? <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span> : <span class="title class_">Math</span>.<span class="title function_">abs</span>(seed);
         <span class="keyword">let</span> mj = <span class="title class_">Random</span>.<span class="property">MSEED</span> - subtraction;
         <span class="variable language_">this</span>.<span class="property">seedArray</span>[<span class="number">55</span>] = mj;
         <span class="keyword">let</span> mk = <span class="number">1</span>;
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">55</span>; i++) {
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">55</span>; i++) &#123;
             <span class="keyword">const</span> ii = (<span class="number">21</span> * i) % <span class="number">55</span>;
             <span class="variable language_">this</span>.<span class="property">seedArray</span>[ii] = mk;
             mk = mj - mk;
-            <span class="keyword">if</span> (mk &lt; <span class="number">0</span>) {
+            <span class="keyword">if</span> (mk &lt; <span class="number">0</span>) &#123;
                 mk += <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>;
-            }
+            &#125;
 
             mj = <span class="variable language_">this</span>.<span class="property">seedArray</span>[ii];
-        }
+        &#125;
 
-        <span class="keyword">for</span> (<span class="keyword">var</span> k = <span class="number">1</span>; k &lt; <span class="number">5</span>; k++) {
-            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">56</span>; i++) {
+        <span class="keyword">for</span> (<span class="keyword">var</span> k = <span class="number">1</span>; k &lt; <span class="number">5</span>; k++) &#123;
+            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">56</span>; i++) &#123;
                 <span class="variable language_">this</span>.<span class="property">seedArray</span>[i] -= <span class="variable language_">this</span>.<span class="property">seedArray</span>[<span class="number">1</span> + (i + <span class="number">30</span>) % <span class="number">55</span>];
-                <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">seedArray</span>[i] &lt; <span class="number">0</span>) {
+                <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">seedArray</span>[i] &lt; <span class="number">0</span>) &#123;
                     <span class="variable language_">this</span>.<span class="property">seedArray</span>[i] += <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>;
-                }
-            }
-        }
-    }
+                &#125;
+            &#125;
+        &#125;
+    &#125;
 
     <span class="keyword">protected</span> sample = <span class="function">() =&gt;</span> <span class="variable language_">this</span>.<span class="title function_">internalSample</span>() * (<span class="number">1</span> / <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>);
 
@@ -57,67 +57,67 @@ export default class Random &amp;#123;
     <span class="keyword">public</span> nextIntegerBetween = <span class="function">(<span class="params">minValue: <span class="built_in">number</span>, maxValue: <span class="built_in">number</span></span>) =&gt;</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="variable language_">this</span>.<span class="title function_">nextNumberBetween</span>(minValue, maxValue));
     <span class="keyword">public</span> nextIntegerLessThan = <span class="function">(<span class="params">maxValue: <span class="built_in">number</span></span>) =&gt;</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="variable language_">this</span>.<span class="title function_">nextNumberLessThan</span>(maxValue));
     <span class="keyword">public</span> nextNumber = <span class="function">() =&gt;</span> <span class="variable language_">this</span>.<span class="title function_">sample</span>();
-    <span class="keyword">public</span> <span class="title function_">nextNumberBetween</span>(<span class="params">minValue: <span class="built_in">number</span>, maxValue: <span class="built_in">number</span></span>) {
+    <span class="keyword">public</span> <span class="title function_">nextNumberBetween</span>(<span class="params">minValue: <span class="built_in">number</span>, maxValue: <span class="built_in">number</span></span>) &#123;
         <span class="keyword">if</span> (minValue &gt; maxValue)
-            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">"Argument out of range."</span>);
+            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Argument out of range.&quot;</span>);
 
         <span class="keyword">var</span> range = maxValue - minValue;
         <span class="keyword">if</span> (range &lt;= <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>)
             <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">sample</span>() * range + minValue;
 
         <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">getSampleForLargeRange</span>() * range + minValue;
-    }
+    &#125;
 
-    <span class="keyword">public</span> <span class="title function_">nextNumberLessThan</span>(<span class="params">maxValue: <span class="built_in">number</span></span>) {
+    <span class="keyword">public</span> <span class="title function_">nextNumberLessThan</span>(<span class="params">maxValue: <span class="built_in">number</span></span>) &#123;
         <span class="keyword">if</span> (maxValue &lt; <span class="number">0</span>)
-            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">"Argument out of range."</span>);
+            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Argument out of range.&quot;</span>);
 
         <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">sample</span>() * maxValue;
-    }
+    &#125;
 
-    <span class="keyword">private</span> <span class="title function_">getSampleForLargeRange</span>(<span class="params"></span>) {
+    <span class="keyword">private</span> <span class="title function_">getSampleForLargeRange</span>(<span class="params"></span>) &#123;
         <span class="keyword">var</span> result = <span class="variable language_">this</span>.<span class="title function_">internalSample</span>();
         <span class="keyword">var</span> negative = <span class="variable language_">this</span>.<span class="title function_">internalSample</span>() % <span class="number">2</span> == <span class="number">0</span>;
-        <span class="keyword">if</span> (negative) {
+        <span class="keyword">if</span> (negative) &#123;
             result = -result;
-        }
+        &#125;
 
         <span class="keyword">let</span> d = result;
         d += <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span> - <span class="number">1</span>;
         d /= <span class="number">2</span> * <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span> - <span class="number">1</span>;
         <span class="keyword">return</span> d;
-    }
+    &#125;
 
-    <span class="keyword">private</span> <span class="title function_">internalSample</span>(<span class="params"></span>) {
+    <span class="keyword">private</span> <span class="title function_">internalSample</span>(<span class="params"></span>) &#123;
         <span class="keyword">var</span> locINext = <span class="variable language_">this</span>.<span class="property">inext</span>;
         <span class="keyword">var</span> locINextp = <span class="variable language_">this</span>.<span class="property">inextp</span>;
 
-        <span class="keyword">if</span> (++locINext &gt;= <span class="number">56</span>) {
+        <span class="keyword">if</span> (++locINext &gt;= <span class="number">56</span>) &#123;
             locINext = <span class="number">1</span>;
-        }
+        &#125;
 
-        <span class="keyword">if</span> (++locINextp &gt;= <span class="number">56</span>) {
+        <span class="keyword">if</span> (++locINextp &gt;= <span class="number">56</span>) &#123;
             locINextp = <span class="number">1</span>;
-        }
+        &#125;
 
         <span class="keyword">let</span> retVal = <span class="variable language_">this</span>.<span class="property">seedArray</span>[locINext] - <span class="variable language_">this</span>.<span class="property">seedArray</span>[locINextp];
-        <span class="keyword">if</span> (retVal == <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>) {
+        <span class="keyword">if</span> (retVal == <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>) &#123;
             retVal--;
-        }
+        &#125;
 
-        <span class="keyword">if</span> (retVal &lt; <span class="number">0</span>) {
+        <span class="keyword">if</span> (retVal &lt; <span class="number">0</span>) &#123;
             retVal += <span class="title class_">Random</span>.<span class="property">INT_MAX_VALUE</span>;
-        }
+        &#125;
 
         <span class="variable language_">this</span>.<span class="property">seedArray</span>[locINext] = retVal;
         <span class="variable language_">this</span>.<span class="property">inext</span> = locINext;
         <span class="variable language_">this</span>.<span class="property">inextp</span> = locINextp;
         <span class="keyword">return</span> retVal;
-    }
-}</code></pre>
+    &#125;
+&#125;</code></pre>
 <p>source: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vc21vdXJpZXIvZjc3NjE3YTgwMmYwOTdhZWE0YjRmMzc3ODEwOGI1ZWY=">https://gist.github.com/smourier/f77617a802f097aea4b4f3778108b5ef</a></p>
-</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2023/05/typescript-equivalent-nets-systemrandom.html" title="TypeScript equivalent .NETs System.Random"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: TypeScript equivalent .NETs System.Random</span></a><a class="button is-default" href="/hexo/how-to-test-render-custom-tag.html" title="How to test render custom tag on HexoJS ?"><span class="has-text-weight-semibold">Next: How to test render custom tag on HexoJS ?</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2023/05/typescript-equivalent-nets-systemrandom.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/chimeraland/attendants/rosary-siren.html" title="Attendant rosary siren"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Attendant rosary siren</span></a><a class="button is-default" href="/hexo/how-to-test-render-custom-tag.html" title="How to test render custom tag on HexoJS ?"><span class="has-text-weight-semibold">Next: How to test render custom tag on HexoJS ?</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/2023/05/typescript-equivalent-nets-systemrandom.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
-<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
-
-      </body></html>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css" />
+</body>
+      </html>

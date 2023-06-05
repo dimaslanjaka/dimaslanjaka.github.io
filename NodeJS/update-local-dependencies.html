@@ -39,10 +39,10 @@ const pjson = require(&amp;#x27;./package.."><meta name="generator" content="Hex
 <li>add update and usages docs</li>
 </ul>
 </blockquote>
-<pre><code class="highlight js"><span class="keyword">const</span> pjson = <span class="built_in">require</span>(<span class="string">&#x27;./package.json&#x27;</span>);
-<span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);
-<span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;upath&#x27;</span>);
-<span class="keyword">const</span> &#123; spawn &#125; = <span class="built_in">require</span>(<span class="string">&#x27;cross-spawn&#x27;</span>);
+<pre><code class="highlight js"><span class="keyword">const</span> pjson = <span class="built_in">require</span>(<span class="string">'./package.json'</span>);
+<span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+<span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'upath'</span>);
+<span class="keyword">const</span> { spawn } = <span class="built_in">require</span>(<span class="string">'cross-spawn'</span>);
 
 <span class="comment">// postinstall scripts</span>
 <span class="comment">// run this script after `npm install`</span>
@@ -53,134 +53,134 @@ const pjson = require(&amp;#x27;./package.."><meta name="generator" content="Hex
 <span class="comment">// usages    : node postinstall.js</span>
 
 <span class="comment">// cache file</span>
-<span class="keyword">const</span> cacheJSON = path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;node_modules/.cache/npm-install.json&#x27;</span>);
-<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;cache json&#x27;</span>, cacheJSON);
-<span class="keyword">if</span> (!fs.<span class="title function_">existsSync</span>(path.<span class="title function_">dirname</span>(cacheJSON))) &#123;
-  fs.<span class="title function_">mkdirSync</span>(path.<span class="title function_">dirname</span>(cacheJSON), &#123; <span class="attr">recursive</span>: <span class="literal">true</span> &#125;);
-&#125;
-<span class="keyword">if</span> (!fs.<span class="title function_">existsSync</span>(cacheJSON)) &#123;
-  fs.<span class="title function_">writeFileSync</span>(cacheJSON, <span class="string">&#x27;&#123;&#125;&#x27;</span>);
-&#125;
+<span class="keyword">const</span> cacheJSON = path.<span class="title function_">join</span>(__dirname, <span class="string">'node_modules/.cache/npm-install.json'</span>);
+<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'cache json'</span>, cacheJSON);
+<span class="keyword">if</span> (!fs.<span class="title function_">existsSync</span>(path.<span class="title function_">dirname</span>(cacheJSON))) {
+  fs.<span class="title function_">mkdirSync</span>(path.<span class="title function_">dirname</span>(cacheJSON), { <span class="attr">recursive</span>: <span class="literal">true</span> });
+}
+<span class="keyword">if</span> (!fs.<span class="title function_">existsSync</span>(cacheJSON)) {
+  fs.<span class="title function_">writeFileSync</span>(cacheJSON, <span class="string">'{}'</span>);
+}
 <span class="comment">/**</span>
 <span class="comment"> * Get cache</span>
-<span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">import(&#x27;./node_modules/cache/npm-install.json&#x27;)</span>&#125;</span>
+<span class="comment"> * <span class="doctag">@returns</span> {<span class="type">import('./node_modules/cache/npm-install.json')</span>}</span>
 <span class="comment"> */</span>
-<span class="keyword">const</span> <span class="title function_">getCache</span> = (<span class="params"></span>) =&gt; <span class="built_in">require</span>(<span class="string">&#x27;./node_modules/.cache/npm-install.json&#x27;</span>);
+<span class="keyword">const</span> <span class="title function_">getCache</span> = (<span class="params"></span>) =&gt; <span class="built_in">require</span>(<span class="string">'./node_modules/.cache/npm-install.json'</span>);
 
 <span class="comment">/**</span>
 <span class="comment"> * Save cache</span>
-<span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">any</span>&#125; <span class="variable">data</span></span>
+<span class="comment"> * <span class="doctag">@param</span> {<span class="type">any</span>} <span class="variable">data</span></span>
 <span class="comment"> * <span class="doctag">@returns</span></span>
 <span class="comment"> * <span class="doctag">@example</span></span>
 <span class="comment"> * const data = getCache()</span>
-<span class="comment"> * data[&#x27;key&#x27;]=&#x27;value&#x27;;</span>
+<span class="comment"> * data['key']='value';</span>
 <span class="comment"> * saveCache(data)</span>
 <span class="comment"> */</span>
 <span class="keyword">const</span> <span class="title function_">saveCache</span> = (<span class="params">data</span>) =&gt;
   fs.<span class="title function_">writeFileSync</span>(cacheJSON, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data, <span class="literal">null</span>, <span class="number">2</span>));
 
-(<span class="keyword">async</span> () =&gt; &#123;
+(<span class="keyword">async</span> () =&gt; {
   <span class="comment">// @todo clear cache local packages</span>
   <span class="keyword">const</span> packages = [pjson.<span class="property">dependencies</span>, pjson.<span class="property">devDependencies</span>];
   <span class="comment">/**</span>
 <span class="comment">   * list packages to update</span>
-<span class="comment">   * <span class="doctag">@type</span> &#123;<span class="type">string[]</span>&#125;</span>
+<span class="comment">   * <span class="doctag">@type</span> {<span class="type">string[]</span>}</span>
 <span class="comment">   */</span>
   <span class="keyword">const</span> toUpdate = [];
 
-  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; packages.<span class="property">length</span>; i++) &#123;
+  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; packages.<span class="property">length</span>; i++) {
     <span class="keyword">const</span> pkgs = packages[i];
     <span class="comment">//const isDev = i === 1; // &lt;-- index devDependencies</span>
-    <span class="keyword">for</span> (<span class="keyword">const</span> pkgname <span class="keyword">in</span> pkgs) &#123;
+    <span class="keyword">for</span> (<span class="keyword">const</span> pkgname <span class="keyword">in</span> pkgs) {
       <span class="comment">/**</span>
-<span class="comment">       * <span class="doctag">@type</span> &#123;<span class="type">string</span>&#125;</span>
+<span class="comment">       * <span class="doctag">@type</span> {<span class="type">string</span>}</span>
 <span class="comment">       */</span>
       <span class="keyword">const</span> version = pkgs[pkgname];
       <span class="comment">// re-installing local and monorepo package</span>
-      <span class="keyword">if</span> (<span class="regexp">/^((file|github):|(git|ssh)\+|http)/i</span>.<span class="title function_">test</span>(version)) &#123;
-        <span class="comment">//const arg = [version, isDev ? &#x27;-D&#x27; : &#x27;&#x27;].filter((str) =&gt; str.trim().length &gt; 0);</span>
+      <span class="keyword">if</span> (<span class="regexp">/^((file|github):|(git|ssh)\+|http)/i</span>.<span class="title function_">test</span>(version)) {
+        <span class="comment">//const arg = [version, isDev ? '-D' : ''].filter((str) =&gt; str.trim().length &gt; 0);</span>
         toUpdate.<span class="title function_">push</span>(pkgname);
-      &#125;
-    &#125;
-  &#125;
+      }
+    }
+  }
 
   <span class="comment">// do update</span>
 
-  <span class="keyword">const</span> isYarn = fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;yarn.lock&#x27;</span>));
+  <span class="keyword">const</span> isYarn = fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">'yarn.lock'</span>));
 
   <span class="comment">/**</span>
 <span class="comment">   * Internal update cache</span>
-<span class="comment">   * <span class="doctag">@returns</span> &#123;<span class="type">Promise&lt;ReturnType&lt;typeof getCache&gt;&gt;</span>&#125;</span>
+<span class="comment">   * <span class="doctag">@returns</span> {<span class="type">Promise&lt;ReturnType&lt;typeof getCache&gt;&gt;</span>}</span>
 <span class="comment">   */</span>
-  <span class="keyword">const</span> <span class="title function_">updateCache</span> = (<span class="params"></span>) =&gt; &#123;
-    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;
+  <span class="keyword">const</span> <span class="title function_">updateCache</span> = (<span class="params"></span>) =&gt; {
+    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> {
       <span class="comment">// save to cache</span>
       <span class="keyword">const</span> data = <span class="title function_">getCache</span>();
-      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; toUpdate.<span class="property">length</span>; i++) &#123;
+      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; toUpdate.<span class="property">length</span>; i++) {
         <span class="keyword">const</span> pkgname = toUpdate[i];
-        data[pkgname] = <span class="title class_">Object</span>.<span class="title function_">assign</span>(data[pkgname] || &#123;&#125;, &#123;
+        data[pkgname] = <span class="title class_">Object</span>.<span class="title function_">assign</span>(data[pkgname] || {}, {
           <span class="attr">lastInstall</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>()
-        &#125;);
-      &#125;
+        });
+      }
 
       <span class="title function_">saveCache</span>(data);
       <span class="title function_">resolve</span>(data);
-    &#125;);
-  &#125;;
+    });
+  };
 
   <span class="comment">/**</span>
 <span class="comment">   * check if all packages exists</span>
 <span class="comment">   * <span class="doctag">@returns</span></span>
 <span class="comment">   */</span>
-  <span class="keyword">const</span> <span class="title function_">checkNodeModules</span> = (<span class="params"></span>) =&gt; &#123;
+  <span class="keyword">const</span> <span class="title function_">checkNodeModules</span> = (<span class="params"></span>) =&gt; {
     <span class="keyword">const</span> exists = toUpdate.<span class="title function_">map</span>(
       <span class="function">(<span class="params">pkgname</span>) =&gt;</span>
-        fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;node_modules&#x27;</span>, pkgname)) &amp;&amp;
+        fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">'node_modules'</span>, pkgname)) &amp;&amp;
         fs.<span class="title function_">existsSync</span>(
-          path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;node_modules&#x27;</span>, pkgname, <span class="string">&#x27;package.json&#x27;</span>)
+          path.<span class="title function_">join</span>(__dirname, <span class="string">'node_modules'</span>, pkgname, <span class="string">'package.json'</span>)
         )
     );
-    <span class="comment">//console.log(&#123; exists &#125;);</span>
+    <span class="comment">//console.log({ exists });</span>
     <span class="keyword">return</span> exists.<span class="title function_">every</span>(<span class="function">(<span class="params">exist</span>) =&gt;</span> exist === <span class="literal">true</span>);
-  &#125;;
+  };
 
-  <span class="keyword">if</span> (<span class="title function_">checkNodeModules</span>()) &#123;
-    <span class="keyword">try</span> &#123;
-      <span class="keyword">if</span> (isYarn) &#123;
-        <span class="keyword">const</span> version = <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;yarn&#x27;</span>, [<span class="string">&#x27;--version&#x27;</span>]);
-        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;yarn version&#x27;</span>, version);
+  <span class="keyword">if</span> (<span class="title function_">checkNodeModules</span>()) {
+    <span class="keyword">try</span> {
+      <span class="keyword">if</span> (isYarn) {
+        <span class="keyword">const</span> version = <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'yarn'</span>, [<span class="string">'--version'</span>]);
+        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'yarn version'</span>, version);
 
-        <span class="keyword">if</span> (<span class="keyword">typeof</span> version.<span class="property">stdout</span> === <span class="string">&#x27;string&#x27;</span>) &#123;
-          <span class="keyword">if</span> (version.<span class="property">stdout</span>.<span class="title function_">includes</span>(<span class="string">&#x27;3.2.4&#x27;</span>)) &#123;
-            toUpdate.<span class="title function_">push</span>(<span class="string">&#x27;--check-cache&#x27;</span>);
-          &#125;
-        &#125;
+        <span class="keyword">if</span> (<span class="keyword">typeof</span> version.<span class="property">stdout</span> === <span class="string">'string'</span>) {
+          <span class="keyword">if</span> (version.<span class="property">stdout</span>.<span class="title function_">includes</span>(<span class="string">'3.2.4'</span>)) {
+            toUpdate.<span class="title function_">push</span>(<span class="string">'--check-cache'</span>);
+          }
+        }
         <span class="comment">// yarn cache clean</span>
-        <span class="keyword">if</span> (toUpdate.<span class="title function_">find</span>(<span class="function">(<span class="params">str</span>) =&gt;</span> str.<span class="title function_">startsWith</span>(<span class="string">&#x27;file:&#x27;</span>))) &#123;
-          <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;yarn&#x27;</span>, [<span class="string">&#x27;cache&#x27;</span>, <span class="string">&#x27;clean&#x27;</span>], &#123;
+        <span class="keyword">if</span> (toUpdate.<span class="title function_">find</span>(<span class="function">(<span class="params">str</span>) =&gt;</span> str.<span class="title function_">startsWith</span>(<span class="string">'file:'</span>))) {
+          <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'yarn'</span>, [<span class="string">'cache'</span>, <span class="string">'clean'</span>], {
             <span class="attr">cwd</span>: __dirname,
-            <span class="attr">stdio</span>: <span class="string">&#x27;inherit&#x27;</span>
-          &#125;);
-        &#125;
+            <span class="attr">stdio</span>: <span class="string">'inherit'</span>
+          });
+        }
         <span class="comment">// yarn upgrade package</span>
-        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;yarn&#x27;</span>, [<span class="string">&#x27;upgrade&#x27;</span>].<span class="title function_">concat</span>(...toUpdate), &#123;
+        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'yarn'</span>, [<span class="string">'upgrade'</span>].<span class="title function_">concat</span>(...toUpdate), {
           <span class="attr">cwd</span>: __dirname,
-          <span class="attr">stdio</span>: <span class="string">&#x27;inherit&#x27;</span>
-        &#125;);
-      &#125; <span class="keyword">else</span> &#123;
+          <span class="attr">stdio</span>: <span class="string">'inherit'</span>
+        });
+      } <span class="keyword">else</span> {
         <span class="comment">// npm cache clean package</span>
-        <span class="keyword">if</span> (toUpdate.<span class="title function_">find</span>(<span class="function">(<span class="params">str</span>) =&gt;</span> str.<span class="title function_">startsWith</span>(<span class="string">&#x27;file:&#x27;</span>))) &#123;
-          <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;npm&#x27;</span>, [<span class="string">&#x27;cache&#x27;</span>, <span class="string">&#x27;clean&#x27;</span>].<span class="title function_">concat</span>(...toUpdate), &#123;
+        <span class="keyword">if</span> (toUpdate.<span class="title function_">find</span>(<span class="function">(<span class="params">str</span>) =&gt;</span> str.<span class="title function_">startsWith</span>(<span class="string">'file:'</span>))) {
+          <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'npm'</span>, [<span class="string">'cache'</span>, <span class="string">'clean'</span>].<span class="title function_">concat</span>(...toUpdate), {
             <span class="attr">cwd</span>: __dirname,
-            <span class="attr">stdio</span>: <span class="string">&#x27;inherit&#x27;</span>
-          &#125;);
-        &#125;
+            <span class="attr">stdio</span>: <span class="string">'inherit'</span>
+          });
+        }
         <span class="comment">// npm update package</span>
-        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;npm&#x27;</span>, [<span class="string">&#x27;update&#x27;</span>].<span class="title function_">concat</span>(...toUpdate), &#123;
+        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'npm'</span>, [<span class="string">'update'</span>].<span class="title function_">concat</span>(...toUpdate), {
           <span class="attr">cwd</span>: __dirname,
-          <span class="attr">stdio</span>: <span class="string">&#x27;inherit&#x27;</span>
-        &#125;);
-      &#125;
+          <span class="attr">stdio</span>: <span class="string">'inherit'</span>
+        });
+      }
 
       <span class="comment">// update cache</span>
       <span class="keyword">await</span> <span class="title function_">updateCache</span>();
@@ -188,103 +188,103 @@ const pjson = require(&amp;#x27;./package.."><meta name="generator" content="Hex
       <span class="keyword">const</span> argv = process.<span class="property">argv</span>;
       <span class="comment">// node postinstall.js --commit</span>
       <span class="keyword">if</span> (
-        fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;.git&#x27;</span>)) &amp;&amp;
-        argv.<span class="title function_">includes</span>(<span class="string">&#x27;--commit&#x27;</span>)
-      ) &#123;
-        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;git&#x27;</span>, [<span class="string">&#x27;add&#x27;</span>, <span class="string">&#x27;package.json&#x27;</span>], &#123; <span class="attr">cwd</span>: __dirname &#125;);
-        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;git&#x27;</span>, [<span class="string">&#x27;add&#x27;</span>, <span class="string">&#x27;package-lock.json&#x27;</span>], &#123; <span class="attr">cwd</span>: __dirname &#125;);
-        <span class="keyword">const</span> status = <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">&#x27;git&#x27;</span>, [<span class="string">&#x27;status&#x27;</span>, <span class="string">&#x27;--porcelain&#x27;</span>], &#123;
+        fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">'.git'</span>)) &amp;&amp;
+        argv.<span class="title function_">includes</span>(<span class="string">'--commit'</span>)
+      ) {
+        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'git'</span>, [<span class="string">'add'</span>, <span class="string">'package.json'</span>], { <span class="attr">cwd</span>: __dirname });
+        <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'git'</span>, [<span class="string">'add'</span>, <span class="string">'package-lock.json'</span>], { <span class="attr">cwd</span>: __dirname });
+        <span class="keyword">const</span> status = <span class="keyword">await</span> <span class="title function_">summon</span>(<span class="string">'git'</span>, [<span class="string">'status'</span>, <span class="string">'--porcelain'</span>], {
           <span class="attr">cwd</span>: __dirname
-        &#125;);
-        <span class="variable language_">console</span>.<span class="title function_">log</span>(&#123; status &#125;);
+        });
+        <span class="variable language_">console</span>.<span class="title function_">log</span>({ status });
         <span class="keyword">if</span> (
           status.<span class="property">stdout</span> &amp;&amp;
-          (status.<span class="property">stdout</span>.<span class="title function_">includes</span>(<span class="string">&#x27;package.json&#x27;</span>) ||
-            status.<span class="property">stdout</span>.<span class="title function_">includes</span>(<span class="string">&#x27;package-lock.json&#x27;</span>))
-        ) &#123;
+          (status.<span class="property">stdout</span>.<span class="title function_">includes</span>(<span class="string">'package.json'</span>) ||
+            status.<span class="property">stdout</span>.<span class="title function_">includes</span>(<span class="string">'package-lock.json'</span>))
+        ) {
           <span class="keyword">await</span> <span class="title function_">summon</span>(
-            <span class="string">&#x27;git&#x27;</span>,
-            [<span class="string">&#x27;commit&#x27;</span>, <span class="string">&#x27;-m&#x27;</span>, <span class="string">&#x27;Update dependencies\nDate: &#x27;</span> + <span class="keyword">new</span> <span class="title class_">Date</span>()],
-            &#123;
+            <span class="string">'git'</span>,
+            [<span class="string">'commit'</span>, <span class="string">'-m'</span>, <span class="string">'Update dependencies\nDate: '</span> + <span class="keyword">new</span> <span class="title class_">Date</span>()],
+            {
               <span class="attr">cwd</span>: __dirname
-            &#125;
+            }
           );
-        &#125;
-      &#125;
-    &#125; <span class="keyword">catch</span> (e) &#123;
+        }
+      }
+    } <span class="keyword">catch</span> (e) {
       <span class="keyword">if</span> (e <span class="keyword">instanceof</span> <span class="title class_">Error</span>) <span class="variable language_">console</span>.<span class="title function_">error</span>(e.<span class="property">message</span>);
-    &#125;
-  &#125; <span class="keyword">else</span> &#123;
-    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;some packages already deleted from node_modules&#x27;</span>);
-  &#125;
-&#125;)();
+    }
+  } <span class="keyword">else</span> {
+    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'some packages already deleted from node_modules'</span>);
+  }
+})();
 
 <span class="comment">/**</span>
 <span class="comment"> * spawn command prompt</span>
-<span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">cmd</span></span>
-<span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string[]</span>&#125; <span class="variable">args</span></span>
-<span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Parameters&lt;typeof spawn&gt;[2]</span>&#125; <span class="variable">opt</span></span>
-<span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">Promise&lt;Error|&#123;stdout:string,stderr:string</span>&#125;&gt;&#125;</span>
+<span class="comment"> * <span class="doctag">@param</span> {<span class="type">string</span>} <span class="variable">cmd</span></span>
+<span class="comment"> * <span class="doctag">@param</span> {<span class="type">string[]</span>} <span class="variable">args</span></span>
+<span class="comment"> * <span class="doctag">@param</span> {<span class="type">Parameters&lt;typeof spawn&gt;[2]</span>} <span class="variable">opt</span></span>
+<span class="comment"> * <span class="doctag">@returns</span> {<span class="type">Promise&lt;Error|{stdout:string,stderr:string</span>}&gt;}</span>
 <span class="comment"> */</span>
-<span class="keyword">function</span> <span class="title function_">summon</span>(<span class="params">cmd, args = [], opt = &#123;&#125;</span>) &#123;
-  <span class="keyword">const</span> spawnopt = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123; <span class="attr">cwd</span>: __dirname &#125;, opt || &#123;&#125;);
+<span class="keyword">function</span> <span class="title function_">summon</span>(<span class="params">cmd, args = [], opt = {}</span>) {
+  <span class="keyword">const</span> spawnopt = <span class="title class_">Object</span>.<span class="title function_">assign</span>({ <span class="attr">cwd</span>: __dirname }, opt || {});
   <span class="comment">// *** Return the promise</span>
-  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve</span>) &#123;
-    <span class="keyword">if</span> (<span class="keyword">typeof</span> cmd !== <span class="string">&#x27;string&#x27;</span> || cmd.<span class="title function_">trim</span>().<span class="property">length</span> === <span class="number">0</span>)
-      <span class="keyword">return</span> <span class="title function_">resolve</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;cmd empty&#x27;</span>));
-    <span class="keyword">let</span> stdout = <span class="string">&#x27;&#x27;</span>;
-    <span class="keyword">let</span> stderr = <span class="string">&#x27;&#x27;</span>;
+  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve</span>) {
+    <span class="keyword">if</span> (<span class="keyword">typeof</span> cmd !== <span class="string">'string'</span> || cmd.<span class="title function_">trim</span>().<span class="property">length</span> === <span class="number">0</span>)
+      <span class="keyword">return</span> <span class="title function_">resolve</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">'cmd empty'</span>));
+    <span class="keyword">let</span> stdout = <span class="string">''</span>;
+    <span class="keyword">let</span> stderr = <span class="string">''</span>;
     <span class="keyword">const</span> child = <span class="title function_">spawn</span>(cmd, args, spawnopt);
-    <span class="comment">// if (spawnopt.stdio === &#x27;ignore&#x27;) child.unref();</span>
+    <span class="comment">// if (spawnopt.stdio === 'ignore') child.unref();</span>
 
-    <span class="keyword">if</span> (child.<span class="property">stdout</span> &amp;&amp; <span class="string">&#x27;on&#x27;</span> <span class="keyword">in</span> child.<span class="property">stdout</span>) &#123;
-      child.<span class="property">stdout</span>.<span class="title function_">setEncoding</span>(<span class="string">&#x27;utf8&#x27;</span>);
-      child.<span class="property">stdout</span>.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;
+    <span class="keyword">if</span> (child.<span class="property">stdout</span> &amp;&amp; <span class="string">'on'</span> <span class="keyword">in</span> child.<span class="property">stdout</span>) {
+      child.<span class="property">stdout</span>.<span class="title function_">setEncoding</span>(<span class="string">'utf8'</span>);
+      child.<span class="property">stdout</span>.<span class="title function_">on</span>(<span class="string">'data'</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> {
         stdout += data;
-      &#125;);
-    &#125;
+      });
+    }
 
-    <span class="keyword">if</span> (child.<span class="property">stderr</span> &amp;&amp; <span class="string">&#x27;on&#x27;</span> <span class="keyword">in</span> child.<span class="property">stdout</span>) &#123;
-      child.<span class="property">stderr</span>.<span class="title function_">setEncoding</span>(<span class="string">&#x27;utf8&#x27;</span>);
-      child.<span class="property">stderr</span>.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;
+    <span class="keyword">if</span> (child.<span class="property">stderr</span> &amp;&amp; <span class="string">'on'</span> <span class="keyword">in</span> child.<span class="property">stdout</span>) {
+      child.<span class="property">stderr</span>.<span class="title function_">setEncoding</span>(<span class="string">'utf8'</span>);
+      child.<span class="property">stderr</span>.<span class="title function_">on</span>(<span class="string">'data'</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> {
         stderr += data;
-      &#125;);
-    &#125;
+      });
+    }
 
     <span class="comment">// silence errors</span>
-    child.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;
-      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;got error&#x27;</span>, err);
-    &#125;);
+    child.<span class="title function_">on</span>(<span class="string">'error'</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> {
+      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'got error'</span>, err);
+    });
 
-    child.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="keyword">function</span> (<span class="params">code</span>) &#123;
-      <span class="comment">// Should probably be &#x27;exit&#x27;, not &#x27;close&#x27;</span>
+    child.<span class="title function_">on</span>(<span class="string">'close'</span>, <span class="keyword">function</span> (<span class="params">code</span>) {
+      <span class="comment">// Should probably be 'exit', not 'close'</span>
       <span class="keyword">if</span> (code !== <span class="number">0</span>)
-        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;[ERROR]&#x27;</span>, cmd, ...args, <span class="string">&#x27;dies with code&#x27;</span>, code);
+        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'[ERROR]'</span>, cmd, ...args, <span class="string">'dies with code'</span>, code);
       <span class="comment">// *** Process completed</span>
-      <span class="title function_">resolve</span>(&#123; stdout, stderr &#125;);
-    &#125;);
-    child.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span> (<span class="params">err</span>) &#123;
+      <span class="title function_">resolve</span>({ stdout, stderr });
+    });
+    child.<span class="title function_">on</span>(<span class="string">'error'</span>, <span class="keyword">function</span> (<span class="params">err</span>) {
       <span class="comment">// *** Process creation failed</span>
       <span class="title function_">resolve</span>(err);
-    &#125;);
-  &#125;);
-&#125;
+    });
+  });
+}
 
 <span class="comment">/**</span>
 <span class="comment"> * No Operation</span>
-<span class="comment"> * <span class="doctag">@param</span>  &#123;<span class="type">...any</span>&#125; <span class="variable">_</span></span>
+<span class="comment"> * <span class="doctag">@param</span>  {<span class="type">...any</span>} <span class="variable">_</span></span>
 <span class="comment"> * <span class="doctag">@returns</span></span>
 <span class="comment"> */</span>
-<span class="keyword">function</span> <span class="title function_">_noop</span>(<span class="params">..._</span>) &#123;
+<span class="keyword">function</span> <span class="title function_">_noop</span>(<span class="params">..._</span>) {
   <span class="keyword">return</span>;
-&#125;</code></pre>
+}</code></pre>
 <h2 id="Register-Script">Register Script</h2>
 <p>add script <code>postinstall</code> to package.json</p>
-<pre><code class="highlight json"><span class="punctuation">&#123;</span>
-  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
-    <span class="attr">&quot;postinstall&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node postinstall.js&quot;</span>
-  <span class="punctuation">&#125;</span>
-<span class="punctuation">&#125;</span></code></pre>
+<pre><code class="highlight json"><span class="punctuation">{</span>
+  <span class="attr">"scripts"</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+    <span class="attr">"postinstall"</span><span class="punctuation">:</span> <span class="string">"node postinstall.js"</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></code></pre>
 <h2 id="Conclusion">Conclusion</h2>
 <h3 id="usages">usages</h3>
 <p>just run <code>npm install</code> and the script <code>postinstall</code> runned automatically.</p>
@@ -294,8 +294,8 @@ const pjson = require(&amp;#x27;./package.."><meta name="generator" content="Hex
 <ul>
 <li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMzI4NzM4NjcvdXBkYXRlLWxvY2FsLWZpbGUtZGVwZW5kZW5jeS13aXRoLW5wbQ==">https://stackoverflow.com/questions/32873867/update-local-file-dependency-with-npm</a></li>
 </ul>
-</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/chimeraland/monsters/hermit-crab.html" title="Monster hermit crab"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Monster hermit crab</span></a><a class="button is-default" href="/Java/android-webview-extra-headers.html" title="Android Webview With Extra Headers"><span class="has-text-weight-semibold">Next: Android Webview With Extra Headers</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/NodeJS/update-local-dependencies.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/NodeJS/update-local-dependencies.html" title="Auto update NPM local and monorepo dependencies"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: Auto update NPM local and monorepo dependencies</span></a><a class="button is-default" href="/Java/android-webview-extra-headers.html" title="Android Webview With Extra Headers"><span class="has-text-weight-semibold">Next: Android Webview With Extra Headers</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/NodeJS/update-local-dependencies.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
-<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css" />
-</body>
-      </html>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

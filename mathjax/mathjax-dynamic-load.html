@@ -20,77 +20,77 @@ document.addEventListener(&amp;quot;DOMContentLoaded&amp;quot;, function (event)
 <span class="comment">// https://polyfill.io/v3/polyfill.min.js?features=es6</span>
 <span class="comment">// https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span>
 
-<span class="comment">// const mathjaxOpt = {/*overriden options*/}</span>
+<span class="comment">// const mathjaxOpt = &#123;/*overriden options*/&#125;</span>
 
-<span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">"DOMContentLoaded"</span>, <span class="keyword">function</span> (<span class="params">event</span>) {
-  <span class="title function_">mathjaxScript</span>(<span class="string">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span>)
-    .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params"></span>) {
-      <span class="variable language_">window</span>.<span class="property">MathJax</span> = {
-        <span class="attr">loader</span>: {
+<span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;
+  <span class="title function_">mathjaxScript</span>(<span class="string">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span>)
+    .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;
+      <span class="variable language_">window</span>.<span class="property">MathJax</span> = &#123;
+        <span class="attr">loader</span>: &#123;
           <span class="attr">load</span>: [
-            <span class="string">"input/tex-base"</span>,
-            <span class="string">"[tex]/newcommand"</span>,
-            <span class="string">"[tex]/action"</span>,
-            <span class="string">"output/chtml"</span>
+            <span class="string">&quot;input/tex-base&quot;</span>,
+            <span class="string">&quot;[tex]/newcommand&quot;</span>,
+            <span class="string">&quot;[tex]/action&quot;</span>,
+            <span class="string">&quot;output/chtml&quot;</span>
           ]
-        },
-        <span class="attr">chtml</span>: {
+        &#125;,
+        <span class="attr">chtml</span>: &#123;
           <span class="attr">scale</span>: <span class="number">1</span>, <span class="comment">// global scaling factor for all expressions</span>
           <span class="attr">minScale</span>: <span class="number">0.5</span>, <span class="comment">// smallest scaling factor to use</span>
           <span class="attr">matchFontHeight</span>: <span class="literal">true</span>, <span class="comment">// true to match ex-height of surrounding font</span>
           <span class="attr">mtextInheritFont</span>: <span class="literal">false</span>, <span class="comment">// true to make mtext elements use surrounding font</span>
           <span class="attr">merrorInheritFont</span>: <span class="literal">true</span>, <span class="comment">// true to make merror text use surrounding font</span>
           <span class="attr">mathmlSpacing</span>: <span class="literal">false</span>, <span class="comment">// true for MathML spacing rules, false for TeX rules</span>
-          <span class="attr">skipAttributes</span>: {}, <span class="comment">// RFDa and other attributes NOT to copy to the output</span>
+          <span class="attr">skipAttributes</span>: &#123;&#125;, <span class="comment">// RFDa and other attributes NOT to copy to the output</span>
           <span class="attr">exFactor</span>: <span class="number">0.5</span>, <span class="comment">// default size of ex in em units</span>
-          <span class="attr">displayAlign</span>: <span class="string">"left"</span>, <span class="comment">// default for indentalign when set to 'auto'</span>
-          <span class="attr">displayIndent</span>: <span class="string">"0"</span> <span class="comment">// default for indentshift when set to 'auto'</span>
-        },
-        <span class="attr">tex</span>: {
+          <span class="attr">displayAlign</span>: <span class="string">&quot;left&quot;</span>, <span class="comment">// default for indentalign when set to &#x27;auto&#x27;</span>
+          <span class="attr">displayIndent</span>: <span class="string">&quot;0&quot;</span> <span class="comment">// default for indentshift when set to &#x27;auto&#x27;</span>
+        &#125;,
+        <span class="attr">tex</span>: &#123;
           <span class="attr">inlineMath</span>: [
-            [<span class="string">"$"</span>, <span class="string">"$"</span>],
-            [<span class="string">"\\("</span>, <span class="string">"\\)"</span>]
+            [<span class="string">&quot;$&quot;</span>, <span class="string">&quot;$&quot;</span>],
+            [<span class="string">&quot;\\(&quot;</span>, <span class="string">&quot;\\)&quot;</span>]
           ],
-          <span class="attr">packages</span>: [<span class="string">"base"</span>, <span class="string">"newcommand"</span>, <span class="string">"action"</span>]
-        },
-        <span class="attr">svg</span>: {
-          <span class="attr">fontCache</span>: <span class="string">"global"</span>
-        }
-      };
+          <span class="attr">packages</span>: [<span class="string">&quot;base&quot;</span>, <span class="string">&quot;newcommand&quot;</span>, <span class="string">&quot;action&quot;</span>]
+        &#125;,
+        <span class="attr">svg</span>: &#123;
+          <span class="attr">fontCache</span>: <span class="string">&quot;global&quot;</span>
+        &#125;
+      &#125;;
 
       <span class="comment">// assign overriden option</span>
-      <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">window</span>.<span class="property">mathjaxOpt</span> === <span class="string">"object"</span>) {
+      <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">window</span>.<span class="property">mathjaxOpt</span> === <span class="string">&quot;object&quot;</span>) &#123;
         <span class="variable language_">window</span>.<span class="property">MathJax</span> = <span class="title class_">Object</span>.<span class="title function_">assign</span>(<span class="variable language_">window</span>.<span class="property">MathJax</span>, <span class="variable language_">window</span>.<span class="property">mathjaxOpt</span>);
-      }
-    })
-    .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params"></span>) {
-      <span class="title function_">mathjaxScript</span>(<span class="string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"</span>);
-    });
-});
+      &#125;
+    &#125;)
+    .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;
+      <span class="title function_">mathjaxScript</span>(<span class="string">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js&quot;</span>);
+    &#125;);
+&#125;);
 
-<span class="keyword">function</span> <span class="title function_">mathjaxScript</span>(<span class="params">src</span>) {
-  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> {
-    <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">"script"</span>);
+<span class="keyword">function</span> <span class="title function_">mathjaxScript</span>(<span class="params">src</span>) &#123;
+  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;
+    <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>);
     script.<span class="property">src</span> = src;
     script.<span class="property">onload</span> = resolve;
     <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script);
-  });
-}</code></pre>
+  &#125;);
+&#125;</code></pre>
 <p>Save above script to file cloud then call it like below:</p>
 <pre><code class="highlight html"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span>
-<span class="language-javascript">  <span class="keyword">const</span> mathjaxOpt = {<span class="comment">/*if you want overriden options of MathJax*/</span>}</span>
+<span class="language-javascript">  <span class="keyword">const</span> mathjaxOpt = &#123;<span class="comment">/*if you want overriden options of MathJax*/</span>&#125;</span>
 <span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
-<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"your file.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;your file.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
 <p>you can use our cdn</p>
-<pre><code class="highlight html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/mathjax/loader.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<pre><code class="highlight html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/mathjax/loader.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
 <h2 id="Online-mathjax-playground">Online mathjax playground</h2>
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="wvjRReG" data-editable="true" data-user="dimaslanjaka" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYS9wZW4vd3ZqUlJlRw==">
   MathJax Playground</a> by dimas lanjaka (<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlvL2RpbWFzbGFuamFrYQ==">@dimaslanjaka</a>)
   on <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlcGVuLmlv" rel="nofollow noopener noreferer noopener">CodePen</a>.</span>
 </p>
-<script async="" src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/NodeJS/gulp-delete-clean-snippet.html" title="How to delete files with gulp without any plugin"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: How to delete files with gulp without any plugin</span></a><a class="button is-default" href="/mathjax/playground.html" title="MathJax Playground"><span class="has-text-weight-semibold">Next: MathJax Playground</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/mathjax/mathjax-dynamic-load.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async=""></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo |&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/NodeJS/gulp-delete-clean-snippet.html" title="How to delete files with gulp without any plugin"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: How to delete files with gulp without any plugin</span></a><a class="button is-default" href="/mathjax/playground.html" title="MathJax Playground"><span class="has-text-weight-semibold">Next: MathJax Playground</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><!--section.related-posts= getRelatedPost(page)--><div id="disqus_thread"></div><article class="mt-6 comment-container" id="disqus"><script>var disqus_config = function () { this.page.url = 'https://www.webmanajemen.com/mathjax/mathjax-dynamic-load.html'; this.page.identifier = 'dimaslanjaka'; this.page.title = document.title; };</script><script>(function() {var d = document, s = d.createElement('script');s.src = '//dimaslanjaka.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><script id="dsq-count-scr" src="//blog-pubgj2togw.disqus.com/count.js" async></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/dimaslanjaka"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//dimaslanjaka1"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Dimas Lanjaka 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap hidden"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" href="//github.com/haojen" rel="nofollow noopener noopener">Theme by Haojen&nbsp;</a><a title="Hexo theme contributor" target="_blank" href="//github.com/dimaslanjaka" rel="nofollow noopener noopener">Modded by L3n4r0x&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL0hhb2plbi9oZXhvLXRoZW1lLUNsYXVkaWE=" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" rel="nofollow noopener noopener"></a></div></div><div><span></span></div></footer><!-- script(async defer src="//buttons.github.io/buttons.js")--><script src="//www.webmanajemen.com/page/assets/js/r-ads.js" type="text/javascript"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script>
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
-<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
-
-      </body></html>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css" />
+</body>
+      </html>

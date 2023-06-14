@@ -42,6 +42,19 @@ export declare function arrayOfObjUniq<T extends any[]>(arr: T, field: string): 
  */
 export declare function array_shuffle<T extends any[]>(items: T): T;
 /**
+ * generate random number
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param n
+ * @returns
+ */
+export declare const rand: (n: number) => number;
+/**
+ * fast shuffle array using swap method
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param t
+ */
+export declare function array_shuffle_swap<T extends any[]>(t: T): void;
+/**
  * flattern array
  * @param arr
  * @returns

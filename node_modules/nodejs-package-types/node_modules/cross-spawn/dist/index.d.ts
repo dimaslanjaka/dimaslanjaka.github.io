@@ -1,4 +1,5 @@
 import * as internalSpawn from './spawn';
+export * from './spawn';
 export declare const spawn: typeof internalSpawn.spawn;
 export declare const sync: typeof internalSpawn.spawnSync;
 export declare const async: typeof internalSpawn.spawnAsync;

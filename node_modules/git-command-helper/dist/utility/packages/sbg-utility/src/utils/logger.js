@@ -28,32 +28,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
 const fs_extra_1 = require("fs-extra");
-const os_1 = require("os");
 const slugify_1 = __importDefault(require("slugify"));
 const upath_1 = require("upath");
 const configs = __importStar(require("../config"));
 const filemanager_1 = require("./filemanager");
 const jest_1 = require("./jest");
-const getConfig = configs.getConfig;
-const FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs');
+let FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs');
+let cwd = process.cwd();
 // disable console.log on jest
 if ((0, jest_1.areWeTestingWithJest)()) {
-    // const log = console.log;
+    const log = console.log;
     console.log = function (...args) {
-        var _a;
-        const config = getConfig();
-        const stack = (_a = new Error('').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gm);
+        if (typeof configs.getConfig === 'function') {
+            const cfg = configs.getConfig();
+            FOLDER = (0, upath_1.join)(cfg.cwd, 'tmp/logs/');
+            cwd = cfg.cwd;
+        }
+        const stack = (new Error('').stack || '').split(/\r?\n/gm);
         let msg = (stack || [])[3] || '';
         if (msg.includes(__filename)) {
-            msg = (stack || [])[4] || '';
+            msg = (stack || [])[2] || '';
         }
-        const filename = (0, slugify_1.default)((0, upath_1.toUnix)(msg).replace((0, upath_1.toUnix)(config.cwd), ''), {
+        // log(stack[2], stack[4]);
+        const filename = (0, slugify_1.default)((0, upath_1.toUnix)(msg).replace((0, upath_1.toUnix)(cwd), ''), {
             lower: true,
             trim: true,
             replacement: '-',
             strict: true
         });
-        (0, filemanager_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
+        const header = `\n\n ${new Date()} \n\n`;
+        const write = (0, filemanager_1.writefile)((0, upath_1.join)(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
+        log(write.file);
     };
 }
 const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);

@@ -13,6 +13,7 @@ if (typeof module !== 'undefined' && 'exports' in module) {
   module.exports._enoent = internalSpawn._enoent;
 }
 
+export * from './spawn';
 export const spawn = internalSpawn.spawn;
 export const sync = internalSpawn.spawnSync;
 export const async = internalSpawn.spawnAsync;
@@ -21,3 +22,4 @@ export const spawnAsync = internalSpawn.spawnAsync;
 export const _parse = internalSpawn._parse;
 export const _enoent = internalSpawn._enoent;
 export default internalSpawn;
+

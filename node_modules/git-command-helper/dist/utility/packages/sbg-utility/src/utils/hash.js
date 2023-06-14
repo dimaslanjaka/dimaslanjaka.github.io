@@ -126,7 +126,11 @@ exports.data_to_hash_sync = data_to_hash_sync;
  */
 async function folder_to_hash(alogarithm, folder, options) {
     return new Promise((resolvePromise, rejectPromise) => {
-        options = Object.assign({ encoding: 'hex', ignored: [], pattern: '' }, options || {});
+        options = Object.assign({
+            encoding: 'hex',
+            ignored: [],
+            pattern: ''
+        }, options || {});
         if (folder.startsWith('file:'))
             folder = folder.replace('file:', '');
         // fix non exist

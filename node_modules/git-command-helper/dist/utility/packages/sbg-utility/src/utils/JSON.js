@@ -1,70 +1,44 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.jsonStringifyWithCircularRefs = void 0;
-JSON.stringifyWithCircularRefs = (function () {
-    const refs = new Map();
-    const parents = [];
-    const path = ['this'];
-    function clear() {
-        refs.clear();
-        parents.length = 0;
-        path.length = 1;
-    }
-    function updateParents(key, value) {
-        let idx = parents.length - 1;
-        let prev = parents[idx];
-        if (prev[key] === value || idx === 0) {
-            path.push(key);
-            parents.push(value);
-        }
-        else {
-            while (idx-- >= 0) {
-                prev = parents[idx];
-                if (prev[key] === value) {
-                    idx += 2;
-                    parents.length = idx;
-                    path.length = idx;
-                    --idx;
-                    parents[idx] = value;
-                    path[idx] = key;
-                    break;
-                }
-            }
-        }
-    }
-    function checkCircular(key, value) {
-        if (value != null) {
-            if (typeof value === 'object') {
-                if (key) {
-                    updateParents(key, value);
-                }
-                const other = refs.get(value);
-                if (other) {
-                    return '[Circular Reference]' + other;
-                }
-                else {
-                    refs.set(value, path.join('.'));
-                }
-            }
-        }
-        return value;
-    }
-    return function stringifyWithCircularRefs(obj, space = 2) {
-        try {
-            parents.push(obj);
-            return JSON.stringify(obj, checkCircular, space);
-        }
-        finally {
-            clear();
-        }
-    };
-})();
+exports.jsonParseWithCircularRefs = exports.jsonStringifyWithCircularRefs = void 0;
+const serializer = __importStar(require("./JSON-serializer"));
+JSON.stringifyWithCircularRefs = serializer.toJSON;
 /**
  * transform any object to json. Suppress `TypeError: Converting circular structure to JSON`
  * @param data
  * @returns
  */
 function jsonStringifyWithCircularRefs(data) {
-    return JSON.stringifyWithCircularRefs(data);
+    return serializer.stringify(data);
 }
 exports.jsonStringifyWithCircularRefs = jsonStringifyWithCircularRefs;
+/**
+ * parse json stringified with circular refs
+ */
+function jsonParseWithCircularRefs(data) {
+    return serializer.parse(data);
+}
+exports.jsonParseWithCircularRefs = jsonParseWithCircularRefs;

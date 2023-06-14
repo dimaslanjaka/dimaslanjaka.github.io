@@ -18,4 +18,5 @@ __exportStar(require("./gulp-cache"), exports);
 __exportStar(require("./gulp-dom"), exports);
 __exportStar(require("./gulp-options"), exports);
 __exportStar(require("./gulp.debug"), exports);
+__exportStar(require("./index"), exports);
 //

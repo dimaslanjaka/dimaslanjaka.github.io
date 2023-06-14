@@ -269,20 +269,10 @@ async function addReadMe() {
     // run `git fsck` fix long time getting git status
     // await spawnAsync('git', ['fsck']);
     // skip index tarball which ignored by .gitignore
-    const checkIgnoreSpawn = await spawnAsync('git', ['status', '--porcelain', '--ignored'], {
-      cwd: __dirname
-    }).catch((err) => {
-      console.log(err);
-      return { output: '', stdout: '', err };
-    });
 
     if (argv['commit']) {
-      const checkIgnore = (checkIgnoreSpawn.output || checkIgnoreSpawn.stdout)
-        .split(/\r?\n/)
-        .map((str) => str.trim())
-        .filter((str) => str.startsWith('!!'))
-        .map((str) => str.replace('!!', '').trim());
-      if (checkIgnore.includes(relativeTarball)) {
+      const checkIgnore = await git.isIgnored(relativeTarball, { cwd: __dirname });
+      if (checkIgnore) {
         console.log(relativeTarball, 'ignored by .gitignore');
         continue;
       } else {
@@ -310,14 +300,16 @@ async function addReadMe() {
     const dev = raw.rawURL;
     const prod = raw.rawURL.replace('/raw/' + branch, '/raw/' + hash);
     let ver = basename(tarball.relative, '.tgz').replace(`${packagejson.name}-`, '');
-    if (isNaN(parseFloat(ver))) {
-      ver = 'latest';
-      tarballUrl = dev;
-      md += `| ${ver} | ${prod} |\n`;
-    } else {
-      tarballUrl = prod;
+    if (typeof hash === 'string') {
+      if (isNaN(parseFloat(ver))) {
+        ver = 'latest';
+        tarballUrl = dev;
+        md += `| ${ver} | ${prod} |\n`;
+      } else {
+        tarballUrl = prod;
+      }
+      md += `| ${ver} | ${tarballUrl} |\n`;
     }
-    md += `| ${ver} | ${tarballUrl} |\n`;
   }
 
   md += `

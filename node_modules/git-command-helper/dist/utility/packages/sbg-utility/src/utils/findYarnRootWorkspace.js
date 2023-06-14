@@ -38,6 +38,8 @@ function findYarnRootWorkspace(ctx) {
     // loop searching
     do {
         const manifest = readPackageJSON(current);
+        if (!manifest)
+            continue;
         const workspaces = extractWorkspaces(manifest);
         if (workspaces) {
             const relativePath = (0, path_1.relative)(current, baseDir);

@@ -1,3 +1,4 @@
+export declare const isWindows: boolean;
 export declare const trueCasePathSync: (filePath: string, basePath?: string | trueCasePathNewCallbackOpt, cbOpt?: trueCasePathNewCallbackOpt) => string;
 export declare const trueCasePath: (filePath: string, basePath?: string | trueCasePathNewCallbackOpt, cbOpt?: trueCasePathNewCallbackOpt) => string;
 interface trueCasePathNewCallbackOpt {

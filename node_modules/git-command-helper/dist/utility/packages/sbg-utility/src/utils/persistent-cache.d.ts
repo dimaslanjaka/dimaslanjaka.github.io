@@ -45,7 +45,7 @@ export declare class persistentCache implements PersistentCacheOpt {
     duration: number;
     memory: boolean;
     persist: boolean;
-    memoryCache: {};
+    memoryCache: Record<string, any>;
     constructor(options?: Partial<PersistentCacheOpt>);
     /**
      * add cache deferred callback

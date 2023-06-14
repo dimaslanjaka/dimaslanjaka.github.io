@@ -12,3 +12,7 @@ export interface JSON {
  * @returns
  */
 export declare function jsonStringifyWithCircularRefs(data: any): string;
+/**
+ * parse json stringified with circular refs
+ */
+export declare function jsonParseWithCircularRefs(data: string): any;

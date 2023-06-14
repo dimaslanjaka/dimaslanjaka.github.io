@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.array_flatten = exports.array_shuffle = exports.arrayOfObjUniq = exports.array_remove_empty = exports.array_unique = exports.array_random = void 0;
+exports.array_flatten = exports.array_shuffle_swap = exports.rand = exports.array_shuffle = exports.arrayOfObjUniq = exports.array_remove_empty = exports.array_unique = exports.array_random = void 0;
 /**
  * pick random items from array
  * @param items
@@ -90,6 +90,39 @@ function array_shuffle(items) {
     return items.sort(() => Math.random() - 0.5);
 }
 exports.array_shuffle = array_shuffle;
+/**
+ * generate random number
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param n
+ * @returns
+ */
+const rand = (n) => 0 | (Math.random() * n);
+exports.rand = rand;
+/**
+ * fast shuffle array (internal)
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param t
+ */
+function swap(t, i, j) {
+    const q = t[i];
+    t[i] = t[j];
+    t[j] = q;
+    return t;
+}
+/**
+ * fast shuffle array using swap method
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param t
+ */
+function array_shuffle_swap(t) {
+    let last = t.length;
+    let n;
+    while (last > 0) {
+        n = (0, exports.rand)(last);
+        swap(t, n, --last);
+    }
+}
+exports.array_shuffle_swap = array_shuffle_swap;
 /**
  * flattern array
  * @param arr

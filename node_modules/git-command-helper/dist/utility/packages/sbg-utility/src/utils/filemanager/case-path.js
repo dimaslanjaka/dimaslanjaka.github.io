@@ -1,14 +1,14 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.trueCasePath = exports.trueCasePathSync = void 0;
+exports.trueCasePath = exports.trueCasePathSync = exports.isWindows = void 0;
 const fs_extra_1 = require("fs-extra");
 const os_1 = require("os");
 const path_1 = require("path");
 const upath_1 = require("upath");
 const util_1 = require("util");
 const readdir = (0, util_1.promisify)(fs_extra_1.readdir);
-const isWindows = (0, os_1.platform)() === 'win32';
-const delimiter = isWindows ? '\\' : '/';
+exports.isWindows = (0, os_1.platform)() === 'win32';
+const delimiter = exports.isWindows ? '\\' : '/';
 exports.trueCasePathSync = trueCasePathNew({ sync: true });
 exports.trueCasePath = trueCasePathNew({ sync: false });
 function trueCasePathNew(opt) {
@@ -88,7 +88,7 @@ function _trueCasePath({ sync }) {
             if (basePath) {
                 throw new Error('[true-case-path]: filePath must be relative when used with basePath');
             }
-            basePath = isWindows
+            basePath = exports.isWindows
                 ? (_a = segments.shift()) === null || _a === void 0 ? void 0 : _a.toUpperCase() // drive letter
                 : '';
         }

@@ -1,0 +1,12 @@
+import { Pattern } from 'hexo-util';
+declare function isMatch(path: any, patterns: any): any;
+declare function isTmpFile(path: any): any;
+declare function isHiddenFile(path: any): boolean;
+declare function isExcludedFile(path: any, config: any): boolean;
+export declare const ignoreTmpAndHiddenFile: Pattern;
+export { isTmpFile };
+export { isHiddenFile };
+export { isExcludedFile };
+export declare function toDate(date: any): any;
+export declare function timezone(date: any, timezone: any): Date;
+export { isMatch };

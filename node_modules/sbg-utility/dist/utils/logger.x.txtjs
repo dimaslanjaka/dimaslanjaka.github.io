@@ -1,0 +1,7 @@
+process.env.JEST_WORKER_ID = '1';
+
+import './logger';
+
+console.log('xxx');
+
+console.log('yyy');

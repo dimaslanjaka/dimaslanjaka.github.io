@@ -1,3 +1,5 @@
+console.clear();
+
 /* eslint-disable no-undef */
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-inner-declarations */
@@ -127,12 +129,6 @@ function jQueryMethod() {
     });
   };
 
-  let processLi = function () {
-    jQuery('#search-questions').on('keyup', function () {
-      searchLi(jQuery(this).val());
-    });
-  };
-
   // transform array to li
   let transformArray2Li = function () {
     // clean orphan text
@@ -196,15 +192,31 @@ function jQueryMethod() {
           .map(function (str) {
             return str.trim();
           })
-      );
+      )
+        // remove empties
+        .filter((str) => str.trim().length > 0);
       // transform
       transformArray2Li();
     }
-    // attach event listener
-    processLi();
   }
 
+  /**
+   * start searching
+   */
+  function doSearch() {
+    if (
+      inputSearch &&
+      inputSearch.value &&
+      inputSearch.value.trim().length > 0
+    ) {
+      searchLi(inputSearch.value);
+    }
+  }
+
+  // attach event listener
+
   // filter only (O)
+  // listen input#O_only
   $('#O_only').on('change', function (e) {
     e.preventDefault();
     if (this.checked) {
@@ -213,13 +225,17 @@ function jQueryMethod() {
       transformArray2Li();
     }
 
-    if (
-      inputSearch &&
-      inputSearch.value &&
-      inputSearch.value.trim().length > 0
-    ) {
-      searchLi(inputSearch.value);
-    }
+    doSearch();
+  });
+
+  const jqInput = jQuery(inputSearch);
+  // on input typed
+  jqInput.on('keyup', function () {
+    searchLi(jQuery(this).val());
+  });
+  // on input changed
+  jqInput.on('change', function () {
+    searchLi(jQuery(this).val());
   });
 
   // form add quiz

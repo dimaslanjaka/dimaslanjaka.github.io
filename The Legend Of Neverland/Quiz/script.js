@@ -4,7 +4,7 @@ console.clear();
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-inner-declarations */
 
-if (location.host == "cdpn.io") {
+if (location.host == 'cdpn.io') {
   console.clear();
 
   function rangeAlphabetic(start, stop) {
@@ -19,18 +19,18 @@ if (location.host == "cdpn.io") {
     return result;
   }
 
-  let aZ = rangeAlphabetic("a", "z")
-    .concat(rangeAlphabetic("A", "Z"))
+  let aZ = rangeAlphabetic('a', 'z')
+    .concat(rangeAlphabetic('A', 'Z'))
     .filter(function (el) {
       return el != null;
     }); // a-zA-Z array
 
   // automated test
   setTimeout(function () {
-    let inputSearch = document.getElementById("search-questions");
+    let inputSearch = document.getElementById('search-questions');
     var keyword = aZ[Math.floor(Math.random() * aZ.length)];
     inputSearch.value = keyword;
-    inputSearch.dispatchEvent(new Event("keyup"));
+    inputSearch.dispatchEvent(new Event('keyup'));
   }, 3000);
 }
 
@@ -44,17 +44,17 @@ if (location.host == "cdpn.io") {
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
-  s = document.createElement("script");
-  s.type = "text/javascript";
+  s = document.createElement('script');
+  s.type = 'text/javascript';
   s.src = src;
   s.onload = s.onreadystatechange = function () {
     //console.log( this.readyState ); //uncomment this line to see which ready states are called.
-    if (!r && (!this.readyState || this.readyState == "complete")) {
+    if (!r && (!this.readyState || this.readyState == 'complete')) {
       r = true;
-      if (typeof callback == "function") callback();
+      if (typeof callback == 'function') callback();
     }
   };
-  t = document.getElementsByTagName("script")[0];
+  t = document.getElementsByTagName('script')[0];
   t.parentNode.insertBefore(s, t);
 }
 
@@ -76,29 +76,29 @@ function uniqArr(a) {
  * @returns
  */
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
 
 let quizUrls = [
   location.protocol +
-    "//" +
+    '//' +
     location.host.trim() +
-    "/The Legend Of Neverland/Quiz/quiz.txt",
+    '/The Legend Of Neverland/Quiz/quiz.txt',
   //'https://crossorigin.me/http://backend.webmanajemen.com/tlon/quiz.php?show',
-  "https://backend.webmanajemen.com/tlon/quiz.php?show"
+  'https://backend.webmanajemen.com/tlon/quiz.php?show'
 ];
 let quizSrc = [];
 
 function jQueryMethod() {
   // ul questions
   //let questions = document.getElementById('questions');
-  let inputSearch = document.getElementById("search-questions");
+  let inputSearch = document.getElementById('search-questions');
   //let O_only = document.getElementById('O_only');
 
   // searcher
   let searchLi = function (filter) {
     if (!filter) {
-      console.log("input empty");
+      console.log('input empty');
       return;
     }
     let listQuiz = jQuery("ul[id*='questions'] li");
@@ -107,7 +107,7 @@ function jQueryMethod() {
       let searchFirst =
         jQuery(this)
           .text()
-          .search(new RegExp("^" + escapeRegExp(filter), "gmi")) < 0;
+          .search(new RegExp('^' + escapeRegExp(filter), 'gmi')) < 0;
       if (searchFirst) {
         jQuery(this).hide();
       } else {
@@ -120,7 +120,7 @@ function jQueryMethod() {
       let searchWild =
         jQuery(this)
           .text()
-          .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
+          .search(new RegExp(escapeRegExp(filter), 'gmi')) < 0;
       if (searchWild) {
         jQuery(this).hide();
       } else {
@@ -132,21 +132,21 @@ function jQueryMethod() {
   // transform array to li
   let transformArray2Li = function () {
     // clean orphan text
-    $("#questions").text("");
+    $('#questions').text('');
     // remove existing li's
-    $("#questions li").remove();
+    $('#questions li').remove();
 
     for (let i = 0; i < quizSrc.length; i++) {
       let str = quizSrc[i];
       let isTrue = /\(O\)$/i;
-      let li = document.createElement("li");
+      let li = document.createElement('li');
       li.innerHTML = str;
       if (isTrue.test(str)) {
-        li.setAttribute("class", "isTrue");
+        li.setAttribute('class', 'isTrue');
       } else {
-        li.setAttribute("class", "isFalse");
+        li.setAttribute('class', 'isFalse');
       }
-      document.getElementById("questions").appendChild(li);
+      document.getElementById('questions').appendChild(li);
     }
   };
 
@@ -165,10 +165,10 @@ function jQueryMethod() {
       })
       .then(processResponse)
       .catch(function () {
-        const log = "cannot fetch " + url_parse.toString();
-        const debugEl = document.getElementById("quiz-debug");
+        const log = 'cannot fetch ' + url_parse.toString();
+        const debugEl = document.getElementById('quiz-debug');
         if (debugEl) {
-          debugEl.innerHTML += log + "<hr/>";
+          debugEl.innerHTML += log + '<hr/>';
         } else {
           console.log(log);
         }
@@ -176,9 +176,9 @@ function jQueryMethod() {
   });
 
   function processResponse(data) {
-    if (typeof data === "string") {
+    if (typeof data === 'string') {
       // split newLine from retrieved text into array
-      let split = data.split("\n");
+      let split = data.split('\n');
       // trim
       quizSrc = quizSrc.map(function (str) {
         return str.trim();
@@ -217,10 +217,10 @@ function jQueryMethod() {
 
   // filter only (O)
   // listen input#O_only
-  $("#O_only").on("change", function (e) {
+  $('#O_only').on('change', function (e) {
     e.preventDefault();
     if (this.checked) {
-      $(".isFalse").remove();
+      $('.isFalse').remove();
     } else {
       transformArray2Li();
     }
@@ -232,7 +232,7 @@ function jQueryMethod() {
   const inputListener = () => searchLi(jqInput.val());
   let listenerTimer;
   // on input typed and changed https://stackoverflow.com/a/7757327/6404439
-  jqInput.on("keyup change", () => {
+  jqInput.on('keyup change', () => {
     if (listenerTimer) {
       clearTimeout(listenerTimer);
       listenerTimer = undefined;
@@ -258,9 +258,9 @@ function jQueryMethod() {
   */
 }
 
-if (typeof window.jQuery === "undefined") {
+if (typeof window.jQuery === 'undefined') {
   loadJScript(
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
     jQueryMethod
   );
 } else {
@@ -277,7 +277,7 @@ if (typeof window.jQuery === "undefined") {
 // eslint-disable-next-line no-unused-vars
 function parse_query_url(url) {
   if (url instanceof URL) url = url.toString();
-  if (typeof url !== "string") return; //throw new Error('Please provide url');
+  if (typeof url !== 'string') return; //throw new Error('Please provide url');
   // http://jsfiddle.net/drzaus/8EE8k/
   const deparam = (function (d, x, params, p, i, j) {
     return function (qs) {
@@ -285,14 +285,14 @@ function parse_query_url(url) {
       params = {};
       // remove preceding non-querystring, correct spaces, and split
       qs = qs
-        .substring(qs.indexOf("?") + 1)
-        .replace(x, " ")
-        .split("&");
+        .substring(qs.indexOf('?') + 1)
+        .replace(x, ' ')
+        .split('&');
       // march and parse
       for (i = qs.length; i > 0; ) {
         p = qs[--i];
         // allow equals in value
-        j = p.indexOf("=");
+        j = p.indexOf('=');
         // what if no val?
         if (j === -1) params[d(p)] = undefined;
         else params[d(p.substring(0, j))] = d(p.substring(j + 1));
@@ -312,13 +312,13 @@ function parse_url(url) {
   return parse;
 }*/
 
-if (typeof jQuery !== "undefined") {
-  $(document).on("click", "#clear-cache", function () {
+if (typeof jQuery !== 'undefined') {
+  $(document).on('click', '#clear-cache', function () {
     $.ajax({
-      url: "",
+      url: '',
       context: document.body,
       success: function (s, _x) {
-        $("html[manifest=saveappoffline.appcache]").attr("content", "");
+        $('html[manifest=saveappoffline.appcache]').attr('content', '');
         $(this).html(s);
       }
     });

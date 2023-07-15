@@ -31,7 +31,7 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: "github-pages-artifact"
+      name: "github-pages"
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
@@ -103,11 +103,11 @@ jobs:
         with:
           # Upload entire repository
           path: "."
-          name: "github-pages-artifact"
+          name: "github-pages"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
         if: steps.validate.outcome == 'success'
         with:
           token: ${{ env.ACCESS_TOKEN }}
-          artifact_name: "github-pages-artifact"
+          artifact_name: "github-pages"

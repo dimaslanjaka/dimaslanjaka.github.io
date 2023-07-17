@@ -2,8 +2,8 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| 7.0.4 | https://github.com/dimaslanjaka/node-cross-spawn/raw/e317737/release/cross-spawn-7.0.4.tgz |
-| latest | https://github.com/dimaslanjaka/node-cross-spawn/raw/e317737/release/cross-spawn.tgz |
+| 7.0.4 | https://github.com/dimaslanjaka/node-cross-spawn/raw/ff4b648/release/cross-spawn-7.0.4.tgz |
+| latest | https://github.com/dimaslanjaka/node-cross-spawn/raw/ff4b648/release/cross-spawn.tgz |
 | latest | https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz |
 
 use this tarball with `resolutions`:

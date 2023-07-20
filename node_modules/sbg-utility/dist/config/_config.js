@@ -6,6 +6,7 @@ const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const utils = tslib_1.__importStar(require("../utils"));
+const filemanager_1 = require("../utils/filemanager");
 const defaults = tslib_1.__importStar(require("./defaults"));
 const configFileJSON = (0, upath_1.join)(__dirname, '_config.json');
 if (!fs_extra_1.default.existsSync(configFileJSON))
@@ -23,8 +24,8 @@ function fetchConfig(fileYML) {
         fileYML += '/_config.yml';
     }
     const configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync((0, upath_1.resolve)(fileYML), 'utf-8'));
-    setConfig(utils.object.orderKeys(configYML));
-    utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
+    setConfig(utils.orderKeys(configYML));
+    (0, filemanager_1.writefile)(configFileJSON, JSON.stringify(configYML, null, 2));
 }
 exports.fetchConfig = fetchConfig;
 // fetch _config.yml first init

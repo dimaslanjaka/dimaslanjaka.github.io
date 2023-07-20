@@ -1,6 +1,3 @@
-declare global {
-    const hexo: import('hexo');
-}
 /**
  * @example
  * const console = Logger

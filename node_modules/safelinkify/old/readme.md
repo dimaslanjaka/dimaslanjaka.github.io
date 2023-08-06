@@ -1,1 +1,0 @@
-this is my old scripts. created since 2018

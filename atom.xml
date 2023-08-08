@@ -463,7 +463,7 @@
     <link href="https://www.webmanajemen.com/hexo/hexo-get-total-words.html"/>
     <id>https://www.webmanajemen.com/hexo/hexo-get-total-words.html</id>
     <published>2023-07-15T04:09:58.000Z</published>
-    <updated>2023-07-15T04:09:58.000Z</updated>
+    <updated>2023-08-08T00:44:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Hexo script to get words count of a post contents</p><pre><code class="highlight js"><span class="comment">/**</span><span class="comment"> * Get the word count of a paragraph.</span><span class="comment"> */</span>hexo.<span class="property">extend</span>.<span class="property">helper</span>.<span class="title function_">register</span>(<span class="string">&#x27;word_count&#x27;</span>, <span class="function">(<span class="params">content</span>) =&gt;</span> &#123;    content = content.<span class="title function_">replace</span>(<span class="regexp">/&lt;\/?[a-z][^&gt;]*&gt;/gi</span>, <span class="string">&#x27;&#x27;</span>);    content = content.<span class="title function_">trim</span>();    <span class="keyword">return</span> content ? (content.<span class="title function_">match</span>(<span class="regexp">/[\u00ff-\uffff]|[a-zA-Z]+/g</span>) || []).<span class="property">length</span> : <span class="number">0</span>;&#125;);</code></pre>]]></content>
     
@@ -488,7 +488,7 @@
     <link href="https://www.webmanajemen.com/en/javascript/data-types.html"/>
     <id>https://www.webmanajemen.com/en/javascript/data-types.html</id>
     <published>2023-07-04T01:42:48.000Z</published>
-    <updated>2023-07-04T01:42:48.000Z</updated>
+    <updated>2023-08-08T00:44:23.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Common-Data-Type">Common Data Type</h2><p>The following are data types commonly used in JavaScript</p><ol><li>Boolean ( <code>true, false</code> )</li><li>Null ( <code>null</code> )</li><li>Undefined ( <code>undefined</code> )</li><li>Number ( <code>1, 4, 7, 231, 51, 11, 9</code> )</li><li>BigInt ( <code>9007199254740991n</code> )</li><li>String ( <code>'Hello', 'World', 'Uzbekistan'</code> )</li><li>Symbol ( <code>let sym1 = Symbol()</code> )</li><li>Objects ( <code>&#123;a: 123&#125;, [1]</code> )</li></ol><h2 id=""></h2><p><img src="https://tutorial.techaltum.com/images/js-datatypes.jpg" alt=""></p>]]></content>
     
@@ -511,7 +511,7 @@
     <link href="https://www.webmanajemen.com/id/javascript/data-types.html"/>
     <id>https://www.webmanajemen.com/id/javascript/data-types.html</id>
     <published>2023-07-04T01:42:48.000Z</published>
-    <updated>2023-07-04T01:42:48.000Z</updated>
+    <updated>2023-08-08T00:44:21.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Tipe-Data-Umum">Tipe Data Umum</h2><p>Berikut ini adalah tipe data yang umum digunakan dalam JavaScript</p><ol><li>Boolean ( <code>true, false</code> )</li><li>Null ( <code>null</code> )</li><li>Undefined ( <code>undefined</code> )</li><li>Number ( <code>1, 4, 7, 231, 51, 11, 9</code> )</li><li>BigInt ( <code>9007199254740991n</code> )</li><li>String ( <code>'Hello', 'World', 'Uzbekistan'</code> )</li><li>Symbol ( <code>let sym1 = Symbol()</code> )</li><li>Objects ( <code>&#123;a: 123&#125;, [1]</code> )</li></ol><h2 id=""></h2><p><img src="https://tutorial.techaltum.com/images/js-datatypes.jpg" alt=""></p>]]></content>
     
@@ -534,7 +534,7 @@
     <link href="https://www.webmanajemen.com/hexo/hexo-run-custom-script-after-clean.html"/>
     <id>https://www.webmanajemen.com/hexo/hexo-run-custom-script-after-clean.html</id>
     <published>2023-06-12T11:22:02.000Z</published>
-    <updated>2023-06-12T11:22:19.000Z</updated>
+    <updated>2023-08-08T00:44:18.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Create-custom-script-file">Create custom script file</h2><p>create new custom script file inside <code>&lt;your hexo project dir&gt;/scripts/script-file-name.js</code>.</p><blockquote><p><code>&lt;your hexo project dir&gt;</code> is your current site directory</p></blockquote><h2 id="fill-below-codes">fill below codes</h2><pre><code class="highlight js"><span class="meta">&#x27;use strict&#x27;</span>;<span class="comment">/**</span><span class="comment"> * clean auto generated files inside .deploy_git</span><span class="comment"> */</span><span class="comment">// const path = require(&#x27;path&#x27;);</span><span class="comment">// const fs = require(&#x27;fs-extra&#x27;);</span>hexo.<span class="property">extend</span>.<span class="property">filter</span>.<span class="title function_">register</span>(<span class="string">&#x27;after_clean&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;  <span class="comment">// your logic codes here</span>&#125;);</code></pre>]]></content>
     

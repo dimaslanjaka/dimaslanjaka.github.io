@@ -16,7 +16,7 @@ case `uname` in
   *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
 esac
 
-# remove lost files
+# get list of lost files from git
 # source https://stackoverflow.com/a/63497865/6404439
 
 files=$(comm -23 <(git rev-list HEAD | sed 1d | xargs -i git ls-tree -r {} --name-only | sort -u) <(git ls-tree -r HEAD --name-only | sort -u))
@@ -24,5 +24,3 @@ lostfiles=$(echo $files | sed -e 's/\s/ /g')
 echo $lostfiles
 #echo "remove lost files"
 #git filter-branch -f --tree-filter "rm -rf ${lostfiles}" --prune-emtpy
-
-git filter-repo --analyze

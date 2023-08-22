@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# make cygwin bin as priority
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+# absolute path working directory
+basecwd=${PWD}
+# base script directory
+basedir=`dirname "$0"`
+# absolute path script directory
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+# remove lost files
+# source https://stackoverflow.com/a/63497865/6404439
+
+files=$(comm -23 <(git rev-list HEAD | sed 1d | xargs -i git ls-tree -r {} --name-only | sort -u) <(git ls-tree -r HEAD --name-only | sort -u))
+lostfiles=$(echo $files | sed -e 's/\s/ /g')
+echo $lostfiles
+#echo "remove lost files"
+#git filter-branch -f --tree-filter "rm -rf ${lostfiles}" --prune-emtpy

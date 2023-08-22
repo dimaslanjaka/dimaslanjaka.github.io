@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+# make cygwin bin as priority
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+# absolute path working directory
+basecwd=${PWD}
+# base script directory
+basedir=`dirname "$0"`
+# absolute path script directory
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
 branch=$(git branch --show-current)
 git checkout --orphan latest_branch # Move to new branch with new object
 git add -A # Add all files

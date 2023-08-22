@@ -24,3 +24,5 @@ lostfiles=$(echo $files | sed -e 's/\s/ /g')
 echo $lostfiles
 #echo "remove lost files"
 #git filter-branch -f --tree-filter "rm -rf ${lostfiles}" --prune-emtpy
+
+git filter-repo --analyze

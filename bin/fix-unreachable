@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+# make cygwin bin as priority
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+# absolute path working directory
+basecwd=${PWD}
+# base script directory
+basedir=`dirname "$0"`
+# absolute path script directory
+SCRIPT_DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
+# get script path
+SCRIPT=$(realpath "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+git stash clear
+git reflog expire --expire-unreachable=now --all
+git fsck --unreachable
+git gc --prune=now

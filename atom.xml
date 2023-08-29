@@ -63,29 +63,6 @@
   </entry>
   
   <entry>
-    <title>How to add path folder to github workflows CI</title>
-    <link href="https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html"/>
-    <id>https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html</id>
-    <published>2023-08-27T07:09:03.000Z</published>
-    <updated>2023-08-27T07:27:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Sometimes when you try to use a command and Bash displays the “Command not found” error, it might be because the program is not installed on your system. Correct this by installing a software package containing the command and add them into <strong>PATH</strong> enviroment variable.</p><p>In <strong>Github Workflows</strong> also has ability to add <em>PATH enviroment variable</em>. below is sample codes:</p><h2 id="add-local-bin-to-PATH-CI">add ~/.local/bin to PATH CI</h2><pre><code class="highlight yaml"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">add</span> <span class="string">~/.local/bin</span> <span class="string">to</span> <span class="string">PATH</span>  <span class="attr">shell:</span> <span class="string">bash</span>  <span class="attr">run:</span> <span class="string">|</span>    <span class="string">echo</span> <span class="string">&quot;$&#123;HOME&#125;/.local/bin&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">$GITHUB_PATH</span></code></pre><h2 id="add-CI-PATH-node-modules-bin">add CI PATH ./node_modules/.bin</h2><pre><code class="highlight yaml"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">add</span> <span class="string">./node_modules/.bin</span> <span class="string">to</span> <span class="string">PATH</span>  <span class="attr">shell:</span> <span class="string">bash</span>  <span class="attr">run:</span> <span class="string">|</span>    <span class="string">echo</span> <span class="string">&quot;$&#123;GITHUB_WORKSPACE&#125;/node_modules/.bin&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">$GITHUB_PATH</span></code></pre>]]></content>
-    
-    
-    <summary type="html">How to add path folder to github workflows CI Sometimes when you try to use a command and Bash displays the Command not found error, it might be because the program is not installed on your system. Correct this by installing a software package containing the command and add them into PATH envirome</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
-    
-    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
-    
-  </entry>
-  
-  <entry>
     <title>How to make husky support for multiple platform</title>
     <link href="https://www.webmanajemen.com/2023/08/how-to-make-husky-support-for-multiplatform.html"/>
     <id>https://www.webmanajemen.com/2023/08/how-to-make-husky-support-for-multiplatform.html</id>
@@ -105,6 +82,29 @@
     <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
     
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to add path folder to github workflows CI</title>
+    <link href="https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html"/>
+    <id>https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html</id>
+    <published>2023-08-27T07:09:03.000Z</published>
+    <updated>2023-08-27T07:27:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Sometimes when you try to use a command and Bash displays the “Command not found” error, it might be because the program is not installed on your system. Correct this by installing a software package containing the command and add them into <strong>PATH</strong> enviroment variable.</p><p>In <strong>Github Workflows</strong> also has ability to add <em>PATH enviroment variable</em>. below is sample codes:</p><h2 id="add-local-bin-to-PATH-CI">add ~/.local/bin to PATH CI</h2><pre><code class="highlight yaml"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">add</span> <span class="string">~/.local/bin</span> <span class="string">to</span> <span class="string">PATH</span>  <span class="attr">shell:</span> <span class="string">bash</span>  <span class="attr">run:</span> <span class="string">|</span>    <span class="string">echo</span> <span class="string">&quot;$&#123;HOME&#125;/.local/bin&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">$GITHUB_PATH</span></code></pre><h2 id="add-CI-PATH-node-modules-bin">add CI PATH ./node_modules/.bin</h2><pre><code class="highlight yaml"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">add</span> <span class="string">./node_modules/.bin</span> <span class="string">to</span> <span class="string">PATH</span>  <span class="attr">shell:</span> <span class="string">bash</span>  <span class="attr">run:</span> <span class="string">|</span>    <span class="string">echo</span> <span class="string">&quot;$&#123;GITHUB_WORKSPACE&#125;/node_modules/.bin&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">$GITHUB_PATH</span></code></pre>]]></content>
+    
+    
+    <summary type="html">How to add path folder to github workflows CI Sometimes when you try to use a command and Bash displays the Command not found error, it might be because the program is not installed on your system. Correct this by installing a software package containing the command and add them into PATH envirome</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
+    
+    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
     
   </entry>
   

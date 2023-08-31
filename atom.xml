@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-08-27T07:27:18.000Z</updated>
+  <updated>2023-08-30T20:09:38.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fix end of line on github repository</title>
+    <link href="https://www.webmanajemen.com/GitHub/fix-end-of-line.html"/>
+    <id>https://www.webmanajemen.com/GitHub/fix-end-of-line.html</id>
+    <published>2023-08-30T20:06:28.000Z</published>
+    <updated>2023-08-30T20:09:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="force-end-of-line-using-LF">force end of line using LF</h2><p>For repos (Git repositories) that were checked out after those global settings were set, everything will be checked out as whatever it is in the repo – hopefully <code>LF</code> (<code>\n</code>).<br>Any <code>CRLF</code> will be converted to just <code>LF</code> on check-in (commit).</p><p>With an existing repo that you have already checked out – that has the correct line endings in the repo but not your working copy – you can run the following commands to fix it:</p><pre><code class="highlight bash">git config --global core.eol lfgit config --global core.autocrlf inputgit <span class="built_in">rm</span> -rf --cached .git reset --hard HEAD</code></pre><p><code>git rm -rf --cached .</code> will delete (<code>rm</code>) recursively (<code>-r</code>) without prompt (<code>-f</code>), all files except those that you have edited (<code>--cached</code>), from the current directory (<code>.</code>). The <code>reset</code> then returns all those files to a state where they have their true line endings (matching what’s in the repo).</p><p>If you need to fix the line endings of files in a repo, I recommend grabbing an editor that will let you do that in bulk like IntelliJ or Sublime Text, but I’m sure any good one will likely support this.</p><h3 id="Put-a-gitattributes-file-in-the-root-of-your-git-repository-having-following-contents">Put a <code>.gitattributes</code> file in the root of your git repository having following contents:</h3><pre><code class="highlight plaintext">* text=auto eol=lf</code></pre><p>Commit the <code>.gitattributes</code></p><h3 id="Optional-tweaks-for-all-IDE">Optional tweaks for all IDE</h3><p>You can also add an <a href="http://EditorConfig.org"><code>.editorconfig</code></a> in the root of your repository to ensure that modern tooling creates new files with the desired line endings.</p><pre><code class="highlight plaintext"># EditorConfig is awesome: http://EditorConfig.org# top-most EditorConfig fileroot = true# Unix-style newlines with a newline ending every file[*]end_of_line = lfinsert_final_newline = true</code></pre>]]></content>
+    
+    
+    <summary type="html">fix end of line on github repository force end of line using LF For repos Git repositories that were checked out after those global settings were set, everything will be checked out as whatever it is </summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    <category term="bash" scheme="https://www.webmanajemen.com/categories/programming/bash/"/>
+    
+    <category term="github" scheme="https://www.webmanajemen.com/categories/programming/bash/github/"/>
+    
+    
+    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>How to add path folder to github workflows CI</title>
@@ -469,35 +494,6 @@
     
     
     <summary type="html">Monster giant dinbearlink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dark</summary>
-    
-    
-    
-    <category term="games" scheme="https://www.webmanajemen.com/categories/games/"/>
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/categories/games/chimeraland/"/>
-    
-    <category term="monsters" scheme="https://www.webmanajemen.com/categories/games/chimeraland/monsters/"/>
-    
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
-    
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
-    <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Monster giant squid</title>
-    <link href="https://www.webmanajemen.com/chimeraland/monsters/giant-squid.html"/>
-    <id>https://www.webmanajemen.com/chimeraland/monsters/giant-squid.html</id>
-    <published>2023-08-06T14:00:28.000Z</published>
-    <updated>2023-08-06T14:11:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>giant squid Information from Chimeraland</h2>    <h2 id="attribute"><i>giant squid</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td>N/A <br />N/A</td>              </tr>              <tr>                <th>Attack</th>                <td>N/A</td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td>N/A</td>              </tr>              <tr>                <th>Defense</th>                <td></td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: giant squid stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for giant squid</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for giant squid</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-18-29-71_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-18-29-71_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-18-29-71_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-18-33-75_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-18-33-75_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-18-33-75_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-18-38-89_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-18-38-89_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-18-38-89_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-18-42-81_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-18-42-81_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-18-42-81_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-18-49-54_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-18-49-54_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-18-49-54_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-18-59-74_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-18-59-74_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-18-59-74_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-19-04-34_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-19-04-34_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-19-04-34_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-squid/Screenshot_2023-08-07-01-19-11-33_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant squid Screenshot_2023-08-07-01-19-11-33_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant squid</i>              Screenshot_2023-08-07-01-19-11-33_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content>
-    
-    
-    <summary type="html">Monster giant squidlink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dark h</summary>
     
     
     

@@ -42,7 +42,7 @@ jobs:
       YARN_CHECKSUM_BEHAVIOR: update
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.ref }}
           token: ${{ env.ACCESS_TOKEN }}

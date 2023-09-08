@@ -70,4 +70,3 @@ function bufferToString(array) {
     }
 }
 exports.bufferToString = bufferToString;
-//# sourceMappingURL=string.js.map

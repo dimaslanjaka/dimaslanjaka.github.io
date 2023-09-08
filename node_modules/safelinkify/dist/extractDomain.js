@@ -16,4 +16,3 @@ function extractDomain(url) {
     return hostname;
 }
 exports.default = extractDomain;
-//# sourceMappingURL=extractDomain.js.map

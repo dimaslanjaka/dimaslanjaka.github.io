@@ -81,34 +81,39 @@ let markdown = `
 // git log date format reference https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
 // custom --pretty=format:"%h %ad | %s %d [%an]" --date=short v1.1.4...v1.1.8
 // default --pretty=oneline v1.1.4...v1.1.8
-gitExec([
+const args = [
   'log',
-  '--pretty=format:%h !|! %ad !|! %s %d',
-  `--date=format:%Y-%m-%d %H:%M:%S`,
+  `--pretty=format:"%h !|! %ad !|! %s %d"`,
+  `--date=format:"%Y-%m-%d %H:%M:%S"`,
   'v1.1.4...v' + pkg.version
-]).then(function (commits) {
-  commits
-    .split(/\r?\n/gm)
-    .slice()
-    .reverse()
-    .forEach((str, index, all) => {
-      const splitx = str.split('!|!').map((str) => str.trim());
-      const o = {
-        hash: splitx[0],
-        date: splitx[1],
-        message: splitx[2]
-      };
-      if (o.message.includes('tag: v')) {
-        markdown += `\n**${o.message.replace(/\(.*\),?/, '').trim()}**\n` + EOL;
-      } else {
-        markdown +=
-          `- [ _${o.date}_ ] [${o.hash}](https://github.com/dimaslanjaka/safelink/commit/${o.hash}) ${o.message.replace(
-            /,$/,
-            ''
-          )}` + EOL;
-      }
-      if (index === all.length - 1) {
-        writeFileSync(join(__dirname, 'CHANGELOG.md'), markdown);
-      }
-    });
-});
+];
+gitExec(args)
+  .then(function (commits) {
+    commits
+      .split(/\r?\n/gm)
+      .slice()
+      .reverse()
+      .forEach((str, index, all) => {
+        const splitx = str.split('!|!').map((str) => str.trim());
+        const o = {
+          hash: splitx[0],
+          date: splitx[1],
+          message: splitx[2]
+        };
+        if (o.message.includes('tag: v')) {
+          markdown += `\n**${o.message.replace(/\(.*\),?/, '').trim()}**\n` + EOL;
+        } else {
+          markdown +=
+            `- [ _${o.date}_ ] [${o.hash}](https://github.com/dimaslanjaka/safelink/commit/${
+              o.hash
+            }) ${o.message.replace(/,$/, '')}` + EOL;
+        }
+        if (index === all.length - 1) {
+          writeFileSync(join(__dirname, 'CHANGELOG.md'), markdown);
+        }
+      });
+  })
+  .catch((e) => {
+    console.error(e);
+    console.log(args.join(' '));
+  });

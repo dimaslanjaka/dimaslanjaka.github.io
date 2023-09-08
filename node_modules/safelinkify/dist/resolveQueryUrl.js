@@ -28,7 +28,7 @@ function resolveQueryUrl(url, passphrase, debug) {
         }
         else {
             var parse = (0, toURL_1.default)(url);
-            if (parse !== null)
+            if (parse)
                 href = parse.href;
         }
     }
@@ -38,7 +38,7 @@ function resolveQueryUrl(url, passphrase, debug) {
     if (!href || !href.match(/#|\?/))
         return null;
     var parse_query_url = (0, parseQuery_1.parseQuery)(null, href);
-    if (typeof parse_query_url == 'object') {
+    if (parse_query_url) {
         Object.keys(parse_query_url).forEach(function (key) {
             var value = parse_query_url[key];
             result[key] = (0, encryptionURL_1.default)(value, passphrase, debug);
@@ -48,4 +48,3 @@ function resolveQueryUrl(url, passphrase, debug) {
 }
 exports.default = resolveQueryUrl;
 _global_resolveQueryUrl.resolveQueryUrl = resolveQueryUrl;
-//# sourceMappingURL=resolveQueryUrl.js.map

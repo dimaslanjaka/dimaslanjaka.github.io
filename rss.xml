@@ -15,8 +15,31 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Mon, 04 Sep 2023 13:08:09 GMT</pubDate>
+    <pubDate>Wed, 06 Sep 2023 19:09:51 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>create interface class and function in typescript d.ts</title>
+      <link>https://www.webmanajemen.com/NodeJS/d-ts-create-interface-class-and-function.html</link>
+      <guid>https://www.webmanajemen.com/NodeJS/d-ts-create-interface-class-and-function.html</guid>
+      <pubDate>Wed, 06 Sep 2023 18:46:43 GMT</pubDate>
+      
+      <description>create interface class and function in typescript d.ts Summary when you create an library which is can be function or class like below sample import Client from ./client;// The following two lines bot</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Summary">Summary</h2><p>when you create an library which is can be function or class like below sample</p><pre><code class="highlight ts"><span class="keyword">import</span> <span class="title class_">Client</span> <span class="keyword">from</span> <span class="string">&quot;./client&quot;</span>;<span class="comment">// The following two lines both achieve the same result.</span><span class="keyword">const</span> clas = <span class="keyword">new</span> <span class="title class_">Client</span>();<span class="keyword">const</span> fun = <span class="title class_">Client</span>();</code></pre><p>The <code>client</code> may be constructed via the new keyword or implicitly without as a function call.<br>How you can express this in a types.d.ts file?</p><h2 id="Conclusion">Conclusion</h2><p>The conventional way something like this is done in TypeScript’s own standard library (see <a href="https://github.com/microsoft/TypeScript/blob/ec77bff33226fb01f4e38b20e481f8c1fcd9e6c0/lib/lib.es5.d.ts#L729-L907">the typings for <code>Date</code></a> for example) is to declare two <code>interface</code>s; one for the instance type (with the intended <code>class</code> name) and another for the constructor type (usually the same name with <code>Constructor</code> appended to it).<br>And then you declare the class constructor value as a <code>var</code> or <code>const</code>.<br>If you want to give the constructor added functionality, such as being callable without <code>new</code>, you can do it inside the <code>XXXConstructor</code> interface.<br>Like so: (Making a class and function interchangeable in Typescript types.d.ts library definition)</p><pre><code class="highlight ts"><span class="comment">// this you class import, were assumed like this</span><span class="keyword">interface</span> <span class="title class_">Client</span> &#123;  <span class="title function_">foo</span>(): <span class="built_in">void</span>;&#125;<span class="comment">// create new client constructor</span><span class="keyword">interface</span> <span class="title class_">ClientConstructor</span> &#123;  <span class="title function_">new</span>(): <span class="title class_">Client</span>;  (): <span class="title class_">Client</span>;&#125;<span class="comment">// export them</span><span class="keyword">declare</span> <span class="keyword">const</span> <span class="title class_">Client</span>: <span class="title class_">ClientConstructor</span>;<span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Client</span>;</code></pre><p><a href="https://www.typescriptlang.org/play?module=1#code/PTAEGMBsEsFMDsAuA6RBnAUCUiAW01QBPAewFcJIBDNQ6AWwAcSAnRAGlAHdYXZQaaMvVgATUDADW-PAQzQkvAGZVw-AJIBhGAkSgA3hlCglJEgApkVqiwDmaAFwD4RAJROAbiWiiA3BgBfDAwlMnhwRGgSeFBtOCRzWUdQLR0kVwMjCGi0PVMSUABeUHNGPiVoAA8nXJYFWwzCgD4DbPg0EkhYZEgSW1Lyqs4AcnzhjKDjaCUSpIzDY2Mk5HyikzN-Y0nQPkQyFhiFxfysoKCsMHA+KkR+eFguSni9cBzEFjII1nlFFhU1WJpRCaN4fL4sTLGe5cczuFJxXSbEpw1LPfznbCwSrMNg4XCwegYLE4vT6QHPEHtd6fRCsUBBYmsPSiWAqMiQPQIpACQhc4GgmmsfwXUAAGVg6BwsFyoGgiBFDBJ5N0JhYJHooGGyGAUGew2F2CusBu-HoJHAklAaCoTC66whSVAjGoRFsarC4luuQwrypoHoRD5ayDNGVSEptUFLGFvplsepETEa2h-sDQNh-njYNuohWZnMACIAEZEUApvkF1wxt4QKiQLriYoBvnIIsKUTmfQBVwZn11ht5izF0uhcKV3xAA">Sample mock demo typescript playground</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/d-ts-create-interface-class-and-function.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Fix rollup eval warning</title>
@@ -301,7 +324,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear.html</guid>
       <pubDate>Sun, 06 Aug 2023 14:00:28 GMT</pubDate>
       
-      <description>Monster giant dinbearlink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dark</description>
+      <description>Monster giant dinbear giant dinbear Information from Chimeraland giant dinbear default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -332,7 +355,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-squid.html</guid>
       <pubDate>Sun, 06 Aug 2023 14:00:28 GMT</pubDate>
       
-      <description>Monster giant squidlink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dark h</description>
+      <description>Monster giant squid giant squid Information from Chimeraland giant squid default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -363,7 +386,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-whitefox.html</guid>
       <pubDate>Sun, 06 Aug 2023 14:00:28 GMT</pubDate>
       
-      <description>Monster giant whitefoxlink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dar</description>
+      <description>Monster giant whitefox giant whitefox Information from Chimeraland giant whitefox default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -394,7 +417,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae.html</guid>
       <pubDate>Sun, 06 Aug 2023 14:00:28 GMT</pubDate>
       
-      <description>Monster lichen bufonidaelink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=d</description>
+      <description>Monster lichen bufonidae lichen bufonidae Information from Chimeraland lichen bufonidae default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -425,7 +448,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-transparay.html</guid>
       <pubDate>Sun, 06 Aug 2023 11:43:16 GMT</pubDate>
       
-      <description>Monster Giant Transparaylink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=d</description>
+      <description>Monster Giant Transparay Giant Transparay Information from Chimeraland Giant Transparay default maximum attribute GRADE A NOBLE - LEGENDARY </description>
       
       
       
@@ -456,7 +479,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi.html</guid>
       <pubDate>Sun, 06 Aug 2023 07:50:21 GMT</pubDate>
       
-      <description>Monster giant mahi-mahilink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=da</description>
+      <description>Monster giant mahi-mahi giant mahi-mahi Information from Chimeraland giant mahi-mahi default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -487,7 +510,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-scatelope.html</guid>
       <pubDate>Sun, 06 Aug 2023 07:50:21 GMT</pubDate>
       
-      <description>Monster giant scatelopelink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=da</description>
+      <description>Monster giant scatelope giant scatelope Information from Chimeraland giant scatelope default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -518,7 +541,7 @@
       <guid>https://www.webmanajemen.com/chimeraland/attendants/astakat.html</guid>
       <pubDate>Sun, 06 Aug 2023 07:49:21 GMT</pubDate>
       
-      <description>Attendant astakatlink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dark h2a</description>
+      <description>Attendant astakat astakat Information from Chimeraland astakat default maximum attribute GRADE N/A N/A Attack N/A </description>
       
       
       
@@ -534,39 +557,10 @@
       
       <category domain="https://www.webmanajemen.com/tags/chimeraland/">chimeraland</category>
       
-      <category domain="https://www.webmanajemen.com/tags/Attendant/">Attendant</category>
+      <category domain="https://www.webmanajemen.com/tags/attendant/">attendant</category>
       
       
       <comments>https://www.webmanajemen.com/chimeraland/attendants/astakat.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Attendant cin-aqui</title>
-      <link>https://www.webmanajemen.com/chimeraland/attendants/cin-aqui.html</link>
-      <guid>https://www.webmanajemen.com/chimeraland/attendants/cin-aqui.html</guid>
-      <pubDate>Sun, 06 Aug 2023 07:49:21 GMT</pubDate>
-      
-      <description>Attendant cin-aquilink rel=stylesheet href=https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css / section id=bootstrap-wrapper div data-bs-theme=dark h2</description>
-      
-      
-      
-      <content:encoded><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>cin-aqui Information from Chimeraland</h2>    <h2 id="attribute"><i>cin-aqui</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td>N/A <br />N/A</td>              </tr>              <tr>                <th>Attack</th>                <td>N/A</td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td>N/A</td>              </tr>              <tr>                <th>Defense</th>                <td></td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: cin-aqui stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for cin-aqui</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for cin-aqui</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-04-46-98_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-04-46-98_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-04-46-98_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-04-51-22_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-04-51-22_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-04-51-22_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-04-55-45_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-04-55-45_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-04-55-45_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-04-59-27_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-04-59-27_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-04-59-27_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-05-03-66_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-05-03-66_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-05-03-66_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-05-09-26_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-05-09-26_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-05-09-26_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-05-14-28_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-05-14-28_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-05-14-28_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/attendants/cin-aqui/Screenshot_2023-08-01-23-05-19-14_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="cin-aqui Screenshot_2023-08-01-23-05-19-14_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>cin-aqui</i>              Screenshot_2023-08-01-23-05-19-14_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/games/">games</category>
-      
-      <category domain="https://www.webmanajemen.com/categories/games/chimeraland/">chimeraland</category>
-      
-      <category domain="https://www.webmanajemen.com/categories/games/chimeraland/attendants/">attendants</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/chimeraland/">chimeraland</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/Attendant/">Attendant</category>
-      
-      
-      <comments>https://www.webmanajemen.com/chimeraland/attendants/cin-aqui.html#disqus_thread</comments>
       
     </item>
     

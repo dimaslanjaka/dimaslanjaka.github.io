@@ -10,6 +10,9 @@ basecwd=${PWD}
 basedir=`dirname "$0"`
 # absolute path script directory
 SCRIPT_DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
+# get script path
+SCRIPT=$(realpath "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
 
 case `uname` in
   *CYGWIN*)
@@ -19,13 +22,15 @@ case `uname` in
     ;;
 esac
 
+# parse and export .env file (dotenv)
+if [ -f ".env" ]; then
+  # Export the vars in .env into your shell:
+  export $(egrep -v '^#' .env | xargs)
+fi
+
 # auto clone all submodules, prevent not-matched hash
 # set ACCESS_TOKEN=github_personal_tokens
 # usages: sh folder_this_repo/submodule-install
-
-# get script path
-SCRIPT=$(realpath "$0")
-SCRIPTPATH=$(dirname "$SCRIPT")
 
 # set default root
 export ROOT="$(git rev-parse --show-toplevel)"

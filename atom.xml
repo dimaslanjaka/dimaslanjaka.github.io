@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-09-18T11:15:03.000Z</updated>
+  <updated>2023-09-18T20:49:35.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to fix vscode settings sync in linux</title>
+    <link href="https://www.webmanajemen.com/2023/09/fix-vscode-settings-sync-linux.html"/>
+    <id>https://www.webmanajemen.com/2023/09/fix-vscode-settings-sync-linux.html</id>
+    <published>2023-09-18T20:37:50.000Z</published>
+    <updated>2023-09-18T20:49:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Ensure-gnome-keyring-is-running">Ensure gnome-keyring is running</h2><pre><code class="highlight bash">$ systemctl --user status gnome-keyring-daemon● gnome-keyring-daemon.service - GNOME Keyring daemon     Loaded: loaded (/usr/lib/systemd/user/gnome-keyring-daemon.service; enabled; preset: enabled)     Active: active (running) since Thu 2023-06-15 12:36:32 CEST; 3h 43min agoTriggeredBy: ● gnome-keyring-daemon.socket   Main PID: 16317 (gnome-keyring-d)      Tasks: 4 (<span class="built_in">limit</span>: 67352)     Memory: 3.5M        CPU: 1.067s     CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/gnome-keyring-daemon.service             └─16317 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring</code></pre><p>Otherwise</p><h3 id="enable-gnome-keyring-daemon-manually">enable <code>gnome-keyring-daemon</code> manually</h3><pre><code class="highlight bash">gnome-keyring-daemon --replace --daemonize --components=pkcs11,secrets,ssh</code></pre><h4 id="Show-installed-gnome-keyring">Show installed <code>gnome-keyring</code></h4><pre><code class="highlight bash">$ dpkg -l | grep gnome-keyringii  gnome-keyring                                               42.1-1+b2                                            amd64        GNOME keyring services (daemon and tools)ii  gnome-keyring-pkcs11:amd64                                  42.1-1+b2                                            amd64        GNOME keyring module <span class="keyword">for</span> the PKCS<span class="comment">#11 module loading library</span>ii  libgnome-keyring-common                                     3.12.0-1                                             all          GNOME keyring services library - data filesii  libgnome-keyring-dev                                        3.12.0-1+b2                                          amd64        Development files <span class="keyword">for</span> GNOME keyring serviceii  libgnome-keyring0:amd64                                     3.12.0-1+b2                                          amd64        GNOME keyring services libraryii  libpam-gnome-keyring:amd64                                  42.1-1+b2                                            amd64        PAM module to unlock the GNOME keyring upon login</code></pre><h4 id="Show-installed-libsecret">Show installed <code>libsecret</code></h4><pre><code class="highlight bash">$ dpkg -l | grep libsecretii  libsecret-1-0:amd64                                         0.20.5-3                                             amd64        Secret storeii  libsecret-common                                            0.20.5-3                                             all          Secret store (common files)</code></pre><h4 id="Show-installed-dbus-x11">Show installed <code>dbus-x11</code></h4><pre><code class="highlight bash">$ dpkg -l | grep -i dbus-x11ii  dbus-x11                                                    1.14.6-1                                             amd64        simple interprocess messaging system (X11 deps)</code></pre><h2 id="Open-VSCode-argument-settings">Open VSCode argument settings</h2><p>open the Command Palette (<code>Ctrl+Shift+P</code>) and type <strong>Preferences: Configure Runtime Arguments</strong></p><p><img src="/2023/09/fix-vscode-settings-sync-linux/image.png" alt=""></p><h2 id="Add-settings">Add settings</h2><p>add the setting <code>&quot;password-store&quot;:&quot;gnome&quot;</code></p><p><img src="/2023/09/fix-vscode-settings-sync-linux/add-settings.png" alt=""></p><h2 id="Restart-VSCode">Restart VSCode</h2><p>after added the password-store to settings, clean restart VSCode.</p><p>Close the window (<code>X</code>) then re-open VSCode from start menu or desktop icon.</p><h2 id="Relogin">Relogin</h2><p>Try relogin VSCode with github or microsoft account</p>]]></content>
+    
+    
+    <summary type="html">How to fix vscode settings sync in linux Ensure gnome-keyring is running systemctl --user status gnome-keyring-daemon gnome-keyring-daemon.service - GNOME Keyring daemon Loaded: loaded /usr/lib/system</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="tips &amp; tricks" scheme="https://www.webmanajemen.com/tags/tips-tricks/"/>
+    
+    <category term="vscode" scheme="https://www.webmanajemen.com/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>How to lazy loading JSX react module with dots notation</title>
@@ -471,35 +494,6 @@
     
     
     <summary type="html">Monster Giant Transparay Giant Transparay Information from Chimeraland Giant Transparay default maximum attribute GRADE A NOBLE - LEGENDARY </summary>
-    
-    
-    
-    <category term="games" scheme="https://www.webmanajemen.com/categories/games/"/>
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/categories/games/chimeraland/"/>
-    
-    <category term="monsters" scheme="https://www.webmanajemen.com/categories/games/chimeraland/monsters/"/>
-    
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
-    
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
-    <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Monster giant mahi-mahi</title>
-    <link href="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi.html"/>
-    <id>https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi.html</id>
-    <published>2023-08-06T07:50:21.000Z</published>
-    <updated>2023-08-06T08:01:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>giant mahi-mahi Information from Chimeraland</h2>    <h2 id="attribute"><i>giant mahi-mahi</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td>N/A <br />N/A</td>              </tr>              <tr>                <th>Attack</th>                <td>N/A</td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td>N/A</td>              </tr>              <tr>                <th>Defense</th>                <td></td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: giant mahi-mahi stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for giant mahi-mahi</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for giant mahi-mahi</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093520.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093520.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093520.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093549.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093549.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093549.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093613.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093613.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093613.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093627.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093627.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093627.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093648.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093648.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093648.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093703.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093703.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093703.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093721.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093721.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093721.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-mahi-mahi/Screenshot%202023-06-15%20093742.webp"              alt="giant mahi-mahi Screenshot 2023-06-15 093742.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant mahi-mahi</i> Screenshot 2023-06-15 093742.webp.            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content>
-    
-    
-    <summary type="html">Monster giant mahi-mahi giant mahi-mahi Information from Chimeraland giant mahi-mahi default maximum attribute GRADE N/A N/A Attack N/A </summary>
     
     
     

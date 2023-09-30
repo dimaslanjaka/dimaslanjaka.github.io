@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-09-18T20:49:35.000Z</updated>
+  <updated>2023-09-27T23:34:23.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react-dom server generate static html from react elements</title>
+    <link href="https://www.webmanajemen.com/2023/09/react-dom-server-generate-static-html-from-react.html"/>
+    <id>https://www.webmanajemen.com/2023/09/react-dom-server-generate-static-html-from-react.html</id>
+    <published>2023-09-27T23:34:23.000Z</published>
+    <updated>2023-09-27T23:34:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="highlight tsx"><span class="keyword">import</span> * <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">&quot;fs&quot;</span>;<span class="keyword">import</span> prettier <span class="keyword">from</span> <span class="string">&quot;prettier&quot;</span>;<span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;<span class="keyword">import</span> <span class="title class_">ReactDOMServer</span> <span class="keyword">from</span> <span class="string">&quot;react-dom/server&quot;</span>;<span class="title function_">render</span>();<span class="keyword">function</span> <span class="title function_">render</span>(<span class="params"></span>) &#123;  <span class="keyword">let</span> html = <span class="title class_">ReactDOMServer</span>.<span class="title function_">renderToStaticMarkup</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorldPage</span> /&gt;</span></span>);  <span class="keyword">let</span> htmlWDoc = <span class="string">&quot;&lt;!DOCTYPE html&gt;&quot;</span> + html;  <span class="keyword">let</span> prettyHtml = prettier.<span class="title function_">format</span>(htmlWDoc, &#123; <span class="attr">parser</span>: <span class="string">&quot;html&quot;</span> &#125;);  <span class="keyword">let</span> outputFile = <span class="string">&quot;./output.html&quot;</span>;  fs.<span class="title function_">writeFileSync</span>(outputFile, prettyHtml);  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Wrote <span class="subst">$&#123;outputFile&#125;</span>`</span>);&#125;<span class="keyword">function</span> <span class="title function_">HelloWorldPage</span>(<span class="params"></span>) &#123;  <span class="keyword">return</span> (    <span class="language-xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charSet</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><span class="language-xml">    <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span>  );&#125;</code></pre><h2 id="Conclusion">Conclusion</h2><p>generated static html result at <code>output.html</code></p>]]></content>
+    
+    
+    <summary type="html">react-dom server generate static html from react elements import as fs from fs;import prettier from prettier;import React from react;import ReactDOMServer from react-dom/server;render;function render </summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
+    <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
+    
+    <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to use react suite toaster in reactjs</title>
+    <link href="https://www.webmanajemen.com/2023/09/how-to-use-react-suite-toaster-in-reactjs.html"/>
+    <id>https://www.webmanajemen.com/2023/09/how-to-use-react-suite-toaster-in-reactjs.html</id>
+    <published>2023-09-26T01:00:44.000Z</published>
+    <updated>2023-09-26T01:14:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-Hook-“useToaster”-cannot-be-called-in-a-class-component">React Hook “useToaster” cannot be called in a class component</h2><blockquote><p>You cannot using <code>useToaster</code> in class component, use <a href="#using-in-class-component"><code>rsuite.toaster</code></a> instead.</p></blockquote><h2 id="Using-in-function-component">Using in function component</h2><pre><code class="highlight tsx"><span class="keyword">import</span> &#123;  <span class="title class_">Notification</span>,  useToaster,  <span class="title class_">Placeholder</span>,  <span class="title class_">Uploader</span>,  <span class="title class_">ButtonToolbar</span>,  <span class="title class_">SelectPicker</span>,  <span class="title class_">Button</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;rsuite&#x27;</span>;<span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;  <span class="keyword">const</span> [<span class="keyword">type</span>, setType] = <span class="title class_">React</span>.<span class="title function_">useState</span>(<span class="string">&#x27;info&#x27;</span>);  <span class="keyword">const</span> [placement, setPlacement] = <span class="title class_">React</span>.<span class="title function_">useState</span>(<span class="string">&#x27;topStart&#x27;</span>);  <span class="keyword">const</span> toaster = <span class="title function_">useToaster</span>();  <span class="keyword">const</span> message = (    <span class="language-xml"><span class="tag">&lt;<span class="name">Notification</span> <span class="attr">type</span>=<span class="string">&#123;type&#125;</span> <span class="attr">header</span>=<span class="string">&#123;type&#125;</span> <span class="attr">closable</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;<span class="name">Placeholder.Paragraph</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> <span class="attr">320</span> &#125;&#125; <span class="attr">rows</span>=<span class="string">&#123;3&#125;</span> /&gt;</span></span><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><span class="language-xml">      <span class="tag">&lt;<span class="name">Uploader</span> <span class="attr">action</span>=<span class="string">&quot;#&quot;</span> /&gt;</span></span><span class="language-xml">    <span class="tag">&lt;/<span class="name">Notification</span>&gt;</span></span>  );  <span class="keyword">return</span> (    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><span class="language-xml">      &#123;message&#125;</span><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><span class="language-xml">      <span class="tag">&lt;<span class="name">ButtonToolbar</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">SelectPicker</span></span></span><span class="tag"><span class="language-xml">          <span class="attr">value</span>=<span class="string">&#123;type&#125;</span></span></span><span class="tag"><span class="language-xml">          <span class="attr">data</span>=<span class="string">&#123;[</span></span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">info</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">info</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">success</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">success</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">warning</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">warning</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">error</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">error</span>&#x27; &#125;</span></span><span class="tag"><span class="language-xml">          ]&#125;</span></span><span class="tag"><span class="language-xml">          <span class="attr">onChange</span>=<span class="string">&#123;setType&#125;</span></span></span><span class="tag"><span class="language-xml">          <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> <span class="attr">200</span> &#125;&#125;</span></span><span class="tag"><span class="language-xml">        /&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">SelectPicker</span></span></span><span class="tag"><span class="language-xml">          <span class="attr">value</span>=<span class="string">&#123;placement&#125;</span></span></span><span class="tag"><span class="language-xml">          <span class="attr">data</span>=<span class="string">&#123;[</span></span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">topStart</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">topStart</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">topCenter</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">topCenter</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">topEnd</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">topEnd</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">bottomStart</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">bottomStart</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">bottomCenter</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">bottomCenter</span>&#x27; &#125;,</span></span><span class="tag"><span class="language-xml">            &#123; <span class="attr">label:</span> &#x27;<span class="attr">bottomEnd</span>&#x27;, <span class="attr">value:</span> &#x27;<span class="attr">bottomEnd</span>&#x27; &#125;</span></span><span class="tag"><span class="language-xml">          ]&#125;</span></span><span class="tag"><span class="language-xml">          <span class="attr">onChange</span>=<span class="string">&#123;setPlacement&#125;</span></span></span><span class="tag"><span class="language-xml">          <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> <span class="attr">200</span> &#125;&#125;</span></span><span class="tag"><span class="language-xml">        /&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> toaster.push(message, &#123; placement &#125;)&#125;&gt;Push<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> toaster.remove()&#125;&gt;Remove<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> toaster.clear()&#125;&gt;Clear<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;/<span class="name">ButtonToolbar</span>&gt;</span></span><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>  );&#125;;<span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</code></pre><h2 id="Using-in-class-component">Using in class component</h2><pre><code class="highlight jsx"><span class="keyword">class</span> <span class="title class_">AppClass</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;  toaster;  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;    <span class="variable language_">super</span>(props);    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;      <span class="attr">type</span>: <span class="string">&quot;info&quot;</span>,      <span class="attr">placement</span>: <span class="string">&quot;topStart&quot;</span>    &#125;;  &#125;  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;    <span class="keyword">import</span>(<span class="string">&quot;rsuite&quot;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">modules</span>) =&gt;</span> &#123;      <span class="variable language_">this</span>.<span class="property">toaster</span> = modules.<span class="property">toaster</span>;    &#125;);  &#125;  <span class="title function_">render</span>(<span class="params"></span>) &#123;    <span class="keyword">const</span> &#123; type, placement &#125; = <span class="variable language_">this</span>.<span class="property">state</span>;    <span class="keyword">const</span> message = (      <span class="language-xml"><span class="tag">&lt;<span class="name">Notification</span> <span class="attr">type</span>=<span class="string">&#123;type&#125;</span> <span class="attr">header</span>=<span class="string">&#123;type&#125;</span> <span class="attr">closable</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">Placeholder.Paragraph</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> <span class="attr">320</span> &#125;&#125; <span class="attr">rows</span>=<span class="string">&#123;3&#125;</span> /&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">Uploader</span> <span class="attr">action</span>=<span class="string">&quot;#&quot;</span> /&gt;</span></span><span class="language-xml">      <span class="tag">&lt;/<span class="name">Notification</span>&gt;</span></span>    );    <span class="keyword">return</span> (      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><span class="language-xml">        &#123;message&#125;</span><span class="language-xml">        <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><span class="language-xml">        <span class="tag">&lt;<span class="name">ButtonToolbar</span>&gt;</span></span><span class="language-xml">          <span class="tag">&lt;<span class="name">SelectPicker</span></span></span><span class="tag"><span class="language-xml">            <span class="attr">value</span>=<span class="string">&#123;type&#125;</span></span></span><span class="tag"><span class="language-xml">            <span class="attr">data</span>=<span class="string">&#123;[</span></span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">info</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">info</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">success</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">success</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">warning</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">warning</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">error</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">error</span>&quot; &#125;</span></span><span class="tag"><span class="language-xml">            ]&#125;</span></span><span class="tag"><span class="language-xml">            <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> console.log(&quot;label&quot;, e)&#125;</span><span class="language-xml">            style=&#123;&#123; width: 200 &#125;&#125;</span><span class="language-xml">          /&gt;</span><span class="language-xml">          <span class="tag">&lt;<span class="name">SelectPicker</span></span></span><span class="tag"><span class="language-xml">            <span class="attr">value</span>=<span class="string">&#123;placement&#125;</span></span></span><span class="tag"><span class="language-xml">            <span class="attr">data</span>=<span class="string">&#123;[</span></span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">topStart</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">topStart</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">topCenter</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">topCenter</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">topEnd</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">topEnd</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">bottomStart</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">bottomStart</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">bottomCenter</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">bottomCenter</span>&quot; &#125;,</span></span><span class="tag"><span class="language-xml">              &#123; <span class="attr">label:</span> &quot;<span class="attr">bottomEnd</span>&quot;, <span class="attr">value:</span> &quot;<span class="attr">bottomEnd</span>&quot; &#125;</span></span><span class="tag"><span class="language-xml">            ]&#125;</span></span><span class="tag"><span class="language-xml">            <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> console.log(&quot;placement&quot;, e)&#125;</span><span class="language-xml">            style=&#123;&#123; width: 200 &#125;&#125;</span><span class="language-xml">          /&gt;</span><span class="language-xml">          <span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.toaster.push(message, &#123; placement &#125;)&#125;&gt;</span><span class="language-xml">            Push</span><span class="language-xml">          <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><span class="language-xml">          <span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.toaster.remove()&#125;&gt;Remove<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><span class="language-xml">          <span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.toaster.clear()&#125;&gt;Clear<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span><span class="language-xml">        <span class="tag">&lt;/<span class="name">ButtonToolbar</span>&gt;</span></span><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>    );  &#125;&#125;</code></pre><h2 id="react-suite-toaster-live-playground">react suite toaster live playground</h2><p><a href="https://codesandbox.io/s/billowing-rain-dn9r2y?fontsize=14&amp;hidenavigation=1&amp;theme=dark"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt=""></a></p><iframe src="https://codesandbox.io/embed/billowing-rain-dn9r2y?fontsize=14&hidenavigation=1&theme=dark"     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"     title="billowing-rain-dn9r2y"     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"   ></iframe>]]></content>
+    
+    
+    <summary type="html">How to use react suite toaster in reactjs React Hook useToaster cannot be called in a class component You cannot using useToaster in class component, use rsuite.toaster instead. useToaster rsuite.toas</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
+    <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
+    
+    <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>How to fix vscode settings sync in linux</title>
@@ -56,9 +106,9 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
-    <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
-    
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
+    <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
     
     <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
     
@@ -81,11 +131,11 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
+    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
     <category term="vscode" scheme="https://www.webmanajemen.com/tags/vscode/"/>
     
     <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
-    
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
     <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
     
@@ -173,11 +223,11 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
-    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
+    <category term="css" scheme="https://www.webmanajemen.com/tags/css/"/>
     
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
-    <category term="css" scheme="https://www.webmanajemen.com/tags/css/"/>
+    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
     
   </entry>
   
@@ -244,9 +294,9 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
-    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
-    
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
+    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
     
   </entry>
   
@@ -267,11 +317,11 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
+    <category term="tips &amp; tricks" scheme="https://www.webmanajemen.com/tags/tips-tricks/"/>
+    
     <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
     
     <category term="workflows" scheme="https://www.webmanajemen.com/tags/workflows/"/>
-    
-    <category term="tips &amp; tricks" scheme="https://www.webmanajemen.com/tags/tips-tricks/"/>
     
   </entry>
   
@@ -390,9 +440,9 @@
     
     <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
     
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
     <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
+    
+    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
     
   </entry>
   
@@ -419,9 +469,9 @@
     
     <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
     
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
     <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
+    
+    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
     
   </entry>
   
@@ -448,67 +498,9 @@
     
     <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
     
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
     <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Monster lichen bufonidae</title>
-    <link href="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae.html"/>
-    <id>https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae.html</id>
-    <published>2023-08-06T14:00:28.000Z</published>
-    <updated>2023-08-06T14:11:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>lichen bufonidae Information from Chimeraland</h2>    <h2 id="attribute"><i>lichen bufonidae</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td>N/A <br />N/A</td>              </tr>              <tr>                <th>Attack</th>                <td>N/A</td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td>N/A</td>              </tr>              <tr>                <th>Defense</th>                <td></td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: lichen bufonidae stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for lichen bufonidae</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for lichen bufonidae</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-05-33-89_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-05-33-89_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-05-33-89_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-05-37-98_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-05-37-98_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-05-37-98_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-05-42-26_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-05-42-26_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-05-42-26_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-05-46-22_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-05-46-22_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-05-46-22_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-05-51-53_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-05-51-53_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-05-51-53_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-05-57-28_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-05-57-28_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-05-57-28_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-06-02-18_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-06-02-18_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-06-02-18_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-06-06-94_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-06-06-94_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-06-06-94_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/lichen-bufonidae/Screenshot_2023-08-07-01-06-17-19_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="lichen bufonidae Screenshot_2023-08-07-01-06-17-19_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>lichen bufonidae</i>              Screenshot_2023-08-07-01-06-17-19_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content>
-    
-    
-    <summary type="html">Monster lichen bufonidae lichen bufonidae Information from Chimeraland lichen bufonidae default maximum attribute GRADE N/A N/A Attack N/A </summary>
-    
-    
-    
-    <category term="games" scheme="https://www.webmanajemen.com/categories/games/"/>
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/categories/games/chimeraland/"/>
-    
-    <category term="monsters" scheme="https://www.webmanajemen.com/categories/games/chimeraland/monsters/"/>
-    
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
-    
     <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
-    <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Monster Giant Transparay</title>
-    <link href="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay.html"/>
-    <id>https://www.webmanajemen.com/chimeraland/monsters/giant-transparay.html</id>
-    <published>2023-08-06T11:43:16.000Z</published>
-    <updated>2023-05-24T13:48:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>Giant Transparay Information from Chimeraland</h2>    <h2 id="attribute"><i>Giant Transparay</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td>                  A <br /><span class="text-warning">NOBLE - LEGENDARY</span>                </td>              </tr>              <tr>                <th>Attack</th>                <td>70</td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td>70</td>              </tr>              <tr>                <th>Defense</th>                <td>70</td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: Giant Transparay stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for Giant Transparay</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for Giant Transparay</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/undefined"              alt="Giant Transparay undefined"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i> .            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-34-53-81_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-34-53-81_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-34-53-81_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-00-69_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-00-69_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-00-69_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-04-17_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-04-17_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-04-17_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-08-30_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-08-30_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-08-30_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-15-80_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-15-80_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-15-80_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-20-92_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-20-92_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-20-92_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-26-14_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-26-14_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-26-14_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-transparay/Screenshot_2023-08-06-23-35-31-61_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="Giant Transparay Screenshot_2023-08-06-23-35-31-61_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>Giant Transparay</i>              Screenshot_2023-08-06-23-35-31-61_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content>
-    
-    
-    <summary type="html">Monster Giant Transparay Giant Transparay Information from Chimeraland Giant Transparay default maximum attribute GRADE A NOBLE - LEGENDARY </summary>
-    
-    
-    
-    <category term="games" scheme="https://www.webmanajemen.com/categories/games/"/>
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/categories/games/chimeraland/"/>
-    
-    <category term="monsters" scheme="https://www.webmanajemen.com/categories/games/chimeraland/monsters/"/>
-    
-    
-    <category term="chimeraland" scheme="https://www.webmanajemen.com/tags/chimeraland/"/>
-    
-    <category term="pet" scheme="https://www.webmanajemen.com/tags/pet/"/>
-    
-    <category term="monster" scheme="https://www.webmanajemen.com/tags/monster/"/>
     
   </entry>
   

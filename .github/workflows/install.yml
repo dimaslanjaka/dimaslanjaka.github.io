@@ -99,12 +99,13 @@ jobs:
         id: cleanup
         run: |
           rm -rf github-actions
-          rm -rf .github
+          find . -name '.github' -type d -prune -exec rm -rf '{}' +
           rm -rf .devcontainer
           rm -rf .npmrc
           rm -rf .gitmodules
           rm -rf github-actions-validator.config.yml
-          rm -rf .vscode
+          find . -name '.vscode' -type d -prune -exec rm -rf '{}' +
+          find . -name 'tmp' -type d -prune -exec rm -rf '{}' +
       - name: Setup Pages
         uses: actions/configure-pages@v3
         if: steps.validate.outcome == 'success'

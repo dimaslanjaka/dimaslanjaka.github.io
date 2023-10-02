@@ -16,7 +16,7 @@ case `uname` in
   *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
 esac
 
-echo "Insert commit hash" read commitHash
+echo "Insert commit hash" && read commitHash
 branch=$(git branch --show-current)
 branchpatch=patch
 

@@ -95,7 +95,7 @@ jobs:
       - name: validate paths
         run: node github-actions/index.js
         id: validate
-      - run: cleanup unused files
+      - name: cleanup unused files
         id: cleanup
         run: |
           rm -rf github-actions

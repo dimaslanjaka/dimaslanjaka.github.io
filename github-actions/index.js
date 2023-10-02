@@ -6,6 +6,7 @@ const jsdom = require("jsdom");
 const path = require("path");
 const yaml = require("yaml");
 const color = require("ansi-colors");
+const { writefile } = require("sbg-utility");
 
 /**
  * @type {import('./tmp/schema.json')}
@@ -17,12 +18,9 @@ const config = yaml.parse(
 );
 
 // save schema
-if (!fs.existsSync(path.join(__dirname, "tmp"))) {
-	fs.mkdirSync(path.join(__dirname, "tmp"));
-}
-fs.writeFileSync(
+writefile(
 	path.join(__dirname, "tmp/schema.json"),
-	JSON.stringify(config)
+	JSON.stringify(config, null, 2)
 );
 
 let hasErrors = false;

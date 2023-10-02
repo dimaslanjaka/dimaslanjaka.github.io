@@ -1,1 +1,238 @@
-<html><head></head><body></body></html>
+<!DOCTYPE html><html lang="[&quot;id&quot;,&quot;en&quot;,&quot;zh-TW&quot;,&quot;zh-CN&quot;,&quot;zh-HK&quot;,&quot;th&quot;,&quot;tl&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>GitHub Workflow Events | WMI</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Macam-macam events pada GitHub Workflows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub Workflow Events">
+<meta property="og:url" content="https://www.webmanajemen.com/GitHub/workflows-events.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="Macam-macam events pada GitHub Workflows">
+<meta property="og:locale" content="id_ID">
+<meta property="og:image" content="https://www.webmanajemen.com/GitHub/workflows/events.png">
+<meta property="article:published_time" content="2021-11-21T09:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-02T14:28:01.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="github-workflows">
+<meta property="article:tag" content="snippet">
+<meta property="article:tag" content="yaml">
+<meta property="article:tag" content="github-actions">
+<meta property="article:tag" content="github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.webmanajemen.com/GitHub/workflows/events.png"><link rel="shortcut icon" href="/images/image2vector.svg"><link rel="canonical" href="https://www.webmanajemen.com/GitHub/workflows-events.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""><link rel="preconnect" href="//static.cloudflareinsights.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-106238155-1');
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;2157c0f3b9e74a92badffe39156166b9&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"Kami tidak dapat menemukan hasil apapun untuk pencarian: ${query}","hits_stats":"${hits} results found"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'Browser tidak mendukung'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'baru saja',
+    min: 'menit yang lalu',
+    hour: 'jam yang lalu',
+    day: 'hari yang lalu',
+    month: 'bulan yang lalu'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'GitHub Workflow Events',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-02 21:28:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//cdn.statically.io/gh/dimaslanjaka/Web-Manajemen/gh-pages/highlight.js/styles/github-dark.css" crossorigin="anonymous" referrerpolicy="no-referrer"><meta name="generator" content="Hexo 7.0.0-rc2"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Postingan</div><div class="length-num">1773</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">143</div></a><a href="/categories/"><div class="headline">Kategori</div><div class="length-num">23</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/page/google/login.html"><i class="fa-fw fab fa-google"></i><span> Login</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> Tools</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/page/bot-detect.html"><i class="fa-fw fas fa-robot"></i><span> Bot Detector</span></a></li><li><a class="site-page child" href="/page/cookies.html"><i class="fa-fw fas fa-cookie"></i><span> Cookies Manager</span></a></li><li><a class="site-page child" href="/page/moment-timezone.html"><i class="fa-fw fas fa-clock"></i><span> Moment Timezone Playground</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="WMI"><span class="site-name">WMI</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/page/google/login.html"><i class="fa-fw fab fa-google"></i><span> Login</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> Tools</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/page/bot-detect.html"><i class="fa-fw fas fa-robot"></i><span> Bot Detector</span></a></li><li><a class="site-page child" href="/page/cookies.html"><i class="fa-fw fas fa-cookie"></i><span> Cookies Manager</span></a></li><li><a class="site-page child" href="/page/moment-timezone.html"><i class="fa-fw fas fa-clock"></i><span> Moment Timezone Playground</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">GitHub Workflow Events</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">Diupdate</span><time datetime="2023-09-02T14:28:01.000Z" title="Diupdate 2023-09-02 21:28:01">2023-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/programming/">programming</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="GitHub Workflow Events"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Kunjungan Postingan:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1>Events yang memicu Github Workflow</h1>
+<p>Anda dapat mengkonfigurasi alur kerja Anda untuk berjalan saat aktivitas tertentu di GitHub terjadi, pada waktu yang dijadwalkan, atau saat peristiwa di luar GitHub terjadi.</p>
+<h2 id="Contoh-Menggunakan-single-event">Contoh Menggunakan single event</h2>
+<pre><code class="highlight yaml"><span class="comment"># Memicu workflow pada event push atau pull request</span>
+<span class="attr">on:</span> [<span class="string">push</span>, <span class="string">pull_request</span>]</code></pre>
+<h2 id="Contoh-Menggunakan-beberapa-events-dengan-jenis-atau-konfigurasi-aktivitas">Contoh Menggunakan beberapa events dengan jenis atau konfigurasi aktivitas</h2>
+<p>Jika Anda perlu menentukan jenis aktivitas atau konfigurasi untuk suatu peristiwa, Anda harus mengonfigurasi setiap peristiwa secara terpisah. Anda harus menambahkan titik dua (:) ke semua event, termasuk event tanpa konfigurasi.</p>
+<pre><code class="highlight yaml"><span class="attr">on:</span>
+  <span class="comment"># Memicu workflow pada event push atau pull request,</span>
+  <span class="comment"># tapi hanya untuk event `main` branch,</span>
+  <span class="comment"># anda juga dapat menambahkan beberapa branch dibawah,</span>
+  <span class="comment"># cukup tambahkan `- nama branch`</span>
+  <span class="attr">push:</span>
+    <span class="attr">branches:</span>
+      <span class="bullet">-</span> <span class="string">main</span>
+  <span class="attr">pull_request:</span>
+    <span class="attr">branches:</span>
+      <span class="bullet">-</span> <span class="string">main</span></code></pre>
+<h2 id="Contoh-Menggunakan-workflow-lain-sebagai-acuan-untuk-memicu-workflow-saat-ini">Contoh Menggunakan workflow lain sebagai acuan untuk memicu workflow saat ini</h2>
+<p>Ini workflow yang akan di lihat (primary workflow)</p>
+<pre><code class="highlight yaml"><span class="comment"># workflow yang akan berjalan pertama kali</span>
+<span class="attr">name:</span> <span class="string">Primary</span> <span class="string">Workflow</span></code></pre>
+<p>Ini workflow kedua yang akan jalan apabila workflow pertama sukses</p>
+<pre><code class="highlight yaml"><span class="comment"># apabila 'Primary Workflow' selesai, lanjutkan workflow ini</span>
+<span class="attr">on:</span>
+  <span class="attr">workflow_run:</span>
+    <span class="attr">workflows:</span> [<span class="string">"Primary Workflow"</span>]
+    <span class="comment"># hanya akan jalan apabila 'Primary Workflow' sukses/tidak error</span>
+    <span class="attr">types:</span>
+      <span class="bullet">-</span> <span class="string">completed</span></code></pre>
+<p>Ini workflow ketiga yang akan jalan berdampingan dengan workflow pertama, apabila workflow tersebut diminta untuk jalan (terpicu)</p>
+<pre><code class="highlight yaml"><span class="comment"># apabila primary workflow dipicu, maka workflow ini juga akan jalan</span>
+<span class="attr">on:</span>
+  <span class="attr">workflow_run:</span>
+    <span class="attr">workflows:</span> [<span class="string">"Primary Workflow"</span>]
+    <span class="comment"># hanya akan jalan apabila 'Primary Workflow' terpicu</span>
+    <span class="attr">types:</span>
+      <span class="bullet">-</span> <span class="string">requested</span></code></pre>
+<h2 id="Contoh-Github-workflow-run-after-other-workflow">Contoh Github workflow run after other workflow</h2>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9hLzY3NTM0OTIw">source idea</a></p>
+<pre><code class="highlight yaml"><span class="attr">on:</span>
+  <span class="attr">workflow_run:</span>
+    <span class="attr">workflows:</span> [<span class="string">"Other Workflow Name"</span>]
+    <span class="attr">types:</span>
+     <span class="bullet">-</span> <span class="string">completed</span>
+
+<span class="attr">jobs:</span>
+  <span class="attr">on-success:</span>
+    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span>
+    <span class="attr">if:</span> <span class="string">${{</span> <span class="string">github.event.workflow_run.conclusion</span> <span class="string">==</span> <span class="string">'success'</span> <span class="string">}}</span>
+    <span class="attr">steps:</span>
+      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"First workflow was a success"</span>
+
+  <span class="attr">on-failure:</span>
+    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span>
+    <span class="attr">if:</span> <span class="string">${{</span> <span class="string">github.event.workflow_run.conclusion</span> <span class="string">==</span> <span class="string">'failure'</span> <span class="string">}}</span>
+    <span class="attr">steps:</span>
+      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"First workflow was a failure"</span></code></pre>
+<p>Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://www.webmanajemen.com">Dimas Lanjaka</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://www.webmanajemen.com/GitHub/workflows-events.html">https://www.webmanajemen.com/GitHub/workflows-events.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8=">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/github-workflows/">github-workflows</a><a class="post-meta__tags" href="/tags/snippet/">snippet</a><a class="post-meta__tags" href="/tags/yaml/">yaml</a><a class="post-meta__tags" href="/tags/github-actions/">github-actions</a><a class="post-meta__tags" href="/tags/github/">github</a></div><div class="post_share"><div class="addtoany"><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_button_whatsapp"></a><a class="a2a_button_twitter"></a><a class="a2a_button_wechat"></a><a class="a2a_button_sina_weibo"></a><a class="a2a_button_email"></a><a class="a2a_button_copy_link"></a><a class="a2a_dd" target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYWRkdG9hbnkuY29tL3NoYXJl"></a></div></div><script async="async" src="https://static.addtoany.com/menu/page.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/GitHub/workflows-condition.html" title="Macam-macam kondisional pada github workflows"><img class="cover" src="/GitHub/workflows/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Postingan Sebelumnya</div><div class="prev_info">Macam-macam kondisional pada github workflows</div></div></a></div><div class="next-post pull-right"><a href="/GitHub/workflows-caches.html" title="Mempercepat GitHub Workflow Dengan Cache Strategy"><img class="cover" src="/GitHub/workflows/cover2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Postingan Selanjutnya</div><div class="next_info">Mempercepat GitHub Workflow Dengan Cache Strategy</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/GitHub/actions-matrix-sequentally.html" title="Github Workflows Run Strategy Matrix Sequentally"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Github Workflows Run Strategy Matrix Sequentally</div></div></a></div><div><a href="/GitHub/default-username-and-email-github-actions.html" title="Default username and email for github workflow actions"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Default username and email for github workflow actions</div></div></a></div><div><a href="/GitHub/github-workflow-filter-jobs-by-os.html" title="Github Workflow Filter Jobs By OS"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Github Workflow Filter Jobs By OS</div></div></a></div><div><a href="/id/GitHub/github-workflow-filter-jobs-by-os.html" title="Github Workflow Filter Job Berdasarkan OS Yang Dijalankan"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Github Workflow Filter Job Berdasarkan OS Yang Dijalankan</div></div></a></div><div><a href="/id/GitHub/github-actions-run-single-instance.html" title="Menjalankan Github Workflow Satu Instansi sequentally"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Menjalankan Github Workflow Satu Instansi sequentally</div></div></a></div><div><a href="/GitHub/workflow-auto-clean-cache.html" title="yaml github actions to clean all caches"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">yaml github actions to clean all caches</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Postingan</div><div class="length-num">1773</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">143</div></a><a href="/categories/"><div class="headline">Kategori</div><div class="length-num">23</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ=="><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Katalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Events yang memicu Github Workflow</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Contoh-Menggunakan-single-event"><span class="toc-number">1.1.</span> <span class="toc-text">Contoh Menggunakan single event</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contoh-Menggunakan-beberapa-events-dengan-jenis-atau-konfigurasi-aktivitas"><span class="toc-number">1.2.</span> <span class="toc-text">Contoh Menggunakan beberapa events dengan jenis atau konfigurasi aktivitas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contoh-Menggunakan-workflow-lain-sebagai-acuan-untuk-memicu-workflow-saat-ini"><span class="toc-number">1.3.</span> <span class="toc-text">Contoh Menggunakan workflow lain sebagai acuan untuk memicu workflow saat ini</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contoh-Github-workflow-run-after-other-workflow"><span class="toc-number">1.4.</span> <span class="toc-text">Contoh Github workflow run after other workflow</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Postingan Baru</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/notes/catatan-muslim.html" title="Catatan Muslim">Catatan Muslim</a><time datetime="2023-10-01T19:09:45.000Z" title="Dibuat 2023-10-02 02:09:45">2023-10-02</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/09/react-dom-server-generate-static-html-from-react.html" title="react-dom server generate static html from react elements">react-dom server generate static html from react elements</a><time datetime="2023-09-27T23:34:23.000Z" title="Dibuat 2023-09-28 06:34:23">2023-09-28</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/09/how-to-use-react-suite-toaster-in-reactjs.html" title="How to use react suite toaster in reactjs">How to use react suite toaster in reactjs</a><time datetime="2023-09-26T01:00:44.000Z" title="Dibuat 2023-09-26 08:00:44">2023-09-26</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/09/fix-vscode-settings-sync-linux.html" title="How to fix vscode settings sync in linux">How to fix vscode settings sync in linux</a><time datetime="2023-09-18T20:37:50.000Z" title="Dibuat 2023-09-19 03:37:50">2023-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/how-to-react-lazy-load-module-with-dot-notation.html" title="How to lazy loading JSX react module with dots notation"><img src="https://felixgerschau.com/static/fd98b903a50c5468828ec6c1c72d7b7e/0243e/react-lazy-loading-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to lazy loading JSX react module with dots notation"></a><div class="content"><a class="title" href="/2023/09/how-to-react-lazy-load-module-with-dot-notation.html" title="How to lazy loading JSX react module with dots notation">How to lazy loading JSX react module with dots notation</a><time datetime="2023-09-17T23:18:02.000Z" title="Dibuat 2023-09-18 06:18:02">2023-09-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">©2014 - 2023 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2plcnJ5YzEyNy9oZXhvLXRoZW1lLWJ1dHRlcmZseQ==">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Baca Selengkapnya"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Kembali ke atas"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/tw_cn.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://www.webmanajemen.com/page/assets/js/r-ads.js"></script><script src="/page/assets/js/highlight.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Memuat Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Cari postingan" type="text"></div></div><hr><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/search/local-search.min.js"></script></div></div>
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

@@ -1,1 +1,235 @@
-<html><head></head><body></body></html>
+<!DOCTYPE html><html lang="[&quot;id&quot;,&quot;en&quot;,&quot;zh-TW&quot;,&quot;zh-CN&quot;,&quot;zh-HK&quot;,&quot;th&quot;,&quot;tl&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>git detach subfolder to their own repository | WMI</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="git detach subfolder to their own repository If you create a new clone of a repository, you can split the folder into another repository without losing your Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git detach subfolder to their own repository">
+<meta property="og:url" content="https://www.webmanajemen.com/GitHub/git-detach-subfolder-to-their-own-repository.html">
+<meta property="og:site_name" content="WMI">
+<meta property="og:description" content="git detach subfolder to their own repository If you create a new clone of a repository, you can split the folder into another repository without losing your Git">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/dimaslanjaka/source-posts/assets/12471057/aba30e58-526f-48c3-a2c5-fe7df582b8b2">
+<meta property="article:published_time" content="2023-05-29T11:02:45.000Z">
+<meta property="article:modified_time" content="2023-09-02T14:28:02.000Z">
+<meta property="article:author" content="Dimas Lanjaka">
+<meta property="article:tag" content="bash">
+<meta property="article:tag" content="github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/dimaslanjaka/source-posts/assets/12471057/aba30e58-526f-48c3-a2c5-fe7df582b8b2"><link rel="shortcut icon" href="/images/image2vector.svg"><link rel="canonical" href="https://www.webmanajemen.com/GitHub/git-detach-subfolder-to-their-own-repository.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""><link rel="preconnect" href="//static.cloudflareinsights.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-106238155-1');
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;2157c0f3b9e74a92badffe39156166b9&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"Kami tidak dapat menemukan hasil apapun untuk pencarian: ${query}","hits_stats":"${hits} results found"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'Browser tidak mendukung'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'baru saja',
+    min: 'menit yang lalu',
+    hour: 'jam yang lalu',
+    day: 'hari yang lalu',
+    month: 'bulan yang lalu'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'git detach subfolder to their own repository',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-02 21:28:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//cdn.statically.io/gh/dimaslanjaka/Web-Manajemen/gh-pages/highlight.js/styles/github-dark.css" crossorigin="anonymous" referrerpolicy="no-referrer"><meta name="generator" content="Hexo 7.0.0-rc2"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Postingan</div><div class="length-num">1773</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">143</div></a><a href="/categories/"><div class="headline">Kategori</div><div class="length-num">23</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/page/google/login.html"><i class="fa-fw fab fa-google"></i><span> Login</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> Tools</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/page/bot-detect.html"><i class="fa-fw fas fa-robot"></i><span> Bot Detector</span></a></li><li><a class="site-page child" href="/page/cookies.html"><i class="fa-fw fas fa-cookie"></i><span> Cookies Manager</span></a></li><li><a class="site-page child" href="/page/moment-timezone.html"><i class="fa-fw fas fa-clock"></i><span> Moment Timezone Playground</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="WMI"><span class="site-name">WMI</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/page/google/login.html"><i class="fa-fw fab fa-google"></i><span> Login</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> Tools</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/page/bot-detect.html"><i class="fa-fw fas fa-robot"></i><span> Bot Detector</span></a></li><li><a class="site-page child" href="/page/cookies.html"><i class="fa-fw fas fa-cookie"></i><span> Cookies Manager</span></a></li><li><a class="site-page child" href="/page/moment-timezone.html"><i class="fa-fw fas fa-clock"></i><span> Moment Timezone Playground</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">git detach subfolder to their own repository</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">Updated</span><time datetime="2023-09-02T14:28:02.000Z" title="Updated 2023-09-02 21:28:02">2023-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/programming/">programming</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="git detach subfolder to their own repository"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p>If you create a new clone of a repository, you can split the folder into another repository without losing your Git history or changes.</p>
+<ol>
+<li>
+<p>Open Git Bash.</p>
+</li>
+<li>
+<p>Change your current working directory to where you want to create the new repository. 3. Clone the repository including subfolders.</p>
+ <pre><code class="highlight plaintext">$ git clone https://github.com/USERNAME/REPOSITORY-NAME</code></pre>
+</li>
+<li>
+<p>Change your current working directory to the cloned repository.</p>
+ <pre><code class="highlight plaintext">$ cd REPOSITORY-NAME</code></pre>
+</li>
+</ol>
+<p>Five. To filter subfolders from the rest of the files in the repository, use <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL25ld3Jlbi9naXQtZmlsdGVyLXJlcG8=">‘git-filter-repo’</a>, run git filter-repo with the following arguments:</p>
+<ul>
+<li>“Folder name”:<br>
+A folder within a project in which to create another repository.</li>
+</ul>
+<blockquote>
+<p><strong>Up:</strong> Windows users must use “/” to separate folders.</p>
+</blockquote>
+<pre><code><pre><code class="highlight plaintext">$ git filter-repo --path FOLDER-NAME/
+# Filter the specified branch in your directory and remove empty commits
+&gt; Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (89/89)
+&gt; Ref 'refs/heads/BRANCH-NAME' was rewritten</code></pre>
+</code></pre>
+<p>Now the repository will only contain the files that were in the subfolders.</p>
+<ol start="6">
+<li>
+<p>[Create a new repository] (<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vcmVwb3NpdG9yaWVzL2NyZWF0aW5nLWFuZC1tYW5hZ2luZy1yZXBvc2l0b3JpZXMvY3JlYXRpbmctYS1uZXctcmVwb3NpdG9yeQ==">https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository</a>) on GitHub.</p>
+</li>
+<li>
+<p>At the top of your new repository, click the <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL0dpdEh1Yi5jb20=">GitHub.com</a> Quick Setup page.</p>
+</li>
+<li>
+<p>Copy the remote repository URL.</p>
+</li>
+</ol>
+<p><img src="https://docs.github.com/assets/cb-48149/images/help/repository/copy-remote-repository-url-quick-setup.png" alt="git detach subfolder to their own repository | WMI - https://docs.github.com/assets/cb-48149/images/help/repository/copy-remote-repository-url-quick-setup.png"></p>
+<p><strong>Up:</strong> See [About remote repositories] (<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vZ2V0LXN0YXJ0ZWQvZ2V0dGluZy1zdGFydGVkLXdpdGgtZ2l0L2Fib3V0LXJlbW90ZS1yZXBvc2l0b3JpZXM=">https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories</a>).</p>
+<ol start="4">
+<li>
+<p>Add a new remote name using the URL you copied for your repository. For example, Origin or Upstream are two common choices.</p>
+ <pre><code class="highlight plaintext">git remote add origin https://github.com/USERNAME/REPOSITORY-NAME.git</code></pre>
+</li>
+<li>
+<p>Make sure the remote URL is added with the new repository name.</p>
+ <pre><code class="highlight plaintext">$ git remote -v
+# Verify new remote URL
+&gt; origin  https://github.com/USERNAME/NEW-REPOSITORY-NAME.git (fetch)
+&gt; origin  https://github.com/USERNAME/NEW-REPOSITORY-NAME.git (push)</code></pre>
+</li>
+<li>
+<p>Push your changes to your new repository on GitHub.</p>
+ <pre><code class="highlight plaintext">git push -u origin BRANCH-NAME</code></pre>
+</li>
+</ol>
+<p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/aba30e58-526f-48c3-a2c5-fe7df582b8b2" alt="git detach subfolder to their own repository | WMI - https://github.com/dimaslanjaka/source-posts/assets/12471057/aba30e58-526f-48c3-a2c5-fe7df582b8b2"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://www.webmanajemen.com">Dimas Lanjaka</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://www.webmanajemen.com/GitHub/git-detach-subfolder-to-their-own-repository.html">https://www.webmanajemen.com/GitHub/git-detach-subfolder-to-their-own-repository.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8=">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/bash/">bash</a><a class="post-meta__tags" href="/tags/github/">github</a></div><div class="post_share"><div class="addtoany"><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_button_whatsapp"></a><a class="a2a_button_twitter"></a><a class="a2a_button_wechat"></a><a class="a2a_button_sina_weibo"></a><a class="a2a_button_email"></a><a class="a2a_button_copy_link"></a><a class="a2a_dd" target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYWRkdG9hbnkuY29tL3NoYXJl"></a></div></div><script async="async" src="https://static.addtoany.com/menu/page.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/GitHub/delete-thousands-old-commits-github.html" title="How to remove thousands old unneeded commits"><img class="cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">How to remove thousands old unneeded commits</div></div></a></div><div class="next-post pull-right"><a href="/NodeJS/jest-debug-memory-leaks.html" title="debug memory leaks with jest"><img class="cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">debug memory leaks with jest</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/02/bash-rollback-github-pages.html" title="bash script to rollback github pages"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">bash script to rollback github pages</div></div></a></div><div><a href="/2023/04/git-conventional-commit.html" title="Conventional Commit Messages"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Conventional Commit Messages</div></div></a></div><div><a href="/2023/04/git-fix-case-sensitive-conflict.html" title="git fix case-sensitive conflict"><img class="cover" src="https://1.bp.blogspot.com/-qPtq_n0ithw/YPbCOjZsFyI/AAAAAAAAAhM/JfQ6R2yIcgYMlTZ9GhPaOgFEZ1rm0O0lACLcBGAsYHQ/s600/git-cli-commands.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">git fix case-sensitive conflict</div></div></a></div><div><a href="/2023/05/git-remove-big-files.html" title="remove files from git history for specific size"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">remove files from git history for specific size</div></div></a></div><div><a href="/2023/05/git-rollback-commit-hash.html" title="rollback commit github"><img class="cover" src="/var(--default-bg-color)" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-29</div><div class="title">rollback commit github</div></div></a></div><div><a href="/2023/05/removes-nodemodules-from-git-history.html" title="removes node_modules from git history"><img class="cover" src="https://github.com/dimaslanjaka/source-posts/assets/12471057/40dd6736-8c54-4039-bce4-cbddd5984f82" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">removes node_modules from git history</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Postingan</div><div class="length-num">1773</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">143</div></a><a href="/categories/"><div class="headline">Kategori</div><div class="length-num">23</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ=="><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Postingan Baru</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/notes/catatan-muslim.html" title="Catatan Muslim">Catatan Muslim</a><time datetime="2023-10-01T19:09:45.000Z" title="Dibuat 2023-10-02 02:09:45">2023-10-02</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/09/react-dom-server-generate-static-html-from-react.html" title="react-dom server generate static html from react elements">react-dom server generate static html from react elements</a><time datetime="2023-09-27T23:34:23.000Z" title="Dibuat 2023-09-28 06:34:23">2023-09-28</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/09/how-to-use-react-suite-toaster-in-reactjs.html" title="How to use react suite toaster in reactjs">How to use react suite toaster in reactjs</a><time datetime="2023-09-26T01:00:44.000Z" title="Dibuat 2023-09-26 08:00:44">2023-09-26</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/09/fix-vscode-settings-sync-linux.html" title="How to fix vscode settings sync in linux">How to fix vscode settings sync in linux</a><time datetime="2023-09-18T20:37:50.000Z" title="Dibuat 2023-09-19 03:37:50">2023-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/how-to-react-lazy-load-module-with-dot-notation.html" title="How to lazy loading JSX react module with dots notation"><img src="https://felixgerschau.com/static/fd98b903a50c5468828ec6c1c72d7b7e/0243e/react-lazy-loading-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="How to lazy loading JSX react module with dots notation"></a><div class="content"><a class="title" href="/2023/09/how-to-react-lazy-load-module-with-dot-notation.html" title="How to lazy loading JSX react module with dots notation">How to lazy loading JSX react module with dots notation</a><time datetime="2023-09-17T23:18:02.000Z" title="Dibuat 2023-09-18 06:18:02">2023-09-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">©2014 - 2023 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2plcnJ5YzEyNy9oZXhvLXRoZW1lLWJ1dHRlcmZseQ==">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/tw_cn.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://www.webmanajemen.com/page/assets/js/r-ads.js"></script><script src="/page/assets/js/highlight.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Memuat Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Cari postingan" type="text"></div></div><hr><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/search/local-search.min.js"></script></div></div>
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      </body></html>

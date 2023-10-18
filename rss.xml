@@ -15,8 +15,33 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Mon, 09 Oct 2023 00:12:17 GMT</pubDate>
+    <pubDate>Mon, 16 Oct 2023 22:46:27 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>ReactJS isMounted hook with useEffect</title>
+      <link>https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html</link>
+      <guid>https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html</guid>
+      <pubDate>Mon, 16 Oct 2023 22:34:57 GMT</pubDate>
+      
+      <description>ReactJS isMounted hook with useEffect Basic errors Warning: Cant perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. Basic Reac</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Basic-errors">Basic errors</h2><pre><code class="hljs log">Warning: Can&#x27;t perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.</code></pre><h2 id="Basic-React-useEffect">Basic <code>React.useEffect</code></h2><p>understanding basic usage of <code>React.useEffect</code></p><h3 id="call-every-changes">call every changes</h3><blockquote><p>Below codes will run on every render of your component, e.g. when state or props change.</p></blockquote><pre><code class="hljs js"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  <span class="hljs-comment">// component is mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    <span class="hljs-comment">// component is being unmounted</span>  &#125;&#125;);</code></pre><h3 id="call-only-once">call only once</h3><blockquote><p>Below codes will run an effect and clean it up only once (on mount and unmount). This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.</p></blockquote><pre><code class="hljs js"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  <span class="hljs-comment">// component is mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    <span class="hljs-comment">// component is being unmounted</span>  &#125;&#125;, []); <span class="hljs-comment">// run once on mount</span></code></pre><h2 id="Basic-React-useRef">Basic <code>React.useRef</code></h2><blockquote><p>Keep in mind that useRef doesn’t notify you when its content changes. Mutating the .current property doesn’t cause a re-render.</p></blockquote><h2 id="Storing-isMounted-with-React-useRef">Storing <code>isMounted</code> with <code>React.useRef</code></h2><p>You’ll <code>React.useEffect</code> to monitor when the component mounts or unmounts, and save that info in a <code>ref</code></p><pre><code class="hljs js"><span class="hljs-keyword">const</span> isMounted = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useRef</span>(<span class="hljs-literal">false</span>); <span class="hljs-comment">// unmounted by default</span><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  isMounted.<span class="hljs-property">current</span> = <span class="hljs-literal">true</span>; <span class="hljs-comment">// mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    isMounted.<span class="hljs-property">current</span> = <span class="hljs-literal">false</span>; <span class="hljs-comment">// unmounted</span>  &#125;&#125;, []); <span class="hljs-comment">// run once on mount</span></code></pre><p>Now anytime you need to know if our component is mounted, you can check <code>isMounted.current</code> to get the current value.</p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/react/">react</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Convert iframe to hexo-shortcodes codepen</title>
@@ -84,9 +109,9 @@
       <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
       
       
-      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
-      
       <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
       <category domain="https://www.webmanajemen.com/tags/react/">react</category>
       
@@ -111,9 +136,9 @@
       <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
       
       
-      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
-      
       <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
       <category domain="https://www.webmanajemen.com/tags/react/">react</category>
       
@@ -163,9 +188,9 @@
       <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
       
       
-      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
-      
       <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
       <category domain="https://www.webmanajemen.com/tags/react/">react</category>
       
@@ -190,11 +215,11 @@
       <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
       
       
-      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
+      <category domain="https://www.webmanajemen.com/tags/vscode/">vscode</category>
       
       <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
       
-      <category domain="https://www.webmanajemen.com/tags/vscode/">vscode</category>
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
       <category domain="https://www.webmanajemen.com/tags/react/">react</category>
       
@@ -290,11 +315,11 @@
       <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
       
       
-      <category domain="https://www.webmanajemen.com/tags/css/">css</category>
+      <category domain="https://www.webmanajemen.com/tags/github/">github</category>
       
       <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
-      <category domain="https://www.webmanajemen.com/tags/github/">github</category>
+      <category domain="https://www.webmanajemen.com/tags/css/">css</category>
       
       
       <comments>https://www.webmanajemen.com/2023/09/cara-mengakses-css-github-menjadi-cdn.html#disqus_thread</comments>
@@ -367,9 +392,9 @@
       <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
       
       
-      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
-      
       <category domain="https://www.webmanajemen.com/tags/bash/">bash</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
       
       <comments>https://www.webmanajemen.com/2023/08/how-to-make-husky-support-for-multiplatform.html#disqus_thread</comments>
@@ -394,9 +419,9 @@
       
       <category domain="https://www.webmanajemen.com/tags/github/">github</category>
       
-      <category domain="https://www.webmanajemen.com/tags/tips-tricks/">tips &amp; tricks</category>
-      
       <category domain="https://www.webmanajemen.com/tags/workflows/">workflows</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/tips-tricks/">tips &amp; tricks</category>
       
       
       <comments>https://www.webmanajemen.com/GitHub/how-to-remove-github-workflows-logs.html#disqus_thread</comments>
@@ -500,37 +525,6 @@
       
       
       <comments>https://www.webmanajemen.com/GitHub/how-to-remove-all-files-from-the-git-history-that-are-not-currently-present.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Monster giant dinbear</title>
-      <link>https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear.html</link>
-      <guid>https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear.html</guid>
-      <pubDate>Sun, 06 Aug 2023 14:00:28 GMT</pubDate>
-      
-      <description>Monster giant dinbear giant dinbear Information from Chimeraland giant dinbear default maximum attribute GRADE N/A N/A Attack N/A </description>
-      
-      
-      
-      <content:encoded><![CDATA[<link  rel="stylesheet"  href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/870a349/css/bootstrap-5-3-0-alpha3-wrapper.css"/><section id="bootstrap-wrapper">  <div data-bs-theme="dark">    <h2>giant dinbear Information from Chimeraland</h2>    <h2 id="attribute"><i>giant dinbear</i> default maximum attribute</h2>    <div class="row">      <div class="col mb-2">        <div class="card">          <div class="card-body">            <table>              <tr>                <th>GRADE</th>                <td>N/A <br />N/A</td>              </tr>              <tr>                <th>Attack</th>                <td>N/A</td>              </tr>              <tr>                <th>Health Point (HP)</th>                <td>N/A</td>              </tr>              <tr>                <th>Defense</th>                <td></td>              </tr>            </table>          </div>        </div>      </div>    </div>    <blockquote class="bd-callout bd-callout-warning">      Note: giant dinbear stat will increase based on their <b>grade</b> and      <b>delicacies/tasty</b>.    </blockquote>    <hr />    <h2 id="delicacies">Delicacies/Tasty for giant dinbear</h2>    <div class="card">      <div class="card-body">        <div class="table-responsive">          <table class="table table-striped">            <thead>              <tr>                <th>Recipe Name</th>                <th>Link</th>              </tr>            </thead>            <tbody></tbody>          </table>        </div>      </div>    </div>    <hr />    <div id="gallery">      <h2>Galleries for giant dinbear</h2>      <div class="row">        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-36-52-84_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-36-52-84_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-36-52-84_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-36-56-30_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-36-56-30_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-36-56-30_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-37-00-52_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-37-00-52_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-37-00-52_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-37-04-50_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-37-04-50_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-37-04-50_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-37-31-36_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-37-31-36_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-37-31-36_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-38-04-16_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-38-04-16_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-38-04-16_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-38-09-67_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-38-09-67_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-38-09-67_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>        <div class="col-lg-6 col-12">          <figure>            <img              src="https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear/Screenshot_2023-08-06-23-38-15-48_f4fc9fb10454fc3a3dacb99dff89b568.webp"              alt="giant dinbear Screenshot_2023-08-06-23-38-15-48_f4fc9fb10454fc3a3dacb99dff89b568.webp"            />            <figcaption style="word-wrap: break-word">              <i>giant dinbear</i>              Screenshot_2023-08-06-23-38-15-48_f4fc9fb10454fc3a3dacb99dff89b568.webp.            </figcaption>          </figure>        </div>      </div>    </div>  </div></section>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/games/">games</category>
-      
-      <category domain="https://www.webmanajemen.com/categories/games/chimeraland/">chimeraland</category>
-      
-      <category domain="https://www.webmanajemen.com/categories/games/chimeraland/monsters/">monsters</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/chimeraland/">chimeraland</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/monster/">monster</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/pet/">pet</category>
-      
-      
-      <comments>https://www.webmanajemen.com/chimeraland/monsters/giant-dinbear.html#disqus_thread</comments>
       
     </item>
     

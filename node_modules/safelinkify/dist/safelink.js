@@ -68,6 +68,14 @@ var safelink = /** @class */ (function () {
         var excludes = this.options.exclude;
         var value = String(url);
         var parsed = url instanceof URL ? url : (0, toURL_1.default)(value);
+        // skip empty string
+        if (typeof url === 'string' && url.length === 0) {
+            return true;
+        }
+        // skip url starts with ? and #
+        if (value.match(/^(\?|#)/)) {
+            return true;
+        }
         // only process url with protocol
         if (value.match(/^(?:(ht|f)tp(s?):\/\/)?/)) {
             for (var i = 0; i < excludes.length; i++) {

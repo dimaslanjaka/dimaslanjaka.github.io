@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-10-16T22:46:27.000Z</updated>
+  <updated>2023-10-25T07:55:17.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gradle script to generate proguard dictionaries each build</title>
+    <link href="https://www.webmanajemen.com/2023/10/gradle-generate-proguard-dictionaries-each-build.html"/>
+    <id>https://www.webmanajemen.com/2023/10/gradle-generate-proguard-dictionaries-each-build.html</id>
+    <published>2023-10-25T07:32:33.000Z</published>
+    <updated>2023-10-25T07:55:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="hljs gradle"><span class="hljs-keyword">def</span> dictDest = <span class="hljs-keyword">new</span> <span class="hljs-keyword">File</span>(<span class="hljs-string">&#x27;build/builddict.txt&#x27;</span>)tasks.register(<span class="hljs-string">&#x27;genDict&#x27;</span>) &#123;    outputs.<span class="hljs-keyword">file</span>(dictDest)    <span class="hljs-keyword">doLast</span> &#123;        <span class="hljs-keyword">if</span> (dictDest.exists()) <span class="hljs-keyword">return</span>        <span class="hljs-keyword">def</span> r = <span class="hljs-keyword">new</span> Random()        <span class="hljs-keyword">println</span>(r)        <span class="hljs-keyword">def</span> begin = r.nextInt(<span class="hljs-number">1000</span>) + <span class="hljs-number">0</span>x0100        <span class="hljs-keyword">def</span> end = begin + <span class="hljs-number">0</span>x40000        <span class="hljs-keyword">println</span>(<span class="hljs-string">&quot;end: &quot;</span> + end)        <span class="hljs-keyword">def</span> chars = (begin..end)                .<span class="hljs-keyword">findAll</span> &#123; Character.isValidCodePoint(it) &amp;&amp; Character.isJavaIdentifierPart(it) &#125;                .<span class="hljs-keyword">collect</span> &#123; String.valueOf(Character.toChars(it)) &#125;        <span class="hljs-keyword">println</span>(<span class="hljs-string">&quot;chars: &quot;</span> + chars)        <span class="hljs-keyword">int</span> max = chars.<span class="hljs-keyword">size</span>()        <span class="hljs-keyword">println</span>(max)        <span class="hljs-keyword">def</span> start = []        <span class="hljs-keyword">def</span> dict = []        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; max; i++) &#123;            <span class="hljs-keyword">char</span> c = chars.get(i).charAt(<span class="hljs-number">0</span>)            <span class="hljs-keyword">if</span> (Character.isJavaIdentifierStart(c)) &#123;                start &lt;&lt; String.valueOf(c)            &#125;        &#125;        <span class="hljs-keyword">println</span>(start.<span class="hljs-keyword">size</span>())        <span class="hljs-keyword">def</span> f = outputs.files.getSingleFile()        f.getParentFile().mkdirs()        f.<span class="hljs-keyword">withWriter</span>(<span class="hljs-string">&quot;UTF-8&quot;</span>) &#123;            it.<span class="hljs-keyword">write</span>(start.<span class="hljs-keyword">join</span>(System.lineSeparator()))            it.<span class="hljs-keyword">write</span>()        &#125;    &#125;&#125;</code></pre><p>run manual with <code>./gradlew genDict</code></p><p>but you can automated generator dictionary using <code>afterEvaluate</code></p><pre><code class="hljs gradle">afterEvaluate &#123;    <span class="hljs-comment">// each variant depends on `genDict` task</span>    android.applicationVariants.all &#123; variant -&gt;        <span class="hljs-keyword">if</span> (variant.name.endsWith(<span class="hljs-string">&#x27;Release&#x27;</span>))            variant.javaCompileProvider.configure &#123;                dependsOn <span class="hljs-string">&#x27;genDict&#x27;</span>            &#125;    &#125;&#125;</code></pre><p>in new API Androig Gradle Plugin v8</p><pre><code class="hljs gradle">afterEvaluate &#123;    <span class="hljs-comment">// each variant depends on `genDict` task</span>    android.applicationVariants.configureEach &#123; variant -&gt;        <span class="hljs-keyword">if</span> (variant.name.endsWith(<span class="hljs-string">&#x27;Release&#x27;</span>))            variant.javaCompileProvider.configure &#123;                dependsOn <span class="hljs-string">&#x27;genDict&#x27;</span>            &#125;    &#125;&#125;</code></pre><p>in your proguard rules dont forget put</p><pre><code class="hljs proguard">-obfuscationdictionary build/dict.txt-classobfuscationdictionary build/dict.txt-packageobfuscationdictionary build/dict.txt</code></pre><h2 id="My-working-scripts">My working scripts</h2><p>put in <code>app/build.gradle</code></p><pre><code class="hljs gradle"><span class="hljs-keyword">def</span> dictDest = <span class="hljs-keyword">new</span> <span class="hljs-keyword">File</span>(<span class="hljs-string">&#x27;.&#x27;</span>, <span class="hljs-string">&#x27;build/builddict.txt&#x27;</span>)tasks.register(<span class="hljs-string">&#x27;genDict&#x27;</span>) &#123;    outputs.<span class="hljs-keyword">file</span>(dictDest)    <span class="hljs-keyword">doLast</span> &#123;        <span class="hljs-comment">// prevent rewrite</span>        <span class="hljs-keyword">if</span> (dictDest.exists()) <span class="hljs-keyword">return</span>        <span class="hljs-keyword">def</span> r = <span class="hljs-keyword">new</span> Random()        <span class="hljs-keyword">println</span>(r)        <span class="hljs-keyword">def</span> begin = r.nextInt(<span class="hljs-number">1000</span>) + <span class="hljs-number">0</span>x0100        <span class="hljs-keyword">def</span> end = begin + <span class="hljs-number">0</span>x40000        <span class="hljs-keyword">println</span>(<span class="hljs-string">&quot;end: &quot;</span> + end)        <span class="hljs-keyword">def</span> chars = (begin..end)                .<span class="hljs-keyword">findAll</span> &#123; Character.isValidCodePoint(it) &amp;&amp; Character.isJavaIdentifierPart(it) &#125;                .<span class="hljs-keyword">collect</span> &#123; String.valueOf(Character.toChars(it)) &#125;        <span class="hljs-keyword">println</span>(<span class="hljs-string">&quot;chars: &quot;</span> + chars)        <span class="hljs-keyword">int</span> max = chars.<span class="hljs-keyword">size</span>()        <span class="hljs-keyword">println</span>(max)        <span class="hljs-keyword">def</span> start = []        <span class="hljs-keyword">def</span> dict = []        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; max; i++) &#123;            <span class="hljs-keyword">char</span> c = chars.get(i).charAt(<span class="hljs-number">0</span>)            <span class="hljs-keyword">if</span> (Character.isJavaIdentifierStart(c)) &#123;                start &lt;&lt; String.valueOf(c)            &#125;        &#125;        <span class="hljs-keyword">println</span>(start.<span class="hljs-keyword">size</span>())        <span class="hljs-keyword">def</span> f = outputs.files.getSingleFile()        f.getParentFile().mkdirs()        f.<span class="hljs-keyword">withWriter</span>(<span class="hljs-string">&quot;UTF-8&quot;</span>) &#123;            it.<span class="hljs-keyword">write</span>(start.<span class="hljs-keyword">join</span>(System.lineSeparator()))            it.<span class="hljs-keyword">write</span>()        &#125;    &#125;&#125;tasks.named(<span class="hljs-string">&quot;preBuild&quot;</span>) &#123; dependsOn(tasks.named(<span class="hljs-string">&quot;genDict&quot;</span>))&#125;afterEvaluate &#123;    <span class="hljs-comment">// each variant depends on `genDict` task</span>    android.applicationVariants.configureEach &#123; variant -&gt;        <span class="hljs-keyword">if</span> (variant.name.toLowerCase().contains(<span class="hljs-string">&#x27;release&#x27;</span>))            variant.javaCompileProvider.configure &#123;                dependsOn <span class="hljs-string">&#x27;genDict&#x27;</span>            &#125;    &#125;&#125;</code></pre>]]></content>
+    
+    
+    <summary type="html">Gradle script to generate proguard dictionaries each build</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+    <category term="gradle" scheme="https://www.webmanajemen.com/tags/gradle/"/>
+    
+    <category term="groovy" scheme="https://www.webmanajemen.com/tags/groovy/"/>
+    
+    <category term="proguard" scheme="https://www.webmanajemen.com/tags/proguard/"/>
+    
+  </entry>
   
   <entry>
     <title>ReactJS isMounted hook with useEffect</title>
@@ -458,31 +485,6 @@
     <category term="cmd" scheme="https://www.webmanajemen.com/tags/cmd/"/>
     
     <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to remove all files from the git history that are not currently present?</title>
-    <link href="https://www.webmanajemen.com/GitHub/how-to-remove-all-files-from-the-git-history-that-are-not-currently-present.html"/>
-    <id>https://www.webmanajemen.com/GitHub/how-to-remove-all-files-from-the-git-history-that-are-not-currently-present.html</id>
-    <published>2023-08-22T09:36:12.000Z</published>
-    <updated>2023-08-22T09:36:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<details>  <summary>Summary</summary><p>I’ve seen several articles and questions about how to remove a <em>single</em> file from all git history. Example: <a href="https://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-git-repository">How to remove/delete a large file from commit history in Git repository?</a></p><p>What I’d like to do is remove <em>all</em> files that are not <em>currently present</em> at the head of the master branch.</p><p>My use case is that I’m splitting off a smaller repository (call it <code>small</code> ) from a monolithic repository (call it <code>monolith</code> ). I want to preserve the git history when creating <code>small</code> , but only the <em>relevant</em> git history.</p><p>First, I created a new repository <code>small</code> on GitHub. Then, on my laptop, I added it as a remote named <code>origin-small</code> to my local <code>monolith</code> repository, and pushed the current state of the master branch of <code>monolith</code> to <code>origin-small</code> .</p><p>I then removed the remote <code>origin-small</code> from <code>monolith</code> , changed directories, and cloned <code>small</code> from GitHub. Voilà, I had a copy of my original repository, <code>monolith</code> , with its full history.</p><p>But, there are loads of files in the history of <code>small</code> that are no longer relevant, and they are bloating the repo.</p><p>What I’d like to do is:</p><ol><li>Delete all of the unnecessary files from <code>small</code> .</li><li>Run a command to clear the whole git history of the files that I just deleted.</li></ol><p>Is there a way to do this with a single command? Or do I need to run <code>git filter-branch</code> once for every file/directory that I want to remove?</p></details><p>I ended up using <code>git-filter-repo</code> . <strong>WARNING: This approach is NOT able to update tags on the remote, if there are any.</strong></p><ol><li>Install <code>git-filter-repo</code> .</li></ol><p><code>brew install git-filter-repo</code></p><ol start="2"><li>Clone your desired repo, in mirror form.</li></ol><p><code>git clone --mirror &lt;my-repo-url&gt;</code></p><ol start="3"><li>Enter the repo directory.</li></ol><p><code>cd &lt;my-repo-name&gt;</code></p><ol start="4"><li>Analyze the repo to identify all files that are in the history, but no longer exist.</li></ol><p><code>git filter-repo --analyze</code></p><ol start="5"><li><p>In the <code>analysis</code> output directory, there will be a file named <code>path-deleted-sizes.txt</code> that contains a list all files that were committed at some point, and were later deleted, but still exist in the git history.</p><p>Create a new file that lacks the headers and other columns.</p></li></ol><p><code>tail +3 ./filter-repo/analysis/path-deleted-sizes.txt | tr -s ' ' | cut -d ' ' -f 5- &gt; ./filter-repo/analysis/path-deleted.txt</code></p><ol start="6"><li>Clean the git history of all files that no longer exist. This will also clean dirty commits, remove empty commits, and recompress everything for you.</li></ol><p><code>git filter-repo --invert-paths --paths-from-file ./filter-repo/analysis/path-deleted.txt</code></p><ol start="7"><li>Clean up the <code>./filter-repo</code> directory, or you won’t be able to push your changes.</li></ol><p><code>rm -rf ./filter-repo</code></p><ol start="8"><li>Force-push all refs to the origin. It will force-push, even though the command doesn’t indicate it. Also, it will update <em>all</em> branches on the remote, which is convenient. If you have branch protection enabled on some branches in GitHub/Bitbucket/etc., then you will need to allow force-pushes. You can always re-run this command if you find that some refs could not be force-pushed.</li></ol><p><code>git push --force-with-lease</code></p>]]></content>
-    
-    
-    <summary type="html">How to remove all files from the git history that are not currently present? SummaryIve seen several articles and questions about how to remove a single file fr</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
-    
-    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
-    
-    <category term="cmd" scheme="https://www.webmanajemen.com/tags/cmd/"/>
     
   </entry>
   

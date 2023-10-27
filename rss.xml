@@ -15,8 +15,37 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Wed, 25 Oct 2023 20:31:22 GMT</pubDate>
+    <pubDate>Fri, 27 Oct 2023 15:16:52 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Kill gradle daemon process</title>
+      <link>https://www.webmanajemen.com/2023/10/kill-gradle-daemon-process.html</link>
+      <guid>https://www.webmanajemen.com/2023/10/kill-gradle-daemon-process.html</guid>
+      <pubDate>Fri, 27 Oct 2023 15:16:52 GMT</pubDate>
+      
+      <description>command to kill gradle daemon processes</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/0801b88a-5332-4bfa-94f1-f3e52972016d" alt=""></p><h2 id="Windows">Windows</h2><pre><code class="hljs cmd">WMIC PROCESS where &quot;Name like &#x27;java%&#x27; AND CommandLine like &#x27;<span class="hljs-variable">%GradleDaemon%</span>&#x27;&quot; <span class="hljs-keyword">Call</span> TerminateWMIC PROCESS where &quot;Name like &#x27;java%&#x27; AND CommandLine like &#x27;<span class="hljs-variable">%kotlin%</span>&#x27;&quot; <span class="hljs-keyword">Call</span> Terminate</code></pre><h2 id="Linux">Linux</h2><pre><code class="hljs bash">pkill -f <span class="hljs-string">&#x27;.*GradleDaemon.*&#x27;</span></code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/bash/">bash</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/cmd/">cmd</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/gradle/">gradle</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2023/10/kill-gradle-daemon-process.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Gradle script to generate proguard dictionaries each build</title>
@@ -500,33 +529,6 @@
       
       
       <comments>https://www.webmanajemen.com/2023/08/common-settings-for-bashrc.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Script java killer</title>
-      <link>https://www.webmanajemen.com/Java/kill-java-script.html</link>
-      <guid>https://www.webmanajemen.com/Java/kill-java-script.html</guid>
-      <pubDate>Wed, 23 Aug 2023 06:32:38 GMT</pubDate>
-      
-      <description>Script java killer Windows CMD create script with name killjava.cmd or killjava.bat killjava.cmd killjava.bat @echo offtaskkill /f /im jqs.exetaskkill /f /im ja</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Windows-CMD">Windows CMD</h2><p>create script with name <code>killjava.cmd</code> or <code>killjava.bat</code></p><pre><code class="hljs cmd">@<span class="hljs-built_in">echo</span> off<span class="hljs-built_in">taskkill</span> /f /im jqs.exe<span class="hljs-built_in">taskkill</span> /f /im javaw.exe<span class="hljs-built_in">taskkill</span> /f /im java.exe<span class="hljs-built_in">taskkill</span> /f /im geckodriver.exe<span class="hljs-built_in">taskkill</span> /f /im chromedriver.exe<span class="hljs-built_in">taskkill</span> /f /im node.exe</code></pre><h2 id="Windows-Powershell">Windows Powershell</h2><p>create script with name <code>killjava.ps1</code></p><pre><code class="hljs powershell">cmd <span class="hljs-string">&quot;/C TASKKILL /IM node.exe /F&quot;</span></code></pre><h2 id="Bash">Bash</h2><p>create script with name <code>kill-process</code></p><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span><span class="hljs-comment"># make cygwin bin as priority</span><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">&quot;/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:<span class="hljs-variable">$PATH</span>&quot;</span>;(<span class="hljs-built_in">set</span> -o igncr) 2&gt;/dev/null &amp;&amp; <span class="hljs-built_in">set</span> -o igncr; <span class="hljs-comment"># cygwin encoding fix</span><span class="hljs-comment"># absolute path working directory</span>basecwd=<span class="hljs-variable">$&#123;PWD&#125;</span><span class="hljs-comment"># base script directory</span>basedir=`<span class="hljs-built_in">dirname</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>`<span class="hljs-comment"># absolute path script directory</span>SCRIPT_DIR=$( <span class="hljs-built_in">cd</span> -- <span class="hljs-string">&quot;<span class="hljs-subst">$( dirname -- <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;BASH_SOURCE[0]&#125;</span>&quot;</span> )</span>&quot;</span> &amp;&gt; /dev/null &amp;&amp; <span class="hljs-built_in">pwd</span> )<span class="hljs-keyword">case</span> `<span class="hljs-built_in">uname</span>` <span class="hljs-keyword">in</span>  *CYGWIN*) basedir=`cygpath -w <span class="hljs-string">&quot;<span class="hljs-variable">$basedir</span>&quot;</span>`;;<span class="hljs-keyword">esac</span>ps -W | grep <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> | awk <span class="hljs-string">&#x27;&#123;print $1&#125;&#x27;</span> | xargs <span class="hljs-built_in">kill</span> -f;</code></pre><p>create java killer script with name <code>killjava</code></p><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/env bash</span><span class="hljs-comment"># make cygwin bin as priority</span><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">&quot;/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:<span class="hljs-variable">$PATH</span>&quot;</span>;(<span class="hljs-built_in">set</span> -o igncr) 2&gt;/dev/null &amp;&amp; <span class="hljs-built_in">set</span> -o igncr; <span class="hljs-comment"># cygwin encoding fix</span><span class="hljs-comment"># absolute path working directory</span>basecwd=<span class="hljs-variable">$&#123;PWD&#125;</span><span class="hljs-comment"># base script directory</span>basedir=`<span class="hljs-built_in">dirname</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>`<span class="hljs-comment"># absolute path script directory</span>SCRIPT_DIR=$( <span class="hljs-built_in">cd</span> -- <span class="hljs-string">&quot;<span class="hljs-subst">$( dirname -- <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;BASH_SOURCE[0]&#125;</span>&quot;</span> )</span>&quot;</span> &amp;&gt; /dev/null &amp;&amp; <span class="hljs-built_in">pwd</span> )<span class="hljs-keyword">case</span> `<span class="hljs-built_in">uname</span>` <span class="hljs-keyword">in</span>  *CYGWIN*) basedir=`cygpath -w <span class="hljs-string">&quot;<span class="hljs-variable">$basedir</span>&quot;</span>`;;<span class="hljs-keyword">esac</span><span class="hljs-comment">#kill -9 $(ps aux | grep &#x27;\\snode\\s&#x27; | awk &#x27;&#123;print $2&#125;&#x27;)</span><span class="hljs-keyword">if</span> ! [ -x <span class="hljs-string">&quot;<span class="hljs-subst">$(command -v killall)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>  kill-process java  kill-process javaw<span class="hljs-keyword">else</span>  killall java  killall javaw<span class="hljs-keyword">fi</span></code></pre><h2 id="Usage">Usage</h2><ul><li>add parent folder these files into enviroment PATH</li><li>now you can type <code>killjava</code> at terminal to kill java processes</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/bash/">bash</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/cmd/">cmd</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      
-      <comments>https://www.webmanajemen.com/Java/kill-java-script.html#disqus_thread</comments>
       
     </item>
     

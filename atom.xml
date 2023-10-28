@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-10-27T15:16:52.000Z</updated>
+  <updated>2023-10-28T03:33:48.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android SDK API List</title>
+    <link href="https://www.webmanajemen.com/2023/10/android-sdk-api-list.html"/>
+    <id>https://www.webmanajemen.com/2023/10/android-sdk-api-list.html</id>
+    <published>2023-10-28T03:33:48.000Z</published>
+    <updated>2023-10-28T03:33:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/7254c426-aea8-41bc-aad5-c06eee780162" alt=""></p><ul><li>API 10 (Gingerbread) - 0.3%</li><li>API 15 (Ice Cream Sandwich) - 0.3%</li><li>API 16 (Jellybean) - 1.2%</li><li>API 17 (Jellybean) - 1.5%</li><li>API 18 (Jellybean) - 0.5%</li><li>API 19 (KitKat) - 6.9%</li><li>API 21 (Lollipop) - 3.0%</li><li>API 22 (Lollipop) - 11.5%</li><li>API 23 (Marshmallow) - 16.9%</li><li>API 24 (Nougat) - 11.4%</li><li>API 25 (Nougat) - 7.8%</li><li>API 26 (Oreo) - 12.9%</li><li>API 27 (Oreo) - 15.4%</li><li>API 28 (Pie) - 10.4%</li></ul>]]></content>
+    
+    
+    <summary type="html">Collection list of android SDK API</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>Kill gradle daemon process</title>
@@ -459,27 +480,6 @@
     
     
     <summary type="html">How to reorder cygwin binary execution files as first priority Script header bash to reorder cygwin binary execution files as priority /usr/bin/env bash install</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Common Settings For .bashrc</title>
-    <link href="https://www.webmanajemen.com/2023/08/common-settings-for-bashrc.html"/>
-    <id>https://www.webmanajemen.com/2023/08/common-settings-for-bashrc.html</id>
-    <published>2023-08-23T17:00:51.000Z</published>
-    <updated>2023-08-24T03:39:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code class="hljs properties"><span class="hljs-comment"># custom NodeJS executable paths</span><span class="hljs-attr">if</span> <span class="hljs-string">[ -d &quot;/media/dimaslanjaka/DATA/bin/node/linux/bin&quot; ] ; then</span>    <span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:/media/dimaslanjaka/DATA/bin/node/linux/bin&quot;</span><span class="hljs-attr">fi</span><span class="hljs-comment"># search executable files &lt;cwd&gt;/bin</span><span class="hljs-attr">if</span> <span class="hljs-string">[ -d &quot;./bin&quot; ] ; then</span>    <span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:./bin&quot;</span><span class="hljs-attr">fi</span><span class="hljs-comment"># search executable files &lt;cwd&gt;/node_modules/.bin</span><span class="hljs-attr">if</span> <span class="hljs-string">[ -d &quot;./node_modules/.bin&quot; ] ; then</span>    <span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:./node_modules/.bin&quot;</span><span class="hljs-attr">fi</span><span class="hljs-comment"># lampp configuration starts</span><span class="hljs-attr">if</span> <span class="hljs-string">[ -d &quot;/opt/lampp&quot; ] ; then</span>    <span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:/opt/lampp&quot;</span><span class="hljs-attr">fi</span><span class="hljs-attr">if</span> <span class="hljs-string">[ -d &quot;/opt/lampp/bin&quot; ] ; then</span>    <span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:/opt/lampp/bin&quot;</span><span class="hljs-attr">fi</span><span class="hljs-comment"># lampp configuration ends</span><span class="hljs-attr">if</span> <span class="hljs-string">[ -d &quot;/media/dimaslanjaka/DATA/bin/composer&quot; ] ; then</span>    <span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:/media/dimaslanjaka/DATA/bin/composer&quot;</span><span class="hljs-attr">fi</span><span class="hljs-comment"># android development</span><span class="hljs-attr">export</span> <span class="hljs-string">ANDROID_HOME=&quot;$HOME/Android/Sdk&quot;</span><span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH&quot;</span><span class="hljs-comment"># android, groovy, gradle development</span><span class="hljs-attr">export</span> <span class="hljs-string">GRADLE_HOME=&quot;$HOME/.gradle&quot;</span><span class="hljs-attr">export</span> <span class="hljs-string">GRADLE_USER_HOME=&quot;$GRADLE_HOME&quot;</span><span class="hljs-comment"># python development</span><span class="hljs-attr">export</span> <span class="hljs-string">PYTHON=&quot;/usr/bin/python&quot;</span><span class="hljs-comment"># java, kotlin development</span><span class="hljs-attr">export</span> <span class="hljs-string">JAVA_HOME=&quot;/media/dimaslanjaka/DATA/bin/java/linux/java-11&quot;</span><span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:$JAVA_HOME/bin&quot;</span><span class="hljs-comment"># search executable files ~/.local/bin</span><span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$PATH:$HOME/.local/bin&quot;</span><span class="hljs-comment"># yarn v1 devekioment</span><span class="hljs-attr">export</span> <span class="hljs-string">PATH=&quot;$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH&quot;</span></code></pre>]]></content>
-    
-    
-    <summary type="html">Common Settings For .bashrc custom NodeJS executable pathsif [ -d /media/dimaslanjaka/DATA/bin/node/linux/bin ] ; then export PATH=PATH:/media/dimaslanjaka/DATA</summary>
     
     
     

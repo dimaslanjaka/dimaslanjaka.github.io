@@ -15,8 +15,39 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Fri, 10 Nov 2023 01:36:29 GMT</pubDate>
+    <pubDate>Fri, 10 Nov 2023 23:46:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Geckoview cangoback equivalent of android webview.canGoBack</title>
+      <link>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html</link>
+      <guid>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html</guid>
+      <pubDate>Fri, 10 Nov 2023 23:41:10 GMT</pubDate>
+      
+      <description>Geckoview cangoback equivalent of android webview.canGoBack How can i use canGoBack on GeckoView? below is sample default android webview canGoBack implemention canGoBack public void onBackPressed if </description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="How-can-i-use-canGoBack-on-GeckoView">How can i use canGoBack() on GeckoView?</h2><p>below is sample default android webview <code>canGoBack()</code> implemention</p><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onBackPressed</span><span class="hljs-params">()</span> &#123;    <span class="hljs-keyword">if</span> (webView.canGoBack()) &#123;        webView.goBack();    &#125; <span class="hljs-keyword">else</span> &#123;        <span class="hljs-built_in">super</span>.onBackPressed();    &#125;&#125;</code></pre><p>on geckoview</p><blockquote><p>You need to set a navigation delegate on the gecko session and use a global boolean to keep track of whether it can go back or not.</p></blockquote><h2 id="Java">Java</h2><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">canGoBack</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> &#123;   <span class="hljs-meta">@Override</span>   <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;       <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);       session.setNavigationDelegate(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GeckoSession</span>.NavigationDelegate() &#123;                  <span class="hljs-meta">@Override</span>                  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCanGoBack</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> GeckoSession session, <span class="hljs-type">boolean</span> canGoBack)</span> &#123;                      MainActivity.<span class="hljs-built_in">this</span>.canGoBack = canGoBack;                  &#125;         &#125;);   &#125;&#125;</code></pre><h2 id="Kotlin">Kotlin</h2><pre><code class="hljs kotlin">session.navigationDelegate = <span class="hljs-keyword">object</span> : NavigationDelegate &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCanGoBack</span><span class="hljs-params">(session: <span class="hljs-type">GeckoSession</span>, canGoBack: <span class="hljs-type">Boolean</span>)</span></span> &#123;        <span class="hljs-comment">// equivalent of webview.canGoBack</span>        <span class="hljs-keyword">this</span><span class="hljs-symbol">@MainActivity</span>.canGoBack = canGoBack    &#125;&#125;</code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/android/">android</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/webview/">webview</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/kotlin/">kotlin</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/geckoview/">geckoview</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>List referrer of original traffic from android</title>
@@ -83,6 +114,8 @@
       
       
       <category domain="https://www.webmanajemen.com/tags/android/">android</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/webview/">webview</category>
       
       <category domain="https://www.webmanajemen.com/tags/java/">java</category>
       
@@ -504,31 +537,6 @@
       
       
       <comments>https://www.webmanajemen.com/GitHub/fix-end-of-line.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>How to add path folder to github workflows CI</title>
-      <link>https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html</link>
-      <guid>https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html</guid>
-      <pubDate>Sun, 27 Aug 2023 07:09:03 GMT</pubDate>
-      
-      <description>How to add path folder to github workflows CI Sometimes when you try to use a command and Bash displays the Command not found error, it might be because the pro</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>Sometimes when you try to use a command and Bash displays the “Command not found” error, it might be because the program is not installed on your system. Correct this by installing a software package containing the command and add them into <strong>PATH</strong> enviroment variable.</p><p>In <strong>Github Workflows</strong> also has ability to add <em>PATH enviroment variable</em>. below is sample codes:</p><h2 id="add-local-bin-to-PATH-CI">add ~/.local/bin to PATH CI</h2><pre><code class="hljs yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">add</span> <span class="hljs-string">~/.local/bin</span> <span class="hljs-string">to</span> <span class="hljs-string">PATH</span>  <span class="hljs-attr">shell:</span> <span class="hljs-string">bash</span>  <span class="hljs-attr">run:</span> <span class="hljs-string">|</span>    <span class="hljs-string">echo</span> <span class="hljs-string">&quot;$&#123;HOME&#125;/.local/bin&quot;</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">$GITHUB_PATH</span></code></pre><h2 id="add-CI-PATH-node-modules-bin">add CI PATH ./node_modules/.bin</h2><pre><code class="hljs yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">add</span> <span class="hljs-string">./node_modules/.bin</span> <span class="hljs-string">to</span> <span class="hljs-string">PATH</span>  <span class="hljs-attr">shell:</span> <span class="hljs-string">bash</span>  <span class="hljs-attr">run:</span> <span class="hljs-string">|</span>    <span class="hljs-string">echo</span> <span class="hljs-string">&quot;$&#123;GITHUB_WORKSPACE&#125;/node_modules/.bin&quot;</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">$GITHUB_PATH</span></code></pre>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/github/">github</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/bash/">bash</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2023/08/how-to-add-paths-to-github-workflows-ci.html#disqus_thread</comments>
       
     </item>
     

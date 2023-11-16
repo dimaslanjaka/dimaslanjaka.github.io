@@ -80,11 +80,7 @@ function escapeRegExp(string) {
 }
 
 let quizUrls = [
-  location.protocol +
-    '//' +
-    location.host.trim() +
-    '/The Legend Of Neverland/Quiz/quiz.txt',
-  //'https://crossorigin.me/http://backend.webmanajemen.com/tlon/quiz.php?show',
+  'https://raw.githubusercontent.com/dimaslanjaka/source-posts/posts/The%20Legend%20Of%20Neverland/Quiz/quiz.txt',
   'https://backend.webmanajemen.com/tlon/quiz.php?show'
 ];
 let quizSrc = [];
@@ -243,17 +239,17 @@ function jQueryMethod() {
   // form add quiz
   /*
   $("form#addQuiz").on("submit", function (e) {
-    e.preventDefault();
-    let t = $(this);
-    $.ajax({
-      url: t.attr("action"),
-      type: "post",
-      //dataType: "json",
-      data: t.serialize(),
-      success: function (data) {
-        console.log(data);
-      }
-    });
+	e.preventDefault();
+	let t = $(this);
+	$.ajax({
+	  url: t.attr("action"),
+	  type: "post",
+	  //dataType: "json",
+	  data: t.serialize(),
+	  success: function (data) {
+		console.log(data);
+	  }
+	});
   });
   */
 }

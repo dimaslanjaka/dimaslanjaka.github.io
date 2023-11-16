@@ -1,7 +1,6 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
 
-# make cygwin bin as priority
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+# put these on top of file
 
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
@@ -16,8 +15,18 @@ SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
 case `uname` in
-  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+  *CYGWIN*)
+    basedir=`cygpath -w "$basedir"`
+    # make cygwin bin as priority
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+    ;;
 esac
+
+# parse and export .env file (dotenv)
+if [ -f ".env" ]; then
+  # Export the vars in .env into your shell:
+  export $(egrep -v '^#' .env | xargs)
+fi
 
 # auto clone all submodules, prevent not-matched hash
 # set ACCESS_TOKEN=github_personal_tokens
@@ -107,11 +116,24 @@ update_submodule() {
 }
 
 remove_submodule() {
-  echo "input submodule path"
-  read folderpath
+  if [[ -z $2 || $2 == "" ]]; then
+    echo "input submodule path"
+    read folderpath
+  else
+    folderpath="$2"
+  fi
+
+  if [ -z $folderpath ]; then
+    echo "Folder path is empty" ;
+    exit 1;
+  fi
+
+  echo "removing submodule $folderpath"
 
   # Remove the submodule entry from .git/config
-  git submodule deinit -f $folderpath
+  if [ -d $folderpath ]; then
+    git submodule deinit -f $folderpath
+  fi
 
   # Remove the submodule directory from the superproject's .git/modules directory
   if [ -d ".git/modules/$folderpath" ]; then
@@ -126,14 +148,14 @@ remove_submodule() {
 
 case $1 in
   install|i)
-    update_submodule
+    update_submodule "$@"
     ;;
-  uninstall|u|x)
-    remove_submodule
+  uninstall|remove|u|x)
+    remove_submodule "$@"
     ;;
   *)
     echo "no option found. Usage:"
     echo "update submodule $SCRIPT [install|i]"
-    echo "remove submodule $SCRIPT [uninstall|u|x]"
+    echo "remove submodule $SCRIPT [uninstall|remove|u|x]"
     ;;
 esac

@@ -75,6 +75,35 @@
   </entry>
   
   <entry>
+    <title>Geckoview cangoback equivalent of android webview.canGoBack</title>
+    <link href="https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html"/>
+    <id>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html</id>
+    <published>2023-11-10T23:41:10.000Z</published>
+    <updated>2023-11-10T23:46:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="How-can-i-use-canGoBack-on-GeckoView">How can i use canGoBack() on GeckoView?</h2><p>below is sample default android webview <code>canGoBack()</code> implemention</p><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onBackPressed</span><span class="hljs-params">()</span> &#123;    <span class="hljs-keyword">if</span> (webView.canGoBack()) &#123;        webView.goBack();    &#125; <span class="hljs-keyword">else</span> &#123;        <span class="hljs-built_in">super</span>.onBackPressed();    &#125;&#125;</code></pre><p>on geckoview</p><blockquote><p>You need to set a navigation delegate on the gecko session and use a global boolean to keep track of whether it can go back or not.</p></blockquote><h2 id="Java">Java</h2><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">canGoBack</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> &#123;   <span class="hljs-meta">@Override</span>   <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;       <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);       session.setNavigationDelegate(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GeckoSession</span>.NavigationDelegate() &#123;                  <span class="hljs-meta">@Override</span>                  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCanGoBack</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> GeckoSession session, <span class="hljs-type">boolean</span> canGoBack)</span> &#123;                      MainActivity.<span class="hljs-built_in">this</span>.canGoBack = canGoBack;                  &#125;         &#125;);   &#125;&#125;</code></pre><h2 id="Kotlin">Kotlin</h2><pre><code class="hljs kotlin">session.navigationDelegate = <span class="hljs-keyword">object</span> : NavigationDelegate &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCanGoBack</span><span class="hljs-params">(session: <span class="hljs-type">GeckoSession</span>, canGoBack: <span class="hljs-type">Boolean</span>)</span></span> &#123;        <span class="hljs-comment">// equivalent of webview.canGoBack</span>        <span class="hljs-keyword">this</span><span class="hljs-symbol">@MainActivity</span>.canGoBack = canGoBack    &#125;&#125;</code></pre>]]></content>
+    
+    
+    <summary type="html">Geckoview cangoback equivalent of android webview.canGoBack How can i use canGoBack on GeckoView? below is sample default android webview canGoBack implemention canGoBack public void onBackPressed if webView.canGoBack webView.goBack; else super.onBackPre</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+    <category term="webview" scheme="https://www.webmanajemen.com/tags/webview/"/>
+    
+    <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
+    
+    <category term="kotlin" scheme="https://www.webmanajemen.com/tags/kotlin/"/>
+    
+    <category term="geckoview" scheme="https://www.webmanajemen.com/tags/geckoview/"/>
+    
+  </entry>
+  
+  <entry>
     <title>List referrer of original traffic from android</title>
     <link href="https://www.webmanajemen.com/2023/11/list-referrer-of-original-traffic-from-android.html"/>
     <id>https://www.webmanajemen.com/2023/11/list-referrer-of-original-traffic-from-android.html</id>
@@ -85,6 +114,27 @@
     
     
     <summary type="html">List referrer of original traffic from android list original traffic referrer from android parsed with regex android-app:[&#92;w&#92;/&#92;.] android-app:[&#92;w&#92;/&#92;.] android-app://arun.com.chromerandroid-app://com.a</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="seo" scheme="https://www.webmanajemen.com/tags/seo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>List referrer of original traffic from android</title>
+    <link href="https://www.webmanajemen.com/2023/11/list-referrer-of-original-traffic-from-android.html"/>
+    <id>https://www.webmanajemen.com/2023/11/list-referrer-of-original-traffic-from-android.html</id>
+    <published>2023-11-10T01:36:29.000Z</published>
+    <updated>2023-11-10T01:36:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>list original traffic referrer from android (parsed with regex <code>(android-app:[\w\/\.]+)</code>)</p><pre><code class="hljs log">android-app://arun.com.chromerandroid-app://com.andrewshu.android.redditandroid-app://com.andrewshu.android.redditdonationandroid-app://com.android.chromeandroid-app://com.google.android.apps.genie.geniewidgetandroid-app://com.google.android.apps.plus/https/plus.url.google.com/mobileappandroid-app://com.google.android.apps.social.spacesandroid-app://com.google.android.googlequicksearchboxandroid-app://com.google.android.googlequicksearchbox/googlequicksearchbox/suggestandroid-app://com.google.android.googlequicksearchbox/https/www.google.comandroid-app://com.guardianandroid-app://com.hanista.mobogramandroid-app://com.innologica.inoreaderandroid-app://com.laurencedawson.reddit_syncandroid-app://com.laurencedawson.reddit_sync.devandroid-app://com.laurencedawson.reddit_sync.proandroid-app://com.levelup.palabreandroid-app://com.linkedin.androidandroid-app://com.noinnion.android.greader.readerandroid-app://com.noinnion.android.greader.readerproandroid-app://com.paladin.auto.car.news.reviewsandroid-app://com.pinterestandroid-app://com.Slackandroid-app://com.stickypassword.androidandroid-app://com.tumblrandroid-app://com.twitpane.premiumandroid-app://com.twitter.androidandroid-app://de.idealo.androidandroid-app://ir.felegramandroid-app://org.telegram.messengerandroid-app://org.telegram.plus</code></pre>]]></content>
+    
+    
+    <summary type="html">List referrer of original traffic from android list original traffic referrer from android parsed with regex android-app:[&#92;w&#92;/&#92;.] android-app:[&#92;w&#92;/&#92;.] android-app://arun.com.chromerandroid-app://com.andrewshu.android.redditandroid-app://com.andrewshu.android.redditdonationandroid-app://co</summary>
     
     
     
@@ -163,6 +213,56 @@
   </entry>
   
   <entry>
+    <title>What does google-services.json really do?</title>
+    <link href="https://www.webmanajemen.com/2023/10/what-does-google-servicesjson-really-do.html"/>
+    <id>https://www.webmanajemen.com/2023/10/what-does-google-servicesjson-really-do.html</id>
+    <published>2023-10-30T01:19:17.000Z</published>
+    <updated>2023-10-30T01:28:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="What-is-this-file-really-for">What is this file really for</h2><p><strong>google-services.json</strong> contains developer credentials and configuration settings, which is needed to verify while connecting with GoogleApiClient. Though your service is working fine with your test device as it is detecting your developer account but after releasing your app in public, it will not work without the json file. So don’t delete it.</p><p><strong>The Official Documentation says:</strong></p><p>The application builds a GoogleApiClient, specifying which scopes and APIs the application will access. When the GoogleApiClient connects, the user is signed in.</p><p>See the <a href="https://developers.google.com/identity/sign-in/android/start">how it works</a> section</p><h2 id="How-does-google-services-json-file-affects-your-android-studio-project">How does google-services.json file affects your android studio project?</h2><p>I investigated a bit regarding the google-services plugin and json and found the sources to this plugin.</p><h2 id="First-things-first">First things first</h2><p>The gradle-plugin google-services that is referenced by classpath and with apply is a build-time plugin only! So it only influences the build-process of your app, but not the runtime-process!</p><p>This plugin is only meant as a quickstart-helper to integrating Google-services quickly in your app. Obviously, the process is somewhat convoluted and not documented, so Google should have made it clear what this process does.</p><p>In fact, I found the source code for the plugin version com.google.gms:google-services:1.4.0-beta3 and didnt find any specific reference in it regarding appinvites nor did I find any Google API for App Invites! (But maybe it just uses a generic API project with its project id, I didnt try this)</p><h2 id="What-it-does">What it does</h2><p>The google-services gradle-plugin looks for the mentioned google-services.json file in your app-module. Then it looks for configured settings like project-id’s and tracking-id’s and such, generated by the Google API developer console into the google-services.json file. From the settings it found, Android resource values are generated into the following path:</p><pre><code class="hljs kotlin"><span class="hljs-string">&quot;<span class="hljs-variable">$project</span>.buildDir/generated/res/google-services/<span class="hljs-variable">$variant</span>.dirName/values/values.xml&quot;</span></code></pre><p>For example for a debug-build of your app:</p><blockquote><p>just in short for second url, if you add google-services.json in your project there must be a auto-generated <code>google-services</code> folder for <code>debug</code> variant in this path</p></blockquote><pre><code class="hljs kotlin"><span class="hljs-string">&quot;app/build/generated/res/google-services/debug/values/values.xml&quot;</span></code></pre><p>E.g. if you followed the GCM tutorial, the JSON file would include the API project’s id as the following android-resource:</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gcm_defaultSenderId&quot;</span>&gt;</span>project-id<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code></pre><p>So this plugin and JSON file are not essential to running or publishing your app, it is just a quickstart helper to generate some basic android-resource files for easier integration of specific Google API features.</p><p>Notice in the source code referenced below that the google-services plugin always generates those android-resources for every app-variant that is defined in your app/build.gradle.</p><p>If you don’t want that, you should use those generated resources in the app-variants you want, and delete the others. Don’t forget to remove the google-services plugin apply from app/build.gradle, or else it will be regenerated for all app-variants.</p><h2 id="What-it-does-not">What it does not</h2><p>This plugin and JSON-file do NOT directly influence the inner workings of said Google-features for your app! If you already have followed older tutorials on <a href="http://developer.android.com">developer.android.com</a> on how to integrate e.g. GCM or Google Analytics, then you don’t even need to integrate either the gradle-plugin google-services or the google-services.json file!</p><h2 id="Notice-about-where-I-found-the-sources">Notice about where I found the sources</h2><p>After you integrated the google-services gradle-plugin and when sync your project, Gradle automatically downloads the google-services dependency to a path similar to this (on Windows, you might need to look into your home/.gradle for Linux):</p><pre><code class="hljs plaintext">C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.gms\google-services\1.4.0-beta3\f1580f62e3be313eba041ce19b64fd3f44cf8951\google-services-1.4.0-beta3-sources.jar</code></pre><p>If you extract this jar-file, you will find two files:</p><pre><code class="hljs plaintext">GoogleServicesPlugin.groovyGoogleServicesTask.java</code></pre><p>which contain the plain source code of the gradle-plugin.</p><pre><code class="hljs plaintext">GoogleServicesPlugin.groovy</code></pre><p>contains the handling of the app-variants and basic definitions of paths etc.</p><pre><code class="hljs plaintext">GoogleServicesTask.java</code></pre><p>contains the actual task-definition, look for the following method to see what it really does:</p><pre><code class="hljs java"><span class="hljs-meta">@TaskAction</span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">action</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;</code></pre><h2 id="What-to-do-to-make-it-done">What to do, to make it done?</h2><p>add google-services dependency in <code>project_level</code> build.gradle, you can also use <code>version 3.0.0</code> if you are using app_compact library.</p><pre><code class="hljs gradle"><span class="hljs-comment">// Top-level build.gradle file</span><span class="hljs-keyword">classpath</span> <span class="hljs-string">&#x27;com.google.gms:google-services:2.1.2&#x27;</span></code></pre><p>now in <code>app_level</code> build.gradle you have to add at the <strong>bottom</strong>.</p><pre><code class="hljs gradle"><span class="hljs-comment">// app-level build.gradle file</span>apply plugin: <span class="hljs-string">&#x27;com.google.gms.google-services&#x27;</span></code></pre><p><strong>Note:</strong> Adding this line at the bottom of the gradle file is really important. Otherwise Gradle builds won’t give you any errors, but it won’t just work properly.</p><h2 id="Where-to-put-google-service-json-file-in-your-structure">Where to put google-service.json file in your structure.</h2><p>case 1.) if you have no build_flavor just put it in inside <code>/app/google-service.json</code> folder.</p><p>case 2.) if you have multiple build_flavor and you have different-different google_services.json files put inside <code>app/src/build_flavor/google-service.json</code>.</p><p>case 3.) if you have multiple build_flavor and you have single google_services.json file put inside <code>app/google-service.json</code>.</p>]]></content>
+    
+    
+    <summary type="html">Android - What does google-services.json really do?</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+    <category term="json" scheme="https://www.webmanajemen.com/tags/json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>android webview get content height</title>
+    <link href="https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html"/>
+    <id>https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html</id>
+    <published>2023-10-28T21:43:36.000Z</published>
+    <updated>2023-11-10T23:46:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Basic-methods">Basic methods</h2><p>Basic methods of Various ways to get the height of a Webview on Android. Nothing really works on all cases</p><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> android.view.ViewTreeObserver<span class="hljs-keyword">import</span> android.webkit.JavascriptInterface<span class="hljs-keyword">import</span> android.webkit.WebView<span class="hljs-keyword">import</span> android.webkit.WebViewClient<span class="hljs-comment">// Try 1</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightFromDocumentBodyScrollHeight</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;    webView.webViewClient = <span class="hljs-keyword">object</span> : WebViewClient() &#123;        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageFinished</span><span class="hljs-params">(view: <span class="hljs-type">WebView</span>?, url: <span class="hljs-type">String</span>?)</span></span> &#123;            view?.let &#123;                it.settings.javaScriptEnabled = <span class="hljs-literal">true</span>                it.addJavascriptInterface(WebAppInterface(it, setHeight), <span class="hljs-string">&quot;AndroidGetHeightFunction&quot;</span>)                it.loadUrl(<span class="hljs-string">&quot;javascript:AndroidGetHeightFunction.resize(document.body.scrollHeight)&quot;</span>)            &#125;        &#125;    &#125;&#125;<span class="hljs-keyword">class</span> <span class="hljs-title class_">WebAppInterface</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> webView: WebView, <span class="hljs-keyword">val</span> setHeight: (<span class="hljs-built_in">Int</span>)-&gt;<span class="hljs-built_in">Unit</span>) &#123;    <span class="hljs-meta">@JavascriptInterface</span>    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">resize</span><span class="hljs-params">(height: <span class="hljs-type">Float</span>)</span></span> &#123;        webView.post &#123;            <span class="hljs-keyword">val</span> h = Math.floor((height * webView.context.resources.displayMetrics.density).toDouble()).toInt()            setHeight(h)            webView.settings.javaScriptEnabled = <span class="hljs-literal">false</span>        &#125;    &#125;&#125;<span class="hljs-comment">// Try 2</span><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> heightWebViewJSScript = <span class="hljs-string">&quot;(function() &#123;var pageHeight = 0;function findHighestNode(nodesList) &#123; for (var i = nodesList.length - 1; i &gt;= 0; i--) &#123;if (nodesList[i].scrollHeight &amp;&amp; nodesList[i].clientHeight) &#123;var elHeight = Math.max(nodesList[i].scrollHeight, nodesList[i].clientHeight);pageHeight = Math.max(elHeight, pageHeight);&#125;if (nodesList[i].childNodes.length) findHighestNode(nodesList[i].childNodes);&#125;&#125;findHighestNode(document.documentElement.childNodes); return pageHeight;&#125;)()&quot;</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightWithJavascriptEvaluation</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;    webView.settings.javaScriptEnabled = <span class="hljs-literal">true</span>    webView.webViewClient = <span class="hljs-keyword">object</span> : WebViewClient() &#123;        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageFinished</span><span class="hljs-params">(view: <span class="hljs-type">WebView</span>, url: <span class="hljs-type">String</span>)</span></span> &#123;            webView.evaluateJavascript(heightWebViewJSScript) &#123; height -&gt;                <span class="hljs-keyword">val</span> h = Math.floor((height.toInt() * webView.context.resources.displayMetrics.density).toDouble()).toInt()                setHeight(h)                webView.settings.javaScriptEnabled = <span class="hljs-literal">false</span>            &#125;        &#125;    &#125;&#125;<span class="hljs-comment">// Try 3</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightWithViewTreeObserver</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;        webView.viewTreeObserver.addOnPreDrawListener(<span class="hljs-keyword">object</span> : ViewTreeObserver.OnPreDrawListener &#123;            <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPreDraw</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Boolean</span> &#123;                <span class="hljs-keyword">val</span> height = webView.measuredHeight                <span class="hljs-keyword">if</span> (height != <span class="hljs-number">0</span>) &#123;                    <span class="hljs-keyword">val</span> h = Math.floor((height * webView.context.resources.displayMetrics.density).toDouble()).toInt()                    setHeight(height)                    webView.viewTreeObserver.removeOnPreDrawListener(<span class="hljs-keyword">this</span>)                &#125;                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>            &#125;        &#125;)&#125;<span class="hljs-comment">// Try 4</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightWithLayoutChangeListener</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;    webView.addOnLayoutChangeListener&#123; _, _, _, _, _, _, _, _, _ -&gt;        setHeight(webView.contentHeight)    &#125;&#125;</code></pre>]]></content>
+    
+    
+    <summary type="html">script to get content height of android webview</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+    <category term="webview" scheme="https://www.webmanajemen.com/tags/webview/"/>
+    
+    <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
+    
+    <category term="kotlin" scheme="https://www.webmanajemen.com/tags/kotlin/"/>
+    
+  </entry>
+  
+  <entry>
     <title>android webview get content height</title>
     <link href="https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html"/>
     <id>https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html</id>
@@ -255,6 +355,54 @@
     
     
     <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android SDK API List</title>
+    <link href="https://www.webmanajemen.com/2023/10/android-sdk-api-list.html"/>
+    <id>https://www.webmanajemen.com/2023/10/android-sdk-api-list.html</id>
+    <published>2023-10-28T03:33:48.000Z</published>
+    <updated>2023-10-28T03:33:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/7254c426-aea8-41bc-aad5-c06eee780162" alt=""></p><ul><li>API 10 (Gingerbread) - 0.3%</li><li>API 15 (Ice Cream Sandwich) - 0.3%</li><li>API 16 (Jellybean) - 1.2%</li><li>API 17 (Jellybean) - 1.5%</li><li>API 18 (Jellybean) - 0.5%</li><li>API 19 (KitKat) - 6.9%</li><li>API 21 (Lollipop) - 3.0%</li><li>API 22 (Lollipop) - 11.5%</li><li>API 23 (Marshmallow) - 16.9%</li><li>API 24 (Nougat) - 11.4%</li><li>API 25 (Nougat) - 7.8%</li><li>API 26 (Oreo) - 12.9%</li><li>API 27 (Oreo) - 15.4%</li><li>API 28 (Pie) - 10.4%</li></ul>]]></content>
+    
+    
+    <summary type="html">Collection list of android SDK API</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="android" scheme="https://www.webmanajemen.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kill gradle daemon process</title>
+    <link href="https://www.webmanajemen.com/2023/10/kill-gradle-daemon-process.html"/>
+    <id>https://www.webmanajemen.com/2023/10/kill-gradle-daemon-process.html</id>
+    <published>2023-10-27T15:16:52.000Z</published>
+    <updated>2023-11-14T17:28:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/0801b88a-5332-4bfa-94f1-f3e52972016d" alt=""></p><h2 id="Windows">Windows</h2><h3 id="Using-WMIC">Using WMIC</h3><p>kill gradle processes using <code>WMIC</code></p><pre><code class="hljs cmd">WMIC PROCESS where &quot;Name like &#x27;java%&#x27; AND CommandLine like &#x27;<span class="hljs-variable">%GradleDaemon%</span>&#x27;&quot; <span class="hljs-keyword">Call</span> TerminateWMIC PROCESS where &quot;Name like &#x27;java%&#x27; AND CommandLine like &#x27;<span class="hljs-variable">%kotlin%</span>&#x27;&quot; <span class="hljs-keyword">Call</span> TerminateWMIC PROCESS where &quot;Name like &#x27;java%&#x27; AND CommandLine like &#x27;<span class="hljs-variable">%java%</span>&#x27;&quot; <span class="hljs-keyword">Call</span> Terminate</code></pre><p>in batch file remove percent symbol <code>%</code></p><pre><code class="hljs cmd"><span class="hljs-keyword">call</span> wmic process where &quot;name like &#x27;java.exe&#x27;&quot; delete</code></pre><h3 id="Using-Taskkill">Using Taskkill</h3><p>kill gradle processes using <code>taskkill</code></p><pre><code class="hljs cmd"><span class="hljs-built_in">taskkill</span> /f /im java.exe<span class="hljs-built_in">taskkill</span> /f /im javaw.exe</code></pre><h2 id="Linux">Linux</h2><pre><code class="hljs bash">pkill -f <span class="hljs-string">&#x27;.*GradleDaemon.*&#x27;</span></code></pre>]]></content>
+    
+    
+    <summary type="html">command to kill gradle daemon processes</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
+    
+    <category term="cmd" scheme="https://www.webmanajemen.com/tags/cmd/"/>
+    
+    <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
+    
+    <category term="gradle" scheme="https://www.webmanajemen.com/tags/gradle/"/>
     
   </entry>
   
@@ -363,144 +511,6 @@
     <category term="groovy" scheme="https://www.webmanajemen.com/tags/groovy/"/>
     
     <category term="proguard" scheme="https://www.webmanajemen.com/tags/proguard/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ReactJS isMounted hook with useEffect</title>
-    <link href="https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html"/>
-    <id>https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html</id>
-    <published>2023-10-16T22:34:57.000Z</published>
-    <updated>2023-10-16T22:46:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Basic-errors">Basic errors</h2><pre><code class="hljs log">Warning: Can&#x27;t perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.</code></pre><h2 id="Basic-React-useEffect">Basic <code>React.useEffect</code></h2><p>understanding basic usage of <code>React.useEffect</code></p><h3 id="call-every-changes">call every changes</h3><blockquote><p>Below codes will run on every render of your component, e.g. when state or props change.</p></blockquote><pre><code class="hljs js"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  <span class="hljs-comment">// component is mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    <span class="hljs-comment">// component is being unmounted</span>  &#125;&#125;);</code></pre><h3 id="call-only-once">call only once</h3><blockquote><p>Below codes will run an effect and clean it up only once (on mount and unmount). This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.</p></blockquote><pre><code class="hljs js"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  <span class="hljs-comment">// component is mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    <span class="hljs-comment">// component is being unmounted</span>  &#125;&#125;, []); <span class="hljs-comment">// run once on mount</span></code></pre><h2 id="Basic-React-useRef">Basic <code>React.useRef</code></h2><blockquote><p>Keep in mind that useRef doesn’t notify you when its content changes. Mutating the .current property doesn’t cause a re-render.</p></blockquote><h2 id="Storing-isMounted-with-React-useRef">Storing <code>isMounted</code> with <code>React.useRef</code></h2><p>You’ll <code>React.useEffect</code> to monitor when the component mounts or unmounts, and save that info in a <code>ref</code></p><pre><code class="hljs js"><span class="hljs-keyword">const</span> isMounted = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useRef</span>(<span class="hljs-literal">false</span>); <span class="hljs-comment">// unmounted by default</span><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  isMounted.<span class="hljs-property">current</span> = <span class="hljs-literal">true</span>; <span class="hljs-comment">// mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    isMounted.<span class="hljs-property">current</span> = <span class="hljs-literal">false</span>; <span class="hljs-comment">// unmounted</span>  &#125;&#125;, []); <span class="hljs-comment">// run once on mount</span></code></pre><p>Now anytime you need to know if our component is mounted, you can check <code>isMounted.current</code> to get the current value.</p>]]></content>
-    
-    
-    <summary type="html">ReactJS isMounted hook with useEffect Basic errors Warning: Cant perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. Basic Reac</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
-    
-    <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ReactJS isMounted hook with useEffect</title>
-    <link href="https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html"/>
-    <id>https://www.webmanajemen.com/2023/10/reactjs-is-mounted-hook-with-use-effect.html</id>
-    <published>2023-10-16T22:34:57.000Z</published>
-    <updated>2023-10-16T22:46:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Basic-errors">Basic errors</h2><pre><code class="hljs log">Warning: Can&#x27;t perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.</code></pre><h2 id="Basic-React-useEffect">Basic <code>React.useEffect</code></h2><p>understanding basic usage of <code>React.useEffect</code></p><h3 id="call-every-changes">call every changes</h3><blockquote><p>Below codes will run on every render of your component, e.g. when state or props change.</p></blockquote><pre><code class="hljs js"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  <span class="hljs-comment">// component is mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    <span class="hljs-comment">// component is being unmounted</span>  &#125;&#125;);</code></pre><h3 id="call-only-once">call only once</h3><blockquote><p>Below codes will run an effect and clean it up only once (on mount and unmount). This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.</p></blockquote><pre><code class="hljs js"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  <span class="hljs-comment">// component is mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    <span class="hljs-comment">// component is being unmounted</span>  &#125;&#125;, []); <span class="hljs-comment">// run once on mount</span></code></pre><h2 id="Basic-React-useRef">Basic <code>React.useRef</code></h2><blockquote><p>Keep in mind that useRef doesn’t notify you when its content changes. Mutating the .current property doesn’t cause a re-render.</p></blockquote><h2 id="Storing-isMounted-with-React-useRef">Storing <code>isMounted</code> with <code>React.useRef</code></h2><p>You’ll <code>React.useEffect</code> to monitor when the component mounts or unmounts, and save that info in a <code>ref</code></p><pre><code class="hljs js"><span class="hljs-keyword">const</span> isMounted = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useRef</span>(<span class="hljs-literal">false</span>); <span class="hljs-comment">// unmounted by default</span><span class="hljs-title class_">React</span>.<span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;  isMounted.<span class="hljs-property">current</span> = <span class="hljs-literal">true</span>; <span class="hljs-comment">// mounted</span>  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> &#123;    isMounted.<span class="hljs-property">current</span> = <span class="hljs-literal">false</span>; <span class="hljs-comment">// unmounted</span>  &#125;&#125;, []); <span class="hljs-comment">// run once on mount</span></code></pre><p>Now anytime you need to know if our component is mounted, you can check <code>isMounted.current</code> to get the current value.</p>]]></content>
-    
-    
-    <summary type="html">ReactJS isMounted hook with useEffect Basic errors Warning: Cant perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. Basic React.useEffect React.useEffect understanding basic usage of React.useEffect call every changes Below c</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
-    
-    <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Convert iframe to hexo-shortcodes codepen</title>
-    <link href="https://www.webmanajemen.com/2023/10/convert-iframe-to-hexo-shortcodes-codepen.html"/>
-    <id>https://www.webmanajemen.com/2023/10/convert-iframe-to-hexo-shortcodes-codepen.html</id>
-    <published>2023-10-09T00:12:12.000Z</published>
-    <updated>2023-10-09T00:12:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Promise</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;bluebird&#x27;</span>);<span class="hljs-keyword">const</span> glob = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;glob&#x27;</span>);<span class="hljs-keyword">const</span> &#123; join &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<span class="hljs-keyword">const</span> &#123; writefile &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;sbg-utility&#x27;</span>);<span class="hljs-keyword">const</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;moment-timezone&#x27;</span>);<span class="hljs-comment">// convert iframe to hexo-shortcodes codepen</span><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>(glob.<span class="hljs-title function_">glob</span>(<span class="hljs-string">&#x27;src-posts/**/*.md&#x27;</span>, &#123; <span class="hljs-attr">ignore</span>: [<span class="hljs-string">&#x27;**/node_modules/**&#x27;</span>] &#125;))  .<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> <span class="hljs-title function_">join</span>(__dirname, p))  .<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;hexo-post-parser&#x27;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">async</span> loaded =&gt; &#123;      <span class="hljs-keyword">const</span> parsed = <span class="hljs-keyword">await</span> loaded.<span class="hljs-title function_">parsePost</span>(file);      <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">module</span>: loaded, file, ...parsed &#125;;    &#125;)  )  .<span class="hljs-title function_">each</span>(<span class="hljs-function"><span class="hljs-params">parsed</span> =&gt;</span> &#123;    <span class="hljs-keyword">const</span> &#123; file, <span class="hljs-variable language_">module</span> &#125; = parsed;    <span class="hljs-keyword">let</span> &#123; <span class="hljs-attr">body</span>: contents &#125; = parsed;    <span class="hljs-keyword">let</span> save = <span class="hljs-literal">false</span>;    <span class="hljs-keyword">if</span> (contents.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&#x27;source.l3n4r0x.cf&#x27;</span>)) &#123;      contents = contents.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;iframe [^&gt;]*src=&quot;[^&quot;]*&quot;[^&gt;]*&gt;[\s\S]*?&lt;\/iframe\b[^&gt;]*&gt;/gim</span>, <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> &#123;        <span class="hljs-keyword">let</span> shortcode = tag;        <span class="hljs-keyword">const</span> src = <span class="hljs-regexp">/(?&lt;=src=&quot;).*?(?=[*&quot;])/gim</span>.<span class="hljs-title function_">exec</span>(tag)[<span class="hljs-number">0</span>];        <span class="hljs-keyword">const</span> url = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-title function_">decodeHTMLEntities</span>(src));        <span class="hljs-keyword">const</span> searchParams = <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>(url.<span class="hljs-property">search</span>);        <span class="hljs-keyword">let</span> user,          id,          opt = [];        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, value] <span class="hljs-keyword">of</span> searchParams.<span class="hljs-title function_">entries</span>()) &#123;          <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;id&#x27;</span>) &#123;            id = value;          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;user&#x27;</span>) &#123;            user = value;          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;h&#x27;</span>) &#123;            opt.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;height=&#x27;</span> + value);          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;tab&#x27;</span>) &#123;            opt.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;default_tab=&#x27;</span> + value);          &#125; <span class="hljs-keyword">else</span> &#123;            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(key, value);          &#125;        &#125;        <span class="hljs-keyword">if</span> (user.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span> &amp;&amp; id.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;          shortcode = <span class="hljs-string">`&#123;% codepen https://codepen.io/<span class="hljs-subst">$&#123;user&#125;</span>/pen/<span class="hljs-subst">$&#123;id&#125;</span> <span class="hljs-subst">$&#123;opt.join(<span class="hljs-string">&#x27; &#x27;</span>)&#125;</span> %&#125;`</span>;        &#125;        <span class="hljs-comment">// console.log(tag, shortcode);</span>        <span class="hljs-keyword">return</span> shortcode;      &#125;);      <span class="hljs-comment">// writefile(__dirname + &#x27;/tmp/x.html&#x27;, contents);</span>      parsed.<span class="hljs-property">body</span> = contents;      parsed.<span class="hljs-property">content</span> = contents;      parsed.<span class="hljs-property">metadata</span>.<span class="hljs-property">updated</span> = <span class="hljs-title function_">moment</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()).<span class="hljs-title function_">tz</span>(<span class="hljs-string">&#x27;Asia/Jakarta&#x27;</span>).<span class="hljs-title function_">format</span>();      save = <span class="hljs-literal">true</span>;    &#125;    <span class="hljs-keyword">if</span> (save)      <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-variable language_">module</span>.<span class="hljs-title function_">buildPost</span>(&#123; <span class="hljs-attr">body</span>: contents, <span class="hljs-attr">metadata</span>: parsed.<span class="hljs-property">metadata</span> &#125;)).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">build</span> =&gt;</span> &#123;        <span class="hljs-title function_">writefile</span>(file, build);      &#125;);  &#125;);<span class="hljs-keyword">function</span> <span class="hljs-title function_">decodeHTMLEntities</span>(<span class="hljs-params">text</span>) &#123;  <span class="hljs-keyword">var</span> entities = [    [<span class="hljs-string">&#x27;amp&#x27;</span>, <span class="hljs-string">&#x27;&amp;&#x27;</span>],    [<span class="hljs-string">&#x27;apos&#x27;</span>, <span class="hljs-string">&quot;&#x27;&quot;</span>],    [<span class="hljs-string">&#x27;#x27&#x27;</span>, <span class="hljs-string">&quot;&#x27;&quot;</span>],    [<span class="hljs-string">&#x27;#x2F&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>],    [<span class="hljs-string">&#x27;#39&#x27;</span>, <span class="hljs-string">&quot;&#x27;&quot;</span>],    [<span class="hljs-string">&#x27;#47&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>],    [<span class="hljs-string">&#x27;lt&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>],    [<span class="hljs-string">&#x27;gt&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>],    [<span class="hljs-string">&#x27;nbsp&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>],    [<span class="hljs-string">&#x27;quot&#x27;</span>, <span class="hljs-string">&#x27;&quot;&#x27;</span>]  ];  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, max = entities.<span class="hljs-property">length</span>; i &lt; max; ++i)    text = text.<span class="hljs-title function_">replace</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">&#x27;&amp;&#x27;</span> + entities[i][<span class="hljs-number">0</span>] + <span class="hljs-string">&#x27;;&#x27;</span>, <span class="hljs-string">&#x27;g&#x27;</span>), entities[i][<span class="hljs-number">1</span>]);  <span class="hljs-keyword">return</span> text;&#125;</code></pre>]]></content>
-    
-    
-    <summary type="html">Script javascript for convering html iframe to hexo-shortcodes codepen</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="hexo" scheme="https://www.webmanajemen.com/tags/hexo/"/>
-    
-    <category term="hexo-shortcodes" scheme="https://www.webmanajemen.com/tags/hexo-shortcodes/"/>
-    
-    <category term="codepen" scheme="https://www.webmanajemen.com/tags/codepen/"/>
-    
-    <category term="markdown" scheme="https://www.webmanajemen.com/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Convert iframe to hexo-shortcodes codepen</title>
-    <link href="https://www.webmanajemen.com/2023/10/convert-iframe-to-hexo-shortcodes-codepen.html"/>
-    <id>https://www.webmanajemen.com/2023/10/convert-iframe-to-hexo-shortcodes-codepen.html</id>
-    <published>2023-10-09T00:12:12.000Z</published>
-    <updated>2023-10-09T00:12:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Promise</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;bluebird&#x27;</span>);<span class="hljs-keyword">const</span> glob = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;glob&#x27;</span>);<span class="hljs-keyword">const</span> &#123; join &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<span class="hljs-keyword">const</span> &#123; writefile &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;sbg-utility&#x27;</span>);<span class="hljs-keyword">const</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;moment-timezone&#x27;</span>);<span class="hljs-comment">// convert iframe to hexo-shortcodes codepen</span><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>(glob.<span class="hljs-title function_">glob</span>(<span class="hljs-string">&#x27;src-posts/**/*.md&#x27;</span>, &#123; <span class="hljs-attr">ignore</span>: [<span class="hljs-string">&#x27;**/node_modules/**&#x27;</span>] &#125;))  .<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> <span class="hljs-title function_">join</span>(__dirname, p))  .<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;hexo-post-parser&#x27;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">async</span> loaded =&gt; &#123;      <span class="hljs-keyword">const</span> parsed = <span class="hljs-keyword">await</span> loaded.<span class="hljs-title function_">parsePost</span>(file);      <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">module</span>: loaded, file, ...parsed &#125;;    &#125;)  )  .<span class="hljs-title function_">each</span>(<span class="hljs-function"><span class="hljs-params">parsed</span> =&gt;</span> &#123;    <span class="hljs-keyword">const</span> &#123; file, <span class="hljs-variable language_">module</span> &#125; = parsed;    <span class="hljs-keyword">let</span> &#123; <span class="hljs-attr">body</span>: contents &#125; = parsed;    <span class="hljs-keyword">let</span> save = <span class="hljs-literal">false</span>;    <span class="hljs-keyword">if</span> (contents.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&#x27;source.l3n4r0x.cf&#x27;</span>)) &#123;      contents = contents.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;iframe [^&gt;]*src=&quot;[^&quot;]*&quot;[^&gt;]*&gt;[\s\S]*?&lt;\/iframe\b[^&gt;]*&gt;/gim</span>, <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> &#123;        <span class="hljs-keyword">let</span> shortcode = tag;        <span class="hljs-keyword">const</span> src = <span class="hljs-regexp">/(?&lt;=src=&quot;).*?(?=[*&quot;])/gim</span>.<span class="hljs-title function_">exec</span>(tag)[<span class="hljs-number">0</span>];        <span class="hljs-keyword">const</span> url = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-title function_">decodeHTMLEntities</span>(src));        <span class="hljs-keyword">const</span> searchParams = <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>(url.<span class="hljs-property">search</span>);        <span class="hljs-keyword">let</span> user,          id,          opt = [];        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, value] <span class="hljs-keyword">of</span> searchParams.<span class="hljs-title function_">entries</span>()) &#123;          <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;id&#x27;</span>) &#123;            id = value;          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;user&#x27;</span>) &#123;            user = value;          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;h&#x27;</span>) &#123;            opt.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;height=&#x27;</span> + value);          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">&#x27;tab&#x27;</span>) &#123;            opt.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;default_tab=&#x27;</span> + value);          &#125; <span class="hljs-keyword">else</span> &#123;            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(key, value);          &#125;        &#125;        <span class="hljs-keyword">if</span> (user.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span> &amp;&amp; id.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;          shortcode = <span class="hljs-string">`&#123;% codepen https://codepen.io/<span class="hljs-subst">$&#123;user&#125;</span>/pen/<span class="hljs-subst">$&#123;id&#125;</span> <span class="hljs-subst">$&#123;opt.join(<span class="hljs-string">&#x27; &#x27;</span>)&#125;</span> %&#125;`</span>;        &#125;        <span class="hljs-comment">// console.log(tag, shortcode);</span>        <span class="hljs-keyword">return</span> shortcode;      &#125;);      <span class="hljs-comment">// writefile(__dirname + &#x27;/tmp/x.html&#x27;, contents);</span>      parsed.<span class="hljs-property">body</span> = contents;      parsed.<span class="hljs-property">content</span> = contents;      parsed.<span class="hljs-property">metadata</span>.<span class="hljs-property">updated</span> = <span class="hljs-title function_">moment</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()).<span class="hljs-title function_">tz</span>(<span class="hljs-string">&#x27;Asia/Jakarta&#x27;</span>).<span class="hljs-title function_">format</span>();      save = <span class="hljs-literal">true</span>;    &#125;    <span class="hljs-keyword">if</span> (save)      <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-variable language_">module</span>.<span class="hljs-title function_">buildPost</span>(&#123; <span class="hljs-attr">body</span>: contents, <span class="hljs-attr">metadata</span>: parsed.<span class="hljs-property">metadata</span> &#125;)).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">build</span> =&gt;</span> &#123;        <span class="hljs-title function_">writefile</span>(file, build);      &#125;);  &#125;);<span class="hljs-keyword">function</span> <span class="hljs-title function_">decodeHTMLEntities</span>(<span class="hljs-params">text</span>) &#123;  <span class="hljs-keyword">var</span> entities = [    [<span class="hljs-string">&#x27;amp&#x27;</span>, <span class="hljs-string">&#x27;&amp;&#x27;</span>],    [<span class="hljs-string">&#x27;apos&#x27;</span>, <span class="hljs-string">&quot;&#x27;&quot;</span>],    [<span class="hljs-string">&#x27;#x27&#x27;</span>, <span class="hljs-string">&quot;&#x27;&quot;</span>],    [<span class="hljs-string">&#x27;#x2F&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>],    [<span class="hljs-string">&#x27;#39&#x27;</span>, <span class="hljs-string">&quot;&#x27;&quot;</span>],    [<span class="hljs-string">&#x27;#47&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>],    [<span class="hljs-string">&#x27;lt&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>],    [<span class="hljs-string">&#x27;gt&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>],    [<span class="hljs-string">&#x27;nbsp&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>],    [<span class="hljs-string">&#x27;quot&#x27;</span>, <span class="hljs-string">&#x27;&quot;&#x27;</span>]  ];  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, max = entities.<span class="hljs-property">length</span>; i &lt; max; ++i)    text = text.<span class="hljs-title function_">replace</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">&#x27;&amp;&#x27;</span> + entities[i][<span class="hljs-number">0</span>] + <span class="hljs-string">&#x27;;&#x27;</span>, <span class="hljs-string">&#x27;g&#x27;</span>), entities[i][<span class="hljs-number">1</span>]);  <span class="hljs-keyword">return</span> text;&#125;</code></pre>]]></content>
-    
-    
-    <summary type="html">Script javascript for convering html iframe to hexo-shortcodes codepen</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="hexo" scheme="https://www.webmanajemen.com/tags/hexo/"/>
-    
-    <category term="hexo-shortcodes" scheme="https://www.webmanajemen.com/tags/hexo-shortcodes/"/>
-    
-    <category term="codepen" scheme="https://www.webmanajemen.com/tags/codepen/"/>
-    
-    <category term="markdown" scheme="https://www.webmanajemen.com/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Catatan Muslim</title>
-    <link href="https://www.webmanajemen.com/notes/catatan-muslim.html"/>
-    <id>https://www.webmanajemen.com/notes/catatan-muslim.html</id>
-    <published>2023-10-01T19:09:45.000Z</published>
-    <updated>2023-10-15T13:03:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Barang siapa membaca attaubah ayat 128-129 enam puluh enam kali kepada orang yang terkena bisa binatang maka akan sembuh seketika (Asy-Syaikh At-Tijani)</p><p>Barang siapa menghafal sepuluh ayat terakhir dari surah Al kahfi, maka ia akan terlindungi dari fitnah dajjal (HR Muslim)</p><p>Barang siapa yang membacakan do’a ini di depan kuburan minimal 3 kali, maka Allah akan mengangkat siksa kuburnya hingga hari kiamat nanti.</p><blockquote><p>Allahumma Bihakki sayyidina Muhammadin wa’Ali Muhammadin la tu’adzib hadzal mayyit</p></blockquote><p>Neraka tidak akan menyentuh orang yang mengamalkan doa ini setelah sholat Maghrib dan subuh</p><blockquote><p>Allahumma ajirni minannar 7x</p></blockquote><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ajiepanqestu/video/7233039713081298202" data-video-id="7233039713081298202" data-embed-from="embed_page" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@ajiepanqestu" href="https://www.tiktok.com/@ajiepanqestu?refer=embed">@ajiepanqestu</a> <p>nraka tidak akan menyentuh orang yang berdzikir ini <a title="nongkireligi" target="_blank" href="https://www.tiktok.com/tag/nongkireligi?refer=embed">#nongkireligi</a> </p> <a target="_blank" title="♬ Epic Inspiration - DM Production" href="https://www.tiktok.com/music/Epic-Inspiration-7116400670005872641?refer=embed">♬ Epic Inspiration - DM Production</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script><p>la illaha iillallah wahdaula syarikala lahul mulku walahul hamdu yuhyii wa yumit<br>wahwa hayun layyamutubiyadh khoir wahua alakulli syaiin khodir</p>]]></content>
-    
-    
-    <summary type="html">Catatan Muslim Barang siapa membaca attaubah ayat 128-129 enam puluh enam kali kepada orang yang terkena bisa binatang maka akan sembuh seketika Asy-Syaikh At-Tijani Barang siapa menghafal sepuluh aya</summary>
-    
-    
-    
-    <category term="uncategorized" scheme="https://www.webmanajemen.com/categories/uncategorized/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Catatan Muslim</title>
-    <link href="https://www.webmanajemen.com/notes/catatan-muslim.html"/>
-    <id>https://www.webmanajemen.com/notes/catatan-muslim.html</id>
-    <published>2023-10-01T19:09:45.000Z</published>
-    <updated>2023-10-15T13:03:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Barang siapa membaca attaubah ayat 128-129 enam puluh enam kali kepada orang yang terkena bisa binatang maka akan sembuh seketika (Asy-Syaikh At-Tijani)</p><p>Barang siapa menghafal sepuluh ayat terakhir dari surah Al kahfi, maka ia akan terlindungi dari fitnah dajjal (HR Muslim)</p><p>Barang siapa yang membacakan do’a ini di depan kuburan minimal 3 kali, maka Allah akan mengangkat siksa kuburnya hingga hari kiamat nanti.</p><blockquote><p>Allahumma Bihakki sayyidina Muhammadin wa’Ali Muhammadin la tu’adzib hadzal mayyit</p></blockquote><p>Neraka tidak akan menyentuh orang yang mengamalkan doa ini setelah sholat Maghrib dan subuh</p><blockquote><p>Allahumma ajirni minannar 7x</p></blockquote><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ajiepanqestu/video/7233039713081298202" data-video-id="7233039713081298202" data-embed-from="embed_page" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@ajiepanqestu" href="https://www.tiktok.com/@ajiepanqestu?refer=embed">@ajiepanqestu</a> <p>nraka tidak akan menyentuh orang yang berdzikir ini <a title="nongkireligi" target="_blank" href="https://www.tiktok.com/tag/nongkireligi?refer=embed">#nongkireligi</a> </p> <a target="_blank" title="♬ Epic Inspiration - DM Production" href="https://www.tiktok.com/music/Epic-Inspiration-7116400670005872641?refer=embed">♬ Epic Inspiration - DM Production</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script><p>la illaha iillallah wahdaula syarikala lahul mulku walahul hamdu yuhyii wa yumit<br>wahwa hayun layyamutubiyadh khoir wahua alakulli syaiin khodir</p>]]></content>
-    
-    
-    <summary type="html">Catatan Muslim Barang siapa membaca attaubah ayat 128-129 enam puluh enam kali kepada orang yang terkena bisa binatang maka akan sembuh seketika Asy-Syaikh At-Tijani Barang siapa menghafal sepuluh ayat terakhir dari surah Al kahfi, maka ia akan terlindungi dari fitnah dajjal HR Muslim Barang sia</summary>
-    
-    
-    
-    <category term="uncategorized" scheme="https://www.webmanajemen.com/categories/uncategorized/"/>
-    
     
   </entry>
   

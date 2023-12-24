@@ -107,7 +107,7 @@ jobs:
           find . -name '.vscode' -type d -prune -exec rm -rf '{}' +
           find . -name 'tmp' -type d -prune -exec rm -rf '{}' +
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         if: steps.validate.outcome == 'success'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

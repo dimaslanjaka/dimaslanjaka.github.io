@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2023-11-10T23:46:25.000Z</updated>
+  <updated>2024-01-05T10:20:40.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>how to setup local site domain vhost xampp windows 2024</title>
+    <link href="https://www.webmanajemen.com/2024/01/how-to-setup-local-domain-vhost-xampp-windows.html"/>
+    <id>https://www.webmanajemen.com/2024/01/how-to-setup-local-domain-vhost-xampp-windows.html</id>
+    <published>2024-01-05T10:20:40.000Z</published>
+    <updated>2024-01-05T10:20:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>How to setup vhost config on xampp for local site domain, support for multiple local site.</p><h2 id="Setup-hosts">Setup hosts</h2><pre><code class="hljs php"><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>    localhost<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>    mysite-dev.com<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>    anothersite-dev.com</code></pre><h2 id="Setup-httpd-vhost-conf">Setup httpd-vhost.conf</h2><pre><code class="hljs conf">&lt;VirtualHost *:80&gt;  DocumentRoot C:/xampp/htdocs/  ServerName localhost&lt;/VirtualHost&gt;&lt;VirtualHost *:80&gt;    ServerName mysite-dev.com # domain name    DocumentRoot &quot;D:/Workspaces/PHP/ISP&quot;    &lt;Directory &quot;D:/Workspaces/PHP/ISP&quot;&gt;        Options Indexes FollowSymLinks        # AllowOverride All      # Deprecated        # Order Allow,Deny       # Deprecated        # Allow from all         # Deprecated        # --New way of doing it        Require all granted    &lt;/Directory&gt;&lt;/VirtualHost&gt;</code></pre><p>you can add more virtual host, like:</p><blockquote><p>using forward slash <code>/</code> instead of back slash <code>\</code></p></blockquote><pre><code class="hljs conf">&lt;VirtualHost *:80&gt;    ServerName yourdomain.tld    DocumentRoot &quot;your/directory&quot;    &lt;Directory &quot;your/directory&quot;&gt;        Options Indexes FollowSymLinks        Require all granted    &lt;/Directory&gt;&lt;/VirtualHost&gt;</code></pre><h2 id="Setup-httpd-xampp-conf">Setup httpd-xampp.conf</h2><p>this required for <code>mod_rewrite</code> module works. add new line:</p><pre><code class="hljs conf">&lt;Directory &quot;D:/Workspaces/PHP/ISP&quot;&gt;    AllowOverride All    Require all granted&lt;/Directory&gt;</code></pre><blockquote><p>change <strong>D:/Workspaces/PHP/ISP</strong> to your directory</p></blockquote><p>All sets, try start xampp.</p>]]></content>
+    
+    
+    <summary type="html">how to setup local site domain vhost xampp windows 2024</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="php" scheme="https://www.webmanajemen.com/tags/php/"/>
+    
+    <category term="apache" scheme="https://www.webmanajemen.com/tags/apache/"/>
+    
+    <category term="xampp" scheme="https://www.webmanajemen.com/tags/xampp/"/>
+    
+  </entry>
   
   <entry>
     <title>Geckoview cangoback equivalent of android webview.canGoBack</title>
@@ -472,29 +497,6 @@
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
     <category term="css" scheme="https://www.webmanajemen.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>fix end of line on github repository</title>
-    <link href="https://www.webmanajemen.com/GitHub/fix-end-of-line.html"/>
-    <id>https://www.webmanajemen.com/GitHub/fix-end-of-line.html</id>
-    <published>2023-08-30T20:06:28.000Z</published>
-    <updated>2023-09-02T14:28:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="force-end-of-line-using-LF">force end of line using LF</h2><p>For repos (Git repositories) that were checked out after those global settings were set, everything will be checked out as whatever it is in the repo – hopefully <code>LF</code> (<code>\n</code>).<br>Any <code>CRLF</code> will be converted to just <code>LF</code> on check-in (commit).</p><p>With an existing repo that you have already checked out – that has the correct line endings in the repo but not your working copy – you can run the following commands to fix it:</p><pre><code class="hljs bash">git config --global core.eol lfgit config --global core.autocrlf inputgit <span class="hljs-built_in">rm</span> -rf --cached .git reset --hard HEAD</code></pre><p><code>git rm -rf --cached .</code> will delete (<code>rm</code>) recursively (<code>-r</code>) without prompt (<code>-f</code>), all files except those that you have edited (<code>--cached</code>), from the current directory (<code>.</code>). The <code>reset</code> then returns all those files to a state where they have their true line endings (matching what’s in the repo).</p><p>If you need to fix the line endings of files in a repo, I recommend grabbing an editor that will let you do that in bulk like IntelliJ or Sublime Text, but I’m sure any good one will likely support this.</p><h3 id="Put-a-gitattributes-file-in-the-root-of-your-git-repository-having-following-contents">Put a <code>.gitattributes</code> file in the root of your git repository having following contents:</h3><pre><code class="hljs plaintext">* text=auto eol=lf</code></pre><p>Commit the <code>.gitattributes</code></p><h3 id="Optional-tweaks-for-all-IDE">Optional tweaks for all IDE</h3><p>You can also add an <a href="http://EditorConfig.org"><code>.editorconfig</code></a> in the root of your repository to ensure that modern tooling creates new files with the desired line endings.</p><pre><code class="hljs plaintext"># EditorConfig is awesome: http://EditorConfig.org# top-most EditorConfig fileroot = true# Unix-style newlines with a newline ending every file[*]end_of_line = lfinsert_final_newline = true</code></pre>]]></content>
-    
-    
-    <summary type="html">fix end of line on github repository force end of line using LF For repos Git repositories that were checked out after those global settings were set, everythin</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
-    
-    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
     
   </entry>
   

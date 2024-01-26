@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2024-01-25T19:02:22.000Z</updated>
+  <updated>2024-01-25T21:02:03.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring boot with eclipse gradle plugin</title>
+    <link href="https://www.webmanajemen.com/2024/01/eclipse-gradle-plugin-sync-build-with-spring-boot.html"/>
+    <id>https://www.webmanajemen.com/2024/01/eclipse-gradle-plugin-sync-build-with-spring-boot.html</id>
+    <published>2024-01-25T20:38:40.000Z</published>
+    <updated>2024-01-25T21:02:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Spring Boot DevTools provides a set of tools that can help improve the development experience. One of the features is automatic class reloading, which can be particularly useful during development. Eclipse, on the other hand, has its own set of tools for Java development. To sync compiled classes from the Eclipse Gradle plugin with Spring Boot DevTools, you can follow these general steps:</p><h2 id="Ensure-Spring-Boot-DevTools-is-Configured">Ensure Spring Boot DevTools is Configured</h2><ul><li>Make sure that the <code>spring-boot-devtools</code> dependency is included in your Spring Boot project. Add the following dependency to your <code>build.gradle</code> file:</li></ul><pre><code class="hljs gradle"><span class="hljs-keyword">dependencies</span> &#123;    implementation <span class="hljs-string">&#x27;org.springframework.boot:spring-boot-devtools&#x27;</span>&#125;</code></pre><h2 id="Configure-gradle">Configure gradle</h2><h3 id="Configure-eclipse-gradle-plugin">Configure <code>eclipse</code> gradle plugin</h3><pre><code class="hljs gradle">eclipse &#123;    <span class="hljs-keyword">classpath</span> &#123;        defaultOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build/eclipse&#x27;</span>)        baseSourceOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build/classes/java&#x27;</span>)        <span class="hljs-keyword">file</span>.whenMerged &#123;            entries.<span class="hljs-keyword">each</span> &#123; entry -&gt;                <span class="hljs-keyword">if</span> (entry.kind == <span class="hljs-string">&#x27;src&#x27;</span> &amp;&amp; entry.hasProperty(<span class="hljs-string">&#x27;output&#x27;</span>)) &#123;                    <span class="hljs-keyword">if</span> (entry.output != <span class="hljs-keyword">null</span>) entry.output = entry.output.replace(<span class="hljs-string">&#x27;bin/&#x27;</span>, <span class="hljs-string">&quot;build/&quot;</span>)                &#125;            &#125;        &#125;    &#125;&#125;</code></pre><h3 id="Configure-jar-and-bootJar-tasks">Configure <code>jar</code> and <code>bootJar</code> tasks</h3><p>In Gradle, if you want to create a JAR file and exclude duplicate files, you can use the DuplicatesStrategy.EXCLUDE strategy. This strategy excludes duplicates from the final JAR by keeping only the first occurrence of each duplicate file.</p><pre><code class="hljs plaintext">// Optional: Specify the main class if your JAR is executableapplication &#123;    mainClassName = &#x27;web.MainApplication&#x27;&#125;// Configure the JAR taskjar &#123;    duplicatesStrategy = DuplicatesStrategy.EXCLUDE    manifest &#123;        attributes &quot;Start-Class&quot;: &quot;web.MainApplication&quot;    &#125;&#125;// Configure the spring JAR taskbootJar &#123;    duplicatesStrategy = DuplicatesStrategy.EXCLUDE    manifest &#123;        attributes &quot;Start-Class&quot;: &quot;web.MainApplication&quot;    &#125;&#125;</code></pre><blockquote><p>Replace ‘web.MainApplication’ with the actual main class of your application.</p><p>Note: The <code>application</code> block is optional and is only necessary if your JAR is executable, and you want to specify the main class. If your JAR is not executable, you can omit the <code>application</code> block.</p></blockquote><h2 id="Initialize-configuration-for-Eclipse">Initialize configuration for Eclipse</h2><p>When working with Gradle in Eclipse, you can use the <code>eclipse</code> plugin to generate Eclipse-specific configuration files. These files help to set up your Eclipse project based on the dependencies and structure defined in your Gradle build script. To initialize the Eclipse configuration for your Gradle project, follow these step:</p><pre><code class="hljs bash">gradlew eclipse --no-daemon</code></pre><blockquote><p><code>--no-daemon</code> parameter will kill the java when app exit (CTRL+C or Close terminal)</p></blockquote><h2 id="Configure-Eclipse-for-Automatic-Building">Configure Eclipse for Automatic Building</h2><ul><li><p>In Eclipse, go to <code>Project</code> &gt; <code>Build Automatically</code> to ensure that automatic building is enabled.-   <strong>Configure Gradle Build in Eclipse:</strong></p></li><li><p>Ensure that your Eclipse project is properly configured to use the Gradle build system. You can do this by right-clicking on your project in the Eclipse Project Explorer, selecting <code>Properties</code>, and then navigating to <code>Project Facets</code>. Make sure that the <code>Gradle</code> facet is selected.-   <strong>Enable Automatic Project Refresh in Eclipse:</strong></p></li><li><p>Go to <code>Window</code> &gt; <code>Preferences</code> &gt; <code>General</code> &gt; <code>Workspace</code>.</p></li><li><p>Enable the option “Refresh using native hooks or polling”.</p></li><li><p>Enable the option “Refresh on access”.-   <strong>Configure Spring Boot DevTools in <code>application.properties</code>:</strong></p></li><li><p>In your <code>src/main/resources/application.properties</code> (or <code>application.yml</code>) file, ensure that DevTools is configured to enable class reloading:</p></li></ul><pre><code class="hljs properties"><span class="hljs-attr">spring.devtools.restart.enabled</span>=<span class="hljs-string">true</span></code></pre><h2 id="Run-the-Application-with-DevTools">Run the Application with DevTools</h2><ul><li>Run your Spring Boot application from Eclipse with the Gradle plugin.</li><li>Spring Boot DevTools should detect changes in your class files and automatically trigger a restart.</li></ul><pre><code class="hljs bash">gradlew bootrun --no-daemon</code></pre><blockquote><p><code>--no-daemon</code> parameter will kill the java when app exit (CTRL+C or Close terminal)</p></blockquote><h2 id="Conclusion">Conclusion</h2><p>Now spring boot livereload working even you changes the <code>java</code>, <code>kotlin</code>, <code>groovy</code> or <code>resources</code> files.</p><p>Keep in mind that the effectiveness of DevTools may depend on various factors, and not all changes can be hot-reloaded. Certain types of changes, such as those to method signatures or certain structural changes, may still require a manual restart.</p><p>By following these steps, you should be able to synchronize the compiled classes from the Eclipse Gradle plugin with Spring Boot DevTools during development. If you encounter any issues, consider checking the Spring Boot DevTools documentation and the Eclipse documentation for further troubleshooting.</p>]]></content>
+    
+    
+    <summary type="html">sync compiled classes from eclipse gradle plugin with spring boot devtools</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
+    
+    <category term="gradle" scheme="https://www.webmanajemen.com/tags/gradle/"/>
+    
+    <category term="kotlin" scheme="https://www.webmanajemen.com/tags/kotlin/"/>
+    
+  </entry>
   
   <entry>
     <title>auto configure classpath config using eclipse gradle plugin</title>
@@ -474,29 +499,6 @@
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
     <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to fix vscode settings sync in linux</title>
-    <link href="https://www.webmanajemen.com/2023/09/fix-vscode-settings-sync-linux.html"/>
-    <id>https://www.webmanajemen.com/2023/09/fix-vscode-settings-sync-linux.html</id>
-    <published>2023-09-18T20:37:50.000Z</published>
-    <updated>2023-09-18T20:49:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Ensure-gnome-keyring-is-running">Ensure gnome-keyring is running</h2><pre><code class="hljs bash">$ systemctl --user status gnome-keyring-daemon● gnome-keyring-daemon.service - GNOME Keyring daemon     Loaded: loaded (/usr/lib/systemd/user/gnome-keyring-daemon.service; enabled; preset: enabled)     Active: active (running) since Thu 2023-06-15 12:36:32 CEST; 3h 43min agoTriggeredBy: ● gnome-keyring-daemon.socket   Main PID: 16317 (gnome-keyring-d)      Tasks: 4 (<span class="hljs-built_in">limit</span>: 67352)     Memory: 3.5M        CPU: 1.067s     CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/gnome-keyring-daemon.service             └─16317 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring</code></pre><p>Otherwise</p><h3 id="enable-gnome-keyring-daemon-manually">enable <code>gnome-keyring-daemon</code> manually</h3><pre><code class="hljs bash">gnome-keyring-daemon --replace --daemonize --components=pkcs11,secrets,ssh</code></pre><h4 id="Show-installed-gnome-keyring">Show installed <code>gnome-keyring</code></h4><pre><code class="hljs bash">$ dpkg -l | grep gnome-keyringii  gnome-keyring                                               42.1-1+b2                                            amd64        GNOME keyring services (daemon and tools)ii  gnome-keyring-pkcs11:amd64                                  42.1-1+b2                                            amd64        GNOME keyring module <span class="hljs-keyword">for</span> the PKCS<span class="hljs-comment">#11 module loading library</span>ii  libgnome-keyring-common                                     3.12.0-1                                             all          GNOME keyring services library - data filesii  libgnome-keyring-dev                                        3.12.0-1+b2                                          amd64        Development files <span class="hljs-keyword">for</span> GNOME keyring serviceii  libgnome-keyring0:amd64                                     3.12.0-1+b2                                          amd64        GNOME keyring services libraryii  libpam-gnome-keyring:amd64                                  42.1-1+b2                                            amd64        PAM module to unlock the GNOME keyring upon login</code></pre><h4 id="Show-installed-libsecret">Show installed <code>libsecret</code></h4><pre><code class="hljs bash">$ dpkg -l | grep libsecretii  libsecret-1-0:amd64                                         0.20.5-3                                             amd64        Secret storeii  libsecret-common                                            0.20.5-3                                             all          Secret store (common files)</code></pre><h4 id="Show-installed-dbus-x11">Show installed <code>dbus-x11</code></h4><pre><code class="hljs bash">$ dpkg -l | grep -i dbus-x11ii  dbus-x11                                                    1.14.6-1                                             amd64        simple interprocess messaging system (X11 deps)</code></pre><h2 id="Open-VSCode-argument-settings">Open VSCode argument settings</h2><p>open the Command Palette (<code>Ctrl+Shift+P</code>) and type <strong>Preferences: Configure Runtime Arguments</strong></p><p><img src="/2023/09/fix-vscode-settings-sync-linux/image.png" alt=""></p><h2 id="Add-settings">Add settings</h2><p>add the setting <code>&quot;password-store&quot;:&quot;gnome&quot;</code></p><p><img src="/2023/09/fix-vscode-settings-sync-linux/add-settings.png" alt=""></p><h2 id="Restart-VSCode">Restart VSCode</h2><p>after added the password-store to settings, clean restart VSCode.</p><p>Close the window (<code>X</code>) then re-open VSCode from start menu or desktop icon.</p><h2 id="Relogin">Relogin</h2><p>Try relogin VSCode with github or microsoft account</p>]]></content>
-    
-    
-    <summary type="html">How to fix vscode settings sync in linux Ensure gnome-keyring is running systemctl --user status gnome-keyring-daemon gnome-keyring-daemon.service - GNOME Keyring daemon Loaded: loaded /usr/lib/system</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="tips &amp; tricks" scheme="https://www.webmanajemen.com/tags/tips-tricks/"/>
-    
-    <category term="vscode" scheme="https://www.webmanajemen.com/tags/vscode/"/>
     
   </entry>
   

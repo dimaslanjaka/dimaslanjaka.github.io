@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2024-02-02T22:48:58.000Z</updated>
+  <updated>2024-02-03T12:07:22.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exported variable has or is using name from external module</title>
+    <link href="https://www.webmanajemen.com/2024/02/typescript-error-private-name.html"/>
+    <id>https://www.webmanajemen.com/2024/02/typescript-error-private-name.html</id>
+    <published>2024-02-03T12:04:52.000Z</published>
+    <updated>2024-02-03T12:07:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>In TypeScript, when you have an exported variable that uses a private type from an external module, you may run into issues because private types are not accessible outside of their module.</p><p>answers for exported variable that uses a private type from an external module:</p><ul><li><a href="https://stackoverflow.com/questions/61456979/solve-react-typescript-error-export-variable-is-using-name-from-external-modul/77933352#77933352">Exported variable ‘yourVariable’ has or is using name ‘TypeName’ from external module “module/path” but cannot be named. ts(4023)</a></li><li><a href="https://stackoverflow.com/questions/43900035/ts4023-exported-variable-x-has-or-is-using-name-y-from-external-module-but">TS4023: Exported Variable <x> has or is using name <y> from external module but cannot be named</a></li><li><a href="https://stackoverflow.com/questions/62538330/exported-variable-x-has-or-is-using-name-y-from-external-module-z-but-cannot-be">Exported variable X has or is using name Y from external module Z but cannot be named</a></li><li><a href="https://www.google.com/search?q=Exported+variable+%27projectConfig%27+has+or+is+using+name+%27Config%27+from+external+module+site:stackoverflow.com&amp;client=firefox-b-d&amp;sca_esv=5c40852b81bce253&amp;sxsrf=ACQVn0_cbfoN2nZaFBculzZNSiBrQy0xKw:1706986272038&amp;sa=X&amp;ved=2ahUKEwig_oWz64-EAxXH4jgGHU4tD10QrQIoBHoECBMQBQ&amp;biw=1366&amp;bih=615&amp;dpr=1">Exported variable ‘projectConfig’ has or is using name ‘Config’ from external module site:stackoverflow.com</a></li></ul><p>To fix exported variable using private type from external module, you can consider a few approaches:</p><h2 id="Fix-steps">Fix steps</h2><p>just declare the type, for example:</p><p>in external lib has code like below:</p><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> privateProperty &#123;  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;&#125;<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> config = &#123;  <span class="hljs-attr">propName</span>: &#123;&#125; <span class="hljs-keyword">as</span> privateProperty&#125;</code></pre><p>in your code</p><pre><code class="hljs ts"><span class="hljs-comment">// this config[&#x27;propName&#x27;] contains non-exported type/interface</span><span class="hljs-keyword">import</span> &#123; config &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;external-lib&#x27;</span>;<span class="hljs-comment">// declare new type from private property</span><span class="hljs-keyword">type</span> Y = config[<span class="hljs-string">&#x27;propName&#x27;</span>]; <span class="hljs-comment">// or typeof config[&#x27;propName&#x27;]</span><span class="hljs-comment">// declare new type that extends Y</span><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> X <span class="hljs-keyword">extends</span> Y &#123;&#125;<span class="hljs-comment">// apply interface X which contains Private Type Name</span><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> yourVariable = &#123;&#125; <span class="hljs-keyword">as</span> X;</code></pre><h2 id="Conclusion">Conclusion</h2><p>done. now the problem fixed</p><p>result</p><p>before<br><a href="https://i.stack.imgur.com/6zwQS.png"><img src="https://i.stack.imgur.com/6zwQS.png" alt=""></a></p><p>after<br><a href="https://i.stack.imgur.com/uVeAs.png"><img src="https://i.stack.imgur.com/uVeAs.png" alt=""></a></p>]]></content>
+    
+    
+    <summary type="html">How to fix exported variable using private type from external module</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>Enable CORS globally in spring boot</title>
@@ -480,25 +501,6 @@
     <category term="codepen" scheme="https://www.webmanajemen.com/tags/codepen/"/>
     
     <category term="markdown" scheme="https://www.webmanajemen.com/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Catatan Muslim</title>
-    <link href="https://www.webmanajemen.com/notes/catatan-muslim.html"/>
-    <id>https://www.webmanajemen.com/notes/catatan-muslim.html</id>
-    <published>2023-10-01T19:09:45.000Z</published>
-    <updated>2023-10-15T13:03:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Barang siapa membaca attaubah ayat 128-129 enam puluh enam kali kepada orang yang terkena bisa binatang maka akan sembuh seketika (Asy-Syaikh At-Tijani)</p><p>Barang siapa menghafal sepuluh ayat terakhir dari surah Al kahfi, maka ia akan terlindungi dari fitnah dajjal (HR Muslim)</p><p>Barang siapa yang membacakan do’a ini di depan kuburan minimal 3 kali, maka Allah akan mengangkat siksa kuburnya hingga hari kiamat nanti.</p><blockquote><p>Allahumma Bihakki sayyidina Muhammadin wa’Ali Muhammadin la tu’adzib hadzal mayyit</p></blockquote><p>Neraka tidak akan menyentuh orang yang mengamalkan doa ini setelah sholat Maghrib dan subuh</p><blockquote><p>Allahumma ajirni minannar 7x</p></blockquote><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ajiepanqestu/video/7233039713081298202" data-video-id="7233039713081298202" data-embed-from="embed_page" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@ajiepanqestu" href="https://www.tiktok.com/@ajiepanqestu?refer=embed">@ajiepanqestu</a> <p>nraka tidak akan menyentuh orang yang berdzikir ini <a title="nongkireligi" target="_blank" href="https://www.tiktok.com/tag/nongkireligi?refer=embed">#nongkireligi</a> </p> <a target="_blank" title="♬ Epic Inspiration - DM Production" href="https://www.tiktok.com/music/Epic-Inspiration-7116400670005872641?refer=embed">♬ Epic Inspiration - DM Production</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script><p>la illaha iillallah wahdaula syarikala lahul mulku walahul hamdu yuhyii wa yumit<br>wahwa hayun layyamutubiyadh khoir wahua alakulli syaiin khodir</p>]]></content>
-    
-    
-    <summary type="html">Catatan Muslim Barang siapa membaca attaubah ayat 128-129 enam puluh enam kali kepada orang yang terkena bisa binatang maka akan sembuh seketika Asy-Syaikh At-Tijani Barang siapa menghafal sepuluh aya</summary>
-    
-    
-    
-    <category term="uncategorized" scheme="https://www.webmanajemen.com/categories/uncategorized/"/>
-    
     
   </entry>
   

@@ -15,8 +15,33 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Fri, 09 Feb 2024 17:06:06 GMT</pubDate>
+    <pubDate>Sun, 11 Feb 2024 06:31:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Toggle enable/disable github hooks event</title>
+      <link>https://www.webmanajemen.com/GitHub/toggle-enable-disable-github-hooks-event.html</link>
+      <guid>https://www.webmanajemen.com/GitHub/toggle-enable-disable-github-hooks-event.html</guid>
+      <pubDate>Sun, 11 Feb 2024 06:31:05 GMT</pubDate>
+      
+      <description>How to toggle enable/disable github hooks event</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>Pre-commit hooks are scripts that run locally before a commit is made.<br>They are not specific to GitHub but can be part of your local development environment.<br>Tools like <code>pre-commit</code> allow you to configure and run hooks before each commit.</p><h2 id="enable-git-hooks">enable git hooks</h2><p>To toggle enable git hooks you can do following:</p><pre><code class="hljs bash">git config core.hooksPath ./git-hooks</code></pre><h2 id="disable-git-hooks">disable git hooks</h2><p>To toggle disable git hooks you can do following:</p><pre><code class="hljs bash">git config --<span class="hljs-built_in">unset</span> core.hookspath</code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/github/">github</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/bash/">bash</category>
+      
+      
+      <comments>https://www.webmanajemen.com/GitHub/toggle-enable-disable-github-hooks-event.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Visual Studio Code Run task on save</title>
@@ -504,35 +529,6 @@
       
       
       <comments>https://www.webmanajemen.com/2023/10/what-does-google-servicesjson-really-do.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>android webview get content height</title>
-      <link>https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html</link>
-      <guid>https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html</guid>
-      <pubDate>Sat, 28 Oct 2023 21:43:36 GMT</pubDate>
-      
-      <description>script to get content height of android webview</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Basic-methods">Basic methods</h2><p>Basic methods of Various ways to get the height of a Webview on Android. Nothing really works on all cases</p><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> android.view.ViewTreeObserver<span class="hljs-keyword">import</span> android.webkit.JavascriptInterface<span class="hljs-keyword">import</span> android.webkit.WebView<span class="hljs-keyword">import</span> android.webkit.WebViewClient<span class="hljs-comment">// Try 1</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightFromDocumentBodyScrollHeight</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;    webView.webViewClient = <span class="hljs-keyword">object</span> : WebViewClient() &#123;        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageFinished</span><span class="hljs-params">(view: <span class="hljs-type">WebView</span>?, url: <span class="hljs-type">String</span>?)</span></span> &#123;            view?.let &#123;                it.settings.javaScriptEnabled = <span class="hljs-literal">true</span>                it.addJavascriptInterface(WebAppInterface(it, setHeight), <span class="hljs-string">&quot;AndroidGetHeightFunction&quot;</span>)                it.loadUrl(<span class="hljs-string">&quot;javascript:AndroidGetHeightFunction.resize(document.body.scrollHeight)&quot;</span>)            &#125;        &#125;    &#125;&#125;<span class="hljs-keyword">class</span> <span class="hljs-title class_">WebAppInterface</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> webView: WebView, <span class="hljs-keyword">val</span> setHeight: (<span class="hljs-built_in">Int</span>)-&gt;<span class="hljs-built_in">Unit</span>) &#123;    <span class="hljs-meta">@JavascriptInterface</span>    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">resize</span><span class="hljs-params">(height: <span class="hljs-type">Float</span>)</span></span> &#123;        webView.post &#123;            <span class="hljs-keyword">val</span> h = Math.floor((height * webView.context.resources.displayMetrics.density).toDouble()).toInt()            setHeight(h)            webView.settings.javaScriptEnabled = <span class="hljs-literal">false</span>        &#125;    &#125;&#125;<span class="hljs-comment">// Try 2</span><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> heightWebViewJSScript = <span class="hljs-string">&quot;(function() &#123;var pageHeight = 0;function findHighestNode(nodesList) &#123; for (var i = nodesList.length - 1; i &gt;= 0; i--) &#123;if (nodesList[i].scrollHeight &amp;&amp; nodesList[i].clientHeight) &#123;var elHeight = Math.max(nodesList[i].scrollHeight, nodesList[i].clientHeight);pageHeight = Math.max(elHeight, pageHeight);&#125;if (nodesList[i].childNodes.length) findHighestNode(nodesList[i].childNodes);&#125;&#125;findHighestNode(document.documentElement.childNodes); return pageHeight;&#125;)()&quot;</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightWithJavascriptEvaluation</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;    webView.settings.javaScriptEnabled = <span class="hljs-literal">true</span>    webView.webViewClient = <span class="hljs-keyword">object</span> : WebViewClient() &#123;        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageFinished</span><span class="hljs-params">(view: <span class="hljs-type">WebView</span>, url: <span class="hljs-type">String</span>)</span></span> &#123;            webView.evaluateJavascript(heightWebViewJSScript) &#123; height -&gt;                <span class="hljs-keyword">val</span> h = Math.floor((height.toInt() * webView.context.resources.displayMetrics.density).toDouble()).toInt()                setHeight(h)                webView.settings.javaScriptEnabled = <span class="hljs-literal">false</span>            &#125;        &#125;    &#125;&#125;<span class="hljs-comment">// Try 3</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightWithViewTreeObserver</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;        webView.viewTreeObserver.addOnPreDrawListener(<span class="hljs-keyword">object</span> : ViewTreeObserver.OnPreDrawListener &#123;            <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPreDraw</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Boolean</span> &#123;                <span class="hljs-keyword">val</span> height = webView.measuredHeight                <span class="hljs-keyword">if</span> (height != <span class="hljs-number">0</span>) &#123;                    <span class="hljs-keyword">val</span> h = Math.floor((height * webView.context.resources.displayMetrics.density).toDouble()).toInt()                    setHeight(height)                    webView.viewTreeObserver.removeOnPreDrawListener(<span class="hljs-keyword">this</span>)                &#125;                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>            &#125;        &#125;)&#125;<span class="hljs-comment">// Try 4</span><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getHeightWithLayoutChangeListener</span><span class="hljs-params">(webView: <span class="hljs-type">WebView</span>, setHeight: (<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Unit</span>)</span></span> &#123;    webView.addOnLayoutChangeListener&#123; _, _, _, _, _, _, _, _, _ -&gt;        setHeight(webView.contentHeight)    &#125;&#125;</code></pre>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/android/">android</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/webview/">webview</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/kotlin/">kotlin</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2023/10/android-webview-get-content-height.html#disqus_thread</comments>
       
     </item>
     

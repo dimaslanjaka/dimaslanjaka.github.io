@@ -15,8 +15,29 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Fri, 16 Feb 2024 23:50:16 GMT</pubDate>
+    <pubDate>Thu, 22 Feb 2024 01:07:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>How to exclude anoying tags in intellij idea or android studio</title>
+      <link>https://www.webmanajemen.com/2024/02/how-to-exclude-anoying-tags-from-logcat-intellij-android-studio.html</link>
+      <guid>https://www.webmanajemen.com/2024/02/how-to-exclude-anoying-tags-from-logcat-intellij-android-studio.html</guid>
+      <pubDate>Thu, 22 Feb 2024 00:12:51 GMT</pubDate>
+      
+      <description>In IntelliJ IDEA and Android Studio, you can exclude specific log tags in the Logcat view</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/5241507b-bdf2-48b4-8712-5d1dc0761690" alt=""></p><p>In IntelliJ IDEA and Android Studio, you can exclude specific log tags in the Logcat view. Here’s how you can do it:</p><ul><li>Open Android Studio or Intellij IDEA.</li><li>Go to Tools &gt; Android &gt; Logcat.</li><li>In Logcat, seek for options related to “Ignore Tags” or “Ignored Log Tags”.</li><li>Add a list of tags that you want to ignore, by separating it using spaces or commas.</li></ul><pre><code class="hljs text">HardwareCodecCapability AudioCapabilities OpenGLRenderer ViewRoot ForceDarkHelper Looper PlayCore AudioTrack SurfaceUtils cr_ChildProcessConn FA ActivityThread DynamiteModule Perf DynamitePackage EgretLoader cr_LibraryLoader BpBinder chatty FeatureParser MediaCodec ExtendedACodec MapperHal OMXClient VideoCapabilities Gralloc3 MetadataUtil AdrenoGLES chromium DpmTcmClient WebViewFactory cr_CachingUmaRecorder AdrenoUtils cr_media AudioManager cr_SpareChildConn Chrome_InProcGp Choreographer AdInternalSettings Keep-Alive Vary pool-15-thread- WifiMulticast WifiHW MtpService PushClient EGL_emulation OpenGl* InputReader art dalvik Environment DataRouter AlarmManager WindowManager PhoneStatusBar ActivityManager ResourceType PackageManager gralloc Gnss NetRec ResolverController GAv4 AsyncOperation AppOps WificondControl aofp wifi netmgr ctxmgr BestClock FirebaseInstanceId android.os.Debug memtrack netd system_server StrictMode bluetooth NetworkMonitor BroadcastQueue ConnextivityService WakeLock HttpClientWrapper RAWR Tenor BgTask WifiService BluetoothAdapter UpdateStatsService AppIdleHistory Connectivity VelvetNetworkClient WorkerManager ActivityTaskManager UsageStatsService ocess.gservice DropBoxManagerService EventLogChimeraService PContextMetricsRunner MemoryController MultiDex AutofillManager libMEOW</code></pre><h2 id="Setting-result-looks-like-below-screenshoot">Setting result looks like below screenshoot</h2><p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/1061e3cb-b57f-44de-96b8-78aab3cebeba" alt=""></p><h2 id="Additional-for-GeckoView">Additional for GeckoView</h2><p>Put below pattern to logcat filter column</p><pre><code class="hljs text">-tag~:GeckoConsole|SurfaceComposerClient|BufferQueueConsumer|GeckoSession|GeckoThread|Web\sContent|GeckoEventDispatcher|BLASTBufferQueue|GeckoNetworkManager|linker</code></pre><p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/78a27118-5eae-43e1-abba-0a6a3ad81270" alt=""></p><h2 id="Conclusion">Conclusion</h2><p>Done, now all common anoying tags should not be displayed on logcat logs. Looks like below screenshot, no more annoying tags shown :)</p><p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/6a72637d-6ee7-410d-bed5-a6d666663201" alt=""></p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/uncategorized/">uncategorized</category>
+      
+      
+      
+      <comments>https://www.webmanajemen.com/2024/02/how-to-exclude-anoying-tags-from-logcat-intellij-android-studio.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Fix The inferred type of X cannot be named without a reference</title>
@@ -130,9 +151,9 @@
       
       <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
-      <category domain="https://www.webmanajemen.com/tags/css/">css</category>
-      
       <category domain="https://www.webmanajemen.com/tags/html/">html</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/css/">css</category>
       
       
       <comments>https://www.webmanajemen.com/2024/02/boostrap-5-color-theme-switcher.html#disqus_thread</comments>
@@ -498,37 +519,6 @@
       
       
       <comments>https://www.webmanajemen.com/2024/01/how-to-setup-local-domain-vhost-xampp-windows.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Geckoview cangoback equivalent of android webview.canGoBack</title>
-      <link>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html</link>
-      <guid>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html</guid>
-      <pubDate>Fri, 10 Nov 2023 23:41:10 GMT</pubDate>
-      
-      <description>Geckoview cangoback equivalent of android webview.canGoBack How can i use canGoBack on GeckoView? below is sample default android webview canGoBack implemention canGoBack public void onBackPressed if </description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="How-can-i-use-canGoBack-on-GeckoView">How can i use canGoBack() on GeckoView?</h2><p>below is sample default android webview <code>canGoBack()</code> implemention</p><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onBackPressed</span><span class="hljs-params">()</span> &#123;    <span class="hljs-keyword">if</span> (webView.canGoBack()) &#123;        webView.goBack();    &#125; <span class="hljs-keyword">else</span> &#123;        <span class="hljs-built_in">super</span>.onBackPressed();    &#125;&#125;</code></pre><p>on geckoview</p><blockquote><p>You need to set a navigation delegate on the gecko session and use a global boolean to keep track of whether it can go back or not.</p></blockquote><h2 id="Java">Java</h2><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">canGoBack</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> &#123;   <span class="hljs-meta">@Override</span>   <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;       <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);       session.setNavigationDelegate(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GeckoSession</span>.NavigationDelegate() &#123;                  <span class="hljs-meta">@Override</span>                  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCanGoBack</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> GeckoSession session, <span class="hljs-type">boolean</span> canGoBack)</span> &#123;                      MainActivity.<span class="hljs-built_in">this</span>.canGoBack = canGoBack;                  &#125;         &#125;);   &#125;&#125;</code></pre><h2 id="Kotlin">Kotlin</h2><pre><code class="hljs kotlin">session.navigationDelegate = <span class="hljs-keyword">object</span> : NavigationDelegate &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCanGoBack</span><span class="hljs-params">(session: <span class="hljs-type">GeckoSession</span>, canGoBack: <span class="hljs-type">Boolean</span>)</span></span> &#123;        <span class="hljs-comment">// equivalent of webview.canGoBack</span>        <span class="hljs-keyword">this</span><span class="hljs-symbol">@MainActivity</span>.canGoBack = canGoBack    &#125;&#125;</code></pre>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/android/">android</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/webview/">webview</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/kotlin/">kotlin</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/geckoview/">geckoview</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2023/11/geckoview-equivalent-cangoback-android-webview.html#disqus_thread</comments>
       
     </item>
     

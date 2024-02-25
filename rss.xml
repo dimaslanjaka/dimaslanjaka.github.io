@@ -15,14 +15,14 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Sat, 24 Feb 2024 13:35:46 GMT</pubDate>
+    <pubDate>Sun, 25 Feb 2024 05:34:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>setup vmoption intellij idea for 8GB RAM processor intel i3</title>
       <link>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html</link>
       <guid>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html</guid>
-      <pubDate>Sat, 24 Feb 2024 13:44:34 GMT</pubDate>
+      <pubDate>Sun, 25 Feb 2024 05:43:06 GMT</pubDate>
       
       <description>Here are some suggestions for setting up VM options in IntelliJ IDEA with an 8GB RAM machine and an Intel i3 processor</description>
       
@@ -42,6 +42,31 @@
       
       
       <comments>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Hexo Cannot GET /</title>
+      <link>https://www.webmanajemen.com/2024/02/hexo-cannot-get.html</link>
+      <guid>https://www.webmanajemen.com/2024/02/hexo-cannot-get.html</guid>
+      <pubDate>Sat, 24 Feb 2024 07:58:30 GMT</pubDate>
+      
+      <description>How to fix Hexo Cannot GET /</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Check-config-yaml">Check config yaml</h2><p>check your <code>_config.yml</code></p><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://www.webmanajemen.com/</span><span class="hljs-attr">root:</span> <span class="hljs-string">/</span><span class="hljs-comment"># Home page setting</span><span class="hljs-comment"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span><span class="hljs-comment"># per_page: Posts displayed per page. (0 = disable pagination)</span><span class="hljs-comment"># order_by: Posts order. (Order by date descending by default)</span><span class="hljs-attr">index_generator:</span>  <span class="hljs-attr">path:</span> <span class="hljs-string">&#x27;/&#x27;</span>  <span class="hljs-attr">per_page:</span> <span class="hljs-number">10</span>  <span class="hljs-attr">order_by:</span> <span class="hljs-string">-updated</span> <span class="hljs-comment"># updated | date | -date | -updated</span>  <span class="hljs-attr">pagination_dir:</span> <span class="hljs-string">page</span></code></pre><h2 id="Check-the-URL-and-Paths">Check the URL and Paths:</h2><p>Ensure that you are accessing the correct URL.<br>Hexo may be configured to generate content under different paths.<br>For example, if your site is located in a subdirectory, you might need to access <code>http://localhost:4000/subdirectory/</code></p><h2 id="Reinstall-Dependencies">Reinstall Dependencies:</h2><p>Sometimes, issues can arise from corrupted dependencies.<br>You can try deleting the node_modules directory and reinstalling dependencies:</p><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf node_modulesnpm install</code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2024/02/hexo-cannot-get.html#disqus_thread</comments>
       
     </item>
     
@@ -492,31 +517,6 @@
       
       
       <comments>https://www.webmanajemen.com/GitHub/github-actions-overwrite-cache.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Deprecated WebSecurityConfigurerAdapter Solution</title>
-      <link>https://www.webmanajemen.com/2024/01/deprecated-web-security-configurer-adapter-solution.html</link>
-      <guid>https://www.webmanajemen.com/2024/01/deprecated-web-security-configurer-adapter-solution.html</guid>
-      <pubDate>Fri, 19 Jan 2024 06:51:33 GMT</pubDate>
-      
-      <description>Solve WebSecurityConfigurerAdapter deprecated in spring boot</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>How to solve <strong>Deprecated WebSecurityConfigurerAdapter</strong> in spring boot security <code>&gt;= 5.7.0-M2</code></p><h2 id="SecurityConfiguration-method-structures">SecurityConfiguration method structures</h2><p>Spring Security <code>v5.7.0-M2</code> deprecates <strong>WebSecurityConfigurerAdapter</strong> for customizing HTTP security.<br>Developers are strongly encouraged to prioritize content-based security configuration over extension classes.<br>This change focuses on adapting to newer practices.</p><h3 id="Old-codes">Old codes</h3><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><span class="hljs-meta">@EnableWebSecurity</span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecurityConfiguration</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">WebSecurityConfigurerAdapter</span> &#123;    <span class="hljs-meta">@Override</span>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception &#123;        <span class="hljs-comment">// configure HTTP security...</span>    &#125;    <span class="hljs-meta">@Override</span>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">configure</span><span class="hljs-params">(WebSecurity web)</span> <span class="hljs-keyword">throws</span> Exception &#123;        <span class="hljs-comment">// configure Web security...</span>    &#125;&#125;</code></pre><h3 id="New-codes">New codes</h3><p>To resolve this issue, replace the WebSecurityConfigurerAdapter extension with the <strong>SecurityFilterChain</strong> and <strong>WebSecurityCustomizer</strong> bean declarations as shown below.</p><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecurityConfiguration</span> &#123;    <span class="hljs-meta">@Bean</span>    <span class="hljs-keyword">public</span> SecurityFilterChain <span class="hljs-title function_">filterChain</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception &#123;      <span class="hljs-comment">// configure HTTP security...</span>    &#125;    <span class="hljs-meta">@Bean</span>    <span class="hljs-keyword">public</span> WebSecurityCustomizer <span class="hljs-title function_">webSecurityCustomizer</span><span class="hljs-params">()</span> &#123;      <span class="hljs-comment">// configure Web security...</span>    &#125;&#125;</code></pre><h2 id="Configure-http-security">Configure http security</h2><p>We are currently moving our code, including security configuration, to a component-based approach.<br>Below is the code that extends the WebSecurityConfigurerAdapter class.</p><h3 id="Old-codes-2">Old codes</h3><pre><code class="hljs java"><span class="hljs-meta">@EnableWebSecurity</span><span class="hljs-meta">@EnableGlobalMethodSecurity(prePostEnabled = true)</span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WebSecurity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">WebSecurityConfigurerAdapter</span> &#123;    <span class="hljs-meta">@Override</span>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception &#123;        http.cors().and().csrf().disable()                .authorizeHttpRequests()                .requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()                .anyRequest().authenticated().and()                .addFilter(getAuthenticationFilter())                .addFilter(<span class="hljs-keyword">new</span> <span class="hljs-title class_">AuthorizationFilter</span>(authenticationManager(), userRepository))                .sessionManagement()                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);    &#125;    <span class="hljs-comment">// Configure AuthenticationManagerBuilder</span>    <span class="hljs-meta">@Override</span>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">configure</span><span class="hljs-params">(AuthenticationManagerBuilder auth)</span> <span class="hljs-keyword">throws</span> Exception &#123;        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);    &#125;    <span class="hljs-keyword">protected</span> AuthenticationFilter <span class="hljs-title function_">getAuthenticationFilter</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;        <span class="hljs-keyword">final</span> <span class="hljs-type">AuthenticationFilter</span> <span class="hljs-variable">filter</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AuthenticationFilter</span>(authenticationManager());        filter.setFilterProcessesUrl(<span class="hljs-string">&quot;/users/login&quot;</span>);        <span class="hljs-keyword">return</span> filter;    &#125;&#125;</code></pre><h3 id="New-codes-2">New codes</h3><p>Below is the same code without extending the WebSecurityConfigurerAdapter class in new spring boot API.</p><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><span class="hljs-meta">@EnableWebSecurity</span><span class="hljs-meta">@EnableMethodSecurity(prePostEnabled = true)</span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WebSecurity</span> &#123;    <span class="hljs-comment">// expose authentication manager to @Controller</span>    <span class="hljs-meta">@Bean</span>    <span class="hljs-keyword">public</span> AuthenticationManager <span class="hljs-title function_">authenticationManager</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception &#123;      <span class="hljs-keyword">return</span> http.getSharedObject(AuthenticationManagerBuilder.class)          .build();    &#125;    <span class="hljs-meta">@Bean</span>    <span class="hljs-keyword">public</span> SecurityFilterChain <span class="hljs-title function_">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception &#123;        <span class="hljs-comment">// Configure AuthenticationManagerBuilder</span>        <span class="hljs-type">AuthenticationManagerBuilder</span> <span class="hljs-variable">authenticationManagerBuilder</span> <span class="hljs-operator">=</span> http.getSharedObject(AuthenticationManagerBuilder.class);        authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);        <span class="hljs-comment">// Get AuthenticationManager</span>        <span class="hljs-type">AuthenticationManager</span> <span class="hljs-variable">authenticationManager</span> <span class="hljs-operator">=</span> authenticationManagerBuilder.build();        http                .cors(withDefaults())                .csrf((csrf) -&gt; csrf.disable())                .authorizeHttpRequests((authz) -&gt; authz                .requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()                .anyRequest().authenticated())                .authenticationManager(authenticationManager)                .addFilter(authenticationFilter)                .addFilter(<span class="hljs-keyword">new</span> <span class="hljs-title class_">AuthorizationFilter</span>(authenticationManager))                .sessionManagement((session) -&gt; session                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));        <span class="hljs-keyword">return</span> http.build();    &#125;    <span class="hljs-keyword">protected</span> AuthenticationFilter <span class="hljs-title function_">getAuthenticationFilter</span><span class="hljs-params">(AuthenticationManager authenticationManager)</span> <span class="hljs-keyword">throws</span> Exception &#123;        <span class="hljs-keyword">final</span> <span class="hljs-type">AuthenticationFilter</span> <span class="hljs-variable">filter</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AuthenticationFilter</span>(authenticationManager);        filter.setFilterProcessesUrl(<span class="hljs-string">&quot;/users/login&quot;</span>);        <span class="hljs-keyword">return</span> filter;    &#125;    <span class="hljs-meta">@Bean</span>    CorsConfigurationSource <span class="hljs-title function_">corsConfigurationSource</span><span class="hljs-params">()</span> &#123;        <span class="hljs-type">CorsConfiguration</span> <span class="hljs-variable">configuration</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CorsConfiguration</span>();        configuration.setAllowedOrigins(Arrays.asList(<span class="hljs-string">&quot;*&quot;</span>));        configuration.setAllowedMethods(Arrays.asList(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;PUT&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;OPTIONS&quot;</span>, <span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-string">&quot;PATCH&quot;</span>)); <span class="hljs-comment">// or simply &quot;*&quot;</span>        configuration.setAllowedHeaders(Arrays.asList(<span class="hljs-string">&quot;*&quot;</span>));        <span class="hljs-type">UrlBasedCorsConfigurationSource</span> <span class="hljs-variable">source</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UrlBasedCorsConfigurationSource</span>();        source.registerCorsConfiguration(<span class="hljs-string">&quot;/**&quot;</span>, configuration);        <span class="hljs-keyword">return</span> source;    &#125;&#125;</code></pre>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/spring-boot/">spring-boot</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2024/01/deprecated-web-security-configurer-adapter-solution.html#disqus_thread</comments>
       
     </item>
     

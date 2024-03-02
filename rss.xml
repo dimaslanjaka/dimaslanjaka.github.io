@@ -15,14 +15,14 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Fri, 01 Mar 2024 12:19:41 GMT</pubDate>
+    <pubDate>Sat, 02 Mar 2024 19:29:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>setup vmoption intellij idea for 8GB RAM processor intel i3</title>
       <link>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html</link>
       <guid>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html</guid>
-      <pubDate>Fri, 01 Mar 2024 12:22:41 GMT</pubDate>
+      <pubDate>Sat, 02 Mar 2024 19:32:58 GMT</pubDate>
       
       <description>Here are some suggestions for setting up VM options in IntelliJ IDEA with an 8GB RAM machine and an Intel i3 processor</description>
       
@@ -42,6 +42,29 @@
       
       
       <comments>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>enable automatic memory heap resizing of android studio</title>
+      <link>https://www.webmanajemen.com/2024/03/android-studio-enable-automatic-memory-heap-resizing.html</link>
+      <guid>https://www.webmanajemen.com/2024/03/android-studio-enable-automatic-memory-heap-resizing.html</guid>
+      <pubDate>Sat, 02 Mar 2024 11:44:44 GMT</pubDate>
+      
+      <description>enable automatic memory heap resizing of android studio To limit Android Studios memory usage, you can modify the studio.vmoptions file. This file contains configuration settings for Android Studio, i</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>To limit Android Studio’s memory usage, you can modify the <code>studio.vmoptions</code> file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps:</p><ol><li><p><strong>Locate the <code>studio.vmoptions</code> file:</strong></p><ul><li>On Windows, it is usually located in the <code>bin</code> directory of the Android Studio installation directory. For example, <code>C:\Program Files\Android\Android Studio\bin\studio64.exe.vmoptions</code>.</li><li>On macOS, it is often found in the <code>Contents/bin</code> directory within the application bundle. For example, <code>/Applications/Android Studio.app/Contents/bin/studio.vmoptions</code>.</li><li>On Linux, it is also typically in the <code>bin</code> directory of the installation. For example, <code>/opt/android-studio/bin/studio64.vmoptions</code>.</li></ul></li><li><p><strong>Open the <code>studio.vmoptions</code> file in a text editor:</strong> Use a text editor like Notepad (on Windows), TextEdit (on macOS), or any code editor of your choice.</p></li><li><p><strong>Modify the memory settings:</strong> Add or modify the following lines to set the maximum heap size (Xmx) and the initial heap size (Xms). Adjust the values according to your system’s available memory.</p></li></ol><pre><code class="hljs plaintext">-Xms256m-Xmx2048m```` Example values are used above (`-Xms256m` for the initial heap size and `-Xmx2048m` for the maximum heap size). You can increase or decrease these values based on your system&#x27;s configuration.2.  **Save the changes and restart Android Studio:** Save the modifications to the `studio.vmoptions` file and restart Android Studio for the changes to take effect.Keep in mind that setting the maximum heap size too high might cause issues if your system doesn&#x27;t have enough available memory. Adjust the values based on your system&#x27;s specifications to achieve optimal performance.## Enable automatic memory heap resizingTo add garbage collection options and parallelism while limiting the maximum heap size to 1GB in Android Studio, you can modify the `studio.vmoptions` file. Here&#x27;s an example configuration:java</code></pre><h1>custom Android Studio VM options</h1><h1>Set the maximum heap size to 1GB</h1><p>-Xmx1g</p><h1>Set the initial heap size</h1><p>-Xms256m</p><h1>Enable parallel garbage collection</h1><p>-XX:+UseParallelGC</p><h1>Enable concurrent garbage collection (for parallel)</h1><p>-XX:+UseConcMarkSweepGC</p><h1>Set the size of the young generation (you may adjust this based on your needs)</h1><p>-XX:NewSize=512m<br>-XX:MaxNewSize=512m</p><h1>Enable automatic heap resizing</h1><p>-XX:+UseAdaptiveSizePolicy</p><pre><code>In this configuration:-   `-XX:+UseParallelGC` enables the parallel garbage collector.-   `-XX:+UseConcMarkSweepGC` enables concurrent garbage collection, which works in conjunction with parallel garbage collection.-   `-XX:NewSize` and `-XX:MaxNewSize` set the size of the young generation, which is part of the heap where new objects are created. Adjust these values based on your requirements.-   `-XX:+UseAdaptiveSizePolicy` enables automatic heap resizing based on the application's behavior.Feel free to adjust these settings based on your system's specifications and the specific needs of your Android Studio projects. Keep in mind that tuning garbage collection settings can be a trial-and-error process, so monitor the performance and adjust as needed. Save the changes, restart Android Studio, and observe the impact on performance.</code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2024/03/android-studio-enable-automatic-memory-heap-resizing.html#disqus_thread</comments>
       
     </item>
     
@@ -303,9 +326,9 @@
       
       <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
       
-      <category domain="https://www.webmanajemen.com/tags/css/">css</category>
-      
       <category domain="https://www.webmanajemen.com/tags/html/">html</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/css/">css</category>
       
       
       <comments>https://www.webmanajemen.com/2024/02/boostrap-5-color-theme-switcher.html#disqus_thread</comments>
@@ -488,33 +511,6 @@
       
       
       <comments>https://www.webmanajemen.com/2024/01/eclipse-gradle-plugin-sync-build-with-spring-boot.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>auto configure classpath config using eclipse gradle plugin</title>
-      <link>https://www.webmanajemen.com/2024/01/auto-configure-classpath-config-using-eclipse-gradle-plugin.html</link>
-      <guid>https://www.webmanajemen.com/2024/01/auto-configure-classpath-config-using-eclipse-gradle-plugin.html</guid>
-      <pubDate>Thu, 25 Jan 2024 16:59:16 GMT</pubDate>
-      
-      <description>configuring classpath and build settings automatically for an Eclipse project that uses the Gradle build tool</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>according <a href="https://github.com/redhat-developer/vscode-java/issues/1615">this issue</a> about automatically configuring classpath and build settings for an Eclipse project that uses the Gradle build tool. Configuring classpath and build settings in Eclipse for a Gradle project involves a few steps. Here is a framework for auto-configuring the classpath using the Eclipse Gradle plugin:</p><h2 id="Install-Eclipse-Gradle-Plugin">Install Eclipse Gradle Plugin</h2><p>activate <code>eclipse</code> plugin each gradle subprojects</p><h3 id="Using-plugins-block">Using plugins block</h3><pre><code class="hljs gradle">plugins &#123;  id <span class="hljs-string">&quot;eclipse&quot;</span>&#125;</code></pre><h2 id="Using-native-classpath">Using native classpath</h2><pre><code class="hljs gradle">apply plugin: <span class="hljs-string">&#x27;eclipse&#x27;</span></code></pre><h2 id="Configure-eclipse-classpath-generation">Configure eclipse .classpath generation</h2><p>Configure eclipse .classpath generation using <code>eclipse</code> block</p><h3 id="Groovy">Groovy</h3><pre><code class="hljs gradle">eclipse &#123;  <span class="hljs-keyword">classpath</span> &#123;    defaultOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build/eclipse&#x27;</span>)    <span class="hljs-keyword">file</span>.whenMerged &#123;      entries.<span class="hljs-keyword">each</span> &#123; entry -&gt;        <span class="hljs-keyword">if</span> (entry.kind == <span class="hljs-string">&#x27;src&#x27;</span> &amp;&amp; entry.hasProperty(<span class="hljs-string">&#x27;output&#x27;</span>)) &#123;          entry.output = entry.output.replace(<span class="hljs-string">&#x27;bin/&#x27;</span>, <span class="hljs-string">&quot;build/eclipse/&quot;</span>)        &#125;      &#125;    &#125;  &#125;&#125;</code></pre><h3 id="Kotlin-DSL">Kotlin DSL</h3><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> org.gradle.plugins.ide.eclipse.model.Classpath<span class="hljs-keyword">import</span> org.gradle.plugins.ide.eclipse.model.SourceFolderplugins &#123;    java    eclipse&#125;buildDir = file(<span class="hljs-string">&quot;build/gradle&quot;</span>)eclipse &#123;    classpath &#123;        defaultOutputDir = file(<span class="hljs-string">&quot;build/eclipse&quot;</span>)        file &#123;            whenMerged(                    Action&lt;Classpath&gt; &#123; -&gt;                        entries.filter &#123; it.kind == <span class="hljs-string">&quot;src&quot;</span> &#125;.forEach &#123;                            <span class="hljs-keyword">if</span> (it <span class="hljs-keyword">is</span> SourceFolder) &#123;                                it.output = it.output.replace(<span class="hljs-string">&quot;bin/&quot;</span>, <span class="hljs-string">&quot;build/eclipse/&quot;</span>)                            &#125;                        &#125;                    &#125;            )        &#125;    &#125;&#125;</code></pre><h3 id="Sync-with-gradle-build-output-classes-and-resources">Sync with gradle build output classes and resources</h3><p>You also can sync between eclipse output and gradle output classes and resources with below gradle config:</p><pre><code class="hljs gradle">eclipse &#123;    <span class="hljs-keyword">classpath</span> &#123;        defaultOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build&#x27;</span>)        baseSourceOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build/classes/java&#x27;</span>)        <span class="hljs-keyword">file</span>.whenMerged &#123;            entries.<span class="hljs-keyword">each</span> &#123; entry -&gt;                <span class="hljs-keyword">if</span> (entry.kind == <span class="hljs-string">&#x27;src&#x27;</span> &amp;&amp; entry.hasProperty(<span class="hljs-string">&#x27;output&#x27;</span>)) &#123;                    <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/main/java&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/classes/java/main&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/main/resources&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/resources/main&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/test/resources&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/resources/test&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/test/java&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/classes/java/test&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/test/groovy&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/classes/groovy/test&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/main/groovy&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/classes/groovy/main&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/main/kotlin&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/classes/kotlin/main&quot;</span>                    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (entry.path == <span class="hljs-string">&quot;src/test/kotlin&quot;</span>) &#123;                        entry.output = <span class="hljs-string">&quot;build/classes/kotlin/test&quot;</span>                    &#125; <span class="hljs-keyword">else</span>  &#123;                        <span class="hljs-keyword">println</span>(entry.path)                    &#125;                    <span class="hljs-keyword">if</span> (entry.output != <span class="hljs-keyword">null</span>) entry.output = entry.output.replace(<span class="hljs-string">&#x27;bin/&#x27;</span>, <span class="hljs-string">&quot;build/&quot;</span>)                &#125;            &#125;        &#125;    &#125;&#125;</code></pre><h2 id="Generate-Eclipse-Files">Generate Eclipse Files</h2><ul><li>Open a terminal and navigate to your project directory.</li><li>Run the following Gradle command to generate Eclipse files:</li></ul><pre><code class="hljs bash">gradlew eclipse</code></pre><blockquote><p>This task generates the necessary .project and .classpath files for your Eclipse project.</p></blockquote><h2 id="Conclusion">Conclusion</h2><p>By following these steps, you should have successfully configured your Eclipse project with the Gradle build tool. Keep in mind that these instructions may vary slightly depending on your specific project structure and requirements.</p>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/gradle/">gradle</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/kotlin/">kotlin</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2024/01/auto-configure-classpath-config-using-eclipse-gradle-plugin.html#disqus_thread</comments>
       
     </item>
     

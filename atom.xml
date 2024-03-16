@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2024-03-02T11:44:44.000Z</updated>
+  <updated>2024-03-15T12:18:05.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Turn git log history into markdown</title>
+    <link href="https://www.webmanajemen.com/2024/03/turn-git-log-history-to-markdown.html"/>
+    <id>https://www.webmanajemen.com/2024/03/turn-git-log-history-to-markdown.html</id>
+    <published>2024-03-15T12:18:05.000Z</published>
+    <updated>2024-03-15T12:18:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;writing github commit history&quot;</span>git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">&quot;%ad%n%h %s%n%b&quot;</span> --<span class="hljs-built_in">date</span>=format:<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span> | <span class="hljs-keyword">while</span> IFS= <span class="hljs-built_in">read</span> -r line; <span class="hljs-keyword">do</span>  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;line#&quot;<span class="hljs-variable">$&#123;line%%[![:space:]]*&#125;</span>&quot;&#125;</span>&quot;</span>  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;trimmed_line%&quot;<span class="hljs-variable">$&#123;trimmed_line##*[![:space:]]&#125;</span>&quot;&#125;</span>&quot;</span>  <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> ]; <span class="hljs-keyword">then</span>    <span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> =~ ^[0-9]&#123;4&#125;-[0-9]&#123;2&#125;-[0-9]&#123;2&#125;\ [0-9]&#123;2&#125;:[0-9]&#123;2&#125;:[0-9]&#123;2&#125;$ ]]; <span class="hljs-keyword">then</span>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;**<span class="hljs-variable">$trimmed_line</span>**\n&quot;</span>    <span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$first_line</span>&quot;</span> = <span class="hljs-literal">true</span> ]; <span class="hljs-keyword">then</span>      first_line=<span class="hljs-literal">false</span>    <span class="hljs-keyword">else</span>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;  <span class="hljs-variable">$trimmed_line</span>\n&quot;</span>    <span class="hljs-keyword">fi</span>  <span class="hljs-keyword">fi</span><span class="hljs-keyword">done</span> &gt; release-repo/changelog-commit.md<span class="hljs-comment"># Wait for 3 seconds</span><span class="hljs-built_in">sleep</span> 3</code></pre><p>the format markdown like</p><pre><code class="hljs markdown"><span class="hljs-strong">**2024-03-07 18:41:29**</span><span class="hljs-bullet">-</span> 39d989ee chore: round double value<span class="hljs-strong">**2024-03-07 18:38:32**</span><span class="hljs-bullet">-</span> 0586bd98 chore: improve performance</code></pre><p>above script also works with multiline commits, looks like below:</p><pre><code class="hljs log">**2024-03-07 18:37:53**- 064c3b79 chore: update preparation activity UI  improve performance stability</code></pre>]]></content>
+    
+    
+    <summary type="html">Turn git log history into markdown /bin/bashecho writing github commit historygit log --pretty=format:adnh snb --date=format:Y-m-d H:M:S while IFS= read -r line; do trimmed_line=lineline[[:space:]] tr</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
+    
+    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
+    
+  </entry>
   
   <entry>
     <title>enable automatic memory heap resizing of android studio</title>
@@ -301,9 +324,9 @@
     
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
-    <category term="html" scheme="https://www.webmanajemen.com/tags/html/"/>
-    
     <category term="css" scheme="https://www.webmanajemen.com/tags/css/"/>
+    
+    <category term="html" scheme="https://www.webmanajemen.com/tags/html/"/>
     
   </entry>
   
@@ -442,33 +465,6 @@
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
     <category term="hexo" scheme="https://www.webmanajemen.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring boot with eclipse gradle plugin</title>
-    <link href="https://www.webmanajemen.com/2024/01/eclipse-gradle-plugin-sync-build-with-spring-boot.html"/>
-    <id>https://www.webmanajemen.com/2024/01/eclipse-gradle-plugin-sync-build-with-spring-boot.html</id>
-    <published>2024-01-25T20:38:40.000Z</published>
-    <updated>2024-01-26T06:57:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Spring Boot DevTools provides a set of tools that can help improve the development experience. One of the features is automatic class reloading, which can be particularly useful during development. Eclipse, on the other hand, has its own set of tools for Java development. To sync compiled classes from the Eclipse Gradle plugin with Spring Boot DevTools, you can follow these general steps:</p><h2 id="Ensure-Spring-Boot-DevTools-is-Configured">Ensure Spring Boot DevTools is Configured</h2><ul><li>Make sure that the <code>spring-boot-devtools</code> dependency is included in your Spring Boot project. Add the following dependency to your <code>build.gradle</code> file:</li></ul><pre><code class="hljs gradle"><span class="hljs-keyword">dependencies</span> &#123;    implementation <span class="hljs-string">&#x27;org.springframework.boot:spring-boot-devtools&#x27;</span>&#125;</code></pre><h2 id="Configure-gradle">Configure gradle</h2><h3 id="Configure-eclipse-gradle-plugin">Configure <code>eclipse</code> gradle plugin</h3><pre><code class="hljs gradle">eclipse &#123;    <span class="hljs-keyword">classpath</span> &#123;        defaultOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build/eclipse&#x27;</span>)        baseSourceOutputDir = <span class="hljs-keyword">file</span>(<span class="hljs-string">&#x27;build/classes/java&#x27;</span>)        <span class="hljs-keyword">file</span>.whenMerged &#123;            entries.<span class="hljs-keyword">each</span> &#123; entry -&gt;                <span class="hljs-keyword">if</span> (entry.kind == <span class="hljs-string">&#x27;src&#x27;</span> &amp;&amp; entry.hasProperty(<span class="hljs-string">&#x27;output&#x27;</span>)) &#123;                    <span class="hljs-keyword">if</span> (entry.output != <span class="hljs-keyword">null</span>) entry.output = entry.output.replace(<span class="hljs-string">&#x27;bin/&#x27;</span>, <span class="hljs-string">&quot;build/&quot;</span>)                &#125;            &#125;        &#125;    &#125;&#125;</code></pre><h3 id="Configure-JavaCompile-tasks">Configure <code>JavaCompile</code> tasks</h3><p>According <a href="https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention">Upgrading to Spring Framework 6.x</a> we need apply <code>-parameters</code> jvm arguments into compiler to make it works.</p><p><strong>Issues about this config</strong></p><ul><li><a href="https://github.com/spring-projects/spring-boot/issues/38723">Error &quot;Name for argument of type [java.util.UUID] not specified, and parameter name information not found in class file either&quot;with spring-boot 3.2.0 upgrade</a></li></ul><h4 id="Groovy-DSL">Groovy DSL</h4><pre><code class="hljs gradle">tasks.withType(JavaCompile).configureEach &#123;    <span class="hljs-keyword">options</span>.compilerArgs.add(<span class="hljs-string">&quot;-parameters&quot;</span>)&#125;</code></pre><h4 id="Kotlin-DSL">Kotlin DSL</h4><pre><code class="hljs gradle">tasks.withType&lt;JavaCompile&gt;() &#123;    <span class="hljs-keyword">options</span>.compilerArgs.add(<span class="hljs-string">&quot;-parameters&quot;</span>)&#125;</code></pre><h3 id="Configure-jar-and-bootJar-tasks">Configure <code>jar</code> and <code>bootJar</code> tasks</h3><p>In Gradle, if you want to create a JAR file and exclude duplicate files, you can use the DuplicatesStrategy.EXCLUDE strategy. This strategy excludes duplicates from the final JAR by keeping only the first occurrence of each duplicate file.</p><pre><code class="hljs plaintext">// Optional: Specify the main class if your JAR is executableapplication &#123;    mainClassName = &#x27;web.MainApplication&#x27;&#125;// Configure the JAR taskjar &#123;    duplicatesStrategy = DuplicatesStrategy.EXCLUDE    manifest &#123;        attributes &quot;Start-Class&quot;: &quot;web.MainApplication&quot;    &#125;&#125;// Configure the spring JAR taskbootJar &#123;    duplicatesStrategy = DuplicatesStrategy.EXCLUDE    manifest &#123;        attributes &quot;Start-Class&quot;: &quot;web.MainApplication&quot;    &#125;&#125;</code></pre><blockquote><p>Replace ‘web.MainApplication’ with the actual main class of your application.</p><p>Note: The <code>application</code> block is optional and is only necessary if your JAR is executable, and you want to specify the main class. If your JAR is not executable, you can omit the <code>application</code> block.</p></blockquote><h2 id="Initialize-configuration-for-Eclipse">Initialize configuration for Eclipse</h2><p>When working with Gradle in Eclipse, you can use the <code>eclipse</code> plugin to generate Eclipse-specific configuration files. These files help to set up your Eclipse project based on the dependencies and structure defined in your Gradle build script. To initialize the Eclipse configuration for your Gradle project, follow these step:</p><pre><code class="hljs bash">gradlew eclipse --no-daemon</code></pre><blockquote><p><code>--no-daemon</code> parameter will kill the java when app exit (CTRL+C or Close terminal)</p></blockquote><h2 id="Configure-Eclipse-for-Automatic-Building">Configure Eclipse for Automatic Building</h2><ul><li><p>In Eclipse, go to <code>Project</code> &gt; <code>Build Automatically</code> to ensure that automatic building is enabled.-   <strong>Configure Gradle Build in Eclipse:</strong></p></li><li><p>Ensure that your Eclipse project is properly configured to use the Gradle build system. You can do this by right-clicking on your project in the Eclipse Project Explorer, selecting <code>Properties</code>, and then navigating to <code>Project Facets</code>. Make sure that the <code>Gradle</code> facet is selected.-   <strong>Enable Automatic Project Refresh in Eclipse:</strong></p></li><li><p>Go to <code>Window</code> &gt; <code>Preferences</code> &gt; <code>General</code> &gt; <code>Workspace</code>.</p></li><li><p>Enable the option “Refresh using native hooks or polling”.</p></li><li><p>Enable the option “Refresh on access”.-   <strong>Configure Spring Boot DevTools in <code>application.properties</code>:</strong></p></li><li><p>In your <code>src/main/resources/application.properties</code> (or <code>application.yml</code>) file, ensure that DevTools is configured to enable class reloading:</p></li></ul><pre><code class="hljs properties"><span class="hljs-attr">spring.devtools.restart.enabled</span>=<span class="hljs-string">true</span></code></pre><h2 id="Run-the-Application-with-DevTools">Run the Application with DevTools</h2><ul><li>Run your Spring Boot application from Eclipse with the Gradle plugin.</li><li>Spring Boot DevTools should detect changes in your class files and automatically trigger a restart.</li></ul><pre><code class="hljs bash">gradlew bootrun --no-daemon</code></pre><blockquote><p><code>--no-daemon</code> parameter will kill the java when app exit (CTRL+C or Close terminal)</p></blockquote><h2 id="Conclusion">Conclusion</h2><p>Now spring boot livereload working even you changes the <code>java</code>, <code>kotlin</code>, <code>groovy</code> or <code>resources</code> files.</p><p>Keep in mind that the effectiveness of DevTools may depend on various factors, and not all changes can be hot-reloaded. Certain types of changes, such as those to method signatures or certain structural changes, may still require a manual restart.</p><p>By following these steps, you should be able to synchronize the compiled classes from the Eclipse Gradle plugin with Spring Boot DevTools during development. If you encounter any issues, consider checking the Spring Boot DevTools documentation and the Eclipse documentation for further troubleshooting.</p>]]></content>
-    
-    
-    <summary type="html">sync compiled classes from eclipse gradle plugin with spring boot devtools</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
-    
-    <category term="gradle" scheme="https://www.webmanajemen.com/tags/gradle/"/>
-    
-    <category term="kotlin" scheme="https://www.webmanajemen.com/tags/kotlin/"/>
-    
-    <category term="groovy" scheme="https://www.webmanajemen.com/tags/groovy/"/>
     
   </entry>
   

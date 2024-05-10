@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2024-04-25T00:02:47.000Z</updated>
+  <updated>2024-05-10T02:04:23.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[PHP] generate big text file for testing purpose</title>
+    <link href="https://www.webmanajemen.com/2024/05/php-generate-big-text-file-for-testing-purpose.html"/>
+    <id>https://www.webmanajemen.com/2024/05/php-generate-big-text-file-for-testing-purpose.html</id>
+    <published>2024-05-10T02:04:23.000Z</published>
+    <updated>2024-05-10T02:04:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This script will generate a text file named <code>big_text_file.txt</code> with a size of approximately 10 megabytes.<br>You can adjust the size by changing the value of <code>$fileSizeMB</code>.<br>The script generates random strings of characters to fill the file.</p><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><span class="hljs-comment">// Function to generate a random string</span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateRandomString</span>(<span class="hljs-params"><span class="hljs-variable">$length</span> = <span class="hljs-number">10</span></span>) </span>&#123;    <span class="hljs-variable">$characters</span> = <span class="hljs-string">&#x27;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#x27;</span>;    <span class="hljs-variable">$randomString</span> = <span class="hljs-string">&#x27;&#x27;</span>;    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-variable">$length</span>; <span class="hljs-variable">$i</span>++) &#123;        <span class="hljs-variable">$randomString</span> .= <span class="hljs-variable">$characters</span>[<span class="hljs-title function_ invoke__">rand</span>(<span class="hljs-number">0</span>, <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$characters</span>) - <span class="hljs-number">1</span>)];    &#125;    <span class="hljs-keyword">return</span> <span class="hljs-variable">$randomString</span>;&#125;<span class="hljs-comment">// Define the size of the text file in megabytes</span><span class="hljs-variable">$fileSizeMB</span> = <span class="hljs-number">10</span>; <span class="hljs-comment">// Change this to the desired size</span><span class="hljs-comment">// Open a new text file for writing</span><span class="hljs-variable">$fileName</span> = <span class="hljs-string">&#x27;big_text_file.txt&#x27;</span>;<span class="hljs-variable">$file</span> = <span class="hljs-title function_ invoke__">fopen</span>(<span class="hljs-variable">$fileName</span>, <span class="hljs-string">&#x27;w&#x27;</span>);<span class="hljs-comment">// Calculate the number of iterations needed to reach the desired file size</span><span class="hljs-variable">$iterations</span> = <span class="hljs-variable">$fileSizeMB</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span> / <span class="hljs-number">10</span>; <span class="hljs-comment">// Assuming each character occupies approximately 10 bytes</span><span class="hljs-comment">// Generate and write random strings to the file</span><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-variable">$iterations</span>; <span class="hljs-variable">$i</span>++) &#123;    <span class="hljs-variable">$randomString</span> = <span class="hljs-title function_ invoke__">generateRandomString</span>(<span class="hljs-number">100</span>); <span class="hljs-comment">// Change 100 to adjust string length if needed</span>    <span class="hljs-title function_ invoke__">fwrite</span>(<span class="hljs-variable">$file</span>, <span class="hljs-variable">$randomString</span> . PHP_EOL); <span class="hljs-comment">// Add a newline character after each string</span>&#125;<span class="hljs-comment">// Close the file</span><span class="hljs-title function_ invoke__">fclose</span>(<span class="hljs-variable">$file</span>);<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Text file generated successfully!&quot;</span>;<span class="hljs-meta">?&gt;</span></code></pre>]]></content>
+    
+    
+    <summary type="html">[PHP] generate big text file for testing purpose This script will generate a text file named big_text_file.txt with a size of approximately 10 megabytes.You can adjust the size by changing the value o</summary>
+    
+    
+    
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    
+    
+    <category term="php" scheme="https://www.webmanajemen.com/tags/php/"/>
+    
+  </entry>
   
   <entry>
     <title>List of Chrome Driver command line arguments</title>
@@ -259,9 +280,9 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
-    
     <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
+    
+    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
   </entry>
   
@@ -282,9 +303,9 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
-    
     <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
+    
+    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
   </entry>
   
@@ -366,9 +387,9 @@
     <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
     
     
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
-    
     <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
+    
+    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
   </entry>
   
@@ -436,29 +457,6 @@
     <category term="css" scheme="https://www.webmanajemen.com/tags/css/"/>
     
     <category term="html" scheme="https://www.webmanajemen.com/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Include livereload in spring boot web</title>
-    <link href="https://www.webmanajemen.com/2024/02/spring-livereload-javascript.html"/>
-    <id>https://www.webmanajemen.com/2024/02/spring-livereload-javascript.html</id>
-    <published>2024-02-08T19:32:14.000Z</published>
-    <updated>2024-02-08T19:32:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>LiveReload is a tool that automatically reloads your web application whenever you alter the source code or static resources. To integrate LiveReload into a Spring Boot web application, follow these steps:</p><h2 id="Add-LiveReload-Server-as-a-Dependency">Add LiveReload Server as a Dependency</h2><p>Add the LiveReload server as a dependency to your project. If you use Maven, you can include the following dependencies in your <code>pom.xml</code> file:</p><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-devtools<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">optional</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">optional</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre><p>If you’re using Gradle, include the following in your build.gradle file:</p><pre><code class="hljs groovy">dependencies &#123;    implementation <span class="hljs-string">&#x27;org.springframework.boot:spring-boot-devtools&#x27;</span>&#125;</code></pre><h2 id="Enable-LiveReload">Enable LiveReload</h2><p>Enable LiveReload in either <code>application.properties</code> or <code>application.yml</code>.<br>Open the <code>src/main/resources/application.properties</code> or <code>src/main/resources/application.yml</code> file and add the following property:</p><h3 id="PROPERTIES">PROPERTIES</h3><pre><code class="hljs properties"><span class="hljs-attr">spring.devtools.livereload.enabled</span>=<span class="hljs-string">true</span><span class="hljs-attr">spring.devtools.livereload.livereload</span>=<span class="hljs-string">true</span></code></pre><h3 id="YAML">YAML</h3><pre><code class="hljs yml"><span class="hljs-attr">spring:</span>    <span class="hljs-attr">devtools:</span>        <span class="hljs-attr">restart:</span>            <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>        <span class="hljs-attr">livereload:</span>            <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span></code></pre><h2 id="Install-livereload-into-your-html">Install livereload into your html</h2><p>Call the livereload javascript into your html template. For example using <code>thymeleaf</code>:</p><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">th:inline</span>=<span class="hljs-string">&quot;javascript&quot;</span>&gt;</span><span class="language-javascript"></span><span class="language-javascript">  (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><span class="language-javascript">    <span class="hljs-keyword">const</span> port = <span class="hljs-comment">/*[($&#123;@environment.getProperty(&#x27;server.port&#x27;)&#125;)]*/</span> <span class="hljs-string">&#x27;8080&#x27;</span>;</span><span class="language-javascript">    <span class="hljs-keyword">if</span> (location.<span class="hljs-property">port</span> == port &amp;&amp; location.<span class="hljs-property">hostname</span> == <span class="hljs-string">&#x27;localhost&#x27;</span>) &#123;</span><span class="language-javascript">      <span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>);</span><span class="language-javascript">      script.<span class="hljs-property">src</span> = <span class="hljs-string">&#x27;http://localhost:35729/livereload.js&#x27;</span>;</span><span class="language-javascript">      script.<span class="hljs-property">async</span> = <span class="hljs-literal">true</span>;</span><span class="language-javascript">      <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script);</span><span class="language-javascript">    &#125;</span><span class="language-javascript">  &#125;)();</span><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><h2 id="Open-the-Application-in-the-Browser">Open the Application in the Browser:</h2><p>Launch your program in the browser.</p><p>Now, whenever you make changes to your code or resources, the LiveReload server will detect them and reload the browser to reflect the changes.</p><p>Keep in mind that <code>spring-boot-devtools</code> is only advised for development and should not be used in production. Also, keep in mind that LiveReload may not operate completely in all cases, particularly if you’re utilizing sophisticated frameworks or setups.</p>]]></content>
-    
-    
-    <summary type="html">Include livereload in spring boot web LiveReload is a tool that automatically reloads your web application whenever you alter the source code or static resources. To integrate LiveReload into a Spring</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="java" scheme="https://www.webmanajemen.com/tags/java/"/>
-    
-    <category term="kotlin" scheme="https://www.webmanajemen.com/tags/kotlin/"/>
     
   </entry>
   

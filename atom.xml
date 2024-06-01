@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2024-05-12T20:11:24.000Z</updated>
+  <updated>2024-06-01T03:14:14.000Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mobile Legends To The Stars Event Clue</title>
+    <link href="https://www.webmanajemen.com/2024/06/mobile-legend-to-the-stars-event.html"/>
+    <id>https://www.webmanajemen.com/2024/06/mobile-legend-to-the-stars-event.html</id>
+    <published>2024-06-01T03:14:14.000Z</published>
+    <updated>2024-06-01T03:14:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Mobile Legends</strong> - <strong>To The Star</strong> event - event jalan takdir stage <strong>1-1</strong></p><p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/5e64b7ee-cf95-4a60-949e-a4c99bd9251e" alt=""></p><p><strong>Mobile Legends</strong> - <strong>To The Star</strong> event - event jalan takdir stage <strong>4-4</strong></p><p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/e0a4ebfa-7b87-48dc-9770-c6f17e895208" alt=""></p>]]></content>
+    
+    
+    <summary type="html">How to solve event To The Stars Event in Mobile Legends</summary>
+    
+    
+    
+    <category term="games" scheme="https://www.webmanajemen.com/categories/games/"/>
+    
+    
+    <category term="mobile legends" scheme="https://www.webmanajemen.com/tags/mobile-legends/"/>
+    
+  </entry>
   
   <entry>
     <title>[PHP] generate random proxy IP:PORT from CIDR</title>
@@ -434,25 +455,6 @@
     <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
     
     <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Visual Studio Code Run task on save</title>
-    <link href="https://www.webmanajemen.com/2024/02/vscode-run-task-on-save.html"/>
-    <id>https://www.webmanajemen.com/2024/02/vscode-run-task-on-save.html</id>
-    <published>2024-02-09T16:46:28.000Z</published>
-    <updated>2024-02-09T17:06:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>In Visual Studio Code, you can configure tasks to run automatically when you save a file using the tasks.json file.<br>Here is a step-by-step guide for configuring tasks to run on save:</p><h2 id="Method-1-Using-plugin-Trigger-Task-on-Save">Method 1: Using plugin Trigger Task on Save</h2><p>You can use the <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.triggertaskonsave">Trigger Task on Save</a> extension.</p><h3 id="Configure-plugin-settings">Configure plugin settings</h3><p>To set it up, add the following to your <code>.vscode/settings.json</code>:</p><pre><code class="hljs jsonc">&#123;  &quot;task.saveBeforeRun&quot;:&quot;always&quot;,  // task name to run on save action  &quot;triggerTaskOnSave.selectedTask&quot;:&quot;bootRun&quot;,  // enable plugin  &quot;triggerTaskOnSave.on&quot;:true,  // restart task when running  &quot;triggerTaskOnSave.restart&quot;:true,  // run in background  &quot;triggerTaskOnSave.showNotifications&quot;:false,  // run in background  &quot;triggerTaskOnSave.showStatusBarToggle&quot;:false,  &quot;triggerTaskOnSave.tasks&quot;:&#123;    &quot;build&quot;:[      // watch file patterns      &quot;server/**/*.html&quot;,      &quot;jvm/**/*.java&quot;,      &quot;server/**/*.java&quot;    ]  &#125;&#125;</code></pre><h3 id="Configure-tasks-json">Configure tasks.json</h3><pre><code class="hljs jsonc">&#123;  &quot;version&quot;: &quot;2.0.0&quot;,  &quot;tasks&quot;: [    &#123;      // run in background      &quot;isBackground&quot;: true,      // task name      &quot;label&quot;: &quot;bootRun&quot;,      &quot;type&quot;: &quot;shell&quot;,      // command shell to run      &quot;command&quot;: &quot;gradlew bootRun&quot;,      &quot;args&quot;: [],      &quot;group&quot;: &#123;        &quot;kind&quot;: &quot;build&quot;,        &quot;isDefault&quot;: true      &#125;,      // task description      &quot;detail&quot;: &quot;run gradle bootRun&quot;,      &quot;presentation&quot;: &#123;        // run in background        &quot;reveal&quot;: &quot;silent&quot;,        &quot;panel&quot;: &quot;shared&quot;      &#125;,      &quot;problemMatcher&quot;: [],      &quot;options&quot;: &#123;        // working directory        &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;      &#125;,      &quot;runOptions&quot;: &#123;        &quot;runOn&quot;: &quot;default&quot;      &#125;    &#125;  ]&#125;</code></pre><h2 id="Method-2-Using-default-tasks-json">Method 2: Using default tasks.json</h2><ol><li><p>Open your project in Visual Studio Code.</p></li><li><p>Press <code>Ctrl + Shift + B</code> (Windows/Linux) or <code>Cmd + Shift + B</code> (Mac) to open the <strong>“Run Build Task”</strong> menu.</p></li><li><p>Select <strong>“Configure Build Task”</strong> and then choose the type of task you want to create (e.g., “Create tasks.json file from template”).</p></li><li><p>Choose the appropriate template based on your project (e.g., “Others”).</p></li><li><p>Modify the generated “tasks.json” file to include a task that runs on save. For example:</p></li></ol><pre><code class="hljs jsonc">&#123;  &quot;version&quot;: &quot;2.0.0&quot;,  &quot;tasks&quot;: [    &#123;      &quot;label&quot;: &quot;Run On Save&quot;,      &quot;type&quot;: &quot;shell&quot;,      &quot;command&quot;: &quot;your_command_here&quot;,      &quot;group&quot;: &#123;        &quot;kind&quot;: &quot;build&quot;,        &quot;isDefault&quot;: true      &#125;,      &quot;presentation&quot;: &#123;        &quot;reveal&quot;: &quot;always&quot;,        &quot;panel&quot;: &quot;new&quot;      &#125;,      &quot;runOptions&quot;: &#123;        &quot;runOn&quot;: &quot;save&quot;      &#125;    &#125;  ]&#125;</code></pre><p>Replace <strong>“your_command_here”</strong> with the actual command you want to run. Make sure the command is something that can be executed from the command line.</p><blockquote><p>Note: option <strong>“runOn”: “save”</strong> triggers the execution of the task when the file is saved.<br>Make sure the task is properly configured  for your project and that the necessary tools are installed.</p></blockquote><pre><code class="hljs jsonc">&quot;runOptions&quot;: &#123;  &quot;runOn&quot;: &quot;save&quot;&#125;</code></pre><ol start="6"><li>Save the “tasks.json” file.</li></ol><h2 id="Conclusion">Conclusion</h2><p>Now, when you save a file in your project, the specified task will be executed automatically.</p><p>The two tricks above worked when I tested previously. That’s the article about <strong>Run task on save using VSCode (Visual Studio Code)</strong></p>]]></content>
-    
-    
-    <summary type="html">How to run task on save using VSCode</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
     
   </entry>
   

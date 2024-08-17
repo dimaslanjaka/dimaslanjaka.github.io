@@ -297,7 +297,7 @@ main();</code></pre>
 <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
   <span class="hljs-keyword">await</span> hexo.<span class="hljs-title function_">init</span>();
   hexo.<span class="hljs-title function_">init</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> hexo.<span class="hljs-title function_">loadPlugin</span>(<span class="hljs-built_in">require</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-string">'hexo-shortcodes'</span>)));
-  <span class="hljs-keyword">await</span> hexo.<span class="hljs-title function_">load</span>(<span class="hljs-title function_">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> hexo.<span class="hljs-title function_">load</span>(<span class="hljs-keyword">async</span> () =&gt; {
     <span class="hljs-keyword">const</span> post = <span class="hljs-keyword">await</span> hexo.<span class="hljs-property">post</span>.<span class="hljs-title function_">render</span>(path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">'source/lang/php.md'</span>));
     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(post);
   });

@@ -363,55 +363,55 @@ gtag('config', 'UA-106238155-1');
   ]
 };</code></pre>
 <h2 id="prettierrc">.prettierrc</h2>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"$schema"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://json.schemastore.org/prettierrc"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"semi"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"printWidth"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">120</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"singleQuote"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"trailingComma"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"none"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"tabWidth"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2
+}</code></pre>
 <h2 id="vscode-settings-json">.vscode/settings.json</h2>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"eslint.format.enable"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"eslint.validate"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"javascript"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"javascriptreact"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"typescript"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"typescriptreact"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"editor.codeActionsOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"source.fixAll.eslint"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"source.fixAll.stylelint"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "eslint.format.enable": true,
+  "editor.formatOnSave": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  }
+}</code></pre>
 <h2 id="tsconfig-json">tsconfig.json</h2>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"include"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"./src/*"</span>
-  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"lib"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-string">"dom"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-string">"es2015"</span>
-    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"jsx"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"react"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"esModuleInterop"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"target"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"es5"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"allowJs"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"noImplicitAny"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"skipLibCheck"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"allowSyntheticDefaultImports"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"strict"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"forceConsistentCasingInFileNames"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"module"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"esnext"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"moduleResolution"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"node"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"resolveJsonModule"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"isolatedModules"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"noEmit"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "include": [
+    "./src/*"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "jsx": "react",
+    "esModuleInterop": true,
+    "target": "es5",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  }
+}</code></pre>
 <h2 id="example-package-json-devDependencies">example package.json devDependencies</h2>
 <pre><code class="hljs json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"devDependencies"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>

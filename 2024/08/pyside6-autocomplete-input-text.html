@@ -250,29 +250,29 @@ gtag('config', 'UA-106238155-1');
         <span class="hljs-built_in">super</span>().__init__()
 
         <span class="hljs-comment"># Set up the main window</span>
-        <span class="hljs-variable language_">self</span>.setWindowTitle(<span class="hljs-string">"Autocomplete Example"</span>)
-        <span class="hljs-variable language_">self</span>.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-number">200</span>)
+        self.setWindowTitle(<span class="hljs-string">"Autocomplete Example"</span>)
+        self.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-number">200</span>)
 
         <span class="hljs-comment"># Create a central widget and a layout</span>
         central_widget = QWidget()
         layout = QVBoxLayout()
 
         <span class="hljs-comment"># Create QLineEdit widget</span>
-        <span class="hljs-variable language_">self</span>.line_edit = QLineEdit()
-        <span class="hljs-variable language_">self</span>.line_edit.setPlaceholderText(<span class="hljs-string">"Type something..."</span>)
+        self.line_edit = QLineEdit()
+        self.line_edit.setPlaceholderText(<span class="hljs-string">"Type something..."</span>)
 
         <span class="hljs-comment"># Create sample data for autocomplete</span>
         data = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"grape"</span>, <span class="hljs-string">"orange"</span>, <span class="hljs-string">"peach"</span>, <span class="hljs-string">"pear"</span>, <span class="hljs-string">"plum"</span>]
 
         <span class="hljs-comment"># Create QStringListModel and QCompleter</span>
-        <span class="hljs-variable language_">self</span>.model = QStringListModel(data)
-        <span class="hljs-variable language_">self</span>.completer = QCompleter(<span class="hljs-variable language_">self</span>.model)
-        <span class="hljs-variable language_">self</span>.line_edit.setCompleter(<span class="hljs-variable language_">self</span>.completer)
+        self.model = QStringListModel(data)
+        self.completer = QCompleter(self.model)
+        self.line_edit.setCompleter(self.completer)
 
         <span class="hljs-comment"># Add the QLineEdit to the layout</span>
-        layout.addWidget(<span class="hljs-variable language_">self</span>.line_edit)
+        layout.addWidget(self.line_edit)
         central_widget.setLayout(layout)
-        <span class="hljs-variable language_">self</span>.setCentralWidget(central_widget)
+        self.setCentralWidget(central_widget)
 
 <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
     app = QApplication([])

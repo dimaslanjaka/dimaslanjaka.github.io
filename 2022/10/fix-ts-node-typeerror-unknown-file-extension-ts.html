@@ -252,15 +252,15 @@ gtag('config', 'UA-106238155-1');
 <pre><code class="hljs plaintext">TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts" for /index.ts at new NodeError (node:internal/errors:371:5) at Object.file: (node:internal/modules/esm/get_format:72:15) at defaultGetFormat (node:internal/modules/esm/get_format:85:38) at defaultLoad (node:internal/modules/esm/load:13:42) at ESMLoader.load (node:internal/modules/esm/loader:303:26) at ESMLoader.moduleProvider (node:internal/modules/esm/loader:230:58) at new ModuleJob (node:internal/modules/esm/module_job:63:26) at ESMLoader.getModuleJob (node:internal/modules/esm/loader:244:11) at async Promise.all (index 0) at async ESMLoader.import (node:internal/modules/esm/loader:281:24) { code: 'ERR_UNKNOWN_FILE_EXTENSION' }</code></pre>
 <h2 id="tsconfig-json">tsconfig.json</h2>
 <p>add following codes to <code>tsconfig.json</code> to fix <code>TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts"</code></p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"ts-node"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-attr">"module"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"CommonJS"</span>
-    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"esm"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"experimentalSpecifierResolution"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"node"</span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
+}</code></pre>
 <h2 id="Official-Issues">Official Issues</h2>
 <ul>
 <li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL1R5cGVTdHJvbmcvdHMtbm9kZS9pc3N1ZXMvMTU4NA==" hexo-seo="true" alt="Fix ts-node TypeError ERR_UNKNOWN_FILE_EXTENSION Unknown file extension .ts" title="Fix ts-node TypeError ERR_UNKNOWN_FILE_EXTENSION Unknown file extension .ts">ESM issues: TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts #1584</a></li>

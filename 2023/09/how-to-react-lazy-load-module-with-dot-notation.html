@@ -361,7 +361,7 @@ gtag('config', 'UA-106238155-1');
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">MyNavbar</span>;
 
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">navItemClick</span>(<span class="hljs-params"><span class="hljs-attr">e</span>: { target: <span class="hljs-built_in">any</span> }</span>): <span class="hljs-built_in">any</span> {
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">navItemClick</span>(<span class="hljs-params">e: { target: <span class="hljs-built_in">any</span> }</span>): <span class="hljs-built_in">any</span> {
   <span class="hljs-keyword">const</span> el = e.<span class="hljs-property">target</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">HTMLElement</span>;
   <span class="hljs-keyword">if</span> (el.<span class="hljs-title function_">hasAttribute</span>(<span class="hljs-string">'href'</span>)) {
     <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = el.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">'href'</span>);

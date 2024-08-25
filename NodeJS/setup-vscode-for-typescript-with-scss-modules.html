@@ -271,143 +271,143 @@ gtag('config', 'UA-106238155-1');
 <h2 id="Change-VSCode-USER-SETTINGS-json">Change VSCode USER SETTINGS json</h2>
 <p>add these configuration to your user settings json by <code>CTRL+SHIFT+P</code></p>
 <p><img src="https://github.com/dimaslanjaka/source-posts/assets/12471057/d6c87041-8545-49af-b71a-70f575829cca" alt="Setup VSCode for typescript with css modules | WMI - https://github.com/dimaslanjaka/source-posts/assets/12471057/d6c87041-8545-49af-b71a-70f575829cca" title="Setup VSCode for typescript with css modules" itemprop="image"></p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-comment">// prompt using local project typescript version</span>
-  <span class="hljs-attr">"typescript.enablePromptUseWorkspaceTsdk"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-comment">// add plugin to vscode typescript server language</span>
-  <span class="hljs-attr">"typescript.tsserver.pluginPaths"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"typescript-plugin-css-modules"</span>
-  <span class="hljs-punctuation">]</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  // prompt using local project typescript version
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // add plugin to vscode typescript server language
+  "typescript.tsserver.pluginPaths": [
+    "typescript-plugin-css-modules"
+  ]
+}</code></pre>
 <h2 id="Change-VSCode-PROJECT-SETTINGS-json">Change VSCode PROJECT SETTINGS json</h2>
 <p>add these configuration to your project settings json</p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-comment">// tell vscode to using local project typescript version</span>
-  <span class="hljs-attr">"typescript.tsdk"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"./node_modules/typescript/lib"</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  // tell vscode to using local project typescript version
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}</code></pre>
 <h2 id="Modify-tsconfig-json">Modify tsconfig.json</h2>
 <p>enable css modules plugin in project typescript configuration by editing <code>tsconfig.json</code></p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-comment">// enable css modules plugin</span>
-    <span class="hljs-attr">"plugins"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span> <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"typescript-plugin-css-modules"</span> <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"lib"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-string">"DOM"</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// browser DOM support such as (window, document.*, etc)</span>
-      <span class="hljs-string">"ES2020"</span> <span class="hljs-comment">// enable modern ECMAScript prototype support</span>
-    <span class="hljs-punctuation">]</span> 
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"include"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"src"</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// include all typescript and javascript files</span>
-    <span class="hljs-string">"src/**/*.json"</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// json file import support</span>
-    <span class="hljs-string">"src/**/*.css"</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// css file import support</span>
-    <span class="hljs-string">"src/**/*.scss"</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// scss file import support</span>
-    <span class="hljs-string">"src/**/*.less"</span> <span class="hljs-comment">// less file import support</span>
-  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"exclude"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"**/node_modules/**"</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// exclude node_modules folder from compilation</span>
-    <span class="hljs-string">"**/dist/**"</span> <span class="hljs-comment">// exclude dist folder</span>
-  <span class="hljs-punctuation">]</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "compilerOptions": {
+    // enable css modules plugin
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "lib": [
+      "DOM", // browser DOM support such as (window, document.*, etc)
+      "ES2020" // enable modern ECMAScript prototype support
+    ] 
+  },
+  "include": [
+    "src", // include all typescript and javascript files
+    "src/**/*.json", // json file import support
+    "src/**/*.css", // css file import support
+    "src/**/*.scss", // scss file import support
+    "src/**/*.less" // less file import support
+  ],
+  "exclude": [
+    "**/node_modules/**", // exclude node_modules folder from compilation
+    "**/dist/**" // exclude dist folder
+  ]
+}</code></pre>
 <h3 id="Full-example-of-tsconfig-json">Full example of <code>tsconfig.json</code></h3>
 <p>Or use my typescript config then modify it according to your project structure</p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"extends"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"./tsconfig.base.json"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"jsx"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"react"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"module"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"CommonJS"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"moduleResolution"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Node"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"esModuleInterop"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"outDir"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"tmp/tsc"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"checkJs"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"composite"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"allowJs"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"resolveJsonModule"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"downlevelIteration"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"allowSyntheticDefaultImports"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"skipDefaultLibCheck"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"skipLibCheck"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"strict"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"lib"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-string">"DOM"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-string">"ES2020"</span>
-    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"typeRoots"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-string">"./typings"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-string">"./node_modules/@types"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-string">"./node_modules/nodejs-package-types/typings"</span>
-    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"types"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-string">"rsuite"</span>
-    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"plugins"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-punctuation">{</span>
-        <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"typescript-plugin-css-modules"</span>
-      <span class="hljs-punctuation">}</span>
-    <span class="hljs-punctuation">]</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"include"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"src"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"src/**/*.json"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"src/**/*.css"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"src/**/*.scss"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"src/**/*.less"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"typings"</span>
-  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"exclude"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"**/node_modules/**"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"./page/**/*"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"**/dist/**"</span>
-  <span class="hljs-punctuation">]</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "outDir": "tmp/tsc",
+    "checkJs": false,
+    "composite": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "lib": [
+      "DOM",
+      "ES2020"
+    ],
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types",
+      "./node_modules/nodejs-package-types/typings"
+    ],
+    "types": [
+      "rsuite"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
+  },
+  "include": [
+    "src",
+    "src/**/*.json",
+    "src/**/*.css",
+    "src/**/*.scss",
+    "src/**/*.less",
+    "typings"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "./page/**/*",
+    "**/dist/**"
+  ]
+}</code></pre>
 <h2 id="Create-or-modify-src-global-d-ts">Create or modify <code>src/global.d.ts</code></h2>
 <p>create or modify <code>src/global.d.ts</code> to apply css modules to typescriptreact project, by adding below declarations:</p>
-<pre><code class="hljs jsonc"><span class="hljs-comment">// typescript css modules</span>
+<pre><code class="hljs jsonc">// typescript css modules
 
-declare module '*.module.css' <span class="hljs-punctuation">{</span>
-  const classes<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-punctuation">[</span>key<span class="hljs-punctuation">:</span> string<span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> string <span class="hljs-punctuation">}</span>;
+declare module '*.module.css' {
+  const classes: { [key: string]: string };
   export default classes;
-<span class="hljs-punctuation">}</span>
+}
 
-declare module '*.module.scss' <span class="hljs-punctuation">{</span>
-  const classes<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-punctuation">[</span>key<span class="hljs-punctuation">:</span> string<span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> string <span class="hljs-punctuation">}</span>;
+declare module '*.module.scss' {
+  const classes: { [key: string]: string };
   export default classes;
-<span class="hljs-punctuation">}</span>
+}
 
-declare module '*.module.sass' <span class="hljs-punctuation">{</span>
-  const classes<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-punctuation">[</span>key<span class="hljs-punctuation">:</span> string<span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> string <span class="hljs-punctuation">}</span>;
+declare module '*.module.sass' {
+  const classes: { [key: string]: string };
   export default classes;
-<span class="hljs-punctuation">}</span>
+}
 
-declare module '*.module.less' <span class="hljs-punctuation">{</span>
-  const classes<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-punctuation">[</span>key<span class="hljs-punctuation">:</span> string<span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> string <span class="hljs-punctuation">}</span>;
+declare module '*.module.less' {
+  const classes: { [key: string]: string };
   export default classes;
-<span class="hljs-punctuation">}</span>
+}
 
-declare module '*.module.styl' <span class="hljs-punctuation">{</span>
-  const classes<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-punctuation">[</span>key<span class="hljs-punctuation">:</span> string<span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> string <span class="hljs-punctuation">}</span>;
+declare module '*.module.styl' {
+  const classes: { [key: string]: string };
   export default classes;
-<span class="hljs-punctuation">}</span>
+}
 
-<span class="hljs-comment">// additional configs</span>
+// additional configs
 
-declare global <span class="hljs-punctuation">{</span>
-  interface Window <span class="hljs-punctuation">{</span>
-    <span class="hljs-comment">// custom global window properties</span>
-    <span class="hljs-punctuation">[</span>key<span class="hljs-punctuation">:</span> string<span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> any; <span class="hljs-comment">// enable dynamic object support</span>
-    dataLayer<span class="hljs-punctuation">:</span> Record&lt;string<span class="hljs-punctuation">,</span> any&gt;<span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span>; <span class="hljs-comment">// google analytics</span>
-    opera<span class="hljs-punctuation">:</span> Record&lt;string<span class="hljs-punctuation">,</span> any&gt;;
-    opr<span class="hljs-punctuation">:</span> Record&lt;string<span class="hljs-punctuation">,</span> any&gt;;
-    safari<span class="hljs-punctuation">:</span> Record&lt;string<span class="hljs-punctuation">,</span> any&gt;;
-    adsbygoogle<span class="hljs-punctuation">:</span> any; <span class="hljs-comment">// google adsense</span>
-    clipboardData?<span class="hljs-punctuation">:</span> any; <span class="hljs-comment">// safari clipboard</span>
-    google<span class="hljs-punctuation">:</span> import('@types/google.accounts'); <span class="hljs-comment">// google new API GSI client</span>
-  <span class="hljs-punctuation">}</span>
+declare global {
+  interface Window {
+    // custom global window properties
+    [key: string]: any; // enable dynamic object support
+    dataLayer: Record&lt;string, any&gt;[]; // google analytics
+    opera: Record&lt;string, any&gt;;
+    opr: Record&lt;string, any&gt;;
+    safari: Record&lt;string, any&gt;;
+    adsbygoogle: any; // google adsense
+    clipboardData?: any; // safari clipboard
+    google: import('@types/google.accounts'); // google new API GSI client
+  }
 
-  interface Event <span class="hljs-punctuation">{</span>
-    <span class="hljs-comment">// custom global event properties</span>
-    clipboardData?<span class="hljs-punctuation">:</span> any; <span class="hljs-comment">// safari clipboard</span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+  interface Event {
+    // custom global event properties
+    clipboardData?: any; // safari clipboard
+  }
+}</code></pre>
 <h2 id="Conclusion">Conclusion</h2>
 <p>Now reload window and your vscode now supported import css modules into typescript or javascript files (react or non-react).<br>
 To test create new file:</p>

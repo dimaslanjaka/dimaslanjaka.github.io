@@ -281,54 +281,54 @@ gtag('config', 'UA-106238155-1');
 <p>step by step how to setup jest within vscode code runner</p>
 <h3 id="create-file-vscode-settings-json">create file <code>.vscode/settings.json</code></h3>
 <p>create settings file and fill below configs.</p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"emmet.includeLanguages"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"ejs"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"html"</span> <span class="hljs-comment">// treat ejs as html</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"terminal.integrated.env.linux"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-comment">// linux custom PATH environment variable</span>
-    <span class="hljs-attr">"PATH"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"terminal.integrated.env.windows"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-comment">// windows custom PATH environment variable</span>
-    <span class="hljs-attr">"PATH"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"editor.codeActionsOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"source.fixAll.eslint"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// let ESLint take formating and linting</span>
-    <span class="hljs-attr">"source.organizeImports"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">// auto remove unused imports</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"[ts]"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span> <span class="hljs-comment">// custom formating with default vscode formatter</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"[scss]"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// custom formating with default vscode formatter</span>
-    <span class="hljs-attr">"editor.defaultFormatter"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"esbenp.prettier-vscode"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"[css]"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// custom formating with default vscode formatter</span>
-    <span class="hljs-attr">"editor.defaultFormatter"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"esbenp.prettier-vscode"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"[ejs]"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">// custom formating with default vscode formatter</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"[json]"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// custom formating with default vscode formatter</span>
-    <span class="hljs-attr">"editor.defaultFormatter"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"vscode.json-language-features"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"editor.formatOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// default vscode formatter</span>
-  <span class="hljs-attr">"git.enabled"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// enable git</span>
-  <span class="hljs-attr">"code-runner.clearPreviousOutput"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// code runner clear console when run code</span>
-  <span class="hljs-attr">"code-runner.saveFileBeforeRun"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// code runner save current file before run</span>
-  <span class="hljs-attr">"code-runner.saveAllFilesBeforeRun"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// code runner save all files before run</span>
-  <span class="hljs-attr">"code-runner.runInTerminal"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// code runner run in terminal</span>
-  <span class="hljs-attr">"files.exclude"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"**/node_modules"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"**/vendor"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"code-runner.respectShebang"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// code runner follow executor maps</span>
-  <span class="hljs-attr">"code-runner.executorMapByGlob"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-comment">// code runner executor map by glob</span>
-    <span class="hljs-attr">"*.test.ts"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"yarn test -- $fileNameWithoutExt"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"eslint.codeActionsOnSave.mode"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"all"</span> <span class="hljs-comment">// code runner save all files before run</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+  "emmet.includeLanguages": {
+    "ejs": "html" // treat ejs as html
+  },
+  "terminal.integrated.env.linux": { // linux custom PATH environment variable
+    "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
+  },
+  "terminal.integrated.env.windows": { // windows custom PATH environment variable
+    "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true, // let ESLint take formating and linting
+    "source.organizeImports": true // auto remove unused imports
+  },
+  "[ts]": {
+    "editor.formatOnSave": false // custom formating with default vscode formatter
+  },
+  "[scss]": {
+    "editor.formatOnSave": true, // custom formating with default vscode formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.formatOnSave": true, // custom formating with default vscode formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ejs]": {
+    "editor.formatOnSave": true // custom formating with default vscode formatter
+  },
+  "[json]": {
+    "editor.formatOnSave": true, // custom formating with default vscode formatter
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.formatOnSave": false, // default vscode formatter
+  "git.enabled": true, // enable git
+  "code-runner.clearPreviousOutput": true, // code runner clear console when run code
+  "code-runner.saveFileBeforeRun": true, // code runner save current file before run
+  "code-runner.saveAllFilesBeforeRun": true, // code runner save all files before run
+  "code-runner.runInTerminal": true, // code runner run in terminal
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true
+  },
+  "code-runner.respectShebang": true, // code runner follow executor maps
+  "code-runner.executorMapByGlob": { // code runner executor map by glob
+    "*.test.ts": "yarn test -- $fileNameWithoutExt"
+  },
+  "eslint.codeActionsOnSave.mode": "all" // code runner save all files before run
+}</code></pre>
 <h3 id="install-dependencies">install dependencies</h3>
 <pre><code class="hljs bash">npm install -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @jest/types @jest/globals
 <span class="hljs-comment"># or</span>
@@ -408,28 +408,28 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> config;</code></pre>
 <h3 id="create-tsconfig-jest-json">create <code>tsconfig.jest.json</code></h3>
 <p>create typescript config for jest in root of project folder, change typescript config for jest below as you wish:</p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-comment">// custom schema (non-vscode environment)</span>
-  <span class="hljs-attr">"$schema"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://json.schemastore.org/tsconfig"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-comment">// extends other typescript config file</span>
-  <span class="hljs-attr">"extends"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"./tsconfig.json"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-comment">// make dump output to temp folder</span>
-    <span class="hljs-attr">"outDir"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"tmp/jest"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-comment">/* Visit https://aka.ms/tsconfig.json to read more about this file */</span>
-    <span class="hljs-comment">/* Language and Environment */</span>
-    <span class="hljs-attr">"target"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"es2016"</span> <span class="hljs-comment">/* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */</span><span class="hljs-punctuation">,</span>
+<pre><code class="hljs jsonc">{
+  // custom schema (non-vscode environment)
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // extends other typescript config file
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // make dump output to temp folder
+    "outDir": "tmp/jest",
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    /* Language and Environment */
+    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
-    <span class="hljs-comment">/* Modules */</span>
-    <span class="hljs-attr">"module"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"commonjs"</span> <span class="hljs-comment">/* Specify what module code is generated. */</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"esModuleInterop"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">/* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"forceConsistentCasingInFileNames"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">/* Ensure that casing is correct in imports. */</span><span class="hljs-punctuation">,</span>
+    /* Modules */
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
 
-    <span class="hljs-comment">/* Type Checking */</span>
-    <span class="hljs-attr">"strict"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span> <span class="hljs-comment">/* Enable all strict type-checking */</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"skipLibCheck"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">/* Skip type checking all .d.ts files. */</span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+    /* Type Checking */
+    "strict": false /* Enable all strict type-checking */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  }
+}</code></pre>
 <h3 id="step-to-test">step to test</h3>
 <p>create sample test inside <code>test</code> folder</p>
 <h4 id="create-test-math-operator-test-ts">create <code>test/math-operator.test.ts</code></h4>

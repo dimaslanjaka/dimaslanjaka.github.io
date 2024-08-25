@@ -265,7 +265,7 @@ gtag('config', 'UA-106238155-1');
     : <span class="hljs-literal">null</span>
 }</code></pre>
 <h2 id="Array-JSX-Join-Typescript-Function">Array JSX Join Typescript Function</h2>
-<pre><code class="hljs typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">jsxJoin</span>(<span class="hljs-params"><span class="hljs-attr">array</span>: JSX.<span class="hljs-title class_">Element</span>[], <span class="hljs-attr">separator</span>: <span class="hljs-built_in">string</span> | JSX.<span class="hljs-title class_">Element</span></span>) {
+<pre><code class="hljs typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">jsxJoin</span>(<span class="hljs-params">array: JSX.Element[], separator: <span class="hljs-built_in">string</span> | JSX.Element</span>) {
   <span class="hljs-keyword">return</span> array.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>
     ? array.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">result, item</span>) =&gt;</span> (
         <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span></span>
@@ -278,8 +278,8 @@ gtag('config', 'UA-106238155-1');
 }</code></pre>
 <h2 id="Array-JSX-Join-With-Validation">Array JSX Join With Validation</h2>
 <pre><code class="hljs typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">array_jsx_join</span>(<span class="hljs-params"></span>
-<span class="hljs-params">  <span class="hljs-attr">arr</span>: JSX.<span class="hljs-title class_">Element</span>[],</span>
-<span class="hljs-params">  delimeter?: JSX.<span class="hljs-title class_">Element</span> | <span class="hljs-built_in">string</span></span>
+<span class="hljs-params">  arr: JSX.Element[],</span>
+<span class="hljs-params">  delimeter?: JSX.Element | <span class="hljs-built_in">string</span></span>
 <span class="hljs-params"></span>): <span class="hljs-variable constant_">JSX</span>.<span class="hljs-property">Element</span> {
   <span class="hljs-keyword">if</span> (!<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(arr) || arr.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>)
     <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>[array_jsx_join] empty array<span class="hljs-tag">&lt;/&gt;</span></span>

@@ -271,7 +271,7 @@ gtag('config', 'UA-106238155-1');
     <span class="hljs-keyword">private</span> inextp = <span class="hljs-number">21</span>;
     <span class="hljs-keyword">private</span> seedArray = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">56</span>);
 
-    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-attr">seed</span>: <span class="hljs-built_in">number</span></span>) {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">seed: <span class="hljs-built_in">number</span></span>) {
         <span class="hljs-keyword">var</span> subtraction = (seed == <span class="hljs-title class_">Random</span>.<span class="hljs-property">INT_MIN_VALUE</span>) ? <span class="hljs-title class_">Random</span>.<span class="hljs-property">INT_MAX_VALUE</span> : <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(seed);
         <span class="hljs-keyword">let</span> mj = <span class="hljs-title class_">Random</span>.<span class="hljs-property">MSEED</span> - subtraction;
         <span class="hljs-variable language_">this</span>.<span class="hljs-property">seedArray</span>[<span class="hljs-number">55</span>] = mj;
@@ -300,10 +300,10 @@ gtag('config', 'UA-106238155-1');
     <span class="hljs-keyword">protected</span> sample = <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">internalSample</span>() * (<span class="hljs-number">1</span> / <span class="hljs-title class_">Random</span>.<span class="hljs-property">INT_MAX_VALUE</span>);
 
     <span class="hljs-keyword">public</span> nextInteger = <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">internalSample</span>();
-    <span class="hljs-keyword">public</span> nextIntegerBetween = <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">minValue</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">maxValue</span>: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">nextNumberBetween</span>(minValue, maxValue));
-    <span class="hljs-keyword">public</span> nextIntegerLessThan = <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">maxValue</span>: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">nextNumberLessThan</span>(maxValue));
+    <span class="hljs-keyword">public</span> nextIntegerBetween = <span class="hljs-function">(<span class="hljs-params">minValue: <span class="hljs-built_in">number</span>, maxValue: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">nextNumberBetween</span>(minValue, maxValue));
+    <span class="hljs-keyword">public</span> nextIntegerLessThan = <span class="hljs-function">(<span class="hljs-params">maxValue: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">nextNumberLessThan</span>(maxValue));
     <span class="hljs-keyword">public</span> nextNumber = <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">sample</span>();
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">nextNumberBetween</span>(<span class="hljs-params"><span class="hljs-attr">minValue</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">maxValue</span>: <span class="hljs-built_in">number</span></span>) {
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">nextNumberBetween</span>(<span class="hljs-params">minValue: <span class="hljs-built_in">number</span>, maxValue: <span class="hljs-built_in">number</span></span>) {
         <span class="hljs-keyword">if</span> (minValue &gt; maxValue)
             <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">"Argument out of range."</span>);
 
@@ -314,7 +314,7 @@ gtag('config', 'UA-106238155-1');
         <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getSampleForLargeRange</span>() * range + minValue;
     }
 
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">nextNumberLessThan</span>(<span class="hljs-params"><span class="hljs-attr">maxValue</span>: <span class="hljs-built_in">number</span></span>) {
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">nextNumberLessThan</span>(<span class="hljs-params">maxValue: <span class="hljs-built_in">number</span></span>) {
         <span class="hljs-keyword">if</span> (maxValue &lt; <span class="hljs-number">0</span>)
             <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">"Argument out of range."</span>);
 

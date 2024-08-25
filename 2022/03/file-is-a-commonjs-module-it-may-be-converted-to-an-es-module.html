@@ -252,10 +252,10 @@ gtag('config', 'UA-106238155-1');
 <p>You can disable them by setting: <code>"typescript.suggestionActions.enabled": false</code> or <code>"javascript.suggestionActions.enabled": false</code> in your user/workspace settings. The documentation can be found <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20vZG9jcy9nZXRzdGFydGVkL3NldHRpbmdz" hexo-seo="true" alt="disable vscode alert File is a CommonJS module; it may be converted to an ES module" title="disable vscode alert File is a CommonJS module; it may be converted to an ES module">here</a>.</p>
 <h3 id="open-settings-json-file">open settings.json file</h3>
 <p>insert below option</p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"javascript.suggestionActions.enabled"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// disable vscode alert on javascript</span>
-    <span class="hljs-attr">"typescript.suggestionActions.enabled"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span> <span class="hljs-comment">// disable vscode alert on typescript</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<pre><code class="hljs jsonc">{
+    "javascript.suggestionActions.enabled": false, // disable vscode alert on javascript
+    "typescript.suggestionActions.enabled": false // disable vscode alert on typescript
+}</code></pre>
 <h3 id="Preview-Example-it-should-be-looks-like">[Preview Example] it should be looks like:</h3>
 <p><img src="https://i.stack.imgur.com/2AUwp.png" alt="disable vscode alert File is a CommonJS module; it may be converted to an ES module | WMI - https://i.stack.imgur.com/2AUwp.png" title="disable vscode alert File is a CommonJS module; it may be converted to an ES module" itemprop="image"></p>
 <h2 id="This-solution-also-fix-vscode-alerts-below">This solution also fix vscode alerts below</h2>

@@ -233,62 +233,62 @@ Here is a step-by-step guide for configuring tasks to run on save:</p>
 <p>You can use the <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPUdydW50ZnVnZ2x5LnRyaWdnZXJ0YXNrb25zYXZl" hexo-seo="true" alt="Visual Studio Code Run task on save" title="Visual Studio Code Run task on save">Trigger Task on Save</a> extension.</p>
 <h3 id="Configure-plugin-settings">Configure plugin settings</h3>
 <p>To set it up, add the following to your <code>.vscode/settings.json</code>:</p>
-<pre><code class="hljs jsonc">{
-  "task.saveBeforeRun":"always",
-  // task name to run on save action
-  "triggerTaskOnSave.selectedTask":"bootRun",
-  // enable plugin
-  "triggerTaskOnSave.on":true,
-  // restart task when running
-  "triggerTaskOnSave.restart":true,
-  // run in background
-  "triggerTaskOnSave.showNotifications":false,
-  // run in background
-  "triggerTaskOnSave.showStatusBarToggle":false,
-  "triggerTaskOnSave.tasks":{
-    "build":[
-      // watch file patterns
-      "server/**/*.html",
-      "jvm/**/*.java",
-      "server/**/*.java"
-    ]
-  }
-}</code></pre>
+<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"task.saveBeforeRun"</span><span class="hljs-punctuation">:</span><span class="hljs-string">"always"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// task name to run on save action</span>
+  <span class="hljs-attr">"triggerTaskOnSave.selectedTask"</span><span class="hljs-punctuation">:</span><span class="hljs-string">"bootRun"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// enable plugin</span>
+  <span class="hljs-attr">"triggerTaskOnSave.on"</span><span class="hljs-punctuation">:</span><span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// restart task when running</span>
+  <span class="hljs-attr">"triggerTaskOnSave.restart"</span><span class="hljs-punctuation">:</span><span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// run in background</span>
+  <span class="hljs-attr">"triggerTaskOnSave.showNotifications"</span><span class="hljs-punctuation">:</span><span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// run in background</span>
+  <span class="hljs-attr">"triggerTaskOnSave.showStatusBarToggle"</span><span class="hljs-punctuation">:</span><span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"triggerTaskOnSave.tasks"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"build"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+      <span class="hljs-comment">// watch file patterns</span>
+      <span class="hljs-string">"server/**/*.html"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"jvm/**/*.java"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"server/**/*.java"</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <h3 id="Configure-tasks-json">Configure tasks.json</h3>
-<pre><code class="hljs jsonc">{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      // run in background
-      "isBackground": true,
-      // task name
-      "label": "bootRun",
-      "type": "shell",
-      // command shell to run
-      "command": "gradlew bootRun",
-      "args": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      // task description
-      "detail": "run gradle bootRun",
-      "presentation": {
-        // run in background
-        "reveal": "silent",
-        "panel": "shared"
-      },
-      "problemMatcher": [],
-      "options": {
-        // working directory
-        "cwd": "${workspaceFolder}"
-      },
-      "runOptions": {
-        "runOn": "default"
-      }
-    }
-  ]
-}</code></pre>
+<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"version"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2.0.0"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"tasks"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-comment">// run in background</span>
+      <span class="hljs-attr">"isBackground"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+      <span class="hljs-comment">// task name</span>
+      <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"bootRun"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"shell"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-comment">// command shell to run</span>
+      <span class="hljs-attr">"command"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"gradlew bootRun"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"args"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"group"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"kind"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"build"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"isDefault"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-comment">// task description</span>
+      <span class="hljs-attr">"detail"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"run gradle bootRun"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"presentation"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-comment">// run in background</span>
+        <span class="hljs-attr">"reveal"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"silent"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"panel"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"shared"</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"problemMatcher"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"options"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-comment">// working directory</span>
+        <span class="hljs-attr">"cwd"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"${workspaceFolder}"</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"runOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"runOn"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <h2 id="Method-2-Using-default-tasks-json">Method 2: Using default tasks.json</h2>
 <ol>
 <li>
@@ -307,35 +307,35 @@ Here is a step-by-step guide for configuring tasks to run on save:</p>
 <p>Modify the generated “tasks.json” file to include a task that runs on save. For example:</p>
 </li>
 </ol>
-<pre><code class="hljs jsonc">{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Run On Save",
-      "type": "shell",
-      "command": "your_command_here",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      },
-      "runOptions": {
-        "runOn": "save"
-      }
-    }
-  ]
-}</code></pre>
+<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"version"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2.0.0"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"tasks"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Run On Save"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"shell"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"command"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"your_command_here"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"group"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"kind"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"build"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"isDefault"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"presentation"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"reveal"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"always"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"panel"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"new"</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"runOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"runOn"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"save"</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <p>Replace <strong>“your_command_here”</strong> with the actual command you want to run. Make sure the command is something that can be executed from the command line.</p>
 <blockquote>
 <p>Note: option <strong>“runOn”: “save”</strong> triggers the execution of the task when the file is saved.<br>
 Make sure the task is properly configured  for your project and that the necessary tools are installed.</p>
 </blockquote>
-<pre><code class="hljs jsonc">"runOptions": {
-  "runOn": "save"
-}</code></pre>
+<pre><code class="hljs jsonc"><span class="hljs-attr">"runOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"runOn"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"save"</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <ol start="6">
 <li>Save the “tasks.json” file.</li>
 </ol>

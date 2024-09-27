@@ -360,31 +360,31 @@ Here’s a guide for both IDEs:</p>
 <li>Ensure it has the necessary classpath settings.</li>
 </ul>
 <p>Example <code>settings.json</code>:</p>
-<pre><code class="hljs jsonc">{
-  "java.project.outputPath": "build",
-  "java.import.generatesMetadataFilesAtProjectRoot": false,
-  "java.editor.reloadChangedSources": "auto",
-  "java.configuration.updateBuildConfiguration": "disabled",
-  "java.server.launchMode": "Hybrid",
-  "java.project.referencedLibraries": [
-    "build/classes/java/main",
-    "build/resources/main",
-    "lib/**/*.jar"
-  ],
-  "java.edit.smartSemicolonDetection.enabled": true,
-  "terminal.integrated.env.windows": {
-    "PATH": "${workspaceFolder};${workspaceFolder}\\bin;${workspaceFolder}\\node_modules\\.bin;${env:PATH}"
-  },
-  "terminal.integrated.env.linux": {
-    "PATH": "${workspaceFolder}:${workspaceFolder}/bin:${workspaceFolder}/node_modules/.bin:${env:PATH}"
-  },
-  "java.sharedIndexes.enabled": "off",
-  "java.project.resourceFilters": [
-    "node_modules",
-    "\\.git",
-    "\\.cache"
-  ]
-}</code></pre>
+<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"java.project.outputPath"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"build"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.import.generatesMetadataFilesAtProjectRoot"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.editor.reloadChangedSources"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"auto"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.configuration.updateBuildConfiguration"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"disabled"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.server.launchMode"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Hybrid"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.project.referencedLibraries"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"build/classes/java/main"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"build/resources/main"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"lib/**/*.jar"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.edit.smartSemicolonDetection.enabled"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"terminal.integrated.env.windows"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"PATH"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"${workspaceFolder};${workspaceFolder}\\bin;${workspaceFolder}\\node_modules\\.bin;${env:PATH}"</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"terminal.integrated.env.linux"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"PATH"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"${workspaceFolder}:${workspaceFolder}/bin:${workspaceFolder}/node_modules/.bin:${env:PATH}"</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.sharedIndexes.enabled"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"off"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"java.project.resourceFilters"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"node_modules"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"\\.git"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"\\.cache"</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <h2 id="Conclusion">Conclusion</h2>
 <p>Now you don’t have to wait long when opening a Java project in VScode with the Redhat Java plugin, because all build output is synchronized from Gradle and Eclipse JDT which are used by the Redhat Java extension.</p>
 <p>And this trick can change the output folder from Redhat Java Extension to the Gradle build folder.</p>

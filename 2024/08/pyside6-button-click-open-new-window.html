@@ -253,35 +253,35 @@ gtag('config', 'UA-106238155-1');
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecondaryWindow</span>(<span class="hljs-title class_ inherited__">QWidget</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
         <span class="hljs-built_in">super</span>().__init__()
-        self.setWindowTitle(<span class="hljs-string">"Secondary Window"</span>)
-        self.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
+        <span class="hljs-variable language_">self</span>.setWindowTitle(<span class="hljs-string">"Secondary Window"</span>)
+        <span class="hljs-variable language_">self</span>.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainWindow</span>(<span class="hljs-title class_ inherited__">QMainWindow</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
         <span class="hljs-built_in">super</span>().__init__()
-        self.setWindowTitle(<span class="hljs-string">"Main Window"</span>)
-        self.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-number">300</span>)
+        <span class="hljs-variable language_">self</span>.setWindowTitle(<span class="hljs-string">"Main Window"</span>)
+        <span class="hljs-variable language_">self</span>.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-number">300</span>)
 
-        self.opened_windows = []
+        <span class="hljs-variable language_">self</span>.opened_windows = []
 
-        self.button = QPushButton(<span class="hljs-string">"Open Secondary Window"</span>, self)
-        self.button.clicked.connect(self.open_secondary_window)
+        <span class="hljs-variable language_">self</span>.button = QPushButton(<span class="hljs-string">"Open Secondary Window"</span>, <span class="hljs-variable language_">self</span>)
+        <span class="hljs-variable language_">self</span>.button.clicked.connect(<span class="hljs-variable language_">self</span>.open_secondary_window)
 
         layout = QVBoxLayout()
-        layout.addWidget(self.button)
+        layout.addWidget(<span class="hljs-variable language_">self</span>.button)
 
         central_widget = QWidget()
         central_widget.setLayout(layout)
-        self.setCentralWidget(central_widget)
+        <span class="hljs-variable language_">self</span>.setCentralWidget(central_widget)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">open_secondary_window</span>(<span class="hljs-params">self</span>):
         new_window = SecondaryWindow()
         new_window.show()
-        self.opened_windows.append(new_window)
+        <span class="hljs-variable language_">self</span>.opened_windows.append(new_window)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">closeEvent</span>(<span class="hljs-params">self, event</span>):
         <span class="hljs-comment"># Close all opened windows when the main window is closed</span>
-        <span class="hljs-keyword">for</span> window <span class="hljs-keyword">in</span> self.opened_windows:
+        <span class="hljs-keyword">for</span> window <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.opened_windows:
             window.close()
         event.accept()
 
@@ -319,32 +319,32 @@ gtag('config', 'UA-106238155-1');
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecondaryWindow</span>(<span class="hljs-title class_ inherited__">QWidget</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
         <span class="hljs-built_in">super</span>().__init__()
-        self.setWindowTitle(<span class="hljs-string">"Secondary Window"</span>)
-        self.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
+        <span class="hljs-variable language_">self</span>.setWindowTitle(<span class="hljs-string">"Secondary Window"</span>)
+        <span class="hljs-variable language_">self</span>.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>, <span class="hljs-number">200</span>)
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainWindow</span>(<span class="hljs-title class_ inherited__">QWidget</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
         <span class="hljs-built_in">super</span>().__init__()
-        self.setWindowTitle(<span class="hljs-string">"Main Window"</span>)
-        self.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-number">300</span>)
+        <span class="hljs-variable language_">self</span>.setWindowTitle(<span class="hljs-string">"Main Window"</span>)
+        <span class="hljs-variable language_">self</span>.setGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-number">300</span>)
 
-        self.opened_windows: <span class="hljs-type">List</span>[SecondaryWindow] = []
+        <span class="hljs-variable language_">self</span>.opened_windows: <span class="hljs-type">List</span>[SecondaryWindow] = []
 
-        self.button: QPushButton = QPushButton(<span class="hljs-string">"Open Secondary Window"</span>, self)
-        self.button.clicked.connect(self.open_secondary_window)
+        <span class="hljs-variable language_">self</span>.button: QPushButton = QPushButton(<span class="hljs-string">"Open Secondary Window"</span>, <span class="hljs-variable language_">self</span>)
+        <span class="hljs-variable language_">self</span>.button.clicked.connect(<span class="hljs-variable language_">self</span>.open_secondary_window)
 
-        layout: QVBoxLayout = QVBoxLayout(self)
-        layout.addWidget(self.button)
-        self.setLayout(layout)
+        layout: QVBoxLayout = QVBoxLayout(<span class="hljs-variable language_">self</span>)
+        layout.addWidget(<span class="hljs-variable language_">self</span>.button)
+        <span class="hljs-variable language_">self</span>.setLayout(layout)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">open_secondary_window</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-literal">None</span>:
         new_window: SecondaryWindow = SecondaryWindow()
         new_window.show()
-        self.opened_windows.append(new_window)
+        <span class="hljs-variable language_">self</span>.opened_windows.append(new_window)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">closeEvent</span>(<span class="hljs-params">self, event: QCloseEvent</span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-comment"># Close all opened windows when the main window is closed</span>
-        <span class="hljs-keyword">for</span> window <span class="hljs-keyword">in</span> self.opened_windows:
+        <span class="hljs-keyword">for</span> window <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.opened_windows:
             window.close()
         event.accept()
 

@@ -61372,6 +61372,19 @@
         }
     }
 
+    /**
+     * loading animation remover.
+     * this should run inside `window.addEventListener("load"` or in global scope
+     */
+    function initloader() {
+        var preloader = document.getElementById("preloader");
+        var preloaderMini = document.getElementById("preloader-mini");
+        if (preloader)
+            preloader.style.display = "none";
+        if (preloaderMini)
+            preloaderMini.style.display = "none";
+    }
+
     function initToc() {
         // Table of content click event
         // Select all TOC links
@@ -61417,6 +61430,10 @@
                 mobileMenu.classList.toggle("hidden");
             });
         }
+    });
+    window.addEventListener("load", function () {
+        // fix: loader not hidden after page load
+        initloader();
     });
 
 })();

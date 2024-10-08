@@ -1,164 +1,18 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Cara Host CSS dan JavaScript file di Github dengan Rawgit | WMI</title><meta name="author" content="Dimas Lanjaka"><meta name="copyright" content="Dimas Lanjaka"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Cara Host CSS dan JavaScript file di Github dengan Rawgit">
-<meta property="og:url" content="https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html">
-<meta property="og:site_name" content="WMI">
-<meta property="og:description" content="Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png">
-<meta property="article:published_time" content="2017-09-04T11:42:00.000Z">
-<meta property="article:modified_time" content="2023-09-02T16:13:42.000Z">
-<meta property="article:author" content="Dimas Lanjaka">
-<meta property="article:tag" content="tips &amp; tricks">
-<meta property="article:tag" content="blogging">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png"><link rel="shortcut icon" href="/logo.svg"><link rel="canonical" href="https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""><link rel="preconnect" href="//static.cloudflareinsights.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-106238155-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-106238155-1');
-</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;2157c0f3b9e74a92badffe39156166b9&quot;}"></script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":false,"highlightHeightLimit":false},
-  copy: {
-    success: 'Copy Successful',
-    error: 'Copy Error',
-    noSupport: 'Browser Not Supported'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: 'Just now',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: 'Load More'
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: false,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Cara Host CSS dan JavaScript file di Github dengan Rawgit',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-09-02 23:13:42'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
+<!DOCTYPE html><html lang="en" class="dark"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE; chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Cara Host CSS dan JavaScript file di Github dengan Rawgit - WMI
+    </title>
+    <meta name="description" content="WMI - Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus">
+    <meta name="keywords" content="keyword1, keyword2, keyword3, keyword4">
+    <meta name="author" content="Dimas Lanjaka Kumala Indra">
+    <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/94406c3ac26b8fede322ec31e7895cf9b5f4e2d0/highlight.js/styles/github-dark.css" crossorigin="anonymous" referrerpolicy="no-referrer"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
 <link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
 
 
@@ -240,9 +94,484 @@ gtag('config', 'UA-106238155-1');
   }
 ]</script>
 
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar" title="avatar" itemprop="image"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1645</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">126</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> Tools</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/android-traffic-exchange"><i class="fa-fw fas fa-robot"></i><span> Android Traffic Exchanger</span></a></li><li><a class="site-page child" href="/page/bot-detect.html"><i class="fa-fw fas fa-robot"></i><span> Bot Detector</span></a></li><li><a class="site-page child" href="/page/cookies.html"><i class="fa-fw fas fa-cookie"></i><span> Cookies Manager</span></a></li><li><a class="site-page child" href="/page/moment-timezone.html"><i class="fa-fw fas fa-clock"></i><span> Moment Timezone Playground</span></a></li><li><a class="site-page child" href="/page/google/login.html"><i class="fa-fw fab fa-google"></i><span> Login</span></a></li><li><a class="site-page child" href="/The%20Legend%20Of%20Neverland/Quiz.html"><i class="fa-fw fas fa-folder-open"></i><span> Quiz The Legend Of Neverland</span></a></li><li><a class="site-page child" href="/android-engineer/"><i class="fa-fw fab fa-android"></i><span> Android Engineer</span></a></li><li><a class="site-page child" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"><i class="fa-fw fas fa-globe"></i><span> Free Proxy List</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="WMI"><span class="site-name">WMI</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> Tools</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/android-traffic-exchange"><i class="fa-fw fas fa-robot"></i><span> Android Traffic Exchanger</span></a></li><li><a class="site-page child" href="/page/bot-detect.html"><i class="fa-fw fas fa-robot"></i><span> Bot Detector</span></a></li><li><a class="site-page child" href="/page/cookies.html"><i class="fa-fw fas fa-cookie"></i><span> Cookies Manager</span></a></li><li><a class="site-page child" href="/page/moment-timezone.html"><i class="fa-fw fas fa-clock"></i><span> Moment Timezone Playground</span></a></li><li><a class="site-page child" href="/page/google/login.html"><i class="fa-fw fab fa-google"></i><span> Login</span></a></li><li><a class="site-page child" href="/The%20Legend%20Of%20Neverland/Quiz.html"><i class="fa-fw fas fa-folder-open"></i><span> Quiz The Legend Of Neverland</span></a></li><li><a class="site-page child" href="/android-engineer/"><i class="fa-fw fab fa-android"></i><span> Android Engineer</span></a></li><li><a class="site-page child" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"><i class="fa-fw fas fa-globe"></i><span> Free Proxy List</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Cara Host CSS dan JavaScript file di Github dengan Rawgit</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">Updated</span><time datetime="2023-09-02T16:13:42.000Z" title="Updated 2023-09-02 23:13:42">2023-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/programming/">programming</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><span id="span_e1b0_0"><span id="span_e1b0_1" lang="id">Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus pada konten berkualitas tinggi tetapi juga pada kecepatan loading blog.&nbsp;</span><span id="span_e1b0_2" lang="id">Jika blog Anda beban kecepatan ini tidak baik.&nbsp;</span><span id="span_e1b0_3" lang="id">Maka pengunjung blog Anda akan mulai untuk meninggalkan blog Anda pada kunjungan pertama dan akan pindah ke beberapa blog untuk artikel yang sama.</span></span><br><br></p><div id="onPageAds" len="1"></div><span id="span_e1b0_4"><span id="span_e1b0_5" lang="id">Dalam tutorial ini, saya akan memperkenalkan Anda penyedia layanan CDN gratis baru yakni, RawGit(by MaxCDN) yang adalah alat sumber terbuka yang menyajikan raw file langsung dari GitHub dengan header Content-Type yang benar.&nbsp;</span><span id="span_e1b0_6" lang="id">Dan juga, menjelaskan kepada Anda bagaimana untuk mengatur untuk terbatas bandwidth menggunakan GitHub.&nbsp;</span><span id="span_e1b0_7" lang="id">Tetapi sebelum ini, izinkan saya menjelaskan sesuatu tentang keuntungan,</span></span><br><br><h2 id="h2_e1b0_0" lang="id" len="58">Mengapa Anda harus menggunakan RawGit CDN (Content Delivery Network)?</h2><div id="div_e1b0_0" lang="id" len="261">CDN, singkatan dari pengiriman konten jaringan, adalah sistem secara luas didistribusikan beberapa server di berbagai lokasi di seluruh dunia yang membantu dalam memberikan isi statis seperti CSS, JavaScript, dan gambar ke pengguna berdasarkan lokasi geografis pengguna.</div><div id="div_e1b0_1" len="19"><br id="br_e1b0_2" len="0"><div id="div_e1b0_2" len="1"></div></div><img border="0" id="img_e1b0_0" len="0" max-height="286" src="https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png" width="640" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" itemprop="image"><br><span id="span_e1b0_8" lang="id">1. ini akan meningkatkan waktu-pembukaannya dari blog atau situs Anda dengan melayani konten halaman web Anda untuk pengguna berdasarkan lokasi mereka.</span><br><span id="span_e1b0_9" lang="id">2. ini akan mengurangi jumlah bandwidth.</span><br><span id="span_e1b0_10" lang="id">3. ini akan menghemat uang Anda ketika Anda menjalankan server Anda sendiri.</span><br><span id="span_e1b0_11" lang="id">4. akan meningkatkan pengalaman pengguna dan menurunkan tingkat pentalan blog.</span><br><br id="br_e1b0_8" len="0"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5taWNyb3NvZnR0cmFuc2xhdG9yLmNvbS9idi5hc3B4P2Zyb209JmFtcDt0bz1pZCZhbXA7YT1odHRwcyUzQSUyRiUyRnd3dy5ibG9nZ2VyLmNvbSUyRg==" id="a_e1b0_0" len="0" name="more" target="_blank" rel="nofollow noopener noreferer noreferrer external" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"></a><span id="span_e1b0_12"></span><br><h3 class="note" id="h3_e1b0_0" lang="id" len="36">Cara membuat akun GitHub?</h3><span id="span_e1b0_13"><span id="span_e1b0_14" lang="id">Pertama, arahkan ke&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2pvaW4/cmV0dXJuX3RvPWh0dHBzOi8vZ2lzdC5naXRodWIuY29tLz9zaWdudXA9dHJ1ZQ==" id="a_e1b0_1" len="6" rel="nofollow noopener noreferer noreferrer external" target="_blank" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">GitHub</a>&nbsp;dan di sana, Anda harus mengikuti 3 langkah untuk membuat akun pribadi.&nbsp;</span><span id="span_e1b0_15" lang="id">Hanya melakukan seperti biasa.&nbsp;</span><span id="span_e1b0_16" lang="id">Pada langkah 2, Anda akan meminta untuk memilih sebuah rencana, kemudian pilih gratis dari daftar.</span></span><br><br id="br_e1b0_10" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" id="img_e1b0_1" len="0" max-height="286" src="https://4.bp.blogspot.com/-M0YP87Np6rY/Vo-PZICZmXI/AAAAAAAAExk/BkJVAj_PRco/s320/how_to_host_javascript_css_files_on_github_with.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><br><h3 class="note" id="h3_e1b0_1" lang="id" len="28">Cara membuat repositori?</h3><span id="span_e1b0_17"><span id="span_e1b0_18" lang="id">1. setelah berhasil mendaftar.&nbsp;</span><span id="span_e1b0_19" lang="id">Anda akan secara otomatis diarahkan ke Dashboard yang mana di sana Anda akan melihat pilihan untuk membuat repositori baru.</span></span><br><br id="br_e1b0_13" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" id="img_e1b0_2" len="0" src="https://1.bp.blogspot.com/-m_unofD9Tq8/Vo-PXjWHcmI/AAAAAAAAExE/ZR4X9Sip-Rs/s1600/how_to_host_javascript_css_files_on_github_with%2B%25281%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" itemprop="image"><br><br><div id="note" len="196"><div id="note-inner" len="167"><span id="span_e1b0_20" lang="id">Anda tidak dapat mampu menciptakan sebuah repositori sampai Anda memverifikasi rekening Anda.&nbsp;</span><span id="span_e1b0_21" lang="id">Hanya menavigasi pengaturan (terletak di sidebar kiri) &gt; email &gt; Kirim email verifikasi.</span></div></div><br id="br_e1b0_15" len="0"><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYmxvZ2dlci5jb20vbnVsbA==" id="a_e1b0_2" len="0" name="more" rel="nofollow noopener noreferer noreferrer external" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"></a><br id="br_e1b0_16" len="0"><span id="span_e1b0_22" lang="id">2. sekarang, mengisi semua bidang seperti yang dinyatakan dalam gambar di bawah,</span><br><br id="br_e1b0_18" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" id="img_e1b0_3" len="0" src="https://3.bp.blogspot.com/-1w0nAaQajLo/Vo-PXcqr_xI/AAAAAAAAExA/c0zWaFyB5SQ/s320/how_to_host_javascript_css_files_on_github_with%2B%25282%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_23"><span id="span_e1b0_24" lang="id">3. sekarang, kita perlu membuat file <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL1JFQURNRS5tZA==" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">README.md</a> yang seperti file Readme.txt yang mana Anda dapat menulis apapun.&nbsp;</span><span id="span_e1b0_25" lang="id">Dan itu sangat diperlukan.</span></span><br><div id="div_e1b0_3" len="5"><br id="br_e1b0_20" len="0"></div><div id="div_e1b0_4" len="5142"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="74" id="img_e1b0_4" len="0" src="https://4.bp.blogspot.com/-grQBYhSabkU/Vo-PXMKxRRI/AAAAAAAAExU/sQ5vYwdjRTI/s320/how_to_host_javascript_css_files_on_github_with%2B%25283%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><div id="div_e1b0_5" len="386"><br id="br_e1b0_22" len="0"><h3 class="note" id="h3_e1b0_2" lang="id" len="64">Cara membuat sebuah proyek GitHub untuk host JavaScript atau CSS file?</h3><span id="span_e1b0_26" lang="id">1. pertama-tama, arahkan ke&nbsp;<b id="b_e1b0_0" len="9">pengaturan&nbsp;</b>&gt; dan gulir ke bawah sampai Anda melihat&nbsp;<b id="b_e1b0_1" len="24">Otomatis Generator halaman</b>, kemudian klik di atasnya dan kemudian Buat halaman dengan mengisi beberapa bidang yang diperlukan dan mempublikasikannya.</span><br><br id="br_e1b0_24" len="0"><span id="span_e1b0_27" lang="id">2. sekarang, Anda dapat membuat file CSS dan JavaScript dengan hanya mengklik tombol plus(+).</span></div><div id="div_e1b0_6" len="4405"><br id="br_e1b0_25" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="117" id="img_e1b0_5" len="0" src="https://1.bp.blogspot.com/-w1ms6JB1WS8/Vo-PXwN5ZMI/AAAAAAAAExg/japIfYNv3Zo/s320/how_to_host_javascript_css_files_on_github_with%2B%25284%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_28"><span id="span_e1b0_29" lang="id">3. setiap kali, ketika Anda klik pada&nbsp;<b id="b_e1b0_2" len="14">tombol plus(+)</b>, editor kode yang akan muncul.&nbsp;</span><span id="span_e1b0_30" lang="id">Mana Anda dapat menambahkan kode Anda.&nbsp;</span><span id="span_e1b0_31" lang="id">Jangan lupa untuk menambahkan nama ekstensi seperti css atau js.&nbsp;</span><span id="span_e1b0_32" lang="id">Lihat gambar di bawah,</span></span><br><br id="br_e1b0_28" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="143" id="img_e1b0_6" len="0" src="https://1.bp.blogspot.com/-HdC5DwTfaos/Vo-PYNVmYyI/AAAAAAAAExY/l24zrAsnS2k/s320/how_to_host_javascript_css_files_on_github_with%2B%25285%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_33"><span id="span_e1b0_34" lang="id">4. sekarang, di bagian bawah halaman, Anda akan melihat&nbsp;<b id="b_e1b0_3" len="6">melakukan</b>&nbsp;tombol.&nbsp;</span><span id="span_e1b0_35" lang="id">Klik di atasnya untuk host atau mempublikasikan file Anda di web.</span></span><br><br id="br_e1b0_31" len="0"><span id="span_e1b0_36"><span id="span_e1b0_37" lang="id">5. sekarang, klik kanan pada file yang baru dibuat atau upload dan pilih&nbsp;<b id="b_e1b0_4" len="18">salin link lokasi</b>.&nbsp;</span><span id="span_e1b0_38" lang="id">Lihat gambar di bawah</span></span><br><br id="br_e1b0_33" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="245" id="img_e1b0_7" len="0" src="https://2.bp.blogspot.com/-f-MFQITvWWA/Vo-PYp7VsmI/AAAAAAAAExc/UeysUduQZOg/s320/how_to_host_javascript_css_files_on_github_with%2B%25286%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_39"><span id="span_e1b0_40" lang="id">6. dan kemudian paste link disalin ke Notepad Anda.&nbsp;</span><span id="span_e1b0_41" lang="id">Anda menyalin link akan sesuatu seperti di bawah ini,</span></span><br><br id="br_e1b0_36" len="0"><pre class="code" id="pre_e1b0_0" len="72"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL3dvb3RoZW1lcy9GbGV4U2xpZGVyL2Jsb2IvbWFzdGVyL2pxdWVyeS5mbGV4c2xpZGVyLmpz">https://github.com/woothemes/FlexSlider/blob/master/jquery.flexslider.js</a></pre><br id="br_e1b0_37" len="0"><h3 class="note" id="h3_e1b0_3" lang="id" len="76">Bagaimana untuk membuat link URL default GitHub dengan RawGit CDN untuk unlimited Bandwidth?</h3><span id="span_e1b0_42" lang="id">1. pertama-tama, navigasikan ke website resmi&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yYXdnaXQuY29tLw==" id="a_e1b0_3" len="6" rel="nofollow noopener noreferer noreferrer external" target="_blank" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Rawgit</a>&nbsp;.</span><br><br id="br_e1b0_39" len="0"><span id="span_e1b0_43"><span id="span_e1b0_44" lang="id">2. Anda akan melihat ada beberapa Field input.&nbsp;</span><span id="span_e1b0_45" lang="id">Selanjutnya, tempelkan default GitHub Link (yang Anda disalin pada Notepad) di&nbsp;<b id="b_e1b0_5" len="17">pertama field input</b></span></span>.<br><br id="br_e1b0_41" len="0"><span id="span_e1b0_46"><span id="span_e1b0_47" lang="id">3. RawGit akan memberikan Anda dua berbeda link pertama satu untuk lalu lintas yang terbatas dan yang kedua untuk lalu lintas terbatas atau produksi.&nbsp;</span><span id="span_e1b0_48" lang="id">Kemudian salin atau menggunakan<b id="b_e1b0_6" len="9">&nbsp;2 link</b>&nbsp;yang&nbsp;<b id="b_e1b0_7" len="14">untuk produksi</b>.&nbsp;</span><span id="span_e1b0_49" lang="id">Lihat gambar di bawah,</span></span><br><br id="br_e1b0_43" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="96" id="img_e1b0_8" len="0" src="https://3.bp.blogspot.com/-n0JPVRlVfws/Vo-biSOPwuI/AAAAAAAAExw/sGW_EVQxWWc/s640/host%2Bjavascript%2Bfiles%2Bwith%2Bfree%2BCDn%2Bfo%2Bmaxcdn%2Bfor%2Bblogger%252C%2Bwordpress%2Bwith%2Bunlimited%2Bbandwidth.PNG" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="640" itemprop="image"><br><span id="span_e1b0_50"><span id="span_e1b0_51" lang="id">Sekarang file JavaScript Anda sudah siap untuk digunakan pada blogger blog atau website Anda.&nbsp;</span><span id="span_e1b0_52" lang="id">Hanya menggunakan di bawah seperti tag,</span></span><br><br id="br_e1b0_46" len="0"><pre class="code" id="pre_e1b0_1" len="87"> &lt;script src=“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Nkbi5yYXdnaXQuY29t">cdn.rawgit.com</a>…js” type=“text/javascript”&gt;&lt;/script&gt;</pre><br id="br_e1b0_47" len="0"><div id="note" len="794"><div id="note-inner" len="765"><span id="span_e1b0_53"><span id="span_e1b0_54" lang="id">Selalu menggunakan RawGit URL untuk produksi (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Nkbi5yYXdnaXQuY29t" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">cdn.rawgit.com</a>) bukan untuk pengujian dev (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3Jhd2dpdC5jb20=" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">rawgit.com</a>).&nbsp;</span><span id="span_e1b0_55" lang="id">Karena, pertama menghasilkan URL yang dapat Anda lihat pada gambar di atas adalah untuk hanya pengujian tujuan atau website lalu lintas yang rendah.</span></span><br><br id="br_e1b0_49" len="0"><span id="span_e1b0_56" lang="id">Jika Anda menggunakan pengujian dev URL (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3Jhd2dpdC5jb20=" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">rawgit.com</a>) bukan URL untuk produksi (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Nkbi5yYXdnaXQuY29t" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">cdn.rawgit.com</a>), RawGit akan menampilkan pop up pesan peringatan seperti berikut,</span><br><br id="br_e1b0_51" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="67" id="img_e1b0_9" len="0" src="https://4.bp.blogspot.com/-HxTt3qhTMPU/Vo-hwmEmt1I/AAAAAAAAEyA/0e_BspBUXvA/s400/host%2Bjavascript%2Bfiles%2Bwith%2Bfree%2BCDn%2Bfo%2Bmaxcdn%2Bfor%2Bblogger%252C%2Bwordpress%2Bwith%2Bunlimited%2Bbandwidth.PNG" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="400" itemprop="image"></div></div><br id="br_e1b0_52" len="0"><h2 id="h2_e1b0_1" lang="id" len="12">Membungkus</h2><span id="span_e1b0_57" lang="id">Jika blog Anda semakin banyak lalu lintas, maka itu adalah waktu terbaik untuk menggunakan jaringan pengiriman konten yang dapat menangani semua bandwidth Anda dengan caching semua file dari situs Anda dan memberikan mereka berdasarkan lokasi pengguna.</span><br><br id="br_e1b0_54" len="0"><span id="span_e1b0_58"><span id="span_e1b0_59" lang="id">Tersedia satu ton plugin untuk WordPress yang dapat menginstal hanya dalam beberapa klik.&nbsp;</span><span id="span_e1b0_60" lang="id">Dan tidak hanya untuk Blogger.&nbsp;</span><span id="span_e1b0_61" lang="id">Jadi, kita tahu bahwa 'kebutuhan adalah ibu penemuan.&nbsp;</span><span id="span_e1b0_62" lang="id">Saya telah diteliti pada menggunakan pencarian google dan menemukan ide ini menggunakan MaxCDN untuk hosting file statis gratis dengan bandwidth yang terbatas secara tidak langsung.</span></span><br><br id="br_e1b0_56" len="0"><span id="span_e1b0_63" lang="id">Terima kasih!</span></div></div>
-</article><div class="post-copyright"><div class="post-copyright__created"><span class="post-copyright-meta"><i class="fas fa-calendar fa-fw"></i>Created at <span class="post-copyright-info"></span>2017-09-04 18:42:00</span></div><div class="post-copyright__updated"><span class="post-copyright-meta"><i class="fas fa-calendar fa-fw"></i>Updated at <span class="post-copyright-info"></span>2023-09-02 23:13:42</span></div><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.webmanajemen.com" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Dimas Lanjaka Kumala Indra</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8=" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/tips-tricks/">tips &amp; tricks</a><a class="post-meta__tags" href="/tags/blogging/">blogging</a></div><div class="post_share"><div class="addtoany"><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_button_whatsapp"></a><a class="a2a_button_twitter"></a><a class="a2a_button_wechat"></a><a class="a2a_button_sina_weibo"></a><a class="a2a_button_email"></a><a class="a2a_button_copy_link"></a><a class="a2a_dd" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYWRkdG9hbnkuY29tL3NoYXJl" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"></a></div></div><script async="async" src="https://static.addtoany.com/menu/page.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2017/09/css-sticky-fixed-footer.html" title="CSS Sticky Fixed Footer"><img class="cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post" title="cover of previous post" itemprop="image"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">CSS Sticky Fixed Footer</div></div></a></div><div class="next-post pull-right"><a href="/2017/09/cara-menggunakan-directory-bind-android.html" title="Cara menggunakan Directory Bind Android"><img class="cover" src="https://imgdb.net/images/3180.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post" title="cover of next post" itemprop="image"><div class="pagination-info"><div class="label">Next</div><div class="next_info">Cara menggunakan Directory Bind Android</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2017/08/dapatkah-anda-mendapatkan-persetujuan.html" title="Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&amp;ssl=1" alt="cover" title="cover" itemprop="image"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-08-08</div><div class="title">Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?</div></div></a></div><div><a href="/2017/08/update-code-auto-syntax-highlighter.html" title="Update Code Auto Syntax Highlighter Prettyprint js"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png" alt="cover" title="cover" itemprop="image"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Update Code Auto Syntax Highlighter Prettyprint js</div></div></a></div><div><a href="/2017/09/deskripsi-tentang-noodp-dan-noydir-meta.html" title="Deskripsi Tentang Noodp Dan Noydir Meta Tag"><img class="cover" src="https://4.bp.blogspot.com/-kV14y7XCZqU/WaRzYNYOwTI/AAAAAAAAACs/jwCN67nJfZ4WLGgf5W9Ev52y5s4_jUb9QCLcBGAs/s1600/PenjelasandanFungsidariMetatagnoodpdannoydir.jpg" alt="cover" title="cover" itemprop="image"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-10-08</div><div class="title">Deskripsi Tentang Noodp Dan Noydir Meta Tag</div></div></a></div><div><a href="/2017/09/simple-recent-posts-blogger-plus.html" title="Simple Recent Posts Blogger Plus Thumbnails"><img class="cover" src="https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png" alt="cover" title="cover" itemprop="image"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Simple Recent Posts Blogger Plus Thumbnails</div></div></a></div><div><a href="/2017/10/cara-membuat-file-peta-situs-untuk.html" title="Cara Membuat File Peta Situs untuk Situs Web HTML Anda"><img class="cover" src="https://cdn.woorkup.com/wp-content/uploads/2013/09/xml-sitemap-html.jpg" alt="cover" title="cover" itemprop="image"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-02</div><div class="title">Cara Membuat File Peta Situs untuk Situs Web HTML Anda</div></div></a></div><div><a href="/2017/10/cara-menggunakan-alat-webmaster-yandex.html" title="Cara Menggunakan Alat Webmaster Yandex"><img class="cover" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-yandex-1024x513.png" alt="cover" title="cover" itemprop="image"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-08-08</div><div class="title">Cara Menggunakan Alat Webmaster Yandex</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar" title="avatar" itemprop="image"></div><div class="author-info__name">Dimas Lanjaka</div><div class="author-info__description">Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1645</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">126</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYQ==" rel="nofollow noopener noreferer noreferrer external" target="_blank" title="Github" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:dimaslanjaka@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9mYWNlYm9vay5jb20vZGltYXNsYW5qYWthMQ==" rel="nofollow noopener noreferer noreferrer external" target="_blank" title="Facebook" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit"><i class="fab fa-facebook" style="color: #4267B2;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#h2_e1b0_0"><span class="toc-number">1.</span> <span class="toc-text">Mengapa Anda harus menggunakan RawGit CDN (Content Delivery Network)?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#h3_e1b0_0"><span class="toc-number">1.1.</span> <span class="toc-text">Cara membuat akun GitHub?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h3_e1b0_1"><span class="toc-number">1.2.</span> <span class="toc-text">Cara membuat repositori?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h3_e1b0_2"><span class="toc-number">1.3.</span> <span class="toc-text">Cara membuat sebuah proyek GitHub untuk host JavaScript atau CSS file?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h3_e1b0_3"><span class="toc-number">1.4.</span> <span class="toc-text">Bagaimana untuk membuat link URL default GitHub dengan RawGit CDN untuk unlimited Bandwidth?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#h2_e1b0_1"><span class="toc-number">2.</span> <span class="toc-text">Membungkus</span></a></li></ol></div></div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2188063137129806" data-ad-slot="3295872825" data-ad-format="auto" data-full-width-responsive="true"></ins><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/08/pyside6-button-click-open-new-window.html" title="PySide6 button click open new window"><img src="https://www.pythonguis.com/static/tutorials/start/creating-multiple-windows/window7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PySide6 button click open new window" title="PySide6 button click open new window" itemprop="image"></a><div class="content"><a class="title" href="/2024/08/pyside6-button-click-open-new-window.html" title="PySide6 button click open new window">PySide6 button click open new window</a><time datetime="2024-08-24T12:01:29.000Z" title="Created 2024-08-24 19:01:29">2024-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/pyside6-autocomplete-input-text.html" title="PySide6 autocomplete input text"><img src="https://i.ibb.co.com/z2tJxm9/image.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PySide6 autocomplete input text" title="PySide6 autocomplete input text" itemprop="image"></a><div class="content"><a class="title" href="/2024/08/pyside6-autocomplete-input-text.html" title="PySide6 autocomplete input text">PySide6 autocomplete input text</a><time datetime="2024-08-16T21:58:32.000Z" title="Created 2024-08-17 04:58:32">2024-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/mobile-legend-to-the-stars-event.html" title="Mobile Legends To The Stars Event Clue"><img src="https://i.ytimg.com/vi/UcITM0EZCHQ/maxresdefault.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mobile Legends To The Stars Event Clue" title="Mobile Legends To The Stars Event Clue" itemprop="image"></a><div class="content"><a class="title" href="/2024/06/mobile-legend-to-the-stars-event.html" title="Mobile Legends To The Stars Event Clue">Mobile Legends To The Stars Event Clue</a><time datetime="2024-06-01T03:14:14.000Z" title="Created 2024-06-01 10:14:14">2024-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/php-generate-random-proxy-ipport-from-cidr.html" title="[PHP] generate random proxy IP:PORT from CIDR"><img src="https://rawcdn.githack.com/dimaslanjaka/public-source/6a0117ddb2ea327c80dbcc7327cceca1e1b7794e/images/no-image-svgrepo-com.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[PHP] generate random proxy IP:PORT from CIDR" title="[PHP] generate random proxy IP:PORT from CIDR" itemprop="image"></a><div class="content"><a class="title" href="/2024/05/php-generate-random-proxy-ipport-from-cidr.html" title="[PHP] generate random proxy IP:PORT from CIDR">[PHP] generate random proxy IP:PORT from CIDR</a><time datetime="2024-05-10T04:47:10.000Z" title="Created 2024-05-10 11:47:10">2024-05-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/php-generate-big-text-file-for-testing-purpose.html" title="[PHP] generate big text file for testing purpose"><img src="https://rawcdn.githack.com/dimaslanjaka/public-source/6a0117ddb2ea327c80dbcc7327cceca1e1b7794e/images/no-image-svgrepo-com.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[PHP] generate big text file for testing purpose" title="[PHP] generate big text file for testing purpose" itemprop="image"></a><div class="content"><a class="title" href="/2024/05/php-generate-big-text-file-for-testing-purpose.html" title="[PHP] generate big text file for testing purpose">[PHP] generate big text file for testing purpose</a><time datetime="2024-05-10T02:04:23.000Z" title="Created 2024-05-10 09:04:23">2024-05-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">©2014 - 2024 By Dimas Lanjaka</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9oZXhvLmlv" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2plcnJ5YzEyNy9oZXhvLXRoZW1lLWJ1dHRlcmZseQ==" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/tw_cn.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/page/assets/js/highlight.js"></script><div style="display: none"><div id="top-ge-counter-container" data-site-id="113359"></div><script async="" src="//counter.top.ge/counter.js"></script><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?3860842&amp;101" alt="myspace tracker" border="0" title="myspace tracker" itemprop="image"></a></div><script async="" type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script> <script> (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => { basicSubscriptions.init({ type: "NewsArticle", isPartOfType: ["Product"], isPartOfProductId: "CAow3ImsDA:openaccess", clientOptions: { theme: "light", lang: "en" }, }); }); </script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/search/local-search.min.js"></script></div></div>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+  <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mb-4">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/logo.svg" class="h-8" alt="WMI Logo" title="WMI Logo" itemprop="image">
+      <span class="text-2xl font-semibold whitespace-nowrap dark:text-white">WMI</span>
+    </a>
+    <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        
+        
+          
+            
+              <a href="/about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+            
+          
+            
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Privacy Policy</a>
+            
+          
+            
+              <a href="https://www.webmanajemen.com/p/tos.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Terms Of Service</a>
+            
+          
+            
+              <a href="/contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+            
+          
+            
+              <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                  Games
+                  <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+                  </svg>
+                </button>
+                
+                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                  <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                    
+                      
+                        <li>
+                          <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Quiz The Legend Of Neverland</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">PHP Proxy Hunter</a>
+                        </li>
+                      
+                    
+                      
+                    
+                  </ul>
+                  
+                    
+                  
+                    
+                  
+                    
+                      <div class="py-1">
+                        <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Python Proxy Hunter</a>
+                      </div>
+                    
+                  
+                </div>
+              </li>
+            
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <main class="mx-4">
+      
+  <div class="w-full mx-auto max-w-8xl">
+    <div class="flex w-full">
+      <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+        
+        <div id="accordion-collapse-metadata" data-accordion="collapse">
+          <h2 id="accordion-post-metadata">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-metadata-body" aria-expanded="false" aria-controls="accordion-post-metadata-body">
+              <span class="font-bold tracking-tight text-gray-900 dark:text-white">Cara Host CSS dan JavaScript file di Github dengan Rawgit - WMI</span>
+              <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
+            <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+              <p class="text-gray-500 dark:text-gray-400">Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus</p>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="p-5"><span class="flex items-center mb-2 text-sm text-gray-600 dark:text-gray-400">
+    <i class="far fa-folder mr-1"></i>
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/programming/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">programming</span>
+        </a>
+      </span>
+      <span class="mr-4"></span>
+    <span class="flex items-center">
+      <i class="far fa-tags mr-1"></i>
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/tips-tricks/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">tips &amp; tricks</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/blogging/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">blogging</span>
+          </a>
+        </span>
+    </span>
+</span>
+</div>
+        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><p><span id="span_e1b0_0"><span id="span_e1b0_1" lang="id">Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus pada konten berkualitas tinggi tetapi juga pada kecepatan loading blog.&nbsp;</span><span id="span_e1b0_2" lang="id">Jika blog Anda beban kecepatan ini tidak baik.&nbsp;</span><span id="span_e1b0_3" lang="id">Maka pengunjung blog Anda akan mulai untuk meninggalkan blog Anda pada kunjungan pertama dan akan pindah ke beberapa blog untuk artikel yang sama.</span></span><br><br></p><div id="onPageAds" len="1"></div><span id="span_e1b0_4"><span id="span_e1b0_5" lang="id">Dalam tutorial ini, saya akan memperkenalkan Anda penyedia layanan CDN gratis baru yakni, RawGit(by MaxCDN) yang adalah alat sumber terbuka yang menyajikan raw file langsung dari GitHub dengan header Content-Type yang benar.&nbsp;</span><span id="span_e1b0_6" lang="id">Dan juga, menjelaskan kepada Anda bagaimana untuk mengatur untuk terbatas bandwidth menggunakan GitHub.&nbsp;</span><span id="span_e1b0_7" lang="id">Tetapi sebelum ini, izinkan saya menjelaskan sesuatu tentang keuntungan,</span></span><br><br><h2 id="h2_e1b0_0" lang="id" len="58">Mengapa Anda harus menggunakan RawGit CDN (Content Delivery Network)?</h2><div id="div_e1b0_0" lang="id" len="261">CDN, singkatan dari pengiriman konten jaringan, adalah sistem secara luas didistribusikan beberapa server di berbagai lokasi di seluruh dunia yang membantu dalam memberikan isi statis seperti CSS, JavaScript, dan gambar ke pengguna berdasarkan lokasi geografis pengguna.</div><div id="div_e1b0_1" len="19"><br id="br_e1b0_2" len="0"><div id="div_e1b0_2" len="1"></div></div><img border="0" id="img_e1b0_0" len="0" max-height="286" src="https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png" width="640" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" itemprop="image"><br><span id="span_e1b0_8" lang="id">1. ini akan meningkatkan waktu-pembukaannya dari blog atau situs Anda dengan melayani konten halaman web Anda untuk pengguna berdasarkan lokasi mereka.</span><br><span id="span_e1b0_9" lang="id">2. ini akan mengurangi jumlah bandwidth.</span><br><span id="span_e1b0_10" lang="id">3. ini akan menghemat uang Anda ketika Anda menjalankan server Anda sendiri.</span><br><span id="span_e1b0_11" lang="id">4. akan meningkatkan pengalaman pengguna dan menurunkan tingkat pentalan blog.</span><br><br id="br_e1b0_8" len="0"><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy5taWNyb3NvZnR0cmFuc2xhdG9yLmNvbS9idi5hc3B4P2Zyb209JmFtcDt0bz1pZCZhbXA7YT1odHRwcyUzQSUyRiUyRnd3dy5ibG9nZ2VyLmNvbSUyRg==" id="a_e1b0_0" len="0" name="more" target="_blank" rel="nofollow noopener noreferer noreferrer external" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"></a><span id="span_e1b0_12"></span><br><h3 class="note" id="h3_e1b0_0" lang="id" len="36">Cara membuat akun GitHub?</h3><span id="span_e1b0_13"><span id="span_e1b0_14" lang="id">Pertama, arahkan ke&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2pvaW4/cmV0dXJuX3RvPWh0dHBzOi8vZ2lzdC5naXRodWIuY29tLz9zaWdudXA9dHJ1ZQ==" id="a_e1b0_1" len="6" rel="nofollow noopener noreferer noreferrer external" target="_blank" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">GitHub</a>&nbsp;dan di sana, Anda harus mengikuti 3 langkah untuk membuat akun pribadi.&nbsp;</span><span id="span_e1b0_15" lang="id">Hanya melakukan seperti biasa.&nbsp;</span><span id="span_e1b0_16" lang="id">Pada langkah 2, Anda akan meminta untuk memilih sebuah rencana, kemudian pilih gratis dari daftar.</span></span><br><br id="br_e1b0_10" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" id="img_e1b0_1" len="0" max-height="286" src="https://4.bp.blogspot.com/-M0YP87Np6rY/Vo-PZICZmXI/AAAAAAAAExk/BkJVAj_PRco/s320/how_to_host_javascript_css_files_on_github_with.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><br><h3 class="note" id="h3_e1b0_1" lang="id" len="28">Cara membuat repositori?</h3><span id="span_e1b0_17"><span id="span_e1b0_18" lang="id">1. setelah berhasil mendaftar.&nbsp;</span><span id="span_e1b0_19" lang="id">Anda akan secara otomatis diarahkan ke Dashboard yang mana di sana Anda akan melihat pilihan untuk membuat repositori baru.</span></span><br><br id="br_e1b0_13" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" id="img_e1b0_2" len="0" src="https://1.bp.blogspot.com/-m_unofD9Tq8/Vo-PXjWHcmI/AAAAAAAAExE/ZR4X9Sip-Rs/s1600/how_to_host_javascript_css_files_on_github_with%2B%25281%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" itemprop="image"><br><br><div id="note" len="196"><div id="note-inner" len="167"><span id="span_e1b0_20" lang="id">Anda tidak dapat mampu menciptakan sebuah repositori sampai Anda memverifikasi rekening Anda.&nbsp;</span><span id="span_e1b0_21" lang="id">Hanya menavigasi pengaturan (terletak di sidebar kiri) &gt; email &gt; Kirim email verifikasi.</span></div></div><br id="br_e1b0_15" len="0"><a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly93d3cuYmxvZ2dlci5jb20vbnVsbA==" id="a_e1b0_2" len="0" name="more" rel="nofollow noopener noreferer noreferrer external" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit"></a><br id="br_e1b0_16" len="0"><span id="span_e1b0_22" lang="id">2. sekarang, mengisi semua bidang seperti yang dinyatakan dalam gambar di bawah,</span><br><br id="br_e1b0_18" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" id="img_e1b0_3" len="0" src="https://3.bp.blogspot.com/-1w0nAaQajLo/Vo-PXcqr_xI/AAAAAAAAExA/c0zWaFyB5SQ/s320/how_to_host_javascript_css_files_on_github_with%2B%25282%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_23"><span id="span_e1b0_24" lang="id">3. sekarang, kita perlu membuat file <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL1JFQURNRS5tZA==" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">README.md</a> yang seperti file Readme.txt yang mana Anda dapat menulis apapun.&nbsp;</span><span id="span_e1b0_25" lang="id">Dan itu sangat diperlukan.</span></span><br><div id="div_e1b0_3" len="5"><br id="br_e1b0_20" len="0"></div><div id="div_e1b0_4" len="5142"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="74" id="img_e1b0_4" len="0" src="https://4.bp.blogspot.com/-grQBYhSabkU/Vo-PXMKxRRI/AAAAAAAAExU/sQ5vYwdjRTI/s320/how_to_host_javascript_css_files_on_github_with%2B%25283%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><div id="div_e1b0_5" len="386"><br id="br_e1b0_22" len="0"><h3 class="note" id="h3_e1b0_2" lang="id" len="64">Cara membuat sebuah proyek GitHub untuk host JavaScript atau CSS file?</h3><span id="span_e1b0_26" lang="id">1. pertama-tama, arahkan ke&nbsp;<b id="b_e1b0_0" len="9">pengaturan&nbsp;</b>&gt; dan gulir ke bawah sampai Anda melihat&nbsp;<b id="b_e1b0_1" len="24">Otomatis Generator halaman</b>, kemudian klik di atasnya dan kemudian Buat halaman dengan mengisi beberapa bidang yang diperlukan dan mempublikasikannya.</span><br><br id="br_e1b0_24" len="0"><span id="span_e1b0_27" lang="id">2. sekarang, Anda dapat membuat file CSS dan JavaScript dengan hanya mengklik tombol plus(+).</span></div><div id="div_e1b0_6" len="4405"><br id="br_e1b0_25" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="117" id="img_e1b0_5" len="0" src="https://1.bp.blogspot.com/-w1ms6JB1WS8/Vo-PXwN5ZMI/AAAAAAAAExg/japIfYNv3Zo/s320/how_to_host_javascript_css_files_on_github_with%2B%25284%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_28"><span id="span_e1b0_29" lang="id">3. setiap kali, ketika Anda klik pada&nbsp;<b id="b_e1b0_2" len="14">tombol plus(+)</b>, editor kode yang akan muncul.&nbsp;</span><span id="span_e1b0_30" lang="id">Mana Anda dapat menambahkan kode Anda.&nbsp;</span><span id="span_e1b0_31" lang="id">Jangan lupa untuk menambahkan nama ekstensi seperti css atau js.&nbsp;</span><span id="span_e1b0_32" lang="id">Lihat gambar di bawah,</span></span><br><br id="br_e1b0_28" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="143" id="img_e1b0_6" len="0" src="https://1.bp.blogspot.com/-HdC5DwTfaos/Vo-PYNVmYyI/AAAAAAAAExY/l24zrAsnS2k/s320/how_to_host_javascript_css_files_on_github_with%2B%25285%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_33"><span id="span_e1b0_34" lang="id">4. sekarang, di bagian bawah halaman, Anda akan melihat&nbsp;<b id="b_e1b0_3" len="6">melakukan</b>&nbsp;tombol.&nbsp;</span><span id="span_e1b0_35" lang="id">Klik di atasnya untuk host atau mempublikasikan file Anda di web.</span></span><br><br id="br_e1b0_31" len="0"><span id="span_e1b0_36"><span id="span_e1b0_37" lang="id">5. sekarang, klik kanan pada file yang baru dibuat atau upload dan pilih&nbsp;<b id="b_e1b0_4" len="18">salin link lokasi</b>.&nbsp;</span><span id="span_e1b0_38" lang="id">Lihat gambar di bawah</span></span><br><br id="br_e1b0_33" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="245" id="img_e1b0_7" len="0" src="https://2.bp.blogspot.com/-f-MFQITvWWA/Vo-PYp7VsmI/AAAAAAAAExc/UeysUduQZOg/s320/how_to_host_javascript_css_files_on_github_with%2B%25286%2529.png" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="320" itemprop="image"><br><span id="span_e1b0_39"><span id="span_e1b0_40" lang="id">6. dan kemudian paste link disalin ke Notepad Anda.&nbsp;</span><span id="span_e1b0_41" lang="id">Anda menyalin link akan sesuatu seperti di bawah ini,</span></span><br><br id="br_e1b0_36" len="0"><pre class="code" id="pre_e1b0_0" len="72"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL3dvb3RoZW1lcy9GbGV4U2xpZGVyL2Jsb2IvbWFzdGVyL2pxdWVyeS5mbGV4c2xpZGVyLmpz">https://github.com/woothemes/FlexSlider/blob/master/jquery.flexslider.js</a></pre><br id="br_e1b0_37" len="0"><h3 class="note" id="h3_e1b0_3" lang="id" len="76">Bagaimana untuk membuat link URL default GitHub dengan RawGit CDN untuk unlimited Bandwidth?</h3><span id="span_e1b0_42" lang="id">1. pertama-tama, navigasikan ke website resmi&nbsp;<a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9yYXdnaXQuY29tLw==" id="a_e1b0_3" len="6" rel="nofollow noopener noreferer noreferrer external" target="_blank" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Rawgit</a>&nbsp;.</span><br><br id="br_e1b0_39" len="0"><span id="span_e1b0_43"><span id="span_e1b0_44" lang="id">2. Anda akan melihat ada beberapa Field input.&nbsp;</span><span id="span_e1b0_45" lang="id">Selanjutnya, tempelkan default GitHub Link (yang Anda disalin pada Notepad) di&nbsp;<b id="b_e1b0_5" len="17">pertama field input</b></span></span>.<br><br id="br_e1b0_41" len="0"><span id="span_e1b0_46"><span id="span_e1b0_47" lang="id">3. RawGit akan memberikan Anda dua berbeda link pertama satu untuk lalu lintas yang terbatas dan yang kedua untuk lalu lintas terbatas atau produksi.&nbsp;</span><span id="span_e1b0_48" lang="id">Kemudian salin atau menggunakan<b id="b_e1b0_6" len="9">&nbsp;2 link</b>&nbsp;yang&nbsp;<b id="b_e1b0_7" len="14">untuk produksi</b>.&nbsp;</span><span id="span_e1b0_49" lang="id">Lihat gambar di bawah,</span></span><br><br id="br_e1b0_43" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="96" id="img_e1b0_8" len="0" src="https://3.bp.blogspot.com/-n0JPVRlVfws/Vo-biSOPwuI/AAAAAAAAExw/sGW_EVQxWWc/s640/host%2Bjavascript%2Bfiles%2Bwith%2Bfree%2BCDn%2Bfo%2Bmaxcdn%2Bfor%2Bblogger%252C%2Bwordpress%2Bwith%2Bunlimited%2Bbandwidth.PNG" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="640" itemprop="image"><br><span id="span_e1b0_50"><span id="span_e1b0_51" lang="id">Sekarang file JavaScript Anda sudah siap untuk digunakan pada blogger blog atau website Anda.&nbsp;</span><span id="span_e1b0_52" lang="id">Hanya menggunakan di bawah seperti tag,</span></span><br><br id="br_e1b0_46" len="0"><pre class="code" id="pre_e1b0_1" len="87"> &lt;script src=“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Nkbi5yYXdnaXQuY29t">cdn.rawgit.com</a>…js” type=“text/javascript”&gt;&lt;/script&gt;</pre><br id="br_e1b0_47" len="0"><div id="note" len="794"><div id="note-inner" len="765"><span id="span_e1b0_53"><span id="span_e1b0_54" lang="id">Selalu menggunakan RawGit URL untuk produksi (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Nkbi5yYXdnaXQuY29t" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">cdn.rawgit.com</a>) bukan untuk pengujian dev (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3Jhd2dpdC5jb20=" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">rawgit.com</a>).&nbsp;</span><span id="span_e1b0_55" lang="id">Karena, pertama menghasilkan URL yang dapat Anda lihat pada gambar di atas adalah untuk hanya pengujian tujuan atau website lalu lintas yang rendah.</span></span><br><br id="br_e1b0_49" len="0"><span id="span_e1b0_56" lang="id">Jika Anda menggunakan pengujian dev URL (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3Jhd2dpdC5jb20=" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">rawgit.com</a>) bukan URL untuk produksi (<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2Nkbi5yYXdnaXQuY29t" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">cdn.rawgit.com</a>), RawGit akan menampilkan pop up pesan peringatan seperti berikut,</span><br><br id="br_e1b0_51" len="0"><img alt="How To Host CSS, JavaScript Files on Github with Rawgit" border="0" height="67" id="img_e1b0_9" len="0" src="https://4.bp.blogspot.com/-HxTt3qhTMPU/Vo-hwmEmt1I/AAAAAAAAEyA/0e_BspBUXvA/s400/host%2Bjavascript%2Bfiles%2Bwith%2Bfree%2BCDn%2Bfo%2Bmaxcdn%2Bfor%2Bblogger%252C%2Bwordpress%2Bwith%2Bunlimited%2Bbandwidth.PNG" title="How To Host CSS, JavaScript Files on Github with Rawgit" width="400" itemprop="image"></div></div><br id="br_e1b0_52" len="0"><h2 id="h2_e1b0_1" lang="id" len="12">Membungkus</h2><span id="span_e1b0_57" lang="id">Jika blog Anda semakin banyak lalu lintas, maka itu adalah waktu terbaik untuk menggunakan jaringan pengiriman konten yang dapat menangani semua bandwidth Anda dengan caching semua file dari situs Anda dan memberikan mereka berdasarkan lokasi pengguna.</span><br><br id="br_e1b0_54" len="0"><span id="span_e1b0_58"><span id="span_e1b0_59" lang="id">Tersedia satu ton plugin untuk WordPress yang dapat menginstal hanya dalam beberapa klik.&nbsp;</span><span id="span_e1b0_60" lang="id">Dan tidak hanya untuk Blogger.&nbsp;</span><span id="span_e1b0_61" lang="id">Jadi, kita tahu bahwa 'kebutuhan adalah ibu penemuan.&nbsp;</span><span id="span_e1b0_62" lang="id">Saya telah diteliti pada menggunakan pencarian google dan menemukan ide ini menggunakan MaxCDN untuk hosting file statis gratis dengan bandwidth yang terbatas secara tidak langsung.</span></span><br><br id="br_e1b0_56" len="0"><span id="span_e1b0_63" lang="id">Terima kasih!</span></div></div>
+</div>
+        
+
+  <div class="container mx-auto px-2 py-4">
+    <h5 class="text-xl font-bold mb-4 text-center">Gallery - Cara Host CSS dan JavaScript file di Github dengan Rawgit</h5>
+    <div class="masonry-grid">
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png" id="image-1" alt="Gallery Image 1" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 1" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-1">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://4.bp.blogspot.com/-M0YP87Np6rY/Vo-PZICZmXI/AAAAAAAAExk/BkJVAj_PRco/s320/how_to_host_javascript_css_files_on_github_with.png" id="image-2" alt="Gallery Image 2" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 2" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-2">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://1.bp.blogspot.com/-m_unofD9Tq8/Vo-PXjWHcmI/AAAAAAAAExE/ZR4X9Sip-Rs/s1600/how_to_host_javascript_css_files_on_github_with%2B%25281%2529.png" id="image-3" alt="Gallery Image 3" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 3" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-3">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://3.bp.blogspot.com/-1w0nAaQajLo/Vo-PXcqr_xI/AAAAAAAAExA/c0zWaFyB5SQ/s320/how_to_host_javascript_css_files_on_github_with%2B%25282%2529.png" id="image-4" alt="Gallery Image 4" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 4" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-4">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://4.bp.blogspot.com/-grQBYhSabkU/Vo-PXMKxRRI/AAAAAAAAExU/sQ5vYwdjRTI/s320/how_to_host_javascript_css_files_on_github_with%2B%25283%2529.png" id="image-5" alt="Gallery Image 5" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 5" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-5">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://1.bp.blogspot.com/-w1ms6JB1WS8/Vo-PXwN5ZMI/AAAAAAAAExg/japIfYNv3Zo/s320/how_to_host_javascript_css_files_on_github_with%2B%25284%2529.png" id="image-6" alt="Gallery Image 6" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 6" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-6">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://1.bp.blogspot.com/-HdC5DwTfaos/Vo-PYNVmYyI/AAAAAAAAExY/l24zrAsnS2k/s320/how_to_host_javascript_css_files_on_github_with%2B%25285%2529.png" id="image-7" alt="Gallery Image 7" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 7" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-7">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://2.bp.blogspot.com/-f-MFQITvWWA/Vo-PYp7VsmI/AAAAAAAAExc/UeysUduQZOg/s320/how_to_host_javascript_css_files_on_github_with%2B%25286%2529.png" id="image-8" alt="Gallery Image 8" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 8" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-8">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://3.bp.blogspot.com/-n0JPVRlVfws/Vo-biSOPwuI/AAAAAAAAExw/sGW_EVQxWWc/s640/host%2Bjavascript%2Bfiles%2Bwith%2Bfree%2BCDn%2Bfo%2Bmaxcdn%2Bfor%2Bblogger%252C%2Bwordpress%2Bwith%2Bunlimited%2Bbandwidth.PNG" id="image-9" alt="Gallery Image 9" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 9" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-9">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="https://4.bp.blogspot.com/-HxTt3qhTMPU/Vo-hwmEmt1I/AAAAAAAAEyA/0e_BspBUXvA/s400/host%2Bjavascript%2Bfiles%2Bwith%2Bfree%2BCDn%2Bfo%2Bmaxcdn%2Bfor%2Bblogger%252C%2Bwordpress%2Bwith%2Bunlimited%2Bbandwidth.PNG" id="image-10" alt="Gallery Image 10" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 10" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-10">View</button>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+        
+  <div class="border-t border-gray-300 dark:border-gray-600"></div>
+  <div class="flex justify-between items-center py-4">
+    <div class="post-nav-item">
+        <a href="/2017/09/css-sticky-fixed-footer.html" rel="prev" title="CSS Sticky Fixed Footer" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <i class="fa fa-angle-left mr-2"></i> CSS Sticky Fixed Footer
+        </a>
+    </div>
+    <div class="post-nav-item">
+        <a href="/2017/09/cara-menggunakan-directory-bind-android.html" rel="next" title="Cara menggunakan Directory Bind Android" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          Cara menggunakan Directory Bind Android <i class="fa fa-angle-right ml-2"></i>
+        </a>
+    </div>
+  </div>
+  <div class="border-b border-gray-300 dark:border-gray-600"></div>
+
+        
+  <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+            var disqus_config = function (){
+              this.page.url = 'https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html';
+              this.page.identifier = 'https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html';
+            };
+
+            (function() {
+            var d = document, s = d.createElement('script');
+            s.type = 'text/javascript'; s.async = true;
+            s.src = 'https://dimaslanjaka.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9kaXNxdXMuY29tLz9yZWZfbm9zY3JpcHQ=" rel="nofollow noopener noopener">comments powered by Disqus.</a></noscript>
+  </div>
+
+
+        
+      </main>
+      <div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm lg:block">
+        <div class="flex overflow-y-auto sticky top-5 flex-col justify-between">
+          
+          <div id="accordion-collapse-aside" data-accordion="collapse">
+            
+              <h2 id="accordion-post-toc">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-toc-body" aria-expanded="false" aria-controls="accordion-post-toc-body">
+                  <span><i class="fa-light fa-table mr-2"></i> On this page</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-toc-body" class="hidden" aria-labelledby="accordion-post-toc">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                  <nav id="TableOfContents">
+                    <ul class="toc">
+                        <li>
+                          <a href="#mengapa-anda-harus-menggunakan-rawgit-cdn-(content-delivery-network)?">Mengapa Anda harus menggunakan RawGit CDN (Content Delivery Network)?</a>
+                            <ul>
+                                <li>
+                                  <a href="#cara-membuat-akun-github?">Cara membuat akun GitHub?</a>
+                                </li>
+                                <li>
+                                  <a href="#cara-membuat-repositori?">Cara membuat repositori?</a>
+                                </li>
+                                <li>
+                                  <a href="#cara-membuat-sebuah-proyek-github-untuk-host-javascript-atau-css-file?">Cara membuat sebuah proyek GitHub untuk host JavaScript atau CSS file?</a>
+                                </li>
+                                <li>
+                                  <a href="#bagaimana-untuk-membuat-link-url-default-github-dengan-rawgit-cdn-untuk-unlimited-bandwidth?">Bagaimana untuk membuat link URL default GitHub dengan RawGit CDN untuk unlimited Bandwidth?</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#membungkus">Membungkus</a>
+                        </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            
+              <h2 id="accordion-post-tags">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-tags-body" aria-expanded="false" aria-controls="accordion-post-tags-body">
+                  <span><i class="fa-duotone fa-solid fa-tags mr-2"></i> Tags</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-tags-body" class="hidden" aria-labelledby="accordion-post-tags">
+                <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                  <div class="flex flex-wrap justify-center">
+                      <a href="/tags/tips-tricks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tips &amp; tricks</a>
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/github/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github</a>
+                      <a href="/tags/github-actions-workflow/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github-actions-workflow</a>
+                      <a href="/tags/matrix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> matrix</a>
+                      <a href="/tags/snippet/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> snippet</a>
+                      <a href="/tags/yaml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> yaml</a>
+                      <a href="/tags/shell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> shell</a>
+                      <a href="/tags/workflows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> workflows</a>
+                      <a href="/tags/tips-tricks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tips &amp; tricks</a>
+                      <a href="/tags/bash/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bash</a>
+                      <a href="/tags/android/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> android</a>
+                      <a href="/tags/webview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webview</a>
+                      <a href="/tags/java/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> java</a>
+                      <a href="/tags/minecraft/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> minecraft</a>
+                      <a href="/tags/regexp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regexp</a>
+                      <a href="/tags/regular-expression/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regular expression</a>
+                      <a href="/tags/vscode/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vscode</a>
+                      <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
+                      <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
+                      <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
+                      <a href="/tags/eslint/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> eslint</a>
+                      <a href="/tags/jest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> jest</a>
+                      <a href="/tags/npm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> npm</a>
+                      <a href="/tags/prettier/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> prettier</a>
+                      <a href="/tags/springboot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> springboot</a>
+                      <a href="/tags/webflux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webflux</a>
+                      <a href="/tags/mocha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mocha</a>
+                      <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
+                      <a href="/tags/react/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> react</a>
+                      <a href="/tags/json/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> json</a>
+                      <a href="/tags/typeerror/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typeerror</a>
+                      <a href="/tags/games/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> games</a>
+                      <a href="/tags/seven-knight/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seven knight</a>
+                      <a href="/tags/bluestacks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bluestacks</a>
+                      <a href="/tags/game-control/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> game control</a>
+                      <a href="/tags/the-legend-of-neverland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> the legend of neverland</a>
+                      <a href="/tags/life-skill/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> life skill</a>
+                      <a href="/tags/macros/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> macros</a>
+                      <a href="/tags/midi/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> midi</a>
+                      <a href="/tags/event/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> event</a>
+                      <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>
+                      <a href="/tags/scala/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scala</a>
+                      <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
+                      <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
+                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
+                      <a href="/tags/download/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> download</a>
+                      <a href="/tags/drama/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> drama</a>
+                      <a href="/tags/movie/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> movie</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
+                      <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
+                      <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
+                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
+                      <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
+                      <a href="/tags/script/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> script</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
+                      <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
+                      <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
+                      <a href="/tags/mysql/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mysql</a>
+                      <a href="/tags/movies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> movies</a>
+                      <a href="/tags/linux-unix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux/unix</a>
+                      <a href="/tags/marketing-strategies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> marketing strategies</a>
+                      <a href="/tags/durango/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> durango</a>
+                      <a href="/tags/software/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> software</a>
+                      <a href="/tags/musics/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> musics</a>
+                      <a href="/tags/fonts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> fonts</a>
+                      <a href="/tags/regedit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regedit</a>
+                      <a href="/tags/windows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> windows</a>
+                      <a href="/tags/proxy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proxy</a>
+                      <a href="/tags/share/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> share</a>
+                      <a href="/tags/gradle/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> gradle</a>
+                      <a href="/tags/kotlin/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> kotlin</a>
+                      <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
+                      <a href="/tags/genshin-impact/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> genshin impact</a>
+                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
+                      <a href="/tags/xml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xml</a>
+                      <a href="/tags/templates/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> templates</a>
+                      <a href="/tags/themes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> themes</a>
+                      <a href="/tags/powershell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> powershell</a>
+                      <a href="/tags/apache/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> apache</a>
+                      <a href="/tags/xampp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xampp</a>
+                      <a href="/tags/recaptcha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recaptcha</a>
+                      <a href="/tags/qfil/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> qfil</a>
+                      <a href="/tags/firmware/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> firmware</a>
+                      <a href="/tags/scripts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scripts</a>
+                      <a href="/tags/hyperlink/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hyperlink</a>
+                      <a href="/tags/rollback/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> rollback</a>
+                      <a href="/tags/linux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux</a>
+                      <a href="/tags/python/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> python</a>
+                      <a href="/tags/test/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> test</a>
+                      <a href="/tags/coverage/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> coverage</a>
+                      <a href="/tags/hexo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo</a>
+                      <a href="/tags/random/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> random</a>
+                      <a href="/tags/net/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> net</a>
+                      <a href="/tags/ejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ejs</a>
+                      <a href="/tags/nunjucks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nunjucks</a>
+                      <a href="/tags/hexo-shortcodes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo-shortcodes</a>
+                      <a href="/tags/codepen/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codepen</a>
+                      <a href="/tags/markdown/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> markdown</a>
+                      <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
+                      <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
+                      <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
+                      <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
+                      <a href="/tags/mobile-legends/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mobile legends</a>
+                      <a href="/tags/pyside6/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> pyside6</a>
+                      <a href="/tags/chest-location/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chest location</a>
+                      <a href="/tags/quest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> quest</a>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+          
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2188063137129806" data-ad-slot="1136979979" data-ad-format="auto" data-full-width-responsive="true" data-adtest="on"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </main>
+    <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">WMI™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+      
+        
+          
+            <li>
+              <a href="/about" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Privacy Policy</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Cara Host CSS dan JavaScript file di Github dengan Rawgit" title="Cara Host CSS dan JavaScript file di Github dengan Rawgit">Terms Of Service</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact" class="hover:underline me-4 md:me-6">Contact</a>
+            </li>
+          
+        
+          
+        
+      
+    </ul>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="/js/script.js"></script>
+    
+  
 <script src="/hexo-shortcodes-lib/githubcard.js"></script>
 <link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
 
-      </body></html>
+      
+
+</body></html>

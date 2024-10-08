@@ -14,11 +14,16 @@ SCRIPT_DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
-case `uname` in
+# Detect Cygwin or MinGW
+case "$(uname)" in
   *CYGWIN*)
-    basedir=`cygpath -w "$basedir"`
+    basedir=$(cygpath -w "$basedir")
     # make cygwin bin as priority
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+    ;;
+  *MINGW*)
+    # make mingw bin as priority
+    export PATH="/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
     ;;
 esac
 

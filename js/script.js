@@ -61385,6 +61385,110 @@
             preloaderMini.style.display = "none";
     }
 
+    /**
+     * Initializes the navigation menu, handling both mobile and desktop interactions.
+     *
+     * - Toggles the mobile menu visibility when the corresponding button is clicked.
+     * - Handles submenu interactions for desktop, showing and hiding submenus on mouse enter and leave.
+     * - Handles submenu toggling for mobile, allowing users to click on links to show/hide submenus.
+     *
+     * @returns This function does not return a value.
+     */
+    function initNavigationMenu() {
+        var mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenuButton && mobileMenu) {
+            if (!mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+            }
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.toggle("hidden");
+            });
+        }
+        // Handle submenu interactions for desktop
+        var navItems = document.querySelectorAll(".relative.group");
+        if (navItems) {
+            navItems.forEach(function (item) {
+                var icon = item.querySelector("i");
+                item.addEventListener("mouseenter", function () {
+                    var submenu = item.querySelector(".absolute");
+                    if (submenu)
+                        submenu.classList.remove("hidden");
+                    if (icon) {
+                        icon.classList.remove("fa-caret-down");
+                        icon.classList.add("fa-caret-up");
+                    }
+                });
+                item.addEventListener("mouseleave", function () {
+                    var submenu = item.querySelector(".absolute");
+                    if (submenu)
+                        submenu.classList.add("hidden");
+                    if (icon) {
+                        icon.classList.remove("fa-caret-up");
+                        icon.classList.add("fa-caret-down");
+                    }
+                });
+            });
+            // Handle submenu toggle for mobile
+            navItems.forEach(function (item) {
+                var link = item.querySelector("a");
+                var icon = item.querySelector("i");
+                // Add a click event listener to toggle submenu
+                link.addEventListener("click", function (e) {
+                    var submenu = item.querySelector(".absolute");
+                    if (submenu) {
+                        // Prevent default navigation behavior if submenu exists
+                        e.preventDefault();
+                        // Check if submenu is already visible
+                        if (submenu.classList.contains("hidden")) {
+                            // Hide all other open submenus first
+                            closeAllSubmenus(navItems);
+                            // Show the current submenu
+                            submenu.classList.remove("hidden");
+                            // Toggle the caret icon
+                            if (icon) {
+                                icon.classList.remove("fa-caret-down");
+                                icon.classList.add("fa-caret-up");
+                            }
+                        }
+                        else {
+                            // Hide the current submenu if it's already visible
+                            submenu.classList.add("hidden");
+                            // Reset the caret icon
+                            if (icon) {
+                                icon.classList.remove("fa-caret-up");
+                                icon.classList.add("fa-caret-down");
+                            }
+                        }
+                    }
+                    else {
+                        // If no submenu exists, follow the link's default behavior
+                        window.location.href = link.getAttribute("href");
+                    }
+                });
+            });
+        }
+    }
+    /**
+     * Closes all open submenus and resets their icons to indicate closed state.
+     *
+     * @param navItems - A NodeList of navigation items containing submenus.
+     * @returns This function does not return a value.
+     */
+    function closeAllSubmenus(navItems) {
+        navItems.forEach(function (item) {
+            var submenu = item.querySelector(".absolute");
+            var icon = item.querySelector("i");
+            if (submenu && !submenu.classList.contains("hidden")) {
+                submenu.classList.add("hidden");
+                if (icon) {
+                    icon.classList.remove("fa-caret-up");
+                    icon.classList.add("fa-caret-down");
+                }
+            }
+        });
+    }
+
     function initToc() {
         // Table of content click event
         // Select all TOC links
@@ -61419,17 +61523,7 @@
         initFancybox();
         initToc();
         initClickable();
-        // layout/partials/nav.njk
-        var mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');
-        var mobileMenu = document.getElementById("mobile-menu");
-        if (mobileMenuButton && mobileMenu) {
-            if (!mobileMenu.classList.contains("hidden")) {
-                mobileMenu.classList.add("hidden");
-            }
-            mobileMenuButton.addEventListener("click", function () {
-                mobileMenu.classList.toggle("hidden");
-            });
-        }
+        initNavigationMenu();
     });
     window.addEventListener("load", function () {
         // fix: loader not hidden after page load

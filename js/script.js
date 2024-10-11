@@ -61488,6 +61488,57 @@
             }
         });
     }
+    function initSearch() {
+        // Open and close the search modal
+        var searchModal = document.getElementById("searchModal");
+        var openSearchBtn = document.getElementById("openSearchModal");
+        var closeSearchBtn = document.getElementById("closeSearchModal");
+        openSearchBtn.addEventListener("click", function () {
+            searchModal.classList.remove("hidden");
+        });
+        closeSearchBtn.addEventListener("click", function () {
+            searchModal.classList.add("hidden");
+        });
+        // Search functionality
+        document.getElementById("searchInput").addEventListener("input", function () {
+            return __awaiter(this, void 0, void 0, function () {
+                var query, metaTag, searchUrl, response, searchData, results, resultsContainer_1;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            query = this.value.toLowerCase();
+                            metaTag = document.querySelector('meta[name="search"]');
+                            searchUrl = metaTag ? metaTag.getAttribute("content") : null;
+                            if (!searchUrl) return [3 /*break*/, 3];
+                            return [4 /*yield*/, fetch(searchUrl)];
+                        case 1:
+                            response = _a.sent();
+                            return [4 /*yield*/, response.json()];
+                        case 2:
+                            searchData = _a.sent();
+                            results = searchData.filter(function (item) {
+                                return item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query);
+                            });
+                            resultsContainer_1 = document.getElementById("searchResults");
+                            resultsContainer_1.innerHTML = "";
+                            if (results.length > 0) {
+                                results.forEach(function (result) {
+                                    var resultItem = document.createElement("div");
+                                    resultItem.className = "p-2 hover:bg-gray-700";
+                                    resultItem.innerHTML = "\n        <a href=\"".concat(result.url, "\" class=\"block text-sm font-medium text-white\">").concat(result.title, "</a>\n        <p class=\"text-sm text-gray-400\">").concat(result.description, "</p>\n      ");
+                                    resultsContainer_1.appendChild(resultItem);
+                                });
+                            }
+                            else {
+                                resultsContainer_1.innerHTML = '<p class="p-2 text-gray-400">No results found</p>';
+                            }
+                            _a.label = 3;
+                        case 3: return [2 /*return*/];
+                    }
+                });
+            });
+        });
+    }
 
     function initToc() {
         // Table of content click event
@@ -61524,6 +61575,7 @@
         initToc();
         initClickable();
         initNavigationMenu();
+        initSearch();
     });
     window.addEventListener("load", function () {
         // fix: loader not hidden after page load

@@ -61372,6 +61372,16 @@
         }
     }
 
+    function initKatex() {
+        var hasKatexClass = document.body.querySelector('[class^="katex-"]');
+        if (hasKatexClass) {
+            var link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = "https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css";
+            document.head.appendChild(link);
+        }
+    }
+
     /**
      * loading animation remover.
      * this should run inside `window.addEventListener("load"` or in global scope
@@ -61576,6 +61586,7 @@
         initClickable();
         initNavigationMenu();
         initSearch();
+        initKatex();
     });
     window.addEventListener("load", function () {
         // fix: loader not hidden after page load

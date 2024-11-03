@@ -1,19 +1,13 @@
 console.clear();
 
-/* eslint-disable no-undef */
 /* eslint-disable no-prototype-builtins */
-/* eslint-disable no-inner-declarations */
 
 if (location.host == 'cdpn.io') {
   console.clear();
 
   function rangeAlphabetic(start, stop) {
     var result = [];
-    for (
-      var idx = start.charCodeAt(0), end = stop.charCodeAt(0);
-      idx <= end;
-      ++idx
-    ) {
+    for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
       result.push(String.fromCharCode(idx));
     }
     return result;
@@ -79,17 +73,12 @@ function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
 
-let quizUrls = [
-  'https://raw.githubusercontent.com/dimaslanjaka/source-posts/posts/The%20Legend%20Of%20Neverland/Quiz/quiz.txt',
-  'https://backend.webmanajemen.com/tlon/quiz.php?show'
-];
 let quizSrc = [];
 
 function jQueryMethod() {
   // ul questions
-  //let questions = document.getElementById('questions');
-  let inputSearch = document.getElementById('search-questions');
-  //let O_only = document.getElementById('O_only');
+  const searchElementQuery = '#search-questions';
+  const inputSearch = document.querySelector(searchElementQuery);
 
   // searcher
   let searchLi = function (filter) {
@@ -147,14 +136,13 @@ function jQueryMethod() {
   };
 
   // step 1: get new question sources
-  quizUrls.forEach(function (quizUrl) {
+  function fetchQuizUrl(quizUrl) {
     let url_parse = new URL(quizUrl);
     // url_parse.search = '?uid=' + new Date();
     // console.log('parse_query_url', parse_query_url(url_parse.toString()));
     // console.log(url_parse.toString());
-
-    //console.log(quizUrl);
-    fetch(url_parse.toString())
+    // console.log(quizUrl);
+    return fetch(url_parse.toString())
       .then(function (response) {
         // The API call was successful!
         return response.text();
@@ -169,6 +157,12 @@ function jQueryMethod() {
           console.log(log);
         }
       });
+  }
+
+  fetchQuizUrl('https://backend.webmanajemen.com/tlon/quiz.php?show').catch(() => {
+    fetchQuizUrl(
+      'https://raw.githubusercontent.com/dimaslanjaka/source-posts/posts/The%20Legend%20Of%20Neverland/Quiz/quiz.txt'
+    );
   });
 
   function processResponse(data) {
@@ -200,11 +194,7 @@ function jQueryMethod() {
    * start searching
    */
   function doSearch() {
-    if (
-      inputSearch &&
-      inputSearch.value &&
-      inputSearch.value.trim().length > 0
-    ) {
+    if (inputSearch && inputSearch.value && inputSearch.value.trim().length > 0) {
       searchLi(inputSearch.value);
     }
   }
@@ -224,7 +214,7 @@ function jQueryMethod() {
     doSearch();
   });
 
-  const jqInput = jQuery(inputSearch);
+  const jqInput = jQuery(searchElementQuery);
   const inputListener = () => searchLi(jqInput.val());
   let listenerTimer;
   // on input typed and changed https://stackoverflow.com/a/7757327/6404439
@@ -255,10 +245,7 @@ function jQueryMethod() {
 }
 
 if (typeof window.jQuery === 'undefined') {
-  loadJScript(
-    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
-    jQueryMethod
-  );
+  loadJScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', jQueryMethod);
 } else {
   jQueryMethod();
 }
@@ -270,7 +257,6 @@ if (typeof window.jQuery === 'undefined') {
  * @param {string|URL} url
  * @returns {Record<string, any>|undefined}
  */
-// eslint-disable-next-line no-unused-vars
 function parse_query_url(url) {
   if (url instanceof URL) url = url.toString();
   if (typeof url !== 'string') return; //throw new Error('Please provide url');

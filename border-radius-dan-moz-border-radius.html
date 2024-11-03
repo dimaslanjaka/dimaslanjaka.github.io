@@ -1,0 +1,750 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-radius dan -moz-border-radius - WMI</title>
+    <meta name="description" content="WMI - Salah satu sifat CSS yang paling ditunggu adalahborder-radius.Perancang web tidak lagi harus menggunakan struktur tabel yang rumit">
+    <meta name="keywords" content="css,programming">
+    <meta name="search" content="/hexo-search.json">
+    <meta name="author" content="Dimas Lanjaka Kumala Indra">
+    
+    <meta property="og:title" content="border-radius dan -moz-border-radius - WMI">
+    <meta property="og:description" content="WMI - Salah satu sifat CSS yang paling ditunggu adalahborder-radius.Perancang web tidak lagi harus menggunakan struktur tabel yang rumit">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="border-radius dan -moz-border-radius - WMI">
+    <meta name="twitter:description" content="WMI - Salah satu sifat CSS yang paling ditunggu adalahborder-radius.Perancang web tidak lagi harus menggunakan struktur tabel yang rumit">
+    <meta name="twitter:image" content="">
+    <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/css/",
+        "name": "css"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/categories/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/border-radius-dan-moz-border-radius.html",
+        "name": "border-radius dan -moz-border-radius"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/border-radius-dan-moz-border-radius.html"
+    },
+    "headline": "border-radius dan -moz-border-radius",
+    "description": "Salah satu sifat CSS yang paling ditunggu adalahborder-radius.Perancang web tidak lagi harus menggunakan struktur tabel yang rumit",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://cdn.the-art-of-web.com/images/moz-border-radius.gif",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Unknown Author"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Unknown Author",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2017-09-29T19:24:00+07:00",
+    "dateModified": "2023-09-02T23:30:22+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+  <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
+    
+  
+    <div id="preloader-mini" class="fixed top-4 right-4 bg-white dark:bg-gray-900 flex items-center justify-center p-2 rounded-full z-50">
+      <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 dark:border-blue-300"></div>
+    </div>
+  
+
+
+    
+<nav class="bg-gray-900 mb-4">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Logo" class="h-8 w-auto" title="Logo" itemprop="image">
+          </a>
+          <a href="/" class="text-white text-lg font-semibold ml-2">WMI</a>
+        </div>
+      </div>
+      
+      <div class="hidden sm:block sm:ml-6">
+        <div class="flex space-x-4">
+          
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Site Overview
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+                    
+                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                    
+                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                    
+                      <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+                    
+                  </div>
+                
+              </div>
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Games
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                    
+                  </div>
+                
+              </div>
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Utilities
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                    
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                    
+                      <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
+                    
+                  </div>
+                
+              </div>
+            
+          
+        </div>
+      </div>
+      
+      <div class="relative flex items-center sm:ml-6">
+        <button id="openSearchModal" class="p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white">
+          <i class="fa fa-search"></i>
+          <span class="sr-only">Open Search</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      
+      
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Site Overview
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+                
+                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                
+                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                
+                  <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Games
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Utilities
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                
+                  <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
+                
+              </div>
+            
+          </div>
+        
+      
+    </div>
+  </div>
+</nav>
+
+<div id="searchModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-start justify-center min-h-screen px-4">
+    <div class="search-modal bg-gray-800 text-white p-6 rounded-lg shadow-lg relative">
+      <button id="closeSearchModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i class="fa fa-times"></i>
+      </button>
+      <h2 class="text-lg font-medium mb-4">Search</h2>
+      <input type="text" id="searchInput" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Type to search...">
+      <div id="searchResults" class="mt-4">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <main class="mx-4">
+      
+  <div class="w-full mx-auto max-w-8xl">
+    <div class="flex flex-col lg:flex-row w-full">
+      
+      <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+        
+        <div id="accordion-collapse-metadata" data-accordion="collapse">
+          <h2 id="accordion-post-metadata">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-metadata-body" aria-expanded="false" aria-controls="accordion-post-metadata-body">
+              <span class="font-bold tracking-tight text-gray-900 dark:text-white">border-radius dan -moz-border-radius - WMI</span>
+              <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
+            <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+              <p class="text-gray-500 dark:text-gray-400">Salah satu sifat CSS yang paling ditunggu adalahborder-radius.Perancang web tidak lagi harus menggunakan struktur tabel yang rumit</p>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1048456668116270" data-ad-slot="7276066194" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <div class="p-5"><span class="flex items-center mb-2 text-sm text-gray-600 dark:text-gray-400">
+    <i class="far fa-folder mr-1"></i>
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/programming/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">programming</span>
+        </a>
+      </span>
+      <span class="mr-4"></span>
+    <span class="flex items-center">
+      <i class="far fa-tags mr-1"></i>
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/css/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">css</span>
+          </a>
+        </span>
+    </span>
+</span>
+</div>
+        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><p>Salah satu sifat CSS3 yang paling ditunggu adalah&nbsp;border-radius&nbsp;.&nbsp;Perancang web tidak lagi harus menggunakan struktur tabel yang rumit menggunakan grafik sudut khusus atau termasuk file JavaScript misterius untuk menghasilkan desain dengan sudut yang membulat.</p>
+<p>Sementara Internet Explorer sebelum IE9 tidak mendukung banyak (atau ada) sifat CSS lanjutan, Mozilla (Firefox dan peramban terkait) dan WebKit (&nbsp;<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9ZW4mYW1wO3NwPW5tdDQmYW1wO3RsPWlkJmFtcDt1PWh0dHA6Ly93ZWJraXQub3JnLyZhbXA7dXNnPUFMa0pyaGc4T2p6WkszNzg0dlZtMkxCWk1MT2dQdXlIT3c=" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://webkit.org/&amp;usg=ALkJrhg8OjzZK3784vVm2LBZMLOgPuyHOw">mesin peramban web</a>&nbsp;Apple yang digunakan di&nbsp;<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9ZW4mYW1wO3NwPW5tdDQmYW1wO3RsPWlkJmFtcDt1PWh0dHA6Ly93d3cuYXBwbGUuY29tL3NhZmFyaS8mYW1wO3VzZz1BTGtKcmhoNnQ5STZnWTVJZVdtT2ZMa3d0UWhpcmYxY3ln" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.apple.com/safari/&amp;usg=ALkJrhh6t9I6gY5IeWmOfLkwtQhirf1cyg">Safari</a>&nbsp;dan&nbsp;<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9ZW4mYW1wO3NwPW5tdDQmYW1wO3RsPWlkJmFtcDt1PWh0dHA6Ly93d3cuZ29vZ2xlLmNvbS9jaHJvbWUmYW1wO3VzZz1BTGtKcmhoRmMtcHJMSVVkZThOdG9aU21hZ19lT2p1RnNR" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.google.com/chrome&amp;usg=ALkJrhhFc-prLIUde8NtoZSmag_eOjuFsQ">Chrome</a>&nbsp;) dan Opera telah mendukungnya selama bertahun-tahun.</p>
+<p><strong>Awalan vendor (&nbsp;-moz&nbsp;,&nbsp;-webkit&nbsp;) sekarang tidak lagi diperlukan untuk rilis peramban terbaru karena mereka semua mengadopsi sintaks CSS3 resmi.</strong></p>
+<h2>1.&nbsp;Definisi dan sintaks untuk border-radius</h2>
+<p>Seperti banyak properti CSS yang berkaitan dengan margin, padding dan border, ada empat properti individual - satu untuk setiap sudut elemen kotak - dan satu properti singkat.&nbsp;Masing-masing atribut sudut akan menerima satu atau dua nilai.Properti&nbsp;border-radius&nbsp;akan menerima hingga dua nilai di browser WebKit dan sampai delapan sekarang di Firefox 3.5.</p>
+<p>Berikut adalah atribut khusus CSS dan browser yang dimaksud:</p>
+<p>CSS3</p>
+<p>Setara Mozilla</p>
+<p>Setara dengan WebKit</p>
+<p>border-top-right-radius</p>
+<p>-moz-border-radius-topright</p>
+<p>-webkit-border-top-right-radius</p>
+<p>border-bottom-right-radius</p>
+<p>-moz-border-radius-bottomright</p>
+<p>-webkit-border-bottom-right-radius</p>
+<p>border-bottom-left-radius</p>
+<p>-moz-border-radius-bottomleft</p>
+<p>-webkit-border-left-left-radius</p>
+<p>radius batas kiri atas</p>
+<p>-moz-border-radius-topleft</p>
+<p>-webkit-border-top-left-radius</p>
+<p>border-radius</p>
+<p>-moz-border-radius</p>
+<p>-webkit-border-radius</p>
+<p>Sebelum IE9, properti CSS3 ini&nbsp;<strong>tidak berfungsi di Internet Explorer</strong>&nbsp;.&nbsp;Versi 'Mozilla' bagaimanapun bekerja dengan sangat baik di Firefox dan browser berbasis Mozilla lainnya dan 'WebKit' di Safari dan Chrome serta iPhone / iPad.</p>
+<p>Masing-masing sudut CSS3 properti mengambil satu atau dua nilai&nbsp;<em>panjang</em>&nbsp;(umumnya nilai 'px' atau 'em').&nbsp;Jika satu nilai diberikan maka itu menjadi radius sudut yang membulat.&nbsp;Jika dua nilai diberikan maka mereka menjadi radius horizontal dan vertikal untuk sudut elips.</p>
+<p>Sintaks Mozilla sebelum Firefox 3.5 hanya mendukung sudut bulat (berlawanan dengan elips) dan menambahkan nilai kedua akan menghasilkan sudut persegi standar.</p>
+<p>Properti&nbsp;border-radius&nbsp;di WebKit menerima satu atau dua nilai dan menggunakannya untuk membuat gaya keempat penjuru membuat bentuk simetris yang bagus.&nbsp;<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9ZW4mYW1wO3NwPW5tdDQmYW1wO3RsPWlkJmFtcDt1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL2Nzcy9ib3JkZXItcmFkaXVzLyZhbXA7dXNnPUFMa0pyaGdQY0wzallyX3ZsdXBSTzhsVVhESXQ2SF96cXcjZmlyZWZveF8zNQ==" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/css/border-radius/&amp;usg=ALkJrhgPcL3jYr_vlupRO8lUXDIt6H_zqw#firefox_35">Sintaks Firefox yang baru</a>&nbsp;memungkinkan Anda mendefinisikan empat sudut bulat atau elips yang berbeda.&nbsp;Garis miring telah diperkenalkan untuk memisahkan pengaturan&nbsp;<em>panjang</em>&nbsp;horizontal dan vertikal.</p>
+<p>Tidak ada solusi CSS murni untuk sudut membulat di IE8 atau browser primitif lainnya.&nbsp;Hanya berbagai tambalan JavaScript yang bisa ditemukan dengan mencari secara online.</p>
+<h2>2.&nbsp;Menggunakan -moz-border-radius di Mozilla (Firefox)</h2>
+<p>Contoh berikut hanya akan bekerja jika Anda menggunakan Firefox atau browser Mozilla lainnya yang mendukung&nbsp;-moz-border-radius&nbsp;properties.</p>
+<p>Contoh 1</p>
+<p><code>-moz-border-radius: 1em;</code>  </p>
+<p>Contoh 2</p>
+<p><code>-moz-border-radius-topright: 2em; -moz-border-radius-topleft: 2em;</code>  </p>
+<p>Contoh 3</p>
+<p><code>-moz-border-radius: 2em 0;</code>  </p>
+<p>Contoh 4</p>
+<p><code>-moz-border-radius: 3em 1em;</code>  </p>
+<p>Properti Mozilla yang digunakan di sini&nbsp;<strong>tidak</strong>&nbsp;sesuai dengan standar (dengan demikian&nbsp;<em>-moz-</em>&nbsp;awalan) dan sampai Firefox 3.5 hanya mendukung sudut bulat.&nbsp;Di versi yang lebih baru dari sudut elips Firefox juga dimungkinkan.</p>
+<p>Seperti beberapa orang telah menunjukkan sifat-sifat ini dapat digunakan tidak hanya untuk 'kotak' tapi juga untuk banyak objek HTML lainnya termasuk elemen bentuk.</p>
+<p>Bagi anda yang masih melihat pojok persegi, berikut adalah cuplikan dari&nbsp;<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9ZW4mYW1wO3NwPW5tdDQmYW1wO3RsPWlkJmFtcDt1PWh0dHA6Ly93d3cubW96aWxsYS5jb20vZmlyZWZveC8mYW1wO3VzZz1BTGtKcmhnY3Bzd0ZWdG9JckdjX2RXZkIzX1FMdEIzQTln" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.mozilla.com/firefox/&amp;usg=ALkJrhgcpswFVtoIrGc_dWfB3_QLtB3A9g">Firefox yang</a>&nbsp;menunjukkan efek sudut membulat:</p>
+<p><img src="http://cdn.the-art-of-web.com/images/moz-border-radius.gif" alt="http://cdn.the-art-of-web.com/images/moz-border-radius.gif" title="border-radius dan -moz-border-radius" itemprop="image"></p>
+<p>Ada sejumlah solusi JavaScript yang rumit yang memungkinkan border-radius dan properti CSS3 lainnya dapat dilihat di Internet Explorer dan browser lainnya - namun biaya overhead tidak benar-benar membenarkan hasilnya.</p>
+<h2>3.&nbsp;Menggunakan -webkit-border-radius di Safari (Webkit)</h2>
+<p>Versi terbaru Safari sekarang mendukung&nbsp;-webkit-border-radius&nbsp;.&nbsp;Sebelumnya hanya 'nightly builds' yang berisi fungsi ini Di Opera, sintaks untuk sudut-sudutnya sama seperti di Safari, namun perilaku&nbsp;border-radius dengan dua nilai sama dengan Firefox, seperti yang terlihat pada Contoh # 7 di bawah ini:</p>
+<p>Contoh 5</p>
+<p><code>-webkit-border-radius: 1em;</code>  </p>
+<p>Contoh 6</p>
+<p><code>-webkit-border-top-right-radius: 24px; -webkit-border-top-left-radius: 24px;</code>  </p>
+<p>Contoh 7</p>
+<p><code>-webkit-border-radius: 24px 0;</code>  </p>
+<p>Contoh 8</p>
+<p><code>-webkit-border-radius: 36px 12px;</code>  </p>
+<p>Contoh 9</p>
+<p><code>-webkit-border-top-right-radius: 50px 30px; -webkit-border-bottom-right-radius: 50px 30px;</code>  </p>
+<p>Bagi Anda yang masih melihat sudut persegi, di bawah ini Anda dapat menemukan cuplikan dari WebKit yang menunjukkan efek sudut membulat.&nbsp;Perhatikan terutama perubahan sintaks dan efek melewatkan dua nilai ke -webkit-border-radius dibandingkan&nbsp;dengan contoh&nbsp;-moz-border-radius&nbsp;di&nbsp;atas.</p>
+<p><img src="http://cdn.the-art-of-web.com/images/border-radius.gif" alt="http://cdn.the-art-of-web.com/images/border-radius.gif" title="border-radius dan -moz-border-radius" itemprop="image"></p>
+<p>WebKit juga memiliki dukungan terbatas untuk properti border CSS3 lainnya seperti: multiple background;&nbsp;gambar latar belakang;&nbsp;dan berbagai penyeleksi lanjutan (&nbsp;::select misalnya) menjadikannya platform uji coba yang bagus untuk pengembang berwawasan ke depan.&nbsp;Nantikan blog Surfin 'Safari yang terhubung di bawah ini untuk perkembangan terbaru yang menarik.</p>
+<h2>4.&nbsp;Efek khusus lainnya</h2>
+<p>WebKit, Firefox dan Opera sekarang mendukung sejumlah fitur CSS3 lainnya, termasuk efek dan transformasi sederhana berikut ini.&nbsp;Syukurlah, tidak seperti sudut membulat, untuk bayang-bayang dan transformasi, nampaknya ada kesepakatan mengenai sintaks yang sama.</p>
+<h4>-webkit-kotak-bayangan</h4>
+<p>Contoh bayangan</p>
+<p><code>-webkit- border-radius: 36px 12px; -moz- border-radius: 36px / 12px; border-radius: 36px / 12px; box-shadow: 2px 2px 6px rgba(0,0,0,0.6);</code>  </p>
+<p>Jelas masih ada beberapa masalah anti-aliasing, tapi untuk sudut dan lekuk lembut itu bisa terlihat keren banget.</p>
+<p>Lalu ada berbagai opsi&nbsp;-webkit-transform&nbsp;yang bisa digunakan untuk menciptakan segala macam bentuk aneh dan indah:</p>
+<h4>-webkit-transform: memutar ()</h4>
+<p>Putar contoh</p>
+<p><code>-webkit- border-radius: 36px 12px; -moz- border-radius: 36px / 12px; border-radius: 36px / 12px; -webkit- transform: rotate(-5deg);</code>  </p>
+<h4>-webkit-transform: condong ()</h4>
+<p>Contoh miring</p>
+<p><code>-webkit- border-radius: 36px 12px; -moz- border-radius: 36px / 12px; border-radius: 36px / 12px; -webkit- transform: skew(5deg,5deg);</code>  </p>
+<p>Untuk browser-impaired disini adalah screenshot dari Safari yang menunjukkan efek dari aturan CSS ini.&nbsp;Efek yang sama sekarang mungkin dilakukan di Firefox, Opera dan browser terkait.&nbsp;Ganti saja&nbsp;-webkit&nbsp;dengan&nbsp;-moz&nbsp;atau&nbsp;-o&nbsp;, kecuali&nbsp;border-radius&nbsp;dan&nbsp;box-shadow&nbsp;dimana Opera tidak menggunakan awalan.</p>
+<p><img src="http://cdn.the-art-of-web.com/images/webkit-effects.gif" alt="http://cdn.the-art-of-web.com/images/webkit-effects.gif" title="border-radius dan -moz-border-radius" itemprop="image"></p>
+<p>Juga di Safari ini dan transformasi lainnya dapat diimplementasikan sebagai&nbsp;<a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MiZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9ZW4mYW1wO3NwPW5tdDQmYW1wO3RsPWlkJmFtcDt1PWh0dHA6Ly93d3cudGhlLWFydC1vZi13ZWIuY29tL2Nzcy9jc3MtYW5pbWF0aW9uLyZhbXA7dXNnPUFMa0pyaGhNX2dkZllxN3FGYVlSQ1FBbF9Ta3VkT2ZnWXc=" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="http://translate.googleusercontent.com/translate_c?depth=2&amp;nv=1&amp;rurl=translate.google.com&amp;sl=en&amp;sp=nmt4&amp;tl=id&amp;u=http://www.the-art-of-web.com/css/css-animation/&amp;usg=ALkJrhhM_gdfYq7qFaYRCQAl_SkudOfgYw">animasi</a>&nbsp;dengan hanya menggunakan efek CSS yang dipicu oleh melayang di atas elemen - tidak diperlukan JavaScript.</p>
+<h2>5.&nbsp;Properti pendek baru</h2>
+<p>Sintaks berikut sekarang bekerja di Firefox dan Opera yang memungkinkan Anda untuk menentukan tidak hanya mencocokkan sudut elips, tapi juga sudut elips yang berbeda dalam satu properti singkat.</p>
+<p>Di sini kita telah menciptakan dua contoh WebKit di atas dengan menggunakan sintaks baru.&nbsp;Anda dapat melihat bahwa pengaturan sudut individu bekerja sama persis sekarang di Firefox seperti di WebKit, namun untuk properti singkat yang Anda butuhkan untuk menyertakan garis miring:</p>
+<p>Contoh 8</p>
+<p><code>border-radius: 36px / 12px;</code>  </p>
+<p>Contoh 9</p>
+<p><code>border-radius-topright: 50px 30px; border-radius-bottomright: 50px 30px;</code>  </p>
+<p>Dan sekarang ke bagian yang menakutkan.&nbsp;Dengan menggunakan properti tangan pendek, semua nilai sebelum garis miring berlaku untuk jari-jari horizontal dan semua nilai kemudian ke vertikal.&nbsp;Dalam contoh ini kita telah membuat hibrida dari dua contoh sebelumnya.</p>
+<p>Contoh 10</p>
+<p><code>border-radius: 36px 50px 50px 36px / 12px 30px 30px 12px</code>  </p>
+<p>Di sini Anda bisa melihat seperti apa kotak-kotak ini di Firefox 3.5:</p>
+<p><img src="http://cdn.the-art-of-web.com/images/firefox-wonky.gif" alt="http://cdn.the-art-of-web.com/images/firefox-wonky.gif" title="border-radius dan -moz-border-radius" itemprop="image"></p>
+<p>Dengan semua browser utama yang sekarang menggunakan sintaks yang sama, prefiks vendor telah dilepas dan standarnya sepertinya ada di batu.</p>
+<h2>6.&nbsp;Daftar dengan sudut membulat</h2>
+<p>Berikut adalah contoh bagus daftar unordered (UL) yang ditandai menggunakan CSS untuk menerapkan radius perbatasan hanya pada sudut luar elemen pertama dan terakhir:</p>
+<ul>
+<li>bulat</li>
+<li>sudut</li>
+<li>pertama &amp; terakhir</li>
+<li>elemen</li>
+</ul>
+<p>Markup CSS adalah sebagai berikut:</p>
+<p><code>&lt;style type="text/css"&gt; ul.rounded { margin: 0; padding: 0; width: 200px; background: #ababab; border-radius: 1em; box-shadow: 2px 2px 4px #666; } ul.rounded li { display: block; margin: 0 0 1px; padding: 4px 12px; background: #dedede; transition: 0.2s; } ul.rounded li:first-child { border-radius: 1em 1em 0 0; } ul.rounded li:last-child { border-radius: 0 0 1em 1em; } ul.rounded li:hover { padding-left: 20px; background: #efefef; } &lt;/style&gt;</code>  </p>
+<p>Markup HTML adalah untuk elemen daftar UL standar dengan&nbsp;class="rounded".</p>
+<p>Dengan memanfaatkan&nbsp;first-child&nbsp;and&nbsp;last-child&nbsp;kita harus mengidentifikasi unsur-unsur mana yang harus menerapkan radius perbatasan di dalam HTML kita.</p>
+</div>
+        
+
+  <div class="container mx-auto px-2 py-4">
+    <h5 class="text-xl font-bold mb-4 text-center">Gallery - border-radius dan -moz-border-radius</h5>
+    <div class="masonry-grid">
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://cdn.the-art-of-web.com/images/moz-border-radius.gif" id="image-1" alt="Gallery Image 1" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 1" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-1">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://cdn.the-art-of-web.com/images/border-radius.gif" id="image-2" alt="Gallery Image 2" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 2" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-2">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://cdn.the-art-of-web.com/images/webkit-effects.gif" id="image-3" alt="Gallery Image 3" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 3" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-3">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://cdn.the-art-of-web.com/images/firefox-wonky.gif" id="image-4" alt="Gallery Image 4" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 4" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-4">View</button>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+        
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1048456668116270" data-ad-slot="2801449465"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        
+  <div class="border-t border-gray-300 dark:border-gray-600"></div>
+  <div class="flex justify-between items-center py-4">
+    <div class="post-nav-item">
+        <a href="/make-horizontal-menu-navigation.html" rel="prev" title="/make-horizontal-menu-navigation.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <i class="fa fa-angle-left mr-2"></i> MAKE A HORIZONTAL MENU NAVIGATION
+        </a>
+    </div>
+    <div class="post-nav-item">
+        <a href="/some-types-of-border-css.html" rel="next" title="/some-types-of-border-css.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          SOME TYPES OF BORDER CSS <i class="fa fa-angle-right ml-2"></i>
+        </a>
+    </div>
+  </div>
+  <div class="border-b border-gray-300 dark:border-gray-600"></div>
+
+        
+  <div class="comments">
+    <div id="disqus_thread" data-disqus-shortname="dimaslanjaka" data-disqus-url="https://www.webmanajemen.com/border-radius-dan-moz-border-radius.html"></div>
+  </div>
+
+
+      </main>
+      <div class="flex-none w-full mt-4 lg:mt-0 lg:w-64 lg:ml-2 xl:text-sm">
+        <div class="flex overflow-y-auto sticky top-5 flex-col justify-between">
+          
+          <div id="accordion-collapse-aside" data-accordion="collapse">
+            
+              <h2 id="accordion-post-toc">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-toc-body" aria-expanded="false" aria-controls="accordion-post-toc-body">
+                  <span><i class="fa-light fa-table mr-2"></i> On this page</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-toc-body" class="hidden" aria-labelledby="accordion-post-toc">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                  <nav id="TableOfContents">
+                    <ul class="toc">
+                        <li>
+                          <a href="#1.-definisi-dan-sintaks-untuk-border-radius">1.&nbsp;Definisi dan sintaks untuk border-radius</a>
+                        </li>
+                        <li>
+                          <a href="#2.-menggunakan--moz-border-radius-di-mozilla-(firefox)">2.&nbsp;Menggunakan -moz-border-radius di Mozilla (Firefox)</a>
+                        </li>
+                        <li>
+                          <a href="#3.-menggunakan--webkit-border-radius-di-safari-(webkit)">3.&nbsp;Menggunakan -webkit-border-radius di Safari (Webkit)</a>
+                        </li>
+                        <li>
+                          <a href="#4.-efek-khusus-lainnya">4.&nbsp;Efek khusus lainnya</a>
+                            <ul>
+                                <li>
+                                  <a href="#-webkit-kotak-bayangan">-webkit-kotak-bayangan</a>
+                                </li>
+                                <li>
+                                  <a href="#-webkit-transform:-memutar-()">-webkit-transform: memutar ()</a>
+                                </li>
+                                <li>
+                                  <a href="#-webkit-transform:-condong-()">-webkit-transform: condong ()</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#5.-properti-pendek-baru">5.&nbsp;Properti pendek baru</a>
+                        </li>
+                        <li>
+                          <a href="#6.-daftar-dengan-sudut-membulat">6.&nbsp;Daftar dengan sudut membulat</a>
+                        </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            
+              <h2 id="accordion-post-tags">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-tags-body" aria-expanded="false" aria-controls="accordion-post-tags-body">
+                  <span><i class="fa-duotone fa-solid fa-tags mr-2"></i> Tags</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-tags-body" class="hidden" aria-labelledby="accordion-post-tags">
+                <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                  <div class="flex flex-wrap justify-center">
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/github/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github</a>
+                      <a href="/tags/github-actions-workflow/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github-actions-workflow</a>
+                      <a href="/tags/matrix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> matrix</a>
+                      <a href="/tags/snippet/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> snippet</a>
+                      <a href="/tags/yaml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> yaml</a>
+                      <a href="/tags/shell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> shell</a>
+                      <a href="/tags/workflows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> workflows</a>
+                      <a href="/tags/tips-tricks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tips &amp; tricks</a>
+                      <a href="/tags/bash/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bash</a>
+                      <a href="/tags/android/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> android</a>
+                      <a href="/tags/java/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> java</a>
+                      <a href="/tags/webview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webview</a>
+                      <a href="/tags/minecraft/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> minecraft</a>
+                      <a href="/tags/vscode/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vscode</a>
+                      <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
+                      <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
+                      <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
+                      <a href="/tags/eslint/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> eslint</a>
+                      <a href="/tags/jest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> jest</a>
+                      <a href="/tags/npm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> npm</a>
+                      <a href="/tags/prettier/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> prettier</a>
+                      <a href="/tags/mocha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mocha</a>
+                      <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
+                      <a href="/tags/springboot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> springboot</a>
+                      <a href="/tags/webflux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webflux</a>
+                      <a href="/tags/json/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> json</a>
+                      <a href="/tags/react/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> react</a>
+                      <a href="/tags/typeerror/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typeerror</a>
+                      <a href="/tags/regexp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regexp</a>
+                      <a href="/tags/regular-expression/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regular expression</a>
+                      <a href="/tags/bluestacks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bluestacks</a>
+                      <a href="/tags/game-control/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> game control</a>
+                      <a href="/tags/the-legend-of-neverland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> the legend of neverland</a>
+                      <a href="/tags/life-skill/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> life skill</a>
+                      <a href="/tags/macros/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> macros</a>
+                      <a href="/tags/midi/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> midi</a>
+                      <a href="/tags/event/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> event</a>
+                      <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>
+                      <a href="/tags/games/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> games</a>
+                      <a href="/tags/seven-knight/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seven knight</a>
+                      <a href="/tags/scala/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scala</a>
+                      <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
+                      <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
+                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
+                      <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
+                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
+                      <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
+                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
+                      <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
+                      <a href="/tags/script/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> script</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
+                      <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
+                      <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
+                      <a href="/tags/mysql/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mysql</a>
+                      <a href="/tags/movies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> movies</a>
+                      <a href="/tags/linux-unix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux/unix</a>
+                      <a href="/tags/marketing-strategies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> marketing strategies</a>
+                      <a href="/tags/durango/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> durango</a>
+                      <a href="/tags/download/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> download</a>
+                      <a href="/tags/software/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> software</a>
+                      <a href="/tags/musics/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> musics</a>
+                      <a href="/tags/fonts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> fonts</a>
+                      <a href="/tags/regedit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regedit</a>
+                      <a href="/tags/windows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> windows</a>
+                      <a href="/tags/proxy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proxy</a>
+                      <a href="/tags/share/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> share</a>
+                      <a href="/tags/gradle/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> gradle</a>
+                      <a href="/tags/kotlin/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> kotlin</a>
+                      <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
+                      <a href="/tags/genshin-impact/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> genshin impact</a>
+                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
+                      <a href="/tags/xml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xml</a>
+                      <a href="/tags/templates/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> templates</a>
+                      <a href="/tags/themes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> themes</a>
+                      <a href="/tags/powershell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> powershell</a>
+                      <a href="/tags/apache/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> apache</a>
+                      <a href="/tags/xampp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xampp</a>
+                      <a href="/tags/recaptcha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recaptcha</a>
+                      <a href="/tags/qfil/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> qfil</a>
+                      <a href="/tags/firmware/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> firmware</a>
+                      <a href="/tags/scripts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scripts</a>
+                      <a href="/tags/hyperlink/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hyperlink</a>
+                      <a href="/tags/rollback/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> rollback</a>
+                      <a href="/tags/python/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> python</a>
+                      <a href="/tags/linux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux</a>
+                      <a href="/tags/test/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> test</a>
+                      <a href="/tags/coverage/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> coverage</a>
+                      <a href="/tags/hexo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo</a>
+                      <a href="/tags/random/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> random</a>
+                      <a href="/tags/net/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> net</a>
+                      <a href="/tags/ejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ejs</a>
+                      <a href="/tags/nunjucks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nunjucks</a>
+                      <a href="/tags/hexo-shortcodes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo-shortcodes</a>
+                      <a href="/tags/codepen/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codepen</a>
+                      <a href="/tags/markdown/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> markdown</a>
+                      <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
+                      <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
+                      <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
+                      <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
+                      <a href="/tags/mobile-legends/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mobile legends</a>
+                      <a href="/tags/pyside6/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> pyside6</a>
+                      <a href="/tags/chest-location/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chest location</a>
+                      <a href="/tags/quest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> quest</a>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+          
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1048456668116270" data-ad-slot="3815148236" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </main>
+    
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+      
+        
+          
+            <li>
+              <a href="/about" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="border-radius dan -moz-border-radius" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact" class="hover:underline">Contact</a>
+            </li>
+          
+        
+      
+    </ul>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="/js/script.js"></script>
+    
+
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BG75CLNJZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BG75CLNJZ1');
+</script>
+
+  
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      
+
+</body></html>

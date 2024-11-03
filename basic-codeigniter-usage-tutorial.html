@@ -1,0 +1,729 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic CodeIgniter Usage Tutorial - WMI</title>
+    <meta name="description" content="WMI - In this tutorial, the author will provide a tutorial on the basic use of the php framework is CodeIgniter.The author uses CodeIgniter v">
+    <meta name="keywords" content="blogging,tools,codeigniter,programming">
+    <meta name="search" content="/hexo-search.json">
+    <meta name="author" content="Unknown">
+    
+    <meta property="og:title" content="Basic CodeIgniter Usage Tutorial - WMI">
+    <meta property="og:description" content="WMI - In this tutorial, the author will provide a tutorial on the basic use of the php framework is CodeIgniter.The author uses CodeIgniter v">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Basic CodeIgniter Usage Tutorial - WMI">
+    <meta name="twitter:description" content="WMI - In this tutorial, the author will provide a tutorial on the basic use of the php framework is CodeIgniter.The author uses CodeIgniter v">
+    <meta name="twitter:image" content="">
+    <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/blogging/",
+        "name": "blogging"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/tools/",
+        "name": "tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/codeigniter/",
+        "name": "codeigniter"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/categories/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/basic-codeigniter-usage-tutorial.html",
+        "name": "Basic CodeIgniter Usage Tutorial"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/basic-codeigniter-usage-tutorial.html"
+    },
+    "headline": "Basic CodeIgniter Usage Tutorial",
+    "description": "In this tutorial, the author will provide a tutorial on the basic use of the php framework is CodeIgniter.The author uses CodeIgniter v",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Unknown Author"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Unknown Author",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2018-12-18T13:17:00+07:00",
+    "dateModified": "2023-09-02T23:22:37+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+  <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
+    
+  
+    <div id="preloader-mini" class="fixed top-4 right-4 bg-white dark:bg-gray-900 flex items-center justify-center p-2 rounded-full z-50">
+      <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 dark:border-blue-300"></div>
+    </div>
+  
+
+
+    
+<nav class="bg-gray-900 mb-4">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Logo" class="h-8 w-auto" title="Logo" itemprop="image">
+          </a>
+          <a href="/" class="text-white text-lg font-semibold ml-2">WMI</a>
+        </div>
+      </div>
+      
+      <div class="hidden sm:block sm:ml-6">
+        <div class="flex space-x-4">
+          
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Site Overview
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+                    
+                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                    
+                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                    
+                      <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+                    
+                  </div>
+                
+              </div>
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Games
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                    
+                  </div>
+                
+              </div>
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Utilities
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                    
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                    
+                      <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
+                    
+                  </div>
+                
+              </div>
+            
+          
+        </div>
+      </div>
+      
+      <div class="relative flex items-center sm:ml-6">
+        <button id="openSearchModal" class="p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white">
+          <i class="fa fa-search"></i>
+          <span class="sr-only">Open Search</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      
+      
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Site Overview
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+                
+                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                
+                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                
+                  <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Games
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Utilities
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                
+                  <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
+                
+              </div>
+            
+          </div>
+        
+      
+    </div>
+  </div>
+</nav>
+
+<div id="searchModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-start justify-center min-h-screen px-4">
+    <div class="search-modal bg-gray-800 text-white p-6 rounded-lg shadow-lg relative">
+      <button id="closeSearchModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i class="fa fa-times"></i>
+      </button>
+      <h2 class="text-lg font-medium mb-4">Search</h2>
+      <input type="text" id="searchInput" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Type to search...">
+      <div id="searchResults" class="mt-4">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <main class="mx-4">
+      
+  <div class="w-full mx-auto max-w-8xl">
+    <div class="flex flex-col lg:flex-row w-full">
+      
+      <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+        
+        <div id="accordion-collapse-metadata" data-accordion="collapse">
+          <h2 id="accordion-post-metadata">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-metadata-body" aria-expanded="false" aria-controls="accordion-post-metadata-body">
+              <span class="font-bold tracking-tight text-gray-900 dark:text-white">Basic CodeIgniter Usage Tutorial - WMI</span>
+              <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
+            <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+              <p class="text-gray-500 dark:text-gray-400">In this tutorial, the author will provide a tutorial on the basic use of the php framework is CodeIgniter.The author uses CodeIgniter v</p>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1048456668116270" data-ad-slot="7276066194" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <div class="p-5"><span class="flex items-center mb-2 text-sm text-gray-600 dark:text-gray-400">
+    <i class="far fa-folder mr-1"></i>
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/programming/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">programming</span>
+        </a>
+      </span>
+      <span class="mr-4"></span>
+    <span class="flex items-center">
+      <i class="far fa-tags mr-1"></i>
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/blogging/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">blogging</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/tools/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">tools</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/codeigniter/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">codeigniter</span>
+          </a>
+        </span>
+    </span>
+</span>
+</div>
+        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><p>In this tutorial, the author will provide a tutorial on the basic use of the php framework is CodeIgniter.&nbsp;The author uses CodeIgniter v 2.1.4 which can be downloaded directly from the official web CodeIgniter, ie <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2VsbGlzbGFiLmNvbS9jb2RlaWduaXRlcg==" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="http://ellislab.com/codeigniter">http://ellislab.com/codeigniter</a>.&nbsp;What is needed for this tutorial is:</p>
+<p>1. CodeIgniter 2.1.4<br>2. Text Editor (Sublime Text, CodeIgniter, Brackets, ell)<br>3. XAMPP / WAMP</p>
+<p><img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png" alt="CodeIgniter PHP Framework" title="CodeIgniter PHP Framework" itemprop="image"></p>
+<p>CodeIgniter PHP Framework</p>
+<p>What is done for the first time is download CodeIgniter v 2.1.4 which has been provided at the official website then extract the download and generate CodeIgniter folder.&nbsp;The folder should be the reader move into the htdocs folder in the XAMPP / WAMP directory.</p>
+<p>Related Articles:&nbsp;<strong><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3RyYW5zbGF0ZS5nb29nbGV1c2VyY29udGVudC5jb20vdHJhbnNsYXRlX2M/ZGVwdGg9MSZhbXA7bnY9MSZhbXA7cnVybD10cmFuc2xhdGUuZ29vZ2xlLmNvbSZhbXA7c2w9aWQmYW1wO3NwPW5tdDQmYW1wO3RsPWVuJmFtcDt1PWh0dHA6Ly93d3cudHV0b3JpYWwtd2ViZGVzaWduLmNvbS9tZW5naGlsYW5na2FuLWluZGV4LXBocC1kaS1jb2RlaWduaXRlci8mYW1wO3VzZz1BTGtKcmhpcC1jQ1c5Nm5xWERzTTg5N2J0MlRSODV6T0x3" title="http://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=id&amp;sp=nmt4&amp;tl=en&amp;u=http://www.tutorial-webdesign.com/menghilangkan-index-php-di-codeigniter/&amp;usg=ALkJrhip-cCW96nqXDsM897bt2TR85zOLw" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial">Codeigniter Early Settings</a></strong></p>
+<p>After that the reader must run the web server contained in XAMPP / WAMP in order to run the PHP script.&nbsp;If it is, the reader can directly open the browser page and then write "localhost / CodeIgniter" in the URL Browser (Without quotes ""), if the display "Welcome to CodeIgniter" means you have successfully used the CodeIgniter framework for the first time</p>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE0LzAxL1NjcmVlbi1TaG90LTIwMTQtMDEtMjYtYXQtMi41Ni4yMS1QTS5wbmc=" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-2.56.21-PM.png"><img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-2.56.21-PM-450x281.png" alt="Welcome Page CodeIgniter" title="Welcome Page CodeIgniter" itemprop="image"></a></p>
+<p>Welcome Page CodeIgniter</p>
+<p>Before we discuss how the page can appear, the reader should know that this CodeIgniter framework has a MVC / Model View Controller structure so that when you look at the contents of the application folder inside the CodeIgniter you have downloaded there will be the models, views and controllers folder.&nbsp;(For those who do not understand the MVC programming model, please read here: <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9Nb2RlbC12aWV3LWNvbnRyb2xsZXI=" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="http://en.wikipedia.org/wiki/Model-view-controller">http://en.wikipedia.org/wiki/Model-view-controller</a>)</p>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE0LzAxL1NjcmVlbi1TaG90LTIwMTQtMDEtMjYtYXQtMi41Ny4xNy1QTS5wbmc=" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-2.57.17-PM.png"><img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-2.57.17-PM-450x281.png" alt="Folder Structure on CodeIgniter" title="Folder Structure on CodeIgniter" itemprop="image"></a></p>
+<p>Folder Structure on CodeIgniter</p>
+<p>Let's look at the routes.php file in the application / config folder, inside the folder there is a code like this:</p>
+<pre><code class="hljs php"><span class="hljs-variable">$route</span>[<span class="hljs-string">'default_controller'</span>] = <span class="hljs-string">"welcome"</span>;</code></pre>
+
+<p>-&gt; This code indicates that the default controller or controller that was first executed when running our web application is a welcome.php file that is in the controllers folder.Readers can change the default controller in accordance with the wishes later, patiently yes, hehehe</p>
+<p>From there we already know when the website first run (When we type localhost / CodeIgniter) will run the file welcome.php in the application / controllers folder.&nbsp;Inside the welcome.php file contains:</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">defined</span>(<span class="hljs-string">'BASEPATH'</span>)) <span class="hljs-keyword">exit</span>(<span class="hljs-string">'No direct script access allowed'</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Welcome</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CI_Controller</span></span>
+<span class="hljs-class"></span>{
+    <span class="hljs-comment">/**</span>
+<span class="hljs-comment">     * Index Page for this controller.</span>
+<span class="hljs-comment">     * * Maps to the following URL</span>
+<span class="hljs-comment">     * http://example.com/index.php/welcome</span>
+<span class="hljs-comment">     * - or -</span>
+<span class="hljs-comment">     * http://example.com/index.php/welcome/index</span>
+<span class="hljs-comment">     * - or -</span>
+<span class="hljs-comment">     * Since this controller is set as the default controller in</span>
+<span class="hljs-comment">     * config/routes.php, it's displayed at http://example.com/</span>
+<span class="hljs-comment">     * * So any other public methods not prefixed with an underscore will</span>
+<span class="hljs-comment">     * map to /index.php/welcome/&lt;method_name&gt;</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@see</span> http://codeigniter.com/user_guide/general/urls.html</span>
+<span class="hljs-comment">     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span>(<span class="hljs-params"></span>)</span>
+<span class="hljs-function">    </span>{
+        <span class="hljs-variable language_">$this</span>
+            -&gt;load
+            -&gt;<span class="hljs-title function_ invoke__">view</span>(<span class="hljs-string">'welcome_message'</span>);
+    }
+}</code></pre>
+
+<p>It is the main structure for a controller inside CodeIgniter.&nbsp;The name of the class that is used is Welcome, it is because adjusted with the controller file name is welcome.php.&nbsp;If we have a controller with filename products.php then we have to create a class like this in it:</p>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Products</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CI_Controller</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">//Do Something here...</span>
+  }
+}</code></pre>
+
+<p>In the welcome.php file also has a function index, the function is the default function that will be called or run when the first time the controller is running.&nbsp;We can also add another function in it, like this for example:</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">defined</span>(<span class="hljs-string">'BASEPATH'</span>)) <span class="hljs-keyword">exit</span>(<span class="hljs-string">'No direct script access allowed'</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Welcome</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CI_Controller</span></span>
+<span class="hljs-class"></span>{
+    <span class="hljs-comment">/** * Index Page for this controller. * * Maps to the following URL * http://example.com/index.php/welcome * - or - * http://example.com/index.php/welcome/index * - or - * Since this controller is set as the default controller in * config/routes.php, it's displayed at http://example.com/ * * So any other public methods not prefixed with an underscore will * map to /index.php/welcome/&lt;method_name&gt; * <span class="hljs-doctag">@see</span> http://codeigniter.com/user_guide/general/urls.html */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span>(<span class="hljs-params"></span>)</span>
+<span class="hljs-function">    </span>{
+        <span class="hljs-variable language_">$this</span>
+            -&gt;load
+            -&gt;<span class="hljs-title function_ invoke__">view</span>(<span class="hljs-string">'welcome_message'</span>);
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greetings</span>(<span class="hljs-params"></span>)</span>
+<span class="hljs-function">    </span>{
+        <span class="hljs-variable language_">$this</span>
+            -&gt;load
+            -&gt;<span class="hljs-title function_ invoke__">view</span>(<span class="hljs-string">'say_greetings'</span>);
+    }
+}</code></pre>
+
+<p>Later function greetings will call view "say_greetings.php" which later we make :)</p>
+<p>After finishing the controller, it's time we switch to Views in the application / views folder.&nbsp;Inside the folder there is the file "welcome_message.php".&nbsp;Well, the file "welcome_message.php" is what was called by the controller welcome.php with code:</p>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-variable language_">$this</span>-&gt;load-&gt;<span class="hljs-title function_ invoke__">view</span>(<span class="hljs-string">'welcome_message'</span>); }</code></pre>
+
+<p>So already know the origin of the page "Welcome to CodeIgniter" earlier?<br>Let's create a new file named say_greetings.php in the views folder to be called by the controller welcome with function greetings.<br>Contents say_greetings.php:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Belajar CodeIgniter<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.adrianhartanto.com"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span> Greetings from CodeIgniter, <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span> by Adrian Hartanto <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<p>Once done, let's try to open a new page we created by typing "localhost / CodeIgniter / index.php / welcome / greetings" in our browser URL.<br>Notes:<br>1. CodeIgniter: Is our main folder<br>2. welcome: The name of our Controller, located in CodeIgniter / application / controllers / welcome.php<br>3. greetings: Function Name that is inside the controller, ie function greetings</p>
+<p>And finally we can add new function to our controller and also show new view that we have created ...</p>
+<p><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL3d3dy50dXRvcmlhbC13ZWJkZXNpZ24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE0LzAxL1NjcmVlbi1TaG90LTIwMTQtMDEtMjYtYXQtNC4yMS41OC1QTS5wbmc=" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-4.21.58-PM.png"><img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-4.21.58-PM-450x281.png" alt="Screenshot" title="Screenshot" itemprop="image"></a></p>
+<p>New Screen Shot View we have created :)</p>
+<h4>Download Script</h4>
+<p>If you want to try it yourself please download the script from&nbsp;<strong><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90cmFuc2xhdGUuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3RyYW5zbGF0ZV9jP2RlcHRoPTEmYW1wO252PTEmYW1wO3J1cmw9dHJhbnNsYXRlLmdvb2dsZS5jb20mYW1wO3NsPWlkJmFtcDtzcD1ubXQ0JmFtcDt0bD1lbiZhbXA7dT1odHRwczovL2dpdGh1Yi5jb20vdHV0d2ViL1R1dG9yaWFsLURhc2FyLUNvZGVpZ25pdGVyJmFtcDt1c2c9QUxrSnJoakd2enhZM09jQjNtYy1GT0gtZnRVazF0NWlwZw==" title="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=id&amp;sp=nmt4&amp;tl=en&amp;u=https://github.com/tutweb/Tutorial-Dasar-Codeigniter&amp;usg=ALkJrhjGvzxY3OcB3mc-FOH-ftUk1t5ipg" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial">Github TutWeb</a></strong></p>
+<p>Thus the tutorial from the author for the basic use of the PHP CodeIgniter framework, for the use of the model will be the author discussed in the next tutorial ..</p>
+</div>
+        
+
+  <div class="container mx-auto px-2 py-4">
+    <h5 class="text-xl font-bold mb-4 text-center">Gallery - Basic CodeIgniter Usage Tutorial</h5>
+    <div class="masonry-grid">
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png" id="image-1" alt="Gallery Image 1" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 1" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-1">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-2.56.21-PM-450x281.png" id="image-2" alt="Gallery Image 2" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 2" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-2">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-2.57.17-PM-450x281.png" id="image-3" alt="Gallery Image 3" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 3" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-3">View</button>
+          </div>
+        </div>
+      
+        <div class="masonry-item relative overflow-hidden rounded-lg">
+          <img src="http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/Screen-Shot-2014-01-26-at-4.21.58-PM-450x281.png" id="image-4" alt="Gallery Image 4" class="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300" title="Gallery Image 4" itemprop="image">
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <button class="px-3 py-1 text-white bg-blue-600 rounded-lg" masonry-target="image-4">View</button>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+        
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1048456668116270" data-ad-slot="2801449465"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        
+  <div class="border-t border-gray-300 dark:border-gray-600"></div>
+  <div class="flex justify-between items-center py-4">
+    <div class="post-nav-item">
+        <a href="/some-free-domain-provider-sites-forever.html" rel="prev" title="/some-free-domain-provider-sites-forever.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <i class="fa fa-angle-left mr-2"></i> Some free domain provider sites forever
+        </a>
+    </div>
+    <div class="post-nav-item">
+        <a href="/pubgm-v0100-apk-data.html" rel="next" title="/pubgm-v0100-apk-data.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          PUBGM v.0.10.0 APK DATA <i class="fa fa-angle-right ml-2"></i>
+        </a>
+    </div>
+  </div>
+  <div class="border-b border-gray-300 dark:border-gray-600"></div>
+
+        
+  <div class="comments">
+    <div id="disqus_thread" data-disqus-shortname="dimaslanjaka" data-disqus-url="https://www.webmanajemen.com/basic-codeigniter-usage-tutorial.html"></div>
+  </div>
+
+
+      </main>
+      <div class="flex-none w-full mt-4 lg:mt-0 lg:w-64 lg:ml-2 xl:text-sm">
+        <div class="flex overflow-y-auto sticky top-5 flex-col justify-between">
+          
+          <div id="accordion-collapse-aside" data-accordion="collapse">
+            
+              <h2 id="accordion-post-toc">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-toc-body" aria-expanded="false" aria-controls="accordion-post-toc-body">
+                  <span><i class="fa-light fa-table mr-2"></i> On this page</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-toc-body" class="hidden" aria-labelledby="accordion-post-toc">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                  <nav id="TableOfContents">
+                    <ul class="toc">
+                        <li>
+                          <a href="#download-script">Download Script</a>
+                        </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            
+              <h2 id="accordion-post-tags">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-tags-body" aria-expanded="false" aria-controls="accordion-post-tags-body">
+                  <span><i class="fa-duotone fa-solid fa-tags mr-2"></i> Tags</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-tags-body" class="hidden" aria-labelledby="accordion-post-tags">
+                <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                  <div class="flex flex-wrap justify-center">
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
+                      <a href="/tags/github/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github</a>
+                      <a href="/tags/github-actions-workflow/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github-actions-workflow</a>
+                      <a href="/tags/matrix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> matrix</a>
+                      <a href="/tags/snippet/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> snippet</a>
+                      <a href="/tags/yaml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> yaml</a>
+                      <a href="/tags/shell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> shell</a>
+                      <a href="/tags/workflows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> workflows</a>
+                      <a href="/tags/tips-tricks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tips &amp; tricks</a>
+                      <a href="/tags/bash/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bash</a>
+                      <a href="/tags/android/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> android</a>
+                      <a href="/tags/java/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> java</a>
+                      <a href="/tags/webview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webview</a>
+                      <a href="/tags/minecraft/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> minecraft</a>
+                      <a href="/tags/vscode/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vscode</a>
+                      <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
+                      <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
+                      <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
+                      <a href="/tags/eslint/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> eslint</a>
+                      <a href="/tags/jest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> jest</a>
+                      <a href="/tags/npm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> npm</a>
+                      <a href="/tags/prettier/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> prettier</a>
+                      <a href="/tags/mocha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mocha</a>
+                      <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
+                      <a href="/tags/springboot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> springboot</a>
+                      <a href="/tags/webflux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webflux</a>
+                      <a href="/tags/json/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> json</a>
+                      <a href="/tags/react/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> react</a>
+                      <a href="/tags/typeerror/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typeerror</a>
+                      <a href="/tags/regexp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regexp</a>
+                      <a href="/tags/regular-expression/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regular expression</a>
+                      <a href="/tags/bluestacks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bluestacks</a>
+                      <a href="/tags/game-control/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> game control</a>
+                      <a href="/tags/the-legend-of-neverland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> the legend of neverland</a>
+                      <a href="/tags/life-skill/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> life skill</a>
+                      <a href="/tags/macros/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> macros</a>
+                      <a href="/tags/midi/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> midi</a>
+                      <a href="/tags/event/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> event</a>
+                      <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>
+                      <a href="/tags/games/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> games</a>
+                      <a href="/tags/seven-knight/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seven knight</a>
+                      <a href="/tags/scala/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scala</a>
+                      <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
+                      <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
+                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
+                      <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
+                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
+                      <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
+                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
+                      <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
+                      <a href="/tags/script/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> script</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
+                      <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
+                      <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
+                      <a href="/tags/mysql/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mysql</a>
+                      <a href="/tags/movies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> movies</a>
+                      <a href="/tags/linux-unix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux/unix</a>
+                      <a href="/tags/marketing-strategies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> marketing strategies</a>
+                      <a href="/tags/durango/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> durango</a>
+                      <a href="/tags/download/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> download</a>
+                      <a href="/tags/software/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> software</a>
+                      <a href="/tags/musics/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> musics</a>
+                      <a href="/tags/fonts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> fonts</a>
+                      <a href="/tags/regedit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regedit</a>
+                      <a href="/tags/windows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> windows</a>
+                      <a href="/tags/proxy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proxy</a>
+                      <a href="/tags/share/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> share</a>
+                      <a href="/tags/gradle/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> gradle</a>
+                      <a href="/tags/kotlin/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> kotlin</a>
+                      <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
+                      <a href="/tags/genshin-impact/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> genshin impact</a>
+                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
+                      <a href="/tags/xml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xml</a>
+                      <a href="/tags/templates/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> templates</a>
+                      <a href="/tags/themes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> themes</a>
+                      <a href="/tags/powershell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> powershell</a>
+                      <a href="/tags/apache/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> apache</a>
+                      <a href="/tags/xampp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xampp</a>
+                      <a href="/tags/recaptcha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recaptcha</a>
+                      <a href="/tags/qfil/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> qfil</a>
+                      <a href="/tags/firmware/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> firmware</a>
+                      <a href="/tags/scripts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scripts</a>
+                      <a href="/tags/hyperlink/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hyperlink</a>
+                      <a href="/tags/rollback/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> rollback</a>
+                      <a href="/tags/python/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> python</a>
+                      <a href="/tags/linux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux</a>
+                      <a href="/tags/test/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> test</a>
+                      <a href="/tags/coverage/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> coverage</a>
+                      <a href="/tags/hexo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo</a>
+                      <a href="/tags/random/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> random</a>
+                      <a href="/tags/net/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> net</a>
+                      <a href="/tags/ejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ejs</a>
+                      <a href="/tags/nunjucks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nunjucks</a>
+                      <a href="/tags/hexo-shortcodes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo-shortcodes</a>
+                      <a href="/tags/codepen/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codepen</a>
+                      <a href="/tags/markdown/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> markdown</a>
+                      <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
+                      <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
+                      <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
+                      <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
+                      <a href="/tags/mobile-legends/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mobile legends</a>
+                      <a href="/tags/pyside6/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> pyside6</a>
+                      <a href="/tags/chest-location/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chest location</a>
+                      <a href="/tags/quest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> quest</a>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+          
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1048456668116270" data-ad-slot="3815148236" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </main>
+    
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+      
+        
+          
+            <li>
+              <a href="/about" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Basic CodeIgniter Usage Tutorial" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact" class="hover:underline">Contact</a>
+            </li>
+          
+        
+      
+    </ul>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="/js/script.js"></script>
+    
+
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BG75CLNJZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BG75CLNJZ1');
+</script>
+
+  
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      
+
+</body></html>

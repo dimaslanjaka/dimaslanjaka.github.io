@@ -1,0 +1,616 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>000webhost unzipper script php - WMI</title>
+    <meta name="description" content="WMI - Zip extractor for 000webhost hostinger">
+    <meta name="keywords" content="php,script,tools,programming">
+    <meta name="search" content="/hexo-search.json">
+    <meta name="author" content="Dimas Lanjaka 2">
+    
+    <meta property="og:title" content="000webhost unzipper script php - WMI">
+    <meta property="og:description" content="WMI - Zip extractor for 000webhost hostinger">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="000webhost unzipper script php - WMI">
+    <meta name="twitter:description" content="WMI - Zip extractor for 000webhost hostinger">
+    <meta name="twitter:image" content="">
+    <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WMI" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="WMI" type="application/rss+xml">
+
+
+<script type="application/ld+json" id="hexo-seo-schema">[
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.webmanajemen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "@id": "https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox",
+      "target": "https://www.webmanajemen.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://developers.google.com/search/docs/advanced/structured-data/breadcrumb",
+    "name": "breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "https://www.webmanajemen.com/tags/php/",
+        "name": "php"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/script/",
+        "name": "script"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": "https://www.webmanajemen.com/tags/tools/",
+        "name": "tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": "https://www.webmanajemen.com/categories/programming/",
+        "name": "programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": "https://www.webmanajemen.com/00webhost-unzipper-script-php.html",
+        "name": "000webhost unzipper script php"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.webmanajemen.com/00webhost-unzipper-script-php.html"
+    },
+    "headline": "000webhost unzipper script php",
+    "description": "Zip extractor for 000webhost hostinger",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://i.ytimg.com/vi/NjCuwavAr40/maxresdefault.jpg",
+      "width": "250",
+      "height": "250"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Unknown Author"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Unknown Author",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.webmanajemen.com/2022/01/04/frp-redmi-go-tiare-fix/Bypass%20FRP%20Redmi%20Go%20Tiare%20M1903C3GG.jpg",
+        "width": "125",
+        "height": "125"
+      }
+    },
+    "datePublished": "2018-03-26T19:22:00+07:00",
+    "dateModified": "2023-09-02T21:28:34+07:00"
+  }
+]</script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head>
+  <body class="bg-white dark:bg-slate-800 dark:text-slate-200">
+    
+  
+    <div id="preloader-mini" class="fixed top-4 right-4 bg-white dark:bg-gray-900 flex items-center justify-center p-2 rounded-full z-50">
+      <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 dark:border-blue-300"></div>
+    </div>
+  
+
+
+    
+<nav class="bg-gray-900 mb-4">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Logo" class="h-8 w-auto" title="Logo" itemprop="image">
+          </a>
+          <a href="/" class="text-white text-lg font-semibold ml-2">WMI</a>
+        </div>
+      </div>
+      
+      <div class="hidden sm:block sm:ml-6">
+        <div class="flex space-x-4">
+          
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Site Overview
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+                    
+                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                    
+                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                    
+                      <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+                    
+                  </div>
+                
+              </div>
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Games
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                    
+                  </div>
+                
+              </div>
+            
+              <div class="relative group">
+                <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Utilities
+                  <i class="fa-thin fa-caret-down ml-2"></i>
+                </a>
+                
+                
+                  <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                    
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="000webhost unzipper script php" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                    
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="000webhost unzipper script php" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                    
+                      <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
+                    
+                  </div>
+                
+              </div>
+            
+          
+        </div>
+      </div>
+      
+      <div class="relative flex items-center sm:ml-6">
+        <button id="openSearchModal" class="p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white">
+          <i class="fa fa-search"></i>
+          <span class="sr-only">Open Search</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      
+      
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Site Overview
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+                
+                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                
+                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                
+                  <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Games
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="relative group">
+            <a href="" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Utilities
+              <i class="fa-thin fa-caret-down ml-2"></i>
+            </a>
+            
+              <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
+                
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="000webhost unzipper script php" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="000webhost unzipper script php" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                
+                  <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
+                
+              </div>
+            
+          </div>
+        
+      
+    </div>
+  </div>
+</nav>
+
+<div id="searchModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-start justify-center min-h-screen px-4">
+    <div class="search-modal bg-gray-800 text-white p-6 rounded-lg shadow-lg relative">
+      <button id="closeSearchModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i class="fa fa-times"></i>
+      </button>
+      <h2 class="text-lg font-medium mb-4">Search</h2>
+      <input type="text" id="searchInput" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Type to search...">
+      <div id="searchResults" class="mt-4">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <main class="mx-4">
+      
+  <div class="w-full mx-auto max-w-8xl">
+    <div class="flex flex-col lg:flex-row w-full">
+      
+      <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+        
+        <div id="accordion-collapse-metadata" data-accordion="collapse">
+          <h2 id="accordion-post-metadata">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-metadata-body" aria-expanded="false" aria-controls="accordion-post-metadata-body">
+              <span class="font-bold tracking-tight text-gray-900 dark:text-white">000webhost unzipper script php - WMI</span>
+              <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
+            <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+              <p class="text-gray-500 dark:text-gray-400">Zip extractor for 000webhost hostinger</p>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1048456668116270" data-ad-slot="7276066194" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <div class="p-5"><span class="flex items-center mb-2 text-sm text-gray-600 dark:text-gray-400">
+    <i class="far fa-folder mr-1"></i>
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/programming/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">programming</span>
+        </a>
+      </span>
+      <span class="mr-4"></span>
+    <span class="flex items-center">
+      <i class="far fa-tags mr-1"></i>
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/php/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">php</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/script/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">script</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/tools/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">tools</span>
+          </a>
+        </span>
+    </span>
+</span>
+</div>
+        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><h2>Features:</h2><ul><li>Detect zip file automatically</li><li>Extract zip to custom folder</li><li>Detect zip file on subfolder</li></ul><img src="https://i.ytimg.com/vi/NjCuwavAr40/maxresdefault.jpg" title="PHP UNZIPPER" alt="000webhost unzipper script php" itemprop="image"><center><h2>Unzipper tools php script</h2></center><pre>&lt;?php<br>/**<br> * The Unzipper extracts .zip or .rar archives and .gz files on webservers.<br> * It's handy if you do not have shell access. E.g. if you want to upload a lot<br> * of files (php framework or image collection) as an archive to save time.<br> * As of version 0.1.0 it also supports creating archives.<br> *<br> * @author  Andreas Tasch, at[tec], attec.at<br> * @license GNU GPL v3<br> * @package attec.toolbox<br> * @version 0.1.1<br> */<br>define('VERSION', '0.1.1');<br><br>$timestart = microtime(TRUE);<br>$GLOBALS['status'] = array();<br><br>$unzipper = new Unzipper;<br>if (isset($_POST['dounzip'])) {<br>  // Check if an archive was selected for unzipping.<br>  $archive = isset($_POST['zipfile']) ? strip_tags($_POST['zipfile']) : '';<br>  $destination = isset($_POST['extpath']) ? strip_tags($_POST['extpath']) : '';<br>  $unzipper-&gt;prepareExtraction($archive, $destination);<br>}<br><br>if (isset($_POST['dozip'])) {<br>  $zippath = !empty($_POST['zippath']) ? strip_tags($_POST['zippath']) : '.';<br>  // Resulting zipfile e.g. zipper--2016-07-23--11-55.zip.<br>  $zipfile = 'zipper-' . date("Y-m-d--H-i") . '.zip';<br>  Zipper::zipDir($zippath, $zipfile);<br>}<br><br>$timeend = microtime(TRUE);<br>$time = round($timeend - $timestart, 4);<br><br>/**<br> * Class Unzipper<br> */<br>class Unzipper {<br>  public $localdir = '.';<br>  public $zipfiles = array();<br><br>  public function __construct() {<br>    // Read directory and pick .zip, .rar and .gz files.<br>    if ($dh = opendir($this-&gt;localdir)) {<br>      while (($file = readdir($dh)) !== FALSE) {<br>        if (pathinfo($file, PATHINFO_EXTENSION) === 'zip'<br>          || pathinfo($file, PATHINFO_EXTENSION) === 'gz'<br>          || pathinfo($file, PATHINFO_EXTENSION) === 'rar'<br>        ) {<br>          $this-&gt;zipfiles[] = $file;<br>        }<br>      }<br>      closedir($dh);<br><br>      if (!empty($this-&gt;zipfiles)) {<br>        $GLOBALS['status'] = array('info' =&gt; '.zip or .gz or .rar files found, ready for extraction');<br>      }<br>      else {<br>        $GLOBALS['status'] = array('info' =&gt; 'No .zip or .gz or rar files found. So only zipping functionality available.');<br>      }<br>    }<br>  }<br><br>  /**<br>   * Prepare and check zipfile for extraction.<br>   *<br>   * @param string $archive<br>   *   The archive name including file extension. E.g. my_archive.zip.<br>   * @param string $destination<br>   *   The relative destination path where to extract files.<br>   */<br>  public function prepareExtraction($archive, $destination = '') {<br>    // Determine paths.<br>    if (empty($destination)) {<br>      $extpath = $this-&gt;localdir;<br>    }<br>    else {<br>      $extpath = $this-&gt;localdir . '/' . $destination;<br>      // Todo: move this to extraction function.<br>      if (!is_dir($extpath)) {<br>        mkdir($extpath);<br>      }<br>    }<br>    // Only local existing archives are allowed to be extracted.<br>    if (in_array($archive, $this-&gt;zipfiles)) {<br>      self::extract($archive, $extpath);<br>    }<br>  }<br><br>  /**<br>   * Checks file extension and calls suitable extractor functions.<br>   *<br>   * @param string $archive<br>   *   The archive name including file extension. E.g. my_archive.zip.<br>   * @param string $destination<br>   *   The relative destination path where to extract files.<br>   */<br>  public static function extract($archive, $destination) {<br>    $ext = pathinfo($archive, PATHINFO_EXTENSION);<br>    switch ($ext) {<br>      case 'zip':<br>        self::extractZipArchive($archive, $destination);<br>        break;<br>      case 'gz':<br>        self::extractGzipFile($archive, $destination);<br>        break;<br>      case 'rar':<br>        self::extractRarArchive($archive, $destination);<br>        break;<br>    }<br><br>  }<br><br>  /**<br>   * Decompress/extract a zip archive using ZipArchive.<br>   *<br>   * @param $archive<br>   * @param $destination<br>   */<br>  public static function extractZipArchive($archive, $destination) {<br>    // Check if webserver supports unzipping.<br>    if (!class_exists('ZipArchive')) {<br>      $GLOBALS['status'] = array('error' =&gt; 'Error: Your PHP version does not support unzip functionality.');<br>      return;<br>    }<br><br>    $zip = new ZipArchive;<br><br>    // Check if archive is readable.<br>    if ($zip-&gt;open($archive) === TRUE) {<br>      // Check if destination is writable<br>      if (is_writeable($destination . '/')) {<br>        $zip-&gt;extractTo($destination);<br>        $zip-&gt;close();<br>        $GLOBALS['status'] = array('success' =&gt; 'Files unzipped successfully');<br>      }<br>      else {<br>        $GLOBALS['status'] = array('error' =&gt; 'Error: Directory not writeable by webserver.');<br>      }<br>    }<br>    else {<br>      $GLOBALS['status'] = array('error' =&gt; 'Error: Cannot read .zip archive.');<br>    }<br>  }<br><br>  /**<br>   * Decompress a .gz File.<br>   *<br>   * @param string $archive<br>   *   The archive name including file extension. E.g. my_archive.zip.<br>   * @param string $destination<br>   *   The relative destination path where to extract files.<br>   */<br>  public static function extractGzipFile($archive, $destination) {<br>    // Check if zlib is enabled<br>    if (!function_exists('gzopen')) {<br>      $GLOBALS['status'] = array('error' =&gt; 'Error: Your PHP has no zlib support enabled.');<br>      return;<br>    }<br><br>    $filename = pathinfo($archive, PATHINFO_FILENAME);<br>    $gzipped = gzopen($archive, "rb");<br>    $file = fopen($destination . '/' . $filename, "w");<br><br>    while ($string = gzread($gzipped, 4096)) {<br>      fwrite($file, $string, strlen($string));<br>    }<br>    gzclose($gzipped);<br>    fclose($file);<br><br>    // Check if file was extracted.<br>    if (file_exists($destination . '/' . $filename)) {<br>      $GLOBALS['status'] = array('success' =&gt; 'File unzipped successfully.');<br><br>      // If we had a tar.gz file, let's extract that tar file.<br>      if (pathinfo($destination . '/' . $filename, PATHINFO_EXTENSION) == 'tar') {<br>        $phar = new PharData($destination . '/' . $filename);<br>        if ($phar-&gt;extractTo($destination)) {<br>          $GLOBALS['status'] = array('success' =&gt; 'Extracted tar.gz archive successfully.');<br>          // Delete .tar.<br>          unlink($destination . '/' . $filename);<br>        }<br>      }<br>    }<br>    else {<br>      $GLOBALS['status'] = array('error' =&gt; 'Error unzipping file.');<br>    }<br><br>  }<br><br>  /**<br>   * Decompress/extract a Rar archive using RarArchive.<br>   *<br>   * @param string $archive<br>   *   The archive name including file extension. E.g. my_archive.zip.<br>   * @param string $destination<br>   *   The relative destination path where to extract files.<br>   */<br>  public static function extractRarArchive($archive, $destination) {<br>    // Check if webserver supports unzipping.<br>    if (!class_exists('RarArchive')) {<br>      $GLOBALS['status'] = array('error' =&gt; 'Error: Your PHP version does not support .rar archive functionality. &lt;a class="info" href="http://php.net/manual/en/rar.installation.php" target="_blank"&gt;How to install RarArchive&lt;/a&gt;');<br>      return;<br>    }<br>    // Check if archive is readable.<br>    if ($rar = RarArchive::open($archive)) {<br>      // Check if destination is writable<br>      if (is_writeable($destination . '/')) {<br>        $entries = $rar-&gt;getEntries();<br>        foreach ($entries as $entry) {<br>          $entry-&gt;extract($destination);<br>        }<br>        $rar-&gt;close();<br>        $GLOBALS['status'] = array('success' =&gt; 'Files extracted successfully.');<br>      }<br>      else {<br>        $GLOBALS['status'] = array('error' =&gt; 'Error: Directory not writeable by webserver.');<br>      }<br>    }<br>    else {<br>      $GLOBALS['status'] = array('error' =&gt; 'Error: Cannot read .rar archive.');<br>    }<br>  }<br><br>}<br><br>/**<br> * Class Zipper<br> *<br> * Copied and slightly modified from http://at2.php.net/manual/en/class.ziparchive.php#110719<br> * @author umbalaconmeogia<br> */<br>class Zipper {<br>  /**<br>   * Add files and sub-directories in a folder to zip file.<br>   *<br>   * @param string $folder<br>   *   Path to folder that should be zipped.<br>   *<br>   * @param ZipArchive $zipFile<br>   *   Zipfile where files end up.<br>   *<br>   * @param int $exclusiveLength<br>   *   Number of text to be exclusived from the file path.<br>   */<br>  private static function folderToZip($folder, &amp;$zipFile, $exclusiveLength) {<br>    $handle = opendir($folder);<br><br>    while (FALSE !== $f = readdir($handle)) {<br>      // Check for local/parent path or zipping file itself and skip.<br>      if ($f != '.' &amp;&amp; $f != '..' &amp;&amp; $f != basename(__FILE__)) {<br>        $filePath = "$folder/$f";<br>        // Remove prefix from file path before add to zip.<br>        $localPath = substr($filePath, $exclusiveLength);<br><br>        if (is_file($filePath)) {<br>          $zipFile-&gt;addFile($filePath, $localPath);<br>        }<br>        elseif (is_dir($filePath)) {<br>          // Add sub-directory.<br>          $zipFile-&gt;addEmptyDir($localPath);<br>          self::folderToZip($filePath, $zipFile, $exclusiveLength);<br>        }<br>      }<br>    }<br>    closedir($handle);<br>  }<br><br>  /**<br>   * Zip a folder (including itself).<br>   *<br>   * Usage:<br>   *   Zipper::zipDir('path/to/sourceDir', 'path/to/out.zip');<br>   *<br>   * @param string $sourcePath<br>   *   Relative path of directory to be zipped.<br>   *<br>   * @param string $outZipPath<br>   *   Relative path of the resulting output zip file.<br>   */<br>  public static function zipDir($sourcePath, $outZipPath) {<br>    $pathInfo = pathinfo($sourcePath);<br>    $parentPath = $pathInfo['dirname'];<br>    $dirName = $pathInfo['basename'];<br><br>    $z = new ZipArchive();<br>    $z-&gt;open($outZipPath, ZipArchive::CREATE);<br>    $z-&gt;addEmptyDir($dirName);<br>    if ($sourcePath == $dirName) {<br>      self::folderToZip($sourcePath, $z, 0);<br>    }<br>    else {<br>      self::folderToZip($sourcePath, $z, strlen("$parentPath/"));<br>    }<br>    $z-&gt;close();<br><br>    $GLOBALS['status'] = array('success' =&gt; 'Successfully created archive ' . $outZipPath);<br>  }<br>}<br>?&gt;<br><br>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>  &lt;title&gt;File Unzipper + Zipper&lt;/title&gt;<br>  &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;<br>  &lt;style type="text/css"&gt;<br>    &lt;!--<br>    body {<br>      font-family: Arial, sans-serif;<br>      line-height: 150%;<br>    }<br><br>    label {<br>      display: block;<br>      margin-top: 20px;<br>    }<br><br>    fieldset {<br>      border: 0;<br>      background-color: #EEE;<br>      margin: 10px 0 10px 0;<br>    }<br><br>    .select {<br>      padding: 5px;<br>      font-size: 110%;<br>    }<br><br>    .status {<br>      margin: 0;<br>      margin-bottom: 20px;<br>      padding: 10px;<br>      font-size: 80%;<br>      background: #EEE;<br>      border: 1px dotted #DDD;<br>    }<br><br>    .status--ERROR {<br>      background-color: red;<br>      color: white;<br>      font-size: 120%;<br>    }<br><br>    .status--SUCCESS {<br>      background-color: green;<br>      font-weight: bold;<br>      color: white;<br>      font-size: 120%<br>    }<br><br>    .small {<br>      font-size: 0.7rem;<br>      font-weight: normal;<br>    }<br><br>    .version {<br>      font-size: 80%;<br>    }<br><br>    .form-field {<br>      border: 1px solid #AAA;<br>      padding: 8px;<br>      width: 280px;<br>    }<br><br>    .info {<br>      margin-top: 0;<br>      font-size: 80%;<br>      color: #777;<br>    }<br><br>    .submit {<br>      background-color: #378de5;<br>      border: 0;<br>      color: #ffffff;<br>      font-size: 15px;<br>      padding: 10px 24px;<br>      margin: 20px 0 20px 0;<br>      text-decoration: none;<br>    }<br><br>    .submit:hover {<br>      background-color: #2c6db2;<br>      cursor: pointer;<br>    }<br>    --&gt;<br>  &lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;p class="status status--&lt;?php echo strtoupper(key($GLOBALS['status'])); ?&gt;"&gt;<br>  Status: &lt;?php echo reset($GLOBALS['status']); ?&gt;&lt;br/&gt;<br>  &lt;span class="small"&gt;Processing Time: &lt;?php echo $time; ?&gt; seconds&lt;/span&gt;<br>&lt;/p&gt;<br>&lt;form action="" method="POST"&gt;<br>  &lt;fieldset&gt;<br>    &lt;h1&gt;Archive Unzipper&lt;/h1&gt;<br>    &lt;label for="zipfile"&gt;Select .zip or .rar archive or .gz file you want to extract:&lt;/label&gt;<br>    &lt;select name="zipfile" size="1" class="select"&gt;<br>      &lt;?php foreach ($unzipper-&gt;zipfiles as $zip) {<br>        echo "&lt;option&gt;$zip&lt;/option&gt;";<br>      }<br>      ?&gt;<br>    &lt;/select&gt;<br>    &lt;label for="extpath"&gt;Extraction path (optional):&lt;/label&gt;<br>    &lt;input type="text" name="extpath" class="form-field" /&gt;<br>    &lt;p class="info"&gt;Enter extraction path without leading or trailing slashes (e.g. "mypath"). If left empty current directory will be used.&lt;/p&gt;<br>    &lt;input type="submit" name="dounzip" class="submit" value="Unzip Archive"/&gt;<br>  &lt;/fieldset&gt;<br><br>  &lt;fieldset&gt;<br>    &lt;h1&gt;Archive Zipper&lt;/h1&gt;<br>    &lt;label for="zippath"&gt;Path that should be zipped (optional):&lt;/label&gt;<br>    &lt;input type="text" name="zippath" class="form-field" /&gt;<br>    &lt;p class="info"&gt;Enter path to be zipped without leading or trailing slashes (e.g. "zippath"). If left empty current directory will be used.&lt;/p&gt;<br>    &lt;input type="submit" name="dozip" class="submit" value="Zip Archive"/&gt;<br>  &lt;/fieldset&gt;<br>&lt;/form&gt;<br>&lt;p class="version"&gt;Unzipper version: &lt;?php echo VERSION; ?&gt;&lt;/p&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></pre></div>
+        
+
+
+        
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1048456668116270" data-ad-slot="2801449465"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        
+  <div class="border-t border-gray-300 dark:border-gray-600"></div>
+  <div class="flex justify-between items-center py-4">
+    <div class="post-nav-item">
+        <a href="/ftp-backup-file-recursively-php-script.html" rel="prev" title="/ftp-backup-file-recursively-php-script.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <i class="fa fa-angle-left mr-2"></i> FTP Backup File Recursively PHP Script
+        </a>
+    </div>
+    <div class="post-nav-item">
+        <a href="/00webhost-file-manager-alternative.html" rel="next" title="/00webhost-file-manager-alternative.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          00webhost file manager alternative <i class="fa fa-angle-right ml-2"></i>
+        </a>
+    </div>
+  </div>
+  <div class="border-b border-gray-300 dark:border-gray-600"></div>
+
+        
+  <div class="comments">
+    <div id="disqus_thread" data-disqus-shortname="dimaslanjaka" data-disqus-url="https://www.webmanajemen.com/00webhost-unzipper-script-php.html"></div>
+  </div>
+
+
+      </main>
+      <div class="flex-none w-full mt-4 lg:mt-0 lg:w-64 lg:ml-2 xl:text-sm">
+        <div class="flex overflow-y-auto sticky top-5 flex-col justify-between">
+          
+          <div id="accordion-collapse-aside" data-accordion="collapse">
+            
+              <h2 id="accordion-post-toc">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-toc-body" aria-expanded="false" aria-controls="accordion-post-toc-body">
+                  <span><i class="fa-light fa-table mr-2"></i> On this page</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-toc-body" class="hidden" aria-labelledby="accordion-post-toc">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                  <nav id="TableOfContents">
+                    <ul class="toc">
+                        <li>
+                          <a href="#features:">Features:</a>
+                        </li>
+                        <li>
+                          <a href="#unzipper-tools-php-script">Unzipper tools php script</a>
+                        </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            
+              <h2 id="accordion-post-tags">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-tags-body" aria-expanded="false" aria-controls="accordion-post-tags-body">
+                  <span><i class="fa-duotone fa-solid fa-tags mr-2"></i> Tags</span>
+                  <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-post-tags-body" class="hidden" aria-labelledby="accordion-post-tags">
+                <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                  <div class="flex flex-wrap justify-center">
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/script/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> script</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/github/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github</a>
+                      <a href="/tags/github-actions-workflow/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github-actions-workflow</a>
+                      <a href="/tags/matrix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> matrix</a>
+                      <a href="/tags/snippet/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> snippet</a>
+                      <a href="/tags/yaml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> yaml</a>
+                      <a href="/tags/shell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> shell</a>
+                      <a href="/tags/workflows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> workflows</a>
+                      <a href="/tags/tips-tricks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tips &amp; tricks</a>
+                      <a href="/tags/bash/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bash</a>
+                      <a href="/tags/android/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> android</a>
+                      <a href="/tags/java/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> java</a>
+                      <a href="/tags/webview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webview</a>
+                      <a href="/tags/minecraft/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> minecraft</a>
+                      <a href="/tags/vscode/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vscode</a>
+                      <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
+                      <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
+                      <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
+                      <a href="/tags/eslint/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> eslint</a>
+                      <a href="/tags/jest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> jest</a>
+                      <a href="/tags/npm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> npm</a>
+                      <a href="/tags/prettier/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> prettier</a>
+                      <a href="/tags/mocha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mocha</a>
+                      <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
+                      <a href="/tags/springboot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> springboot</a>
+                      <a href="/tags/webflux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webflux</a>
+                      <a href="/tags/json/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> json</a>
+                      <a href="/tags/react/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> react</a>
+                      <a href="/tags/typeerror/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typeerror</a>
+                      <a href="/tags/regexp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regexp</a>
+                      <a href="/tags/regular-expression/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regular expression</a>
+                      <a href="/tags/bluestacks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bluestacks</a>
+                      <a href="/tags/game-control/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> game control</a>
+                      <a href="/tags/the-legend-of-neverland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> the legend of neverland</a>
+                      <a href="/tags/life-skill/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> life skill</a>
+                      <a href="/tags/macros/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> macros</a>
+                      <a href="/tags/midi/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> midi</a>
+                      <a href="/tags/event/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> event</a>
+                      <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>
+                      <a href="/tags/games/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> games</a>
+                      <a href="/tags/seven-knight/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seven knight</a>
+                      <a href="/tags/scala/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scala</a>
+                      <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
+                      <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
+                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
+                      <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
+                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
+                      <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
+                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
+                      <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
+                      <a href="/tags/script/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> script</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
+                      <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
+                      <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
+                      <a href="/tags/mysql/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mysql</a>
+                      <a href="/tags/movies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> movies</a>
+                      <a href="/tags/linux-unix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux/unix</a>
+                      <a href="/tags/marketing-strategies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> marketing strategies</a>
+                      <a href="/tags/durango/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> durango</a>
+                      <a href="/tags/download/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> download</a>
+                      <a href="/tags/software/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> software</a>
+                      <a href="/tags/musics/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> musics</a>
+                      <a href="/tags/fonts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> fonts</a>
+                      <a href="/tags/regedit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regedit</a>
+                      <a href="/tags/windows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> windows</a>
+                      <a href="/tags/proxy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proxy</a>
+                      <a href="/tags/share/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> share</a>
+                      <a href="/tags/gradle/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> gradle</a>
+                      <a href="/tags/kotlin/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> kotlin</a>
+                      <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
+                      <a href="/tags/genshin-impact/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> genshin impact</a>
+                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
+                      <a href="/tags/xml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xml</a>
+                      <a href="/tags/templates/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> templates</a>
+                      <a href="/tags/themes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> themes</a>
+                      <a href="/tags/powershell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> powershell</a>
+                      <a href="/tags/apache/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> apache</a>
+                      <a href="/tags/xampp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xampp</a>
+                      <a href="/tags/recaptcha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recaptcha</a>
+                      <a href="/tags/qfil/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> qfil</a>
+                      <a href="/tags/firmware/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> firmware</a>
+                      <a href="/tags/scripts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scripts</a>
+                      <a href="/tags/hyperlink/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hyperlink</a>
+                      <a href="/tags/rollback/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> rollback</a>
+                      <a href="/tags/python/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> python</a>
+                      <a href="/tags/linux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux</a>
+                      <a href="/tags/test/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> test</a>
+                      <a href="/tags/coverage/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> coverage</a>
+                      <a href="/tags/hexo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo</a>
+                      <a href="/tags/random/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> random</a>
+                      <a href="/tags/net/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> net</a>
+                      <a href="/tags/ejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ejs</a>
+                      <a href="/tags/nunjucks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nunjucks</a>
+                      <a href="/tags/hexo-shortcodes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo-shortcodes</a>
+                      <a href="/tags/codepen/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codepen</a>
+                      <a href="/tags/markdown/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> markdown</a>
+                      <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
+                      <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
+                      <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
+                      <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
+                      <a href="/tags/mobile-legends/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mobile legends</a>
+                      <a href="/tags/pyside6/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> pyside6</a>
+                      <a href="/tags/chest-location/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chest location</a>
+                      <a href="/tags/quest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> quest</a>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+          
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1048456668116270" data-ad-slot="3815148236" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </main>
+    
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+      
+        
+          
+            <li>
+              <a href="/about" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="000webhost unzipper script php" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact" class="hover:underline">Contact</a>
+            </li>
+          
+        
+      
+    </ul>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="/js/script.js"></script>
+    
+
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BG75CLNJZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BG75CLNJZ1');
+</script>
+
+  
+<script src="/hexo-shortcodes-lib/githubcard.js"></script>
+<link rel="stylesheet" href="/hexo-shortcodes-lib/gist.css">
+
+      
+
+</body></html>

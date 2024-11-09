@@ -420,7 +420,9 @@
 <p>If you haven't installed <code>jest</code>, please read <a href="https://www.webmanajemen.com/2023/04/setup-jest-code-runner-vscode.html" rel="internal follow bookmark" hexo-seo="true" alt="debug memory leaks with jest" title="https://www.webmanajemen.com/2023/04/setup-jest-code-runner-vscode.html">https://www.webmanajemen.com/2023/04/setup-jest-code-runner-vscode.html</a></p>
 </blockquote>
 <ul>
-<li>create new test file<pre><code class="hljs ts"><span class="hljs-keyword">import</span> { afterAll, describe, expect, it } <span class="hljs-keyword">from</span> <span class="hljs-string">'@jest/globals'</span>;
+<li>create new test file</li>
+</ul>
+<pre><code class="hljs ts"><span class="hljs-keyword">import</span> { afterAll, describe, expect, it } <span class="hljs-keyword">from</span> <span class="hljs-string">'@jest/globals'</span>;
 <span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">'fs'</span>;
 <span class="hljs-keyword">import</span> { join } <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
 <span class="hljs-keyword">import</span> { testcfg } <span class="hljs-keyword">from</span> <span class="hljs-string">'./config'</span>;
@@ -441,9 +443,11 @@
       <span class="hljs-variable language_">global</span>.<span class="hljs-title function_">gc</span>();
     }
   });
-});</code></pre></li>
-<li>run using below command<pre><code class="hljs bash">node --expose-gc ./node_modules/jest-cli/bin/jest.js --logHeapUsage -- test-file-name</code></pre></li>
+});</code></pre>
+<ul>
+<li>run using below command</li>
 </ul>
+<pre><code class="hljs bash">node --expose-gc ./node_modules/jest-cli/bin/jest.js --logHeapUsage -- test-file-name</code></pre>
 </div>
         
 

@@ -407,9 +407,9 @@
 </span>
 </div>
         <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><ul>
-<li><p>add <code>TOKEN</code> to Github Actions Secrets Environtment</p>
-</li>
-<li><p>create <code>.github/workflows/clean-caches.yml</code>, put below codes</p>
+<li>add <code>TOKEN</code> to Github Actions Secrets Environtment</li>
+<li>create <code>.github/workflows/clean-caches.yml</code>, put below codes</li>
+</ul>
 <pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Clean</span> <span class="hljs-string">Caches</span>
 
 <span class="hljs-attr">on:</span>
@@ -459,9 +459,9 @@
 <span class="hljs-string">          echo "Done"</span>
 <span class="hljs-string"></span>        <span class="hljs-attr">env:</span>
           <span class="hljs-attr">GH_TOKEN:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">}}</span></code></pre>
-</li>
-<li><p>save and push <code>.github/workflows/clean-caches.yml</code></p>
-</li>
+
+<ul>
+<li>save and push <code>.github/workflows/clean-caches.yml</code></li>
 </ul>
 <h2>Conclusion</h2>
 <p>Every <code>package-lock.json</code> or <code>yarn.lock</code> changed, github actions runner <code>auto clean all caches</code> should be run.</p>

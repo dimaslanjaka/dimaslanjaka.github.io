@@ -383,7 +383,9 @@
 <h2>Fix solution</h2>
 <ul>
 <li>Open directory of your <code>php.exe</code> for example mine is <code>D:\xampp\php\php.exe</code>.<br><img src="https://user-images.githubusercontent.com/12471057/160263043-e813f6e5-9ab3-4b6d-816b-8228e1928f07.png" alt="Environtment Variables Windows" title="Environtment Variables Windows" itemprop="image"></li>
-<li>Create new file called <code>php.ps1</code> and paste below codes:<pre><code class="hljs powershell"><span class="hljs-comment">#!/usr/bin/env pwsh</span>
+<li>Create new file called <code>php.ps1</code> and paste below codes:</li>
+</ul>
+<pre><code class="hljs powershell"><span class="hljs-comment">#!/usr/bin/env pwsh</span>
 <span class="hljs-variable">$basedir</span>=<span class="hljs-built_in">Split-Path</span> <span class="hljs-variable">$MyInvocation</span>.MyCommand.Definition <span class="hljs-literal">-Parent</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$basedir</span>
 
@@ -401,26 +403,32 @@
   &amp; <span class="hljs-string">"php<span class="hljs-variable">$exe</span>"</span> <span class="hljs-variable">$args</span>
   <span class="hljs-variable">$ret</span>=<span class="hljs-variable">$LASTEXITCODE</span>
 }
-<span class="hljs-keyword">exit</span> <span class="hljs-variable">$ret</span></code></pre></li>
-<li>Create new file called <code>php.cmd</code> and paste below codes:<pre><code class="hljs cmd">:: custom php binary
+<span class="hljs-keyword">exit</span> <span class="hljs-variable">$ret</span></code></pre>
+<ul>
+<li>Create new file called <code>php.cmd</code> and paste below codes:</li>
+</ul>
+<pre><code class="hljs cmd">:: custom php binary
 @<span class="hljs-built_in">ECHO</span> OFF
 
 <span class="hljs-built_in">SETLOCAL</span>
 
 <span class="hljs-built_in">SET</span> "PHP_EXE=<span class="hljs-variable">%~dp0\php.exe"</span>
 <span class="hljs-variable"></span>
-<span class="hljs-variable">"%</span>PHP_EXE%" %*</code></pre></li>
-</ul>
+<span class="hljs-variable">"%</span>PHP_EXE%" %*</code></pre>
 <h3>now fix problem of <strong>PowerShell says "execution of scripts is disabled on this system."</strong></h3>
 <ul>
 <li>Open powershell terminal</li>
-<li>type below codes to list <strong>Current Execution Policy</strong><pre><code class="hljs powershell"><span class="hljs-built_in">Get-ExecutionPolicy</span></code></pre>
+<li>type below codes to list <strong>Current Execution Policy</strong></li>
+</ul>
+<pre><code class="hljs powershell"><span class="hljs-built_in">Get-ExecutionPolicy</span></code></pre>
 <blockquote>
 <p>Result: The execution policy is printed with its name like <em>Restricted</em>. then continue the step</p>
 </blockquote>
-</li>
-<li>type below codes to <strong>Change Execution Policy to Unrestricted For The Current User</strong><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-Scope</span> User Unrestricted</code></pre></li>
+<ul>
+<li>type below codes to <strong>Change Execution Policy to Unrestricted For The Current User</strong></li>
 </ul>
+<pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-Scope</span> User Unrestricted</code></pre>
+
 <h4>Change Execution Policy to Unrestricted For All Users</h4>
 <p>The execution policy can be change to the Unrestricted for all users in the system. In order to accomplish this the PowerShell terminal should be opened with the Local Administrator or Domain Administrator privileges. This is explained in the following posts.</p>
 <h3>Youtube video tutorial - fix running scripts is disabled on this system</h3>

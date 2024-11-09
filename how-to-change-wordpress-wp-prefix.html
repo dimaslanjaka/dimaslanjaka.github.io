@@ -395,9 +395,14 @@
 <li>Open File Manager under Files &amp; Security.</li>
 <li>Locate the file wp-config.php and check the box to select it.</li>
 <li>Edit the wp-config.php.</li>
-<li>Locate the following entry:<pre><code class="hljs php"><span class="hljs-variable">$table_prefix</span> = <span class="hljs-string">'OLDPREFIX_'</span>;</code></pre></li>
-<li>Replace with new entry:<pre><code class="hljs php"><span class="hljs-variable">$table_prefix</span> = <span class="hljs-string">'NEWPREFIX_'</span>;</code></pre></li>
+<li>Locate the following entry:</li>
 </ol>
+<pre><code class="hljs php"><span class="hljs-variable">$table_prefix</span> = <span class="hljs-string">'OLDPREFIX_'</span>;</code></pre>
+<ol start="6">
+<li>Replace with new entry:</li>
+</ol>
+<pre><code class="hljs php"><span class="hljs-variable">$table_prefix</span> = <span class="hljs-string">'NEWPREFIX_'</span>;</code></pre>
+
 <h2>Step 2</h2>
 <h3>Update SQL database to change wordpress table prefix</h3>
 <ol>

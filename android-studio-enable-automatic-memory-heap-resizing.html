@@ -3,19 +3,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>enable automatic memory heap resizing of android studio - WMI</title>
-    <meta name="description" content="WMI - enable automatic memory heap resizing of android studio To limit Android Studios memory usage, you can modify the studio.vmoptions file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps: studio.vmoptions Locate the studio.vmoptions">
+    <meta name="description" content="WMI -">
     <meta name="keywords" content="java,programming">
     <meta name="search" content="/hexo-search.json">
     <meta name="author" content="Dimas Lanjaka">
     
     <meta property="og:title" content="enable automatic memory heap resizing of android studio - WMI">
-    <meta property="og:description" content="WMI - enable automatic memory heap resizing of android studio To limit Android Studios memory usage, you can modify the studio.vmoptions file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps: studio.vmoptions Locate the studio.vmoptions">
+    <meta property="og:description" content="WMI -">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="enable automatic memory heap resizing of android studio - WMI">
-    <meta name="twitter:description" content="WMI - enable automatic memory heap resizing of android studio To limit Android Studios memory usage, you can modify the studio.vmoptions file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps: studio.vmoptions Locate the studio.vmoptions">
+    <meta name="twitter:description" content="WMI -">
     <meta name="twitter:image" content="">
     <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
     <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
@@ -73,7 +73,7 @@
       "@id": "https://www.webmanajemen.com/android-studio-enable-automatic-memory-heap-resizing.html"
     },
     "headline": "enable automatic memory heap resizing of android studio",
-    "description": "enable automatic memory heap resizing of android studio To limit Android Studios memory usage, you can modify the studio.vmoptions file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps: studio.vmoptions Locate the studio.vmoptions ",
+    "description": "enable automatic memory heap resizing of android studio",
     "image": {
       "@type": "ImageObject",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png",
@@ -95,7 +95,7 @@
       }
     },
     "datePublished": "2024-03-02T18:44:44+07:00",
-    "dateModified": "2024-03-02T18:44:44+07:00"
+    "dateModified": "2024-11-22T01:26:49+07:00"
   }
 ]</script>
 
@@ -343,7 +343,7 @@
           </h2>
           <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
             <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-              <p class="text-gray-500 dark:text-gray-400">enable automatic memory heap resizing of android studio To limit Android Studios memory usage, you can modify the studio.vmoptions file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps: studio.vmoptions Locate the studio.vmoptions </p>
+              <p class="text-gray-500 dark:text-gray-400"></p>
             </div>
           </div>
         </div>
@@ -397,7 +397,7 @@
 <p>Keep in mind that setting the maximum heap size too high might cause issues if your system doesn't have enough available memory. Adjust the values based on your system's specifications to achieve optimal performance.</p>
 <h2>Enable automatic memory heap resizing</h2>
 <p>To add garbage collection options and parallelism while limiting the maximum heap size to 1GB in Android Studio, you can modify the <code>studio.vmoptions</code> file. Here's an example configuration:</p>
-<p>java</p>
+<h3>Android Studio</h3>
 <pre><code class="hljs plaintext"># custom Android Studio VM options
 
 # Set the maximum heap size to 1GB
@@ -417,6 +417,60 @@
 -XX:MaxNewSize=512m
 
 # Enable automatic heap resizing
+-XX:+UseAdaptiveSizePolicy</code></pre>
+
+<h3>Intellij IDEA (Community or Ultimate)</h3>
+<pre><code class="hljs plaintext"># Use the server JVM, optimized for long-running applications with more aggressive optimizations.
+-server 
+
+# Aim to keep GC pause times under 200ms. This affects how the JVM manages memory.
+-XX:MaxGCPauseMillis=200
+
+# Trigger garbage collection when 45% of the heap is occupied. Helps manage memory pressure.
+-XX:InitiatingHeapOccupancyPercent=45
+
+# Set the ratio of the Eden space (young generation) to the survivor space.
+# A ratio of 8 means the Eden space is 8 times larger than a survivor space.
+-XX:SurvivorRatio=8
+
+# Allow flushing of compiled code from the code cache to prevent it from running out of memory.
+-XX:+UseCodeCacheFlushing
+
+# Reserve 128MB for the code cache, which stores JIT-compiled code.
+-XX:ReservedCodeCacheSize=128m
+
+# Enable assertions during runtime for debugging purposes.
+-ea
+
+# Disable caching of canonicalized file path strings. 
+# This is often useful when working with networked or temporary file systems.
+-Dsun.io.useCanonCaches=false
+
+
+# ===================
+# Custom Android Studio VM options
+# ===================
+
+# Set the maximum heap size for the JVM to 1GB. Controls the upper limit of memory usage.
+-Xmx1g
+
+# Set the initial heap size to 256MB. This is the starting memory allocation.
+-Xms256m
+
+# Enable parallel garbage collection to improve throughput by using multiple threads.
+-XX:+UseParallelGC
+
+# Enable the concurrent garbage collector, which works alongside the application
+# (used in conjunction with parallel GC for balanced performance).
+-XX:+UseConcMarkSweepGC
+
+# Set the initial size of the young generation (Eden + survivor spaces) to 512MB.
+-XX:NewSize=512m
+
+# Set the maximum size of the young generation to 512MB.
+-XX:MaxNewSize=512m
+
+# Enable adaptive resizing of heap spaces to improve performance dynamically based on application behavior.
 -XX:+UseAdaptiveSizePolicy</code></pre>
 
 <p>In this configuration:</p>
@@ -478,6 +532,14 @@
                     <ul class="toc">
                         <li>
                           <a href="#enable-automatic-memory-heap-resizing">Enable automatic memory heap resizing</a>
+                            <ul>
+                                <li>
+                                  <a href="#android-studio">Android Studio</a>
+                                </li>
+                                <li>
+                                  <a href="#intellij-idea-(community-or-ultimate)">Intellij IDEA (Community or Ultimate)</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                   </nav>
@@ -510,17 +572,17 @@
                       <a href="/tags/java/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> java</a>
                       <a href="/tags/minecraft/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> minecraft</a>
                       <a href="/tags/vscode/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vscode</a>
+                      <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
                       <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
                       <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
-                      <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
                       <a href="/tags/eslint/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> eslint</a>
                       <a href="/tags/jest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> jest</a>
                       <a href="/tags/npm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> npm</a>
+                      <a href="/tags/mocha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mocha</a>
+                      <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
                       <a href="/tags/prettier/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> prettier</a>
                       <a href="/tags/springboot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> springboot</a>
                       <a href="/tags/webflux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> webflux</a>
-                      <a href="/tags/mocha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mocha</a>
-                      <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
                       <a href="/tags/react/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> react</a>
                       <a href="/tags/json/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> json</a>
                       <a href="/tags/typeerror/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typeerror</a>
@@ -529,10 +591,10 @@
                       <a href="/tags/games/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> games</a>
                       <a href="/tags/seven-knight/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seven knight</a>
                       <a href="/tags/bluestacks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bluestacks</a>
+                      <a href="/tags/game-control/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> game control</a>
+                      <a href="/tags/the-legend-of-neverland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> the legend of neverland</a>
                       <a href="/tags/life-skill/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> life skill</a>
                       <a href="/tags/macros/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> macros</a>
-                      <a href="/tags/the-legend-of-neverland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> the legend of neverland</a>
-                      <a href="/tags/game-control/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> game control</a>
                       <a href="/tags/midi/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> midi</a>
                       <a href="/tags/event/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> event</a>
                       <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>

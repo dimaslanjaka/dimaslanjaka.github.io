@@ -9109,7 +9109,7 @@ html.with-fancybox body.hide-scrollbar{width:auto;margin-right:calc(var(--fancyb
   --tw-contain-style:  ;
 }
 /*
-! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com
 */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -9434,7 +9434,7 @@ video {
   height: auto;
 }
 /* Make elements with the HTML hidden attribute stay hidden by default */
-[hidden]:where(:not([hidden="until-found"])) {
+[hidden] {
   display: none;
 }
 .tooltip-arrow,.tooltip-arrow:before{
@@ -10452,14 +10452,8 @@ input:checked + .toggle-bg{
 .mb-6{
   margin-bottom: 1.5rem;
 }
-.me-2{
-  margin-inline-end: 0.5rem;
-}
 .me-4{
   margin-inline-end: 1rem;
-}
-.me-auto{
-  margin-inline-end: auto;
 }
 .ml-1{
   margin-left: 0.25rem;
@@ -10964,9 +10958,6 @@ input:checked + .toggle-bg{
 }
 .text-center{
   text-align: center;
-}
-.text-end{
-  text-align: end;
 }
 .text-2xl{
   font-size: 1.5rem;

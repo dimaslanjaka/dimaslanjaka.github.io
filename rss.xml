@@ -15,8 +15,31 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Sat, 02 Nov 2024 19:47:33 GMT</pubDate>
+    <pubDate>Sun, 02 Feb 2025 17:10:42 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Set Up ADB Wireless Debugging on Android: A Full Guide</title>
+      <link>https://www.webmanajemen.com/android-wireless-debugging.html</link>
+      <guid>https://www.webmanajemen.com/android-wireless-debugging.html</guid>
+      <pubDate>Sun, 02 Feb 2025 16:59:01 GMT</pubDate>
+      
+      <description>Learn how to set up and use ADB wireless debugging on Android devices with this comprehensive guide.</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>Android Wireless Debugging is a feature that allows developers to connect their Android devices to their development environment (e.g., Android Studio) over a Wi-Fi network instead of using a physical USB cable. It provides a more convenient way to debug apps and interact with the device wirelessly.</p><p>To use it, both the Android device and the computer running Android Studio need to be connected to the same Wi-Fi network. Developers can enable wireless debugging on the Android device by going into the Developer Options menu, and then they can pair the device with Android Studio for wireless debugging sessions.</p><p>This feature is especially useful when testing apps on devices that are not easily accessible, such as when the device is mounted or located far from the computer.</p><p>To enable and pair wireless debugging in Android, follow these steps:</p><h3>Step 1: Enable Developer Options</h3><ol><li><strong>Open the Settings app</strong> on your Android device.</li><li>Scroll down and tap <strong>About phone</strong>.</li><li>Find and tap <strong>Build number</strong> 7 times to unlock Developer Options. You may need to enter your device&#39;s PIN or password.</li></ol><h3>Step 2: Enable Wireless Debugging</h3><ol><li>Once Developer Options are enabled, go back to the <strong>Settings</strong> menu.</li><li>Tap <strong>System</strong> &gt; <strong>Developer options</strong>.</li><li>Find and enable <strong>Wireless debugging</strong>.</li></ol><h3>Step 3: Pair Device for Wireless Debugging</h3><ol><li><p>In the <strong>Developer options</strong> menu, scroll down and enable <strong>Wireless debugging</strong>.</p></li><li><p>Tap <strong>Pair device with pairing code</strong>.</p></li><li><p>On your computer, open a terminal or command prompt and run the following command to discover your device:</p><pre><code class="hljs bash">adb devices</code></pre><p>This will show the list of connected devices.</p></li><li><p>In the <strong>Wireless Debugging</strong> section on your Android device, tap <strong>Pair device</strong>. You&#39;ll see a pairing code.</p></li><li><p>On your computer, use the following command to pair the device using the code:</p><pre><code class="hljs bash">adb pair &lt;device-ip&gt;:&lt;port&gt; &lt;pairing-code&gt;</code></pre><p>Replace <code>&lt;device-ip&gt;</code>, <code>&lt;port&gt;</code>, and <code>&lt;pairing-code&gt;</code> with the details from the Android device. Like below screenshoot:</p><p><img src="https://i.sstatic.net/3UUaA.png" alt="Example interface pairing wireless debugging android"></p></li><li><p>After pairing, you can run the following command to connect:</p> <pre><code class="hljs bash">adb connect &lt;device-ip&gt;:&lt;port&gt;</code></pre><p> Replace <code>&lt;device-ip&gt;</code> and <code>&lt;port&gt;</code> with the information provided in the pairing step.</p></li></ol><p>Now, your Android device should be connected wirelessly for debugging! You can use <code>adb</code> commands just like you would with a wired connection.</p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/android/">android</category>
+      
+      
+      <comments>https://www.webmanajemen.com/android-wireless-debugging.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>How to Fill Tax Information on Google Adsense</title>
@@ -2047,47 +2070,6 @@ git &lt;span class=&quot;hljs-built_in&quot;&gt;log&lt;/span&gt; --pretty=format
       
       
       <comments>https://www.webmanajemen.com/detect-if-called-via-request-or-directly-by-command-line.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>How to disable WebRTC in Chrome, Firefox, Safari, Opera &amp; Edge</title>
-      <link>https://www.webmanajemen.com/how-to-disable-webrtc-in-chrome-firefox-safari-opera-edge.html</link>
-      <guid>https://www.webmanajemen.com/how-to-disable-webrtc-in-chrome-firefox-safari-opera-edge.html</guid>
-      <pubDate>Thu, 22 Feb 2024 08:56:24 GMT</pubDate>
-      
-      <description>&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://github.com/K3V1991/How-to-disable-WebRTC-in-Chrome-Firefox-Safari-Opera-and-Edge/blob/main/Disable-WebRTC.png&quot; width=&quot;200&quot;&gt;
-
-&lt;/p&gt;&lt;h2&gt;NFO:&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;WebRTC is often talked about on VPN Websites. &lt;br&gt;&lt;br&gt;WebRTC is a Technology that allows your Browser to have Video and Voice Communication Abilities. &lt;br&gt;&lt;br&gt;When you use Google Meet to hold a Video Conference, you’re using WebRTC. &lt;br&gt;&lt;br&gt;The same is with the Facebook Messenger Video Call. &lt;br&gt;&lt;br&gt;There are other Applications that make use of WebRTC. For Example, if you’re on Discord. &lt;br&gt;&lt;br&gt;It enables live Communications in real Time.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;What is WebRTC Leak?&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;WebRTC works by sending Audio/Video Feeds between two Entities. &lt;br&gt;&lt;br&gt;This means your Browser will share some of your Information with the Website, which will include your IP Address. &lt;br&gt;&lt;br&gt;And these Channels can bypass the encrypted Tunnel you have Setup. &lt;br&gt;&lt;br&gt;So basically, a WebRTC Leak can reveal your real IP Address even if you are using a VPN.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;How to know about a WebRTC Leak?&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;To see if your IP is leaked go to &lt;a href=&quot;https://ipleak.net/&quot;&gt;IPLEAK.NET&lt;/a&gt;. &lt;br&gt;&lt;br&gt;If you see your real IP on the Website, your IP is being leaked. &lt;br&gt;&lt;br&gt;If you can see the IP Address of the VPN Server, you’re safe and your browsing is secure.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;WebRTC Leaks can be blocked&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;One Way is by getting a VPN that doesn’t allow these Leaks. &lt;br&gt;&lt;br&gt;Another Option is to block the WebRTC Requests directly from the Browser. &lt;br&gt;&lt;br&gt;You can also use browser Extensions if you cannot disable WebRTC.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Note:&lt;/h2&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p align="center"><img src="https://github.com/K3V1991/How-to-disable-WebRTC-in-Chrome-Firefox-Safari-Opera-and-Edge/blob/main/Disable-WebRTC.png" width="200"></a><h2>NFO:</h2><blockquote><p>WebRTC is often talked about on VPN Websites. <br /><br>WebRTC is a Technology that allows your Browser to have Video and Voice Communication Abilities. <br /><br>When you use Google Meet to hold a Video Conference, you’re using WebRTC. <br /><br>The same is with the Facebook Messenger Video Call. <br /><br>There are other Applications that make use of WebRTC. For Example, if you’re on Discord. <br /><br>It enables live Communications in real Time.<br><br /></p></blockquote><h2>What is WebRTC Leak?</h2><blockquote><p>WebRTC works by sending Audio/Video Feeds between two Entities. <br /><br>This means your Browser will share some of your Information with the Website, which will include your IP Address. <br /><br>And these Channels can bypass the encrypted Tunnel you have Setup. <br /><br>So basically, a WebRTC Leak can reveal your real IP Address even if you are using a VPN.<br><br /></p></blockquote><h2>How to know about a WebRTC Leak?</h2><blockquote><p>To see if your IP is leaked go to <a href="https://ipleak.net/">IPLEAK.NET</a>. <br /><br>If you see your real IP on the Website, your IP is being leaked. <br /><br>If you can see the IP Address of the VPN Server, you’re safe and your browsing is secure.<br><br /></p></blockquote><h2>WebRTC Leaks can be blocked</h2><blockquote><p>One Way is by getting a VPN that doesn’t allow these Leaks. <br /><br>Another Option is to block the WebRTC Requests directly from the Browser. <br /><br>You can also use browser Extensions if you cannot disable WebRTC.<br><br /></p></blockquote><h2>Note:</h2><blockquote><p>Keep in Mind that if you disable WebRTC, you won’t be able to enjoy the Functionalities that come with it.</p><br /><br /></blockquote><h2>Disabling WebRTC in Chrome:</h2><blockquote><p>You cannot disable WebRTC in Chrome. The only thing you can do is use Add-ons. A good Chrome Add-on is <a href="https://chrome.google.com/webstore/detail/webrtc-leak-prevent/eiadekoaikejlgdbkbdfeijglgfdalml?hl=en">WebRTC Leak Prevent</a>. <br /><br>It controls the hidden WebRTC Settings and protects you against the Leaks.</p></blockquote><h2>Disabling WebRTC in Chrome Mobile</h2><ol><li>Type this URL: <code>chrome://flags/#disable-webrtc</code> in your Android Chrome Address Bar. It will open a Settings Page</li><li>Scroll down and you’ll find WebRTC STUN Origin Header. You can disable it here</li><li>You can even disable WebRTC Hardware Video Encoding and decoding Options if you want</li></ol><br /><h2>Disabling WebRTC in Mozilla Firefox:</h2><ol><li>Go to the URL Bar, type <code>about:config</code> and press Enter</li><li>Firefox will display a Warning Message. Click on <code>Accept the Risk and Continue</code></li><li>It will take you to another Page. In the Search Bar, type: <code>media.peerconnection.enabled</code></li><li>Double click on the Row and change its Value to &quot;false&quot;. Now WebRTC will be disabled.</li></ol><br /><h2>Disabling WebRTC on Safari Browser:</h2><ol><li>On Safari, visit <code>Preferences</code></li><li>Check <code>Show Develop menu in menu bar</code></li><li>In the Develop Section, go to <code>Experimental Features</code></li><li>Click on <code>Remove Legacy WebRTC API</code></li></ol><br /><h2>Disabling WebRTC in Opera:</h2><blockquote><p>Opera doesn’t have a Way to disable WebRTC. You can use third-party Addons like <code>WebRTC Leak Prevent</code> just like you did with Chrome. <br /><br>Keep in mind that these Extensions do not fix the Leak. Instead, they block the Attempts the Websites make to collect IP Addresses.<br><br /></p></blockquote><h2>Disabling WebRTC on Microsoft Edge:</h2><ol><li>Open Edge and type: <code>about:flags</code> in the Address Bar &amp; press Enter</li><li>You’ll see WebRTC here. Under that, there’s an Option to hide your real IP Address. Check the Box: <code>Hide my local IP address over WebRTC connections</code> to activate.</li></ol><br /><h2>How to stay secure:</h2><blockquote><p>Make sure you use a VPN. The VPN should be able to bypass the WebRTC Leak. <br /><br>With a VPN, you can use a Secure Browsers like LibreWolf that does not keep any of your Details.</p></blockquote>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/software/">software</category>
-      
-      
-      <comments>https://www.webmanajemen.com/how-to-disable-webrtc-in-chrome-firefox-safari-opera-edge.html#disqus_thread</comments>
       
     </item>
     

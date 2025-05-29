@@ -1,0 +1,134 @@
+name: Install Site
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master", "gh-pages"]
+    paths:
+      - "**/*.html"
+      - "**/*.css"
+      - "**/*.js"
+      - "**/*.json"
+      - "**/workflows/install.yml"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "checkout branch or commit"
+        required: true
+        default: "master"
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions: write-all
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: "github-pages"
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN || github.token }}
+      node-version: 18.x
+      YARN_CHECKSUM_BEHAVIOR: update
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref }}
+          token: ${{ env.ACCESS_TOKEN }}
+          submodules: recursive
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node-version }}
+      - run: corepack enable
+      - name: install validator
+        run: yarn install
+        working-directory: github-actions
+        id: install
+        continue-on-error: true
+      - run: |
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false
+          truncate -s 0 yarn.lock 2>/dev/null || : > yarn.lock
+          yarn cache clean --all
+          rm -rf node_modules
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
+        working-directory: github-actions
+        if: steps.install.outcome == 'failure'
+        name: clean install github validator
+        shell: bash
+      - name: fix github config
+        run: |
+          echo "fix end of lines"
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
+          echo "fix case-sensitive"
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+          git rm -r --cached .
+          git add --all .
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -a -m "fix: file name casing"
+          fi
+      - name: install corepack
+        run: |
+          if ! command -v corepack &> /dev/null; then
+            echo "corepack could not be found, installing..."
+            npm install -g corepack
+          else
+            echo "corepack is already installed"
+          fi
+          corepack enable
+          npm install -g npm@latest
+      - name: clean dependencies
+        run: rm -rf node_modules
+      - name: install
+        run: |
+          if [ -f "yarn.lock" ]; then
+              yarn install --immutable --immutable-cache --check-cache
+          else
+              npm install --omit=dev --production
+          fi
+      - name: validate paths
+        run: node github-actions/index.js
+        id: validate
+      - name: cleanup unused files
+        id: cleanup
+        run: |
+          rm -rf github-actions
+          find . -name '.github' -type d -prune -exec rm -rf '{}' +
+          rm -rf .devcontainer
+          rm -rf .npmrc
+          rm -rf .gitmodules
+          rm -rf github-actions-validator.config.yml
+          find . -name '.vscode' -type d -prune -exec rm -rf '{}' +
+          find . -name 'tmp' -type d -prune -exec rm -rf '{}' +
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        if: steps.validate.outcome == 'success'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        if: steps.validate.outcome == 'success'
+        with:
+          # Upload entire repository
+          path: "."
+          name: "github-pages"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: steps.validate.outcome == 'success'
+        with:
+          token: ${{ env.ACCESS_TOKEN }}
+          artifact_name: "github-pages"

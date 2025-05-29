@@ -15,8 +15,37 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Sun, 02 Feb 2025 17:10:42 GMT</pubDate>
+    <pubDate>Thu, 29 May 2025 15:54:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Yarn Guides</title>
+      <link>https://www.webmanajemen.com/NodeJS/yarn-guides.html</link>
+      <guid>https://www.webmanajemen.com/NodeJS/yarn-guides.html</guid>
+      <pubDate>Wed, 28 May 2025 10:00:00 GMT</pubDate>
+      
+      <description>A quick guide on how to update specific packages like husky and lint-staged across all workspaces in a Yarn monorepo.</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h3>Update Specific Packages for All Workspaces</h3><p>The following command updates the specified packages (<code>husky</code> and <code>lint-staged</code>) across all workspaces in a Yarn monorepo setup.</p><pre><code class="hljs bash">yarn workspaces foreach --all <span class="hljs-built_in">exec</span> yarn up husky lint-staged</code></pre>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/yarn/">yarn</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/monorepo/">monorepo</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/workspaces/">workspaces</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/package-management/">package management</category>
+      
+      
+      <comments>https://www.webmanajemen.com/NodeJS/yarn-guides.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Set Up ADB Wireless Debugging on Android: A Full Guide</title>
@@ -2045,31 +2074,6 @@ git &lt;span class=&quot;hljs-built_in&quot;&gt;log&lt;/span&gt; --pretty=format
       
       
       <comments>https://www.webmanajemen.com/2024/02/hexo-cannot-get.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Detect NodeJS if called using import or directly</title>
-      <link>https://www.webmanajemen.com/2024/02/detect-if-called-via-request-or-directly-by-command-line.html</link>
-      <guid>https://www.webmanajemen.com/2024/02/detect-if-called-via-request-or-directly-by-command-line.html</guid>
-      <pubDate>Fri, 23 Feb 2024 04:16:51 GMT</pubDate>
-      
-      <description>How can I detect if my NodeJS file is called using node file path `node path-to-file` or `require(&#39;path-to-file&#39;)` or `import &#39;path-to-file&#39;` ?</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2>CommonJS</h2><p>CommonJS modules can use the <code>require.main</code> object to determine whether the module is  executed directly or  imported. The <code>require.main</code> object is the main module that started your Node.js application.</p><pre><code class="hljs js"><span class="hljs-comment">// CommonJS</span><span class="hljs-comment">// main.js</span><span class="hljs-keyword">if</span> (<span class="hljs-built_in">require</span>.<span class="hljs-property">main</span> === <span class="hljs-variable language_">module</span>) &#123;  <span class="hljs-comment">// This script is being run directly</span>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;This script is the main module.&#x27;</span>);&#125; <span class="hljs-keyword">else</span> &#123;  <span class="hljs-comment">// This script is being imported as a module</span>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;This script is being imported as a module.&#x27;</span>);&#125;</code></pre><p>In this example, if you run <code>main.js</code> directly using the <code>main.js</code> node, you will see the output <strong>This script is the main module.</strong> When I import <code>main.js</code> into another script or module using <code>require(&#39;./main&#39;)</code> I get the output <strong>This script will be imported as a module</strong>.</p><p> Note that this approach works with Node.js versions that support ES Module (ESM) syntax.</p><p> If you are using <code>CommonJS</code> syntax, you may want to use the <code>require.main === module</code> check.</p><h2>ESM</h2><p>In the ECMAScript Module (ESM), you can use the &quot;import.meta&quot; object  to determine whether a module is  executed directly or  imported. In particular, you can check the <code>import.meta.url</code> property.</p><pre><code class="hljs ts"><span class="hljs-comment">// main.mjs</span><span class="hljs-keyword">if</span> (<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span> === <span class="hljs-string">`file://<span class="hljs-subst">$&#123;process.argv[<span class="hljs-number">1</span>]&#125;</span>`</span>) &#123;  <span class="hljs-comment">// This module is being run directly</span>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;This module is the main module.&#x27;</span>);&#125; <span class="hljs-keyword">else</span> &#123;  <span class="hljs-comment">// This module is being imported as a module</span>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;This module is being imported as a module.&#x27;</span>);&#125;</code></pre><p>or you can using module <a href="http://npmjs.com/es-main">es-main</a>:</p><pre><code class="hljs ts"><span class="hljs-comment">// ESM</span><span class="hljs-keyword">import</span> esMain <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;es-main&#x27;</span>;<span class="hljs-keyword">if</span> (<span class="hljs-title function_">esMain</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>)) &#123;    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;called directly&#x27;</span>);&#125; <span class="hljs-keyword">else</span> &#123;    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;required as a module&#x27;</span>);&#125;</code></pre><p>In this example, if you run <code>main.mjs</code> directly using the <code>main.mjs</code> node, you will see the output: &quot;This module is the main module.<br>&quot; If you import <code>main.mjs</code> into another ESM module using <code>import &#39;./main.mjs&#39;;</code>, you will see the output <strong>This module will be imported as a module.</strong> Note  the ESM file extension.</p><p>Modules are usually <code>.mjs</code>. If you want to use CommonJS syntax, you can use the approach described in the previous answer <code>(&quot;require.main === module&quot;)</code>.</p>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/typescript/">typescript</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/javascript/">javascript</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2024/02/detect-if-called-via-request-or-directly-by-command-line.html#disqus_thread</comments>
       
     </item>
     

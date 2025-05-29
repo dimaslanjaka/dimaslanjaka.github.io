@@ -73,46 +73,14 @@ jobs:
           git config core.autocrlf input
           git checkout-index --force --all
 
-      - name: Normalize File Names in Main Repo and Submodules
+      - name: Normalize File Names
         shell: bash
         run: |
-          set -e
-
-          # Step 1: Run cleanup in main repository, excluding submodules
-          echo "Cleaning main repository..."
-
-          # Get list of submodules from .gitmodules
-          submodules=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
-
-          # Remove all files from index (cached)
           git rm -r --cached .
-
-          # Re-add all files
-          git add --all
-
-          # Restore submodules to avoid staging them
-          for sm in $submodules; do
-            git restore --staged "$sm" || true
-          done
-
-          # Commit if there are changes
-          if [ "$(git status --porcelain | wc -l)" -gt 0 ]; then
-            git commit -m "fix: file name casing (main repo)"
+          git add --all .
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -a -m "fix: file name casing"
           fi
-
-          # Step 2: Run cleanup inside each submodule
-          for sm in $submodules; do
-            echo "Cleaning submodule: $sm"
-            (
-              cd "$sm"
-              git rm -r --cached .
-              git add --all
-              if [ "$(git status --porcelain | wc -l)" -gt 0 ]; then
-                git commit -m "fix: file name casing (submodule $sm)"
-              fi
-            )
-          done
-
 
       - name: Clean & Reinstall Main Dependencies
         shell: bash

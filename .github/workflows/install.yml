@@ -58,7 +58,7 @@ jobs:
         continue-on-error: true
       - run: |
           YARN_ENABLE_IMMUTABLE_INSTALLS=false
-          truncate -s 0 yarn.lock
+          truncate -s 0 yarn.lock 2>/dev/null || : > yarn.lock
           yarn cache clean --all
           rm -rf node_modules
           YARN_CHECKSUM_BEHAVIOR=update yarn install

@@ -82,10 +82,18 @@ jobs:
           if [ $(git status --porcelain | wc -l) -gt "0" ]; then
             git commit -a -m "fix: file name casing"
           fi
+      - name: install corepack
+        run: |
+          if ! command -v corepack &> /dev/null; then
+            echo "corepack could not be found, installing..."
+            npm install -g corepack
+          else
+            echo "corepack is already installed"
+          fi
+          corepack enable
+          npm install -g npm@latest
       - name: install
         run: |
-          corepack enable
-          yarn dlx npm i -g npm
           rm -rf node_modules
           if [ -f "package-lock.json" ]; then
               npm install --omit=dev --production

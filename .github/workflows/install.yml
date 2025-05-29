@@ -65,7 +65,7 @@ jobs:
           )
         working-directory: github-actions
 
-      - name: Fix Git Config & Normalize Files
+      - name: Configure Git & Normalize Line Endings
         run: |
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
@@ -73,11 +73,14 @@ jobs:
           git config core.autocrlf input
           git checkout-index --force --all
 
+      - name: Stage and Commit File Changes (if any)
+        run: |
           git rm -r --cached .
           git add --all .
           if [ "$(git status --porcelain | wc -l)" -gt 0 ]; then
             git commit -m "fix: file name casing"
           fi
+
 
       - name: Clean & Reinstall Main Dependencies
         run: |

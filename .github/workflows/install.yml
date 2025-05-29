@@ -76,10 +76,21 @@ jobs:
       - name: Normalize File Names
         shell: bash
         run: |
+          # Remove everything from index
           git rm -r --cached .
-          git add --all .
-          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
-            git commit -a -m "fix: file name casing"
+
+          # Re-add everything
+          git add --all
+
+          # Explicitly re-add submodules (they won't be re-added by --all if just their ref changed)
+          submodules=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
+          for sm in $submodules; do
+            git add "$sm" || true
+          done
+
+          # Commit if there are any staged changes
+          if [ "$(git diff --cached --quiet || echo changed)" = "changed" ]; then
+            git commit -m "fix: file name casing"
           fi
 
       - name: Clean & Reinstall Main Dependencies

@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "outDir": "./tmp/dist",
     "allowJs": true,
     "checkJs": false,
@@ -12,6 +15,10 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "strict": false,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
     "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "include": [

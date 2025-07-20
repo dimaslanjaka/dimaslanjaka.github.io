@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2025-07-05T13:03:21.387Z</updated>
+  <updated>2025-07-20T10:43:00.449Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Yarn NPM Registry Configuration</title>
+    <link href="https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html"/>
+    <id>https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html</id>
+    <published>2025-07-19T02:40:01.000Z</published>
+    <updated>2025-07-20T10:43:00.449Z</updated>
+    
+    <content type="html"><![CDATA[<p>To configure Yarn to use a custom NPM registry and enable authentication for the <code>npm</code> scope, use the following commands:</p><ol><li><p><strong>Set the NPM registry server for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmRegistryServer <span class="hljs-string">&quot;https://registry.npmjs.org&quot;</span></code></pre></li><li><p><strong>Always authenticate for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAlwaysAuth <span class="hljs-literal">true</span></code></pre></li><li><p><strong>Set the authentication token for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAuthToken <span class="hljs-string">&quot;YOUR_NPM_TOKEN&quot;</span></code></pre></li></ol>]]></content>
+    
+    
+    <summary type="html">Example configuration for setting up Yarn to use a custom NPM registry and authentication.</summary>
+    
+    
+    
+    
+    <category term="yarn" scheme="https://www.webmanajemen.com/tags/yarn/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Yarn Guides</title>
     <link href="https://www.webmanajemen.com/NodeJS/yarn-guides.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-guides.html</id>
     <published>2025-05-28T10:00:00.000Z</published>
-    <updated>2025-07-05T13:03:21.387Z</updated>
+    <updated>2025-07-20T10:43:00.445Z</updated>
     
     <content type="html"><![CDATA[<h3>Update Specific Packages for All Workspaces</h3><p>The following command updates the specified packages (<code>husky</code> and <code>lint-staged</code>) across all workspaces in a Yarn monorepo setup.</p><pre><code class="hljs bash">yarn workspaces foreach --all <span class="hljs-built_in">exec</span> yarn up husky lint-staged</code></pre>]]></content>
     
@@ -2009,29 +2028,6 @@ git &lt;span class=&quot;hljs-built_in&quot;&gt;log&lt;/span&gt; --pretty=format
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Cannot GET /</title>
-    <link href="https://www.webmanajemen.com/2024/02/hexo-cannot-get.html"/>
-    <id>https://www.webmanajemen.com/2024/02/hexo-cannot-get.html</id>
-    <published>2024-02-24T07:58:30.000Z</published>
-    <updated>2024-11-03T02:28:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2>Check config yaml</h2><p>check your <code>_config.yml</code></p><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://www.webmanajemen.com/</span><span class="hljs-attr">root:</span> <span class="hljs-string">/</span><span class="hljs-comment"># Home page setting</span><span class="hljs-comment"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span><span class="hljs-comment"># per_page: Posts displayed per page. (0 = disable pagination)</span><span class="hljs-comment"># order_by: Posts order. (Order by date descending by default)</span><span class="hljs-attr">index_generator:</span>  <span class="hljs-attr">path:</span> <span class="hljs-string">&#x27;/&#x27;</span>  <span class="hljs-attr">per_page:</span> <span class="hljs-number">10</span>  <span class="hljs-attr">order_by:</span> <span class="hljs-string">-updated</span> <span class="hljs-comment"># updated | date | -date | -updated</span>  <span class="hljs-attr">pagination_dir:</span> <span class="hljs-string">page</span></code></pre><h2>Check the URL and Paths:</h2><p>Ensure that you are accessing the correct URL.<br>Hexo may be configured to generate content under different paths.<br>For example, if your site is located in a subdirectory, you might need to access <code>http://localhost:4000/subdirectory/</code></p><h2>Missing markdown renderer</h2><p>Ensure your dependencies has <code>hexo-renderer-marked</code> or <code>hexo-renderer-markdown-it</code>, or install by:</p><pre><code class="hljs bash">npm i hexo-renderer-marked<span class="hljs-comment"># npm i hexo-renderer-markdown-it</span></code></pre><h2>Reinstall Dependencies:</h2><p>Sometimes, issues can arise from corrupted dependencies.<br>You can try deleting the node_modules directory and reinstalling dependencies:</p><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf node_modulesnpm install</code></pre>]]></content>
-    
-    
-    <summary type="html">How to fix Hexo Cannot GET /</summary>
-    
-    
-    
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    
-    
-    <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
-    
-    <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
   </entry>
   

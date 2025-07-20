@@ -1,9 +1,9 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "src",
     "baseUrl": "./",
     "target": "es5",
-    //"tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
     "outDir": "./dist",
     "emitDeclarationOnly": false,
     "declaration": true,

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VSCode Migrate Typescript CommonJS to ESM - WMI</title>
     <meta name="description" content="WMI - VSCode Migrate Typescript CommonJS to ESM How to migrate typescript commonjs to esm with vscode package.json add following key to package.json type: module, mai">
-    <meta name="keywords" content="programming">
+    <meta name="keywords" content="vscode,ide,programming">
     <meta name="search" content="/hexo-search.json">
     <meta name="author" content="Dimas Lanjaka">
     
@@ -48,12 +48,24 @@
       {
         "@type": "ListItem",
         "position": 1,
+        "item": "https://www.webmanajemen.com/tags/vscode/",
+        "name": "vscode"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": "https://www.webmanajemen.com/tags/ide/",
+        "name": "ide"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "item": "https://www.webmanajemen.com/categories/programming/",
         "name": "programming"
       },
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 4,
         "item": "https://www.webmanajemen.com/2022/03/vscode-migrate-ts-project-to-esm.html",
         "name": "VSCode Migrate Typescript CommonJS to ESM"
       }
@@ -89,7 +101,7 @@
       }
     },
     "datePublished": "2022-03-30T13:57:37+07:00",
-    "dateModified": "2023-09-02T23:13:08+07:00"
+    "dateModified": "2025-07-28T17:04:41+07:00"
   }
 ]</script>
 
@@ -357,6 +369,19 @@
         </a>
       </span>
       <span class="mr-4"></span>
+    <span class="flex items-center">
+      <i class="far fa-tags mr-1"></i>
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/vscode/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">vscode</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/ide/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">ide</span>
+          </a>
+        </span>
+    </span>
 </span>
 </div>
         <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><h2>How to migrate typescript commonjs to esm with vscode</h2>
@@ -448,14 +473,8 @@
 <h3>Method 1</h3>
 <ul>
 <li>Open Search And Replace VSCode</li>
-<li>Insert below pattern to search input and check Regex Search Flag</li>
-</ul>
-<pre><code class="hljs regexp">(^import.*\/((?!.js).)*)(['"];)$</code></pre>
-<ul>
-<li>Insert below replacement pattern to replacement input</li>
-</ul>
-<pre><code class="hljs regexp">$1.js$3</code></pre>
-<ul>
+<li>Insert below pattern to search input and check Regex Search Flag<pre><code class="hljs r"><span class="hljs-punctuation">(</span><span class="hljs-operator">^</span>import.<span class="hljs-operator">*</span><span class="hljs-punctuation">\</span><span class="hljs-operator">/</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">(</span><span class="hljs-operator">?</span><span class="hljs-operator">!</span>.js<span class="hljs-punctuation">)</span>.<span class="hljs-punctuation">)</span><span class="hljs-operator">*</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">[</span><span class="hljs-string">'"];)$</span></code></pre></li>
+<li>Insert below replacement pattern to replacement input<pre><code class="hljs r"><span class="hljs-operator">$</span><span class="hljs-number">1.</span>js<span class="hljs-operator">$</span><span class="hljs-number">3</span></code></pre></li>
 <li>Insert folder to <code>files to input</code> bar for example <code>src/</code></li>
 <li>Replace all<br><img src="https://user-images.githubusercontent.com/12471057/160769725-41b16e7d-ef33-4886-8113-d59a30a63482.png" alt="image" title="image" itemprop="image"></li>
 </ul>
@@ -463,6 +482,11 @@
 <ul>
 <li>Search: <code>^(import [^';]* from '(\./|(\.\./)+)[^';.]*)';</code></li>
 <li>Replace: <code>$1.js';</code></li>
+</ul>
+<h3>Method 3</h3>
+<ul>
+<li>filter only import with dot<pre><code class="hljs r"><span class="hljs-punctuation">(</span><span class="hljs-operator">^</span>import.<span class="hljs-operator">*</span>from<span class="hljs-punctuation">\</span>s<span class="hljs-operator">+</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">[</span><span class="hljs-string">'"])(\.{1,2}\/(?!.*\.js)[^'</span><span class="hljs-string">"]*)(['"</span><span class="hljs-punctuation">]</span>;<span class="hljs-punctuation">)</span><span class="hljs-operator">$</span></code></pre></li>
+<li>code replacement<pre><code class="hljs r"><span class="hljs-operator">$</span><span class="hljs-number">1</span><span class="hljs-operator">$</span><span class="hljs-number">2</span><span class="hljs-operator">$</span><span class="hljs-number">3.</span>js<span class="hljs-operator">$</span><span class="hljs-number">4</span></code></pre></li>
 </ul>
 </div>
         
@@ -534,6 +558,9 @@
                                 <li>
                                   <a href="#method-2">Method 2</a>
                                 </li>
+                                <li>
+                                  <a href="#method-3">Method 3</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -552,6 +579,8 @@
               <div id="accordion-post-tags-body" class="hidden" aria-labelledby="accordion-post-tags">
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
                   <div class="flex flex-wrap justify-center">
+                      <a href="/tags/vscode/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vscode</a>
+                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
                       <a href="/tags/github/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github</a>
                       <a href="/tags/github-actions-workflow/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github-actions-workflow</a>
                       <a href="/tags/matrix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> matrix</a>
@@ -594,8 +623,8 @@
                       <a href="/tags/life-skill/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> life skill</a>
                       <a href="/tags/macros/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> macros</a>
                       <a href="/tags/midi/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> midi</a>
-                      <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>
                       <a href="/tags/event/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> event</a>
+                      <a href="/tags/recipes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipes</a>
                       <a href="/tags/chimeraland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chimeraland</a>
                       <a href="/tags/attendant/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> attendant</a>
                       <a href="/tags/attendants/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> attendants</a>
@@ -610,22 +639,22 @@
                       <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
                       <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
                       <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
-                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
-                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
                       <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
                       <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
-                      <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
-                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
                       <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
-                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
-                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
-                      <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
                       <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
                       <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
                       <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
-                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
-                      <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
                       <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
+                      <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
                       <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
                       <a href="/tags/mysql/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mysql</a>
                       <a href="/tags/movies/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> movies</a>

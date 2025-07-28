@@ -48,6 +48,10 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
+      - name: Download .yarnrc.yml
+        run: |
+          curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/refs/heads/main/.yarnrc-template.yml -o .yarnrc.yml
+
       - name: Enable Corepack & Install NPM
         run: |
           corepack enable

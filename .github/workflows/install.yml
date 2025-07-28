@@ -93,6 +93,13 @@ jobs:
             git commit -m "fix: file name casing"
           fi
 
+      - name: Update submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+          yarn dlx rimraf .git/modules
+          yarn dlx binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz submodule-install
+
       - name: Clean & Reinstall Main Dependencies
         shell: bash
         run: |

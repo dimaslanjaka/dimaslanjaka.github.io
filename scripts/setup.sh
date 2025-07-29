@@ -40,6 +40,11 @@ if [[ -f "yarn.lock" ]]; then
     npx --yes cross-env YARN_NODE_ENV=production yarn install --immutable
   fi
 else
-  echo "No yarn.lock file found. Running 'npm ci --omit=dev --production'..."
-  npm ci --omit=dev --production
+  if [[ -f "package-lock.json" ]]; then
+    echo "No yarn.lock file found, but package-lock.json exists."
+    npm ci --omit=dev --production
+  else
+    echo "No yarn.lock or package-lock.json file found."
+    npm install --omit=dev --production
+  fi
 fi

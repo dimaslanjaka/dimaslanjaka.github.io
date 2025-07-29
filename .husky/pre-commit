@@ -1,0 +1,68 @@
+#!/bin/sh
+set -e
+
+ROOT_DIR=$(git rev-parse --show-toplevel)
+PACKAGE_JSON="$ROOT_DIR/package.json"
+
+# Remove packageManager from package.json
+if command -v jq >/dev/null 2>&1; then
+  jq 'del(.packageManager)' "$PACKAGE_JSON" > "${PACKAGE_JSON}.tmp" && mv "${PACKAGE_JSON}.tmp" "$PACKAGE_JSON"
+  # Ensure newline at EOF
+  [ "$(tail -c1 "$PACKAGE_JSON")" ] && echo >> "$PACKAGE_JSON"
+else
+  export PACKAGE_JSON
+  node -e '
+    const fs = require("fs");
+    const path = process.env.PACKAGE_JSON;
+    if (!path) throw new Error("PACKAGE_JSON env var is not set.");
+    const data = JSON.parse(fs.readFileSync(path, "utf8"));
+    delete data.packageManager;
+    fs.writeFileSync(path, JSON.stringify(data, null, 2) + "\n");
+  '
+fi
+
+# Check if lint-staged config exists
+check_lint_staged_config() {
+  for file in \
+    lint-staged.config.js lint-staged.config.cjs lint-staged.config.mjs lint-staged.config.ts \
+    .lintstagedrc .lintstagedrc.js .lintstagedrc.cjs .lintstagedrc.mjs \
+    .lintstagedrc.json .lintstagedrc.yaml .lintstagedrc.yml .lintstagedrc.toml; do
+    [ -f "$file" ] && return 0
+  done
+
+  if [ -f "$PACKAGE_JSON" ]; then
+    if command -v jq >/dev/null 2>&1; then
+      jq -e '.["lint-staged"]? != null' "$PACKAGE_JSON" >/dev/null 2>&1
+    else
+      node -e '
+        const fs = require("fs");
+        const data = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+        if (data["lint-staged"]) process.exit(0); else process.exit(1);
+      ' "$PACKAGE_JSON"
+    fi
+  else
+    return 1
+  fi
+}
+
+if check_lint_staged_config; then
+  npx lint-staged
+fi
+
+# Check tarballs under 10MB
+check_tarballs() {
+  dir="$1"
+  if [ -d "$dir" ]; then
+    for file in "$dir"/*.tgz; do
+      [ -e "$file" ] || continue
+      size_bytes=$(wc -c <"$file")
+      if [ "$size_bytes" -gt $((10 * 1024 * 1024)) ]; then
+        echo "Error: Tarball $file exceeds 10MB limit"
+        exit 1
+      fi
+    done
+  fi
+}
+
+check_tarballs release
+check_tarballs releases

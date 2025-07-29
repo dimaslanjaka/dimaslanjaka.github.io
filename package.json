@@ -8,7 +8,8 @@
     "update": "npx npm-check-updates -u -x chalk,deepmerge-ts",
     "ci": "yarn install --production=true --immutable --immutable-cache --check-cache --frozen-lockfile --check-files",
     "prod": "npm install --omit=dev",
-    "yarn:prod": "yarn install --production=true"
+    "yarn:prod": "yarn install --production=true",
+    "setup": "bash scripts/setup.sh"
   },
   "keywords": [],
   "private": true,

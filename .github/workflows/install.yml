@@ -48,9 +48,9 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - name: ⬇️ Download .yarnrc.yml Template
-        run: |
-          curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/refs/heads/main/.yarnrc-template.yml -o .yarnrc.yml
+      # - name: ⬇️ Download .yarnrc.yml Template
+      #   run: |
+      #     curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/refs/heads/main/.yarnrc-template.yml -o .yarnrc.yml
 
       - name: ⚙️ Enable Corepack & Update NPM
         run: |

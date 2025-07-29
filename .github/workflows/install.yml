@@ -1,4 +1,4 @@
-name: Install Site
+name: 🚀 Install & Deploy GitHub Pages Site
 
 on:
   push:
@@ -36,28 +36,28 @@ jobs:
       node-version: 20.x
       YARN_CHECKSUM_BEHAVIOR: update
     steps:
-      - name: Checkout
+      - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.ref }}
           token: ${{ env.ACCESS_TOKEN }}
           submodules: recursive
 
-      - name: Setup Node
+      - name: 🛠️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node-version }}
 
-      - name: Download .yarnrc.yml
+      - name: ⬇️ Download .yarnrc.yml Template
         run: |
           curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/refs/heads/main/.yarnrc-template.yml -o .yarnrc.yml
 
-      - name: Enable Corepack & Install NPM
+      - name: ⚙️ Enable Corepack & Update NPM
         run: |
           corepack enable
           npm install -g npm@latest
 
-      - name: Install GitHub Validator (Try Once)
+      - name: 🧪 Install GitHub Actions Validator (Try Once)
         id: install_validator
         run: |
           yarn install || (
@@ -69,15 +69,15 @@ jobs:
           )
         working-directory: github-actions
 
-      - name: Configure Git & Normalize Line Endings
+      - name: 🔧 Configure Git & Normalize Line Endings
         run: |
-          git config --global user.email "dimaslanjaka@gmail.com"
-          git config --global user.name "dimaslanjaka"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
 
-      - name: Normalize File Names
+      - name: 📝 Normalize File Names (Casing)
         shell: bash
         run: |
           # Remove everything from index
@@ -97,14 +97,14 @@ jobs:
             git commit -m "fix: file name casing"
           fi
 
-      - name: Update submodules
+      - name: 🔄 Update Git Submodules
         run: |
           git submodule sync --recursive
           git submodule update --init --recursive
           yarn dlx -y rimraf .git/modules
           yarn dlx -y binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz submodule-install
 
-      - name: Clean & Reinstall Main Dependencies
+      - name: 🧹 Clean & Reinstall Production Dependencies
         shell: bash
         run: |
           rm -rf node_modules
@@ -114,27 +114,27 @@ jobs:
             npm install --omit=dev --production
           fi
 
-      - name: Validate Paths
+      - name: ✅ Validate Paths & Structure
         id: validate
         run: node github-actions/index.js
 
-      - name: Cleanup Unused Files
+      - name: 🗑️ Cleanup Unused & Temporary Files
         run: |
           rm -rf github-actions .devcontainer .npmrc .gitmodules github-actions-validator.config.yml
           find . -type d \( -name '.github' -o -name '.vscode' -o -name 'tmp' \) -exec rm -rf '{}' +
 
-      - name: Setup Pages
+      - name: 📄 Setup GitHub Pages
         if: steps.validate.outcome == 'success'
         uses: actions/configure-pages@v5
 
-      - name: Upload Artifact
+      - name: ⬆️ Upload Pages Artifact
         if: steps.validate.outcome == 'success'
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
           name: "github-pages"
 
-      - name: Deploy to GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
         if: steps.validate.outcome == 'success'
         id: deployment
         uses: actions/deploy-pages@v4

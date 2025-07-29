@@ -22,6 +22,8 @@ else
     # Get and display Yarn version
     YARN_VERSION=$(yarn --version)
     echo "Yarn is installed. Version: $YARN_VERSION"
+    echo "Downloading .yarnrc.yml template..."
+    curl -L https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/refs/heads/main/.yarnrc-template.yml -o .yarnrc.yml
 fi
 
 # clean install

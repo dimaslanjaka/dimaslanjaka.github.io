@@ -34,10 +34,13 @@ if [[ -f "yarn.lock" ]]; then
   if [[ "$YARN_VERSION" == 1.* ]]; then
     echo "Yarn v1 detected."
     yarn install --production=true
+  elif [[ "$YARN_VERSION" == 2.* || "$YARN_VERSION" == 3.* ]]; then
+    echo "Yarn v2 or v3 detected."
+    # Use cross-env to set YARN_NODE_ENV for Yarn v2+ compatibility
+    npx --yes cross-env YARN_NODE_ENV=production yarn install --immutable --immutable-cache --check-cache
   else
-    echo "Yarn v2 or later detected."
-    # yarn install --immutable --immutable-cache --check-cache
-    npx --yes cross-env YARN_NODE_ENV=production yarn install --immutable
+    echo "Yarn v4 or later detected."
+    yarn workspaces focus --production
   fi
 else
   if [[ -f "package-lock.json" ]]; then

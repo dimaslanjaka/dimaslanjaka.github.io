@@ -101,8 +101,8 @@ jobs:
         run: |
           git submodule sync --recursive
           git submodule update --init --recursive
-          yarn dlx rimraf .git/modules
-          yarn dlx binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz submodule-install
+          yarn dlx -y rimraf .git/modules
+          yarn dlx -y binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz submodule-install
 
       - name: Clean & Reinstall Main Dependencies
         shell: bash

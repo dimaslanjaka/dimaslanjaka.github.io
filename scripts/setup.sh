@@ -32,11 +32,12 @@ fi
 
 if [[ -f "yarn.lock" ]]; then
   if [[ "$YARN_VERSION" == 1.* ]]; then
-    echo "Yarn v1 detected. Running 'yarn install --production=true'..."
+    echo "Yarn v1 detected."
     yarn install --production=true
   else
-    echo "Yarn v2 or later detected. Running 'yarn install --immutable --immutable-cache --check-cache'..."
-    yarn install --immutable --immutable-cache --check-cache
+    echo "Yarn v2 or later detected."
+    # yarn install --immutable --immutable-cache --check-cache
+    npx --yes cross-env YARN_NODE_ENV=production yarn install --immutable
   fi
 else
   echo "No yarn.lock file found. Running 'npm ci --omit=dev --production'..."

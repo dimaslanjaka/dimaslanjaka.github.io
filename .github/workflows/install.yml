@@ -107,12 +107,7 @@ jobs:
       - name: 🧹 Clean & Reinstall Production Dependencies
         shell: bash
         run: |
-          rm -rf node_modules
-          if [ -f "yarn.lock" ]; then
-            yarn install --immutable --immutable-cache --check-cache
-          else
-            npm install --omit=dev --production
-          fi
+          bash -e scripts/setup.sh
 
       - name: ✅ Validate Paths & Structure
         id: validate

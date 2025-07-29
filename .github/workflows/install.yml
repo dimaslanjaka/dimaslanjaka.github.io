@@ -71,9 +71,8 @@ jobs:
             **/yarn.lock
             **/package-lock.json
             **/.yarn/**
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock', '**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'package.json', '.husky/hash.txt') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'package.json', '.husky/hash.txt') }}
 
       - name: 🧪 Install GitHub Actions Validator (Try Once)
         id: install_validator

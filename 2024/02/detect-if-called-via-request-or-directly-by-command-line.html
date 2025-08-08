@@ -2,20 +2,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detect if a Node.js File Is Run Directly or Imported - WMI</title>
-    <meta name="description" content="WMI - Learn how to check if a Node.js file is executed via CLI (node path-to-file) or loaded using require or import. Supports both CommonJS and ES modules.">
-    <meta name="keywords" content="detect,import,require,meta">
+    <title>Detect if a Node.js File Runs Directly or Is Imported - WMI</title>
+    <meta name="description" content="WMI - Learn how to determine if a Node.js file is executed directly from the CLI or imported as a module, with examples for CommonJS, ESM, and cross-module detection.">
+    <meta name="keywords" content="node.js detect main module,check if node file run directly,detect node require vs import,commonjs require.main,esm import.meta.url">
     <meta name="search" content="/hexo-search.json">
     <meta name="author" content="Dimas Lanjaka">
     
-    <meta property="og:title" content="Detect if a Node.js File Is Run Directly or Imported - WMI">
-    <meta property="og:description" content="WMI - Learn how to check if a Node.js file is executed via CLI (node path-to-file) or loaded using require or import. Supports both CommonJS and ES modules.">
+    <meta property="og:title" content="Detect if a Node.js File Runs Directly or Is Imported - WMI">
+    <meta property="og:description" content="WMI - Learn how to determine if a Node.js file is executed directly from the CLI or imported as a module, with examples for CommonJS, ESM, and cross-module detection.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Detect if a Node.js File Is Run Directly or Imported - WMI">
-    <meta name="twitter:description" content="WMI - Learn how to check if a Node.js file is executed via CLI (node path-to-file) or loaded using require or import. Supports both CommonJS and ES modules.">
+    <meta name="twitter:title" content="Detect if a Node.js File Runs Directly or Is Imported - WMI">
+    <meta name="twitter:description" content="WMI - Learn how to determine if a Node.js file is executed directly from the CLI or imported as a module, with examples for CommonJS, ESM, and cross-module detection.">
     <meta name="twitter:image" content="">
     <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
     <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
@@ -54,32 +54,38 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "item": "https://www.webmanajemen.com/tags/nodejs/",
+        "name": "nodejs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "item": "https://www.webmanajemen.com/tags/javascript/",
         "name": "javascript"
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 4,
         "item": "https://www.webmanajemen.com/tags/esm/",
         "name": "esm"
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 5,
         "item": "https://www.webmanajemen.com/tags/commonjs/",
         "name": "commonjs"
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 6,
         "item": "https://www.webmanajemen.com/categories/programming/",
         "name": "programming"
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "item": "https://www.webmanajemen.com/2024/02/detect-if-called-via-request-or-directly-by-command-line.html",
-        "name": "Detect if a Node.js File Is Run Directly or Imported"
+        "name": "Detect if a Node.js File Runs Directly or Is Imported"
       }
     ]
   },
@@ -90,8 +96,8 @@
       "@type": "WebPage",
       "@id": "https://www.webmanajemen.com/2024/02/detect-if-called-via-request-or-directly-by-command-line.html"
     },
-    "headline": "Detect if a Node.js File Is Run Directly or Imported",
-    "description": "Learn how to check if a Node.js file is executed via CLI (node path-to-file) or loaded using require or import. Supports both CommonJS and ES modules.",
+    "headline": "Detect if a Node.js File Runs Directly or Is Imported",
+    "description": "Learn how to determine if a Node.js file is executed directly from the CLI or imported as a module, with examples for CommonJS, ESM, and cross-module detection.",
     "image": {
       "@type": "ImageObject",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png",
@@ -113,7 +119,7 @@
       }
     },
     "datePublished": "2024-02-23T11:16:51+07:00",
-    "dateModified": "2025-07-25T00:53:36+07:00"
+    "dateModified": "2025-08-08T08:59:45+07:00"
   }
 ]</script>
 
@@ -168,9 +174,9 @@
                     
                       <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
                     
-                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
                     
-                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
                     
                       <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
                     
@@ -187,11 +193,11 @@
                 
                   <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                     
-                      <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
+                      <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
                     
-                      <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
+                      <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
                     
-                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
                     
                   </div>
                 
@@ -206,9 +212,9 @@
                 
                   <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                     
-                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
                     
-                      <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
+                      <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
                     
                   </div>
                 
@@ -223,9 +229,9 @@
                 
                   <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                     
-                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
                     
-                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
                     
                       <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
                     
@@ -261,9 +267,9 @@
                 
                   <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
                 
-                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
                 
-                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
                 
                   <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
                 
@@ -279,11 +285,11 @@
             
               <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                 
-                  <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
+                  <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
                 
-                  <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
+                  <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
                 
-                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
                 
               </div>
             
@@ -297,9 +303,9 @@
             
               <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                 
-                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
                 
-                  <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
+                  <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
                 
               </div>
             
@@ -313,9 +319,9 @@
             
               <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                 
-                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
                 
-                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
                 
                   <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
                 
@@ -353,7 +359,7 @@
         <div id="accordion-collapse-metadata" data-accordion="collapse">
           <h2 id="accordion-post-metadata">
             <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-metadata-body" aria-expanded="false" aria-controls="accordion-post-metadata-body">
-              <span class="font-bold tracking-tight text-gray-900 dark:text-white">Detect if a Node.js File Is Run Directly or Imported - WMI</span>
+              <span class="font-bold tracking-tight text-gray-900 dark:text-white">Detect if a Node.js File Runs Directly or Is Imported - WMI</span>
               <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
               </svg>
@@ -361,7 +367,7 @@
           </h2>
           <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
             <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-              <p class="text-gray-500 dark:text-gray-400">Learn how to check if a Node.js file is executed via CLI (node path-to-file) or loaded using require or import. Supports both CommonJS and ES modules.</p>
+              <p class="text-gray-500 dark:text-gray-400">Learn how to determine if a Node.js file is executed directly from the CLI or imported as a module, with examples for CommonJS, ESM, and cross-module detection.</p>
             </div>
           </div>
         </div>
@@ -386,6 +392,11 @@
         <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
           <a href="/tags/typescript/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
             <span itemprop="name">typescript</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/nodejs/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">nodejs</span>
           </a>
         </span>,
         <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
@@ -425,7 +436,14 @@
 <h2>ESM</h2>
 <p>In the ECMAScript Module (ESM), you can use the "import.meta" object  to determine whether a module is  executed directly or  imported. In particular, you can check the <code>import.meta.url</code> property.</p>
 <pre><code class="hljs ts"><span class="hljs-comment">// main.mjs</span>
-<span class="hljs-keyword">if</span> (<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span> === <span class="hljs-string">`file://<span class="hljs-subst">${process.argv[<span class="hljs-number">1</span>]}</span>`</span>) {
+
+<span class="hljs-keyword">import</span> { fileURLToPath, pathToFileURL } <span class="hljs-keyword">from</span> <span class="hljs-string">'url'</span>;
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
+
+<span class="hljs-keyword">const</span> __filename = <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>);
+<span class="hljs-keyword">const</span> __dirname = path.<span class="hljs-title function_">dirname</span>(__filename);
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span> === <span class="hljs-title function_">pathToFileURL</span>(process.<span class="hljs-property">argv</span>[<span class="hljs-number">1</span>]).<span class="hljs-property">href</span>) {
   <span class="hljs-comment">// This module is being run directly</span>
   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'This module is the main module.'</span>);
 } <span class="hljs-keyword">else</span> {
@@ -433,7 +451,7 @@
   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'This module is being imported as a module.'</span>);
 }</code></pre>
 
-<p>or you can using module <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL25wbWpzLmNvbS9lcy1tYWlu" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="http://npmjs.com/es-main">es-main</a>:</p>
+<p>or you can using module <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL25wbWpzLmNvbS9lcy1tYWlu" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="http://npmjs.com/es-main">es-main</a>:</p>
 <pre><code class="hljs ts"><span class="hljs-comment">// ESM</span>
 
 <span class="hljs-keyword">import</span> esMain <span class="hljs-keyword">from</span> <span class="hljs-string">'es-main'</span>;
@@ -561,6 +579,7 @@
                 <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
                   <div class="flex flex-wrap justify-center">
                       <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
+                      <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
                       <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
                       <a href="/tags/esm/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> esm</a>
                       <a href="/tags/commonjs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> commonjs</a>
@@ -654,13 +673,8 @@
                       <a href="/tags/share/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> share</a>
                       <a href="/tags/gradle/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> gradle</a>
                       <a href="/tags/kotlin/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> kotlin</a>
-                      <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
-                      <a href="/tags/genshin-impact/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> genshin impact</a>
-                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
-                      <a href="/tags/xml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xml</a>
-                      <a href="/tags/templates/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> templates</a>
-                      <a href="/tags/themes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> themes</a>
                       <a href="/tags/powershell/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> powershell</a>
+                      <a href="/tags/ide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ide</a>
                       <a href="/tags/apache/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> apache</a>
                       <a href="/tags/xampp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xampp</a>
                       <a href="/tags/recaptcha/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recaptcha</a>
@@ -668,6 +682,11 @@
                       <a href="/tags/firmware/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> firmware</a>
                       <a href="/tags/scripts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scripts</a>
                       <a href="/tags/hyperlink/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hyperlink</a>
+                      <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
+                      <a href="/tags/genshin-impact/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> genshin impact</a>
+                      <a href="/tags/xml/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> xml</a>
+                      <a href="/tags/templates/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> templates</a>
+                      <a href="/tags/themes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> themes</a>
                       <a href="/tags/rollback/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> rollback</a>
                       <a href="/tags/linux/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linux</a>
                       <a href="/tags/python/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> python</a>
@@ -684,8 +703,8 @@
                       <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
                       <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
                       <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
-                      <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
                       <a href="/tags/commonjs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> commonjs</a>
+                      <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
                       <a href="/tags/mobile-legends/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mobile legends</a>
                       <a href="/tags/pyside6/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> pyside6</a>
                       <a href="/tags/chest-location/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chest location</a>
@@ -713,7 +732,7 @@
     
 <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
   <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
       
@@ -726,13 +745,13 @@
         
           
             <li>
-              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
             </li>
           
         
           
             <li>
-              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Is Run Directly or Imported" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Detect if a Node.js File Runs Directly or Is Imported" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
             </li>
           
         

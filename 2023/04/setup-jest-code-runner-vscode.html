@@ -125,7 +125,7 @@
       }
     },
     "datePublished": "2023-04-19T06:41:48+07:00",
-    "dateModified": "2023-09-02T21:28:04+07:00"
+    "dateModified": "2025-08-19T08:52:07+07:00"
   }
 ]</script>
 
@@ -593,6 +593,116 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span></code></pre>
 
+<h2>Setup jest for compatible Mixed module (CommonJS and ESM)</h2>
+<blockquote>
+<p>when your project is CJS (dont have <code>type: module</code> in package.json), you should convert <code>jest.config.js</code> and <code>babel.config.js</code> to CJS syntax</p>
+</blockquote>
+<h3>Install additional dependencies</h3>
+<pre><code class="hljs bash">yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @jest/types @jest/globals @babel/core @babel/preset-env @babel/preset-typescript babel-jest</code></pre>
+
+<h3>Create <code>jest.config.js</code></h3>
+<pre><code class="hljs typescript"><span class="hljs-keyword">import</span> { defaults } <span class="hljs-keyword">from</span> <span class="hljs-string">'jest-config'</span>;
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'upath'</span>;
+<span class="hljs-keyword">import</span> { fileURLToPath } <span class="hljs-keyword">from</span> <span class="hljs-string">'url'</span>;
+
+<span class="hljs-keyword">const</span> __dirname = path.<span class="hljs-title function_">dirname</span>(<span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>));
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@type</span> {<span class="hljs-type">import('jest').Config</span>} */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  ...defaults,
+  <span class="hljs-attr">testEnvironment</span>: <span class="hljs-string">'node'</span>,
+  <span class="hljs-attr">extensionsToTreatAsEsm</span>: [<span class="hljs-string">'.ts'</span>, <span class="hljs-string">'.tsx'</span>],
+  <span class="hljs-attr">transform</span>: {
+    <span class="hljs-comment">// TypeScript files</span>
+    <span class="hljs-string">'^.+\\.(ts|tsx)$'</span>: [
+      <span class="hljs-string">'ts-jest'</span>,
+      {
+        <span class="hljs-attr">babelConfig</span>: {
+          <span class="hljs-attr">presets</span>: [
+            [
+              <span class="hljs-string">'@babel/preset-env'</span>,
+              {
+                <span class="hljs-attr">targets</span>: { <span class="hljs-attr">node</span>: <span class="hljs-string">'current'</span> }
+              }
+            ],
+            <span class="hljs-string">'@babel/preset-typescript'</span>
+          ]
+        },
+        <span class="hljs-attr">useESM</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">tsconfig</span>: path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">'tsconfig.jest.json'</span>)
+      }
+    ],
+    <span class="hljs-comment">// ESM JavaScript files</span>
+    <span class="hljs-string">'^.+\\.(mjs)$'</span>: [
+      <span class="hljs-string">'babel-jest'</span>,
+      {
+        <span class="hljs-attr">presets</span>: [[<span class="hljs-string">'@babel/preset-env'</span>, { <span class="hljs-attr">targets</span>: { <span class="hljs-attr">node</span>: <span class="hljs-string">'current'</span> }, <span class="hljs-attr">modules</span>: <span class="hljs-literal">false</span> }]],
+        <span class="hljs-attr">babelrc</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">configFile</span>: <span class="hljs-literal">false</span>
+      }
+    ],
+    <span class="hljs-comment">// CommonJS and other JS files</span>
+    <span class="hljs-string">'^.+\\.(cjs|js|jsx)$'</span>: [
+      <span class="hljs-string">'babel-jest'</span>,
+      {
+        <span class="hljs-attr">presets</span>: [[<span class="hljs-string">'@babel/preset-env'</span>, { <span class="hljs-attr">targets</span>: { <span class="hljs-attr">node</span>: <span class="hljs-string">'current'</span> } }]]
+      }
+    ]
+  },
+  <span class="hljs-attr">moduleFileExtensions</span>: [<span class="hljs-string">'ts'</span>, <span class="hljs-string">'tsx'</span>, <span class="hljs-string">'js'</span>, <span class="hljs-string">'jsx'</span>, <span class="hljs-string">'mjs'</span>, <span class="hljs-string">'cjs'</span>, <span class="hljs-string">'json'</span>, <span class="hljs-string">'node'</span>],
+  <span class="hljs-attr">moduleNameMapper</span>: {
+    <span class="hljs-string">'^(\\.{1,2}/.*)\\.(js|mjs|jsx|tsx)$'</span>: <span class="hljs-string">'$1'</span>
+  },
+  <span class="hljs-attr">testMatch</span>: [<span class="hljs-string">'**/__tests__/**/*.+(ts|tsx|js|jsx|mjs|cjs)'</span>, <span class="hljs-string">'**/*.(test|spec).+(ts|tsx|js|jsx|mjs|cjs)'</span>],
+  <span class="hljs-attr">transformIgnorePatterns</span>: [<span class="hljs-string">'/node_modules/(?!your-esm-package)/'</span>], <span class="hljs-comment">// allow ESM packages if needed</span>
+  <span class="hljs-attr">collectCoverageFrom</span>: [<span class="hljs-string">'src/**/*.{ts,js,mjs,cjs}'</span>],
+  <span class="hljs-attr">coveragePathIgnorePatterns</span>: [<span class="hljs-string">'/node_modules/'</span>, <span class="hljs-string">'/dist/'</span>, <span class="hljs-string">'/tmp/'</span>, <span class="hljs-string">'/test/'</span>, <span class="hljs-string">'/__tests__/'</span>, <span class="hljs-string">'/coverage/'</span>, <span class="hljs-string">'/lib/'</span>],
+  <span class="hljs-attr">coverageDirectory</span>: <span class="hljs-string">'coverage'</span>,
+  <span class="hljs-attr">coverageReporters</span>: [<span class="hljs-string">'text'</span>, <span class="hljs-string">'lcov'</span>, <span class="hljs-string">'html'</span>],
+  <span class="hljs-attr">setupFilesAfterEnv</span>: [],
+  <span class="hljs-attr">testTimeout</span>: <span class="hljs-number">120000</span>,
+  <span class="hljs-attr">detectOpenHandles</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">modulePathIgnorePatterns</span>: [<span class="hljs-string">'&lt;rootDir&gt;/test/package.json'</span>]
+};</code></pre>
+
+<h3>Create <code>tsconfig.jest.json</code></h3>
+<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
+  <span class="hljs-comment">// custom schema (non-vscode environment)</span>
+  <span class="hljs-attr">"$schema"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://json.schemastore.org/tsconfig"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// extends other typescript config file</span>
+  <span class="hljs-attr">"extends"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"./tsconfig.json"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-comment">// make dump output to temp folder</span>
+    <span class="hljs-attr">"outDir"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"tmp/jest"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-comment">/* Visit https://aka.ms/tsconfig.json to read more about this file */</span>
+    <span class="hljs-comment">/* Language and Environment */</span>
+    <span class="hljs-attr">"target"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"esnext"</span> <span class="hljs-comment">/* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */</span><span class="hljs-punctuation">,</span>
+
+    <span class="hljs-comment">/* Modules */</span>
+    <span class="hljs-attr">"module"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"esnext"</span> <span class="hljs-comment">/* Specify what module code is generated. */</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"esModuleInterop"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">/* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"forceConsistentCasingInFileNames"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">/* Ensure that casing is correct in imports. */</span><span class="hljs-punctuation">,</span>
+
+    <span class="hljs-comment">/* Type Checking */</span>
+    <span class="hljs-attr">"strict"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span> <span class="hljs-comment">/* Enable all strict type-checking */</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"skipLibCheck"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">/* Skip type checking all .d.ts files. */</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
+
+<h3>Create <code>babel.config.js</code></h3>
+<pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">presets</span>: [
+    [
+      <span class="hljs-string">'@babel/preset-env'</span>,
+      {
+        <span class="hljs-attr">targets</span>: { <span class="hljs-attr">node</span>: <span class="hljs-string">'current'</span> },
+        <span class="hljs-attr">modules</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// keep ESM</span>
+      }
+    ],
+    <span class="hljs-string">'@babel/preset-typescript'</span>
+  ]
+};</code></pre>
+
 <h3>step to test</h3>
 <p>create sample test inside <code>test</code> folder</p>
 <h4>create <code>test/math-operator.test.ts</code></h4>
@@ -603,7 +713,7 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
    <span class="hljs-attr">sum</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">a,b</span>) {
        <span class="hljs-keyword">return</span> a + b;
    },
-   
+
    <span class="hljs-attr">diff</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">a,b</span>) {
        <span class="hljs-keyword">return</span> a - b;
    },
@@ -691,6 +801,23 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
                                 </li>
                                 <li>
                                   <a href="#create-tsconfig.jest.json">create tsconfig.jest.json</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#setup-jest-for-compatible-mixed-module-(commonjs-and-esm)">Setup jest for compatible Mixed module (CommonJS and ESM)</a>
+                            <ul>
+                                <li>
+                                  <a href="#install-additional-dependencies">Install additional dependencies</a>
+                                </li>
+                                <li>
+                                  <a href="#create-jest.config.js">Create jest.config.js</a>
+                                </li>
+                                <li>
+                                  <a href="#create-tsconfig.jest.json">Create tsconfig.jest.json</a>
+                                </li>
+                                <li>
+                                  <a href="#create-babel.config.js">Create babel.config.js</a>
                                 </li>
                                 <li>
                                   <a href="#step-to-test">step to test</a>
@@ -785,20 +912,20 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
                       <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
                       <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
                       <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
-                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
-                      <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
-                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
-                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
-                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
-                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
-                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
-                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
-                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
-                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
                       <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
+                      <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
+                      <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
                       <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
                       <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
+                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
                       <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
                       <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
                       <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
                       <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
@@ -841,12 +968,12 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
                       <a href="/tags/net/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> net</a>
                       <a href="/tags/ejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ejs</a>
                       <a href="/tags/nunjucks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nunjucks</a>
+                      <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
                       <a href="/tags/hexo-shortcodes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo-shortcodes</a>
                       <a href="/tags/codepen/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codepen</a>
                       <a href="/tags/markdown/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> markdown</a>
                       <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
                       <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
-                      <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
                       <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
                       <a href="/tags/commonjs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> commonjs</a>
                       <a href="/tags/mobile-legends/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> mobile legends</a>
@@ -854,8 +981,8 @@ yarn add -D jest ts-jest jest-config jest-mock @jest/expect @jest/environment @j
                       <a href="/tags/chest-location/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> chest location</a>
                       <a href="/tags/quest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> quest</a>
                       <a href="/tags/material/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> material</a>
-                      <a href="/tags/recipe/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipe</a>
                       <a href="/tags/bug/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bug</a>
+                      <a href="/tags/recipe/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipe</a>
                       <a href="/tags/scenic-spot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scenic-spot</a>
                   </div>
                 </div>

@@ -2,20 +2,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Migrate ESLint v9 for prettier typescript javascript - WMI</title>
-    <meta name="description" content="WMI - Migration ESLint with prettier, typescript, javascript rules">
-    <meta name="keywords" content="eslint,javascript,typescript">
+    <title>ESLint Flat Config for JS, TS, React, and Prettier - WMI</title>
+    <meta name="description" content="WMI - ESLint Flat Config for JS, TS, React, and Prettier with Babel, Hooks, and JSONC support.">
+    <meta name="keywords" content="typescript,eslint,javascript,react,prettier,linting,configuration,flat config,babel,hooks,jsonc,web development,setup,guide,tutorial,best practices,Programming,ESLint,JavaScript,TypeScript,React">
     <meta name="search" content="/hexo-search.json">
     <meta name="author" content="Dimas Lanjaka">
     
-    <meta property="og:title" content="Migrate ESLint v9 for prettier typescript javascript - WMI">
-    <meta property="og:description" content="WMI - Migration ESLint with prettier, typescript, javascript rules">
+    <meta property="og:title" content="ESLint Flat Config for JS, TS, React, and Prettier - WMI">
+    <meta property="og:description" content="WMI - ESLint Flat Config for JS, TS, React, and Prettier with Babel, Hooks, and JSONC support.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Migrate ESLint v9 for prettier typescript javascript - WMI">
-    <meta name="twitter:description" content="WMI - Migration ESLint with prettier, typescript, javascript rules">
+    <meta name="twitter:title" content="ESLint Flat Config for JS, TS, React, and Prettier - WMI">
+    <meta name="twitter:description" content="WMI - ESLint Flat Config for JS, TS, React, and Prettier with Babel, Hooks, and JSONC support.">
     <meta name="twitter:image" content="">
     <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
     <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
@@ -66,20 +66,116 @@
       {
         "@type": "ListItem",
         "position": 4,
-        "item": "https://www.webmanajemen.com/tags/nodejs/",
-        "name": "nodejs"
+        "item": "https://www.webmanajemen.com/tags/react/",
+        "name": "react"
       },
       {
         "@type": "ListItem",
         "position": 5,
-        "item": "https://www.webmanajemen.com/categories/programming/",
-        "name": "programming"
+        "item": "https://www.webmanajemen.com/tags/prettier/",
+        "name": "prettier"
       },
       {
         "@type": "ListItem",
         "position": 6,
-        "item": "https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript.html",
-        "name": "Migrate ESLint v9 for prettier typescript javascript"
+        "item": "https://www.webmanajemen.com/tags/linting/",
+        "name": "linting"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": "https://www.webmanajemen.com/tags/configuration/",
+        "name": "configuration"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": "https://www.webmanajemen.com/tags/flat-config/",
+        "name": "flat config"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": "https://www.webmanajemen.com/tags/babel/",
+        "name": "babel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": "https://www.webmanajemen.com/tags/hooks/",
+        "name": "hooks"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": "https://www.webmanajemen.com/tags/jsonc/",
+        "name": "jsonc"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": "https://www.webmanajemen.com/tags/web-development/",
+        "name": "web development"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": "https://www.webmanajemen.com/tags/setup/",
+        "name": "setup"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": "https://www.webmanajemen.com/tags/guide/",
+        "name": "guide"
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": "https://www.webmanajemen.com/tags/tutorial/",
+        "name": "tutorial"
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": "https://www.webmanajemen.com/tags/best-practices/",
+        "name": "best practices"
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": "https://www.webmanajemen.com/categories/Programming/",
+        "name": "Programming"
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": "https://www.webmanajemen.com/categories/Programming/ESLint/",
+        "name": "ESLint"
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": "https://www.webmanajemen.com/categories/Programming/ESLint/JavaScript/",
+        "name": "JavaScript"
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": "https://www.webmanajemen.com/categories/Programming/ESLint/JavaScript/TypeScript/",
+        "name": "TypeScript"
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "item": "https://www.webmanajemen.com/categories/Programming/ESLint/JavaScript/TypeScript/React/",
+        "name": "React"
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "item": "https://www.webmanajemen.com/NodeJS/eslint-all-in-one-flat-config.html",
+        "name": "ESLint Flat Config for JS, TS, React, and Prettier"
       }
     ]
   },
@@ -88,10 +184,10 @@
     "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript.html"
+      "@id": "https://www.webmanajemen.com/NodeJS/eslint-all-in-one-flat-config.html"
     },
-    "headline": "Migrate ESLint v9 for prettier typescript javascript",
-    "description": "Migration ESLint with prettier, typescript, javascript rules",
+    "headline": "ESLint Flat Config for JS, TS, React, and Prettier",
+    "description": "ESLint Flat Config for JS, TS, React, and Prettier with Babel, Hooks, and JSONC support.",
     "image": {
       "@type": "ImageObject",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png",
@@ -112,8 +208,8 @@
         "height": "125"
       }
     },
-    "datePublished": "2024-10-13T19:23:21+07:00",
-    "dateModified": "2025-08-20T23:04:04+07:00"
+    "datePublished": "2025-08-20T22:54:10+07:00",
+    "dateModified": "2025-08-20T22:56:37+07:00"
   }
 ]</script>
 
@@ -168,9 +264,9 @@
                     
                       <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
                     
-                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                      <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
                     
-                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                      <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
                     
                       <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
                     
@@ -187,11 +283,11 @@
                 
                   <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                     
-                      <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
+                      <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
                     
-                      <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
+                      <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
                     
-                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
                     
                   </div>
                 
@@ -206,9 +302,9 @@
                 
                   <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                     
-                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                      <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
                     
-                      <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
+                      <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
                     
                   </div>
                 
@@ -223,9 +319,9 @@
                 
                   <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                     
-                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
                     
-                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                      <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
                     
                       <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
                     
@@ -261,9 +357,9 @@
                 
                   <a href="/about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
                 
-                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+                  <a href="https://www.webmanajemen.com/p/privacy.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
                 
-                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+                  <a href="https://www.webmanajemen.com/p/tos.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
                 
                   <a href="/contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
                 
@@ -279,11 +375,11 @@
             
               <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                 
-                  <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
+                  <a href="https://www.webmanajemen.com/docs/hexo-adsense/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/docs/hexo-adsense/">hexo-adsense</a>
                 
-                  <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
+                  <a href="https://www.webmanajemen.com/docs/hexo-shortcodes/" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/docs/hexo-shortcodes/">hexo-shortcodes</a>
                 
-                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9oZXhvLXNlbw==" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://github.com/dimaslanjaka/hexo-seo">hexo-seo</a>
                 
               </div>
             
@@ -297,9 +393,9 @@
             
               <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                 
-                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
+                  <a href="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html">Quiz The Legend Of Neverland</a>
                 
-                  <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
+                  <a href="https://www.webmanajemen.com/chimeraland/blacklist-player.html" class="block px-4 py-2 text-sm hover:bg-gray-700" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/chimeraland/blacklist-player.html">Chimeraland Blacklist Player</a>
                 
               </div>
             
@@ -313,9 +409,9 @@
             
               <div class="absolute hidden bg-gray-800 text-white rounded-md shadow-lg group-hover:block z-50 w-48">
                 
-                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com/proxyManager.html" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://sh.webmanajemen.com/proxyManager.html">PHP Proxy Hunter</a>
                 
-                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
+                  <a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://sh.webmanajemen.com:8443/proxy/" class="block px-4 py-2 text-sm hover:bg-gray-700" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://sh.webmanajemen.com:8443/proxy/">Python Proxy Hunter</a>
                 
                   <a href="/android-engineer" class="block px-4 py-2 text-sm hover:bg-gray-700">Android Flashtool Utility</a>
                 
@@ -353,7 +449,7 @@
         <div id="accordion-collapse-metadata" data-accordion="collapse">
           <h2 id="accordion-post-metadata">
             <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-post-metadata-body" aria-expanded="false" aria-controls="accordion-post-metadata-body">
-              <span class="font-bold tracking-tight text-gray-900 dark:text-white">Migrate ESLint v9 for prettier typescript javascript - WMI</span>
+              <span class="font-bold tracking-tight text-gray-900 dark:text-white">ESLint Flat Config for JS, TS, React, and Prettier - WMI</span>
               <svg data-accordion-icon="" class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path>
               </svg>
@@ -361,7 +457,7 @@
           </h2>
           <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
             <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-              <p class="text-gray-500 dark:text-gray-400">Migration ESLint with prettier, typescript, javascript rules</p>
+              <p class="text-gray-500 dark:text-gray-400">ESLint Flat Config for JS, TS, React, and Prettier with Babel, Hooks, and JSONC support.</p>
             </div>
           </div>
         </div>
@@ -376,8 +472,32 @@
         <div class="p-5"><span class="flex items-center mb-2 text-sm text-gray-600 dark:text-gray-400">
     <i class="far fa-folder mr-1"></i>
       <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-        <a href="/categories/programming/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
-          <span itemprop="name">programming</span>
+        <a href="/categories/Programming/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">Programming</span>
+        </a>
+      </span>,
+      
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/Programming/ESLint/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">ESLint</span>
+        </a>
+      </span>,
+      
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/Programming/ESLint/JavaScript/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">JavaScript</span>
+        </a>
+      </span>,
+      
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/Programming/ESLint/JavaScript/TypeScript/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">TypeScript</span>
+        </a>
+      </span>,
+      
+      <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+        <a href="/categories/Programming/ESLint/JavaScript/TypeScript/React/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+          <span itemprop="name">React</span>
         </a>
       </span>
       <span class="mr-4"></span>
@@ -399,340 +519,349 @@
           </a>
         </span>,
         <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
-          <a href="/tags/nodejs/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
-            <span itemprop="name">nodejs</span>
+          <a href="/tags/react/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">react</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/prettier/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">prettier</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/linting/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">linting</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/configuration/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">configuration</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/flat-config/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">flat config</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/babel/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">babel</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/hooks/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">hooks</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/jsonc/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">jsonc</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/web-development/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">web development</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/setup/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">setup</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/guide/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">guide</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/tutorial/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">tutorial</span>
+          </a>
+        </span>,
+        <span itemprop="keywords" itemscope="" itemtype="http://schema.org/Thing">
+          <a href="/tags/best-practices/" itemprop="url" rel="index" class="ml-1 text-blue-600 dark:text-blue-400 hover:underline">
+            <span itemprop="name">best practices</span>
           </a>
         </span>
     </span>
 </span>
 </div>
-        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><h2>Install dependencies</h2>
-<p>install using npm:</p>
-<pre><code class="hljs bash">npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin globals @eslint/js @eslint/eslintrc</code></pre>
-<p>install using yarn:</p>
-<pre><code class="hljs bash">yarn add -D prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin globals @eslint/js @eslint/eslintrc</code></pre>
+        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><h2>Why Use ESLint Flat Config?</h2>
+<p>The new ESLint Flat Config format (<code>eslint.config.js</code>) offers a more flexible, modern, and JavaScript-native way to configure your linter. It allows you to:</p>
+<ul>
+<li>Use full JavaScript for dynamic configuration.</li>
+<li>Share and compose configs easily.</li>
+<li>Integrate with modern tools like Babel, TypeScript, and Prettier.</li>
+<li>Avoid legacy config pitfalls and limitations.</li>
+</ul>
+<p>This article provides a complete, production-ready Flat Config setup for projects using JavaScript, TypeScript, React, and Prettier, with support for Babel and JSONC (JSON with comments) for Prettier configuration.</p>
+<hr>
+<h2>Requirements</h2>
+<pre><code class="hljs bash">yarn add -D eslint @eslint/js eslint-config-prettier eslint-plugin-prettier @babel/core @babel/eslint-parser @babel/preset-react @babel/plugin-syntax-import-assertions typescript typescript-eslint eslint-plugin-react eslint-plugin-react-hooks globals jsonc-parser</code></pre>
 
-<h3>ESLint v9 ESM configuration migrated</h3>
-<p>Save this rules to <strong>eslint.config.mjs</strong></p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> globals <span class="hljs-keyword">from</span> <span class="hljs-string">'globals'</span>;
-<span class="hljs-keyword">import</span> tsParser <span class="hljs-keyword">from</span> <span class="hljs-string">'@typescript-eslint/parser'</span>;
-<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'node:path'</span>;
-<span class="hljs-keyword">import</span> { fileURLToPath } <span class="hljs-keyword">from</span> <span class="hljs-string">'node:url'</span>;
-<span class="hljs-keyword">import</span> js <span class="hljs-keyword">from</span> <span class="hljs-string">'@eslint/js'</span>;
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">FlatCompat</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@eslint/eslintrc'</span>;
-
-<span class="hljs-keyword">const</span> __filename = <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>);
-<span class="hljs-keyword">const</span> __dirname = path.<span class="hljs-title function_">dirname</span>(__filename);
-<span class="hljs-keyword">const</span> compat = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlatCompat</span>({
-  <span class="hljs-attr">baseDirectory</span>: __dirname,
-  <span class="hljs-attr">recommendedConfig</span>: js.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>,
-  <span class="hljs-attr">allConfig</span>: js.<span class="hljs-property">configs</span>.<span class="hljs-property">all</span>
-});
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> [
-  {
-    <span class="hljs-comment">// Ignore certain files and directories from linting</span>
-    <span class="hljs-attr">ignores</span>: [
-      <span class="hljs-string">'**/*.md'</span>,          <span class="hljs-comment">// Markdown files</span>
-      <span class="hljs-string">'**/tmp/**/*'</span>,      <span class="hljs-comment">// Temporary files</span>
-      <span class="hljs-string">'**/*.html'</span>,        <span class="hljs-comment">// HTML files</span>
-      <span class="hljs-string">'**/*.py'</span>,          <span class="hljs-comment">// Python files</span>
-      <span class="hljs-string">'**/*.txt'</span>,         <span class="hljs-comment">// Text files</span>
-      <span class="hljs-string">'**/app/**/*'</span>,      <span class="hljs-comment">// Application-specific files</span>
-      <span class="hljs-string">'**/dist/**/*'</span>,     <span class="hljs-comment">// Distribution/build files</span>
-      <span class="hljs-string">'**/node_modules/**/*'</span>, <span class="hljs-comment">// Node.js dependencies</span>
-    ]
-  },
-
-  <span class="hljs-comment">// Extend recommended ESLint rules, TypeScript plugin rules, and Prettier plugin rules</span>
-  ...compat.<span class="hljs-title function_">extends</span>(
-    <span class="hljs-string">'eslint:recommended'</span>,                     <span class="hljs-comment">// Base ESLint recommended rules</span>
-    <span class="hljs-string">'plugin:@typescript-eslint/eslint-recommended'</span>, <span class="hljs-comment">// TypeScript-specific recommended rules</span>
-    <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,  <span class="hljs-comment">// Additional TypeScript rules</span>
-    <span class="hljs-string">'plugin:prettier/recommended'</span>             <span class="hljs-comment">// Integrate Prettier for code formatting</span>
-  ),
-
-  {
-    <span class="hljs-attr">linterOptions</span>: {
-      <span class="hljs-attr">reportUnusedDisableDirectives</span>: <span class="hljs-literal">true</span>      <span class="hljs-comment">// Report unused ESLint disable comments</span>
-    },
-
-    <span class="hljs-attr">languageOptions</span>: {
-      <span class="hljs-attr">globals</span>: {
-        ...globals.<span class="hljs-property">browser</span>,                    <span class="hljs-comment">// Browser global variables</span>
-        ...globals.<span class="hljs-property">amd</span>,                        <span class="hljs-comment">// AMD module globals</span>
-        ...globals.<span class="hljs-property">node</span>,                       <span class="hljs-comment">// Node.js global variables</span>
-        <span class="hljs-attr">$</span>: <span class="hljs-string">'readonly'</span>,                         <span class="hljs-comment">// jQuery object</span>
-        <span class="hljs-attr">jQuery</span>: <span class="hljs-string">'readonly'</span>,                    <span class="hljs-comment">// jQuery object</span>
-        <span class="hljs-attr">adsbygoogle</span>: <span class="hljs-string">'writable'</span>,               <span class="hljs-comment">// Google Ads</span>
-        <span class="hljs-attr">hexo</span>: <span class="hljs-string">'readonly'</span>                       <span class="hljs-comment">// Hexo static site generator object</span>
-      },
-
-      <span class="hljs-attr">parser</span>: tsParser,                        <span class="hljs-comment">// Use TypeScript parser</span>
-      <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-number">2020</span>,                       <span class="hljs-comment">// Specify ECMAScript version 2020</span>
-      <span class="hljs-attr">sourceType</span>: <span class="hljs-string">'module'</span>                     <span class="hljs-comment">// Enable ES6 modules</span>
-    },
-
-    <span class="hljs-attr">rules</span>: {
-      <span class="hljs-comment">// Prettier formatting rules</span>
-      <span class="hljs-string">'prettier/prettier'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">$schema</span>: <span class="hljs-string">'https://json.schemastore.org/prettierrc'</span>, <span class="hljs-comment">// Prettier schema</span>
-          <span class="hljs-attr">printWidth</span>: <span class="hljs-number">120</span>,          <span class="hljs-comment">// Max line length</span>
-          <span class="hljs-attr">tabWidth</span>: <span class="hljs-number">2</span>,              <span class="hljs-comment">// Use 2 spaces for indentation</span>
-          <span class="hljs-attr">useTabs</span>: <span class="hljs-literal">false</span>,           <span class="hljs-comment">// Use spaces instead of tabs</span>
-          <span class="hljs-attr">bracketSameLine</span>: <span class="hljs-literal">true</span>,    <span class="hljs-comment">// Keep opening/closing tags on the same line for JSX</span>
-          <span class="hljs-attr">bracketSpacing</span>: <span class="hljs-literal">true</span>,     <span class="hljs-comment">// Add space inside object literal brackets</span>
-          <span class="hljs-attr">semi</span>: <span class="hljs-literal">true</span>,               <span class="hljs-comment">// Add semicolons at the end of statements</span>
-          <span class="hljs-attr">singleQuote</span>: <span class="hljs-literal">true</span>,        <span class="hljs-comment">// Use single quotes for strings</span>
-          <span class="hljs-attr">trailingComma</span>: <span class="hljs-string">'none'</span>,    <span class="hljs-comment">// No trailing commas</span>
-          <span class="hljs-attr">endOfLine</span>: <span class="hljs-string">'lf'</span>,          <span class="hljs-comment">// Use linefeed (\n) as the end-of-line character</span>
-          <span class="hljs-attr">quoteProps</span>: <span class="hljs-string">'as-needed'</span>,  <span class="hljs-comment">// Only quote object properties when necessary</span>
-
-          <span class="hljs-comment">// Override settings for specific file types</span>
-          <span class="hljs-attr">overrides</span>: [
-            {
-              <span class="hljs-attr">excludeFiles</span>: [<span class="hljs-string">'*.min.js'</span>, <span class="hljs-string">'*.min.cjs'</span>, <span class="hljs-string">'*.min.css'</span>, <span class="hljs-string">'*.min.html'</span>, <span class="hljs-string">'*.min.scss'</span>], <span class="hljs-comment">// Skip minified files</span>
-              <span class="hljs-attr">files</span>: [<span class="hljs-string">'*.js'</span>, <span class="hljs-string">'*.css'</span>, <span class="hljs-string">'*.sass'</span>, <span class="hljs-string">'*.html'</span>, <span class="hljs-string">'*.md'</span>, <span class="hljs-string">'*.ts'</span>],                    <span class="hljs-comment">// Target specific file types</span>
-              <span class="hljs-attr">options</span>: { <span class="hljs-attr">semi</span>: <span class="hljs-literal">true</span> }                                                         <span class="hljs-comment">// Always use semicolons</span>
-            },
-            {
-              <span class="hljs-attr">files</span>: [<span class="hljs-string">'*.ejs'</span>, <span class="hljs-string">'*.njk'</span>, <span class="hljs-string">'*.html'</span>],     <span class="hljs-comment">// Specific parser for templating and HTML files</span>
-              <span class="hljs-attr">options</span>: { <span class="hljs-attr">parser</span>: <span class="hljs-string">'html'</span> }
-            }
-          ]
-        }
-      ],
-
-      <span class="hljs-comment">// TypeScript-specific rules</span>
-      <span class="hljs-string">'@typescript-eslint/explicit-function-return-type'</span>: <span class="hljs-string">'off'</span>,  <span class="hljs-comment">// Disable enforcing return type on functions</span>
-      <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'off'</span>,                                    <span class="hljs-comment">// Disable base rule (TypeScript has its own)</span>
-
-      <span class="hljs-comment">// Allow unused variables starting with _ (common convention for ignored variables)</span>
-      <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,            <span class="hljs-comment">// Ignore unused arguments starting with _</span>
-          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,            <span class="hljs-comment">// Ignore unused variables starting with _</span>
-          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span>     <span class="hljs-comment">// Ignore unused caught errors starting with _</span>
-        }
-      ],
-
-      <span class="hljs-string">'@typescript-eslint/no-explicit-any'</span>: <span class="hljs-string">'off'</span>,                <span class="hljs-comment">// Allow usage of 'any' type</span>
-      <span class="hljs-string">'@typescript-eslint/no-this-alias'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">allowDestructuring</span>: <span class="hljs-literal">false</span>,          <span class="hljs-comment">// Disallow destructuring with aliasing</span>
-          <span class="hljs-attr">allowedNames</span>: [<span class="hljs-string">'self'</span>, <span class="hljs-string">'hexo'</span>]      <span class="hljs-comment">// Allow specific aliases like 'self' and 'hexo'</span>
-        }
-      ],
-
-      <span class="hljs-comment">// JavaScript arrow function rules</span>
-      <span class="hljs-string">'arrow-body-style'</span>: <span class="hljs-string">'off'</span>,              <span class="hljs-comment">// Disable forcing arrow function bodies</span>
-      <span class="hljs-string">'prefer-arrow-callback'</span>: <span class="hljs-string">'off'</span>          <span class="hljs-comment">// Disable enforcing arrow functions for callbacks</span>
-    }
-  },
-
-  {
-    <span class="hljs-comment">// Specific rules for JavaScript and CommonJS files</span>
-    <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.js'</span>, <span class="hljs-string">'**/*.cjs'</span>],
-
-    <span class="hljs-attr">rules</span>: {
-      <span class="hljs-string">'@typescript-eslint/no-var-requires'</span>: <span class="hljs-string">'off'</span>,  <span class="hljs-comment">// Allow require() in CommonJS files</span>
-      <span class="hljs-string">'@typescript-eslint/no-require-imports'</span>: <span class="hljs-string">'off'</span> <span class="hljs-comment">// Allow require imports</span>
-    }
-  }
-];</code></pre>
-
-<h3>ESLint v9 CommonJS (CJS) configuraion migrated</h3>
-<p>Save this rules to <strong>eslint.config.cjs</strong></p>
-<pre><code class="hljs js"><span class="hljs-keyword">const</span> globals = <span class="hljs-built_in">require</span>(<span class="hljs-string">'globals'</span>);
-<span class="hljs-keyword">const</span> tsParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@typescript-eslint/parser'</span>);
-<span class="hljs-keyword">const</span> js = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@eslint/js'</span>);
-<span class="hljs-keyword">const</span> { <span class="hljs-title class_">FlatCompat</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@eslint/eslintrc'</span>);
-
-<span class="hljs-keyword">const</span> compat = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FlatCompat</span>({
-  <span class="hljs-attr">baseDirectory</span>: __dirname,                   <span class="hljs-comment">// The current directory for ESLint configs</span>
-  <span class="hljs-attr">recommendedConfig</span>: js.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>,  <span class="hljs-comment">// ESLint's recommended rules</span>
-  <span class="hljs-attr">allConfig</span>: js.<span class="hljs-property">configs</span>.<span class="hljs-property">all</span>                   <span class="hljs-comment">// All ESLint rules</span>
-});
-
-<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = [
-  {
-    <span class="hljs-comment">// Ignore certain files and directories from linting</span>
-    <span class="hljs-attr">ignores</span>: [
-      <span class="hljs-string">'**/*.md'</span>,          <span class="hljs-comment">// Markdown files</span>
-      <span class="hljs-string">'**/tmp/**/*'</span>,      <span class="hljs-comment">// Temporary files</span>
-      <span class="hljs-string">'**/*.html'</span>,        <span class="hljs-comment">// HTML files</span>
-      <span class="hljs-string">'**/*.py'</span>,          <span class="hljs-comment">// Python files</span>
-      <span class="hljs-string">'**/*.txt'</span>,         <span class="hljs-comment">// Text files</span>
-      <span class="hljs-string">'**/app/**/*'</span>,      <span class="hljs-comment">// Application-specific files</span>
-      <span class="hljs-string">'**/dist/**/*'</span>,     <span class="hljs-comment">// Distribution/build files</span>
-      <span class="hljs-string">'**/node_modules/**/*'</span>, <span class="hljs-comment">// Node.js dependencies</span>
-    ]
-  },
-
-  <span class="hljs-comment">// Extend recommended ESLint rules, TypeScript plugin rules, and Prettier plugin rules</span>
-  ...compat.<span class="hljs-title function_">extends</span>(
-    <span class="hljs-string">'eslint:recommended'</span>,                     <span class="hljs-comment">// Base ESLint recommended rules</span>
-    <span class="hljs-string">'plugin:@typescript-eslint/eslint-recommended'</span>, <span class="hljs-comment">// TypeScript-specific recommended rules</span>
-    <span class="hljs-string">'plugin:@typescript-eslint/recommended'</span>,  <span class="hljs-comment">// Additional TypeScript rules</span>
-    <span class="hljs-string">'plugin:prettier/recommended'</span>             <span class="hljs-comment">// Integrate Prettier for code formatting</span>
-  ),
-
-  {
-    <span class="hljs-attr">linterOptions</span>: {
-      <span class="hljs-attr">reportUnusedDisableDirectives</span>: <span class="hljs-literal">true</span>      <span class="hljs-comment">// Report unused ESLint disable comments</span>
-    },
-
-    <span class="hljs-attr">languageOptions</span>: {
-      <span class="hljs-attr">globals</span>: {
-        ...globals.<span class="hljs-property">browser</span>,                    <span class="hljs-comment">// Browser global variables</span>
-        ...globals.<span class="hljs-property">amd</span>,                        <span class="hljs-comment">// AMD module globals</span>
-        ...globals.<span class="hljs-property">node</span>,                       <span class="hljs-comment">// Node.js global variables</span>
-        <span class="hljs-attr">$</span>: <span class="hljs-string">'readonly'</span>,                         <span class="hljs-comment">// jQuery object</span>
-        <span class="hljs-attr">jQuery</span>: <span class="hljs-string">'readonly'</span>,                    <span class="hljs-comment">// jQuery object</span>
-        <span class="hljs-attr">adsbygoogle</span>: <span class="hljs-string">'writable'</span>,               <span class="hljs-comment">// Google Ads</span>
-        <span class="hljs-attr">hexo</span>: <span class="hljs-string">'readonly'</span>                       <span class="hljs-comment">// Hexo static site generator object</span>
-      },
-
-      <span class="hljs-attr">parser</span>: tsParser,                        <span class="hljs-comment">// Use TypeScript parser</span>
-      <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-number">2020</span>,                       <span class="hljs-comment">// Specify ECMAScript version 2020</span>
-      <span class="hljs-attr">sourceType</span>: <span class="hljs-string">'module'</span>                     <span class="hljs-comment">// Enable ES6 modules</span>
-    },
-
-    <span class="hljs-attr">rules</span>: {
-      <span class="hljs-comment">// Prettier formatting rules</span>
-      <span class="hljs-string">'prettier/prettier'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">$schema</span>: <span class="hljs-string">'https://json.schemastore.org/prettierrc'</span>, <span class="hljs-comment">// Prettier schema</span>
-          <span class="hljs-attr">printWidth</span>: <span class="hljs-number">120</span>,          <span class="hljs-comment">// Max line length</span>
-          <span class="hljs-attr">tabWidth</span>: <span class="hljs-number">2</span>,              <span class="hljs-comment">// Use 2 spaces for indentation</span>
-          <span class="hljs-attr">useTabs</span>: <span class="hljs-literal">false</span>,           <span class="hljs-comment">// Use spaces instead of tabs</span>
-          <span class="hljs-attr">bracketSameLine</span>: <span class="hljs-literal">true</span>,    <span class="hljs-comment">// Keep opening/closing tags on the same line for JSX</span>
-          <span class="hljs-attr">bracketSpacing</span>: <span class="hljs-literal">true</span>,     <span class="hljs-comment">// Add space inside object literal brackets</span>
-          <span class="hljs-attr">semi</span>: <span class="hljs-literal">true</span>,               <span class="hljs-comment">// Add semicolons at the end of statements</span>
-          <span class="hljs-attr">singleQuote</span>: <span class="hljs-literal">true</span>,        <span class="hljs-comment">// Use single quotes for strings</span>
-          <span class="hljs-attr">trailingComma</span>: <span class="hljs-string">'none'</span>,    <span class="hljs-comment">// No trailing commas</span>
-          <span class="hljs-attr">endOfLine</span>: <span class="hljs-string">'lf'</span>,          <span class="hljs-comment">// Use linefeed (\n) as the end-of-line character</span>
-          <span class="hljs-attr">quoteProps</span>: <span class="hljs-string">'as-needed'</span>,  <span class="hljs-comment">// Only quote object properties when necessary</span>
-
-          <span class="hljs-comment">// Override settings for specific file types</span>
-          <span class="hljs-attr">overrides</span>: [
-            {
-              <span class="hljs-attr">excludeFiles</span>: [<span class="hljs-string">'*.min.js'</span>, <span class="hljs-string">'*.min.cjs'</span>, <span class="hljs-string">'*.min.css'</span>, <span class="hljs-string">'*.min.html'</span>, <span class="hljs-string">'*.min.scss'</span>], <span class="hljs-comment">// Skip minified files</span>
-              <span class="hljs-attr">files</span>: [<span class="hljs-string">'*.js'</span>, <span class="hljs-string">'*.css'</span>, <span class="hljs-string">'*.sass'</span>, <span class="hljs-string">'*.html'</span>, <span class="hljs-string">'*.md'</span>, <span class="hljs-string">'*.ts'</span>],                    <span class="hljs-comment">// Target specific file types</span>
-              <span class="hljs-attr">options</span>: { <span class="hljs-attr">semi</span>: <span class="hljs-literal">true</span> }                                                         <span class="hljs-comment">// Always use semicolons</span>
-            },
-            {
-              <span class="hljs-attr">files</span>: [<span class="hljs-string">'*.ejs'</span>, <span class="hljs-string">'*.njk'</span>, <span class="hljs-string">'*.html'</span>],     <span class="hljs-comment">// Specific parser for templating and HTML files</span>
-              <span class="hljs-attr">options</span>: { <span class="hljs-attr">parser</span>: <span class="hljs-string">'html'</span> }
-            }
-          ]
-        }
-      ],
-
-      <span class="hljs-comment">// TypeScript-specific rules</span>
-      <span class="hljs-string">'@typescript-eslint/explicit-function-return-type'</span>: <span class="hljs-string">'off'</span>,  <span class="hljs-comment">// Disable enforcing return type on functions</span>
-      <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'off'</span>,                                    <span class="hljs-comment">// Disable base rule (TypeScript has its own)</span>
-
-      <span class="hljs-comment">// Allow unused variables starting with _ (common convention for ignored variables)</span>
-      <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,            <span class="hljs-comment">// Ignore unused arguments starting with _</span>
-          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,            <span class="hljs-comment">// Ignore unused variables starting with _</span>
-          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span>     <span class="hljs-comment">// Ignore unused caught errors starting with _</span>
-        }
-      ],
-
-      <span class="hljs-string">'@typescript-eslint/no-explicit-any'</span>: <span class="hljs-string">'off'</span>,                <span class="hljs-comment">// Allow usage of 'any' type</span>
-      <span class="hljs-string">'@typescript-eslint/no-this-alias'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">allowDestructuring</span>: <span class="hljs-literal">false</span>,          <span class="hljs-comment">// Disallow destructuring with aliasing</span>
-          <span class="hljs-attr">allowedNames</span>: [<span class="hljs-string">'self'</span>, <span class="hljs-string">'hexo'</span>]      <span class="hljs-comment">// Allow specific aliases like 'self' and 'hexo'</span>
-        }
-      ],
-
-      <span class="hljs-comment">// JavaScript arrow function rules</span>
-      <span class="hljs-string">'arrow-body-style'</span>: <span class="hljs-string">'off'</span>,              <span class="hljs-comment">// Disable forcing arrow function bodies</span>
-      <span class="hljs-string">'prefer-arrow-callback'</span>: <span class="hljs-string">'off'</span>          <span class="hljs-comment">// Disable enforcing arrow functions for callbacks</span>
-    }
-  },
-
-  {
-    <span class="hljs-comment">// Specific rules for JavaScript and CommonJS files</span>
-    <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.js'</span>, <span class="hljs-string">'**/*.cjs'</span>],
-
-    <span class="hljs-attr">rules</span>: {
-      <span class="hljs-string">'@typescript-eslint/no-var-requires'</span>: <span class="hljs-string">'off'</span>,  <span class="hljs-comment">// Allow require() in CommonJS files</span>
-      <span class="hljs-string">'@typescript-eslint/no-require-imports'</span>: <span class="hljs-string">'off'</span> <span class="hljs-comment">// Allow require imports</span>
-    }
-  }
-];</code></pre>
-
-<h2>Prettier rule config</h2>
-<p>You can separate prettier config into <strong>.prettierrc</strong></p>
+<h2>Write <code>.prettierrc.json</code></h2>
 <pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"$schema"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://json.schemastore.org/prettierrc"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"printWidth"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">120</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"tabWidth"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"useTabs"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"bracketSameLine"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"bracketSpacing"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">// Prettier config</span>
   <span class="hljs-attr">"semi"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"singleQuote"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"trailingComma"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"none"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"endOfLine"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"lf"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"quoteProps"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"as-needed"</span>
+  <span class="hljs-attr">"printWidth"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"tabWidth"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"trailingComma"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"es5"</span>
 <span class="hljs-punctuation">}</span></code></pre>
 
-<h2>VSCode config</h2>
-<p>Create <strong>.vscode/settings.json</strong></p>
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"editor.codeActionsOnSave"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"source.fixAll.eslint"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-comment">// let ESLint take formating and linting</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-comment">// ESLint v9 need to using flat config</span>
-  <span class="hljs-attr">"eslint.useFlatConfig"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"eslint.experimental.useFlatConfig"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
-<span class="hljs-punctuation">}</span></code></pre>
+<hr>
+<pre><code class="hljs javascript"><span class="hljs-comment">// ESLint Flat Config for JS, TS, React, and Prettier</span>
+<span class="hljs-comment">// ---------------------------------------------------</span>
+<span class="hljs-comment">// This configuration uses Flat Config (`eslint.config.js`)</span>
+<span class="hljs-comment">// and integrates:</span>
+<span class="hljs-comment">//   - Base JS rules (@eslint/js)</span>
+<span class="hljs-comment">//   - Babel parser for modern JS &amp; JSX</span>
+<span class="hljs-comment">//   - TypeScript parser for TS/TSX</span>
+<span class="hljs-comment">//   - React + React Hooks plugins</span>
+<span class="hljs-comment">//   - Prettier as an ESLint plugin</span>
+<span class="hljs-comment">//   - jsonc-parser for Prettier config (supports comments)</span>
+<span class="hljs-comment">// Requirements:</span>
+<span class="hljs-comment">//   yarn add -D \</span>
+<span class="hljs-comment">// eslint @eslint/js eslint-config-prettier eslint-plugin-prettier \</span>
+<span class="hljs-comment">// @babel/core @babel/eslint-parser @babel/preset-react @babel/plugin-syntax-import-assertions \</span>
+<span class="hljs-comment">// typescript typescript-eslint \</span>
+<span class="hljs-comment">// eslint-plugin-react eslint-plugin-react-hooks \</span>
+<span class="hljs-comment">// globals jsonc-parser</span>
+<span class="hljs-comment">// ---------------------------------------------------</span>
 
-<h2>Optional typescript rules config</h2>
-<p>create tsconfig.json (if not created yet), for example tsconfig.json for node 16.</p>
-<p>npm</p>
-<pre><code class="hljs bash">npm install --save-dev @tsconfig/node16</code></pre>
-<p>yarn</p>
-<pre><code class="hljs bash">yarn add --dev @tsconfig/node16</code></pre>
+<span class="hljs-keyword">import</span> js <span class="hljs-keyword">from</span> <span class="hljs-string">'@eslint/js'</span>;
+<span class="hljs-keyword">import</span> globals <span class="hljs-keyword">from</span> <span class="hljs-string">'globals'</span>;
+<span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">'node:fs'</span>;
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'node:path'</span>;
+<span class="hljs-keyword">import</span> { fileURLToPath } <span class="hljs-keyword">from</span> <span class="hljs-string">'node:url'</span>;
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint/config'</span>;
 
-<pre><code class="hljs jsonc"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"$schema"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://json.schemastore.org/tsconfig"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"display"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Node 16"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"extends"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"@tsconfig/node16/tsconfig.json"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"compilerOptions"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"preserveConstEnums"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"allowJs"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"outDir"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"./dist"</span>
-  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"include"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"src/**/*"</span>
-  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"exclude"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"**/node_modules/**"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"**/*.spec.ts"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"**/*.test.ts"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-string">"**/__tests__/**"</span>
-  <span class="hljs-punctuation">]</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<span class="hljs-keyword">import</span> babelParser <span class="hljs-keyword">from</span> <span class="hljs-string">'@babel/eslint-parser'</span>;
+<span class="hljs-keyword">import</span> tseslint <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-eslint'</span>;
+<span class="hljs-keyword">import</span> prettier <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-prettier'</span>;
+<span class="hljs-keyword">import</span> prettierConfig <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-config-prettier'</span>;
+<span class="hljs-keyword">import</span> react <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-react'</span>;
+<span class="hljs-keyword">import</span> reactHooks <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-react-hooks'</span>;
+<span class="hljs-keyword">import</span> { parse <span class="hljs-keyword">as</span> parseJSONC } <span class="hljs-keyword">from</span> <span class="hljs-string">'jsonc-parser'</span>;
 
-<h2>Finish</h2>
-<p>now your vscode format and lint your codes automatically.</p>
+<span class="hljs-comment">// Resolve current directory for reading .prettierrc.json</span>
+<span class="hljs-keyword">const</span> __filename = <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>);
+<span class="hljs-keyword">const</span> __dirname = path.<span class="hljs-title function_">dirname</span>(__filename);
+
+<span class="hljs-comment">// Load Prettier config, allowing comments in JSON</span>
+<span class="hljs-keyword">const</span> prettierrc = <span class="hljs-title function_">parseJSONC</span>(fs.<span class="hljs-title function_">readFileSync</span>(path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'.prettierrc.json'</span>), <span class="hljs-string">'utf-8'</span>));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>([
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  <span class="hljs-comment">// 🌍 Global config (applies to all files)</span>
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  {
+    <span class="hljs-attr">ignores</span>: [
+      <span class="hljs-string">'**/*.md'</span>, <span class="hljs-comment">// Ignore Markdown files</span>
+      <span class="hljs-string">'**/*.html'</span>, <span class="hljs-comment">// Ignore raw HTML files</span>
+      <span class="hljs-string">'**/*.py'</span>, <span class="hljs-comment">// Ignore Python scripts</span>
+      <span class="hljs-string">'**/*.txt'</span>, <span class="hljs-comment">// Ignore plain text</span>
+      <span class="hljs-string">'**/tmp/**'</span>, <span class="hljs-comment">// Ignore temp files</span>
+      <span class="hljs-string">'**/app/**'</span>, <span class="hljs-comment">// Ignore custom app output</span>
+      <span class="hljs-string">'**/dist/**'</span>, <span class="hljs-comment">// Ignore build output</span>
+      <span class="hljs-string">'**/node_modules/**'</span>, <span class="hljs-comment">// Ignore dependencies</span>
+      <span class="hljs-string">'**/coverage/**'</span>, <span class="hljs-comment">// Ignore test coverage</span>
+      <span class="hljs-string">'**/logs/**'</span>, <span class="hljs-comment">// Ignore logs</span>
+      <span class="hljs-string">'**/vendor/**'</span>, <span class="hljs-comment">// Ignore vendor code</span>
+      <span class="hljs-string">'**/min.*'</span>, <span class="hljs-comment">// Ignore minified assets</span>
+      <span class="hljs-string">'**/*.lock'</span>, <span class="hljs-comment">// Ignore lockfiles</span>
+      <span class="hljs-string">'**/public/**'</span>, <span class="hljs-comment">// Ignore public assets</span>
+      <span class="hljs-string">'**/.yarn/**'</span> <span class="hljs-comment">// Ignore Yarn cache</span>
+    ],
+
+    <span class="hljs-comment">// Global language options</span>
+    <span class="hljs-attr">languageOptions</span>: {
+      <span class="hljs-attr">globals</span>: {
+        ...globals.<span class="hljs-property">browser</span>, <span class="hljs-comment">// Browser globals (window, document, etc.)</span>
+        ...globals.<span class="hljs-property">node</span>, <span class="hljs-comment">// Node.js globals (process, __dirname, etc.)</span>
+        ...globals.<span class="hljs-property">jest</span>, <span class="hljs-comment">// Jest testing globals</span>
+        <span class="hljs-attr">grecaptcha</span>: <span class="hljs-string">'readonly'</span>, <span class="hljs-comment">// Google reCAPTCHA</span>
+        <span class="hljs-attr">$</span>: <span class="hljs-string">'readonly'</span>, <span class="hljs-comment">// jQuery $</span>
+        <span class="hljs-attr">jQuery</span>: <span class="hljs-string">'readonly'</span>, <span class="hljs-comment">// jQuery object</span>
+        <span class="hljs-attr">adsbygoogle</span>: <span class="hljs-string">'writable'</span>, <span class="hljs-comment">// Google Ads</span>
+        <span class="hljs-attr">hexo</span>: <span class="hljs-string">'readonly'</span> <span class="hljs-comment">// Hexo static site generator</span>
+      },
+      <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-string">'latest'</span>, <span class="hljs-comment">// Support latest ECMAScript syntax</span>
+      <span class="hljs-attr">sourceType</span>: <span class="hljs-string">'module'</span> <span class="hljs-comment">// Enable ES modules</span>
+    },
+
+    <span class="hljs-attr">plugins</span>: { prettier },
+
+    <span class="hljs-attr">rules</span>: {
+      <span class="hljs-comment">// ✅ Run Prettier as an ESLint rule (using config with comments)</span>
+      <span class="hljs-string">'prettier/prettier'</span>: [<span class="hljs-string">'error'</span>, prettierrc],
+
+      <span class="hljs-comment">// ✅ Disable stylistic rules that conflict with Prettier</span>
+      ...prettierConfig.<span class="hljs-property">rules</span>,
+
+      <span class="hljs-comment">// Example JS style relaxations</span>
+      <span class="hljs-string">'arrow-body-style'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// Allow any arrow fn body style</span>
+      <span class="hljs-string">'prefer-arrow-callback'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// Allow normal function callbacks</span>
+      <span class="hljs-comment">// ⚙️ Allow unused variables starting with "_"</span>
+      <span class="hljs-string">'no-unused-vars'</span>: [
+        <span class="hljs-string">'error'</span>,
+        {
+          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,
+          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,
+          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span>
+        }
+      ]
+    }
+  },
+
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  <span class="hljs-comment">// 📜 JavaScript (JS, MJS, CJS, JSX)</span>
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  {
+    <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.{js,mjs,cjs,jsx}'</span>],
+    ...js.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>, <span class="hljs-comment">// Use ESLint recommended JS rules</span>
+    <span class="hljs-attr">languageOptions</span>: {
+      <span class="hljs-attr">parser</span>: babelParser, <span class="hljs-comment">// Use Babel parser for modern JS/JSX</span>
+      <span class="hljs-attr">parserOptions</span>: {
+        <span class="hljs-attr">requireConfigFile</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Allow parsing without .babelrc</span>
+        <span class="hljs-attr">babelOptions</span>: {
+          <span class="hljs-attr">presets</span>: [<span class="hljs-string">'@babel/preset-react'</span>], <span class="hljs-comment">// Handle JSX in JS files</span>
+          <span class="hljs-attr">plugins</span>: [<span class="hljs-string">'@babel/plugin-syntax-import-assertions'</span>] <span class="hljs-comment">// Support `import ... with { type: "json" }`</span>
+        },
+        <span class="hljs-attr">ecmaFeatures</span>: {
+          <span class="hljs-attr">jsx</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// Enable JSX parsing</span>
+        }
+      },
+      <span class="hljs-attr">globals</span>: { ...globals.<span class="hljs-property">browser</span>, ...globals.<span class="hljs-property">node</span> }
+    },
+    <span class="hljs-attr">rules</span>: {
+      <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'error'</span> <span class="hljs-comment">// Disallow unused variables</span>
+    }
+  },
+
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  <span class="hljs-comment">// 🟦 TypeScript (TS, TSX, MTS, CTS)</span>
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  {
+    <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.{ts,tsx,mts,cts}'</span>],
+    ...tseslint.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>, <span class="hljs-comment">// Use recommended TS rules</span>
+    <span class="hljs-attr">languageOptions</span>: {
+      <span class="hljs-attr">parser</span>: tseslint.<span class="hljs-property">parser</span>, <span class="hljs-comment">// TypeScript-aware parser</span>
+      <span class="hljs-attr">parserOptions</span>: {
+        <span class="hljs-attr">project</span>: <span class="hljs-string">'./tsconfig.json'</span> <span class="hljs-comment">// Point to project tsconfig</span>
+      },
+      <span class="hljs-attr">globals</span>: { ...globals.<span class="hljs-property">browser</span>, ...globals.<span class="hljs-property">node</span> }
+    },
+    <span class="hljs-attr">rules</span>: {
+      <span class="hljs-comment">// Replace base "no-unused-vars" with TS version</span>
+      <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'off'</span>,
+      <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: [
+        <span class="hljs-string">'error'</span>,
+        {
+          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>, <span class="hljs-comment">// Allow ignored args starting with "_"</span>
+          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>, <span class="hljs-comment">// Allow ignored vars starting with "_"</span>
+          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span> <span class="hljs-comment">// Allow ignored caught errors</span>
+        }
+      ],
+
+      <span class="hljs-string">'@typescript-eslint/explicit-function-return-type'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// No need to force return types</span>
+      <span class="hljs-string">'@typescript-eslint/no-explicit-any'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// Allow `any`</span>
+      <span class="hljs-string">'@typescript-eslint/no-this-alias'</span>: [
+        <span class="hljs-string">'error'</span>,
+        {
+          <span class="hljs-attr">allowDestructuring</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-attr">allowedNames</span>: [<span class="hljs-string">'self'</span>, <span class="hljs-string">'hexo'</span>] <span class="hljs-comment">// Allow aliasing `this` to self/hexo</span>
+        }
+      ]
+    }
+  },
+
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  <span class="hljs-comment">// ⚛️ React (JSX + TSX)</span>
+  <span class="hljs-comment">// ---------------------------------------------------</span>
+  {
+    <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.{jsx,tsx}'</span>],
+    <span class="hljs-attr">plugins</span>: {
+      react, <span class="hljs-comment">// React linting rules</span>
+      <span class="hljs-string">'react-hooks'</span>: reactHooks, <span class="hljs-comment">// Enforce hooks rules</span>
+      prettier
+    },
+    <span class="hljs-attr">rules</span>: {
+      <span class="hljs-comment">// ✅ React recommended rules</span>
+      ...react.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>.<span class="hljs-property">rules</span>,
+      ...react.<span class="hljs-property">configs</span>[<span class="hljs-string">'jsx-runtime'</span>].<span class="hljs-property">rules</span>,
+
+      <span class="hljs-comment">// ✅ React Hooks best practices</span>
+      ...reactHooks.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>.<span class="hljs-property">rules</span>,
+
+      <span class="hljs-comment">// ✅ Prettier formatting</span>
+      <span class="hljs-string">'prettier/prettier'</span>: <span class="hljs-string">'error'</span>,
+
+      <span class="hljs-comment">// ⚙️ Adjustments for modern React</span>
+      <span class="hljs-string">'react/react-in-jsx-scope'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// Not needed in React 17+</span>
+      <span class="hljs-string">'react/prop-types'</span>: <span class="hljs-string">'off'</span> <span class="hljs-comment">// Disable PropTypes if using TS</span>
+    },
+    <span class="hljs-attr">settings</span>: {
+      <span class="hljs-attr">react</span>: {
+        <span class="hljs-attr">version</span>: <span class="hljs-string">'detect'</span> <span class="hljs-comment">// Auto-detect installed React version</span>
+      }
+    }
+  }
+]);</code></pre>
+
 <blockquote>
-<p><strong>See Also:</strong><br><a href="./eslint-all-in-one-flat-config.md">Comprehensive ESLint Flat Config for JS, TS, React, and Prettier</a></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>For ESM projects (<code>"type": "module"</code> in <code>package.json</code>), use <code>eslint.config.js</code> or <code>eslint.config.mjs</code>.</li>
+<li>For CommonJS projects (no <code>"type": "module"</code>), use <code>eslint.config.cjs</code> or <code>eslint.config.js</code>.</li>
+<li>Choose the config file extension that matches your project's module system for best compatibility.</li>
+</ul>
 </blockquote>
+<hr>
+<h2>Key Features of This Config</h2>
+<ul>
+<li><strong>Unified Linting</strong>: One config for JS, TS, React, and Prettier.</li>
+<li><strong>Modern Syntax Support</strong>: Babel parser for latest JS/JSX, TypeScript parser for TS/TSX.</li>
+<li><strong>React &amp; Hooks</strong>: Best practices and rules for React and React Hooks.</li>
+<li><strong>Prettier Integration</strong>: Prettier runs as an ESLint rule, using config with comments.</li>
+<li><strong>Flexible Ignoring</strong>: Ignores common output, lock, and asset files.</li>
+<li><strong>Globals</strong>: Pre-configured for browser, Node.js, Jest, and common web globals.</li>
+<li><strong>Customizable</strong>: Easily extend or override for your project needs.</li>
+<li><strong>ESM &amp; CJS Project Support</strong>: This ESLint config works for both ECMAScript Module (ESM) and CommonJS (CJS) projects—just use the appropriate file extension (<code>.mjs</code>, <code>.js</code>, or <code>.cjs</code>) for your <code>eslint.config</code> file to match your project's module system.</li>
+</ul>
+<hr>
+<h2>How to Use</h2>
+<ol>
+<li><p><strong>Install dependencies</strong> (see Requirements above).</p>
+</li>
+<li><p><strong>Copy the config</strong> into your project as <code>eslint.config.js</code>.</p>
+</li>
+<li><p><strong>Add a <code>.prettierrc.json</code></strong> file (optionally with comments, thanks to JSONC support).</p>
+</li>
+<li><p><strong>Run ESLint</strong> on your codebase:</p>
+<pre><code class="hljs bash">npx eslint . --ext js,jsx,ts,tsx</code></pre>
+</li>
+<li><p><strong>Integrate with your editor</strong> (e.g., VS Code) for real-time linting and formatting.</p>
+</li>
+</ol>
+<hr>
+<h2>Troubleshooting &amp; Tips</h2>
+<ul>
+<li>If you see parser errors, ensure all dependencies are installed and up to date.</li>
+<li>For TypeScript, make sure your <code>tsconfig.json</code> is present and correct.</li>
+<li>You can further customize rules for your team or project style.</li>
+<li>For monorepos, you can share this config across packages.</li>
+</ul>
+<hr>
+<h2>References &amp; Further Reading</h2>
+<ul>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9lc2xpbnQub3JnL2RvY3MvbGF0ZXN0L3VzZS9jb25maWd1cmUvY29uZmlndXJhdGlvbi1maWxlcy1uZXc=" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://eslint.org/docs/latest/use/configure/configuration-files-new">ESLint Flat Config Guide</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9wcmV0dGllci5pby9kb2NzL2VuL29wdGlvbnMuaHRtbA==" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://prettier.io/docs/en/options.html">Prettier Documentation</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly90eXBlc2NyaXB0LWVzbGludC5pby8=" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://typescript-eslint.io/">TypeScript ESLint</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2JhYmVsL2JhYmVsL3RyZWUvbWFpbi9lc2xpbnQvYmFiZWwtZXNsaW50LXBhcnNlcg==" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://github.com/babel/babel/tree/main/eslint/babel-eslint-parser">Babel ESLint Parser</a></li>
+<li><a target="_blank" rel="nofollow noopener noreferer noreferrer external" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2pzeC1lc2xpbnQvZXNsaW50LXBsdWdpbi1yZWFjdA==" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://github.com/jsx-eslint/eslint-plugin-react">React ESLint Plugin</a></li>
+</ul>
+<hr>
 </div>
         
 
@@ -746,13 +875,13 @@
   <div class="border-t border-gray-300 dark:border-gray-600"></div>
   <div class="flex justify-between items-center py-4">
     <div class="post-nav-item">
-        <a href="/2024/11/how-to-fill-tax-information-on-google-adsense.html" rel="prev" title="/2024/11/how-to-fill-tax-information-on-google-adsense.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
-          <i class="fa fa-angle-left mr-2"></i> How to Fill Tax Information on Google Adsense
-        </a>
+        <span class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-400 bg-gray-200 rounded-lg dark:text-gray-500 dark:bg-gray-700">
+          <i class="fa fa-angle-left mr-2"></i> No previous post
+        </span>
     </div>
     <div class="post-nav-item">
-        <a href="/2024/08/pyside6-button-click-open-new-window.html" rel="next" title="/2024/08/pyside6-button-click-open-new-window.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
-          PySide6 button click open new window <i class="fa fa-angle-right ml-2"></i>
+        <a href="/NodeJS/yarn-npm-registry-configuration.html" rel="next" title="/NodeJS/yarn-npm-registry-configuration.html" class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+          Yarn NPM Registry Configuration <i class="fa fa-angle-right ml-2"></i>
         </a>
     </div>
   </div>
@@ -760,7 +889,7 @@
 
         
   <div class="comments">
-    <div id="disqus_thread" data-disqus-shortname="dimaslanjaka" data-disqus-url="https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript.html"></div>
+    <div id="disqus_thread" data-disqus-shortname="dimaslanjaka" data-disqus-url="https://www.webmanajemen.com/NodeJS/eslint-all-in-one-flat-config.html"></div>
   </div>
 
 
@@ -783,27 +912,25 @@
                   <nav id="TableOfContents">
                     <ul class="toc">
                         <li>
-                          <a href="#install-dependencies">Install dependencies</a>
-                            <ul>
-                                <li>
-                                  <a href="#eslint-v9-esm-configuration-migrated">ESLint v9 ESM configuration migrated</a>
-                                </li>
-                                <li>
-                                  <a href="#eslint-v9-commonjs-(cjs)-configuraion-migrated">ESLint v9 CommonJS (CJS) configuraion migrated</a>
-                                </li>
-                            </ul>
+                          <a href="#why-use-eslint-flat-config?">Why Use ESLint Flat Config?</a>
                         </li>
                         <li>
-                          <a href="#prettier-rule-config">Prettier rule config</a>
+                          <a href="#requirements">Requirements</a>
                         </li>
                         <li>
-                          <a href="#vscode-config">VSCode config</a>
+                          <a href="#write-.prettierrc.json">Write .prettierrc.json</a>
                         </li>
                         <li>
-                          <a href="#optional-typescript-rules-config">Optional typescript rules config</a>
+                          <a href="#key-features-of-this-config">Key Features of This Config</a>
                         </li>
                         <li>
-                          <a href="#finish">Finish</a>
+                          <a href="#how-to-use">How to Use</a>
+                        </li>
+                        <li>
+                          <a href="#troubleshooting-&amp;-tips">Troubleshooting &amp; Tips</a>
+                        </li>
+                        <li>
+                          <a href="#references-&amp;-further-reading">References &amp; Further Reading</a>
                         </li>
                     </ul>
                   </nav>
@@ -824,7 +951,19 @@
                       <a href="/tags/typescript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> typescript</a>
                       <a href="/tags/eslint/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> eslint</a>
                       <a href="/tags/javascript/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> javascript</a>
-                      <a href="/tags/nodejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nodejs</a>
+                      <a href="/tags/react/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> react</a>
+                      <a href="/tags/prettier/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> prettier</a>
+                      <a href="/tags/linting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> linting</a>
+                      <a href="/tags/configuration/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> configuration</a>
+                      <a href="/tags/flat-config/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> flat config</a>
+                      <a href="/tags/babel/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> babel</a>
+                      <a href="/tags/hooks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hooks</a>
+                      <a href="/tags/jsonc/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> jsonc</a>
+                      <a href="/tags/web-development/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> web development</a>
+                      <a href="/tags/setup/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> setup</a>
+                      <a href="/tags/guide/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> guide</a>
+                      <a href="/tags/tutorial/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tutorial</a>
+                      <a href="/tags/best-practices/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> best practices</a>
                       <a href="/tags/github/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github</a>
                       <a href="/tags/github-actions-workflow/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> github-actions-workflow</a>
                       <a href="/tags/matrix/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> matrix</a>
@@ -984,7 +1123,7 @@
     
 <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
   <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://www.webmanajemen.com" class="hover:underline" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com">WMI™</a>. All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
       
@@ -997,13 +1136,13 @@
         
           
             <li>
-              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
+              <a href="https://www.webmanajemen.com/p/privacy.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/p/privacy.html">Privacy Policy</a>
             </li>
           
         
           
             <li>
-              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="Migrate ESLint v9 for prettier typescript javascript" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
+              <a href="https://www.webmanajemen.com/p/tos.html" class="hover:underline me-4 md:me-6" rel="internal follow bookmark" hexo-seo="true" alt="ESLint Flat Config for JS, TS, React, and Prettier" title="https://www.webmanajemen.com/p/tos.html">Terms Of Service</a>
             </li>
           
         

@@ -143,7 +143,7 @@
       }
     },
     "datePublished": "2025-08-20T22:54:10+07:00",
-    "dateModified": "2025-08-21T03:02:03+07:00"
+    "dateModified": "2025-08-21T04:00:14+07:00"
   }
 ]</script>
 
@@ -508,32 +508,29 @@
 <span class="hljs-comment">// globals jsonc-parser</span>
 <span class="hljs-comment">// ---------------------------------------------------</span>
 
-<span class="hljs-keyword">import</span> js <span class="hljs-keyword">from</span> <span class="hljs-string">'@eslint/js'</span>;
+<span class="hljs-keyword">import</span> babelParser <span class="hljs-keyword">from</span> <span class="hljs-string">'@babel/eslint-parser'</span>;
+<span class="hljs-keyword">import</span> eslint <span class="hljs-keyword">from</span> <span class="hljs-string">'@eslint/js'</span>;
+<span class="hljs-keyword">import</span> prettierConfig <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-config-prettier'</span>;
+<span class="hljs-keyword">import</span> prettier <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-prettier'</span>;
+<span class="hljs-keyword">import</span> react <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-react'</span>;
+<span class="hljs-keyword">import</span> reactHooks <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-react-hooks'</span>;
 <span class="hljs-keyword">import</span> globals <span class="hljs-keyword">from</span> <span class="hljs-string">'globals'</span>;
+<span class="hljs-keyword">import</span> { parse <span class="hljs-keyword">as</span> parseJSONC } <span class="hljs-keyword">from</span> <span class="hljs-string">'jsonc-parser'</span>;
 <span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">'node:fs'</span>;
 <span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'node:path'</span>;
 <span class="hljs-keyword">import</span> { fileURLToPath } <span class="hljs-keyword">from</span> <span class="hljs-string">'node:url'</span>;
-<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint/config'</span>;
-
-<span class="hljs-keyword">import</span> babelParser <span class="hljs-keyword">from</span> <span class="hljs-string">'@babel/eslint-parser'</span>;
 <span class="hljs-keyword">import</span> tseslint <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-eslint'</span>;
-<span class="hljs-keyword">import</span> prettier <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-prettier'</span>;
-<span class="hljs-keyword">import</span> prettierConfig <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-config-prettier'</span>;
-<span class="hljs-keyword">import</span> react <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-react'</span>;
-<span class="hljs-keyword">import</span> reactHooks <span class="hljs-keyword">from</span> <span class="hljs-string">'eslint-plugin-react-hooks'</span>;
-<span class="hljs-keyword">import</span> { parse <span class="hljs-keyword">as</span> parseJSONC } <span class="hljs-keyword">from</span> <span class="hljs-string">'jsonc-parser'</span>;
 
-<span class="hljs-comment">// Resolve current directory for reading .prettierrc.json</span>
 <span class="hljs-keyword">const</span> __filename = <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>);
 <span class="hljs-keyword">const</span> __dirname = path.<span class="hljs-title function_">dirname</span>(__filename);
-
-<span class="hljs-comment">// Load Prettier config, allowing comments in JSON</span>
 <span class="hljs-keyword">const</span> prettierrc = <span class="hljs-title function_">parseJSONC</span>(fs.<span class="hljs-title function_">readFileSync</span>(path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">'.prettierrc.json'</span>), <span class="hljs-string">'utf-8'</span>));
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>([
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> tseslint.<span class="hljs-title function_">config</span>(
   <span class="hljs-comment">// ---------------------------------------------------</span>
   <span class="hljs-comment">// 🌍 Global config (applies to all files)</span>
   <span class="hljs-comment">// ---------------------------------------------------</span>
+  eslint.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>,
+  tseslint.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>,
   {
     <span class="hljs-attr">ignores</span>: [
       <span class="hljs-string">'**/*.md'</span>, <span class="hljs-comment">// Ignore Markdown files</span>
@@ -556,17 +553,27 @@
     <span class="hljs-comment">// Global language options</span>
     <span class="hljs-attr">languageOptions</span>: {
       <span class="hljs-attr">globals</span>: {
-        ...globals.<span class="hljs-property">browser</span>, <span class="hljs-comment">// Browser globals (window, document, etc.)</span>
-        ...globals.<span class="hljs-property">node</span>, <span class="hljs-comment">// Node.js globals (process, __dirname, etc.)</span>
-        ...globals.<span class="hljs-property">jest</span>, <span class="hljs-comment">// Jest testing globals</span>
-        <span class="hljs-attr">grecaptcha</span>: <span class="hljs-string">'readonly'</span>, <span class="hljs-comment">// Google reCAPTCHA</span>
-        <span class="hljs-attr">$</span>: <span class="hljs-string">'readonly'</span>, <span class="hljs-comment">// jQuery $</span>
-        <span class="hljs-attr">jQuery</span>: <span class="hljs-string">'readonly'</span>, <span class="hljs-comment">// jQuery object</span>
-        <span class="hljs-attr">adsbygoogle</span>: <span class="hljs-string">'writable'</span>, <span class="hljs-comment">// Google Ads</span>
-        <span class="hljs-attr">hexo</span>: <span class="hljs-string">'readonly'</span> <span class="hljs-comment">// Hexo static site generator</span>
+        <span class="hljs-comment">// Browser globals (window, document, etc.)</span>
+        ...globals.<span class="hljs-property">browser</span>,
+        <span class="hljs-comment">// Node.js globals (process, __dirname, etc.)</span>
+        ...globals.<span class="hljs-property">node</span>,
+        <span class="hljs-comment">// Jest testing globals</span>
+        ...globals.<span class="hljs-property">jest</span>,
+        <span class="hljs-comment">// Google reCAPTCHA</span>
+        <span class="hljs-attr">grecaptcha</span>: <span class="hljs-string">'readonly'</span>,
+        <span class="hljs-comment">// jQuery $</span>
+        <span class="hljs-attr">$</span>: <span class="hljs-string">'readonly'</span>,
+        <span class="hljs-comment">// jQuery object</span>
+        <span class="hljs-attr">jQuery</span>: <span class="hljs-string">'readonly'</span>,
+        <span class="hljs-comment">// Google Ads</span>
+        <span class="hljs-attr">adsbygoogle</span>: <span class="hljs-string">'writable'</span>,
+        <span class="hljs-comment">// Hexo static site generator</span>
+        <span class="hljs-attr">hexo</span>: <span class="hljs-string">'readonly'</span>
       },
-      <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-string">'latest'</span>, <span class="hljs-comment">// Support latest ECMAScript syntax</span>
-      <span class="hljs-attr">sourceType</span>: <span class="hljs-string">'module'</span> <span class="hljs-comment">// Enable ES modules</span>
+      <span class="hljs-comment">// Support latest ECMAScript syntax</span>
+      <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-string">'latest'</span>,
+      <span class="hljs-comment">// Enable ES modules</span>
+      <span class="hljs-attr">sourceType</span>: <span class="hljs-string">'module'</span>
     },
 
     <span class="hljs-attr">plugins</span>: { prettier },
@@ -598,23 +605,40 @@
   <span class="hljs-comment">// ---------------------------------------------------</span>
   {
     <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.{js,mjs,cjs,jsx}'</span>],
-    ...js.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>, <span class="hljs-comment">// Use ESLint recommended JS rules</span>
     <span class="hljs-attr">languageOptions</span>: {
-      <span class="hljs-attr">parser</span>: babelParser, <span class="hljs-comment">// Use Babel parser for modern JS/JSX</span>
+      <span class="hljs-comment">// Use Babel parser for modern JS/JSX</span>
+      <span class="hljs-attr">parser</span>: babelParser,
       <span class="hljs-attr">parserOptions</span>: {
-        <span class="hljs-attr">requireConfigFile</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Allow parsing without .babelrc</span>
+        <span class="hljs-comment">// Allow parsing without .babelrc</span>
+        <span class="hljs-attr">requireConfigFile</span>: <span class="hljs-literal">false</span>,
         <span class="hljs-attr">babelOptions</span>: {
-          <span class="hljs-attr">presets</span>: [<span class="hljs-string">'@babel/preset-react'</span>], <span class="hljs-comment">// Handle JSX in JS files</span>
-          <span class="hljs-attr">plugins</span>: [<span class="hljs-string">'@babel/plugin-syntax-import-assertions'</span>] <span class="hljs-comment">// Support `import ... with { type: "json" }`</span>
+          <span class="hljs-comment">// Handle JSX in JS files</span>
+          <span class="hljs-attr">presets</span>: [<span class="hljs-string">'@babel/preset-react'</span>],
+          <span class="hljs-comment">// Support `import ... with { type: "json" }`</span>
+          <span class="hljs-attr">plugins</span>: [<span class="hljs-string">'@babel/plugin-syntax-import-assertions'</span>]
         },
         <span class="hljs-attr">ecmaFeatures</span>: {
-          <span class="hljs-attr">jsx</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// Enable JSX parsing</span>
+          <span class="hljs-comment">// Enable JSX parsing</span>
+          <span class="hljs-attr">jsx</span>: <span class="hljs-literal">true</span>
         }
       },
-      <span class="hljs-attr">globals</span>: { ...globals.<span class="hljs-property">browser</span>, ...globals.<span class="hljs-property">node</span> }
+      <span class="hljs-attr">globals</span>: {
+        ...globals.<span class="hljs-property">browser</span>,
+        ...globals.<span class="hljs-property">node</span>
+      }
     },
     <span class="hljs-attr">rules</span>: {
-      <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'error'</span> <span class="hljs-comment">// Disallow unused variables</span>
+      <span class="hljs-comment">// Only use base no-unused-vars for JS, allow unused vars starting with _</span>
+      <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: <span class="hljs-string">'off'</span>,
+      <span class="hljs-comment">// Place custom no-unused-vars last to ensure it takes precedence</span>
+      <span class="hljs-string">'no-unused-vars'</span>: [
+        <span class="hljs-string">'error'</span>,
+        {
+          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,
+          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>,
+          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span>
+        }
+      ]
     }
   },
 
@@ -623,26 +647,21 @@
   <span class="hljs-comment">// ---------------------------------------------------</span>
   {
     <span class="hljs-attr">files</span>: [<span class="hljs-string">'**/*.{ts,tsx,mts,cts}'</span>],
-    ...tseslint.<span class="hljs-property">configs</span>.<span class="hljs-property">recommended</span>, <span class="hljs-comment">// Use recommended TS rules</span>
     <span class="hljs-attr">languageOptions</span>: {
-      <span class="hljs-attr">parser</span>: tseslint.<span class="hljs-property">parser</span>, <span class="hljs-comment">// TypeScript-aware parser</span>
+      <span class="hljs-comment">// TypeScript-aware parser</span>
+      <span class="hljs-attr">parser</span>: tseslint.<span class="hljs-property">parser</span>,
       <span class="hljs-attr">parserOptions</span>: {
-        <span class="hljs-attr">project</span>: <span class="hljs-string">'./tsconfig.json'</span> <span class="hljs-comment">// Point to project tsconfig</span>
+        <span class="hljs-comment">// Point to project tsconfig</span>
+        <span class="hljs-attr">project</span>: <span class="hljs-string">'./tsconfig.json'</span>
       },
-      <span class="hljs-attr">globals</span>: { ...globals.<span class="hljs-property">browser</span>, ...globals.<span class="hljs-property">node</span> }
+      <span class="hljs-attr">globals</span>: {
+        ...globals.<span class="hljs-property">browser</span>,
+        ...globals.<span class="hljs-property">node</span>
+      }
     },
     <span class="hljs-attr">rules</span>: {
       <span class="hljs-comment">// Replace base "no-unused-vars" with TS version</span>
       <span class="hljs-string">'no-unused-vars'</span>: <span class="hljs-string">'off'</span>,
-      <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: [
-        <span class="hljs-string">'error'</span>,
-        {
-          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>, <span class="hljs-comment">// Allow ignored args starting with "_"</span>
-          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>, <span class="hljs-comment">// Allow ignored vars starting with "_"</span>
-          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span> <span class="hljs-comment">// Allow ignored caught errors</span>
-        }
-      ],
-
       <span class="hljs-string">'@typescript-eslint/explicit-function-return-type'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// No need to force return types</span>
       <span class="hljs-string">'@typescript-eslint/no-explicit-any'</span>: <span class="hljs-string">'off'</span>, <span class="hljs-comment">// Allow `any`</span>
       <span class="hljs-string">'@typescript-eslint/no-this-alias'</span>: [
@@ -650,6 +669,15 @@
         {
           <span class="hljs-attr">allowDestructuring</span>: <span class="hljs-literal">false</span>,
           <span class="hljs-attr">allowedNames</span>: [<span class="hljs-string">'self'</span>, <span class="hljs-string">'hexo'</span>] <span class="hljs-comment">// Allow aliasing `this` to self/hexo</span>
+        }
+      ],
+      <span class="hljs-comment">// Place custom TS unused-vars rule last to ensure it takes precedence</span>
+      <span class="hljs-string">'@typescript-eslint/no-unused-vars'</span>: [
+        <span class="hljs-string">'error'</span>,
+        {
+          <span class="hljs-attr">argsIgnorePattern</span>: <span class="hljs-string">'^_'</span>, <span class="hljs-comment">// Allow ignored args starting with "_"</span>
+          <span class="hljs-attr">varsIgnorePattern</span>: <span class="hljs-string">'^_'</span>, <span class="hljs-comment">// Allow ignored vars starting with "_"</span>
+          <span class="hljs-attr">caughtErrorsIgnorePattern</span>: <span class="hljs-string">'^_'</span> <span class="hljs-comment">// Allow ignored caught errors</span>
         }
       ]
     }
@@ -686,7 +714,7 @@
       }
     }
   }
-]);</code></pre>
+);</code></pre>
 
 <blockquote>
 <p><strong>Note:</strong></p>
@@ -888,12 +916,12 @@
                       <a href="/tags/Chimeraland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> Chimeraland</a>
                       <a href="/tags/scala/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scala</a>
                       <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
-                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
                       <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
-                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
                       <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
                       <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
                       <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
                       <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
                       <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
                       <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
@@ -918,8 +946,8 @@
                       <a href="/tags/fonts/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> fonts</a>
                       <a href="/tags/regedit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> regedit</a>
                       <a href="/tags/windows/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> windows</a>
-                      <a href="/tags/proxy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proxy</a>
                       <a href="/tags/share/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> share</a>
+                      <a href="/tags/proxy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proxy</a>
                       <a href="/tags/gradle/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> gradle</a>
                       <a href="/tags/kotlin/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> kotlin</a>
                       <a href="/tags/cmd/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> cmd</a>
@@ -946,11 +974,11 @@
                       <a href="/tags/net/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> net</a>
                       <a href="/tags/ejs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> ejs</a>
                       <a href="/tags/nunjucks/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> nunjucks</a>
+                      <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
+                      <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
                       <a href="/tags/hexo-shortcodes/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hexo-shortcodes</a>
                       <a href="/tags/codepen/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codepen</a>
                       <a href="/tags/markdown/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> markdown</a>
-                      <a href="/tags/groovy/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> groovy</a>
-                      <a href="/tags/proguard/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> proguard</a>
                       <a href="/tags/geckoview/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> geckoview</a>
                       <a href="/tags/spring-boot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> spring-boot</a>
                       <a href="/tags/commonjs/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> commonjs</a>

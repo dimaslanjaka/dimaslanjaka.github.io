@@ -15,8 +15,73 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Sun, 24 Aug 2025 10:05:07 GMT</pubDate>
+    <pubDate>Sun, 24 Aug 2025 18:13:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>How to Activate MySQL for Multiple Devices</title>
+      <link>https://www.webmanajemen.com/2025/08/setup-mysql-for-multiple-devices.html</link>
+      <guid>https://www.webmanajemen.com/2025/08/setup-mysql-for-multiple-devices.html</guid>
+      <pubDate>Sun, 24 Aug 2025 10:54:43 GMT</pubDate>
+      
+      <description>&lt;h1&gt;How to Activate MySQL for Multiple Devices&lt;/h1&gt;
+&lt;p&gt;This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL server installed on your host machine&lt;/li&gt;
+&lt;li&gt;Access to the MySQL root user or an admin account&lt;/li&gt;
+&lt;li&gt;Basic knowledge of networking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Step 1: Configure MySQL to Listen on All IP Addresses&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the MySQL configuration file (&lt;code&gt;my.cnf&lt;/code&gt; or &lt;code&gt;my.ini&lt;/code&gt;).&lt;ul&gt;
+&lt;li&gt;On Windows: Usually located at &lt;code&gt;C:&#92;ProgramData&#92;MySQL&#92;MySQL Server X.X&#92;my.ini&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On Linux: Usually at &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; or &lt;code&gt;/etc/my.cnf&lt;/code&gt; or &lt;code&gt;/etc/mysql/mysql.conf.d/mysqld.cnf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Find the line starting with &lt;code&gt;bind-address&lt;/code&gt;.&lt;pre&gt;&lt;code class=&quot;hljs ini&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;bind-address&lt;/span&gt;        = &lt;span class=&quot;hljs-number&quot;&gt;127.0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0.1&lt;/span&gt;
+&lt;span class=&quot;hljs-attr&quot;&gt;mysqlx-bind-address&lt;/span&gt; = &lt;span class=&quot;hljs-number&quot;&gt;127.0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0.1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;Change it to:&lt;pre&gt;&lt;code class=&quot;hljs ini&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;bind-address&lt;/span&gt;        = &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;
+&lt;span class=&quot;hljs-attr&quot;&gt;mysqlx-bind-address&lt;/span&gt; = &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+This allows MySQL to accept connections from any IP address.&lt;/li&gt;
+&lt;li&gt;Save the file and restart the MySQL service.&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;hljs cmd&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;net&lt;/span&gt; stop mysql
+&lt;span class=&quot;hljs-built_in&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;start&lt;/span&gt; mysql&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linux:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;hljs bash&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;sudo&lt;/span&gt; systemctl restart mysql&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Step 2: Allow Remote Connections in the Firewall&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open port 3306 (default MySQL port) in your firewall settings.&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows:&lt;/strong&gt; Use Windows Defender Firewall to allow inbound connections on port 3306.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linux:&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;hljs bash&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;sudo&lt;/span&gt; ufw allow 3306/tcp&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Step 3: Create a MySQL User for Remote Access&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Important: At this point MySQL will accept connections from anywhere. If your server is exposed to the internet, secure it:&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1>How to Activate MySQL for Multiple Devices</h1><p>This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network.</p><h2>Prerequisites</h2><ul><li>MySQL server installed on your host machine</li><li>Access to the MySQL root user or an admin account</li><li>Basic knowledge of networking</li></ul><h2>Step 1: Configure MySQL to Listen on All IP Addresses</h2><ol><li>Open the MySQL configuration file (<code>my.cnf</code> or <code>my.ini</code>).<ul><li>On Windows: Usually located at <code>C:\ProgramData\MySQL\MySQL Server X.X\my.ini</code></li><li>On Linux: Usually at <code>/etc/mysql/my.cnf</code> or <code>/etc/my.cnf</code> or <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></li></ul></li><li>Find the line starting with <code>bind-address</code>.<pre><code class="hljs ini"><span class="hljs-attr">bind-address</span>        = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><span class="hljs-attr">mysqlx-bind-address</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span></code></pre></li><li>Change it to:<pre><code class="hljs ini"><span class="hljs-attr">bind-address</span>        = <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span><span class="hljs-attr">mysqlx-bind-address</span> = <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span></code></pre>This allows MySQL to accept connections from any IP address.</li><li>Save the file and restart the MySQL service.<ul><li><strong>Windows:</strong><pre><code class="hljs cmd"><span class="hljs-built_in">net</span> stop mysql<span class="hljs-built_in">net</span> <span class="hljs-built_in">start</span> mysql</code></pre></li><li><strong>Linux:</strong><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart mysql</code></pre></li></ul></li></ol><h2>Step 2: Allow Remote Connections in the Firewall</h2><ol><li>Open port 3306 (default MySQL port) in your firewall settings.<ul><li><strong>Windows:</strong> Use Windows Defender Firewall to allow inbound connections on port 3306.</li><li><strong>Linux:</strong><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw allow 3306/tcp</code></pre></li></ul></li></ol><h2>Step 3: Create a MySQL User for Remote Access</h2><blockquote><p>⚠️ Important: At this point MySQL will accept connections from anywhere. If your server is exposed to the internet, secure it:</p></blockquote><ol><li>Log in to MySQL as root:<pre><code class="hljs bash">mysql -u root -p</code></pre></li><li>Create a new user or update an existing user to allow access from a specific IP or any IP (<code>%</code>):<pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;username&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;password&#x27;</span>;<span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> PRIVILEGES <span class="hljs-keyword">ON</span> <span class="hljs-operator">*</span>.<span class="hljs-operator">*</span> <span class="hljs-keyword">TO</span> <span class="hljs-string">&#x27;username&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">GRANT</span> OPTION;FLUSH PRIVILEGES;</code></pre><blockquote><p>Replace <code>username</code> and <code>password</code> with your desired credentials.</p></blockquote></li></ol><h2>Step 4: Connect from Another Device</h2><p>On the client device, use the following command to connect:</p><pre><code class="hljs bash">mysql -h &lt;server-ip-address&gt; -u username -p</code></pre><p>Replace <code>&lt;server-ip-address&gt;</code> with the IP address of your MySQL server.</p><h2>Security Tips</h2><ul><li>Only allow trusted IPs if possible (replace <code>%</code> with a specific IP or subnet).</li><li>Use strong passwords for all MySQL users.</li><li>Consider enabling SSL for encrypted connections.</li></ul><hr><p>You have now enabled MySQL access for multiple devices on your network!</p>]]></content:encoded>
+      
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/mysql/">mysql</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/database/">database</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/networking/">networking</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/tutorial/">tutorial</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2025/08/setup-mysql-for-multiple-devices.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>ESLint Flat Config for JS, TS, React, and Prettier</title>
@@ -2063,33 +2128,6 @@ git &lt;span class=&quot;hljs-built_in&quot;&gt;log&lt;/span&gt; --pretty=format
       
       
       <comments>https://www.webmanajemen.com/2024/02/is-defining-screen-density-on-gradlebuild-can-reduce-build-time.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>setup vmoption intellij idea for 8GB RAM processor intel i3</title>
-      <link>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html</link>
-      <guid>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html</guid>
-      <pubDate>Tue, 27 Feb 2024 07:39:32 GMT</pubDate>
-      
-      <description>Here are some suggestions for setting up VM options in IntelliJ IDEA with an 8GB RAM machine and an Intel i3 processor</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>When configuring IntelliJ IDEA&#39;s VM options, we recommend that you  consider the available memory on your computer, in this case 8GB of RAM.<br> With this in mind, you need to configure your Java Virtual Machine (JVM) settings so that IntelliJ IDEA runs properly within the available resources.</p><p> Here are some suggestions for setting  VM options in IntelliJ IDEA with an 8GB RAM machine and an Intel i3 processor:</p><ol><li><p>Heap Memory (Xmx and Xms):</p><ul><li>Set the maximum heap size (<code>-Xmx</code>) to a value that is suitable for your system. With 8GB of RAM, you could allocate a significant portion, but not all, of the memory to IntelliJ. For example, you might use <code>-Xmx4g</code> to allocate 4GB of memory. Adjust this value based on your preferences and the other applications you might be running.</li><li>Set the initial heap size (<code>-Xms</code>) to a reasonable value, perhaps half of the maximum heap size. For example, <code>-Xms2g</code> for 2GB.</li></ul><p>Example:</p></li></ol><pre><code class="hljs bash">-Xms2g -Xmx4g</code></pre><ol start="2"><li><p>Permsize and Metaspace:</p><ul><li>If you are using a Java version before Java 8, consider specifying PermGen size. However, for Java 8 and later, this is replaced by Metaspace. Adjust the Metaspace size based on your needs.</li></ul><p>Example:</p></li></ol><pre><code class="hljs bash">-XX:MaxMetaspaceSize=512m</code></pre><ol start="3"><li><p>Garbage Collection:</p><ul><li>You can use JVM options to configure garbage collection algorithms based on your application&#39;s characteristics. However, for day-to-day development, the default settings are usually sufficient.</li></ul></li><li><p>Additional Configuration:</p><ul><li>Depending on your specific requirements and the plugins you use, you might need additional configurations. For example, if you work with Android projects, you might need to allocate additional memory for Gradle builds.</li></ul><p>Example:</p></li></ol><pre><code class="hljs bash">-XX:MaxPermSize=512m -XX:+UseConcMarkSweepGC</code></pre><p>To set these options in IntelliJ IDEA:</p><ol><li>Open IntelliJ IDEA.</li><li>Navigate to &quot;Help&quot; &gt; &quot;Edit Custom VM Options...&quot;</li><li>Add or modify the VM options according to your preferences.</li></ol><p>Keep in mind to screen your system&#39;s execution whereas utilizing <strong>IntelliJ Idea</strong>, particularly in the event that you run other memory-intensive applications at the same time. Alter the JVM alternatives based on your real needs and accessible assets.</p><p>Here my <strong>optimal setup for low-end device</strong>:</p><pre><code class="hljs text">-Xms128m-Xmx1024m-XX:ReservedCodeCacheSize=100m-XX:+IgnoreUnrecognizedVMOptions-XX:MaxPermSize=512m-XX:+UseConcMarkSweepGC-XX:+UseCodeCacheFlushing-XX:+UseCompressedOops--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED-javaagent:D:\ja-netfilter-all\ja-netfilter.jar=jetbrains</code></pre><ul><li><p><code>-Xmx</code>: Sets the maximum heap size, specifying the maximum amount of memory that the Java Virtual Machine (JVM) can use for the heap. For example, <code>-Xmx2000m</code> sets the maximum heap size to 2000 megabytes.</p></li><li><p><code>-Xms</code>: Sets the initial heap size, defining the amount of memory reserved for the heap when the JVM starts. For example, <code>-Xms300m</code> sets the initial heap size to 300 megabytes.</p></li><li><p><code>-XX:MaxMetaspaceSize</code>: Sets the maximum size of the Metaspace, which is the memory area used for class metadata in Java 8 and later versions. For example, <code>-XX:MaxMetaspaceSize=256m</code> sets the maximum Metaspace size to 256 megabytes.</p></li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/tips-tricks/">tips &amp; tricks</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/kotlin/">kotlin</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2024/02/setup-vmoption-intellij-idea-for-8gb-ram-processor-intel-i3.html#disqus_thread</comments>
       
     </item>
     

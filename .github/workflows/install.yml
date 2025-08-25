@@ -134,7 +134,7 @@ jobs:
 
       - name: ⬆️ Upload Pages Artifact
         if: steps.validate.outcome == 'success'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "."
           name: "github-pages"

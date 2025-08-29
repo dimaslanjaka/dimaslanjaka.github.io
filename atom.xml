@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2025-08-28T13:10:41.023Z</updated>
+  <updated>2025-08-29T02:16:23.302Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.webmanajemen.com/2025/08/setup-mysql-for-multiple-devices.html"/>
     <id>https://www.webmanajemen.com/2025/08/setup-mysql-for-multiple-devices.html</id>
     <published>2025-08-24T10:54:43.000Z</published>
-    <updated>2025-08-28T13:10:41.023Z</updated>
+    <updated>2025-08-29T02:16:23.302Z</updated>
     
     <content type="html"><![CDATA[<h1>How to Activate MySQL for Multiple Devices</h1><p>This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network.</p><h2>Prerequisites</h2><ul><li>MySQL server installed on your host machine</li><li>Access to the MySQL root user or an admin account</li><li>Basic knowledge of networking</li></ul><h2>Step 1: Configure MySQL to Listen on All IP Addresses</h2><ol><li>Open the MySQL configuration file (<code>my.cnf</code> or <code>my.ini</code>).<ul><li>On Windows: Usually located at <code>C:\ProgramData\MySQL\MySQL Server X.X\my.ini</code></li><li>On Linux: Usually at <code>/etc/mysql/my.cnf</code> or <code>/etc/my.cnf</code> or <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></li></ul></li><li>Find the line starting with <code>bind-address</code>.<pre><code class="hljs ini"><span class="hljs-attr">bind-address</span>        = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><span class="hljs-attr">mysqlx-bind-address</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span></code></pre></li><li>Change it to:<pre><code class="hljs ini"><span class="hljs-attr">bind-address</span>        = <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span><span class="hljs-attr">mysqlx-bind-address</span> = <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span></code></pre>This allows MySQL to accept connections from any IP address.</li><li>Save the file and restart the MySQL service.<ul><li><strong>Windows:</strong><pre><code class="hljs cmd"><span class="hljs-built_in">net</span> stop mysql<span class="hljs-built_in">net</span> <span class="hljs-built_in">start</span> mysql</code></pre></li><li><strong>Linux:</strong><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart mysql</code></pre></li></ul></li></ol><h2>Step 2: Allow Remote Connections in the Firewall</h2><ol><li>Open port 3306 (default MySQL port) in your firewall settings.<ul><li><strong>Windows:</strong> Use Windows Defender Firewall to allow inbound connections on port 3306.</li><li><strong>Linux:</strong><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw allow 3306/tcp</code></pre></li></ul></li></ol><h2>Step 3: Create a MySQL User for Remote Access</h2><blockquote><p>⚠️ Important: At this point MySQL will accept connections from anywhere. If your server is exposed to the internet, secure it:</p></blockquote><ol><li>Log in to MySQL as root:<pre><code class="hljs bash">mysql -u root -p</code></pre></li><li>Create a new user or update an existing user to allow access from a specific IP or any IP (<code>%</code>):<pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;username&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;password&#x27;</span>;<span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> PRIVILEGES <span class="hljs-keyword">ON</span> <span class="hljs-operator">*</span>.<span class="hljs-operator">*</span> <span class="hljs-keyword">TO</span> <span class="hljs-string">&#x27;username&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">GRANT</span> OPTION;FLUSH PRIVILEGES;</code></pre><blockquote><p>Replace <code>username</code> and <code>password</code> with your desired credentials.</p></blockquote></li></ol><h2>Step 4: Connect from Another Device</h2><p>On the client device, use the following command to connect:</p><pre><code class="hljs bash">mysql -h &lt;server-ip-address&gt; -u username -p</code></pre><p>Replace <code>&lt;server-ip-address&gt;</code> with the IP address of your MySQL server.</p><h2>Security Tips</h2><ul><li>Only allow trusted IPs if possible (replace <code>%</code> with a specific IP or subnet).</li><li>Use strong passwords for all MySQL users.</li><li>Consider enabling SSL for encrypted connections.</li></ul><hr><p>You have now enabled MySQL access for multiple devices on your network!</p>]]></content>
     
@@ -121,7 +121,7 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     <link href="https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html</id>
     <published>2025-07-19T02:40:01.000Z</published>
-    <updated>2025-08-28T13:10:40.635Z</updated>
+    <updated>2025-08-29T02:16:22.904Z</updated>
     
     <content type="html"><![CDATA[<p>To configure Yarn to use a custom NPM registry and enable authentication for the <code>npm</code> scope, use the following commands:</p><ol><li><p><strong>Set the NPM registry server for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmRegistryServer <span class="hljs-string">&quot;https://registry.npmjs.org&quot;</span></code></pre></li><li><p><strong>Always authenticate for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAlwaysAuth <span class="hljs-literal">true</span></code></pre></li><li><p><strong>Set the authentication token for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAuthToken <span class="hljs-string">&quot;YOUR_NPM_TOKEN&quot;</span></code></pre></li></ol>]]></content>
     
@@ -140,7 +140,7 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     <link href="https://www.webmanajemen.com/NodeJS/yarn-guides.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-guides.html</id>
     <published>2025-05-28T10:00:00.000Z</published>
-    <updated>2025-08-28T13:10:40.634Z</updated>
+    <updated>2025-08-29T02:16:22.903Z</updated>
     
     <content type="html"><![CDATA[<h3>Update Specific Packages for All Workspaces</h3><p>The following command updates the specified packages (<code>husky</code> and <code>lint-staged</code>) across all workspaces in a Yarn monorepo setup.</p><pre><code class="hljs bash">yarn workspaces foreach --all <span class="hljs-built_in">exec</span> yarn up husky lint-staged</code></pre>]]></content>
     

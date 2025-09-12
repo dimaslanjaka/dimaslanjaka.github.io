@@ -3,19 +3,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Activate MySQL for Multiple Devices - WMI</title>
-    <meta name="description" content="WMI - How to Activate MySQL for Multiple Devices How to Activate MySQL for Multiple Devices This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network. Prerequisites MySQL server installed on your host machineAccess to the MySQL root user or an adm">
+    <meta name="description" content="WMI -">
     <meta name="keywords" content="mysql,database,networking,tutorial">
     <meta name="search" content="/hexo-search.json">
     <meta name="author" content="Dimas Lanjaka">
     
     <meta property="og:title" content="How to Activate MySQL for Multiple Devices - WMI">
-    <meta property="og:description" content="WMI - How to Activate MySQL for Multiple Devices How to Activate MySQL for Multiple Devices This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network. Prerequisites MySQL server installed on your host machineAccess to the MySQL root user or an adm">
+    <meta property="og:description" content="WMI -">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How to Activate MySQL for Multiple Devices - WMI">
-    <meta name="twitter:description" content="WMI - How to Activate MySQL for Multiple Devices How to Activate MySQL for Multiple Devices This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network. Prerequisites MySQL server installed on your host machineAccess to the MySQL root user or an adm">
+    <meta name="twitter:description" content="WMI -">
     <meta name="twitter:image" content="">
     <link rel="icon" type="image/x-icon" href="//www.webmanajemen.com/favicon.ico">
     <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/0f634f242ff259087c9fe176e8f28ccaebb5c015/css/all.min.css">
@@ -85,7 +85,7 @@
       "@id": "https://www.webmanajemen.com/2025/08/setup-mysql-for-multiple-devices.html"
     },
     "headline": "How to Activate MySQL for Multiple Devices",
-    "description": "How to Activate MySQL for Multiple Devices How to Activate MySQL for Multiple Devices This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network. Prerequisites MySQL server installed on your host machineAccess to the MySQL root user or an adm",
+    "description": "How to Activate MySQL for Multiple Devices",
     "image": {
       "@type": "ImageObject",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png",
@@ -107,7 +107,7 @@
       }
     },
     "datePublished": "2025-08-24T17:54:43+07:00",
-    "dateModified": "2025-09-12T09:10:21+07:00"
+    "dateModified": "2025-09-12T11:08:29+07:00"
   }
 ]</script>
 
@@ -355,7 +355,7 @@
           </h2>
           <div id="accordion-post-metadata-body" class="hidden" aria-labelledby="accordion-post-metadata">
             <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-              <p class="text-gray-500 dark:text-gray-400">How to Activate MySQL for Multiple Devices How to Activate MySQL for Multiple Devices This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network. Prerequisites MySQL server installed on your host machineAccess to the MySQL root user or an adm</p>
+              <p class="text-gray-500 dark:text-gray-400"></p>
             </div>
           </div>
         </div>
@@ -393,15 +393,15 @@
     </span>
 </span>
 </div>
-        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><h1>How to Activate MySQL for Multiple Devices</h1>
+        <div class="max-w-none format lg:format-lg dark:format-invert format-red post"><h2>How to Activate MySQL for Multiple Devices</h2>
 <p>This tutorial will guide you through the steps to allow multiple devices to access your MySQL server over a network.</p>
-<h2>Prerequisites</h2>
+<h3>Prerequisites</h3>
 <ul>
 <li>MySQL server installed on your host machine</li>
 <li>Access to the MySQL root user or an admin account</li>
 <li>Basic knowledge of networking</li>
 </ul>
-<h2>Step 1: Configure MySQL to Listen on All IP Addresses</h2>
+<h3>Configure MySQL to Listen on All IP Addresses</h3>
 <ol>
 <li>Open the MySQL configuration file (<code>my.cnf</code> or <code>my.ini</code>).<ul>
 <li>On Windows: Usually located at <code>C:\ProgramData\MySQL\MySQL Server X.X\my.ini</code></li>
@@ -420,7 +420,7 @@ This allows MySQL to accept connections from any IP address.</li>
 </ul>
 </li>
 </ol>
-<h2>Step 2: Allow Remote Connections in the Firewall</h2>
+<h3>Allow Remote Connections in the Firewall</h3>
 <ol>
 <li>Open port 3306 (default MySQL port) in your firewall settings.<ul>
 <li><strong>Windows:</strong> Use Windows Defender Firewall to allow inbound connections on port 3306.</li>
@@ -428,7 +428,7 @@ This allows MySQL to accept connections from any IP address.</li>
 </ul>
 </li>
 </ol>
-<h2>Step 3: Create a MySQL User for Remote Access</h2>
+<h3>Create a MySQL User for Remote Access</h3>
 <blockquote>
 <p>⚠️ Important: At this point MySQL will accept connections from anywhere. If your server is exposed to the internet, secure it:</p>
 </blockquote>
@@ -442,10 +442,36 @@ FLUSH PRIVILEGES;</code></pre>
 </blockquote>
 </li>
 </ol>
-<h2>Step 4: Connect from Another Device</h2>
+<h3>Connect from Another Device</h3>
 <p>On the client device, use the following command to connect:</p>
 <pre><code class="hljs bash">mysql -h &lt;server-ip-address&gt; -u username -p</code></pre>
 <p>Replace <code>&lt;server-ip-address&gt;</code> with the IP address of your MySQL server.</p>
+<h2>Optimizations</h2>
+<h3>Increase Packet Size Limit</h3>
+<p>edit: <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+<pre><code class="hljs ini"><span class="hljs-section">[mysqld]</span>
+<span class="hljs-attr">max_allowed_packet</span> = <span class="hljs-number">128</span>M
+<span class="hljs-attr">net_read_timeout</span> = <span class="hljs-number">120</span>
+<span class="hljs-attr">net_write_timeout</span> = <span class="hljs-number">120</span></code></pre>
+
+<p>check using:</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> VARIABLES <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'max_allowed_packet'</span>;
+<span class="hljs-keyword">SHOW</span> VARIABLES <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'net_read_timeout'</span>;
+<span class="hljs-keyword">SHOW</span> VARIABLES <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'net_write_timeout'</span>;</code></pre>
+
+<h3>Increase Connection Limit</h3>
+<p>edit: <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+<pre><code class="hljs ini"><span class="hljs-section">[mysqld]</span>
+<span class="hljs-attr">max_connections</span> = <span class="hljs-number">500</span>
+<span class="hljs-attr">wait_timeout</span> = <span class="hljs-number">60</span>
+<span class="hljs-attr">interactive_timeout</span> = <span class="hljs-number">60</span></code></pre>
+
+<p>check using</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> VARIABLES <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'max_connections'</span>;
+<span class="hljs-keyword">SHOW</span> STATUS <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'Threads_connected'</span>;
+<span class="hljs-keyword">SHOW</span> STATUS <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'Threads_running'</span>;</code></pre>
+
+
 <h2>Security Tips</h2>
 <ul>
 <li>Only allow trusted IPs if possible (replace <code>%</code> with a specific IP or subnet).</li>
@@ -510,21 +536,32 @@ FLUSH PRIVILEGES;</code></pre>
                                   <a href="#prerequisites">Prerequisites</a>
                                 </li>
                                 <li>
-                                  <a href="#step-1:-configure-mysql-to-listen-on-all-ip-addresses">Step 1: Configure MySQL to Listen on All IP Addresses</a>
+                                  <a href="#configure-mysql-to-listen-on-all-ip-addresses">Configure MySQL to Listen on All IP Addresses</a>
                                 </li>
                                 <li>
-                                  <a href="#step-2:-allow-remote-connections-in-the-firewall">Step 2: Allow Remote Connections in the Firewall</a>
+                                  <a href="#allow-remote-connections-in-the-firewall">Allow Remote Connections in the Firewall</a>
                                 </li>
                                 <li>
-                                  <a href="#step-3:-create-a-mysql-user-for-remote-access">Step 3: Create a MySQL User for Remote Access</a>
+                                  <a href="#create-a-mysql-user-for-remote-access">Create a MySQL User for Remote Access</a>
                                 </li>
                                 <li>
-                                  <a href="#step-4:-connect-from-another-device">Step 4: Connect from Another Device</a>
-                                </li>
-                                <li>
-                                  <a href="#security-tips">Security Tips</a>
+                                  <a href="#connect-from-another-device">Connect from Another Device</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                          <a href="#optimizations">Optimizations</a>
+                            <ul>
+                                <li>
+                                  <a href="#increase-packet-size-limit">Increase Packet Size Limit</a>
+                                </li>
+                                <li>
+                                  <a href="#increase-connection-limit">Increase Connection Limit</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#security-tips">Security Tips</a>
                         </li>
                     </ul>
                   </nav>
@@ -602,22 +639,22 @@ FLUSH PRIVILEGES;</code></pre>
                       <a href="/tags/Chimeraland/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> Chimeraland</a>
                       <a href="/tags/scala/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scala</a>
                       <a href="/tags/map/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> map</a>
-                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
                       <a href="/tags/math/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> math</a>
-                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
+                      <a href="/tags/unit/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> unit</a>
+                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
+                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
                       <a href="/tags/blogger/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogger</a>
                       <a href="/tags/blogging/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> blogging</a>
-                      <a href="/tags/wordpress/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> wordpress</a>
-                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
-                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
-                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
-                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
-                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
-                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
-                      <a href="/tags/adsense/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> adsense</a>
                       <a href="/tags/popular/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> popular</a>
+                      <a href="/tags/css/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> css</a>
+                      <a href="/tags/seo/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> seo</a>
+                      <a href="/tags/php/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> php</a>
+                      <a href="/tags/social-media/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> social media</a>
                       <a href="/tags/hosting/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> hosting</a>
+                      <a href="/tags/html/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> html</a>
+                      <a href="/tags/amp/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> amp</a>
                       <a href="/tags/facebook/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> facebook</a>
+                      <a href="/tags/tools/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> tools</a>
                       <a href="/tags/vainglory/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> vainglory</a>
                       <a href="/tags/codeigniter/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> codeigniter</a>
                       <a href="/tags/miscellaneous/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> miscellaneous</a>
@@ -677,8 +714,8 @@ FLUSH PRIVILEGES;</code></pre>
                       <a href="/tags/quest/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> quest</a>
                       <a href="/tags/material/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> material</a>
                       <a href="/tags/bug/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> bug</a>
-                      <a href="/tags/scenic-spot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scenic-spot</a>
                       <a href="/tags/recipe/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> recipe</a>
+                      <a href="/tags/scenic-spot/" rel="tag" class="hover:text-blue-700 mx-2"><i class="fa-regular fa-tag"></i> scenic-spot</a>
                   </div>
                 </div>
               </div>

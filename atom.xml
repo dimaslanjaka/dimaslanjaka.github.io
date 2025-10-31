@@ -121,7 +121,7 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     <link href="https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html</id>
     <published>2025-07-19T02:40:01.000Z</published>
-    <updated>2025-10-30T13:14:40.244Z</updated>
+    <updated>2025-10-31T02:21:40.364Z</updated>
     
     <content type="html"><![CDATA[<p>To configure Yarn to use a custom NPM registry and enable authentication for the <code>npm</code> scope, use the following commands:</p><ol><li><p><strong>Set the NPM registry server for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmRegistryServer <span class="hljs-string">&quot;https://registry.npmjs.org&quot;</span></code></pre></li><li><p><strong>Always authenticate for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAlwaysAuth <span class="hljs-literal">true</span></code></pre></li><li><p><strong>Set the authentication token for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAuthToken <span class="hljs-string">&quot;YOUR_NPM_TOKEN&quot;</span></code></pre></li></ol>]]></content>
     
@@ -140,7 +140,7 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     <link href="https://www.webmanajemen.com/NodeJS/yarn-guides.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-guides.html</id>
     <published>2025-05-28T10:00:00.000Z</published>
-    <updated>2025-10-30T13:14:40.245Z</updated>
+    <updated>2025-10-31T02:21:40.365Z</updated>
     
     <content type="html"><![CDATA[<h3>Update Specific Packages for All Workspaces</h3><p>The following command updates the specified packages (<code>husky</code> and <code>lint-staged</code>) across all workspaces in a Yarn monorepo setup.</p><pre><code class="hljs bash">yarn workspaces foreach --all <span class="hljs-built_in">exec</span> yarn up husky lint-staged</code></pre>]]></content>
     

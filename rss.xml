@@ -15,8 +15,33 @@
     <atom:link href="https://www.webmanajemen.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.</description>
-    <pubDate>Fri, 12 Sep 2025 04:08:29 GMT</pubDate>
+    <pubDate>Sat, 08 Nov 2025 13:08:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Night Crows ACC/DEF Requirements</title>
+      <link>https://www.webmanajemen.com/2025/08/night-crows-acc-deff-requirements.html</link>
+      <guid>https://www.webmanajemen.com/2025/08/night-crows-acc-deff-requirements.html</guid>
+      <pubDate>Sat, 08 Nov 2025 13:08:04 GMT</pubDate>
+      
+      <description>Comprehensive list of ACC and DEF requirements for Night Crows Battlefield and World Battlefield levels.</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>▶Server B.F Lv.45 ㅡ Total DEF 240 / Total ACC 200<br>▶Server B.F Lv.50 ㅡ Total DEF 270 / Total ACC 260<br>▶Server B.F Lv.55 ㅡ Total DEF 340 / Total ACC 340<br>▶Server B.F Lv.58 ㅡ Total DEF 410 / Total ACC 370<br>▶Server B.F Lv.61 ㅡ Total DEF 450 / Total ACC 420<br>▶Server B.F Lv.64 ㅡ Total DEF 500 / Total ACC 480<br>▶Server B.F Lv.68 ㅡ Total DEF 500 / Total ACC 505<br>▶Server B.F Lv.72 ㅡ Total DEF 560 / Total ACC 545<br>▶Server B.F Lv.76 ㅡ Total DEF 580 / Total ACC 585  </p><p>▶월드 격전지 ( World B.F ver. 1 )<br>▶World B.F Lv.58 ㅡ Total DEF 430 / Total ACC 395<br>▶World B.F Lv.61 ㅡ Total DEF 470 / Total ACC 435<br>▶World B.F Lv.64 ㅡ Total DEF 510 / Total ACC 485<br>▶World B.F Lv.68 ㅡ Total DEF 540 / Total ACC 525<br>▶World B.F Lv.72 ㅡ Total DEF 585 / Total ACC 570<br>▶World B.F Lv.76 ㅡ Total DEF 615 / Total ACC 615<br>▶World B.F Lv.80 ㅡ Total DEF 645 / Total ACC 685<br>▶World B.F Lv.84 ㅡ Total DEF 680 / Total ACC 735<br>▶World B.F Lv.88 ㅡ Total DEF 700 / Total ACC 785<br>▶World B.F Lv.90 ㅡ Total DEF PASS / Total ACC 833 / HERO 1.5 Tier full set<br>▶World B.F Lv.92 ㅡ Total DEF PASS / Total ACC 883 / HERO 1.5 Tier full set +@<br>▶World B.F Lv.94 ㅡ Total DEF PASS / Total ACC 933 / HERO 1 Tier full set<br>▶World B.F Lv.96 ㅡ Total DEF PASS / Total ACC 983 / HERO 1 Tier full set +@<br>▶World B.F Lv.98 ㅡ Total DEF PASS / Total ACC 1033 / HERO 1 Tier full set +@  </p>]]></content:encoded>
+      
+      
+      <category domain="https://www.webmanajemen.com/categories/games/">games</category>
+      
+      
+      <category domain="https://www.webmanajemen.com/tags/guide/">guide</category>
+      
+      <category domain="https://www.webmanajemen.com/tags/night-crows/">night crows</category>
+      
+      
+      <comments>https://www.webmanajemen.com/2025/08/night-crows-acc-deff-requirements.html#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>How to Activate MySQL for Multiple Devices</title>
@@ -2097,37 +2122,6 @@ git &lt;span class=&quot;hljs-built_in&quot;&gt;log&lt;/span&gt; --pretty=format
       
       
       <comments>https://www.webmanajemen.com/2024/03/android-studio-enable-automatic-memory-heap-resizing.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>is defining screen density can reduce build time ?</title>
-      <link>https://www.webmanajemen.com/2024/02/is-defining-screen-density-on-gradlebuild-can-reduce-build-time.html</link>
-      <guid>https://www.webmanajemen.com/2024/02/is-defining-screen-density-on-gradlebuild-can-reduce-build-time.html</guid>
-      <pubDate>Wed, 28 Feb 2024 06:27:35 GMT</pubDate>
-      
-      <description>is defining screen density on gradle.build can reduce build time ?</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>Setting screen density in  an Android project&#39;s &quot;build.gradle&quot; file usually has no direct impact on build time.</p><p>Screen density refers to the resources used in your Android app and  affects how your app runs on different devices with different screen densities.</p><p>This is not configured at build time.</p><p>To clarify, when you set screen density in the &#39;build.gradle&#39; file, you typically specify different versions of the drawable resource for different screen densities.</p><p> For example:</p><p>gradle</p><pre><code class="language-gradle">android {    // ...    splits {        density {            enable true            exclude &quot;ldpi&quot;, &quot;xxxhdpi&quot;            compatibleScreens &#39;small&#39;, &#39;normal&#39;, &#39;large&#39;, &#39;xlarge&#39;        }    }}</code></pre><p>This configuration is more about generating APKs with different drawables for different screen densities and is not directly related to  build times.</p><p> To improve  your Android project build time, you may want to consider other strategies such as:</p><ol><li><p><strong>Caching:</strong> Utilize Gradle&#39;s built-in caching mechanisms to avoid redundant work in subsequent builds.</p></li><li><p><strong>Parallel Builds:</strong> Configure Gradle to perform parallel builds, allowing it to build multiple modules concurrently.</p></li><li><p><strong>Incremental Builds:</strong> Enable incremental builds to only rebuild the parts of the project that have changed.</p></li><li><p><strong>Dependency Analysis:</strong> Use tools like the Gradle build scans or build dashboard to analyze dependencies and understand which dependencies are impacting build times.</p></li><li><p><strong>Profile Your Build:</strong> Use tools like the Gradle profiler or Android Studio&#39;s built-in profiler to identify bottlenecks in your build process.</p></li></ol><p>Remember that screen density configurations are important for the runtime behavior of your app on different devices, but they aren&#39;t the primary factor influencing build times.</p>]]></content:encoded>
-      
-      
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      
-      
-      <category domain="https://www.webmanajemen.com/tags/android/">android</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/gradle/">gradle</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/kotlin/">kotlin</category>
-      
-      <category domain="https://www.webmanajemen.com/tags/groovy/">groovy</category>
-      
-      
-      <comments>https://www.webmanajemen.com/2024/02/is-defining-screen-density-on-gradlebuild-can-reduce-build-time.html#disqus_thread</comments>
       
     </item>
     

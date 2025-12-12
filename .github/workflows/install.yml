@@ -65,7 +65,7 @@ jobs:
           yarn dlx binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz submodule-install
 
       - name: ♻️ Initialize Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             **/yarn.lock

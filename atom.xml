@@ -6,7 +6,7 @@
   <link href="https://www.webmanajemen.com/atom.xml" rel="self"/>
   
   <link href="https://www.webmanajemen.com/"/>
-  <updated>2026-01-23T02:43:15.715Z</updated>
+  <updated>2026-01-23T13:23:43.370Z</updated>
   <id>https://www.webmanajemen.com/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Night Crows ACC/DEF Requirements</title>
     <link href="https://www.webmanajemen.com/2025/08/night-crows-acc-deff-requirements.html"/>
     <id>https://www.webmanajemen.com/2025/08/night-crows-acc-deff-requirements.html</id>
-    <published>2026-01-23T02:43:15.715Z</published>
-    <updated>2026-01-23T02:43:15.715Z</updated>
+    <published>2026-01-23T13:23:43.370Z</published>
+    <updated>2026-01-23T13:23:43.370Z</updated>
     
     <content type="html"><![CDATA[<p>▶Server B.F Lv.45 ㅡ Total DEF 240 / Total ACC 200<br>▶Server B.F Lv.50 ㅡ Total DEF 270 / Total ACC 260<br>▶Server B.F Lv.55 ㅡ Total DEF 340 / Total ACC 340<br>▶Server B.F Lv.58 ㅡ Total DEF 410 / Total ACC 370<br>▶Server B.F Lv.61 ㅡ Total DEF 450 / Total ACC 420<br>▶Server B.F Lv.64 ㅡ Total DEF 500 / Total ACC 480<br>▶Server B.F Lv.68 ㅡ Total DEF 500 / Total ACC 505<br>▶Server B.F Lv.72 ㅡ Total DEF 560 / Total ACC 545<br>▶Server B.F Lv.76 ㅡ Total DEF 580 / Total ACC 585  </p><p>▶월드 격전지 ( World B.F ver. 1 )<br>▶World B.F Lv.58 ㅡ Total DEF 430 / Total ACC 395<br>▶World B.F Lv.61 ㅡ Total DEF 470 / Total ACC 435<br>▶World B.F Lv.64 ㅡ Total DEF 510 / Total ACC 485<br>▶World B.F Lv.68 ㅡ Total DEF 540 / Total ACC 525<br>▶World B.F Lv.72 ㅡ Total DEF 585 / Total ACC 570<br>▶World B.F Lv.76 ㅡ Total DEF 615 / Total ACC 615<br>▶World B.F Lv.80 ㅡ Total DEF 645 / Total ACC 685<br>▶World B.F Lv.84 ㅡ Total DEF 680 / Total ACC 735<br>▶World B.F Lv.88 ㅡ Total DEF 700 / Total ACC 785<br>▶World B.F Lv.90 ㅡ Total DEF PASS / Total ACC 833 / HERO 1.5 Tier full set<br>▶World B.F Lv.92 ㅡ Total DEF PASS / Total ACC 883 / HERO 1.5 Tier full set +@<br>▶World B.F Lv.94 ㅡ Total DEF PASS / Total ACC 933 / HERO 1 Tier full set<br>▶World B.F Lv.96 ㅡ Total DEF PASS / Total ACC 983 / HERO 1 Tier full set +@<br>▶World B.F Lv.98 ㅡ Total DEF PASS / Total ACC 1033 / HERO 1 Tier full set +@  </p>]]></content>
     
@@ -129,9 +129,9 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     
     <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
     
-    <category term="eslint" scheme="https://www.webmanajemen.com/tags/eslint/"/>
-    
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
+    
+    <category term="eslint" scheme="https://www.webmanajemen.com/tags/eslint/"/>
     
     <category term="react" scheme="https://www.webmanajemen.com/tags/react/"/>
     
@@ -144,7 +144,7 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     <link href="https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-npm-registry-configuration.html</id>
     <published>2025-07-19T02:40:01.000Z</published>
-    <updated>2026-01-23T02:43:15.455Z</updated>
+    <updated>2026-01-23T13:23:42.995Z</updated>
     
     <content type="html"><![CDATA[<p>To configure Yarn to use a custom NPM registry and enable authentication for the <code>npm</code> scope, use the following commands:</p><ol><li><p><strong>Set the NPM registry server for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmRegistryServer <span class="hljs-string">&quot;https://registry.npmjs.org&quot;</span></code></pre></li><li><p><strong>Always authenticate for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAlwaysAuth <span class="hljs-literal">true</span></code></pre></li><li><p><strong>Set the authentication token for the <code>npm</code> scope:</strong></p><pre><code class="hljs bash">yarn config <span class="hljs-built_in">set</span> npmScopes.npm.npmAuthToken <span class="hljs-string">&quot;YOUR_NPM_TOKEN&quot;</span></code></pre></li></ol>]]></content>
     
@@ -163,7 +163,7 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     <link href="https://www.webmanajemen.com/NodeJS/yarn-guides.html"/>
     <id>https://www.webmanajemen.com/NodeJS/yarn-guides.html</id>
     <published>2025-05-28T10:00:00.000Z</published>
-    <updated>2026-01-23T02:43:15.456Z</updated>
+    <updated>2026-01-23T13:23:42.996Z</updated>
     
     <content type="html"><![CDATA[<h3>Update Specific Packages for All Workspaces</h3><p>The following command updates the specified packages (<code>husky</code> and <code>lint-staged</code>) across all workspaces in a Yarn monorepo setup.</p><pre><code class="hljs bash">yarn workspaces foreach --all <span class="hljs-built_in">exec</span> yarn up husky lint-staged</code></pre>]]></content>
     
@@ -248,11 +248,11 @@ This allows MySQL to accept connections from any IP address.&lt;/li&gt;
     
     <category term="typescript" scheme="https://www.webmanajemen.com/tags/typescript/"/>
     
-    <category term="eslint" scheme="https://www.webmanajemen.com/tags/eslint/"/>
+    <category term="nodejs" scheme="https://www.webmanajemen.com/tags/nodejs/"/>
     
     <category term="javascript" scheme="https://www.webmanajemen.com/tags/javascript/"/>
     
-    <category term="nodejs" scheme="https://www.webmanajemen.com/tags/nodejs/"/>
+    <category term="eslint" scheme="https://www.webmanajemen.com/tags/eslint/"/>
     
   </entry>
   

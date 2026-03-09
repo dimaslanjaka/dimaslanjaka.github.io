@@ -5,7 +5,7 @@
     <link>https://www.webmanajemen.com/</link>
     <description>Website Management Indonesia</description>
     <copyright>All rights reserved 2026, Dimas Lanjaka</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 13:24:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2026 13:42:36 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <image>
       <url>https://www.webmanajemen.com/logo.png</url>
@@ -21,9 +21,21 @@
       <category domain="https://www.webmanajemen.com/categories/games/">games</category>
       <category domain="https://www.webmanajemen.com/tags/guide/">guide</category>
       <category domain="https://www.webmanajemen.com/tags/night-crows/">night crows</category>
-      <pubDate>Sun, 08 Mar 2026 13:24:51 GMT</pubDate>
+      <pubDate>Mon, 09 Mar 2026 13:42:36 GMT</pubDate>
       <content:encoded>
         <![CDATA[<p>▶Server B.F Lv.45 ㅡ Total DEF 240 / Total ACC 200<br>▶Server B.F Lv.50 ㅡ Total DEF 270 / Total ACC 260<br>▶Server B.F Lv.55 ㅡ Total DEF 340 / Total ACC 340<br>▶Server B.F Lv.58 ㅡ Total DEF 410 / Total ACC 370<br>▶Server B.F Lv.61 ㅡ Total DEF 450 / Total ACC 420<br>▶Server B.F Lv.64 ㅡ Total DEF 500 / Total ACC 480<br>▶Server B.F Lv.68 ㅡ Total DEF 500 / Total ACC 505<br>▶Server B.F Lv.72 ㅡ Total DEF 560 / Total ACC 545<br>▶Server B.F Lv.76 ㅡ Total DEF 580 / Total ACC 585  </p><p>▶월드 격전지 ( World B.F ver. 1 )<br>▶World B.F Lv.58 ㅡ Total DEF 430 / Total ACC 395<br>▶World B.F Lv.61 ㅡ Total DEF 470 / Total ACC 435<br>▶World B.F Lv.64 ㅡ Total DEF 510 / Total ACC 485<br>▶World B.F Lv.68 ㅡ Total DEF 540 / Total ACC 525<br>▶World B.F Lv.72 ㅡ Total DEF 585 / Total ACC 570<br>▶World B.F Lv.76 ㅡ Total DEF 615 / Total ACC 615<br>▶World B.F Lv.80 ㅡ Total DEF 645 / Total ACC 685<br>▶World B.F Lv.84 ㅡ Total DEF 680 / Total ACC 735<br>▶World B.F Lv.88 ㅡ Total DEF 700 / Total ACC 785<br>▶World B.F Lv.90 ㅡ Total DEF PASS / Total ACC 833 / HERO 1.5 Tier full set<br>▶World B.F Lv.92 ㅡ Total DEF PASS / Total ACC 883 / HERO 1.5 Tier full set +@<br>▶World B.F Lv.94 ㅡ Total DEF PASS / Total ACC 933 / HERO 1 Tier full set<br>▶World B.F Lv.96 ㅡ Total DEF PASS / Total ACC 983 / HERO 1 Tier full set +@<br>▶World B.F Lv.98 ㅡ Total DEF PASS / Total ACC 1033 / HERO 1 Tier full set +@  </p>]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>How to build tun2socks for android</title>
+      <link>https://www.webmanajemen.com/undefined.html</link>
+      <description>Tutorial building tun2socks.aar for android</description>
+      <author>Dimas Lanjaka</author>
+      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
+      <category domain="https://www.webmanajemen.com/tags/android/">android</category>
+      <pubDate>Sun, 08 Mar 2026 06:52:43 GMT</pubDate>
+      <content:encoded>
+        <![CDATA[<h2>Windows</h2><pre><code class="hljs cmd">go install golang.org/x/mobile/<span class="hljs-built_in">cmd</span>/gomobile@latestgo get golang.org/x/mobile/bindgomobile initgo install github.com/xjasonlyu/tun2socks/v2@latest<span class="hljs-built_in">set</span> DEST=<span class="hljs-variable">%cd%</span>\app\libs<span class="hljs-built_in">mkdir</span> <span class="hljs-variable">%DEST%</span><span class="hljs-built_in">cd</span> <span class="hljs-variable">%GOPATH%</span>\pkg\mod\github.com\xjasonlyu\tun2socks\v2*<span class="hljs-comment">@rem for me : C:\Users\Dell\go\pkg\mod\github.com\xjasonlyu\tun2socks\v2@v2.6.0</span><span class="hljs-comment"></span><span class="hljs-comment">@rem change your android SDK path</span><span class="hljs-built_in">set</span> ANDROID_HOME=D:\ProgramData\Android<span class="hljs-built_in">set</span> ANDROID_SDK_ROOT=D:\ProgramData\Android<span class="hljs-built_in">set</span> ANDROID_NDK_HOME=D:\ProgramData\Android\ndk\<span class="hljs-number">25</span>.<span class="hljs-number">2</span>.<span class="hljs-number">9519653</span>gomobile bind -o <span class="hljs-variable">%DEST%</span>\tun2socks.aar -target android ./engine<span class="hljs-comment">@rem specify android api: gomobile bind -o %DEST%\tun2socks.aar -target android -androidapi 21 ./engine</span><span class="hljs-built_in">dir</span> <span class="hljs-variable">%DEST%</span></code></pre><h2>Linux</h2><pre><code class="hljs bash">$ go install golang.org/x/mobile/cmd/gomobile@latest$ go get golang.org/x/mobile/bind$ gomobile init$ go install github.com/xjasonlyu/tun2socks/v2@latest$ <span class="hljs-built_in">export</span> DEST=$(<span class="hljs-built_in">pwd</span>)/app/libs$ <span class="hljs-built_in">mkdir</span> -p DEST$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$GOPATH</span>/src/github.com/xjasonlyu/tun2socks$ gomobile <span class="hljs-built_in">bind</span> -o <span class="hljs-variable">$DEST</span>/tun2socks.aar -target android <span class="hljs-variable">$GOPATH</span>/src/github.com/xjasonlyu/tun2socks/engine$ <span class="hljs-built_in">ls</span> <span class="hljs-variable">$DEST</span> <span class="hljs-comment"># you should see tun2socks.aar and tun2socks-sources.jar</span></code></pre><h2>Apply to gradle project</h2><p>Add the following to your <code>settings.gradle</code>:</p><pre><code class="hljs diff"> dependencyResolutionManagement &#123;     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)     repositories &#123;         google()         mavenCentral()<span class="hljs-addition">+        flatDir &#123;</span><span class="hljs-addition">+            dirs &#x27;app/libs&#x27;</span><span class="hljs-addition">+        &#125;</span>     &#125; &#125;</code></pre><p>Add the dependency to your <code>app/build.gradle</code>:</p><pre><code class="hljs diff"> dependencies &#123;<span class="hljs-addition">+    implementation (name:&#x27;tun2socks&#x27;, ext:&#x27;aar&#x27;)</span>     implementation &#x27;androidx.core:core-ktx:1.7.0&#x27;     // omitted...&#125;</code></pre><p>Execute &quot;<em>Sync Project with Gradle Files</em>&quot; action in Android Studio. Then the <code>engine</code> package would be added to your build path:</p><pre><code class="hljs java"><span class="hljs-keyword">import</span> engine.Engine;</code></pre><p>Note that it seemed necessary to set empty values even for unused options.</p>]]>
       </content:encoded>
     </item>
     <item>
@@ -1833,64 +1845,6 @@ git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-str
       <pubDate>Fri, 15 Mar 2024 12:18:05 GMT</pubDate>
       <content:encoded>
         <![CDATA[<pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;writing github commit history&quot;</span>git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">&quot;%ad%n%h %s%n%b&quot;</span> --<span class="hljs-built_in">date</span>=format:<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span> | <span class="hljs-keyword">while</span> IFS= <span class="hljs-built_in">read</span> -r line; <span class="hljs-keyword">do</span>  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;line#&quot;<span class="hljs-variable">$&#123;line%%[![:space:]]*&#125;</span>&quot;&#125;</span>&quot;</span>  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;trimmed_line%&quot;<span class="hljs-variable">$&#123;trimmed_line##*[![:space:]]&#125;</span>&quot;&#125;</span>&quot;</span>  <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> ]; <span class="hljs-keyword">then</span>    <span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> =~ ^[0-9]&#123;4&#125;-[0-9]&#123;2&#125;-[0-9]&#123;2&#125;\ [0-9]&#123;2&#125;:[0-9]&#123;2&#125;:[0-9]&#123;2&#125;$ ]]; <span class="hljs-keyword">then</span>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;**<span class="hljs-variable">$trimmed_line</span>**\n&quot;</span>    <span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$first_line</span>&quot;</span> = <span class="hljs-literal">true</span> ]; <span class="hljs-keyword">then</span>      first_line=<span class="hljs-literal">false</span>    <span class="hljs-keyword">else</span>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;  <span class="hljs-variable">$trimmed_line</span>\n&quot;</span>    <span class="hljs-keyword">fi</span>  <span class="hljs-keyword">fi</span><span class="hljs-keyword">done</span> &gt; release-repo/changelog-commit.md<span class="hljs-comment"># Wait for 3 seconds</span><span class="hljs-built_in">sleep</span> 3</code></pre><p>the format markdown like</p><pre><code class="hljs markdown"><span class="hljs-strong">**2024-03-07 18:41:29**</span><span class="hljs-bullet">-</span> 39d989ee chore: round double value<span class="hljs-strong">**2024-03-07 18:38:32**</span><span class="hljs-bullet">-</span> 0586bd98 chore: improve performance</code></pre><p>above script also works with multiline commits, looks like below:</p><pre><code class="hljs log">**2024-03-07 18:37:53**- 064c3b79 chore: update preparation activity UI  improve performance stability</code></pre>]]>
-      </content:encoded>
-    </item>
-    <item>
-      <title>enable automatic memory heap resizing of android studio</title>
-      <link>https://www.webmanajemen.com/undefined.html</link>
-      <description>
-        <![CDATA[<p>To limit Android Studio&#39;s memory usage, you can modify the <code>studio.vmoptions</code> file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps:</p>
-<ol>
-<li><p><strong>Locate the <code>studio.vmoptions</code> file:</strong></p>
-<ul>
-<li>On Windows, it is usually located in the <code>bin</code> directory of the Android Studio installation directory. For example, <code>C:\Program Files\Android\Android Studio\bin\studio64.exe.vmoptions</code>.</li>
-<li>On macOS, it is often found in the <code>Contents/bin</code> directory within the application bundle. For example, <code>/Applications/Android Studio.app/Contents/bin/studio.vmoptions</code>.</li>
-<li>On Linux, it is also typically in the <code>bin</code> directory of the installation. For example, <code>/opt/android-studio/bin/studio64.vmoptions</code>.</li>
-</ul>
-</li>
-<li><p><strong>Open the <code>studio.vmoptions</code> file in a text editor:</strong> Use a text editor like Notepad (on Windows), TextEdit (on macOS), or any code editor of your choice.</p>
-</li>
-<li><p><strong>Modify the memory settings:</strong> Add or modify the following lines to set the maximum heap size (Xmx) and the initial heap size (Xms). Adjust the values according to your system&#39;s available memory.</p>
-</li>
-</ol>
-<pre><code class="hljs plaintext">-Xms256m
--Xmx2048m</code></pre>
-
-<p> Example values are used above (<code>-Xms256m</code> for the initial heap size and <code>-Xmx2048m</code> for the maximum heap size). You can increase or decrease these values based on your system&#39;s configuration.</p>
-<ol start="2">
-<li><strong>Save the changes and restart Android Studio:</strong> Save the modifications to the <code>studio.vmoptions</code> file and restart Android Studio for the changes to take effect.</li>
-</ol>
-<p>Keep in mind that setting the maximum heap size too high might cause issues if your system doesn&#39;t have enough available memory. Adjust the values based on your system&#39;s specifications to achieve optimal performance.</p>
-<h2>Enable automatic memory heap resizing</h2>
-<p>To add garbage collection options and parallelism while limiting the maximum heap size to 1GB in Android Studio, you can modify the <code>studio.vmoptions</code> file. Here&#39;s an example configuration:</p>
-<h3>Android Studio</h3>
-<pre><code class="hljs plaintext"># custom Android Studio VM options
-
-# Set the maximum heap size to 1GB
--Xmx1g
-
-# Set the initial heap size
--Xms256m
-
-# Enable parallel garbage collection
--XX:+UseParallelGC
-
-# Enable concurrent garbage collection (for parallel)
--XX:+UseConcMarkSweepGC
-
-# Set the size of the young generation (you may adjust this based on your needs)
--XX:NewSize=512m
--XX:MaxNewSize=512m
-
-# Enable automatic heap resizing
--XX:+UseAdaptiveSizePolicy</code></pre>]]>
-      </description>
-      <author>Dimas Lanjaka</author>
-      <category domain="https://www.webmanajemen.com/categories/programming/">programming</category>
-      <category domain="https://www.webmanajemen.com/tags/java/">java</category>
-      <pubDate>Sat, 02 Mar 2024 11:44:44 GMT</pubDate>
-      <content:encoded>
-        <![CDATA[<p>To limit Android Studio&#39;s memory usage, you can modify the <code>studio.vmoptions</code> file. This file contains configuration settings for Android Studio, including memory-related settings. Follow these steps:</p><ol><li><p><strong>Locate the <code>studio.vmoptions</code> file:</strong></p><ul><li>On Windows, it is usually located in the <code>bin</code> directory of the Android Studio installation directory. For example, <code>C:\Program Files\Android\Android Studio\bin\studio64.exe.vmoptions</code>.</li><li>On macOS, it is often found in the <code>Contents/bin</code> directory within the application bundle. For example, <code>/Applications/Android Studio.app/Contents/bin/studio.vmoptions</code>.</li><li>On Linux, it is also typically in the <code>bin</code> directory of the installation. For example, <code>/opt/android-studio/bin/studio64.vmoptions</code>.</li></ul></li><li><p><strong>Open the <code>studio.vmoptions</code> file in a text editor:</strong> Use a text editor like Notepad (on Windows), TextEdit (on macOS), or any code editor of your choice.</p></li><li><p><strong>Modify the memory settings:</strong> Add or modify the following lines to set the maximum heap size (Xmx) and the initial heap size (Xms). Adjust the values according to your system&#39;s available memory.</p></li></ol><pre><code class="hljs plaintext">-Xms256m-Xmx2048m</code></pre><p> Example values are used above (<code>-Xms256m</code> for the initial heap size and <code>-Xmx2048m</code> for the maximum heap size). You can increase or decrease these values based on your system&#39;s configuration.</p><ol start="2"><li><strong>Save the changes and restart Android Studio:</strong> Save the modifications to the <code>studio.vmoptions</code> file and restart Android Studio for the changes to take effect.</li></ol><p>Keep in mind that setting the maximum heap size too high might cause issues if your system doesn&#39;t have enough available memory. Adjust the values based on your system&#39;s specifications to achieve optimal performance.</p><h2>Enable automatic memory heap resizing</h2><p>To add garbage collection options and parallelism while limiting the maximum heap size to 1GB in Android Studio, you can modify the <code>studio.vmoptions</code> file. Here&#39;s an example configuration:</p><h3>Android Studio</h3><pre><code class="hljs plaintext"># custom Android Studio VM options# Set the maximum heap size to 1GB-Xmx1g# Set the initial heap size-Xms256m# Enable parallel garbage collection-XX:+UseParallelGC# Enable concurrent garbage collection (for parallel)-XX:+UseConcMarkSweepGC# Set the size of the young generation (you may adjust this based on your needs)-XX:NewSize=512m-XX:MaxNewSize=512m# Enable automatic heap resizing-XX:+UseAdaptiveSizePolicy</code></pre><h3>Intellij IDEA (Community or Ultimate)</h3><pre><code class="hljs plaintext"># Use the server JVM, optimized for long-running applications with more aggressive optimizations.-server # Aim to keep GC pause times under 200ms. This affects how the JVM manages memory.-XX:MaxGCPauseMillis=200# Trigger garbage collection when 45% of the heap is occupied. Helps manage memory pressure.-XX:InitiatingHeapOccupancyPercent=45# Set the ratio of the Eden space (young generation) to the survivor space.# A ratio of 8 means the Eden space is 8 times larger than a survivor space.-XX:SurvivorRatio=8# Allow flushing of compiled code from the code cache to prevent it from running out of memory.-XX:+UseCodeCacheFlushing# Reserve 128MB for the code cache, which stores JIT-compiled code.-XX:ReservedCodeCacheSize=128m# Enable assertions during runtime for debugging purposes.-ea# Disable caching of canonicalized file path strings. # This is often useful when working with networked or temporary file systems.-Dsun.io.useCanonCaches=false# ===================# Custom Android Studio VM options# ===================# Set the maximum heap size for the JVM to 1GB. Controls the upper limit of memory usage.-Xmx1g# Set the initial heap size to 256MB. This is the starting memory allocation.-Xms256m# Enable parallel garbage collection to improve throughput by using multiple threads.-XX:+UseParallelGC# Enable the concurrent garbage collector, which works alongside the application# (used in conjunction with parallel GC for balanced performance).-XX:+UseConcMarkSweepGC# Set the initial size of the young generation (Eden + survivor spaces) to 512MB.-XX:NewSize=512m# Set the maximum size of the young generation to 512MB.-XX:MaxNewSize=512m# Enable adaptive resizing of heap spaces to improve performance dynamically based on application behavior.-XX:+UseAdaptiveSizePolicy</code></pre><p>In this configuration:</p><ul><li><code>-XX:+UseParallelGC</code> enables the parallel garbage collector.</li><li><code>-XX:+UseConcMarkSweepGC</code> enables concurrent garbage collection, which works in conjunction with parallel garbage collection.</li><li><code>-XX:NewSize</code> and <code>-XX:MaxNewSize</code> set the size of the young generation, which is part of the heap where new objects are created. Adjust these values based on your requirements.</li><li><code>-XX:+UseAdaptiveSizePolicy</code> enables automatic heap resizing based on the application&#39;s behavior.</li></ul><p>Feel free to adjust these settings based on your system&#39;s specifications and the specific needs of your Android Studio projects. Keep in mind that tuning garbage collection settings can be a trial-and-error process, so monitor the performance and adjust as needed. Save the changes, restart Android Studio, and observe the impact on performance.</p>]]>
       </content:encoded>
     </item>
   </channel>

@@ -1,5 +1,5 @@
 //! moment-timezone.js
-//! version : 0.6.0
+//! version : 0.6.1
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -29,7 +29,7 @@
 	// 	return moment;
 	// }
 
-	var VERSION = "0.6.0",
+	var VERSION = "0.6.1",
 		zones = {},
 		links = {},
 		countries = {},
@@ -724,7 +724,7 @@
 	}
 
 	loadData({
-		"version": "2025b",
+		"version": "2026a",
 		"zones": [
 			"Africa/Abidjan|GMT|0|0||48e5",
 			"Africa/Nairobi|EAT|-30|0||47e5",
@@ -861,7 +861,7 @@
 			"Etc/UTC|UTC|0|0||",
 			"Europe/Ulyanovsk|+04 +03|-40 -30|010|1N7y0 3rd0|13e5",
 			"Europe/London|GMT BST|0 -10|01010101010101010101010|1GNB0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|10e6",
-			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1GNA0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0|67e4",
+			"Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1GNA0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WN0 1qM0|67e4",
 			"Europe/Kaliningrad|+03 EET|-30 -20|01|1N7z0|44e4",
 			"Europe/Moscow|MSK MSK|-40 -30|01|1N7y0|16e6",
 			"Europe/Saratov|+04 +03|-40 -30|010|1N7y0 5810|",

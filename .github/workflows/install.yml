@@ -142,7 +142,7 @@ jobs:
       - name: 🚀 Deploy to GitHub Pages
         if: steps.validate.outcome == 'success'
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         with:
           token: ${{ env.ACCESS_TOKEN }}
           artifact_name: "github-pages"

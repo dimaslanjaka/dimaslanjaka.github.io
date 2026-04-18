@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Dimas Lanjaka</rights>
   <subtitle>Website Management Indonesia</subtitle>
   <title>WMI</title>
-  <updated>2026-04-17T14:10:12.245Z</updated>
+  <updated>2026-04-18T09:38:31.185Z</updated>
   <entry>
     <author>
       <name>Dimas Lanjaka</name>
@@ -24,10 +24,28 @@
     </content>
     <id>https://www.webmanajemen.com/undefined.html</id>
     <link href="https://www.webmanajemen.com/undefined.html"/>
-    <published>2026-04-17T14:10:12.245Z</published>
+    <published>2026-04-18T09:38:31.184Z</published>
     <summary>Comprehensive list of ACC and DEF requirements for Night Crows Battlefield and World Battlefield levels.</summary>
     <title>Night Crows ACC/DEF Requirements</title>
-    <updated>2026-04-17T14:10:12.245Z</updated>
+    <updated>2026-04-18T09:38:31.185Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Dimas Lanjaka</name>
+    </author>
+    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
+    <category term="blogging" scheme="https://www.webmanajemen.com/tags/blogging/"/>
+    <category term="blogger" scheme="https://www.webmanajemen.com/tags/blogger/"/>
+    <category term="css" scheme="https://www.webmanajemen.com/tags/css/"/>
+    <content>
+      <![CDATA[<h2>Install Font Awesome Pro — quick guide</h2><p>This short guide shows three practical ways to include Font Awesome Pro in your web project:</p><ul><li>Install via npm (recommended for applications)</li><li>Use an official Font Awesome Kit (hosted, simple)</li><li>Fetch Pro CSS during build or at runtime when you have access to a private repo</li></ul><h3>Helper: load CSS into the page</h3><p>Use this small helper to switch between a stylesheet URL (<code>link</code>) or inline CSS (<code>style</code>) at runtime.</p><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">loadCss</span>(<span class="hljs-params">urlOrCss, type = <span class="hljs-string">&#x27;link&#x27;</span></span>) &#123;  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&#x27;link&#x27;</span>) &#123;    <span class="hljs-keyword">let</span> link = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;link[data-theme]&#x27;</span>);    <span class="hljs-keyword">if</span> (link) link.<span class="hljs-property">href</span> = urlOrCss;    <span class="hljs-keyword">else</span> &#123;      link = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;link&#x27;</span>);      link.<span class="hljs-property">rel</span> = <span class="hljs-string">&#x27;stylesheet&#x27;</span>;      link.<span class="hljs-property">href</span> = urlOrCss;      link.<span class="hljs-property">dataset</span>.<span class="hljs-property">theme</span> = <span class="hljs-string">&#x27;true&#x27;</span>;      <span class="hljs-variable language_">document</span>.<span class="hljs-property">head</span>.<span class="hljs-title function_">appendChild</span>(link);    &#125;  &#125; <span class="hljs-keyword">else</span> &#123;    <span class="hljs-keyword">let</span> style = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;style[data-theme]&#x27;</span>);    <span class="hljs-keyword">if</span> (style) style.<span class="hljs-property">innerHTML</span> = urlOrCss;    <span class="hljs-keyword">else</span> &#123;      style = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;style&#x27;</span>);      style.<span class="hljs-property">dataset</span>.<span class="hljs-property">theme</span> = <span class="hljs-string">&#x27;true&#x27;</span>;      style.<span class="hljs-property">innerHTML</span> = urlOrCss;      <span class="hljs-variable language_">document</span>.<span class="hljs-property">head</span>.<span class="hljs-title function_">appendChild</span>(style);    &#125;  &#125;&#125;</code></pre><h3>Runtime fetch</h3><p>Use this to download css into your webpage.</p><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span></span><span class="hljs-tag">  <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js&quot;</span></span><span class="hljs-tag">  <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==&quot;</span></span><span class="hljs-tag">  <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span></span><span class="hljs-tag">  <span class="hljs-attr">referrerpolicy</span>=<span class="hljs-string">&quot;no-referrer&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><span class="language-javascript">  <span class="hljs-comment">// CSS fetcher</span></span><span class="language-javascript">  <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchPrivateCss</span>(<span class="hljs-params"></span>) &#123;</span><span class="language-javascript">    <span class="hljs-keyword">const</span> ciphertext = <span class="hljs-string">&quot;U2FsdGVkX1+fGbiFMs1hFEzTEoYvXyFxJyMbfkzl1bs5XRQxeuzUo9isnQUcpVGzb5LsWSTS1/r7sVzRd5D3swJY0v2f2KtC5v4LYk1xXyLuDSNXqeZP1IPDV8VuYLy9ou+mSFKc4nDlup9ZCuiHXQ==&quot;</span>;</span><span class="language-javascript">    <span class="hljs-keyword">const</span> bytes = <span class="hljs-title class_">CryptoJS</span>.<span class="hljs-property">AES</span>.<span class="hljs-title function_">decrypt</span>(<span class="hljs-title class_">String</span>(ciphertext), <span class="hljs-title class_">String</span>(<span class="hljs-string">&#x27;not-so-secret&#x27;</span>));</span><span class="language-javascript">    <span class="hljs-keyword">const</span> token = bytes.<span class="hljs-title function_">toString</span>(<span class="hljs-title class_">CryptoJS</span>.<span class="hljs-property">enc</span>.<span class="hljs-property">Utf8</span>);</span><span class="language-javascript"></span><span class="language-javascript">    <span class="hljs-keyword">const</span> apiUrl = <span class="hljs-string">&#x27;https://api.github.com/repos/dimaslanjaka/fontawesome/contents/css/all.min.css&#x27;</span>;</span><span class="language-javascript"></span><span class="language-javascript">    <span class="hljs-keyword">const</span> resp = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(apiUrl, &#123;</span><span class="language-javascript">      <span class="hljs-attr">headers</span>: &#123;</span><span class="language-javascript">        <span class="hljs-title class_">Authorization</span>: <span class="hljs-string">`token <span class="hljs-subst">$&#123;token&#125;</span>`</span>,</span><span class="language-javascript">        <span class="hljs-title class_">Accept</span>: <span class="hljs-string">&#x27;application/vnd.github.v3.raw&#x27;</span></span><span class="language-javascript">      &#125;</span><span class="language-javascript">    &#125;);</span><span class="language-javascript"></span><span class="language-javascript">    <span class="hljs-keyword">if</span> (!resp.<span class="hljs-property">ok</span>) &#123;</span><span class="language-javascript">      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;Failed to fetch private CSS: &#x27;</span> + resp.<span class="hljs-property">statusText</span>);</span><span class="language-javascript">    &#125;</span><span class="language-javascript"></span><span class="language-javascript">    <span class="hljs-keyword">return</span> resp.<span class="hljs-title function_">text</span>();</span><span class="language-javascript">  &#125;</span><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><h3>Usage</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-title function_">fetchPrivateCss</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> <span class="hljs-title function_">loadCss</span>(data));</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-solid fa-user&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-regular fa-heart&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-light fa-star&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-duotone fa-camera&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-brands fa-github&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></code></pre><p>now your webpage font-awesome pro icon ready</p>]]>
+    </content>
+    <id>https://www.webmanajemen.com/undefined.html</id>
+    <link href="https://www.webmanajemen.com/undefined.html"/>
+    <published>2026-04-18T01:54:46.000Z</published>
+    <summary>Examples for loading Font Awesome Pro CSS in the browser, with fetch + loadCss helpers and an option for secure build-time fetching.</summary>
+    <title>Install Font Awesome Pro (Latest) for Web</title>
+    <updated>2026-04-18T01:54:48.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -140,7 +158,7 @@ This allows MySQL to accept connections from any IP address.</li>
     <published>2025-07-19T02:40:01.000Z</published>
     <summary>Example configuration for setting up Yarn to use a custom NPM registry and authentication.</summary>
     <title>Yarn NPM Registry Configuration</title>
-    <updated>2026-04-17T14:10:11.925Z</updated>
+    <updated>2026-04-18T09:38:30.828Z</updated>
   </entry>
   <entry>
     <author>
@@ -159,7 +177,7 @@ This allows MySQL to accept connections from any IP address.</li>
     <published>2025-05-28T10:00:00.000Z</published>
     <summary>A quick guide on how to update specific packages like husky and lint-staged across all workspaces in a Yarn monorepo.</summary>
     <title>Yarn Guides</title>
-    <updated>2026-04-17T14:10:11.922Z</updated>
+    <updated>2026-04-18T09:38:30.824Z</updated>
   </entry>
   <entry>
     <author>
@@ -1868,60 +1886,5 @@ clientBuilder.cookieJar(WebkitCookieManager(CookieManager.getInstance(), binding
     </summary>
     <title>OkHttp cookie handling on android (webview supported)</title>
     <updated>2024-11-03T03:55:56.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Dimas Lanjaka</name>
-    </author>
-    <category term="programming" scheme="https://www.webmanajemen.com/categories/programming/"/>
-    <category term="github" scheme="https://www.webmanajemen.com/tags/github/"/>
-    <category term="bash" scheme="https://www.webmanajemen.com/tags/bash/"/>
-    <content>
-      <![CDATA[<pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;writing github commit history&quot;</span>git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">&quot;%ad%n%h %s%n%b&quot;</span> --<span class="hljs-built_in">date</span>=format:<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span> | <span class="hljs-keyword">while</span> IFS= <span class="hljs-built_in">read</span> -r line; <span class="hljs-keyword">do</span>  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;line#&quot;<span class="hljs-variable">$&#123;line%%[![:space:]]*&#125;</span>&quot;&#125;</span>&quot;</span>  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;trimmed_line%&quot;<span class="hljs-variable">$&#123;trimmed_line##*[![:space:]]&#125;</span>&quot;&#125;</span>&quot;</span>  <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> ]; <span class="hljs-keyword">then</span>    <span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> =~ ^[0-9]&#123;4&#125;-[0-9]&#123;2&#125;-[0-9]&#123;2&#125;\ [0-9]&#123;2&#125;:[0-9]&#123;2&#125;:[0-9]&#123;2&#125;$ ]]; <span class="hljs-keyword">then</span>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;**<span class="hljs-variable">$trimmed_line</span>**\n&quot;</span>    <span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$first_line</span>&quot;</span> = <span class="hljs-literal">true</span> ]; <span class="hljs-keyword">then</span>      first_line=<span class="hljs-literal">false</span>    <span class="hljs-keyword">else</span>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;  <span class="hljs-variable">$trimmed_line</span>\n&quot;</span>    <span class="hljs-keyword">fi</span>  <span class="hljs-keyword">fi</span><span class="hljs-keyword">done</span> &gt; release-repo/changelog-commit.md<span class="hljs-comment"># Wait for 3 seconds</span><span class="hljs-built_in">sleep</span> 3</code></pre><p>the format markdown like</p><pre><code class="hljs markdown"><span class="hljs-strong">**2024-03-07 18:41:29**</span><span class="hljs-bullet">-</span> 39d989ee chore: round double value<span class="hljs-strong">**2024-03-07 18:38:32**</span><span class="hljs-bullet">-</span> 0586bd98 chore: improve performance</code></pre><p>above script also works with multiline commits, looks like below:</p><pre><code class="hljs log">**2024-03-07 18:37:53**- 064c3b79 chore: update preparation activity UI  improve performance stability</code></pre>]]>
-    </content>
-    <id>https://www.webmanajemen.com/undefined.html</id>
-    <link href="https://www.webmanajemen.com/undefined.html"/>
-    <published>2024-03-15T12:18:05.000Z</published>
-    <summary>
-      <![CDATA[<pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;writing github commit history&quot;</span>
-
-git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">&quot;%ad%n%h %s%n%b&quot;</span> --<span class="hljs-built_in">date</span>=format:<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span> | <span class="hljs-keyword">while</span> IFS= <span class="hljs-built_in">read</span> -r line; <span class="hljs-keyword">do</span>
-  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;line#&quot;<span class="hljs-variable">$&#123;line%%[![:space:]]*&#125;</span>&quot;&#125;</span>&quot;</span>
-  trimmed_line=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;trimmed_line%&quot;<span class="hljs-variable">$&#123;trimmed_line##*[![:space:]]&#125;</span>&quot;&#125;</span>&quot;</span>
-
-  <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
-    <span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$trimmed_line</span>&quot;</span> =~ ^[0-9]&#123;4&#125;-[0-9]&#123;2&#125;-[0-9]&#123;2&#125;\ [0-9]&#123;2&#125;:[0-9]&#123;2&#125;:[0-9]&#123;2&#125;$ ]]; <span class="hljs-keyword">then</span>
-      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;**<span class="hljs-variable">$trimmed_line</span>**\n&quot;</span>
-    <span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$first_line</span>&quot;</span> = <span class="hljs-literal">true</span> ]; <span class="hljs-keyword">then</span>
-      first_line=<span class="hljs-literal">false</span>
-    <span class="hljs-keyword">else</span>
-      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;  <span class="hljs-variable">$trimmed_line</span>\n&quot;</span>
-    <span class="hljs-keyword">fi</span>
-  <span class="hljs-keyword">fi</span>
-<span class="hljs-keyword">done</span> &gt; release-repo/changelog-commit.md
-
-<span class="hljs-comment"># Wait for 3 seconds</span>
-<span class="hljs-built_in">sleep</span> 3</code></pre>
-
-<p>the format markdown like</p>
-<pre><code class="hljs markdown"><span class="hljs-strong">**2024-03-07 18:41:29**</span>
-
-<span class="hljs-bullet">-</span> 39d989ee chore: round double value
-
-<span class="hljs-strong">**2024-03-07 18:38:32**</span>
-
-<span class="hljs-bullet">-</span> 0586bd98 chore: improve performance</code></pre>
-
-<p>above script also works with multiline commits, looks like below:</p>
-<pre><code class="hljs log">**2024-03-07 18:37:53**
-
-- 064c3b79 chore: update preparation activity UI
-
-  improve performance stability</code></pre>]]>
-    </summary>
-    <title>Turn git log history into markdown</title>
-    <updated>2024-03-15T12:18:05.000Z</updated>
   </entry>
 </feed>

@@ -1,33 +1,22 @@
-/**
- * capitalize string first letter of each word which mixed with symbols
- * @param {string} str
- * @param {string[]} moreSymbols add more symbols
- * @returns
- */
-function capitalizer(str, moreSymbols) {
-  let symbols = ["-", " "];
-  if (Array.isArray(moreSymbols)) {
-	// concatenate more symbols and unique
-	symbols = [...new Set(symbols.concat(moreSymbols))];
-  }
-  symbols.forEach((symbol) => {
-	str = str
-	  .split(symbol)
-	  .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
-	  .join(symbol);
+$(document).ready(function () {
+  console.clear();
+  $("#myCarousel").on("slide.bs.carousel", function (e) {
+	var $e = $(e.relatedTarget);
+	var idx = $e.index();
+	var itemsPerSlide = 4;
+	var totalItems = $(".carousel-item").length;
+	if (idx >= totalItems - (itemsPerSlide - 1)) {
+	  var it = itemsPerSlide - (totalItems - idx);
+	  for (var i = 0; i < it; i++) {
+		if (window.CP.shouldStopExecution(0)) break;
+		// append slides to end
+		if (e.direction == "left") {
+		  $(".carousel-item").eq(i).appendTo(".carousel-inner");
+		} else {
+		  $(".carousel-item").eq(0).appendTo($(this).find(".carousel-inner"));
+		}
+	  }
+	  window.CP.exitedLoop(0);
+	}
   });
-  return str;
-}
-
-if (location.host.match(/cdpn|codepen/)) console.clear();
-Array.from(document.querySelectorAll("[data-str]")).forEach((el) => {
-  const arg = el.getAttribute("data-arguments")
-	? el.getAttribute("data-arguments").split(",")
-	: [];
-  console.log(arg);
-  const str = el.getAttribute("data-str");
-  el.innerHTML = `<span style='color:red'>${str}</span> => <span style='color:green'>${capitalizer(
-	str,
-	arg
-  )}</span>`;
 });
